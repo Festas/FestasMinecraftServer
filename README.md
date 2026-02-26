@@ -10,7 +10,8 @@ Dieses Repository enthält alle Konfigurationen für ein Minecraft Paper Server 
 
 **Server-IP:** `mc.festas-builds.com`
 
-Das Netzwerk besteht aus 4 Servern:
+Das Netzwerk besteht aus 5 Komponenten:
+- **Proxy** (Velocity): Netzwerk-Proxy für Server-Routing, MOTD, TAB, Skins
 - **Lobby**: Haupt-Lobby für Spieler-Routing
 - **Survival**: Standard Survival Server (getrennt von MMO-Servern)
 - **Skyblock**: MMO Skyblock mit RPG-Elementen
@@ -26,21 +27,37 @@ Mit vielen eigenen Verbesserungen und zusätzlichen Features!
 
 ```
 MinecraftMMO/
-├── Skyblock/           # Skyblock Server Konfigurationen
-│   ├── MythicMobs/    # Items, Mobs, Skills
-│   ├── Quests/        # Quest-Definitionen
-│   ├── Classes/       # Klassen-System
-│   ├── Dungeons/      # Dungeon-Konfigurationen
-│   └── NPCs/          # NPC-Definitionen
-├── RPG/               # RPG Server Konfigurationen
-│   ├── MythicMobs/    # Items, Mobs, Skills
-│   ├── Quests/        # Quest-Definitionen
-│   ├── Classes/       # Klassen-System
-│   ├── Dungeons/      # Dungeon-Konfigurationen
-│   └── NPCs/          # NPC-Definitionen
-├── Shared/            # Gemeinsame Ressourcen
-├── Lobby/             # Lobby-Konfigurationen
-└── Survival/          # Survival-Konfigurationen
+├── .github/workflows/      # CI/CD Workflows
+├── docs/                   # Umfangreiche Dokumentation
+│   ├── classes/           # Klassen-System Guides
+│   ├── economy/           # Wirtschafts-Dokumentation
+│   ├── infrastructure/    # Infrastruktur-Dokumentation
+│   ├── items/             # Item-System Dokumentation
+│   ├── rpg/               # RPG-Server Dokumentation
+│   └── skyblock/          # Skyblock-Server Dokumentation
+├── proxy/plugins/          # Velocity Proxy Konfigurationen
+│   ├── Geyser-Velocity/   # Bedrock-Crossplay
+│   ├── libertybans/       # Ban-System
+│   ├── minimotd-velocity/ # Server-MOTD
+│   ├── skinsrestorer/     # Skin-System
+│   └── tab/               # TAB-Liste & Nametags
+├── lobby/plugins/          # Lobby-Server Konfigurationen
+├── survival/plugins/       # Survival-Server Konfigurationen
+├── skyblock/plugins/       # Skyblock-Server Plugin-Konfigurationen
+├── rpg/plugins/            # RPG-Server Plugin-Konfigurationen
+│   ├── BetonQuest/        # Quest-System
+│   ├── BlueMap/           # Live-Weltkarte
+│   ├── CMI/               # Server-Management
+│   ├── MMOCore/           # Klassen & Gamelogic
+│   ├── MMOItems/          # Custom Items (694 Items!)
+│   ├── MythicMobs/        # Custom Mobs & Skills
+│   ├── RoseLoot/          # Loot-Tabellen
+│   └── ...                # Weitere Plugins
+├── CONTRIBUTING.md         # Beitragsrichtlinien
+├── IMPLEMENTATION_SUMMARY.md
+├── QUICKREF.md             # Schnellreferenz
+├── README.md
+└── USAGE.md                # Nutzungsanleitung
 ```
 
 ## Klassen-System
@@ -99,12 +116,15 @@ Umfassende Dokumentation findest du im [`/docs`](docs/) Verzeichnis:
 
 ## Verwendung
 
-Jeder Server-Ordner (Skyblock, RPG) enthält seine eigenen Plugin-Konfigurationen.
+Jeder Server-Ordner enthält ein `plugins/` Verzeichnis mit den jeweiligen Plugin-Konfigurationen.
 
 Die Konfigurationsdateien können direkt in die entsprechenden Plugin-Ordner auf dem Server kopiert werden:
 ```bash
-# Beispiel für MythicMobs Items
-plugins/MythicMobs/Items/ <- Skyblock/MythicMobs/Items/
+# Beispiel: RPG-Server MythicMobs Konfigurationen deployen
+cp -r rpg/plugins/MythicMobs/ /path/to/rpg-server/plugins/MythicMobs/
+
+# Beispiel: Proxy TAB-Konfiguration deployen
+cp -r proxy/plugins/tab/ /path/to/velocity/plugins/tab/
 ```
 
 ## Beitragen
