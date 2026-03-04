@@ -81,3 +81,6 @@ eula.txt
 
 # Plugin JARs (binary files)
 **/plugins/*.jar
+
+# CoinsEngine credentials (contain DB secrets)
+**/CoinsEngine/engine.yml

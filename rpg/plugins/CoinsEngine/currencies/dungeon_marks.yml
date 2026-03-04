@@ -1,0 +1,23 @@
+Name: Dungeon-Marken
+Symbol: '⚔'
+Prefix: Dungeon-Marken
+Command_Aliases: dungeonmarks,dm
+Format: '%amount% %currency_symbol%'
+Format_Short: '%amount%%currency_symbol%'
+Icon:
+  Material: minecraft:nether_star
+  Lore:
+  - '&7Dungeon-Währung'
+  - '&7Verdient durch Dungeon-Bosse'
+Column_Name: dungeon_marks
+Synchronized: true
+Permission_Required: false
+Decimal: false
+Start_Value: 0.0
+Max_Value: -1.0
+Transfer_Allowed: false
+Transfer_Min_Amount: -1.0
+Exchange:
+  Allowed: false
+Leaderboard:
+  Enabled: true

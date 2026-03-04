@@ -1,0 +1,23 @@
+Name: Quest-Punkte
+Symbol: '✎'
+Prefix: Quest-Punkte
+Command_Aliases: questpoints,qp
+Format: '%amount% %currency_symbol%'
+Format_Short: '%amount%%currency_symbol%'
+Icon:
+  Material: minecraft:book
+  Lore:
+  - '&7Quest-Belohnungswährung'
+  - '&7Verdient durch Quests'
+Column_Name: quest_points
+Synchronized: true
+Permission_Required: false
+Decimal: false
+Start_Value: 0.0
+Max_Value: -1.0
+Transfer_Allowed: false
+Transfer_Min_Amount: -1.0
+Exchange:
+  Allowed: false
+Leaderboard:
+  Enabled: true

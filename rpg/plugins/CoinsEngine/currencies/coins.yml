@@ -1,17 +1,17 @@
 # Currency display name.
 # https://nightexpressdev.com/nightcore/configuration/text-formation/
-Name: Coins
+Name: Münzen
 # Currency symbol.
 # https://nightexpressdev.com/nightcore/configuration/text-formation/
 Symbol: ⛂
 # Currency prefix.
 # https://nightexpressdev.com/nightcore/configuration/text-formation/
 # https://nightexpressdev.com/coinsengine/features/prefix
-Prefix: Coins
+Prefix: Münzen
 # Currency command aliases. Split with comma.
 # [*] Server reboot is required for the changes to apply.
 # https://nightexpressdev.com/coinsengine/commands
-Command_Aliases: coins
+Command_Aliases: coins,muenzen
 # Currency display format.
 # Placeholders:
 # - %amount% - Amount value.
@@ -35,7 +35,7 @@ Icon:
 Column_Name: coins
 # Controls whether currency is included in data synchronization.
 # https://nightexpressdev.com/coinsengine/features/cross-server
-Synchronized: false
+Synchronized: true
 # Controls whether permission is required for this currency.
 # https://nightexpressdev.com/coinsengine/permissions
 Permission_Required: false
@@ -56,8 +56,7 @@ Exchange:
   # https://nightexpressdev.com/coinsengine/features/exchange
   Allowed: true
   Rates:
-    mystery_coins: 5
-    magic_coins: 10
+    money: 0.1
 Leaderboard:
   # Controls whether this currency can have a leaderboard.
   # [*] Requires the Tops module to be enabled.

@@ -1,8 +1,8 @@
 Plugin:
   # Localized plugin name. It's used in messages and with internal placeholders.
-  Name: Economy
+  Name: Wirtschaft
   # Plugin prefix. Used in messages.
-  Prefix: <lyellow><b>Economy</b></lyellow><dgray> » </dgray><gray>
+  Prefix: <lyellow><b>Wirtschaft</b></lyellow><dgray> » </dgray><gray>
   # Command names that will be registered as main plugin commands.
   # Do not leave this empty. Split multiple names with a comma.
   Command_Aliases: coinsengine,coe
@@ -10,7 +10,7 @@ Plugin:
   # Basically it tells the plugin to use certain messages config from the '/lang/' sub-folder.
   # If specified language is not available, default one (English) will be used instead.
   # [Default is System Locale]
-  Language: en
+  Language: de
 Database:
   # Sets database type.
   # Available values: MYSQL,SQLITE
@@ -28,13 +28,13 @@ Database:
   Table_Prefix: 'ce_'
   MySQL:
     # Database user name.
-    Username: 'u4_PhpWOSuqQc'
+    Username: 'CHANGE_ME'
     # Database password.
-    Password: 'VF.mg5Gr=5q9.o2Q7cQX010D'
+    Password: 'CHANGE_ME'
     # Database host. Example: localhost:3306, 127.0.0.1:3306
-    Host: 172.25.0.1:3306
+    Host: 'CHANGE_ME:3306'
     # Name of the MySQL database where plugin will create tables.
-    Database: 's4_coins'
+    Database: 'CHANGE_ME'
     # Connection options. Do not touch unless you know what you're doing.
     Options: ?allowPublicKeyRetrieval=true&useSSL=false
   SQLite:

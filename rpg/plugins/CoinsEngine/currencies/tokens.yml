@@ -1,0 +1,23 @@
+Name: Tokens
+Symbol: '✦'
+Prefix: Tokens
+Command_Aliases: tokens
+Format: '%amount% %currency_symbol%'
+Format_Short: '%amount%%currency_symbol%'
+Icon:
+  Material: minecraft:emerald
+  Lore:
+  - '&7Premium-Währung'
+  - '&7Erhältlich durch Events und Specials'
+Column_Name: tokens
+Synchronized: true
+Permission_Required: false
+Decimal: false
+Start_Value: 0.0
+Max_Value: -1.0
+Transfer_Allowed: false
+Transfer_Min_Amount: -1.0
+Exchange:
+  Allowed: false
+Leaderboard:
+  Enabled: false
