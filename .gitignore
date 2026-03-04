@@ -24,3 +24,60 @@ logs/
 
 # Test files
 test-server/
+
+# ========================
+# Minecraft Server Runtime
+# ========================
+
+# Security keys & secrets
+**/security.key
+**/security.yml
+
+# bStats tracking
+**/bStats/
+
+# Runtime data & caches
+**/cache/
+**/lastupdate
+**/*.lock
+**/Saves/
+**/internal/
+**/.hopper/
+
+# ProtocolLib runtime
+**/ProtocolLib/lastupdate
+**/ProtocolLib/error/
+
+# Database files (HSQLDB, SQLite, etc.)
+**/punishments-database.*
+*.db
+*.sqlite
+
+# Player data & sessions
+**/playerdata/
+**/sessions/
+**/usercache.json
+**/whitelist.json
+**/banned-*.json
+**/ops.json
+
+# Server runtime files
+**/server.properties
+**/bukkit.yml
+**/spigot.yml
+**/paper.yml
+**/paper-global.yml
+**/paper-world-defaults.yml
+**/config/paper-*.yml
+eula.txt
+**/world/
+**/world_nether/
+**/world_the_end/
+
+# Crash reports & dumps
+**/crash-reports/
+**/hs_err_*.log
+*.hprof
+
+# Plugin JARs (binary files)
+**/plugins/*.jar

@@ -26,21 +26,17 @@ Mit vielen eigenen Verbesserungen und zusätzlichen Features!
 
 ```
 MinecraftMMO/
-├── Skyblock/           # Skyblock Server Konfigurationen
-│   ├── MythicMobs/    # Items, Mobs, Skills
-│   ├── Quests/        # Quest-Definitionen
-│   ├── Classes/       # Klassen-System
-│   ├── Dungeons/      # Dungeon-Konfigurationen
-│   └── NPCs/          # NPC-Definitionen
-├── RPG/               # RPG Server Konfigurationen
-│   ├── MythicMobs/    # Items, Mobs, Skills
-│   ├── Quests/        # Quest-Definitionen
-│   ├── Classes/       # Klassen-System
-│   ├── Dungeons/      # Dungeon-Konfigurationen
-│   └── NPCs/          # NPC-Definitionen
-├── Shared/            # Gemeinsame Ressourcen
-├── Lobby/             # Lobby-Konfigurationen
-└── Survival/          # Survival-Konfigurationen
+├── proxy/              # Velocity Proxy Konfigurationen
+│   └── plugins/        # Proxy-Plugins (TAB, MiniMOTD, LibertyBans, etc.)
+├── lobby/              # Lobby Server Konfigurationen
+│   └── plugins/        # Lobby-Plugins (CMI, FancyNpcs, etc.)
+├── survival/           # Survival Server Konfigurationen
+│   └── plugins/        # Survival-Plugins (Jobs, Rankup, etc.)
+├── skyblock/           # Skyblock Server Konfigurationen
+│   └── plugins/        # MMO-Plugins (MMOCore, MMOItems, MythicMobs, etc.)
+├── rpg/                # RPG Server Konfigurationen
+│   └── plugins/        # RPG-Plugins (MythicMobs Premium, MythicDungeons, etc.)
+└── docs/               # Dokumentation
 ```
 
 ## Klassen-System
@@ -99,12 +95,12 @@ Umfassende Dokumentation findest du im [`/docs`](docs/) Verzeichnis:
 
 ## Verwendung
 
-Jeder Server-Ordner (Skyblock, RPG) enthält seine eigenen Plugin-Konfigurationen.
+Jeder Server-Ordner (`skyblock/`, `rpg/`, `lobby/`, `survival/`, `proxy/`) enthält seine eigenen Plugin-Konfigurationen unter `plugins/`.
 
 Die Konfigurationsdateien können direkt in die entsprechenden Plugin-Ordner auf dem Server kopiert werden:
 ```bash
 # Beispiel für MythicMobs Items
-plugins/MythicMobs/Items/ <- Skyblock/MythicMobs/Items/
+plugins/MythicMobs/Items/ <- skyblock/plugins/MythicMobs/Items/
 ```
 
 ## Beitragen
