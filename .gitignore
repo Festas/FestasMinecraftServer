@@ -33,6 +33,9 @@ test-server/
 **/security.key
 **/security.yml
 
+# Database credentials (engine.yml contains MySQL/Redis passwords)
+**/engine.yml
+
 # bStats tracking
 **/bStats/
 
