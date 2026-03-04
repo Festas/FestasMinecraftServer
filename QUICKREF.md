@@ -6,19 +6,17 @@ Schnelle Übersicht über die wichtigsten Befehle und Konzepte.
 
 ```
 MinecraftMMO/
-├── Skyblock/              # Skyblock Server
-│   ├── MythicMobs/
-│   │   ├── Items/        # Custom Items (Waffen, Rüstungen, etc.)
-│   │   ├── Mobs/         # Custom Mobs und Bosse
-│   │   └── Skills/       # Skills für Mobs und Items
-│   ├── Quests/           # Quest-Definitionen
-│   ├── Classes/          # Klassen-System (Warrior, Mage, etc.)
-│   ├── Dungeons/         # Dungeon-Konfigurationen
-│   └── NPCs/             # NPCs und Händler
-├── RPG/                  # RPG Server (gleiche Struktur)
-├── Lobby/                # Lobby Server
-├── Survival/             # Survival Server
-└── Shared/               # Gemeinsame Ressourcen
+├── proxy/              # Velocity Proxy Konfigurationen
+│   └── plugins/        # Proxy-Plugins (TAB, MiniMOTD, LibertyBans, etc.)
+├── lobby/              # Lobby Server Konfigurationen
+│   └── plugins/        # Lobby-Plugins (CMI, FancyNpcs, etc.)
+├── survival/           # Survival Server Konfigurationen
+│   └── plugins/        # Survival-Plugins (Jobs, Rankup, etc.)
+├── skyblock/           # Skyblock Server Konfigurationen
+│   └── plugins/        # MMO-Plugins (MMOCore, MMOItems, MythicMobs, etc.)
+├── rpg/                # RPG Server Konfigurationen
+│   └── plugins/        # RPG-Plugins (MythicMobs Premium, MythicDungeons, etc.)
+└── docs/               # Dokumentation
 ```
 
 ## Wichtige Dateien
@@ -33,25 +31,22 @@ MinecraftMMO/
 ### 1. Neues Item erstellen
 
 ```bash
-cd Skyblock/MythicMobs/Items/
-cp example_sword.yml my_new_item.yml
-# Bearbeite my_new_item.yml
+cd skyblock/plugins/MMOItems/
+# Bearbeite oder erstelle eine Item-Konfigurationsdatei
 ```
 
 ### 2. Neuen Mob erstellen
 
 ```bash
-cd Skyblock/MythicMobs/Mobs/
-cp zombie_warrior.yml my_new_mob.yml
-# Bearbeite my_new_mob.yml
+cd skyblock/plugins/MythicMobs/Mobs/
+# Bearbeite oder erstelle eine Mob-Konfigurationsdatei
 ```
 
 ### 3. Neue Quest erstellen
 
 ```bash
-cd Skyblock/Quests/
-cp example_quest.yml my_new_quest.yml
-# Bearbeite my_new_quest.yml
+cd skyblock/plugins/BetonQuest/
+# Bearbeite oder erstelle eine Quest-Konfigurationsdatei
 ```
 
 ## In-Game Befehle
@@ -224,7 +219,7 @@ Display: '&6Text'
 ```bash
 # Komplettes Backup erstellen
 tar -czf mmo-backup-$(date +%Y%m%d).tar.gz \
-  Skyblock/ RPG/ Shared/
+  skyblock/ rpg/ lobby/ survival/ proxy/
 ```
 
 ## Repository-Befehle
