@@ -7,7 +7,7 @@ Symbol: ✎
 # Currency prefix.
 # https://nightexpressdev.com/nightcore/configuration/text-formation/
 # https://nightexpressdev.com/coinsengine/features/prefix
-Prefix: Quests
+Prefix: Quest-Punkte
 # Currency command aliases. Split with comma.
 # [*] Server reboot is required for the changes to apply.
 # https://nightexpressdev.com/coinsengine/commands
@@ -28,8 +28,10 @@ Format_Short: '%amount%%currency_symbol%'
 # Currency icon.
 # https://nightexpressdev.com/nightcore/configuration/item-formation/
 Icon:
-  Material: minecraft:written_book
-  Lore: []
+  Material: minecraft:book
+  Lore:
+  - '§7Quest-Belohnungswährung'
+  - '§7Verdient durch Quests'
 # Database column name where this currency will be saved.
 # https://nightexpressdev.com/coinsengine/features/cross-server
 Column_Name: quest_points

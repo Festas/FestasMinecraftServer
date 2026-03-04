@@ -7,7 +7,7 @@ Symbol: ⚔
 # Currency prefix.
 # https://nightexpressdev.com/nightcore/configuration/text-formation/
 # https://nightexpressdev.com/coinsengine/features/prefix
-Prefix: Dungeon
+Prefix: Dungeon-Marken
 # Currency command aliases. Split with comma.
 # [*] Server reboot is required for the changes to apply.
 # https://nightexpressdev.com/coinsengine/commands
@@ -28,8 +28,10 @@ Format_Short: '%amount%%currency_symbol%'
 # Currency icon.
 # https://nightexpressdev.com/nightcore/configuration/item-formation/
 Icon:
-  Material: minecraft:nether_star
-  Lore: []
+  Material: minecraft:iron_sword
+  Lore:
+  - '§7Dungeon-Belohnungswährung'
+  - '§7Erhalten durch Dungeon-Bosse'
 # Database column name where this currency will be saved.
 # https://nightexpressdev.com/coinsengine/features/cross-server
 Column_Name: dungeon_marks

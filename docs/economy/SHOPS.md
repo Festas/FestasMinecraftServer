@@ -9,6 +9,7 @@
 | Shop | Währung | Beschreibung |
 |------|---------|-------------|
 | NPC-Shops | Geld ($) | Basis-Items kaufen/verkaufen |
+| Bazaar | Geld ($) / Münzen (⛂) | Spieler-zu-Spieler Handel |
 | Spezial-Shop | Münzen (⛂) | Kosmetik, Upgrades |
 | Quest-Shop | Quest-Punkte (✎) | Quest-Belohnungen einlösen |
 | Dungeon-Shop | Dungeon-Marken (⚔) | Hochwertige Dungeon-Ausrüstung |

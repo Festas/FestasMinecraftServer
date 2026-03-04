@@ -25,4 +25,11 @@ Das MMO-Netzwerk (RPG & Skyblock) nutzt **5 Währungen**, die über beide Server
 
 ---
 
+## Konfigurationsstruktur
+
+Die Datei `engine.yml` enthält MySQL-Zugangsdaten und ist über `.gitignore` (`**/engine.yml`) aus der Versionskontrolle ausgeschlossen.
+Für neue Server-Setups muss `engine.yml` manuell mit den echten Zugangsdaten befüllt werden (Vorlage mit `CHANGE_ME`-Platzhaltern liegt im Repo).
+
+---
+
 **Letzte Aktualisierung:** 2026-03-04

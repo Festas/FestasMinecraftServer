@@ -11,7 +11,7 @@ Prefix: Geld
 # Currency command aliases. Split with comma.
 # [*] Server reboot is required for the changes to apply.
 # https://nightexpressdev.com/coinsengine/commands
-Command_Aliases: money
+Command_Aliases: money,geld
 # Currency display format.
 # Placeholders:
 # - %amount% - Amount value.
@@ -56,7 +56,7 @@ Exchange:
   # https://nightexpressdev.com/coinsengine/features/exchange
   Allowed: true
   Rates:
-    coins: 1
+    coins: 10
 Leaderboard:
   # Controls whether this currency can have a leaderboard.
   # [*] Requires the Tops module to be enabled.

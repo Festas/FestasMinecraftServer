@@ -37,7 +37,7 @@ Allgemeine Spielwährung für besondere Käufe.
 - **Spieler-Handel:** Ja (`/coins pay <spieler> <betrag>`)
 - **Dezimal:** Nein (nur ganze Zahlen)
 - **Startwert:** 0
-- **Tausch:** 1 Münze = 1 Geld (und umgekehrt)
+- **Tausch:** 10 Münzen = 1 Geld (Tauschrate: 0.1)
 
 ---
 
