@@ -1,24 +1,24 @@
 # Currency display name.
 # https://nightexpressdev.com/nightcore/configuration/text-formation/
-Name: Münzen
+Name: Quest-Punkte
 # Currency symbol.
 # https://nightexpressdev.com/nightcore/configuration/text-formation/
-Symbol: ⛂
+Symbol: ✎
 # Currency prefix.
 # https://nightexpressdev.com/nightcore/configuration/text-formation/
 # https://nightexpressdev.com/coinsengine/features/prefix
-Prefix: Münzen
+Prefix: Quests
 # Currency command aliases. Split with comma.
 # [*] Server reboot is required for the changes to apply.
 # https://nightexpressdev.com/coinsengine/commands
-Command_Aliases: coins,muenzen
+Command_Aliases: questpoints,qp
 # Currency display format.
 # Placeholders:
 # - %amount% - Amount value.
 # - Currency placeholders: https://nightexpressdev.com/coinsengine/placeholders/internal
 # - PlaceholderAPI placeholders that are NOT bound to a player (e.g. Oraxen or ItemsAdder %img% placeholders)
 # https://nightexpressdev.com/nightcore/configuration/text-formation/
-Format: '%amount%%currency_symbol%'
+Format: '%amount% %currency_symbol%'
 # Currency short display format.
 # - %amount% - Amount value.
 # - Currency placeholders: https://nightexpressdev.com/coinsengine/placeholders/internal
@@ -28,11 +28,11 @@ Format_Short: '%amount%%currency_symbol%'
 # Currency icon.
 # https://nightexpressdev.com/nightcore/configuration/item-formation/
 Icon:
-  Material: minecraft:sunflower
+  Material: minecraft:written_book
   Lore: []
 # Database column name where this currency will be saved.
 # https://nightexpressdev.com/coinsengine/features/cross-server
-Column_Name: coins
+Column_Name: quest_points
 # Controls whether currency is included in data synchronization.
 # https://nightexpressdev.com/coinsengine/features/cross-server
 Synchronized: true
@@ -47,16 +47,15 @@ Start_Value: 0.0
 # [*] Set to '-1' to disable.
 Max_Value: -1.0
 # Controls whether players can send this currency to other players.
-Transfer_Allowed: true
+Transfer_Allowed: false
 # Min. amount to send this currency to other players.
 # [*] Set to '-1' for no limit.
 Transfer_Min_Amount: -1.0
 Exchange:
   # Controls whether this currency can be exchanged for other ones.
   # https://nightexpressdev.com/coinsengine/features/exchange
-  Allowed: true
-  Rates:
-    money: 1
+  Allowed: false
+  Rates: {}
 Leaderboard:
   # Controls whether this currency can have a leaderboard.
   # [*] Requires the Tops module to be enabled.
