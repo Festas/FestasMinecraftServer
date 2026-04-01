@@ -38,4 +38,4 @@ CREATE TABLE IF NOT EXISTS guild_invites (
     inviter_uuid VARCHAR(36) NOT NULL,
     expires_at TIMESTAMP NOT NULL,
     FOREIGN KEY (guild_id) REFERENCES guilds(id) ON DELETE CASCADE
-)
+);
