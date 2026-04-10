@@ -122,11 +122,11 @@ Der Server wurde möglicherweise kompromittiert (unbefugter Zugriff).
 # Datenbank-Container stoppen
 docker compose stop mariadb
 
-# Backup einspielen
-docker exec -i mariadb mysql -u root -p<passwort> < backup/mariadb_backup.sql
+# Backup einspielen (Passwort wird interaktiv abgefragt)
+docker exec -i mariadb mysql -u root -p < backup/mariadb_backup.sql
 
-# Alternativ: mysqldump-Restore
-cat backup/mariadb_backup.sql | docker exec -i mariadb mysql -u root -p<passwort>
+# Alternativ: Credentials-Datei verwenden (sicherer, kein Passwort in der Shell-History)
+# docker exec -i mariadb mysql --defaults-extra-file=/etc/mysql/credentials.cnf < backup/mariadb_backup.sql
 
 # Container neu starten
 docker compose restart mariadb

@@ -16,7 +16,11 @@ Die Server müssen in der folgenden Reihenfolge gestartet werden, um Abhängigke
 ```bash
 # Beispiel mit Docker Compose
 docker compose up -d mariadb redis
-# Warten, bis MariaDB und Redis bereit sind
+
+# Bereitschaft prüfen, bevor weitere Dienste gestartet werden
+docker compose exec mariadb mysqladmin ping --wait=30
+docker compose exec redis redis-cli ping
+
 docker compose up -d velocity
 docker compose up -d lobby
 docker compose up -d rpg skyblock survival
@@ -136,6 +140,8 @@ Für die Benachrichtigung bei kritischen Ereignissen wird eine **Discord-Webhook
 - Alerts für TPS-Drops, hohe RAM-Auslastung und Festplattenprobleme einrichten.
 - Webhook-URL im Monitoring-Tool hinterlegen.
 - Verschiedene Kanäle für Warnungen und kritische Alerts verwenden.
+
+Die Webhook-URL wird im jeweiligen Monitoring-Tool konfiguriert (z. B. Grafana, Prometheus Alertmanager oder ein eigenes Skript). Dort die URL unter den Benachrichtigungseinstellungen hinterlegen.
 
 ```
 Beispiel-Webhook-Payload:
