@@ -119,8 +119,8 @@ MySQL-Storage:
   Enabled: true
   Hostname: 172.25.0.1
   Port: 3306
-  Username: u4_Ayjah6gSyf
-  Password: BWU4CkB^N.cpGDQ@cxgD7dL5
+  Username: CHANGE_ME
+  Password: CHANGE_ME
   # Database name
   Database: s4_gmp
   Wait-Timeout: 18000

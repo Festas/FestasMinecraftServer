@@ -29,8 +29,8 @@ Database:
     MySQL:
         Host: 172.25.0.1
         Port: 3306
-        User: u4_MaaC4xwYZ0
-        Password: eMKLKiOIHc+LJxx!SN4pmTd+
+        User: CHANGE_ME
+        Password: CHANGE_ME
         Database: s4_stats
         # Launch options to append after mysql driver address
         Launch_options: "?rewriteBatchedStatements=true&serverTimezone=UTC"

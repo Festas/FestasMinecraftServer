@@ -42,7 +42,14 @@ test-server/
 **/HuskSync/config.yml
 **/partyandfriends/config.yml
 **/plan/config.yml
+**/Plan/config.yml
+**/plan/serverConfiguration/
+**/Plan/serverConfiguration/
 **/DeluxeBazaar/config.yml
+**/GlobalMarketPlus/Config.yml
+**/PlayerPoints/config.yml
+**/MMOCore/config.yml
+**/forceresourcepacks/key.yml
 
 # bStats tracking
 **/bStats/

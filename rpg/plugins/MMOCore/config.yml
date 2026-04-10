@@ -38,8 +38,8 @@ mysql:
   host: 172.25.0.1
   port: 3306
   database: 's4_mmocore'
-  user: 'u4_LvGozDwDB9'
-  pass: 'CCZHp+NLD^jHw=i3ZOGB0f=a'
+  user: 'CHANGE_ME'
+  pass: 'CHANGE_ME'
   maxPoolSize: 10
   maxLifeTime: 300000
   connectionTimeOut: 10000
