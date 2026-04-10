@@ -49,7 +49,6 @@ test-server/
 **/GlobalMarketPlus/Config.yml
 **/PlayerPoints/config.yml
 **/MMOCore/config.yml
-**/forceresourcepacks/key.yml
 
 # bStats tracking
 **/bStats/
