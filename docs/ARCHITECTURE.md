@@ -480,7 +480,14 @@ Bei kritischen Fehlern:
 - Track-System für Ranks
 
 ### Anti-Cheat
-- _(Noch zu definieren)_
+- **Empfehlung:** Vulcan Anti-Cheat (Premium) oder Spartan Anti-Cheat
+- **Konfigurationsrichtlinien:**
+  - Bewegungs-Checks (Fly, Speed, NoClip) auf allen Servern aktiv
+  - Kampf-Checks (KillAura, Reach, AutoClicker) besonders auf RPG/Skyblock
+  - Bedrock-Spieler (Geyser/Floodgate) von bestimmten Checks ausnehmen
+  - False-Positive-Toleranz initial höher einstellen, nach Testing verschärfen
+- **Logging:** Verdächtige Aktionen in Discord-Channel melden
+- **Integration:** LibertyBans für automatische Temp-Bans bei wiederholten Verstößen
 
 ### DDoS-Protection
 - Cloudflare (optional)

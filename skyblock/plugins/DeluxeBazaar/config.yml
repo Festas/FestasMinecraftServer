@@ -66,8 +66,8 @@ database:
   mysql_settings: # For mysql dataabase
     link: "com.mysql.cj.jdbc.Driver" # Aktualisierter Treiber (besser für neuere Java Versionen)
     url: "jdbc:mysql://172.25.0.1:3306/s4_bazaar" # Deine Datenbank-URL
-    user: "u4_VxRpqswcWG" # Dein Username
-    password: "sj1cLlUloTa!RqnfLCBXnzQ@" # Dein Passwort
+    user: "CHANGE_ME" # Dein Username
+    password: "CHANGE_ME" # Dein Passwort
 
 # PLUGIN ADDONS
 addons:

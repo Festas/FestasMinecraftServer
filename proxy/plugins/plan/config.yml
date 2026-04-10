@@ -33,8 +33,8 @@ Database:
     MySQL:
         Host: 172.25.0.1
         Port: 3306
-        User: u4_MaaC4xwYZ0
-        Password: eMKLKiOIHc+LJxx!SN4pmTd+
+        User: CHANGE_ME
+        Password: CHANGE_ME
         Database: s4_stats
         # Launch options to append after mysql driver address
         Launch_options: "?rewriteBatchedStatements=true&serverTimezone=UTC"
@@ -72,7 +72,7 @@ Webserver:
         # Cross-Origin Resource Sharing (Requests from non-Plan web pages)
         # https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
         CORS:
-            Allow_origin: "*"
+            Allow_origin: "https://mc-stats.festas-builds.com"
         # Allows using the whitelist with a reverse-proxy.
         # ! Make sure non-proxy access is not possible, it would allow IP spoofing !
         Use_X-Forwarded-For_Header: true

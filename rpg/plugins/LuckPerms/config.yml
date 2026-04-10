@@ -102,8 +102,8 @@ data:
   database: "s4_perms"
 
   # Credentials for the database.
-  username: u4_qs85LtOXeq
-  password: 'mASixd5b@BHHt!bRmvu^+=Pj'
+  username: CHANGE_ME
+  password: 'CHANGE_ME'
 
   # These settings apply to the MySQL connection pool.
   # - The default values will be suitable for the majority of users.
@@ -267,7 +267,7 @@ redis:
   enabled: true
   address: 172.18.0.1:6379
   username: ''
-  password: 'Esuusmyq@19063'
+  password: 'CHANGE_ME'
 
 # Settings for Nats.
 # Port 4222 is used by default; set address to "host:port" if differs

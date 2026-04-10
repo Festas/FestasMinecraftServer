@@ -31,10 +31,10 @@ database:
     host: 172.25.0.1
     port: 3306
     database: s4_husk
-    username: u4_4b4u8kvZ9N
-    password: LVO3dEK^iGttg^FoD9Ut@@.l
+    username: CHANGE_ME
+    password: CHANGE_ME
     # Only change this if you're using MARIADB or POSTGRES
-    parameters: ?autoReconnect=true&useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    parameters: ?autoReconnect=true&useSSL=true&useUnicode=true&characterEncoding=UTF-8
   # MYSQL, MARIADB, POSTGRES database Hikari connection pool properties. Don't modify this unless you know what you're doing!
   connection_pool:
     maximum_pool_size: 10
@@ -65,9 +65,9 @@ redis:
     # Only change the database if you know what you are doing. The default is 0.
     database: 0
     user: ''
-    password: Esuusmyq@19063
+    password: CHANGE_ME
     # Use SSL/TLS for encrypted connections.
-    use_ssl: false
+    use_ssl: true
     # Connection timeout in milliseconds.
     connection_timeout: 2000
     # Socket (read/write) timeout in milliseconds.

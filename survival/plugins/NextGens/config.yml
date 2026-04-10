@@ -29,7 +29,7 @@ mysql:
   database: db_nextgens
   user: root
   password: ''
-  useSSL: false
+  useSSL: true
 
 # Should we save the data immediately when there's a changes?
 database:

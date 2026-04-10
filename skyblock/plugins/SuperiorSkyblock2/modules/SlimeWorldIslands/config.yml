@@ -21,7 +21,7 @@ data-source:
     username: ''
     password: ''
     database: ''
-    useSSL: false
+    useSSL: true
   # MongoDB related settings
   mongodb:
     url: 'mongodb://{username}:{password}@{host}:{port}/'

@@ -36,7 +36,7 @@ Database:
     # Name of the MySQL database where plugin will create tables.
     Database: 'CHANGE_ME'
     # Connection options. Do not touch unless you know what you're doing.
-    Options: ?allowPublicKeyRetrieval=true&useSSL=false
+    Options: ?allowPublicKeyRetrieval=true&useSSL=true
   SQLite:
     # File name for the SQLite database file.
     # Actually it's a path to the file, so you can use directories here.

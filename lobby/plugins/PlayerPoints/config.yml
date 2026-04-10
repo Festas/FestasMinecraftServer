@@ -135,16 +135,16 @@ mysql-settings:
 
   # MySQL Database User Name
   # Default: ''
-  user-name: 'u4_tvO9hK5F0e'
+  user-name: 'CHANGE_ME'
 
   # MySQL Database User Password
   # Default: ''
-  user-password: 'FedD349oE=0fm3U+bv5Koh.s'
+  user-password: 'CHANGE_ME'
 
   # If the database connection should use SSL
   # You should enable this if your database supports SSL
   # Default: false
-  use-ssl: false
+  use-ssl: true
 
   # The number of connections to make to the database
   # Default: 3

@@ -190,13 +190,15 @@ Diese Stats werden von Items, Skills und Buffs beeinflusst:
 
 ## Prestige-System
 
-<!-- TODO: Prestige-System noch nicht final geplant -->
+**Status:** In Planung — Wird nach Abschluss des Balance-Testings implementiert.
 
 **Geplante Features:**
 - Nach Level 100: Prestige möglich
 - Prestige setzt Level zurück, gibt permanente Boni
 - Prestige-Stufen: Bis zu 10
 - Jede Prestige-Stufe: +5% Stats, exklusive Skins/Titel
+- Prestige-spezifische Fähigkeiten und visuelle Effekte
+- Prestige-Rangliste im Tab-Menü
 
 ---
 
