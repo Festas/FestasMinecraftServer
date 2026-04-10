@@ -1,0 +1,61 @@
+# CrossCraft Guilds - Konfiguration
+database:
+  host: "localhost"
+  port: 3306
+  database: "minecraft_guilds"
+  username: "CHANGE_ME"
+  password: "CHANGE_ME"
+  pool-size: 10
+
+redis:
+  host: "localhost"
+  port: 6379
+  password: ""
+  channel: "crosscraft-guilds"
+
+guild:
+  min-name-length: 3
+  max-name-length: 32
+  min-tag-length: 2
+  max-tag-length: 8
+  creation-cost: 10000.0
+  creation-currency: "money"
+  max-members-base: 10
+  max-members-per-level: 2
+  invite-expire-minutes: 60
+  disband-confirmation-seconds: 30
+
+levels:
+  max-level: 50
+  xp-formula: "1000 * level^1.5"
+  rewards:
+    5:
+      description: "XP Boost freigeschaltet"
+      xp-multiplier: 1.05
+    10:
+      description: "Gilden-Bank freigeschaltet"
+      unlock: "bank"
+    15:
+      description: "Loot Bonus in Dungeons"
+      loot-multiplier: 1.10
+    20:
+      description: "Erhöhte Mitglieder-Kapazität"
+      bonus-members: 10
+    25:
+      description: "Gilden-Kosmetik"
+      unlock: "cosmetics"
+
+messages:
+  prefix: "<gradient:#FFD700:#FFA500>⚔ Gilde</gradient> <gray>» "
+  guild-created: "<green>Die Gilde <gold>{name}</gold> wurde erfolgreich gegründet!"
+  guild-disbanded: "<red>Die Gilde <gold>{name}</gold> wurde aufgelöst."
+  player-invited: "<green>{player} wurde in die Gilde eingeladen!"
+  invite-received: "<gold>{guild}</gold> hat dich eingeladen! <click:run_command:/guild accept {guild}><green>[Annehmen]</click>"
+  player-joined: "<green>{player} ist der Gilde beigetreten!"
+  player-left: "<yellow>{player} hat die Gilde verlassen."
+  player-kicked: "<red>{player} wurde aus der Gilde entfernt."
+  no-guild: "<red>Du bist in keiner Gilde!"
+  already-in-guild: "<red>Du bist bereits in einer Gilde!"
+  guild-not-found: "<red>Gilde nicht gefunden!"
+  no-permission: "<red>Du hast keine Berechtigung dafür!"
+  guild-chat-format: "<dark_gray>[<gradient:#FFD700:#FFA500>Gilde</gradient>]</dark_gray> <white>{player}</white><gray>: {message}"
