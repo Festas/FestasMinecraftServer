@@ -10,7 +10,6 @@ Der **Krieger** ist der klassische Nahkampf-Spezialist und Tank. Mit hoher Verte
 Der Krieger ist ein furchtloser Kämpfer, der sich mit schwerer Rüstung und mächtigen Waffen in den Kampf stürzt. Ob als unerschütterlicher Tank, der seine Verbündeten beschützt, oder als brutaler Schadens-Dealer, der Feinde mit verheerenden Schlägen niederstreckt - der Krieger beherrscht das Schlachtfeld.
 
 ### Lore
-<!-- TODO: Lore-Text für Krieger schreiben -->
 
 _"Wo andere zurückweichen, steht der Krieger fest. Sein Wille ist unerschütterlich, seine Klinge unbezwingbar."_
 
@@ -425,7 +424,6 @@ Die Krieger des Reiches sind Meister des Nahkampfes, ausgebildet in den härtest
 
 ## Balance-Notizen
 
-<!-- TODO: Balance-Anpassungen nach Testing -->
 
 **Aktuelle Balance (Stand 2026-01-03):**
 - Krieger ist in ausgeglichenem Zustand

@@ -10,7 +10,6 @@ Der **Beschwörer** ist der Meister der Beschwörungen und Pet-Control. Mit eine
 Der Beschwörer ruft mächtige Kreaturen aus anderen Dimensionen, um für ihn zu kämpfen. Von treuen Dienern bis zu gewaltigen Elementaren - der Beschwörer beherrscht die Kunst der Beschwörung. Er ist eine einzigartige Klasse, die Strategie, Pet-Management und magischen Schaden vereint.
 
 ### Lore
-<!-- TODO: Lore-Text für Beschwörer schreiben -->
 
 _"Allein bin ich schwach, aber mit meinen Dienern bin ich eine Armee. Der Beschwörer kämpft nie allein."_
 
@@ -436,7 +435,6 @@ In verborgenen Bibliotheken studieren Beschwörer die Künste der Dimensionsmagi
 
 ## Balance-Notizen
 
-<!-- TODO: Balance-Anpassungen nach Testing -->
 
 **Aktuelle Balance (Stand 2026-01-03):**
 - Beschwörer ist einzigartig und vielseitig

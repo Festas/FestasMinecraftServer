@@ -10,7 +10,6 @@ Der **Bogenschütze** ist der Meister des Fernkampfes mit physischen Waffen. Mit
 Der Bogenschütze beherrscht die Kunst des Fernkampfes mit Bogen und Armbrust. Durch präzise Schüsse, Spezial-Pfeile und geschicktes Kiting hält er Feinde auf Distanz, während er konstanten Schaden verursacht. Mit mittlerer Verteidigung und hoher Mobilität ist der Bogenschütze eine ausgewogene DPS-Klasse.
 
 ### Lore
-<!-- TODO: Lore-Text für Bogenschütze schreiben -->
 
 _"Jeder Pfeil findet sein Ziel. Geduld, Präzision und ein ruhiger Atem - das sind die Waffen des Bogenschützen."_
 
@@ -399,7 +398,6 @@ In den Wäldern und Bergen trainieren Bogenschützen Tag für Tag, um ihre Fähi
 
 ## Balance-Notizen
 
-<!-- TODO: Balance-Anpassungen nach Testing -->
 
 **Aktuelle Balance (Stand 2026-01-03):**
 - Bogenschütze ist gut ausbalanciert

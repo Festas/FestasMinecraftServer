@@ -10,7 +10,6 @@ Der **Assassine** ist der Meister des schnellen, tödlichen Schadens. Mit hoher 
 Der Assassine schlägt aus den Schatten zu, schnell und tödlich. Mit Dolchen bewaffnet, spezialisiert er sich auf kritische Treffer und Burst-Schaden. Der Assassine ist die perfekte Wahl für Spieler, die schnelles, risikohaftes Gameplay bevorzugen.
 
 ### Lore
-<!-- TODO: Lore-Text für Assassine schreiben -->
 
 _"Im Schatten lauert der Tod, unhörbar, unsichtbar, unvermeidlich. Der Assassine schlägt zu, bevor das Ziel ihn bemerkt."_
 
@@ -450,7 +449,6 @@ Schneller Stich Spam → Klingen-Wirbel → Heimtückischer Angriff → ...
 
 ## Balance-Notizen
 
-<!-- TODO: Balance-Anpassungen nach Testing -->
 
 **Aktuelle Balance (Stand 2026-01-03):**
 - Assassine hat höchsten Burst-Schaden

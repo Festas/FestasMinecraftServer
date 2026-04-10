@@ -10,7 +10,6 @@ Der **Schamane** ist der Meister der Heilung und Unterstützung. Mit Totems, Hei
 Der Schamane kanalisiert die Kräfte der Natur und der Geister. Er ist der primäre Heiler und Support, der seine Verbündeten am Leben hält und mit mächtigen Buffs verstärkt. Mit Totems, Heilzaubern und Gruppenfähigkeiten ist der Schamane das Rückgrat jeder erfolgreichen Gruppe.
 
 ### Lore
-<!-- TODO: Lore-Text für Schamane schreiben -->
 
 _"Die Geister flüstern, die Natur antwortet. Der Schamane ist der Vermittler zwischen den Welten."_
 
@@ -421,7 +420,6 @@ In abgelegenen Heiligtümern kommunizieren Schamanen mit den Geistern der Natur.
 
 ## Balance-Notizen
 
-<!-- TODO: Balance-Anpassungen nach Testing -->
 
 **Aktuelle Balance (Stand 2026-01-03):**
 - Schamane ist optimal als Gruppen-Heiler

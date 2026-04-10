@@ -10,7 +10,6 @@ Der **Magier** ist der Meister der arkanen und elementaren Magie. Mit verheerend
 Der Magier kanalisiert die rohen Kräfte der Elemente und der arkanen Magie. Feuer, Eis, Blitz und Arkane Energie stehen ihm zur Verfügung. Er ist die ultimative Schadens-Klasse für Fernkampf, aber seine geringe Verteidigung erfordert geschicktes Positionieren und Timing.
 
 ### Lore
-<!-- TODO: Lore-Text für Magier schreiben -->
 
 _"Wissen ist Macht, und Macht formt die Realität selbst. Der Magier beugt die Gesetze der Natur seinem Willen."_
 
@@ -455,7 +454,6 @@ Blitzschlag → Feuerball Spam → Eislanze (wenn verfügbar)
 
 ## Balance-Notizen
 
-<!-- TODO: Balance-Anpassungen nach Testing -->
 
 **Aktuelle Balance (Stand 2026-01-03):**
 - Magier hat höchsten Schaden, aber niedrigste Überlebensfähigkeit
