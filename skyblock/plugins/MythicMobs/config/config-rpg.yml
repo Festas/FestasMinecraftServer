@@ -10,14 +10,14 @@ Configuration:
   #================================================================================
 
   Storage:
-    Driver: JSON                              # JSON or MYSQL
+    Driver: MYSQL                             # JSON or MYSQL
 
     #==== MySQL settings ====
-    #Address: 127.0.0.1
-    #Port: 3306
-    #Database: database
-    #Username: username
-    #Password: password
+    Address: 172.25.0.1
+    Port: 3306
+    Database: s4_mmocore
+    Username: CHANGE_ME
+    Password: CHANGE_ME
 
   #================================================================================
   # Profile Options

@@ -60,9 +60,9 @@ economy:
 database:
   type: "mysql" # WICHTIG: Auf MySQL geändert
   auto_save:
-    player_orders: false # When player orders are changed, should plugin save directly?
-    item_orders: false # When item orders are changed, should plugin save directly?
-    item_prices: false # When item prices are changed, should plugin save directly?
+    player_orders: true # When player orders are changed, should plugin save directly?
+    item_orders: true # When item orders are changed, should plugin save directly?
+    item_prices: true # When item prices are changed, should plugin save directly?
   mysql_settings: # For mysql dataabase
     link: "com.mysql.cj.jdbc.Driver" # Aktualisierter Treiber (besser für neuere Java Versionen)
     url: "jdbc:mysql://172.25.0.1:3306/s4_bazaar" # Deine Datenbank-URL

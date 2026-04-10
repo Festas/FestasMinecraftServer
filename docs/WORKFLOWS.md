@@ -17,7 +17,7 @@ Leere Workflow-Templates für die zukünftige Dokumentation von häufigen Aufgab
 
 #### 1.1 Mob-Definition erstellen
 ```yaml
-# Pfad: Skyblock/MythicMobs/Mobs/ oder RPG/plugins/MythicMobs/Mobs/
+# Pfad: skyblock/plugins/MythicMobs/Mobs/ oder rpg/plugins/MythicMobs/Mobs/
 # Dateiname: BOSS_NAME_LEVEL.yml
 
 BOSS_NAME:
@@ -38,7 +38,7 @@ BOSS_NAME:
 
 #### 1.2 Skills definieren
 ```yaml
-# Pfad: Skyblock/MythicMobs/Skills/ oder RPG/plugins/MythicMobs/Skills/
+# Pfad: skyblock/plugins/MythicMobs/Skills/ oder rpg/plugins/MythicMobs/Skills/
 # Dateiname: BOSS_NAME_skills.yml
 
 # Skill-Definitionen hier
@@ -82,7 +82,7 @@ _Platz für boss-spezifische Notizen_
 
 #### 2.1 Quest-Definition erstellen
 ```yaml
-# Pfad: Skyblock/Quests/ oder RPG/plugins/BetonQuest/
+# Pfad: skyblock/plugins/BetonQuest/ oder rpg/plugins/BetonQuest/
 # Dateiname: KATEGORIE_NUMMER_NAME.yml
 
 # Quest-Haupt-Definition
@@ -152,7 +152,7 @@ _Platz für quest-spezifische Notizen_
 
 #### 3.1 MMOItems Definition
 ```yaml
-# Pfad: Skyblock/MythicMobs/Items/ oder RPG/plugins/MMOItems/item/
+# Pfad: skyblock/plugins/MMOItems/item/ oder rpg/plugins/MMOItems/item/
 # Dateiname: TYPE_NAME_TIER.yml
 
 # Base-Item Definition
