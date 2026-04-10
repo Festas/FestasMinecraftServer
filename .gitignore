@@ -32,9 +32,17 @@ test-server/
 # Security keys & secrets
 **/security.key
 **/security.yml
+**/forceresourcepacks/key.yml
 
 # Database credentials (engine.yml contains MySQL/Redis passwords)
 **/engine.yml
+
+# Plugin configs that contain database/Redis credentials
+**/LuckPerms/config.yml
+**/HuskSync/config.yml
+**/partyandfriends/config.yml
+**/plan/config.yml
+**/DeluxeBazaar/config.yml
 
 # bStats tracking
 **/bStats/

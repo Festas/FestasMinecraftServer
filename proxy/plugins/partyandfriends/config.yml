@@ -5,8 +5,8 @@ MySQL:
   Host: 172.25.0.1
   Port: 3306
   UseSSL: false
-  Username: u4_FmrTpIrZkt
-  Password: g3rAEH5x9+GDFI@bBwOD@2A@
+  Username: CHANGE_ME
+  Password: CHANGE_ME
   Database: s4_party
   TablePrefix: fr_
   Cache: true
