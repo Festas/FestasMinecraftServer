@@ -399,7 +399,7 @@ In den Wäldern und Bergen trainieren Bogenschützen Tag für Tag, um ihre Fähi
 ## Balance-Notizen
 
 
-**Aktuelle Balance (Stand 2026-01-03):**
+**Aktuelle Balance (Stand 2026-04-10):**
 - Bogenschütze ist gut ausbalanciert
 - Konstanter Schaden ohne Extreme
 - Vielseitig einsetzbar
@@ -421,6 +421,6 @@ In den Wäldern und Bergen trainieren Bogenschützen Tag für Tag, um ihre Fähi
 
 ---
 
-**Letzte Aktualisierung:** 2026-01-03
+**Letzte Aktualisierung:** 2026-04-10
 
 **Status:** 🚧 Work in Progress - Werte unterliegen Balance-Anpassungen

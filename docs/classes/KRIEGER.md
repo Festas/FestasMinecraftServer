@@ -425,7 +425,7 @@ Die Krieger des Reiches sind Meister des Nahkampfes, ausgebildet in den härtest
 ## Balance-Notizen
 
 
-**Aktuelle Balance (Stand 2026-01-03):**
+**Aktuelle Balance (Stand 2026-04-10):**
 - Krieger ist in ausgeglichenem Zustand
 - Tank-Build sehr stark in Dungeons
 - DPS-Build kompetitiv, aber nicht überwältigend
@@ -448,6 +448,6 @@ Die Krieger des Reiches sind Meister des Nahkampfes, ausgebildet in den härtest
 
 ---
 
-**Letzte Aktualisierung:** 2026-01-03
+**Letzte Aktualisierung:** 2026-04-10
 
 **Status:** 🚧 Work in Progress - Werte unterliegen Balance-Anpassungen

@@ -519,6 +519,6 @@ Wiederverwendbare Checklisten für neue Inhalte, Balance und Testing.
 
 ---
 
-**Letzte Aktualisierung:** 2026-01-03
+**Letzte Aktualisierung:** 2026-04-10
 
 **Hinweis:** Diese Checklisten sind als Richtlinien gedacht - nicht jeder Punkt ist für jeden Content-Typ relevant. Anpassen nach Bedarf!

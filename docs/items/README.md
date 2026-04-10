@@ -18,13 +18,13 @@ Dokumentation des umfassenden Item-Systems mit Oraxen, MMOItems und MythicCrucib
 
 Das Spiel nutzt **7 Item-Tiers:**
 
-1. **Gewöhnlich** (Common) - Grau
-2. **Ungewöhnlich** (Uncommon) - Grün
-3. **Selten** (Rare) - Blau
-4. **Episch** (Epic) - Lila
-5. **Legendär** (Legendary) - Orange
-6. **Mythisch** (Mythic) - Rot
-7. **Göttlich** (Divine) - Gold _(geplant)_
+1. **Gewöhnlich** (Common) - Weiß (`&f`)
+2. **Ungewöhnlich** (Uncommon) - Grün (`&a`)
+3. **Selten** (Rare) - Blau (`&9`)
+4. **Episch** (Epic) - Lila (`&5`)
+5. **Legendär** (Legendary) - Gold (`&6`)
+6. **Mythisch** (Mythic) - Pink (`&d`)
+7. **Göttlich** (Divine) - Hellrot (`&c`) _(geplant)_
 
 ---
 
@@ -71,4 +71,4 @@ Das Spiel nutzt **7 Item-Tiers:**
 
 ---
 
-**Letzte Aktualisierung:** 2026-01-03
+**Letzte Aktualisierung:** 2026-04-10

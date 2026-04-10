@@ -7,15 +7,15 @@ Vielen Dank für dein Interesse an diesem Projekt!
 Bitte halte dich an die bestehende Struktur:
 
 ```
-Server/
+server/plugins/
 ├── MythicMobs/
 │   ├── Items/
 │   ├── Mobs/
 │   └── Skills/
-├── Quests/
-├── Classes/
-├── Dungeons/
-└── NPCs/
+├── BetonQuest/
+├── MMOCore/classes/
+├── MythicDungeons/
+└── Citizens/
 ```
 
 ## Naming Conventions

@@ -421,7 +421,7 @@ In abgelegenen Heiligtümern kommunizieren Schamanen mit den Geistern der Natur.
 ## Balance-Notizen
 
 
-**Aktuelle Balance (Stand 2026-01-03):**
+**Aktuelle Balance (Stand 2026-04-10):**
 - Schamane ist optimal als Gruppen-Heiler
 - Solo-Play sehr langsam (design-intended)
 - Gut balanciert für Support-Rolle
@@ -443,6 +443,6 @@ In abgelegenen Heiligtümern kommunizieren Schamanen mit den Geistern der Natur.
 
 ---
 
-**Letzte Aktualisierung:** 2026-01-03
+**Letzte Aktualisierung:** 2026-04-10
 
 **Status:** 🚧 Work in Progress - Werte unterliegen Balance-Anpassungen

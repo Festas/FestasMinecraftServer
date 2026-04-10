@@ -436,7 +436,7 @@ In verborgenen Bibliotheken studieren Beschwörer die Künste der Dimensionsmagi
 ## Balance-Notizen
 
 
-**Aktuelle Balance (Stand 2026-01-03):**
+**Aktuelle Balance (Stand 2026-04-10):**
 - Beschwörer ist einzigartig und vielseitig
 - Sehr stark im Solo, gut in Gruppen
 - Pet-Management ist Skill-Ceiling
@@ -458,6 +458,6 @@ In verborgenen Bibliotheken studieren Beschwörer die Künste der Dimensionsmagi
 
 ---
 
-**Letzte Aktualisierung:** 2026-01-03
+**Letzte Aktualisierung:** 2026-04-10
 
 **Status:** 🚧 Work in Progress - Werte unterliegen Balance-Anpassungen

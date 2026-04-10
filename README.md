@@ -6,7 +6,7 @@ Konfigurationen von all meinen MMO Plugins auf meinem RPG Minecraft Server
 
 ## Über das Projekt
 
-Dieses Repository enthält alle Konfigurationen für ein Minecraft Paper Server Netzwerk (Version 1.21.10) mit Velocity Proxy.
+Dieses Repository enthält alle Konfigurationen für ein Minecraft Paper Server Netzwerk (Version 1.21.1) mit Velocity Proxy.
 
 **Server-IP:** `mc.festas-builds.com`
 
@@ -27,7 +27,7 @@ Mit vielen eigenen Verbesserungen und zusätzlichen Features!
 ```
 MinecraftMMO/
 ├── proxy/              # Velocity Proxy Konfigurationen
-│   └── plugins/        # Proxy-Plugins (TAB, MiniMOTD, LibertyBans, etc.)
+│   └── plugins/        # Proxy-Plugins (TAB, MiniMOTD, LibertyBans, Geyser, etc.)
 ├── lobby/              # Lobby Server Konfigurationen
 │   └── plugins/        # Lobby-Plugins (CMI, FancyNpcs, etc.)
 ├── survival/           # Survival Server Konfigurationen
@@ -36,6 +36,8 @@ MinecraftMMO/
 │   └── plugins/        # MMO-Plugins (MMOCore, MMOItems, MythicMobs, etc.)
 ├── rpg/                # RPG Server Konfigurationen
 │   └── plugins/        # RPG-Plugins (MythicMobs Premium, MythicDungeons, etc.)
+├── crosscraft-guilds/  # CrossCraft Guilds Plugin (Gradle, Java 21)
+│   └── ...             # Paper + Velocity Module
 └── docs/               # Dokumentation
 ```
 
@@ -109,8 +111,9 @@ Dies ist ein persönliches Projekt für meinen Minecraft Server.
 
 ## Technische Details
 
-- **Minecraft Version:** 1.21.10
+- **Minecraft Version:** 1.21.1
 - **Server Software:** Paper
 - **Proxy:** Velocity
-- **Datenbanken:** MySQL/MariaDB, Redis
+- **Bedrock-Support:** Geyser-Velocity + Floodgate
+- **Datenbanken:** MariaDB (172.25.0.1:3306), Redis (172.18.0.1:6379)
 - **Server-IP:** mc.festas-builds.com

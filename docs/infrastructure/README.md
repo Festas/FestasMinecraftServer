@@ -28,4 +28,4 @@ Technische Infrastruktur für das MinecraftMMO-Netzwerk.
 
 ---
 
-**Letzte Aktualisierung:** 2026-01-03
+**Letzte Aktualisierung:** 2026-04-10

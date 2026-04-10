@@ -27,7 +27,7 @@ Für die MMO-Server (Skyblock & RPG) werden folgende Plugins benötigt:
 
 ### Minecraft Server
 
-- Minecraft Version: 1.21.10
+- Minecraft Version: 1.21.1
 - Server-Software: Paper
 - Proxy: Velocity
 
@@ -45,50 +45,50 @@ git clone https://github.com/Festas/MinecraftMMO.git
 
 ```bash
 # Skyblock
-cp Skyblock/MythicMobs/Items/*.yml /pfad/zum/server/plugins/MythicMobs/Items/
+cp skyblock/plugins/MythicMobs/Items/*.yml /pfad/zum/server/plugins/MythicMobs/Items/
 
 # RPG
-cp RPG/MythicMobs/Items/*.yml /pfad/zum/server/plugins/MythicMobs/Items/
+cp rpg/plugins/MythicMobs/Items/*.yml /pfad/zum/server/plugins/MythicMobs/Items/
 ```
 
 #### MythicMobs Mobs
 
 ```bash
 # Skyblock
-cp Skyblock/MythicMobs/Mobs/*.yml /pfad/zum/server/plugins/MythicMobs/Mobs/
+cp skyblock/plugins/MythicMobs/Mobs/*.yml /pfad/zum/server/plugins/MythicMobs/Mobs/
 
 # RPG
-cp RPG/MythicMobs/Mobs/*.yml /pfad/zum/server/plugins/MythicMobs/Mobs/
+cp rpg/plugins/MythicMobs/Mobs/*.yml /pfad/zum/server/plugins/MythicMobs/Mobs/
 ```
 
 #### MythicMobs Skills
 
 ```bash
 # Skyblock
-cp Skyblock/MythicMobs/Skills/*.yml /pfad/zum/server/plugins/MythicMobs/Skills/
+cp skyblock/plugins/MythicMobs/Skills/*.yml /pfad/zum/server/plugins/MythicMobs/Skills/
 
 # RPG
-cp RPG/MythicMobs/Skills/*.yml /pfad/zum/server/plugins/MythicMobs/Skills/
+cp rpg/plugins/MythicMobs/Skills/*.yml /pfad/zum/server/plugins/MythicMobs/Skills/
 ```
 
 #### Quests
 
 ```bash
 # Skyblock
-cp Skyblock/Quests/*.yml /pfad/zum/server/plugins/[QuestPlugin]/quests/
+cp skyblock/plugins/BetonQuest/*.yml /pfad/zum/server/plugins/BetonQuest/
 
 # RPG
-cp RPG/Quests/*.yml /pfad/zum/server/plugins/[QuestPlugin]/quests/
+cp rpg/plugins/BetonQuest/*.yml /pfad/zum/server/plugins/BetonQuest/
 ```
 
 #### NPCs
 
 ```bash
 # Skyblock
-cp Skyblock/NPCs/*.yml /pfad/zum/server/plugins/Citizens/[konfiguration]/
+cp skyblock/plugins/Citizens/*.yml /pfad/zum/server/plugins/Citizens/
 
 # RPG
-cp RPG/NPCs/*.yml /pfad/zum/server/plugins/Citizens/[konfiguration]/
+cp rpg/plugins/Citizens/*.yml /pfad/zum/server/plugins/Citizens/
 ```
 
 ### 3. Plugins neu laden
@@ -106,7 +106,7 @@ Nach dem Kopieren der Dateien:
 
 ### Neue Items erstellen
 
-1. Gehe zu `Skyblock/MythicMobs/Items/` oder `RPG/MythicMobs/Items/`
+1. Gehe zu `skyblock/plugins/MythicMobs/Items/` oder `rpg/plugins/MythicMobs/Items/`
 2. Erstelle eine neue `.yml` Datei (z.B. `my_sword.yml`)
 3. Verwende das Format aus `example_sword.yml`
 4. Passe Stats, Enchantments und Lore an
@@ -114,7 +114,7 @@ Nach dem Kopieren der Dateien:
 
 ### Neue Mobs erstellen
 
-1. Gehe zu `Skyblock/MythicMobs/Mobs/` oder `RPG/MythicMobs/Mobs/`
+1. Gehe zu `skyblock/plugins/MythicMobs/Mobs/` oder `rpg/plugins/MythicMobs/Mobs/`
 2. Erstelle eine neue `.yml` Datei
 3. Verwende das Format aus `example_boss.yml` oder `zombie_warrior.yml`
 4. Definiere Health, Damage, Skills und Drops
@@ -122,7 +122,7 @@ Nach dem Kopieren der Dateien:
 
 ### Neue Quests erstellen
 
-1. Gehe zu `Skyblock/Quests/` oder `RPG/Quests/`
+1. Gehe zu `skyblock/plugins/BetonQuest/` oder `rpg/plugins/BetonQuest/`
 2. Erstelle eine neue `.yml` Datei
 3. Verwende das Format aus `example_quest.yml`
 4. Definiere Stages, Requirements und Rewards
@@ -130,7 +130,7 @@ Nach dem Kopieren der Dateien:
 
 ### Neue Klassen/Skills erstellen
 
-1. Gehe zu `Skyblock/Classes/` oder `RPG/Classes/`
+1. Gehe zu `skyblock/plugins/MMOCore/classes/` oder `rpg/plugins/MMOCore/classes/`
 2. Erstelle eine neue `.yml` Datei
 3. Verwende das Format aus `warrior.yml` oder `mage.yml`
 4. Definiere Stats, Skills und Progression

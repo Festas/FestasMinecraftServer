@@ -323,6 +323,6 @@ Schatzkammer → Boss-Arena → Ausgang
 
 ---
 
-**Letzte Aktualisierung:** 2026-01-03
+**Letzte Aktualisierung:** 2026-04-10
 
 **Status:** 🚧 Work in Progress

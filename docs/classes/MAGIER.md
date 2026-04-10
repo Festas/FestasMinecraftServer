@@ -455,7 +455,7 @@ Blitzschlag → Feuerball Spam → Eislanze (wenn verfügbar)
 ## Balance-Notizen
 
 
-**Aktuelle Balance (Stand 2026-01-03):**
+**Aktuelle Balance (Stand 2026-04-10):**
 - Magier hat höchsten Schaden, aber niedrigste Überlebensfähigkeit
 - Arkageddon sehr stark in Gruppen-Content
 - PvP gut, aber anfällig für Burst
@@ -480,6 +480,6 @@ Blitzschlag → Feuerball Spam → Eislanze (wenn verfügbar)
 
 ---
 
-**Letzte Aktualisierung:** 2026-01-03
+**Letzte Aktualisierung:** 2026-04-10
 
 **Status:** 🚧 Work in Progress - Werte unterliegen Balance-Anpassungen

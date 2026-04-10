@@ -6,7 +6,7 @@ Dokumentation für den MMO-Skyblock Server mit RPG-Elementen.
 
 ## Server-Informationen
 
-**Server-Typ:** Paper 1.21.10  
+**Server-Typ:** Paper 1.21.1  
 **Hauptfokus:** Skyblock mit MMO-RPG Progression  
 **Spieler-Kapazität:** 50-100 Spieler  
 **Synchronisation:** HuskSync mit RPG-Server  
@@ -90,6 +90,6 @@ Dokumentation für den MMO-Skyblock Server mit RPG-Elementen.
 
 ---
 
-**Letzte Aktualisierung:** 2026-01-03
+**Letzte Aktualisierung:** 2026-04-10
 
 **Status:** 🚧 Work in Progress

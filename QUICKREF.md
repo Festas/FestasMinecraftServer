@@ -31,21 +31,21 @@ MinecraftMMO/
 ### 1. Neues Item erstellen
 
 ```bash
-cd skyblock/plugins/MMOItems/
+cd rpg/plugins/MMOItems/
 # Bearbeite oder erstelle eine Item-Konfigurationsdatei
 ```
 
 ### 2. Neuen Mob erstellen
 
 ```bash
-cd skyblock/plugins/MythicMobs/Mobs/
+cd rpg/plugins/MythicMobs/Mobs/
 # Bearbeite oder erstelle eine Mob-Konfigurationsdatei
 ```
 
 ### 3. Neue Quest erstellen
 
 ```bash
-cd skyblock/plugins/BetonQuest/
+cd rpg/plugins/BetonQuest/
 # Bearbeite oder erstelle eine Quest-Konfigurationsdatei
 ```
 
@@ -210,9 +210,9 @@ Display: '&6Text'
 
 | Plugin | Min. Version | Empfohlen |
 |--------|-------------|-----------|
-| MythicMobs | 5.0.0 | 5.6.0+ |
-| Citizens | 2.0.30 | 2.0.33+ |
-| Paper | 1.21.10 | Latest |
+| MythicMobs | 5.0.0 | 5.7.0+ |
+| Citizens | 2.0.30 | 2.0.35+ |
+| Paper | 1.21.1 | Latest |
 
 ## Backup-Befehl
 
