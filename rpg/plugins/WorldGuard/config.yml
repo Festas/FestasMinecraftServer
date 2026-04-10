@@ -63,17 +63,17 @@ physics:
     allow-portal-anywhere: false
     disable-water-damage-blocks: []
 ignition:
-    block-tnt: false
-    block-tnt-block-damage: false
+    block-tnt: true
+    block-tnt-block-damage: true
     block-lighter: false
 fire:
-    disable-lava-fire-spread: false
+    disable-lava-fire-spread: true
     disable-all-fire-spread: false
     disable-fire-spread-blocks: []
     lava-spread-blocks: []
 mobs:
-    block-creeper-explosions: false
-    block-creeper-block-damage: false
+    block-creeper-explosions: true
+    block-creeper-block-damage: true
     block-wither-explosions: false
     block-wither-block-damage: false
     block-wither-skull-explosions: false
@@ -85,7 +85,7 @@ mobs:
     block-windcharge-explosions: false
     anti-wolf-dumbness: false
     allow-tamed-spawns: true
-    disable-enderman-griefing: false
+    disable-enderman-griefing: true
     disable-snowman-trails: false
     block-painting-destroy: false
     block-item-frame-destroy: false
@@ -93,7 +93,7 @@ mobs:
     block-plugin-spawning: true
     block-above-ground-slimes: false
     block-other-explosions: false
-    block-zombie-door-destruction: false
+    block-zombie-door-destruction: true
     block-vehicle-entry: false
     block-creature-spawn: []
 player-damage:

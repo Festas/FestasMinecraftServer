@@ -8,7 +8,7 @@ Item_Blacklist:
 #- ENDER_DRAGON_SPAWN_EGG
 
 # Taxes added when creating shops (in %) //CURRENTLY NOT WORKING!
-Taxes: 0
+Taxes: 5
 
 # prevents Hoppers and Hopper Minecrads from stealing items from shops
 Shop_hopper_protection: true

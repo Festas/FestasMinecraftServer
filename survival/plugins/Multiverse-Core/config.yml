@@ -30,7 +30,7 @@ world:
   # If this is set to false, players will be able to enter any world they want.
   # If this is set to true, players will only be able to enter worlds they have
   # the `mv.access.<worldname>` permission.
-  enforce-access: false
+  enforce-access: true
   
   # Sets whether Multiverse will should enforce gamemode on world change.
   # If enabled, players will be forced into the gamemode of the world they are entering, unless they have
