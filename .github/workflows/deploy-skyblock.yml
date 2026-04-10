@@ -44,7 +44,7 @@ jobs:
           SERVER_PATH: ${{ secrets.SERVER_PATH_SKYBLOCK }} # Endet auf .../plugins
           REPLACE_FOLDER: ${{ github.event.inputs.replace_folder }}
         run: |
-          EXCLUDE_OPTS="--exclude='*.db' --exclude='*.sqlite' --exclude='*.log' --exclude='playerdata/' --exclude='data/' --exclude='cache/' --exclude='.git*'"
+          EXCLUDE_OPTS="--exclude='*.db' --exclude='*.sqlite' --exclude='*.log' --exclude='*.zip' --exclude='*.tar.gz' --exclude='playerdata/' --exclude='data/' --exclude='cache/' --exclude='.git*' --exclude='world/' --exclude='world_nether/' --exclude='world_the_end/'"
 
           if [ -n "$REPLACE_FOLDER" ]; then
             # --- Modus: Ganzen Ordner ersetzen ---
@@ -113,4 +113,20 @@ jobs:
               echo "Full sync completed successfully"
             fi
           fi
+
+      - name: Verify Deployment
+        if: success()
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          SERVER_PATH: ${{ secrets.SERVER_PATH_SKYBLOCK }}
+        run: |
+          echo "🔍 Verifiziere Deployment..."
+          FILE_COUNT=$(ssh -n -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "find $SERVER_PATH -name '*.yml' -type f | wc -l")
+          echo "📊 $FILE_COUNT Konfigurationsdateien auf dem Server gefunden."
+          if [ "$FILE_COUNT" -lt 1 ]; then
+            echo "::error::Keine Konfigurationsdateien auf dem Server gefunden! Deployment möglicherweise fehlgeschlagen."
+            exit 1
+          fi
+          echo "✅ Deployment verifiziert."
 

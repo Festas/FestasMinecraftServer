@@ -85,6 +85,14 @@ jobs:
           # Skyblock plugins Verzeichnis erstellen falls nicht vorhanden
           mkdir -p skyblock/plugins
           
+          echo "📦 Erstelle Backup der Skyblock-Plugins..."
+          BACKUP_DIR="/tmp/skyblock-backup-$(date +%Y%m%d-%H%M%S)"
+          mkdir -p "$BACKUP_DIR"
+          if [ -d "skyblock/plugins" ]; then
+            cp -r skyblock/plugins "$BACKUP_DIR/"
+            echo "✅ Backup erstellt in $BACKUP_DIR"
+          fi
+          
           for PLUGIN in "${PLUGINS[@]}"; do
             SOURCE="rpg/plugins/$PLUGIN"
             DEST="skyblock/plugins/$PLUGIN"
@@ -151,6 +159,12 @@ jobs:
             echo "✅ Änderungen erfolgreich gepusht!"
           fi
 
+      - name: Notify on Failure
+        if: failure()
+        run: |
+          echo "❌ Sync-Workflow fehlgeschlagen!"
+          echo "::error::Der RPG → Skyblock Sync ist fehlgeschlagen. Bitte manuell prüfen."
+
   deploy-to-skyblock-server:
     needs: sync-to-skyblock-repo
     runs-on: ubuntu-latest
@@ -208,8 +222,21 @@ jobs:
               
               # --delete sorgt dafür, dass gelöschte Dateien auch auf dem Server entfernt werden
               rsync -avz --delete \
+                --backup-dir="/tmp/rsync-backup-$(date +%Y%m%d)" \
                 --exclude='*.jar' \
                 --exclude='*.jar.disabled' \
+                --exclude='*.db' \
+                --exclude='*.sqlite' \
+                --exclude='*.log' \
+                --exclude='*.zip' \
+                --exclude='*.tar.gz' \
+                --exclude='playerdata/' \
+                --exclude='data/' \
+                --exclude='cache/' \
+                --exclude='.git*' \
+                --exclude='world/' \
+                --exclude='world_nether/' \
+                --exclude='world_the_end/' \
                 -e "ssh -o StrictHostKeyChecking=no" \
                 "$LOCAL_DIR/" \
                 "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.SERVER_PATH_SKYBLOCK }}/$PLUGIN/"
@@ -232,3 +259,9 @@ jobs:
           done
           
           echo "🎉 Alle Plugins erfolgreich deployed!"
+
+      - name: Notify on Failure
+        if: failure()
+        run: |
+          echo "❌ Sync-Workflow fehlgeschlagen!"
+          echo "::error::Der RPG → Skyblock Sync ist fehlgeschlagen. Bitte manuell prüfen."
