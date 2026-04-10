@@ -66,13 +66,14 @@ chown -R minecraft:minecraft /path/to/server/world
 
 ```bash
 # Vollständiges Backup aller s4_*-Datenbanken
+# WICHTIG: Credentials über --defaults-extra-file bereitstellen, NICHT über --password
+# Erstelle /etc/mysql/backup.cnf mit [client] user=... password=...
 mariadb-dump --all-databases \
+  --defaults-extra-file=/etc/mysql/backup.cnf \
   --single-transaction \
   --routines \
   --triggers \
   --host=172.25.0.1 \
-  --user=CHANGE_ME \
-  --password=CHANGE_ME \
   | gzip > /path/to/backup/mariadb_full_$(date +%Y-%m-%d).sql.gz
 ```
 
@@ -94,8 +95,9 @@ cp /var/lib/redis/dump.rdb /path/to/backup/redis_$(date +%Y-%m-%d).rdb
 # 1. Alle betroffenen Server stoppen
 
 # 2. Vollständiges Backup wiederherstellen
+# WICHTIG: Credentials über --defaults-extra-file, NICHT über --password
 gunzip < /path/to/backup/mariadb_full_YYYY-MM-DD.sql.gz \
-  | mariadb --host=172.25.0.1 --user=CHANGE_ME --password=CHANGE_ME
+  | mariadb --defaults-extra-file=/etc/mysql/backup.cnf --host=172.25.0.1
 
 # 3. Inkrementelle Backups in chronologischer Reihenfolge einspielen
 mariadb-backup --prepare --target-dir=/path/to/full-backup \
