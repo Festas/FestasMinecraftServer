@@ -7,7 +7,7 @@ Created a complete VFX system for Basic Classes (Level 1-50) in the MinecraftMMO
 ## Files Created
 
 ### MythicMobs Skills (6 files, 427 lines total)
-Path: `RPG/plugins/MythicMobs/skills/basis_klassen/`
+Path: `rpg/plugins/MythicMobs/skills/basis_klassen/`
 
 1. **krieger_basis_vfx.yml** - 7 Warrior skills
 2. **magier_basis_vfx.yml** - 6 Mage skills  
@@ -19,7 +19,7 @@ Path: `RPG/plugins/MythicMobs/skills/basis_klassen/`
 **Total: 28 unique basic class skills**
 
 ### MythicLib Skill Bindings (6 files, 156 lines total)
-Path: `RPG/plugins/MythicLib/skill/`
+Path: `rpg/plugins/MythicLib/skill/`
 
 1. **basis_krieger.yml**
 2. **basis_magier.yml**

@@ -21,6 +21,16 @@ Vollständige Übersicht aller verwendeten Plugins pro Server.
   - Custom Textures
 - **Config:** Resourcepack-URL in `config.yml`
 
+#### Geyser-Velocity
+- **Funktion:** Bedrock-Spieler-Support über Java-Server
+- **Features:**
+  - Erlaubt Bedrock-Edition-Spielern (Handy, Konsole, Windows 10) den Beitritt
+  - Floodgate-Authentifizierung (kein Java-Account nötig)
+  - Resourcepack-Erzwingung auch für Bedrock
+  - MOTD-Konfiguration für Bedrock-Clients
+- **Config:** `config.yml` (auth-type: floodgate)
+- **Abhängigkeit:** Floodgate (für Account-Verknüpfung)
+
 #### LibertyBans
 - **Funktion:** Netzwerk-weites Ban-System
 - **Features:**
@@ -744,19 +754,22 @@ Vollständige Übersicht aller verwendeten Plugins pro Server.
 
 ```
 MinecraftMMO/
-├── RPG/plugins/           # RPG-Server Plugin-Configs
-├── Skyblock/              # Skyblock Plugin-Content (MythicMobs, Quests)
-└── Shared/                # Gemeinsame Ressourcen
+├── proxy/plugins/         # Proxy-Server Plugin-Configs
+├── lobby/plugins/         # Lobby-Server Plugin-Configs
+├── survival/plugins/      # Survival-Server Plugin-Configs
+├── skyblock/plugins/      # Skyblock-Server Plugin-Configs
+├── rpg/plugins/           # RPG-Server Plugin-Configs
+└── crosscraft-guilds/     # CrossCraft Guilds Plugin (Eigenentwicklung)
 ```
 
-**Hinweis:** Nicht alle Plugin-Configs sind im Repository - nur Custom-Content (Items, Mobs, Quests, etc.)
+**Hinweis:** Nicht alle Plugin-Configs sind im Repository - nur Custom-Content und konfigurierte Einstellungen. Sensible Daten (Passwörter, API-Keys) sind über `.gitignore` ausgeschlossen.
 
 ---
 
-**Letzte Aktualisierung:** 2026-01-03
+**Letzte Aktualisierung:** 2026-04-10
 
 **Plugin-Anzahl:**
-- Velocity: 10 Plugins
+- Velocity: 11 Plugins (inkl. Geyser)
 - Lobby: ~12 Plugins
 - Survival: ~15 Plugins
 - Skyblock: ~25 Plugins

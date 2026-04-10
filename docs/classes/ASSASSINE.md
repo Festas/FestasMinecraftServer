@@ -450,7 +450,7 @@ Schneller Stich Spam → Klingen-Wirbel → Heimtückischer Angriff → ...
 ## Balance-Notizen
 
 
-**Aktuelle Balance (Stand 2026-01-03):**
+**Aktuelle Balance (Stand 2026-04-10):**
 - Assassine hat höchsten Burst-Schaden
 - Sehr stark im PvP gegen Stoffklassen
 - Gute Balance zwischen Schaden und Mobilität
@@ -473,6 +473,6 @@ Schneller Stich Spam → Klingen-Wirbel → Heimtückischer Angriff → ...
 
 ---
 
-**Letzte Aktualisierung:** 2026-01-03
+**Letzte Aktualisierung:** 2026-04-10
 
 **Status:** 🚧 Work in Progress - Werte unterliegen Balance-Anpassungen

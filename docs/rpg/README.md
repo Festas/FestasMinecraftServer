@@ -6,7 +6,7 @@ Dokumentation für den vollständigen MMO-RPG Server mit Open World, Quests, Dun
 
 ## Server-Informationen
 
-**Server-Typ:** Paper 1.21.10  
+**Server-Typ:** Paper 1.21.1  
 **Hauptfokus:** Open World MMO-RPG mit Quest-System, Dungeons und Klassen  
 **Spieler-Kapazität:** 50-100 Spieler  
 **Synchronisation:** HuskSync mit Skyblock-Server  
@@ -206,6 +206,6 @@ RPG-Server/
 
 ---
 
-**Letzte Aktualisierung:** 2026-01-03
+**Letzte Aktualisierung:** 2026-04-10
 
 **Status:** 🚧 Work in Progress - Server in aktiver Entwicklung

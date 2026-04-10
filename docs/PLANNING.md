@@ -369,4 +369,4 @@ _Hier können spontane Ideen, Notizen oder unfertige Gedanken festgehalten werde
 
 ---
 
-**Letzte Aktualisierung:** 2026-01-03
+**Letzte Aktualisierung:** 2026-04-10

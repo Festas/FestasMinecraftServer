@@ -211,6 +211,6 @@ Diese Stats werden von Items, Skills und Buffs beeinflusst:
 
 ---
 
-**Letzte Aktualisierung:** 2026-01-03
+**Letzte Aktualisierung:** 2026-04-10
 
 **Status:** 🚧 Work in Progress - Detaillierte Klassen-Beschreibungen werden noch ausgefüllt

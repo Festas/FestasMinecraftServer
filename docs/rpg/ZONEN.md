@@ -307,6 +307,6 @@ _Das Starter-Tal ist ein friedlicher Ort, wo neue Abenteurer ihre Reise beginnen
 
 ---
 
-**Letzte Aktualisierung:** 2026-01-03
+**Letzte Aktualisierung:** 2026-04-10
 
 **Status:** 🚧 Work in Progress - Templates zum Ausfüllen bereit

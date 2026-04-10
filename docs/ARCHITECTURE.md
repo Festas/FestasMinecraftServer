@@ -22,8 +22,8 @@ Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
     │   Lobby   │              │   Survival  │            │   MMO-Server    │
     │  Server   │              │   Server    │            │   (RPG/Skyblock)│
     └───────────┘              └─────────────┘            └─────────────────┘
-    - Routing                  - Standard SMP            - RPG (Paper 1.21.10)
-    - Welcome                  - Jobs, Claims            - Skyblock (Paper 1.21.10)
+    - Routing                  - Standard SMP            - RPG (Paper 1.21.1)
+    - Welcome                  - Jobs, Claims            - Skyblock (Paper 1.21.1)
     - Info NPCs                - Economy                 - MMOCore, MMOItems
                                - Bluemap                 - MythicMobs Premium
 ```
@@ -41,6 +41,7 @@ Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
 **Plugins:**
 - **CMIV** - CMI Integration für Velocity
 - **ForceResourcepacks** - Erzwingt Resourcepacks auf Clients
+- **Geyser-Velocity** - Bedrock-Spieler-Unterstützung (Floodgate Auth)
 - **LibertyBans** - Netzwerk-weites Ban-System
 - **MiniMOTD** - Custom MOTD (Message of the Day)
 - **MySQL-And-Configurate** - Datenbank-Integration
@@ -61,7 +62,7 @@ Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
 
 **Funktion:** Willkommens-Server und Hub für Server-Navigation
 
-**Version:** Paper 1.21.10
+**Version:** Paper 1.21.1
 
 **Hauptplugins:**
 - **CMI** (Complete Minecraft Integration) - Kern-Management-Plugin
@@ -87,7 +88,7 @@ Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
 
 **Funktion:** Standard Minecraft Survival mit Economy und Claims
 
-**Version:** Paper 1.21.10
+**Version:** Paper 1.21.1
 
 **Hauptplugins:**
 - **Jobs** - Job-System für Economy
@@ -119,7 +120,7 @@ Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
 
 **Funktion:** MMO Skyblock mit RPG-Elementen
 
-**Version:** Paper 1.21.10
+**Version:** Paper 1.21.1
 
 **Hauptplugins:**
 - **SuperiorSkyblock2** - Skyblock Core-System
@@ -168,7 +169,7 @@ Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
 
 **Funktion:** Vollständiger MMO-RPG Server mit Open World
 
-**Version:** Paper 1.21.10
+**Version:** Paper 1.21.1
 
 **Hauptplugins:**
 - **MythicMobs Premium** - Advanced Custom Mobs/Bosse/Items
@@ -514,6 +515,6 @@ Bei kritischen Fehlern:
 
 ---
 
-**Letzte Aktualisierung:** 2026-01-03
+**Letzte Aktualisierung:** 2026-04-10
 
-**Version:** 1.0
+**Version:** 1.1

@@ -621,6 +621,6 @@ _..._
 
 ---
 
-**Letzte Aktualisierung:** 2026-01-03
+**Letzte Aktualisierung:** 2026-04-10
 
 **Hinweis:** Diese Templates sind Leitfäden - nicht jeder Schritt ist für jeden Use-Case relevant. Anpassen nach Bedarf!
