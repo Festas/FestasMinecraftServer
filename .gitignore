@@ -41,6 +41,7 @@ test-server/
 **/LuckPerms/config.yml
 **/HuskSync/config.yml
 **/partyandfriends/config.yml
+**/libertybans/sql.yml
 **/plan/config.yml
 **/Plan/config.yml
 **/plan/serverConfiguration/

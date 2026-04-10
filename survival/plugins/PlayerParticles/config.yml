@@ -306,7 +306,7 @@ mysql-settings:
   # If the database connection should use SSL
   # You should enable this if your database supports SSL
   # Default: false
-  use-ssl: false
+  use-ssl: true
 
   # The number of connections to make to the database
   # Default: 3

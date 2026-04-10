@@ -18,4 +18,4 @@ mysql:
   database: "plot_db"
   # Set additional properties: https://dev.mysql.com/doc/connector-j/en/connector-j-reference-configuration-properties.html
   properties: 
-  - "useSSL=false"
+  - "useSSL=true"

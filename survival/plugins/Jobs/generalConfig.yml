@@ -18,8 +18,8 @@ mysql:
   hostname: localhost:3306
   database: minecraft
   table-prefix: jobs_
-  verify-server-certificate: false
-  use-ssl: false
+  verify-server-certificate: true
+  use-ssl: true
   auto-reconnect: true
   characterEncoding: utf8
   encoding: UTF-8

@@ -140,7 +140,7 @@ MySQL-Storage:
     MessageChannel: MessageChannel
   # Connection options
   Options:
-    useSSL: false
+    useSSL: true
     useUnicode: true
     allowMultiQueries: true
     allowPublicKeyRetrieval: true
