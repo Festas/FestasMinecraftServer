@@ -374,17 +374,6 @@ Vollständige Übersicht aller verwendeten Plugins pro Server.
 
 ### Quests & Progression
 
-#### BetonQuest
-- **Funktion:** Advanced Quest-System
-- **Features:**
-  - Komplexe Quest-Chains
-  - Branching-Quests
-  - NPC-Integration
-  - Conditional Quests
-- **Commands:**
-  - `/q <quest>`
-  - `/journal`
-
 #### Aurora
 - **Funktion:** Quests/Achievements (Alternative)
 - **Features:**
@@ -398,20 +387,6 @@ Vollständige Übersicht aller verwendeten Plugins pro Server.
   - Sammle X von Y
   - Unlock-Belohnungen
   - Collection-Levels
-
-### NPCs
-
-#### Citizens
-- **Funktion:** NPC-System
-- **Features:**
-  - Quest-NPCs
-  - Händler-NPCs
-  - Dialog-System
-  - Traits/Scripts
-- **Commands:**
-  - `/npc create <name>`
-  - `/npc skin`
-  - `/trait <trait>`
 
 ### Economy
 

@@ -131,13 +131,10 @@ Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
 - **CoinsEngine** - Multi-Währungs-System
 - **Aurora** - Quests/Achievements
 - **AuroraCollections** - Collection-System
-- **BetonQuest** - Advanced Quest-System
-- **Citizens** - NPCs
 - **HuskSync** - Daten-Synchronisation (mit RPG)
 - **LuckPerms** - Permissions
 - **PlaceholderAPI** - Platzhalter
 - **Oraxen** - Custom Items/Texturen
-- **DeluxeMenus** - Custom GUIs
 - **DeluxeBazaar** - Bazaar-System
 
 **Klassen (MMOCore):**

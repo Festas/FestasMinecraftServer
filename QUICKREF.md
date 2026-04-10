@@ -16,13 +16,14 @@ MinecraftMMO/
 │   └── plugins/        # MMO-Plugins (MMOCore, MMOItems, MythicMobs, etc.)
 ├── rpg/                # RPG Server Konfigurationen
 │   └── plugins/        # RPG-Plugins (MythicMobs Premium, MythicDungeons, etc.)
+├── crosscraft-guilds/  # CrossCraft Guilds Plugin (Gradle, Java 21)
+│   └── ...             # Paper + Velocity Module
 └── docs/               # Dokumentation
 ```
 
 ## Wichtige Dateien
 
 - **README.md** - Projekt-Übersicht
-- **USAGE.md** - Ausführliche Nutzungsanleitung
 - **CONTRIBUTING.md** - Richtlinien für Beiträge
 - **.gitignore** - Git-Ausschlüsse
 
