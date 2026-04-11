@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
         with:
           token: ${{ secrets.PERSONAL_TOKEN }}
 
@@ -72,7 +72,7 @@ jobs:
             rsync -avz --delete \
               --exclude='*.jar' \
               --exclude='*.jar.disabled' \
-              -e "ssh -o StrictHostKeyChecking=no" \
+              -e "ssh -o StrictHostKeyChecking=accept-new" \
               "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${SERVER_PATH}/" \
               "$LOCAL_DIR/"
           else
@@ -82,7 +82,7 @@ jobs:
             rsync -avz --delete \
               --exclude='*.jar' \
               --exclude='*.jar.disabled' \
-              -e "ssh -o StrictHostKeyChecking=no" \
+              -e "ssh -o StrictHostKeyChecking=accept-new" \
               "$LOCAL_DIR/" \
               "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${SERVER_PATH}/"
           fi
@@ -102,6 +102,7 @@ jobs:
             echo "Keine Änderungen gefunden."
           else
             git commit -m "🔄 Sync $SERVER_NAME plugin configs from server"
+            echo "::add-mask::${{ secrets.PERSONAL_TOKEN }}"
             git remote set-url origin https://x-access-token:${{ secrets.PERSONAL_TOKEN }}@github.com/${{ github.repository }}
             
             # Pull remote changes and rebase before pushing

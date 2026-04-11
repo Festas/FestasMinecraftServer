@@ -44,7 +44,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
         with:
           token: ${{ secrets.PERSONAL_TOKEN }}
           fetch-depth: 0
@@ -143,6 +143,7 @@ jobs:
             
             Inkl. Löschungen und Aktualisierungen."
             
+            echo "::add-mask::${{ secrets.PERSONAL_TOKEN }}"
             git remote set-url origin https://x-access-token:${{ secrets.PERSONAL_TOKEN }}@github.com/${{ github.repository }}
             
             # Try to pull and rebase, if conflicts occur abort and try a fast-forward only pull
@@ -170,7 +171,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
         with:
           ref: main
           fetch-depth: 0
@@ -237,7 +238,7 @@ jobs:
                 --exclude='world/' \
                 --exclude='world_nether/' \
                 --exclude='world_the_end/' \
-                -e "ssh -o StrictHostKeyChecking=no" \
+                -e "ssh -o StrictHostKeyChecking=accept-new" \
                 "$LOCAL_DIR/" \
                 "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.SERVER_PATH_SKYBLOCK }}/$PLUGIN/"
               
@@ -248,7 +249,7 @@ jobs:
               # Safely construct the path and verify it's not empty
               REMOTE_PATH="${{ secrets.SERVER_PATH_SKYBLOCK }}/$PLUGIN"
               if [ -n "$REMOTE_PATH" ] && [ "$PLUGIN" != "" ]; then
-                ssh -o StrictHostKeyChecking=no \
+                ssh -o StrictHostKeyChecking=accept-new \
                   "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}" \
                   "if [ -d \"$REMOTE_PATH\" ]; then rm -rf \"$REMOTE_PATH\"; fi" 2>/dev/null || true
                 echo "✅ $PLUGIN vom Server entfernt"

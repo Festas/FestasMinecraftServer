@@ -15,14 +15,14 @@ public class GuildConfig {
     private String databaseHost = "localhost";
     private int databasePort = 3306;
     private String databaseName = "minecraft_guilds";
-    private String databaseUsername = "root";
-    private String databasePassword = "";
+    private String databaseUsername = "CHANGE_ME";
+    private String databasePassword = "CHANGE_ME";
     private int databasePoolSize = 10;
 
     // Redis-Standards
     private String redisHost = "localhost";
     private int redisPort = 6379;
-    private String redisPassword = "";
+    private String redisPassword = "CHANGE_ME";
     private String redisChannel = "crosscraft-guilds";
 
     // Gilden-Standards

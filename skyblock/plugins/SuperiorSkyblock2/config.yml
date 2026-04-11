@@ -21,8 +21,8 @@ database:
   address: 'localhost'
   port: 3306
   db-name: 'SuperiorSkyblock'
-  user-name: 'root'
-  password: 'root'
+  user-name: 'CHANGE_ME'
+  password: 'CHANGE_ME'
   prefix: ''
   useSSL: true
   allowPublicKeyRetrieval: true
