@@ -1,0 +1,14 @@
+# DecentHolograms - Survival/Tycoon NPC Hologram
+# Place above the Survival NPC
+location:
+  world: lobby
+  x: 5.5
+  y: 68.0
+  z: -5.5
+lines:
+  - '&2&l🌳 &a&lSURVIVAL / TYCOON &2&l🌳'
+  - '&725 Ränge • Dynamische Börse • Boss-Events'
+  - '&7Spieler online: &e%server_online_survival%'
+display-range: 32
+update-range: 32
+update-interval: 200

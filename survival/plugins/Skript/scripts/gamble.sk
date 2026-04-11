@@ -80,6 +80,9 @@ command /gamble <text>:
             # Verlust tracken für tägliches Limit
             add {_bet} to {casino_loss::%uuid of {_p}%}
             
+            # Economy Monitor: Gamble-Verlust loggen
+            logGamble({_p}, {_bet}, false)
+            
             delete {_msgs::*}
             # Die Klassiker
             add "Wallah, dein Geld ist weg. Hops genommen!" to {_msgs::*}
@@ -141,6 +144,10 @@ command /gamble <text>:
             set {_win} to {_bet} * 1.5
             add {_win} to {_p}'s balance
             
+            # Achievement & Economy tracking
+            unlockAchievement({_p}, "gamble_win")
+            logGamble({_p}, {_win}, true)
+            
             delete {_msgs::*}
             add "Besser als nix, Habibi." to {_msgs::*}
             add "Kleines Taschengeld für die S-Bahn." to {_msgs::*}
@@ -159,6 +166,10 @@ command /gamble <text>:
         else if {_luck} <= 920:
             set {_win} to {_bet} * 2
             add {_win} to {_p}'s balance
+            
+            # Achievement & Economy tracking
+            unlockAchievement({_p}, "gamble_win")
+            logGamble({_p}, {_win}, true)
             
             delete {_msgs::*}
             add "Schmeckt, Digga! Verdoppelt." to {_msgs::*}
@@ -179,6 +190,10 @@ command /gamble <text>:
             set {_win} to {_bet} * 4
             add {_win} to {_p}'s balance
             
+            # Achievement & Economy tracking
+            unlockAchievement({_p}, "gamble_win")
+            logGamble({_p}, {_win}, true)
+            
             delete {_msgs::*}
             add "Oha, vierfach! Macher, kein Lacher." to {_msgs::*}
             add "Wallah Krise... für die Bank! Du hast gewonnen." to {_msgs::*}
@@ -197,6 +212,11 @@ command /gamble <text>:
         else:
             set {_win} to {_bet} * 10
             add {_win} to {_p}'s balance
+            
+            # Achievement & Economy tracking
+            unlockAchievement({_p}, "gamble_win")
+            unlockAchievement({_p}, "gamble_jackpot")
+            logGamble({_p}, {_win}, true)
             
             delete {_msgs::*}
             add "JACKPOT! System gedribbelt!" to {_msgs::*}

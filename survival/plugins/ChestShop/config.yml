@@ -1,14 +1,34 @@
-language: en
+# ChestShop Configuration - Player-to-Player Trading
+# Erlaubt Spielern eigene Shops zu erstellen
+language: de
 
-World_Blacklist:
-#- world_nether
-#- world_end
+World_Blacklist: []
 
 Item_Blacklist:
-#- ENDER_DRAGON_SPAWN_EGG
+# Verbiete bestimmte Items im Handel
+- BEDROCK
+- BARRIER
+- COMMAND_BLOCK
+- STRUCTURE_BLOCK
+- JIGSAW
+- SPAWNER
 
-# Taxes added when creating shops (in %) //CURRENTLY NOT WORKING!
+# Taxes added when creating shops (in %)
+# 5% Steuer auf alle Transaktionen = Economy Sink
 Taxes: 5
 
-# prevents Hoppers and Hopper Minecrads from stealing items from shops
+# prevents Hoppers and Hopper Minecarts from stealing items from shops
 Shop_hopper_protection: true
+
+# Restrict shops to plot owners only
+# This ensures only plot owners can create shops on their plot
+restrict_to_plot: true
+
+# Maximum number of shops a player can create
+max_shops: 10
+
+# Signs display format
+# Line 1: Player name (auto-filled)
+# Line 2: Quantity
+# Line 3: Price (B <price> : S <price>)
+# Line 4: Item name
