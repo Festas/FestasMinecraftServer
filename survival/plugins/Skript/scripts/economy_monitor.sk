@@ -50,7 +50,10 @@ command /economy:
             send "{@prefix}&7Aktives Event: &7Keins"
 
         if {boss_active} is true:
-            send "{@prefix}&7Boss-Event: &c%{boss_names::%{boss_id}%}% &7(HP: %{boss_hp}%/%{boss_max_hp}%)"
+            if {boss_names::%{boss_id}%} is set:
+                send "{@prefix}&7Boss-Event: &c%{boss_names::%{boss_id}%}% &7(HP: %{boss_hp}%/%{boss_max_hp}%)"
+            else:
+                send "{@prefix}&7Boss-Event: &cAktiv"
         else:
             send "{@prefix}&7Boss-Event: &7Inaktiv"
 

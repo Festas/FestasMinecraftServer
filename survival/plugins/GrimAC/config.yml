@@ -19,12 +19,11 @@ alerts:
   # Permission to see alerts
   alert-permission: "grim.alerts"
 
-# Punishments
+# Bestrafungen
 punishments:
-  # Enable automatic punishment
+  # Automatische Bestrafung aktivieren
   enabled: true
-  # Commands to execute when a player is flagged
-  # Use {player} for the player name
+  # Befehle bei Erkennung. Nutze {player} für den Spielernamen.
   commands:
     - "cmi tempban {player} 1h &cAnti-Cheat: Verdächtige Aktivität erkannt."
 

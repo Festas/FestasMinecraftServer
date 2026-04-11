@@ -254,8 +254,10 @@ function endBossEvent(victory: boolean):
         loop {boss_participants::*}:
             set {_pName} to loop-value
             set {_uuid} to loop-index
-            # Geld geben (via CMI weil es sicherer ist)
-            execute console command "cmi money give %{_pName}% %{_reward}%"
+            # Spielername validieren (Schutz gegen Command Injection)
+            if {_pName} matches "^[a-zA-Z0-9_\.]{1,32}$":
+                # Geld geben (via CMI weil es sicherer ist)
+                execute console command "cmi money give %{_pName}% %{_reward}%"
 
             # Boss-Kill Achievements tracken
             if {stats.bosskills.%{_uuid}%} is not set:

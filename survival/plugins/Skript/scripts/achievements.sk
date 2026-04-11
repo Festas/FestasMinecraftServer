@@ -172,10 +172,11 @@ command /achievements:
         set {_count} to {achievement.count.%player's uuid%}
         if {_count} is not set:
             set {_count} to 0
+        set {_total} to size of {ach_names::*}
 
         send ""
         send "&8&m─────────────────────────────────────"
-        send "&6&l  🏆 DEINE ACHIEVEMENTS (%{_count}%/23)"
+        send "&6&l  🏆 DEINE ACHIEVEMENTS (%{_count}%/%{_total}%)"
         send "&8&m─────────────────────────────────────"
         send ""
 

@@ -127,7 +127,8 @@ every 6 hours:
     # Samstags automatisch ein Event starten
     set {_today} to now
     set {_dayName} to {_today} formatted as "EEEE"
-    if {_dayName} contains "Samstag":
+    # Skript nutzt standardmäßig englische Locale
+    if {_dayName} contains "Saturday":
         if {weekly_event} is not set:
             set {_eventID} to random integer between 1 and 5
             set {weekly_event} to {_eventID}

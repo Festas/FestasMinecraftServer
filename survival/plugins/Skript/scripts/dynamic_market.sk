@@ -110,19 +110,19 @@ every 30 minutes:
         # Verkaufsdruck: Je mehr verkauft, desto mehr sinkt der Preis
         if {_sold} > 0:
             # Pro 100 verkaufte Items sinkt der Preis um sell_pressure %
-            set {_pressure} to {_sold} / 100 * 0.5
+            set {_pressure} to {_sold} / 100 * {@sell_pressure}
             if {_pressure} > 10:
                 set {_pressure} to 10
             subtract {_pressure} from {_current}
         else:
             # Kein Verkauf → Preis erholt sich
-            add 2.0 to {_current}
+            add {@recovery_rate} to {_current}
 
-        # Grenzen einhalten (50% - 200%)
-        if {_current} < 50:
-            set {_current} to 50
-        if {_current} > 200:
-            set {_current} to 200
+        # Grenzen einhalten
+        if {_current} < {@min_price_pct}:
+            set {_current} to {@min_price_pct}
+        if {_current} > {@max_price_pct}:
+            set {_current} to {@max_price_pct}
 
         set {boerse_multi::%{_item}%} to {_current}
         # Verkaufszähler zurücksetzen
