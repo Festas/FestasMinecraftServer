@@ -126,6 +126,9 @@ command /sthc:
         wait 5 ticks
         execute console command "luckperms group tycoon_gold permission set shopguiplus.price-modifier.p6 true"
         wait 5 ticks
+        # Multi-Plot: Ab Gold (Tier 6) dürfen Spieler 2 Plots haben
+        execute console command "luckperms group tycoon_gold permission set plots.plot.2 world=tycoon"
+        wait 5 ticks
         execute console command "luckperms group tycoon_gold parent add tycoon_kupfer"
 
         send "&eGold fertig." to console
@@ -221,6 +224,9 @@ command /sthc:
         wait 5 ticks
         execute console command "luckperms group tycoon_obsidian permission set shopguiplus.price-modifier.p11 true"
         wait 5 ticks
+        # Multi-Plot: Ab Obsidian (Tier 11) dürfen Spieler 3 Plots haben
+        execute console command "luckperms group tycoon_obsidian permission set plots.plot.3 world=tycoon"
+        wait 5 ticks
         execute console command "luckperms group tycoon_obsidian parent add tycoon_diamant"
         
         send "&eObsidian fertig." to console
@@ -314,6 +320,9 @@ command /sthc:
         wait 5 ticks
         execute console command "luckperms group tycoon_andesit permission set shopguiplus.price-modifier.p16 true"
         wait 5 ticks
+        # Multi-Plot: Ab Andesit (Tier 16) dürfen Spieler 4 Plots haben
+        execute console command "luckperms group tycoon_andesit permission set plots.plot.4 world=tycoon"
+        wait 5 ticks
         execute console command "luckperms group tycoon_andesit parent add tycoon_diorit"
         send "&eAndesit fertig." to console
         wait 10 ticks
@@ -403,6 +412,9 @@ command /sthc:
         execute console command "luckperms group tycoon_endstein permission set tycoon.rank.21 true"
         wait 5 ticks
         execute console command "luckperms group tycoon_endstein permission set shopguiplus.price-modifier.p21 true"
+        wait 5 ticks
+        # Multi-Plot: Ab Endstein (Tier 21) dürfen Spieler 5 Plots haben
+        execute console command "luckperms group tycoon_endstein permission set plots.plot.5 world=tycoon"
         wait 5 ticks
         execute console command "luckperms group tycoon_endstein parent add tycoon_purpur"
         send "&eEndstein fertig." to console
