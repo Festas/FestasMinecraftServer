@@ -17,7 +17,7 @@ foods:
         material: APPLE
         quantity: 1
       buyPrice: 30
-      sellPrice: 0.05
+      sellPrice: 5
       slot: 19
       page: 1
 
@@ -27,7 +27,7 @@ foods:
         material: GOLDEN_APPLE
         quantity: 1
       buyPrice: 500
-      sellPrice: -1
+      sellPrice: 50
       slot: 20
       page: 1
 
@@ -47,7 +47,7 @@ foods:
         material: COOKIE
         quantity: 1
       buyPrice: 30
-      sellPrice: -1
+      sellPrice: 5
       slot: 22
       page: 1
 
@@ -57,7 +57,7 @@ foods:
         material: CAKE
         quantity: 1
       buyPrice: 300
-      sellPrice: -1
+      sellPrice: 30
       slot: 23
       page: 1
 
@@ -67,7 +67,7 @@ foods:
         material: PUMPKIN_PIE
         quantity: 1
       buyPrice: 120
-      sellPrice: -1
+      sellPrice: 15
       slot: 24
       page: 1
 
@@ -77,7 +77,7 @@ foods:
         material: BREAD
         quantity: 1
       buyPrice: 50
-      sellPrice: -1
+      sellPrice: 8
       slot: 25
       page: 1
 
@@ -87,7 +87,7 @@ foods:
         material: BAKED_POTATO
         quantity: 1
       buyPrice: 50
-      sellPrice: -1
+      sellPrice: 8
       slot: 28
       page: 1
 
@@ -97,7 +97,7 @@ foods:
         material: COOKED_MUTTON
         quantity: 1
       buyPrice: 50
-      sellPrice: -1
+      sellPrice: 8
       slot: 29
       page: 1
 
@@ -107,7 +107,7 @@ foods:
         material: COOKED_CHICKEN
         quantity: 1
       buyPrice: 50
-      sellPrice: -1
+      sellPrice: 8
       slot: 30
       page: 1
 
@@ -117,7 +117,7 @@ foods:
         material: COOKED_BEEF
         quantity: 1
       buyPrice: 50
-      sellPrice: -1
+      sellPrice: 8
       slot: 31
       page: 1
 
@@ -127,7 +127,7 @@ foods:
         material: COOKED_PORKCHOP
         quantity: 1
       buyPrice: 50
-      sellPrice: -1
+      sellPrice: 8
       slot: 32
       page: 1
 
@@ -137,7 +137,7 @@ foods:
         material: COD
         quantity: 1
       buyPrice: 50
-      sellPrice: -1
+      sellPrice: 8
       slot: 33
       page: 1
 
@@ -147,7 +147,7 @@ foods:
         material: PUFFERFISH
         quantity: 1
       buyPrice: 500
-      sellPrice: -1
+      sellPrice: 50
       slot: 34
       page: 1
 
@@ -157,7 +157,7 @@ foods:
         material: TROPICAL_FISH
         quantity: 1
       buyPrice: 50
-      sellPrice: -1
+      sellPrice: 8
       slot: 37
       page: 1
 
@@ -167,7 +167,7 @@ foods:
         material: COOKED_COD
         quantity: 1
       buyPrice: 50
-      sellPrice: -1
+      sellPrice: 8
       slot: 38
       page: 1
 
@@ -177,7 +177,7 @@ foods:
         material: COOKED_SALMON
         quantity: 1
       buyPrice: 50
-      sellPrice: -1
+      sellPrice: 8
       slot: 39
       page: 1
 
@@ -187,7 +187,7 @@ foods:
         material: GLOW_BERRIES
         quantity: 1
       buyPrice: 100
-      sellPrice: 0.05
+      sellPrice: 15
       slot: 40
       page: 1
 

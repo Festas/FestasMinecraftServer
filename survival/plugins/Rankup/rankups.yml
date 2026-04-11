@@ -212,7 +212,7 @@
     rank: 'tycoon_magma'
     next: 'tycoon_bedrock'
     requirements:
-      - 'money 250000000000'
+      - 'money 175000000000'
     commands:
       - 'tycoon_perform_rankup {{player}} bedrock tier25_1'
 

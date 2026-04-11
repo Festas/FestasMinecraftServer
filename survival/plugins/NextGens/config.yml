@@ -40,7 +40,7 @@ database:
 #       and player need to fix the broken generator with money by
 #       shift + right-clicking the generator
 corruption:
-  enabled: false
+  enabled: true
   # How often should corruption happen (in minutes)
   interval: 180
   # Should we corrupt the generator if the player are online?

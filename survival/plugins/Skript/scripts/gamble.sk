@@ -72,9 +72,11 @@ command /gamble <text>:
         set {_luck} to random integer between 1 and 1000
         
         # --- 5. ERGEBNISSE ---
+        # Odds: 62% lose, 18% x1.5, 12% x2, 6% x4, 2% x10
+        # EV = 0.95 (5% house edge)
         
-        # A) VERLOREN (70%)
-        if {_luck} <= 700:
+        # A) VERLOREN (62%)
+        if {_luck} <= 620:
             # Verlust tracken für tägliches Limit
             add {_bet} to {casino_loss::%uuid of {_p}%}
             
@@ -134,8 +136,8 @@ command /gamble <text>:
 
                 give 1 of {_item} to {_p}
             
-        # B) KLEINER GEWINN - 1.5x (15%)
-        else if {_luck} <= 850:
+        # B) KLEINER GEWINN - 1.5x (18%)
+        else if {_luck} <= 800:
             set {_win} to {_bet} * 1.5
             add {_win} to {_p}'s balance
             
@@ -153,8 +155,8 @@ command /gamble <text>:
             send "%{_prefix}%&e%{_msg}%" to {_p}
             play sound "entity.experience_orb.pickup" to {_p}
             
-        # C) VERDOPPELT - 2x (9%)
-        else if {_luck} <= 940:
+        # C) VERDOPPELT - 2x (12%)
+        else if {_luck} <= 920:
             set {_win} to {_bet} * 2
             add {_win} to {_p}'s balance
             
@@ -172,8 +174,8 @@ command /gamble <text>:
             send "%{_prefix}%&a%{_msg}%" to {_p}
             play sound "entity.player.levelup" to {_p}
             
-        # D) BABA GEWINN - 4x (4%)
-        else if {_luck} <= 999:
+        # D) BABA GEWINN - 4x (6%)
+        else if {_luck} <= 980:
             set {_win} to {_bet} * 4
             add {_win} to {_p}'s balance
             
