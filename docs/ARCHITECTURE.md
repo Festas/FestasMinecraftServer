@@ -84,35 +84,52 @@ Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
 
 ---
 
-### 3. Survival Server
+### 3. Survival / Tycoon Server
 
-**Funktion:** Standard Minecraft Survival mit Economy und Claims
+**Funktion:** Survival-Server mit integriertem Tycoon-Gamemode (Generator-basierte Economy mit 25-Tier-Progression)
 
 **Version:** Paper 1.21.1
 
 **Hauptplugins:**
+- **CMI** - Core Management (Primäres Management-Plugin: Economy, Homes, Teleport, Kits, Chat)
+- **EssentialsX** - Basis-Befehle (Konfliktbefehle deaktiviert — CMI hat Priorität)
 - **Jobs** - Job-System für Economy
-- **PlotSquared** - Land-Claiming-System
+- **PlotSquared** - Land-Claiming-System (Tycoon-Plots + Freebuild)
 - **ShopGUIPlus** - Shop-GUI für Economy
-- **Rankup** - Rang-Progression-System
+- **Rankup** - Rang-Progression-System (25 Tycoon-Ränge: Erde → Bedrock)
+- **NextGens** - Generator-System (Tycoon-Kern)
 - **Bluemap** - 3D-Web-Karte
 - **GlobalMarketPlus** - Globaler Marktplatz
-- **CMI** - Core Management
+- **ChestShop** - Spieler-Shops (Schilder-basiert)
 - **LuckPerms** - Permissions
-- **EssentialsX** - Basis-Befehle
 - **Vault** - Economy API
-- **GriefPrevention** - Alternative Claims
+- **Skript** - Custom Tycoon-Logik (Sell Wand, Chunk Collector, Nitwit Boss, Casino)
+- **WorldGuard** - Regionen-Schutz (gehärtet: TNT/Creeper/Feuer/Wither blockiert)
+
+**Tycoon-Gamemode:**
+- 25-Tier Rangaufstieg (Erde → Stein → Kohle → ... → Bedrock)
+- Generator-basierte Item-Produktion mit Sell-Wand-System
+- Chunk Collector (automatisches Item-Sammeln im 20-Block-Radius)
+- Casino/Gambling-System mit täglichem Verlustlimit
+- Custom Nitwit-Boss-Encounters (zufällige Spawn-Events)
+- Plot-Reset bei Rangaufstieg
 
 **Datenbank:**
 - **MySQL/MariaDB** (separiert von MMO-Servern)
   - Spielerdaten (Jobs, Claims, Ranks)
-  - Economy-Daten
+  - Economy-Daten (CMI, Logging aktiviert)
   - Shop-Transaktionen
 
 **Besonderheiten:**
 - **Strikte Trennung von MMO-Servern** (keine Daten-Synchronisation)
 - Eigene Economy (nicht geteilt mit RPG/Skyblock)
-- Standard Survival Gameplay
+- Tycoon-Gamemode als primäres Spielerlebnis neben Standard-Survival
+- Geyser/Floodgate für Bedrock-Spieler-Support
+
+**Sicherheitshinweise:**
+- WorldGuard: TNT, Creeper, Wither, Feuer global blockiert
+- Skript-Commands: Spielername-Validierung gegen Command Injection
+- Anti-Cheat: **Noch nicht installiert** — Vulcan Premium wird empfohlen (siehe Anti-Cheat Abschnitt unten)
 
 ---
 
@@ -479,6 +496,9 @@ Bei kritischen Fehlern:
 
 ### Anti-Cheat
 - **Empfehlung:** Vulcan Anti-Cheat (Premium) oder Spartan Anti-Cheat
+- **Aktueller Status:**
+  - ❌ **Survival/Tycoon:** Kein Anti-Cheat installiert — **PRIORITÄT!** Besonders kritisch wegen Casino/Gambling und Economy-System
+  - RPG/Skyblock: Status prüfen
 - **Konfigurationsrichtlinien:**
   - Bewegungs-Checks (Fly, Speed, NoClip) auf allen Servern aktiv
   - Kampf-Checks (KillAura, Reach, AutoClicker) besonders auf RPG/Skyblock

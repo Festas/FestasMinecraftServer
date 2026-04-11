@@ -176,8 +176,56 @@ overridden-commands:
 # You should not need to disable commands used by other plugins, as they will automatically get priority.
 # See https://breezewiki.com/bukkit/wiki/Commands.yml#aliases to map commands to other plugins.
 disabled-commands:
-  #- nick
-  #- clear
+  # --- Disabled to avoid conflicts with CMI (primary management plugin) ---
+  # Economy commands (CMI economy is primary)
+  - bal
+  - balance
+  - pay
+  - eco
+  - baltop
+  # Teleport commands (CMI handles teleportation)
+  - tp
+  - tpa
+  - tpaccept
+  - tpdeny
+  - tpahere
+  - tpall
+  - tphere
+  - tpo
+  - tpohere
+  - tppos
+  # Home commands (CMI handles homes)
+  - home
+  - sethome
+  - delhome
+  - homes
+  # Spawn commands (CMI handles spawn)
+  - spawn
+  - setspawn
+  # Kit commands (CMI handles kits)
+  - kit
+  - kits
+  # Warp commands (CMI handles warps)
+  - warp
+  - setwarp
+  - delwarp
+  # Chat commands (CMI handles chat formatting)
+  - nick
+  - reply
+  - r
+  - msg
+  # Misc commands handled by CMI
+  - back
+  - fly
+  - god
+  - heal
+  - feed
+  - time
+  - weather
+  - gamemode
+  - gm
+  - clear
+  - clearinventory
 
 # Whether Essentials should show detailed command usages.
 # If set to false, Essentials will collapse all usages in to one single usage message.

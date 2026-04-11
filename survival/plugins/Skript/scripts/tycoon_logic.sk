@@ -2,6 +2,13 @@
 # Beinhaltet: Preise (ItemType-Safe), SellWand, Start-Logik, Reset.
 # Optionen entfernt & Loop-Values gefixt.
 
+# --- HELPER: Spielername validieren (Schutz gegen Command Injection via Geyser/Floodgate) ---
+# Java Edition: a-zA-Z0-9_ (max 16 chars), Floodgate/Bedrock: Prefix mit Punkt möglich (max 32 chars)
+function isValidPlayerName(name: text) :: boolean:
+    if {_name} matches "^[a-zA-Z0-9_\.]{1,32}$":
+        return true
+    return false
+
 # --- 1. PREISE LADEN ---
 on script load:
     delete {tycoon_prices::*}
@@ -156,6 +163,11 @@ on right click:
 function giveTycoonKit(p: player, genID: text):
     set {_pName} to name of {_p}
     
+    # Sicherheitscheck: Spielername validieren
+    if isValidPlayerName({_pName}) is false:
+        send "&8[&6Tycoon&8] &cFehler: Ungültiger Spielername!" to {_p}
+        stop
+    
     execute console command "nextgens give %{_pName}% %{_genID}% 1"
     
     # NEU: Unser Markt-Zepter geben
@@ -186,6 +198,10 @@ command /tycoon start:
         make player execute command "plot auto"
         
         set {_pName} to name of player
+        # Sicherheitscheck: Spielername validieren
+        if isValidPlayerName({_pName}) is false:
+            send "%{_prefix}%&cFehler: Ungültiger Spielername!" to player
+            stop
         execute console command "luckperms user %{_pName}% parent add tycoon_erde world=%{_world}%"
         execute console command "luckperms user %{_pName}% permission set tycoon.started true world=%{_world}%"
         
@@ -208,6 +224,11 @@ command /tycoon_buy_system <text> <number> <text>:
         if {_balance} >= {_price}:
             remove {_price} from {_p}'s balance
             set {_pName} to name of {_p}
+            # Sicherheitscheck: Spielername validieren
+            if isValidPlayerName({_pName}) is false:
+                add {_price} to {_p}'s balance
+                send "&8[&6Shop&8] &cFehler: Ungültiger Spielername!"
+                stop
             execute console command "nextgens give %{_pName}% %{_genID}% 1"
             
             send "&8[&6Shop&8] &aDu hast %{_name}% &agekauft für &e$%{_price}%&a!"
@@ -243,6 +264,11 @@ command /tycoon_perform_rankup <player> <text> <text>:
         set {_targetGen} to arg-3
         set {_pName} to name of {_p}
         set {_world} to "tycoon"
+        
+        # Sicherheitscheck: Spielername validieren
+        if isValidPlayerName({_pName}) is false:
+            send "&8[&6Tycoon&8] &cFehler: Ungültiger Spielername!" to {_p}
+            stop
         
         send "&8[&6Tycoon&8] &eAufstieg wird vorbereitet... &7(Bitte warten)" to {_p}
         
