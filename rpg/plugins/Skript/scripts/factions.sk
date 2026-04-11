@@ -1,0 +1,458 @@
+# ============================================================
+#  Fraktions-System — RPG Server
+#  Befehle: /fraktion, /fraktion beitreten, /fraktion verlassen
+# ============================================================
+
+options:
+    prefix: &b&l⚜ Fraktion &8» &r
+    leave_cooldown_days: 7
+    max_reputation: 10000
+    rep_per_mob_kill: 5
+    rep_per_quest: 50
+    vendor_tier1_rep: 1000
+    vendor_tier2_rep: 3000
+    vendor_tier3_rep: 6000
+    vendor_tier4_rep: 9000
+
+# ============================================================
+#  Hilfsfunktionen
+# ============================================================
+
+function factionDisplayName(faction: text) :: text:
+    if {_faction} is "sonnenorden":
+        return "&e☀ Sonnenorden"
+    else if {_faction} is "schattenklaue":
+        return "&8🗡 Schattenklaue"
+    else if {_faction} is "eisenwacht":
+        return "&7🛡 Eisenwacht"
+    else if {_faction} is "naturzirkel":
+        return "&a🌿 Naturzirkel"
+    return "&7Unbekannt"
+
+function factionDescription(faction: text) :: text:
+    if {_faction} is "sonnenorden":
+        return "&7Paladine des Lichts — Heilung und Schutz"
+    else if {_faction} is "schattenklaue":
+        return "&7Assassinen der Nacht — Hinterlist und Schaden"
+    else if {_faction} is "eisenwacht":
+        return "&7Krieger des Stahls — Verteidigung und Stärke"
+    else if {_faction} is "naturzirkel":
+        return "&7Druiden der Natur — Harmonie und Erneuerung"
+    return "&7Keine Beschreibung"
+
+function factionColor(faction: text) :: text:
+    if {_faction} is "sonnenorden":
+        return "&e"
+    else if {_faction} is "schattenklaue":
+        return "&8"
+    else if {_faction} is "eisenwacht":
+        return "&7"
+    else if {_faction} is "naturzirkel":
+        return "&a"
+    return "&7"
+
+function factionRepRank(rep: number) :: text:
+    if {_rep} >= 9000:
+        return "&6&lGeleiter"
+    else if {_rep} >= 6000:
+        return "&5Erwählter"
+    else if {_rep} >= 3000:
+        return "&9Veteran"
+    else if {_rep} >= 1000:
+        return "&aMitglied"
+    else if {_rep} >= 500:
+        return "&eAnwärter"
+    return "&7Rekrut"
+
+function factionMemberCount(faction: text) :: number:
+    set {_count} to 0
+    loop {faction.members.%{_faction}%::*}:
+        add 1 to {_count}
+    return {_count}
+
+function factionRepBar(rep: number) :: text:
+    set {_percent} to floor({_rep} / {@max_reputation} * 20)
+    set {_bar} to ""
+    loop 20 times:
+        if loop-number <= {_percent}:
+            set {_bar} to "%{_bar}%&a█"
+        else:
+            set {_bar} to "%{_bar}%&7░"
+    return {_bar}
+
+function applyFactionEffects(p: player):
+    set {_faction} to {faction.%{_p}%.current}
+    if {_faction} is not set:
+        return
+    set {_rep} to {faction.%{_p}%.%{_faction}%.reputation} ? 0
+    # Base faction passive
+    if {_faction} is "sonnenorden":
+        apply regeneration 1 without particles to {_p} for 999 days
+    else if {_faction} is "schattenklaue":
+        apply speed 1 without particles to {_p} for 999 days
+    else if {_faction} is "eisenwacht":
+        apply resistance 1 without particles to {_p} for 999 days
+    else if {_faction} is "naturzirkel":
+        apply saturation 1 without particles to {_p} for 999 days
+
+function removeFactionEffects(p: player):
+    remove potion effect of regeneration from {_p}
+    remove potion effect of speed from {_p}
+    remove potion effect of resistance from {_p}
+    remove potion effect of saturation from {_p}
+
+function openFactionMenu(p: player):
+    set {_gui} to chest inventory with 4 rows named "&b&l⚜ Fraktionen"
+
+    set {_current} to {faction.%{_p}%.current}
+
+    # Sonnenorden
+    set {_s_count} to factionMemberCount("sonnenorden")
+    if {_current} is "sonnenorden":
+        set slot 10 of {_gui} to sunflower named "&e&l☀ Sonnenorden &a(Deine Fraktion)" with lore factionDescription("sonnenorden"), "", "&7Mitglieder: &e%{_s_count}%", "", "&7Klasse: &ePaladin", "&7Passive: &aRegeneration", "" and "&c▶ Bereits beigetreten"
+    else:
+        set slot 10 of {_gui} to sunflower named "&e&l☀ Sonnenorden" with lore factionDescription("sonnenorden"), "", "&7Mitglieder: &e%{_s_count}%", "", "&7Klasse: &ePaladin", "&7Passive: &aRegeneration", "" and "&a▶ Klicke zum Beitreten"
+
+    # Schattenklaue
+    set {_sk_count} to factionMemberCount("schattenklaue")
+    if {_current} is "schattenklaue":
+        set slot 12 of {_gui} to wither skeleton skull named "&8&l🗡 Schattenklaue &a(Deine Fraktion)" with lore factionDescription("schattenklaue"), "", "&7Mitglieder: &e%{_sk_count}%", "", "&7Klasse: &8Assassine", "&7Passive: &aGeschwindigkeit", "" and "&c▶ Bereits beigetreten"
+    else:
+        set slot 12 of {_gui} to wither skeleton skull named "&8&l🗡 Schattenklaue" with lore factionDescription("schattenklaue"), "", "&7Mitglieder: &e%{_sk_count}%", "", "&7Klasse: &8Assassine", "&7Passive: &aGeschwindigkeit", "" and "&a▶ Klicke zum Beitreten"
+
+    # Eisenwacht
+    set {_e_count} to factionMemberCount("eisenwacht")
+    if {_current} is "eisenwacht":
+        set slot 14 of {_gui} to iron chestplate named "&7&l🛡 Eisenwacht &a(Deine Fraktion)" with lore factionDescription("eisenwacht"), "", "&7Mitglieder: &e%{_e_count}%", "", "&7Klasse: &7Krieger", "&7Passive: &aWiderstand", "" and "&c▶ Bereits beigetreten"
+    else:
+        set slot 14 of {_gui} to iron chestplate named "&7&l🛡 Eisenwacht" with lore factionDescription("eisenwacht"), "", "&7Mitglieder: &e%{_e_count}%", "", "&7Klasse: &7Krieger", "&7Passive: &aWiderstand", "" and "&a▶ Klicke zum Beitreten"
+
+    # Naturzirkel
+    set {_n_count} to factionMemberCount("naturzirkel")
+    if {_current} is "naturzirkel":
+        set slot 16 of {_gui} to oak sapling named "&a&l🌿 Naturzirkel &a(Deine Fraktion)" with lore factionDescription("naturzirkel"), "", "&7Mitglieder: &e%{_n_count}%", "", "&7Klasse: &aDruide", "&7Passive: &aSättigung", "" and "&c▶ Bereits beigetreten"
+    else:
+        set slot 16 of {_gui} to oak sapling named "&a&l🌿 Naturzirkel" with lore factionDescription("naturzirkel"), "", "&7Mitglieder: &e%{_n_count}%", "", "&7Klasse: &aDruide", "&7Passive: &aSättigung", "" and "&a▶ Klicke zum Beitreten"
+
+    # Current faction info
+    if {_current} is set:
+        set {_rep} to {faction.%{_p}%.%{_current}%.reputation} ? 0
+        set {_rank} to factionRepRank({_rep})
+        set {_bar} to factionRepBar({_rep})
+        set {_dispName} to factionDisplayName({_current})
+        set slot 31 of {_gui} to book named "&b&lDein Fraktionsstatus" with lore "&7Fraktion: %{_dispName}%", "&7Rang: %{_rank}%", "&7Ruf: &e%{_rep}%&7/{@max_reputation}", {_bar}, "", "&7Händler-Tier 1: %getUnlockStatus({_rep}, {@vendor_tier1_rep})%", "&7Händler-Tier 2: %getUnlockStatus({_rep}, {@vendor_tier2_rep})%", "&7Händler-Tier 3: %getUnlockStatus({_rep}, {@vendor_tier3_rep})%" and "&7Händler-Tier 4: %getUnlockStatus({_rep}, {@vendor_tier4_rep})%"
+    else:
+        set slot 31 of {_gui} to book named "&7&lKeine Fraktion" with lore "&7Du gehörst noch keiner Fraktion an.", "" and "&eWähle oben eine Fraktion aus!"
+
+    open {_gui} to {_p}
+
+function getUnlockStatus(currentRep: number, requiredRep: number) :: text:
+    if {_currentRep} >= {_requiredRep}:
+        return "&a✔ Freigeschaltet"
+    return "&c✖ Benötigt %{_requiredRep}% Ruf"
+
+# ============================================================
+#  Befehle
+# ============================================================
+
+command /fraktion [<text = "info">] [<text>]:
+    aliases: /faction, /frak
+    trigger:
+        if arg-1 is "info":
+            set {_faction} to {faction.%player%.current}
+            if {_faction} is not set:
+                send "{@prefix}&7Du gehörst noch keiner Fraktion an."
+                send "{@prefix}&eNutze &6/fraktion beitreten <Name> &eoder &6/fraktion &eum das Menü zu öffnen."
+                stop
+            set {_name} to factionDisplayName({_faction})
+            set {_desc} to factionDescription({_faction})
+            set {_rep} to {faction.%player%.%{_faction}%.reputation} ? 0
+            set {_rank} to factionRepRank({_rep})
+            set {_bar} to factionRepBar({_rep})
+            set {_members} to factionMemberCount({_faction})
+            send ""
+            send "{@prefix}%{_name}%"
+            send "  %{_desc}%"
+            send ""
+            send "  &7Rang: %{_rank}%"
+            send "  &7Ruf: &e%{_rep}%&7/{@max_reputation}"
+            send "  %{_bar}%"
+            send "  &7Mitglieder: &e%{_members}%"
+            send ""
+            send "  &7Händler Tier 1: %getUnlockStatus({_rep}, {@vendor_tier1_rep})%"
+            send "  &7Händler Tier 2: %getUnlockStatus({_rep}, {@vendor_tier2_rep})%"
+            send "  &7Händler Tier 3: %getUnlockStatus({_rep}, {@vendor_tier3_rep})%"
+            send "  &7Händler Tier 4: %getUnlockStatus({_rep}, {@vendor_tier4_rep})%"
+            send ""
+
+        else if arg-1 is "menu" or "gui" or "menü":
+            openFactionMenu(player)
+
+        else if arg-1 is "beitreten" or "join":
+            if arg-2 is not set:
+                send "{@prefix}&cNutzung: /fraktion beitreten <sonnenorden|schattenklaue|eisenwacht|naturzirkel>"
+                stop
+            set {_target} to arg-2 in lower case
+            # Normalize common variations
+            replace all "ö" in {_target} with "oe"
+            replace all "ü" in {_target} with "ue"
+            set {_valid::*} to "sonnenorden", "schattenklaue", "eisenwacht" and "naturzirkel"
+            if {_valid::*} does not contain {_target}:
+                send "{@prefix}&cUnbekannte Fraktion! Verfügbar:"
+                send "  &e☀ Sonnenorden &8- &7Paladine"
+                send "  &8🗡 Schattenklaue &8- &7Assassinen"
+                send "  &7🛡 Eisenwacht &8- &7Krieger"
+                send "  &a🌿 Naturzirkel &8- &7Druiden"
+                stop
+            if {faction.%player%.current} is set:
+                send "{@prefix}&cDu bist bereits in einer Fraktion!"
+                send "{@prefix}&7Verlasse zuerst deine aktuelle Fraktion mit &e/fraktion verlassen"
+                stop
+            # Check leave cooldown
+            if {faction.%player%.leave_cooldown} is set:
+                set {_now} to now
+                set {_diff} to difference between {faction.%player%.leave_cooldown} and {_now}
+                if {_diff} < {@leave_cooldown_days} days:
+                    set {_remaining} to {@leave_cooldown_days} days - {_diff}
+                    send "{@prefix}&cDu musst noch warten, bevor du einer neuen Fraktion beitreten kannst!"
+                    send "{@prefix}&7Verbleibende Zeit: &e%{_remaining}%"
+                    stop
+
+            # Join faction
+            set {faction.%player%.current} to {_target}
+            set {faction.%player%.%{_target}%.reputation} to {faction.%player%.%{_target}%.reputation} ? 0
+            set {faction.%player%.%{_target}%.joined} to now
+            add "%player%" to {faction.members.%{_target}%::*}
+            delete {faction.%player%.leave_cooldown}
+
+            set {_name} to factionDisplayName({_target})
+            send ""
+            send "{@prefix}&a&lWillkommen bei %{_name}%&a&l!"
+            send "{@prefix}%factionDescription({_target})%"
+            send ""
+            play sound "ui.toast.challenge_complete" with volume 1 and pitch 1 to player
+            applyFactionEffects(player)
+
+            # Announce to faction
+            loop {faction.members.%{_target}%::*}:
+                set {_member} to loop-value parsed as player
+                if {_member} is online:
+                    if {_member} is not player:
+                        send "{@prefix}&e%player% &7ist der Fraktion %{_name}% &7beigetreten!" to {_member}
+
+        else if arg-1 is "verlassen" or "leave":
+            if {faction.%player%.current} is not set:
+                send "{@prefix}&cDu bist in keiner Fraktion!"
+                stop
+            set {_faction} to {faction.%player%.current}
+            set {_name} to factionDisplayName({_faction})
+            send "{@prefix}&eDu hast %{_name}% &everlassen."
+            send "{@prefix}&7Du kannst in &e{@leave_cooldown_days} Tagen &7einer neuen Fraktion beitreten."
+
+            # Announce to faction
+            loop {faction.members.%{_faction}%::*}:
+                set {_member} to loop-value parsed as player
+                if {_member} is online:
+                    if {_member} is not player:
+                        send "{@prefix}&e%player% &7hat die Fraktion %{_name}% &7verlassen." to {_member}
+
+            remove "%player%" from {faction.members.%{_faction}%::*}
+            delete {faction.%player%.current}
+            set {faction.%player%.leave_cooldown} to now
+            removeFactionEffects(player)
+
+        else if arg-1 is "chat" or "fc":
+            if {faction.%player%.current} is not set:
+                send "{@prefix}&cDu bist in keiner Fraktion!"
+                stop
+            if arg-2 is not set:
+                # Toggle faction chat
+                if {faction.%player%.chat_enabled} is true:
+                    set {faction.%player%.chat_enabled} to false
+                    send "{@prefix}&eFraktionschat &cdeaktiviert&e."
+                else:
+                    set {faction.%player%.chat_enabled} to true
+                    send "{@prefix}&eFraktionschat &aaktiviert&e."
+                    send "{@prefix}&7Alle Nachrichten gehen jetzt an deine Fraktion."
+                stop
+
+        else if arg-1 is "liste" or "list":
+            send ""
+            send "{@prefix}&e&lAlle Fraktionen:"
+            send ""
+            set {_factions::*} to "sonnenorden", "schattenklaue", "eisenwacht" and "naturzirkel"
+            loop {_factions::*}:
+                set {_f} to loop-value
+                set {_name} to factionDisplayName({_f})
+                set {_desc} to factionDescription({_f})
+                set {_members} to factionMemberCount({_f})
+                send "  %{_name}% &8- %{_desc}%"
+                send "    &7Mitglieder: &e%{_members}%"
+                send ""
+
+        else:
+            send "{@prefix}&eFraktions-Befehle:"
+            send "  &b/fraktion &8- &7Zeigt Fraktionsinfo"
+            send "  &b/fraktion menü &8- &7Öffnet Fraktionsmenü"
+            send "  &b/fraktion beitreten <Name> &8- &7Fraktion beitreten"
+            send "  &b/fraktion verlassen &8- &7Fraktion verlassen"
+            send "  &b/fraktion chat &8- &7Fraktionschat umschalten"
+            send "  &b/fraktion liste &8- &7Zeigt alle Fraktionen"
+
+# ============================================================
+#  GUI-Klick-Handler
+# ============================================================
+
+on inventory click:
+    if name of event-inventory is "&b&l⚜ Fraktionen":
+        cancel event
+        if name of event-slot contains "Sonnenorden":
+            if name of event-slot does not contain "Deine Fraktion":
+                close player's inventory
+                make player execute command "/fraktion beitreten sonnenorden"
+        else if name of event-slot contains "Schattenklaue":
+            if name of event-slot does not contain "Deine Fraktion":
+                close player's inventory
+                make player execute command "/fraktion beitreten schattenklaue"
+        else if name of event-slot contains "Eisenwacht":
+            if name of event-slot does not contain "Deine Fraktion":
+                close player's inventory
+                make player execute command "/fraktion beitreten eisenwacht"
+        else if name of event-slot contains "Naturzirkel":
+            if name of event-slot does not contain "Deine Fraktion":
+                close player's inventory
+                make player execute command "/fraktion beitreten naturzirkel"
+
+# ============================================================
+#  Fraktionschat
+# ============================================================
+
+on chat:
+    if {faction.%player%.chat_enabled} is true:
+        cancel event
+        set {_faction} to {faction.%player%.current}
+        if {_faction} is not set:
+            set {faction.%player%.chat_enabled} to false
+            stop
+        set {_color} to factionColor({_faction})
+        set {_name} to factionDisplayName({_faction})
+        loop {faction.members.%{_faction}%::*}:
+            set {_member} to loop-value parsed as player
+            if {_member} is online:
+                send "&8[%{_name}%&8] %{_color}%%player% &8» &f%message%" to {_member}
+
+# ============================================================
+#  Ruf durch Mob-Kills
+# ============================================================
+
+on death of a monster:
+    set {_killer} to attacker
+    if {_killer} is a player:
+        set {_faction} to {faction.%{_killer}%.current}
+        if {_faction} is set:
+            set {_rep} to {faction.%{_killer}%.%{_faction}%.reputation} ? 0
+            if {_rep} < {@max_reputation}:
+                add {@rep_per_mob_kill} to {faction.%{_killer}%.%{_faction}%.reputation}
+                if {faction.%{_killer}%.%{_faction}%.reputation} > {@max_reputation}:
+                    set {faction.%{_killer}%.%{_faction}%.reputation} to {@max_reputation}
+
+                # Check for tier unlock announcements
+                set {_newRep} to {faction.%{_killer}%.%{_faction}%.reputation}
+                set {_oldRep} to {_newRep} - {@rep_per_mob_kill}
+                if {_oldRep} < {@vendor_tier1_rep}:
+                    if {_newRep} >= {@vendor_tier1_rep}:
+                        send "{@prefix}&a&lNeuer Händler freigeschaltet! &7Tier 1 erreicht!" to {_killer}
+                        play sound "entity.player.levelup" with volume 1 and pitch 1 to {_killer}
+                if {_oldRep} < {@vendor_tier2_rep}:
+                    if {_newRep} >= {@vendor_tier2_rep}:
+                        send "{@prefix}&a&lNeuer Händler freigeschaltet! &7Tier 2 erreicht!" to {_killer}
+                        play sound "entity.player.levelup" with volume 1 and pitch 1 to {_killer}
+                if {_oldRep} < {@vendor_tier3_rep}:
+                    if {_newRep} >= {@vendor_tier3_rep}:
+                        send "{@prefix}&a&lNeuer Händler freigeschaltet! &7Tier 3 erreicht!" to {_killer}
+                        play sound "entity.player.levelup" with volume 1 and pitch 1 to {_killer}
+                if {_oldRep} < {@vendor_tier4_rep}:
+                    if {_newRep} >= {@vendor_tier4_rep}:
+                        send "{@prefix}&a&lMaximaler Ruf erreicht! &6Alle Händler freigeschaltet!" to {_killer}
+                        play sound "ui.toast.challenge_complete" with volume 1 and pitch 1 to {_killer}
+
+# ============================================================
+#  Join-Events
+# ============================================================
+
+on join:
+    wait 1 second
+    set {_faction} to {faction.%player%.current}
+    if {_faction} is set:
+        set {_name} to factionDisplayName({_faction})
+        set {_rep} to {faction.%player%.%{_faction}%.reputation} ? 0
+        set {_rank} to factionRepRank({_rep})
+        send "{@prefix}&eWillkommen zurück, %{_rank}% &eder %{_name}%&e!" to player
+        applyFactionEffects(player)
+
+# ============================================================
+#  Admin-Befehle
+# ============================================================
+
+command /fraktionadmin <text> [<player>] [<text>]:
+    permission: faction.admin
+    permission message: {@prefix}&cKeine Berechtigung!
+    trigger:
+        if arg-1 is "setrep":
+            if arg-2 is not set:
+                send "{@prefix}&cNutzung: /fraktionadmin setrep <Spieler> <Menge>"
+                stop
+            if arg-3 is not set:
+                send "{@prefix}&cNutzung: /fraktionadmin setrep <Spieler> <Menge>"
+                stop
+            set {_faction} to {faction.%arg-2%.current}
+            if {_faction} is not set:
+                send "{@prefix}&cDer Spieler ist in keiner Fraktion!"
+                stop
+            set {_amount} to arg-3 parsed as integer
+            if {_amount} < 0:
+                set {_amount} to 0
+            if {_amount} > {@max_reputation}:
+                set {_amount} to {@max_reputation}
+            set {faction.%arg-2%.%{_faction}%.reputation} to {_amount}
+            send "{@prefix}&aRuf von %arg-2% auf &e%{_amount}% &agesetzt."
+
+        else if arg-1 is "kick":
+            if arg-2 is not set:
+                send "{@prefix}&cNutzung: /fraktionadmin kick <Spieler>"
+                stop
+            set {_faction} to {faction.%arg-2%.current}
+            if {_faction} is not set:
+                send "{@prefix}&cDer Spieler ist in keiner Fraktion!"
+                stop
+            remove "%arg-2%" from {faction.members.%{_faction}%::*}
+            delete {faction.%arg-2%.current}
+            send "{@prefix}&a%arg-2% wurde aus der Fraktion entfernt."
+            if arg-2 is online:
+                removeFactionEffects(arg-2)
+                send "{@prefix}&cDu wurdest aus deiner Fraktion entfernt." to arg-2
+
+        else if arg-1 is "addrep":
+            if arg-2 is not set:
+                send "{@prefix}&cNutzung: /fraktionadmin addrep <Spieler> <Menge>"
+                stop
+            if arg-3 is not set:
+                send "{@prefix}&cNutzung: /fraktionadmin addrep <Spieler> <Menge>"
+                stop
+            set {_faction} to {faction.%arg-2%.current}
+            if {_faction} is not set:
+                send "{@prefix}&cDer Spieler ist in keiner Fraktion!"
+                stop
+            set {_amount} to arg-3 parsed as integer
+            add {_amount} to {faction.%arg-2%.%{_faction}%.reputation}
+            if {faction.%arg-2%.%{_faction}%.reputation} > {@max_reputation}:
+                set {faction.%arg-2%.%{_faction}%.reputation} to {@max_reputation}
+            if {faction.%arg-2%.%{_faction}%.reputation} < 0:
+                set {faction.%arg-2%.%{_faction}%.reputation} to 0
+            send "{@prefix}&a%{_amount}% Ruf für %arg-2% hinzugefügt."
+
+        else:
+            send "{@prefix}&eAdmin-Befehle:"
+            send "  &b/fraktionadmin setrep <Spieler> <Menge>"
+            send "  &b/fraktionadmin addrep <Spieler> <Menge>"
+            send "  &b/fraktionadmin kick <Spieler>"
