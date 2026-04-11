@@ -23,7 +23,10 @@ every {@spawn_interval}:
     
     if {_target} is set:
         if world of {_target} is "tycoon" or "world":
-            execute console command "spawn_nitwit %name of {_target}%"
+            # Sicherheitscheck: Spielername validieren bevor wir Console-Commands nutzen
+            set {_targetName} to name of {_target}
+            if {_targetName} matches "^[a-zA-Z0-9_\.]{1,32}$":
+                execute console command "spawn_nitwit %{_targetName}%"
 
 # --- SPAWN BEFEHL ---
 command /spawn_nitwit <player>:
