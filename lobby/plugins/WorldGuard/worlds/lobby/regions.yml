@@ -1,0 +1,49 @@
+# WorldGuard regions for lobby world
+# Global region protects the entire lobby from griefing, PvP, and damage
+regions:
+    __global__:
+        min: {}
+        max: {}
+        members:
+            unique-ids: []
+        owners:
+            unique-ids: []
+        flags:
+            build: deny
+            pvp: deny
+            tnt: deny
+            creeper-explosion: deny
+            other-explosion: deny
+            fire-spread: deny
+            mob-spawning: deny
+            item-drop: deny
+            item-pickup: deny
+            block-break: deny
+            block-place: deny
+            lighter: deny
+            lava-fire: deny
+            lava-flow: deny
+            water-flow: deny
+            snow-fall: deny
+            snow-melt: deny
+            ice-form: deny
+            ice-melt: deny
+            leaf-decay: deny
+            mushroom-growth: deny
+            grass-growth: deny
+            vine-growth: deny
+            crop-growth: deny
+            soil-dry: deny
+            hunger-drain: deny
+            invincibility: allow
+            fall-damage: deny
+            damage-animals: deny
+            interact: allow
+            chest-access: deny
+            pistons: deny
+            enderpearl: deny
+            chorus-fruit-teleport: deny
+            entity-painting-destroy: deny
+            entity-item-frame-destroy: deny
+        priority: 0
+        type: global

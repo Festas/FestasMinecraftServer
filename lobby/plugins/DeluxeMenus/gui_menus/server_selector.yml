@@ -15,7 +15,6 @@ items:
   # --- RPG SERVER ---
   'rpg':
     material: DIAMOND_SWORD
-    # Füge hier "CustomModelData" hinzu, falls du Oraxen Icons nutzen willst
     slot: 11
     priority: 1
     display_name: '&5&l⚔ RPG Server'
@@ -23,12 +22,16 @@ items:
       - '&7Tauche ein in eine Welt voller'
       - '&7Magie, Dungeons und Abenteuer!'
       - ''
+      - '&7Klassen &8| &fKrieger, Magier, Assassine ...'
+      - '&7Dungeons &8| &fInstanzierte Bosskämpfe'
+      - '&7Quests &8| &fEpische Storyline'
+      - ''
       - '&7Status: &aOnline'
       - ''
       - '&e► Klicke zum Verbinden'
     left_click_commands:
       - '[close]'
-      - '[connect] rpg' # Dieser Befehl schickt den Spieler zum RPG Server
+      - '[connect] rpg'
     right_click_commands:
       - '[close]'
       - '[connect] rpg'
@@ -40,26 +43,57 @@ items:
     priority: 1
     display_name: '&6&lFestas Builds'
     lore:
-      - '&7Wähle deinen Spielmodus'
+      - '&7Wähle deinen Spielmodus!'
+      - ''
+      - '&8» &7Website: &fmc.festas-builds.com'
+      - '&8» &7Discord: &fdiscord.gg/festasbuilds'
     left_click_commands:
       - '[refresh]'
 
   # --- SURVIVAL SERVER ---
   'survival':
     material: GRASS_BLOCK
-    slot: 15
+    slot: 12
     priority: 1
-    display_name: '&a&l🌳 Survival'
+    display_name: '&a&l🌳 Survival / Tycoon'
     lore:
       - '&7Klassisches Survival mit'
-      - '&7Plots und Wirtschaft.'
+      - '&7Tycoon-Modus und Wirtschaft!'
+      - ''
+      - '&7Generatoren &8| &f25 Tier-Stufen'
+      - '&7Jobs &8| &f13 Berufe'
+      - '&7Plots &8| &fBaue & Handle'
       - ''
       - '&7Status: &aOnline'
       - ''
       - '&e► Klicke zum Verbinden'
     left_click_commands:
       - '[close]'
-      - '[connect] survival' # Schickt den Spieler zum Survival Server
+      - '[connect] survival'
     right_click_commands:
       - '[close]'
       - '[connect] survival'
+
+  # --- SKYBLOCK SERVER ---
+  'skyblock':
+    material: OAK_SAPLING
+    slot: 14
+    priority: 1
+    display_name: '&b&l🏝 Skyblock'
+    lore:
+      - '&7MMO Skyblock mit RPG-Elementen,'
+      - '&7Minions und Inseln!'
+      - ''
+      - '&7Klassen &8| &fWähle deinen Weg'
+      - '&7Minions &8| &fAutomatische Farmen'
+      - '&7Inseln &8| &fBaue im Himmel'
+      - ''
+      - '&7Status: &aOnline'
+      - ''
+      - '&e► Klicke zum Verbinden'
+    left_click_commands:
+      - '[close]'
+      - '[connect] skyblock'
+    right_click_commands:
+      - '[close]'
+      - '[connect] skyblock'

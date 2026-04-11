@@ -22,15 +22,31 @@
 # and if possible spread them out with a delay by using "delay! 0.3" or similar variable
 # This will allow server to catch up with his calculation instead of forcing him to do all of those commands at once
 firstJoinServer:
-  Enabled: false
+  Enabled: true
   Commands:
-  - cmi msg [playerName] !This is event command example!
-  - cmi msg [playerName] !Originates from sneakingSwapHandItems event!
+  - title! &6&lWillkommen bei &e&lFestas Builds!
+  - delay! 0.2
+  - subtitle! &7Nutze &b/navigator &7um einen Server zu wählen
+  - delay! 0.3
+  - cmi msg [playerName] !&8&m─────────────────────────────────────
+  - cmi msg [playerName] !&6&l  ✦ Willkommen bei Festas Builds! ✦
+  - cmi msg [playerName] !&8&m─────────────────────────────────────
+  - cmi msg [playerName] ! 
+  - cmi msg [playerName] !&7  Nutze &b/navigator &7um einen Server zu wählen.
+  - cmi msg [playerName] !&7  Oder klicke einen der &eNPCs &7an!
+  - cmi msg [playerName] ! 
+  - cmi msg [playerName] !&7  &8» &aDiscord: &fdiscord.gg/festasbuilds
+  - cmi msg [playerName] !&8&m─────────────────────────────────────
+  - delay! 0.5
+  - actionbar! &e✦ &6Festas Builds &8| &7mc.festas-builds.com &e✦
 joinServer:
-  Enabled: false
+  Enabled: true
   Commands:
-  - cmi msg [playerName] !This is event command example!
-  - cmi msg [playerName] !Originates from sneakingSwapHandItems event!
+  - title! &b&lFestas Builds
+  - delay! 0.2
+  - subtitle! &7Willkommen zurück, &f[playerDisplayName]&7!
+  - delay! 0.5
+  - actionbar! &e✦ &6Festas Builds &8| &7/navigator &e✦
 quitServer:
   Enabled: false
   Commands:
@@ -108,10 +124,10 @@ playerLevelChange:
   - cmi msg [playerName] !This is event command example!
   - cmi msg [playerName] !Originates from sneakingSwapHandItems event!
 voidFall:
-  Enabled: false
+  Enabled: true
   Commands:
-  - cmi msg [playerName] !This is event command example!
-  - cmi msg [playerName] !Originates from sneakingSwapHandItems event!
+  - cmi spawn [playerName]
+  - cmi msg [playerName] !&c&l✦ &7Du bist ins Leere gefallen und wurdest zum Spawn teleportiert.
 elytraStartGlide:
   Enabled: false
   Commands:
