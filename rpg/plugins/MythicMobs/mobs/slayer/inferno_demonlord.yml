@@ -1,0 +1,210 @@
+# ===================================================
+# Inferno Demonlord - Blaze Slayer (Tiers I-V)
+# Lohen-Slayer mit Feuer- und Lavamechaniken
+# ===================================================
+
+# ---------------------------------------------------
+# Tier I - Kleiner Feuerdämon (Lv.10, 700 HP)
+# ---------------------------------------------------
+InfernoDemonlordT1:
+  Type: BLAZE
+  Display: '&6&lInferno Demonlord &e[Tier I]'
+  Health: 700
+  Damage: 9
+  Armor: 3
+  Options:
+    MovementSpeed: 0.25
+    PreventOtherDrops: true
+    AlwaysShowName: true
+    FollowRange: 30
+  Skills:
+  - skill{s=InfernoFireball} @target ~onTimer:300
+  - skill{s=DemonRise} @self ~onSpawn
+  - skill{s=FlameAura} @self ~onTimer:500
+  Drops:
+  - mmoitems{type=MATERIAL;id=DERELICT_ASHE} 1-3 1.0
+  - mmoitems{type=MATERIAL;id=GOLD_COIN} 12-28 1.0
+  - exp 280
+  BossBar:
+    Enabled: true
+    Title: '&6&lInferno Demonlord &e[Tier I]'
+    Color: YELLOW
+    Style: SOLID
+    Range: 30
+
+# ---------------------------------------------------
+# Tier II - Feuerdämon (Lv.25, 3000 HP)
+# ---------------------------------------------------
+InfernoDemonlordT2:
+  Type: BLAZE
+  Display: '&6&lInferno Demonlord &e[Tier II]'
+  Health: 3000
+  Damage: 16
+  Armor: 6
+  Options:
+    MovementSpeed: 0.27
+    PreventOtherDrops: true
+    AlwaysShowName: true
+    FollowRange: 35
+  Skills:
+  - skill{s=InfernoFireball} @target ~onTimer:250
+  - skill{s=DemonRise} @self ~onSpawn
+  - skill{s=FlameAura} @self ~onTimer:400
+  - skill{s=LavaPool} @target ~onTimer:500
+  - skill{s=FireShield} @self ~onHealthMod:<0.5 1
+  Drops:
+  - mmoitems{type=MATERIAL;id=DERELICT_ASHE} 5-10 1.0
+  - mmoitems{type=MATERIAL;id=INFERNO_FUEL_BLOCK} 1 0.5
+  - mmoitems{type=MATERIAL;id=GOLD_COIN} 55-110 1.0
+  - exp 950
+  BossBar:
+    Enabled: true
+    Title: '&6&lInferno Demonlord &e[Tier II]'
+    Color: YELLOW
+    Style: SEGMENTED_10
+    Range: 35
+
+# ---------------------------------------------------
+# Tier III - Inferno-Fürst (Lv.40, 12000 HP)
+# ---------------------------------------------------
+InfernoDemonlordT3:
+  Type: BLAZE
+  Display: '&6&lInferno Demonlord &e[Tier III]'
+  Health: 12000
+  Damage: 28
+  Armor: 10
+  Options:
+    MovementSpeed: 0.28
+    PreventOtherDrops: true
+    AlwaysShowName: true
+    FollowRange: 40
+  Skills:
+  - skill{s=InfernoFireball} @target ~onTimer:200
+  - skill{s=DemonRise} @self ~onSpawn
+  - skill{s=FlameAura} @self ~onTimer:350
+  - skill{s=LavaPool} @target ~onTimer:400
+  - skill{s=FireShield} @self ~onHealthMod:<0.5 1
+  - skill{s=SummonFireImps} @self ~onTimer:500
+  - skill{s=MeteorShower} @target ~onTimer:600
+  Drops:
+  - mmoitems{type=MATERIAL;id=DERELICT_ASHE} 15-25 1.0
+  - mmoitems{type=MATERIAL;id=INFERNO_FUEL_BLOCK} 1-2 0.8
+  - mmoitems{type=MATERIAL;id=ARCHFIEND_DICE} 1 0.3
+  - mmoitems{type=MATERIAL;id=GOLD_COIN} 250-500 1.0
+  - exp 4000
+  BossBar:
+    Enabled: true
+    Title: '&6&lInferno Demonlord &e[Tier III]'
+    Color: YELLOW
+    Style: SEGMENTED_10
+    Range: 40
+
+# ---------------------------------------------------
+# Tier IV - Inferno-Erzdämon (Lv.60, 35000 HP)
+# ---------------------------------------------------
+InfernoDemonlordT4:
+  Type: BLAZE
+  Display: '&6&lInferno Demonlord &e&l[Tier IV]'
+  Health: 35000
+  Damage: 42
+  Armor: 14
+  Options:
+    MovementSpeed: 0.30
+    PreventOtherDrops: true
+    AlwaysShowName: true
+    FollowRange: 45
+  Skills:
+  # Phase 1 (100%-60% HP)
+  - skill{s=InfernoFireball} @target ~onTimer:180
+  - skill{s=DemonRise} @self ~onSpawn
+  - skill{s=FlameAura} @self ~onTimer:300
+  - skill{s=LavaPool} @target ~onTimer:350
+  - skill{s=SummonFireImps} @self ~onTimer:400
+  # Phase 2 (60%-30% HP)
+  - skill{s=DemonlordPhase2} @self ~onHealthMod:<0.6 1
+  - skill{s=MeteorShower} @target ~onTimer:400 ~onHealthMod:0.3to0.6
+  - skill{s=FireShield} @self ~onTimer:500 ~onHealthMod:0.3to0.6
+  - skill{s=HellfireWave} @self ~onTimer:350 ~onHealthMod:0.3to0.6
+  - skill{s=SummonInfernoGuards} @self ~onTimer:400 ~onHealthMod:0.3to0.6
+  # Phase 3 (30%-0% HP)
+  - skill{s=DemonlordPhase3} @self ~onHealthMod:<0.3 1
+  - skill{s=InfernoCataclysm} @self ~onTimer:300 ~onHealthMod:<0.3
+  - skill{s=MeteorShower} @target ~onTimer:300 ~onHealthMod:<0.3
+  - skill{s=SummonInfernoGuards} @self ~onTimer:300 ~onHealthMod:<0.3
+  - skill{s=LavaFlood} @self ~onTimer:400 ~onHealthMod:<0.3
+  # Death
+  - skill{s=DemonlordDeathExplosion} @self ~onDeath
+  Drops:
+  - mmoitems{type=MATERIAL;id=DERELICT_ASHE} 30-50 1.0
+  - mmoitems{type=MATERIAL;id=INFERNO_FUEL_BLOCK} 3-5 1.0
+  - mmoitems{type=MATERIAL;id=ARCHFIEND_DICE} 1-2 0.6
+  - mmoitems{type=MATERIAL;id=DUPLEX_SCROLL} 1 0.1
+  - mmoitems{type=MATERIAL;id=GOLD_COIN} 600-1200 1.0
+  - exp 9500
+  BossBar:
+    Enabled: true
+    Title: '&6&lInferno Demonlord &e&l[Tier IV]'
+    Color: YELLOW
+    Style: SEGMENTED_12
+    Range: 45
+
+# ---------------------------------------------------
+# Tier V - Höllenfürst (Lv.80, 100000 HP)
+# ---------------------------------------------------
+InfernoDemonlordT5:
+  Type: BLAZE
+  Display: '&e&l☠ Inferno Demonlord &6&l[Tier V]'
+  Health: 100000
+  Damage: 62
+  Armor: 20
+  Options:
+    MovementSpeed: 0.32
+    PreventOtherDrops: true
+    AlwaysShowName: true
+    FollowRange: 50
+    Silent: false
+  Skills:
+  # Spawn
+  - skill{s=DemonlordT5Spawn} @self ~onSpawn
+  # Phase 1 (100%-70% HP)
+  - skill{s=InfernoFireball} @target ~onTimer:150
+  - skill{s=FlameAura} @self ~onTimer:250
+  - skill{s=LavaPool} @target ~onTimer:300
+  - skill{s=SummonFireImps} @self ~onTimer:350
+  # Phase 2 (70%-40% HP)
+  - skill{s=DemonlordPhase2} @self ~onHealthMod:<0.7 1
+  - skill{s=MeteorShower} @target ~onTimer:300 ~onHealthMod:0.4to0.7
+  - skill{s=HellfireWave} @self ~onTimer:300 ~onHealthMod:0.4to0.7
+  - skill{s=SummonInfernoGuards} @self ~onTimer:300 ~onHealthMod:0.4to0.7
+  - skill{s=FireShield} @self ~onTimer:400 ~onHealthMod:0.4to0.7
+  - skill{s=VolcanicEruption} @self ~onTimer:500 ~onHealthMod:0.4to0.7
+  # Phase 3 (40%-15% HP)
+  - skill{s=DemonlordPhase3} @self ~onHealthMod:<0.4 1
+  - skill{s=InfernoCataclysm} @self ~onTimer:300 ~onHealthMod:0.15to0.4
+  - skill{s=LavaFlood} @self ~onTimer:350 ~onHealthMod:0.15to0.4
+  - skill{s=SummonArchfiends} @self ~onTimer:400 ~onHealthMod:0.15to0.4
+  - skill{s=MeteorShower} @target ~onTimer:250 ~onHealthMod:0.15to0.4
+  - skill{s=VolcanicEruption} @self ~onTimer:400 ~onHealthMod:0.15to0.4
+  # Phase 4 (15%-0% HP) - Enrage
+  - skill{s=DemonlordPhase4} @self ~onHealthMod:<0.15 1
+  - skill{s=DemonlordEnrage} @self ~onHealthMod:<0.15 1
+  - skill{s=InfernoApocalypse} @self ~onTimer:200 ~onHealthMod:<0.15
+  - skill{s=InfernoCataclysm} @self ~onTimer:250 ~onHealthMod:<0.15
+  - skill{s=SummonArchfiends} @self ~onTimer:300 ~onHealthMod:<0.15
+  - skill{s=LavaFlood} @self ~onTimer:250 ~onHealthMod:<0.15
+  # Death
+  - skill{s=DemonlordT5Death} @self ~onDeath
+  Drops:
+  - mmoitems{type=MATERIAL;id=DERELICT_ASHE} 64 1.0
+  - mmoitems{type=MATERIAL;id=INFERNO_FUEL_BLOCK} 5-10 1.0
+  - mmoitems{type=MATERIAL;id=ARCHFIEND_DICE} 2-4 1.0
+  - mmoitems{type=MATERIAL;id=DUPLEX_SCROLL} 1 0.3
+  - mmoitems{type=MATERIAL;id=HIGH_CLASS_ARCHFIEND_DICE} 1 0.05
+  - mmoitems{type=MATERIAL;id=GOLD_COIN;amount=6000} 1.0
+  - exp 30000
+  BossBar:
+    Enabled: true
+    Title: '&e&l☠ Inferno Demonlord &6[Tier V]'
+    Color: YELLOW
+    Style: SEGMENTED_20
+    Range: 50
