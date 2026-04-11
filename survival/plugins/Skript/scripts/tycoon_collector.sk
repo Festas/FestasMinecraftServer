@@ -86,7 +86,8 @@ on left click:
             drop 1 of {_item} at {_loc}
 
 # --- DER STAUBSAUGER LOOP (Optimiert) ---
-every 1 seconds:
+# Intervall: 3 Sekunden statt 1 — reduziert Server-Last bei vielen aktiven Collectoren
+every 3 seconds:
     loop {collector_locs::*}:
         set {_loc} to loop-value
         set {_block} to block at {_loc}

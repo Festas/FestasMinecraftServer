@@ -19,7 +19,7 @@ Economy:
   # Should we allow offline payments. This is primarily for pay command and will not block other payments like receiving money from other plugins
   OfflinePayments: true
   # Set to true if you want to log money transfers between players
-  LogEnabled: false
+  LogEnabled: true
   log:
     Unknown: true
     Transfer: true

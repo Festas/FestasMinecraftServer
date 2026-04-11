@@ -1,14 +1,18 @@
 # --- CASINO SYSTEM (Talahun Extended Edition) ---
 # High Risk, High Reward.
 # Mit Trostpreisen und extra vielen Sprüchen.
+# Sicherheit: Cooldown, tägliches Verlustlimit, moderater Max-Einsatz.
 
 command /gamble <text>:
     aliases: /cf, /coinflip, /casino
+    cooldown: 10 seconds
+    cooldown message: &8[&dCasino&8] &7Warte kurz, Bruder. Cooldown: %remaining time%
     trigger:
         # --- KONFIGURATION ---
         set {_prefix} to "&8[&dCasino&8] &7"
         set {_min_bet} to 100
-        set {_max_bet} to 1000000000
+        set {_max_bet} to 10000000
+        set {_daily_loss_cap} to 50000000
         
         set {_input} to arg-1
         set {_p} to player
@@ -38,6 +42,18 @@ command /gamble <text>:
             send "%{_prefix}%&7Versuch nicht Auge zu machen." to {_p}
             play sound "entity.villager.no" to {_p}
             stop
+        
+        # --- 2b. TÄGLICHES VERLUSTLIMIT ---
+        # Reset wenn neuer Tag
+        set {_today} to now formatted as "yyyy-MM-dd"
+        if {casino_day::%uuid of {_p}%} is not {_today}:
+            set {casino_day::%uuid of {_p}%} to {_today}
+            set {casino_loss::%uuid of {_p}%} to 0
+        
+        if {casino_loss::%uuid of {_p}%} >= {_daily_loss_cap}:
+            send "%{_prefix}%&cBruder, du hast heute genug verloren (&e$%{_daily_loss_cap}%&c). Morgen geht's weiter." to {_p}
+            play sound "entity.villager.no" to {_p}
+            stop
             
         # --- 3. START ---
         remove {_bet} from {_p}'s balance
@@ -58,6 +74,9 @@ command /gamble <text>:
         
         # A) VERLOREN (70%)
         if {_luck} <= 700:
+            # Verlust tracken für tägliches Limit
+            add {_bet} to {casino_loss::%uuid of {_p}%}
+            
             delete {_msgs::*}
             # Die Klassiker
             add "Wallah, dein Geld ist weg. Hops genommen!" to {_msgs::*}

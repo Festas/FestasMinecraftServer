@@ -8,8 +8,6 @@ default to member:
   requirements:
     time:
       value: 2h
-  bentobox level:
-    value: 10000
   results:
     money:
       value: 1000
