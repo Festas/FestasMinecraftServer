@@ -298,7 +298,7 @@ mobdrops:
         material: GLOW_INK_SAC
         quantity: 1
       buyPrice: 100
-      sellPrice: 200
+      sellPrice: 20
       slot: 25
       page: 2
 

@@ -15,7 +15,7 @@ tools:
         material: WOODEN_AXE
         quantity: 1
       buyPrice: 20
-      sellPrice: -1
+      sellPrice: 2
       slot: 19
       page: 1
 
@@ -25,7 +25,7 @@ tools:
         material: WOODEN_PICKAXE
         quantity: 1
       buyPrice: 20
-      sellPrice: -1
+      sellPrice: 2
       slot: 20
       page: 1
 
@@ -35,7 +35,7 @@ tools:
         material: WOODEN_SHOVEL
         quantity: 1
       buyPrice: 10
-      sellPrice: -1
+      sellPrice: 1
       slot: 21
       page: 1
 
@@ -45,7 +45,7 @@ tools:
         material: WOODEN_HOE
         quantity: 1
       buyPrice: 12
-      sellPrice: -1
+      sellPrice: 1
       slot: 22
       page: 1
 
@@ -56,7 +56,7 @@ tools:
         material: COMPASS
         quantity: 1
       buyPrice: 200
-      sellPrice: -1
+      sellPrice: 15
       slot: 24
       page: 1
 
@@ -66,7 +66,7 @@ tools:
         material: RECOVERY_COMPASS
         quantity: 1
       buyPrice: 5000
-      sellPrice: -1
+      sellPrice: 250
       slot: 25
       page: 1
 
@@ -76,7 +76,7 @@ tools:
         material: STONE_AXE
         quantity: 1
       buyPrice: 25
-      sellPrice: -1
+      sellPrice: 2
       slot: 28
       page: 1
 
@@ -86,7 +86,7 @@ tools:
         material: STONE_PICKAXE
         quantity: 1
       buyPrice: 25
-      sellPrice: -1
+      sellPrice: 2
       slot: 29
       page: 1
 
@@ -96,7 +96,7 @@ tools:
         material: STONE_SHOVEL
         quantity: 1
       buyPrice: 25
-      sellPrice: -1
+      sellPrice: 2
       slot: 30
       page: 1
 
@@ -106,7 +106,7 @@ tools:
         material: STONE_HOE
         quantity: 1
       buyPrice: 25
-      sellPrice: -1
+      sellPrice: 2
       slot: 31
       page: 1
 
@@ -118,7 +118,7 @@ tools:
         material: SPYGLASS
         quantity: 1
       buyPrice: 300
-      sellPrice: -1
+      sellPrice: 20
       slot: 33
       page: 1
 
@@ -128,7 +128,7 @@ tools:
         material: SHEARS
         quantity: 1
       buyPrice: 50
-      sellPrice: -1
+      sellPrice: 5
       slot: 34
       page: 1
 
@@ -138,7 +138,7 @@ tools:
         material: GOLDEN_AXE
         quantity: 1
       buyPrice: 200
-      sellPrice: -1
+      sellPrice: 15
       slot: 37
       page: 1
 
@@ -148,7 +148,7 @@ tools:
         material: GOLDEN_PICKAXE
         quantity: 1
       buyPrice: 200
-      sellPrice: -1
+      sellPrice: 15
       slot: 38
       page: 1
 
@@ -158,7 +158,7 @@ tools:
         material: GOLDEN_SHOVEL
         quantity: 1
       buyPrice: 50
-      sellPrice: -1
+      sellPrice: 5
       slot: 39
       page: 1
 
@@ -168,7 +168,7 @@ tools:
         material: GOLDEN_HOE
         quantity: 1
       buyPrice: 100
-      sellPrice: -1
+      sellPrice: 8
       slot: 40
       page: 1
 
@@ -180,7 +180,7 @@ tools:
         material: LEAD
         quantity: 1
       buyPrice: 50
-      sellPrice: -1
+      sellPrice: 5
       slot: 42
       page: 1
 
@@ -190,7 +190,7 @@ tools:
         material: CLOCK
         quantity: 1
       buyPrice: 200
-      sellPrice: -1
+      sellPrice: 15
       slot: 43
       page: 1
 
@@ -210,7 +210,7 @@ tools:
         material: IRON_AXE
         quantity: 1
       buyPrice: 100
-      sellPrice: -1
+      sellPrice: 8
       slot: 19
       page: 2
 
@@ -220,7 +220,7 @@ tools:
         material: IRON_PICKAXE
         quantity: 1
       buyPrice: 50
-      sellPrice: -1
+      sellPrice: 5
       slot: 20
       page: 2
 
@@ -230,7 +230,7 @@ tools:
         material: IRON_SHOVEL
         quantity: 1
       buyPrice: 25
-      sellPrice: -1
+      sellPrice: 2
       slot: 21
       page: 2
 
@@ -240,7 +240,7 @@ tools:
         material: IRON_HOE
         quantity: 1
       buyPrice: 50
-      sellPrice: -1
+      sellPrice: 5
       slot: 22
       page: 2
 
@@ -252,7 +252,7 @@ tools:
         material: FLINT_AND_STEEL
         quantity: 1
       buyPrice: 50
-      sellPrice: -1
+      sellPrice: 5
       slot: 24
       page: 2
 
@@ -262,7 +262,7 @@ tools:
         material: NAME_TAG
         quantity: 1
       buyPrice: 1000
-      sellPrice: -1
+      sellPrice: 50
       slot: 25
       page: 2
 
@@ -272,7 +272,7 @@ tools:
         material: DIAMOND_AXE
         quantity: 1
       buyPrice: 1000
-      sellPrice: -1
+      sellPrice: 50
       slot: 28
       page: 2
 
@@ -282,7 +282,7 @@ tools:
         material: DIAMOND_PICKAXE
         quantity: 1
       buyPrice: 1000
-      sellPrice: -1
+      sellPrice: 50
       slot: 29
       page: 2
 
@@ -292,7 +292,7 @@ tools:
         material: DIAMOND_SHOVEL
         quantity: 1
       buyPrice: 1000
-      sellPrice: -1
+      sellPrice: 50
       slot: 30
       page: 2
 
@@ -302,7 +302,7 @@ tools:
         material: DIAMOND_HOE
         quantity: 1
       buyPrice: 1000
-      sellPrice: -1
+      sellPrice: 50
       slot: 31
       page: 2
 
@@ -314,7 +314,7 @@ tools:
         material: TADPOLE_BUCKET
         quantity: 1
       buyPrice: 100
-      sellPrice: -1
+      sellPrice: 8
       slot: 33
       page: 2
 
@@ -324,7 +324,7 @@ tools:
         material: FISHING_ROD
         quantity: 1
       buyPrice: 25
-      sellPrice: -1
+      sellPrice: 2
       slot: 34
       page: 2
 
@@ -334,7 +334,7 @@ tools:
         material: NETHERITE_AXE
         quantity: 1
       buyPrice: 50000
-      sellPrice: -1
+      sellPrice: 2500
       slot: 37
       page: 2
 
@@ -344,7 +344,7 @@ tools:
         material: NETHERITE_PICKAXE
         quantity: 1
       buyPrice: 50000
-      sellPrice: -1
+      sellPrice: 2500
       slot: 38
       page: 2
 
@@ -354,7 +354,7 @@ tools:
         material: NETHERITE_SHOVEL
         quantity: 1
       buyPrice: 50000
-      sellPrice: -1
+      sellPrice: 2500
       slot: 39
       page: 2
 
@@ -364,7 +364,7 @@ tools:
         material: NETHERITE_HOE
         quantity: 1
       buyPrice: 50000
-      sellPrice: -1
+      sellPrice: 2500
       slot: 40
       page: 2
 
@@ -376,7 +376,7 @@ tools:
         material: BUCKET
         quantity: 1
       buyPrice: 50
-      sellPrice: -1
+      sellPrice: 5
       slot: 42
       page: 2
 
