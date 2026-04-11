@@ -1,0 +1,129 @@
+# --- ECONOMY MONITORING & LOGGING ---
+# Überwacht die Server-Wirtschaft und loggt Transaktionen
+# Warnt Admins bei verdächtigen Aktivitäten
+
+options:
+    prefix: &8[&3📊 Economy&8] &7
+
+# --- ECONOMY STATISTIKEN ---
+on script load:
+    send "&8[&3📊 Economy&8] &aWirtschafts-Monitor geladen!" to console
+
+# --- WIRTSCHAFTS-ÜBERSICHT ---
+command /economy:
+    permission: tycoon.admin
+    description: Zeige Wirtschaftsübersicht
+    aliases: /eco_stats, /wirtschaft
+    trigger:
+        set {_playerCount} to number of all players
+        set {_totalMoney} to 0
+        loop all players:
+            add loop-player's balance to {_totalMoney}
+
+        set {_avgMoney} to 0
+        if {_playerCount} > 0:
+            set {_avgMoney} to {_totalMoney} / {_playerCount}
+
+        send ""
+        send "&8&m─────────────────────────────────────"
+        send "&3&l  📊 WIRTSCHAFTS-MONITOR"
+        send "&8&m─────────────────────────────────────"
+        send ""
+        send "{@prefix}&7Online Spieler: &e%{_playerCount}%"
+        send "{@prefix}&7Gesamtgeld (online): &a%{_totalMoney}%€"
+        send "{@prefix}&7Durchschnitt: &e%{_avgMoney}%€"
+        send ""
+        send "{@prefix}&7Heutiger Umsatz: &a%{eco.daily_revenue}%€"
+        send "{@prefix}&7Heutige Verkäufe: &e%{eco.daily_sales}%"
+        send "{@prefix}&7Heutige Gamble-Verluste: &c%{eco.daily_gamble_loss}%€"
+        send "{@prefix}&7Heutige Gamble-Gewinne: &a%{eco.daily_gamble_win}%€"
+        send ""
+
+        # Börse-Status
+        if {weekly_event} is set:
+            send "{@prefix}&7Aktives Event: %{event_names::%{weekly_event}%}%"
+        else:
+            send "{@prefix}&7Aktives Event: &7Keins"
+
+        if {boss_active} is true:
+            send "{@prefix}&7Boss-Event: &c%{boss_names::%{boss_id}%}% &7(HP: %{boss_hp}%/%{boss_max_hp}%)"
+        else:
+            send "{@prefix}&7Boss-Event: &7Inaktiv"
+
+        send ""
+        send "&8&m─────────────────────────────────────"
+
+# --- TÄGLICHER RESET ---
+every 1 day:
+    # Logge die Tagesstatistiken bevor sie zurückgesetzt werden
+    set {eco.yesterday_revenue} to {eco.daily_revenue}
+    set {eco.yesterday_sales} to {eco.daily_sales}
+    set {eco.yesterday_gamble_loss} to {eco.daily_gamble_loss}
+    set {eco.yesterday_gamble_win} to {eco.daily_gamble_win}
+
+    # Reset
+    set {eco.daily_revenue} to 0
+    set {eco.daily_sales} to 0
+    set {eco.daily_gamble_loss} to 0
+    set {eco.daily_gamble_win} to 0
+
+    send "&8[&3📊 Economy&8] &7Tagesstatistiken zurückgesetzt." to console
+
+# --- LOGGING FUNKTIONEN ---
+function logSale(p: player, amount: number, itemCount: number):
+    if {eco.daily_revenue} is not set:
+        set {eco.daily_revenue} to 0
+    if {eco.daily_sales} is not set:
+        set {eco.daily_sales} to 0
+    add {_amount} to {eco.daily_revenue}
+    add {_itemCount} to {eco.daily_sales}
+
+    # Warnung bei großen Transaktionen
+    if {_amount} > 50000000:
+        loop all players:
+            if loop-player has permission "tycoon.admin":
+                send "{@prefix}&c⚠ Großer Verkauf: &f%{_p}% &7hat &e%{_amount}%€ &7verdient (%{_itemCount}% Items)" to loop-player
+
+function logGamble(p: player, amount: number, won: boolean):
+    if {_won} is true:
+        if {eco.daily_gamble_win} is not set:
+            set {eco.daily_gamble_win} to 0
+        add {_amount} to {eco.daily_gamble_win}
+    else:
+        if {eco.daily_gamble_loss} is not set:
+            set {eco.daily_gamble_loss} to 0
+        add {_amount} to {eco.daily_gamble_loss}
+
+# --- INFLATIONS-WARNUNG ---
+every 1 hour:
+    set {_totalOnline} to 0
+    set {_playerCount} to number of all players
+    if {_playerCount} > 0:
+        loop all players:
+            add loop-player's balance to {_totalOnline}
+
+        set {_avg} to {_totalOnline} / {_playerCount}
+
+        # Warnung wenn Durchschnittsgeld zu hoch wird
+        if {_avg} > 100000000000:
+            loop all players:
+                if loop-player has permission "tycoon.admin":
+                    send "{@prefix}&c⚠ INFLATIONSWARNUNG! Durchschnittliches Geld: %{_avg}%€" to loop-player
+                    send "{@prefix}&7Erwäge einen Markt-Crash oder neue Money-Sinks." to loop-player
+
+# --- GESTERN STATS ---
+command /economy yesterday:
+    permission: tycoon.admin
+    description: Zeige gestrige Statistiken
+    trigger:
+        send ""
+        send "&8&m─────────────────────────────────────"
+        send "&3&l  📊 GESTRIGE STATISTIKEN"
+        send "&8&m─────────────────────────────────────"
+        send ""
+        send "{@prefix}&7Umsatz: &a%{eco.yesterday_revenue}%€"
+        send "{@prefix}&7Verkäufe: &e%{eco.yesterday_sales}%"
+        send "{@prefix}&7Gamble-Verluste: &c%{eco.yesterday_gamble_loss}%€"
+        send "{@prefix}&7Gamble-Gewinne: &a%{eco.yesterday_gamble_win}%€"
+        send ""
+        send "&8&m─────────────────────────────────────"

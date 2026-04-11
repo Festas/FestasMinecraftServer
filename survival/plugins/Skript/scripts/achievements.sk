@@ -1,0 +1,220 @@
+# --- ACHIEVEMENT / BADGE SYSTEM ---
+# Meilensteine die Spieler freischalten können
+# Belohnungen: Geld, Titel, Items
+# Zeigt Fortschritt und abgeschlossene Achievements
+
+options:
+    prefix: &8[&6🏆 Achievement&8] &7
+
+# --- ACHIEVEMENT DEFINITIONEN ---
+on script load:
+    # Achievement IDs und Namen
+    delete {ach_names::*}
+    set {ach_names::first_sell} to "&aErster Verkauf"
+    set {ach_names::sell_1k} to "&a1.000 Items verkauft"
+    set {ach_names::sell_10k} to "&e10.000 Items verkauft"
+    set {ach_names::sell_100k} to "&6100.000 Items verkauft"
+    set {ach_names::sell_1m} to "&d&l1 Million verkauft"
+    set {ach_names::rank_5} to "&aRang 5 erreicht"
+    set {ach_names::rank_10} to "&eRang 10 erreicht"
+    set {ach_names::rank_15} to "&6Rang 15 erreicht"
+    set {ach_names::rank_20} to "&cRang 20 erreicht"
+    set {ach_names::rank_25} to "&d&lBedrock erreicht!"
+    set {ach_names::gamble_win} to "&aErster Casino-Gewinn"
+    set {ach_names::gamble_jackpot} to "&6&lJACKPOT!"
+    set {ach_names::daily_7} to "&a7-Tage Streak"
+    set {ach_names::daily_30} to "&e30-Tage Streak"
+    set {ach_names::daily_100} to "&6&l100-Tage Streak"
+    set {ach_names::prestige_1} to "&d&lErster Prestige"
+    set {ach_names::prestige_5} to "&5&l5x Prestige"
+    set {ach_names::prestige_10} to "&6&l✦ LEGENDE ✦"
+    set {ach_names::boss_kill} to "&cErster Boss besiegt"
+    set {ach_names::boss_10} to "&4&l10 Bosse besiegt"
+    set {ach_names::rich_1m} to "&a1 Million €"
+    set {ach_names::rich_1b} to "&e1 Milliarde €"
+    set {ach_names::rich_1t} to "&6&l1 Billion €"
+
+    # Achievement Belohnungen (Geld)
+    delete {ach_rewards::*}
+    set {ach_rewards::first_sell} to 500
+    set {ach_rewards::sell_1k} to 5000
+    set {ach_rewards::sell_10k} to 50000
+    set {ach_rewards::sell_100k} to 500000
+    set {ach_rewards::sell_1m} to 5000000
+    set {ach_rewards::rank_5} to 25000
+    set {ach_rewards::rank_10} to 100000
+    set {ach_rewards::rank_15} to 500000
+    set {ach_rewards::rank_20} to 2000000
+    set {ach_rewards::rank_25} to 10000000
+    set {ach_rewards::gamble_win} to 1000
+    set {ach_rewards::gamble_jackpot} to 500000
+    set {ach_rewards::daily_7} to 10000
+    set {ach_rewards::daily_30} to 100000
+    set {ach_rewards::daily_100} to 1000000
+    set {ach_rewards::prestige_1} to 5000000
+    set {ach_rewards::prestige_5} to 50000000
+    set {ach_rewards::prestige_10} to 500000000
+    set {ach_rewards::boss_kill} to 25000
+    set {ach_rewards::boss_10} to 500000
+    set {ach_rewards::rich_1m} to 10000
+    set {ach_rewards::rich_1b} to 1000000
+    set {ach_rewards::rich_1t} to 10000000
+
+    send "&8[&6🏆 Achievement&8] &aAchievement-System geladen (23 Achievements)!" to console
+
+# --- ACHIEVEMENT FREISCHALTEN ---
+function unlockAchievement(p: player, achID: text):
+    # Prüfe ob schon freigeschaltet
+    if {achievement.%{_p}'s uuid%.%{_achID}%} is true:
+        stop
+
+    # Freischalten
+    set {achievement.%{_p}'s uuid%.%{_achID}%} to true
+
+    # Zähler erhöhen
+    if {achievement.count.%{_p}'s uuid%} is not set:
+        set {achievement.count.%{_p}'s uuid%} to 0
+    add 1 to {achievement.count.%{_p}'s uuid%}
+
+    # Belohnung
+    set {_reward} to {ach_rewards::%{_achID}%}
+    set {_name} to {ach_names::%{_achID}%}
+
+    if {_reward} is set:
+        add {_reward} to {_p}'s balance
+
+    # Nachricht
+    send "" to {_p}
+    send "&8&m─────────────────────────────────────" to {_p}
+    send "&6&l  🏆 ACHIEVEMENT FREIGESCHALTET!" to {_p}
+    send "&8&m─────────────────────────────────────" to {_p}
+    send "" to {_p}
+    send "&8[&6🏆&8] %{_name}%" to {_p}
+    if {_reward} is set:
+        send "&8[&6🏆&8] &7Belohnung: &a+%{_reward}%€" to {_p}
+    send "" to {_p}
+    send "&8&m─────────────────────────────────────" to {_p}
+
+    play sound "ui.toast.challenge_complete" with volume 1 and pitch 1.2 to {_p}
+
+    # Broadcast bei seltenen Achievements
+    if {_achID} is "rank_25" or "prestige_1" or "prestige_10" or "sell_1m" or "gamble_jackpot" or "daily_100" or "rich_1t" or "boss_10":
+        broadcast "&8[&6🏆&8] &f%{_p}% &7hat &6%{_name}% &7freigeschaltet! 🎉"
+
+# --- ACHIEVEMENT PRÜFEN: Items verkauft ---
+function checkSellAchievements(p: player, amount: number):
+    if {stats.sold.%{_p}'s uuid%} is not set:
+        set {stats.sold.%{_p}'s uuid%} to 0
+    add {_amount} to {stats.sold.%{_p}'s uuid%}
+
+    set {_total} to {stats.sold.%{_p}'s uuid%}
+
+    if {_total} >= 1:
+        unlockAchievement({_p}, "first_sell")
+    if {_total} >= 1000:
+        unlockAchievement({_p}, "sell_1k")
+    if {_total} >= 10000:
+        unlockAchievement({_p}, "sell_10k")
+    if {_total} >= 100000:
+        unlockAchievement({_p}, "sell_100k")
+    if {_total} >= 1000000:
+        unlockAchievement({_p}, "sell_1m")
+
+# --- ACHIEVEMENT PRÜFEN: Balance ---
+function checkBalanceAchievements(p: player):
+    set {_bal} to {_p}'s balance
+    if {_bal} >= 1000000:
+        unlockAchievement({_p}, "rich_1m")
+    if {_bal} >= 1000000000:
+        unlockAchievement({_p}, "rich_1b")
+    if {_bal} >= 1000000000000:
+        unlockAchievement({_p}, "rich_1t")
+
+# --- PERIODISCHE CHECKS ---
+every 5 minutes:
+    loop all players:
+        checkBalanceAchievements(loop-player)
+
+        # Daily Streak Achievement Check
+        set {_streak} to {daily.streak.%loop-player's uuid%}
+        if {_streak} is set:
+            if {_streak} >= 7:
+                unlockAchievement(loop-player, "daily_7")
+            if {_streak} >= 30:
+                unlockAchievement(loop-player, "daily_30")
+            if {_streak} >= 100:
+                unlockAchievement(loop-player, "daily_100")
+
+        # Prestige Achievement Check
+        set {_prestige} to {prestige.level.%loop-player's uuid%}
+        if {_prestige} is set:
+            if {_prestige} >= 1:
+                unlockAchievement(loop-player, "prestige_1")
+            if {_prestige} >= 5:
+                unlockAchievement(loop-player, "prestige_5")
+            if {_prestige} >= 10:
+                unlockAchievement(loop-player, "prestige_10")
+
+# --- ACHIEVEMENT LISTE ---
+command /achievements:
+    description: Zeige deine Achievements
+    aliases: /ach, /badges, /trophäen
+    trigger:
+        set {_count} to {achievement.count.%player's uuid%}
+        if {_count} is not set:
+            set {_count} to 0
+
+        send ""
+        send "&8&m─────────────────────────────────────"
+        send "&6&l  🏆 DEINE ACHIEVEMENTS (%{_count}%/23)"
+        send "&8&m─────────────────────────────────────"
+        send ""
+
+        # Verkaufs-Achievements
+        send "&7&l  Verkauf:"
+        showAchStatus(player, "first_sell")
+        showAchStatus(player, "sell_1k")
+        showAchStatus(player, "sell_10k")
+        showAchStatus(player, "sell_100k")
+        showAchStatus(player, "sell_1m")
+
+        send ""
+        send "&7&l  Ränge:"
+        showAchStatus(player, "rank_5")
+        showAchStatus(player, "rank_10")
+        showAchStatus(player, "rank_15")
+        showAchStatus(player, "rank_20")
+        showAchStatus(player, "rank_25")
+
+        send ""
+        send "&7&l  Casino:"
+        showAchStatus(player, "gamble_win")
+        showAchStatus(player, "gamble_jackpot")
+
+        send ""
+        send "&7&l  Streak & Prestige:"
+        showAchStatus(player, "daily_7")
+        showAchStatus(player, "daily_30")
+        showAchStatus(player, "daily_100")
+        showAchStatus(player, "prestige_1")
+        showAchStatus(player, "prestige_5")
+        showAchStatus(player, "prestige_10")
+
+        send ""
+        send "&7&l  Boss & Reichtum:"
+        showAchStatus(player, "boss_kill")
+        showAchStatus(player, "boss_10")
+        showAchStatus(player, "rich_1m")
+        showAchStatus(player, "rich_1b")
+        showAchStatus(player, "rich_1t")
+
+        send ""
+        send "&8&m─────────────────────────────────────"
+
+# --- HELPER: Achievement Status anzeigen ---
+function showAchStatus(p: player, achID: text):
+    set {_name} to {ach_names::%{_achID}%}
+    if {achievement.%{_p}'s uuid%.%{_achID}%} is true:
+        send "  &a✔ %{_name}%" to {_p}
+    else:
+        send "  &8✖ &7%{_name}% &8(Gesperrt)" to {_p}

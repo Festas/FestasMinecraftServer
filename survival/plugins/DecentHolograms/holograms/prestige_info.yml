@@ -1,0 +1,23 @@
+# DecentHolograms - Prestige Infotafel
+location:
+  world: tycoon
+  x: 10.5
+  y: 68.0
+  z: -10.5
+lines:
+  - '&5&l✦ &d&lPRESTIGE SYSTEM &5&l✦'
+  - '&8&m──────────────────────'
+  - '&7Erreiche Rang &fBedrock &7und'
+  - '&7prestige für permanente Boni!'
+  - '&8&m──────────────────────'
+  - '&d✦ Bronze &8- &a+10%% Sell-Bonus'
+  - '&6✦✦ Silber &8- &a+20%% Sell-Bonus'
+  - '&e✦✦✦ Gold &8- &a+35%% Sell-Bonus'
+  - '&b✦✦✦✦ Platin &8- &a+50%% Sell-Bonus'
+  - '&a✦✦✦✦✦ Smaragd &8- &a+70%% Sell-Bonus'
+  - '&6&l✦✦✦✦✦✦✦✦✦✦ Legende &8- &a+200%%'
+  - '&8&m──────────────────────'
+  - '&e/prestige &8- &7Info & Aufstieg'
+display-range: 48
+update-range: 48
+update-interval: 20

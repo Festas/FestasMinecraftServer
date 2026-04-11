@@ -1,0 +1,23 @@
+# DecentHolograms - Börsen-Ticker (Dynamische Preise)
+# Zeigt die aktuellen Marktpreise an
+# Wird vom dynamic_market.sk Skript aktualisiert
+location:
+  world: tycoon
+  x: 0.5
+  y: 69.0
+  z: -10.5
+lines:
+  - '&e&l📈 &6&lBÖRSE &e&l📉'
+  - '&8&m──────────────────────'
+  - '&7Erde: &e%skript_boerse_dirt%€ %skript_boerse_trend_dirt%'
+  - '&8Kohle: &e%skript_boerse_coal%€ %skript_boerse_trend_coal%'
+  - '&fEisen: &e%skript_boerse_iron%€ %skript_boerse_trend_iron%'
+  - '&6Gold: &e%skript_boerse_gold%€ %skript_boerse_trend_gold%'
+  - '&bDiamant: &e%skript_boerse_diamond%€ %skript_boerse_trend_diamond%'
+  - '&aSmaragd: &e%skript_boerse_emerald%€ %skript_boerse_trend_emerald%'
+  - '&8&m──────────────────────'
+  - '&7Preise ändern sich alle &e30 Min'
+  - '&7Nutze &e/boerse &7für Details'
+display-range: 48
+update-range: 48
+update-interval: 600

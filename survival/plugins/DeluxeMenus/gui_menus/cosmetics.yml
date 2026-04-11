@@ -1,0 +1,416 @@
+menu_title: '&8» &d✨ Kosmetik Shop'
+open_command: cosmetics
+size: 45
+
+items:
+  # ==============================================================
+  # FILLER (Hintergrund)
+  # ==============================================================
+  'filler':
+    material: PURPLE_STAINED_GLASS_PANE
+    slots:
+      - '0-8'
+      - '36-44'
+    display_name: '&f'
+    priority: 2
+
+  'filler2':
+    material: BLACK_STAINED_GLASS_PANE
+    slots:
+      - '9'
+      - '17'
+      - '18'
+      - '26'
+      - '27'
+      - '35'
+    display_name: '&f'
+    priority: 2
+
+  # ==============================================================
+  # HEADER
+  # ==============================================================
+  'header':
+    material: NETHER_STAR
+    slot: 4
+    priority: 1
+    display_name: '&d&l✨ Kosmetik Shop'
+    lore:
+      - '&7Kaufe kosmetische Effekte!'
+      - '&7Alle Effekte sind permanent.'
+      - ''
+      - '&7Dein Geld: &a%vault_eco_balance_formatted%€'
+
+  # ==============================================================
+  # PARTIKEL-EFFEKTE
+  # ==============================================================
+  'particles_flame':
+    material: BLAZE_POWDER
+    slot: 10
+    priority: 1
+    display_name: '&6&lFlammen-Spur'
+    lore:
+      - '&7Hinterlasse brennende Partikel!'
+      - ''
+      - '&7Preis: &e500.000€'
+      - ''
+      - '&e► Linksklick zum Kaufen'
+    left_click_commands:
+      - '[console] cmi money take %player% 500000'
+      - '[console] lp user %player% permission set playerparticles.effect.flame true'
+      - '[console] pp fixed create %player% ~0 ~1 ~0 feet flame'
+      - '[message] &8[&d✨&8] &aFlammen-Spur freigeschaltet!'
+      - '[sound] ENTITY_PLAYER_LEVELUP'
+      - '[close]'
+    left_click_requirement:
+      requirements:
+        money:
+          type: has money
+          amount: 500000
+      deny_commands:
+        - '[message] &8[&d✨&8] &cDu brauchst 500.000€!'
+        - '[sound] ENTITY_VILLAGER_NO'
+
+  'particles_hearts':
+    material: RED_DYE
+    slot: 11
+    priority: 1
+    display_name: '&c&lHerz-Aura'
+    lore:
+      - '&7Umgib dich mit Herzen!'
+      - ''
+      - '&7Preis: &e750.000€'
+      - ''
+      - '&e► Linksklick zum Kaufen'
+    left_click_commands:
+      - '[console] cmi money take %player% 750000'
+      - '[console] lp user %player% permission set playerparticles.effect.heart true'
+      - '[message] &8[&d✨&8] &aHerz-Aura freigeschaltet!'
+      - '[sound] ENTITY_PLAYER_LEVELUP'
+      - '[close]'
+    left_click_requirement:
+      requirements:
+        money:
+          type: has money
+          amount: 750000
+      deny_commands:
+        - '[message] &8[&d✨&8] &cDu brauchst 750.000€!'
+        - '[sound] ENTITY_VILLAGER_NO'
+
+  'particles_enchant':
+    material: ENCHANTING_TABLE
+    slot: 12
+    priority: 1
+    display_name: '&b&lVerzauberungs-Glitzer'
+    lore:
+      - '&7Magische Funken um dich herum!'
+      - ''
+      - '&7Preis: &e1.000.000€'
+      - ''
+      - '&e► Linksklick zum Kaufen'
+    left_click_commands:
+      - '[console] cmi money take %player% 1000000'
+      - '[console] lp user %player% permission set playerparticles.effect.enchantment true'
+      - '[message] &8[&d✨&8] &aVerzauberungs-Glitzer freigeschaltet!'
+      - '[sound] ENTITY_PLAYER_LEVELUP'
+      - '[close]'
+    left_click_requirement:
+      requirements:
+        money:
+          type: has money
+          amount: 1000000
+      deny_commands:
+        - '[message] &8[&d✨&8] &cDu brauchst 1.000.000€!'
+        - '[sound] ENTITY_VILLAGER_NO'
+
+  'particles_totem':
+    material: TOTEM_OF_UNDYING
+    slot: 13
+    priority: 1
+    display_name: '&e&lTotem-Effekt'
+    lore:
+      - '&7Regenbogen-Partikel überall!'
+      - ''
+      - '&7Preis: &e5.000.000€'
+      - ''
+      - '&e► Linksklick zum Kaufen'
+    left_click_commands:
+      - '[console] cmi money take %player% 5000000'
+      - '[console] lp user %player% permission set playerparticles.effect.totem true'
+      - '[message] &8[&d✨&8] &aTotem-Effekt freigeschaltet!'
+      - '[sound] ENTITY_PLAYER_LEVELUP'
+      - '[close]'
+    left_click_requirement:
+      requirements:
+        money:
+          type: has money
+          amount: 5000000
+      deny_commands:
+        - '[message] &8[&d✨&8] &cDu brauchst 5.000.000€!'
+        - '[sound] ENTITY_VILLAGER_NO'
+
+  'particles_endrod':
+    material: END_ROD
+    slot: 14
+    priority: 1
+    display_name: '&f&lEnd-Stab Funken'
+    lore:
+      - '&7Elegante weiße Partikel!'
+      - ''
+      - '&7Preis: &e2.500.000€'
+      - ''
+      - '&e► Linksklick zum Kaufen'
+    left_click_commands:
+      - '[console] cmi money take %player% 2500000'
+      - '[console] lp user %player% permission set playerparticles.effect.end_rod true'
+      - '[message] &8[&d✨&8] &aEnd-Stab Funken freigeschaltet!'
+      - '[sound] ENTITY_PLAYER_LEVELUP'
+      - '[close]'
+    left_click_requirement:
+      requirements:
+        money:
+          type: has money
+          amount: 2500000
+      deny_commands:
+        - '[message] &8[&d✨&8] &cDu brauchst 2.500.000€!'
+        - '[sound] ENTITY_VILLAGER_NO'
+
+  # ==============================================================
+  # CHAT-FARBEN
+  # ==============================================================
+  'chat_header':
+    material: BOOK
+    slot: 16
+    priority: 1
+    display_name: '&f&lChat-Farben'
+    lore:
+      - '&7Ändere die Farbe deiner'
+      - '&7Chat-Nachrichten!'
+      - ''
+      - '&7Nutze &e/chatcolor &7nach Kauf.'
+
+  'chat_gold':
+    material: GOLD_INGOT
+    slot: 19
+    priority: 1
+    display_name: '&6&lGoldener Chat'
+    lore:
+      - '&7Deine Nachrichten in &6Gold&7!'
+      - ''
+      - '&7Preis: &e250.000€'
+      - ''
+      - '&e► Linksklick zum Kaufen'
+    left_click_commands:
+      - '[console] cmi money take %player% 250000'
+      - '[console] lp user %player% permission set cmi.colors.publicmessage.gold true'
+      - '[message] &8[&d✨&8] &aGoldener Chat freigeschaltet! Nutze /chatcolor'
+      - '[sound] ENTITY_PLAYER_LEVELUP'
+      - '[close]'
+    left_click_requirement:
+      requirements:
+        money:
+          type: has money
+          amount: 250000
+      deny_commands:
+        - '[message] &8[&d✨&8] &cDu brauchst 250.000€!'
+        - '[sound] ENTITY_VILLAGER_NO'
+
+  'chat_aqua':
+    material: PRISMARINE_SHARD
+    slot: 20
+    priority: 1
+    display_name: '&b&lAqua Chat'
+    lore:
+      - '&7Deine Nachrichten in &bAqua&7!'
+      - ''
+      - '&7Preis: &e250.000€'
+      - ''
+      - '&e► Linksklick zum Kaufen'
+    left_click_commands:
+      - '[console] cmi money take %player% 250000'
+      - '[console] lp user %player% permission set cmi.colors.publicmessage.aqua true'
+      - '[message] &8[&d✨&8] &aAqua Chat freigeschaltet! Nutze /chatcolor'
+      - '[sound] ENTITY_PLAYER_LEVELUP'
+      - '[close]'
+    left_click_requirement:
+      requirements:
+        money:
+          type: has money
+          amount: 250000
+      deny_commands:
+        - '[message] &8[&d✨&8] &cDu brauchst 250.000€!'
+        - '[sound] ENTITY_VILLAGER_NO'
+
+  'chat_red':
+    material: REDSTONE
+    slot: 21
+    priority: 1
+    display_name: '&c&lRoter Chat'
+    lore:
+      - '&7Deine Nachrichten in &cRot&7!'
+      - ''
+      - '&7Preis: &e250.000€'
+      - ''
+      - '&e► Linksklick zum Kaufen'
+    left_click_commands:
+      - '[console] cmi money take %player% 250000'
+      - '[console] lp user %player% permission set cmi.colors.publicmessage.red true'
+      - '[message] &8[&d✨&8] &aRoter Chat freigeschaltet! Nutze /chatcolor'
+      - '[sound] ENTITY_PLAYER_LEVELUP'
+      - '[close]'
+    left_click_requirement:
+      requirements:
+        money:
+          type: has money
+          amount: 250000
+      deny_commands:
+        - '[message] &8[&d✨&8] &cDu brauchst 250.000€!'
+        - '[sound] ENTITY_VILLAGER_NO'
+
+  'chat_green':
+    material: EMERALD
+    slot: 22
+    priority: 1
+    display_name: '&a&lGrüner Chat'
+    lore:
+      - '&7Deine Nachrichten in &aGrün&7!'
+      - ''
+      - '&7Preis: &e250.000€'
+      - ''
+      - '&e► Linksklick zum Kaufen'
+    left_click_commands:
+      - '[console] cmi money take %player% 250000'
+      - '[console] lp user %player% permission set cmi.colors.publicmessage.green true'
+      - '[message] &8[&d✨&8] &aGrüner Chat freigeschaltet! Nutze /chatcolor'
+      - '[sound] ENTITY_PLAYER_LEVELUP'
+      - '[close]'
+    left_click_requirement:
+      requirements:
+        money:
+          type: has money
+          amount: 250000
+      deny_commands:
+        - '[message] &8[&d✨&8] &cDu brauchst 250.000€!'
+        - '[sound] ENTITY_VILLAGER_NO'
+
+  # ==============================================================
+  # DISGUISES (LibsDisguises)
+  # ==============================================================
+  'disguise_header':
+    material: PLAYER_HEAD
+    slot: 25
+    priority: 1
+    display_name: '&5&lVerkleidungen'
+    lore:
+      - '&7Verwandle dich in Mobs!'
+      - '&7Nur kosmetisch - kein Vorteil.'
+      - ''
+      - '&7Nutze &e/undisguise &7zum Entfernen.'
+
+  'disguise_chicken':
+    material: EGG
+    slot: 28
+    priority: 1
+    display_name: '&e&lHuhn-Verkleidung'
+    lore:
+      - '&7Verwandle dich in ein Huhn!'
+      - ''
+      - '&7Preis: &e100.000€'
+      - ''
+      - '&e► Linksklick zum Aktivieren'
+    left_click_commands:
+      - '[console] cmi money take %player% 100000'
+      - '[console] lp user %player% permission set libsdisguises.disguise.chicken true'
+      - '[player] disguise chicken'
+      - '[message] &8[&d✨&8] &aDu bist jetzt ein Huhn! 🐔'
+      - '[sound] ENTITY_CHICKEN_AMBIENT'
+      - '[close]'
+    left_click_requirement:
+      requirements:
+        money:
+          type: has money
+          amount: 100000
+      deny_commands:
+        - '[message] &8[&d✨&8] &cDu brauchst 100.000€!'
+        - '[sound] ENTITY_VILLAGER_NO'
+
+  'disguise_villager':
+    material: EMERALD
+    slot: 29
+    priority: 1
+    display_name: '&2&lDorfbewohner-Verkleidung'
+    lore:
+      - '&7Verwandle dich in einen Villager!'
+      - ''
+      - '&7Preis: &e500.000€'
+      - ''
+      - '&e► Linksklick zum Aktivieren'
+    left_click_commands:
+      - '[console] cmi money take %player% 500000'
+      - '[console] lp user %player% permission set libsdisguises.disguise.villager true'
+      - '[player] disguise villager'
+      - '[message] &8[&d✨&8] &aDu bist jetzt ein Dorfbewohner!'
+      - '[sound] ENTITY_VILLAGER_YES'
+      - '[close]'
+    left_click_requirement:
+      requirements:
+        money:
+          type: has money
+          amount: 500000
+      deny_commands:
+        - '[message] &8[&d✨&8] &cDu brauchst 500.000€!'
+        - '[sound] ENTITY_VILLAGER_NO'
+
+  'disguise_enderman':
+    material: ENDER_PEARL
+    slot: 30
+    priority: 1
+    display_name: '&5&lEnderman-Verkleidung'
+    lore:
+      - '&7Verwandle dich in einen Enderman!'
+      - ''
+      - '&7Preis: &e2.000.000€'
+      - ''
+      - '&e► Linksklick zum Aktivieren'
+    left_click_commands:
+      - '[console] cmi money take %player% 2000000'
+      - '[console] lp user %player% permission set libsdisguises.disguise.enderman true'
+      - '[player] disguise enderman'
+      - '[message] &8[&d✨&8] &aDu bist jetzt ein Enderman!'
+      - '[sound] ENTITY_ENDERMAN_SCREAM'
+      - '[close]'
+    left_click_requirement:
+      requirements:
+        money:
+          type: has money
+          amount: 2000000
+      deny_commands:
+        - '[message] &8[&d✨&8] &cDu brauchst 2.000.000€!'
+        - '[sound] ENTITY_VILLAGER_NO'
+
+  'disguise_remove':
+    material: BARRIER
+    slot: 31
+    priority: 1
+    display_name: '&c&lVerkleidung entfernen'
+    lore:
+      - '&7Entferne deine aktuelle Verkleidung.'
+      - ''
+      - '&e► Linksklick zum Entfernen'
+    left_click_commands:
+      - '[player] undisguise'
+      - '[message] &8[&d✨&8] &7Verkleidung entfernt.'
+      - '[close]'
+
+  # ==============================================================
+  # INFO / ZURÜCK
+  # ==============================================================
+  'back':
+    material: ARROW
+    slot: 40
+    priority: 1
+    display_name: '&c&lZurück'
+    lore:
+      - '&7Zurück zum Tycoon Manager'
+    left_click_commands:
+      - '[openguimenu] tycoon_main'
+      - '[sound] UI_BUTTON_CLICK'

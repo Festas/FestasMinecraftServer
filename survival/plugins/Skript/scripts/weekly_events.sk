@@ -1,0 +1,151 @@
+# --- WÖCHENTLICHE EVENTS SYSTEM ---
+# Automatische rotierende Events für mehr Abwechslung
+# Doppelte Ausgabe, halber Rankup-Preis, Casino-Specials, etc.
+
+options:
+    prefix: &8[&a🎉 Event&8] &7
+
+# --- EVENT-TYPEN ---
+on script load:
+    delete {event_names::*}
+    set {event_names::1} to "&a&lDOPPELTE GENERATOREN"
+    set {event_names::2} to "&e&lGOLDENE STUNDE"
+    set {event_names::3} to "&d&lCASINO FIEBER"
+    set {event_names::4} to "&b&lHANDELSTAG"
+    set {event_names::5} to "&6&lGLÜCKSTAG"
+
+    delete {event_desc::*}
+    set {event_desc::1} to "&7Generatoren produzieren doppelt so viel!"
+    set {event_desc::2} to "&7Alle Sell-Preise um 50%% erhöht!"
+    set {event_desc::3} to "&7Casino Max-Einsatz verdoppelt & x15 Jackpot!"
+    set {event_desc::4} to "&7GlobalMarket-Transaktionen ohne Steuern!"
+    set {event_desc::5} to "&7Daily Rewards sind verdreifacht!"
+
+    send "&8[&a🎉 Event&8] &aEvent-System geladen (5 Event-Typen)!" to console
+
+# --- AKTIVES EVENT PRÜFEN ---
+function isEventActive(eventID: number) :: boolean:
+    if {weekly_event} is {_eventID}:
+        return true
+    return false
+
+# --- EVENT STATUS ---
+command /event:
+    description: Zeige aktuelle Events
+    aliases: /events, /wochendevent
+    trigger:
+        send ""
+        send "&8&m─────────────────────────────────────"
+        send "&a&l  🎉 AKTUELLE EVENTS 🎉"
+        send "&8&m─────────────────────────────────────"
+        send ""
+
+        if {weekly_event} is set:
+            set {_eventName} to {event_names::%{weekly_event}%}
+            set {_eventDesc} to {event_desc::%{weekly_event}%}
+            send "{@prefix}&7Aktives Event: %{_eventName}%"
+            send "{@prefix}%{_eventDesc}%"
+            send ""
+            send "{@prefix}&7Endet automatisch in einigen Stunden."
+        else:
+            send "{@prefix}&7Aktuell kein Event aktiv."
+            send "{@prefix}&7Events starten automatisch am Wochenende"
+            send "{@prefix}&7und zufällig unter der Woche!"
+
+        send ""
+        send "&8&m─────────────────────────────────────"
+
+# --- EVENT STARTEN (Admin) ---
+command /event start <number>:
+    permission: tycoon.admin
+    description: Starte ein Event manuell
+    trigger:
+        set {_id} to arg-1
+        if {_id} < 1:
+            set {_id} to 1
+        if {_id} > 5:
+            set {_id} to 5
+
+        set {weekly_event} to {_id}
+
+        broadcast ""
+        broadcast "&8&m─────────────────────────────────────"
+        broadcast "&a&l  🎉 EVENT GESTARTET! 🎉"
+        broadcast "&8&m─────────────────────────────────────"
+        broadcast ""
+        broadcast "{@prefix}%{event_names::%{_id}%}%"
+        broadcast "{@prefix}%{event_desc::%{_id}%}%"
+        broadcast ""
+        broadcast "&8&m─────────────────────────────────────"
+
+        loop all players:
+            play sound "entity.player.levelup" with volume 0.8 and pitch 1.5 to loop-player
+            send title "&a&l🎉 EVENT!" with subtitle "%{event_names::%{_id}%}%" to loop-player for 5 seconds
+
+# --- EVENT STOPPEN (Admin) ---
+command /event stop:
+    permission: tycoon.admin
+    description: Stoppe das aktive Event
+    trigger:
+        if {weekly_event} is not set:
+            send "{@prefix}&cKein Event aktiv!"
+            stop
+
+        set {_name} to {event_names::%{weekly_event}%}
+        delete {weekly_event}
+
+        broadcast "{@prefix}%{_name}% &7ist beendet!"
+
+# --- AUTOMATISCHE WOCHENEND-EVENTS ---
+# Freitag 18:00 bis Sonntag 23:59 automatisches Event
+every 1 hour:
+    # Zufällige Events unter der Woche (5% Chance pro Stunde)
+    if {weekly_event} is not set:
+        set {_chance} to random integer between 1 and 100
+        if {_chance} <= 5:
+            set {_eventID} to random integer between 1 and 5
+            set {weekly_event} to {_eventID}
+
+            broadcast ""
+            broadcast "{@prefix}&a&l⚡ ÜBERRASCHUNGS-EVENT!"
+            broadcast "{@prefix}%{event_names::%{_eventID}%}%"
+            broadcast "{@prefix}%{event_desc::%{_eventID}%}%"
+            broadcast "{@prefix}&7Endet in &e4 Stunden&7!"
+            broadcast ""
+
+            loop all players:
+                play sound "entity.player.levelup" with volume 0.8 and pitch 1.5 to loop-player
+
+            # Event nach 4 Stunden automatisch beenden
+            wait 4 hours
+            if {weekly_event} is {_eventID}:
+                delete {weekly_event}
+                broadcast "{@prefix}%{event_names::%{_eventID}%}% &7ist beendet!"
+
+# --- WOCHENEND-EVENT (Jeden Samstag) ---
+every 6 hours:
+    # Samstags automatisch ein Event starten
+    set {_today} to now
+    set {_dayName} to {_today} formatted as "EEEE"
+    if {_dayName} contains "Samstag" or "Saturday":
+        if {weekly_event} is not set:
+            set {_eventID} to random integer between 1 and 5
+            set {weekly_event} to {_eventID}
+
+            broadcast ""
+            broadcast "&8&m─────────────────────────────────────"
+            broadcast "{@prefix}&6&l🎊 WOCHENEND-EVENT! 🎊"
+            broadcast "{@prefix}%{event_names::%{_eventID}%}%"
+            broadcast "{@prefix}%{event_desc::%{_eventID}%}%"
+            broadcast "{@prefix}&7Aktiv für &e6 Stunden&7!"
+            broadcast "&8&m─────────────────────────────────────"
+            broadcast ""
+
+            loop all players:
+                play sound "ui.toast.challenge_complete" with volume 1 and pitch 1 to loop-player
+                send title "&6&l🎊 WOCHENEND-EVENT!" with subtitle "%{event_names::%{_eventID}%}%" to loop-player for 5 seconds
+
+            wait 6 hours
+            if {weekly_event} is {_eventID}:
+                delete {weekly_event}
+                broadcast "{@prefix}%{event_names::%{_eventID}%}% &7ist beendet! Bis zum nächsten Mal!"
