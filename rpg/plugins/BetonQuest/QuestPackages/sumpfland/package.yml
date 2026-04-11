@@ -1,0 +1,6 @@
+# Sumpfland - Sumpf-Zonen Quest-Paket
+# The Swamp Zone
+
+npcs:
+  "30": "sumpfhexe_morla"
+  "31": "geisterfaenger_gregor"
