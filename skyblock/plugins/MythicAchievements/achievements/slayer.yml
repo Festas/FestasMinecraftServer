@@ -1,0 +1,137 @@
+# ============================================================
+# Slayer-Erfolge (Slayer Achievements) — Skyblock Server
+# ============================================================
+achievements:
+  zombie_slayer_t1:
+    name: "&7Zombie-Slayer I"
+    description: "&7Schließe Zombie-Slayer Stufe 1 ab"
+    icon: ROTTEN_FLESH
+    type: slayer_complete
+    slayer: zombie
+    tier: 1
+    amount: 1
+    reward:
+      commands:
+        - "eco give %player% 500"
+    title: "&7Zombie-Jäger"
+
+  zombie_slayer_t2:
+    name: "&aZombie-Slayer II"
+    description: "&7Schließe Zombie-Slayer Stufe 2 ab"
+    icon: ZOMBIE_HEAD
+    type: slayer_complete
+    slayer: zombie
+    tier: 2
+    amount: 1
+    reward:
+      commands:
+        - "eco give %player% 2000"
+    title: "&aZombie-Vernichter"
+
+  zombie_slayer_t3:
+    name: "&5Zombie-Slayer III"
+    description: "&7Schließe Zombie-Slayer Stufe 3 ab"
+    icon: DIAMOND_SWORD
+    type: slayer_complete
+    slayer: zombie
+    tier: 3
+    amount: 1
+    reward:
+      commands:
+        - "eco give %player% 10000"
+        - "crate give %player% legendary 1"
+    title: "&5Zombie-Meister"
+
+  spinnen_slayer_t1:
+    name: "&7Spinnen-Slayer I"
+    description: "&7Schließe Spinnen-Slayer Stufe 1 ab"
+    icon: SPIDER_EYE
+    type: slayer_complete
+    slayer: spider
+    tier: 1
+    amount: 1
+    reward:
+      commands:
+        - "eco give %player% 500"
+    title: "&7Spinnen-Jäger"
+
+  spinnen_slayer_t2:
+    name: "&aSpinnen-Slayer II"
+    description: "&7Schließe Spinnen-Slayer Stufe 2 ab"
+    icon: FERMENTED_SPIDER_EYE
+    type: slayer_complete
+    slayer: spider
+    tier: 2
+    amount: 1
+    reward:
+      commands:
+        - "eco give %player% 2000"
+    title: "&aSpinnen-Vernichter"
+
+  spinnen_slayer_t3:
+    name: "&5Spinnen-Slayer III"
+    description: "&7Schließe Spinnen-Slayer Stufe 3 ab"
+    icon: NETHERITE_SWORD
+    type: slayer_complete
+    slayer: spider
+    tier: 3
+    amount: 1
+    reward:
+      commands:
+        - "eco give %player% 10000"
+        - "crate give %player% legendary 1"
+    title: "&5Spinnen-Meister"
+
+  wolf_slayer_t1:
+    name: "&7Wolf-Slayer I"
+    description: "&7Schließe Wolf-Slayer Stufe 1 ab"
+    icon: BONE
+    type: slayer_complete
+    slayer: wolf
+    tier: 1
+    amount: 1
+    reward:
+      commands:
+        - "eco give %player% 500"
+    title: "&7Wolfsjäger"
+
+  wolf_slayer_t2:
+    name: "&aWolf-Slayer II"
+    description: "&7Schließe Wolf-Slayer Stufe 2 ab"
+    icon: BONE_BLOCK
+    type: slayer_complete
+    slayer: wolf
+    tier: 2
+    amount: 1
+    reward:
+      commands:
+        - "eco give %player% 2000"
+    title: "&aWolfsvernichter"
+
+  wolf_slayer_t3:
+    name: "&5Wolf-Slayer III"
+    description: "&7Schließe Wolf-Slayer Stufe 3 ab"
+    icon: NETHERITE_SWORD
+    type: slayer_complete
+    slayer: wolf
+    tier: 3
+    amount: 1
+    reward:
+      commands:
+        - "eco give %player% 10000"
+        - "crate give %player% legendary 1"
+    title: "&5Wolfsmeister"
+
+  alle_slayer_gemeistert:
+    name: "&6&lSlayer-Großmeister"
+    description: "&7Schließe alle Slayer auf der höchsten Stufe ab"
+    icon: NETHER_STAR
+    type: slayer_complete
+    slayer: all
+    tier: 3
+    amount: 1
+    reward:
+      commands:
+        - "eco give %player% 100000"
+        - "crate give %player% mythic 10"
+    title: "&6&lSlayer-Großmeister"

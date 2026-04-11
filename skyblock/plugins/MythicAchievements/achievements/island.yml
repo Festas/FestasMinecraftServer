@@ -1,0 +1,121 @@
+# ============================================================
+# Insel-Erfolge (Island Achievements) — Skyblock Server
+# ============================================================
+achievements:
+  insel_erstellt:
+    name: "&7Inselbesitzer"
+    description: "&7Erstelle deine erste Insel"
+    icon: GRASS_BLOCK
+    type: island_create
+    amount: 1
+    reward:
+      commands:
+        - "eco give %player% 500"
+    title: "&7Inselbesitzer"
+
+  insel_level_10:
+    name: "&aInsel Level 10"
+    description: "&7Erreiche Insel-Level 10"
+    icon: STONE
+    type: island_level
+    amount: 10
+    reward:
+      commands:
+        - "eco give %player% 1000"
+    title: "&aInselbauer"
+
+  insel_level_50:
+    name: "&bInsel Level 50"
+    description: "&7Erreiche Insel-Level 50"
+    icon: IRON_BLOCK
+    type: island_level
+    amount: 50
+    reward:
+      commands:
+        - "eco give %player% 5000"
+    title: "&bInsel-Architekt"
+
+  insel_level_100:
+    name: "&5Insel Level 100"
+    description: "&7Erreiche Insel-Level 100"
+    icon: GOLD_BLOCK
+    type: island_level
+    amount: 100
+    reward:
+      commands:
+        - "eco give %player% 15000"
+        - "crate give %player% legendary 2"
+    title: "&5Insel-Meister"
+
+  insel_level_250:
+    name: "&6Insel Level 250"
+    description: "&7Erreiche Insel-Level 250"
+    icon: DIAMOND_BLOCK
+    type: island_level
+    amount: 250
+    reward:
+      commands:
+        - "eco give %player% 50000"
+        - "crate give %player% mythic 3"
+    title: "&6Insel-Legende"
+
+  insel_level_500:
+    name: "&6&lInsel Level 500"
+    description: "&7Erreiche Insel-Level 500"
+    icon: EMERALD_BLOCK
+    type: island_level
+    amount: 500
+    reward:
+      commands:
+        - "eco give %player% 150000"
+        - "crate give %player% mythic 10"
+    title: "&6&lInsel-Gott"
+
+  mitglied_eingeladen:
+    name: "&aMitglied eingeladen"
+    description: "&7Lade einen Spieler auf deine Insel ein"
+    icon: PLAYER_HEAD
+    type: island_invite
+    amount: 1
+    reward:
+      commands:
+        - "eco give %player% 300"
+    title: "&aGastgeber"
+
+  insel_upgrades_alle:
+    name: "&5Alle Upgrades"
+    description: "&7Kaufe alle Insel-Upgrades"
+    icon: BEACON
+    type: island_upgrade
+    upgrade: all
+    amount: 1
+    reward:
+      commands:
+        - "eco give %player% 25000"
+        - "crate give %player% mythic 2"
+    title: "&5Voll ausgebaut"
+
+  insel_top_10:
+    name: "&6Top 10 Insel"
+    description: "&7Erreiche die Top 10 der Insel-Rangliste"
+    icon: GOLDEN_APPLE
+    type: island_ranking
+    ranking: 10
+    amount: 1
+    reward:
+      commands:
+        - "eco give %player% 50000"
+    title: "&6Top-Insulaner"
+
+  insel_top_1:
+    name: "&6&l#1 Insel"
+    description: "&7Erreiche Platz 1 der Insel-Rangliste"
+    icon: ENCHANTED_GOLDEN_APPLE
+    type: island_ranking
+    ranking: 1
+    amount: 1
+    reward:
+      commands:
+        - "eco give %player% 200000"
+        - "crate give %player% mythic 15"
+    title: "&6&lInsel-König"

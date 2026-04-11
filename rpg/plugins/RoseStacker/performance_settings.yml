@@ -1,0 +1,54 @@
+# ============================================================
+# RoseStacker — Performance-Optimierung für RPG Server
+# ============================================================
+entity-stacking:
+  enabled: true
+  max-stack-size: 128
+  stack-range: 5
+  merge-radius: 5
+  display:
+    name: "&c%amount%x &7%name%"
+  kill-entire-stack-on-death: false
+  kill-entire-stack-on-explosion: false
+  drop-accurate-items: true
+  drop-accurate-exp: true
+  require-line-of-sight: true
+
+item-stacking:
+  enabled: true
+  max-stack-size: 1024
+  merge-radius: 3
+  display:
+    name: "&e%amount%x &7%name%"
+  max-item-age: 300
+
+spawner-stacking:
+  enabled: true
+  max-stack-size: 64
+  stack-range: 5
+  display:
+    name: "&b%amount%x &7%name%"
+  silk-touch-required: true
+
+block-stacking:
+  enabled: false
+
+# Aggressive Settings für Mob-Farmen
+global:
+  disable-mob-ai-when-stacked: true
+  only-stack-on-ground: false
+  instant-stack-kill: false
+  stack-entities-by-type: true
+  stack-entities-of-same-name: true
+  
+  # Performance-Einstellungen
+  stacking-thread-pool-size: 2
+  entity-stacking-interval: 5
+  item-stacking-interval: 3
+  
+  # Welten-Einstellungen
+  disabled-worlds: []
+  
+  # Chunk-Limits
+  entity-per-chunk-limit: 50
+  item-per-chunk-limit: 100

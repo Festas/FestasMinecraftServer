@@ -1,0 +1,134 @@
+# ============================================================
+# Dungeon-Erfolge (Dungeon Achievements) — RPG Server
+# ============================================================
+achievements:
+  erster_dungeon:
+    name: "&7Erster Dungeon"
+    description: "&7Schließe deinen ersten Dungeon ab"
+    icon: MOSSY_COBBLESTONE
+    type: dungeon_clear
+    amount: 1
+    reward:
+      commands:
+        - "eco give %player% 500"
+    title: "&7Dungeon-Läufer"
+
+  zehn_dungeons:
+    name: "&aDungeon-Veteran"
+    description: "&7Schließe 10 Dungeons ab"
+    icon: MOSSY_STONE_BRICKS
+    type: dungeon_clear
+    amount: 10
+    reward:
+      commands:
+        - "eco give %player% 5000"
+    title: "&aDungeon-Veteran"
+
+  krypta_normal:
+    name: "&7Krypta bezwungen"
+    description: "&7Schließe die Krypta im Normalmodus ab"
+    icon: SKELETON_SKULL
+    type: dungeon_clear
+    dungeon: krypta
+    difficulty: normal
+    amount: 1
+    reward:
+      commands:
+        - "eco give %player% 2000"
+    title: "&7Krypta-Bezwinger"
+
+  krypta_mythisch:
+    name: "&5Krypta Mythisch"
+    description: "&7Schließe die Krypta im Mythischen Modus ab"
+    icon: WITHER_SKELETON_SKULL
+    type: dungeon_clear
+    dungeon: krypta
+    difficulty: mythic
+    amount: 1
+    reward:
+      commands:
+        - "eco give %player% 15000"
+        - "crate give %player% mythic 2"
+    title: "&5Krypta-Meister"
+
+  vulkanhort_normal:
+    name: "&cVulkanhort bezwungen"
+    description: "&7Schließe den Vulkanhort im Normalmodus ab"
+    icon: MAGMA_CREAM
+    type: dungeon_clear
+    dungeon: vulkanhort
+    difficulty: normal
+    amount: 1
+    reward:
+      commands:
+        - "eco give %player% 3000"
+    title: "&cVulkan-Bezwinger"
+
+  vulkanhort_mythisch:
+    name: "&5Vulkanhort Mythisch"
+    description: "&7Schließe den Vulkanhort im Mythischen Modus ab"
+    icon: BLAZE_ROD
+    type: dungeon_clear
+    dungeon: vulkanhort
+    difficulty: mythic
+    amount: 1
+    reward:
+      commands:
+        - "eco give %player% 20000"
+        - "crate give %player% mythic 3"
+    title: "&5Vulkan-Meister"
+
+  eistempel_normal:
+    name: "&bEistempel bezwungen"
+    description: "&7Schließe den Eistempel im Normalmodus ab"
+    icon: BLUE_ICE
+    type: dungeon_clear
+    dungeon: eistempel
+    difficulty: normal
+    amount: 1
+    reward:
+      commands:
+        - "eco give %player% 3000"
+    title: "&bEis-Bezwinger"
+
+  eistempel_mythisch:
+    name: "&5Eistempel Mythisch"
+    description: "&7Schließe den Eistempel im Mythischen Modus ab"
+    icon: PACKED_ICE
+    type: dungeon_clear
+    dungeon: eistempel
+    difficulty: mythic
+    amount: 1
+    reward:
+      commands:
+        - "eco give %player% 20000"
+        - "crate give %player% mythic 3"
+    title: "&5Eis-Meister"
+
+  alle_dungeons_normal:
+    name: "&6Alle Dungeons (Normal)"
+    description: "&7Schließe alle Dungeons im Normalmodus ab"
+    icon: GOLDEN_APPLE
+    type: dungeon_clear
+    dungeon: all
+    difficulty: normal
+    amount: 1
+    reward:
+      commands:
+        - "eco give %player% 25000"
+        - "crate give %player% legendary 5"
+    title: "&6Dungeon-Eroberer"
+
+  alle_dungeons_mythisch:
+    name: "&6&lAlle Dungeons (Mythisch)"
+    description: "&7Schließe alle Dungeons im Mythischen Modus ab"
+    icon: ENCHANTED_GOLDEN_APPLE
+    type: dungeon_clear
+    dungeon: all
+    difficulty: mythic
+    amount: 1
+    reward:
+      commands:
+        - "eco give %player% 100000"
+        - "crate give %player% mythic 10"
+    title: "&6&lMythischer Eroberer"

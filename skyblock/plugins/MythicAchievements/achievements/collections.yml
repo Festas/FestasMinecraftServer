@@ -1,0 +1,188 @@
+# ============================================================
+# Sammlungs-Erfolge (Collection Achievements) — Skyblock Server
+# ============================================================
+achievements:
+  holz_sammler_1:
+    name: "&7Holzsammler I"
+    description: "&7Sammle 100 Holzblöcke"
+    icon: OAK_LOG
+    type: collection
+    collection: wood
+    amount: 100
+    reward:
+      commands:
+        - "eco give %player% 200"
+    title: "&7Holzfäller"
+
+  holz_sammler_2:
+    name: "&aHolzsammler II"
+    description: "&7Sammle 1.000 Holzblöcke"
+    icon: SPRUCE_LOG
+    type: collection
+    collection: wood
+    amount: 1000
+    reward:
+      commands:
+        - "eco give %player% 1000"
+    title: "&aHolzfäller-Veteran"
+
+  holz_sammler_3:
+    name: "&6Holzsammler III"
+    description: "&7Sammle 10.000 Holzblöcke"
+    icon: DARK_OAK_LOG
+    type: collection
+    collection: wood
+    amount: 10000
+    reward:
+      commands:
+        - "eco give %player% 5000"
+        - "crate give %player% legendary 1"
+    title: "&6Meister-Holzfäller"
+
+  erz_sammler_1:
+    name: "&7Bergarbeiter I"
+    description: "&7Sammle 100 Erze"
+    icon: IRON_ORE
+    type: collection
+    collection: ore
+    amount: 100
+    reward:
+      commands:
+        - "eco give %player% 300"
+    title: "&7Bergarbeiter"
+
+  erz_sammler_2:
+    name: "&aBergarbeiter II"
+    description: "&7Sammle 1.000 Erze"
+    icon: GOLD_ORE
+    type: collection
+    collection: ore
+    amount: 1000
+    reward:
+      commands:
+        - "eco give %player% 2000"
+    title: "&aBergarbeiter-Veteran"
+
+  erz_sammler_3:
+    name: "&6Bergarbeiter III"
+    description: "&7Sammle 10.000 Erze"
+    icon: DIAMOND_ORE
+    type: collection
+    collection: ore
+    amount: 10000
+    reward:
+      commands:
+        - "eco give %player% 10000"
+        - "crate give %player% mythic 1"
+    title: "&6Meister-Bergarbeiter"
+
+  ernte_sammler_1:
+    name: "&7Farmer I"
+    description: "&7Ernte 100 Feldfrüchte"
+    icon: WHEAT
+    type: collection
+    collection: farming
+    amount: 100
+    reward:
+      commands:
+        - "eco give %player% 200"
+    title: "&7Bauer"
+
+  ernte_sammler_2:
+    name: "&aFarmer II"
+    description: "&7Ernte 1.000 Feldfrüchte"
+    icon: CARROT
+    type: collection
+    collection: farming
+    amount: 1000
+    reward:
+      commands:
+        - "eco give %player% 1000"
+    title: "&aGroßbauer"
+
+  ernte_sammler_3:
+    name: "&6Farmer III"
+    description: "&7Ernte 10.000 Feldfrüchte"
+    icon: GOLDEN_CARROT
+    type: collection
+    collection: farming
+    amount: 10000
+    reward:
+      commands:
+        - "eco give %player% 5000"
+        - "crate give %player% legendary 1"
+    title: "&6Meister-Farmer"
+
+  fisch_sammler_1:
+    name: "&7Angler I"
+    description: "&7Fange 50 Fische"
+    icon: COD
+    type: collection
+    collection: fishing
+    amount: 50
+    reward:
+      commands:
+        - "eco give %player% 300"
+    title: "&7Angler"
+
+  fisch_sammler_2:
+    name: "&aAngler II"
+    description: "&7Fange 500 Fische"
+    icon: SALMON
+    type: collection
+    collection: fishing
+    amount: 500
+    reward:
+      commands:
+        - "eco give %player% 2000"
+    title: "&aFischer-Veteran"
+
+  fisch_sammler_3:
+    name: "&6Angler III"
+    description: "&7Fange 5.000 Fische"
+    icon: TROPICAL_FISH
+    type: collection
+    collection: fishing
+    amount: 5000
+    reward:
+      commands:
+        - "eco give %player% 10000"
+        - "crate give %player% mythic 1"
+    title: "&6Meister-Fischer"
+
+  alle_sammlungen_holz:
+    name: "&2Holz-Komplett"
+    description: "&7Schließe alle Holz-Sammlungen ab"
+    icon: BOOKSHELF
+    type: collection_category
+    category: wood
+    amount: 1
+    reward:
+      commands:
+        - "eco give %player% 15000"
+    title: "&2Holz-Komplettierer"
+
+  alle_sammlungen_erz:
+    name: "&bErz-Komplett"
+    description: "&7Schließe alle Erz-Sammlungen ab"
+    icon: DIAMOND_BLOCK
+    type: collection_category
+    category: ore
+    amount: 1
+    reward:
+      commands:
+        - "eco give %player% 20000"
+    title: "&bErz-Komplettierer"
+
+  alle_sammlungen:
+    name: "&6&lGroßsammler"
+    description: "&7Schließe alle Sammlungskategorien ab"
+    icon: NETHER_STAR
+    type: collection_category
+    category: all
+    amount: 1
+    reward:
+      commands:
+        - "eco give %player% 100000"
+        - "crate give %player% mythic 10"
+    title: "&6&lGroßsammler"
