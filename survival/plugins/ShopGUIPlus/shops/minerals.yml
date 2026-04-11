@@ -136,7 +136,7 @@ minerals:
         material: IRON_BLOCK
         quantity: 1
       buyPrice: 200
-      sellPrice: 45
+      sellPrice: 90
       slot: 33
       page: 1
 
@@ -146,7 +146,7 @@ minerals:
         material: DIAMOND_BLOCK
         quantity: 1
       buyPrice: 50000
-      sellPrice: 5000
+      sellPrice: 6750
       slot: 34
       page: 1
 
@@ -156,7 +156,7 @@ minerals:
         material: LAPIS_BLOCK
         quantity: 1
       buyPrice: 400
-      sellPrice: 200
+      sellPrice: 225
       slot: 37
       page: 1
 
@@ -216,7 +216,7 @@ minerals:
         material: QUARTZ_BLOCK
         quantity: 1
       buyPrice: 400
-      sellPrice: 80
+      sellPrice: 180
       slot: 43
       page: 1
 
@@ -270,7 +270,7 @@ minerals:
         material: COPPER_BLOCK
         quantity: 1
       buyPrice: 200
-      sellPrice: 45
+      sellPrice: 90
       slot: 22
       page: 2
 
