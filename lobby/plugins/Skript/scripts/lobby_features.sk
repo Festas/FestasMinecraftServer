@@ -1,0 +1,111 @@
+# --- LOBBY ANNOUNCEMENTS & FEATURES ---
+# Rotierende Nachrichten, Vote-Erinnerungen, Scoreboard
+# Erweitert die bestehende navigator.sk
+
+options:
+    prefix: &8[&6Festas&8] &7
+    lobby_world: lobby
+
+# --- 1. ROTIERENDE BOSSBAR NACHRICHTEN ---
+on script load:
+    delete {lobby_msgs::*}
+    set {lobby_msgs::1} to "&e✦ &6Festas Builds &8| &7mc.festas-builds.com &e✦"
+    set {lobby_msgs::2} to "&a✦ &7Wähle deinen Server mit &b/navigator &a✦"
+    set {lobby_msgs::3} to "&d✦ &7Tritt unserem Discord bei: &fdiscord.gg/festasbuilds &d✦"
+    set {lobby_msgs::4} to "&c✦ &7Lies die Regeln: &e/rules &c✦"
+    set {lobby_msgs::5} to "&b✦ &7Hilfe brauchst du? &e/guide &b✦"
+    set {lobby_msgs::6} to "&6✦ &7Tycoon: 25 Ränge & Dynamische Börse! &6✦"
+    set {lobby_msgs::7} to "&a✦ &7RPG: 6 Klassen, Dungeons & Quests! &a✦"
+    set {lobby_msgs::8} to "&3✦ &7Skyblock: Inseln, Minions & Skills! &3✦"
+    set {lobby_msgs::9} to "&e✦ &7Vote für den Server: &a/vote &e✦"
+    set {lobby_msgs::10} to "&5✦ &7NEU: Prestige-System & Boss-Events! &5✦"
+
+    set {lobby_msg_index} to 1
+    send "&8[&6Lobby&8] &aAnnouncement-System geladen (10 Nachrichten)!" to console
+
+# Rotiere alle 8 Sekunden
+every 8 seconds:
+    set {_msg} to {lobby_msgs::%{lobby_msg_index}%}
+    if {_msg} is set:
+        loop all players:
+            if world of loop-player is "{@lobby_world}":
+                send action bar "%{_msg}%" to loop-player
+
+    add 1 to {lobby_msg_index}
+    if {lobby_msg_index} > 10:
+        set {lobby_msg_index} to 1
+
+# --- 2. VOTE ERINNERUNG ---
+on join:
+    wait 5 seconds
+    if world of player is "{@lobby_world}":
+        # Vote-Erinnerung (nur alle 30 Minuten pro Spieler)
+        set {_lastReminder} to {vote.reminder.%player's uuid%}
+        set {_shouldRemind} to true
+
+        if {_lastReminder} is set:
+            set {_diff} to difference between {_lastReminder} and now
+            if {_diff} < 30 minutes:
+                set {_shouldRemind} to false
+
+        if {_shouldRemind} is true:
+            set {vote.reminder.%player's uuid%} to now
+            send "" to player
+            send "&8&m─────────────────────────────────────" to player
+            send "&e&l  ✦ VOTE FÜR UNS! ✦" to player
+            send "&8&m─────────────────────────────────────" to player
+            send "" to player
+            send "{@prefix}&7Unterstütze den Server mit deinem Vote!" to player
+            send "{@prefix}&7Nutze &e/vote &7für die Vote-Links." to player
+            send "{@prefix}&7Du erhältst &atolle Belohnungen &7für jeden Vote!" to player
+            send "" to player
+            send "&8&m─────────────────────────────────────" to player
+
+# --- 3. SERVER-TIPPS (Alle 5 Minuten) ---
+every 5 minutes:
+    delete {_tips::*}
+    add "&7Tipp: Nutze &eDouble-Jump &7um durch die Lobby zu fliegen!" to {_tips::*}
+    add "&7Tipp: Klicke die &eNPCs &7an um einen Server zu wählen!" to {_tips::*}
+    add "&7Tipp: Der &b/navigator &7öffnet das Server-Menü." to {_tips::*}
+    add "&7Tipp: Lies die &e/rules &7bevor du spielst!" to {_tips::*}
+    add "&7Tipp: &e/guide &7zeigt dir alles über das Netzwerk." to {_tips::*}
+    add "&7Tipp: Tritt unserem &9Discord &7bei für News & Support!" to {_tips::*}
+    add "&7Tipp: Das &6Tycoon &7System hat jetzt eine &dDynamische Börse&7!" to {_tips::*}
+    add "&7Tipp: &5Prestige &7nach Bedrock-Rang für permanente Boni!" to {_tips::*}
+
+    set {_tip} to random element out of {_tips::*}
+    loop all players:
+        if world of loop-player is "{@lobby_world}":
+            send "{@prefix}%{_tip}%" to loop-player
+
+# --- 4. VOTE BEFEHL (Platzhalter bis VotingPlugin installiert) ---
+command /vote:
+    description: Vote-Links anzeigen
+    trigger:
+        send ""
+        send "&8&m─────────────────────────────────────"
+        send "&e&l  ✦ VOTE FÜR FESTAS BUILDS ✦"
+        send "&8&m─────────────────────────────────────"
+        send ""
+        send "{@prefix}&7Vote-Links werden bald hinzugefügt!"
+        send "{@prefix}&7Danke für deine Unterstützung! ❤"
+        send ""
+        send "&8&m─────────────────────────────────────"
+
+# --- 5. ONLINE-SPIELER ANZEIGE ---
+command /online:
+    description: Zeige Online-Spieler
+    aliases: /players
+    trigger:
+        set {_count} to number of all players
+        send ""
+        send "&8&m─────────────────────────────────────"
+        send "&b&l  👥 ONLINE SPIELER"
+        send "&8&m─────────────────────────────────────"
+        send ""
+        send "{@prefix}&7Spieler online: &e%{_count}%"
+        send ""
+        loop all players:
+            send "&8  • &f%name of loop-player%" to player
+        send ""
+        send "&8&m─────────────────────────────────────"

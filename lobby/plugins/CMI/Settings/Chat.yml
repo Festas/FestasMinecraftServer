@@ -69,7 +69,7 @@ Chat:
   # For 1.16+ servers you can use color gradients like '{#b3a28f>}{message}{#d7b8e6<}'
   # You can have more than 2 colors in gradient. To define it repeat {message} variable. For example '{#b3a28f>}{message}{#5c6999<>}{message}{#d7b8e6<}'
   # Use %cmi_user_chatcolor% to add players choosen chat color
-  GeneralMessageFormat: '{message}'
+  GeneralMessageFormat: '%cmi_user_chatcolor%{message}'
   Ranged:
     # Defines range of regular messages to travel
     # Set to -1 to disable range restriction
@@ -128,7 +128,7 @@ Chat:
   GroupFormat:
     '1': '{prefix}&f{displayName}&f: &r{message}'
     '2': '{prefix}&f{displayName}&7: &r{message}'
-    '3': '{prefix}&f{displayName}&8: &r{message}'
+    '3': '{prefix}&e{displayName}&7: &r{message}'
   # Use numeric increments to separate groups from each other. If player has more than one, then line with higher number will be used
   # Add as many lines as you need too
   # cmi.chatmessagegroup.[id] permnission node to use

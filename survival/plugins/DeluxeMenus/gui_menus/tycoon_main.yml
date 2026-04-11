@@ -1,6 +1,6 @@
 menu_title: '&8» &6Tycoon Manager'
 open_command: tycoon_menu
-size: 27
+size: 36
 
 items:
   # ==============================================================
@@ -9,7 +9,7 @@ items:
   'filler':
     material: BLACK_STAINED_GLASS_PANE
     slots:
-      - '0-26' # WICHTIG: In Anführungszeichen!
+      - '0-35'
     display_name: '&f'
     priority: 2
 
@@ -96,4 +96,73 @@ items:
     left_click_commands:
       - '[openguimenu] tycoon_warps'
       - '[sound] UI_BUTTON_CLICK'
+
+  # ==============================================================
+  # 6. KOSMETIK SHOP
+  # ==============================================================
+  'cosmetics':
+    material: AMETHYST_SHARD
+    slot: 20
+    priority: 1
+    display_name: '&d&l✨ Kosmetik Shop'
+    lore:
+      - '&7Partikel, Chat-Farben &'
+      - '&7Verkleidungen kaufen!'
+      - ''
+      - '&d► Linksklick zum Öffnen'
+    left_click_commands:
+      - '[openguimenu] cosmetics'
+      - '[sound] UI_BUTTON_CLICK'
+
+  # ==============================================================
+  # 7. PRESTIGE
+  # ==============================================================
+  'prestige':
+    material: NETHER_STAR
+    slot: 24
+    priority: 1
+    display_name: '&5&l✦ Prestige'
+    lore:
+      - '&7Prestige-Info & Aufstieg'
+      - '&7nach Bedrock-Rang.'
+      - ''
+      - '&5► Linksklick für Info'
+    left_click_commands:
+      - '[player] prestige'
+      - '[close]'
+
+  # ==============================================================
+  # 8. ACHIEVEMENTS
+  # ==============================================================
+  'achievements':
+    material: GOLDEN_APPLE
+    slot: 4
+    priority: 1
+    display_name: '&6&l🏆 Achievements'
+    lore:
+      - '&7Zeige deine Fortschritte'
+      - '&7und freigeschalteten Badges!'
+      - ''
+      - '&6► Linksklick zum Anzeigen'
+    left_click_commands:
+      - '[player] achievements'
+      - '[close]'
+
+  # ==============================================================
+  # 9. BÖRSE
+  # ==============================================================
+  'boerse':
+    material: SUNFLOWER
+    slot: 18
+    priority: 1
+    display_name: '&e&l📈 Börse'
+    lore:
+      - '&7Aktuelle Marktpreise'
+      - '&7Dynamisch basierend auf'
+      - '&7Angebot & Nachfrage!'
+      - ''
+      - '&e► Linksklick für Preise'
+    left_click_commands:
+      - '[player] boerse'
+      - '[close]'
 
