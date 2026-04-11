@@ -1,0 +1,22 @@
+# DecentHolograms - Rank Progression Hologram
+# Place near spawn to show rank progression
+# Adjust location after placing in-game
+location:
+  world: tycoon
+  x: 0.5
+  y: 67.0
+  z: 20.5
+lines:
+  - '&6&l🏆 &e&lRANG-PROGRESSION &6&l🏆'
+  - '&8&m─────────────────────────'
+  - '&6Erde &8→ &7Stein &8→ &8Kohle &8→ &fEisen &8→ &cKupfer'
+  - '&6Gold &8→ &cRedstone &8→ &9Lapis &8→ &aSmaragd &8→ &bDiamant'
+  - '&5Obsidian &8→ &4Netherite &8→ &7Tuff &8→ &fCalcit &8→ &fDiorit'
+  - '&7Andesit &8→ &cGranit &8→ &8Basalt &8→ &0Schwarzstein &8→ &dPurpur'
+  - '&eEndstein &8→ &bPrismarin &8→ &8Seelenerde &8→ &6Magma &8→ &8Bedrock'
+  - '&8&m─────────────────────────'
+  - '&e/rankup &8- &7Zum nächsten Rang aufsteigen'
+  - '&e/ranks &8- &7Alle Ränge anzeigen'
+display-range: 48
+update-range: 48
+update-interval: 20
