@@ -1,0 +1,81 @@
+# Pfad: plugins/Skript/scripts/tycoon_tutorial.sk
+# Tycoon Tutorial / Onboarding System
+# Fires on first join to guide new players through the tycoon mechanics
+
+# --- KONFIGURATION ---
+options:
+    prefix: &8[&6Tycoon&8] &7
+
+# --- TUTORIAL BEFEHL (Manuell aufrufbar) ---
+command /tutorial:
+    description: Startet das Tycoon-Tutorial
+    aliases: /tut, /hilfe_tycoon
+    trigger:
+        tutorialStart(player)
+
+# --- ERSTER JOIN ERKENNUNG ---
+on first join:
+    wait 3 seconds
+    tutorialStart(player)
+
+# --- TUTORIAL FUNKTION ---
+function tutorialStart(p: player):
+    # Schritt 1: Begrüßung
+    send "{@prefix}&a&l━━━ TYCOON TUTORIAL ━━━" to {_p}
+    send "" to {_p}
+    send "{@prefix}&eWillkommen zum Tycoon-Modus!" to {_p}
+    send "{@prefix}&7Hier lernst du die Grundlagen." to {_p}
+    send "" to {_p}
+    wait 2 seconds
+
+    # Schritt 2: Generatoren
+    send "{@prefix}&6&lSchritt 1: Generatoren" to {_p}
+    send "{@prefix}&7Generatoren produzieren automatisch Items." to {_p}
+    send "{@prefix}&7Du startest mit &fErde-Generatoren&7." to {_p}
+    send "{@prefix}&7Öffne das Generator-Menü mit &e/tycoon&7." to {_p}
+    send "" to {_p}
+    wait 3 seconds
+
+    # Schritt 3: Sell Wand
+    send "{@prefix}&6&lSchritt 2: Markt-Zepter (Sell Wand)" to {_p}
+    send "{@prefix}&7Mit dem &6Markt-Zepter &7(Goldene Hacke)" to {_p}
+    send "{@prefix}&7kannst du Items direkt aus Kisten verkaufen." to {_p}
+    send "{@prefix}&7Rechtsklick auf eine Kiste/Fass = Verkaufen!" to {_p}
+    send "" to {_p}
+    wait 3 seconds
+
+    # Schritt 4: Rankup
+    send "{@prefix}&6&lSchritt 3: Rang aufsteigen" to {_p}
+    send "{@prefix}&7Verdiene Geld und steige im Rang auf!" to {_p}
+    send "{@prefix}&7Nutze &e/rankup &7wenn du genug Geld hast." to {_p}
+    send "{@prefix}&7Es gibt &f25 Ränge &7von &6Erde &7bis &8Bedrock&7!" to {_p}
+    send "" to {_p}
+    wait 3 seconds
+
+    # Schritt 5: Jobs
+    send "{@prefix}&6&lSchritt 4: Jobs" to {_p}
+    send "{@prefix}&7Wähle einen Beruf mit &e/jobs&7." to {_p}
+    send "{@prefix}&713 Berufe verfügbar: Miner, Farmer, Builder ..." to {_p}
+    send "{@prefix}&7Verdiene zusätzliches Geld durch Arbeit!" to {_p}
+    send "" to {_p}
+    wait 3 seconds
+
+    # Schritt 6: Shops
+    send "{@prefix}&6&lSchritt 5: Shops & Marktplatz" to {_p}
+    send "{@prefix}&7Kaufe und verkaufe Items im &e/shop&7." to {_p}
+    send "{@prefix}&7Handele mit Spielern auf dem &e/gm &7(Globaler Marktplatz)." to {_p}
+    send "" to {_p}
+    wait 2 seconds
+
+    # Schritt 7: Wichtige Befehle
+    send "{@prefix}&6&lWichtige Befehle:" to {_p}
+    send "{@prefix}&e/tycoon &8- &7Tycoon Hauptmenü" to {_p}
+    send "{@prefix}&e/rankup &8- &7Rang aufsteigen" to {_p}
+    send "{@prefix}&e/shop &8- &7Shop öffnen" to {_p}
+    send "{@prefix}&e/jobs &8- &7Jobs verwalten" to {_p}
+    send "{@prefix}&e/plot auto &8- &7Plot beanspruchen" to {_p}
+    send "{@prefix}&e/lobby &8- &7Zurück zur Lobby" to {_p}
+    send "{@prefix}&e/tutorial &8- &7Dieses Tutorial wiederholen" to {_p}
+    send "" to {_p}
+    send "{@prefix}&a&l━━━ VIEL SPASS! ━━━" to {_p}
+    play sound "entity.player.levelup" with volume 1 and pitch 1 at {_p} for {_p}

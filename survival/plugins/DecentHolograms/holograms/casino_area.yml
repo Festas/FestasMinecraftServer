@@ -1,0 +1,25 @@
+# DecentHolograms - Casino/Gambling Area Hologram
+# Place at the casino entrance
+# Adjust location after placing in-game
+location:
+  world: tycoon
+  x: -20.5
+  y: 67.0
+  z: 0.5
+lines:
+  - '&6&l🎰 &e&lCASINO &6&l🎰'
+  - '&8&m────────────────────'
+  - '&7Versuche dein Glück!'
+  - ''
+  - '&e/coinflip <Betrag> &8- &7Münzwurf'
+  - '&e/gamble <Betrag> &8- &7Glücksspiel'
+  - '&8&m────────────────────'
+  - '&cRegeln:'
+  - '&7• Min. Einsatz: &f100€'
+  - '&7• Max. Einsatz: &f10.000.000€'
+  - '&7• Tägliches Verlustlimit aktiv'
+  - '&8&m────────────────────'
+  - '&c⚠ &7Glücksspiel kann süchtig machen!'
+display-range: 48
+update-range: 48
+update-interval: 20

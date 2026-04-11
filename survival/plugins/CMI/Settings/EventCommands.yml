@@ -22,15 +22,38 @@
 # and if possible spread them out with a delay by using "delay! 0.3" or similar variable
 # This will allow server to catch up with his calculation instead of forcing him to do all of those commands at once
 firstJoinServer:
-  Enabled: false
+  Enabled: true
   Commands:
-  - cmi msg [playerName] !This is event command example!
-  - cmi msg [playerName] !Originates from sneakingSwapHandItems event!
+  - title! &6&lWillkommen auf dem Survival Server!
+  - delay! 0.2
+  - subtitle! &7Starte deine Tycoon-Karriere mit &e/tycoon
+  - delay! 0.3
+  - cmi msg [playerName] !&8&m─────────────────────────────────────
+  - cmi msg [playerName] !&6&l  ✦ Willkommen auf Survival/Tycoon! ✦
+  - cmi msg [playerName] !&8&m─────────────────────────────────────
+  - cmi msg [playerName] ! 
+  - cmi msg [playerName] !&7  So funktioniert der Tycoon-Modus:
+  - cmi msg [playerName] !&e  1. &7Nutze &f/tycoon &7um das Hauptmenü zu öffnen
+  - cmi msg [playerName] !&e  2. &7Generatoren produzieren Items automatisch
+  - cmi msg [playerName] !&e  3. &7Verkaufe Items mit dem &fMarkt-Zepter &7(Goldene Hacke)
+  - cmi msg [playerName] !&e  4. &7Verdiene Geld und steige im Rang auf mit &f/rankup
+  - cmi msg [playerName] ! 
+  - cmi msg [playerName] !&7  Nützliche Befehle:
+  - cmi msg [playerName] !&e  /shop &8- &7Items kaufen/verkaufen
+  - cmi msg [playerName] !&e  /jobs &8- &7Berufe wählen
+  - cmi msg [playerName] !&e  /plot auto &8- &7Plot beanspruchen
+  - cmi msg [playerName] !&e  /lobby &8- &7Zurück zur Lobby
+  - cmi msg [playerName] !&8&m─────────────────────────────────────
+  - delay! 1.0
+  - actionbar! &e✦ &6Tipp: Nutze /tycoon für das Hauptmenü! &e✦
 joinServer:
-  Enabled: false
+  Enabled: true
   Commands:
-  - cmi msg [playerName] !This is event command example!
-  - cmi msg [playerName] !Originates from sneakingSwapHandItems event!
+  - title! &a&lSurvival / Tycoon
+  - delay! 0.2
+  - subtitle! &7Willkommen zurück, &f[playerDisplayName]&7!
+  - delay! 0.5
+  - actionbar! &e✦ &6Rang: &f%vault_prefix% &8| &6Geld: &f%vault_eco_balance_formatted%€ &e✦
 quitServer:
   Enabled: false
   Commands:

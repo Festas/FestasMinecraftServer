@@ -1,0 +1,20 @@
+# DecentHolograms - Shop Area Hologram
+# Place at the entrance to the shop area
+# Adjust location after placing in-game
+location:
+  world: tycoon
+  x: 20.5
+  y: 67.0
+  z: 0.5
+lines:
+  - '&a&l🏪 &f&lSHOP &a&l🏪'
+  - '&8&m────────────────────'
+  - '&7Kaufe und verkaufe Items!'
+  - ''
+  - '&e/shop &8- &7Shop-GUI öffnen'
+  - '&e/gm &8- &7Globaler Marktplatz'
+  - '&8&m────────────────────'
+  - '&7Preise ändern sich mit deinem &6Rang&7!'
+display-range: 48
+update-range: 48
+update-interval: 20

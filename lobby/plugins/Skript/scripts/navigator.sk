@@ -1,7 +1,7 @@
 # Pfad: plugins/Skript/scripts/navigator.sk
+# Lobby Navigator + Hub Protection Script
 
 # --- KONFIGURATION ---
-# Hier den Namen der Welt eintragen (ohne Anführungszeichen in der Option selbst, Skript mag das so lieber)
 options:
     lobby_world: lobby
 
@@ -16,6 +16,17 @@ command /lobby:
     trigger:
         message "&cDu bist bereits auf der Lobby!"
 
+command /rules:
+    description: Zeigt die Serverregeln
+    trigger:
+        execute player command "dm open rules"
+
+command /guide:
+    description: Zeigt den Netzwerk-Guide
+    aliases: /info, /hilfe, /help2
+    trigger:
+        execute player command "dm open network_guide"
+
 # --- 2. ALIASES (Direktwahl) ---
 command /rpg:
     trigger:
@@ -25,17 +36,32 @@ command /survival:
     trigger:
         execute player command "dm open server_selector"
 
+command /skyblock:
+    trigger:
+        execute player command "dm open server_selector"
+
 # --- 3. DAS ITEM MANAGEN (Nur in der Lobby-Welt) ---
 
 function updateNavigator(p: player):
     wait 5 ticks
-    # Korrektur: Wir vergleichen world of {_p} mit dem String "lobby" (über die Option)
     if world of {_p} is "{@lobby_world}":
-        # Slot 4 (Mitte) prüfen
+        # Inventar leeren (nur Lobby-Items behalten)
+        loop all items in {_p}'s inventory:
+            if loop-item is not compass:
+                remove loop-item from {_p}'s inventory
+            else if name of loop-item does not contain "Navigator":
+                remove loop-item from {_p}'s inventory
+        # Navigator-Kompass in Slot 4 setzen
         if slot 4 of {_p}'s inventory is not compass:
             set slot 4 of {_p}'s inventory to compass named "&b&lNavigator &7(Rechtsklick)" with lore "&7Wähle deinen Server"
-    
-    # Korrektur: Das 'else' muss direkt an den 'if'-Block anschließen (Einrückung beachten!)
+        # Spielmodus und Zustand setzen
+        set {_p}'s gamemode to adventure
+        set {_p}'s hunger to 20
+        set {_p}'s saturation to 20
+        set {_p}'s health to 20
+        heal {_p}
+        clear {_p}'s potion effects
+
     else:
         loop all items in {_p}'s inventory:
             if loop-item is compass:
@@ -45,6 +71,10 @@ function updateNavigator(p: player):
 # --- EVENTS ---
 on join:
     updateNavigator(player)
+    # Wetter und Zeit für den Spieler ständig schön halten
+    if world of player is "{@lobby_world}":
+        set weather in world of player to clear
+        set time in world of player to 6000
 
 on world change:
     updateNavigator(player)
@@ -70,10 +100,11 @@ on inventory click:
 
 on drop:
     if world of player is "{@lobby_world}":
-        if event-item is compass:
-            if name of event-item contains "Navigator":
-                cancel event
-                execute player command "navigator"
+        cancel event
+
+on pickup:
+    if world of player is "{@lobby_world}":
+        cancel event
 
 on click:
     if world of player is "{@lobby_world}":
@@ -81,3 +112,37 @@ on click:
             if name of player's tool contains "Navigator":
                 cancel event
                 execute player command "navigator"
+
+# --- 5. DOPPELSPRUNG (Double-Jump) ---
+
+on toggle flight:
+    if world of player is "{@lobby_world}":
+        if player's gamemode is adventure:
+            cancel event
+            set {_v} to player's velocity
+            set y component of {_v} to 1.0
+            set player's velocity to {_v}
+            play sound "entity.firework_rocket.launch" with volume 0.5 and pitch 1.5 at player for player
+            set player's flight mode to false
+            wait 5 ticks
+            set player's flight mode to true
+
+on join:
+    if world of player is "{@lobby_world}":
+        set player's flight mode to true
+
+on move:
+    if world of player is "{@lobby_world}":
+        if player is on ground:
+            if player's flight mode is false:
+                set player's flight mode to true
+
+# --- 6. HUNGER & SCHADEN SCHUTZ ---
+
+on hunger meter change:
+    if world of player is "{@lobby_world}":
+        cancel event
+
+on damage of player:
+    if world of player is "{@lobby_world}":
+        cancel event

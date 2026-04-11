@@ -65,22 +65,33 @@ Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
 **Version:** Paper 1.21.1
 
 **Hauptplugins:**
-- **CMI** (Complete Minecraft Integration) - Kern-Management-Plugin
-- **FancyNpcs** - Interaktive NPCs für Server-Navigation
+- **CMI** (Complete Minecraft Integration) - Kern-Management-Plugin (Chat-Formatierung, Events, Void-Schutz)
+- **FancyNpcs** - Interaktive NPCs für Server-Navigation (RPG, Survival, Skyblock + Info-NPCs)
 - **Oraxen** - Custom Items und Texturen
-- **DeluxeMenus** - Custom GUI-Menüs
+- **DeluxeMenus** - Custom GUI-Menüs (Server-Selector, Regeln, Netzwerk-Guide)
 - **LuckPerms** - Permissions-Management
 - **PlaceholderAPI** - Platzhalter für Nachrichten/Displays
 - **ProtocolLib** - Packet-Manipulation für Custom-Features
-- **DecentHolograms** - Hologramme für Infos/Anzeigen
+- **WorldGuard** - Weltschutz (Build/PvP/Damage/Hunger blockiert)
+- **Skript** - Navigator-Kompass, Doppelsprung, Hub-Schutz
 
 **Besonderheiten:**
 - Keine Gameplay-Elemente (kein Survival, kein Combat)
-- Read-only World (keine Block-Manipulation)
-- Server-Selector NPCs
-- Informations-Hologramme
+- Read-only World (WorldGuard __global__ Region mit build:deny)
+- Server-Selector NPCs (FancyNpcs: RPG, Survival/Tycoon, Skyblock)
+- Info-NPCs (Regeln, Guide)
+- Willkommens-Nachrichten (Titel + Untertitel + Actionbar auf Join)
+- Doppelsprung-System (kosmetisch)
+- Inventar-Schutz (nur Navigator-Kompass erlaubt)
+- Void-Fall-Schutz (Teleport zum Spawn)
 
 **Datenbank:** Keine eigene (nutzt Velocity-Datenbanken)
+
+**Noch zu installieren:**
+- ⚠️ **DecentHolograms** - Plugin-JAR muss manuell installiert werden (Hologramme für Willkommen, Server-Info, Spielerzahlen)
+- ⚠️ **Spawn-Punkt** - Muss in-game mit `/cmi setspawn` gesetzt werden
+- ⚠️ **NPC-Positionen** - Müssen in-game mit `/npc teleport <name>` positioniert werden
+- ⚠️ **NPC-Skins** - Müssen über mineskin.org beschafft und in-game gesetzt werden
 
 ---
 
@@ -91,19 +102,20 @@ Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
 **Version:** Paper 1.21.1
 
 **Hauptplugins:**
-- **CMI** - Core Management (Primäres Management-Plugin: Economy, Homes, Teleport, Kits, Chat)
+- **CMI** - Core Management (Economy, Homes, Teleport, Kits, Chat-Formatierung, AFK-System)
 - **EssentialsX** - Basis-Befehle (Konfliktbefehle deaktiviert — CMI hat Priorität)
-- **Jobs** - Job-System für Economy
+- **Jobs** - Job-System für Economy (13 Berufe)
 - **PlotSquared** - Land-Claiming-System (Tycoon-Plots + Freebuild)
 - **ShopGUIPlus** - Shop-GUI für Economy
 - **Rankup** - Rang-Progression-System (25 Tycoon-Ränge: Erde → Bedrock)
-- **NextGens** - Generator-System (Tycoon-Kern)
+- **NextGens** - Generator-System (Tycoon-Kern, 25 Tier × 10 Sub-Levels)
+- **DecentHolograms** - Info-Hologramme (Spawn, Shop, Casino, Generatoren, Rang-Progression)
+- **Autorank** - Spielzeit-basierte Belohnungen (1h, 5h, 24h, 72h, 168h Milestones)
 - **Bluemap** - 3D-Web-Karte
 - **GlobalMarketPlus** - Globaler Marktplatz
-- **ChestShop** - Spieler-Shops (Schilder-basiert)
 - **LuckPerms** - Permissions
 - **Vault** - Economy API
-- **Skript** - Custom Tycoon-Logik (Sell Wand, Chunk Collector, Nitwit Boss, Casino)
+- **Skript** - Custom Tycoon-Logik (Sell Wand, Chunk Collector, Nitwit Boss, Casino, Tutorial, Daily Rewards)
 - **WorldGuard** - Regionen-Schutz (gehärtet: TNT/Creeper/Feuer/Wither blockiert)
 
 **Tycoon-Gamemode:**
@@ -113,6 +125,9 @@ Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
 - Casino/Gambling-System mit täglichem Verlustlimit
 - Custom Nitwit-Boss-Encounters (zufällige Spawn-Events)
 - Plot-Reset bei Rangaufstieg
+- Tägliche Login-Belohnungen mit Streak-System (daily_rewards.sk)
+- Spielzeit-Belohnungen über Autorank (Meilensteine)
+- Tutorial-System für neue Spieler (tycoon_tutorial.sk)
 
 **Datenbank:**
 - **MySQL/MariaDB** (separiert von MMO-Servern)
@@ -125,11 +140,19 @@ Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
 - Eigene Economy (nicht geteilt mit RPG/Skyblock)
 - Tycoon-Gamemode als primäres Spielerlebnis neben Standard-Survival
 - Geyser/Floodgate für Bedrock-Spieler-Support
+- AFK-System aktiviert (Auto-Kick nach 30 Min bei 10+ Spielern online)
+- Chat-Formatierung aktiviert (CMI mit Rang-Prefix)
 
 **Sicherheitshinweise:**
 - WorldGuard: TNT, Creeper, Wither, Feuer global blockiert
 - Skript-Commands: Spielername-Validierung gegen Command Injection
 - Anti-Cheat: **Noch nicht installiert** — Vulcan Premium wird empfohlen (siehe Anti-Cheat Abschnitt unten)
+
+**Noch zu installieren/konfigurieren:**
+- ⚠️ **Anti-Cheat** - Vulcan Premium muss manuell installiert werden (PRIORITÄT für Economy-Schutz)
+- ⚠️ **Voting-System** - NuVotifier + VotingPlugin für Server-Listen-Integration
+- ⚠️ **Hologramm-Positionen** - Müssen in-game mit `/dh hologram move` positioniert werden
+- ⚠️ **ChestShop** - Plugin installiert aber nicht konfiguriert (GlobalMarketPlus deckt Spieler-Handel ab)
 
 ---
 
@@ -530,8 +553,27 @@ Bei kritischen Fehlern:
 - [ ] CDN für Resourcepacks
 - [ ] Backup-Server (Fallback bei Ausfällen)
 
+### Lobby — Nächste Schritte
+- [ ] DecentHolograms Plugin-JAR installieren (Welcome, Server-Info, Spielerzahlen)
+- [ ] Spawn-Punkt in-game setzen (`/cmi setspawn`)
+- [ ] NPC-Skins und -Positionen in-game konfigurieren
+- [ ] Scoreboard/Sidebar mit Netzwerk-Info (CMI oder Skript)
+- [ ] Kosmetik-System (PlayerParticles + PlayerPoints als Währung)
+- [ ] Parkour-Kurs mit Belohnungen
+- [ ] Boss-Bar-Announcements für rotierende Ankündigungen
+- [ ] Tab-Liste Header/Footer anpassen (via Proxy TAB Plugin)
+
+### Survival — Nächste Schritte
+- [ ] Anti-Cheat installieren (Vulcan Premium — PRIORITÄT)
+- [ ] Voting-System (NuVotifier + VotingPlugin)
+- [ ] Crate/Key-System (ExcellentCrates oder CrazyCrates)
+- [ ] ChestShop konfigurieren oder entfernen (GlobalMarketPlus deckt den Bedarf)
+- [ ] LibsDisguises in Kosmetik-System integrieren oder entfernen
+- [ ] PlayerPoints als sekundäre Währung konfigurieren
+- [ ] Erweiterte Boss-Events über Nitwit hinaus
+
 ---
 
-**Letzte Aktualisierung:** 2026-04-10
+**Letzte Aktualisierung:** 2026-04-11
 
 **Version:** 1.1

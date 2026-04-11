@@ -1,0 +1,171 @@
+# Pfad: plugins/DeluxeMenus/gui_menus/network_guide.yml
+# Netzwerk-Guide GUI - Geöffnet über /guide oder NPC Klick
+
+menu_title: '&8» &a📖 Netzwerk Guide'
+open_command: network_guide
+size: 45
+
+items:
+  'filler':
+    material: GREEN_STAINED_GLASS_PANE
+    slots:
+      - 0-8
+      - 36-44
+    display_name: '&f'
+    priority: 2
+
+  'header':
+    material: KNOWLEDGE_BOOK
+    slot: 4
+    display_name: '&a&l📖 Netzwerk Guide'
+    lore:
+      - '&7Erfahre alles über unser Netzwerk!'
+      - '&7Klicke auf einen Spielmodus für Details.'
+
+  # --- SURVIVAL / TYCOON ---
+  'survival_guide':
+    material: GRASS_BLOCK
+    slot: 10
+    display_name: '&a&l🌳 Survival / Tycoon'
+    lore:
+      - '&7Der Survival/Tycoon Server bietet:'
+      - ''
+      - '&6Tycoon-Modus:'
+      - '&8» &fGeneratoren &7produzieren Items'
+      - '&8» &fSell-Wand &7(Markt-Zepter) zum Verkaufen'
+      - '&8» &f25 Ränge &7von Erde bis Bedrock'
+      - '&8» &fRankup &7durch Geld verdienen'
+      - ''
+      - '&6Wirtschaft:'
+      - '&8» &f13 Jobs &7(Miner, Farmer, Builder ...)'
+      - '&8» &fShops &7zum Kaufen und Verkaufen'
+      - '&8» &fMarktplatz &7für Spieler-Handel'
+      - '&8» &fCasino &7mit Münzwurf und Glücksspiel'
+      - ''
+      - '&6Bauen:'
+      - '&8» &fPlots &7für sicheres Bauen'
+      - '&8» &fFreebuild &7für kreatives Bauen'
+      - ''
+      - '&eBefehle: &7/rankup, /shop, /jobs, /plot'
+
+  # --- RPG SERVER ---
+  'rpg_guide':
+    material: DIAMOND_SWORD
+    slot: 12
+    display_name: '&5&l⚔ RPG Server'
+    lore:
+      - '&7Der RPG Server bietet eine'
+      - '&7vollständige MMO-Erfahrung:'
+      - ''
+      - '&6Klassen:'
+      - '&8» &fKrieger &7- Tank & Nahkampf'
+      - '&8» &fMagier &7- Magie & Fernkampf'
+      - '&8» &fAssassine &7- Stealth & Schaden'
+      - '&8» &fBogenschütze &7- Fernkampf & Fallen'
+      - '&8» &fSchamane &7- Heilung & Support'
+      - '&8» &fBeschwörer &7- Kreaturen beschwören'
+      - ''
+      - '&6Features:'
+      - '&8» &fDungeons &7mit Bossen und Loot'
+      - '&8» &fQuests &7mit spannender Story'
+      - '&8» &fCustom Mobs &7mit besonderen Fähigkeiten'
+      - '&8» &fSkill-Trees &7für jede Klasse'
+      - ''
+      - '&eBefehle: &7/class, /skills, /quests'
+
+  # --- SKYBLOCK ---
+  'skyblock_guide':
+    material: OAK_SAPLING
+    slot: 14
+    display_name: '&b&l🏝 Skyblock'
+    lore:
+      - '&7MMO Skyblock mit RPG-Elementen:'
+      - ''
+      - '&6Skyblock:'
+      - '&8» &fEigene Insel &7bauen und erweitern'
+      - '&8» &fMinions &7die für dich arbeiten'
+      - '&8» &fInsel-Upgrades &7und Level-System'
+      - '&8» &fCoop-Inseln &7mit Freunden'
+      - ''
+      - '&6MMO-System:'
+      - '&8» &f6 Klassen &7(wie auf RPG)'
+      - '&8» &fSkills & Level &7Progression'
+      - '&8» &fCollections &7für Belohnungen'
+      - '&8» &fBazaar &7für den Marktplatz'
+      - ''
+      - '&7Deine Klasse und Items werden'
+      - '&7zwischen RPG und Skyblock synchronisiert!'
+      - ''
+      - '&eBefehle: &7/is, /class, /skills'
+
+  # --- NETZWERK INFO ---
+  'network_info':
+    material: NETHER_STAR
+    slot: 16
+    display_name: '&6&l✦ Netzwerk Info'
+    lore:
+      - '&6Festas Builds &7Minecraft Netzwerk'
+      - ''
+      - '&8» &7IP: &fmc.festas-builds.com'
+      - '&8» &7Discord: &fdiscord.gg/festasbuilds'
+      - '&8» &7Version: &f1.21.1'
+      - '&8» &7Bedrock: &fUnterstützt (Geyser)'
+      - ''
+      - '&7Wir unterstützen Java &fund &7Bedrock!'
+
+  # --- WICHTIGE BEFEHLE ---
+  'commands':
+    material: COMMAND_BLOCK
+    slot: 28
+    display_name: '&e&l⌨ Wichtige Befehle'
+    lore:
+      - '&7Allgemeine Befehle für alle Server:'
+      - ''
+      - '&e/navigator &8- &7Server-Auswahl'
+      - '&e/rules &8- &7Serverregeln'
+      - '&e/guide &8- &7Dieser Guide'
+      - '&e/lobby &8- &7Zurück zur Lobby'
+      - '&e/msg <Spieler> &8- &7Private Nachricht'
+      - '&e/friend &8- &7Freundesliste'
+      - '&e/party &8- &7Party-System'
+
+  # --- GILDEN ---
+  'guilds':
+    material: SHIELD
+    slot: 30
+    display_name: '&d&l🛡 Gilden-System'
+    lore:
+      - '&7Erstelle oder trete einer Gilde bei!'
+      - '&7Gilden funktionieren server-übergreifend.'
+      - ''
+      - '&8» &fGilden-Chat &7über alle Server'
+      - '&8» &fGilden-Bank &7für gemeinsame Währung'
+      - '&8» &fGilden-Level &7bis Level 50'
+      - '&8» &fRänge: &7Rekrut → Mitglied → Offizier → Anführer'
+      - ''
+      - '&eBefehle: &7/guild create, /guild invite'
+
+  # --- SUPPORT ---
+  'support':
+    material: ENDER_EYE
+    slot: 32
+    display_name: '&c&l❓ Hilfe & Support'
+    lore:
+      - '&7Brauchst du Hilfe? So erreichst du uns:'
+      - ''
+      - '&8» &fDiscord: &7discord.gg/festasbuilds'
+      - '&8» &fIn-Game: &7/report <Spieler> <Grund>'
+      - '&8» &fTeam: &7Schreibe einen Moderator an'
+      - ''
+      - '&7Bitte erstelle ein Ticket auf Discord'
+      - '&7für schnellste Hilfe!'
+
+  # --- ZURÜCK ---
+  'back':
+    material: ARROW
+    slot: 40
+    display_name: '&7&l← Zurück'
+    lore:
+      - '&7Zurück zum Server-Menü'
+    left_click_commands:
+      - '[close]'
