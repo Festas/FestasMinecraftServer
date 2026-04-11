@@ -90,10 +90,11 @@ Umfassende Dokumentation findest du im [`/docs`](docs/) Verzeichnis:
 
 ### Technische Infrastruktur
 - **[Infrastruktur](docs/infrastructure/README.md)** - Datenbanken, Synchronisation, Backups
+- **[OPERATIONS.md](docs/OPERATIONS.md)** - Betriebshandbuch (Start/Stopp, Wartung, Monitoring)
+- **[DISASTER_RECOVERY.md](docs/DISASTER_RECOVERY.md)** - Notfall-Wiederherstellung
 
 ### Zusätzliche Referenzen
 - **[QUICKREF.md](QUICKREF.md)** - Schnellreferenz für häufige Befehle und Konzepte
-- **[USAGE.md](USAGE.md)** - Ausführliche Nutzungsanleitung
 
 ## Verwendung
 
