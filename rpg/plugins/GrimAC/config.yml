@@ -1,0 +1,253 @@
+# ============================================================
+#  GrimAC Konfiguration – RPG-Server
+#  Minecraft MMO Netzwerk
+#  Gelockerte Bewegungsprüfungen wegen Dash-/Teleport-Skills
+# ============================================================
+
+# --- Allgemeine Einstellungen ---
+prefix: "&c&lAntiCheat &8» &r"
+config-version: 9
+
+# Sprache und Nachrichten
+alerts:
+  # Benachrichtigungen an Staff-Mitglieder
+  enable-staff-alerts: true
+  # Mindest-Permission für Alarme: grimac.alerts
+  alert-permission: "grimac.alerts"
+  # Alarme beim Beitreten automatisch aktivieren
+  alert-on-join: true
+  # Intervall in Ticks zwischen wiederholten Alarmen (Spam-Schutz)
+  alert-cooldown-ticks: 60
+  # Format der Alert-Nachricht
+  alert-format: "&c&lAntiCheat &8» &r&e%player% &7hat &c%check% &7ausgelöst &8(&fVL: %vl%&8)"
+
+# --- Geyser / Floodgate Unterstützung ---
+# Bedrock-Spieler über Floodgate automatisch von Prüfungen befreien
+exempt-floodgate: true
+# Geyser-Spieler erkennen und entsprechend behandeln
+exempt-geyser: true
+
+# --- Verbindungseinstellungen ---
+connection:
+  # Max. Transaktions-Timeout in Millisekunden
+  transaction-timeout: 60000
+  # Max. Ping bevor Spieler als verdächtig markiert wird
+  max-transaction-time: 15000
+  # Spieler bei Timeout kicken
+  kick-on-timeout: true
+
+# --- Teleport-Handling ---
+# HINWEIS: Großzügig konfiguriert, da RPG-Skills wie Dash, Blink und
+# Teleport häufig schnelle Positionswechsel verursachen.
+teleport:
+  # Längere Wartezeit nach Teleport (Skills lösen häufig Teleports aus)
+  exempt-ticks-on-teleport: 100
+  # Wartezeit nach Weltenwechsel (Dungeon-Instanzen usw.)
+  exempt-ticks-on-world-change: 140
+
+# ============================================================
+#  Prüfungen (Checks)
+# ============================================================
+
+checks:
+
+  # --- Bewegungsprüfungen ---
+  # HINWEIS: Deutlich gelockert wegen RPG-Skills (Dash, Blink, Sprint-Boost,
+  # Rückstoß-Skills, Teleport-Fähigkeiten, Geschwindigkeitsbuffs).
+  movement:
+    # Prediction-Engine – Hauptbewegungsprüfung
+    prediction:
+      enabled: true
+      # Stark gelockert für Dash- und Sprint-Skills
+      max-advantage: 0.04
+      # Höherer Schwellenwert, da Skills plötzliche Positionsänderungen auslösen
+      immediate-setback-threshold: 0.25
+      max-ceiling: 0.15
+
+    # Fahrzeug-Bewegungsprüfung (Mounts, fliegende Reittiere)
+    vehicle:
+      enabled: true
+      # Gelockert für benutzerdefinierte Mounts mit unterschiedlicher Geschwindigkeit
+      max-advantage: 0.05
+      immediate-setback-threshold: 0.3
+
+    # Timer-Check – Erkennt Speed-Hacks über Paketfrequenz
+    # Gelockert, da Geschwindigkeitsbuffs die Paketrate beeinflussen
+    timer:
+      enabled: true
+      decay: 0.04
+      max-violations: 20
+
+    # Phase/NoClip – Spieler bewegt sich durch Blöcke
+    # Manche Skills erlauben kurzzeitiges Durchqueren von Blöcken
+    phase:
+      enabled: true
+      setback: true
+      decay: 0.01
+      max-violations: 12
+
+  # --- Flugprüfungen ---
+  # Gelockert für Sprung-Skills, Doppelsprung und kurzes Schweben
+  fly:
+    enabled: true
+    setback: true
+    # Erhöhter Schwellenwert für Skills die vertikale Bewegung auslösen
+    max-violations: 20
+    decay: 0.06
+    # Spieler mit Skill-Flugrechten ausnehmen
+    exempt-permission: "grimac.exempt.fly"
+    # Toleranz für Elytra und Flug-Skills
+    elytra-tolerance: 2.0
+
+  # --- Kampfprüfungen ---
+  combat:
+    # Reichweitenprüfung
+    reach:
+      enabled: true
+      # Leicht erhöht für Nahkampf-Skills mit erweiterter Reichweite
+      max-reach: 3.5
+      threshold: 0.001
+      # Großzügiger Schwellenwert wegen Kombinations-Angriffen
+      max-violations: 20
+      decay: 0.03
+
+    # Killaura / Angriffs-Richtungsprüfung
+    # Gelockert da AoE-Skills (Flächenangriffe) die Richtungsprüfung auslösen
+    killaura:
+      enabled: true
+      max-violations: 18
+      decay: 0.03
+
+    # Auto-Clicker Erkennung
+    autoclicker:
+      enabled: true
+      # Leicht erhöht für Schnellangriff-Skills
+      max-cps: 22
+      max-violations: 20
+      decay: 0.06
+
+    # Kritische Treffer Manipulation
+    # Gelockert für Sprung-Angriffs-Skills
+    criticals:
+      enabled: true
+      max-violations: 15
+      decay: 0.04
+
+  # --- Spielerprüfungen ---
+  player:
+    # BadPackets – Ungültige/manipulierte Pakete
+    badpackets:
+      enabled: true
+      max-violations: 12
+      decay: 0.015
+
+    # Inventory-Manipulation (zu schnelle Aktionen)
+    # Gelockert für schnelle Skill-Wechsel und Inventar-Interaktionen
+    inventory:
+      enabled: true
+      max-violations: 18
+      decay: 0.04
+
+    # Scaffold-Check (schnelles Blocksetzen)
+    scaffold:
+      enabled: true
+      max-violations: 12
+      decay: 0.02
+
+    # Groundspoof – Falscher Bodenkontakt
+    # Gelockert da Skills den Bodenkontakt kurzzeitig verändern
+    groundspoof:
+      enabled: true
+      max-violations: 14
+      decay: 0.03
+
+    # FastBreak – Zu schneller Blockabbau
+    fastbreak:
+      enabled: true
+      max-violations: 10
+      decay: 0.02
+
+    # FastPlace – Zu schnelles Blocksetzen
+    fastplace:
+      enabled: true
+      max-violations: 10
+      decay: 0.02
+
+# ============================================================
+#  Bestrafungssystem (Eskalation: Warnung → Kick → Tempban)
+#  HINWEIS: Höhere Schwellenwerte als auf anderen Servern, da
+#  RPG-Skills häufiger false-positives verursachen können.
+# ============================================================
+
+punishment:
+  # Bestrafungen aktivieren
+  enabled: true
+
+  # Eskalationsstufen
+  thresholds:
+    # Stufe 1: Warnung an den Spieler
+    warn:
+      violations: 35
+      message: "&c&lAntiCheat &8» &r&cVerdächtiges Verhalten erkannt. Bitte spiele fair!"
+      command: ""
+
+    # Stufe 2: Kick vom Server
+    kick:
+      violations: 65
+      message: "&c&lAntiCheat &8» &r&cDu wurdest wegen verdächtigem Verhalten gekickt."
+      command: "kick %player% &cVerdächtiges Verhalten erkannt. Bitte spiele fair!"
+
+    # Stufe 3: Temporärer Bann
+    tempban:
+      violations: 90
+      message: "&c&lAntiCheat &8» &r&4Du wurdest temporär gebannt."
+      command: "tempban %player% 1h &cAntiCheat: Wiederholtes verdächtiges Verhalten"
+
+  # Violations-Verfall über Zeit (pro Minute)
+  # Schnellerer Verfall, da RPG-Skills mehr false-positives erzeugen
+  global-decay: 0.8
+  # Violations beim Verlassen des Servers zurücksetzen
+  reset-on-quit: false
+  # Violations-Zähler nach Bestrafung zurücksetzen
+  reset-on-punish: true
+
+# ============================================================
+#  Setback-Einstellungen (Rücksetzung bei Cheating)
+# ============================================================
+
+setback:
+  # Spieler bei erkanntem Cheating zurücksetzen
+  enabled: true
+  # Maximale Setbacks pro Sekunde (weniger aggressiv für RPG)
+  max-per-second: 2
+  # Blockierung der Bewegung bei Setback
+  block-movement-on-setback: true
+  # Kürzere Blockierung da Skills ständig Bewegung erfordern
+  block-duration-ticks: 3
+
+# ============================================================
+#  Logging & Debug
+# ============================================================
+
+logging:
+  # Verstöße in Datei loggen
+  log-to-file: true
+  log-file: "violations.log"
+  # Höherer Schwellenwert, da RPG-Skills mehr Einträge erzeugen
+  min-violation-log: 10
+  # Ausführliches Debug-Logging (nur für Entwicklung!)
+  debug: false
+
+# ============================================================
+#  Performance-Einstellungen
+# ============================================================
+
+performance:
+  # Threads für Paketverarbeitung (mehr Threads für RPG-Berechnungen)
+  max-threads: 3
+  # Max. Spieler die gleichzeitig geprüft werden
+  max-players-checked: 100
+  # Prüfungen für Spieler mit hohem Ping reduzieren
+  lenient-high-ping: true
+  # Ping-Schwelle in ms für gelockerte Prüfungen
+  high-ping-threshold: 250

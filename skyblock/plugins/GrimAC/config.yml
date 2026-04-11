@@ -1,0 +1,244 @@
+# ============================================================
+#  GrimAC Konfiguration – Skyblock-Server
+#  Minecraft MMO Netzwerk
+#  Gelockerte Flugprüfungen wegen Insel-Flugrechten
+# ============================================================
+
+# --- Allgemeine Einstellungen ---
+prefix: "&c&lAntiCheat &8» &r"
+config-version: 9
+
+# Sprache und Nachrichten
+alerts:
+  # Benachrichtigungen an Staff-Mitglieder
+  enable-staff-alerts: true
+  # Mindest-Permission für Alarme: grimac.alerts
+  alert-permission: "grimac.alerts"
+  # Alarme beim Beitreten automatisch aktivieren
+  alert-on-join: true
+  # Intervall in Ticks zwischen wiederholten Alarmen (Spam-Schutz)
+  alert-cooldown-ticks: 40
+  # Format der Alert-Nachricht
+  alert-format: "&c&lAntiCheat &8» &r&e%player% &7hat &c%check% &7ausgelöst &8(&fVL: %vl%&8)"
+
+# --- Geyser / Floodgate Unterstützung ---
+# Bedrock-Spieler über Floodgate automatisch von Prüfungen befreien
+exempt-floodgate: true
+# Geyser-Spieler erkennen und entsprechend behandeln
+exempt-geyser: true
+
+# --- Verbindungseinstellungen ---
+connection:
+  # Max. Transaktions-Timeout in Millisekunden
+  transaction-timeout: 60000
+  # Max. Ping bevor Spieler als verdächtig markiert wird
+  max-transaction-time: 15000
+  # Spieler bei Timeout kicken
+  kick-on-timeout: true
+
+# --- Teleport-Handling ---
+teleport:
+  # Wartezeit nach Teleport bevor Prüfungen wieder greifen (in Ticks)
+  exempt-ticks-on-teleport: 80
+  # Wartezeit nach Weltenwechsel (Skyblock hat viele Inselwelten)
+  exempt-ticks-on-world-change: 120
+
+# ============================================================
+#  Prüfungen (Checks)
+# ============================================================
+
+checks:
+
+  # --- Bewegungsprüfungen ---
+  movement:
+    # Prediction-Engine – Hauptbewegungsprüfung
+    prediction:
+      enabled: true
+      # Leicht gelockert für Insel-Mechaniken
+      max-advantage: 0.015
+      immediate-setback-threshold: 0.12
+      max-ceiling: 0.085
+
+    # Fahrzeug-Bewegungsprüfung (Boote, Minecarts auf Inseln)
+    vehicle:
+      enabled: true
+      max-advantage: 0.03
+      immediate-setback-threshold: 0.18
+
+    # Timer-Check – Erkennt Speed-Hacks über Paketfrequenz
+    timer:
+      enabled: true
+      decay: 0.025
+      max-violations: 12
+
+    # Phase/NoClip – Spieler bewegt sich durch Blöcke
+    phase:
+      enabled: true
+      setback: true
+      decay: 0.005
+      max-violations: 6
+
+  # --- Flugprüfungen ---
+  # HINWEIS: Gelockert, da Spieler auf ihren Inseln Flugrechte haben.
+  # Flugrechte werden über Permissions gesteuert (z.B. island.fly).
+  # GrimAC prüft trotzdem auf unerlaubtes Fliegen außerhalb der Insel.
+  fly:
+    enabled: true
+    setback: true
+    # Deutlich erhöhter Schwellenwert für Insel-Flugrechte
+    max-violations: 30
+    decay: 0.08
+    # Spieler mit Flugrechten von der Prüfung ausnehmen
+    exempt-permission: "grimac.exempt.fly"
+    # Zusätzliche Toleranz für Elytra und benutzerdefinierte Flugmechaniken
+    elytra-tolerance: 1.5
+
+  # --- Kampfprüfungen ---
+  combat:
+    # Reichweitenprüfung
+    reach:
+      enabled: true
+      # Max. Angriffsreichweite in Blöcken (Vanilla: 3.0)
+      max-reach: 3.1
+      threshold: 0.0005
+      max-violations: 15
+      decay: 0.025
+
+    # Killaura / Angriffs-Richtungsprüfung
+    killaura:
+      enabled: true
+      max-violations: 10
+      decay: 0.02
+
+    # Auto-Clicker Erkennung
+    autoclicker:
+      enabled: true
+      # Max. Klicks pro Sekunde
+      max-cps: 18
+      max-violations: 15
+      decay: 0.05
+
+    # Kritische Treffer Manipulation
+    criticals:
+      enabled: true
+      # Gelockert da Spieler von Inseln auf Mobs springen
+      max-violations: 12
+      decay: 0.03
+
+  # --- Spielerprüfungen ---
+  player:
+    # BadPackets – Ungültige/manipulierte Pakete
+    badpackets:
+      enabled: true
+      max-violations: 10
+      decay: 0.01
+
+    # Inventory-Manipulation (zu schnelle Aktionen)
+    # Leicht gelockert für Insel-Hopper und Auto-Sortierer
+    inventory:
+      enabled: true
+      max-violations: 15
+      decay: 0.04
+
+    # Scaffold-Check (schnelles Blocksetzen)
+    # Gelockert, da Brückenbauen auf Skyblock häufig vorkommt
+    scaffold:
+      enabled: true
+      max-violations: 18
+      decay: 0.04
+
+    # Groundspoof – Falscher Bodenkontakt
+    groundspoof:
+      enabled: true
+      # Erhöht wegen Inselmechanik und Void-Nähe
+      max-violations: 10
+      decay: 0.02
+
+    # FastBreak – Zu schneller Blockabbau
+    fastbreak:
+      enabled: true
+      max-violations: 8
+      decay: 0.02
+
+    # FastPlace – Zu schnelles Blocksetzen
+    # Gelockert für Inselaufbau
+    fastplace:
+      enabled: true
+      max-violations: 14
+      decay: 0.03
+
+# ============================================================
+#  Bestrafungssystem (Eskalation: Warnung → Kick → Tempban)
+# ============================================================
+
+punishment:
+  # Bestrafungen aktivieren
+  enabled: true
+
+  # Eskalationsstufen
+  thresholds:
+    # Stufe 1: Warnung an den Spieler
+    warn:
+      violations: 25
+      message: "&c&lAntiCheat &8» &r&cVerdächtiges Verhalten erkannt. Bitte spiele fair!"
+      command: ""
+
+    # Stufe 2: Kick vom Server
+    kick:
+      violations: 50
+      message: "&c&lAntiCheat &8» &r&cDu wurdest wegen verdächtigem Verhalten gekickt."
+      command: "kick %player% &cVerdächtiges Verhalten erkannt. Bitte spiele fair!"
+
+    # Stufe 3: Temporärer Bann
+    tempban:
+      violations: 75
+      message: "&c&lAntiCheat &8» &r&4Du wurdest temporär gebannt."
+      command: "tempban %player% 1h &cAntiCheat: Wiederholtes verdächtiges Verhalten"
+
+  # Violations-Verfall über Zeit (pro Minute)
+  global-decay: 0.6
+  # Violations beim Verlassen des Servers zurücksetzen
+  reset-on-quit: false
+  # Violations-Zähler nach Bestrafung zurücksetzen
+  reset-on-punish: true
+
+# ============================================================
+#  Setback-Einstellungen (Rücksetzung bei Cheating)
+# ============================================================
+
+setback:
+  # Spieler bei erkanntem Cheating zurücksetzen
+  enabled: true
+  # Maximale Setbacks pro Sekunde
+  max-per-second: 3
+  # Blockierung der Bewegung bei Setback
+  block-movement-on-setback: true
+  # Dauer der Blockierung in Ticks
+  block-duration-ticks: 5
+
+# ============================================================
+#  Logging & Debug
+# ============================================================
+
+logging:
+  # Verstöße in Datei loggen
+  log-to-file: true
+  log-file: "violations.log"
+  # Nur Verstöße über diesem Schwellenwert loggen
+  min-violation-log: 5
+  # Ausführliches Debug-Logging (nur für Entwicklung!)
+  debug: false
+
+# ============================================================
+#  Performance-Einstellungen
+# ============================================================
+
+performance:
+  # Threads für Paketverarbeitung
+  max-threads: 2
+  # Max. Spieler die gleichzeitig geprüft werden
+  max-players-checked: 100
+  # Prüfungen für Spieler mit hohem Ping reduzieren
+  lenient-high-ping: true
+  # Ping-Schwelle in ms für gelockerte Prüfungen
+  high-ping-threshold: 250
