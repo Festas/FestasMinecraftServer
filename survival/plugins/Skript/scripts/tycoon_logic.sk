@@ -3,8 +3,9 @@
 # Optionen entfernt & Loop-Values gefixt.
 
 # --- HELPER: Spielername validieren (Schutz gegen Command Injection via Geyser/Floodgate) ---
+# Java Edition: a-zA-Z0-9_ (max 16 chars), Floodgate/Bedrock: Prefix mit Punkt möglich (max 32 chars)
 function isValidPlayerName(name: text) :: boolean:
-    if {_name} matches "^[a-zA-Z0-9_\.\*]{1,32}$":
+    if {_name} matches "^[a-zA-Z0-9_\.]{1,32}$":
         return true
     return false
 

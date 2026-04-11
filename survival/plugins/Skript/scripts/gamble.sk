@@ -13,6 +13,7 @@ command /gamble <text>:
         set {_min_bet} to 100
         set {_max_bet} to 10000000
         set {_daily_loss_cap} to 50000000
+        # Cooldown: 10 Sekunden (oben definiert bei "cooldown: 10 seconds")
         
         set {_input} to arg-1
         set {_p} to player
