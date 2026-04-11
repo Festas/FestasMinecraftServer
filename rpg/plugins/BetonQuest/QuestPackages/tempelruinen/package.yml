@@ -1,0 +1,6 @@
+# Tempelruinen - Tempel-Zonen Quest-Paket
+# The Ancient Temple Ruins Zone
+
+npcs:
+  "70": "archäologe_theodor"
+  "71": "tempelwaechter_seraph"

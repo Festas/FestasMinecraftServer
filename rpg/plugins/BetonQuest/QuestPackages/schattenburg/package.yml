@@ -1,0 +1,6 @@
+# Schattenburg - Schatten-Zonen Quest-Paket
+# The Shadow Fortress Zone
+
+npcs:
+  "80": "schattenritter_darius"
+  "81": "seherin_lyra"

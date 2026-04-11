@@ -1,0 +1,6 @@
+# Eisland - Eis-Zonen Quest-Paket
+# The Frozen Wasteland Zone
+
+npcs:
+  "50": "frostmagier_kalthar"
+  "51": "eisjaegerin_svea"

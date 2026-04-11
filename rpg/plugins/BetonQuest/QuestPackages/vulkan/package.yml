@@ -1,0 +1,6 @@
+# Vulkan - Vulkan-Zonen Quest-Paket
+# The Volcanic Wasteland Zone
+
+npcs:
+  "60": "feuerschmied_ignis"
+  "61": "vulkanologin_pyra"
