@@ -257,6 +257,18 @@ function endBossEvent(victory: boolean):
             # Geld geben (via CMI weil es sicherer ist)
             execute console command "cmi money give %{_pName}% %{_reward}%"
 
+            # Boss-Kill Achievements tracken
+            if {stats.bosskills.%{_uuid}%} is not set:
+                set {stats.bosskills.%{_uuid}%} to 0
+            add 1 to {stats.bosskills.%{_uuid}%}
+
+        # Achievements für alle Online-Teilnehmer
+        loop all players:
+            if {boss_participants::%loop-player's uuid%} is set:
+                unlockAchievement(loop-player, "boss_kill")
+                if {stats.bosskills.%loop-player's uuid%} >= 10:
+                    unlockAchievement(loop-player, "boss_10")
+
         # Sieges-Sound für alle
         loop all players:
             play sound "ui.toast.challenge_complete" with volume 1 and pitch 1 to loop-player
