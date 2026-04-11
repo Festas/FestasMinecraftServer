@@ -20,9 +20,7 @@ dependencies {
         isTransitive = false
     }
 
-    // HikariCP und Jedis shaded
-    implementation("com.zaxxer:HikariCP:5.1.0")
-    implementation("redis.clients:jedis:5.1.0")
+    // SLF4J implementation shaded for runtime
     implementation("org.slf4j:slf4j-simple:2.0.9")
 }
 

@@ -10,9 +10,7 @@ dependencies {
     compileOnly("com.velocitypowered:velocity-api:3.4.0-SNAPSHOT")
     annotationProcessor("com.velocitypowered:velocity-api:3.4.0-SNAPSHOT")
 
-    // HikariCP und Jedis shaded
-    implementation("com.zaxxer:HikariCP:5.1.0")
-    implementation("redis.clients:jedis:5.1.0")
+    // SLF4J implementation shaded for runtime
     implementation("org.slf4j:slf4j-simple:2.0.9")
 }
 
