@@ -1,0 +1,159 @@
+# Pfad: plugins/DeluxeMenus/gui_menus/rules.yml
+# Serverregeln GUI - Geöffnet über /rules oder NPC Klick
+
+menu_title: '&8» &6Serverregeln'
+open_command: rules
+size: 45
+
+items:
+  'filler':
+    material: ORANGE_STAINED_GLASS_PANE
+    slots:
+      - 0-8
+      - 36-44
+    display_name: '&f'
+    priority: 2
+
+  'header':
+    material: BOOK
+    slot: 4
+    display_name: '&6&l📜 Serverregeln'
+    lore:
+      - '&7Bitte lies unsere Regeln sorgfältig.'
+      - '&7Mit dem Spielen akzeptierst du diese.'
+      - ''
+      - '&8Letzte Aktualisierung: &7April 2026'
+
+  # --- REGEL 1: RESPEKT ---
+  'rule_1':
+    material: PLAYER_HEAD
+    slot: 10
+    display_name: '&e&l1. &fRespektvoller Umgang'
+    lore:
+      - '&7Behandle alle Spieler mit Respekt.'
+      - '&7Beleidigungen, Diskriminierung und'
+      - '&7toxisches Verhalten sind verboten.'
+      - ''
+      - '&c✘ &7Hate Speech, Rassismus, Mobbing'
+      - '&a✔ &7Freundlich und hilfsbereit sein'
+
+  # --- REGEL 2: KEIN CHEATING ---
+  'rule_2':
+    material: BARRIER
+    slot: 11
+    display_name: '&e&l2. &fKein Cheating / Hacking'
+    lore:
+      - '&7Jegliche Modifikationen, die einen'
+      - '&7unfairen Vorteil geben, sind verboten.'
+      - ''
+      - '&c✘ &7X-Ray, Fly, Speed, KillAura, AutoClicker'
+      - '&c✘ &7Exploits und Duplication Glitches'
+      - '&a✔ &7Optifine, Shader, Minimap (ohne Radar)'
+
+  # --- REGEL 3: KEIN GRIEFING ---
+  'rule_3':
+    material: TNT
+    slot: 12
+    display_name: '&e&l3. &fKein Griefing / Stealing'
+    lore:
+      - '&7Zerstöre oder stiehl nicht die'
+      - '&7Gebäude und Items anderer Spieler.'
+      - ''
+      - '&c✘ &7Gebäude beschädigen oder zerstören'
+      - '&c✘ &7Items aus fremden Kisten stehlen'
+      - '&a✔ &7Nur auf eigenem Plot bauen'
+
+  # --- REGEL 4: KEIN SPAM ---
+  'rule_4':
+    material: PAPER
+    slot: 13
+    display_name: '&e&l4. &fKein Spam / Werbung'
+    lore:
+      - '&7Spamme nicht im Chat und mache'
+      - '&7keine Werbung für andere Server.'
+      - ''
+      - '&c✘ &7Wiederholte Nachrichten'
+      - '&c✘ &7Server-IPs oder Discord-Links'
+      - '&c✘ &7Großbuchstaben-Spam (CAPS)'
+      - '&a✔ &7Normale Chat-Nutzung'
+
+  # --- REGEL 5: FAIR PLAY ---
+  'rule_5':
+    material: GOLDEN_SWORD
+    slot: 14
+    display_name: '&e&l5. &fFair Play'
+    lore:
+      - '&7Spiele fair und nutze keine'
+      - '&7Bugs oder Glitches aus.'
+      - ''
+      - '&c✘ &7Bug-Abusing / Exploiting'
+      - '&c✘ &7Economy-Manipulation'
+      - '&c✘ &7AFK-Maschinen'
+      - '&a✔ &7Bugs an das Team melden'
+
+  # --- REGEL 6: ACCOUNTS ---
+  'rule_6':
+    material: ARMOR_STAND
+    slot: 15
+    display_name: '&e&l6. &fAccounts & Sicherheit'
+    lore:
+      - '&7Du bist für deinen Account'
+      - '&7selbst verantwortlich.'
+      - ''
+      - '&c✘ &7Multi-Accounting zum Umgehen von Bans'
+      - '&c✘ &7Account-Sharing bei Wettbewerben'
+      - '&a✔ &7Sichere Passwörter verwenden'
+
+  # --- REGEL 7: TEAM ---
+  'rule_7':
+    material: EMERALD
+    slot: 16
+    display_name: '&e&l7. &fTeam-Anweisungen'
+    lore:
+      - '&7Folge den Anweisungen des Teams.'
+      - '&7Bei Problemen wende dich an einen'
+      - '&7Moderator oder Admin.'
+      - ''
+      - '&a✔ &7/report für Regelbrüche nutzen'
+      - '&a✔ &7Tickets auf Discord erstellen'
+
+  # --- STRAFEN ---
+  'punishments':
+    material: IRON_BARS
+    slot: 22
+    display_name: '&c&l⚠ Strafen bei Regelverstoß'
+    lore:
+      - '&7Bei Verstößen drohen folgende Strafen:'
+      - ''
+      - '&e1. Verstoß: &7Verwarnung'
+      - '&e2. Verstoß: &7Temporärer Mute/Ban'
+      - '&e3. Verstoß: &7Permanenter Ban'
+      - ''
+      - '&7Schwere Verstöße können sofort'
+      - '&7zu einem permanenten Ban führen.'
+
+  # --- DISCORD ---
+  'discord':
+    material: LAPIS_LAZULI
+    slot: 30
+    display_name: '&9&lDiscord'
+    lore:
+      - '&7Trete unserem Discord bei!'
+      - '&7discord.gg/festasbuilds'
+      - ''
+      - '&e► Klicke für den Link'
+    left_click_commands:
+      - '[close]'
+      - '[message] &8» &9Discord: &fdiscord.gg/festasbuilds'
+
+  # --- AKZEPTIEREN ---
+  'accept':
+    material: LIME_DYE
+    slot: 32
+    display_name: '&a&l✔ Regeln Akzeptiert'
+    lore:
+      - '&7Danke, dass du die Regeln gelesen hast!'
+      - '&7Viel Spaß auf unserem Server!'
+    left_click_commands:
+      - '[close]'
+      - '[message] &a&l✔ &7Du hast die Regeln akzeptiert. Viel Spaß!'

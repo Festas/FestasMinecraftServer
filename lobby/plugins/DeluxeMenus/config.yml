@@ -19,3 +19,7 @@ gui_menus:
     file: server_selector.yml
   mmohud_menu:
     file: mmohud_menu.yml
+  rules:
+    file: rules.yml
+  network_guide:
+    file: network_guide.yml
