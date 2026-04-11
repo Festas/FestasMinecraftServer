@@ -69,7 +69,22 @@ test-server/
 # Database files (HSQLDB, SQLite, etc.)
 **/punishments-database.*
 *.db
+*.mv.db
 *.sqlite
+**/*.db
+**/*.mv.db
+
+# Database backups
+**/DatabaseBackups/
+
+# Skript backups
+**/Skript/backups/
+
+# Resource pack archives
+**/Oraxen/pack/*.zip
+
+# Essentials userdata (contains player IPs - GDPR)
+**/Essentials/userdata/
 
 # Player data & sessions
 **/playerdata/

@@ -35,9 +35,9 @@ mysql:
   host: "127.0.0.1"
   port: 3306
   ssl: false
-  database: "db name"
-  username: "username"
-  password: "password"
+  database: "CHANGE_ME"
+  username: "CHANGE_ME"
+  password: "CHANGE_ME"
   network-latency: 500
   pool-size: 10
   sync-retry-count: 3

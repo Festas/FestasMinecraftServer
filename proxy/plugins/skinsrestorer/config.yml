@@ -60,8 +60,8 @@ database:
     host: localhost
     port: 3306
     database: db
-    username: root
-    password: pass
+    username: CHANGE_ME
+    password: CHANGE_ME
     maxPoolSize: 10
     tablePrefix: sr_
     connectionOptions: sslMode=trust&serverTimezone=UTC

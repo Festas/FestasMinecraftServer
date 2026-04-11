@@ -182,8 +182,8 @@ mysql:
   host: 127.0.0.1
   port: 3306
   database: tab
-  username: user
-  password: password
+  username: CHANGE_ME
+  password: CHANGE_ME
   useSSL: true
 proxy-support:
   enabled: false

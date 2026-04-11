@@ -13,8 +13,8 @@ mysql:
   use: false
   host: "localhost"
   port: "3306"
-  user: "root"
-  password: "password"
+  user: "CHANGE_ME"
+  password: "CHANGE_ME"
   database: "plot_db"
   # Set additional properties: https://dev.mysql.com/doc/connector-j/en/connector-j-reference-configuration-properties.html
   properties: 
