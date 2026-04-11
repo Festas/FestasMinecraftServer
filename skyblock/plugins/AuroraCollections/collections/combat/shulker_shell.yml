@@ -1,0 +1,19 @@
+triggers: [ entity_loot ]
+types:
+  - "minecraft:shulker_shell"
+
+name: "Shulker Shell"
+
+menu-item:
+  material: SHULKER_SHELL
+
+requirements:
+  - 5
+  - 15
+  - 50
+  - 150
+  - 500
+  - 1000
+  - 2500
+
+use-global-level-matchers: true

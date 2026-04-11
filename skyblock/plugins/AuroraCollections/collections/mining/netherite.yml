@@ -1,0 +1,20 @@
+triggers: [ block_loot ]
+types:
+  - "minecraft:netherite_scrap"
+  - "minecraft:ancient_debris"
+
+name: "Netherite"
+
+menu-item:
+  material: NETHERITE_SCRAP
+
+requirements:
+  - 10
+  - 25
+  - 50
+  - 150
+  - 500
+  - 1000
+  - 2500
+
+use-global-level-matchers: true

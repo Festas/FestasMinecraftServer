@@ -1,0 +1,19 @@
+triggers: [ entity_loot ]
+types:
+  - "minecraft:prismarine_shard"
+
+name: "Prismarine Shard"
+
+menu-item:
+  material: PRISMARINE_SHARD
+
+requirements:
+  - 25
+  - 75
+  - 200
+  - 750
+  - 2000
+  - 4000
+  - 7500
+
+use-global-level-matchers: true

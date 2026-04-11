@@ -1,0 +1,19 @@
+triggers: [ fish ]
+types:
+  - "minecraft:nautilus_shell"
+
+name: "Nautilus Shell"
+
+menu-item:
+  material: NAUTILUS_SHELL
+
+requirements:
+  - 5
+  - 15
+  - 50
+  - 150
+  - 500
+  - 1000
+  - 2500
+
+use-global-level-matchers: true
