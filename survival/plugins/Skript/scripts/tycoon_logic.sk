@@ -138,6 +138,10 @@ on right click:
                     
                     add ({_price} * {_amount}) to {_total}
                     add {_amount} to {_count}
+
+                    # Börse: Verkäufe während des Loops tracken (vor dem Entfernen)
+                    if {boerse_base::%{_type}%} is set:
+                        registerSale({_type}, {_amount})
                     
                     remove loop-item from inventory of event-block
                     set {_soldSomething} to true
@@ -155,12 +159,6 @@ on right click:
                 add {_total} to player's balance
                 send "%{_prefix}%&aVerkauft: &f%{_count}% Items &afür &e$%{_total}%" to player
                 play sound "entity.experience_orb.pickup" to player
-                
-                # Börse: Verkäufe registrieren
-                loop all items in inventory of event-block:
-                    set {_soldType} to "%type of loop-item%"
-                    if {boerse_base::%{_soldType}%} is set:
-                        registerSale({_soldType}, item amount of loop-item)
 
                 # Achievements: Verkäufe tracken
                 checkSellAchievements(player, {_count})

@@ -98,7 +98,16 @@ function unlockAchievement(p: player, achID: text):
     play sound "ui.toast.challenge_complete" with volume 1 and pitch 1.2 to {_p}
 
     # Broadcast bei seltenen Achievements
-    if {_achID} is "rank_25" or "prestige_1" or "prestige_10" or "sell_1m" or "gamble_jackpot" or "daily_100" or "rich_1t" or "boss_10":
+    delete {_rareAchs::*}
+    add "rank_25" to {_rareAchs::*}
+    add "prestige_1" to {_rareAchs::*}
+    add "prestige_10" to {_rareAchs::*}
+    add "sell_1m" to {_rareAchs::*}
+    add "gamble_jackpot" to {_rareAchs::*}
+    add "daily_100" to {_rareAchs::*}
+    add "rich_1t" to {_rareAchs::*}
+    add "boss_10" to {_rareAchs::*}
+    if {_rareAchs::*} contains {_achID}:
         broadcast "&8[&6🏆&8] &f%{_p}% &7hat &6%{_name}% &7freigeschaltet! 🎉"
 
 # --- ACHIEVEMENT PRÜFEN: Items verkauft ---

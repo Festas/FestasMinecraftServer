@@ -35,16 +35,16 @@ on script load:
 
     # Prestige-Kosten (Geld das man beim Bedrock-Rang haben muss)
     delete {prestige_cost::*}
-    set {prestige_cost::1} to 500000000000
-    set {prestige_cost::2} to 1000000000000
-    set {prestige_cost::3} to 2500000000000
-    set {prestige_cost::4} to 5000000000000
-    set {prestige_cost::5} to 10000000000000
-    set {prestige_cost::6} to 25000000000000
-    set {prestige_cost::7} to 50000000000000
-    set {prestige_cost::8} to 100000000000000
-    set {prestige_cost::9} to 250000000000000
-    set {prestige_cost::10} to 500000000000000
+    set {prestige_cost::1} to 500000000000      # 500B (Milliarden)
+    set {prestige_cost::2} to 1000000000000     # 1T (Billion)
+    set {prestige_cost::3} to 2500000000000     # 2.5T
+    set {prestige_cost::4} to 5000000000000     # 5T
+    set {prestige_cost::5} to 10000000000000    # 10T
+    set {prestige_cost::6} to 25000000000000    # 25T
+    set {prestige_cost::7} to 50000000000000    # 50T
+    set {prestige_cost::8} to 100000000000000   # 100T
+    set {prestige_cost::9} to 250000000000000   # 250T
+    set {prestige_cost::10} to 500000000000000  # 500T
 
     send "&8[&5Prestige&8] &aPrestige-System geladen (10 Stufen)!" to console
 
@@ -195,6 +195,7 @@ command /prestige confirm:
         set {_pName} to name of player
 
         # Sicherheitscheck: Spielername validieren
+        # Pattern erlaubt Punkte für Floodgate/Bedrock-Spieler (identisch mit tycoon_logic.sk)
         if {_pName} does not match "^[a-zA-Z0-9_\.]{1,32}$":
             send "{@prefix}&cFehler: Ungültiger Spielername!"
             stop
@@ -216,6 +217,7 @@ command /prestige confirm:
         wait 40 ticks
 
         # Standard Rankup-Reset durchführen (zurück auf Erde)
+        # tycoon_perform_rankup ist definiert in tycoon_logic.sk (Zeile 259+)
         execute console command "tycoon_perform_rankup %{_pName}% erde tier1_1"
 
         # Prestige-Permission setzen

@@ -57,7 +57,6 @@ items:
     left_click_commands:
       - '[console] cmi money take %player% 500000'
       - '[console] lp user %player% permission set playerparticles.effect.flame true'
-      - '[console] pp fixed create %player% ~0 ~1 ~0 feet flame'
       - '[message] &8[&d✨&8] &aFlammen-Spur freigeschaltet!'
       - '[sound] ENTITY_PLAYER_LEVELUP'
       - '[close]'
@@ -66,8 +65,11 @@ items:
         money:
           type: has money
           amount: 500000
+        not_owned:
+          type: "!has permission"
+          permission: playerparticles.effect.flame
       deny_commands:
-        - '[message] &8[&d✨&8] &cDu brauchst 500.000€!'
+        - '[message] &8[&d✨&8] &cDu brauchst 500.000€ oder besitzt diesen Effekt bereits!'
         - '[sound] ENTITY_VILLAGER_NO'
 
   'particles_hearts':
@@ -92,8 +94,11 @@ items:
         money:
           type: has money
           amount: 750000
+        not_owned:
+          type: "!has permission"
+          permission: playerparticles.effect.heart
       deny_commands:
-        - '[message] &8[&d✨&8] &cDu brauchst 750.000€!'
+        - '[message] &8[&d✨&8] &cDu brauchst 750.000€ oder besitzt diesen Effekt bereits!'
         - '[sound] ENTITY_VILLAGER_NO'
 
   'particles_enchant':
@@ -118,8 +123,11 @@ items:
         money:
           type: has money
           amount: 1000000
+        not_owned:
+          type: "!has permission"
+          permission: playerparticles.effect.enchantment
       deny_commands:
-        - '[message] &8[&d✨&8] &cDu brauchst 1.000.000€!'
+        - '[message] &8[&d✨&8] &cDu brauchst 1.000.000€ oder besitzt diesen Effekt bereits!'
         - '[sound] ENTITY_VILLAGER_NO'
 
   'particles_totem':
@@ -144,8 +152,11 @@ items:
         money:
           type: has money
           amount: 5000000
+        not_owned:
+          type: "!has permission"
+          permission: playerparticles.effect.totem
       deny_commands:
-        - '[message] &8[&d✨&8] &cDu brauchst 5.000.000€!'
+        - '[message] &8[&d✨&8] &cDu brauchst 5.000.000€ oder besitzt diesen Effekt bereits!'
         - '[sound] ENTITY_VILLAGER_NO'
 
   'particles_endrod':
@@ -170,8 +181,11 @@ items:
         money:
           type: has money
           amount: 2500000
+        not_owned:
+          type: "!has permission"
+          permission: playerparticles.effect.end_rod
       deny_commands:
-        - '[message] &8[&d✨&8] &cDu brauchst 2.500.000€!'
+        - '[message] &8[&d✨&8] &cDu brauchst 2.500.000€ oder besitzt diesen Effekt bereits!'
         - '[sound] ENTITY_VILLAGER_NO'
 
   # ==============================================================
@@ -210,8 +224,11 @@ items:
         money:
           type: has money
           amount: 250000
+        not_owned:
+          type: "!has permission"
+          permission: cmi.colors.publicmessage.gold
       deny_commands:
-        - '[message] &8[&d✨&8] &cDu brauchst 250.000€!'
+        - '[message] &8[&d✨&8] &cDu brauchst 250.000€ oder besitzt diese Farbe bereits!'
         - '[sound] ENTITY_VILLAGER_NO'
 
   'chat_aqua':
@@ -236,8 +253,11 @@ items:
         money:
           type: has money
           amount: 250000
+        not_owned:
+          type: "!has permission"
+          permission: cmi.colors.publicmessage.aqua
       deny_commands:
-        - '[message] &8[&d✨&8] &cDu brauchst 250.000€!'
+        - '[message] &8[&d✨&8] &cDu brauchst 250.000€ oder besitzt diese Farbe bereits!'
         - '[sound] ENTITY_VILLAGER_NO'
 
   'chat_red':
@@ -262,8 +282,11 @@ items:
         money:
           type: has money
           amount: 250000
+        not_owned:
+          type: "!has permission"
+          permission: cmi.colors.publicmessage.red
       deny_commands:
-        - '[message] &8[&d✨&8] &cDu brauchst 250.000€!'
+        - '[message] &8[&d✨&8] &cDu brauchst 250.000€ oder besitzt diese Farbe bereits!'
         - '[sound] ENTITY_VILLAGER_NO'
 
   'chat_green':
@@ -288,8 +311,11 @@ items:
         money:
           type: has money
           amount: 250000
+        not_owned:
+          type: "!has permission"
+          permission: cmi.colors.publicmessage.green
       deny_commands:
-        - '[message] &8[&d✨&8] &cDu brauchst 250.000€!'
+        - '[message] &8[&d✨&8] &cDu brauchst 250.000€ oder besitzt diese Farbe bereits!'
         - '[sound] ENTITY_VILLAGER_NO'
 
   # ==============================================================
@@ -329,8 +355,11 @@ items:
         money:
           type: has money
           amount: 100000
+        not_owned:
+          type: "!has permission"
+          permission: libsdisguises.disguise.chicken
       deny_commands:
-        - '[message] &8[&d✨&8] &cDu brauchst 100.000€!'
+        - '[message] &8[&d✨&8] &cDu brauchst 100.000€ oder besitzt diese Verkleidung bereits!'
         - '[sound] ENTITY_VILLAGER_NO'
 
   'disguise_villager':
@@ -356,8 +385,11 @@ items:
         money:
           type: has money
           amount: 500000
+        not_owned:
+          type: "!has permission"
+          permission: libsdisguises.disguise.villager
       deny_commands:
-        - '[message] &8[&d✨&8] &cDu brauchst 500.000€!'
+        - '[message] &8[&d✨&8] &cDu brauchst 500.000€ oder besitzt diese Verkleidung bereits!'
         - '[sound] ENTITY_VILLAGER_NO'
 
   'disguise_enderman':
@@ -383,8 +415,11 @@ items:
         money:
           type: has money
           amount: 2000000
+        not_owned:
+          type: "!has permission"
+          permission: libsdisguises.disguise.enderman
       deny_commands:
-        - '[message] &8[&d✨&8] &cDu brauchst 2.000.000€!'
+        - '[message] &8[&d✨&8] &cDu brauchst 2.000.000€ oder besitzt diese Verkleidung bereits!'
         - '[sound] ENTITY_VILLAGER_NO'
 
   'disguise_remove':

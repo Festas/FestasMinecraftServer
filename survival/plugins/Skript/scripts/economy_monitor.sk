@@ -4,6 +4,10 @@
 
 options:
     prefix: &8[&3📊 Economy&8] &7
+    # Schwellenwert für große Transaktionen die Admins benachrichtigen
+    large_transaction: 50000000
+    # Schwellenwert für Inflationswarnung (Durchschnittsgeld pro Spieler)
+    inflation_threshold: 100000000000
 
 # --- ECONOMY STATISTIKEN ---
 on script load:
@@ -79,7 +83,7 @@ function logSale(p: player, amount: number, itemCount: number):
     add {_itemCount} to {eco.daily_sales}
 
     # Warnung bei großen Transaktionen
-    if {_amount} > 50000000:
+    if {_amount} > {@large_transaction}:
         loop all players:
             if loop-player has permission "tycoon.admin":
                 send "{@prefix}&c⚠ Großer Verkauf: &f%{_p}% &7hat &e%{_amount}%€ &7verdient (%{_itemCount}% Items)" to loop-player
@@ -105,7 +109,7 @@ every 1 hour:
         set {_avg} to {_totalOnline} / {_playerCount}
 
         # Warnung wenn Durchschnittsgeld zu hoch wird
-        if {_avg} > 100000000000:
+        if {_avg} > {@inflation_threshold}:
             loop all players:
                 if loop-player has permission "tycoon.admin":
                     send "{@prefix}&c⚠ INFLATIONSWARNUNG! Durchschnittliches Geld: %{_avg}%€" to loop-player
