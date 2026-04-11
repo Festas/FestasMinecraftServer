@@ -1,0 +1,306 @@
+# --- WELTBEDROHUNG / SERVER-WIDE BOSS EVENTS ---
+# Zufällige Boss-Events bei denen ALLE Spieler zusammenarbeiten müssen
+# Der Boss skaliert mit der Spieleranzahl
+# Belohnungen für alle bei Sieg, Strafen bei Niederlage
+
+options:
+    prefix: &8[&4⚔ Boss&8] &7
+    # Boss-Event alle 2-4 Stunden (zufällig)
+    min_interval: 7200
+    max_interval: 14400
+    # Boss-Arena Location (anpassen nach Bedarf)
+    boss_world: tycoon
+
+# --- BOSS-TYPEN LADEN ---
+on script load:
+    # Boss-Namen
+    delete {boss_names::*}
+    set {boss_names::1} to "&4&lDer Verschlinger"
+    set {boss_names::2} to "&5&lSchattenlord"
+    set {boss_names::3} to "&6&lGoldener Golem"
+    set {boss_names::4} to "&1&lEisdämon"
+    set {boss_names::5} to "&c&lFeuerdrache"
+
+    # Boss-Typen (Mob-Types)
+    delete {boss_types::*}
+    set {boss_types::1} to "wither skeleton"
+    set {boss_types::2} to "enderman"
+    set {boss_types::3} to "iron golem"
+    set {boss_types::4} to "stray"
+    set {boss_types::5} to "blaze"
+
+    # Belohnungen pro Boss (Geld)
+    delete {boss_rewards::*}
+    set {boss_rewards::1} to 50000
+    set {boss_rewards::2} to 100000
+    set {boss_rewards::3} to 150000
+    set {boss_rewards::4} to 200000
+    set {boss_rewards::5} to 500000
+
+    send "&8[&4⚔ Boss&8] &aBoss-Event System geladen (5 Bosse)!" to console
+
+# --- BOSS-EVENT STATUS ---
+# {boss_active} = true/false
+# {boss_id} = current boss ID
+# {boss_hp} = remaining HP
+# {boss_max_hp} = max HP
+# {boss_participants::*} = list of participant UUIDs
+
+# --- 1. BOSS-EVENT STARTEN (Admin) ---
+command /bossevent start [<number>]:
+    permission: tycoon.admin
+    description: Starte ein Boss-Event
+    trigger:
+        if {boss_active} is true:
+            send "{@prefix}&cEs läuft bereits ein Boss-Event!"
+            stop
+
+        set {_bossID} to arg-1
+        if {_bossID} is not set:
+            set {_bossID} to random integer between 1 and 5
+
+        if {_bossID} < 1:
+            set {_bossID} to 1
+        if {_bossID} > 5:
+            set {_bossID} to 5
+
+        startBossEvent({_bossID})
+
+# --- 2. BOSS-EVENT STOPPEN (Admin) ---
+command /bossevent stop:
+    permission: tycoon.admin
+    description: Stoppe das aktive Boss-Event
+    trigger:
+        if {boss_active} is not true:
+            send "{@prefix}&cKein Boss-Event aktiv!"
+            stop
+        endBossEvent(false)
+
+# --- 3. BOSS-EVENT INFO ---
+command /boss:
+    description: Zeige Boss-Event Status
+    aliases: /bossevent, /weltbedrohung
+    trigger:
+        if {boss_active} is not true:
+            send ""
+            send "&8&m─────────────────────────────────────"
+            send "&4&l  ⚔ WELTBEDROHUNG ⚔"
+            send "&8&m─────────────────────────────────────"
+            send ""
+            send "{@prefix}&7Aktuell keine Bedrohung aktiv."
+            send "{@prefix}&7Boss-Events starten automatisch!"
+            send "{@prefix}&7Bleib online und sei bereit! ⚔"
+            send ""
+            send "&8&m─────────────────────────────────────"
+            stop
+
+        set {_name} to {boss_names::%{boss_id}%}
+        set {_hp} to {boss_hp}
+        set {_maxHP} to {boss_max_hp}
+        set {_pct} to {_hp} / {_maxHP} * 100
+        set {_participants} to size of {boss_participants::*}
+
+        # HP-Bar erstellen
+        set {_barLength} to 20
+        set {_filled} to round({_pct} / 100 * {_barLength})
+        set {_empty} to {_barLength} - {_filled}
+        set {_bar} to ""
+        loop {_filled} times:
+            set {_bar} to "%{_bar}%&c█"
+        loop {_empty} times:
+            set {_bar} to "%{_bar}%&8█"
+
+        send ""
+        send "&8&m─────────────────────────────────────"
+        send "&4&l  ⚔ AKTIVE WELTBEDROHUNG ⚔"
+        send "&8&m─────────────────────────────────────"
+        send ""
+        send "{@prefix}&7Boss: %{_name}%"
+        send "{@prefix}&7HP: %{_bar}% &7(%{_pct}%%%)"
+        send "{@prefix}&7Teilnehmer: &e%{_participants}%"
+        send ""
+        send "{@prefix}&7Nutze &e/boss hit &7um anzugreifen!"
+        send "{@prefix}&7Belohnung bei Sieg: &a%{boss_rewards::%{boss_id}%}%€ &7pro Spieler"
+        send ""
+        send "&8&m─────────────────────────────────────"
+
+# --- 4. BOSS ANGREIFEN ---
+command /boss hit:
+    description: Greife den Boss an
+    aliases: /bosshit, /attack
+    cooldown: 3 seconds
+    cooldown message: {@prefix}&7Dein Angriff wird geladen... (%remaining time%)
+    trigger:
+        if {boss_active} is not true:
+            send "{@prefix}&cKein Boss-Event aktiv!"
+            stop
+
+        if name of player's world is not "{@boss_world}":
+            send "{@prefix}&cDu musst in der Tycoon-Welt sein!"
+            stop
+
+        # Teilnehmer registrieren
+        set {boss_participants::%player's uuid%} to name of player
+
+        # Schaden berechnen (Basis: 50-150, skaliert mit Prestige)
+        set {_baseDmg} to random integer between 50 and 150
+        set {_prestige} to {prestige.level.%player's uuid%}
+        if {_prestige} is not set:
+            set {_prestige} to 0
+        set {_bonus} to {_prestige} * 10
+        set {_totalDmg} to {_baseDmg} + {_bonus}
+
+        # Boss HP reduzieren
+        subtract {_totalDmg} from {boss_hp}
+
+        # Kritischer Treffer (10% Chance)
+        set {_critChance} to random integer between 1 and 100
+        if {_critChance} <= 10:
+            set {_totalDmg} to {_totalDmg} * 3
+            subtract {_totalDmg} * 2 from {boss_hp}
+            send title "" with subtitle "&c&l⚔ KRITISCHER TREFFER! &7-%{_totalDmg}% HP" to player for 2 seconds
+            play sound "entity.player.attack.crit" with volume 1 and pitch 0.8 to player
+        else:
+            send title "" with subtitle "&c⚔ &7-%{_totalDmg}% HP" to player for 1 second
+            play sound "entity.player.attack.strong" with volume 0.8 and pitch 1 to player
+
+        # HP-Check
+        if {boss_hp} <= 0:
+            set {boss_hp} to 0
+            endBossEvent(true)
+            stop
+
+        # Gelegentliche Boss-Angriffe (30% Chance)
+        set {_attackBack} to random integer between 1 and 100
+        if {_attackBack} <= 30:
+            wait 10 ticks
+            set {_bossName} to {boss_names::%{boss_id}%}
+
+            delete {_attacks::*}
+            add "&7schlägt mit dunkler Energie zurück!" to {_attacks::*}
+            add "&7entfesselt einen Feuerball!" to {_attacks::*}
+            add "&7stampft auf den Boden!" to {_attacks::*}
+            add "&7brüllt ohrenbetäubend!" to {_attacks::*}
+
+            set {_attack} to random element out of {_attacks::*}
+            send "{@prefix}%{_bossName}% %{_attack}%" to player
+            play sound "entity.wither.shoot" with volume 0.5 and pitch 0.8 to player
+
+# --- 5. BOSS-EVENT STARTEN (Funktion) ---
+function startBossEvent(bossID: number):
+    set {boss_active} to true
+    set {boss_id} to {_bossID}
+    delete {boss_participants::*}
+
+    # HP skaliert mit Online-Spielern (Basis: 5000 pro Spieler)
+    set {_playerCount} to number of all players
+    if {_playerCount} < 1:
+        set {_playerCount} to 1
+    set {boss_max_hp} to {_playerCount} * 5000
+    set {boss_hp} to {boss_max_hp}
+
+    set {_name} to {boss_names::%{_bossID}%}
+
+    # Ankündigung
+    broadcast ""
+    broadcast "&8&m─────────────────────────────────────"
+    broadcast "&4&l  ⚠ WELTBEDROHUNG! ⚠"
+    broadcast "&8&m─────────────────────────────────────"
+    broadcast ""
+    broadcast "&8[&4⚔ Boss&8] &7Ein mächtiger Boss ist erschienen!"
+    broadcast "&8[&4⚔ Boss&8] &7Boss: %{_name}%"
+    broadcast "&8[&4⚔ Boss&8] &7HP: &c%{boss_max_hp}%"
+    broadcast "&8[&4⚔ Boss&8] &7Belohnung: &a%{boss_rewards::%{_bossID}%}%€ &7pro Spieler"
+    broadcast ""
+    broadcast "&8[&4⚔ Boss&8] &e&lNutze /boss hit um anzugreifen!"
+    broadcast "&8[&4⚔ Boss&8] &7Ihr habt &c15 Minuten &7Zeit!"
+    broadcast "&8&m─────────────────────────────────────"
+    broadcast ""
+
+    # Sound für alle
+    loop all players:
+        play sound "entity.wither.spawn" with volume 0.8 and pitch 0.8 to loop-player
+        send title "&4&l⚠ WELTBEDROHUNG!" with subtitle "&7%{_name}% &7ist erschienen!" to loop-player for 5 seconds
+
+    # Timer: 15 Minuten bis zur Niederlage
+    wait 15 minutes
+
+    if {boss_active} is true:
+        if {boss_hp} > 0:
+            endBossEvent(false)
+
+# --- 6. BOSS-EVENT BEENDEN ---
+function endBossEvent(victory: boolean):
+    set {_name} to {boss_names::%{boss_id}%}
+    set {_bossID} to {boss_id}
+
+    if {_victory} is true:
+        # SIEG!
+        set {_reward} to {boss_rewards::%{_bossID}%}
+        set {_participants} to size of {boss_participants::*}
+
+        broadcast ""
+        broadcast "&8&m─────────────────────────────────────"
+        broadcast "&a&l  ✦ BOSS BESIEGT! ✦"
+        broadcast "&8&m─────────────────────────────────────"
+        broadcast ""
+        broadcast "&8[&4⚔ Boss&8] &a%{_name}% &awurde besiegt!"
+        broadcast "&8[&4⚔ Boss&8] &7Teilnehmer: &e%{_participants}%"
+        broadcast "&8[&4⚔ Boss&8] &7Belohnung: &a%{_reward}%€ &7pro Teilnehmer"
+        broadcast ""
+        broadcast "&8&m─────────────────────────────────────"
+
+        # Belohnungen verteilen
+        loop {boss_participants::*}:
+            set {_pName} to loop-value
+            set {_uuid} to loop-index
+            # Geld geben (via CMI weil es sicherer ist)
+            execute console command "cmi money give %{_pName}% %{_reward}%"
+
+        # Sieges-Sound für alle
+        loop all players:
+            play sound "ui.toast.challenge_complete" with volume 1 and pitch 1 to loop-player
+            send title "&a&l✦ SIEG! ✦" with subtitle "&7%{_name}% &7wurde besiegt!" to loop-player for 5 seconds
+
+    else:
+        # NIEDERLAGE!
+        broadcast ""
+        broadcast "&8&m─────────────────────────────────────"
+        broadcast "&c&l  ✖ NIEDERLAGE! ✖"
+        broadcast "&8&m─────────────────────────────────────"
+        broadcast ""
+        broadcast "&8[&4⚔ Boss&8] &c%{_name}% &chat gewonnen!"
+        broadcast "&8[&4⚔ Boss&8] &7Der Boss konnte nicht besiegt werden."
+        broadcast "&8[&4⚔ Boss&8] &cStrafe: Generator-Effizienz -20%% für 1 Stunde!"
+        broadcast ""
+        broadcast "&8&m─────────────────────────────────────"
+
+        # Strafe: Flag setzen für reduzierte Generator-Effizienz
+        set {boss_penalty_active} to true
+
+        # Strafe nach 1 Stunde aufheben
+        wait 1 hour
+        delete {boss_penalty_active}
+        broadcast "&8[&4⚔ Boss&8] &aDie Boss-Strafe ist aufgehoben! Generator-Effizienz wieder normal."
+
+        # Sound für alle
+        loop all players:
+            play sound "entity.wither.death" with volume 0.8 and pitch 0.5 to loop-player
+
+    # Aufräumen
+    set {boss_active} to false
+    delete {boss_id}
+    delete {boss_hp}
+    delete {boss_max_hp}
+    delete {boss_participants::*}
+
+# --- 7. AUTOMATISCHE BOSS-EVENTS ---
+every 3 hours:
+    if {boss_active} is not true:
+        # 40% Chance auf ein automatisches Boss-Event
+        set {_chance} to random integer between 1 and 100
+        if {_chance} <= 40:
+            set {_onlinePlayers} to number of all players
+            if {_onlinePlayers} >= 2:
+                set {_bossID} to random integer between 1 and 5
+                startBossEvent({_bossID})

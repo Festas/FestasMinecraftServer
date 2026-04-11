@@ -1,0 +1,303 @@
+# --- DYNAMISCHE BÖRSE / STOCK EXCHANGE SYSTEM ---
+# Preise für Items schwanken basierend auf Angebot & Nachfrage
+# Kein anderer Tycoon-Server hat ein lebendes Wirtschaftssystem!
+#
+# Mechanik:
+# - Jedes Item hat einen Basispreis
+# - Wenn viele Spieler ein Item verkaufen → Preis sinkt
+# - Wenn niemand ein Item verkauft → Preis steigt langsam zurück
+# - Preisänderungen passieren alle 30 Minuten
+# - Min/Max: 50% - 200% des Basispreises
+# - Spezial-Events: Markt-Crash, Boom, Goldrausch
+
+options:
+    prefix: &8[&e📈 Börse&8] &7
+    # Preisanpassung alle 30 Minuten (in Ticks: 30*60*20 = 36000)
+    update_interval: 36000
+    # Wie stark sinken Preise pro Verkauf (in %)
+    sell_pressure: 0.5
+    # Wie stark steigen Preise zurück pro Zyklus (in %)
+    recovery_rate: 2.0
+    # Mindestpreis (% vom Basis)
+    min_price_pct: 50
+    # Höchstpreis (% vom Basis)
+    max_price_pct: 200
+
+# --- 1. BÖRSEN-PREISE INITIALISIEREN ---
+on script load:
+    # Basispreise (gleich wie tycoon_logic.sk)
+    # Diese werden NICHT verändert - nur der Multiplikator ändert sich
+    delete {boerse_base::*}
+    set {boerse_base::dirt} to 5
+    set {boerse_base::coarse dirt} to 10
+    set {boerse_base::stone} to 10
+    set {boerse_base::stone bricks} to 20
+    set {boerse_base::coal} to 20
+    set {boerse_base::coal block} to 180
+    set {boerse_base::iron ingot} to 50
+    set {boerse_base::iron block} to 450
+    set {boerse_base::copper ingot} to 80
+    set {boerse_base::copper block} to 720
+    set {boerse_base::gold ingot} to 120
+    set {boerse_base::gold block} to 1080
+    set {boerse_base::redstone} to 200
+    set {boerse_base::redstone block} to 1800
+    set {boerse_base::lapis lazuli} to 450
+    set {boerse_base::lapis block} to 4050
+    set {boerse_base::emerald} to 800
+    set {boerse_base::emerald block} to 7200
+    set {boerse_base::diamond} to 1500
+    set {boerse_base::diamond block} to 13500
+    set {boerse_base::obsidian} to 2500
+    set {boerse_base::crying obsidian} to 5000
+    set {boerse_base::netherite scrap} to 5000
+    set {boerse_base::netherite ingot} to 20000
+
+    # Initialisiere Multiplikatoren nur wenn nicht vorhanden (persistent!)
+    loop {boerse_base::*}:
+        if {boerse_multi::%loop-index%} is not set:
+            set {boerse_multi::%loop-index%} to 100
+
+    # Verkaufszähler initialisieren
+    loop {boerse_base::*}:
+        if {boerse_sold::%loop-index%} is not set:
+            set {boerse_sold::%loop-index%} to 0
+
+    send "&8[&e📈 Börse&8] &aDynamisches Marktsystem geladen!" to console
+
+# --- 2. AKTUELLEN PREIS BERECHNEN ---
+function getMarketPrice(item: text) :: number:
+    set {_base} to {boerse_base::%{_item}%}
+    if {_base} is not set:
+        return 0
+    set {_multi} to {boerse_multi::%{_item}%}
+    if {_multi} is not set:
+        set {_multi} to 100
+    return {_base} * {_multi} / 100
+
+# --- 3. PREIS-TREND SYMBOL ---
+function getTrend(item: text) :: text:
+    set {_multi} to {boerse_multi::%{_item}%}
+    if {_multi} is not set:
+        return "&7━"
+    if {_multi} > 110:
+        return "&a▲"
+    else if {_multi} > 100:
+        return "&2△"
+    else if {_multi} >= 95:
+        return "&7━"
+    else if {_multi} >= 85:
+        return "&c▽"
+    else:
+        return "&4▼"
+
+# --- 4. VERKAUF REGISTRIEREN (von tycoon_logic.sk aufgerufen) ---
+function registerSale(item: text, amount: number):
+    if {boerse_base::%{_item}%} is set:
+        add {_amount} to {boerse_sold::%{_item}%}
+
+# --- 5. PERIODISCHE PREISANPASSUNG ---
+every 30 minutes:
+    # Für jedes Item: Preis anpassen basierend auf Verkaufszahlen
+    loop {boerse_base::*}:
+        set {_item} to loop-index
+        set {_sold} to {boerse_sold::%{_item}%}
+        set {_current} to {boerse_multi::%{_item}%}
+
+        if {_sold} is not set:
+            set {_sold} to 0
+
+        # Verkaufsdruck: Je mehr verkauft, desto mehr sinkt der Preis
+        if {_sold} > 0:
+            # Pro 100 verkaufte Items sinkt der Preis um sell_pressure %
+            set {_pressure} to {_sold} / 100 * 0.5
+            if {_pressure} > 10:
+                set {_pressure} to 10
+            subtract {_pressure} from {_current}
+        else:
+            # Kein Verkauf → Preis erholt sich
+            add 2.0 to {_current}
+
+        # Grenzen einhalten (50% - 200%)
+        if {_current} < 50:
+            set {_current} to 50
+        if {_current} > 200:
+            set {_current} to 200
+
+        set {boerse_multi::%{_item}%} to {_current}
+        # Verkaufszähler zurücksetzen
+        set {boerse_sold::%{_item}%} to 0
+
+    # Aktualisiere die tycoon_prices Variable für den Sell-Wand
+    loop {boerse_base::*}:
+        set {_item} to loop-index
+        set {_newPrice} to getMarketPrice({_item})
+        set {tycoon_prices::%{_item}%} to {_newPrice}
+
+# --- 6. BÖRSE ANZEIGEN ---
+command /boerse:
+    description: Zeige aktuelle Marktpreise
+    aliases: /börse, /market, /stockmarket, /exchange
+    cooldown: 5 seconds
+    cooldown message: {@prefix}&7Bitte warte kurz...
+    trigger:
+        send ""
+        send "&8&m─────────────────────────────────────"
+        send "&e&l  📈 TYCOON BÖRSE 📉"
+        send "&8&m─────────────────────────────────────"
+        send ""
+        send "{@prefix}&7Preise ändern sich alle &e30 Minuten&7!"
+        send "{@prefix}&7Basierend auf &eAngebot & Nachfrage&7."
+        send ""
+        send "&8  &7Item              &7Preis       &7Trend"
+        send "&8  &m──────────────────────────────────"
+
+        # Tier 1-4 (Basis-Items)
+        set {_items::1} to "dirt"
+        set {_items::2} to "stone"
+        set {_items::3} to "coal"
+        set {_items::4} to "iron ingot"
+        set {_items::5} to "gold ingot"
+        set {_items::6} to "diamond"
+        set {_items::7} to "emerald"
+        set {_items::8} to "netherite ingot"
+
+        set {_names::1} to "&7Erde"
+        set {_names::2} to "&8Stein"
+        set {_names::3} to "&0Kohle"
+        set {_names::4} to "&fEisen"
+        set {_names::5} to "&6Gold"
+        set {_names::6} to "&bDiamant"
+        set {_names::7} to "&aSmaragd"
+        set {_names::8} to "&4Netherite"
+
+        loop 8 times:
+            set {_item} to {_items::%loop-number%}
+            set {_name} to {_names::%loop-number%}
+            set {_price} to getMarketPrice({_item})
+            set {_trend} to getTrend({_item})
+            set {_multi} to {boerse_multi::%{_item}%}
+            send "&8  %{_name}%: &e%{_price}%€ &8(&7%{_multi}%%&8) %{_trend}%"
+
+        send ""
+        send "&8  &m──────────────────────────────────"
+        send "{@prefix}&a▲ &7= Preis steigt &8| &7━ = Stabil &8| &c▼ &7= Preis sinkt"
+        send "{@prefix}&7Nutze &e/boerse detail <item> &7für mehr Info."
+        send ""
+        send "&8&m─────────────────────────────────────"
+
+# --- 7. DETAIL-ANSICHT ---
+command /boerse detail <text>:
+    description: Zeige Details zu einem Item
+    trigger:
+        set {_item} to arg-1 in lower case
+        if {boerse_base::%{_item}%} is not set:
+            send "{@prefix}&cUnbekanntes Item: &f%{_item}%"
+            send "{@prefix}&7Verfügbare Items: dirt, stone, coal, iron ingot, gold ingot, diamond, emerald, netherite ingot, ..."
+            stop
+
+        set {_base} to {boerse_base::%{_item}%}
+        set {_current} to getMarketPrice({_item})
+        set {_multi} to {boerse_multi::%{_item}%}
+        set {_trend} to getTrend({_item})
+        set {_sold} to {boerse_sold::%{_item}%}
+
+        send ""
+        send "&8&m─────────────────────────────────────"
+        send "&e&l  📊 Marktdetail: &f%{_item}%"
+        send "&8&m─────────────────────────────────────"
+        send ""
+        send "{@prefix}&7Basispreis: &f%{_base}%€"
+        send "{@prefix}&7Aktueller Preis: &e%{_current}%€"
+        send "{@prefix}&7Multiplikator: &f%{_multi}%%"
+        send "{@prefix}&7Trend: %{_trend}%"
+        send "{@prefix}&7Verkäufe (aktuell): &f%{_sold}%"
+        send "{@prefix}&7Min. Preis: &c%{_base} * 50 / 100%€ &7(50%%)"
+        send "{@prefix}&7Max. Preis: &a%{_base} * 200 / 100%€ &7(200%%)"
+        send ""
+        send "&8&m─────────────────────────────────────"
+
+# --- 8. MARKT-EVENTS (Admin) ---
+command /boerse event <text>:
+    permission: tycoon.admin
+    description: Löse ein Markt-Event aus
+    trigger:
+        if arg-1 is "crash":
+            # MARKT-CRASH: Alle Preise fallen auf 60%
+            loop {boerse_multi::*}:
+                set {boerse_multi::%loop-index%} to 60
+            broadcast ""
+            broadcast "{@prefix}&c&l⚠ MARKT-CRASH! &7Alle Preise sind auf &c60%% &7gefallen!"
+            broadcast "{@prefix}&7Jetzt ist die beste Zeit zum &aKaufen&7!"
+            broadcast ""
+
+        else if arg-1 is "boom":
+            # MARKT-BOOM: Alle Preise steigen auf 180%
+            loop {boerse_multi::*}:
+                set {boerse_multi::%loop-index%} to 180
+            broadcast ""
+            broadcast "{@prefix}&a&l📈 MARKT-BOOM! &7Alle Preise sind auf &a180%% &7gestiegen!"
+            broadcast "{@prefix}&7Jetzt ist die beste Zeit zum &eVerkaufen&7!"
+            broadcast ""
+
+        else if arg-1 is "goldrush":
+            # GOLDRAUSCH: Gold & Diamant Preise explodieren
+            set {boerse_multi::gold ingot} to 200
+            set {boerse_multi::gold block} to 200
+            set {boerse_multi::diamond} to 200
+            set {boerse_multi::diamond block} to 200
+            broadcast ""
+            broadcast "{@prefix}&6&l⛏ GOLDRAUSCH! &7Gold & Diamant Preise auf &6200%%&7!"
+            broadcast "{@prefix}&7Verkaufe jetzt deine Edelsteine!"
+            broadcast ""
+
+        else if arg-1 is "reset":
+            # RESET: Alle Preise auf 100%
+            loop {boerse_multi::*}:
+                set {boerse_multi::%loop-index%} to 100
+            broadcast "{@prefix}&7Marktpreise wurden zurückgesetzt."
+
+        else:
+            send "{@prefix}&cVerfügbare Events: crash, boom, goldrush, reset"
+
+# --- 9. ZUFÄLLIGE MARKT-EVENTS ---
+every 4 hours:
+    set {_eventChance} to random integer between 1 and 100
+
+    # 15% Chance auf ein zufälliges Markt-Event
+    if {_eventChance} <= 15:
+        set {_eventType} to random integer between 1 and 3
+
+        if {_eventType} is 1:
+            # Mini-Crash: Ein zufälliges Item fällt
+            set {_items::1} to "coal"
+            set {_items::2} to "iron ingot"
+            set {_items::3} to "gold ingot"
+            set {_items::4} to "diamond"
+            set {_items::5} to "emerald"
+            set {_rnd} to random integer between 1 and 5
+            set {_item} to {_items::%{_rnd}%}
+            set {boerse_multi::%{_item}%} to 55
+            broadcast ""
+            broadcast "{@prefix}&c📉 &f%{_item}% &7Preis ist &ceingebrochen&7! Nur noch &c55%%&7!"
+            broadcast ""
+
+        else if {_eventType} is 2:
+            # Mini-Boom: Ein zufälliges Item steigt
+            set {_items::1} to "coal"
+            set {_items::2} to "iron ingot"
+            set {_items::3} to "gold ingot"
+            set {_items::4} to "diamond"
+            set {_items::5} to "emerald"
+            set {_rnd} to random integer between 1 and 5
+            set {_item} to {_items::%{_rnd}%}
+            set {boerse_multi::%{_item}%} to 185
+            broadcast ""
+            broadcast "{@prefix}&a📈 &f%{_item}% &7Preis ist &aexplodiert&7! Jetzt bei &a185%%&7!"
+            broadcast ""
+
+        else:
+            # Nachfrage-Alarm: Bonus für schnelle Verkäufer
+            broadcast ""
+            broadcast "{@prefix}&e⚡ &7Hohe Nachfrage! Alle Verkäufe in den nächsten &e30 Minuten &7geben &a+10%% Bonus&7!"
+            broadcast ""
