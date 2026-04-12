@@ -59,7 +59,9 @@ items:
     display_name: '&b&lRang Aufstieg'
     lore:
       - '&7Steige auf, um neue Generatoren'
-      - '&7freizuschalten (Achtung: Reset!).'
+      - '&7freizuschalten.'
+      - '&c&oAchtung: Haupt-Plot wird zurückgesetzt!'
+      - '&7&oZusätzliche Plots bleiben erhalten.'
       - ''
       - '&7Aktueller Rang: &f%rankup_current_rank%'
       - '&7Nächster Rang: &f%rankup_next_rank%'
@@ -81,6 +83,37 @@ items:
       - '&7deinem Tycoon Plot.'
     left_click_commands:
       - '[player] plot home tycoon'
+      - '[close]'
+
+  # ==============================================================
+  # 4b. PLOT MANAGEMENT
+  # ==============================================================
+  'plot_manage':
+    material: GRASS_BLOCK
+    slot: 26
+    priority: 1
+    display_name: '&2&lPlot Verwaltung'
+    lore:
+      - '&7Kaufe zusätzliche Plots oder'
+      - '&7merge benachbarte Plots.'
+      - ''
+      - '&7Zusätzlicher Plot: &e$1.000.000'
+      - '&7Plot Merge: &e$5.000.000'
+      - ''
+      - '&7Max. Plots je nach Rang:'
+      - '&7 Erde–Kupfer: &f1 Plot'
+      - '&7 Gold–Diamant: &f2 Plots'
+      - '&7 Obsidian–Diorit: &f3 Plots'
+      - '&7 Andesit–Purpur: &f4 Plots'
+      - '&7 Endstein–Bedrock: &f5 Plots'
+      - ''
+      - '&a► Linksklick: Neuen Plot claimen'
+      - '&e► Rechtsklick: Plots mergen'
+    left_click_commands:
+      - '[player] plot auto'
+      - '[close]'
+    right_click_commands:
+      - '[player] plot merge'
       - '[close]'
 
   # ==============================================================
