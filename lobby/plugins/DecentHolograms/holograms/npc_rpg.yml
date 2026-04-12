@@ -1,0 +1,14 @@
+# DecentHolograms - RPG NPC Hologram
+# Place above the RPG NPC
+location:
+  world: lobby
+  x: 0.5
+  y: 68.0
+  z: -5.5
+lines:
+  - '&5&l⚔ &d&lRPG SERVER &5&l⚔'
+  - '&76 Klassen • Dungeons • Quests'
+  - '&7Spieler online: &e%server_online_rpg%'
+display-range: 32
+update-range: 32
+update-interval: 200

@@ -1,0 +1,277 @@
+# --- PRESTIGE/REBIRTH SYSTEM ---
+# Nach Erreichen von Rang 25 (Bedrock) können Spieler "prestigen"
+# Prestige = Reset auf Rang 1 (Erde) mit permanenten Boni
+# Max Prestige: 10 Stufen
+
+options:
+    prefix: &8[&5Prestige&8] &7
+
+# --- PRESTIGE LEVEL NAMEN ---
+on script load:
+    delete {prestige_names::*}
+    set {prestige_names::1} to "&d✦ Bronze"
+    set {prestige_names::2} to "&6✦✦ Silber"
+    set {prestige_names::3} to "&e✦✦✦ Gold"
+    set {prestige_names::4} to "&b✦✦✦✦ Platin"
+    set {prestige_names::5} to "&a✦✦✦✦✦ Smaragd"
+    set {prestige_names::6} to "&3✦✦✦✦✦✦ Saphir"
+    set {prestige_names::7} to "&c✦✦✦✦✦✦✦ Rubin"
+    set {prestige_names::8} to "&5✦✦✦✦✦✦✦✦ Amethyst"
+    set {prestige_names::9} to "&f✦✦✦✦✦✦✦✦✦ Diamant"
+    set {prestige_names::10} to "&6&l✦✦✦✦✦✦✦✦✦✦ Legende"
+
+    # Sell-Multiplikatoren pro Prestige-Level (% Bonus)
+    delete {prestige_bonus::*}
+    set {prestige_bonus::1} to 10
+    set {prestige_bonus::2} to 20
+    set {prestige_bonus::3} to 35
+    set {prestige_bonus::4} to 50
+    set {prestige_bonus::5} to 70
+    set {prestige_bonus::6} to 90
+    set {prestige_bonus::7} to 115
+    set {prestige_bonus::8} to 140
+    set {prestige_bonus::9} to 170
+    set {prestige_bonus::10} to 200
+
+    # Prestige-Kosten (Geld das man beim Bedrock-Rang haben muss)
+    delete {prestige_cost::*}
+    set {prestige_cost::1} to 500000000000      # 500B (Milliarden)
+    set {prestige_cost::2} to 1000000000000     # 1T (Billion)
+    set {prestige_cost::3} to 2500000000000     # 2.5T
+    set {prestige_cost::4} to 5000000000000     # 5T
+    set {prestige_cost::5} to 10000000000000    # 10T
+    set {prestige_cost::6} to 25000000000000    # 25T
+    set {prestige_cost::7} to 50000000000000    # 50T
+    set {prestige_cost::8} to 100000000000000   # 100T
+    set {prestige_cost::9} to 250000000000000   # 250T
+    set {prestige_cost::10} to 500000000000000  # 500T
+
+    send "&8[&5Prestige&8] &aPrestige-System geladen (10 Stufen)!" to console
+
+# --- PRESTIGE HELPER: Aktuelles Prestige-Level holen ---
+function getPrestige(p: player) :: number:
+    set {_level} to {prestige.level.%{_p}'s uuid%}
+    if {_level} is not set:
+        return 0
+    return {_level}
+
+# --- PRESTIGE HELPER: Sell-Multiplikator berechnen ---
+function getPrestigeMultiplier(p: player) :: number:
+    set {_level} to getPrestige({_p})
+    if {_level} is 0:
+        return 1.0
+    set {_bonus} to {prestige_bonus::%{_level}%}
+    if {_bonus} is not set:
+        return 1.0
+    return 1.0 + ({_bonus} / 100)
+
+# --- PRESTIGE BEFEHL ---
+command /prestige:
+    description: Prestige aufsteigen (nach Bedrock-Rang)
+    aliases: /rebirth, /prestige_menu
+    trigger:
+        set {_world} to "tycoon"
+        if name of player's world is not {_world}:
+            send "{@prefix}&cDieser Befehl ist nur in der Tycoon Welt verfügbar!"
+            stop
+
+        set {_currentPrestige} to getPrestige(player)
+        set {_nextPrestige} to {_currentPrestige} + 1
+
+        # Max Prestige erreicht?
+        if {_currentPrestige} >= 10:
+            send ""
+            send "&8&m─────────────────────────────────────"
+            send "&5&l  ✦ PRESTIGE - MAX ERREICHT ✦"
+            send "&8&m─────────────────────────────────────"
+            send ""
+            send "{@prefix}&6Du bist bereits auf dem maximalen Prestige-Level!"
+            send "{@prefix}&7Prestige: %{prestige_names::10}%"
+            send "{@prefix}&7Sell-Bonus: &a+200%%"
+            send ""
+            send "&8&m─────────────────────────────────────"
+            stop
+
+        # Prüfe ob der Spieler Bedrock-Rang hat
+        if player does not have permission "tycoon.unlock.bedrock":
+            send ""
+            send "&8&m─────────────────────────────────────"
+            send "&5&l  ✦ PRESTIGE SYSTEM ✦"
+            send "&8&m─────────────────────────────────────"
+            send ""
+            if {_currentPrestige} > 0:
+                send "{@prefix}&7Aktuelles Prestige: %{prestige_names::%{_currentPrestige}%}%"
+                send "{@prefix}&7Sell-Bonus: &a+%{prestige_bonus::%{_currentPrestige}%}%%%"
+            else:
+                send "{@prefix}&7Aktuelles Prestige: &7Keins"
+            send ""
+            send "{@prefix}&cDu musst erst Rang &fBedrock &cerreichen!"
+            send "{@prefix}&7Erreiche den höchsten Rang, um zu prestigen."
+            send ""
+            send "&8&m─────────────────────────────────────"
+            stop
+
+        # Prüfe Kosten
+        set {_cost} to {prestige_cost::%{_nextPrestige}%}
+        set {_balance} to player's balance
+
+        # Info-Menü anzeigen
+        send ""
+        send "&8&m─────────────────────────────────────"
+        send "&5&l  ✦ PRESTIGE BESTÄTIGUNG ✦"
+        send "&8&m─────────────────────────────────────"
+        send ""
+        if {_currentPrestige} > 0:
+            send "{@prefix}&7Aktuelles Prestige: %{prestige_names::%{_currentPrestige}%}%"
+        else:
+            send "{@prefix}&7Aktuelles Prestige: &7Keins"
+        send "{@prefix}&7Nächstes Prestige: %{prestige_names::%{_nextPrestige}%}%"
+        send ""
+        send "{@prefix}&7Kosten: &e%{_cost}%€"
+        send "{@prefix}&7Dein Geld: &e%{_balance}%€"
+        send ""
+        send "{@prefix}&c⚠ ACHTUNG: Prestige setzt alles zurück!"
+        send "{@prefix}&7• Rang wird auf &fErde &7zurückgesetzt"
+        send "{@prefix}&7• Geld wird auf &f0€ &7gesetzt"
+        send "{@prefix}&7• Generatoren werden entfernt"
+        send "{@prefix}&7• Plot wird zurückgesetzt"
+        send ""
+        send "{@prefix}&aDafür bekommst du:"
+        send "{@prefix}&7• Permanenter Sell-Bonus: &a+%{prestige_bonus::%{_nextPrestige}%}%%%"
+        send "{@prefix}&7• Prestige-Titel: %{prestige_names::%{_nextPrestige}%}%"
+        send "{@prefix}&7• Exklusive Prestige-Partikel"
+        send ""
+
+        if {_balance} < {_cost}:
+            send "{@prefix}&cDir fehlen noch &e%({_cost} - {_balance})%€&c!"
+            send "&8&m─────────────────────────────────────"
+            stop
+
+        send "{@prefix}&a&lNutze &e&l/prestige confirm &a&lzum Bestätigen!"
+        send "&8&m─────────────────────────────────────"
+
+        # Bestätigungsflag setzen (5 Minuten gültig)
+        set {prestige.confirm.%player's uuid%} to now
+
+# --- PRESTIGE BESTÄTIGEN ---
+command /prestige confirm:
+    trigger:
+        set {_world} to "tycoon"
+        if name of player's world is not {_world}:
+            send "{@prefix}&cDieser Befehl ist nur in der Tycoon Welt verfügbar!"
+            stop
+
+        # Prüfe Bestätigungsflag
+        if {prestige.confirm.%player's uuid%} is not set:
+            send "{@prefix}&cBitte nutze erst &e/prestige &cum die Info zu sehen!"
+            stop
+
+        set {_confirmTime} to {prestige.confirm.%player's uuid%}
+        set {_diff} to difference between {_confirmTime} and now
+        if {_diff} is greater than 5 minutes:
+            delete {prestige.confirm.%player's uuid%}
+            send "{@prefix}&cBestätigung abgelaufen! Nutze &e/prestige &cerneut."
+            stop
+
+        delete {prestige.confirm.%player's uuid%}
+
+        set {_currentPrestige} to getPrestige(player)
+        set {_nextPrestige} to {_currentPrestige} + 1
+
+        if {_currentPrestige} >= 10:
+            send "{@prefix}&cDu bist bereits auf dem maximalen Prestige-Level!"
+            stop
+
+        if player does not have permission "tycoon.unlock.bedrock":
+            send "{@prefix}&cDu musst erst Rang Bedrock erreichen!"
+            stop
+
+        set {_cost} to {prestige_cost::%{_nextPrestige}%}
+        if player's balance < {_cost}:
+            send "{@prefix}&cNicht genug Geld!"
+            stop
+
+        # --- PRESTIGE DURCHFÜHREN ---
+        set {_pName} to name of player
+
+        # Sicherheitscheck: Spielername validieren
+        # Pattern erlaubt Punkte für Floodgate/Bedrock-Spieler (identisch mit tycoon_logic.sk)
+        if {_pName} does not match "^[a-zA-Z0-9_\.]{1,32}$":
+            send "{@prefix}&cFehler: Ungültiger Spielername!"
+            stop
+
+        # Prestige-Level setzen
+        set {prestige.level.%player's uuid%} to {_nextPrestige}
+
+        # Broadcast
+        broadcast ""
+        broadcast "{@prefix}&d&l✦ PRESTIGE! &f%player% &7hat Prestige %{prestige_names::%{_nextPrestige}%}% &7erreicht!"
+        broadcast ""
+
+        # Effekte vor dem Reset
+        send title "&5&lPRESTIGE!" with subtitle "%{prestige_names::%{_nextPrestige}%}%" to player for 5 seconds
+        play sound "ui.toast.challenge_complete" with volume 1 and pitch 0.5 to player
+        play sound "entity.ender_dragon.growl" with volume 0.8 and pitch 1.2 to player
+        strike lightning effect at player
+
+        wait 40 ticks
+
+        # Standard Rankup-Reset durchführen (zurück auf Erde)
+        # tycoon_perform_rankup ist definiert in tycoon_logic.sk (Zeile 259+)
+        execute console command "tycoon_perform_rankup %{_pName}% erde tier1_1"
+
+        # Prestige-Permission setzen
+        execute console command "luckperms user %{_pName}% permission set prestige.level.%{_nextPrestige}% true"
+        execute console command "luckperms user %{_pName}% meta set prestige_level %{_nextPrestige}% world=tycoon"
+
+        wait 20 ticks
+        send ""
+        send "{@prefix}&a&lPrestige erfolgreich!"
+        send "{@prefix}&7Neues Prestige: %{prestige_names::%{_nextPrestige}%}%"
+        send "{@prefix}&7Sell-Bonus: &a+%{prestige_bonus::%{_nextPrestige}%}%%%"
+        send "{@prefix}&7Starte deine neue Reise mit &e/tycoon start"
+        send ""
+
+# --- PRESTIGE-STATUS ANZEIGEN ---
+command /prestige info:
+    aliases: /prestigeinfo, /pinfo
+    trigger:
+        set {_level} to getPrestige(player)
+        set {_multiplier} to getPrestigeMultiplier(player)
+
+        send ""
+        send "&8&m─────────────────────────────────────"
+        send "&5&l  ✦ DEIN PRESTIGE STATUS ✦"
+        send "&8&m─────────────────────────────────────"
+        send ""
+
+        if {_level} is 0:
+            send "{@prefix}&7Prestige: &8Keins"
+            send "{@prefix}&7Sell-Bonus: &7+0%%"
+            send "{@prefix}&7Erreiche Rang &fBedrock &7um zu prestigen!"
+        else:
+            send "{@prefix}&7Prestige: %{prestige_names::%{_level}%}%"
+            send "{@prefix}&7Sell-Bonus: &a+%{prestige_bonus::%{_level}%}%%%"
+            send "{@prefix}&7Multiplikator: &ax%{_multiplier}%"
+            if {_level} < 10:
+                set {_next} to {_level} + 1
+                send "{@prefix}&7Nächstes Prestige: %{prestige_names::%{_next}%}%"
+                send "{@prefix}&7Kosten: &e%{prestige_cost::%{_next}%}%€"
+            else:
+                send "{@prefix}&6&lMaximales Prestige erreicht! 🏆"
+
+        send ""
+        send "&8&m─────────────────────────────────────"
+
+# --- PRESTIGE RANGLISTE ---
+command /prestige top:
+    aliases: /ptop
+    trigger:
+        send ""
+        send "&8&m─────────────────────────────────────"
+        send "&5&l  ✦ PRESTIGE RANGLISTE ✦"
+        send "&8&m─────────────────────────────────────"
+        send ""
+        send "{@prefix}&7Nutze &e/baltop &7oder das Hologramm am Spawn!"
+        send ""
+        send "&8&m─────────────────────────────────────"

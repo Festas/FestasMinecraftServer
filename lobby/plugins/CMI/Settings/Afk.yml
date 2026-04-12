@@ -1,6 +1,7 @@
 Afk:
   # Enable or disable auto afk system entirely
-  Enabled: false
+  # Enabled for lobby to free up player slots
+  Enabled: true
   # When enabled shows title message informing that player is in afk mode
   TitleMessage: true
   # When enabled shows random subtitle message
@@ -23,18 +24,18 @@ Afk:
   # Defines commands to be performed when player enters afk mode automatically while addling
   # Supports specialized commands
   AutoAfkCmds:
-  - cmi broadcast !&6[playerDisplayName] &eis now AFK
+  - cmi broadcast !&6[playerDisplayName] &eist jetzt AFK
   # Defines commands to be performed when player enters /cmi afk
   # Supports specialized commands
   ManualAfkCmds:
-  - cmi broadcast !&6[playerDisplayName] &eis now AFK
+  - cmi broadcast !&6[playerDisplayName] &eist jetzt AFK
   LeaveCmds:
     # Defines commands to be performed when player leaves afk mode after he entered it manually
     Manual:
-    - cmi broadcast !&6[playerDisplayName] &eis no longer AFK
+    - cmi broadcast !&6[playerDisplayName] &eist nicht mehr AFK
     # Defines commands to be performed when player leaves afk mode after he entered it automatically
     Auto:
-    - cmi broadcast !&6[playerDisplayName] &eis no longer AFK
+    - cmi broadcast !&6[playerDisplayName] &eist nicht mehr AFK
   AutoKickTimes:
     # Defines how long to wait after player stops moving to kick player
     # This is additional timer to AutoAfkIn and in case player entered afk mode manually he will get kicked after AutoAfkIn+AutoKickIn seconds
@@ -42,11 +43,12 @@ Afk:
     # Keep it at -1 to disable auto kick
     # Can be bypassed with cmi.command.afk.kickbypass permission node
     # Additionally players kick time can be changed with cmi.command.afk.kickOutIn.[seconds] permission node where bigger value takes priority
-    Default: -1
+    # Auto-kick after 15 minutes AFK in lobby (900 seconds)
+    Default: 900
     # Player count from which auto kick should start working
     # Setting it to 0 will kick players independent of how many are online
-    # Recommended value: 995
-    FromPlayerCount: 0
+    # Start kicking AFK players when 5+ players are online
+    FromPlayerCount: 5
     # List of autoKick times based by online player count ([playerCount]-[seconds])
     # This only aplies if default kick time is set to more than -1
     # This will pick closest timer (in seconds) from provided list going down. For example having entries as 30-400 and 40-350 while having 35 online players we will use value of 400 seconds
@@ -65,11 +67,9 @@ Afk:
   # Defines commands to be performed when player can be kicked
   # If player is not kicked then commands will be repeated every RepeatingAutoKickInterval seconds
   AutoKickCmds:
-  - cmi kick [playerName] &eYou have been kicked for idling more than [time]
+  - cmi kick [playerName] &eDu wurdest wegen Inaktivität gekickt. Komm bald wieder!
   # Defines worlds where players will not be placed into afk mode after they idled for defined time
-  DisabledWorlds:
-  - oneTestWorld
-  - secondTestWorld
+  DisabledWorlds: []
   # Disables afk on interaction
   DisableOnInteract: true
   # Prevents player from going bypassing afk mode while continuously holding one button with particular items or on particular blocks

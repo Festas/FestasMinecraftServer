@@ -236,3 +236,86 @@ performance:
   lenient-high-ping: true
   # Ping-Schwelle in ms für gelockerte Prüfungen
   high-ping-threshold: 250
+# GrimAC Anti-Cheat Configuration
+# IMPORTANT: GrimAC JAR must be installed first!
+# Download from: https://www.spigotmc.org/resources/grimac.99923/
+#
+# GrimAC is the recommended anti-cheat for this server because:
+# - Free and open source
+# - Excellent performance
+# - Great Geyser/Floodgate (Bedrock) support
+# - Accurate movement checks
+# - Low false-positive rate
+
+# Prefix for messages
+prefix: "&8[&cAnti-Cheat&8]&7 "
+
+# Alert
+alerts:
+  # How many violations before alerting staff
+  minimum-alerts: 5
+  # Permission to see alerts
+  alert-permission: "grim.alerts"
+
+# Bestrafungen
+punishments:
+  # Auto
+  enabled: true
+  # Befehle bei Erkennung. Nutze {player} für den Spielernamen.
+  commands:
+    - "cmi tempban {player} 1h &cAnti-Cheat: Verdächtige Aktivität erkannt."
+
+# Exemptions
+exempt:
+  # Creative mode players are exempt
+  creative: true
+  # Operators are exempt
+  operators: true
+
+# Checks Configuration
+checks:
+  # Movement checks (important for economy servers)
+  movement:
+    enabled: true
+    # Speed check
+    speed:
+      enabled: true
+    # Fly check
+    fly:
+      enabled: true
+    # No-fall check
+    no-fall:
+      enabled: true
+
+  # Combat checks
+  combat:
+    enabled: true
+    # Reach check
+    reach:
+      enabled: true
+    # Hit-box check
+    hitbox:
+      enabled: true
+
+  # Player checks
+  player:
+    enabled: true
+    # Timer check (speed-up actions)
+    timer:
+      enabled: true
+    # Scaffold check
+    scaffold:
+      enabled: true
+
+  # Inventory checks (critical for economy!)
+  inventory:
+    enabled: true
+
+# Geyser/Floodgate support
+# Automatically detects Bedrock players
+bedrock:
+  # Enable Bedrock player detection
+  enabled: true
+  # Exempt Bedrock players from certain checks
+  # (Bedrock has different physics)
+  exempt-movement: true

@@ -124,10 +124,15 @@ Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
 - Chunk Collector (automatisches Item-Sammeln im 20-Block-Radius)
 - Casino/Gambling-System mit täglichem Verlustlimit
 - Custom Nitwit-Boss-Encounters (zufällige Spawn-Events)
-- Plot-Reset bei Rangaufstieg
+- Multi-Plot-System: Progressive Plot-Limits pro Rang (1→5 Plots + Prestige-Boni)
+- Plot-Merging: Benachbarte Plots zusammenführen ($5M)
+- Plot-Reset bei Rangaufstieg (nur Haupt-Plot, zusätzliche Plots bleiben)
+- Prestige-System (10 Stufen mit permanentem Sell-Bonus bis +200%)
 - Tägliche Login-Belohnungen mit Streak-System (daily_rewards.sk)
 - Spielzeit-Belohnungen über Autorank (Meilensteine)
 - Tutorial-System für neue Spieler (tycoon_tutorial.sk)
+
+> Siehe [docs/survival/](../docs/survival/) für vollständige Tycoon-Dokumentation.
 
 **Datenbank:**
 - **MySQL/MariaDB** (separiert von MMO-Servern)
@@ -564,6 +569,9 @@ Bei kritischen Fehlern:
 - [ ] Tab-Liste Header/Footer anpassen (via Proxy TAB Plugin)
 
 ### Survival — Nächste Schritte
+- [x] Multi-Plot-System: Progressive Plot-Limits pro Rang (1→5 Plots, 6→8 mit Prestige)
+- [x] Plot-Merging als Economy-Sink ($5M pro Merge)
+- [x] Tycoon-Dokumentation erstellt (docs/survival/)
 - [ ] Anti-Cheat installieren (Vulcan Premium — PRIORITÄT)
 - [ ] Voting-System (NuVotifier + VotingPlugin)
 - [ ] Crate/Key-System (ExcellentCrates oder CrazyCrates)

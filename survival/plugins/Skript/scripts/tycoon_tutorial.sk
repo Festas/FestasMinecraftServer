@@ -49,6 +49,16 @@ function tutorialStart(p: player):
     send "{@prefix}&7Verdiene Geld und steige im Rang auf!" to {_p}
     send "{@prefix}&7Nutze &e/rankup &7wenn du genug Geld hast." to {_p}
     send "{@prefix}&7Es gibt &f25 Ränge &7von &6Erde &7bis &8Bedrock&7!" to {_p}
+    send "{@prefix}&7&oAchtung: Dein Haupt-Plot wird beim Rankup zurückgesetzt." to {_p}
+    send "" to {_p}
+    wait 3 seconds
+
+    # Schritt 3b: Plots
+    send "{@prefix}&6&lSchritt 3b: Mehrere Plots" to {_p}
+    send "{@prefix}&7Ab &fGold &7(Rang 6) kannst du &fmehrere Plots &7besitzen!" to {_p}
+    send "{@prefix}&7Zusätzliche Plots kosten &e$1.000.000&7." to {_p}
+    send "{@prefix}&7Mergen mit &e/plot merge &7für &e$5.000.000&7." to {_p}
+    send "{@prefix}&7Zusätzliche Plots bleiben beim Rankup erhalten!" to {_p}
     send "" to {_p}
     wait 3 seconds
 
