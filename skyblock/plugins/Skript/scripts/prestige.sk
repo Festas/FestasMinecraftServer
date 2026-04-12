@@ -201,9 +201,10 @@ on inventory click:
             set player's exp to 0
 
             # Update leaderboard
+            set {prestige.%player's uuid%.name} to name of player
             set {prestige.%player%.name} to name of player
-            if {prestige.leaderboard::*} does not contain "%player%":
-                add "%player%" to {prestige.leaderboard::*}
+            if {prestige.leaderboard::*} does not contain "%player's uuid%":
+                add "%player's uuid%" to {prestige.leaderboard::*}
 
             # Announcement
             send "{@prefix}&a&l✦ PRESTIGE AUFGESTIEGEN! ✦" to player

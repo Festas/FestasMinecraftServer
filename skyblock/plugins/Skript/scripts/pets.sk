@@ -140,7 +140,7 @@ function spawnPetEntity(p: player):
         spawn an armor stand at {_loc}
         set {_entity} to last spawned entity
         set name of {_entity} to "%{_displayName}% &7[Lv.%{_level}%]"
-        set {_entity} to be name visible
+        set name visible of {_entity} to true
         set {_entity}'s helmet to dragon head
         add {_entity} to {pet.%{_p}%.entities::*}
     else:
@@ -156,7 +156,7 @@ function spawnPetEntity(p: player):
             spawn a turtle at {_loc}
         set {_entity} to last spawned entity
         set name of {_entity} to "%{_displayName}% &7[Lv.%{_level}%]"
-        set {_entity} to be name visible
+        set name visible of {_entity} to true
         set ai of {_entity} to false
         set {_entity} to be invulnerable
         add {_entity} to {pet.%{_p}%.entities::*}
@@ -184,7 +184,11 @@ every 10 ticks:
                 else if distance between {_pLoc} and {_eLoc} > 3:
                     set {_dir} to vector from {_eLoc} to {_pLoc}
                     set vector length of {_dir} to 0.3
-                    teleport {_entity} to location of {_entity} ~ {_dir}
+                    set {_newLoc} to location of {_entity}
+                    set x of {_newLoc} to (x of {_newLoc}) + (x of {_dir})
+                    set y of {_newLoc} to (y of {_newLoc}) + (y of {_dir})
+                    set z of {_newLoc} to (z of {_newLoc}) + (z of {_dir})
+                    teleport {_entity} to {_newLoc}
             else:
                 spawnPetEntity(loop-player)
 

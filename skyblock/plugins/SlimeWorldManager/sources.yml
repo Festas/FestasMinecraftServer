@@ -2,11 +2,11 @@ file:
     path: slime_worlds
 mysql:
     enabled: false
-    host: 127.0.0.1
+    host: 172.25.0.1
     port: 3306
-    username: slimeworldmanager
-    password: ''
-    database: slimeworldmanager
+    username: CHANGE_ME
+    password: 'CHANGE_ME'
+    database: s4_slimeworldmanager
     usessl: false
     sqlUrl: jdbc:mysql://{host}:{port}/{database}?autoReconnect=true&allowMultiQueries=true&useSSL={usessl}
 mongodb:
@@ -21,7 +21,7 @@ mongodb:
     uri: ''
 redis:
     enabled: false
-    uri: redis://127.0.0.1/
+    uri: redis://172.18.0.1:6379
 api:
     enabled: false
     ignoreSslCertificate: false
