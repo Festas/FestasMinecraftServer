@@ -69,7 +69,7 @@ Skyblock-spezifische Progression und Skill-Integration.
 
 ## Collections-Übersicht
 
-### Farming (18 Collections)
+### Farming (16 Collections)
 Wheat, Carrot, Potato, Sugar Cane, Cactus, Melon, Pumpkin, Cocoa, Netherwart, Seeds, Chicken, Porkchop, Mutton, Rabbit, Leather, Feather
 
 ### Mining (8 Collections)
