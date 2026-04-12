@@ -8,7 +8,7 @@
 # The data source to use for the island worlds.
 # Choose one of the following types below.
 data-source:
-  type: 'file'
+  type: 'mysql'
   # The settings below are only relevant if you use ASP 3
   # File related settings
   file:
@@ -16,11 +16,11 @@ data-source:
   # MySQL related settings
   mysql:
     url: 'jdbc:mysql://{host}:{port}/{database}?autoReconnect=true&allowMultiQueries=true&useSSL={usessl}'
-    host: 127.0.0.1
+    host: 172.25.0.1
     port: 3306
-    username: ''
-    password: ''
-    database: ''
+    username: 'CHANGE_ME'
+    password: 'CHANGE_ME'
+    database: 's4_superior_islands'
     useSSL: true
   # MongoDB related settings
   mongodb:

@@ -14,13 +14,13 @@ calc-interval: 0
 database:
   # For local database, use "SQLite".
   # For remote database, use "MySQL" or "MariaDB" (Depends on your setup).
-  type: SQLite
+  type: MariaDB
   # Whether the datastore folder should be back-up on startup.
   backup: true
   # Remote database information
-  address: 'localhost'
+  address: '172.25.0.1'
   port: 3306
-  db-name: 'SuperiorSkyblock'
+  db-name: 's4_skyblock'
   user-name: 'CHANGE_ME'
   password: 'CHANGE_ME'
   prefix: ''

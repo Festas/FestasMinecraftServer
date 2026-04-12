@@ -316,17 +316,19 @@ Vollständige Übersicht aller verwendeten Plugins pro Server.
 #### JetsMinions
 - **Funktion:** Minion-System (Hypixel-Style)
 - **Features:**
-  - Auto-Farming
-  - Auto-Mining
-  - Minion-Upgrades
-  - Fuel-System
+  - 8 Minion-Typen
+  - Health-System (Minions müssen gefüttert werden)
+  - Verknüpfte Kisten
+  - Permission-basierte Limits
 - **Minion-Types:**
-  - Cobblestone
-  - Wheat
-  - Coal
-  - Iron
-  - Diamond
-  - (und mehr)
+  - Miner (Bergbau)
+  - Farmer (Ernte)
+  - Fisher (Fischen)
+  - Lumberjack (Holzfällen)
+  - Slayer (Mob-Kampf)
+  - Collector (Item-Sammlung)
+  - Feeder (Minion-Heilung)
+  - Seller (Auto-Verkauf)
 
 ### MMO Systems
 
@@ -375,9 +377,9 @@ Vollständige Übersicht aller verwendeten Plugins pro Server.
 ### Quests & Progression
 
 #### Aurora
-- **Funktion:** Quests/Achievements (Alternative)
+- **Funktion:** Collections & Achievements
 - **Features:**
-  - Quest-System
+  - Collection-System
   - Achievement-System
   - Milestones
 
@@ -387,6 +389,7 @@ Vollständige Übersicht aller verwendeten Plugins pro Server.
   - Sammle X von Y
   - Unlock-Belohnungen
   - Collection-Levels
+  - 5 Kategorien: Farming, Mining, Combat, Foraging, Fishing
 
 ### Economy
 
@@ -513,10 +516,12 @@ Vollständige Übersicht aller verwendeten Plugins pro Server.
 ### Quests & NPCs
 
 #### BetonQuest
-- **Funktion:** Advanced Quest-System (siehe Skyblock)
+- **Funktion:** Advanced Quest-System
+- **Verfügbar auf:** Nur RPG-Server
 
 #### Citizens
-- **Funktion:** NPC-System (siehe Skyblock)
+- **Funktion:** NPC-System
+- **Verfügbar auf:** Nur RPG-Server
 
 ### Models & Visuals
 
@@ -689,15 +694,14 @@ Vollständige Übersicht aller verwendeten Plugins pro Server.
 1. **MMOCore** ← MythicLib
 2. **MMOItems** ← MythicLib
 3. **MythicMobs** (optional: MMOItems-Integration)
-4. **Citizens** ← ProtocolLib
-5. **BetonQuest** ← Citizens (optional)
-6. **HuskSync** ← MySQL + Redis
+4. **HuskSync** ← MySQL + Redis
 
 ### RPG-Server Spezifisch
 
 1. **MythicMobs Premium** → MythicDungeons, MythicCrucible
 2. **ModelEngine** → MythicMobs (für Models)
 3. **Citizens** → BetonQuest (Quests mit NPCs)
+4. **Citizens** ← ProtocolLib
 
 ---
 
@@ -741,7 +745,7 @@ MinecraftMMO/
 
 ---
 
-**Letzte Aktualisierung:** 2026-04-10
+**Letzte Aktualisierung:** 2026-04-12
 
 **Plugin-Anzahl:**
 - Velocity: 11 Plugins (inkl. Geyser)

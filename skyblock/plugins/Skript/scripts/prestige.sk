@@ -201,9 +201,9 @@ on inventory click:
             set player's exp to 0
 
             # Update leaderboard
-            set {prestige.%player%.name} to name of player
-            if {prestige.leaderboard::*} does not contain "%player%":
-                add "%player%" to {prestige.leaderboard::*}
+            set {prestige.%player's uuid%.name} to name of player
+            if {prestige.leaderboard::*} does not contain "%player's uuid%":
+                add "%player's uuid%" to {prestige.leaderboard::*}
 
             # Announcement
             send "{@prefix}&a&l✦ PRESTIGE AUFGESTIEGEN! ✦" to player
@@ -272,7 +272,7 @@ command /prestigeadmin <text> [<player>] [<number>]:
             if {_level} > {@max_prestige}:
                 set {_level} to {@max_prestige}
             set {prestige.%arg-2%.level} to {_level}
-            set {prestige.%arg-2%.name} to name of arg-2
+            set {prestige.%arg-2's uuid%.name} to name of arg-2
             send "{@prefix}&aPrestige von %arg-2% auf &e%{_level}% &agesetzt."
             if arg-2 is online:
                 applyPrestigeEffects(arg-2)

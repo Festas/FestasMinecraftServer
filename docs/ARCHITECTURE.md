@@ -174,7 +174,7 @@ Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
 - **MythicMobs** - Custom Mobs (Community Edition)
 - **JetsMinions** - Minion-System
 - **CoinsEngine** - Multi-Währungs-System
-- **Aurora** - Quests/Achievements
+- **Aurora** - Collections/Achievements
 - **AuroraCollections** - Collection-System
 - **HuskSync** - Daten-Synchronisation (mit RPG)
 - **LuckPerms** - Permissions
@@ -195,7 +195,7 @@ Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
   - Spielerprofile (Klassen, Level, Stats)
   - Inventare (synchronisiert via HuskSync)
   - Skyblock-Island-Daten
-  - Quest-Progress
+  - Collection-Progress
 - **Redis** (Cache für HuskSync)
   - Session-Daten
   - Temp-Inventare

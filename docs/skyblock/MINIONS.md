@@ -6,56 +6,84 @@ JetsMinions Struktur und Templates.
 
 ## Minion-Typen
 
-### Farming Minions
-- **Wheat Minion** - Sammelt Wheat
-- **Carrot Minion** - Sammelt Carrots
-- **Potato Minion** - Sammelt Potatoes
-- **Sugar Cane Minion** - Sammelt Sugar Cane
+### Ressourcen-Minions
+- **⛏ Miner** - Baut automatisch Blöcke vor sich ab (Erze, Steine)
+- **🌾 Farmer** - Erntet und pflanzt Crops automatisch neu (Wheat, Carrots, Potatoes, etc.)
+- **🪓 Lumberjack** - Fällt Bäume und pflanzt Setzlinge nach (alle Holzarten)
+- **🎣 Fisher** - Fängt automatisch Fische aus nahen Wasserquellen
 
-### Mining Minions
-- **Cobblestone Minion** - Sammelt Cobblestone
-- **Iron Minion** - Sammelt Iron Ore
-- **Gold Minion** - Sammelt Gold Ore
-- **Diamond Minion** - Sammelt Diamond Ore
-
-### Combat Minions
-- **Zombie Minion** - Tötet Zombies
-- **Skeleton Minion** - Tötet Skeletons
-
-### Fishing Minions
-- **Fishing Minion** - Fängt Fische
+### Kampf- & Utility-Minions
+- **⚔ Slayer** - Bekämpft automatisch feindliche Mobs und sammelt Drops
+- **🧲 Collector** - Sammelt alle gedropten Items in seinem Radius ein
+- **🍖 Feeder** - Heilt und füttert andere Minions in seiner Reichweite
+- **💰 Seller** - Verkauft automatisch Items aus seiner verknüpften Kiste
 
 ---
 
-## Minion-Upgrades
+## Minion-Gesundheit
 
-### Tier-System
+Alle Minions verwenden ein Health-System statt eines Fuel-Systems:
 
-| Tier | Geschwindigkeit | Storage | Unlock-Kosten |
-|------|----------------|---------|---------------|
-| I | 20s/Action | 64 Items | 100 Coins |
-| II | 18s/Action | 128 Items | 500 Coins |
-| III | 15s/Action | 192 Items | 1000 Coins |
-| IV | 12s/Action | 256 Items | 2500 Coins |
-| V | 10s/Action | 320 Items | 5000 Coins |
+- **Max HP:** 20 Gesundheitspunkte pro Minion
+- **Aktionen reduzieren HP:** Nach einer bestimmten Anzahl Aktionen verliert der Minion 1 HP
+- **Heilung per Essen:** Rechtsklick mit Nahrung heilt den Minion
+- **Heilung per Geld:** 200 Coins für volle Heilung
 
-### Fuel-System
-- **Coal:** +10% Speed, 1 Stunde
-- **Super Fuel:** +25% Speed, 6 Stunden
-- **Hyper Fuel:** +50% Speed, 12 Stunden
+### Futter-Übersicht
+
+| Nahrung | Heilung |
+|---------|---------|
+| Brot / Apfel | 2 ❤ |
+| Steak / Lachs / Hammel / Schwein / Hähnchen | 4 ❤ |
+| Goldener Apfel | 10 ❤ |
+| Verzauberter Goldener Apfel | 20 ❤ (volle Heilung) |
+
+---
+
+## Minion-Aktionsgeschwindigkeit
+
+| Minion | Ticks pro Aktion | Sekunden |
+|--------|-----------------|----------|
+| Miner | 50 | 2,5s |
+| Farmer | 60 | 3,0s |
+| Fisher | 60 | 3,0s |
+| Collector | 100 | 5,0s |
+| Slayer | 140 | 7,0s |
+| Lumberjack | 200 | 10,0s |
+| Feeder | 300 | 15,0s |
+| Seller | 300 | 15,0s |
 
 ---
 
 ## Minion-Placement
 
-**Max Minions pro Island:**
-- Basis: 5 Minions
-- Mit Upgrade: Bis zu 15 Minions
+**Max Minions pro Spieler (Permission-basiert):**
 
-**Empfohlene Setup:**
-- Early Game: 3x Cobblestone, 2x Wheat
-- Mid Game: 2x Iron, 2x Gold, 1x Diamond
-- Late Game: Spezialisierung nach Bedarf
+| Rang | Max Minions | Permission |
+|------|-------------|------------|
+| Default | 3 | `minions.place.default` |
+| VIP | 5 | `minions.place.vip` |
+| God | 10 | `minions.place.god` |
+
+**Verknüpfte Kisten:**
+- Maximale Distanz: 30 Blöcke
+- Link-Timeout: 30 Sekunden
+- Feeder kann andere Minions aus verknüpfter Kiste füttern
+
+**Deaktivierte Welten:**
+- `world_the_end` (Minions nicht platzierbar)
+
+**Offline-Verhalten:**
+- Minions stoppen, wenn der Besitzer offline geht
+- Funktionieren nur bei geladenem Chunk
+
+---
+
+## Empfohlene Setups
+
+- **Early Game:** 1x Miner, 1x Farmer, 1x Collector
+- **Mid Game:** 2x Miner, 1x Farmer, 1x Slayer, 1x Collector
+- **Late Game:** Spezialisierung nach Bedarf + Feeder und Seller
 
 ---
 
@@ -66,4 +94,4 @@ JetsMinions Struktur und Templates.
 
 ---
 
-**Letzte Aktualisierung:** 2026-04-10
+**Letzte Aktualisierung:** 2026-04-12
