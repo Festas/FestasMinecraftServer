@@ -1,0 +1,19 @@
+triggers: [ entity_loot ]
+types:
+  - "minecraft:wither_skeleton_skull"
+
+name: "Wither Skeleton Skull"
+
+menu-item:
+  material: WITHER_SKELETON_SKULL
+
+requirements:
+  - 5
+  - 15
+  - 50
+  - 150
+  - 500
+  - 1000
+  - 2500
+
+use-global-level-matchers: true

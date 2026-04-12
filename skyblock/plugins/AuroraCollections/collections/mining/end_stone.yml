@@ -1,0 +1,19 @@
+triggers: [ block_loot ]
+types:
+  - "minecraft:end_stone"
+
+name: "End Stone"
+
+menu-item:
+  material: END_STONE
+
+requirements:
+  - 50
+  - 100
+  - 250
+  - 1000
+  - 2500
+  - 5000
+  - 10000
+
+use-global-level-matchers: true

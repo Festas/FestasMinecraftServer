@@ -1,7 +1,7 @@
 # ============================================================
-#  GrimAC Konfiguration – Survival-Server
+#  GrimAC Konfiguration – Skyblock-Server
 #  Minecraft MMO Netzwerk
-#  Standardmäßig strenge Prüfungen für fairen Survival-Betrieb
+#  Gelockerte Flugprüfungen wegen Insel-Flugrechten
 # ============================================================
 
 # --- Allgemeine Einstellungen ---
@@ -39,9 +39,9 @@ connection:
 # --- Teleport-Handling ---
 teleport:
   # Wartezeit nach Teleport bevor Prüfungen wieder greifen (in Ticks)
-  exempt-ticks-on-teleport: 60
-  # Wartezeit nach Weltenwechsel
-  exempt-ticks-on-world-change: 100
+  exempt-ticks-on-teleport: 80
+  # Wartezeit nach Weltenwechsel (Skyblock hat viele Inselwelten)
+  exempt-ticks-on-world-change: 120
 
 # ============================================================
 #  Prüfungen (Checks)
@@ -54,40 +54,44 @@ checks:
     # Prediction-Engine – Hauptbewegungsprüfung
     prediction:
       enabled: true
-      # Max. erlaubte Abweichung von der vorhergesagten Position
-      max-advantage: 0.01
-      # Unmittelbare Rücksetzung bei offensichtlichem Cheating
-      immediate-setback-threshold: 0.1
-      # Maximale Abweichung bevor Setback ausgelöst wird
-      max-ceiling: 0.075
+      # Leicht gelockert für Insel-Mechaniken
+      max-advantage: 0.015
+      immediate-setback-threshold: 0.12
+      max-ceiling: 0.085
 
-    # Fahrzeug-Bewegungsprüfung (Boote, Pferde usw.)
+    # Fahrzeug-Bewegungsprüfung (Boote, Minecarts auf Inseln)
     vehicle:
       enabled: true
-      max-advantage: 0.025
-      immediate-setback-threshold: 0.15
+      max-advantage: 0.03
+      immediate-setback-threshold: 0.18
 
     # Timer-Check – Erkennt Speed-Hacks über Paketfrequenz
     timer:
       enabled: true
-      decay: 0.02
-      # Max. erlaubte Timer-Balance
-      max-violations: 10
+      decay: 0.025
+      max-violations: 12
 
     # Phase/NoClip – Spieler bewegt sich durch Blöcke
     phase:
       enabled: true
       setback: true
       decay: 0.005
-      max-violations: 5
+      max-violations: 6
 
   # --- Flugprüfungen ---
+  # HINWEIS: Gelockert, da Spieler auf ihren Inseln Flugrechte haben.
+  # Flugrechte werden über Permissions gesteuert (z.B. island.fly).
+  # GrimAC prüft trotzdem auf unerlaubtes Fliegen außerhalb der Insel.
   fly:
     enabled: true
     setback: true
-    # Strenge Flugprüfung für Survival
-    max-violations: 8
-    decay: 0.05
+    # Deutlich erhöhter Schwellenwert für Insel-Flugrechte
+    max-violations: 30
+    decay: 0.08
+    # Spieler mit Flugrechten von der Prüfung ausnehmen
+    exempt-permission: "grimac.exempt.fly"
+    # Zusätzliche Toleranz für Elytra und benutzerdefinierte Flugmechaniken
+    elytra-tolerance: 1.5
 
   # --- Kampfprüfungen ---
   combat:
@@ -96,7 +100,6 @@ checks:
       enabled: true
       # Max. Angriffsreichweite in Blöcken (Vanilla: 3.0)
       max-reach: 3.1
-      # Zusätzlicher Puffer für Latenz
       threshold: 0.0005
       max-violations: 15
       decay: 0.025
@@ -118,8 +121,9 @@ checks:
     # Kritische Treffer Manipulation
     criticals:
       enabled: true
-      max-violations: 8
-      decay: 0.02
+      # Gelockert da Spieler von Inseln auf Mobs springen
+      max-violations: 12
+      decay: 0.03
 
   # --- Spielerprüfungen ---
   player:
@@ -130,22 +134,25 @@ checks:
       decay: 0.01
 
     # Inventory-Manipulation (zu schnelle Aktionen)
+    # Leicht gelockert für Insel-Hopper und Auto-Sortierer
     inventory:
       enabled: true
-      max-violations: 12
-      decay: 0.03
+      max-violations: 15
+      decay: 0.04
 
     # Scaffold-Check (schnelles Blocksetzen)
+    # Gelockert, da Brückenbauen auf Skyblock häufig vorkommt
     scaffold:
       enabled: true
-      max-violations: 10
-      decay: 0.02
+      max-violations: 18
+      decay: 0.04
 
     # Groundspoof – Falscher Bodenkontakt
     groundspoof:
       enabled: true
-      max-violations: 5
-      decay: 0.01
+      # Erhöht wegen Inselmechanik und Void-Nähe
+      max-violations: 10
+      decay: 0.02
 
     # FastBreak – Zu schneller Blockabbau
     fastbreak:
@@ -154,10 +161,11 @@ checks:
       decay: 0.02
 
     # FastPlace – Zu schnelles Blocksetzen
+    # Gelockert für Inselaufbau
     fastplace:
       enabled: true
-      max-violations: 8
-      decay: 0.02
+      max-violations: 14
+      decay: 0.03
 
 # ============================================================
 #  Bestrafungssystem (Eskalation: Warnung → Kick → Tempban)
@@ -171,26 +179,24 @@ punishment:
   thresholds:
     # Stufe 1: Warnung an den Spieler
     warn:
-      violations: 20
-      # Nachricht an den Spieler
+      violations: 25
       message: "&c&lAntiCheat &8» &r&cVerdächtiges Verhalten erkannt. Bitte spiele fair!"
-      # Befehl der ausgeführt wird (leer = keiner)
       command: ""
 
     # Stufe 2: Kick vom Server
     kick:
-      violations: 40
+      violations: 50
       message: "&c&lAntiCheat &8» &r&cDu wurdest wegen verdächtigem Verhalten gekickt."
       command: "kick %player% &cVerdächtiges Verhalten erkannt. Bitte spiele fair!"
 
     # Stufe 3: Temporärer Bann
     tempban:
-      violations: 60
+      violations: 75
       message: "&c&lAntiCheat &8» &r&4Du wurdest temporär gebannt."
       command: "tempban %player% 1h &cAntiCheat: Wiederholtes verdächtiges Verhalten"
 
   # Violations-Verfall über Zeit (pro Minute)
-  global-decay: 0.5
+  global-decay: 0.6
   # Violations beim Verlassen des Servers zurücksetzen
   reset-on-quit: false
   # Violations-Zähler nach Bestrafung zurücksetzen
@@ -236,86 +242,3 @@ performance:
   lenient-high-ping: true
   # Ping-Schwelle in ms für gelockerte Prüfungen
   high-ping-threshold: 250
-# GrimAC Anti-Cheat Configuration
-# IMPORTANT: GrimAC JAR must be installed first!
-# Download from: https://www.spigotmc.org/resources/grimac.99923/
-#
-# GrimAC is the recommended anti-cheat for this server because:
-# - Free and open source
-# - Excellent performance
-# - Great Geyser/Floodgate (Bedrock) support
-# - Accurate movement checks
-# - Low false-positive rate
-
-# Prefix for messages
-prefix: "&8[&cAnti-Cheat&8]&7 "
-
-# Alert
-alerts:
-  # How many violations before alerting staff
-  minimum-alerts: 5
-  # Permission to see alerts
-  alert-permission: "grim.alerts"
-
-# Bestrafungen
-punishments:
-  # Auto
-  enabled: true
-  # Befehle bei Erkennung. Nutze {player} für den Spielernamen.
-  commands:
-    - "cmi tempban {player} 1h &cAnti-Cheat: Verdächtige Aktivität erkannt."
-
-# Exemptions
-exempt:
-  # Creative mode players are exempt
-  creative: true
-  # Operators are exempt
-  operators: true
-
-# Checks Configuration
-checks:
-  # Movement checks (important for economy servers)
-  movement:
-    enabled: true
-    # Speed check
-    speed:
-      enabled: true
-    # Fly check
-    fly:
-      enabled: true
-    # No-fall check
-    no-fall:
-      enabled: true
-
-  # Combat checks
-  combat:
-    enabled: true
-    # Reach check
-    reach:
-      enabled: true
-    # Hit-box check
-    hitbox:
-      enabled: true
-
-  # Player checks
-  player:
-    enabled: true
-    # Timer check (speed-up actions)
-    timer:
-      enabled: true
-    # Scaffold check
-    scaffold:
-      enabled: true
-
-  # Inventory checks (critical for economy!)
-  inventory:
-    enabled: true
-
-# Geyser/Floodgate support
-# Automatically detects Bedrock players
-bedrock:
-  # Enable Bedrock player detection
-  enabled: true
-  # Exempt Bedrock players from certain checks
-  # (Bedrock has different physics)
-  exempt-movement: true

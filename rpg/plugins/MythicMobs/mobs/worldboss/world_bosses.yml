@@ -1,0 +1,439 @@
+# ===================================================
+# RPG World Bosses - 10 Zonen-Weltbosse
+# Ein Boss pro Zone, aufsteigend nach Schwierigkeit
+# ===================================================
+
+# ---------------------------------------------------
+# 1. Waldwächter Eldric (Lv.15, 50000 HP) - Wald
+# ---------------------------------------------------
+WaldwaechterEldric:
+  Type: IRON_GOLEM
+  Display: '&2&l⚔ Waldwächter Eldric &a[Lv.15]'
+  Health: 50000
+  Damage: 35
+  Armor: 15
+  Options:
+    MovementSpeed: 0.22
+    PreventOtherDrops: true
+    AlwaysShowName: true
+    FollowRange: 40
+    Silent: false
+  Equipment:
+  - OAK_LOG HAND
+  Skills:
+  - skill{s=EldricSpawn} @self ~onSpawn
+  - skill{s=NaturSlam} @target ~onTimer:200
+  - skill{s=WurzelFesseln} @target ~onTimer:400
+  - skill{s=WaldRuf} @self ~onTimer:600
+  - skill{s=EldricHeilung} @self ~onHealthMod:<0.5 1
+  - skill{s=RankenSturm} @self ~onTimer:500 ~onHealthMod:<0.3
+  - skill{s=EldricTod} @self ~onDeath
+  Drops:
+  - mmoitems{type=MATERIAL;id=WALD_ESSENZ} 3-5 1.0
+  - mmoitems{type=MATERIAL;id=GOLD_COIN} 100-200 1.0
+  - mmoitems{type=MATERIAL;id=BOSS_ESSENZ} 1 1.0
+  - mmoitems{type=ARMOR;id=WALDWAECHTER_HELM} 1 0.1
+  - mmoitems{type=ACCESSORY;id=RING_DES_WALDES} 1 0.05
+  - exp 5000
+  BossBar:
+    Enabled: true
+    Title: '&2&l⚔ Waldwächter Eldric'
+    Color: GREEN
+    Style: SEGMENTED_10
+    Range: 50
+
+# ---------------------------------------------------
+# 2. Dschungelkönig Vipera (Lv.25, 100000 HP) - Dschungel
+# ---------------------------------------------------
+DschungelkoenigVipera:
+  Type: RAVAGER
+  Display: '&a&l⚔ Dschungelkönig Vipera &2[Lv.25]'
+  Health: 100000
+  Damage: 50
+  Armor: 18
+  Options:
+    MovementSpeed: 0.28
+    PreventOtherDrops: true
+    AlwaysShowName: true
+    FollowRange: 45
+    Silent: false
+  Skills:
+  - skill{s=ViperaSpawn} @self ~onSpawn
+  - skill{s=GiftBiss} @target ~onTimer:200
+  - skill{s=DschungelStampede} @target ~onTimer:350
+  - skill{s=GiftWolke} @self ~onTimer:500
+  - skill{s=RankenPeitsche} @target ~onTimer:400
+  - skill{s=ViperaWut} @self ~onHealthMod:<0.4 1
+  - skill{s=DschungelBeben} @self ~onTimer:400 ~onHealthMod:<0.25
+  - skill{s=ViperaTod} @self ~onDeath
+  Drops:
+  - mmoitems{type=MATERIAL;id=DSCHUNGEL_ESSENZ} 3-5 1.0
+  - mmoitems{type=MATERIAL;id=GOLD_COIN} 200-400 1.0
+  - mmoitems{type=MATERIAL;id=BOSS_ESSENZ} 2 1.0
+  - mmoitems{type=SWORD;id=VIPERA_FANGZAHN} 1 0.1
+  - mmoitems{type=ARMOR;id=DSCHUNGEL_PANZER} 1 0.05
+  - exp 10000
+  BossBar:
+    Enabled: true
+    Title: '&a&l⚔ Dschungelkönig Vipera'
+    Color: GREEN
+    Style: SEGMENTED_10
+    Range: 50
+
+# ---------------------------------------------------
+# 3. Sumpfhexe Morgatha (Lv.35, 150000 HP) - Sumpf
+# ---------------------------------------------------
+SumpfhexeMorgatha:
+  Type: WITCH
+  Display: '&8&l⚔ Sumpfhexe Morgatha &7[Lv.35]'
+  Health: 150000
+  Damage: 55
+  Armor: 12
+  Options:
+    MovementSpeed: 0.25
+    PreventOtherDrops: true
+    AlwaysShowName: true
+    FollowRange: 45
+    Silent: false
+  Skills:
+  - skill{s=MorgathaSpawn} @self ~onSpawn
+  - skill{s=FluchDerSumpfe} @target ~onTimer:200
+  - skill{s=GiftTrank} @target ~onTimer:300
+  - skill{s=SumpfBeschwörung} @self ~onTimer:500
+  - skill{s=SeuchenWolke} @self ~onTimer:450
+  - skill{s=MorgathaPhase2} @self ~onHealthMod:<0.5 1
+  - skill{s=DunkleRitual} @self ~onTimer:400 ~onHealthMod:<0.3
+  - skill{s=MorgathaTod} @self ~onDeath
+  Drops:
+  - mmoitems{type=MATERIAL;id=SUMPF_ESSENZ} 3-5 1.0
+  - mmoitems{type=MATERIAL;id=GOLD_COIN} 300-600 1.0
+  - mmoitems{type=MATERIAL;id=BOSS_ESSENZ} 3 1.0
+  - mmoitems{type=TOOL;id=MORGATHA_STAB} 1 0.1
+  - mmoitems{type=ACCESSORY;id=HEXEN_AMULETT} 1 0.05
+  - exp 15000
+  BossBar:
+    Enabled: true
+    Title: '&8&l⚔ Sumpfhexe Morgatha'
+    Color: WHITE
+    Style: SEGMENTED_10
+    Range: 50
+
+# ---------------------------------------------------
+# 4. Sandkaiser Anubarak (Lv.45, 200000 HP) - Wüste
+# ---------------------------------------------------
+SandkaiserAnubarak:
+  Type: HUSK
+  Display: '&e&l⚔ Sandkaiser Anubarak &6[Lv.45]'
+  Health: 200000
+  Damage: 65
+  Armor: 20
+  Options:
+    MovementSpeed: 0.27
+    PreventOtherDrops: true
+    AlwaysShowName: true
+    FollowRange: 45
+    PreventSunburn: true
+    Silent: false
+  Equipment:
+  - 'GOLDEN_SWORD{Enchantments:[sharpness:5],Unbreakable:true,display:{Lore:["&6Klinge des Pharaos"]}} HAND'
+  - GOLDEN_HELMET{Unbreakable:true} HEAD
+  - GOLDEN_CHESTPLATE{Unbreakable:true} CHEST
+  - GOLDEN_LEGGINGS{Unbreakable:true} LEGS
+  - GOLDEN_BOOTS{Unbreakable:true} FEET
+  Skills:
+  - skill{s=AnubarakSpawn} @self ~onSpawn
+  - skill{s=SandSturm} @self ~onTimer:300
+  - skill{s=PharaohFluch} @target ~onTimer:250
+  - skill{s=SkarabäusSchwarm} @target ~onTimer:500
+  - skill{s=SandGrab} @self ~onTimer:600
+  - skill{s=AnubarakPhase2} @self ~onHealthMod:<0.5 1
+  - skill{s=PyramidenFluch} @self ~onTimer:400 ~onHealthMod:<0.3
+  - skill{s=AnubarakTod} @self ~onDeath
+  Drops:
+  - mmoitems{type=MATERIAL;id=WUESTEN_ESSENZ} 3-5 1.0
+  - mmoitems{type=MATERIAL;id=GOLD_COIN} 500-1000 1.0
+  - mmoitems{type=MATERIAL;id=BOSS_ESSENZ} 4 1.0
+  - mmoitems{type=SWORD;id=PHARAO_KLINGE} 1 0.1
+  - mmoitems{type=ARMOR;id=ANUBARAK_KRONE} 1 0.05
+  - exp 20000
+  BossBar:
+    Enabled: true
+    Title: '&e&l⚔ Sandkaiser Anubarak'
+    Color: YELLOW
+    Style: SEGMENTED_10
+    Range: 50
+
+# ---------------------------------------------------
+# 5. Frostdrache Icewyn (Lv.55, 300000 HP) - Eisland
+# ---------------------------------------------------
+FrostdracheIcewyn:
+  Type: ENDER_DRAGON
+  Display: '&b&l⚔ Frostdrache Icewyn &3[Lv.55]'
+  Health: 300000
+  Damage: 80
+  Armor: 22
+  Options:
+    MovementSpeed: 0.30
+    PreventOtherDrops: true
+    AlwaysShowName: true
+    FollowRange: 60
+    Silent: false
+  Skills:
+  - skill{s=IcewynSpawn} @self ~onSpawn
+  - skill{s=FrostAtem} @target ~onTimer:250
+  - skill{s=EisSturm} @self ~onTimer:400
+  - skill{s=GletscherSchlag} @target ~onTimer:300
+  - skill{s=FrostNova} @self ~onTimer:500
+  - skill{s=IcewynFlug} @self ~onTimer:600
+  - skill{s=IcewynPhase2} @self ~onHealthMod:<0.5 1
+  - skill{s=EwigeFrost} @self ~onTimer:350 ~onHealthMod:<0.3
+  - skill{s=IcewynTod} @self ~onDeath
+  Drops:
+  - mmoitems{type=MATERIAL;id=EIS_ESSENZ} 5-8 1.0
+  - mmoitems{type=MATERIAL;id=GOLD_COIN} 800-1500 1.0
+  - mmoitems{type=MATERIAL;id=BOSS_ESSENZ} 5 1.0
+  - mmoitems{type=SWORD;id=ICEWYN_KLAUE} 1 0.1
+  - mmoitems{type=ARMOR;id=DRACHENSCHUPPE_PANZER} 1 0.05
+  - mmoitems{type=ACCESSORY;id=FROSTHERZ} 1 0.03
+  - exp 30000
+  BossBar:
+    Enabled: true
+    Title: '&b&l⚔ Frostdrache Icewyn'
+    Color: BLUE
+    Style: SEGMENTED_12
+    Range: 60
+
+# ---------------------------------------------------
+# 6. Vulkantitan Pyraxis (Lv.65, 400000 HP) - Vulkan
+# ---------------------------------------------------
+VulkantitanPyraxis:
+  Type: WARDEN
+  Display: '&c&l⚔ Vulkantitan Pyraxis &4[Lv.65]'
+  Health: 400000
+  Damage: 95
+  Armor: 25
+  Options:
+    MovementSpeed: 0.20
+    PreventOtherDrops: true
+    AlwaysShowName: true
+    FollowRange: 50
+    Silent: false
+  Skills:
+  - skill{s=PyraxisSpawn} @self ~onSpawn
+  - skill{s=MagmaSchlag} @target ~onTimer:250
+  - skill{s=LavaSäule} @target ~onTimer:400
+  - skill{s=VulkanBeben} @self ~onTimer:500
+  - skill{s=FeuerRegen} @self ~onTimer:600
+  - skill{s=PyraxisPhase2} @self ~onHealthMod:<0.5 1
+  - skill{s=MagmaRüstung} @self ~onHealthMod:<0.5 1
+  - skill{s=VulkanEruption} @self ~onTimer:400 ~onHealthMod:<0.3
+  - skill{s=PyraxisTod} @self ~onDeath
+  Drops:
+  - mmoitems{type=MATERIAL;id=VULKAN_ESSENZ} 5-8 1.0
+  - mmoitems{type=MATERIAL;id=GOLD_COIN} 1000-2000 1.0
+  - mmoitems{type=MATERIAL;id=BOSS_ESSENZ} 6 1.0
+  - mmoitems{type=SWORD;id=PYRAXIS_HAMMER} 1 0.1
+  - mmoitems{type=ARMOR;id=MAGMA_TITAN_PLATTE} 1 0.05
+  - mmoitems{type=ACCESSORY;id=VULKANHERZ} 1 0.03
+  - exp 40000
+  BossBar:
+    Enabled: true
+    Title: '&c&l⚔ Vulkantitan Pyraxis'
+    Color: RED
+    Style: SEGMENTED_12
+    Range: 50
+
+# ---------------------------------------------------
+# 7. Tempelwächter Ankhara (Lv.75, 500000 HP) - Tempel
+# ---------------------------------------------------
+TempelwaechterAnkhara:
+  Type: ELDER_GUARDIAN
+  Display: '&9&l⚔ Tempelwächter Ankhara &1[Lv.75]'
+  Health: 500000
+  Damage: 110
+  Armor: 28
+  Options:
+    MovementSpeed: 0.25
+    PreventOtherDrops: true
+    AlwaysShowName: true
+    FollowRange: 50
+    Silent: false
+  Skills:
+  - skill{s=AnkharaSpawn} @self ~onSpawn
+  - skill{s=LaserStrahl} @target ~onTimer:300
+  - skill{s=WasserWirbel} @self ~onTimer:400
+  - skill{s=TempelFluch} @target ~onTimer:350
+  - skill{s=AntikSchild} @self ~onTimer:500
+  - skill{s=AnkharaPhase2} @self ~onHealthMod:<0.5 1
+  - skill{s=SintflutWelle} @self ~onTimer:400 ~onHealthMod:0.25to0.5
+  - skill{s=AnkharaPhase3} @self ~onHealthMod:<0.25 1
+  - skill{s=GoettlicherZorn} @self ~onTimer:300 ~onHealthMod:<0.25
+  - skill{s=AnkharaTod} @self ~onDeath
+  Drops:
+  - mmoitems{type=MATERIAL;id=TEMPEL_ESSENZ} 5-8 1.0
+  - mmoitems{type=MATERIAL;id=GOLD_COIN} 1500-3000 1.0
+  - mmoitems{type=MATERIAL;id=BOSS_ESSENZ} 7 1.0
+  - mmoitems{type=TOOL;id=ANKHARA_DREIZACK} 1 0.1
+  - mmoitems{type=ARMOR;id=TEMPELWAECHTER_RUESTUNG} 1 0.05
+  - mmoitems{type=ACCESSORY;id=AMULETT_DER_TIEFE} 1 0.03
+  - exp 50000
+  BossBar:
+    Enabled: true
+    Title: '&9&l⚔ Tempelwächter Ankhara'
+    Color: BLUE
+    Style: SEGMENTED_12
+    Range: 50
+
+# ---------------------------------------------------
+# 8. Schattenfürst Netharon (Lv.85, 700000 HP) - Nether
+# ---------------------------------------------------
+SchattenfuerstNetharon:
+  Type: WITHER_SKELETON
+  Display: '&8&l⚔ Schattenfürst Netharon &0[Lv.85]'
+  Health: 700000
+  Damage: 130
+  Armor: 30
+  Options:
+    MovementSpeed: 0.30
+    PreventOtherDrops: true
+    AlwaysShowName: true
+    FollowRange: 50
+    Silent: false
+  Equipment:
+  - 'NETHERITE_SWORD{Enchantments:[sharpness:6,fire_aspect:3],Unbreakable:true,display:{Lore:["&8Klinge der Schatten"]}} HAND'
+  - NETHERITE_HELMET{Enchantments:[protection:5],Unbreakable:true} HEAD
+  - NETHERITE_CHESTPLATE{Enchantments:[protection:5],Unbreakable:true} CHEST
+  - NETHERITE_LEGGINGS{Enchantments:[protection:5],Unbreakable:true} LEGS
+  - NETHERITE_BOOTS{Enchantments:[protection:5],Unbreakable:true} FEET
+  Skills:
+  - skill{s=NetharonSpawn} @self ~onSpawn
+  - skill{s=SchattenKlinge} @target ~onTimer:200
+  - skill{s=SeelEntzug} @target ~onTimer:350
+  - skill{s=DunkelheitWelle} @self ~onTimer:400
+  - skill{s=SchattenDoppelgänger} @self ~onTimer:600
+  - skill{s=NetharonPhase2} @self ~onHealthMod:<0.5 1
+  - skill{s=SchattenSturm} @self ~onTimer:350 ~onHealthMod:0.25to0.5
+  - skill{s=NetharonPhase3} @self ~onHealthMod:<0.25 1
+  - skill{s=EwigeNacht} @self ~onTimer:300 ~onHealthMod:<0.25
+  - skill{s=NetharonTod} @self ~onDeath
+  Drops:
+  - mmoitems{type=MATERIAL;id=SCHATTEN_ESSENZ} 5-10 1.0
+  - mmoitems{type=MATERIAL;id=GOLD_COIN} 2000-4000 1.0
+  - mmoitems{type=MATERIAL;id=BOSS_ESSENZ} 8 1.0
+  - mmoitems{type=SWORD;id=NETHARON_KLINGE} 1 0.1
+  - mmoitems{type=ARMOR;id=SCHATTEN_RUESTUNG} 1 0.05
+  - mmoitems{type=ACCESSORY;id=RING_DER_SCHATTEN} 1 0.03
+  - exp 70000
+  BossBar:
+    Enabled: true
+    Title: '&8&l⚔ Schattenfürst Netharon'
+    Color: WHITE
+    Style: SEGMENTED_12
+    Range: 50
+
+# ---------------------------------------------------
+# 9. Himmelsbezwinger Aethon (Lv.95, 1000000 HP) - Himmel
+# ---------------------------------------------------
+HimmelsbezwingerAethon:
+  Type: PHANTOM
+  Display: '&f&l⚔ Himmelsbezwinger Aethon &7[Lv.95]'
+  Health: 1000000
+  Damage: 150
+  Armor: 32
+  Options:
+    MovementSpeed: 0.35
+    PreventOtherDrops: true
+    AlwaysShowName: true
+    FollowRange: 60
+    Silent: false
+  Skills:
+  - skill{s=AethonSpawn} @self ~onSpawn
+  - skill{s=HimmelsSturz} @target ~onTimer:200
+  - skill{s=WindKlinge} @target ~onTimer:250
+  - skill{s=BlitzSchlag} @target ~onTimer:350
+  - skill{s=SturmWirbel} @self ~onTimer:400
+  - skill{s=AethonFlug} @self ~onTimer:500
+  - skill{s=AethonPhase2} @self ~onHealthMod:<0.5 1
+  - skill{s=GoettlicherSturm} @self ~onTimer:350 ~onHealthMod:0.25to0.5
+  - skill{s=HimmelsWache} @self ~onTimer:400 ~onHealthMod:0.25to0.5
+  - skill{s=AethonPhase3} @self ~onHealthMod:<0.25 1
+  - skill{s=ApokalyptischerSturm} @self ~onTimer:250 ~onHealthMod:<0.25
+  - skill{s=HimmlischeVergeltung} @self ~onTimer:300 ~onHealthMod:<0.25
+  - skill{s=AethonTod} @self ~onDeath
+  Drops:
+  - mmoitems{type=MATERIAL;id=HIMMELS_ESSENZ} 5-10 1.0
+  - mmoitems{type=MATERIAL;id=GOLD_COIN} 3000-6000 1.0
+  - mmoitems{type=MATERIAL;id=BOSS_ESSENZ} 10 1.0
+  - mmoitems{type=BOW;id=AETHON_BOGEN} 1 0.1
+  - mmoitems{type=ARMOR;id=HIMMELS_RUESTUNG} 1 0.05
+  - mmoitems{type=ACCESSORY;id=FLUEGEL_DES_AETHON} 1 0.03
+  - exp 100000
+  BossBar:
+    Enabled: true
+    Title: '&f&l⚔ Himmelsbezwinger Aethon'
+    Color: WHITE
+    Style: SEGMENTED_20
+    Range: 60
+
+# ---------------------------------------------------
+# 10. Weltenbrecher Ragnarok (Lv.100, 2000000 HP) - Endboss
+# ---------------------------------------------------
+WeltenbrecherRagnarok:
+  Type: WITHER
+  Display: '&4&l☠ Weltenbrecher Ragnarok &c&l[Lv.100]'
+  Health: 2000000
+  Damage: 200
+  Armor: 40
+  Options:
+    MovementSpeed: 0.25
+    PreventOtherDrops: true
+    AlwaysShowName: true
+    FollowRange: 80
+    Silent: false
+  Skills:
+  # Spawn
+  - skill{s=RagnarokSpawn} @self ~onSpawn
+  # Phase 1 (100%-75% HP)
+  - skill{s=WeltenSchlag} @target ~onTimer:200
+  - skill{s=WitherSturm} @self ~onTimer:300
+  - skill{s=ChaosKugel} @target ~onTimer:350
+  - skill{s=VernichtungsWelle} @self ~onTimer:500
+  # Phase 2 (75%-50% HP)
+  - skill{s=RagnarokPhase2} @self ~onHealthMod:<0.75 1
+  - skill{s=DimensionsRiss} @self ~onTimer:400 ~onHealthMod:0.5to0.75
+  - skill{s=SeelenEntzug} @target ~onTimer:300 ~onHealthMod:0.5to0.75
+  - skill{s=ChaosExplosion} @self ~onTimer:350 ~onHealthMod:0.5to0.75
+  - skill{s=BeschwoereHerold} @self ~onTimer:500 ~onHealthMod:0.5to0.75
+  # Phase 3 (50%-25% HP)
+  - skill{s=RagnarokPhase3} @self ~onHealthMod:<0.5 1
+  - skill{s=WeltenBeben} @self ~onTimer:300 ~onHealthMod:0.25to0.5
+  - skill{s=VoidStorm} @self ~onTimer:350 ~onHealthMod:0.25to0.5
+  - skill{s=BeschwoereHerold} @self ~onTimer:400 ~onHealthMod:0.25to0.5
+  - skill{s=WeltenRiss} @self ~onTimer:400 ~onHealthMod:0.25to0.5
+  # Phase 4 (25%-0% HP) - Enrage
+  - skill{s=RagnarokPhase4} @self ~onHealthMod:<0.25 1
+  - skill{s=RagnarokEnrage} @self ~onHealthMod:<0.25 1
+  - skill{s=Apokalypse} @self ~onTimer:250 ~onHealthMod:<0.25
+  - skill{s=WeltenBeben} @self ~onTimer:200 ~onHealthMod:<0.25
+  - skill{s=VoidStorm} @self ~onTimer:250 ~onHealthMod:<0.25
+  - skill{s=BeschwoereHerold} @self ~onTimer:300 ~onHealthMod:<0.25
+  - skill{s=EndgueltigeVernichtung} @self ~onTimer:350 ~onHealthMod:<0.25
+  # Death
+  - skill{s=RagnarokTod} @self ~onDeath
+  Drops:
+  - mmoitems{type=MATERIAL;id=WELTEN_ESSENZ} 10-15 1.0
+  - mmoitems{type=MATERIAL;id=GOLD_COIN;amount=10000} 1.0
+  - mmoitems{type=MATERIAL;id=BOSS_ESSENZ} 15 1.0
+  - mmoitems{type=SWORD;id=RAGNAROK_SCHWERT} 1 0.1
+  - mmoitems{type=ARMOR;id=RAGNAROK_HELM} 1 0.05
+  - mmoitems{type=ARMOR;id=RAGNAROK_BRUSTPLATTE} 1 0.05
+  - mmoitems{type=ARMOR;id=RAGNAROK_BEINSCHUTZ} 1 0.05
+  - mmoitems{type=ARMOR;id=RAGNAROK_STIEFEL} 1 0.05
+  - mmoitems{type=ACCESSORY;id=WELTENBRECHER_AMULETT} 1 0.02
+  - exp 200000
+  BossBar:
+    Enabled: true
+    Title: '&4&l☠ Weltenbrecher Ragnarok'
+    Color: RED
+    Style: SEGMENTED_20
+    Range: 80

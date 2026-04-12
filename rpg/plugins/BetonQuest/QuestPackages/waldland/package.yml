@@ -1,0 +1,6 @@
+# Waldland - Wald-Zonen Quest-Paket
+# The Dark Forest Zone
+
+npcs:
+  "10": "waldwaechter_elorin"
+  "11": "jaeger_wolfhart"

@@ -1,0 +1,151 @@
+# Hauptquest Kapitel 4: Fluch des Sumpfes
+# Main Quest Chapter 4: Curse of the Swamp
+# 5 Quests führen durch das Sumpfland (Level 30-40)
+
+# ============================================================================
+# QUEST 1: Sumpfland-Überquerung
+# Der Spieler erreicht das Sumpfland
+# ============================================================================
+
+events:
+  quest1_start: "run ^tag add quest1_aktiv ^journal add quest1_start ^_core.sound_quest_start"
+  quest1_sumpf_erreicht: "run ^tag add quest1_complete ^tag del quest1_aktiv ^tag add quest2_aktiv ^experience 300 ^point playerpoints 300 ^_core.sound_quest_complete ^journal add quest1_done"
+
+objectives:
+  quest1_sumpfland: "location 1500;62;1500;world range:30 events:quest1_sumpf_erreicht notify"
+
+journal:
+  quest1_start: "&6Sumpfland-Überquerung|&7Die Korruption führt dich|&7in die finsteren Sümpfe.|&7Überquere das Moor und|&7finde einen sicheren Pfad."
+  quest1_done: "&6Sumpfland erreicht!|&7Der Boden ist weich und|&7trügerisch. Ein fahles Licht|&7flackert in der Ferne."
+
+# ============================================================================
+# QUEST 2: Hexen-Unterschlupf
+# Die Sumpfhexe Morla finden
+# ============================================================================
+
+events:
+  quest2_start: "run ^tag add quest2_aktiv ^journal add quest2_start"
+  quest2_hexe_erreicht: "run ^tag add quest2_location_complete ^journal add quest2_gefunden"
+  quest2_complete: "run ^tag add quest2_complete ^tag del quest2_aktiv ^tag add quest3_aktiv ^experience 350 ^point playerpoints 400 ^_core.sound_quest_complete ^journal add quest2_done"
+
+objectives:
+  quest2_hexenhuette: "location 1550;64;1520;world range:15 events:quest2_hexe_erreicht notify"
+
+journal:
+  quest2_start: "&6Hexen-Unterschlupf|&7Gerüchte erzählen von einer|&7weisen Sumpfhexe namens Morla.|&7Finde ihre Hütte im Moor."
+  quest2_gefunden: "&6Hütte gefunden!|&7Eine schiefe Hütte steht|&7auf Stelzen im Sumpf.|&7Sprich mit der Hexe Morla."
+  quest2_done: "&6Morla spricht!|&7Die Hexe kennt den Fluch|&7der auf dem Sumpf liegt.|&7Sie braucht Zutaten für|&7einen Gegenzauber."
+
+# ============================================================================
+# QUEST 3: Fluchbrecher
+# Schleimkugeln sammeln für den Gegenzauber
+# ============================================================================
+
+events:
+  quest3_start: "run ^tag add quest3_aktiv ^journal add quest3_start"
+  quest3_schleim_done: "tag add quest3_schleim_complete"
+  quest3_complete: "run ^tag add quest3_complete ^tag del quest3_aktiv ^tag add quest4_aktiv ^experience 400 ^point playerpoints 500 ^_core.sound_quest_complete ^journal add quest3_done"
+
+objectives:
+  quest3_schleimkugeln: "block SLIME_BLOCK 20 events:quest3_schleim_done notify"
+
+conditions:
+  quest3_schleim_erledigt: "tag quest3_schleim_complete"
+
+journal:
+  quest3_start: "&6Fluchbrecher|&7Morla braucht 20 Schleimkugeln|&7für ihren Gegenzauber.|&7Sammle sie von den Schleim-|&7kreaturen im Sumpf."
+  quest3_done: "&6Zutaten gesammelt!|&7Morla bereitet den|&7Gegenzauber vor. Doch zuerst|&7muss die untote Armee|&7besiegt werden."
+
+# ============================================================================
+# QUEST 4: Untote Armee
+# Die Ertrunkenen im Sumpf besiegen
+# ============================================================================
+
+events:
+  quest4_start: "run ^tag add quest4_aktiv ^journal add quest4_start"
+  quest4_untote_done: "tag add quest4_untote_complete"
+  quest4_complete: "run ^tag add quest4_complete ^tag del quest4_aktiv ^tag add quest5_aktiv ^experience 500 ^point playerpoints 700 ^_core.sound_quest_complete ^journal add quest4_done"
+
+objectives:
+  quest4_ertrunkene: "mobkill DROWNED 20 events:quest4_untote_done notify"
+
+conditions:
+  quest4_untote_erledigt: "tag quest4_untote_complete"
+
+journal:
+  quest4_start: "&6Untote Armee|&cEine Armee von Ertrunkenen|&csteigt aus dem Sumpf!|&7Besiege 20 Ertrunkene|&7um den Weg zum Sumpfkönig|&7freizumachen."
+  quest4_done: "&6Armee besiegt!|&7Die Ertrunkenen sind|&7zurückgedrängt. Der Weg zum|&7Sumpfkönig ist frei."
+
+# ============================================================================
+# QUEST 5: Sumpfkönig
+# Bossfight - Abschluss von Kapitel 4
+# ============================================================================
+
+events:
+  quest5_start: "run ^tag add quest5_aktiv ^journal add quest5_start"
+  quest5_boss_done: "tag add quest5_boss_complete"
+  quest5_complete: "run ^tag add quest5_complete ^tag del quest5_aktiv ^tag add kapitel4_complete ^experience 700 ^point playerpoints 1000 ^_core.sound_quest_complete ^journal add quest5_done ^journal add kapitel4_done"
+
+objectives:
+  quest5_sumpfkoenig: "mobkill ELDER_GUARDIAN 1 events:quest5_boss_done notify"
+
+conditions:
+  quest5_boss_erledigt: "tag quest5_boss_complete"
+
+journal:
+  quest5_start: "&6Sumpfkönig|&cIn der Tiefe des Sumpfes|&cherrscht der Sumpfkönig!|&7Besiege den uralten Wächter|&7und brich den Fluch!"
+  quest5_done: "&6Sumpfkönig besiegt!|&aDer Fluch des Sumpfes|&aist gebrochen!|&7Morla dankt dir und|&7enthüllt die nächste Spur."
+  kapitel4_done: "&6&lFluch des Sumpfes - Komplett|&7Du hast das vierte Kapitel|&7der Hauptquest abgeschlossen.|&7Die Wüste ruft - dort|&7liegt die nächste Antwort."
+
+# ============================================================================
+# Conversation Extensions für NPCs
+# Diese erweitern die existierenden NPC-Conversations
+# ============================================================================
+
+conversations:
+  sumpfhexe_morla:
+    quester: "Sumpfhexe Morla"
+    first: "begruessung"
+    NPC_options:
+      begruessung:
+        text: "&5Hehehe... Ein Lebender im Sumpf. Selten genug. Du trägst das Mal... ich habe auf dich gewartet."
+        pointer: "was_weisst_du"
+      fluch_erklaerung:
+        text: "&7Ein uralter Fluch liegt auf diesem Sumpf. Die Toten ruhen nicht. Ich brauche Schleimkugeln für einen Gegenzauber."
+        events: "quest3_start"
+      untote_warnung:
+        text: "&cDie Ertrunkenen gehorchen dem Sumpfkönig. Du musst sie zurückdrängen, bevor wir ihn herausfordern können."
+        events: "quest4_start"
+      boss_auftrag:
+        text: "&5Der Sumpfkönig ist ein uralter Wächter, korrumpiert durch die Leere. Vernichte ihn und der Fluch wird brechen!"
+        events: "quest5_start"
+      abschluss:
+        text: "&aDer Fluch ist gebrochen! Die Toten ruhen wieder. Geh in die Wüste, dort wartet die nächste Prüfung auf dich."
+        events: "quest5_complete"
+    player_options:
+      was_weisst_du:
+        text: "&eWas wisst Ihr über den Fluch?"
+        pointer: "fluch_erklaerung"
+      bereit_sammeln:
+        text: "&eIch sammle die Zutaten."
+        pointer: "untote_warnung"
+      untote_bekaempfen:
+        text: "&eIch werde die Untoten besiegen."
+        pointer: "boss_auftrag"
+      sieg_melden:
+        text: "&eDer Sumpfkönig ist gefallen!"
+        pointer: "abschluss"
+
+  geisterfaenger_gregor:
+    quester: "Geisterfänger Gregor"
+    first: "begruessung"
+    NPC_options:
+      begruessung:
+        text: "&7Psst! Siehst du die Irrlichter? Folge ihnen niemals. Sie führen dich in den Tod."
+        pointer: "irrlichter_frage"
+      irrlichter_info:
+        text: "&7Die Irrlichter sind Seelen der Verfluchten. Seit der Sumpfkönig erwacht ist, werden es immer mehr. Sei auf der Hut."
+    player_options:
+      irrlichter_frage:
+        text: "&eWas sind diese Lichter?"
+        pointer: "irrlichter_info"

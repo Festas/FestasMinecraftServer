@@ -1,0 +1,38 @@
+# ============================================================
+# SuperiorSkyblock2 — MySQL Migration Anleitung
+# Umstellung von SQLite auf MariaDB für bessere Performance
+# ============================================================
+#
+# Schritte zur Migration:
+# 1. Backup der SQLite-Datenbank erstellen:
+#    cp plugins/SuperiorSkyblock2/database.db plugins/SuperiorSkyblock2/database.db.bak
+#
+# 2. config.yml anpassen (database section) — siehe Einstellungen unten
+#
+# 3. Server neu starten — Daten werden automatisch migriert
+#
+# 4. Nach erfolgreichem Start prüfen:
+#    - /is top — Sollte alle Inseln anzeigen
+#    - Datenbank-Tabellen in MariaDB verifizieren
+#
+# 5. Bei Problemen: Backup wiederherstellen und Logs prüfen
+#
+# ============================================================
+# Neue Einstellungen für config.yml:
+# ============================================================
+database:
+  type: MySQL
+  address: "172.25.0.1"
+  port: 3306
+  db-name: "s4_skyblock"
+  user-name: "CHANGE_ME"
+  password: "CHANGE_ME"
+  prefix: "sb_"
+  useSSL: false
+  allowPublicKeyRetrieval: true
+
+  pool:
+    max-size: 10
+    min-idle: 2
+    max-lifetime: 1800000
+    connection-timeout: 5000

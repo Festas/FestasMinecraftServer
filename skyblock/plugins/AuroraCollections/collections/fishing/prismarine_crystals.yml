@@ -1,0 +1,19 @@
+triggers: [ fish ]
+types:
+  - "minecraft:prismarine_crystals"
+
+name: "Prismarine Crystals"
+
+menu-item:
+  material: PRISMARINE_CRYSTALS
+
+requirements:
+  - 10
+  - 25
+  - 75
+  - 250
+  - 750
+  - 2000
+  - 5000
+
+use-global-level-matchers: true

@@ -1,0 +1,150 @@
+# Hauptquest Kapitel 3: Gift und Dornen
+# Main Quest Chapter 3: Poison and Thorns
+# 5 Quests führen durch den Dschungel (Level 20-30)
+
+# ============================================================================
+# QUEST 1: Dschungel-Expedition
+# Der Spieler erreicht den Dschungel
+# ============================================================================
+
+events:
+  quest1_start: "run ^tag add quest1_aktiv ^journal add quest1_start ^_core.sound_quest_start"
+  quest1_dschungel_erreicht: "run ^tag add quest1_complete ^tag del quest1_aktiv ^tag add quest2_aktiv ^experience 200 ^point playerpoints 200 ^_core.sound_quest_complete ^journal add quest1_done"
+
+objectives:
+  quest1_dschungel: "location 1000;72;1000;world range:30 events:quest1_dschungel_erreicht notify"
+
+journal:
+  quest1_start: "&6Dschungel-Expedition|&7Die Spur der Korruption|&7führt in den tiefen Dschungel.|&7Erreiche den Eingang|&7des Urwalds."
+  quest1_done: "&6Dschungel erreicht!|&7Die Luft ist schwer|&7und feucht. Überall lauern|&7Gefahren zwischen den Lianen."
+
+# ============================================================================
+# QUEST 2: Giftpilze sammeln
+# Sammle Pilze für ein Gegengift
+# ============================================================================
+
+events:
+  quest2_start: "run ^tag add quest2_aktiv ^journal add quest2_start"
+  quest2_pilze_done: "tag add quest2_pilze_complete"
+  quest2_complete: "run ^tag add quest2_complete ^tag del quest2_aktiv ^tag add quest3_aktiv ^experience 250 ^point playerpoints 300 ^_core.sound_quest_complete ^journal add quest2_done"
+
+objectives:
+  quest2_giftpilze: "block RED_MUSHROOM_BLOCK 15 events:quest2_pilze_done notify"
+
+conditions:
+  quest2_pilze_erledigt: "tag quest2_pilze_complete"
+
+journal:
+  quest2_start: "&6Giftpilze sammeln|&7Die Giftsammlerin Nara|&7braucht 15 rote Pilzblöcke|&7für ein mächtiges Gegengift.|&7Sammle sie im Dschungel."
+  quest2_done: "&6Pilze gesammelt!|&7Nara kann nun das Gegengift|&7brauen. Die Stammesältesten|&7wollen dich sprechen."
+
+# ============================================================================
+# QUEST 3: Stammeshäuptling treffen
+# Das Dschungeldorf erreichen
+# ============================================================================
+
+events:
+  quest3_start: "run ^tag add quest3_aktiv ^journal add quest3_start"
+  quest3_dorf_erreicht: "run ^tag add quest3_complete ^tag del quest3_aktiv ^tag add quest4_aktiv ^experience 300 ^point playerpoints 400 ^_core.sound_quest_complete ^journal add quest3_done"
+
+objectives:
+  quest3_stammesdorf: "location 1100;68;1050;world range:20 events:quest3_dorf_erreicht notify"
+
+journal:
+  quest3_start: "&6Stammeshäuptling treffen|&7Folge dem Pfad zum|&7Dorf des Dschungelstammes.|&7Der Stammesälteste Maku|&7erwartet dich."
+  quest3_done: "&6Stammesdorf erreicht!|&7Maku erzählt von einem|&7uralten Tempel, der von|&7giftigen Kreaturen bewacht wird."
+
+# ============================================================================
+# QUEST 4: Tempelrätsel
+# Den vergifteten Tempel säubern
+# ============================================================================
+
+events:
+  quest4_start: "run ^tag add quest4_aktiv ^journal add quest4_start"
+  quest4_spinnen_done: "tag add quest4_spinnen_complete"
+  quest4_complete: "run ^tag add quest4_complete ^tag del quest4_aktiv ^tag add quest5_aktiv ^experience 400 ^point playerpoints 500 ^_core.sound_quest_complete ^journal add quest4_done"
+
+objectives:
+  quest4_tempel_spinnen: "mobkill CAVE_SPIDER 8 events:quest4_spinnen_done notify"
+
+conditions:
+  quest4_spinnen_erledigt: "tag quest4_spinnen_complete"
+
+journal:
+  quest4_start: "&6Tempelrätsel|&7Der uralte Dschungeltempel|&7ist von giftigen Spinnen|&7befallen. Töte 8 Höhlenspinnen|&7um den Weg zu säubern."
+  quest4_done: "&6Tempel gesäubert!|&7Die Spinnen sind besiegt.|&7Tief im Tempel entdeckst du|&7den Altar der Schlange."
+
+# ============================================================================
+# QUEST 5: Altar der Schlange
+# Bossfight - Abschluss von Kapitel 3
+# ============================================================================
+
+events:
+  quest5_start: "run ^tag add quest5_aktiv ^journal add quest5_start"
+  quest5_boss_done: "tag add quest5_boss_complete"
+  quest5_complete: "run ^tag add quest5_complete ^tag del quest5_aktiv ^tag add kapitel3_complete ^experience 500 ^point playerpoints 800 ^_core.sound_quest_complete ^journal add quest5_done ^journal add kapitel3_done"
+
+objectives:
+  quest5_schlangen_boss: "mobkill RAVAGER 1 events:quest5_boss_done notify"
+
+conditions:
+  quest5_boss_erledigt: "tag quest5_boss_complete"
+
+journal:
+  quest5_start: "&6Altar der Schlange|&cAm Altar erwacht ein|&cmächtiger Schlangengeist!|&7Besiege die uralte Bestie|&7um den Dschungel zu befreien."
+  quest5_done: "&6Schlangengeist besiegt!|&aDer Dschungel ist befreit.|&7Der Stammesälteste Maku|&7ernennt dich zum Ehrenmitglied|&7des Stammes."
+  kapitel3_done: "&6&lGift und Dornen - Komplett|&7Du hast das dritte Kapitel|&7der Hauptquest abgeschlossen.|&7Die Korruption reicht|&7tiefer als gedacht."
+
+# ============================================================================
+# Conversation Extensions für NPCs
+# Diese erweitern die existierenden NPC-Conversations
+# ============================================================================
+
+conversations:
+  stammesaeltester_maku:
+    quester: "Stammesältester Maku"
+    first: "begruessung"
+    NPC_options:
+      begruessung:
+        text: "&aFremdling aus dem Norden... Die Geister haben dein Kommen vorhergesagt. Du trägst das Mal."
+        pointer: "warum_hier"
+      tempel_auftrag:
+        text: "&7Der Tempel unserer Ahnen ist von giftigen Kreaturen befallen. Nur ein Krieger mit dem Mal kann ihn säubern."
+        events: "quest4_start"
+      boss_warnung:
+        text: "&cAm Altar der Schlange ruht eine uralte Bestie. Sie wurde von der Leere geweckt. Du musst sie vernichten!"
+        events: "quest5_start"
+      abschluss:
+        text: "&aDu hast den Dschungel befreit! Die Geister unserer Ahnen sind dir dankbar. Du bist nun ein Ehrenmitglied unseres Stammes."
+        events: "quest5_complete"
+    player_options:
+      warum_hier:
+        text: "&eWarum habt ihr mich erwartet?"
+        pointer: "tempel_auftrag"
+      tempel_bereit:
+        text: "&eIch werde den Tempel säubern."
+        pointer: "boss_warnung"
+      sieg_melden:
+        text: "&eDie Bestie ist besiegt, Maku."
+        pointer: "abschluss"
+
+  gift_sammlerin_nara:
+    quester: "Giftsammlerin Nara"
+    first: "begruessung"
+    NPC_options:
+      begruessung:
+        text: "&5Ah, ein Besucher! Vorsicht wo du hintrittst... hier ist alles giftig. Aber nützlich, wenn man weiß wie."
+        pointer: "pilze_frage"
+      pilze_auftrag:
+        text: "&7Ich brauche 15 rote Pilzblöcke für mein Gegengift. Ohne es wird die Korruption den ganzen Dschungel verschlingen."
+        events: "quest2_start"
+      pilze_danke:
+        text: "&aWunderbar! Mit diesen Pilzen kann ich das Gegengift brauen. Der Stammesälteste will dich sehen."
+        events: "quest2_complete"
+    player_options:
+      pilze_frage:
+        text: "&eWas braucht Ihr?"
+        pointer: "pilze_auftrag"
+      pilze_abgeben:
+        text: "&eHier sind die Pilze."
+        pointer: "pilze_danke"
