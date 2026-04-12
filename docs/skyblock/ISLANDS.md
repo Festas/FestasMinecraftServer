@@ -51,12 +51,36 @@ SuperiorSkyblock2 Konfiguration und Island-Templates.
 
 ## Prestige-System
 
-<!-- TODO: Prestige noch zu planen -->
+Das Prestige-System ist über das Skript `prestige.sk` implementiert und bietet erweiterte Progression nach dem Erreichen des Maximallevels.
 
-**Idee:**
-- Nach Level 10000: Prestige möglich
-- Island-Reset, aber Permanente Boni
-- Prestige-Stufen für Status
+**Voraussetzung:** Level 100 (Minecraft XP Level)
+
+**Prestige-Stufen:**
+
+| Prestige | Titel | Farbe | Passive Buffs |
+|----------|-------|-------|---------------|
+| ✦ 1 | Novize | Gelb | — |
+| ✦✦ 2 | Lehrling | Gelb | Speed I |
+| ✦✦✦ 3 | Geselle | Gold | Speed I |
+| ✦✦✦✦ 4 | Experte | Gold | Speed I, Haste I |
+| ✦✦✦✦✦ 5 | Meister | Rot | Speed I, Haste I |
+| ✦✦✦✦✦✦ 6 | Großmeister | Rot | Speed I, Haste I, Resistance I |
+| ✦✦✦✦✦✦✦ 7 | Champion | Lila | Speed I, Haste I, Resistance I |
+| ✦✦✦✦✦✦✦✦ 8 | Legende | Lila | Speed I, Haste I, Resistance I, Strength I |
+| ✦✦✦✦✦✦✦✦✦ 9 | Mythisch | Rosa | Speed I, Haste I, Resistance I, Strength I |
+| ✦✦✦✦✦✦✦✦✦✦ 10 | Unsterblich | Dunkelrot | Speed I, Haste I, Resistance I, Strength I, Regeneration I |
+
+**Mechanik:**
+- XP-Level wird auf 0 zurückgesetzt
+- Items und Währung bleiben erhalten
+- +5% Stat-Bonus pro Prestige-Stufe
+- Prestige-Sterne werden im Chat angezeigt
+- Bestenliste via `/prestige top`
+
+**Befehle:**
+- `/prestige info` - Status anzeigen
+- `/prestige up` - Prestige durchführen
+- `/prestige top` - Bestenliste
 
 ---
 
@@ -67,4 +91,4 @@ SuperiorSkyblock2 Konfiguration und Island-Templates.
 
 ---
 
-**Letzte Aktualisierung:** 2026-04-10
+**Letzte Aktualisierung:** 2026-04-12
