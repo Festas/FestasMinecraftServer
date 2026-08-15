@@ -12,7 +12,7 @@
    - [Survival / Tycoon](#22-survival--tycoon)
    - [Skyblock (MMO) — Archiv](#23-skyblock-mmo--archiv-wird-eingestellt)
    - [RPG (MMO) — Archiv](#24-rpg-mmo--archiv-wird-eingestellt)
-3. [Klassen-System](#3-klassen-system)
+3. [Klassen-System — Archiv](#3-klassen-system--archiv-mmo)
 4. [Item-System](#4-item-system)
 5. [Economy-System](#5-economy-system)
 6. [Technische Infrastruktur](#6-technische-infrastruktur)

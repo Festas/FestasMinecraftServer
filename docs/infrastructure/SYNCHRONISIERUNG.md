@@ -199,7 +199,7 @@ Der **Survival-Server** ist bewusst von der MMO-Synchronisation ausgenommen. Die
 | Bluemap-Renderings          | Jeweiliger Server   |
 | Survival Economy (Vault)    | Survival            |
 | Jobs-Daten                  | Survival            |
-| Claims (PlotSquared/GriefPrevention) | Survival  |
+| Claims (PlotSquared) | Survival  |
 
 ---
 
