@@ -16,7 +16,7 @@ Dokumentation für den Survival-Server mit integriertem Tycoon-Gamemode.
 
 | Eigenschaft | Wert |
 |-------------|------|
-| **Version** | Paper 1.21.1 |
+| **Version** | Paper 26.2 |
 | **Gamemode** | Survival + Tycoon (Generator-basiert) |
 | **Economy** | Vault (CMI) — separat von MMO-Servern |
 | **Datenbank** | MySQL/MariaDB (isoliert) |

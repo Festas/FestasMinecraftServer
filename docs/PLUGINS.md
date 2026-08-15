@@ -2,6 +2,8 @@
 
 Vollständige Übersicht aller verwendeten Plugins pro Server.
 
+> **⚠️ Stand: Umstellung auf 26.2** — Alle Server laufen auf **Minecraft 26.2**. Der Fokus liegt aktuell **nur auf Lobby und Survival**; deren Plugin-Listen wurden frisch aufgeräumt und spiegeln den echten Ordnerinhalt wider. Die Abschnitte zu **Skyblock** und **RPG** sind **Archiv** — diese Server werden zeitnah eingestellt und durch zwei neue Server ersetzt.
+
 ---
 
 ## Velocity Proxy Plugins
@@ -110,181 +112,162 @@ Vollständige Übersicht aller verwendeten Plugins pro Server.
 
 ## Lobby Server Plugins
 
+> **Aktiv.** Aufgeräumt und neu übertragen auf 26.2. Diese Liste entspricht dem Inhalt von `lobby/plugins/`.
+
 ### Management & Core
 
-#### CMI (Complete Minecraft Integration)
-- **Funktion:** Kern-Management-Plugin
+#### CMI (+ CMILib)
+- **Funktion:** Kern-Management-Plugin (CMILib als Library)
 - **Features:**
-  - Teleport-Commands
-  - World-Management
-  - Warps
-  - Kits
-  - Economy (optional, nicht verwendet)
-- **Wichtige Commands:**
-  - `/warp <name>`
-  - `/spawn`
-  - `/fly`
+  - Teleport-Commands, Spawn, Warps
+  - Chat-Formatierung
+  - Hologramme (ersetzt das frühere DecentHolograms)
+  - Void-/Fall-Schutz
+- **Wichtige Commands:** `/spawn`, `/setspawn`, `/fly`
 
 #### LuckPerms
 - **Funktion:** Permissions-Management
-- **Features:**
-  - Ranks/Groups
-  - Permissions
-  - Context-basierte Permissions (Server, World)
-  - Web-Editor
+- **Features:** Ranks/Groups, Context-basierte Permissions (Server, World), Web-Editor
 - **Web-Editor:** `https://luckperms.net/editor`
+
+#### Vault
+- **Funktion:** Economy-/Permissions-API-Bridge (Backend für andere Plugins)
 
 ### Display & UI
 
-#### FancyNpcs
-- **Funktion:** Interaktive NPCs für Navigation
-- **Verwendung:**
-  - Server-Selector NPCs
-  - Info-NPCs
-  - Tutorial-NPCs
-- **Commands:**
-  - `/npc create <name>`
-  - `/npc action`
-
-#### DecentHolograms
-- **Funktion:** Hologramme für Infos/Anzeigen
-- **Features:**
-  - Multi-Zeilen-Hologramme
-  - PlaceholderAPI-Support
-  - Animationen
-  - Click-Actions
-- **Commands:**
-  - `/holo create <name>`
-  - `/holo line <name> <line> <text>`
-
 #### DeluxeMenus
-- **Funktion:** Custom GUI-Menüs
+- **Funktion:** Custom GUI-Menüs — **zentrale Navigation der Lobby**
 - **Verwendung:**
-  - Server-Selector-GUI
-  - Info-Menüs
-  - Regel-GUI
-- **Config:** YAML-basierte Menü-Definitionen
+  - `server_selector` (Server-Auswahl: Survival, + auslaufend Skyblock/RPG)
+  - Netzwerk-Guide, Regeln, Basics/Advanced-Menüs
+- **Config:** `lobby/plugins/DeluxeMenus/gui_menus/`
+
+#### Skript
+- **Funktion:** Custom-Logik der Lobby
+- **Verwendung:**
+  - Navigator-Kompass (öffnet `server_selector`)
+  - Doppelsprung (kosmetisch), Hub-/Inventar-Schutz
+- **Config:** `lobby/plugins/Skript/scripts/`
 
 ### Items & Resources
 
 #### Oraxen
 - **Funktion:** Custom Items und Texturen
-- **Features:**
-  - Custom Item Models
-  - Custom Textures
-  - Custom Blocks
-  - Resourcepack-Generation
-- **Commands:**
-  - `/oraxen reload`
-  - `/oraxen give <item>`
+- **Features:** Custom Item Models, Texturen, Blocks, Resourcepack-Generierung
 
-### Utility
+### Utility & Bibliotheken
 
 #### PlaceholderAPI
 - **Funktion:** Platzhalter für Nachrichten/Displays
-- **Expansions:**
-  - Player (Name, UUID, etc.)
-  - Server (TPS, Online-Count)
-  - Custom Platzhalter
-- **Commands:**
-  - `/papi parse <player> <placeholder>`
 
 #### ProtocolLib
-- **Funktion:** Packet-Manipulation für Custom-Features
-- **Verwendung:** Backend für andere Plugins (Holograms, NPCs)
+- **Funktion:** Packet-Manipulation (Backend für Custom-Features)
+
+#### CommandAPI
+- **Funktion:** Command-API (Backend-Bibliothek)
+
+#### FastAsyncWorldEdit (FAWE)
+- **Funktion:** Async World-Editing für Lobby-Bau/-Pflege
+
+#### PartyAndFriendsGUI
+- **Funktion:** Party- & Freundeslisten-GUI (Backend zum Velocity-PAF)
+
+#### bStats / faststats / spark
+- **Funktion:** Statistik- und Performance-Werkzeuge (Metriken, Profiling)
+
+> **Hinweis:** FancyNpcs und ein separates Hologramm-Plugin (DecentHolograms) sind **nicht mehr** Teil der Lobby — Navigation läuft jetzt über den DeluxeMenus-`server_selector` + Skript-Kompass, Hologramme über CMI.
 
 ---
 
 ## Survival Server Plugins
 
-### Economy & Jobs
+> **Aktiv.** Aufgeräumt und neu übertragen auf 26.2. Diese Liste entspricht dem Inhalt von `survival/plugins/`.
 
-#### Jobs
-- **Funktion:** Job-System für Economy
-- **Jobs:**
-  - Miner
-  - Woodcutter
-  - Builder
-  - Farmer
-  - Hunter
-  - Fischer
-- **Features:**
-  - Level-System pro Job
-  - Geld verdienen durch Aktionen
-  - Boni bei höherem Level
+### Tycoon & Progression
 
-#### ShopGUIPlus
-- **Funktion:** Shop-GUI für Economy
-- **Features:**
-  - Item-Kauf/Verkauf
-  - Kategorien
-  - Custom Preise
-  - Dynmaic Economy (optional)
-
-#### Vault
-- **Funktion:** Economy API
-- **Verwendung:** Backend für Economy-Plugins
-
-#### GlobalMarketPlus
-- **Funktion:** Globaler Marktplatz
-- **Features:**
-  - Spieler können Items verkaufen
-  - Auktions-System
-  - Marktplatz-GUI
-
-#### PlayerPoints
-- **Funktion:** Punkt-System (alternative Währung)
-
-### Land & Claims
-
-#### PlotSquared
-- **Funktion:** Plot-basiertes Claiming
-- **Features:**
-  - Automatische Plot-Generierung
-  - Plot-Merging
-  - Plot-Rechte
-  - Schematic-System
-
-#### GriefPrevention
-- **Funktion:** Alternative Claims (Freiform)
-- **Features:**
-  - Claims mit Golden Shovel
-  - Subdivisions
-  - Trust-System
-
-### Progression
+#### NextGens
+- **Funktion:** Generator-System — **Kern des Tycoon-Gamemodes**
+- **Features:** 25 Generator-Tiers (Erde → Bedrock) mit Sub-Levels, Auto-Produktion
 
 #### Rankup
-- **Funktion:** Rang-Progression-System
-- **Features:**
-  - Ranks basierend auf Geld
-  - Automatisches Rankup
-  - Permissions pro Rank
+- **Funktion:** Rang-Progression (25 Tycoon-Ränge, geldbasiert)
 
-### Mapping & Visualization
+#### Skript
+- **Funktion:** Custom Tycoon-Logik
+- **Verwendung:** Sell Wand, Chunk Collector, Tutorial, Prestige, Casino, Boss-Events, Daily/Weekly Rewards, dynamische Börse
+- **Config:** `survival/plugins/Skript/scripts/`
 
-#### Bluemap
-- **Funktion:** 3D-Web-Karte
-- **Features:**
-  - Live-Rendering
-  - Spieler-Positionen
-  - Marker
+#### Autorank
+- **Funktion:** Spielzeit-basierte Belohnungen/Meilensteine
+
+### Economy & Shops
+
+#### Jobs
+- **Funktion:** Job-System für zusätzliches Einkommen (mehrere Berufe)
+
+#### ShopGUIPlus
+- **Funktion:** Shop-GUI (Kauf/Verkauf, Kategorien, dynamische Preise)
+
+#### GlobalMarketPlus
+- **Funktion:** Globaler Marktplatz / Auktionshaus (Spieler-zu-Spieler)
+
+#### ChestShop
+- **Funktion:** Spieler-Läden per Truhe & Schild
+
+#### Vault
+- **Funktion:** Economy-API (Backend, angebunden an CMI)
+
+### Land, Welten & Building
+
+#### PlotSquared
+- **Funktion:** Plot-basiertes Claiming (Tycoon-Plots + Freebuild), Merging, Schematics
+
+#### Multiverse-Core (+ Multiverse-Inventories)
+- **Funktion:** Verwaltung mehrerer Welten (`tycoon`, `town`, `freebuild`) mit getrennten Inventaren
+
+#### VoidGen
+- **Funktion:** Void-/Leerwelt-Generator (u. a. für Plot-/Freebuild-Welten)
+
+#### Chunky
+- **Funktion:** Pre-Generierung von Chunks (Performance)
+
+#### WorldGuard
+- **Funktion:** Regionen-Schutz (gehärtet: TNT/Creeper/Feuer/Wither begrenzt)
+
+#### FastAsyncWorldEdit (FAWE)
+- **Funktion:** Async World-Editing
+
+#### AxiomPaper
+- **Funktion:** Advanced Building (Client-Side-Editing, Large-Scale-Edits)
+
+### Optik & Content
+
+#### Oraxen
+- **Funktion:** Custom Items und Texturen
+
+#### RoseStacker
+- **Funktion:** Entity-/Item-Stacking (Performance)
+
+#### RoseGarden
+- **Funktion:** Bibliothek/Backend für die Rose-Plugins
+
+#### HeadDatabase
+- **Funktion:** Datenbank dekorativer Köpfe (Deko/Shops)
+
+#### LibsDisguises
+- **Funktion:** Verkleidungen (Mob/Spieler) — u. a. für Events/Bosse
+
+#### BlueMap
+- **Funktion:** 3D-Web-Karte (Live-Rendering, Marker)
 - **Web-UI:** `http://<server-ip>:8100`
 
-### Core & Management
+### Core, Management & Bibliotheken
 
-#### CMI
-- **Funktion:** Core Management (siehe Lobby)
+#### CMI (+ CMILib)
+- **Funktion:** Core-Management (Economy, Homes, Teleport, Kits, Chat, AFK, Hologramme) — siehe Lobby
 
 #### LuckPerms
-- **Funktion:** Permissions (siehe Lobby)
-
-#### EssentialsX
-- **Funktion:** Basis-Befehle
-- **Features:**
-  - /home, /tpa, /spawn
-  - Kits
-  - Economy (optional)
+- **Funktion:** Permissions und Rang-/Plot-Limits (siehe Lobby)
 
 #### PlaceholderAPI
 - **Funktion:** Platzhalter (siehe Lobby)
@@ -292,9 +275,22 @@ Vollständige Übersicht aller verwendeten Plugins pro Server.
 #### ProtocolLib
 - **Funktion:** Packet-Manipulation (siehe Lobby)
 
+#### CommandAPI / NBTAPI
+- **Funktion:** Command- bzw. NBT-Bibliotheken (Backend)
+
+#### PartyAndFriendsGUI
+- **Funktion:** Party-/Freundeslisten-GUI (Backend zum Velocity-PAF)
+
+#### bStats / faststats / spark
+- **Funktion:** Statistik- und Performance-Werkzeuge
+
+> **Hinweis:** **EssentialsX**, **GriefPrevention**, **PlayerPoints** und ein separates DecentHolograms sind **nicht mehr** Teil des Survival-Servers — die Basis-Befehle und Hologramme übernimmt CMI, Claims laufen über PlotSquared/WorldGuard.
+
 ---
 
 ## Skyblock Server Plugins
+
+> **⚠️ Archiv.** Der Skyblock-Server wird zeitnah eingestellt und durch einen neuen Server ersetzt. Diese Liste wird nicht mehr gepflegt.
 
 ### Skyblock Core
 
@@ -450,6 +446,8 @@ Vollständige Übersicht aller verwendeten Plugins pro Server.
 ---
 
 ## RPG Server Plugins
+
+> **⚠️ Archiv.** Der RPG-Server wird zeitnah eingestellt und durch einen neuen Server ersetzt. Diese Liste wird nicht mehr gepflegt.
 
 ### MythicMobs Ecosystem (Premium)
 
@@ -689,7 +687,7 @@ Vollständige Übersicht aller verwendeten Plugins pro Server.
 2. **ProtocolLib** - Für Holograms, NPCs, Custom Features
 3. **LuckPerms** - Permissions-Management
 
-### MMO-Server (Skyblock & RPG)
+### MMO-Server (Skyblock & RPG) — *Archiv, wird eingestellt*
 
 1. **MMOCore** ← MythicLib
 2. **MMOItems** ← MythicLib
@@ -734,10 +732,10 @@ Vollständige Übersicht aller verwendeten Plugins pro Server.
 ```
 MinecraftMMO/
 ├── proxy/plugins/         # Proxy-Server Plugin-Configs
-├── lobby/plugins/         # Lobby-Server Plugin-Configs
-├── survival/plugins/      # Survival-Server Plugin-Configs
-├── skyblock/plugins/      # Skyblock-Server Plugin-Configs
-├── rpg/plugins/           # RPG-Server Plugin-Configs
+├── lobby/plugins/         # Lobby-Server Plugin-Configs        (AKTIV)
+├── survival/plugins/      # Survival-Server Plugin-Configs     (AKTIV)
+├── skyblock/plugins/      # Skyblock-Server Plugin-Configs     (ARCHIV — wird eingestellt)
+├── rpg/plugins/           # RPG-Server Plugin-Configs          (ARCHIV — wird eingestellt)
 └── crosscraft-guilds/     # CrossCraft Guilds Plugin (Eigenentwicklung)
 ```
 
@@ -745,11 +743,11 @@ MinecraftMMO/
 
 ---
 
-**Letzte Aktualisierung:** 2026-04-12
+**Letzte Aktualisierung:** 2026-08-15
 
-**Plugin-Anzahl:**
-- Velocity: 11 Plugins (inkl. Geyser)
-- Lobby: ~12 Plugins
-- Survival: ~15 Plugins
-- Skyblock: ~25 Plugins
-- RPG: ~40 Plugins
+**Plugin-Anzahl (Ist-Stand der Ordner):**
+- Velocity: 10 Plugins (inkl. Geyser + Floodgate)
+- Lobby: 16 Plugins *(aktiv, aufgeräumt)*
+- Survival: 35 Plugins *(aktiv, aufgeräumt)*
+- Skyblock: ~35 Plugins *(Archiv — wird eingestellt)*
+- RPG: ~50 Plugins *(Archiv — wird eingestellt)*

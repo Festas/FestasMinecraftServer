@@ -10,8 +10,8 @@
 2. [Server-Details](#2-server-details)
    - [Lobby](#21-lobby)
    - [Survival / Tycoon](#22-survival--tycoon)
-   - [Skyblock (MMO)](#23-skyblock-mmo)
-   - [RPG (MMO)](#24-rpg-mmo)
+   - [Skyblock (MMO) — Archiv](#23-skyblock-mmo--archiv-wird-eingestellt)
+   - [RPG (MMO) — Archiv](#24-rpg-mmo--archiv-wird-eingestellt)
 3. [Klassen-System](#3-klassen-system)
 4. [Item-System](#4-item-system)
 5. [Economy-System](#5-economy-system)
@@ -24,11 +24,13 @@
 ## 1. Netzwerk-Überblick
 
 **Server-IP:** `mc.festas-builds.com`  
-**Minecraft-Version:** 1.21.1 (Paper)  
+**Minecraft-Version:** 26.2 (Paper)  
 **Proxy:** Velocity  
 **Bedrock-Support:** Ja (Geyser + Floodgate — Handy, Konsole, Windows 10 Edition)  
 **Sprache:** Deutsch (primär)  
-**Status:** In Entwicklung / Early Access
+**Status:** Umstellung auf 26.2 — Fokus auf Lobby & Survival
+
+> **⚠️ Umbruch:** Aktiv weiterentwickelt werden derzeit nur **Lobby** und **Survival** (Plugins frisch aufgeräumt). Die MMO-Server **Skyblock** und **RPG** werden **zeitnah eingestellt** und durch **zwei neue Server** ersetzt (noch nicht festgelegt). Die Skyblock-/RPG-Abschnitte in diesem Dokument gelten als **Archiv/Referenz**.
 
 ### Netzwerk-Architektur
 
@@ -38,13 +40,15 @@ Internet
     ▼
 Velocity Proxy  (mc.festas-builds.com)
     │
-    ├──► Lobby          Haupt-Hub, Server-Navigation
-    ├──► Survival       Standard Survival + Tycoon-Gamemode
-    ├──► Skyblock       MMO-Skyblock mit RPG-Elementen
-    └──► RPG            Vollständiger MMO-RPG Open-World-Server
+    ├──► Lobby          Haupt-Hub, Server-Navigation           [AKTIV]
+    ├──► Survival       Standard Survival + Tycoon-Gamemode     [AKTIV]
+    ├──► Skyblock       MMO-Skyblock mit RPG-Elementen          [ARCHIV → Abbau]
+    └──► RPG            Vollständiger MMO-RPG Open-World-Server  [ARCHIV → Abbau]
+
+    Geplant: 2 neue Server ersetzen Skyblock & RPG (noch offen)
 ```
 
-Das Netzwerk kombiniert bewährte Konzepte aus bekannten Servern wie **Hypixel Skyblock** (Progression, Minions, Collections) und **Wynncraft** (Klassen-System, Quests, Story) mit zahlreichen eigenen Verbesserungen.
+Der aktive Fokus liegt auf dem **Survival/Tycoon**-Erlebnis und der **Lobby** als Hub. Die auslaufenden MMO-Server kombinierten Konzepte aus **Hypixel Skyblock** (Progression, Minions, Collections) und **Wynncraft** (Klassen, Quests, Story) — diese Inhalte werden mit der Abschaltung durch zwei neue Server-Konzepte abgelöst.
 
 ---
 
@@ -53,7 +57,7 @@ Das Netzwerk kombiniert bewährte Konzepte aus bekannten Servern wie **Hypixel S
 ### 2.1 Lobby
 
 **Funktion:** Willkommens-Hub und Server-Navigation  
-**Version:** Paper 1.21.1
+**Version:** Paper 26.2
 
 #### Features
 - Interaktive **NPC-Server-Selector** (FancyNpcs): Direkter Zugang zu RPG, Survival/Tycoon, Skyblock
@@ -75,7 +79,7 @@ Das Netzwerk kombiniert bewährte Konzepte aus bekannten Servern wie **Hypixel S
 ### 2.2 Survival / Tycoon
 
 **Funktion:** Klassisches Survival mit integriertem Generator-Tycoon-Gamemode  
-**Version:** Paper 1.21.1  
+**Version:** Paper 26.2  
 **Welten:** `tycoon` (Hauptwelt), `town` (Stadtbereich), `freebuild` (Kreativbereich)
 
 #### Tycoon-Gamemode
@@ -170,10 +174,12 @@ Nach Rang 25 kann man prestigen — alles wird zurückgesetzt, aber ein permanen
 
 ---
 
-### 2.3 Skyblock (MMO)
+### 2.3 Skyblock (MMO) — *Archiv, wird eingestellt*
+
+> **⚠️ Dieser Server wird zeitnah abgeschaltet** und durch einen neuen Server ersetzt. Inhalte nur noch als Referenz.
 
 **Funktion:** MMO-Skyblock mit RPG-Elementen und vollständiger Klassen-Integration  
-**Version:** Paper 1.21.1  
+**Version:** Paper 26.2  
 **Kapazität:** 50–100 Spieler  
 **Synchronisation:** HuskSync ↔ RPG-Server
 
@@ -236,10 +242,12 @@ Jede Sammlung hat Milestones mit exklusiven Belohnungen.
 
 ---
 
-### 2.4 RPG (MMO)
+### 2.4 RPG (MMO) — *Archiv, wird eingestellt*
+
+> **⚠️ Dieser Server wird zeitnah abgeschaltet** und durch einen neuen Server ersetzt. Inhalte nur noch als Referenz.
 
 **Funktion:** Vollständiger MMO-RPG Server mit Open World, Quests, Dungeons, Klassen und Story  
-**Version:** Paper 1.21.1  
+**Version:** Paper 26.2  
 **Kapazität:** 50–100 Spieler  
 **Synchronisation:** HuskSync ↔ Skyblock-Server
 
@@ -296,9 +304,11 @@ Die Welt ist in **5 Level-Zonen** eingeteilt:
 
 ---
 
-## 3. Klassen-System
+## 3. Klassen-System — *Archiv (MMO)*
 
-Das Klassen-System ist auf beiden MMO-Servern (RPG & Skyblock) identisch verfügbar. Fortschritt wird via HuskSync synchronisiert.
+> **⚠️ Gehört zu den auslaufenden MMO-Servern Skyblock & RPG.** Wird mit deren Abschaltung ersetzt.
+
+Das Klassen-System war auf beiden MMO-Servern (RPG & Skyblock) identisch verfügbar. Fortschritt wurde via HuskSync synchronisiert.
 
 ### Die 6 Klassen
 
@@ -518,6 +528,8 @@ Zwischen RPG ↔ Skyblock werden synchronisiert:
 
 > Dieser Abschnitt enthält einen fertigen Prompt, den du einem AI Agenten (z.B. GPT-4, Claude, Gemini, Cursor AI o.ä.) übergeben kannst, um eine vollständige Website für das MinecraftMMO Netzwerk zu erstellen oder eine bestehende Website zu überarbeiten.
 
+> **⚠️ Hinweis (26.2-Umstellung):** Der folgende Prompt beschreibt noch das **alte 4-Server-Setup** (inkl. Skyblock & RPG). Da der Fokus jetzt auf **Lobby & Survival** liegt und Skyblock/RPG durch **zwei neue Server** ersetzt werden, sollte der Prompt vor Verwendung entsprechend angepasst werden (Server-Karten, Klassen-/MMO-Sektionen, Version **26.2**).
+
 ---
 
 ### Vollständiger Prompt
@@ -537,7 +549,7 @@ Erstelle eine vollständige, responsive Website für einen deutschen Minecraft-S
 
 **Server-Name:** MinecraftMMO
 **Server-IP:** mc.festas-builds.com
-**Minecraft-Version:** 1.21.1
+**Minecraft-Version:** 26.2
 **Sprache:** Deutsch (primär)
 **Bedrock-Support:** Ja (Handy, Konsole, Windows 10 Edition — keine Java-Account-Pflicht)
 **Status:** Early Access / In Entwicklung
@@ -704,7 +716,7 @@ Vollständiger Wynncraft-inspirierter MMO-RPG Server mit Open World.
 
 ### Hero-Section
 - Großes Banner mit Server-Name und Tagline
-- Tagline-Vorschläge: "Erlebe ein einzigartiges MMO-Abenteuer auf Minecraft 1.21.1" oder "RPG trifft Skyblock — auf einem Server"
+- Tagline-Vorschläge: "Erlebe ein einzigartiges MMO-Abenteuer auf Minecraft 26.2" oder "RPG trifft Skyblock — auf einem Server"
 - Server-IP prominent mit Kopier-Button
 - Minecraft-Version Badge, Bedrock-Badge
 - "Jetzt spielen"-Button (klickt und zeigt IP zum Kopieren)
@@ -791,5 +803,5 @@ Erstelle die komplette Website als einzelne HTML-Datei (index.html) mit eingebet
 
 ---
 
-**Letzte Aktualisierung:** 2026-05-04  
-**Version:** 1.0
+**Letzte Aktualisierung:** 2026-08-15  
+**Version:** 1.1 (26.2-Umstellung: Fokus Lobby & Survival; Skyblock & RPG → Archiv)

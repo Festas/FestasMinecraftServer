@@ -213,7 +213,7 @@ Display: '&6Text'
 |--------|-------------|-----------|
 | MythicMobs | 5.0.0 | 5.7.0+ |
 | Citizens | 2.0.30 | 2.0.35+ |
-| Paper | 1.21.1 | Latest |
+| Paper | 26.2 | Latest |
 
 ## Backup-Befehl
 
