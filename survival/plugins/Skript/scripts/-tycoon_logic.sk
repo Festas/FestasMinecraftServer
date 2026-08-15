@@ -1,0 +1,303 @@
+# --- TYCOON LOGIC & SELLWAND SYSTEM (Final Fix v5) ---
+# Beinhaltet: Preise (ItemType-Safe), SellWand, Start-Logik, Reset.
+# Optionen entfernt & Loop-Values gefixt.
+
+# --- 1. PREISE LADEN ---
+on script load:
+    delete {tycoon_prices::*}
+    
+    # Tier 1
+    set {tycoon_prices::dirt} to 5
+    set {tycoon_prices::coarse dirt} to 10
+    # Tier 2
+    set {tycoon_prices::stone} to 10
+    set {tycoon_prices::stone bricks} to 20
+    # Tier 3
+    set {tycoon_prices::coal} to 20
+    set {tycoon_prices::coal block} to 180
+    # Tier 4
+    set {tycoon_prices::iron ingot} to 50
+    set {tycoon_prices::iron block} to 450
+    # Tier 5
+    set {tycoon_prices::copper ingot} to 80
+    set {tycoon_prices::copper block} to 720
+    # Tier 6
+    set {tycoon_prices::gold ingot} to 120
+    set {tycoon_prices::gold block} to 1080
+    # Tier 7
+    set {tycoon_prices::redstone} to 200
+    set {tycoon_prices::redstone block} to 1800
+    # Tier 8
+    set {tycoon_prices::lapis lazuli} to 450
+    set {tycoon_prices::lapis block} to 4050
+    # Tier 9
+    set {tycoon_prices::emerald} to 800
+    set {tycoon_prices::emerald block} to 7200
+    # Tier 10
+    set {tycoon_prices::diamond} to 1500
+    set {tycoon_prices::diamond block} to 13500
+    # Tier 11
+    set {tycoon_prices::obsidian} to 2500
+    set {tycoon_prices::crying obsidian} to 5000
+    # Tier 12
+    set {tycoon_prices::netherite scrap} to 5000
+    set {tycoon_prices::netherite ingot} to 20000
+    # Tier 13
+    set {tycoon_prices::tuff} to 8000
+    set {tycoon_prices::polished tuff} to 16000
+    # Tier 14
+    set {tycoon_prices::calcite} to 12000
+    set {tycoon_prices::amethyst shard} to 20000
+    # Tier 15
+    set {tycoon_prices::diorite} to 18000
+    set {tycoon_prices::polished diorite} to 36000
+    # Tier 16
+    set {tycoon_prices::andesite} to 25000
+    set {tycoon_prices::polished andesite} to 50000
+    # Tier 17
+    set {tycoon_prices::granite} to 40000
+    set {tycoon_prices::polished granite} to 80000
+    # Tier 18
+    set {tycoon_prices::basalt} to 60000
+    set {tycoon_prices::polished basalt} to 120000
+    # Tier 19
+    set {tycoon_prices::blackstone} to 100000
+    set {tycoon_prices::polished blackstone} to 200000
+    # Tier 20
+    set {tycoon_prices::purpur block} to 200000
+    set {tycoon_prices::purpur pillar} to 400000
+    # Tier 21
+    set {tycoon_prices::end stone} to 400000
+    set {tycoon_prices::end stone bricks} to 800000
+    # Tier 22
+    set {tycoon_prices::prismarine shard} to 800000
+    set {tycoon_prices::prismarine crystals} to 1600000
+    # Tier 23
+    set {tycoon_prices::soul soil} to 1500000
+    set {tycoon_prices::soul lantern} to 3000000
+    # Tier 24
+    set {tycoon_prices::magma cream} to 3000000
+    set {tycoon_prices::magma block} to 6000000
+    # Tier 25
+    set {tycoon_prices::bedrock} to 6000000
+    set {tycoon_prices::beacon} to 12000000
+    
+    send "&8[&6Tycoon&8] &aPreise geladen (V5)!" to console
+
+# --- 2. NEUER STAB BEFEHL ---
+command /tycoon_give_wand <player>:
+    permission: tycoon.admin
+    trigger:
+        set {_p} to arg-1
+        # NEUES ITEM: Goldhacke (Markt-Zepter)
+        set {_item} to golden hoe named "&e&lMarkt-Zepter" with lore "&7Rechtsklick auf Container," and "&7um den Inhalt zu verkaufen." and "" and "&7Multiplikator: &ax1.0"
+        enchant {_item} with unbreaking 1
+        add hide enchants to item flags of {_item}
+        add hide attributes to item flags of {_item}
+        give {_item} to {_p}
+        send "&8[&6Tycoon&8] &aDu hast das Markt-Zepter erhalten!" to {_p}
+
+# --- 3. VERKAUFS LOGIK ---
+on right click:
+    # Wir prüfen auf den NEUEN Namen
+    if name of player's tool is "&e&lMarkt-Zepter":
+        
+        # Check: Ist es ein Container?
+        if event-block is chest or trapped chest or barrel or shulker box:
+        
+            # WICHTIG: Event abbrechen (Kiste nicht öffnen)
+            cancel event
+            
+            set {_prefix} to "&8[&6Tycoon&8] &7"
+            
+            # Sicherheitscheck: Baurechte?
+            if player cannot build at event-block:
+                send "%{_prefix}%&cDu darfst hier nicht verkaufen!" to player
+                play sound "entity.villager.no" to player
+                stop
+                
+            set {_total} to 0
+            set {_count} to 0
+            set {_soldSomething} to false
+            
+            # Inventar loopen
+            loop all items in inventory of event-block:
+                set {_type} to "%type of loop-item%"
+                
+                # Wir prüfen direkt den Typ in unserer Liste
+                if {tycoon_prices::%{_type}%} is set:
+                    set {_price} to {tycoon_prices::%{_type}%}
+                    set {_amount} to item amount of loop-item
+                    
+                    add ({_price} * {_amount}) to {_total}
+                    add {_amount} to {_count}
+                    
+                    remove loop-item from inventory of event-block
+                    set {_soldSomething} to true
+            
+            if {_soldSomething} is true:
+                add {_total} to player's balance
+                send "%{_prefix}%&aVerkauft: &f%{_count}% Items &afür &e$%{_total}%" to player
+                play sound "entity.experience_orb.pickup" to player
+                
+                # Partikel
+                set {_loc} to location of event-block
+                add 1 to y-coord of {_loc}
+                add 0.5 to x-coord of {_loc}
+                add 0.5 to z-coord of {_loc}
+                set {_world} to world of {_loc}
+                execute console command "execute in %{_world}% run particle happy_villager %x-coord of {_loc}% %y-coord of {_loc}% %z-coord of {_loc}% 0.3 0.3 0.3 0.1 10 force"
+                
+            else:
+                send "%{_prefix}%&cKeine verkaufbaren Items gefunden!" to player
+                play sound "block.note_block.bass" to player
+
+# --- HELPER: KIT GEBEN ---
+function giveTycoonKit(p: player, genID: text):
+    set {_pName} to name of {_p}
+    
+    execute console command "nextgens give %{_pName}% %{_genID}% 1"
+    
+    # NEU: Unser Markt-Zepter geben
+    execute console command "tycoon_give_wand %{_pName}%"
+    
+    execute console command "tycoon_give_collector %{_pName}% 1"
+
+    set {_clockName} to "&6&lTycoon Manager"
+    if slot 4 of {_p}'s inventory is not clock:
+        set slot 4 of {_p}'s inventory to clock named {_clockName} with lore "&7Rechtsklick um das Menü zu öffnen"
+
+# --- BEFEHL: START ---
+command /tycoon start:
+    trigger:
+        set {_prefix} to "&8[&6Tycoon&8] &7"
+        set {_world} to "tycoon"
+        
+        if name of player's world is not {_world}:
+            send "%{_prefix}%&cBitte gehe erst in die Tycoon Welt!"
+            stop
+            
+        if player has permission "tycoon.started":
+            send "%{_prefix}%&aDu hast bereits gestartet! Teleportiere..."
+            make player execute command "plot home"
+            stop
+            
+        send "%{_prefix}%&eGrundstück wird zugewiesen..."
+        make player execute command "plot auto"
+        
+        set {_pName} to name of player
+        execute console command "luckperms user %{_pName}% parent add tycoon_erde world=%{_world}%"
+        execute console command "luckperms user %{_pName}% permission set tycoon.started true world=%{_world}%"
+        
+        wait 20 ticks
+        giveTycoonKit(player, "tier1_1")
+        
+        send title "&6&lTYCOON GESTARTET" with subtitle "&7Rang: Erde" to player for 5 seconds
+        play sound "ui.toast.challenge_complete" with volume 1 and pitch 1 to player
+
+# --- SHOP KAUF SYSTEM ---
+command /tycoon_buy_system <text> <number> <text>:
+    trigger:
+        set {_genID} to arg-1
+        set {_price} to arg-2
+        set {_name} to arg-3
+        set {_p} to player
+        
+        set {_balance} to {_p}'s balance
+        
+        if {_balance} >= {_price}:
+            remove {_price} from {_p}'s balance
+            set {_pName} to name of {_p}
+            execute console command "nextgens give %{_pName}% %{_genID}% 1"
+            
+            send "&8[&6Shop&8] &aDu hast %{_name}% &agekauft für &e$%{_price}%&a!"
+            play sound "entity.player.levelup" to {_p}
+        else:
+            send "&8[&6Shop&8] &cFehler: Dir fehlen &e%({_price} - {_balance})%$&c!"
+            send "&8[&6Shop&8] &7Dein Kontostand: &c%{_balance}% &7/ &a%{_price}%"
+            play sound "entity.villager.no" to {_p}
+
+# --- COLLECTOR KAUF SYSTEM ---
+command /tycoon_buy_collector <number> <text>:
+    trigger:
+        set {_price} to arg-1
+        set {_name} to arg-2
+        set {_p} to player
+        set {_balance} to {_p}'s balance
+        
+        if {_balance} >= {_price}:
+            remove {_price} from {_p}'s balance
+            execute console command "tycoon_give_collector %name of {_p}% 1"
+            send "&8[&6Shop&8] &aDu hast %{_name}% &agekauft für &e$%{_price}%&a!"
+            play sound "block.ender_chest.open" to {_p}
+        else:
+            send "&8[&6Shop&8] &cFehler: Dir fehlen &e%({_price} - {_balance})%$&c!"
+            play sound "entity.villager.no" to {_p}
+
+# --- MASTER BEFEHL: Rankup & Reset ---
+command /tycoon_perform_rankup <player> <text> <text>:
+    permission: tycoon.admin
+    trigger:
+        set {_p} to arg-1
+        set {_targetRank} to arg-2
+        set {_targetGen} to arg-3
+        set {_pName} to name of {_p}
+        set {_world} to "tycoon"
+        
+        send "&8[&6Tycoon&8] &eAufstieg wird vorbereitet... &7(Bitte warten)" to {_p}
+        
+        # 1. FREEZE
+        apply potion of slowness of tier 255 without particles to {_p} for 8 seconds
+        apply potion of jump boost of tier 200 without particles to {_p} for 8 seconds
+        apply potion of blindness of tier 1 without particles to {_p} for 4 seconds
+        
+        # 5. FINALER RESET
+        clear {_p}'s inventory
+        set {_p}'s balance to 0
+        
+        # 2. Teleport
+        make {_p} execute command "plot home tycoon"
+        wait 20 ticks
+        teleport {_p} to location 4 meters in front of {_p}
+        
+        # 3. AUFRÄUMEN
+        execute console command "gens removegenerators %{_pName}%"        
+        
+        send "&8[&6Tycoon&8] &7Entferne Maschinen..." to {_p}
+        wait 30 ticks
+        
+        send "&8[&6Tycoon&8] &7Setze Grundstück zurück..." to {_p}
+        
+        execute console command "lp user %{_pName}% permission set plots.*"
+        wait 30 ticks
+        make {_p} execute command "plot clear"
+        wait 10 ticks
+        make {_p} execute command "plot confirm"
+        wait 10 ticks
+        make {_p} execute command "plot schematic paste tycoon"
+        wait 10 ticks
+        execute console command "lp user %{_pName}% permission unset plots.*"
+
+        wait 10 ticks
+        
+        # 5. FINALER RESET
+        clear {_p}'s inventory
+        set {_p}'s balance to 0
+        
+        # 6. Rang & Kit
+        execute console command "luckperms user %{_pName}% parent set tycoon_%{_targetRank}% world=%{_world}%"
+        giveTycoonKit({_p}, {_targetGen})
+        
+        send "&8[&6Tycoon&8] &aAufstieg erfolgreich! Willkommen bei %{_targetRank}%." to {_p}
+        play sound "ui.toast.challenge_complete" with volume 1 and pitch 1 to {_p}
+
+# --- WELT-SCHUTZ ---
+on command "/rankup":
+    if name of player's world is not "tycoon":
+        cancel event
+        send "&8[&6Tycoon&8] &cDieser Befehl ist nur in der Tycoon Welt verfügbar!"
+
+on command "/prestige":
+    if name of player's world is not "tycoon":
+        cancel event
+        send "&8[&6Tycoon&8] &cDieser Befehl ist nur in der Tycoon Welt verfügbar!"

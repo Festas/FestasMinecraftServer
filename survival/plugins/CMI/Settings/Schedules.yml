@@ -15,6 +15,7 @@
 #       Hour: 22
 #       Minute: 30
 #   You can use week day names to indicate at which day in a week this sheduler should be performed. Example - Day: Monday
+#   FirstMonthDay or LastMonthDay can be used to indicate at which month day this scheduler should be performed. This replaces Day section. Example - FirstMonthDay: Friday which will trigger scheduler at first friday of the month
 #   This will set commands to be performed on 4 a clock in morning and at 22:30. Good way to control server backups when there is less players online
 # Repeat: (true/false) if set to false, action will be performed only once other wise it will be repeated all the time in intervals or on particular time
 # MinPlayers: (amount) Will limit minimum player amount there should be online when command performe

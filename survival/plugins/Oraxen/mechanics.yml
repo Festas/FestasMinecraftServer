@@ -40,68 +40,39 @@ custom_block_sounds:
   noteblock_and_block: true
   stringblock_and_furniture: true
   chorusblock: true
+  block: true
+  furniture: true
 
 # legacy blocks using mushroom stems, prefer to use noteblock
 block:
-  tool_types:
-    - WOODEN
-    - STONE
-    - IRON
-    - GOLDEN
-    - DIAMOND
-    - NETHERITE
-  enabled: false
-
-noteblock:
-  tool_types:
-    - WOODEN
-    - STONE
-    - IRON
-    - GOLDEN
-    - DIAMOND
-    - NETHERITE
-    - # ticks between each check for dryout
-  farmblock_check_delay: 1000
-  # Removes the mineable/axe tag from noteblocks for player
-  # This is to prevent axes from breaking custom-blocks in normal speed
-  remove_mineable_tag: false
   enabled: true
-
-stringblock:
-    tool_types:
-      - WOODEN
-      - STONE
-      - IRON
-      - GOLDEN
-      - DIAMOND
-      - NETHERITE
-    sapling_growth_check_delay: 4000
-    disable_vanilla_strings: false
-    enabled: true
-
-chorusblock:
-    tool_types:
-      - WOODEN
-      - STONE
-      - IRON
-      - GOLDEN
-      - DIAMOND
-      - NETHERITE
-    enabled: true
+  tool-types:
+  - WOODEN
+  - STONE
+  - IRON
+  - GOLDEN
+  - DIAMOND
+  - NETHERITE
+  farmblock-check-delay: 1000
+  sapling-growth-check-delay: 4000
+  disable-vanilla-strings: false
+  remove-mineable-tag: false
+  convert-vanilla-waxed: true
+  handle-world-generation: true
 
 furniture:
   default_furniture_type: DISPLAY_ENTITY # DISPLAY_ENTITY, ITEM_FRAME, GLOW_ITEM_FRAME
   tool_types:
-    - WOODEN
-    - STONE
-    - IRON
-    - GOLDEN
-    - DIAMOND
-    - NETHERITE
+  - WOODEN
+  - STONE
+  - IRON
+  - GOLDEN
+  - DIAMOND
+  - NETHERITE
   # ticks between each check for plant growth
   evolution_check_delay: 200
   enabled: true
-  detect_viabackwards: true  # Blocks use of Item Display Furniture when server allows clients below 1.19.4
+  detect_viabackwards: true # Blocks use of Item Display Furniture when server allows clients below 1.19.4
 
 durability:
   enabled: true
@@ -171,7 +142,7 @@ smelting:
   enabled: true
   # To remove an item that should not be cooked, add it here !
   blacklist_cooked:
-    - WET_SPONGE
+  - WET_SPONGE
 
 bottledexp:
   enabled: true
@@ -186,4 +157,8 @@ harvesting:
   enabled: true
 
 watering:
+  enabled: true
+backpack_cosmetic:
+  enabled: true
+knockback_strike:
   enabled: true

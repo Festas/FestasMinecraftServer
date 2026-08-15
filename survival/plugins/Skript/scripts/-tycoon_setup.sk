@@ -1,0 +1,483 @@
+# WICHTIG:
+# 1. Wir nutzen "luckperms" statt "lp" (sicherer).
+# 2. Wir haben "setdisplayname" entfernt (Fehlerquelle).
+# 3. Wir nutzen keine doppelten Anführungszeichen mehr beim Prefix.
+
+command /sthc:
+    permission: op
+    trigger:
+        send "&eStarte Setup (Kompatibilitäts-Modus)..." to console
+        
+        # --- ERDE ---
+        # 1. Erstellen
+        execute console command "luckperms creategroup tycoon_erde"
+        wait 20 ticks # 1 Sekunde warten, damit die DB synchronisiert
+        
+        # 2. Weight & Prefix (Ohne Displayname)
+        execute console command "luckperms group tycoon_erde setweight 1000"
+        wait 5 ticks
+        # WICHTIG: Keine Leerzeichen IM Prefix nutzen, sonst brauchen wir Quotes
+        execute console command "luckperms group tycoon_erde meta setprefix &6[Erde]&r world=tycoon"
+        wait 5 ticks
+        
+        # 3. Permissions
+        execute console command "luckperms group tycoon_erde permission set tycoon.unlock.erde true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_erde permission set plots.plot.1 world=tycoon"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_erde permission set plots.delete false world=tycoon"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_erde permission set nextgens.shop true world=tycoon"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_erde permission set tycoon.rank.1 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_erde permission set shopguiplus.price-modifier.p1 true"
+        
+        send "&eErde fertig." to console
+        wait 10 ticks
+        
+        # --- STEIN ---
+        execute console command "luckperms creategroup tycoon_stein"
+        wait 20 ticks
+        
+        execute console command "luckperms group tycoon_stein setweight 1010"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_stein meta setprefix &7[Stein]&r world=tycoon"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_stein permission set tycoon.unlock.stein true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_stein permission set tycoon.rank.2 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_stein permission set shopguiplus.price-modifier.p2 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_stein parent add tycoon_erde"
+        
+        send "&eStein fertig." to console
+        wait 10 ticks
+        
+        # --- KOHLE ---
+        execute console command "luckperms creategroup tycoon_kohle"
+        wait 20 ticks
+        
+        execute console command "luckperms group tycoon_kohle setweight 1020"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_kohle meta setprefix &8[Kohle]&r world=tycoon"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_kohle permission set tycoon.unlock.kohle true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_kohle permission set tycoon.rank.3 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_kohle permission set shopguiplus.price-modifier.p3 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_kohle parent add tycoon_stein"
+        
+        send "&eKohle fertig." to console
+        wait 10 ticks
+
+        # --- EISEN ---
+        execute console command "luckperms creategroup tycoon_eisen"
+        wait 20 ticks
+        
+        execute console command "luckperms group tycoon_eisen setweight 1030"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_eisen meta setprefix &f[Eisen]&r world=tycoon"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_eisen permission set tycoon.unlock.eisen true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_eisen permission set tycoon.rank.4 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_eisen permission set shopguiplus.price-modifier.p4 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_eisen parent add tycoon_kohle"
+        
+        send "&eEisen fertig." to console
+        wait 10 ticks
+
+        # --- KUPFER ---
+        execute console command "luckperms creategroup tycoon_kupfer"
+        wait 20 ticks
+        
+        execute console command "luckperms group tycoon_kupfer setweight 1040"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_kupfer meta setprefix &c[Kupfer]&r world=tycoon"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_kupfer permission set tycoon.unlock.kupfer true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_kupfer permission set tycoon.rank.5 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_kupfer permission set shopguiplus.price-modifier.p5 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_kupfer parent add tycoon_eisen"
+
+        send "&eKupfer fertig." to console
+        wait 10 ticks
+
+        # --- GOLD ---
+        execute console command "luckperms creategroup tycoon_gold"
+        wait 20 ticks
+        
+        execute console command "luckperms group tycoon_gold setweight 1050"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_gold meta setprefix &6[Gold]&r world=tycoon"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_gold permission set tycoon.unlock.gold true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_gold permission set tycoon.rank.6 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_gold permission set shopguiplus.price-modifier.p6 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_gold parent add tycoon_kupfer"
+
+        send "&eGold fertig." to console
+        wait 10 ticks
+        
+        # --- REDSTONE ---
+        execute console command "luckperms creategroup tycoon_redstone"
+        wait 20 ticks
+        
+        execute console command "luckperms group tycoon_redstone setweight 1060"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_redstone meta setprefix &c[Redstone]&r world=tycoon"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_redstone permission set tycoon.unlock.redstone true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_redstone permission set tycoon.rank.7 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_redstone permission set shopguiplus.price-modifier.p7 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_redstone parent add tycoon_gold"
+        
+        send "&eRedstone fertig." to console
+        wait 10 ticks
+        
+        # --- LAPIS ---
+        execute console command "luckperms creategroup tycoon_lapis"
+        wait 20 ticks
+        
+        execute console command "luckperms group tycoon_lapis setweight 1070"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_lapis meta setprefix &9[Lapis]&r world=tycoon"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_lapis permission set tycoon.unlock.lapis true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_lapis permission set tycoon.rank.8 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_lapis permission set shopguiplus.price-modifier.p8 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_lapis parent add tycoon_redstone"
+        
+        send "&eLapis fertig." to console
+        wait 10 ticks
+        
+        # --- SMARAGD ---
+        execute console command "luckperms creategroup tycoon_smaragd"
+        wait 20 ticks
+        
+        execute console command "luckperms group tycoon_smaragd setweight 1080"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_smaragd meta setprefix &a[Smaragd]&r world=tycoon"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_smaragd permission set tycoon.unlock.smaragd true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_smaragd permission set tycoon.rank.9 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_smaragd permission set shopguiplus.price-modifier.p9 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_smaragd parent add tycoon_lapis"
+        
+        send "&eSmaragd fertig." to console
+        wait 10 ticks
+        
+        # --- DIAMANT ---
+        execute console command "luckperms creategroup tycoon_diamant"
+        wait 20 ticks
+        
+        execute console command "luckperms group tycoon_diamant setweight 1090"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_diamant meta setprefix &b[Diamant]&r world=tycoon"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_diamant permission set tycoon.unlock.diamant true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_diamant permission set tycoon.rank.10 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_diamant permission set shopguiplus.price-modifier.p10 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_diamant parent add tycoon_smaragd"
+        
+        send "&eDiamant fertig." to console
+        wait 10 ticks
+        
+        # --- OBSIDIAN ---
+        execute console command "luckperms creategroup tycoon_obsidian"
+        wait 20 ticks
+        
+        execute console command "luckperms group tycoon_obsidian setweight 1100"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_obsidian meta setprefix &5[Obsidian]&r world=tycoon"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_obsidian permission set tycoon.unlock.obsidian true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_obsidian permission set tycoon.rank.11 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_obsidian permission set shopguiplus.price-modifier.p11 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_obsidian parent add tycoon_diamant"
+        
+        send "&eObsidian fertig." to console
+        wait 10 ticks
+        
+        # --- NETHERITE ---
+        execute console command "luckperms creategroup tycoon_netherite"
+        wait 20 ticks
+        
+        execute console command "luckperms group tycoon_netherite setweight 1110"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_netherite meta setprefix &4[Netherite]&r world=tycoon"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_netherite permission set tycoon.unlock.netherite true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_netherite permission set tycoon.rank.12 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_netherite permission set shopguiplus.price-modifier.p12 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_netherite parent add tycoon_obsidian"
+        
+        send "&eNetherite fertig." to console
+        wait 10 ticks
+        
+        # --- TUFF ---
+        execute console command "luckperms creategroup tycoon_tuff"
+        wait 20 ticks
+        
+        execute console command "luckperms group tycoon_tuff setweight 1120"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_tuff meta setprefix &7[Tuff]&r world=tycoon"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_tuff permission set tycoon.unlock.tuff true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_tuff permission set tycoon.rank.13 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_tuff permission set shopguiplus.price-modifier.p13 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_tuff parent add tycoon_netherite"
+        
+        send "&eTuff fertig." to console
+        wait 10 ticks
+
+        # --- CALCIT ---
+        execute console command "luckperms creategroup tycoon_calcit"
+        wait 20 ticks
+        
+        execute console command "luckperms group tycoon_calcit setweight 1130"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_calcit meta setprefix &f[Calcit]&r world=tycoon"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_calcit permission set tycoon.unlock.calcit true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_calcit permission set tycoon.rank.14 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_calcit permission set shopguiplus.price-modifier.p14 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_calcit parent add tycoon_tuff"
+        send "&eCalcit fertig." to console
+        wait 10 ticks
+
+        # --- DIORIT ---
+        execute console command "luckperms creategroup tycoon_diorit"
+        wait 20 ticks
+        
+        execute console command "luckperms group tycoon_diorit setweight 1140"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_diorit meta setprefix &f[Diorit]&r world=tycoon"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_diorit permission set tycoon.unlock.diorit true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_diorit permission set tycoon.rank.15 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_diorit permission set shopguiplus.price-modifier.p15 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_diorit parent add tycoon_calcit"
+        send "&eDiorit fertig." to console
+        wait 10 ticks
+        
+        # --- ANDESIT ---
+        execute console command "luckperms creategroup tycoon_andesit"
+        wait 20 ticks
+        
+        execute console command "luckperms group tycoon_andesit setweight 1150"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_andesit meta setprefix &7[Andesit]&r world=tycoon"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_andesit permission set tycoon.unlock.andesit true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_andesit permission set tycoon.rank.16 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_andesit permission set shopguiplus.price-modifier.p16 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_andesit parent add tycoon_diorit"
+        send "&eAndesit fertig." to console
+        wait 10 ticks
+        
+        # --- GRANIT ---
+        execute console command "luckperms creategroup tycoon_granit"
+        wait 20 ticks
+        
+        execute console command "luckperms group tycoon_granit setweight 1160"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_granit meta setprefix &c[Granit]&r world=tycoon"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_granit permission set tycoon.unlock.granit true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_granit permission set tycoon.rank.17 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_granit permission set shopguiplus.price-modifier.p17 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_granit parent add tycoon_andesit"
+        send "&eGranit fertig." to console
+        wait 10 ticks
+        
+        # --- BASALT ---
+        execute console command "luckperms creategroup tycoon_basalt"
+        wait 20 ticks
+        
+        execute console command "luckperms group tycoon_basalt setweight 1170"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_basalt meta setprefix &8[Basalt]&r world=tycoon"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_basalt permission set tycoon.unlock.basalt true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_basalt permission set tycoon.rank.18 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_basalt permission set shopguiplus.price-modifier.p18 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_basalt parent add tycoon_granit"
+        send "&eBasalt fertig." to console
+        wait 10 ticks
+        
+        # --- SCHWARZSTEIN ---
+        execute console command "luckperms creategroup tycoon_schwarzstein"
+        wait 20 ticks
+        
+        execute console command "luckperms group tycoon_schwarzstein setweight 1180"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_schwarzstein meta setprefix &0[Schwarzstein]&r world=tycoon"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_schwarzstein permission set tycoon.unlock.schwarzstein true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_schwarzstein permission set tycoon.rank.19 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_schwarzstein permission set shopguiplus.price-modifier.p19 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_schwarzstein parent add tycoon_basalt"
+        send "&eSchwarzstein fertig." to console
+        wait 10 ticks
+        
+        # --- PURPUR ---
+        execute console command "luckperms creategroup tycoon_purpur"
+        wait 20 ticks
+        
+        execute console command "luckperms group tycoon_purpur setweight 1190"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_purpur meta setprefix &d[Purpur]&r world=tycoon"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_purpur permission set tycoon.unlock.purpur true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_purpur permission set tycoon.rank.20 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_purpur permission set shopguiplus.price-modifier.p20 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_purpur parent add tycoon_schwarzstein"
+        send "&ePurpur fertig." to console
+        wait 10 ticks
+        
+        # --- ENDSTEIN ---
+        execute console command "luckperms creategroup tycoon_endstein"
+        wait 20 ticks
+        
+        execute console command "luckperms group tycoon_endstein setweight 1200"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_endstein meta setprefix &e[Endstein]&r world=tycoon"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_endstein permission set tycoon.unlock.endstein true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_endstein permission set tycoon.rank.21 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_endstein permission set shopguiplus.price-modifier.p21 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_endstein parent add tycoon_purpur"
+        send "&eEndstein fertig." to console
+        wait 10 ticks
+        
+        # --- PRISMARIN ---
+        execute console command "luckperms creategroup tycoon_prismarin"
+        wait 20 ticks
+        
+        execute console command "luckperms group tycoon_prismarin setweight 1210"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_prismarin meta setprefix &b[Prismarin]&r world=tycoon"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_prismarin permission set tycoon.unlock.prismarin true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_prismarin permission set tycoon.rank.22 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_prismarin permission set shopguiplus.price-modifier.p22 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_prismarin parent add tycoon_endstein"
+        send "&ePrismarin fertig." to console
+        wait 10 ticks
+        
+        # --- SEELENERDE ---
+        execute console command "luckperms creategroup tycoon_seelenerde"
+        wait 20 ticks
+        
+        execute console command "luckperms group tycoon_seelenerde setweight 1220"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_seelenerde meta setprefix &8[Seelenerde]&r world=tycoon"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_seelenerde permission set tycoon.unlock.seelenerde true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_seelenerde permission set tycoon.rank.23 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_seelenerde permission set shopguiplus.price-modifier.p23 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_seelenerde parent add tycoon_prismarin"
+        send "&eSeelenerde fertig." to console
+        wait 10 ticks
+        
+        # --- MAGMA ---
+        execute console command "luckperms creategroup tycoon_magma"
+        wait 20 ticks
+        
+        execute console command "luckperms group tycoon_magma setweight 1230"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_magma meta setprefix &6[Magma]&r world=tycoon"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_magma permission set tycoon.unlock.magma true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_magma permission set tycoon.rank.24 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_magma permission set shopguiplus.price-modifier.p24 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_magma parent add tycoon_seelenerde"
+        send "&eMagma fertig." to console
+        wait 10 ticks
+        
+        # --- BEDROCK ---
+        execute console command "luckperms creategroup tycoon_bedrock"
+        wait 20 ticks
+        
+        execute console command "luckperms group tycoon_bedrock setweight 1240"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_bedrock meta setprefix &8[Bedrock]&r world=tycoon"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_bedrock permission set tycoon.unlock.bedrock true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_bedrock permission set tycoon.rank.25 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_bedrock permission set shopguiplus.price-modifier.p25 true"
+        wait 5 ticks
+        execute console command "luckperms group tycoon_bedrock parent add tycoon_magma"
+
+        send "&aFERTIG! Alles ohne Fehler erstellt." to console
+
+

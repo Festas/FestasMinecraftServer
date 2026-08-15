@@ -18,8 +18,8 @@ mysql:
   hostname: localhost:3306
   database: minecraft
   table-prefix: jobs_
-  verify-server-certificate: true
-  use-ssl: true
+  verify-server-certificate: false
+  use-ssl: false
   auto-reconnect: true
   characterEncoding: utf8
   encoding: UTF-8
@@ -155,7 +155,7 @@ jobs-shop-enabled: true
 # Use jobs.nearspawner.[amount] to define multiplayer. Example jobs.nearspawner.-0.5 will pay half of payment, jobs.nearspawner.-1 will not pay at all
 enable-pay-near-spawner: true
 # Option to allow payment to be made in creative mode. This ignoring when a group has 'jobs.paycreative' permission.
-enable-pay-creative: false
+enable-pay-creative: true
 # Option to allow payment to be made for exploring when player flies
 enable-pay-for-exploring-when-flying: true
 # Option to allow payment to be made for exploring when player gliding.
@@ -177,7 +177,7 @@ enable-boosted-armor-items: true
 # Tool and weapon items will be ignored if those are equiped in players armor slots
 # None tool or weapon items will be allowed in players head slot
 boosted-items-slot-specific: true
-# Extra boost values for nearSpawner and petPay will be multiplied by sum of other boost values
+# Extra boost values for nearSpawner, petPay, and mcMMO will be multiplied by sum of other boost values
 # When set to true and for example nearSpawner set to -0.98 aka 2% of original payment with other bonuses which should double payment will result in you getting 4% instead of corrent 102% payment
 # If set to false all bonus are sumed to one
 multiply-boosted-extra-values: false
@@ -190,7 +190,7 @@ highest-permission-boost: false
 add-permission-boost: false
 # When enabled we will try to pay player for blocks above broken ones. This only applies to sugarcane, bamboo, kelp and weeping_vines
 pay-for-above: false
-# Allows to pay for stacked entities for each one. Requires StackMob or WildStacker.
+# Allows to pay for stacked entities for each one. Requires StackMob, WildStacker or RoseStacker.
 pay-for-stacked-entities: false
 # Allows, when losing maximum durability of item then it does not pay the player until it is repaired.
 # E.g. the player wants to enchant a item with enchanting table and the item has durability loss then not paying.
@@ -616,6 +616,8 @@ JobsGUI:
     - DIAMOND_SWORD
     MMKILL:
     - WOODEN_SWORD
+    FORCEKILL:
+    - IRON_SWORD
     FISH:
     - FISHING_ROD
     PYROFISHINGPRO:
@@ -662,6 +664,8 @@ JobsGUI:
     - HONEYCOMB
     SCRAPE:
     - WOODEN_AXE
+    EVENMOREFISH:
+    - TROPICAL_FISH
   # Do you want to show chat information when performing /jobs browse command?
   ShowChatBrowse: true
   # With true left mouse button will join job and right will show more info.
@@ -705,6 +709,8 @@ Commands:
       # List of player names who should be excluded from /jobs top & /jobs gtop
       HiddenPlayers:
       - Zrips
+      # Whether to include archived level/experience in /jobs top & /jobs gtop
+      IncludeArchivedStats: false
     Placeholders:
       # Defines amount of placeholders to be shown in one page for /jobs placeholders
       AmountToShow: 10

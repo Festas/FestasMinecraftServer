@@ -1,44 +1,6 @@
-economy:
-  error:
-    nomoney: Die Bank hat kein Geld mehr!
 limitedItem:
   error:
     levelup: '&cDu musst den Job [jobname] leveln, um das Item zu benutzen!'
-general:
-  info:
-    toplineseparator: '&7*********************** &6%playername% &7***********************'
-    separator: '&7*******************************************************'
-    paymentType:
-      MONEY: Money
-      EXP: Exp
-      POINTS: Points
-    paymentTypeValued:
-      MONEY: '&2Money: %amount%'
-      EXP: '&eExp: %amount%'
-      POINTS: '&6Points: %amount%'
-    invalidPage: '&cUngültige Seite.'
-    blocks:
-      furnace: Ofen
-      smoker: Räucherofen
-      blastfurnace: Hochofen
-      brewingstand: Braustand
-    join: '&eClick to join job'
-    leave: '&cClick to leave job'
-  admin:
-    error: '&cBei der Ausführung des Befehls ist ein Fehler aufgetreten.'
-    success: '&eDer Befehl wurde erfolgreich ausgeführt.'
-  error:
-    noHelpPage: '&cEs gibt keine Hilfsseite mit dieser Nummer!'
-    job: '%cDer Job, den du ausgesucht hast existiert nicht oder du bist nicht diesem
-      beigetreten'
-    jobname: '&cCan''t find job by this name!'
-    # Only %playername% can be used here
-    noinfoByPlayer: '&cKeine Informationen für [%playername%] gefunden!'
-    worldisdisabled: '&cDer Befehl kann nicht in dieser Welt ausgeführt werden!'
-    newRegistration: '#&eNeuer Besitzer für [block] &7[current]&e/&f[max] wurde registriert.'
-    reenabledBlock: '&eReenabled ownership'
-    noRegistration: '&c Du hast die maximale [block]-Zahl erreicht!'
-    blockDisabled: '&6Payments from &e[type] &6got disabled. &2[location]'
 command:
   help:
     output:
@@ -104,53 +66,6 @@ command:
       info: Konvertiert das Datenbanksystem vom einen zum anderen. Benutzt du momentan
         SQLite, wird zu MySQL konvertiert und andersherum.
       args: ''
-  limit:
-    help:
-      info: Zeigt die Lohnbegrenzung für Jobs an.
-      args: '[playername]'
-    output:
-      moneytime: '&eZeit bis zum Zurücksetzen des Geldlimits: &2%time%'
-      moneyLimit: '&eGeldlimit: &2%current%&e/&2%total%'
-      exptime: '&eZeit bis zum Reset des XP-Limits: &2%time%'
-      expLimit: '&eXP-Limit: &2%current%&e/&2%total%'
-      pointstime: '&eZeit bis zum Reset des Punktelimits: &2%time%'
-      pointsLimit: '&ePunktelimit: &2%current%&e/&2%total%'
-      reachedmoneylimit: '&4Du hast dein Geldlimit erreicht!'
-      reachedmoneylimit2: '&eDu kannst dein Geldlimit mit &2/jobs limit &eabfragen.'
-      reachedmoneylimit3: '&eDas verdiente Geld wird exponentiell reduziert... Aber
-        du verdienst immer noch etwas!'
-      reachedexplimit: '&4Du hast dein XP-Limit erreicht!'
-      reachedexplimit2: '&eDu kannst dein XP-Limit mit &2/jobs limit &eabfragen'
-      reachedpointslimit: '&4Du hast dein Punktelimit erreicht!'
-      reachedpointslimit2: '&eDu kannst dein Punktelimit mit &2/jobs limit &eabfragen'
-      notenabled: '&eEs ist keine Lohnbegrenzung aktiviert.'
-  resetexploreregion:
-    help:
-      info: Resets region data of Explorering
-      args: world [worldname]
-    output:
-      notenabled: '&eNot enabled.'
-      invalidname: '&eInvalid world name'
-      reseted: '&eExploring region data has been reset for: &2%worldname%'
-  resetlimit:
-    help:
-      info: Setzt das Geldlimit der Spieler zurück
-      args: '[playername]'
-    output:
-      reseted: '&eLohnbegrenzung wurde für &2%playername% zurückgesetzt.'
-  resetquesttotal:
-    help:
-      info: Resets a player's done quest counter
-      args: '[playername]/all'
-    output:
-      reseted: '&eDone quests have been reset for: &2%playerdisplayname%'
-  resetquest:
-    help:
-      info: Quest des Spielers zurücksetzen
-      args: '[playername] [jobname]'
-    output:
-      reseted: '&eDie Quest wurde für &2%playername% zurückgesetzt.'
-      noQuests: '&eEs konnte keine Quest gefunden werden.'
   points:
     help:
       info: Zeigt die Punkteanzahl einzelner Spieler an.
@@ -351,6 +266,9 @@ command:
       mmkill:
         info: '&eMMKill'
         none: '%jobname% erhält keinen Verdienst für das Töten von MythicMobs.'
+      forcekill:
+        info: '&eForceKill'
+        none: '%jobname% does not get money for (ForceKill) action.'
       fish:
         info: '&eAngeln'
         none: '%jobname% erhält keinen Verdienst für das Angeln.'
@@ -420,6 +338,9 @@ command:
       scrape:
         info: '&eScrape'
         none: '%jobname% does not get money for (Scrape) action.'
+      evenmorefish:
+        info: '&eEvenMoreFish'
+        none: '%jobname% does not get money for (EvenMoreFish) action.'
   playerinfo:
     help:
       info: Zeigt für jeden Job eines anderen Spielers an, wieviel er wofür verdient.
@@ -506,14 +427,6 @@ command:
       cleared: '&2Entfernt&7[furnaces] &2Öfen, &7[brewing] &2Braustände, &7[smoker]&2
         Räucheröfen and &7[blast]&2 Hochöfen.'
       lost: '&cLost ownership of &7[type] &cat [location]'
-  skipquest:
-    help:
-      info: Überspringe die definierte Quest und erhalte eine neue.
-      args: '[jobname] [questname] (playerName)'
-    output:
-      questSkipForCost: '&2Du hast die Quest übersprungen und &e%amount%€ bezahlt.'
-    confirmationNeed: '&cAre you sure you want to skip&e [questName]&c quest? Type
-      the command again within&6 [time] seconds &cto confirm!'
   quests:
     help:
       info: Verfügbare Quests auflisten
@@ -669,6 +582,15 @@ command:
       args: '[playername] [jobname] [levels]'
     output:
       target: Du wurdest %levelslost% Level in %jobname% zurückgestuft.
+  deluser:
+    help:
+      info: Delete a player from the jobs database.
+      args: '[playername]'
+    output:
+      target: You have been removed from the jobs database.
+    confirmationNeed: '&cAre you sure you want to delete &e[playername]&c from the
+      database? This cannot be reversed! Type the command again within&6 [time] seconds
+      &cto confirm!'
   grantxp:
     help:
       info: Gibt dem Spieler X Erfahrung in einem Job.
@@ -732,25 +654,61 @@ command:
     help:
       info: Plugin version information
       args: ''
-message:
-  skillup:
-    broadcast: '%playername% wurde zu einem %titlename% %jobname% befördert.'
-    nobroadcast: Herzlichen Glückwunsch, du wurdest zum %titlename% %jobname% befördert.
-  levelup:
-    broadcast: '%playername% ist nun ein Level %joblevel% %jobname%.'
-    nobroadcast: Du bist nun Level %joblevel% in %jobname%.
-  leveldown:
-    message: '&cDu hast Level&e %lostLevel%&c in&e %jobname%&c verloren! Level:&6
-      %joblevel%&c.'
-  cowtimer: '&eDu musst immernoch &6%time% &eSekunden warten bevor du für diesen Beruf
-    bezahlt wirst.'
-  blocktimer: '&eDu musst noch weitere &e[time] &eSekunden warten bevor du für diese
-    Arbeit wieder bezahlt wirst!'
-  taxes: '&3[amount] &eServer Steuern wurden zu diesem Account gesendet.'
-  boostStarted: '&eJobs Boost Zeit wurde gestarted!'
-  boostStoped: '&eJobs Boost Zeit wurde beendet!'
-  crafting:
-    fullinventory: '&cDein Inventar ist voll!'
+  limit:
+    help:
+      info: Zeigt die Lohnbegrenzung für Jobs an.
+      args: '[playername]'
+    output:
+      moneytime: '&eZeit bis zum Zurücksetzen des Geldlimits: &2%time%'
+      moneyLimit: '&eGeldlimit: &2%current%&e/&2%total%'
+      exptime: '&eZeit bis zum Reset des XP-Limits: &2%time%'
+      expLimit: '&eXP-Limit: &2%current%&e/&2%total%'
+      pointstime: '&eZeit bis zum Reset des Punktelimits: &2%time%'
+      pointsLimit: '&ePunktelimit: &2%current%&e/&2%total%'
+      reachedmoneylimit: '&4Du hast dein Geldlimit erreicht!'
+      reachedmoneylimit2: '&eDu kannst dein Geldlimit mit &2/jobs limit &eabfragen.'
+      reachedmoneylimit3: '&eDas verdiente Geld wird exponentiell reduziert... Aber
+        du verdienst immer noch etwas!'
+      reachedexplimit: '&4Du hast dein XP-Limit erreicht!'
+      reachedexplimit2: '&eDu kannst dein XP-Limit mit &2/jobs limit &eabfragen'
+      reachedpointslimit: '&4Du hast dein Punktelimit erreicht!'
+      reachedpointslimit2: '&eDu kannst dein Punktelimit mit &2/jobs limit &eabfragen'
+      notenabled: '&eEs ist keine Lohnbegrenzung aktiviert.'
+  resetexploreregion:
+    help:
+      info: Resets region data of Explorering
+      args: world [worldname]
+    output:
+      notenabled: '&eNot enabled.'
+      invalidname: '&eInvalid world name'
+      reseted: '&eExploring region data has been reset for: &2%worldname%'
+  resetlimit:
+    help:
+      info: Setzt das Geldlimit der Spieler zurück
+      args: '[playername]'
+    output:
+      reseted: '&eLohnbegrenzung wurde für &2%playername% zurückgesetzt.'
+  resetquest:
+    help:
+      info: Quest des Spielers zurücksetzen
+      args: '[playername] [jobname]'
+    output:
+      reseted: '&eDie Quest wurde für &2%playername% zurückgesetzt.'
+      noQuests: '&eEs konnte keine Quest gefunden werden.'
+  resetquesttotal:
+    help:
+      info: Resets a player's done quest counter
+      args: '[playername]/all'
+    output:
+      reseted: '&eDone quests have been reset for: &2%playerdisplayname%'
+  skipquest:
+    help:
+      info: Überspringe die definierte Quest und erhalte eine neue.
+      args: '[jobname] [questname] (playerName)'
+    confirmationNeed: '&cAre you sure you want to skip&e [questName]&c quest? Type
+      the command again within&6 [time] seconds &cto confirm!'
+    output:
+      questSkipForCost: '&2Du hast die Quest übersprungen und &e%amount%€ bezahlt.'
 signs:
   List: '&0[number].&8[player]&7:&4[level]'
   questList: '&0[number].&8[player]&7:&4[quests]'
@@ -786,3 +744,64 @@ scoreboard:
   topline: '&2Top &e%jobname%'
   gtopline: '&2Globale Top Liste'
   line: '&2%number%. &e%playername% (&6%level%&e)'
+general:
+  info:
+    paymentType:
+      MONEY: Money
+      EXP: Exp
+      POINTS: Points
+    paymentTypeValued:
+      MONEY: '&2Money: %amount%'
+      EXP: '&eExp: %amount%'
+      POINTS: '&6Points: %amount%'
+    toplineseparator: '&7*********************** &6%playername% &7***********************'
+    separator: '&7*******************************************************'
+    invalidPage: '&cUngültige Seite.'
+    join: '&eClick to join job'
+    leave: '&cClick to leave job'
+    blocks:
+      furnace: Ofen
+      smoker: Räucherofen
+      blastfurnace: Hochofen
+      brewingstand: Braustand
+  admin:
+    error: '&cBei der Ausführung des Befehls ist ein Fehler aufgetreten.'
+    success: '&eDer Befehl wurde erfolgreich ausgeführt.'
+  error:
+    # Only [playername] can be used here
+    noinfoByPlayer: '&cKeine Informationen für [%playername%] gefunden!'
+    noHelpPage: '&cEs gibt keine Hilfsseite mit dieser Nummer!'
+    job: '%cDer Job, den du ausgesucht hast existiert nicht oder du bist nicht diesem
+      beigetreten'
+    jobname: '&cCan''t find job by this name!'
+    worldisdisabled: '&cDer Befehl kann nicht in dieser Welt ausgeführt werden!'
+    newRegistration: '#&eNeuer Besitzer für [block] &7[current]&e/&f[max] wurde registriert.'
+    reenabledBlock: '&eReenabled ownership'
+    noRegistration: '&c Du hast die maximale [block]-Zahl erreicht!'
+    blockDisabled: '&6Payments from &e[type] &6got disabled. &2[location]'
+quest:
+  notFound: '{gcp}Quest was not found by this name ({gcs}[name]{gcp})'
+  completed: '{gcp}This quest is already completed'
+  reachedSkipLimit: '{gcp}You can''t skip more than {gcs}[amount] {gcp}times'
+message:
+  skillup:
+    broadcast: '%playername% wurde zu einem %titlename% %jobname% befördert.'
+    nobroadcast: Herzlichen Glückwunsch, du wurdest zum %titlename% %jobname% befördert.
+  levelup:
+    broadcast: '%playername% ist nun ein Level %joblevel% %jobname%.'
+    nobroadcast: Du bist nun Level %joblevel% in %jobname%.
+  leveldown:
+    message: '&cDu hast Level&e %lostLevel%&c in&e %jobname%&c verloren! Level:&6
+      %joblevel%&c.'
+  cowtimer: '&eDu musst immernoch &6%time% &eSekunden warten bevor du für diesen Beruf
+    bezahlt wirst.'
+  blocktimer: '&eDu musst noch weitere &e[time] &eSekunden warten bevor du für diese
+    Arbeit wieder bezahlt wirst!'
+  taxes: '&3[amount] &eServer Steuern wurden zu diesem Account gesendet.'
+  boostStarted: '&eJobs Boost Zeit wurde gestarted!'
+  boostStoped: '&eJobs Boost Zeit wurde beendet!'
+  crafting:
+    fullinventory: '&cDein Inventar ist voll!'
+economy:
+  error:
+    nomoney: Die Bank hat kein Geld mehr!

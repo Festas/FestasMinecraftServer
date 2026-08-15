@@ -18,6 +18,9 @@ Plugin:
     chat: true
     books: true
   auto_update_paper_config: true
+  introduction:
+    enabled: true # Set to false to suppress the first-run welcome message entirely
+    console_sent: true # Internal flag — set to true after the welcome message has been shown
 
 WorldEdit:
   noteblock_mechanic: false
@@ -28,14 +31,12 @@ ConfigsTools:
   skipped_model_data_numbers: []
   disable_automatic_model_data: false
   disable_automatic_glyph_code: false
-  enable_configs_updater: true
   error_item:
     material: PODZOL
     excludeFromInventory: false
     injectID: false
 
 Glyphs:
-  glyph_handler: VANILLA
   emoji_list_permission_only: true
   unicode_completions: true
   chat_hover_text: <glyph_placeholder>
@@ -58,16 +59,18 @@ CustomArmor:
     generate_shader_compatible_armor: true
     generate_armor_shader_files: true
     generate_custom_armor_textures: true
+  auto_select_type: true # If true, Oraxen will replace incompatible armor types with the best type for the detected server version
 
 CustomBlocks:
   block_correction: NMS
-  use_legacy_noteblocks: true
 
 ItemUpdater:
   update_items: true
   override_renamed_items: false
   override_item_lore: false
   update_items_on_reload: true
+  update_tile_entity_contents: true # Update items in loaded block inventories, such as chests and furnaces
+  update_entity_contents: true # Update items held by loaded entities, such as item frames, mobs and ender chests
 
 FurnitureUpdater:
   update_furniture: true
@@ -96,12 +99,40 @@ Pack:
     compression: BEST_COMPRESSION
     protection: true
     comment: The content of this texture pack belongs to the owner.
+    # If true, Oraxen will not create or modify pack.mcmeta.
+    # The file at plugins/Oraxen/pack/pack.mcmeta will be included in the final pack exactly as provided.
+    # This also disables automatic overlay entries, so you must manage overlays in pack.mcmeta yourself.
+    disable_mcmeta_generation: false
+    # MULTI-VERSION RESOURCE PACKS
+    # Enable this for servers with players on multiple Minecraft versions (ViaVersion/ProtocolSupport).
+    # When enabled, generates two pack files: one for clients on 1.21.3 and below, and one for 1.21.4+.
+    #
+    # Supported versions: 1.20 through 1.21.3, and 1.21.4+
+    # Each pack declares the full metadata range required by clients in its group.
+    #
+    # Requirements:
+    # - ViaVersion OR ProtocolSupport plugin for version detection (without these, all players get server version pack)
+    # - Upload type must be "lobfile", "polymath", or "external" (NOT "self-host" - can only serve one file)
+    #
+    # How it works:
+    # - On player join, detects their client version via ViaVersion/ProtocolSupport API
+    # - Sends the 1.21.3- or 1.21.4+ pack matching their client's pack_format
+    # - Players without version detection receive the server's version pack as fallback
+    multi_version_packs: false
+    obfuscation:
+      # NONE keeps generated resource keys readable.
+      # SIMPLE renames pack-internal model, texture, and sound file paths while preserving namespaces.
+      # FULL also replaces namespaces used by renamed resources.
+      type: NONE
   
   import:
     merge_duplicate_fonts: true
     merge_duplicates: true
     retain_custom_model_data: true
     merge_item_base_models: false
+    # Removes imported minecraft core shader files from pack/assets and uploads/*.zip merges.
+    # Useful when external packs override Oraxen-generated text/scoreboard shaders.
+    remove_core_shaders_from_imported_packs: false
   
   upload:
     enabled: true
@@ -115,17 +146,25 @@ Pack:
       # Deine funktionierende IP-Einstellung
       host: 0.0.0.0
       port: 25600
-      domain: CHANGE_ME
+      domain: 128.140.99.121:25600
+    lobfile:
+      api-key: ''
+      pack-name: Oraxen # Will use <pack-name>_<version> when using multi version packs
   
   dispatch:
-    send_pack: false
-    send_on_reload: true
     delay: -1
     mandatory: true
     prompt: <#fa4943>Accept the pack...
-    join_message:
-      enabled: false
-      delay: -1
+    send: false # Should the pack be sent to the player.
+    mode: JOIN # PRE-JOIN, JOIN; Mode to use when sending the pack.
+    timeout: 30s # Time to wait for a response when using PRE-JOIN mode before continuing login.
+    # Client versions that should not receive the pack. Quote every rule, e.g. '< 1.12', '= 1.21.11' or '> 1.21.11'.
+    exclude: []
+    # Temporarily disable these when the pack loads.
+    disable:
+      movement: true # Disable movement while the pack loads.
+      damage: true # Disable damage while the pack loads.
+    layer: '' # The pack layer to use, allowing multiple packs to be used. Set to non empty value to stop Oraxen from clearing resourcepacks sent by your proxy.
   
   receive:
     enabled: true
@@ -150,6 +189,7 @@ Pack:
         message:
           type: ACTION_BAR
           content: <#55ffa4><bold>ResourcePack accepted
+          enabled: false
         commands:
           console: []
           player: []

@@ -70,6 +70,14 @@ MSG:
           USAGE: /shop resetmodifier global <player> [buy|sell]
           RESET: You reset &c%player%&f's %type% price modifier.
           RESETBY: Your %type% price modifier was reset by &c%player%&f.
+      WORTH:
+        NOITEM: You have to hold an item in your hand in order to check its worth.
+        NOTFOUND: This item is not listed within the shop.
+        FOUND: This item is %purchasable%&f and %sellable%&f.
+        FOUNDPURCHASEABLE: purchasable for &a%buyprice%&f from shop &a%buyShopId%
+        FOUNDSELLABLE: sellable for &a%sellprice%&f from shop &a%sellShopId%
+        FOUNDNOTPURCHASEABLE: not purchasable
+        FOUNDNOTSELLABLE: not sellable
   MODIFIER:
     INVALIDAMOUNT: Invalid modifier value specified. Valid values are for instance
       0.50 which is 50%, 2.0 which is 200% etc.
@@ -133,6 +141,8 @@ MSG:
     NOITEMS: You don't have any items you can sell.
     SOLD: You sold &a%quantity% items&f for a total of &a%price%&f.
     INVALIDSHOP: Invalid shop specified.
+    NOITEMSOTHER: '%player% doesn''t have any items they can sell.'
+    SOLDOTHER: '&a%player% &fsold &a%quantity% items&f for a total of &a%price%&f.'
   NUMBERFORMAT:
     SHORTSCALE:
       THOUSAND: ' Thousand'
@@ -147,6 +157,7 @@ MSG:
       NONILLION: ' Nonillion'
       DECILLION: ' Decillion'
   INVALIDPAGE: Shop &c%shop%&f with page &c%page%&f not found.
+  MISSINGPLAYER: 'Player name not specified. Usage: %usage%'
 DIALOG:
   AMOUNTSELECTION:
     BUY:

@@ -92,14 +92,10 @@ worlds:
       min_gen_height: -64
       border_size: 1
     economy:
-      # Economy enabled for tycoon plots - acts as money sink
       use: true
       prices:
-        # Cost to merge adjacent plots (encourages progression)
         merge: 5000000
-        # Sell-back value of a plot (no refund)
         sell: 0
-        # Additional claims cost money (first claim is free via /tycoon start)
         claim: 1000000
     event:
       spawn:

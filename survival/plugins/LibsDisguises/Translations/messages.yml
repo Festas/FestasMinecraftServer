@@ -917,3 +917,39 @@
 
 # Reference: VIEW_SELF_TALL_NOTE
 "<green>Your disguise is too tall, self disguise is automatically disabled. You wouldn't be able to see anything otherwise!": "<green>Your disguise is too tall, self disguise is automatically disabled. You wouldn't be able to see anything otherwise!"
+
+# Reference: DISGUISE_ENTITY_SELECTOR
+"<red>Successfully disguised %s entities!</red>": "<red>Successfully disguised %s entities!</red>"
+
+# Reference: DISGUISE_ENTITY_SELECTOR_INVALID
+"<red>The entity selector \"<dark_red>%s</dark_red>\" is invalid!</red>": "<red>The entity selector \"<dark_red>%s</dark_red>\" is invalid!</red>"
+
+# Reference: DISGUISE_ENTITY_SELECTOR_NO_ENTITIES
+"<red>Couldn't find any entities to disguise!</red>": "<red>Couldn't find any entities to disguise!</red>"
+
+# Reference: DMODSELECTOR_HELP1
+"<dark_green>Modify entity disguises via entity selector! If the selector contains spaces, \"quote\" it.</dark_green": "<dark_green>Modify entity disguises via entity selector! If the selector contains spaces, \"quote\" it.</dark_green"
+
+# Reference: DMODSELECTOR_HELP2
+"<dark_green>/disguisemodifyselector <green>Selector</green> <<green>Arguments</green>></dark_green>": "<dark_green>/disguisemodifyselector <green>Selector</green> <<green>Arguments</green>></dark_green>"
+
+# Reference: DSELECTOR_HELP1
+"<dark_green>Disguise entities via entity selector! If the selector contains spaces, \"quote\" it.</dark_green": "<dark_green>Disguise entities via entity selector! If the selector contains spaces, \"quote\" it.</dark_green"
+
+# Reference: DSELECTOR_HELP2
+"<dark_green>/disguiseselector <green>Selector</green> <<green>Disguise Args</green>></dark_green>": "<dark_green>/disguiseselector <green>Selector</green> <<green>Disguise Args</green>></dark_green>"
+
+# Reference: D_ANIM_SELECTOR_HELP_1
+"<dark_green>Play animations on nearby disguises! \"Quote\" the entity selector if it contains spaces.</dark_green>": "<dark_green>Play animations on nearby disguises! \"Quote\" the entity selector if it contains spaces.</dark_green>"
+
+# Reference: D_ANIM_SELECTOR_HELP_2
+"<dark_green>/%s <Entity Selector> <Animation></dark_green>": "<dark_green>/%s <Entity Selector> <Animation></dark_green>"
+
+# Reference: D_ANIM_SELECTOR_NEED_ANIMS_ENTITY
+"<red>You need to supply the animation as well as the entity selector</red>": "<red>You need to supply the animation as well as the entity selector</red>"
+
+# Reference: UNDISG_SELECTOR_HELP
+"<red>/undisguiseselector <Entity Selector></red> - <green>Undisguise entities via entity selector</green>": "<red>/undisguiseselector <Entity Selector></red> - <green>Undisguise entities via entity selector</green>"
+
+# Reference: UNDISG_SELECTOR_SUCCESS
+"<red>Successfully undisguised %s entities!</red>": "<red>Successfully undisguised %s entities!</red>"

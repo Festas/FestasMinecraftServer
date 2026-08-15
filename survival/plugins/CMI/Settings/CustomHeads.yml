@@ -37,7 +37,7 @@ Player:
   Percentage: 1.0
   # Percentage from 0 to 100 for lowering chance in getting second head of same player
   # This will reset on each server restart
-  LowerChanceOfterDrop: 50.0
+  LowerChanceAfterDrop: 50.0
   # When enabled player heads will have bigger chance to drop when using tools with looting enchantment
   # Value is in % and it will add appropriate percentage to current drop chance by using drop chance itself
   # For example player who has head drop change of 1% with looting 3 which has 30% bonus will have 1.3% as end value (default values)
@@ -117,6 +117,11 @@ EntityHeads:
     LowerWithEachDrop: 50.0
     Heads:
     - 100:Default:NzRiOGEzMzNkZmE5MmU3ZTVhOTVhZDRhZTJkODRiMWJhZmEzM2RjMjhjMDU0OTI1Mjc3ZjYwZTc5ZGFmYzhjNCJ9fX0=
+  camel_husk:
+    DropChance: 1.0
+    LowerWithEachDrop: 50.0
+    Heads:
+    - 100:Default:M2JkN2E5MmE2ZjY3Yjc1MDBkMTZjNGUxMmYyODA1OGVjMjg1OTMxMTU1NmJhMDNiZTJkMWY1ODExNzBmMmRiNiJ9fX0=
   cat:
     DropChance: 1.0
     LowerWithEachDrop: 50.0
@@ -305,6 +310,12 @@ EntityHeads:
     LowerWithEachDrop: 50.0
     Heads:
     - 100:Default:YTA0ODZhNzQyZTdkZGEwYmFlNjFjZTJmNTVmYTEzNTI3ZjFjM2IzMzRjNTdjMDM0YmI0Y2YxMzJmYjVmNWYifX19
+  nautilus:
+    DropChance: 1.0
+    LowerWithEachDrop: 50.0
+    Heads:
+    - 100:Default:ZmIxNjQ4NDgyNzMzYTdjM2JiODRiZTQ2OGQ1NzVlM2ZiZDNmZjE5MzI4MWIwNzI3ZWFkOGRlYWRlYTYwMjM3YSJ9fX0=
+    - 100:Default:M2JiMzQwZGQzMzAyNjE1MzQ4ZGU1MTYyZmUxNjcwYjljNWM5YzYxNmNkOTJkMmRlOWQ4Mzk4Y2IzM2U4NDJhZSJ9fX0=
   ocelot:
     DropChance: 1.0
     LowerWithEachDrop: 50.0
@@ -318,6 +329,11 @@ EntityHeads:
     LowerWithEachDrop: 50.0
     Heads:
     - 100:Default:ZDE4OGM5ODBhYWNmYTk0Y2YzMzA4ODUxMmIxYjk1MTdiYTgyNmIxNTRkNGNhZmMyNjJhZmY2OTc3YmU4YSJ9fX0=
+  parched:
+    DropChance: 1.0
+    LowerWithEachDrop: 50.0
+    Heads:
+    - 100:Default:MjRhZWNlZmY1ZjI2ZGQ4NDEzYzVjMDM1NDdjMjM0YWMwMzEwOGQxODdhZjBiOWNkODM0YThjZTEyNTk4NTkxYyJ9fX0=
   parrot:
     DropChance: 1.0
     LowerWithEachDrop: 50.0
@@ -462,6 +478,11 @@ EntityHeads:
     LowerWithEachDrop: 50.0
     Heads:
     - 100:Default:MThhOWFkZjc4MGVjN2RkNDYyNWM5YzA3NzkwNTJlNmExNWE0NTE4NjY2MjM1MTFlNGM4MmU5NjU1NzE0YjNjMSJ9fX0=
+  sulfur_cube:
+    DropChance: 1.0
+    LowerWithEachDrop: 50.0
+    Heads:
+    - 100:Default:MjA1ZWMwMjQxZjA4NGUxNzc2YTIwMWY2ZGY4YzEyNGM4NjM3NjcxZmQ4NWUwYWY1ZTc3MDkwZjRlOWMzODYwMiJ9fX0=
   tadpole:
     DropChance: 1.0
     LowerWithEachDrop: 50.0
@@ -552,6 +573,11 @@ EntityHeads:
     LowerWithEachDrop: 50.0
     Heads:
     - 100:Default:ZDIyOTUwZjJkM2VmZGRiMThkZTg2ZjhmNTVhYzUxOGRjZTczZjEyYTZlMGY4NjM2ZDU1MWQ4ZWI0ODBjZWVjIn19fQ==
+  zombie_nautilus:
+    DropChance: 1.0
+    LowerWithEachDrop: 50.0
+    Heads:
+    - 100:Default:ZmQ5YTkzMzM3NmRhNDRjMzM5MTMwN2NiOWY0Y2YwM2YxNmYzYTU0ZjQ5NWZkNWExMWJhZDhhMzczZjlkNTcyMCJ9fX0=
   zombie_villager:
     DropChance: 1.0
     LowerWithEachDrop: 50.0

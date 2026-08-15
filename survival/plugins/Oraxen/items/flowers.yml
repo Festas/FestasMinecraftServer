@@ -13,7 +13,7 @@ brunnera:
     textures:
     - default/flowers/brunnera.png
   Mechanics:
-    stringblock:
+    block:
       break_sound: block.grass.break
       place_sound: block.grass.place
       custom_variation: 1
@@ -24,6 +24,7 @@ brunnera:
         loots:
         - oraxen_item: brunnera
           probability: 1.0
+      type: STRING
 
 daffodil:
   itemname: <#f5ec42>Daffodil
@@ -34,7 +35,7 @@ daffodil:
     textures:
     - default/flowers/daffodil.png
   Mechanics:
-    stringblock:
+    block:
       break_sound: block.grass.break
       place_sound: block.grass.place
       custom_variation: 2
@@ -45,6 +46,7 @@ daffodil:
         loots:
         - oraxen_item: daffodil
           probability: 1.0
+      type: STRING
 
 dailily:
   itemname: <#bf332c>Dailily
@@ -55,7 +57,7 @@ dailily:
     textures:
     - default/flowers/dailily.png
   Mechanics:
-    stringblock:
+    block:
       break_sound: block.grass.break
       place_sound: block.grass.place
       custom_variation: 3
@@ -66,3 +68,4 @@ dailily:
         loots:
         - oraxen_item: dailily
           probability: 1.0
+      type: STRING

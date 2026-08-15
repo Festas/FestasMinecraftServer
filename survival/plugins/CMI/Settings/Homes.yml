@@ -7,8 +7,6 @@ Homes:
   Gui:
     # Open gui when using /cmi home command if you have more then one home in your saved list
     Use: true
-    # When enabled we will create more complex home UI with extra buttons and options while keeping this disabled we will simply list homes in a row
-    Complex: true
     Options:
       # When enabled we will expand area for homes from 10 to 28
       Expanded: false
@@ -59,6 +57,12 @@ Homes:
     Newbie: 2
     Advanced: 3
     Vip: 5
+  Limits:
+    # Blocks homes usage when the limit is exceeded
+    # Player will not be allowed to teleport to homes if he owns more homes than his max limit
+    BlockExtraHomes: true
+    # Notifies the player on login when they exceed the limit
+    NotifyOnLogin: true
   # Requires cmi.bedhome permission node
   # When set to true by interacting with bed, regular home location will be created
   # When set to false vanilla bed home location will be set

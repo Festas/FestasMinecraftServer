@@ -720,3 +720,30 @@
 
 # Used for the disgiuse modify radius command to list all disguisetypes
 "DisgiseType": "DisgiseType"
+
+# Name for the CAMEL_HUSK disguise
+"Camel Husk": "Camel Husk"
+
+# Name for the NAUTILUS disguise
+"Nautilus": "Nautilus"
+
+# Name for the PARCHED disguise
+"Parched": "Parched"
+
+# Name for the SULFUR_CUBE disguise
+"Sulfur Cube": "Sulfur Cube"
+
+# Name for the ZOMBIE_NAUTILUS disguise
+"Zombie Nautilus": "Zombie Nautilus"
+
+# Name for the CamelHusk EntityType, this is used in radius commands
+"CamelHusk": "CamelHusk"
+
+# Name for the LargeFireball EntityType, this is used in radius commands
+"LargeFireball": "LargeFireball"
+
+# Name for the SulfurCube EntityType, this is used in radius commands
+"SulfurCube": "SulfurCube"
+
+# Name for the ZombieNautilus EntityType, this is used in radius commands
+"ZombieNautilus": "ZombieNautilus"

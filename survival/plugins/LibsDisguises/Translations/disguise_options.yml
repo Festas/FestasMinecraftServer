@@ -271,9 +271,6 @@
 # Found in the disguise options for Bat and uses a boolean
 "setHanging": "setHanging"
 
-# Found in the disguise options for Bee and uses a int
-"setBeeAnger": "setBeeAnger"
-
 # Found in the disguise options for Bee and uses a boolean
 "setFlipped": "setFlipped"
 
@@ -726,3 +723,27 @@
 
 # Used as a shortcut for setBaby(false) when disguising an entity
 "adult": "adult"
+
+# Found in the disguise options for Entity and uses a InteractiveBoundingBox
+"setBoundingBox": "setBoundingBox"
+
+# Found in the disguise options for Entity and uses a FakeBoundingBox
+"setServerBoundingBox": "setServerBoundingBox"
+
+# Found in the disguise options for Ageable and uses a boolean
+"setAgeLocked": "setAgeLocked"
+
+# Found in the disguise options for Bee and uses a long
+"setAngryUntil": "setAngryUntil"
+
+# Found in the disguise options for Illager and uses a Spell
+"setSpell": "setSpell"
+
+# Found in the disguise options for SulfurCube and uses a int
+"setFuseTicks": "setFuseTicks"
+
+# Found in the disguise options for Tadpole and uses a boolean
+"setFromBucket": "setFromBucket"
+
+# Found in the disguise options for Villager and uses a boolean
+"setProfessionLocked": "setProfessionLocked"

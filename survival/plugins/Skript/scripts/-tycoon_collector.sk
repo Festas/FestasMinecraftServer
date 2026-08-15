@@ -1,0 +1,131 @@
+# --- COLLECTOR SYSTEM (Smart Particles) ---
+# Saugt Items im Radius auf.
+# Muss auf einem Trichter platziert werden.
+
+# --- ITEM GEBEN ---
+command /tycoon_give_collector <player> <number>:
+    permission: tycoon.admin
+    trigger:
+        set {_p} to arg-1
+        set {_amount} to arg-2
+        set {_name} to "&5&lChunk Collector"
+        
+        # Glowing Item für das Inventar
+        set {_item} to barrel named {_name} with lore "&7Platziere mich auf einem &fTrichter&7," and "&7um Items im Radius von 20 Blöcken" and "&7automatisch einzusaugen."
+        enchant {_item} with unbreaking 1
+        add hide enchants to item flags of {_item}
+        
+        give {_amount} of {_item} to {_p}
+        send "&8[&6Tycoon&8] &aCollector erhalten!" to {_p}
+
+# --- SMART PLACING ---
+on right click on hopper:
+    set {_name} to "&5&lChunk Collector"
+    if name of player's tool is {_name}:
+        cancel event
+        
+        set {_target} to location of event-block
+        add 1 to y-coord of {_target}
+        
+        if block at {_target} is air or cave air:
+            set block at {_target} to barrel
+            set {collector::%{_target}%} to player
+            set {collector_locs::%{_target}%} to {_target}
+            
+            if player's gamemode is not creative:
+                set {_amt} to item amount of player's tool
+                set item amount of player's tool to ({_amt} - 1)
+            
+            send "&8[&6Tycoon&8] &aCollector aktiviert! Radius: 20 Blöcke." to player
+            play sound "block.beacon.activate" at {_target}
+        else:
+            send "&8[&6Tycoon&8] &cHier ist kein Platz über dem Trichter!" to player
+
+# --- PLATZIEREN (Fallback) ---
+on place of barrel:
+    set {_name} to "&5&lChunk Collector"
+    if name of player's tool is {_name}:
+        if type of block below event-block is not hopper:
+            cancel event
+            send "&8[&6Tycoon&8] &cDer Collector muss auf einem &nTrichter&c platziert werden!" to player
+            stop
+            
+        set {_loc} to location of event-block
+        if {collector::%{_loc}%} is not set:
+            set {collector::%{_loc}%} to player
+            set {collector_locs::%{_loc}%} to {_loc}
+            send "&8[&6Tycoon&8] &aCollector aktiviert! Radius: 20 Blöcke."
+            play sound "block.beacon.activate" at {_loc}
+
+# --- INSTANT ABBAUEN ---
+on left click:
+    if event-block is barrel:
+        set {_loc} to location of event-block
+        
+        if {collector::%{_loc}%} is set:
+            if {collector::%{_loc}%} is not player:
+                if player does not have permission "tycoon.admin":
+                    cancel event
+                    send "&cDas ist nicht dein Collector!" to player
+                    stop
+            
+            cancel event
+            
+            set block at {_loc} to air
+            play sound "block.wood.break" at {_loc}
+            play sound "block.beacon.deactivate" at {_loc}
+            
+            delete {collector::%{_loc}%}
+            delete {collector_locs::%{_loc}%}
+            
+            set {_name} to "&5&lChunk Collector"
+            set {_item} to barrel named {_name} with lore "&7Platziere mich auf einem &fTrichter&7," and "&7um Items im Radius von 20 Blöcken" and "&7automatisch einzusaugen."
+            enchant {_item} with unbreaking 1
+            add hide enchants to item flags of {_item}
+            
+            drop 1 of {_item} at {_loc}
+
+# --- DER STAUBSAUGER LOOP (Optimiert) ---
+every 1 seconds:
+    loop {collector_locs::*}:
+        set {_loc} to loop-value
+        set {_block} to block at {_loc}
+        
+        if type of {_block} is barrel:
+            
+            # --- NEU: Spieler-Check gegen Spam ---
+            # Prüfen, ob ein Spieler in der Nähe (50 Blöcke) ist.
+            # Nur dann senden wir den Partikel-Befehl.
+            if size of players in radius 50 around {_loc} > 0:
+            
+                # 1. VISUELLE EFFEKTE (Nur wenn wer guckt)
+                set {_px} to x-coord of {_loc} + 0
+                set {_py} to y-coord of {_loc} + 1.2
+                set {_pz} to z-coord of {_loc} + 0
+                set {_world} to world of {_loc}
+                
+                #execute console command "execute in %{_world}% run particle witch %{_px}% %{_py}% %{_pz}% 0.3 0.3 0.3 0.05 150 force"
+            
+            # 2. LOGIK (Läuft immer)
+            loop all dropped items in radius 20 around {_loc}:
+                if {_block}'s inventory can hold item of loop-entity:
+                    add item of loop-entity to {_block}'s inventory
+                    delete loop-entity
+        else:
+            # Aufräumen
+            delete {collector::%loop-index%}
+            delete {collector_locs::%loop-index%}
+
+# --- CLEANUP BEFEHL ---
+command /tycoon_collector_remove_all <player>:
+    permission: tycoon.admin
+    trigger:
+        set {_p} to arg-1
+        loop {collector_locs::*}:
+            set {_loc} to loop-value
+            if {collector::%{_loc}%} is {_p}:
+                delete {collector::%loop-index%}
+                delete {collector_locs::%loop-index%}
+                set block at {_loc} to air
+
+

@@ -1,0 +1,254 @@
+[08:52:48.565616378]: Exposed Autorank placeholder extension.
+[08:52:48.566062754]: Started Autorank
+[00:03:55.288980879]: Resetting daily time file
+[00:03:55.28536075]: Resetting daily time file
+[00:03:55.291459233]: Resetting weekly time file
+[00:03:55.285328671]: Resetting daily time file
+[00:03:55.285294059]: Resetting daily time file
+[00:03:55.436317218]: Resetting daily time file
+[00:03:55.485258672]: Resetting daily time file
+[00:03:55.485294138]: Resetting daily time file
+[00:03:55.485199115]: Resetting daily time file
+[00:03:55.485288138]: Resetting daily time file
+[00:03:55.49022527]: Resetting weekly time file
+[00:03:55.435502048]: Resetting daily time file
+[00:03:55.485402116]: Resetting daily time file
+[00:03:55.48543835]: Resetting daily time file
+[00:03:55.485301752]: Resetting daily time file
+[00:03:55.43550128]: Resetting daily time file
+[00:03:55.485384129]: Resetting daily time file
+[00:03:55.435330435]: Resetting daily time file
+[00:03:55.441351188]: Resetting weekly time file
+[00:03:55.445419312]: Resetting monthly time file
+[00:03:55.435618355]: Resetting daily time file
+[00:04:00.685630195]: Resetting daily time file
+[00:04:01.035475514]: Resetting daily time file
+[00:04:01.035314242]: Resetting daily time file
+[00:04:01.035287722]: Resetting daily time file
+[00:04:00.985512875]: Resetting daily time file
+[00:04:00.985431422]: Resetting daily time file
+[00:04:00.990808956]: Resetting weekly time file
+[00:04:01.135758847]: Resetting daily time file
+[00:04:01.185406959]: Resetting daily time file
+[00:04:01.185428026]: Resetting daily time file
+[00:04:01.28539165]: Resetting daily time file
+[00:04:01.285390207]: Resetting daily time file
+[00:04:01.285405929]: Resetting daily time file
+[00:04:01.285752038]: Resetting daily time file
+[00:04:01.290894559]: Resetting weekly time file
+[00:04:01.285331982]: Resetting daily time file
+[00:04:01.285482204]: Resetting daily time file
+[00:04:01.28541514]: Resetting daily time file
+[00:04:01.285309993]: Resetting daily time file
+[00:04:01.235527984]: Resetting daily time file
+[00:04:01.285354875]: Resetting daily time file
+[00:04:01.285352782]: Resetting daily time file
+[00:04:01.291702712]: Resetting weekly time file
+[00:04:01.235750718]: Resetting daily time file
+[00:04:01.335654836]: Resetting daily time file
+[00:04:01.33560625]: Resetting daily time file
+[00:04:01.385379925]: Resetting daily time file
+[00:04:01.335599747]: Resetting daily time file
+[00:04:01.536673196]: Resetting daily time file
+[00:04:01.685425477]: Resetting daily time file
+[00:04:01.691429115]: Resetting weekly time file
+[00:04:01.694194889]: Resetting monthly time file
+[00:04:01.885453684]: Resetting daily time file
+[00:04:02.385469268]: Resetting daily time file
+[00:04:02.835474704]: Resetting daily time file
+[00:04:03.435380062]: Resetting daily time file
+[00:04:03.73526738]: Resetting daily time file
+[00:04:12.935372181]: Resetting daily time file
+[00:04:12.935410227]: Resetting daily time file
+[00:04:12.941151713]: Resetting weekly time file
+[16:19:10.450456121]: Setting (Flatfile) DAILY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 5
+[16:19:10.450695659]: Setting (Flatfile) WEEKLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 5
+[16:19:10.450738679]: Setting (Flatfile) MONTHLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 5
+[16:19:10.450771649]: Setting (Flatfile) TOTAL_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 5
+[16:24:10.438328958]: Setting (Flatfile) DAILY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 10
+[16:24:10.438685456]: Setting (Flatfile) WEEKLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 10
+[16:24:10.438761095]: Setting (Flatfile) MONTHLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 10
+[16:24:10.438797165]: Setting (Flatfile) TOTAL_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 10
+[16:29:10.438224608]: Setting (Flatfile) DAILY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 15
+[16:29:10.438493396]: Setting (Flatfile) WEEKLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 15
+[16:29:10.438580445]: Setting (Flatfile) MONTHLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 15
+[16:29:10.438653684]: Setting (Flatfile) TOTAL_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 15
+[16:34:10.43860619]: Setting (Flatfile) DAILY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 20
+[16:34:10.438933778]: Setting (Flatfile) WEEKLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 20
+[16:34:10.438979298]: Setting (Flatfile) MONTHLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 20
+[16:34:10.439010977]: Setting (Flatfile) TOTAL_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 20
+[16:39:10.438743602]: Setting (Flatfile) DAILY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 25
+[16:39:10.439061209]: Setting (Flatfile) WEEKLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 25
+[16:39:10.439165359]: Setting (Flatfile) MONTHLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 25
+[16:39:10.439199488]: Setting (Flatfile) TOTAL_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 25
+[16:44:10.438371574]: Setting (Flatfile) DAILY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 30
+[16:44:10.438626102]: Setting (Flatfile) WEEKLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 30
+[16:44:10.438664962]: Setting (Flatfile) MONTHLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 30
+[16:44:10.438693412]: Setting (Flatfile) TOTAL_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 30
+[16:49:10.43821146]: Setting (Flatfile) DAILY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 35
+[16:49:10.438441648]: Setting (Flatfile) WEEKLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 35
+[16:49:10.438484848]: Setting (Flatfile) MONTHLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 35
+[16:49:10.438513377]: Setting (Flatfile) TOTAL_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 35
+[16:54:10.438221078]: Setting (Flatfile) DAILY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 40
+[16:54:10.438413056]: Setting (Flatfile) WEEKLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 40
+[16:54:10.438449696]: Setting (Flatfile) MONTHLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 40
+[16:54:10.438477546]: Setting (Flatfile) TOTAL_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 40
+[16:59:10.438420262]: Setting (Flatfile) DAILY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 45
+[16:59:10.438683401]: Setting (Flatfile) WEEKLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 45
+[16:59:10.43871977]: Setting (Flatfile) MONTHLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 45
+[16:59:10.43874752]: Setting (Flatfile) TOTAL_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 45
+[17:04:10.436595938]: Setting (Flatfile) DAILY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 50
+[17:04:10.436724028]: Setting (Flatfile) WEEKLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 50
+[17:04:10.436739808]: Setting (Flatfile) MONTHLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 50
+[17:04:10.436751478]: Setting (Flatfile) TOTAL_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 50
+[17:09:10.43797852]: Setting (Flatfile) DAILY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 55
+[17:09:10.438152479]: Setting (Flatfile) WEEKLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 55
+[17:09:10.438192579]: Setting (Flatfile) MONTHLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 55
+[17:09:10.438225658]: Setting (Flatfile) TOTAL_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 55
+[17:14:10.43823484]: Setting (Flatfile) DAILY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 60
+[17:14:10.438479328]: Setting (Flatfile) WEEKLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 60
+[17:14:10.438522419]: Setting (Flatfile) MONTHLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 60
+[17:14:10.438614498]: Setting (Flatfile) TOTAL_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 60
+[17:19:10.438417849]: Setting (Flatfile) DAILY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 65
+[17:19:10.438712887]: Setting (Flatfile) WEEKLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 65
+[17:19:10.438750027]: Setting (Flatfile) MONTHLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 65
+[17:19:10.438814076]: Setting (Flatfile) TOTAL_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 65
+[17:24:10.439718042]: Setting (Flatfile) DAILY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 70
+[17:24:10.440019459]: Setting (Flatfile) WEEKLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 70
+[17:24:10.440103669]: Setting (Flatfile) MONTHLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 70
+[17:24:10.440143338]: Setting (Flatfile) TOTAL_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 70
+[17:29:10.440597248]: Setting (Flatfile) DAILY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 75
+[17:29:10.440961175]: Setting (Flatfile) WEEKLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 75
+[17:29:10.441058845]: Setting (Flatfile) MONTHLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 75
+[17:29:10.441105944]: Setting (Flatfile) TOTAL_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 75
+[17:34:10.439775698]: Setting (Flatfile) DAILY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 80
+[17:34:10.440129706]: Setting (Flatfile) WEEKLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 80
+[17:34:10.440178295]: Setting (Flatfile) MONTHLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 80
+[17:34:10.440262255]: Setting (Flatfile) TOTAL_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 80
+[17:39:10.438517446]: Setting (Flatfile) DAILY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 85
+[17:39:10.438873244]: Setting (Flatfile) WEEKLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 85
+[17:39:10.438919433]: Setting (Flatfile) MONTHLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 85
+[17:39:10.438970963]: Setting (Flatfile) TOTAL_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 85
+[17:44:10.438262382]: Setting (Flatfile) DAILY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 90
+[17:44:10.43857194]: Setting (Flatfile) WEEKLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 90
+[17:44:10.438658159]: Setting (Flatfile) MONTHLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 90
+[17:44:10.438685479]: Setting (Flatfile) TOTAL_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 90
+[17:49:10.440371366]: Setting (Flatfile) DAILY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 95
+[17:49:10.440818123]: Setting (Flatfile) WEEKLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 95
+[17:49:10.440893482]: Setting (Flatfile) MONTHLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 95
+[17:49:10.440959172]: Setting (Flatfile) TOTAL_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 95
+[17:54:10.439647689]: Setting (Flatfile) DAILY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 100
+[17:54:10.439961977]: Setting (Flatfile) WEEKLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 100
+[17:54:10.440012676]: Setting (Flatfile) MONTHLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 100
+[17:54:10.440054496]: Setting (Flatfile) TOTAL_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 100
+[17:59:10.438659947]: Setting (Flatfile) DAILY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 105
+[17:59:10.439056464]: Setting (Flatfile) WEEKLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 105
+[17:59:10.439100184]: Setting (Flatfile) MONTHLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 105
+[17:59:10.439129063]: Setting (Flatfile) TOTAL_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 105
+[18:04:10.438196364]: Setting (Flatfile) DAILY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 110
+[18:04:10.438477623]: Setting (Flatfile) WEEKLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 110
+[18:04:10.438514583]: Setting (Flatfile) MONTHLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 110
+[18:04:10.438569582]: Setting (Flatfile) TOTAL_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 110
+[18:09:10.43827937]: Setting (Flatfile) DAILY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 115
+[18:09:10.438572607]: Setting (Flatfile) WEEKLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 115
+[18:09:10.438608996]: Setting (Flatfile) MONTHLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 115
+[18:09:10.438634836]: Setting (Flatfile) TOTAL_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 115
+[18:14:10.438517802]: Setting (Flatfile) DAILY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 120
+[18:14:10.43884629]: Setting (Flatfile) WEEKLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 120
+[18:14:10.438878649]: Setting (Flatfile) MONTHLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 120
+[18:14:10.438901189]: Setting (Flatfile) TOTAL_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 120
+[18:19:10.438677179]: Setting (Flatfile) DAILY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 125
+[18:19:10.438938416]: Setting (Flatfile) WEEKLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 125
+[18:19:10.438970796]: Setting (Flatfile) MONTHLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 125
+[18:19:10.438998376]: Setting (Flatfile) TOTAL_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 125
+[18:23:58.896896155]: Setting (Flatfile) DAILY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 130
+[18:23:58.897217162]: Setting (Flatfile) WEEKLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 130
+[18:23:58.897272402]: Setting (Flatfile) MONTHLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 130
+[18:23:58.897312202]: Setting (Flatfile) TOTAL_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 130
+[00:04:12.935573344]: Resetting daily time file
+[00:04:13.035392644]: Resetting daily time file
+[09:48:01.09677489]: Setting (Flatfile) DAILY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 5
+[09:48:01.097007338]: Setting (Flatfile) WEEKLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 135
+[09:48:01.097046898]: Setting (Flatfile) MONTHLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 135
+[09:48:01.097077828]: Setting (Flatfile) TOTAL_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 135
+[09:53:01.088107492]: Setting (Flatfile) DAILY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 10
+[09:53:01.08831575]: Setting (Flatfile) WEEKLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 140
+[09:53:01.08835611]: Setting (Flatfile) MONTHLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 140
+[09:53:01.08838865]: Setting (Flatfile) TOTAL_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 140
+[09:58:01.088747006]: Setting (Flatfile) DAILY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 15
+[09:58:01.089024563]: Setting (Flatfile) WEEKLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 145
+[09:58:01.089072293]: Setting (Flatfile) MONTHLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 145
+[09:58:01.089112132]: Setting (Flatfile) TOTAL_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 145
+[10:03:01.088882273]: Setting (Flatfile) DAILY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 20
+[10:03:01.089129251]: Setting (Flatfile) WEEKLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 150
+[10:03:01.089166221]: Setting (Flatfile) MONTHLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 150
+[10:03:01.089208561]: Setting (Flatfile) TOTAL_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 150
+[10:08:01.088739409]: Setting (Flatfile) DAILY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 25
+[10:08:01.088982667]: Setting (Flatfile) WEEKLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 155
+[10:08:01.089019107]: Setting (Flatfile) MONTHLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 155
+[10:08:01.089047676]: Setting (Flatfile) TOTAL_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 155
+[10:13:01.087380653]: Setting (Flatfile) DAILY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 30
+[10:13:01.087593632]: Setting (Flatfile) WEEKLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 160
+[10:13:01.087629941]: Setting (Flatfile) MONTHLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 160
+[10:13:01.087687591]: Setting (Flatfile) TOTAL_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 160
+[10:17:34.947595821]: Setting (Flatfile) DAILY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 35
+[10:17:34.947876689]: Setting (Flatfile) WEEKLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 165
+[10:17:34.947945248]: Setting (Flatfile) MONTHLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 165
+[10:17:34.947994258]: Setting (Flatfile) TOTAL_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 165
+[00:04:13.085702275]: Resetting daily time file
+[00:04:13.085582169]: Resetting daily time file
+[00:04:13.185385139]: Resetting daily time file
+[00:04:13.13561158]: Resetting daily time file
+[00:04:13.285413595]: Resetting daily time file
+[00:04:13.292206937]: Resetting weekly time file
+[00:04:13.585417535]: Resetting daily time file
+[00:04:13.935423553]: Resetting daily time file
+[00:04:14.335378127]: Resetting daily time file
+[00:04:14.835602266]: Resetting daily time file
+[00:04:15.735381186]: Resetting daily time file
+[00:04:17.035360901]: Resetting daily time file
+[00:04:18.935474189]: Resetting daily time file
+[00:04:18.941848976]: Resetting weekly time file
+[00:04:20.385211639]: Resetting daily time file
+[00:04:22.635347689]: Resetting daily time file
+[22:24:46.498854834]: Setting (Flatfile) DAILY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 5
+[22:24:46.499177638]: Setting (Flatfile) WEEKLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 5
+[22:24:46.499216188]: Setting (Flatfile) MONTHLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 170
+[22:24:46.499247807]: Setting (Flatfile) TOTAL_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 170
+[22:29:19.69388772]: Setting (Flatfile) DAILY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 10
+[22:29:19.694413554]: Setting (Flatfile) WEEKLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 10
+[22:29:19.694440433]: Setting (Flatfile) MONTHLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 175
+[22:29:19.694454973]: Setting (Flatfile) TOTAL_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 175
+[22:34:29.588361413]: Setting (Flatfile) DAILY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 15
+[22:34:29.588603741]: Setting (Flatfile) WEEKLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 15
+[22:34:29.588648961]: Setting (Flatfile) MONTHLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 180
+[22:34:29.58867894]: Setting (Flatfile) TOTAL_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 180
+[22:39:29.688439508]: Setting (Flatfile) DAILY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 20
+[22:39:29.688722066]: Setting (Flatfile) WEEKLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 20
+[22:39:29.688762385]: Setting (Flatfile) MONTHLY_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 185
+[22:39:29.688797385]: Setting (Flatfile) TOTAL_TIME of 4971e234-4716-4677-9eb5-b53980d6ec3d to: 185
+[00:04:25.435453479]: Resetting daily time file
+[00:04:28.28540591]: Resetting daily time file
+[00:04:31.885479154]: Resetting daily time file
+[00:04:36.485400146]: Resetting daily time file
+[00:04:43.535827515]: Resetting daily time file
+[00:04:43.540854021]: Resetting weekly time file
+[00:04:51.885516135]: Resetting daily time file
+[00:05:03.235759073]: Resetting daily time file
+[00:05:15.885608355]: Resetting daily time file
+[00:05:15.891752014]: Resetting monthly time file
+[00:05:28.335418608]: Resetting daily time file
+[00:05:41.035687681]: Resetting daily time file
+[00:05:55.435458637]: Resetting daily time file
+[00:06:09.435513867]: Resetting daily time file
+[00:06:09.441692066]: Resetting weekly time file
+[00:06:24.435451816]: Resetting daily time file
+[00:06:39.885405612]: Resetting daily time file
+[00:06:57.385377221]: Resetting daily time file
+[00:07:14.185369696]: Resetting daily time file
+[00:07:30.935446167]: Resetting daily time file
+[00:07:48.235915476]: Resetting daily time file
+[00:08:06.585446643]: Resetting daily time file
+[00:08:06.591877311]: Resetting weekly time file
+[00:08:25.285441653]: Resetting daily time file
+[12:06:48.59721851]: Stopped Autorank

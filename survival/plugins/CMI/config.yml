@@ -52,6 +52,11 @@ Economy:
     - t-1000000000000
     - q-1000000000000000
   BalTop:
+    # When enabled we will preload all players balances in baltop list on server startup
+    # If you have 3rd party economy plugin this might increase initial load times
+    # If set to false then baltop will only include newly modified players balances and not all of them
+    # Keep it disabled if you are not using baltop from CMI
+    LoadInAll: true
     # List of players to exclude from baltop list
     Exclude:
     - Notch
@@ -106,6 +111,25 @@ Economy:
     SwitchPlaces: false
     # Placing of currency symbol
     Placing: '[money][symbol]'
+    # Taxing for /pay command usage
+    # This is only for this specific command at the moment and will not tax other actions
+    Tax:
+      # Type of taxing. None, Flat, Percentage
+      # Where flat type will deduct specific amount of money for each pay command usage
+      # Percentage type will deduct percentage of money for each pay command usage based on transfer amount
+      Type: None
+      # Either flat amount or percentage on transaction amount
+      # Percentage is defined between 0 and 100
+      Amount: 4.0
+      # Minimal amount to tax player, mostly used when taxing based on percentage
+      Min: 0.0
+      # Maximal amount to tax player, mostly used when taxing based on percentage
+      # Set to 0 if you don't want to have max limit
+      Max: 1000.0
+      # When set to true tax will be added on top of transfered amount, so if player transfers 100 and tax is 10 then receiving player receives 100 and sender player looses 110
+      # If its set to false tax will be subtracted from transfered amount, so if player transfers 100 and tax is 10 then receiving player receives 90 and sender player pays 100
+      # Recommended to keep it at true just to avoid confusion why receiving player got less money
+      DeductOnTop: true
 FileSave:
   # Change this to true only if you have issues with drives I/O and you need to save players files in async mode to lower waiting time for mc server
   Async: false
@@ -432,6 +456,10 @@ Optimizations:
         Time2: 86400
         Time3: 604800
         Time4: 2592000
+    CheckAccount:
+      # List of users/ip's to be excluded from checkaccount command
+      ExcludedUsers:
+      - Zrips
     Inv:
       # List of players which you should not be able to open inventories
       # This can still be bypassed if you are OP
@@ -449,6 +477,9 @@ Optimizations:
     List:
       # Sorts players custom groups in Ascending or descending order
       ASCOrder: true
+    Give:
+      # When enabled items in give command will be limited to same limits as it is set for enchants, same permission requirements will apply
+      LimitEnchants: false
   Multicraft:
     # When set to true, will prevent multicraft servers to spam in console.
     DisableList: false
@@ -630,10 +661,6 @@ ReSpawn:
     - homeLocation
     - worldSpawn
 Holograms:
-  # Defines in milliseconds how often to check if player entered holograms trigger area
-  # Bigger numbers can help slightly lower server load
-  # This is not essential to keep in low numbers
-  CheckInterval: 2000
   Defaults:
     # Default value for hologram view range
     # This defines from how far holograms will appear for the player or when they will disapear
@@ -642,15 +669,21 @@ Holograms:
     # This defines how close player should get for hologram to start updating its text
     # Keep it at reasoble numbers as there is no point to update hologram across map
     updateRange: 8
-    # Defines default update interval
-    # Higher values means that holograms will be updated less often
-    # When value is set to 0 or lower, holograms will not be updated
-    updateInterval: 0.0
-    # Defines default page change interval
+    Interval:
+      # Defines default update interval in ticks, 20 ticks = 1 second
+      # When value is set to 0 or lower, holograms will not be updated
+      # This only applies for holograms with dynamic contents
+      Update: 0
+    # Defines default page change interval in ticks
     # When value is set to 0 or lower, pages will not be changed
     pageChangeInterval: 0.0
-    # Defines if we should place lines up from starting position or down
-    placeUp: true
+    Interaction:
+      # Prefix to be used for lines utilizing CText
+      # This only applies for the sections that have set commands and will not have effect on basic text even with hover text
+      BasePrefix: '{#white}'
+      # Prefix to be used for lines utilizing CText when you hover over it
+      # Can be overriden with hologram editor
+      HoverPrefix: '{#gray}'
 Votifier:
   # When set to true votifier votes will be counted for player
   CountVotes: true
@@ -772,11 +805,6 @@ Command:
       - tell
       - login
       - register
-    # Priority of command spam listener
-    # Changed priority will only take effect on full server restart
-    # Possible options: LOWEST, LOW, NORMAL, HIGH, HIGHEST
-    # Default: LOW
-    Priority: LOW
   Spy:
     # Delay in seconds for commands spy to turn on after relog
     # This will prevent some one from loging in with admin account and seeing commands before loging in
@@ -861,6 +889,8 @@ Spawners:
     # If enabled player will get spawner if using silktouch pickaxe and have cmi.dropspawner permission node
     # If player has cmi.dropspawner.nosilk permission node, player is not required to use silk touch pickaxe to get droped spawner
     Enabled: false
+    # When enabled item stack will receive custom name based on spawners type
+    CustomName: false
     # When enabled instead of dropping spawner on the ground, player will received this item directly into their inventory
     # In case inventory is full then item will be dropped on the ground
     IntoInventory: false
@@ -961,6 +991,7 @@ ItemRenaming:
   # This can prevent items with specific names being completely disabled from being renamed and prevent other items being renamed into them
   CheckSource: true
   # List of materials followed with optional regex code which can prevent specific naming, like renaming mob spawners into another type while still allowing renaming spawner into anything else
+  # Use * for material name if you want to apply this filter to all items, for example *:([A-z])
   List:
   - mobspawner:([A-z]+ (?i)\w*spawner)
 SpawnMob:
@@ -1016,14 +1047,17 @@ Animations:
   DoubleClickDelay: 200
   # Range in blocks from player to look up for valid chair block
   ChairRange: 4
-# All possible damage causes: kill, world_border, contact, entity_attack, entity_sweep_attack, projectile, suffocation, fall, fire, fire_tick, melting, lava, drowning, block_explosion, entity_explosion, void, lightning, suicide, starvation, poison, magic, wither, falling_block, thorns, dragon_breath, fly_into_wall, hot_floor, campfire, cramming, dryout, freeze, sonic_boom, custom
+# All possible damage causes: kill, world_border, entity_attack, entity_sweep_attack, projectile, suffocation, fall, fire, fire_tick, melting, lava, drowning, block_explosion, entity_explosion, void, lightning, suicide, starvation, poison, magic, wither, falling_block, thorns, dragon_breath, fly_into_wall, campfire, cramming, dryout, freeze, sonic_boom, custom
 # Syntax should be [permissionNode]:[damageCause]:[multiplier]
 # Example: nolavadamage:lava:0 will prevent lava damage with cmi.damagecontrol.nolavadamage permission node
 # Negative values will heal player instead of damaging him
 # If player have more than one permission node for same damage cause, then last one in list will be used to determine final damage
 DamageControl:
-- nowalldamage:fly_into_wall:1
-- lowermagmacubedamage:hot_floor:0.9
+  # When enabled some of the damage values can be adjusted
+  Enabled: false
+  List:
+  - nowalldamage:fly_into_wall:1
+  - lowermagmacubedamage:hot_floor:0.9
 Totem:
   # When this set to true, on players death totem will be used even if he is not holding it in hand
   RemoveFromInventory: false
@@ -1152,7 +1186,7 @@ FlightCharge:
   # Set this to 'none' if you want to disable it
   GlowColor: none
 Point:
-  # Default particle for point command. Options: fireworks_spark, crit, magic_crit, potion_swirl, potion_swirl_transparent, spell, instant_spell, witch_magic, note, portal, flying_glyph, flame, lava_pop, footstep, splash, particle_smoke, explosion_huge, explosion_large, explosion, void_fog, small_smoke, cloud, coloured_dust, dust, snowball_break, waterdrip, lavadrip, snow_shovel, slime, heart, villager_thundercloud, happy_villager, large_smoke, water_bubble, water_wake, suspended, barrier, mob_appearance, end_rod, damage_indicator, sweep_attack, totem, spit, squid_ink, bubble_pop, current_down, bubble_column_up, nautilus, dolphin, water_splash, campfire_signal_smoke, campfire_cosy_smoke, sneeze, composter, flash, falling_lava, landing_lava, falling_water, dripping_honey, falling_honey, landing_honey, falling_nectar, soul_fire_flame, ash, crimson_spore, warped_spore, soul, dripping_obsidian_tear, falling_obsidian_tear, landing_obsidian_tear, reverse_portal, white_ash, light, falling_spore_blossom, spore_blossom_air, small_flame, snowflake, dripping_dripstone_lava, falling_dripstone_lava, dripping_dripstone_water, falling_dripstone_water, glow_squid_ink, glow, wax_on, wax_off, electric_spark, scrape, block_marker, sonic_boom, sculk_soul, sculk_charge_pop, cherry_leaves, small_gust, trial_spawner_detection_ominous, vault_connection, infested, item_cobweb, ominous_spawning, raid_omen, trial_omen, poof, explosion_emitter, firework, bubble, fishing, underwater, enchanted_hit, effect, instant_effect, entity_effect, witch, dripping_water, dripping_lava, mycelium, enchant, item_snowball, item_slime, item, block, rain, elder_guardian, falling_dust, totem_of_undying, dust_color_transition, vibration, sculk_charge, shriek, egg_crack, dust_plume, white_smoke, gust, gust_emitter_large, gust_emitter_small, trial_spawner_detection, dust_pillar, pale_oak_leaves, tinted_leaves, block_crumble, trail, firefly
+  # Default particle for point command. Options: fireworks_spark, smoke, dragon_breath, crit, magic_crit, potion_swirl, potion_swirl_transparent, spell, instant_spell, witch_magic, note, portal, flying_glyph, flame, lava_pop, footstep, splash, particle_smoke, explosion_huge, explosion_large, explosion, void_fog, small_smoke, cloud, coloured_dust, dust, snowball_break, waterdrip, lavadrip, snow_shovel, slime, heart, villager_thundercloud, happy_villager, large_smoke, water_bubble, water_wake, suspended, barrier, mob_appearance, end_rod, damage_indicator, sweep_attack, totem, spit, squid_ink, bubble_pop, current_down, bubble_column_up, nautilus, dolphin, water_splash, campfire_signal_smoke, campfire_cosy_smoke, sneeze, composter, flash, falling_lava, landing_lava, falling_water, dripping_honey, falling_honey, landing_honey, falling_nectar, soul_fire_flame, ash, crimson_spore, warped_spore, soul, dripping_obsidian_tear, falling_obsidian_tear, landing_obsidian_tear, reverse_portal, white_ash, light, falling_spore_blossom, spore_blossom_air, small_flame, snowflake, dripping_dripstone_lava, falling_dripstone_lava, dripping_dripstone_water, falling_dripstone_water, glow_squid_ink, glow, wax_on, wax_off, electric_spark, scrape, block_marker, sonic_boom, sculk_soul, sculk_charge_pop, cherry_leaves, small_gust, trial_spawner_detection_ominous, vault_connection, infested, item_cobweb, ominous_spawning, raid_omen, trial_omen, poof, explosion_emitter, firework, bubble, fishing, underwater, enchanted_hit, effect, instant_effect, entity_effect, witch, dripping_water, dripping_lava, mycelium, enchant, item_snowball, item_slime, item, block, rain, elder_guardian, falling_dust, totem_of_undying, dust_color_transition, vibration, sculk_charge, shriek, egg_crack, dust_plume, white_smoke, gust, gust_emitter_large, gust_emitter_small, trial_spawner_detection, dust_pillar, pale_oak_leaves, tinted_leaves, block_crumble, trail, firefly
   DefaultParticle: DUST
 Messages:
   Login:
@@ -1258,10 +1292,12 @@ Newbie:
 Kits:
   # When set to true, kit list will be shown in GUI instead of chat list
   GUI: true
-  # When set to true, kit selection gui empty fields will get filled with definet item
+  # When set to true, kit selection gui empty fields will get filled with default item (check CMILib)
   FillEmptyFields: true
   # When enabled players can preview kits they have access to or have cmi.kit.[kitName].preview or cmi.kit.[kitName].* permission node
   KitPreview: true
+  # Defines how {DATE} value will be formatted
+  DateFormat: yyyy-MM-dd HH:mm:ss
   Buttons:
     # Icons for kit preview gui
     # Setting icon to invalid item will hide button
@@ -1554,6 +1590,7 @@ Player:
       receivePets: true
       deathMessages: true
       notarget: false
+      showVehicleSpeed: false
     Icons:
       visibleHolograms: BLACK_STAINED_GLASS
       shiftSignEdit: OAK_SIGN
@@ -1575,6 +1612,7 @@ Player:
       receivePets: LEAD
       deathMessages: DEAD_BUSH
       notarget: BEDROCK
+      showVehicleSpeed: MINECART
 WarmUps:
   # You can enable any command warmup to prevent instant command usage
   # tp:5:false means that when player performs /tp command he will need to wait 5 sec and will not be able to move outside current block
@@ -1651,6 +1689,9 @@ purge:
   CleanOnStart: false
   # How long player should be offline for his data to be moved
   OfflineDays: 90
+  CMIData:
+    # Do you want to enable player data cleanup from CMI records
+    Enabled: false
   PlayerData:
     # Do you want to enable player data file cleaning
     Enabled: true
@@ -1760,6 +1801,7 @@ Enchanting:
       damage_undead: 5
       piercing: 4
       lure: 3
+      lunge: 3
       riptide: 3
       arrow_damage: 5
       protection_explosions: 4
@@ -1833,6 +1875,9 @@ Sounds:
   MailNotification: entity_creeper_hurt:1:0.5
   TeleportUp: entity_enderman_teleport:2:1
   TeleportDown: entity_enderman_teleport:0.2:1
+  CommandWarmup: blockrespawnanchorcharge:1:1
+  CommandWarmupRunning: blockrespawnanchorcharge:1:1
+  CommandCooldown: blocknoteblockpling:0.5:0.5
 PotionEffects:
   # When set to true player poition effect will expire even if player is offline
   # Keep in mind that player potion effect durability will be updated on players login event so by checking players potions effect while he is offline can show incorrect state
