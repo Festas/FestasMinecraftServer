@@ -10,8 +10,10 @@
 2. [Server-Details](#2-server-details)
    - [Lobby](#21-lobby)
    - [Survival / Tycoon](#22-survival--tycoon)
-   - [Skyblock (MMO) — Archiv](#23-skyblock-mmo--archiv-wird-eingestellt)
-   - [RPG (MMO) — Archiv](#24-rpg-mmo--archiv-wird-eingestellt)
+   - [Minigames — Geplant](#23-minigames--geplant-nachfolger)
+   - [Factions — Geplant](#24-factions--geplant-nachfolger)
+   - [Skyblock (MMO) — Archiv](#25-skyblock-mmo--archiv-wird-eingestellt)
+   - [RPG (MMO) — Archiv](#26-rpg-mmo--archiv-wird-eingestellt)
 3. [Klassen-System — Archiv](#3-klassen-system--archiv-mmo)
 4. [Item-System](#4-item-system)
 5. [Economy-System](#5-economy-system)
@@ -30,7 +32,7 @@
 **Sprache:** Deutsch (primär)  
 **Status:** Umstellung auf 26.2 — Fokus auf Lobby & Survival
 
-> **⚠️ Umbruch:** Aktiv weiterentwickelt werden derzeit nur **Lobby** und **Survival** (Plugins frisch aufgeräumt). Die MMO-Server **Skyblock** und **RPG** werden **zeitnah eingestellt** und durch **zwei neue Server** ersetzt (noch nicht festgelegt). Die Skyblock-/RPG-Abschnitte in diesem Dokument gelten als **Archiv/Referenz**.
+> **⚠️ Umbruch:** Aktiv weiterentwickelt werden derzeit nur **Lobby** und **Survival** (Plugins frisch aufgeräumt). Die MMO-Server **Skyblock** und **RPG** werden **zeitnah eingestellt** und durch **zwei neue Server** ersetzt: **Minigames** (Casual) und **Factions** (Social/PvP) — Weichenstellung, Bewertung und Plugin-Shortlist in [NEW_SERVERS.md](NEW_SERVERS.md). Die Skyblock-/RPG-Abschnitte in diesem Dokument gelten als **Archiv/Referenz**.
 
 ### Netzwerk-Architektur
 
@@ -42,10 +44,12 @@ Velocity Proxy  (mc.festas-builds.com)
     │
     ├──► Lobby          Haupt-Hub, Server-Navigation           [AKTIV]
     ├──► Survival       Standard Survival + Tycoon-Gamemode     [AKTIV]
+    ├──► Minigames      Rotierende Minispiele (Casual)          [GEPLANT → Aufbau]
+    ├──► Factions       Gilden-PvP, Land-Claiming (Social/PvP)  [GEPLANT → Aufbau]
     ├──► Skyblock       MMO-Skyblock mit RPG-Elementen          [ARCHIV → Abbau]
     └──► RPG            Vollständiger MMO-RPG Open-World-Server  [ARCHIV → Abbau]
 
-    Geplant: 2 neue Server ersetzen Skyblock & RPG (noch offen)
+    Minigames & Factions ersetzen Skyblock & RPG (Konzept: NEW_SERVERS.md)
 ```
 
 Der aktive Fokus liegt auf dem **Survival/Tycoon**-Erlebnis und der **Lobby** als Hub. Die auslaufenden MMO-Server kombinierten Konzepte aus **Hypixel Skyblock** (Progression, Minions, Collections) und **Wynncraft** (Klassen, Quests, Story) — diese Inhalte werden mit der Abschaltung durch zwei neue Server-Konzepte abgelöst.
@@ -176,9 +180,46 @@ Nach Rang 25 kann man prestigen — alles wird zurückgesetzt, aber ein permanen
 
 ---
 
-### 2.3 Skyblock (MMO) — *Archiv, wird eingestellt*
+### 2.3 Minigames — *Geplant (Nachfolger)*
+
+> **🟡 Geplant / Aufbauphase.** Einer der zwei Nachfolger für Skyblock & RPG. Konzept:
+> [minigames/README.md](minigames/README.md) · [NEW_SERVERS.md](NEW_SERVERS.md).
+
+**Funktion:** Casual-Server mit rotierenden Minispielen
+**Version:** Paper 26.2 (geplant)
+**Slot:** Casual · **Zielgruppe:** Gelegenheitsspieler, Bedrock-freundlich
+
+**Kern-Idee:**
+- Rotierende Modi: BedWars/SkyWars, Parkour, Spleef, Arcade
+- Kurze Runden, niedrige Einstiegshürde, hoher Wiederspielwert
+- Retention über Cosmetics, Battle-Pass und tägliche Herausforderungen
+
+**Abgrenzung:** Kein Grind — bewusst das Gegenteil des Survival/Tycoon-Loops.
+
+---
+
+### 2.4 Factions — *Geplant (Nachfolger)*
+
+> **🟡 Geplant / Aufbauphase.** Einer der zwei Nachfolger für Skyblock & RPG. Konzept:
+> [factions/README.md](factions/README.md) · [NEW_SERVERS.md](NEW_SERVERS.md).
+
+**Funktion:** Social/PvP-Server mit Gilden-getriebenem Land-Claiming
+**Version:** Paper 26.2 (geplant)
+**Slot:** Social/PvP · **Zielgruppe:** Gruppen-/PvP-Spieler
+
+**Kern-Idee:**
+- Gilden/Teams als Klammer über **CrossCraft-Guilds** (bereits im Repo)
+- Land-Claiming, Warzone, Raids; deckt die offene PvP-Endgame-Lücke ab
+- Progression über Kits, Crates, Ränge; saisonale Wipes/Ladder
+
+**Kritische Blocker:** Anti-Cheat und Factions-Kern für 26.2 verifizieren; CrossCraft-Guilds auf 26.2 anheben.
+
+---
+
+### 2.5 Skyblock (MMO) — *Archiv, wird eingestellt*
 
 > **⚠️ Dieser Server wird zeitnah abgeschaltet** und durch einen neuen Server ersetzt. Inhalte nur noch als Referenz.
+
 
 **Funktion:** MMO-Skyblock mit RPG-Elementen und vollständiger Klassen-Integration  
 **Version:** Paper 26.2  
@@ -244,7 +285,7 @@ Jede Sammlung hat Milestones mit exklusiven Belohnungen.
 
 ---
 
-### 2.4 RPG (MMO) — *Archiv, wird eingestellt*
+### 2.6 RPG (MMO) — *Archiv, wird eingestellt*
 
 > **⚠️ Dieser Server wird zeitnah abgeschaltet** und durch einen neuen Server ersetzt. Inhalte nur noch als Referenz.
 

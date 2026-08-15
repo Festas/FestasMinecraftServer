@@ -2,7 +2,7 @@
 
 Konfigurationen für mein Minecraft Server-Netzwerk (Paper + Velocity)
 
-> **⚠️ Projekt-Status (Umstellung auf 26.2):** Das Netzwerk läuft jetzt auf **Minecraft 26.2** und wird gerade komplett überarbeitet. Der Fokus liegt **aktuell nur auf Lobby und Survival** — die Plugins dieser beiden Server wurden frisch aufgeräumt und neu übertragen. Die MMO-Server **Skyblock** und **RPG** werden **zeitnah eingestellt** und durch **zwei neue Server** ersetzt (Auswahl noch offen). Ihre Dokumentation wird bis dahin nur noch als **Archiv** geführt.
+> **⚠️ Projekt-Status (Umstellung auf 26.2):** Das Netzwerk läuft jetzt auf **Minecraft 26.2** und wird gerade komplett überarbeitet. Der Fokus liegt **aktuell auf Lobby und Survival** — die Plugins dieser beiden Server wurden frisch aufgeräumt und neu übertragen. Die MMO-Server **Skyblock** und **RPG** werden **zeitnah eingestellt** und durch **zwei neue Server** ersetzt: einen **Minigames**-Server (Casual) und einen **Factions**-Server (Social/PvP). Beide sind in der **Konzept-/Aufbauphase** — Details in [docs/NEW_SERVERS.md](docs/NEW_SERVERS.md). Die Doku von Skyblock & RPG wird bis zur Abschaltung nur noch als **Archiv** geführt.
 
 ## Über das Projekt
 
@@ -18,8 +18,11 @@ Dieses Repository enthält alle Konfigurationen für ein Minecraft Paper Server 
 - **Skyblock**: MMO Skyblock mit RPG-Elementen
 - **RPG**: Vollständiger MMO-RPG Server
 
-### Geplant
-- **2 neue Server** als Ersatz für Skyblock & RPG (noch nicht festgelegt)
+### Geplant (Nachfolger für Skyblock & RPG)
+- **Minigames**: Casual-Server mit rotierenden Minispielen (BedWars/SkyWars, Parkour, Spleef, Arcade)
+- **Factions**: Social/PvP-Server mit Gilden-getriebenem Land-Claiming (CrossCraft-Guilds als Klammer)
+
+> Auswahl, Bewertung und Plugin-Shortlist siehe [docs/NEW_SERVERS.md](docs/NEW_SERVERS.md).
 
 Die (auslaufenden) **Skyblock** und **RPG** Server kombinierten die besten Elemente von:
 - **Hypixel Skyblock**: Progression-System, Custom Items, Stats und Skills
@@ -41,6 +44,10 @@ MinecraftMMO/
 │   └── plugins/        # MMO-Plugins (MMOCore, MMOItems, MythicMobs, etc.)
 ├── rpg/                # RPG Server Konfigurationen  (ARCHIV — wird eingestellt)
 │   └── plugins/        # RPG-Plugins (MythicMobs Premium, MythicDungeons, etc.)
+├── minigames/          # Minigames Server (GEPLANT — Nachfolger, Gerüst)
+│   └── plugins/        # Minigame-Framework, Parkour, Cosmetics, etc.
+├── factions/           # Factions Server (GEPLANT — Nachfolger, Gerüst)
+│   └── plugins/        # Factions-Kern, WorldGuard, Anti-Cheat, CrossCraft-Guilds
 ├── crosscraft-guilds/  # CrossCraft Guilds Plugin (Gradle, Java 21)
 │   └── ...             # Paper + Velocity Module
 └── docs/               # Dokumentation
@@ -90,6 +97,7 @@ Vollständige Plugin-Liste siehe [docs/PLUGINS.md](docs/PLUGINS.md)
 Umfassende Dokumentation findest du im [`/docs`](docs/) Verzeichnis:
 
 ### Allgemeine Dokumentation
+- **[NEW_SERVERS.md](docs/NEW_SERVERS.md)** - Nachfolge-Server (Minigames & Factions): Auswahl, Kriterien, Plugin-Shortlist, Roadmap
 - **[PLANNING.md](docs/PLANNING.md)** - Fragenkatalog für Planung und Entwicklung
 - **[ARCHITECTURE.md](docs/ARCHITECTURE.md)** - Netzwerk-Architektur und technische Details
 - **[PLUGINS.md](docs/PLUGINS.md)** - Vollständige Plugin-Referenz pro Server
@@ -106,6 +114,8 @@ Umfassende Dokumentation findest du im [`/docs`](docs/) Verzeichnis:
 
 ### Server-spezifische Dokumentation
 - **[Survival-Server](docs/survival/README.md)** — Tycoon, Plots, Progression *(aktiv)*
+- **[Minigames-Server](docs/minigames/README.md)** — Rotierende Minispiele *(geplant, Nachfolger)*
+- **[Factions-Server](docs/factions/README.md)** — Gilden-PvP, Land-Claiming *(geplant, Nachfolger)*
 - **[RPG-Server](docs/rpg/README.md)** - Zonen, Quests, Dungeons, Mobs, NPCs *(Archiv, wird eingestellt)*
 - **[Skyblock-Server](docs/skyblock/README.md)** - Islands, Minions, Progression *(Archiv, wird eingestellt)*
 
@@ -119,7 +129,7 @@ Umfassende Dokumentation findest du im [`/docs`](docs/) Verzeichnis:
 
 ## Verwendung
 
-Jeder Server-Ordner (`lobby/`, `survival/`, `proxy/` — aktiv; `skyblock/`, `rpg/` — Archiv) enthält seine eigenen Plugin-Konfigurationen unter `plugins/`.
+Jeder Server-Ordner (`lobby/`, `survival/`, `proxy/` — aktiv; `minigames/`, `factions/` — geplant/Gerüst; `skyblock/`, `rpg/` — Archiv) enthält seine eigenen Plugin-Konfigurationen unter `plugins/`.
 
 Die Konfigurationsdateien können direkt in die entsprechenden Plugin-Ordner auf dem Server kopiert werden:
 ```bash
@@ -139,4 +149,4 @@ Dies ist ein persönliches Projekt für meinen Minecraft Server.
 - **Bedrock-Support:** Geyser-Velocity + Floodgate
 - **Datenbanken:** MariaDB (172.25.0.1:3306), Redis (172.18.0.1:6379)
 - **Server-IP:** mc.festas-builds.com
-- **Aktueller Fokus:** Lobby & Survival — Skyblock & RPG werden zeitnah durch 2 neue Server ersetzt
+- **Aktueller Fokus:** Lobby & Survival — Skyblock & RPG werden zeitnah durch **Minigames** & **Factions** ersetzt (Konzept: [docs/NEW_SERVERS.md](docs/NEW_SERVERS.md))

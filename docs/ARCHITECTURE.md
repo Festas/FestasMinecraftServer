@@ -30,7 +30,7 @@ Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
     - Navigation               - Economy, BlueMap        - MMOCore, MMOItems
       (DeluxeMenus)                                      - MythicMobs Premium
 
-    Geplant: 2 neue Server ersetzen RPG & Skyblock (noch offen)
+    Geplant: Minigames & Factions ersetzen RPG & Skyblock (Konzept: NEW_SERVERS.md)
 ```
 
 ---
@@ -572,9 +572,9 @@ Bei kritischen Fehlern:
 
 ## Zukünftige Verbesserungen
 
-> **Stand 26.2:** RPG-/Skyblock-bezogene Punkte sind hinfällig — beide Server werden durch **zwei neue Server** ersetzt. Fokus der nächsten Schritte: **Lobby**, **Survival** und die Vorbereitung der zwei Nachfolge-Server.
+> **Stand 26.2:** RPG-/Skyblock-bezogene Punkte sind hinfällig — beide Server werden durch **zwei neue Server** ersetzt: **Minigames** (Casual) und **Factions** (Social/PvP), siehe [NEW_SERVERS.md](NEW_SERVERS.md). Fokus der nächsten Schritte: **Lobby**, **Survival** und die Vorbereitung der zwei Nachfolge-Server.
 
-- [ ] Konzept & Aufsetzen der **2 neuen Server** (Ersatz für Skyblock & RPG)
+- [ ] Konzept & Aufsetzen der Nachfolge-Server **Minigames** & **Factions** (Ersatz für Skyblock & RPG)
 - [ ] Datensicherung + geordnete Abschaltung von Skyblock & RPG
 - [ ] Separate Build-Server für große Projekte
 - [ ] Event-Server (temporär für spezielle Events)
@@ -584,7 +584,7 @@ Bei kritischen Fehlern:
 ### Lobby — Nächste Schritte
 - [ ] Hologramme über CMI einrichten (Welcome, Server-Info, Spielerzahlen)
 - [ ] Spawn-Punkt in-game setzen (`/cmi setspawn`)
-- [ ] `server_selector` auf die neue Server-Aufstellung anpassen (Skyblock/RPG → 2 neue Server)
+- [ ] `server_selector` auf die neue Server-Aufstellung anpassen (Skyblock/RPG → Minigames/Factions)
 - [ ] Scoreboard/Sidebar mit Netzwerk-Info (CMI oder Skript)
 - [ ] Parkour-Kurs mit Belohnungen
 - [ ] Boss-Bar-Announcements für rotierende Ankündigungen

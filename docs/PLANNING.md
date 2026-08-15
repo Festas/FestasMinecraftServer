@@ -2,7 +2,7 @@
 
 Dieser Fragenkatalog dient als Leitfaden für die weitere Entwicklung und Dokumentation des MinecraftMMO Server-Netzwerks. Die Fragen helfen dabei, strukturiert über Features, Balance und Implementierung nachzudenken.
 
-> **ℹ️ Stand 26.2:** Der Fokus liegt aktuell auf **Lobby** und **Survival**. Fragen zu **Skyblock** und **RPG** sind nur noch für den Rückbau relevant — beide Server werden zeitnah eingestellt und durch **zwei neue Server** ersetzt (Konzept noch offen). Neue Planung sollte sich auf die aktiven Server bzw. die zwei Nachfolge-Server konzentrieren.
+> **ℹ️ Stand 26.2:** Der Fokus liegt aktuell auf **Lobby** und **Survival**. Die MMO-Server **Skyblock** und **RPG** werden zeitnah eingestellt und durch **zwei neue Server** ersetzt: **Minigames** (Casual) und **Factions** (Social/PvP). Die Weichenstellung inkl. Bewertung und Plugin-Shortlist steht in [NEW_SERVERS.md](NEW_SERVERS.md); die Planungskapitel für die Nachfolger sind Abschnitte 4 (Minigames) und 5 (Factions). Fragen zu Skyblock/RPG sind nur noch für den Rückbau relevant.
 
 ---
 
@@ -10,7 +10,7 @@ Dieser Fragenkatalog dient als Leitfaden für die weitere Entwicklung und Dokume
 
 ### Vision & Ziele
 - [ ] Was ist die übergeordnete Vision für das gesamte Netzwerk?
-- [ ] Wie unterscheiden sich die drei MMO-Server (Lobby, Skyblock, RPG) voneinander?
+- [ ] Wie unterscheiden sich die aktiven und geplanten Server (Lobby, Survival, Minigames, Factions) voneinander?
 - [ ] Welche einzigartigen Verkaufsargumente (USPs) hat das Netzwerk?
 - [ ] Welche Zielgruppe soll angesprochen werden? (Casual, Hardcore, PvP, PvE)
 - [ ] Wie lange soll die durchschnittliche Spielzeit bis Endgame sein?
@@ -137,77 +137,61 @@ Dieser Fragenkatalog dient als Leitfaden für die weitere Entwicklung und Dokume
 
 ---
 
-## 4. RPG-Server Planung
+## 4. Minigames-Server Planung (Nachfolger, geplant)
 
-### Welt & Zonen
-- [ ] Wie viele Zonen/Gebiete sind geplant?
-- [ ] Gibt es eine Hauptstadt/Hub?
-- [ ] Zonierung nach Level? (Starter-Zone Level 1-10, etc.)
-- [ ] Dungeons in der Open World oder instanziert?
-- [ ] Schnellreise-System? (Teleporter, Mounts?)
+> Casual-Server mit rotierenden Minispielen. Konzept & Plugin-Shortlist:
+> [NEW_SERVERS.md](NEW_SERVERS.md) · [minigames/README.md](minigames/README.md).
 
-### Quest-System (BetonQuest)
-- [ ] Haupt-Questline: Wie viele Akte/Kapitel?
-- [ ] Nebenquests: Wie viele pro Zone?
-- [ ] Tägliche/Wöchentliche Quests?
-- [ ] Wiederholbare Quests?
-- [ ] Quest-Belohnungen: XP, Items, Währung?
-- [ ] Entscheidungen mit Konsequenzen?
+### Modi & Rotation
+- [ ] Welche Modi zum Launch? (BedWars/SkyWars, Parkour, Spleef, Arcade)
+- [ ] Fester Modus-Selector oder automatische Rotation?
+- [ ] Solo- und Team-Modi?
+- [ ] Ranglisten/Leaderboards pro Modus?
 
-### Dungeons (MythicDungeons)
-- [ ] Wie viele Dungeons insgesamt geplant?
-- [ ] Schwierigkeitsgrade pro Dungeon?
-- [ ] Maximale Gruppengröße?
-- [ ] Lockout-System? (1x pro Tag?)
-- [ ] Besondere Dungeon-Mechaniken?
-- [ ] Boss-Loot-Tables definiert?
+### Maps & Arenen
+- [ ] Eigene Builds oder lizenzfreie Community-Maps?
+- [ ] Wie viele Maps pro Modus zum Launch?
+- [ ] MultiArena/Queue-System für parallele Runden?
+- [ ] Automatischer Map-Reset nach Runde?
 
-### Mobs & Bosse (MythicMobs Premium)
-- [ ] Wie viele normale Mob-Typen?
-- [ ] Wie viele Elite-Mobs?
-- [ ] Wie viele Welt-Bosse?
-- [ ] Respawn-Timer für Bosse?
-- [ ] Mob-Fähigkeiten-Design?
-- [ ] Drop-Tables komplett oder WIP?
+### Framework & Technik (26.2)
+- [ ] Welches Minigame-Framework ist 26.2-tauglich? (Blocker!)
+- [ ] Bedrock-Kompatibilität aller GUIs (Geyser/Floodgate)?
+- [ ] Welt-Verwaltung: Multiverse-Core?
 
-### NPCs (Citizens)
-- [ ] Welche NPC-Typen? (Questgeber, Händler, Trainer, Lore-NPCs)
-- [ ] Dialog-System vollständig geplant?
-- [ ] Voice-Acting / Text-Lokalisierung?
-- [ ] Dynamische NPCs (spawnen/verschwinden basierend auf Quests)?
+### Retention & Economy
+- [ ] Battle-Pass / tägliche Herausforderungen?
+- [ ] Cosmetics (Trails, Effekte, Kills-Messages)?
+- [ ] Server-isolierte Währung oder netzwerkweite Cosmetic-Währung?
 
 ---
 
-## 5. Skyblock-Server Planung
+## 5. Factions-Server Planung (Nachfolger, geplant)
 
-### Island-System (SuperiorSkyblock2)
-- [ ] Standard Skyblock oder Custom Islands?
-- [ ] Island-Größe und Expansion?
-- [ ] Coop-Islands oder nur Solo?
-- [ ] Island-Level-System?
-- [ ] Island-Upgrades? (Generator, Speicher, etc.)
+> Social/PvP-Server mit Gilden-getriebenem Land-Claiming. Konzept & Plugin-Shortlist:
+> [NEW_SERVERS.md](NEW_SERVERS.md) · [factions/README.md](factions/README.md).
 
-### MMO-Integration
-- [ ] Wie unterscheidet sich MMO-Skyblock von Standard-Skyblock?
-- [ ] Klassen-System auch auf Skyblock?
-- [ ] Skyblock-spezifische Dungeons?
-- [ ] PvP auf Skyblock?
+### Gilden & Teams (CrossCraft-Guilds)
+- [ ] CrossCraft-Guilds auf 26.2 kompiliert & getestet?
+- [ ] Gilden-Bank, -Ränge und Cross-Server-Chat aktiv?
+- [ ] Maximale Gildengröße / Allianzen?
 
-### Minions (JetsMinions)
-- [ ] Welche Minion-Typen?
-- [ ] Minion-Upgrades?
-- [ ] Max Minions pro Island?
-- [ ] Minion-Fuel-System?
+### Land-Claiming & War
+- [ ] Welcher Factions-/Claim-Kern ist 26.2-tauglich? (Blocker!)
+- [ ] Claim-Limits, Power-System, Raid-Regeln?
+- [ ] Warzone & Spawn-Schutz (WorldGuard)?
+- [ ] Saisonale Wipes / Ladder?
 
-### Progression
-- [ ] Skill-System? (Mining, Farming, Combat, etc.)
-- [ ] Collections? (Sammle X von Y für Belohnungen)
-- [ ] Slayer-System? (Boss-Kämpfe für Rewards)
+### PvP-Fairness & Sicherheit
+- [ ] Anti-Cheat für 26.2 verifiziert? (kritischer Blocker!)
+- [ ] Combat-Tag / Anti-Combat-Log?
+- [ ] Moderations-Workflow (Griefing, Reports)?
 
-### Economy
-- [ ] Eigene Skyblock-Währung?
-- [ ] Auction House / Bazaar?
-- [ ] NPC-Shop vs Player-Shops?
+### Progression & Retention
+- [ ] Kits, Crates, Ränge, Battle-Pass?
+- [ ] KitPvP-Arena als Zusatz-Modus?
+- [ ] PvE-Welt-Events (ggf. MythicMobs aus Alt-Bestand)?
+- [ ] Server-isolierte Währung?
 
 ---
 
@@ -371,4 +355,4 @@ _Hier können spontane Ideen, Notizen oder unfertige Gedanken festgehalten werde
 
 ---
 
-**Letzte Aktualisierung:** 2026-04-10
+**Letzte Aktualisierung:** 2026-08-15
