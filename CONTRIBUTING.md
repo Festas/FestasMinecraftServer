@@ -2,6 +2,8 @@
 
 Vielen Dank für dein Interesse an diesem Projekt!
 
+> **ℹ️ Stand 26.2:** Aktiv gepflegt werden **Lobby** und **Survival**. Die Naming-/Balancing-Konventionen unten stammen größtenteils aus dem MMO-Content (**Skyblock**/**RPG**, MythicMobs/MMOItems/BetonQuest), der eingestellt wird — sie bleiben als Referenz erhalten. Für neue Beiträge zu Lobby/Survival gelten vor allem die YAML-/Git-Abschnitte.
+
 ## Struktur beibehalten
 
 Bitte halte dich an die bestehende Struktur:

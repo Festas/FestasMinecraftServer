@@ -2,6 +2,8 @@
 
 Dokumentation für den vollständigen MMO-RPG Server mit Open World, Quests, Dungeons und mehr.
 
+> **⚠️ Archiv — wird eingestellt (Stand 26.2):** Dieser Server wird zeitnah abgeschaltet und durch einen von zwei neuen Servern ersetzt. Aktiver Fokus: **Lobby** und **Survival**. Diese Dokumentation wird nur noch als Referenz geführt und nicht weiter gepflegt.
+
 ---
 
 ## Server-Informationen

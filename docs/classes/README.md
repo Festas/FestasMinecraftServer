@@ -2,6 +2,8 @@
 
 Übersicht über das umfassende Klassen-System für die MMO-Server (RPG & Skyblock).
 
+> **⚠️ Archiv (MMO — Skyblock & RPG):** Dieses System gehört zu den auslaufenden MMO-Servern und wird mit deren Abschaltung ersetzt. Aktiver Fokus (26.2): **Lobby** und **Survival**. Diese Doku wird nur noch als Referenz geführt.
+
 ---
 
 ## Übersicht

@@ -2,6 +2,8 @@
 
 CoinsEngine Multi-Währungs-System und Shop-Konfigurationen.
 
+> **⚠️ Archiv (MMO — Skyblock & RPG):** Das CoinsEngine-Multi-Währungssystem gehört zu den auslaufenden MMO-Servern und wird mit deren Abschaltung ersetzt. Die **Survival**-Economy ist davon getrennt und läuft eigenständig über **Vault/CMI** (siehe [../survival/](../survival/)). Diese Doku wird nur noch als Referenz geführt.
+
 ---
 
 ## Währungen

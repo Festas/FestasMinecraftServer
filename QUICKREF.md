@@ -2,19 +2,21 @@
 
 Schnelle Übersicht über die wichtigsten Befehle und Konzepte.
 
+> **ℹ️ Stand 26.2:** Server läuft auf **Minecraft/Paper 26.2**. Aktiver Fokus: **Lobby** und **Survival**. Die MMO-Abschnitte (MythicMobs, Citizens, Quests, Klassen, Item-Tiers, Dungeons) beziehen sich auf **Skyblock**/**RPG**, die zeitnah eingestellt und durch zwei neue Server ersetzt werden — sie gelten als **Archiv**.
+
 ## Verzeichnisstruktur
 
 ```
 MinecraftMMO/
 ├── proxy/              # Velocity Proxy Konfigurationen
 │   └── plugins/        # Proxy-Plugins (TAB, MiniMOTD, LibertyBans, etc.)
-├── lobby/              # Lobby Server Konfigurationen
-│   └── plugins/        # Lobby-Plugins (CMI, FancyNpcs, etc.)
-├── survival/           # Survival Server Konfigurationen
-│   └── plugins/        # Survival-Plugins (Jobs, Rankup, etc.)
-├── skyblock/           # Skyblock Server Konfigurationen
+├── lobby/              # Lobby Server Konfigurationen        (AKTIV)
+│   └── plugins/        # Lobby-Plugins (CMI, DeluxeMenus, Skript, Oraxen, etc.)
+├── survival/           # Survival Server Konfigurationen     (AKTIV)
+│   └── plugins/        # Survival-Plugins (NextGens, Jobs, Rankup, PlotSquared, etc.)
+├── skyblock/           # Skyblock Server Konfigurationen      (ARCHIV — wird eingestellt)
 │   └── plugins/        # MMO-Plugins (MMOCore, MMOItems, MythicMobs, etc.)
-├── rpg/                # RPG Server Konfigurationen
+├── rpg/                # RPG Server Konfigurationen           (ARCHIV — wird eingestellt)
 │   └── plugins/        # RPG-Plugins (MythicMobs Premium, MythicDungeons, etc.)
 ├── crosscraft-guilds/  # CrossCraft Guilds Plugin (Gradle, Java 21)
 │   └── ...             # Paper + Velocity Module
@@ -29,7 +31,9 @@ MinecraftMMO/
 
 ## Schnellstart
 
-### 1. Neues Item erstellen
+> **⚠️ Archiv:** Die folgenden Schnellstarts (MMOItems, MythicMobs, BetonQuest) betreffen die auslaufenden Server **Skyblock**/**RPG**. Für die aktiven Server bearbeite die Configs unter `lobby/plugins/` bzw. `survival/plugins/` (z. B. `survival/plugins/NextGens/`, `survival/plugins/ShopGUIPlus/`, `lobby/plugins/DeluxeMenus/`).
+
+### 1. Neues Item erstellen *(Archiv — MMO)*
 
 ```bash
 cd rpg/plugins/MMOItems/
@@ -51,6 +55,8 @@ cd rpg/plugins/BetonQuest/
 ```
 
 ## In-Game Befehle
+
+> **⚠️ Archiv:** Die folgenden Befehlsgruppen (MythicMobs, Citizens, Quests, Skills/Klassen) sowie die weiter unten stehenden Referenzen (Item-Tiers, Klassen, Mob-Level, Dungeons) gehören zum MMO-Content der auslaufenden Server **Skyblock**/**RPG**.
 
 ### MythicMobs
 
@@ -218,9 +224,13 @@ Display: '&6Text'
 ## Backup-Befehl
 
 ```bash
-# Komplettes Backup erstellen
+# Komplettes Backup erstellen (aktive Server + Proxy)
 tar -czf mmo-backup-$(date +%Y%m%d).tar.gz \
-  skyblock/ rpg/ lobby/ survival/ proxy/
+  lobby/ survival/ proxy/
+
+# Vor Abschaltung: einmaliges Archiv-Backup der auslaufenden MMO-Server
+tar -czf mmo-archive-$(date +%Y%m%d).tar.gz \
+  skyblock/ rpg/
 ```
 
 ## Repository-Befehle

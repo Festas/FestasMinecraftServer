@@ -60,7 +60,7 @@ Der aktive Fokus liegt auf dem **Survival/Tycoon**-Erlebnis und der **Lobby** al
 **Version:** Paper 26.2
 
 #### Features
-- Interaktive **NPC-Server-Selector** (FancyNpcs): Direkter Zugang zu RPG, Survival/Tycoon, Skyblock
+- **Server-Navigation** über DeluxeMenus-`server_selector` + Navigator-Kompass (Skript)
 - **DeluxeMenus-GUIs**: Server-Selector, Regeln, Netzwerk-Guide
 - **Doppelsprung** (kosmetisch, kein Gameplay-Element)
 - Willkommensnachrichten bei erstem Join und Wiederkehr
@@ -68,7 +68,9 @@ Der aktive Fokus liegt auf dem **Survival/Tycoon**-Erlebnis und der **Lobby** al
 - Inventar-Schutz: Nur der Navigator-Kompass ist erlaubt
 - Weltschutz via WorldGuard (kein Bauen, kein PvP, kein Schaden)
 - **AFK-System**: Auto-Kick nach 15 Minuten Inaktivität
-- **Hologramme** für Spielerzahlen und Server-Info (DecentHolograms)
+- **Hologramme** für Spielerzahlen und Server-Info (via CMI)
+
+> **Hinweis:** Bei der 26.2-Aufräumaktion wurden FancyNpcs und DecentHolograms entfernt; die Navigation läuft jetzt rein über DeluxeMenus + Skript, Hologramme über CMI. Der `server_selector` verweist bis zur Abschaltung noch auf Skyblock/RPG.
 
 #### Besonderheiten
 - Keine Gameplay-Elemente — reine Navigation
@@ -512,15 +514,16 @@ Zwischen RPG ↔ Skyblock werden synchronisiert:
 8. **Community-Features:** Server-übergreifende Parties, Freundeslisten, globaler Chat
 
 ### Geplante Features (Roadmap)
+> **Stand 26.2:** RPG-/Skyblock-Punkte entfallen — Ersatz durch zwei neue Server.
+- [ ] Konzept & Aufbau der **2 neuen Server** (Ersatz für Skyblock & RPG)
+- [ ] Datensicherung & geordnete Abschaltung von Skyblock & RPG
 - [ ] Anti-Cheat (Vulcan Premium) auf Survival
 - [ ] Voting-System (NuVotifier + VotingPlugin)
 - [ ] Crate/Key-System (CrazyCrates)
-- [ ] Kosmetik-System mit PlayerPoints
-- [ ] DecentHolograms (Lobby, Spielerzahlen, News)
+- [ ] Hologramme über CMI (Lobby, Spielerzahlen, News)
 - [ ] CDN für Resourcepacks
 - [ ] Parkour-Kurs in der Lobby mit Belohnungen
 - [ ] Event-Server für spezielle Events
-- [ ] Prestige-System auf RPG-Klassen (geplant nach Balance-Testing)
 
 ---
 

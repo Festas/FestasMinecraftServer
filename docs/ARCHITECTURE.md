@@ -302,7 +302,7 @@ Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
 - Survival Server Spielerdaten
 - Jobs-Plugin-Daten
 - Economy (Vault)
-- Claims (PlotSquared, GriefPrevention)
+- Claims (PlotSquared)
 - Ranks (Rankup)
 
 **Keine Verbindung zu:** RPG/Skyblock Servern
@@ -572,18 +572,20 @@ Bei kritischen Fehlern:
 
 ## Zukünftige Verbesserungen
 
-- [ ] Load-Balancing für RPG/Skyblock (mehrere Instanzen)
+> **Stand 26.2:** RPG-/Skyblock-bezogene Punkte sind hinfällig — beide Server werden durch **zwei neue Server** ersetzt. Fokus der nächsten Schritte: **Lobby**, **Survival** und die Vorbereitung der zwei Nachfolge-Server.
+
+- [ ] Konzept & Aufsetzen der **2 neuen Server** (Ersatz für Skyblock & RPG)
+- [ ] Datensicherung + geordnete Abschaltung von Skyblock & RPG
 - [ ] Separate Build-Server für große Projekte
 - [ ] Event-Server (temporär für spezielle Events)
 - [ ] CDN für Resourcepacks
 - [ ] Backup-Server (Fallback bei Ausfällen)
 
 ### Lobby — Nächste Schritte
-- [ ] DecentHolograms Plugin-JAR installieren (Welcome, Server-Info, Spielerzahlen)
+- [ ] Hologramme über CMI einrichten (Welcome, Server-Info, Spielerzahlen)
 - [ ] Spawn-Punkt in-game setzen (`/cmi setspawn`)
-- [ ] NPC-Skins und -Positionen in-game konfigurieren
+- [ ] `server_selector` auf die neue Server-Aufstellung anpassen (Skyblock/RPG → 2 neue Server)
 - [ ] Scoreboard/Sidebar mit Netzwerk-Info (CMI oder Skript)
-- [ ] Kosmetik-System (PlayerParticles + PlayerPoints als Währung)
 - [ ] Parkour-Kurs mit Belohnungen
 - [ ] Boss-Bar-Announcements für rotierende Ankündigungen
 - [ ] Tab-Liste Header/Footer anpassen (via Proxy TAB Plugin)
@@ -595,13 +597,12 @@ Bei kritischen Fehlern:
 - [ ] Anti-Cheat installieren (Vulcan Premium — PRIORITÄT)
 - [ ] Voting-System (NuVotifier + VotingPlugin)
 - [ ] Crate/Key-System (ExcellentCrates oder CrazyCrates)
-- [ ] ChestShop konfigurieren oder entfernen (GlobalMarketPlus deckt den Bedarf)
+- [ ] ChestShop finalisieren (installiert) — Abgrenzung zu GlobalMarketPlus definieren
 - [ ] LibsDisguises in Kosmetik-System integrieren oder entfernen
-- [ ] PlayerPoints als sekundäre Währung konfigurieren
 - [ ] Erweiterte Boss-Events über Nitwit hinaus
 
 ---
 
-**Letzte Aktualisierung:** 2026-04-11
+**Letzte Aktualisierung:** 2026-08-15
 
-**Version:** 1.1
+**Version:** 1.2 (26.2-Umstellung: Fokus Lobby & Survival; Skyblock & RPG → Archiv/Abbau)

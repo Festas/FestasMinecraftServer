@@ -2,6 +2,8 @@
 
 Dokumentation für den MMO-Skyblock Server mit RPG-Elementen.
 
+> **⚠️ Archiv — wird eingestellt (Stand 26.2):** Dieser Server wird zeitnah abgeschaltet und durch einen von zwei neuen Servern ersetzt. Aktiver Fokus: **Lobby** und **Survival**. Diese Dokumentation wird nur noch als Referenz geführt und nicht weiter gepflegt.
+
 ---
 
 ## Server-Informationen

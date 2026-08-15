@@ -2,6 +2,8 @@
 
 Dokumentation des umfassenden Item-Systems mit Oraxen, MMOItems und MythicCrucible.
 
+> **⚠️ Archiv (MMO — Skyblock & RPG):** Das hier beschriebene Item-System (MMOItems/MythicCrucible/Tiers) gehört zu den auslaufenden MMO-Servern und wird mit deren Abschaltung ersetzt. Auf den aktiven Servern (Lobby & Survival) kommt für Custom-Items nur **Oraxen** zum Einsatz. Diese Doku wird nur noch als Referenz geführt.
+
 ---
 
 ## Item-Pipeline

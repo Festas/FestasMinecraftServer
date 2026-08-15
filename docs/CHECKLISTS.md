@@ -2,6 +2,8 @@
 
 Wiederverwendbare Checklisten für neue Inhalte, Balance und Testing.
 
+> **ℹ️ Stand 26.2:** Checklisten rund um MMO-Content (**Skyblock**/**RPG**: Klassen, Items, Mobs, Quests, Dungeons) sind **Archiv**, da diese Server eingestellt werden. Aktiv relevant sind die Checklisten für **Lobby** und **Survival**.
+
 ---
 
 ## 1. Content-Erstellungs-Checkliste

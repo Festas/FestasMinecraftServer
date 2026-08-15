@@ -2,6 +2,8 @@
 
 Dieser Fragenkatalog dient als Leitfaden für die weitere Entwicklung und Dokumentation des MinecraftMMO Server-Netzwerks. Die Fragen helfen dabei, strukturiert über Features, Balance und Implementierung nachzudenken.
 
+> **ℹ️ Stand 26.2:** Der Fokus liegt aktuell auf **Lobby** und **Survival**. Fragen zu **Skyblock** und **RPG** sind nur noch für den Rückbau relevant — beide Server werden zeitnah eingestellt und durch **zwei neue Server** ersetzt (Konzept noch offen). Neue Planung sollte sich auf die aktiven Server bzw. die zwei Nachfolge-Server konzentrieren.
+
 ---
 
 ## 1. Netzwerk-Vision & Lore
