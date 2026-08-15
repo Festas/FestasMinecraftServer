@@ -45,7 +45,14 @@ custom_block_sounds:
 
 # legacy blocks using mushroom stems, prefer to use noteblock
 block:
-  enabled: true
+  tool_types:
+  - WOODEN
+  - STONE
+  - IRON
+  - GOLDEN
+  - DIAMOND
+  - NETHERITE
+  enabled: false
   tool-types:
   - WOODEN
   - STONE
@@ -59,6 +66,43 @@ block:
   remove-mineable-tag: false
   convert-vanilla-waxed: true
   handle-world-generation: true
+
+noteblock:
+  tool_types:
+  - WOODEN
+  - STONE
+  - IRON
+  - GOLDEN
+  - DIAMOND
+  - NETHERITE
+  - null
+  farmblock_check_delay: 1000
+  # Removes the mineable/axe tag from noteblocks for player
+  # This is to prevent axes from breaking custom-blocks in normal speed
+  remove_mineable_tag: false
+  enabled: true
+
+stringblock:
+  tool_types:
+  - WOODEN
+  - STONE
+  - IRON
+  - GOLDEN
+  - DIAMOND
+  - NETHERITE
+  sapling_growth_check_delay: 4000
+  disable_vanilla_strings: false
+  enabled: true
+
+chorusblock:
+  tool_types:
+  - WOODEN
+  - STONE
+  - IRON
+  - GOLDEN
+  - DIAMOND
+  - NETHERITE
+  enabled: true
 
 furniture:
   default_furniture_type: DISPLAY_ENTITY # DISPLAY_ENTITY, ITEM_FRAME, GLOW_ITEM_FRAME

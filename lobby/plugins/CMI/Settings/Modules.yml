@@ -94,7 +94,7 @@ attachedCommands: true
 armorEffects: true
 #  
 # Handling of player tagging in chat and tabcomplete with @
-# Applies for servers from 1.7.x and up
+# Applies for servers from 1.7.x to 1.14.x version
 playerChatTag: true
 #  
 # Handling of chat bubbles
@@ -280,3 +280,11 @@ hat: true
 # Handling of some dialogs UI aspects
 # Applies for servers from 1.21.x and up
 dialogs: true
+#  
+# Handling of speed tracking
+# Applies for servers from 1.9.x and up
+speedtracking: true
+#  
+# Handling of view distance listeners
+# Applies for servers from 1.20.x and up
+viewdistance: true

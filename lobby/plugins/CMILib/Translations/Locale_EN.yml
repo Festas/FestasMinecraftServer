@@ -65,6 +65,7 @@ info:
   Console: '{gcp}Server'
   FromConsole: '{gcw}You can only use this in the console!'
   NotOnline: '{gcw}The player is not online!'
+  NotOffline: '{gcw}The player is not offline!'
   NobodyOnline: '{gcw}There is no one online!'
   NoPlayer: '{gcw}Can''t find player with this name! ({gcs}[name]{gcw})'
   NoCommand: '{gcw}There is no command by this name!'
@@ -176,6 +177,15 @@ info:
   oneHour: '{gcs}[hours] {gcp}hour '
   min: '{gcs}[mins] {gcp}min '
   sec: '{gcs}[secs] {gcp}sec '
+  time:
+    separator: '{gcn}:'
+    short:
+      year: '{gcs}[years]{gcp}Y'
+      month: '{gcs}[months]{gcp}M'
+      day: '{gcs}[days]{gcp}d'
+      hour: '{gcs}[hours]{gcp}h'
+      min: '{gcs}[mins]{gcp}m'
+      sec: '{gcs}[secs]{gcp}s'
   nextPageConsole: '{gcn}For next page perform {gcs}[command]'
   prevPage: '{gcn}----<< {gcp}Prev '
   prevCustomPage: '{gcn}----<< {gcp}[value] '
@@ -204,6 +214,22 @@ info:
   valueToLong: '{gcp}Value is too high. Max: [max]'
   valueToShort: '{gcp}Value is too low. Min: [min]'
   pickIcon: '{gcp}Pick icon'
+  reset: '{gcp}Press {gcs}Q {gcp}to reset'
+  basicDirection: '{gcp}Pitch:{gcs}[x] {gcp}Yaw:{gcs}[y]'
+  fullDirection: '{gcp}Pitch:{gcs}[x] {gcp}Yaw:{gcs}[y] {gcp}Roll:{gcs}[z]'
+  basicScale: '{gcp}Width:{gcs}[x] {gcp}Height:{gcs}[y]'
+  fullScale: '{gcp}Width:{gcs}[x] {gcp}Height:{gcs}[y] {gcp}Depth:{gcs}[z]'
+  basicVector: '{gcp}X:{gcs}[x] {gcp}Y:{gcs}[y]'
+  fullVector: '{gcp}X:{gcs}[x] {gcp}Y:{gcs}[y] {gcp}Z:{gcs}[z]'
+  incorrectColor: '{gcw}Color defined incorrectly!'
+  updateSpeed: '{gcp}Update speed: {gcs}[value]'
+  serializeAndShow: '{gcp}Serialize and show'
+  amount: '{gcp}Amount: {gcs}[value]'
+  speed: '{gcp}Speed: {gcs}[value]'
+  color: '{gcp}Color: [color]Example'
+  duration: '{gcp}Duration: [value]'
+  size: '{gcp}Size: [value]'
+  value: '{gcp}Value: [value]'
   Spawner: '&r[type] Spawner'
   DamageCause:
     block_explosion: Explosion
@@ -260,6 +286,7 @@ info:
     breeze: Breeze
     breeze_wind_charge: Breeze wind charge
     camel: Camel
+    camel_husk: Camel husk
     cat: Cat
     cave_spider: Cave spider
     cherry_boat: Cherry boat
@@ -329,6 +356,7 @@ info:
     minecart: Minecart
     mooshroom: Mooshroom
     mule: Mule
+    nautilus: Nautilus
     oak_boat: Oak boat
     oak_chest_boat: Oak chest boat
     ocelot: Ocelot
@@ -337,6 +365,7 @@ info:
     pale_oak_boat: Pale oak boat
     pale_oak_chest_boat: Pale oak chest boat
     panda: Panda
+    parched: Parched
     parrot: Parrot
     phantom: Phantom
     pig: Pig
@@ -369,6 +398,7 @@ info:
     squid: Squid
     stray: Stray
     strider: Strider
+    sulfur_cube: Sulfur cube
     tadpole: Tadpole
     text_display: Text display
     tnt: Tnt
@@ -392,131 +422,133 @@ info:
     zoglin: Zoglin
     zombie: Zombie
     zombie_horse: Zombie horse
+    zombie_nautilus: Zombie nautilus
     zombie_villager: Zombie villager
     zombified_piglin: Zombified piglin
   # Avoid adding color codes to the enchant name
   EnchantNames:
-    unbreaking: Unbreaking
+    depth_strider: Depth_Strider
+    fire_protection: Fire_Protection
+    vanishing_curse: Vanishing_Curse
+    respiration: Respiration
+    fortune: Fortune
+    luck_of_the_sea: Luck_Of_The_Sea
+    aqua_affinity: Aqua_Affinity
+    soul_speed: Soul_Speed
+    bane_of_arthropods: Bane_Of_Arthropods
     quick_charge: Quick_Charge
+    thorns: Thorns
+    density: Density
+    impaling: Impaling
+    flame: Flame
+    feather_falling: Feather_Falling
+    knockback: Knockback
     breach: Breach
     channeling: Channeling
-    feather_falling: Feather_Falling
-    mending: Mending
-    density: Density
-    loyalty: Loyalty
-    riptide: Riptide
-    impaling: Impaling
-    projectile_protection: Projectile_Protection
-    swift_sneak: Swift_Sneak
-    piercing: Piercing
-    depth_strider: Depth_Strider
-    thorns: Thorns
-    fire_protection: Fire_Protection
-    binding_curse: Binding_Curse
-    soul_speed: Soul_Speed
-    lure: Lure
-    luck_of_the_sea: Luck_Of_The_Sea
-    punch: Punch
-    smite: Smite
-    multishot: Multishot
-    aqua_affinity: Aqua_Affinity
-    respiration: Respiration
-    sharpness: Sharpness
-    sweeping_edge: Sweeping_Edge
-    frost_walker: Frost_Walker
-    flame: Flame
     looting: Looting
-    infinity: Infinity
-    efficiency: Efficiency
-    power: Power
+    smite: Smite
     fire_aspect: Fire_Aspect
+    lure: Lure
+    loyalty: Loyalty
+    frost_walker: Frost_Walker
+    piercing: Piercing
     silk_touch: Silk_Touch
-    fortune: Fortune
+    sweeping_edge: Sweeping_Edge
+    efficiency: Efficiency
     wind_burst: Wind_Burst
-    bane_of_arthropods: Bane_Of_Arthropods
-    vanishing_curse: Vanishing_Curse
-    blast_protection: Blast_Protection
     protection: Protection
-    knockback: Knockback
+    sharpness: Sharpness
+    unbreaking: Unbreaking
+    lunge: Lunge
+    riptide: Riptide
+    projectile_protection: Projectile_Protection
+    mending: Mending
+    punch: Punch
+    swift_sneak: Swift_Sneak
+    binding_curse: Binding_Curse
+    infinity: Infinity
+    multishot: Multishot
+    blast_protection: Blast_Protection
+    power: Power
   PotionEffectAliases:
-    levitation:
-    - Levitation
-    absorption:
-    - Absorption
-    conduitpower:
-    - Conduit power
+    waterbreathing:
+    - Water breathing
     darkness:
     - Darkness
     speed:
     - Speed
-    fireresistance:
-    - Fire resistance
-    raidomen:
-    - Raid omen
-    dolphinsgrace:
-    - Dolphins grace
-    regeneration:
-    - Regeneration
-    slowness:
-    - Slowness
-    unluck:
-    - Unluck
-    instantdamage:
-    - Instant damage
     infested:
     - Infested
-    windcharged:
-    - Wind charged
-    slowfalling:
-    - Slow falling
-    instanthealth:
-    - Instant health
-    resistance:
-    - Resistance
-    haste:
-    - Haste
-    weakness:
-    - Weakness
-    badomen:
-    - Bad omen
-    miningfatigue:
-    - Mining fatigue
-    luck:
-    - Luck
-    trialomen:
-    - Trial omen
-    nightvision:
-    - Night vision
-    glowing:
-    - Glowing
-    oozing:
-    - Oozing
-    nausea:
-    - Nausea
-    healthboost:
-    - Health boost
-    strength:
-    - Strength
-    saturation:
-    - Saturation
-    heroofthevillage:
-    - Hero of the village
+    raidomen:
+    - Raid omen
     invisibility:
     - Invisibility
-    poison:
-    - Poison
-    blindness:
-    - Blindness
     jumpboost:
     - Jump boost
-    waterbreathing:
-    - Water breathing
-    weaving:
-    - Weaving
-    hunger:
-    - Hunger
+    poison:
+    - Poison
+    oozing:
+    - Oozing
+    nightvision:
+    - Night vision
+    haste:
+    - Haste
+    windcharged:
+    - Wind charged
     wither:
     - Wither
+    miningfatigue:
+    - Mining fatigue
+    weakness:
+    - Weakness
+    nausea:
+    - Nausea
+    strength:
+    - Strength
+    levitation:
+    - Levitation
+    glowing:
+    - Glowing
+    trialomen:
+    - Trial omen
+    heroofthevillage:
+    - Hero of the village
+    hunger:
+    - Hunger
+    regeneration:
+    - Regeneration
+    conduitpower:
+    - Conduit power
+    unluck:
+    - Unluck
+    weaving:
+    - Weaving
+    healthboost:
+    - Health boost
+    blindness:
+    - Blindness
+    instantdamage:
+    - Instant damage
+    luck:
+    - Luck
+    slowfalling:
+    - Slow falling
+    badomen:
+    - Bad omen
+    absorption:
+    - Absorption
+    slowness:
+    - Slowness
+    saturation:
+    - Saturation
+    resistance:
+    - Resistance
+    instanthealth:
+    - Instant health
+    dolphinsgrace:
+    - Dolphins grace
+    fireresistance:
+    - Fire resistance
 dialog:
   signEditor: Sign Editor
   update: Update
