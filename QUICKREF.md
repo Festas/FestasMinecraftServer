@@ -16,10 +16,8 @@ MinecraftMMO/
 │   └── plugins/        # Survival-Plugins (NextGens, Jobs, Rankup, PlotSquared, etc.)
 ├── skyblock/           # Skyblock Server Konfigurationen      (UMBAU — ohne Gilden, Freunde-Koop)
 │   └── plugins/        # Skyblock-Plugins (SuperiorSkyblock2, JetsMinions, etc.)
-├── rpg/                # RPG Server Konfigurationen           (ARCHIV — wird eingestellt)
-│   └── plugins/        # RPG-Plugins (MythicMobs Premium, MythicDungeons, etc.)
-├── mining/             # Mining Server (NEU — Gerüst)
-│   └── plugins/        # Mining-/Zonen-Kern, WorldGuard, Shop/Auto-Sell, etc.
+├── rpg/                # Mining Server Konfigurationen       (RECYCELT aus RPG — Aufbau)
+│   └── plugins/        # Mining-/Zonen-Kern, WorldGuard, Shop/Auto-Sell, etc. (+ Alt-RPG-Archiv)
 └── docs/               # Dokumentation
 ```
 
@@ -226,9 +224,10 @@ Display: '&6Text'
 ```bash
 # Komplettes Backup erstellen (aktive Server + Proxy)
 tar -czf mmo-backup-$(date +%Y%m%d).tar.gz \
-  lobby/ survival/ skyblock/ mining/ proxy/
+  lobby/ survival/ skyblock/ rpg/ proxy/
 
-# Vor Abschaltung: einmaliges Archiv-Backup des auslaufenden RPG-Servers
+# Hinweis: rpg/ ist der recycelte Slot des alten RPG-Servers (wird zum Mining-Server) und enthält
+# noch Alt-RPG-Configs; vor dem Content-Umbau ein separates Archiv-Backup des rpg/-Ordners ziehen:
 tar -czf mmo-archive-$(date +%Y%m%d).tar.gz \
   rpg/
 ```

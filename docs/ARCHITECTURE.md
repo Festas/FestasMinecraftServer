@@ -576,10 +576,10 @@ Bei kritischen Fehlern:
 
 ## Zukünftige Verbesserungen
 
-> **Stand 26.2:** Der **RPG**-Server wird eingestellt. Neu bzw. im Umbau sind ein **überarbeiteter Skyblock** (ohne Gilden, mit Freunde-Koop) und ein neuer **Mining**-Server (Abbau-Zonen), siehe [NEW_SERVERS.md](NEW_SERVERS.md). Fokus der nächsten Schritte: **Lobby**, **Survival** sowie **Skyblock** und **Mining**.
+> **Stand 26.2:** Der **RPG-Spielmodus** wird eingestellt; sein **Server-Slot/Pfad `rpg` wird jedoch für den neuen Mining-Server recycelt**. Neu bzw. im Umbau sind ein **überarbeiteter Skyblock** (ohne Gilden, mit Freunde-Koop) und der neue **Mining**-Server (Abbau-Zonen), siehe [NEW_SERVERS.md](NEW_SERVERS.md). Fokus der nächsten Schritte: **Lobby**, **Survival** sowie **Skyblock** und **Mining**.
 
-- [ ] Aufsetzen des neuen **Mining**-Servers und Umbau des **Skyblock**-Servers (ohne Gilden, Freunde-Koop)
-- [ ] Datensicherung + geordnete Abschaltung von **RPG**
+- [ ] Aufsetzen des neuen **Mining**-Servers (recycelt den `rpg`-Slot) und Umbau des **Skyblock**-Servers (ohne Gilden, Freunde-Koop)
+- [ ] Datensicherung des `rpg`-Slots + geordneter Content-Umbau vom RPG-Spielmodus auf Mining
 - [ ] Separate Build-Server für große Projekte
 - [ ] Event-Server (temporär für spezielle Events)
 - [ ] CDN für Resourcepacks
@@ -588,7 +588,7 @@ Bei kritischen Fehlern:
 ### Lobby — Nächste Schritte
 - [ ] Hologramme über CMI einrichten (Welcome, Server-Info, Spielerzahlen)
 - [ ] Spawn-Punkt in-game setzen (`/cmi setspawn`)
-- [ ] `server_selector` auf die neue Server-Aufstellung anpassen (RPG entfernen → Skyblock/Mining aufnehmen)
+- [ ] `server_selector` an die neue Ausrichtung anpassen: den recycelten **`rpg`-Slot** als **Mining** präsentieren (Karte umbenennen), Skyblock aufnehmen — `[connect] rpg` bleibt erhalten
 - [ ] Scoreboard/Sidebar mit Netzwerk-Info (CMI oder Skript)
 - [ ] Parkour-Kurs mit Belohnungen
 - [ ] Boss-Bar-Announcements für rotierende Ankündigungen

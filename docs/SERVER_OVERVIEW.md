@@ -72,7 +72,7 @@ Der aktive Fokus liegt auf dem **Survival/Tycoon**-Erlebnis und der **Lobby** al
 - **AFK-System**: Auto-Kick nach 15 Minuten Inaktivität
 - **Hologramme** für Spielerzahlen und Server-Info (via CMI)
 
-> **Hinweis:** Bei der 26.2-Aufräumaktion wurden FancyNpcs und DecentHolograms entfernt; die Navigation läuft jetzt rein über DeluxeMenus + Skript, Hologramme über CMI. Der `server_selector` verweist bis zur Abschaltung noch auf Skyblock/RPG.
+> **Hinweis:** Bei der 26.2-Aufräumaktion wurden FancyNpcs und DecentHolograms entfernt; die Navigation läuft jetzt rein über DeluxeMenus + Skript, Hologramme über CMI. Der `server_selector` verweist auf **Survival**, **Skyblock** und **Mining** — die Mining-Karte nutzt den **recycelten `rpg`-Slot** (`[connect] rpg`).
 
 #### Besonderheiten
 - Keine Gameplay-Elemente — reine Navigation
@@ -180,8 +180,8 @@ Nach Rang 25 kann man prestigen — alles wird zurückgesetzt, aber ein permanen
 
 ### 2.3 Mining — *Neu*
 
-> **🟡 Neu / Aufbauphase.** Einer der zwei neuen Server. Konzept:
-> [mining/README.md](mining/README.md) · [NEW_SERVERS.md](NEW_SERVERS.md).
+> **🟡 Neu / Aufbauphase.** Einer der zwei neuen Server; **recycelt den `rpg`-Slot** (Ordner `rpg/`,
+> Server-Name `rpg`). Konzept: [mining/README.md](mining/README.md) · [NEW_SERVERS.md](NEW_SERVERS.md).
 
 **Funktion:** Casual-Server mit **Abbau-Zonen** und aufwertbaren Spitzhacken
 **Version:** Paper 26.2 (geplant)

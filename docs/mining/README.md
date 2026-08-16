@@ -15,8 +15,9 @@ einfach, schnell verständlich und Bedrock-freundlich.
 | Eigenschaft | Wert |
 |-------------|------|
 | **Slot** | Casual |
+| **Server-Name (Velocity/Proxy)** | `rpg` *(recycelt — der alte RPG-Slot wird wiederverwendet)* |
 | **Version** | Paper 26.2 (geplant) |
-| **Ordner** | [`mining/`](../../mining/) |
+| **Ordner** | [`rpg/`](../../rpg/) *(recycelt aus dem alten RPG-Server)* |
 | **Economy** | Server-isoliert; optionale netzwerkweite Cosmetic-Währung |
 | **Datenbank** | Eigenes MariaDB-Schema (isoliert) |
 | **Bedrock-Support** | Ja (Geyser/Floodgate) — GUIs müssen Bedrock-tauglich sein |

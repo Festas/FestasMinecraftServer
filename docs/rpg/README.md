@@ -2,7 +2,7 @@
 
 Dokumentation für den vollständigen MMO-RPG Server mit Open World, Quests, Dungeons und mehr.
 
-> **⚠️ Archiv — wird eingestellt (Stand 26.2):** Dieser Server wird zeitnah abgeschaltet und durch einen von zwei neuen Servern ersetzt. Aktiver Fokus: **Lobby** und **Survival**. Diese Dokumentation wird nur noch als Referenz geführt und nicht weiter gepflegt.
+> **⚠️ Archiv — RPG-Spielmodus eingestellt (Stand 26.2):** Der RPG-**Spielmodus** wird eingestellt und durch den neuen **Mining**-Server ersetzt. Der **Server-Slot/Pfad `rpg` bleibt erhalten und wird recycelt** (→ [docs/mining/README.md](../mining/README.md), [../NEW_SERVERS.md](../NEW_SERVERS.md)); die Configs liegen weiterhin im Ordner [`rpg/`](../../rpg/). Diese Dokumentation beschreibt den **alten RPG-Content** und wird nur noch als Referenz geführt.
 
 ---
 

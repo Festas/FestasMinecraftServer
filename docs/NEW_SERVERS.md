@@ -16,7 +16,9 @@
   **überarbeiteten Skyblock** (ohne Gilden, mit Freunde-Koop) und einen neuen **Mining**-Server (Abbau-Zonen
   mit aufwertbaren Spitzhacken). Die zuvor angedachten Konzepte **Factions** und **Minigames** sowie das
   Eigen-Plugin **CrossCraft-Guilds** entfallen.
-- **Wird abgelöst:** **RPG** (MythicMobs Premium, MythicDungeons, BetonQuest, Citizens) — wird eingestellt.
+- **Wird abgelöst:** Der **RPG-Spielmodus** (MythicMobs Premium, MythicDungeons, BetonQuest, Citizens) — wird
+  eingestellt. Der **Server-Slot/Pfad `rpg` bleibt jedoch erhalten** und wird für den neuen **Mining**-Server
+  **recycelt** (siehe [Abschnitt 5](#5-rückbau-des-rpg-spielmodus-slot-recycling)).
 - **Ziel:** Zwei neue Server, die
   1. sich klar vom Tycoon-Survival abgrenzen (kein Kannibalisieren der Spielerbasis),
   2. die vorhandene Infrastruktur wiederverwenden (Velocity, MariaDB, Redis, Geyser/Floodgate, HuskSync,
@@ -64,7 +66,7 @@ Die Weichenstellung fällt auf einen **überarbeiteten Skyblock** plus einen neu
 
 | Slot | Server | Kandidat | Ordner | USP |
 |------|--------|----------|--------|-----|
-| **Casual (Abbau)** | **Mining** | A | [`mining/`](../mining/) | Abbau-Zonen mit **aufwertbaren Spitzhacken** (mehr Blöcke pro Schlag) und **schrittweise freischaltbaren Zonen**; einfacher, klarer Progressions-Loop |
+| **Casual (Abbau)** | **Mining** | A | [`rpg/`](../rpg/) *(recycelt)* | Abbau-Zonen mit **aufwertbaren Spitzhacken** (mehr Blöcke pro Schlag) und **schrittweise freischaltbaren Zonen**; einfacher, klarer Progressions-Loop |
 | **Casual/Koop** | **Skyblock** | B | [`skyblock/`](../skyblock/) | Klassischer Skyblock **ohne Gilden**, aber mit **Freunde-Koop** (Insel-Mitglieder gemeinsam bauen); nutzt vorhandenen Skyblock-Stack weiter |
 
 ### 2.1 Begründung
@@ -143,22 +145,28 @@ Premium-Lizenz weiterverwendbar) für PvE-Events/Bosse.
 - **HuskSync:** Synchronisiert werden **Cosmetics und Ränge**, **nicht** die gameplay-relevanten Inventare der
   Server (Mining/Skyblock haben server-eigene Inventare).
 - **Velocity-Routing:** Neue/aktualisierte Einträge im Lobby-Selector (**DeluxeMenus**), Anpassung von
-  **MOTD (MiniMOTD)** und **TAB**. Server-Namen im Velocity-Config: `mining`, `skyblock`.
+  **MOTD (MiniMOTD)** und **TAB**. Server-Namen im Velocity-Config: `rpg` (recycelt — der bestehende
+  RPG-Slot wird zum Mining-Server), `skyblock`.
 - **Bedrock:** Jede GUI und jedes Custom-Item auf **Geyser/Floodgate**-Kompatibilität testen (Oraxen-Texturen,
   Menü-Formulare).
 - **Ränge & Permissions:** Bestehende **LuckPerms**-Gruppen wiederverwenden, server-spezifische Kontexte
-  (`server=mining`, `server=skyblock`) definieren.
+  (`server=rpg`, `server=skyblock`) definieren.
 
 ---
 
-## 5. Rückbau von RPG (und Bereinigung)
+## 5. Rückbau des RPG-Spielmodus (Slot-Recycling)
 
-1. **Archivierung:** Konfigs/Docs des RPG-Servers bleiben als **Archiv** erhalten (bereits so markiert). Kein
-   aktives Pflegen mehr; klar gekennzeichnete Archiv-Hinweise in den READMEs.
-2. **Daten-Migration/Backup:** Spielerdaten des RPG-Servers **sichern**, bevor abgeschaltet wird. Klären, ob
+> **Wichtig:** Der **Server-Slot/Pfad `rpg` wird nicht abgeschaltet, sondern recycelt** — er wird zum neuen
+> **Mining**-Server. Dadurch bleiben Velocity-Routing, MariaDB/Redis, HuskSync, Resource-Pack und der
+> LuckPerms-Kontext `server=rpg` erhalten. Rückgebaut wird nur der **RPG-Spielmodus** (Content/Plugins).
+
+1. **Archivierung des RPG-Contents:** Die Alt-Configs/Docs des RPG-Spielmodus bleiben als **Archiv** erhalten
+   (bereits so markiert) und werden im `rpg/`-Ordner **schrittweise durch Mining-Configs ersetzt**. Kein
+   aktives Pflegen des RPG-Contents mehr; klar gekennzeichnete Archiv-Hinweise in den READMEs.
+2. **Daten-Migration/Backup:** Spielerdaten des RPG-Slots **sichern**, bevor der Content umgestellt wird. Klären, ob
    Cosmetics/Ränge in die neuen Server überführt werden (via HuskSync möglich).
-3. **Kommunikation:** **Sunset-Ankündigung** mit Datum an die Community; optional **Entschädigung**
-   (In-Game-Währung/Cosmetic) für aktive Spieler.
+3. **Kommunikation:** **Sunset-Ankündigung** des RPG-Spielmodus mit Datum an die Community; optional
+   **Entschädigung** (In-Game-Währung/Cosmetic) für aktive Spieler.
 4. **Plugin-/Lizenz-Abbau:** **Premium-Lizenzen** (MythicMobs Premium etc.) prüfen — Weiterverwendung für
    PvE-Events statt Wegwerfen.
 5. **Asset-Recycling:** Oraxen-Items, Maps und Lore als **Fundus** für die neuen Server.
@@ -173,7 +181,7 @@ Premium-Lizenz weiterverwendbar) für PvE-Events/Bosse.
 2. **Plugin-Recherche 26.2** — die 🔶-Einträge aus [Abschnitt 3](#3-plugin-shortlist--262-verfügbarkeit)
    verifizieren; Blocker früh erkennen (Mining-Kern und Skyblock-Kern für 26.2 sind die kritischsten).
 3. **MVP-Scope definieren** — minimaler spielbarer Umfang je Server (siehe Server-Docs).
-4. **Prototyp/Testserver** — Server-Ordner-Gerüst (`mining/`) und vorhandene `skyblock/`-Configs iterieren.
+4. **Prototyp/Testserver** — recycelter `rpg/`-Slot (wird zum Mining-Server) und vorhandene `skyblock/`-Configs iterieren.
 5. **Integration** — Lobby-Selector, HuskSync, Economy, Permissions, Velocity-Routing verdrahten.
 6. **Beta & Balance** — Test-Checklisten aus [CHECKLISTS.md](CHECKLISTS.md) nutzen, Feedback-Runde.
 7. **Launch + Post-Launch** — Content-Update-Kadenz, saisonale Events (Kandidat F als Ergänzung).

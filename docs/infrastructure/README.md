@@ -2,7 +2,7 @@
 
 Technische Infrastruktur für das MinecraftMMO-Netzwerk.
 
-> **ℹ️ Stand 26.2:** Datenbanken und Backups gelten weiterhin für die aktiven Server (**Lobby**, **Survival**) und den Proxy. Die **HuskSync-Synchronisation** ([SYNCHRONISIERUNG.md](SYNCHRONISIERUNG.md)) betraf ausschließlich die auslaufenden MMO-Server **Skyblock ↔ RPG** und entfällt mit deren Abschaltung — diese Doku ist insoweit **Archiv**.
+> **ℹ️ Stand 26.2:** Datenbanken und Backups gelten weiterhin für die aktiven Server (**Lobby**, **Survival**) und den Proxy. Die in [SYNCHRONISIERUNG.md](SYNCHRONISIERUNG.md) beschriebene **volle Gameplay-Synchronisation** (Klassen, Inventar, Quests) betraf den **alten MMO-Verbund Skyblock ↔ RPG** und **entfällt** — diese Doku ist insoweit **Archiv**. In der Neuausrichtung ist **Skyblock server-isoliert** (überarbeitet, bleibt bestehen) und der **RPG-Slot wird zum Mining-Server recycelt**; **HuskSync** synchronisiert dann nur noch **Cosmetics/Ränge** netzwerkweit.
 
 ---
 
@@ -12,8 +12,8 @@ Technische Infrastruktur für das MinecraftMMO-Netzwerk.
 - MySQL/MariaDB - Hauptdatenbank
 - Redis - Cache-System
 
-### Synchronisation *(Archiv — nur Skyblock ↔ RPG)*
-- HuskSync - Daten-Sync zwischen den auslaufenden MMO-Servern
+### Synchronisation *(Archiv — alte volle Sync Skyblock ↔ RPG)*
+- HuskSync - volle Gameplay-Sync des alten MMO-Verbunds (entfällt; künftig nur Cosmetics/Ränge netzwerkweit)
 
 ### Backups *(aktiv)*
 - Automatische Backup-Strategien

@@ -12,21 +12,21 @@ items:
     display_name: '&f'
     priority: 2
 
-  # --- RPG SERVER ---
+  # --- MINING SERVER (recycelter rpg-Slot) ---
   'rpg':
-    material: DIAMOND_SWORD
+    material: NETHERITE_PICKAXE
     slot: 11
     priority: 1
-    display_name: '&5&l⚔ RPG Server'
+    display_name: '&b&l⛏ Mining Server'
     lore:
-      - '&7Tauche ein in eine Welt voller'
-      - '&7Magie, Dungeons und Abenteuer!'
+      - '&7Baue mit einer besonderen Spitzhacke'
+      - '&7ganze Zonen ab und werde stärker!'
       - ''
-      - '&7Klassen &8| &fKrieger, Magier, Assassine ...'
-      - '&7Dungeons &8| &fInstanzierte Bosskämpfe'
-      - '&7Quests &8| &fEpische Storyline'
+      - '&7Spitzhacken &8| &fImmer mehr Blöcke pro Schlag'
+      - '&7Zonen &8| &fNeue Bereiche freischalten'
+      - '&7Economy &8| &fVerkaufen → Aufwerten'
       - ''
-      - '&7Status: &aOnline'
+      - '&7Status: &eIm Aufbau'
       - ''
       - '&e► Klicke zum Verbinden'
     left_click_commands:

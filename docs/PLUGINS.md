@@ -2,7 +2,7 @@
 
 Vollständige Übersicht aller verwendeten Plugins pro Server.
 
-> **⚠️ Stand: Umstellung auf 26.2** — Alle Server laufen auf **Minecraft 26.2**. Der Fokus liegt aktuell auf **Lobby und Survival**; deren Plugin-Listen wurden frisch aufgeräumt und spiegeln den echten Ordnerinhalt wider. **Skyblock** wird überarbeitet und behalten (ohne Gilden, mit Freunde-Koop); zusätzlich kommt ein neuer **Mining**-Server. Der Abschnitt zu **RPG** ist **Archiv** — dieser Server wird zeitnah eingestellt.
+> **⚠️ Stand: Umstellung auf 26.2** — Alle Server laufen auf **Minecraft 26.2**. Der Fokus liegt aktuell auf **Lobby und Survival**; deren Plugin-Listen wurden frisch aufgeräumt und spiegeln den echten Ordnerinhalt wider. **Skyblock** wird überarbeitet und behalten (ohne Gilden, mit Freunde-Koop); zusätzlich kommt ein neuer **Mining**-Server, der den **`rpg`-Slot recycelt**. Der Abschnitt zu **RPG** ist **Archiv** — der RPG-**Spielmodus** wird eingestellt, der Server-Slot `rpg` wird zum Mining-Server.
 
 ---
 
@@ -138,7 +138,7 @@ Vollständige Übersicht aller verwendeten Plugins pro Server.
 #### DeluxeMenus
 - **Funktion:** Custom GUI-Menüs — **zentrale Navigation der Lobby**
 - **Verwendung:**
-  - `server_selector` (Server-Auswahl: Survival, Skyblock, Mining; + auslaufend RPG)
+  - `server_selector` (Server-Auswahl: Survival, Skyblock, Mining — Mining nutzt den recycelten `rpg`-Slot via `[connect] rpg`)
   - Netzwerk-Guide, Regeln, Basics/Advanced-Menüs
 - **Config:** `lobby/plugins/DeluxeMenus/gui_menus/`
 
@@ -735,8 +735,7 @@ MinecraftMMO/
 ├── lobby/plugins/         # Lobby-Server Plugin-Configs        (AKTIV)
 ├── survival/plugins/      # Survival-Server Plugin-Configs     (AKTIV)
 ├── skyblock/plugins/      # Skyblock-Server Plugin-Configs     (UMBAU — ohne Gilden, Freunde-Koop)
-├── rpg/plugins/           # RPG-Server Plugin-Configs          (ARCHIV — wird eingestellt)
-└── mining/plugins/        # Mining-Server Plugin-Configs       (NEU — Gerüst)
+└── rpg/plugins/           # Mining-Server Plugin-Configs       (RECYCELT aus RPG — Aufbau; + Alt-RPG-Archiv)
 ```
 
 **Hinweis:** Nicht alle Plugin-Configs sind im Repository - nur Custom-Content und konfigurierte Einstellungen. Sensible Daten (Passwörter, API-Keys) sind über `.gitignore` ausgeschlossen.

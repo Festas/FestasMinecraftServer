@@ -41,10 +41,8 @@ MinecraftMMO/
 │   └── plugins/        # Survival-Plugins (NextGens, Jobs, Rankup, PlotSquared, etc.)
 ├── skyblock/           # Skyblock Server Konfigurationen  (NEU/UMBAU — ohne Gilden, Freunde-Koop)
 │   └── plugins/        # Skyblock-Plugins (SuperiorSkyblock2, JetsMinions, etc.)
-├── rpg/                # RPG Server Konfigurationen  (ARCHIV — wird eingestellt)
-│   └── plugins/        # RPG-Plugins (MythicMobs Premium, MythicDungeons, etc.)
-├── mining/             # Mining Server (NEU — Gerüst)
-│   └── plugins/        # Mining-/Zonen-Kern, WorldGuard, Shop/Auto-Sell, Cosmetics
+├── rpg/                # Mining Server Konfigurationen  (recycelt aus altem RPG — Aufbau/Gerüst)
+│   └── plugins/        # Mining-/Zonen-Kern, WorldGuard, Shop/Auto-Sell, Cosmetics (+ Alt-RPG-Archiv)
 └── docs/               # Dokumentation
 ```
 
@@ -112,8 +110,8 @@ Umfassende Dokumentation findest du im [`/docs`](docs/) Verzeichnis:
 ### Server-spezifische Dokumentation
 - **[Survival-Server](docs/survival/README.md)** — Tycoon, Plots, Progression *(aktiv)*
 - **[Skyblock-Server](docs/skyblock/README.md)** — Inseln, Freunde-Koop, Progression *(Umbau — ohne Gilden)*
-- **[Mining-Server](docs/mining/README.md)** — Abbau-Zonen, aufwertbare Spitzhacken *(neu, Gerüst)*
-- **[RPG-Server](docs/rpg/README.md)** - Zonen, Quests, Dungeons, Mobs, NPCs *(Archiv, wird eingestellt)*
+- **[Mining-Server](docs/mining/README.md)** — Abbau-Zonen, aufwertbare Spitzhacken *(neu; recycelt den `rpg/`-Slot)*
+- **[RPG-Server (Archiv)](docs/rpg/README.md)** - Zonen, Quests, Dungeons, Mobs, NPCs *(Spielmodus eingestellt; Slot `rpg` → Mining)*
 
 ### Technische Infrastruktur
 - **[Infrastruktur](docs/infrastructure/README.md)** - Datenbanken, Synchronisation, Backups
@@ -125,7 +123,7 @@ Umfassende Dokumentation findest du im [`/docs`](docs/) Verzeichnis:
 
 ## Verwendung
 
-Jeder Server-Ordner (`lobby/`, `survival/`, `proxy/` — aktiv; `skyblock/` — Umbau; `mining/` — neu/Gerüst; `rpg/` — Archiv) enthält seine eigenen Plugin-Konfigurationen unter `plugins/`.
+Jeder Server-Ordner (`lobby/`, `survival/`, `proxy/` — aktiv; `skyblock/` — Umbau; `rpg/` — recycelt zum Mining-Server) enthält seine eigenen Plugin-Konfigurationen unter `plugins/`.
 
 Die Konfigurationsdateien können direkt in die entsprechenden Plugin-Ordner auf dem Server kopiert werden:
 ```bash
