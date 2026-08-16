@@ -2,6 +2,8 @@
 
 Dokumentation für den Survival-Server mit integriertem Tycoon-Gamemode.
 
+> **✅ Aktiv (26.2).** Dieser Server ist neben der Lobby einer der beiden **aktiv gepflegten** Server. Die Plugins wurden auf 26.2 aufgeräumt und neu übertragen.
+
 ---
 
 ## Inhaltsverzeichnis
@@ -16,7 +18,7 @@ Dokumentation für den Survival-Server mit integriertem Tycoon-Gamemode.
 
 | Eigenschaft | Wert |
 |-------------|------|
-| **Version** | Paper 1.21.1 |
+| **Version** | Paper 26.2 |
 | **Gamemode** | Survival + Tycoon (Generator-basiert) |
 | **Economy** | Vault (CMI) — separat von MMO-Servern |
 | **Datenbank** | MySQL/MariaDB (isoliert) |
@@ -33,10 +35,17 @@ Dokumentation für den Survival-Server mit integriertem Tycoon-Gamemode.
 | **PlotSquared** | Plot-Claiming, Merging, Schematics |
 | **Rankup** | 25-stufige Rang-Progression |
 | **ShopGUIPlus** | Shop-GUI mit dynamischen Preisen |
+| **GlobalMarketPlus** / **ChestShop** | Marktplatz & Spieler-Läden |
 | **Skript** | Custom Tycoon-Logik (Sell Wand, Collector, Tutorial, etc.) |
+| **Multiverse-Core** (+Inventories) | Welten `tycoon`/`town`/`freebuild` mit getrennten Inventaren |
 | **LuckPerms** | Rang-Permissions und Plot-Limits |
-| **CMI** | Economy, Teleport, Kits, Chat-Formatierung |
-| **Jobs** | 13 Berufe für zusätzliches Einkommen |
+| **CMI** (+CMILib) | Economy, Teleport, Kits, Chat-Formatierung, Hologramme |
+| **Jobs** | Berufe für zusätzliches Einkommen |
+| **BlueMap** | 3D-Web-Karte |
+| **WorldGuard** / **FAWE** / **AxiomPaper** | Regionen-Schutz & Building |
+
+> Vollständige, ordnergenaue Plugin-Liste siehe [../PLUGINS.md](../PLUGINS.md#survival-server-plugins).
+> Bei der 26.2-Aufräumaktion entfernt: **EssentialsX**, **GriefPrevention**, **PlayerPoints**, **DecentHolograms** (Basis-Befehle & Hologramme laufen jetzt über CMI).
 
 ---
 
@@ -61,4 +70,4 @@ Dokumentation für den Survival-Server mit integriertem Tycoon-Gamemode.
 
 ---
 
-**Letzte Aktualisierung:** 2026-04-11
+**Letzte Aktualisierung:** 2026-08-15

@@ -2,11 +2,13 @@
 
 Dokumentation für den vollständigen MMO-RPG Server mit Open World, Quests, Dungeons und mehr.
 
+> **⚠️ Archiv — RPG-Spielmodus eingestellt (Stand 26.2):** Der RPG-**Spielmodus** wird eingestellt und durch den neuen **Mining**-Server ersetzt. Der **Server-Slot/Pfad `rpg` bleibt erhalten und wird recycelt** (→ [docs/mining/README.md](../mining/README.md), [../NEW_SERVERS.md](../NEW_SERVERS.md)); die Configs liegen weiterhin im Ordner [`rpg/`](../../rpg/). Diese Dokumentation beschreibt den **alten RPG-Content** und wird nur noch als Referenz geführt.
+
 ---
 
 ## Server-Informationen
 
-**Server-Typ:** Paper 1.21.1  
+**Server-Typ:** Paper 26.2  
 **Hauptfokus:** Open World MMO-RPG mit Quest-System, Dungeons und Klassen  
 **Spieler-Kapazität:** 50-100 Spieler  
 **Synchronisation:** HuskSync mit Skyblock-Server  
@@ -208,4 +210,4 @@ RPG-Server/
 
 **Letzte Aktualisierung:** 2026-04-10
 
-**Status:** 🚧 Work in Progress - Server in aktiver Entwicklung
+**Status:** 🗄️ Archiv — RPG-Spielmodus eingestellt (nur noch Referenz; Slot wird zum Mining-Server recycelt)

@@ -2,22 +2,22 @@
 
 Schnelle Übersicht über die wichtigsten Befehle und Konzepte.
 
+> **ℹ️ Stand 26.2:** Server läuft auf **Minecraft/Paper 26.2**. Aktiver Fokus: **Lobby** und **Survival**. Dazu kommen ein **überarbeiteter Skyblock** (ohne Gilden, Freunde-Koop) und ein neuer **Mining**-Server. Die MMO-Abschnitte (MythicMobs, Citizens, Quests, Klassen, Item-Tiers, Dungeons) beziehen sich auf den auslaufenden **RPG**-Server — sie gelten als **Archiv**.
+
 ## Verzeichnisstruktur
 
 ```
 MinecraftMMO/
 ├── proxy/              # Velocity Proxy Konfigurationen
 │   └── plugins/        # Proxy-Plugins (TAB, MiniMOTD, LibertyBans, etc.)
-├── lobby/              # Lobby Server Konfigurationen
-│   └── plugins/        # Lobby-Plugins (CMI, FancyNpcs, etc.)
-├── survival/           # Survival Server Konfigurationen
-│   └── plugins/        # Survival-Plugins (Jobs, Rankup, etc.)
-├── skyblock/           # Skyblock Server Konfigurationen
-│   └── plugins/        # MMO-Plugins (MMOCore, MMOItems, MythicMobs, etc.)
-├── rpg/                # RPG Server Konfigurationen
-│   └── plugins/        # RPG-Plugins (MythicMobs Premium, MythicDungeons, etc.)
-├── crosscraft-guilds/  # CrossCraft Guilds Plugin (Gradle, Java 21)
-│   └── ...             # Paper + Velocity Module
+├── lobby/              # Lobby Server Konfigurationen        (AKTIV)
+│   └── plugins/        # Lobby-Plugins (CMI, DeluxeMenus, Skript, Oraxen, etc.)
+├── survival/           # Survival Server Konfigurationen     (AKTIV)
+│   └── plugins/        # Survival-Plugins (NextGens, Jobs, Rankup, PlotSquared, etc.)
+├── skyblock/           # Skyblock Server Konfigurationen      (UMBAU — ohne Gilden, Freunde-Koop)
+│   └── plugins/        # Skyblock-Plugins (SuperiorSkyblock2, JetsMinions, etc.)
+├── rpg/                # Mining Server Konfigurationen       (RECYCELT aus RPG — Aufbau)
+│   └── plugins/        # Mining-/Zonen-Kern, WorldGuard, Shop/Auto-Sell, etc. (+ Alt-RPG-Archiv)
 └── docs/               # Dokumentation
 ```
 
@@ -29,7 +29,9 @@ MinecraftMMO/
 
 ## Schnellstart
 
-### 1. Neues Item erstellen
+> **⚠️ Archiv:** Die folgenden Schnellstarts (MMOItems, MythicMobs, BetonQuest) betreffen die auslaufenden Server **Skyblock**/**RPG**. Für die aktiven Server bearbeite die Configs unter `lobby/plugins/` bzw. `survival/plugins/` (z. B. `survival/plugins/NextGens/`, `survival/plugins/ShopGUIPlus/`, `lobby/plugins/DeluxeMenus/`).
+
+### 1. Neues Item erstellen *(Archiv — MMO)*
 
 ```bash
 cd rpg/plugins/MMOItems/
@@ -51,6 +53,8 @@ cd rpg/plugins/BetonQuest/
 ```
 
 ## In-Game Befehle
+
+> **⚠️ Archiv:** Die folgenden Befehlsgruppen (MythicMobs, Citizens, Quests, Skills/Klassen) sowie die weiter unten stehenden Referenzen (Item-Tiers, Klassen, Mob-Level, Dungeons) gehören zum MMO-Content der auslaufenden Server **Skyblock**/**RPG**.
 
 ### MythicMobs
 
@@ -213,14 +217,19 @@ Display: '&6Text'
 |--------|-------------|-----------|
 | MythicMobs | 5.0.0 | 5.7.0+ |
 | Citizens | 2.0.30 | 2.0.35+ |
-| Paper | 1.21.1 | Latest |
+| Paper | 26.2 | Latest |
 
 ## Backup-Befehl
 
 ```bash
-# Komplettes Backup erstellen
+# Komplettes Backup erstellen (aktive Server + Proxy)
 tar -czf mmo-backup-$(date +%Y%m%d).tar.gz \
-  skyblock/ rpg/ lobby/ survival/ proxy/
+  lobby/ survival/ skyblock/ rpg/ proxy/
+
+# Hinweis: rpg/ ist der recycelte Slot des alten RPG-Servers (wird zum Mining-Server) und enthält
+# noch Alt-RPG-Configs; vor dem Content-Umbau ein separates Archiv-Backup des rpg/-Ordners ziehen:
+tar -czf mmo-archive-$(date +%Y%m%d).tar.gz \
+  rpg/
 ```
 
 ## Repository-Befehle

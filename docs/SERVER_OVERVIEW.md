@@ -10,9 +10,10 @@
 2. [Server-Details](#2-server-details)
    - [Lobby](#21-lobby)
    - [Survival / Tycoon](#22-survival--tycoon)
-   - [Skyblock (MMO)](#23-skyblock-mmo)
-   - [RPG (MMO)](#24-rpg-mmo)
-3. [Klassen-System](#3-klassen-system)
+   - [Mining — Neu](#23-mining--neu)
+   - [Skyblock — Umbau](#24-skyblock--umbau-ohne-gilden-freunde-koop)
+   - [RPG (MMO) — Archiv](#25-rpg-mmo--archiv-wird-eingestellt)
+3. [Klassen-System — Archiv](#3-klassen-system--archiv-mmo)
 4. [Item-System](#4-item-system)
 5. [Economy-System](#5-economy-system)
 6. [Technische Infrastruktur](#6-technische-infrastruktur)
@@ -24,11 +25,13 @@
 ## 1. Netzwerk-Überblick
 
 **Server-IP:** `mc.festas-builds.com`  
-**Minecraft-Version:** 1.21.1 (Paper)  
+**Minecraft-Version:** 26.2 (Paper)  
 **Proxy:** Velocity  
 **Bedrock-Support:** Ja (Geyser + Floodgate — Handy, Konsole, Windows 10 Edition)  
 **Sprache:** Deutsch (primär)  
-**Status:** In Entwicklung / Early Access
+**Status:** Umstellung auf 26.2 — Fokus auf Lobby & Survival
+
+> **⚠️ Umbruch:** Aktiv weiterentwickelt werden **Lobby** und **Survival** (Plugins frisch aufgeräumt). Dazu ein **überarbeiteter Skyblock** (ohne Gilden, mit Freunde-Koop) und ein neuer **Mining**-Server (Abbau-Zonen mit aufwertbaren Spitzhacken) — Weichenstellung, Bewertung und Plugin-Shortlist in [NEW_SERVERS.md](NEW_SERVERS.md). Der **RPG**-Abschnitt in diesem Dokument gilt als **Archiv/Referenz**; er wird zeitnah eingestellt.
 
 ### Netzwerk-Architektur
 
@@ -38,13 +41,16 @@ Internet
     ▼
 Velocity Proxy  (mc.festas-builds.com)
     │
-    ├──► Lobby          Haupt-Hub, Server-Navigation
-    ├──► Survival       Standard Survival + Tycoon-Gamemode
-    ├──► Skyblock       MMO-Skyblock mit RPG-Elementen
-    └──► RPG            Vollständiger MMO-RPG Open-World-Server
+    ├──► Lobby          Haupt-Hub, Server-Navigation           [AKTIV]
+    ├──► Survival       Standard Survival + Tycoon-Gamemode     [AKTIV]
+    ├──► Skyblock       Koop-Skyblock, ohne Gilden              [NEU → Umbau]
+    ├──► Mining         Abbau-Zonen, aufwertbare Spitzhacken    [NEU → Aufbau]
+    └──► RPG            Vollständiger MMO-RPG Open-World-Server  [ARCHIV → Abbau]
+
+    Skyblock (überarbeitet) & Mining sind die neuen Server; RPG wird eingestellt (Konzept: NEW_SERVERS.md)
 ```
 
-Das Netzwerk kombiniert bewährte Konzepte aus bekannten Servern wie **Hypixel Skyblock** (Progression, Minions, Collections) und **Wynncraft** (Klassen-System, Quests, Story) mit zahlreichen eigenen Verbesserungen.
+Der aktive Fokus liegt auf dem **Survival/Tycoon**-Erlebnis und der **Lobby** als Hub. Hinzu kommen ein **überarbeiteter Skyblock** (Koop, ohne Gilden) und ein neuer **Mining**-Server. Der auslaufende **RPG**-Server kombinierte Konzepte aus **Hypixel Skyblock** (Progression, Minions, Collections) und **Wynncraft** (Klassen, Quests, Story) — diese Inhalte werden mit der Abschaltung abgelöst; ausgewählte Bausteine leben in den neuen Servern weiter.
 
 ---
 
@@ -53,10 +59,10 @@ Das Netzwerk kombiniert bewährte Konzepte aus bekannten Servern wie **Hypixel S
 ### 2.1 Lobby
 
 **Funktion:** Willkommens-Hub und Server-Navigation  
-**Version:** Paper 1.21.1
+**Version:** Paper 26.2
 
 #### Features
-- Interaktive **NPC-Server-Selector** (FancyNpcs): Direkter Zugang zu RPG, Survival/Tycoon, Skyblock
+- **Server-Navigation** über DeluxeMenus-`server_selector` + Navigator-Kompass (Skript)
 - **DeluxeMenus-GUIs**: Server-Selector, Regeln, Netzwerk-Guide
 - **Doppelsprung** (kosmetisch, kein Gameplay-Element)
 - Willkommensnachrichten bei erstem Join und Wiederkehr
@@ -64,7 +70,9 @@ Das Netzwerk kombiniert bewährte Konzepte aus bekannten Servern wie **Hypixel S
 - Inventar-Schutz: Nur der Navigator-Kompass ist erlaubt
 - Weltschutz via WorldGuard (kein Bauen, kein PvP, kein Schaden)
 - **AFK-System**: Auto-Kick nach 15 Minuten Inaktivität
-- **Hologramme** für Spielerzahlen und Server-Info (DecentHolograms)
+- **Hologramme** für Spielerzahlen und Server-Info (via CMI)
+
+> **Hinweis:** Bei der 26.2-Aufräumaktion wurden FancyNpcs und DecentHolograms entfernt; die Navigation läuft jetzt rein über DeluxeMenus + Skript, Hologramme über CMI. Der `server_selector` verweist auf **Survival**, **Skyblock** und **Mining** — die Mining-Karte nutzt den **recycelten `rpg`-Slot** (`[connect] rpg`).
 
 #### Besonderheiten
 - Keine Gameplay-Elemente — reine Navigation
@@ -75,7 +83,7 @@ Das Netzwerk kombiniert bewährte Konzepte aus bekannten Servern wie **Hypixel S
 ### 2.2 Survival / Tycoon
 
 **Funktion:** Klassisches Survival mit integriertem Generator-Tycoon-Gamemode  
-**Version:** Paper 1.21.1  
+**Version:** Paper 26.2  
 **Welten:** `tycoon` (Hauptwelt), `town` (Stadtbereich), `freebuild` (Kreativbereich)
 
 #### Tycoon-Gamemode
@@ -170,15 +178,38 @@ Nach Rang 25 kann man prestigen — alles wird zurückgesetzt, aber ein permanen
 
 ---
 
-### 2.3 Skyblock (MMO)
+### 2.3 Mining — *Neu*
 
-**Funktion:** MMO-Skyblock mit RPG-Elementen und vollständiger Klassen-Integration  
-**Version:** Paper 1.21.1  
+> **🟡 Neu / Aufbauphase.** Einer der zwei neuen Server; **recycelt den `rpg`-Slot** (Ordner `rpg/`,
+> Server-Name `rpg`). Konzept: [mining/README.md](mining/README.md) · [NEW_SERVERS.md](NEW_SERVERS.md).
+
+**Funktion:** Casual-Server mit **Abbau-Zonen** und aufwertbaren Spitzhacken
+**Version:** Paper 26.2 (geplant)
+**Slot:** Casual · **Zielgruppe:** Gelegenheitsspieler, Bedrock-freundlich
+
+**Kern-Idee:**
+- **Besondere Spitzhacke:** Immer stärkere Stufen bauen **mehr Blöcke auf einmal** ab (1×1 → 3×3 → …) und graben schneller
+- **Freischaltbare Zonen:** Neue Abbau-Zonen mit anderen/wertvolleren Blöcken werden nach und nach freigeschaltet
+- **Verkaufen → Aufwerten → Freischalten:** Blöcke verkaufen finanziert Spitzhacken-Upgrades und Zonen
+- Retention über Ränge/Prestige, Cosmetics und Battle-Pass
+
+**Abgrenzung:** Aktives Abbauen und Spitzhacken-Progression statt passiver Generatoren/Plots des Survival/Tycoon.
+
+---
+
+### 2.4 Skyblock — *Umbau (ohne Gilden, Freunde-Koop)*
+
+> **🟢 Wird überarbeitet und behalten.** Kernänderung: **keine Gilden**, stattdessen **Freunde-Koop** über
+> die Insel-Mitglieder von SuperiorSkyblock2. Konzept: [skyblock/README.md](skyblock/README.md) ·
+> [NEW_SERVERS.md](NEW_SERVERS.md).
+
+**Funktion:** Koop-Skyblock — Freunde einladen und gemeinsam die Insel bauen  
+**Version:** Paper 26.2  
 **Kapazität:** 50–100 Spieler  
-**Synchronisation:** HuskSync ↔ RPG-Server
+**Sozialmodell:** Insel-Mitglieder/Koop statt Gilden
 
 #### Island-System (SuperiorSkyblock2)
-- **Persönliche oder Coop-Islands**
+- **Persönliche oder Koop-Inseln** — Freunde per `/is invite` einladen
 - Island-Level-System und Island-Upgrades
 - Custom Island-Schematics
 - Island-Warps für Besucher
@@ -200,12 +231,13 @@ Nach Rang 25 kann man prestigen — alles wird zurückgesetzt, aber ein permanen
 
 Minions nutzen ein Health-System und müssen gepflegt werden. Verknüpfte Kisten für automatische Lagerung.
 
-#### MMO-Integration
-- **6 Klassen** via MMOCore (identisch mit RPG-Server)
+#### MMO-Integration *(optional — Umfang offen)*
+- **6 Klassen** via MMOCore (aus dem RPG-Erbe)
 - Custom Items mit Stats via MMOItems
 - Custom Mobs via MythicMobs (Community Edition)
 - Skills und Fähigkeiten
-- Daten bleiben beim Wechsel zu RPG erhalten (HuskSync)
+- Ob dieser MMO-Teil erhalten bleibt oder zugunsten eines schlankeren Koop-Skyblocks entfällt, ist offen
+  (siehe [NEW_SERVERS.md → Abschnitt 7](NEW_SERVERS.md#7-verbleibende-offene-fragen))
 
 #### Collection-System (AuroraCollections — 5 Kategorien)
 
@@ -236,10 +268,12 @@ Jede Sammlung hat Milestones mit exklusiven Belohnungen.
 
 ---
 
-### 2.4 RPG (MMO)
+### 2.5 RPG (MMO) — *Archiv, wird eingestellt*
+
+> **⚠️ Dieser Server wird zeitnah abgeschaltet** und durch einen neuen Server ersetzt. Inhalte nur noch als Referenz.
 
 **Funktion:** Vollständiger MMO-RPG Server mit Open World, Quests, Dungeons, Klassen und Story  
-**Version:** Paper 1.21.1  
+**Version:** Paper 26.2  
 **Kapazität:** 50–100 Spieler  
 **Synchronisation:** HuskSync ↔ Skyblock-Server
 
@@ -296,9 +330,11 @@ Die Welt ist in **5 Level-Zonen** eingeteilt:
 
 ---
 
-## 3. Klassen-System
+## 3. Klassen-System — *Archiv (MMO)*
 
-Das Klassen-System ist auf beiden MMO-Servern (RPG & Skyblock) identisch verfügbar. Fortschritt wird via HuskSync synchronisiert.
+> **⚠️ Gehört zu den auslaufenden MMO-Servern Skyblock & RPG.** Wird mit deren Abschaltung ersetzt.
+
+Das Klassen-System war auf beiden MMO-Servern (RPG & Skyblock) identisch verfügbar. Fortschritt wurde via HuskSync synchronisiert.
 
 ### Die 6 Klassen
 
@@ -502,21 +538,24 @@ Zwischen RPG ↔ Skyblock werden synchronisiert:
 8. **Community-Features:** Server-übergreifende Parties, Freundeslisten, globaler Chat
 
 ### Geplante Features (Roadmap)
+> **Stand 26.2:** RPG-/Skyblock-Punkte entfallen — Ersatz durch zwei neue Server.
+- [ ] Konzept & Aufbau der **2 neuen Server** (Ersatz für Skyblock & RPG)
+- [ ] Datensicherung & geordnete Abschaltung von Skyblock & RPG
 - [ ] Anti-Cheat (Vulcan Premium) auf Survival
 - [ ] Voting-System (NuVotifier + VotingPlugin)
 - [ ] Crate/Key-System (CrazyCrates)
-- [ ] Kosmetik-System mit PlayerPoints
-- [ ] DecentHolograms (Lobby, Spielerzahlen, News)
+- [ ] Hologramme über CMI (Lobby, Spielerzahlen, News)
 - [ ] CDN für Resourcepacks
 - [ ] Parkour-Kurs in der Lobby mit Belohnungen
 - [ ] Event-Server für spezielle Events
-- [ ] Prestige-System auf RPG-Klassen (geplant nach Balance-Testing)
 
 ---
 
 ## 8. Website-Prompt für AI Agenten
 
 > Dieser Abschnitt enthält einen fertigen Prompt, den du einem AI Agenten (z.B. GPT-4, Claude, Gemini, Cursor AI o.ä.) übergeben kannst, um eine vollständige Website für das MinecraftMMO Netzwerk zu erstellen oder eine bestehende Website zu überarbeiten.
+
+> **⚠️ Hinweis (26.2-Umstellung):** Der folgende Prompt beschreibt noch ein **älteres Server-Setup**. Aktueller Stand: Fokus auf **Lobby & Survival**, dazu ein **überarbeiteter Skyblock** (ohne Gilden, mit Freunde-Koop) und ein neuer **Mining**-Server (Abbau-Zonen); der **RPG**-Server wird eingestellt. Der Prompt sollte vor Verwendung entsprechend angepasst werden (Server-Karten, Klassen-/MMO-Sektionen, Version **26.2**).
 
 ---
 
@@ -537,7 +576,7 @@ Erstelle eine vollständige, responsive Website für einen deutschen Minecraft-S
 
 **Server-Name:** MinecraftMMO
 **Server-IP:** mc.festas-builds.com
-**Minecraft-Version:** 1.21.1
+**Minecraft-Version:** 26.2
 **Sprache:** Deutsch (primär)
 **Bedrock-Support:** Ja (Handy, Konsole, Windows 10 Edition — keine Java-Account-Pflicht)
 **Status:** Early Access / In Entwicklung
@@ -704,7 +743,7 @@ Vollständiger Wynncraft-inspirierter MMO-RPG Server mit Open World.
 
 ### Hero-Section
 - Großes Banner mit Server-Name und Tagline
-- Tagline-Vorschläge: "Erlebe ein einzigartiges MMO-Abenteuer auf Minecraft 1.21.1" oder "RPG trifft Skyblock — auf einem Server"
+- Tagline-Vorschläge: "Erlebe ein einzigartiges Minecraft-Netzwerk auf Version 26.2" oder "Mining trifft Skyblock — Abbau & Koop"
 - Server-IP prominent mit Kopier-Button
 - Minecraft-Version Badge, Bedrock-Badge
 - "Jetzt spielen"-Button (klickt und zeigt IP zum Kopieren)
@@ -715,7 +754,7 @@ Vier Karten für die 4 Server:
 - Lobby (Icon: Kompass)
 - Survival/Tycoon (Icon: Generator oder Diamant)
 - Skyblock (Icon: Grassblock auf Wolke)
-- RPG (Icon: Schwert oder Zauberstab)
+- Mining (Icon: Spitzhacke)
 Jede Karte: kurze Beschreibung, wichtigste Features als Liste, kleines "Mehr erfahren"-Link
 
 ### Features / Highlights Section
@@ -791,5 +830,5 @@ Erstelle die komplette Website als einzelne HTML-Datei (index.html) mit eingebet
 
 ---
 
-**Letzte Aktualisierung:** 2026-05-04  
-**Version:** 1.0
+**Letzte Aktualisierung:** 2026-08-15  
+**Version:** 1.1 (26.2-Umstellung: Fokus Lobby & Survival; Skyblock & RPG → Archiv)

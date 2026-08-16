@@ -2,6 +2,8 @@
 
 Übersicht über das umfassende Klassen-System für die MMO-Server (RPG & Skyblock).
 
+> **⚠️ Archiv (MMO — Skyblock & RPG):** Dieses System gehört zu den auslaufenden MMO-Servern und wird mit deren Abschaltung ersetzt. Aktiver Fokus (26.2): **Lobby** und **Survival**. Diese Doku wird nur noch als Referenz geführt.
+
 ---
 
 ## Übersicht
@@ -213,4 +215,4 @@ Diese Stats werden von Items, Skills und Buffs beeinflusst:
 
 **Letzte Aktualisierung:** 2026-04-10
 
-**Status:** 🚧 Work in Progress - Detaillierte Klassen-Beschreibungen werden noch ausgefüllt
+**Status:** 🗄️ Archiv (MMO) — nur noch Referenz; MMO-Verbleib auf Skyblock offen (siehe [../NEW_SERVERS.md](../NEW_SERVERS.md#7-verbleibende-offene-fragen))

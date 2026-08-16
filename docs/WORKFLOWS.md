@@ -2,6 +2,8 @@
 
 Leere Workflow-Templates für die zukünftige Dokumentation von häufigen Aufgaben.
 
+> **ℹ️ Stand 26.2:** Workflows für **Skyblock** und **RPG** (Items, Mobs, Quests, Dungeons) sind **Archiv** — diese Server werden eingestellt. Für die aktiven Server **Lobby** und **Survival** sind vor allem die Bau-, Config- und Tycoon-Workflows relevant.
+
 ---
 
 ## 1. Neuen Boss erstellen (MythicMobs)

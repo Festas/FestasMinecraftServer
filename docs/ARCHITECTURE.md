@@ -2,6 +2,8 @@
 
 Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
 
+> **⚠️ Stand: Umstellung auf 26.2** — Netzwerk läuft auf **Minecraft/Paper 26.2**. Aktiver Fokus: **Lobby** und **Survival** (Plugins frisch aufgeräumt). Dazu ein **überarbeiteter Skyblock** (ohne Gilden, mit Freunde-Koop) und ein neuer **Mining**-Server. Der MMO-Server **RPG** wird zeitnah eingestellt; die RPG-Abschnitte sind **Archiv**. Detaillierte Skyblock↔RPG-Sync-Abschnitte gelten nur bis zur RPG-Abschaltung.
+
 ---
 
 ## Netzwerk-Übersicht
@@ -19,13 +21,16 @@ Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
           ┌────────────────────────────┼────────────────────────────┐
           |                            |                            |
     ┌─────▼─────┐              ┌──────▼──────┐            ┌────────▼────────┐
-    │   Lobby   │              │   Survival  │            │   MMO-Server    │
-    │  Server   │              │   Server    │            │   (RPG/Skyblock)│
+    │   Lobby   │              │   Survival  │            │  Skyblock/Mining│
+    │  Server   │              │   Server    │            │   + RPG (Archiv)│
+    │  (AKTIV)  │              │   (AKTIV)   │            │ (NEU / Umbau)   │
     └───────────┘              └─────────────┘            └─────────────────┘
-    - Routing                  - Standard SMP            - RPG (Paper 1.21.1)
-    - Welcome                  - Jobs, Claims            - Skyblock (Paper 1.21.1)
-    - Info NPCs                - Economy                 - MMOCore, MMOItems
-                               - Bluemap                 - MythicMobs Premium
+    - Routing                  - Survival/Tycoon         - Skyblock (Koop, ohne Gilden)
+    - Welcome                  - Jobs, Plots             - Mining (Abbau-Zonen)
+    - Navigation               - Economy, BlueMap        - RPG (Paper 26.2, Archiv)
+      (DeluxeMenus)                                      - MythicMobs Premium (RPG)
+
+    Neu: Skyblock (überarbeitet) & Mining; RPG wird eingestellt (Konzept: NEW_SERVERS.md)
 ```
 
 ---
@@ -62,24 +67,26 @@ Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
 
 **Funktion:** Willkommens-Server und Hub für Server-Navigation
 
-**Version:** Paper 1.21.1
+**Version:** Paper 26.2
 
 **Hauptplugins:**
-- **CMI** (Complete Minecraft Integration) - Kern-Management-Plugin (Chat-Formatierung, Events, Void-Schutz)
-- **FancyNpcs** - Interaktive NPCs für Server-Navigation (RPG, Survival, Skyblock + Info-NPCs)
+- **CMI** (+CMILib, Complete Minecraft Integration) - Kern-Management-Plugin (Chat-Formatierung, Events, Void-Schutz, Hologramme)
+- **DeluxeMenus** - Custom GUI-Menüs, u. a. der `server_selector` (zentrale Server-Navigation)
+- **Skript** - Navigator-Kompass, Doppelsprung, Hub-Schutz
 - **Oraxen** - Custom Items und Texturen
-- **DeluxeMenus** - Custom GUI-Menüs (Server-Selector, Regeln, Netzwerk-Guide)
 - **LuckPerms** - Permissions-Management
 - **PlaceholderAPI** - Platzhalter für Nachrichten/Displays
-- **ProtocolLib** - Packet-Manipulation für Custom-Features
+- **ProtocolLib** / **CommandAPI** - Backend-Bibliotheken für Custom-Features
 - **WorldGuard** - Weltschutz (Build/PvP/Damage/Hunger blockiert)
-- **Skript** - Navigator-Kompass, Doppelsprung, Hub-Schutz
+- **FastAsyncWorldEdit** - Bau/Pflege der Lobby-Welt
+- **PartyAndFriendsGUI** - Party-/Freundeslisten-GUI (Backend zum Velocity-PAF)
+- **Vault**, **bStats**, **faststats**, **spark** - Economy-Bridge, Statistik & Profiling
 
 **Besonderheiten:**
 - Keine Gameplay-Elemente (kein Survival, kein Combat)
 - Read-only World (WorldGuard __global__ Region mit build:deny)
-- Server-Selector NPCs (FancyNpcs: RPG, Survival/Tycoon, Skyblock)
-- Info-NPCs (Regeln, Guide)
+- Server-Navigation über DeluxeMenus-`server_selector` + Skript-Kompass
+- Info-/Regel-Menüs (DeluxeMenus)
 - Willkommens-Nachrichten (Titel + Untertitel + Actionbar auf Join)
 - Doppelsprung-System (kosmetisch)
 - Inventar-Schutz (nur Navigator-Kompass erlaubt)
@@ -87,11 +94,11 @@ Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
 
 **Datenbank:** Keine eigene (nutzt Velocity-Datenbanken)
 
-**Noch zu installieren:**
-- ⚠️ **DecentHolograms** - Plugin-JAR muss manuell installiert werden (Hologramme für Willkommen, Server-Info, Spielerzahlen)
+**Noch einzurichten (in-game):**
 - ⚠️ **Spawn-Punkt** - Muss in-game mit `/cmi setspawn` gesetzt werden
-- ⚠️ **NPC-Positionen** - Müssen in-game mit `/npc teleport <name>` positioniert werden
-- ⚠️ **NPC-Skins** - Müssen über mineskin.org beschafft und in-game gesetzt werden
+- ⚠️ **Hologramme** - Über CMI erstellen (Willkommen, Server-Info, Spielerzahlen)
+
+> **Hinweis:** FancyNpcs und DecentHolograms wurden bei der 26.2-Aufräumaktion entfernt — Navigation läuft jetzt über DeluxeMenus + Skript, Hologramme über CMI.
 
 ---
 
@@ -99,24 +106,34 @@ Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
 
 **Funktion:** Survival-Server mit integriertem Tycoon-Gamemode (Generator-basierte Economy mit 25-Tier-Progression)
 
-**Version:** Paper 1.21.1
+**Version:** Paper 26.2
 
 **Hauptplugins:**
-- **CMI** - Core Management (Economy, Homes, Teleport, Kits, Chat-Formatierung, AFK-System)
-- **EssentialsX** - Basis-Befehle (Konfliktbefehle deaktiviert — CMI hat Priorität)
-- **Jobs** - Job-System für Economy (13 Berufe)
-- **PlotSquared** - Land-Claiming-System (Tycoon-Plots + Freebuild)
-- **ShopGUIPlus** - Shop-GUI für Economy
+- **CMI** (+CMILib) - Core Management (Economy, Homes, Teleport, Kits, Chat-Formatierung, AFK-System, Hologramme)
+- **NextGens** - Generator-System (Tycoon-Kern, 25 Tier × Sub-Levels)
+- **Jobs** - Job-System für Economy
 - **Rankup** - Rang-Progression-System (25 Tycoon-Ränge: Erde → Bedrock)
-- **NextGens** - Generator-System (Tycoon-Kern, 25 Tier × 10 Sub-Levels)
-- **DecentHolograms** - Info-Hologramme (Spawn, Shop, Casino, Generatoren, Rang-Progression)
-- **Autorank** - Spielzeit-basierte Belohnungen (1h, 5h, 24h, 72h, 168h Milestones)
-- **Bluemap** - 3D-Web-Karte
-- **GlobalMarketPlus** - Globaler Marktplatz
+- **Autorank** - Spielzeit-basierte Belohnungen (Meilensteine)
+- **Skript** - Custom Tycoon-Logik (Sell Wand, Chunk Collector, Nitwit Boss, Casino, Tutorial, Daily/Weekly Rewards, Prestige, dynamische Börse)
+- **PlotSquared** - Land-Claiming-System (Tycoon-Plots + Freebuild)
+- **Multiverse-Core** (+Inventories) - Verwaltung der Welten `tycoon`/`town`/`freebuild` mit getrennten Inventaren
+- **VoidGen** - Void-/Leerwelt-Generator
+- **Chunky** - Chunk-Pre-Generierung (Performance)
+- **WorldGuard** - Regionen-Schutz (gehärtet: TNT/Creeper/Feuer/Wither begrenzt)
+- **FastAsyncWorldEdit** / **AxiomPaper** - World-Editing & Building
+- **ShopGUIPlus** - Shop-GUI für Economy
+- **GlobalMarketPlus** - Globaler Marktplatz / Auktionshaus
+- **ChestShop** - Spieler-Läden per Truhe & Schild
+- **Oraxen** - Custom Items und Texturen
+- **HeadDatabase** - dekorative Köpfe
+- **LibsDisguises** - Verkleidungen (Events/Bosse)
+- **RoseStacker** (+RoseGarden) - Entity-/Item-Stacking (Performance)
+- **BlueMap** - 3D-Web-Karte
 - **LuckPerms** - Permissions
-- **Vault** - Economy API
-- **Skript** - Custom Tycoon-Logik (Sell Wand, Chunk Collector, Nitwit Boss, Casino, Tutorial, Daily Rewards)
-- **WorldGuard** - Regionen-Schutz (gehärtet: TNT/Creeper/Feuer/Wither blockiert)
+- **Vault** - Economy API (Backend, an CMI angebunden)
+- **PlaceholderAPI**, **ProtocolLib**, **CommandAPI**, **NBTAPI** - Backend-Bibliotheken
+- **PartyAndFriendsGUI** - Party-/Freundeslisten-GUI (Backend zum Velocity-PAF)
+- **bStats**, **faststats**, **spark** - Statistik & Profiling
 
 **Tycoon-Gamemode:**
 - 25-Tier Rangaufstieg (Erde → Stein → Kohle → ... → Bedrock)
@@ -156,16 +173,21 @@ Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
 **Noch zu installieren/konfigurieren:**
 - ⚠️ **Anti-Cheat** - Vulcan Premium muss manuell installiert werden (PRIORITÄT für Economy-Schutz)
 - ⚠️ **Voting-System** - NuVotifier + VotingPlugin für Server-Listen-Integration
-- ⚠️ **Hologramm-Positionen** - Müssen in-game mit `/dh hologram move` positioniert werden
-- ⚠️ **ChestShop** - Plugin installiert aber nicht konfiguriert (GlobalMarketPlus deckt Spieler-Handel ab)
+- ⚠️ **Hologramm-Positionen** - Über CMI setzen (`/cmi hologram ...`) für Spawn/Shop/Casino/Generatoren
 
 ---
 
-### 4. Skyblock Server (MMO)
+### 4. Skyblock Server — *Neu / Umbau (ohne Gilden, Freunde-Koop)*
 
-**Funktion:** MMO Skyblock mit RPG-Elementen
+> **🟢 Wird überarbeitet und behalten.** Kernänderung: **keine Gilden**, stattdessen **Freunde-Koop** über
+> die Insel-Mitglieder von SuperiorSkyblock2 (Freunde einladen und gemeinsam die Insel bauen). Ob die
+> MMO-Integration (Klassen/MMOItems) erhalten bleibt, ist offen — siehe
+> [NEW_SERVERS.md](NEW_SERVERS.md#7-verbleibende-offene-fragen). Sync-Details unten gelten nur bis zur
+> RPG-Abschaltung.
 
-**Version:** Paper 1.21.1
+**Funktion:** Koop-Skyblock (Freunde einladen), optional mit MMO-/RPG-Elementen
+
+**Version:** Paper 26.2
 
 **Hauptplugins:**
 - **SuperiorSkyblock2** - Skyblock Core-System
@@ -207,11 +229,13 @@ Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
 
 ---
 
-### 5. RPG Server (MMO)
+### 5. RPG Server (MMO) — *Archiv, wird eingestellt*
+
+> **⚠️ Wird zeitnah abgeschaltet** und durch einen neuen Server ersetzt. Abschnitt nur noch als Referenz.
 
 **Funktion:** Vollständiger MMO-RPG Server mit Open World
 
-**Version:** Paper 1.21.1
+**Version:** Paper 26.2
 
 **Hauptplugins:**
 - **MythicMobs Premium** - Advanced Custom Mobs/Bosse/Items
@@ -282,7 +306,7 @@ Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
 - Survival Server Spielerdaten
 - Jobs-Plugin-Daten
 - Economy (Vault)
-- Claims (PlotSquared, GriefPrevention)
+- Claims (PlotSquared)
 - Ranks (Rankup)
 
 **Keine Verbindung zu:** RPG/Skyblock Servern
@@ -552,18 +576,20 @@ Bei kritischen Fehlern:
 
 ## Zukünftige Verbesserungen
 
-- [ ] Load-Balancing für RPG/Skyblock (mehrere Instanzen)
+> **Stand 26.2:** Der **RPG-Spielmodus** wird eingestellt; sein **Server-Slot/Pfad `rpg` wird jedoch für den neuen Mining-Server recycelt**. Neu bzw. im Umbau sind ein **überarbeiteter Skyblock** (ohne Gilden, mit Freunde-Koop) und der neue **Mining**-Server (Abbau-Zonen), siehe [NEW_SERVERS.md](NEW_SERVERS.md). Fokus der nächsten Schritte: **Lobby**, **Survival** sowie **Skyblock** und **Mining**.
+
+- [ ] Aufsetzen des neuen **Mining**-Servers (recycelt den `rpg`-Slot) und Umbau des **Skyblock**-Servers (ohne Gilden, Freunde-Koop)
+- [ ] Datensicherung des `rpg`-Slots + geordneter Content-Umbau vom RPG-Spielmodus auf Mining
 - [ ] Separate Build-Server für große Projekte
 - [ ] Event-Server (temporär für spezielle Events)
 - [ ] CDN für Resourcepacks
 - [ ] Backup-Server (Fallback bei Ausfällen)
 
 ### Lobby — Nächste Schritte
-- [ ] DecentHolograms Plugin-JAR installieren (Welcome, Server-Info, Spielerzahlen)
+- [ ] Hologramme über CMI einrichten (Welcome, Server-Info, Spielerzahlen)
 - [ ] Spawn-Punkt in-game setzen (`/cmi setspawn`)
-- [ ] NPC-Skins und -Positionen in-game konfigurieren
+- [ ] `server_selector` an die neue Ausrichtung anpassen: den recycelten **`rpg`-Slot** als **Mining** präsentieren (Karte umbenennen), Skyblock aufnehmen — `[connect] rpg` bleibt erhalten
 - [ ] Scoreboard/Sidebar mit Netzwerk-Info (CMI oder Skript)
-- [ ] Kosmetik-System (PlayerParticles + PlayerPoints als Währung)
 - [ ] Parkour-Kurs mit Belohnungen
 - [ ] Boss-Bar-Announcements für rotierende Ankündigungen
 - [ ] Tab-Liste Header/Footer anpassen (via Proxy TAB Plugin)
@@ -575,13 +601,12 @@ Bei kritischen Fehlern:
 - [ ] Anti-Cheat installieren (Vulcan Premium — PRIORITÄT)
 - [ ] Voting-System (NuVotifier + VotingPlugin)
 - [ ] Crate/Key-System (ExcellentCrates oder CrazyCrates)
-- [ ] ChestShop konfigurieren oder entfernen (GlobalMarketPlus deckt den Bedarf)
+- [ ] ChestShop finalisieren (installiert) — Abgrenzung zu GlobalMarketPlus definieren
 - [ ] LibsDisguises in Kosmetik-System integrieren oder entfernen
-- [ ] PlayerPoints als sekundäre Währung konfigurieren
 - [ ] Erweiterte Boss-Events über Nitwit hinaus
 
 ---
 
-**Letzte Aktualisierung:** 2026-04-11
+**Letzte Aktualisierung:** 2026-08-15
 
-**Version:** 1.1
+**Version:** 1.3 (26.2: Fokus Lobby & Survival; Skyblock überarbeitet + neuer Mining-Server; RPG → Archiv/Abbau)

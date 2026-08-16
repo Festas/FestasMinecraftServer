@@ -482,4 +482,4 @@ Blitzschlag → Feuerball Spam → Eislanze (wenn verfügbar)
 
 **Letzte Aktualisierung:** 2026-04-10
 
-**Status:** 🚧 Work in Progress - Werte unterliegen Balance-Anpassungen
+**Status:** 🗄️ Archiv (MMO) — nur noch Referenz; MMO-Verbleib auf Skyblock offen (siehe [../NEW_SERVERS.md](../NEW_SERVERS.md#7-verbleibende-offene-fragen))

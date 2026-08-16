@@ -325,4 +325,4 @@ Schatzkammer → Boss-Arena → Ausgang
 
 **Letzte Aktualisierung:** 2026-04-10
 
-**Status:** 🚧 Work in Progress
+**Status:** 🗄️ Archiv — RPG-Spielmodus eingestellt (nur noch Referenz)

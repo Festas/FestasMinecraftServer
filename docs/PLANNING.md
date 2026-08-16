@@ -2,13 +2,15 @@
 
 Dieser Fragenkatalog dient als Leitfaden für die weitere Entwicklung und Dokumentation des MinecraftMMO Server-Netzwerks. Die Fragen helfen dabei, strukturiert über Features, Balance und Implementierung nachzudenken.
 
+> **ℹ️ Stand 26.2:** Der Fokus liegt aktuell auf **Lobby** und **Survival**. Dazu kommen ein **überarbeiteter Skyblock** (ohne Gilden, mit Freunde-Koop) und ein neuer **Mining**-Server (Abbau-Zonen mit aufwertbaren Spitzhacken). Die Weichenstellung inkl. Bewertung und Plugin-Shortlist steht in [NEW_SERVERS.md](NEW_SERVERS.md); die Planungskapitel für die neuen Server sind Abschnitte 4 (Mining) und 5 (Skyblock). Der **RPG**-Server wird zeitnah eingestellt — Fragen dazu sind nur noch für den Rückbau relevant.
+
 ---
 
 ## 1. Netzwerk-Vision & Lore
 
 ### Vision & Ziele
 - [ ] Was ist die übergeordnete Vision für das gesamte Netzwerk?
-- [ ] Wie unterscheiden sich die drei MMO-Server (Lobby, Skyblock, RPG) voneinander?
+- [ ] Wie unterscheiden sich die aktiven und neuen Server (Lobby, Survival, Skyblock, Mining) voneinander?
 - [ ] Welche einzigartigen Verkaufsargumente (USPs) hat das Netzwerk?
 - [ ] Welche Zielgruppe soll angesprochen werden? (Casual, Hardcore, PvP, PvE)
 - [ ] Wie lange soll die durchschnittliche Spielzeit bis Endgame sein?
@@ -135,77 +137,52 @@ Dieser Fragenkatalog dient als Leitfaden für die weitere Entwicklung und Dokume
 
 ---
 
-## 4. RPG-Server Planung
+## 4. Mining-Server Planung (neu, geplant)
 
-### Welt & Zonen
-- [ ] Wie viele Zonen/Gebiete sind geplant?
-- [ ] Gibt es eine Hauptstadt/Hub?
-- [ ] Zonierung nach Level? (Starter-Zone Level 1-10, etc.)
-- [ ] Dungeons in der Open World oder instanziert?
-- [ ] Schnellreise-System? (Teleporter, Mounts?)
+> Casual-Server mit **Abbau-Zonen** und aufwertbaren Spitzhacken. Konzept & Plugin-Shortlist:
+> [NEW_SERVERS.md](NEW_SERVERS.md) · [mining/README.md](mining/README.md).
 
-### Quest-System (BetonQuest)
-- [ ] Haupt-Questline: Wie viele Akte/Kapitel?
-- [ ] Nebenquests: Wie viele pro Zone?
-- [ ] Tägliche/Wöchentliche Quests?
-- [ ] Wiederholbare Quests?
-- [ ] Quest-Belohnungen: XP, Items, Währung?
-- [ ] Entscheidungen mit Konsequenzen?
+### Spitzhacke & Progression
+- [ ] Wie viele Spitzhacken-Stufen zum Launch, und welches Abbau-Muster pro Stufe (1×1 → 3×3 → …)?
+- [ ] Wie werden Upgrades finanziert (Blöcke verkaufen, Tokens, beides)?
+- [ ] Zusätzliche Effekte/Verzauberungen (Auto-Sell, Multiplier, Tempo)?
 
-### Dungeons (MythicDungeons)
-- [ ] Wie viele Dungeons insgesamt geplant?
-- [ ] Schwierigkeitsgrade pro Dungeon?
-- [ ] Maximale Gruppengröße?
-- [ ] Lockout-System? (1x pro Tag?)
-- [ ] Besondere Dungeon-Mechaniken?
-- [ ] Boss-Loot-Tables definiert?
+### Zonen
+- [ ] Wie viele Abbau-Zonen zum Launch, mit welchen Block-Sets?
+- [ ] Freischalt-Bedingungen pro Zone (Währung, Fortschritt, Rang)?
+- [ ] Auto-Regenerations-Tempo der abgebauten Blöcke?
 
-### Mobs & Bosse (MythicMobs Premium)
-- [ ] Wie viele normale Mob-Typen?
-- [ ] Wie viele Elite-Mobs?
-- [ ] Wie viele Welt-Bosse?
-- [ ] Respawn-Timer für Bosse?
-- [ ] Mob-Fähigkeiten-Design?
-- [ ] Drop-Tables komplett oder WIP?
+### Framework & Technik (26.2)
+- [ ] Welches Mining-/Zonen-Plugin ist 26.2-tauglich? (Blocker!)
+- [ ] Bedrock-Kompatibilität aller GUIs (Geyser/Floodgate)?
+- [ ] Zonengrenzen/Schutz über WorldGuard?
 
-### NPCs (Citizens)
-- [ ] Welche NPC-Typen? (Questgeber, Händler, Trainer, Lore-NPCs)
-- [ ] Dialog-System vollständig geplant?
-- [ ] Voice-Acting / Text-Lokalisierung?
-- [ ] Dynamische NPCs (spawnen/verschwinden basierend auf Quests)?
+### Retention & Economy
+- [ ] Ränge/Prestige nach den Zonen?
+- [ ] Cosmetics (Trails, Effekte) / Battle-Pass?
+- [ ] Server-isolierte Währung oder netzwerkweite Cosmetic-Währung?
 
 ---
 
-## 5. Skyblock-Server Planung
+## 5. Skyblock-Server Planung (überarbeitet, geplant)
 
-### Island-System (SuperiorSkyblock2)
-- [ ] Standard Skyblock oder Custom Islands?
-- [ ] Island-Größe und Expansion?
-- [ ] Coop-Islands oder nur Solo?
-- [ ] Island-Level-System?
-- [ ] Island-Upgrades? (Generator, Speicher, etc.)
+> Skyblock **ohne Gilden**, aber mit **Freunde-Koop** (Insel-Mitglieder). Konzept & Plugin-Shortlist:
+> [NEW_SERVERS.md](NEW_SERVERS.md) · [skyblock/README.md](skyblock/README.md).
 
-### MMO-Integration
-- [ ] Wie unterscheidet sich MMO-Skyblock von Standard-Skyblock?
-- [ ] Klassen-System auch auf Skyblock?
-- [ ] Skyblock-spezifische Dungeons?
-- [ ] PvP auf Skyblock?
+### Inseln & Koop
+- [ ] Maximale Insel-Mitglieder / Koop-Größe (Freunde einladen)?
+- [ ] Insel-Rollen/Rechte innerhalb der Insel (statt Gilden)?
+- [ ] Insel-Upgrades, Level und Besucher-System?
 
-### Minions (JetsMinions)
-- [ ] Welche Minion-Typen?
-- [ ] Minion-Upgrades?
-- [ ] Max Minions pro Island?
-- [ ] Minion-Fuel-System?
+### Umfang & Wiederverwendung
+- [ ] Bleibt die MMO-Integration (Klassen/MMOItems) erhalten oder schlankerer Koop-Skyblock?
+- [ ] Welche vorhandenen Plugins (JetsMinions, Collections, Bazaar) bleiben aktiv?
+- [ ] SuperiorSkyblock2 & SlimeWorldManager auf 26.2 verifiziert? (Blocker!)
 
-### Progression
-- [ ] Skill-System? (Mining, Farming, Combat, etc.)
-- [ ] Collections? (Sammle X von Y für Belohnungen)
-- [ ] Slayer-System? (Boss-Kämpfe für Rewards)
-
-### Economy
-- [ ] Eigene Skyblock-Währung?
-- [ ] Auction House / Bazaar?
-- [ ] NPC-Shop vs Player-Shops?
+### Retention & Economy
+- [ ] Prestige-/Collection-Systeme, Pets?
+- [ ] Server-isolierte Währung (Balance getrennt)?
+- [ ] Cosmetics/Battle-Pass?
 
 ---
 
@@ -312,7 +289,7 @@ Dieser Fragenkatalog dient als Leitfaden für die weitere Entwicklung und Dokume
 - [ ] Soll Solo-Play möglich sein bis Endgame?
 
 ### Social Features
-- [ ] Gilden/Clans geplant?
+- [x] Gilden/Clans geplant? → **Nein.** Gilden werden nicht verwendet (CrossCraft-Guilds entfernt); Skyblock nutzt stattdessen **Freunde-Koop** über Insel-Mitglieder.
 - [ ] Party-System (PAF - PartyAndFriendsGUI)?
 - [ ] Chat-Kanäle?
 - [ ] Freundesliste?
@@ -369,4 +346,4 @@ _Hier können spontane Ideen, Notizen oder unfertige Gedanken festgehalten werde
 
 ---
 
-**Letzte Aktualisierung:** 2026-04-10
+**Letzte Aktualisierung:** 2026-08-15

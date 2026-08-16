@@ -342,4 +342,4 @@ objectives:
 
 **Letzte Aktualisierung:** 2026-04-10
 
-**Status:** 🚧 Work in Progress - Templates zum Ausfüllen bereit
+**Status:** 🗄️ Archiv — RPG-Spielmodus eingestellt (nur noch Referenz)

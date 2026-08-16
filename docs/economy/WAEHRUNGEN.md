@@ -86,7 +86,7 @@ Alle Währungen werden zwischen RPG- und Skyblock-Server synchronisiert via:
 
 Spieler haben auf beiden Servern denselben Kontostand.
 
-**Wichtig:** Der Survival-Server hat ein separates Economy-System (Vault/EssentialsX) und ist NICHT mit dem MMO-Economy verbunden.
+**Wichtig:** Der Survival-Server hat ein separates Economy-System (Vault/CMI) und ist NICHT mit dem MMO-Economy verbunden.
 
 ---
 

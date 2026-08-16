@@ -1,9 +1,0 @@
-{
-  "id": "crosscraft-guilds",
-  "name": "CrossCraftGuilds",
-  "version": "1.0.0",
-  "description": "Cross-Server Gilden-System - Velocity Proxy Modul",
-  "authors": ["Festas"],
-  "dependencies": [],
-  "main": "com.festas.guilds.velocity.GuildsVelocityPlugin"
-}

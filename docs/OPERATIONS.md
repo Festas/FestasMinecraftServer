@@ -1,6 +1,8 @@
 # Betriebshandbuch – Minecraft MMO Netzwerk
 
-Dieses Dokument beschreibt die operativen Abläufe für das Minecraft-MMO-Netzwerk mit fünf Servern: **Proxy (Velocity)**, **Lobby**, **Survival**, **Skyblock** und **RPG**. Alle Server laufen in Docker-Containern.
+Dieses Dokument beschreibt die operativen Abläufe für das Minecraft-MMO-Netzwerk. Alle Server laufen in Docker-Containern.
+
+> **ℹ️ Stand 26.2:** Das Netzwerk läuft auf **Minecraft 26.2**. Aktiv betrieben werden **Proxy (Velocity)**, **Lobby** und **Survival**. Die MMO-Server **Skyblock** und **RPG** werden zeitnah eingestellt und durch **zwei neue Server** ersetzt — Betriebsabläufe zu diesen beiden gelten nur noch übergangsweise (Rückbau/Datensicherung).
 
 ---
 
@@ -155,5 +157,5 @@ Beispiel-Webhook-Payload:
 ## Weiterführende Dokumentation
 
 - [Architektur-Übersicht](ARCHITECTURE.md)
-- [Backup-Strategie](BACKUPS.md)
+- [Backup-Strategie](infrastructure/BACKUPS.md)
 - [Notfall-Wiederherstellung](DISASTER_RECOVERY.md)

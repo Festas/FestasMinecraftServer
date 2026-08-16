@@ -1,15 +1,17 @@
 # Skyblock-Server - Übersicht
 
-Dokumentation für den MMO-Skyblock Server mit RPG-Elementen.
+Dokumentation für den überarbeiteten Skyblock-Server — **ohne Gilden**, mit **Freunde-Koop**.
+
+> **🟢 Umbau (Stand 26.2):** Dieser Server wird **überarbeitet und behalten**. Kernänderung: **keine Gilden**, stattdessen **Freunde-Koop** über die Insel-Mitglieder von SuperiorSkyblock2 (Freunde einladen und gemeinsam die Insel bauen). Ob die MMO-Integration (Klassen/MMOItems) erhalten bleibt, ist offen — siehe [NEW_SERVERS.md](../NEW_SERVERS.md#7-verbleibende-offene-fragen). Details unten, die auf die RPG-Synchronisation verweisen, gelten nur bis zur RPG-Abschaltung.
 
 ---
 
 ## Server-Informationen
 
-**Server-Typ:** Paper 1.21.1  
-**Hauptfokus:** Skyblock mit MMO-RPG Progression  
+**Server-Typ:** Paper 26.2  
+**Hauptfokus:** Koop-Skyblock (Freunde einladen), optional mit MMO-Progression  
 **Spieler-Kapazität:** 50-100 Spieler  
-**Synchronisation:** HuskSync mit RPG-Server  
+**Sozialmodell:** Insel-Mitglieder/Koop **statt Gilden**  
 **Basis-Plugin:** SuperiorSkyblock2  
 **Sprache:** Deutsch (DE)
 
@@ -18,7 +20,7 @@ Dokumentation für den MMO-Skyblock Server mit RPG-Elementen.
 ## Kern-Features
 
 ### 1. Island-System (SuperiorSkyblock2)
-- Persönliche oder Coop-Islands
+- Persönliche oder **Koop-Inseln** — Freunde per `/is invite` einladen und gemeinsam bauen (ersetzt Gilden)
 - Island-Levels und Upgrades
 - Custom Island-Schematics
 - Island-Warps und Besucher
@@ -129,14 +131,15 @@ Dokumentation für den MMO-Skyblock Server mit RPG-Elementen.
 
 ## Siehe auch
 
+- [Optimaler Plugin-Stack](PLUGINS.md)
 - [Islands-System](ISLANDS.md)
 - [Minions-System](MINIONS.md)
 - [Progression-System](PROGRESSION.md)
-- [RPG-Server Übersicht](../rpg/README.md)
-- [Klassen-System](../classes/README.md)
+- [Mining-Server](../mining/README.md)
+- [Neue Server: Skyblock & Mining](../NEW_SERVERS.md)
 
 ---
 
-**Letzte Aktualisierung:** 2026-04-12
+**Letzte Aktualisierung:** 2026-08-16
 
-**Status:** 🚧 Work in Progress
+**Status:** 🟢 Umbau — ohne Gilden, mit Freunde-Koop
