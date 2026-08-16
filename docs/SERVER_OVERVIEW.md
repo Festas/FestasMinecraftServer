@@ -555,7 +555,7 @@ Zwischen RPG ↔ Skyblock werden synchronisiert:
 
 > Dieser Abschnitt enthält einen fertigen Prompt, den du einem AI Agenten (z.B. GPT-4, Claude, Gemini, Cursor AI o.ä.) übergeben kannst, um eine vollständige Website für das MinecraftMMO Netzwerk zu erstellen oder eine bestehende Website zu überarbeiten.
 
-> **⚠️ Hinweis (26.2-Umstellung):** Der folgende Prompt beschreibt noch das **alte 4-Server-Setup** (inkl. Skyblock & RPG). Da der Fokus jetzt auf **Lobby & Survival** liegt und Skyblock/RPG durch **zwei neue Server** ersetzt werden, sollte der Prompt vor Verwendung entsprechend angepasst werden (Server-Karten, Klassen-/MMO-Sektionen, Version **26.2**).
+> **⚠️ Hinweis (26.2-Umstellung):** Der folgende Prompt beschreibt noch ein **älteres Server-Setup**. Aktueller Stand: Fokus auf **Lobby & Survival**, dazu ein **überarbeiteter Skyblock** (ohne Gilden, mit Freunde-Koop) und ein neuer **Mining**-Server (Abbau-Zonen); der **RPG**-Server wird eingestellt. Der Prompt sollte vor Verwendung entsprechend angepasst werden (Server-Karten, Klassen-/MMO-Sektionen, Version **26.2**).
 
 ---
 
@@ -743,7 +743,7 @@ Vollständiger Wynncraft-inspirierter MMO-RPG Server mit Open World.
 
 ### Hero-Section
 - Großes Banner mit Server-Name und Tagline
-- Tagline-Vorschläge: "Erlebe ein einzigartiges MMO-Abenteuer auf Minecraft 26.2" oder "RPG trifft Skyblock — auf einem Server"
+- Tagline-Vorschläge: "Erlebe ein einzigartiges Minecraft-Netzwerk auf Version 26.2" oder "Mining trifft Skyblock — Abbau & Koop"
 - Server-IP prominent mit Kopier-Button
 - Minecraft-Version Badge, Bedrock-Badge
 - "Jetzt spielen"-Button (klickt und zeigt IP zum Kopieren)
@@ -754,7 +754,7 @@ Vier Karten für die 4 Server:
 - Lobby (Icon: Kompass)
 - Survival/Tycoon (Icon: Generator oder Diamant)
 - Skyblock (Icon: Grassblock auf Wolke)
-- RPG (Icon: Schwert oder Zauberstab)
+- Mining (Icon: Spitzhacke)
 Jede Karte: kurze Beschreibung, wichtigste Features als Liste, kleines "Mehr erfahren"-Link
 
 ### Features / Highlights Section
