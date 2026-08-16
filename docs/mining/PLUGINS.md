@@ -78,7 +78,7 @@ Plugin ab. Das minimiert Schnittstellen und Wartung — ideal für den Solo-Betr
 | Plugin | Zweck | Status |
 |--------|-------|:------:|
 | **Vault** | Economy-API-Bridge (Backend) | ♻️ Recycelt |
-| **EconomyShopGUI** (+ **-Premium** für Auto-Sell) | Blöcke verkaufen → Upgrades/Zonen finanzieren (Economy-Sink & -Quelle); Vault-kompatibel, Bedrock-taugliche GUI | 🔶 Auswählen |
+| **EconomyShopGUI** (+ **-Premium** für Auto-Sell) | Blöcke verkaufen → Upgrades/Zonen finanzieren (Economy-Sink & -Quelle); Vault-kompatibel, Bedrock-taugliche GUI | 🔶 26.2 prüfen |
 | **ShopGUI+** *(Alternative, premium)* | Ausgereifter Sell-Shop mit Auto-Sell/Sell-Wands | 🔶 Prüfen |
 | **CoinsEngine** *(optional)* | Netzwerkweite Cosmetic-Währung | ♻️ Recycelt |
 
@@ -92,7 +92,7 @@ Plugin ab. Das minimiert Schnittstellen und Wartung — ideal für den Solo-Betr
 
 | Plugin | Zweck | Status |
 |--------|-------|:------:|
-| **BattlePass** (premium) *oder* **Skript**-basierter Pass | Missionen, Tier-Belohnungen, Cosmetic-Unlocks — Langzeit-Bindung | 🔶 Auswählen |
+| **BattlePass** (premium) *oder* **Skript**-basierter Pass | Missionen, Tier-Belohnungen, Cosmetic-Unlocks — Langzeit-Bindung | 🔶 26.2 prüfen |
 | **PlayerParticles** *(recyceln statt entfernen)* | Trails/Partikel-Cosmetics — kostenlos, bereits im `rpg/`-Bestand | ♻️ Recycelt |
 | **Ränge / Prestige** | Progression nach den Zonen: **LuckPerms + Skript** (bereits im Stack) — oder direkt aus dem Core (Weg 1A) | 🔶 Prüfen |
 
