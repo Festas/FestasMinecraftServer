@@ -24,16 +24,38 @@ Die Spalte **Status** ordnet jedes Plugin für den Umbau ein:
 
 Der zentrale Loop: **besondere Spitzhacke → aufwerten → mehr Blöcke pro Schlag → neue Zonen freischalten**.
 
-| Funktion | Zweck | Status |
-|----------|-------|:------:|
-| **Aufwertbare Spitzhacke** | Zentrales Werkzeug; Stufen erhöhen Abbau-Radius/-Menge und Tempo (1×1 → 3×3 → …) | 🔶 Auswählen |
-| **Mehrblock-Abbau** | Ganze Muster/Adern auf einen Schlag (an Spitzhacken-Stufe gekoppelt) | 🔶 Auswählen |
-| **Abbau-Zonen** | Mehrere Bereiche mit unterschiedlichen Block-Sets, freischaltbar | 🔶 Auswählen |
-| **Auto-Regeneration** | Abgebaute Blöcke füllen sich wieder auf | 🔶 Auswählen |
+Es gibt zwei konkrete, umsetzbare Wege. **Empfehlung für den Solo-Betrieb: Weg A** (ein gebündelter Core →
+wenigste Plugins, geringste Wartung). **Weg B** ist der modulare Aufbau aus gepflegten Einzel-Plugins, die
+gut zum vorhandenen Stack passen — flexibler, aber mehr Konfigurations- und Wartungsaufwand.
 
-> **Hinweis:** Diese vier Funktionen können je nach Plugin-Wahl **in einem** etablierten Mining-/Prison-Core
-> gebündelt sein oder aus mehreren Plugins kombiniert werden. Erst nach der Auswahl eines **26.2-tauglichen,
-> gepflegten** Kern-Plugins werden die weiteren Bausteine final verdrahtet.
+> ⚠️ Für **jeden** hier genannten Kandidaten gilt der **26.2-Blocker-Check** (Build bestätigen) fort. Die
+> Vorschläge sind begründete Kandidaten, keine bereits verifizierten Builds.
+
+### 1A. Empfohlen — gebündelter Mining-/Prison-Core *(ein Plugin für den ganzen Loop)*
+
+Deckt Spitzhacken-Progression, Mehrblock-Abbau, Zonen, Auto-Reset, Auto-Sell und Prestige/Ränge **in einem**
+Plugin ab. Das minimiert Schnittstellen und Wartung — ideal für den Solo-Betrieb.
+
+| Plugin | Deckt ab | Warum | Status |
+|--------|----------|-------|:------:|
+| **X-Prison** *(Erstwahl)* | Zonen + Auto-Reset, Mehrblock-Enchants (Explosive/Layer/Nuke), Spitzhacken-Level, Auto-Sell, Prestige/Ränge, Multiplier | Kostenlos & **Open-Source** (auditierbar), aktiv gepflegt, deckt den kompletten Kern-Loop ab | 🔶 26.2 prüfen |
+| **EdPrison** / **VortexPrisonCore** *(Alternativen)* | Gleicher Funktionsumfang (All-in-One-Prison-Core) | Ausgereifte Alternativen (Vortex = ohne NMS → zukunftssicherer; Ed = großer Funktionsumfang) | 🔶 26.2 prüfen |
+
+> **Konsequenz bei Weg A:** Shop/Auto-Sell (Abschnitt 3) und Ränge/Prestige (Abschnitt 4) sind bereits im Core
+> enthalten — dort dann nur noch Feintuning/Balancing statt eigener Plugins. Der „OP-Prison"-Charakter der
+> Mehrblock-Enchants lässt sich über die Config auf den gewünschten Casual-Loop herunterregeln.
+
+### 1B. Alternative — modularer Aufbau *(gepflegte Einzel-Plugins)*
+
+| Funktion | Empfohlenes Plugin | Alternativen | Status |
+|----------|--------------------|--------------|:------:|
+| **Aufwertbare Spitzhacke** (Item + Stufen) | **EcoItems** (kostenlos, gepflegt) | **MMOItems** (♻️ bereits im Bestand), Oraxen-Item + Skript | 🔶 26.2 prüfen |
+| **Mehrblock-Abbau** (3×3 / Adern) | **EcoEnchants** (kostenlos, Area-/Explosive-Enchants) | **AdvancedEnchantments** (premium, Prison-Standard), CrazyEnchantments | 🔶 26.2 prüfen |
+| **Abbau-Zonen + Auto-Regeneration** | **AxMines** (kostenlos, Open-Source, GUI, Timer/Prozent-Reset) | **JetsPrisonMines** (gleicher Entwickler wie JetsMinions im Skyblock-Stack), **OreRegrow** | 🔶 26.2 prüfen |
+
+> **Synergie:** **EcoItems + EcoEnchants** stammen aus demselben (eco-)Ökosystem und sind auf Zusammenspiel
+> ausgelegt — die Spitzhacke (EcoItems) trägt die Area-Enchants (EcoEnchants), gekoppelt an ihre Stufe.
+> **AxMines** übernimmt Zonen inkl. Auto-Reset; **WorldGuard** (Abschnitt 2) sichert die Grenzen.
 
 ---
 
@@ -56,8 +78,13 @@ Der zentrale Loop: **besondere Spitzhacke → aufwerten → mehr Blöcke pro Sch
 | Plugin | Zweck | Status |
 |--------|-------|:------:|
 | **Vault** | Economy-API-Bridge (Backend) | ♻️ Recycelt |
-| **Shop / Auto-Sell** (Vault-kompatibel) | Blöcke verkaufen → Upgrades/Zonen finanzieren (Economy-Sink & -Quelle) | 🔶 Auswählen |
+| **EconomyShopGUI** (+ **-Premium** für Auto-Sell) | Blöcke verkaufen → Upgrades/Zonen finanzieren (Economy-Sink & -Quelle); Vault-kompatibel, Bedrock-taugliche GUI | 🔶 Auswählen |
+| **ShopGUI+** *(Alternative, premium)* | Ausgereifter Sell-Shop mit Auto-Sell/Sell-Wands | 🔶 Prüfen |
 | **CoinsEngine** *(optional)* | Netzwerkweite Cosmetic-Währung | ♻️ Recycelt |
+
+> **Bei Weg 1A (gebündelter Core):** Auto-Sell ist bereits im Prison-Core enthalten — ein separates Shop-Plugin
+> entfällt dann. **EconomyShopGUI** ist die Erstwahl für Weg 1B (modular), weil kostenlos, Vault-kompatibel und
+> Bedrock-tauglich.
 
 ---
 
@@ -65,8 +92,9 @@ Der zentrale Loop: **besondere Spitzhacke → aufwerten → mehr Blöcke pro Sch
 
 | Plugin | Zweck | Status |
 |--------|-------|:------:|
-| **Cosmetics / Battle-Pass** | Trails, Effekte, Belohnungen — Langzeit-Bindung | 🔶 Auswählen |
-| **Ränge / Prestige** | Progression nach den Zonen (Skript oder Rankup-artig) | 🔶 Prüfen |
+| **BattlePass** (premium) *oder* **Skript**-basierter Pass | Missionen, Tier-Belohnungen, Cosmetic-Unlocks — Langzeit-Bindung | 🔶 Auswählen |
+| **PlayerParticles** *(recyceln statt entfernen)* | Trails/Partikel-Cosmetics — kostenlos, bereits im `rpg/`-Bestand | ♻️ Recycelt |
+| **Ränge / Prestige** | Progression nach den Zonen: **LuckPerms + Skript** (bereits im Stack) — oder direkt aus dem Core (Weg 1A) | 🔶 Prüfen |
 
 ---
 
@@ -125,7 +153,8 @@ Diese Plugins gehören zum eingestellten RPG-Spielmodus und werden beim Umbau de
 | **MythicMobs**, **MythicDungeons**, **MythicRPG**, **MythicAchievements**, **MythicHUD** | RPG-Mobs/Dungeons/Scaling | 🧹 Entfernen |
 | **MMOCore**, **MMOItems**, **MythicLib** | Klassen/Custom-Items | 🧹 Entfernen |
 | **BetonQuest**, **Citizens** | Quests & NPCs | 🧹 Entfernen |
-| **ModelEngine**, **LibsDisguises**, **PlayerParticles**, **DecentHolograms** | 3D-Models/Verkleidungen/Partikel/Hologramme (Hologramme via CMI) | 🧹 Entfernen |
+| **ModelEngine**, **LibsDisguises**, **DecentHolograms** | 3D-Models/Verkleidungen/Hologramme (Hologramme via CMI) | 🧹 Entfernen |
+| **PlayerParticles** | Partikel/Trails — **behalten** und für Mining-Cosmetics recyceln (siehe Abschnitt 4) | ♻️ Recycelt |
 | **Aurora**, **AuroraCollections** | RPG-Collections/Achievements | 🧹 Entfernen |
 | **DeluxeBazaar**, **GlobalMarketPlus**, **PlayerPoints** | RPG-Handel/Punkte | 🧹 Entfernen |
 | **RoseLoot**, **RoseStacker**, **RoseGarden** | Loot/Stacking/Lib (nur behalten, falls vom Mining-Kern gebraucht) | 🔶 Prüfen |
@@ -137,11 +166,14 @@ Diese Plugins gehören zum eingestellten RPG-Spielmodus und werden beim Umbau de
 
 ## Offene Punkte
 
-- **Mining-Kern-Plugin** für 26.2 auswählen (Spitzhacken-Upgrades + Mehrblock-Abbau + Auto-Regeneration) —
-  **Blocker Nr. 1**.
-- **Shop/Auto-Sell**-Plugin und Verkaufspreis-Balancing festlegen.
+- **Mining-Kern:** Entscheidung **Weg 1A (gebündelter Core, empfohlen: X-Prison)** vs. **Weg 1B (modular:
+  EcoItems + EcoEnchants + AxMines)** treffen — und den **26.2-Build** des gewählten Kerns bestätigen
+  (**Blocker Nr. 1**).
+- **Shop/Auto-Sell:** Bei Weg 1B **EconomyShopGUI** (bzw. -Premium) einrichten und Verkaufspreis-Balancing
+  festlegen; bei Weg 1A entfällt ein separates Plugin (Core-intern).
 - **Zonen-Design:** Anzahl Zonen zum Launch, Block-Sets, Freischalt-Kosten, Abbau-Muster pro Stufe.
-- **Cosmetics/Battle-Pass** und optionale netzwerkweite Cosmetic-Währung
+- **Cosmetics/Battle-Pass:** **BattlePass** (premium) oder Skript-Pass wählen; **PlayerParticles** für Trails
+  recyceln; optionale netzwerkweite Cosmetic-Währung
   ([../NEW_SERVERS.md#7](../NEW_SERVERS.md#7-verbleibende-offene-fragen)).
 - **26.2-Builds** aller ♻️/🔶-Plugins bestätigen.
 
