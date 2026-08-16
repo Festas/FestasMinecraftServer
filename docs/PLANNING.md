@@ -289,7 +289,7 @@ Dieser Fragenkatalog dient als Leitfaden für die weitere Entwicklung und Dokume
 - [ ] Soll Solo-Play möglich sein bis Endgame?
 
 ### Social Features
-- [ ] Gilden/Clans geplant?
+- [x] Gilden/Clans geplant? → **Nein.** Gilden werden nicht verwendet (CrossCraft-Guilds entfernt); Skyblock nutzt stattdessen **Freunde-Koop** über Insel-Mitglieder.
 - [ ] Party-System (PAF - PartyAndFriendsGUI)?
 - [ ] Chat-Kanäle?
 - [ ] Freundesliste?

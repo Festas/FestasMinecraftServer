@@ -2,7 +2,7 @@
 
 Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
 
-> **⚠️ Stand: Umstellung auf 26.2** — Netzwerk läuft auf **Minecraft/Paper 26.2**. Aktiver Fokus: **Lobby** und **Survival** (Plugins frisch aufgeräumt). Die MMO-Server **Skyblock** und **RPG** werden zeitnah eingestellt und durch **zwei neue Server** ersetzt; die betreffenden Abschnitte sind **Archiv**.
+> **⚠️ Stand: Umstellung auf 26.2** — Netzwerk läuft auf **Minecraft/Paper 26.2**. Aktiver Fokus: **Lobby** und **Survival** (Plugins frisch aufgeräumt). Dazu ein **überarbeiteter Skyblock** (ohne Gilden, mit Freunde-Koop) und ein neuer **Mining**-Server. Der MMO-Server **RPG** wird zeitnah eingestellt; die RPG-Abschnitte sind **Archiv**. Detaillierte Skyblock↔RPG-Sync-Abschnitte gelten nur bis zur RPG-Abschaltung.
 
 ---
 
@@ -21,16 +21,16 @@ Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
           ┌────────────────────────────┼────────────────────────────┐
           |                            |                            |
     ┌─────▼─────┐              ┌──────▼──────┐            ┌────────▼────────┐
-    │   Lobby   │              │   Survival  │            │   MMO-Server    │
-    │  Server   │              │   Server    │            │ (RPG/Skyblock)  │
-    │  (AKTIV)  │              │   (AKTIV)   │            │ (ARCHIV → Abbau)│
+    │   Lobby   │              │   Survival  │            │  Skyblock/Mining│
+    │  Server   │              │   Server    │            │   + RPG (Archiv)│
+    │  (AKTIV)  │              │   (AKTIV)   │            │ (NEU / Umbau)   │
     └───────────┘              └─────────────┘            └─────────────────┘
-    - Routing                  - Survival/Tycoon         - RPG (Paper 26.2)
-    - Welcome                  - Jobs, Plots             - Skyblock (Paper 26.2)
-    - Navigation               - Economy, BlueMap        - MMOCore, MMOItems
-      (DeluxeMenus)                                      - MythicMobs Premium
+    - Routing                  - Survival/Tycoon         - Skyblock (Koop, ohne Gilden)
+    - Welcome                  - Jobs, Plots             - Mining (Abbau-Zonen)
+    - Navigation               - Economy, BlueMap        - RPG (Paper 26.2, Archiv)
+      (DeluxeMenus)                                      - MythicMobs Premium (RPG)
 
-    Geplant: Minigames & Factions ersetzen RPG & Skyblock (Konzept: NEW_SERVERS.md)
+    Neu: Skyblock (überarbeitet) & Mining; RPG wird eingestellt (Konzept: NEW_SERVERS.md)
 ```
 
 ---
@@ -177,11 +177,15 @@ Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
 
 ---
 
-### 4. Skyblock Server (MMO) — *Archiv, wird eingestellt*
+### 4. Skyblock Server — *Neu / Umbau (ohne Gilden, Freunde-Koop)*
 
-> **⚠️ Wird zeitnah abgeschaltet** und durch einen neuen Server ersetzt. Abschnitt nur noch als Referenz.
+> **🟢 Wird überarbeitet und behalten.** Kernänderung: **keine Gilden**, stattdessen **Freunde-Koop** über
+> die Insel-Mitglieder von SuperiorSkyblock2 (Freunde einladen und gemeinsam die Insel bauen). Ob die
+> MMO-Integration (Klassen/MMOItems) erhalten bleibt, ist offen — siehe
+> [NEW_SERVERS.md](NEW_SERVERS.md#7-verbleibende-offene-fragen). Sync-Details unten gelten nur bis zur
+> RPG-Abschaltung.
 
-**Funktion:** MMO Skyblock mit RPG-Elementen
+**Funktion:** Koop-Skyblock (Freunde einladen), optional mit MMO-/RPG-Elementen
 
 **Version:** Paper 26.2
 
@@ -572,10 +576,10 @@ Bei kritischen Fehlern:
 
 ## Zukünftige Verbesserungen
 
-> **Stand 26.2:** RPG-/Skyblock-bezogene Punkte sind hinfällig — beide Server werden durch **zwei neue Server** ersetzt: **Minigames** (Casual) und **Factions** (Social/PvP), siehe [NEW_SERVERS.md](NEW_SERVERS.md). Fokus der nächsten Schritte: **Lobby**, **Survival** und die Vorbereitung der zwei Nachfolge-Server.
+> **Stand 26.2:** Der **RPG**-Server wird eingestellt. Neu bzw. im Umbau sind ein **überarbeiteter Skyblock** (ohne Gilden, mit Freunde-Koop) und ein neuer **Mining**-Server (Abbau-Zonen), siehe [NEW_SERVERS.md](NEW_SERVERS.md). Fokus der nächsten Schritte: **Lobby**, **Survival** sowie **Skyblock** und **Mining**.
 
-- [ ] Konzept & Aufsetzen der Nachfolge-Server **Minigames** & **Factions** (Ersatz für Skyblock & RPG)
-- [ ] Datensicherung + geordnete Abschaltung von Skyblock & RPG
+- [ ] Aufsetzen des neuen **Mining**-Servers und Umbau des **Skyblock**-Servers (ohne Gilden, Freunde-Koop)
+- [ ] Datensicherung + geordnete Abschaltung von **RPG**
 - [ ] Separate Build-Server für große Projekte
 - [ ] Event-Server (temporär für spezielle Events)
 - [ ] CDN für Resourcepacks
@@ -584,7 +588,7 @@ Bei kritischen Fehlern:
 ### Lobby — Nächste Schritte
 - [ ] Hologramme über CMI einrichten (Welcome, Server-Info, Spielerzahlen)
 - [ ] Spawn-Punkt in-game setzen (`/cmi setspawn`)
-- [ ] `server_selector` auf die neue Server-Aufstellung anpassen (Skyblock/RPG → Minigames/Factions)
+- [ ] `server_selector` auf die neue Server-Aufstellung anpassen (RPG entfernen → Skyblock/Mining aufnehmen)
 - [ ] Scoreboard/Sidebar mit Netzwerk-Info (CMI oder Skript)
 - [ ] Parkour-Kurs mit Belohnungen
 - [ ] Boss-Bar-Announcements für rotierende Ankündigungen
@@ -605,4 +609,4 @@ Bei kritischen Fehlern:
 
 **Letzte Aktualisierung:** 2026-08-15
 
-**Version:** 1.2 (26.2-Umstellung: Fokus Lobby & Survival; Skyblock & RPG → Archiv/Abbau)
+**Version:** 1.3 (26.2: Fokus Lobby & Survival; Skyblock überarbeitet + neuer Mining-Server; RPG → Archiv/Abbau)

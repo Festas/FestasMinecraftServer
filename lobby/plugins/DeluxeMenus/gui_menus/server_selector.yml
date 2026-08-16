@@ -81,10 +81,10 @@ items:
     priority: 1
     display_name: '&b&l🏝 Skyblock'
     lore:
-      - '&7MMO Skyblock mit RPG-Elementen,'
-      - '&7Minions und Inseln!'
+      - '&7Koop-Skyblock: baue gemeinsam'
+      - '&7mit Freunden an deiner Insel!'
       - ''
-      - '&7Klassen &8| &fWähle deinen Weg'
+      - '&7Koop &8| &fFreunde per /is invite einladen'
       - '&7Minions &8| &fAutomatische Farmen'
       - '&7Inseln &8| &fBaue im Himmel'
       - ''

@@ -129,21 +129,20 @@ items:
       - '&e/friend &8- &7Freundesliste'
       - '&e/party &8- &7Party-System'
 
-  # --- GILDEN ---
-  'guilds':
-    material: SHIELD
+  # --- FREUNDE & KOOP ---
+  'coop':
+    material: PLAYER_HEAD
     slot: 30
-    display_name: '&d&l🛡 Gilden-System'
+    display_name: '&d&l🤝 Freunde & Koop'
     lore:
-      - '&7Erstelle oder trete einer Gilde bei!'
-      - '&7Gilden funktionieren server-übergreifend.'
+      - '&7Spiele zusammen mit deinen Freunden!'
+      - '&7Auf Skyblock baust du gemeinsam an einer Insel.'
       - ''
-      - '&8» &fGilden-Chat &7über alle Server'
-      - '&8» &fGilden-Bank &7für gemeinsame Währung'
-      - '&8» &fGilden-Level &7bis Level 50'
-      - '&8» &fRänge: &7Rekrut → Mitglied → Offizier → Anführer'
+      - '&8» &fFreundesliste &7server-übergreifend'
+      - '&8» &fParty &7für gemeinsames Spielen'
+      - '&8» &fSkyblock-Koop &7per Insel-Einladung'
       - ''
-      - '&eBefehle: &7/guild create, /guild invite'
+      - '&eBefehle: &7/friend, /party, /is invite'
 
   # --- SUPPORT ---
   'support':

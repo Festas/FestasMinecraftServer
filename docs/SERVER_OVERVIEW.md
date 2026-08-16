@@ -10,10 +10,9 @@
 2. [Server-Details](#2-server-details)
    - [Lobby](#21-lobby)
    - [Survival / Tycoon](#22-survival--tycoon)
-   - [Minigames — Geplant](#23-minigames--geplant-nachfolger)
-   - [Factions — Geplant](#24-factions--geplant-nachfolger)
-   - [Skyblock (MMO) — Archiv](#25-skyblock-mmo--archiv-wird-eingestellt)
-   - [RPG (MMO) — Archiv](#26-rpg-mmo--archiv-wird-eingestellt)
+   - [Mining — Neu](#23-mining--neu)
+   - [Skyblock — Umbau](#24-skyblock--umbau-ohne-gilden-freunde-koop)
+   - [RPG (MMO) — Archiv](#25-rpg-mmo--archiv-wird-eingestellt)
 3. [Klassen-System — Archiv](#3-klassen-system--archiv-mmo)
 4. [Item-System](#4-item-system)
 5. [Economy-System](#5-economy-system)
@@ -32,7 +31,7 @@
 **Sprache:** Deutsch (primär)  
 **Status:** Umstellung auf 26.2 — Fokus auf Lobby & Survival
 
-> **⚠️ Umbruch:** Aktiv weiterentwickelt werden derzeit nur **Lobby** und **Survival** (Plugins frisch aufgeräumt). Die MMO-Server **Skyblock** und **RPG** werden **zeitnah eingestellt** und durch **zwei neue Server** ersetzt: **Minigames** (Casual) und **Factions** (Social/PvP) — Weichenstellung, Bewertung und Plugin-Shortlist in [NEW_SERVERS.md](NEW_SERVERS.md). Die Skyblock-/RPG-Abschnitte in diesem Dokument gelten als **Archiv/Referenz**.
+> **⚠️ Umbruch:** Aktiv weiterentwickelt werden **Lobby** und **Survival** (Plugins frisch aufgeräumt). Dazu ein **überarbeiteter Skyblock** (ohne Gilden, mit Freunde-Koop) und ein neuer **Mining**-Server (Abbau-Zonen mit aufwertbaren Spitzhacken) — Weichenstellung, Bewertung und Plugin-Shortlist in [NEW_SERVERS.md](NEW_SERVERS.md). Der **RPG**-Abschnitt in diesem Dokument gilt als **Archiv/Referenz**; er wird zeitnah eingestellt.
 
 ### Netzwerk-Architektur
 
@@ -44,15 +43,14 @@ Velocity Proxy  (mc.festas-builds.com)
     │
     ├──► Lobby          Haupt-Hub, Server-Navigation           [AKTIV]
     ├──► Survival       Standard Survival + Tycoon-Gamemode     [AKTIV]
-    ├──► Minigames      Rotierende Minispiele (Casual)          [GEPLANT → Aufbau]
-    ├──► Factions       Gilden-PvP, Land-Claiming (Social/PvP)  [GEPLANT → Aufbau]
-    ├──► Skyblock       MMO-Skyblock mit RPG-Elementen          [ARCHIV → Abbau]
+    ├──► Skyblock       Koop-Skyblock, ohne Gilden              [NEU → Umbau]
+    ├──► Mining         Abbau-Zonen, aufwertbare Spitzhacken    [NEU → Aufbau]
     └──► RPG            Vollständiger MMO-RPG Open-World-Server  [ARCHIV → Abbau]
 
-    Minigames & Factions ersetzen Skyblock & RPG (Konzept: NEW_SERVERS.md)
+    Skyblock (überarbeitet) & Mining sind die neuen Server; RPG wird eingestellt (Konzept: NEW_SERVERS.md)
 ```
 
-Der aktive Fokus liegt auf dem **Survival/Tycoon**-Erlebnis und der **Lobby** als Hub. Die auslaufenden MMO-Server kombinierten Konzepte aus **Hypixel Skyblock** (Progression, Minions, Collections) und **Wynncraft** (Klassen, Quests, Story) — diese Inhalte werden mit der Abschaltung durch zwei neue Server-Konzepte abgelöst.
+Der aktive Fokus liegt auf dem **Survival/Tycoon**-Erlebnis und der **Lobby** als Hub. Hinzu kommen ein **überarbeiteter Skyblock** (Koop, ohne Gilden) und ein neuer **Mining**-Server. Der auslaufende **RPG**-Server kombinierte Konzepte aus **Hypixel Skyblock** (Progression, Minions, Collections) und **Wynncraft** (Klassen, Quests, Story) — diese Inhalte werden mit der Abschaltung abgelöst; ausgewählte Bausteine leben in den neuen Servern weiter.
 
 ---
 
@@ -180,54 +178,38 @@ Nach Rang 25 kann man prestigen — alles wird zurückgesetzt, aber ein permanen
 
 ---
 
-### 2.3 Minigames — *Geplant (Nachfolger)*
+### 2.3 Mining — *Neu*
 
-> **🟡 Geplant / Aufbauphase.** Einer der zwei Nachfolger für Skyblock & RPG. Konzept:
-> [minigames/README.md](minigames/README.md) · [NEW_SERVERS.md](NEW_SERVERS.md).
+> **🟡 Neu / Aufbauphase.** Einer der zwei neuen Server. Konzept:
+> [mining/README.md](mining/README.md) · [NEW_SERVERS.md](NEW_SERVERS.md).
 
-**Funktion:** Casual-Server mit rotierenden Minispielen
+**Funktion:** Casual-Server mit **Abbau-Zonen** und aufwertbaren Spitzhacken
 **Version:** Paper 26.2 (geplant)
 **Slot:** Casual · **Zielgruppe:** Gelegenheitsspieler, Bedrock-freundlich
 
 **Kern-Idee:**
-- Rotierende Modi: BedWars/SkyWars, Parkour, Spleef, Arcade
-- Kurze Runden, niedrige Einstiegshürde, hoher Wiederspielwert
-- Retention über Cosmetics, Battle-Pass und tägliche Herausforderungen
+- **Besondere Spitzhacke:** Immer stärkere Stufen bauen **mehr Blöcke auf einmal** ab (1×1 → 3×3 → …) und graben schneller
+- **Freischaltbare Zonen:** Neue Abbau-Zonen mit anderen/wertvolleren Blöcken werden nach und nach freigeschaltet
+- **Verkaufen → Aufwerten → Freischalten:** Blöcke verkaufen finanziert Spitzhacken-Upgrades und Zonen
+- Retention über Ränge/Prestige, Cosmetics und Battle-Pass
 
-**Abgrenzung:** Kein Grind — bewusst das Gegenteil des Survival/Tycoon-Loops.
-
----
-
-### 2.4 Factions — *Geplant (Nachfolger)*
-
-> **🟡 Geplant / Aufbauphase.** Einer der zwei Nachfolger für Skyblock & RPG. Konzept:
-> [factions/README.md](factions/README.md) · [NEW_SERVERS.md](NEW_SERVERS.md).
-
-**Funktion:** Social/PvP-Server mit Gilden-getriebenem Land-Claiming
-**Version:** Paper 26.2 (geplant)
-**Slot:** Social/PvP · **Zielgruppe:** Gruppen-/PvP-Spieler
-
-**Kern-Idee:**
-- Gilden/Teams als Klammer über **CrossCraft-Guilds** (bereits im Repo)
-- Land-Claiming, Warzone, Raids; deckt die offene PvP-Endgame-Lücke ab
-- Progression über Kits, Crates, Ränge; saisonale Wipes/Ladder
-
-**Kritische Blocker:** Anti-Cheat und Factions-Kern für 26.2 verifizieren; CrossCraft-Guilds auf 26.2 anheben.
+**Abgrenzung:** Aktives Abbauen und Spitzhacken-Progression statt passiver Generatoren/Plots des Survival/Tycoon.
 
 ---
 
-### 2.5 Skyblock (MMO) — *Archiv, wird eingestellt*
+### 2.4 Skyblock — *Umbau (ohne Gilden, Freunde-Koop)*
 
-> **⚠️ Dieser Server wird zeitnah abgeschaltet** und durch einen neuen Server ersetzt. Inhalte nur noch als Referenz.
+> **🟢 Wird überarbeitet und behalten.** Kernänderung: **keine Gilden**, stattdessen **Freunde-Koop** über
+> die Insel-Mitglieder von SuperiorSkyblock2. Konzept: [skyblock/README.md](skyblock/README.md) ·
+> [NEW_SERVERS.md](NEW_SERVERS.md).
 
-
-**Funktion:** MMO-Skyblock mit RPG-Elementen und vollständiger Klassen-Integration  
+**Funktion:** Koop-Skyblock — Freunde einladen und gemeinsam die Insel bauen  
 **Version:** Paper 26.2  
 **Kapazität:** 50–100 Spieler  
-**Synchronisation:** HuskSync ↔ RPG-Server
+**Sozialmodell:** Insel-Mitglieder/Koop statt Gilden
 
 #### Island-System (SuperiorSkyblock2)
-- **Persönliche oder Coop-Islands**
+- **Persönliche oder Koop-Inseln** — Freunde per `/is invite` einladen
 - Island-Level-System und Island-Upgrades
 - Custom Island-Schematics
 - Island-Warps für Besucher
@@ -249,12 +231,13 @@ Nach Rang 25 kann man prestigen — alles wird zurückgesetzt, aber ein permanen
 
 Minions nutzen ein Health-System und müssen gepflegt werden. Verknüpfte Kisten für automatische Lagerung.
 
-#### MMO-Integration
-- **6 Klassen** via MMOCore (identisch mit RPG-Server)
+#### MMO-Integration *(optional — Umfang offen)*
+- **6 Klassen** via MMOCore (aus dem RPG-Erbe)
 - Custom Items mit Stats via MMOItems
 - Custom Mobs via MythicMobs (Community Edition)
 - Skills und Fähigkeiten
-- Daten bleiben beim Wechsel zu RPG erhalten (HuskSync)
+- Ob dieser MMO-Teil erhalten bleibt oder zugunsten eines schlankeren Koop-Skyblocks entfällt, ist offen
+  (siehe [NEW_SERVERS.md → Abschnitt 7](NEW_SERVERS.md#7-verbleibende-offene-fragen))
 
 #### Collection-System (AuroraCollections — 5 Kategorien)
 
@@ -285,7 +268,7 @@ Jede Sammlung hat Milestones mit exklusiven Belohnungen.
 
 ---
 
-### 2.6 RPG (MMO) — *Archiv, wird eingestellt*
+### 2.5 RPG (MMO) — *Archiv, wird eingestellt*
 
 > **⚠️ Dieser Server wird zeitnah abgeschaltet** und durch einen neuen Server ersetzt. Inhalte nur noch als Referenz.
 

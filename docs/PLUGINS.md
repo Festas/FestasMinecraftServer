@@ -2,7 +2,7 @@
 
 Vollständige Übersicht aller verwendeten Plugins pro Server.
 
-> **⚠️ Stand: Umstellung auf 26.2** — Alle Server laufen auf **Minecraft 26.2**. Der Fokus liegt aktuell **nur auf Lobby und Survival**; deren Plugin-Listen wurden frisch aufgeräumt und spiegeln den echten Ordnerinhalt wider. Die Abschnitte zu **Skyblock** und **RPG** sind **Archiv** — diese Server werden zeitnah eingestellt und durch zwei neue Server ersetzt.
+> **⚠️ Stand: Umstellung auf 26.2** — Alle Server laufen auf **Minecraft 26.2**. Der Fokus liegt aktuell auf **Lobby und Survival**; deren Plugin-Listen wurden frisch aufgeräumt und spiegeln den echten Ordnerinhalt wider. **Skyblock** wird überarbeitet und behalten (ohne Gilden, mit Freunde-Koop); zusätzlich kommt ein neuer **Mining**-Server. Der Abschnitt zu **RPG** ist **Archiv** — dieser Server wird zeitnah eingestellt.
 
 ---
 
@@ -138,7 +138,7 @@ Vollständige Übersicht aller verwendeten Plugins pro Server.
 #### DeluxeMenus
 - **Funktion:** Custom GUI-Menüs — **zentrale Navigation der Lobby**
 - **Verwendung:**
-  - `server_selector` (Server-Auswahl: Survival, + auslaufend Skyblock/RPG)
+  - `server_selector` (Server-Auswahl: Survival, Skyblock, Mining; + auslaufend RPG)
   - Netzwerk-Guide, Regeln, Basics/Advanced-Menüs
 - **Config:** `lobby/plugins/DeluxeMenus/gui_menus/`
 
@@ -290,7 +290,7 @@ Vollständige Übersicht aller verwendeten Plugins pro Server.
 
 ## Skyblock Server Plugins
 
-> **⚠️ Archiv.** Der Skyblock-Server wird zeitnah eingestellt und durch einen neuen Server ersetzt. Diese Liste wird nicht mehr gepflegt.
+> **🟢 Umbau.** Der Skyblock-Server wird überarbeitet und behalten — **ohne Gilden**, mit **Freunde-Koop** (Insel-Mitglieder via SuperiorSkyblock2). Der Plugin-Stack bleibt weitgehend bestehen; ob die MMO-Plugins (MMOCore/MMOItems) erhalten bleiben, ist offen (siehe [NEW_SERVERS.md](NEW_SERVERS.md#7-verbleibende-offene-fragen)).
 
 ### Skyblock Core
 
@@ -687,7 +687,7 @@ Vollständige Übersicht aller verwendeten Plugins pro Server.
 2. **ProtocolLib** - Für Holograms, NPCs, Custom Features
 3. **LuckPerms** - Permissions-Management
 
-### MMO-Server (Skyblock & RPG) — *Archiv, wird eingestellt*
+### MMO-Server (Skyblock im Umbau & RPG im Archiv)
 
 1. **MMOCore** ← MythicLib
 2. **MMOItems** ← MythicLib
@@ -734,9 +734,9 @@ MinecraftMMO/
 ├── proxy/plugins/         # Proxy-Server Plugin-Configs
 ├── lobby/plugins/         # Lobby-Server Plugin-Configs        (AKTIV)
 ├── survival/plugins/      # Survival-Server Plugin-Configs     (AKTIV)
-├── skyblock/plugins/      # Skyblock-Server Plugin-Configs     (ARCHIV — wird eingestellt)
+├── skyblock/plugins/      # Skyblock-Server Plugin-Configs     (UMBAU — ohne Gilden, Freunde-Koop)
 ├── rpg/plugins/           # RPG-Server Plugin-Configs          (ARCHIV — wird eingestellt)
-└── crosscraft-guilds/     # CrossCraft Guilds Plugin (Eigenentwicklung)
+└── mining/plugins/        # Mining-Server Plugin-Configs       (NEU — Gerüst)
 ```
 
 **Hinweis:** Nicht alle Plugin-Configs sind im Repository - nur Custom-Content und konfigurierte Einstellungen. Sensible Daten (Passwörter, API-Keys) sind über `.gitignore` ausgeschlossen.
@@ -749,5 +749,6 @@ MinecraftMMO/
 - Velocity: 10 Plugins (inkl. Geyser + Floodgate)
 - Lobby: 16 Plugins *(aktiv, aufgeräumt)*
 - Survival: 35 Plugins *(aktiv, aufgeräumt)*
-- Skyblock: ~35 Plugins *(Archiv — wird eingestellt)*
+- Skyblock: ~35 Plugins *(Umbau — ohne Gilden, Freunde-Koop)*
 - RPG: ~50 Plugins *(Archiv — wird eingestellt)*
+- Mining: Gerüst *(neu — Plugin-Stack in Aufbau)*
