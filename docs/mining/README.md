@@ -56,7 +56,8 @@ einfach, schnell verständlich und Bedrock-freundlich.
 
 ## Plugin-Stack (Auszug)
 
-Siehe vollständige Shortlist inkl. 26.2-Verfügbarkeit in
+Vollständiger, für dieses Setup optimierter Plugin-Stack (inkl. Recycling- und Entfernen-Liste):
+[PLUGINS.md](PLUGINS.md). Shortlist inkl. 26.2-Verfügbarkeit in
 [../NEW_SERVERS.md → Abschnitt 3.2](../NEW_SERVERS.md#32-mining-spezifisch).
 
 - **Mining-/Zonen-Kern** (custom Spitzhacken, Abbau-Regionen, Auto-Regeneration — Blocker zuerst verifizieren)
@@ -77,7 +78,7 @@ Siehe vollständige Shortlist inkl. 26.2-Verfügbarkeit in
 
 ---
 
-**Verwandt:** [../NEW_SERVERS.md](../NEW_SERVERS.md) · [../PLANNING.md](../PLANNING.md) ·
+**Verwandt:** [PLUGINS.md](PLUGINS.md) · [../NEW_SERVERS.md](../NEW_SERVERS.md) · [../PLANNING.md](../PLANNING.md) ·
 [../skyblock/README.md](../skyblock/README.md)
 
 **Letzte Aktualisierung:** 2026-08-16

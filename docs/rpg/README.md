@@ -210,4 +210,4 @@ RPG-Server/
 
 **Letzte Aktualisierung:** 2026-04-10
 
-**Status:** 🚧 Work in Progress - Server in aktiver Entwicklung
+**Status:** 🗄️ Archiv — RPG-Spielmodus eingestellt (nur noch Referenz; Slot wird zum Mining-Server recycelt)

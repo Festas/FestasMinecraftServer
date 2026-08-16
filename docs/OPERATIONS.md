@@ -157,5 +157,5 @@ Beispiel-Webhook-Payload:
 ## Weiterführende Dokumentation
 
 - [Architektur-Übersicht](ARCHITECTURE.md)
-- [Backup-Strategie](BACKUPS.md)
+- [Backup-Strategie](infrastructure/BACKUPS.md)
 - [Notfall-Wiederherstellung](DISASTER_RECOVERY.md)

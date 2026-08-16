@@ -247,4 +247,4 @@ Nach jedem schwerwiegenden Vorfall sollte ein Post-Mortem erstellt werden:
 
 - [Betriebshandbuch](OPERATIONS.md)
 - [Architektur-Übersicht](ARCHITECTURE.md)
-- [Backup-Strategie](BACKUPS.md)
+- [Backup-Strategie](infrastructure/BACKUPS.md)

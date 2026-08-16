@@ -131,6 +131,7 @@ Dokumentation für den überarbeiteten Skyblock-Server — **ohne Gilden**, mit 
 
 ## Siehe auch
 
+- [Optimaler Plugin-Stack](PLUGINS.md)
 - [Islands-System](ISLANDS.md)
 - [Minions-System](MINIONS.md)
 - [Progression-System](PROGRESSION.md)

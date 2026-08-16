@@ -55,7 +55,7 @@ plugins/CoinsEngine/
 ## Siehe auch
 
 - [Währungen-System](WAEHRUNGEN.md) — Details zu allen Währungen, Sync und Befehlen
-- [Shop-System](SHOPS.md) — Geplante Shops und deren Währungen
+- **Shop-System** — geplant; noch nicht dokumentiert (Shops laufen aktuell über den Survival-Stack, siehe [../PLUGINS.md](../PLUGINS.md#survival-server-plugins))
 
 ---
 
