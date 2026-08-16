@@ -2,7 +2,7 @@
 
 Dieser Fragenkatalog dient als Leitfaden für die weitere Entwicklung und Dokumentation des MinecraftMMO Server-Netzwerks. Die Fragen helfen dabei, strukturiert über Features, Balance und Implementierung nachzudenken.
 
-> **ℹ️ Stand 26.2:** Der Fokus liegt aktuell auf **Lobby** und **Survival**. Die MMO-Server **Skyblock** und **RPG** werden zeitnah eingestellt und durch **zwei neue Server** ersetzt: **Minigames** (Casual) und **Factions** (Social/PvP). Die Weichenstellung inkl. Bewertung und Plugin-Shortlist steht in [NEW_SERVERS.md](NEW_SERVERS.md); die Planungskapitel für die Nachfolger sind Abschnitte 4 (Minigames) und 5 (Factions). Fragen zu Skyblock/RPG sind nur noch für den Rückbau relevant.
+> **ℹ️ Stand 26.2:** Der Fokus liegt aktuell auf **Lobby** und **Survival**. Dazu kommen ein **überarbeiteter Skyblock** (ohne Gilden, mit Freunde-Koop) und ein neuer **Mining**-Server (Abbau-Zonen mit aufwertbaren Spitzhacken). Die Weichenstellung inkl. Bewertung und Plugin-Shortlist steht in [NEW_SERVERS.md](NEW_SERVERS.md); die Planungskapitel für die neuen Server sind Abschnitte 4 (Mining) und 5 (Skyblock). Der **RPG**-Server wird zeitnah eingestellt — Fragen dazu sind nur noch für den Rückbau relevant.
 
 ---
 
@@ -10,7 +10,7 @@ Dieser Fragenkatalog dient als Leitfaden für die weitere Entwicklung und Dokume
 
 ### Vision & Ziele
 - [ ] Was ist die übergeordnete Vision für das gesamte Netzwerk?
-- [ ] Wie unterscheiden sich die aktiven und geplanten Server (Lobby, Survival, Minigames, Factions) voneinander?
+- [ ] Wie unterscheiden sich die aktiven und neuen Server (Lobby, Survival, Skyblock, Mining) voneinander?
 - [ ] Welche einzigartigen Verkaufsargumente (USPs) hat das Netzwerk?
 - [ ] Welche Zielgruppe soll angesprochen werden? (Casual, Hardcore, PvP, PvE)
 - [ ] Wie lange soll die durchschnittliche Spielzeit bis Endgame sein?
@@ -137,61 +137,52 @@ Dieser Fragenkatalog dient als Leitfaden für die weitere Entwicklung und Dokume
 
 ---
 
-## 4. Minigames-Server Planung (Nachfolger, geplant)
+## 4. Mining-Server Planung (neu, geplant)
 
-> Casual-Server mit rotierenden Minispielen. Konzept & Plugin-Shortlist:
-> [NEW_SERVERS.md](NEW_SERVERS.md) · [minigames/README.md](minigames/README.md).
+> Casual-Server mit **Abbau-Zonen** und aufwertbaren Spitzhacken. Konzept & Plugin-Shortlist:
+> [NEW_SERVERS.md](NEW_SERVERS.md) · [mining/README.md](mining/README.md).
 
-### Modi & Rotation
-- [ ] Welche Modi zum Launch? (BedWars/SkyWars, Parkour, Spleef, Arcade)
-- [ ] Fester Modus-Selector oder automatische Rotation?
-- [ ] Solo- und Team-Modi?
-- [ ] Ranglisten/Leaderboards pro Modus?
+### Spitzhacke & Progression
+- [ ] Wie viele Spitzhacken-Stufen zum Launch, und welches Abbau-Muster pro Stufe (1×1 → 3×3 → …)?
+- [ ] Wie werden Upgrades finanziert (Blöcke verkaufen, Tokens, beides)?
+- [ ] Zusätzliche Effekte/Verzauberungen (Auto-Sell, Multiplier, Tempo)?
 
-### Maps & Arenen
-- [ ] Eigene Builds oder lizenzfreie Community-Maps?
-- [ ] Wie viele Maps pro Modus zum Launch?
-- [ ] MultiArena/Queue-System für parallele Runden?
-- [ ] Automatischer Map-Reset nach Runde?
+### Zonen
+- [ ] Wie viele Abbau-Zonen zum Launch, mit welchen Block-Sets?
+- [ ] Freischalt-Bedingungen pro Zone (Währung, Fortschritt, Rang)?
+- [ ] Auto-Regenerations-Tempo der abgebauten Blöcke?
 
 ### Framework & Technik (26.2)
-- [ ] Welches Minigame-Framework ist 26.2-tauglich? (Blocker!)
+- [ ] Welches Mining-/Zonen-Plugin ist 26.2-tauglich? (Blocker!)
 - [ ] Bedrock-Kompatibilität aller GUIs (Geyser/Floodgate)?
-- [ ] Welt-Verwaltung: Multiverse-Core?
+- [ ] Zonengrenzen/Schutz über WorldGuard?
 
 ### Retention & Economy
-- [ ] Battle-Pass / tägliche Herausforderungen?
-- [ ] Cosmetics (Trails, Effekte, Kills-Messages)?
+- [ ] Ränge/Prestige nach den Zonen?
+- [ ] Cosmetics (Trails, Effekte) / Battle-Pass?
 - [ ] Server-isolierte Währung oder netzwerkweite Cosmetic-Währung?
 
 ---
 
-## 5. Factions-Server Planung (Nachfolger, geplant)
+## 5. Skyblock-Server Planung (überarbeitet, geplant)
 
-> Social/PvP-Server mit Gilden-getriebenem Land-Claiming. Konzept & Plugin-Shortlist:
-> [NEW_SERVERS.md](NEW_SERVERS.md) · [factions/README.md](factions/README.md).
+> Skyblock **ohne Gilden**, aber mit **Freunde-Koop** (Insel-Mitglieder). Konzept & Plugin-Shortlist:
+> [NEW_SERVERS.md](NEW_SERVERS.md) · [skyblock/README.md](skyblock/README.md).
 
-### Gilden & Teams (CrossCraft-Guilds)
-- [ ] CrossCraft-Guilds auf 26.2 kompiliert & getestet?
-- [ ] Gilden-Bank, -Ränge und Cross-Server-Chat aktiv?
-- [ ] Maximale Gildengröße / Allianzen?
+### Inseln & Koop
+- [ ] Maximale Insel-Mitglieder / Koop-Größe (Freunde einladen)?
+- [ ] Insel-Rollen/Rechte innerhalb der Insel (statt Gilden)?
+- [ ] Insel-Upgrades, Level und Besucher-System?
 
-### Land-Claiming & War
-- [ ] Welcher Factions-/Claim-Kern ist 26.2-tauglich? (Blocker!)
-- [ ] Claim-Limits, Power-System, Raid-Regeln?
-- [ ] Warzone & Spawn-Schutz (WorldGuard)?
-- [ ] Saisonale Wipes / Ladder?
+### Umfang & Wiederverwendung
+- [ ] Bleibt die MMO-Integration (Klassen/MMOItems) erhalten oder schlankerer Koop-Skyblock?
+- [ ] Welche vorhandenen Plugins (JetsMinions, Collections, Bazaar) bleiben aktiv?
+- [ ] SuperiorSkyblock2 & SlimeWorldManager auf 26.2 verifiziert? (Blocker!)
 
-### PvP-Fairness & Sicherheit
-- [ ] Anti-Cheat für 26.2 verifiziert? (kritischer Blocker!)
-- [ ] Combat-Tag / Anti-Combat-Log?
-- [ ] Moderations-Workflow (Griefing, Reports)?
-
-### Progression & Retention
-- [ ] Kits, Crates, Ränge, Battle-Pass?
-- [ ] KitPvP-Arena als Zusatz-Modus?
-- [ ] PvE-Welt-Events (ggf. MythicMobs aus Alt-Bestand)?
-- [ ] Server-isolierte Währung?
+### Retention & Economy
+- [ ] Prestige-/Collection-Systeme, Pets?
+- [ ] Server-isolierte Währung (Balance getrennt)?
+- [ ] Cosmetics/Battle-Pass?
 
 ---
 

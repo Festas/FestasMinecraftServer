@@ -2,7 +2,7 @@
 
 Konfigurationen für mein Minecraft Server-Netzwerk (Paper + Velocity)
 
-> **⚠️ Projekt-Status (Umstellung auf 26.2):** Das Netzwerk läuft jetzt auf **Minecraft 26.2** und wird gerade komplett überarbeitet. Der Fokus liegt **aktuell auf Lobby und Survival** — die Plugins dieser beiden Server wurden frisch aufgeräumt und neu übertragen. Die MMO-Server **Skyblock** und **RPG** werden **zeitnah eingestellt** und durch **zwei neue Server** ersetzt: einen **Minigames**-Server (Casual) und einen **Factions**-Server (Social/PvP). Beide sind in der **Konzept-/Aufbauphase** — Details in [docs/NEW_SERVERS.md](docs/NEW_SERVERS.md). Die Doku von Skyblock & RPG wird bis zur Abschaltung nur noch als **Archiv** geführt.
+> **⚠️ Projekt-Status (Umstellung auf 26.2):** Das Netzwerk läuft jetzt auf **Minecraft 26.2** und wird gerade komplett überarbeitet. Der Fokus liegt **aktuell auf Lobby und Survival** — die Plugins dieser beiden Server wurden frisch aufgeräumt und neu übertragen. Als **zwei neue Server** kommen ein **überarbeiteter Skyblock** (ohne Gilden, mit Freunde-Koop) und ein neuer **Mining**-Server (Abbau-Zonen mit immer stärkeren Spitzhacken) — Details in [docs/NEW_SERVERS.md](docs/NEW_SERVERS.md). Der MMO-Server **RPG** wird **zeitnah eingestellt** und bis zur Abschaltung nur noch als **Archiv** geführt.
 
 ## Über das Projekt
 
@@ -15,20 +15,19 @@ Dieses Repository enthält alle Konfigurationen für ein Minecraft Paper Server 
 - **Survival**: Survival-Server mit Tycoon-Gamemode (eigene Economy)
 
 ### Wird eingestellt (Archiv, in Ablösung)
-- **Skyblock**: MMO Skyblock mit RPG-Elementen
 - **RPG**: Vollständiger MMO-RPG Server
 
-### Geplant (Nachfolger für Skyblock & RPG)
-- **Minigames**: Casual-Server mit rotierenden Minispielen (BedWars/SkyWars, Parkour, Spleef, Arcade)
-- **Factions**: Social/PvP-Server mit Gilden-getriebenem Land-Claiming (CrossCraft-Guilds als Klammer)
+### Neu / in Aufbau
+- **Skyblock**: Überarbeiteter Skyblock **ohne Gilden**, aber mit **Freunde-Koop** (Freunde einladen und gemeinsam die Insel bauen)
+- **Mining**: Casual-Server mit **Abbau-Zonen** — immer stärkere Spitzhacken bauen mehr Blöcke auf einmal ab, neue Zonen werden nach und nach freigeschaltet
 
 > Auswahl, Bewertung und Plugin-Shortlist siehe [docs/NEW_SERVERS.md](docs/NEW_SERVERS.md).
 
-Die (auslaufenden) **Skyblock** und **RPG** Server kombinierten die besten Elemente von:
+Der (auslaufende) **RPG**-Server sowie der frühere MMO-Skyblock kombinierten Elemente von:
 - **Hypixel Skyblock**: Progression-System, Custom Items, Stats und Skills
 - **Wynncraft RPG**: Quests, Klassen-System (6 Klassen), Story-Elemente
 
-Die zugehörige Doku bleibt vorerst als Referenz erhalten, wird aber nicht weiter gepflegt.
+Die RPG-Doku bleibt vorerst als Referenz erhalten, wird aber nicht weiter gepflegt.
 
 ## Repository-Struktur
 
@@ -40,22 +39,18 @@ MinecraftMMO/
 │   └── plugins/        # Lobby-Plugins (CMI, DeluxeMenus, Skript, Oraxen, etc.)
 ├── survival/           # Survival Server Konfigurationen  (AKTIV)
 │   └── plugins/        # Survival-Plugins (NextGens, Jobs, Rankup, PlotSquared, etc.)
-├── skyblock/           # Skyblock Server Konfigurationen  (ARCHIV — wird eingestellt)
-│   └── plugins/        # MMO-Plugins (MMOCore, MMOItems, MythicMobs, etc.)
+├── skyblock/           # Skyblock Server Konfigurationen  (NEU/UMBAU — ohne Gilden, Freunde-Koop)
+│   └── plugins/        # Skyblock-Plugins (SuperiorSkyblock2, JetsMinions, etc.)
 ├── rpg/                # RPG Server Konfigurationen  (ARCHIV — wird eingestellt)
 │   └── plugins/        # RPG-Plugins (MythicMobs Premium, MythicDungeons, etc.)
-├── minigames/          # Minigames Server (GEPLANT — Nachfolger, Gerüst)
-│   └── plugins/        # Minigame-Framework, Parkour, Cosmetics, etc.
-├── factions/           # Factions Server (GEPLANT — Nachfolger, Gerüst)
-│   └── plugins/        # Factions-Kern, WorldGuard, Anti-Cheat, CrossCraft-Guilds
-├── crosscraft-guilds/  # CrossCraft Guilds Plugin (Gradle, Java 21)
-│   └── ...             # Paper + Velocity Module
+├── mining/             # Mining Server (NEU — Gerüst)
+│   └── plugins/        # Mining-/Zonen-Kern, WorldGuard, Shop/Auto-Sell, Cosmetics
 └── docs/               # Dokumentation
 ```
 
-## Klassen-System (Archiv — Skyblock & RPG)
+## Klassen-System (Archiv — RPG)
 
-> Das Klassen-System gehört zu den auslaufenden MMO-Servern Skyblock & RPG und wird mit deren Abschaltung ersetzt.
+> Das Klassen-System gehört zum auslaufenden MMO-Server RPG und wird mit dessen Abschaltung ersetzt. Ob es (ganz oder teilweise) auf dem überarbeiteten Skyblock erhalten bleibt, ist offen (siehe [docs/NEW_SERVERS.md](docs/NEW_SERVERS.md#7-verbleibende-offene-fragen)).
 
 Das (auslaufende) MMO bot ein umfassendes Klassen-System mit **6 Klassen** (MMOCore):
 
@@ -80,14 +75,16 @@ Das (auslaufende) MMO bot ein umfassendes Klassen-System mit **6 Klassen** (MMOC
 - **LuckPerms**, **PlaceholderAPI**, **Vault**, **ProtocolLib**: Basis-Infrastruktur
 - **BlueMap**: 3D-Web-Karte (Survival)
 
-### Auslaufende MMO-Server (Skyblock & RPG, Archiv)
+### Skyblock (Umbau) & auslaufender RPG-Server
 
+- **SuperiorSkyblock2**: Insel-Kern inkl. **Koop/Insel-Mitglieder** (Freunde einladen) — ersetzt das frühere Gilden-Konzept
+- **JetsMinions**: Minion-/Automations-System (Skyblock)
 - **MythicMobs** (Premium auf RPG): Custom Mobs, Items und Skills
 - **MMOCore & MMOItems**: Klassen- und Custom-Item-System
-- **BetonQuest**: Advanced Quest-System
-- **MythicDungeons**: Instanzierte Dungeons
-- **Citizens**: NPC-System
-- **HuskSync**: Daten-Synchronisation zwischen RPG & Skyblock
+- **BetonQuest**: Advanced Quest-System (RPG)
+- **MythicDungeons**: Instanzierte Dungeons (RPG)
+- **Citizens**: NPC-System (RPG)
+- **HuskSync**: selektive Synchronisation (Cosmetics/Ränge) zwischen Servern
 - **CoinsEngine**: Multi-Währungs-System
 
 Vollständige Plugin-Liste siehe [docs/PLUGINS.md](docs/PLUGINS.md)
@@ -97,15 +94,15 @@ Vollständige Plugin-Liste siehe [docs/PLUGINS.md](docs/PLUGINS.md)
 Umfassende Dokumentation findest du im [`/docs`](docs/) Verzeichnis:
 
 ### Allgemeine Dokumentation
-- **[NEW_SERVERS.md](docs/NEW_SERVERS.md)** - Nachfolge-Server (Minigames & Factions): Auswahl, Kriterien, Plugin-Shortlist, Roadmap
+- **[NEW_SERVERS.md](docs/NEW_SERVERS.md)** - Neue Server (Skyblock überarbeitet & Mining): Auswahl, Kriterien, Plugin-Shortlist, Roadmap
 - **[PLANNING.md](docs/PLANNING.md)** - Fragenkatalog für Planung und Entwicklung
 - **[ARCHITECTURE.md](docs/ARCHITECTURE.md)** - Netzwerk-Architektur und technische Details
 - **[PLUGINS.md](docs/PLUGINS.md)** - Vollständige Plugin-Referenz pro Server
 - **[WORKFLOWS.md](docs/WORKFLOWS.md)** - Workflow-Templates für häufige Aufgaben
 - **[CHECKLISTS.md](docs/CHECKLISTS.md)** - Checklisten für Content-Erstellung und Testing
 
-### Gameplay-Systeme (Archiv — Skyblock & RPG)
-> Diese Systeme gehören zu den auslaufenden MMO-Servern und werden nicht weiter gepflegt.
+### Gameplay-Systeme (Archiv — RPG)
+> Diese Systeme gehören zum auslaufenden MMO-Server RPG und werden nicht weiter gepflegt.
 - **[Klassen-System](docs/classes/README.md)** - Detaillierte Guides für alle 6 Klassen
   - [Krieger](docs/classes/KRIEGER.md), [Magier](docs/classes/MAGIER.md), [Assassine](docs/classes/ASSASSINE.md)
   - [Bogenschütze](docs/classes/BOGENSCHUETZE.md), [Schamane](docs/classes/SCHAMANE.md), [Beschwörer](docs/classes/BESCHWOERER.md)
@@ -114,10 +111,9 @@ Umfassende Dokumentation findest du im [`/docs`](docs/) Verzeichnis:
 
 ### Server-spezifische Dokumentation
 - **[Survival-Server](docs/survival/README.md)** — Tycoon, Plots, Progression *(aktiv)*
-- **[Minigames-Server](docs/minigames/README.md)** — Rotierende Minispiele *(geplant, Nachfolger)*
-- **[Factions-Server](docs/factions/README.md)** — Gilden-PvP, Land-Claiming *(geplant, Nachfolger)*
+- **[Skyblock-Server](docs/skyblock/README.md)** — Inseln, Freunde-Koop, Progression *(Umbau — ohne Gilden)*
+- **[Mining-Server](docs/mining/README.md)** — Abbau-Zonen, aufwertbare Spitzhacken *(neu, Gerüst)*
 - **[RPG-Server](docs/rpg/README.md)** - Zonen, Quests, Dungeons, Mobs, NPCs *(Archiv, wird eingestellt)*
-- **[Skyblock-Server](docs/skyblock/README.md)** - Islands, Minions, Progression *(Archiv, wird eingestellt)*
 
 ### Technische Infrastruktur
 - **[Infrastruktur](docs/infrastructure/README.md)** - Datenbanken, Synchronisation, Backups
@@ -129,7 +125,7 @@ Umfassende Dokumentation findest du im [`/docs`](docs/) Verzeichnis:
 
 ## Verwendung
 
-Jeder Server-Ordner (`lobby/`, `survival/`, `proxy/` — aktiv; `minigames/`, `factions/` — geplant/Gerüst; `skyblock/`, `rpg/` — Archiv) enthält seine eigenen Plugin-Konfigurationen unter `plugins/`.
+Jeder Server-Ordner (`lobby/`, `survival/`, `proxy/` — aktiv; `skyblock/` — Umbau; `mining/` — neu/Gerüst; `rpg/` — Archiv) enthält seine eigenen Plugin-Konfigurationen unter `plugins/`.
 
 Die Konfigurationsdateien können direkt in die entsprechenden Plugin-Ordner auf dem Server kopiert werden:
 ```bash
@@ -149,4 +145,4 @@ Dies ist ein persönliches Projekt für meinen Minecraft Server.
 - **Bedrock-Support:** Geyser-Velocity + Floodgate
 - **Datenbanken:** MariaDB (172.25.0.1:3306), Redis (172.18.0.1:6379)
 - **Server-IP:** mc.festas-builds.com
-- **Aktueller Fokus:** Lobby & Survival — Skyblock & RPG werden zeitnah durch **Minigames** & **Factions** ersetzt (Konzept: [docs/NEW_SERVERS.md](docs/NEW_SERVERS.md))
+- **Aktueller Fokus:** Lobby & Survival — dazu ein **überarbeiteter Skyblock** (ohne Gilden, Freunde-Koop) und ein neuer **Mining**-Server; **RPG** wird zeitnah eingestellt (Konzept: [docs/NEW_SERVERS.md](docs/NEW_SERVERS.md))

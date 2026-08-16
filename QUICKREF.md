@@ -2,7 +2,7 @@
 
 Schnelle Übersicht über die wichtigsten Befehle und Konzepte.
 
-> **ℹ️ Stand 26.2:** Server läuft auf **Minecraft/Paper 26.2**. Aktiver Fokus: **Lobby** und **Survival**. Die MMO-Abschnitte (MythicMobs, Citizens, Quests, Klassen, Item-Tiers, Dungeons) beziehen sich auf **Skyblock**/**RPG**, die zeitnah eingestellt und durch zwei neue Server ersetzt werden — sie gelten als **Archiv**.
+> **ℹ️ Stand 26.2:** Server läuft auf **Minecraft/Paper 26.2**. Aktiver Fokus: **Lobby** und **Survival**. Dazu kommen ein **überarbeiteter Skyblock** (ohne Gilden, Freunde-Koop) und ein neuer **Mining**-Server. Die MMO-Abschnitte (MythicMobs, Citizens, Quests, Klassen, Item-Tiers, Dungeons) beziehen sich auf den auslaufenden **RPG**-Server — sie gelten als **Archiv**.
 
 ## Verzeichnisstruktur
 
@@ -14,12 +14,12 @@ MinecraftMMO/
 │   └── plugins/        # Lobby-Plugins (CMI, DeluxeMenus, Skript, Oraxen, etc.)
 ├── survival/           # Survival Server Konfigurationen     (AKTIV)
 │   └── plugins/        # Survival-Plugins (NextGens, Jobs, Rankup, PlotSquared, etc.)
-├── skyblock/           # Skyblock Server Konfigurationen      (ARCHIV — wird eingestellt)
-│   └── plugins/        # MMO-Plugins (MMOCore, MMOItems, MythicMobs, etc.)
+├── skyblock/           # Skyblock Server Konfigurationen      (UMBAU — ohne Gilden, Freunde-Koop)
+│   └── plugins/        # Skyblock-Plugins (SuperiorSkyblock2, JetsMinions, etc.)
 ├── rpg/                # RPG Server Konfigurationen           (ARCHIV — wird eingestellt)
 │   └── plugins/        # RPG-Plugins (MythicMobs Premium, MythicDungeons, etc.)
-├── crosscraft-guilds/  # CrossCraft Guilds Plugin (Gradle, Java 21)
-│   └── ...             # Paper + Velocity Module
+├── mining/             # Mining Server (NEU — Gerüst)
+│   └── plugins/        # Mining-/Zonen-Kern, WorldGuard, Shop/Auto-Sell, etc.
 └── docs/               # Dokumentation
 ```
 
@@ -226,11 +226,11 @@ Display: '&6Text'
 ```bash
 # Komplettes Backup erstellen (aktive Server + Proxy)
 tar -czf mmo-backup-$(date +%Y%m%d).tar.gz \
-  lobby/ survival/ proxy/
+  lobby/ survival/ skyblock/ mining/ proxy/
 
-# Vor Abschaltung: einmaliges Archiv-Backup der auslaufenden MMO-Server
+# Vor Abschaltung: einmaliges Archiv-Backup des auslaufenden RPG-Servers
 tar -czf mmo-archive-$(date +%Y%m%d).tar.gz \
-  skyblock/ rpg/
+  rpg/
 ```
 
 ## Repository-Befehle
