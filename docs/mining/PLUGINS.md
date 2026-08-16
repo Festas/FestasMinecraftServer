@@ -97,7 +97,7 @@ Der zentrale Loop: **besondere Spitzhacke → aufwerten → mehr Blöcke pro Sch
 
 | Plugin | Zweck | Status |
 |--------|-------|:------:|
-| **floodgate** | Bedrock-Auth (Geyser/Floodgate) — GUIs müssen Bedrock-tauglich sein | ♻️ Recycelt |
+| **Floodgate** | Bedrock-Auth (Geyser/Floodgate) — GUIs müssen Bedrock-tauglich sein | ♻️ Recycelt |
 | **GrimAC** | Anticheat | ♻️ Recycelt |
 | **SimpleAutoRestart** | Geplante Server-Neustarts | ♻️ Recycelt |
 | **spark** / **bStats** / **nightcore** | Performance-Profiling, Metriken, Core-Library | ♻️ Recycelt |
