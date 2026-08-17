@@ -159,7 +159,7 @@ Nach Rang 25 kann man prestigen — alles wird zurückgesetzt, aber ein permanen
 - **13 Jobs** (Jobs-Plugin): Miner, Farmer, Hunter, Fisher, Builder, u.v.m.
 - **Multi-Plot-System**: Progressive Plot-Limits je nach Rang (1→5 Plots + Prestige-Boni)
 - **Plot-Merging**: Benachbarte Plots zusammenführen ($5 Mio.)
-- **Autorank**: Spielzeit-Belohnungen bei 1h, 5h, 24h, 72h, 168h
+- **Zeitbasierte Rang-Leiter** (CMI-Rang-Engine): 14 Stufen (Lauch → MainCharacter) nach Spielzeit, netzwerkweit via LuckPerms; ersetzt Autorank ([Details](survival/ZEITRANG_CMI.md))
 
 #### Wichtige Befehle
 

@@ -1,5 +1,5 @@
 # --- RANKUP EFFECTS (Visuals & Sounds) ---
-# Wird von Autorank ausgeführt.
+# Wird von der CMI-Rang-Engine (Settings/Ranks.yml) beim zeitbasierten Aufstieg ausgefuehrt.
 # Regelt die Party beim Aufstieg.
 
 command /tycoon_celebrate_rankup <player> <text> <text>:
@@ -51,7 +51,7 @@ command /tycoon_celebrate_rankup <player> <text> <text>:
         send "&8&m----------------------------------------" to {_p}
         send " &6&lGLÜCKWUNSCH!" to {_p}
         send " &7Deine Treue wurde belohnt." to {_p}
-        send " &7Neuer Rang: %{_rankName}%"
+        send " &7Neuer Rang: %{_rankName}%" to {_p}
         send "&8&m----------------------------------------" to {_p}
         send "" to {_p}
 

@@ -205,8 +205,11 @@ Vollständige Übersicht aller verwendeten Plugins pro Server.
 - **Verwendung:** Sell Wand, Chunk Collector, Tutorial, Prestige, Casino, Boss-Events, Daily/Weekly Rewards, dynamische Börse
 - **Config:** `survival/plugins/Skript/scripts/`
 
-#### Autorank
-- **Funktion:** Spielzeit-basierte Belohnungen/Meilensteine
+#### CMI — Rang-Engine (zeitbasierte Leiter)
+- **Funktion:** Treibt die zeitbasierte Rang-Leiter (`autorank`-Track, 14 Stufen) über `AutoRankUp`
+- **Cross-Server:** Rang gilt netzwerkweit über LuckPerms (`s4_perms`); nur **Survival** betreibt die Engine
+- **Details:** [survival/ZEITRANG_CMI.md](survival/ZEITRANG_CMI.md)
+- **Ersetzt:** das frühere **Autorank**-Plugin (entfernt)
 
 ### Economy & Shops
 

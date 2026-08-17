@@ -721,7 +721,9 @@ Ranks:
   # This means that in case player has access to third rank while recorded one is first one, we will prioritize third one
   # While this is active using command like /cmi setrank will set players rank to highest one he has access too, so as long as player has permission access to third rank you cant go lower than this, 
   # you will have to remove access to specific rank by removing permission node before trying to derank him
-  PermissionCheck: false
+  # true: Die autorank-Track-Gruppen erben aufeinander (lauch<-...<-maincharacter). Ein Spieler traegt daher mehrere cmi.rank.*-Nodes;
+  # mit PermissionCheck: true erkennt CMI die aktuelle Stufe korrekt als die mit dem hoechsten Gewicht. Notwendig fuer die Zeit-Leiter.
+  PermissionCheck: true
   # Defines how often in minutes plugin will recalculate players group
   # Keeping it at 0 will disable this feature
   Recalculation: 0

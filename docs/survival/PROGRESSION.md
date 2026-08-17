@@ -21,6 +21,11 @@ Dokumentation des gesamten Progressions-Systems: Ränge, Prestige, Economy-Fluss
   Endgame: Prestige 10 (Legende) mit +200% Sell-Bonus
 ```
 
+> **Zwei parallele Rang-Leitern:** Die oben gezeigte **geldbasierte** Tycoon-Leiter (`tycoon`-Track,
+> Rankup-Plugin) läuft **unabhängig** von der **zeitbasierten** Leiter (`autorank`-Track, CMI-Rang-Engine).
+> Beide beeinflussen sich nicht. Siehe [Zeitbasierte Rang-Leiter](#zeitbasierte-rang-leiter-cmi) unten
+> und [ZEITRANG_CMI.md](ZEITRANG_CMI.md).
+
 ---
 
 ## Economy-Fluss
@@ -94,6 +99,32 @@ Der Multiplikator wird in `{prestige.level.%uuid%}` gespeichert und in `tycoon_l
 
 ---
 
+## Zeitbasierte Rang-Leiter (CMI)
+
+Parallel zur geldbasierten Tycoon-Leiter existiert eine **zeitbasierte** Rang-Progression
+(`autorank`-Track). Sie wird von der **CMI-Rang-Engine** (`AutoRankUp`) getrieben und ist
+**serverübergreifend** wirksam: Der Rang wird über LuckPerms (`s4_perms`) gesetzt und ist damit
+sofort netzwerkweit (Lobby, Skyblock, RPG/Mining) als Prefix/Permission sichtbar. Die **Spielzeit**
+wird in Phase 1 **Survival-lokal** gemessen; nur Survival betreibt die Rang-Engine.
+
+Diese Leiter **ersetzt** das frühere **Autorank**-Plugin.
+
+| # | Rang | Spielzeit | Geld | # | Rang | Spielzeit | Geld |
+|--:|------|----------:|-----:|--:|------|----------:|-----:|
+| 1 | Lauch | 1 h | 1.000 | 8 | Bratan | 250 h | 250.000 |
+| 2 | Knecht | 5 h | 5.000 | 9 | Bre | 400 h | 400.000 |
+| 3 | Chiller | 12 h | 10.000 | 10 | Ehrenmann | 600 h | 750.000 |
+| 4 | Ticker | 24 h | 25.000 | 11 | Löwe | 800 h | 1.000.000 |
+| 5 | Hustler | 48 h | 50.000 | 12 | Maschine | 1.000 h | 2.000.000 |
+| 6 | Macher | 100 h | 100.000 | 13 | BABA | 1.250 h | 5.000.000 |
+| 7 | Türsteher | 150 h | 150.000 | 14 | MainCharacter | 1.500 h | 10.000.000 |
+
+Pro Aufstieg: LuckPerms-Promote im `autorank`-Track, Geldbelohnung, Celebration-Effekt und
+Chat-Nachricht. Vollständige Details, manuelle Einrichtungsschritte und Migration:
+**[ZEITRANG_CMI.md](ZEITRANG_CMI.md)**.
+
+---
+
 ## Verbesserungsplan
 
 ### Problem: Nur ein Plot + Reset bei jedem Rankup
@@ -143,4 +174,4 @@ Dies schafft eine strategische Entscheidung und verlangsamt die Inflation.
 
 ---
 
-**Letzte Aktualisierung:** 2026-04-11
+**Letzte Aktualisierung:** 2026-08-17
