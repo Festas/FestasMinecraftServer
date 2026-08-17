@@ -155,7 +155,8 @@ noTarget: true
 #  
 # Handles rankup system
 # Applies for servers from 1.7.x and up
-ranks: true
+# Aus: Rankups laufen ausschliesslich auf Survival (CMI-Rang-Autoritaet). Verhindert Track-Races auf s4_perms.
+ranks: false
 #  
 # Handles votifier system
 # Applies for servers from 1.7.x and up

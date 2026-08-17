@@ -1,5 +1,5 @@
 # --- RANKUP EFFECTS (Visuals & Sounds) ---
-# Wird von Autorank ausgeführt.
+# Wird von der CMI-Rang-Engine (Settings/Ranks.yml) beim zeitbasierten Aufstieg ausgefuehrt.
 # Regelt die Party beim Aufstieg.
 
 command /tycoon_celebrate_rankup <player> <text> <text>:

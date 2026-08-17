@@ -111,132 +111,212 @@
 #         OpenBarrel - defines amount of interactions with open barrel.
 #         DropCount - defines amount of interactions with drop count.
 
-Newbie:
+# ==========================================================================
+# Zeitbasierte Rang-Leiter (autorank-Track) - CMI AutoRankUp Engine
+# Nur auf Survival aktiv (Modules.yml ranks: true) = einzige Rankup-Autoritaet.
+# Rangnamen == LuckPerms-Gruppen des 'autorank'-Tracks. Aufstieg via
+# 'lp ... promote autorank' -> Rang gilt sofort netzwerkweit (shared s4_perms).
+# Erkennung der aktuellen Stufe: cmi.rank.<name>-Node je Track-Gruppe +
+# config.yml Ranks.PermissionCheck: true (hoechstes Gewicht = aktuelle Stufe).
+# ==========================================================================
+default:
   Enabled: true
-  DisplayName: '&2Newbie'
+  DisplayName: '&7Default'
   DefaultRank: true
   AutoRankup: true
   NextRanks:
-  - Branch1
-  - Branch2
-Branch1:
+  - lauch
+lauch:
   Enabled: true
-  DisplayName: '&2Branch1'
+  DisplayName: '&aLauch'
   AutoRankup: true
-  RankupConfirmation: true
-  Votes: 5
-  PermissionRequirement:
-  - cmi.command.fly:Fly
-  McMMORequirement:
-  - woodcutting:10
-  - power:20
-  JobsRequirement:
-  - miner:10
-  - totallevel:20
-  AuraSkillsRequirement:
-  - miner:10
-  - power:20
-  AureliumRequirement:
-  - fishing:10
-  - power:30
-  ItemRequirement:
-  - stone:10
-  - stone:1:20
-  - book:20
+  RankupConfirmation: false
   NextRanks:
-  - Branch1Rank1
-  MoneyCost: 100
-  Commands:
-  - broadcast! &6[playerDisplayName] &eleveled up to Branch1 rank!
+  - knecht
   StatsRequirements:
   - PlayTime:3600
-  - travel:1000
-  - MonsterKills:zombie:10
-  - MonsterKills:slime:5
-  - MonsterKills:wolf:5
-  - AccountAge:1209600
-Branch1Rank1:
+  Commands:
+  - 'asConsole! lp user [playerName] promote autorank'
+  - 'asConsole! cmi money give [playerName] 1000'
+  - 'asConsole! tycoon_celebrate_rankup [playerName] Lauch normal'
+  - 'asConsole! tycoon_msg [playerName] &8[&bRang&8] &aGlückwunsch! Du bist kein NPC mehr, sondern ein &fLauch&a!'
+knecht:
   Enabled: true
-  DisplayName: '&2Branch1Rank1'
-  DefaultRank: false
+  DisplayName: '&aKnecht'
   AutoRankup: true
   RankupConfirmation: false
-  PermissionRequirement:
-  - cmi.command.heal:Heal
   NextRanks:
-  - Last
-  MoneyCost: 300
-  ExpCost: 350
-  Commands:
-  - broadcast! &6[playerDisplayName] &eleveled up to Branch1Rank1 rank!
+  - chiller
   StatsRequirements:
-  - travel:10000
-  - blocksmined:3000
-  - blocksmined:diamond_ore:30
-  - MonsterKills:1000
-  - AccountAge:1209600
-  McMMORequirement:
-  - taming:10
-  - unarmed:30
-Branch2:
-  Enabled: true
-  DisplayName: '&2Branch2'
-  AutoRankup: true
-  RankupConfirmation: true
-  MoneyCost: 150
-  NextRanks:
-  - Branch2Rank1
+  - PlayTime:18000
   Commands:
-  - broadcast! &6[playerDisplayName] &eleveled up to Branch2 rank!
-  PermissionRequirement:
-  - cmi.command.tp:Teleport
-  StatsRequirements:
-  - PlayTime:3600
-  - travel:2000
-  - MonsterKills:zombie:15
-  - MonsterKills:slime:10
-Branch2Rank1:
+  - 'asConsole! lp user [playerName] promote autorank'
+  - 'asConsole! cmi money give [playerName] 5000'
+  - 'asConsole! tycoon_celebrate_rankup [playerName] Knecht normal'
+  - 'asConsole! tycoon_msg [playerName] &8[&bRang&8] &aRespekt! Du hast dich zum &eKnecht &ahochgearbeitet!'
+chiller:
   Enabled: true
-  DisplayName: '&2Branch2Rank1'
+  DisplayName: '&aChiller'
   AutoRankup: true
   RankupConfirmation: false
-  MoneyCost: 100
-  ExpCost: 150
   NextRanks:
-  - Branch2Rank2
-  Commands:
-  - broadcast! &6[playerDisplayName] &eleveled up to Branch1Rank1 rank!
+  - ticker
   StatsRequirements:
-  - PlayTime:4600
-  - Swim:1000
-  - SneakTime:180
-  - MonsterKills:100
-Branch2Rank2:
+  - PlayTime:43200
+  Commands:
+  - 'asConsole! lp user [playerName] promote autorank'
+  - 'asConsole! cmi money give [playerName] 10000'
+  - 'asConsole! tycoon_celebrate_rankup [playerName] Chiller normal'
+  - 'asConsole! tycoon_msg [playerName] &8[&bRang&8] &aDu bist jetzt offiziell ein &bChiller&a!'
+ticker:
   Enabled: true
-  DisplayName: '&2Branch2Rank2'
+  DisplayName: '&aTicker'
   AutoRankup: true
   RankupConfirmation: false
-  MoneyCost: 100
-  ExpCost: 150
   NextRanks:
-  - Last
-  Commands:
-  - broadcast! &6[playerDisplayName] &eleveled up to Branch2Rank2 rank!
+  - hustler
   StatsRequirements:
-  - walk:15000
-  - HorseTravel:1000
-  - ItemsUsed:10000
-  - PlayerKills:10
-Last:
+  - PlayTime:86400
+  Commands:
+  - 'asConsole! lp user [playerName] promote autorank'
+  - 'asConsole! cmi money give [playerName] 25000'
+  - 'asConsole! tycoon_celebrate_rankup [playerName] Ticker normal'
+  - 'asConsole! tycoon_msg [playerName] &8[&bRang&8] &aGeschäfte laufen? Du bist nun &aTicker&a!'
+hustler:
   Enabled: true
-  DisplayName: '&2Last'
+  DisplayName: '&6Hustler'
   AutoRankup: true
+  RankupConfirmation: false
+  NextRanks:
+  - macher
   StatsRequirements:
-  - PlayTime:21600
-  - walk:30000
-  - MonsterKills:1000
-  - blocksmined:30000
+  - PlayTime:172800
   Commands:
-  - broadcast! &6[playerDisplayName] &eleveled up to Last rank!
-  - cmi heal [playerName]
-  - money give [playerName] 100
+  - 'asConsole! lp user [playerName] promote autorank'
+  - 'asConsole! cmi money give [playerName] 50000'
+  - 'asConsole! tycoon_celebrate_rankup [playerName] Hustler mid'
+  - 'asConsole! tycoon_msg [playerName] &8[&bRang&8] &aJeden Tag am Hustlen. Rang: &6Hustler&a!'
+macher:
+  Enabled: true
+  DisplayName: '&6Macher'
+  AutoRankup: true
+  RankupConfirmation: false
+  NextRanks:
+  - tuersteher
+  StatsRequirements:
+  - PlayTime:360000
+  Commands:
+  - 'asConsole! lp user [playerName] promote autorank'
+  - 'asConsole! cmi money give [playerName] 100000'
+  - 'asConsole! tycoon_celebrate_rankup [playerName] Macher mid'
+  - 'asConsole! tycoon_msg [playerName] &8[&bRang&8] &aDu bist ein echter &9Macher&a geworden!'
+tuersteher:
+  Enabled: true
+  DisplayName: '&6Türsteher'
+  AutoRankup: true
+  RankupConfirmation: false
+  NextRanks:
+  - bratan
+  StatsRequirements:
+  - PlayTime:540000
+  Commands:
+  - 'asConsole! lp user [playerName] promote autorank'
+  - 'asConsole! cmi money give [playerName] 150000'
+  - 'asConsole! tycoon_celebrate_rankup [playerName] Türsteher mid'
+  - 'asConsole! tycoon_msg [playerName] &8[&bRang&8] &aDu kontrollierst jetzt den Block. &8Türsteher&a!'
+bratan:
+  Enabled: true
+  DisplayName: '&6Bratan'
+  AutoRankup: true
+  RankupConfirmation: false
+  NextRanks:
+  - bre
+  StatsRequirements:
+  - PlayTime:900000
+  Commands:
+  - 'asConsole! lp user [playerName] promote autorank'
+  - 'asConsole! cmi money give [playerName] 250000'
+  - 'asConsole! tycoon_celebrate_rankup [playerName] Bratan mid'
+  - 'asConsole! tycoon_msg [playerName] &8[&bRang&8] &aDu gehörst zur Familie. &5Bratan&a!'
+bre:
+  Enabled: true
+  DisplayName: '&6Bre'
+  AutoRankup: true
+  RankupConfirmation: false
+  NextRanks:
+  - ehrenmann
+  StatsRequirements:
+  - PlayTime:1440000
+  Commands:
+  - 'asConsole! lp user [playerName] promote autorank'
+  - 'asConsole! cmi money give [playerName] 400000'
+  - 'asConsole! tycoon_celebrate_rankup [playerName] Bre mid'
+  - 'asConsole! tycoon_msg [playerName] &8[&bRang&8] &aWas geht, &dBre&a?'
+ehrenmann:
+  Enabled: true
+  DisplayName: '&cEhrenmann'
+  AutoRankup: true
+  RankupConfirmation: false
+  NextRanks:
+  - loewe
+  StatsRequirements:
+  - PlayTime:2160000
+  Commands:
+  - 'asConsole! lp user [playerName] promote autorank'
+  - 'asConsole! cmi money give [playerName] 750000'
+  - 'asConsole! tycoon_celebrate_rankup [playerName] Ehrenmann high'
+  - 'asConsole! tycoon_msg [playerName] &8[&bRang&8] &aAbsoluter &cEhrenmann&a!'
+loewe:
+  Enabled: true
+  DisplayName: '&cLöwe'
+  AutoRankup: true
+  RankupConfirmation: false
+  NextRanks:
+  - maschine
+  StatsRequirements:
+  - PlayTime:2880000
+  Commands:
+  - 'asConsole! lp user [playerName] promote autorank'
+  - 'asConsole! cmi money give [playerName] 1000000'
+  - 'asConsole! tycoon_celebrate_rankup [playerName] Löwe high'
+  - 'asConsole! tycoon_msg [playerName] &8[&bRang&8] &aEin echter &6Löwe&a!'
+maschine:
+  Enabled: true
+  DisplayName: '&cMaschine'
+  AutoRankup: true
+  RankupConfirmation: false
+  NextRanks:
+  - baba
+  StatsRequirements:
+  - PlayTime:3600000
+  Commands:
+  - 'asConsole! lp user [playerName] promote autorank'
+  - 'asConsole! cmi money give [playerName] 2000000'
+  - 'asConsole! tycoon_celebrate_rankup [playerName] Maschine high'
+  - 'asConsole! tycoon_msg [playerName] &8[&bRang&8] &aDu funktionierst wie eine &bMaschine&a!'
+baba:
+  Enabled: true
+  DisplayName: '&4BABA'
+  AutoRankup: true
+  RankupConfirmation: false
+  NextRanks:
+  - maincharacter
+  StatsRequirements:
+  - PlayTime:4500000
+  Commands:
+  - 'asConsole! lp user [playerName] promote autorank'
+  - 'asConsole! cmi money give [playerName] 5000000'
+  - 'asConsole! tycoon_celebrate_rankup [playerName] BABA god'
+  - 'asConsole! tycoon_msg [playerName] &8[&bRang&8] &aDu bist der &4BABA&a im Geschäft!'
+maincharacter:
+  Enabled: true
+  DisplayName: '&4MainCharacter'
+  AutoRankup: true
+  RankupConfirmation: false
+  StatsRequirements:
+  - PlayTime:5400000
+  Commands:
+  - 'asConsole! lp user [playerName] promote autorank'
+  - 'asConsole! cmi money give [playerName] 10000000'
+  - 'asConsole! tycoon_celebrate_rankup [playerName] Main-Character god'
+  - 'asConsole! tycoon_msg [playerName] &8[&bRang&8] &aDu bist der &bMain Character&a dieses Servers!'
