@@ -1,0 +1,39 @@
+{
+  "class": "dev.drawethree.xprison.enchants.model.impl.LayerEnchant",
+  "id": 10,
+  "rawName": "layer",
+  "name": "<blue>Layer</blue>",
+  "enabled": true,
+  "chance": 0.0002,
+  "increaseCostBy": "baseCost * pow(1.05, level)",
+  "maxLevel": 1000,
+  "initialCost": 500,
+  "countBlocksBroken": false,
+  "currency": "GEMS",
+  "useEvents": true,
+  "sounds": true,
+  "currencyToGive": "TOKENS",
+  "message": "<gradient:#FFD700:#FFEA00><bold>ENCHANT </bold></gradient><dark_gray>» </dark_gray><gray>You got <yellow><bold>%amount% %currency%</bold></yellow> <gray>from <red><bold>Layer </bold></red>activation.</gray>",
+  "pickaxeLevelRequired": 1,
+  "prestige": {
+    "enabled": true,
+    "maxPrestige": 5,
+    "requiredActivationsFormula": "2000 * pow(10, prestige)",
+    "multiplierPerPrestige": 0.2
+  },
+  "refund": {
+    "enabled": true,
+    "guiSlot": 20,
+    "percentage": 35.0
+  },
+  "gui": {
+    "name": "<blue>Layer</blue>",
+    "material": "HOPPER",
+    "customModelData": 0,
+    "slot": 22,
+    "description": [
+      "<gray>Breaks an entire layer of blocks</gray>",
+      "<gray>at once while mining.</gray>"
+    ]
+  }
+}

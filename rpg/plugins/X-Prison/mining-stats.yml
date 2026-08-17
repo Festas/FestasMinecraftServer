@@ -1,0 +1,49 @@
+mining-summary:
+  enabled: true
+  duration: 60
+  message:
+    - " "
+    - "<yellow><strikethrough>--------------------------------------------------"
+    - "<gold>⛏️ <yellow><bold>Your Mining Summary"
+    - "<yellow>➤ <gray>Blocks Mined: <white>%blocks_mined%"
+    - " "
+    - "<gold><bold>⬥ Currencies Earned:"
+    - "%currencies%"
+    - " "
+    - "<gold><bold>⬥ Enchant Procs:"
+    - "%enchants%"
+    - "<yellow><strikethrough>--------------------------------------------------"
+    - " "
+  currency-format: "<green>  ➤ <white>%currency%: <yellow>%amount%"
+  enchant-format: "<aqua>  • <white>%enchant% <gray>x<yellow>%count%"
+
+# Live action-bar HUD shown ABOVE the hotbar while a player is actively mining.
+# Unlike the chat summary above, this refreshes continuously and shows live *rates*.
+# NOTE: If you enable this, disable AutoSell's own earnings action bar
+#       (autosell.yml -> earnings-actionbar.enabled: false) so the two don't fight
+#       over the same action-bar line.
+mining-hud:
+  enabled: true
+  # How often the HUD is redrawn, in server ticks (20 ticks = 1 second).
+  refresh-ticks: 20
+  # Rolling window (seconds) used for the per-minute rates. 60 = "earned in the last minute".
+  window-seconds: 60
+  # Rolling window (seconds) used for the blocks-per-second (BPS) figure. 1 = truly instantaneous.
+  bps-window-seconds: 1
+  # Hide the HUD once the player hasn't broken a block for this many seconds.
+  show-while-mining-seconds: 5
+  # Resolve PlaceholderAPI placeholders in the format below (only matters if you add %...% tokens
+  # that aren't built-in). Set false to squeeze out extra performance on very large servers.
+  parse-papi: true
+  # The HUD line. Supports MiniMessage, legacy '&' colours, and:
+  #   Built-in mining placeholders (resolved by X-Prison, no PAPI required):
+  #     %blocks_per_sec%          - blocks broken per second (BPS)
+  #     %blocks_per_min%          - blocks broken per minute
+  #     %<currency>_per_min%      - earning rate per minute, e.g. %money_per_min% %tokens_per_min% %gems_per_min%
+  #     %balance_<currency>%      - current balance, e.g. %balance_money% %balance_tokens% %balance_gems%
+  #   Any other %placeholder% is passed through to PlaceholderAPI (if installed & parse-papi: true), e.g.:
+  #     %xprison_prestige_id%     - current prestige level (number)      [requires PlaceholderAPI]
+  #     %xprison_prestige%        - current prestige prefix (as configured in prestiges.yml)
+  #     %vault_eco_balance%, %luckperms_prefix%, ...
+  # Currency values already include that currency's own prefix ($ / ⛃ / 💠) and short format (T/B/M).
+  format: "<light_purple>✦ P%xprison_prestige_id%  <green>%money_per_min%<gray>/m  <gold>%tokens_per_min%<gray>/m  <aqua>%gems_per_min%<gray>/m  <dark_aqua>%blocks_per_sec% <gray>BPS"

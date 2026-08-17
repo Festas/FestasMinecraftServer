@@ -1,0 +1,32 @@
+{
+  "class": "dev.drawethree.xprison.enchants.model.impl.FlyEnchant",
+  "id": 8,
+  "rawName": "fly",
+  "name": "<red>Fly</red>",
+  "enabled": true,
+  "increaseCostBy": 0,
+  "maxLevel": 1,
+  "currency": "TOKENS",
+  "initialCost": 250000,
+  "prestige": {
+    "enabled": false,
+    "maxPrestige": 5,
+    "requiredActivationsFormula": "1000",
+    "multiplierPerPrestige": 0.1
+  },
+  "refund": {
+    "enabled": true,
+    "guiSlot": 28,
+    "percentage": 30.0
+  },
+  "gui": {
+    "name": "<red>Fly</red>",
+    "material": "FEATHER",
+    "customModelData": 0,
+    "slot": 28,
+    "description": [
+      "<gray>Grants the ability to </gray><red>fly </red><gray>while holding</gray>",
+      "<gray>your pickaxe.</gray>"
+    ]
+  }
+}

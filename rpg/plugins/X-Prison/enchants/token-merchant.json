@@ -1,0 +1,36 @@
+{
+  "class": "dev.drawethree.xprison.enchants.model.impl.CurrencyMerchantEnchant",
+  "id": 28,
+  "rawName": "tokenmerchant",
+  "name": "<gold>Token Merchant</gold>",
+  "enabled": true,
+  "increaseCostBy": "baseCost * pow(1.05, level)",
+  "maxLevel": 100,
+  "chance": 1.0,
+  "currency": "TOKENS",
+  "multiplierExpression": "1 + (level * 0.1)",
+  "targetCurrency": "TOKENS",
+  "pickaxeLevelRequired": 1,
+  "initialCost": 25,
+  "prestige": {
+    "enabled": false,
+    "maxPrestige": 5,
+    "requiredActivationsFormula": "1000",
+    "multiplierPerPrestige": 0.1
+  },
+  "refund": {
+    "enabled": true,
+    "guiSlot": 37,
+    "percentage": 50.0
+  },
+  "gui": {
+    "name": "<gold>Token Merchant</gold>",
+    "material": "GOLD_INGOT",
+    "slot": 37,
+    "description": [
+      "<gray>Multiplies the amount of tokens gained</gray>",
+      "<gray>by <yellow>Token Finder</yellow> based on level.</gray>",
+      "<gray>Higher levels increase the multiplier to</gray> <green>11x</green> <gray>at Level 100.</gray>"
+    ]
+  }
+}

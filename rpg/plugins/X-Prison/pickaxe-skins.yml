@@ -1,0 +1,89 @@
+# Aliases for the main command of the plugin.
+# Players can use any of these to open the skins GUI or use other skin features.
+main-command-aliases:
+  - skins
+  - pickskin
+  - skin
+
+# Messages displayed to players for various events or errors.
+messages:
+  no-permission: '<yellow><bold>SKINS <dark_gray>» <red>You don''t have permission to activate this skin!'
+  no-pickaxe: '<yellow><bold>SKINS <dark_gray>» <red>You must be holding a pickaxe.'
+  skin-activated: '<yellow><bold>SKINS <dark_gray>» <gray>You have activated skin <#ffdd00>%skin%!</#ffdd00>'
+  skin-reset: '<yellow><bold>SKINS <dark_gray>» <gray>You have reset your skin!'
+
+# Sound effects used by the plugin for user feedback.
+# These sounds are triggered by specific actions or responses.
+sounds:
+  click: UI_BUTTON_CLICK              # Played when a player interacts with GUI items.
+  success: ENTITY_PLAYER_LEVELUP     # Played on successful skin activation.
+  info: BLOCK_NOTE_BLOCK_PLING       # Played when showing info or tips.
+  error: BLOCK_NOTE_BLOCK_BASS       # Played when an error or invalid action occurs.
+
+# List of all available skins.
+# Each skin must have a unique key and contains:
+# - name: Display name (supports color codes)
+# - description: Lore shown in the GUI
+# - custom-model-data: Required value to match resource pack
+# - multipliers: Boosts to in-game currencies
+# - permission: Required permission to unlock the skin
+skins:
+  plasma:
+    name: '<gradient:#00ffff:#008b8b><bold>Plasma Surge</bold></gradient>'
+    description:
+      - '<gray>This skin boosts your gain of'
+      - '<aqua><bold>all major currencies <gray>while mining.'
+      - ' '
+      - '<gold>Money <white>1.8x'
+      - '<gold>Tokens <white>2.2x'
+      - '<gold>Gems <white>1.5x'
+    custom-model-data: 110
+    multipliers:
+      money: 1.8
+      tokens: 2.2
+      gems: 1.5
+    permission: pickaxeskins.skin.plasma
+  #corrupted:
+    #name: '<gradient:#555555:#222222><bold>Corrupted Soul</bold></gradient>'
+    #description:
+      #- '<gray>This skin boosts your gain of'
+      #- '<aqua><bold>all major currencies <gray>while mining.'
+      #- ' '
+      #- '<gold>Money <white>2.1x'
+      #- '<gold>Tokens <white>2.6x'
+      #- '<gold>Gems <white>1.9x'
+    #custom-model-data: 111
+    #multipliers:
+      #money: 2.1
+      #tokens: 2.6
+      #gems: 1.9
+    #permission: pickaxeskins.skin.corrupted
+# GUI configuration for the pickaxe skins menu
+skins-gui:
+  rows: 4                                # Number of rows in the GUI (max 6). 4 rows = 36 slots
+  title: '<gradient:#9b59b6:#8e44ad><bold>PICKAXE SKINS</bold></gradient> '             # Title of the GUI (supports color codes)
+  filler: BLACK_STAINED_GLASS_PANE       # Material used for filler items in unused slots
+  skins-slots: [12,13,14,21,22,23]       # Specific slot positions where skins are displayed (0-based index)
+  items:
+    info-item:
+      slot: 4                            # Slot index for the info/help item
+      name: '<light_purple><bold>Information'       # Name of the item in the GUI
+      material: ENCHANTED_BOOK           # Item material used
+      custom_model_data: 0               # Optional model data (0 = vanilla)
+      lore:
+        - ' '
+        - '<gray>Pickaxe Skins grant you powerful perks'
+        - '<gray>that last the entire season'
+        - ' '
+        - '<gray>Check them out <light_purple><bold>below'
+    reset-skin-item:
+      slot: 31
+      name: '<red><bold>Reset Skin'
+      material: BARRIER
+      custom_model_data: 0
+      lore:
+        - ' '
+        - '<gray>Remove your active pickaxe skin'
+        - '<gray>and return to the plain pickaxe look.'
+        - ' '
+        - '<red>Click to reset'

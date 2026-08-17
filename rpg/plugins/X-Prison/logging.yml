@@ -1,0 +1,86 @@
+# ═══════════════════════════════════════════════════════════════════════════
+#  X-Prison - File logging
+# ═══════════════════════════════════════════════════════════════════════════
+#  X-Prison writes its own log file to plugins/X-Prison/logs/latest.log, so you
+#  no longer have to dig X-Prison's lines out of the server-wide latest.log.
+#  Add-on output is included too, tagged [Addon:Name].
+#
+#  When reporting a problem, send plugins/X-Prison/logs/errors.log - or run
+#  /xprison logs dump, which packages everything up for you.
+#
+#  IMPORTANT - this file controls what is WRITTEN TO DISK. What is *produced*
+#  is still controlled by 'debug-mode' and 'debug-sql-queries' in config.yml.
+# ═══════════════════════════════════════════════════════════════════════════
+
+# Turn the whole log file off. When false, logging costs nothing at all -
+# X-Prison still prints to the console exactly as before.
+enabled: true
+
+file:
+  # Folder inside plugins/X-Prison/ where log files are kept.
+  directory: logs
+
+  # Minimum level written to the file: DEBUG, INFO, WARN, ERROR or OFF.
+  # This is independent of what the console shows.
+  #
+  # Debug output does not come through here at all while debug-file is enabled
+  # below - it goes to its own file instead, so latest.log stays readable even
+  # with debug-mode: true.
+  level: INFO
+
+  # How often buffered lines are written out, in milliseconds.
+  flush-interval-ms: 1000
+
+  # Lines at this level or above are written out immediately, so a crash cannot
+  # swallow the warning that explains it.
+  flush-immediately-at: WARN
+
+  # How many lines may wait in memory. Writing happens off the server thread; if
+  # logging ever outruns the disk, the newest lines are dropped (and counted in
+  # the file) rather than making the server wait for it.
+  queue-size: 8192
+
+rotation:
+  # Start a new file once the current one passes this size. 0 disables it.
+  max-size-mb: 25
+  # Also start a new file when the date changes.
+  daily: true
+  # Compress rolled files to .gz. They shrink roughly tenfold; read them with
+  # zgrep, 7-Zip, or any archive tool.
+  compress: true
+
+retention:
+  # Delete rolled files older than this many days. 0 disables age-based cleanup.
+  # Note that logs contain player names and UUIDs, so this doubles as how long
+  # that information is kept on disk.
+  max-age-days: 14
+  # Hard cap on the total size of the logs folder; the oldest rolled files are
+  # deleted first. 0 disables it. latest.log and errors.log are never deleted.
+  max-total-size-mb: 500
+  # How often (in minutes) the cleanup runs.
+  cleanup-interval-minutes: 60
+  # Run one cleanup pass on startup.
+  clean-on-startup: true
+
+# A second file containing only warnings and errors - the one to attach to a
+# bug report.
+error-file:
+  enabled: true
+  name: errors.log
+  max-size-mb: 5
+
+# Debug output (produced only when 'debug-mode: true' in config.yml) goes to its
+# own file, so it cannot drown out latest.log. Debug is high-volume by nature -
+# on a busy server it can be tens of thousands of lines a minute - which is why
+# it gets a bigger size cap and its own rotation.
+#
+# Set enabled: false to fold debug back into latest.log instead.
+debug-file:
+  enabled: true
+  name: debug.log
+  max-size-mb: 50
+
+# Write a summary at the top of each log file: plugin and server versions, Java
+# version, database type, enabled modules and loaded add-ons. Saves a round of
+# questions on every support request.
+session-header: true

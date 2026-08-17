@@ -1,0 +1,29 @@
+debug-mode: false
+enable-metrics: false
+database_type: H2
+mysql:
+  host: localhost # MySQL server hostname or IP address.
+  port: 3306 # MySQL server port (default is 3306).
+  database: dbName # Name of the database to use.
+  username: dbUser # Username for database authentication.
+  password: dbPass # Password for database authentication.
+connection_properties:
+  connection_timeout: 60000 # Maximum milliseconds to wait for a connection from the pool.
+  idle_timeout: 600000 # Time in ms before an idle connection is removed from the pool.
+  keep_alive_time: 0 # How often (in ms) to keep alive idle connections. 0 = disabled.
+  max_life_time: 1800000 # Maximum lifetime in ms of a connection in the pool.
+  minimum_idle: 10 # Minimum number of idle connections to maintain in the pool.
+  maximum_pool_size: 10 # Maximum number of connections in the pool.
+  leak_detection_threshold: 0 # Threshold in ms to detect connection leaks. 0 = disabled.
+  connection_test_query: SELECT 1 # Query used to test if a connection is valid.
+  character_encoding: utf8 # Character encoding to use for the database connection.
+main-command-aliases:
+- robots
+- robot
+robots-reward-interval: 1
+sounds:
+  click: UI_BUTTON_CLICK # Played on UI interactions (e.g., button clicks).
+  success: ENTITY_PLAYER_LEVELUP # Played on successful actions or rewards.
+  info: BLOCK_NOTE_BLOCK_PLING # Played for informational messages.
+  error: BLOCK_NOTE_BLOCK_BASS # Played when an error or invalid action occurs.
+  robot-add: ENTITY_FIREWORK_ROCKET_BLAST # Played when player adds robot to his collection

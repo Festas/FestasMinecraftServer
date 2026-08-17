@@ -1,0 +1,36 @@
+{
+  "class": "dev.drawethree.xprison.enchants.model.impl.CharityEnchant",
+  "id": 11,
+  "rawName": "charity",
+  "name": "<red>Charity</red>",
+  "enabled": true,
+  "increaseCostBy": "baseCost * pow(1.05, level)",
+  "maxLevel": 1000,
+  "chance": 0.005,
+  "currency": "TOKENS",
+  "amountToGive": "level * 500",
+  "initialCost": 500,
+  "messagesEnabled": true,
+  "currencyToGive": "MONEY",
+  "prestige": {
+    "enabled": true,
+    "maxPrestige": 5,
+    "requiredActivationsFormula": "1000 * pow(10, prestige)",
+    "multiplierPerPrestige": 0.2
+  },
+  "refund": {
+    "enabled": true,
+    "guiSlot": 29,
+    "percentage": 40.0
+  },
+  "gui": {
+    "name": "<red>Charity</red>",
+    "material": "SLIME_BALL",
+    "customModelData": 0,
+    "slot": 29,
+    "description": [
+      "<gray>Chance to reward all online players</gray>",
+      "<gray>with </gray><red>money </red><gray>as you mine.</gray>"
+    ]
+  }
+}

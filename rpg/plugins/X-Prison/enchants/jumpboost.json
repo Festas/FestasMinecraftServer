@@ -1,0 +1,32 @@
+{
+  "class": "dev.drawethree.xprison.enchants.model.impl.JumpBoostEnchant",
+  "id": 6,
+  "rawName": "jumpboost",
+  "name": "<aqua>Jump Boost</aqua>",
+  "enabled": true,
+  "increaseCostBy": "baseCost * pow(2, level)",
+  "maxLevel": 3,
+  "initialCost": 7500,
+  "currency": "TOKENS",
+  "prestige": {
+    "enabled": false,
+    "maxPrestige": 5,
+    "requiredActivationsFormula": "1000",
+    "multiplierPerPrestige": 0.1
+  },
+  "refund": {
+    "enabled": true,
+    "guiSlot": 24,
+    "percentage": 40.0
+  },
+  "gui": {
+    "name": "<aqua>Jump Boost</aqua>",
+    "material": "LEATHER_BOOTS",
+    "customModelData": 0,
+    "slot": 24,
+    "description": [
+      "<gray>Grants the ability to jump higher</gray>",
+      "<gray>while holding your pickaxe.</gray>"
+    ]
+  }
+}

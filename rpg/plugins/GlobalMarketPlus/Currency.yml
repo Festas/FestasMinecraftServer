@@ -1,0 +1,87 @@
+# ###########################################################
+# +------------------------------------------------------+ #
+# |                     Instruction                      | #
+# +------------------------------------------------------+ #
+# ###########################################################
+
+# Except for the custom weak-dependency currency unit, 
+# the usage permissions for all other currency systems are in the OtherPermissions.yml file.
+# Related command: /gmp money
+
+# The default currency system, used to obtain and determine the player's account balance in the global market.
+# The following are optional currencies:
+#  1. Default: Built-in currency system (Command: /gmp money)
+#  2. Vault: Use the Vault plugin as an currency pre-plugin (eg Essentials, CMI, etc)
+#  3. PlayerPoints: plugin "PlayerPoints"
+Default-Currency-System: Vault
+
+# Multiple Currencies Settings
+Multiple-Currencies-Settings:
+  # Enable multi-currency support
+  # When enabled, players can choose which currency to use when listing items for sale.
+  # Note: If enabled, "Default" cannot be used as the default currency system - select another option instead.
+  Enabled: false
+  # Enabled currency systems
+  # If you've created a custom weak-dependency currency, add its name here.
+  Enabled-List:
+  - Vault
+  - PlayerPoints
+  # Multiple currencies' symbols. (It can also be a word)
+  # This is used to quickly position the target currency unit without manual command settings.
+  # Example: When "Vault: $" is set in the following, "/gmpmarket sell 100$" can be directly recognized as a Vault as a currency unit.
+  # Example: When "PlayerPoints: points" is set in the following, "/gmp market sell 100points" can be directly recognized as a PlayerPoints as a currency unit.
+  Symbols:
+    Vault: $
+    PlayerPoints: €
+    Custom: '@'
+
+# Custom Weak-Dependency Currencies
+# Allows integration with economy plugins not natively supported.
+# Requires the target economy plugin to support PlaceholderAPI and command-based balance manipulation.
+# Provide a PlaceholderAPI placeholder for balance queries and a command for balance operations.
+Custom-Weak-Dependency-Currencies:
+  # Example configuration, you can add more custom currencies
+  # ATTENTION! If you use MySQL to achieve data synchronization, 
+  # you need to ensure that these servers have the same currency configuration!
+  Custom:
+    # Enable this custom currency
+    Enabled: false
+    # Whether allowed to use by default (if set to false, permission is required to use the currency unit)
+    Default: true
+    # Usage permission (if no permission is required, this option can be removed directly)
+    Permission: globalmarketplus.otherpermission.currencies.custom
+    # Display name (If not filled in, it defaults to the configuration node name)
+    Display-Name: Custom Currency
+    # Balance Lookup
+    # Enter a PAPI placeholder for the plugin to get the player's balance.
+    # Important: Placeholder must update in real-time and work while the player is offline!
+    # This is a example placeholder, please use the actual placeholder of the economy plugin.
+    Balance-Lookup: '%economyplugin_balance%'
+    # Balance Command
+    # Enter a command for the plugin to modify the player's balance.
+    # The plugin automatically resolves UUID to player name and replaces {player} with the username, {balance} with the amount.
+    # For plugins that support it, use {uuid} instead of {player} to prevent player name ambiguity.
+    # Important: Command must work while the player is offline!
+    # This is a example command, please use the actual balance setting command of the economy plugin.
+    Balance-Setting: economyplugin set {player} {balance}
+
+# Whether to enable balance display cache
+# After enabling, the balance used for display will not be frequently requested through the API,
+# avoiding excessive burden on the database IO of other economic systems.
+Display-Balance-Cache:
+  Enabled: false
+  # Interval (Second)
+  Interval: 0.0
+
+# Separate servers (effective for merchandises on the market)
+# After enabling this option, the money from transactions and auctions will be sent to the merchant account on the server where the merchant was listed the merchandise
+# For example, if a merchant has listed a item on Server1 and a buyer purchased on Server2, the money will be sent to the merchant's account on Server1 instead of the merchant's account on Server2
+Separate-Servers:
+  Enabled: false
+  # The name of the current server (cannot be duplicated with other servers)
+  Server-Name: Server1
+
+# Economic system administrator list, supports filling in player name or UUID
+# Players in this list will not perform balance operations and receive new mails,
+# Usually, only when a certain merchant is used as a system store, the merchant name needs to be included in this list.
+Operators: []

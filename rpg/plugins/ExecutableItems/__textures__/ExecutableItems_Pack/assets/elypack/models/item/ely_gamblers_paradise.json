@@ -1,7 +1,0 @@
-{
-	"parent": "item/generated",
-	"textures": {
-	  "layer0": "elypack:item/nothing",
-	  "layer1": "elypack:item/pack1/gamblers_paradise"
-	}
-}

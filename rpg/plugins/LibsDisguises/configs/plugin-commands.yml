@@ -30,6 +30,16 @@ grabskin:
   - downloadskin
   - skincache
 
+undisguiseselector:
+  name: undisguiseselector
+  permission: libsdisguises.seecmd.undisguiseselector
+  enabled: true
+  description: Undisguise all entities in an entity selector.
+  aliases:
+  - undisselector
+  - undselector
+  - undisgselector
+
 disguiseentity:
   name: disguiseentity
   permission: libsdisguises.seecmd.disguiseentity
@@ -49,6 +59,16 @@ disguisehelp:
   - dhelp
   - dishelp
   - disghelp
+
+disguiseselector:
+  name: disguiseselector
+  permission: libsdisguises.seecmd.disguiseselector
+  enabled: true
+  description: Disguise entities via entity selector.
+  aliases:
+  - dselector
+  - disselector
+  - disgselector
 
 disguiseradius:
   name: disguiseradius
@@ -215,6 +235,22 @@ undisguise:
   - undis
   - undisg
 
+disguisemodifyselector:
+  name: disguisemodifyselector
+  permission: libsdisguises.seecmd.disguisemodifyselector
+  enabled: true
+  description: Modify entity disguises via entity selector
+  aliases:
+  - dmodifyselector
+  - dmodselector
+  - disgmodselector
+  - dismodselector
+  - modifydisguiseselector
+  - modifydisgselector
+  - moddisguiseselector
+  - mdisguiseselector
+  - moddisgselector
+
 copydisguise:
   name: copydisguise
   permission: libsdisguises.seecmd.copydisguise
@@ -310,4 +346,11 @@ disguiseanimation:
   permission: libsdisguises.disguiseanimation
   enabled: true
   description: Play a supported animation on your own disguise
+  aliases: []
+
+disguiseselectoranimation:
+  name: disguiseselectoranimation
+  permission: libsdisguises.disguiseselectoranimation
+  enabled: true
+  description: Play a supported animation on all supported disguises via entity selector.
   aliases: []

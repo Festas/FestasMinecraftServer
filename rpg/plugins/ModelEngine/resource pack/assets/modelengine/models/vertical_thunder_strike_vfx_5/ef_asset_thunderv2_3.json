@@ -1,1 +1,0 @@
-{"textures":{"0":"modelengine:entity/vertical_thunder_5","particle":"#0"},"elements":[{"from":[-0.5,8.0,8.0],"to":[16.5,27.5,8.0],"faces":{"south":{"uv":[10.0,1.125,16.0,8.25],"tintindex":0,"rotation":0,"texture":"#0"},"north":{"uv":[16.0,1.125,10.0,8.25],"tintindex":0,"rotation":0,"texture":"#0"}}}],"display":{"gui":{"rotation":[-150.0,-45.0,180.0]}}}

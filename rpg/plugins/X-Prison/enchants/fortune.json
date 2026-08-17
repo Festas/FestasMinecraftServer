@@ -1,0 +1,35 @@
+{
+  "class": "dev.drawethree.xprison.enchants.model.impl.FortuneEnchant",
+  "id": 3,
+  "rawName": "fortune",
+  "name": "<red>Fortune</red>",
+  "enabled": true,
+  "increaseCostBy": "baseCost * pow(1.05, level)",
+  "maxLevel": 2000,
+  "initialCost": 1000,
+  "currency": "TOKENS",
+  "blacklist": [
+    "BEDROCK"
+  ],
+  "prestige": {
+    "enabled": false,
+    "maxPrestige": 5,
+    "requiredActivationsFormula": "1000",
+    "multiplierPerPrestige": 0.1
+  },
+  "refund": {
+    "enabled": true,
+    "guiSlot": 21,
+    "percentage": 35.0
+  },
+  "gui": {
+    "name": "<red>Fortune</red>",
+    "material": "DIAMOND",
+    "customModelData": 0,
+    "slot": 21,
+    "description": [
+      "<gray>Increases the number of blocks you receive</gray>",
+      "<gray>from each mined block.</gray>"
+    ]
+  }
+}

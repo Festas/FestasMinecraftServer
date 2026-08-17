@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "elypack:item/custom_textures/bastion_compass_19"
-  }
-}

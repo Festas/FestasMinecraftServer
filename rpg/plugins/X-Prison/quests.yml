@@ -1,0 +1,535 @@
+# ============================================================================
+#  X-Prison - Quests
+# ----------------------------------------------------------------------------
+#  Daily and weekly quests rotate from the pools below; permanent quests are
+#  always active. Completing a quest lets the player claim its reward (and any
+#  Battle Pass XP) from /quests.
+#
+#  All text uses MiniMessage formatting (https://docs.advntr.dev/minimessage).
+#  Enable/disable the whole module in config.yml -> modules.quests
+#
+#  Quest types: MINE_BLOCKS, EARN_CURRENCY, RANKUP, PRESTIGE, REBIRTH,
+#               TRIGGER_ENCHANT, USE_BOMB, JOIN_GANG, AUTOMINE
+#  'filter' (optional) narrows a quest to one currency/enchant name.
+# ============================================================================
+
+# How many DAILY quests each player is assigned (randomly, weighted) per day.
+daily:
+  count: 3
+# How many WEEKLY quests each player is assigned per week.
+weekly:
+  count: 2
+
+rotation:
+  # Empty = server's system timezone. Otherwise an IANA id, e.g. "Europe/Bratislava".
+  timezone: ""
+  # Hour (0-23) at which daily quests reset.
+  daily-reset-hour: 0
+  # Day and hour at which weekly quests reset.
+  weekly-reset-day: MONDAY
+  weekly-reset-hour: 0
+
+# Grant a quest's reward automatically the moment it is completed (no manual GUI claim).
+auto-claim: false
+
+# Progress feedback: an actionbar shown at 25/50/75% and on completion.
+notifications:
+  actionbar: true
+
+# Optionally make /quests reroll cost currency and sit behind a cooldown.
+reroll:
+  enabled: false
+  cost-currency: gems
+  cost: 50
+  cooldown-seconds: 3600
+  # Allow rerolling weekly quests too: /quests reroll weekly
+  allow-weekly: false
+
+# ----------------------------------------------------------------------------
+#  Quest scaling (keeps quests fair across the rank ladder)
+# ----------------------------------------------------------------------------
+#  When enabled, any quest that defines a 'scaling:' block (see the pool below)
+#  has its goal and/or reward scaled by the player's progression. The chosen
+#  'source' is plugged into your formulas as the variable 'scale'.
+#
+#  The scale value is snapshotted when the quest is assigned, so a quest stays
+#  the same difficulty for its whole day/week even if the player ranks up in
+#  the meantime. Quests without a 'scaling:' block are never scaled.
+scaling:
+  # Master switch. Off = every quest uses its plain 'target' for all players.
+  enabled: false
+  # What 'scale' means: RANK (rank ladder index), PRESTIGE, REBIRTH, or
+  # PERMISSION (the highest weight among the nodes below that the player holds).
+  source: RANK
+  # Only used when source: PERMISSION. Give each rank/group one of these nodes
+  # (e.g. via LuckPerms) and 'scale' becomes that node's weight.
+  permission-weights:
+    "xprison.quests.scale.1": 1
+    "xprison.quests.scale.2": 2
+    "xprison.quests.scale.3": 3
+
+messages:
+  prefix: "<gradient:#f7971e:#ffd200><bold>QUESTS</bold> <dark_gray>»</dark_gray></gradient> "
+  quest-completed: "<green>You completed the quest <yellow>%quest%<green>! Claim it in <yellow>/quests<green>."
+  reward-claimed: "<green>Claimed the reward for <yellow>%quest%<green>!"
+  reward-not-completed: "<red>You have not completed <yellow>%quest%<red> yet."
+  reward-already-claimed: "<red>You have already claimed that quest's reward."
+  rerolled: "<green>Your <yellow>%category%<green> quests have been rerolled."
+  no-permission: "<red>You do not have permission to do that."
+  reroll-cost-fail: "<red>You need <white>%cost% %currency%<red> to reroll your quests."
+  reroll-cooldown: "<red>You can reroll again in <white>%time%<red>."
+
+# ----------------------------------------------------------------------------
+#  On-screen titles & sounds for key moments. Each block has an optional 'title'
+#  (enabled/title/subtitle plus fade-in/stay/fade-out in seconds) and a 'sound'
+#  (enabled/sound/volume/pitch). Titles use MiniMessage; sounds are Bukkit/XSound
+#  names. Set either 'enabled: false' to silence just that part.
+# ----------------------------------------------------------------------------
+effects:
+  # Played the moment a quest is completed. Placeholder: %quest%.
+  quest-complete:
+    title:
+      enabled: true
+      title: "<gradient:#f7971e:#ffd200><bold>QUEST COMPLETE</bold></gradient>"
+      subtitle: "<white>%quest% <gray>- claim it in <yellow>/quests"
+      fade-in: 1
+      stay: 3
+      fade-out: 1
+    sound:
+      enabled: true
+      sound: ENTITY_PLAYER_LEVELUP
+      volume: 1.0
+      pitch: 1.0
+  # Played when a quest reward is claimed. Placeholder: %quest%.
+  claim:
+    sound:
+      enabled: true
+      sound: ENTITY_EXPERIENCE_ORB_PICKUP
+      volume: 1.0
+      pitch: 1.0
+  # Played at each 25/50/75% milestone. Off by default to avoid noise; a sound is
+  # usually plenty here. Placeholder: %quest%.
+  milestone:
+    title:
+      enabled: false
+      title: ""
+      subtitle: ""
+      fade-in: 1
+      stay: 2
+      fade-out: 1
+    sound:
+      enabled: false
+      sound: BLOCK_NOTE_BLOCK_PLING
+      volume: 0.5
+      pitch: 1.5
+
+# ----------------------------------------------------------------------------
+#  Quest pool
+#  display name/lore placeholders: %name%, %category%, %progress%, %target%,
+#  %percent%, %bar%, %status%, %multiplier% (see gui.status / gui.progress-bar).
+#
+#  Optional per-quest keys:
+#    permission: "<node>"     Only assign this quest to players with the node.
+#                             Use it to give different ranks different quests.
+#    scaling:                 Scale this quest per player (requires scaling.enabled
+#                             above). Variables: 'target' (the base target below)
+#                             and 'scale' (your chosen scaling.source).
+#      target-formula: "..."            -> the player's goal amount
+#      reward-multiplier-formula: "..." -> exposed to rewards as %multiplier%
+#  In rewards, %multiplier% and %target% are replaced with the player's scaled
+#  values, so reward-aware commands/messages can pay out proportionally.
+# ----------------------------------------------------------------------------
+quests:
+  daily_mine_blocks:
+    type: MINE_BLOCKS
+    category: DAILY
+    display-name: "Daily Miner"
+    target: 2500
+    weight: 10
+    pass-xp: 150
+    # Example scaling: each rank adds 25% to the goal (and the reward multiplier).
+    # With scaling.source: RANK, a rank-0 player mines 2500; a rank-8 player 7500.
+    scaling:
+      target-formula: "target * (1 + 0.25 * scale)"
+      reward-multiplier-formula: "1 + 0.25 * scale"
+    display:
+      material: IRON_PICKAXE
+      name: "<yellow>Daily Miner"
+      lore:
+        - "<gray>Mine <white>%target% <gray>blocks."
+        - ""
+        - "<gray>Progress: <white>%progress%<gray>/<white>%target% <gray>(<white>%percent%<gray>)"
+        - "%bar%"
+        - ""
+        - "%status%"
+    rewards:
+      commands:
+        - "money give %player% 25000"
+      messages:
+        - "<green>+ $25,000 <gray>(goal scaled x%multiplier% for your rank)"
+      sound: ENTITY_PLAYER_LEVELUP
+  daily_earn_tokens:
+    type: EARN_CURRENCY
+    category: DAILY
+    display-name: "Token Hoarder"
+    target: 1000
+    weight: 10
+    filter: "Tokens"
+    pass-xp: 150
+    display:
+      material: SUNFLOWER
+      name: "<yellow>Token Hoarder"
+      lore:
+        - "<gray>Earn <white>%target% <gray>Tokens."
+        - ""
+        - "<gray>Progress: <white>%progress%<gray>/<white>%target% <gray>(<white>%percent%<gray>)"
+        - "%bar%"
+        - ""
+        - "%status%"
+    rewards:
+      commands:
+        - "tokens give %player% 250"
+      messages:
+        - "<aqua>+ 250 Tokens"
+  daily_rankup:
+    type: RANKUP
+    category: DAILY
+    display-name: "Climbing the Ranks"
+    target: 3
+    weight: 8
+    pass-xp: 150
+    display:
+      material: NAME_TAG
+      name: "<yellow>Climbing the Ranks"
+      lore:
+        - "<gray>Rank up <white>%target% <gray>times."
+        - ""
+        - "<gray>Progress: <white>%progress%<gray>/<white>%target% <gray>(<white>%percent%<gray>)"
+        - "%bar%"
+        - ""
+        - "%status%"
+    rewards:
+      commands:
+        - "tokens give %player% 300"
+      messages:
+        - "<aqua>+ 300 Tokens"
+  daily_use_bombs:
+    type: USE_BOMB
+    category: DAILY
+    display-name: "Demolition Expert"
+    target: 10
+    weight: 6
+    pass-xp: 150
+    display:
+      material: TNT
+      name: "<yellow>Demolition Expert"
+      lore:
+        - "<gray>Detonate <white>%target% <gray>bombs."
+        - ""
+        - "<gray>Progress: <white>%progress%<gray>/<white>%target% <gray>(<white>%percent%<gray>)"
+        - "%bar%"
+        - ""
+        - "%status%"
+    rewards:
+      commands:
+        - "money give %player% 50000"
+      messages:
+        - "<green>+ $50,000"
+  daily_trigger_enchants:
+    type: TRIGGER_ENCHANT
+    category: DAILY
+    display-name: "Enchanter"
+    target: 200
+    weight: 6
+    pass-xp: 150
+    display:
+      material: ENCHANTED_BOOK
+      name: "<yellow>Enchanter"
+      lore:
+        - "<gray>Trigger pickaxe enchants <white>%target% <gray>times."
+        - ""
+        - "<gray>Progress: <white>%progress%<gray>/<white>%target% <gray>(<white>%percent%<gray>)"
+        - "%bar%"
+        - ""
+        - "%status%"
+    rewards:
+      commands:
+        - "tokens give %player% 200"
+      messages:
+        - "<aqua>+ 200 Tokens"
+  weekly_mine_blocks:
+    type: MINE_BLOCKS
+    category: WEEKLY
+    display-name: "Weekly Excavation"
+    target: 50000
+    weight: 10
+    pass-xp: 750
+    display:
+      material: DIAMOND_PICKAXE
+      name: "<gold>Weekly Excavation"
+      lore:
+        - "<gray>Mine <white>%target% <gray>blocks this week."
+        - ""
+        - "<gray>Progress: <white>%progress%<gray>/<white>%target% <gray>(<white>%percent%<gray>)"
+        - "%bar%"
+        - ""
+        - "%status%"
+    rewards:
+      commands:
+        - "money give %player% 1000000"
+      messages:
+        - "<green><bold>+ $1,000,000"
+      sound: UI_TOAST_CHALLENGE_COMPLETE
+  weekly_prestige:
+    type: PRESTIGE
+    category: WEEKLY
+    display-name: "Prestige Pursuit"
+    target: 5
+    weight: 8
+    pass-xp: 750
+    display:
+      material: NETHER_STAR
+      name: "<gold>Prestige Pursuit"
+      lore:
+        - "<gray>Prestige <white>%target% <gray>times this week."
+        - ""
+        - "<gray>Progress: <white>%progress%<gray>/<white>%target% <gray>(<white>%percent%<gray>)"
+        - "%bar%"
+        - ""
+        - "%status%"
+    rewards:
+      commands:
+        - "gems give %player% 100"
+      messages:
+        - "<green>+ 100 Gems"
+      sound: UI_TOAST_CHALLENGE_COMPLETE
+  weekly_earn_gems:
+    type: EARN_CURRENCY
+    category: WEEKLY
+    display-name: "Gem Collector"
+    target: 250
+    weight: 6
+    filter: "Gems"
+    pass-xp: 750
+    display:
+      material: EMERALD
+      name: "<gold>Gem Collector"
+      lore:
+        - "<gray>Earn <white>%target% <gray>Gems this week."
+        - ""
+        - "<gray>Progress: <white>%progress%<gray>/<white>%target% <gray>(<white>%percent%<gray>)"
+        - "%bar%"
+        - ""
+        - "%status%"
+    rewards:
+      commands:
+        - "tokens give %player% 5000"
+      messages:
+        - "<aqua>+ 5,000 Tokens"
+  permanent_join_gang:
+    type: JOIN_GANG
+    category: PERMANENT
+    display-name: "Find Your Crew"
+    target: 1
+    weight: 1
+    pass-xp: 100
+    display:
+      material: SHIELD
+      name: "<aqua>Find Your Crew"
+      lore:
+        - "<gray>Join a gang."
+        - ""
+        - "<gray>Progress: <white>%progress%<gray>/<white>%target% <gray>(<white>%percent%<gray>)"
+        - "%bar%"
+        - ""
+        - "%status%"
+    rewards:
+      commands:
+        - "money give %player% 100000"
+      messages:
+        - "<green>+ $100,000"
+  permanent_first_rebirth:
+    type: REBIRTH
+    category: PERMANENT
+    display-name: "Born Again"
+    target: 1
+    weight: 1
+    pass-xp: 500
+    display:
+      material: TOTEM_OF_UNDYING
+      name: "<aqua>Born Again"
+      lore:
+        - "<gray>Rebirth for the first time."
+        - ""
+        - "<gray>Progress: <white>%progress%<gray>/<white>%target% <gray>(<white>%percent%<gray>)"
+        - "%bar%"
+        - ""
+        - "%status%"
+    rewards:
+      commands:
+        - "gems give %player% 50"
+      messages:
+        - "<green>+ 50 Gems"
+      sound: UI_TOAST_CHALLENGE_COMPLETE
+  # ---- New objective types ----
+  # SELL_BLOCKS counts items sold (auto-sell + /sellall). MINE_SPECIFIC needs a 'filter'
+  # naming the block material. PLAYTIME counts minutes played. REACH_BALANCE tracks the
+  # highest balance reached for the filtered currency.
+  daily_sell_blocks:
+    type: SELL_BLOCKS
+    category: DAILY
+    display-name: "Market Trader"
+    target: 5000
+    weight: 8
+    pass-xp: 150
+    display:
+      material: GOLD_INGOT
+      name: "<yellow>Market Trader"
+      lore:
+        - "<gray>Sell <white>%target% <gray>items."
+        - ""
+        - "<gray>Progress: <white>%progress%<gray>/<white>%target% <gray>(<white>%percent%<gray>)"
+        - "%bar%"
+        - ""
+        - "%status%"
+    rewards:
+      commands:
+        - "money give %player% 50000"
+      messages:
+        - "<green>+ $50,000"
+  daily_mine_emerald:
+    type: MINE_SPECIFIC
+    category: DAILY
+    display-name: "Emerald Hunter"
+    target: 250
+    weight: 6
+    filter: "EMERALD_ORE"
+    pass-xp: 150
+    display:
+      material: EMERALD_ORE
+      name: "<yellow>Emerald Hunter"
+      lore:
+        - "<gray>Mine <white>%target% <gray>Emerald Ore."
+        - ""
+        - "<gray>Progress: <white>%progress%<gray>/<white>%target% <gray>(<white>%percent%<gray>)"
+        - "%bar%"
+        - ""
+        - "%status%"
+    rewards:
+      commands:
+        - "tokens give %player% 500"
+      messages:
+        - "<aqua>+ 500 Tokens"
+  permanent_playtime:
+    type: PLAYTIME
+    category: PERMANENT
+    display-name: "Dedicated Miner"
+    target: 120
+    weight: 1
+    pass-xp: 300
+    display:
+      material: CLOCK
+      name: "<aqua>Dedicated Miner"
+      lore:
+        - "<gray>Play for <white>%target% <gray>minutes."
+        - ""
+        - "<gray>Progress: <white>%progress%<gray>/<white>%target% <gray>(<white>%percent%<gray>)"
+        - "%bar%"
+        - ""
+        - "%status%"
+    rewards:
+      commands:
+        - "money give %player% 250000"
+      messages:
+        - "<green>+ $250,000"
+  permanent_reach_balance:
+    type: REACH_BALANCE
+    category: PERMANENT
+    display-name: "First Million"
+    target: 1000000
+    weight: 1
+    filter: "money"
+    pass-xp: 300
+    display:
+      material: DIAMOND
+      name: "<aqua>First Million"
+      lore:
+        - "<gray>Reach a balance of <white>%target% <gray>Money."
+        - ""
+        - "<gray>Progress: <white>%progress%<gray>/<white>%target% <gray>(<white>%percent%<gray>)"
+        - "%bar%"
+        - ""
+        - "%status%"
+    rewards:
+      commands:
+        - "gems give %player% 25"
+      messages:
+        - "<green>+ 25 Gems"
+
+gui:
+  title: "<dark_gray>Your Quests"
+  rows: 6
+  filler: "BLACK_STAINED_GLASS_PANE"
+  quest-slots: [10, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25, 28, 29, 30, 31, 32, 33, 34]
+  # Category filter tabs. Click a tab to show only that category (All shows everything).
+  tabs:
+    all:
+      slot: 0
+      material: BOOK
+      name: "<yellow><bold>All Quests"
+    daily:
+      slot: 1
+      material: CLOCK
+      name: "<yellow><bold>Daily"
+    weekly:
+      slot: 2
+      material: PAPER
+      name: "<gold><bold>Weekly"
+    permanent:
+      slot: 3
+      material: NETHER_STAR
+      name: "<aqua><bold>Permanent"
+  # Optional cosmetic frame around the quest area. Each entry is a normal item
+  # (material/name/lore/glow) at a single 'slot' or a list of 'slots'.
+  decorations:
+    title:
+      material: ORANGE_STAINED_GLASS_PANE
+      name: "<gradient:#f7971e:#ffd200><bold>YOUR QUESTS"
+      slot: 4
+    top:
+      material: ORANGE_STAINED_GLASS_PANE
+      name: " "
+      slots: [0, 1, 2, 3, 5, 6, 7, 8]
+    sides:
+      material: YELLOW_STAINED_GLASS_PANE
+      name: " "
+      slots: [9, 17, 18, 26, 27, 35]
+    row:
+      material: ORANGE_STAINED_GLASS_PANE
+      name: " "
+      slots: [36, 37, 38, 39, 40, 41, 42, 43, 44]
+    bottom:
+      material: YELLOW_STAINED_GLASS_PANE
+      name: " "
+      slots: [45, 46, 47, 51, 52, 53]
+  status:
+    in-progress: "<gray>In progress..."
+    completed: "<yellow><bold>➜ Click to claim!</bold>"
+    claimed: "<green><bold>✔ Claimed</bold>"
+  progress-bar:
+    length: 20
+    symbol-filled: "<green>▮"
+    symbol-empty: "<dark_gray>▮"
+  items:
+    close:
+      slot: 49
+      material: BARRIER
+      name: "<red>Close"
+    prev-page:
+      slot: 48
+      material: ARROW
+      name: "<yellow>Previous Page"
+    next-page:
+      slot: 50
+      material: ARROW
+      name: "<yellow>Next Page"

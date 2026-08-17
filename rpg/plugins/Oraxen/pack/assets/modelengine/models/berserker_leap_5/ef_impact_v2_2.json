@@ -1,1 +1,0 @@
-{"textures":{"0":"modelengine:entity/berserker_leap_5","particle":"#0"},"elements":[{"from":[8.0,8.0,6.5],"to":[8.0,27.5,9.5],"faces":{"east":{"uv":[2.5,0.125,3.5,10.0],"tintindex":0,"rotation":0,"texture":"#0"},"west":{"uv":[3.5,0.125,2.5,10.0],"tintindex":0,"rotation":0,"texture":"#0"}}}],"display":{"gui":{"rotation":[-150.0,-45.0,180.0]}}}

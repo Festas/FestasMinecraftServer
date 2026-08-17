@@ -1,1 +1,0 @@
-{"textures":{"0":"modelengine:entity/constant_thunder_strike_long","particle":"#0"},"elements":[{"from":[8.0,-2.5,5.0],"to":[8.0,18.5,11.0],"faces":{"east":{"uv":[4.125,6.25,2.125,11.75],"tintindex":0,"rotation":0,"texture":"#0"},"west":{"uv":[2.125,6.25,4.125,11.75],"tintindex":0,"rotation":0,"texture":"#0"}}}],"display":{"gui":{"rotation":[-150.0,-45.0,180.0]}}}

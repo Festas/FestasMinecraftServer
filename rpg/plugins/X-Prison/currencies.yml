@@ -1,0 +1,94 @@
+# Messages shown to players for various currency-related actions
+messages:
+  invalid_currency: '<gradient:#FFFF00:#FFD700:#FFA500><bold>CURRENCIES</bold></gradient> <dark_gray>»</dark_gray> <white>Invalid currency name.'
+  no_permission: '<gradient:#FFFF00:#FFD700:#FFA500><bold>CURRENCIES</bold></gradient> <dark_gray>»</dark_gray> <white>You do not have permission to do that!'
+  not_enough_currency: '<gradient:#FFFF00:#FFD700:#FFA500><bold>CURRENCIES</bold></gradient> <dark_gray>»</dark_gray> <white>You don''t have enough %currency%'
+  your_currency: '<gradient:#FFFF00:#FFD700:#FFA500><bold>CURRENCIES</bold></gradient> <dark_gray>»</dark_gray> <white>You have <yellow>%amount% <white>%currency%'
+  other_currency: '<gradient:#FFFF00:#FFD700:#FFA500><bold>CURRENCIES</bold></gradient> <dark_gray>»</dark_gray> <yellow>%player%''s %currency%: %amount%'
+  not_withdrawal_currency: '<gradient:#FFFF00:#FFD700:#FFA500><bold>CURRENCIES</bold></gradient> <dark_gray>»</dark_gray> <red>%currency% is not withdrawable!'
+  withdraw_successful: '<gradient:#FFFF00:#FFD700:#FFA500><bold>CURRENCIES</bold></gradient> <dark_gray>»</dark_gray> <white>You have withdrawn <yellow>%amount% %currency%!'
+  admin_set_currency: '<gradient:#FFFF00:#FFD700:#FFA500><bold>CURRENCIES</bold></gradient> <dark_gray>»</dark_gray> <white>Successfuly set <yellow>%player%''s %currency% to <yellow>%amount%.'
+  admin_give_currency: '<gradient:#FFFF00:#FFD700:#FFA500><bold>CURRENCIES</bold></gradient> <dark_gray>»</dark_gray> <white>Successfuly given <yellow>%amount% %currency% to <yellow>%player%.'
+  player_give_currency: '<gradient:#FFFF00:#FFD700:#FFA500><bold>CURRENCIES</bold></gradient> <dark_gray>»</dark_gray> <white>You have received <yellow>%amount% %currency% <white>from <yellow>%sender%.'
+  admin_remove_currency: '<gradient:#FFFF00:#FFD700:#FFA500><bold>CURRENCIES</bold></gradient> <dark_gray>»</dark_gray> <white>Successfuly removed <yellow>%amount% %currency% from <yellow>%player%.'
+  currency_redeem: '<gradient:#FFFF00:#FFD700:#FFA500><bold>CURRENCIES</bold></gradient> <dark_gray>»</dark_gray> <yellow>You redeemed <white>%amount% %currency%'
+  currency_send: '<gradient:#FFFF00:#FFD700:#FFA500><bold>CURRENCIES</bold></gradient> <dark_gray>»</dark_gray> <yellow>You have sent <white>%amount% %currency% <yellow>to <white>%player%'
+  currency_cant_send_to_yourself: '<gradient:#FFFF00:#FFD700:#FFA500><bold>CURRENCIES</bold></gradient> <dark_gray>»</dark_gray> <white>You can''t send currency to yourself.'
+  currency_received: '<gradient:#FFFF00:#FFD700:#FFA500><bold>CURRENCIES</bold></gradient> <dark_gray>»</dark_gray> <yellow>You received <white>%amount% %currency% <yellow>from <white>%player%.'
+  currency_received_console: '<gradient:#FFFF00:#FFD700:#FFA500><bold>CURRENCIES</bold></gradient> <dark_gray>»</dark_gray> <white>You have received <white>%amount% %currency%.'
+  not_a_number: '<gradient:#FFFF00:#FFD700:#FFA500><bold>CURRENCIES</bold></gradient> <dark_gray>»</dark_gray> <white>%input% is not a number!'
+  player_not_online: '<gradient:#FFFF00:#FFD700:#FFA500><bold>PRISON</bold></gradient> <dark_gray>»</dark_gray> <white>Player <yellow>%player% <white>is not online!'
+  currency_message_disabled: '<gradient:#FFFF00:#FFD700:#FFA500><bold>CURRENCIES</bold></gradient> <dark_gray>»</dark_gray> <white>%currency% Messages <yellow><bold>OFF'
+  currency_message_enabled: '<gradient:#FFFF00:#FFD700:#FFA500><bold>CURRENCIES</bold></gradient> <dark_gray>»</dark_gray> <white>%currency% Messages <yellow><bold>ON'
+# Configuration for each available currency
+currencies:
+  money:
+    enabled: true # If false, players won't be able to use this currency
+    starting-amount: 1000000  # Initial balance for new players
+    max-amount: "1E48"  # Effectively unlimited (supports S-scale and beyond); set a plain number to impose a cap
+    display-name: "Money"  # Shown in GUI or messages
+    format: "#,##0.##"  # Number formatting
+    short-format: true  # Enables short formatting like 1M, 1B
+    trim-zeros: true  # Removes trailing zeros
+    prefix: "$"  # Added before the amount
+    suffix: ""  # Added after the amount
+    physical-item:  # Configuration for redeemable item
+      material: PAPER  # Item type
+      custom_model_data: 0  # Custom model data for resource packs
+      name: '<gradient:#FFFF00:#FFD700:#FFA500>%amount% <bold>Money</bold></gradient>' # Display name
+      lore:
+        - '<yellow>➥ <white>Right-Click to Redeem'  # Description/lore line
+  tokens:
+    enabled: true
+    starting-amount: 1000000
+    max-amount: "1E48"  # Effectively unlimited (supports S-scale and beyond); set a plain number to impose a cap
+    display-name: "Tokens"
+    format: "#.##"
+    short-format: true
+    trim-zeros: true
+    prefix: "⛃"
+    suffix: ""
+    physical-item:
+      material: SUNFLOWER
+      custom_model_data: 0
+      name: '<gradient:#FFFF00:#FFD700:#FFA500>%amount% <bold>Tokens</bold></gradient>'
+      lore:
+        - '<yellow>➥ <white>Right-Click to Redeem'
+  gems:
+    enabled: true
+    starting-amount: 1000000
+    max-amount: "1E48"  # Effectively unlimited (supports S-scale and beyond); set a plain number to impose a cap
+    display-name: "Gems"
+    format: "#.##"
+    short-format: true
+    trim-zeros: true
+    prefix: "💠"
+    suffix: ""
+    physical-item:
+      custom_model_data: 0
+      material: EMERALD
+      name: '<gradient:#FFFF00:#FFD700:#FFA500>%amount% <bold>Gems</bold></gradient>'
+      lore:
+        - '<yellow>➥ <white>Right-Click to redeem'
+# Help menu shown to players
+currency-help-menu:
+  - '<yellow><strikethrough>-------<white><strikethrough>-------<yellow><strikethrough>--------<white><strikethrough>--------<yellow><strikethrough>--------<white><strikethrough>-------<yellow><strikethrough>-------'
+  - '<yellow><bold>%currency% Help'
+  - '<yellow><strikethrough>-------<white><strikethrough>-------<yellow><strikethrough>--------<white><strikethrough>--------<yellow><strikethrough>--------<white><strikethrough>-------<yellow><strikethrough>-------'
+  - '<yellow>/%currency% balance [player]'
+  - '<yellow>/%currency% pay [player] [amount]'
+  - '<yellow>/%currency% withdraw [amount]'
+  - '<yellow><strikethrough>-------<white><strikethrough>-------<yellow><strikethrough>--------<white><strikethrough>--------<yellow><strikethrough>--------<white><strikethrough>-------<yellow><strikethrough>-------'
+
+
+# Help menu for admins
+currency-admin-help-menu:
+  - '<yellow><strikethrough>-------<white><strikethrough>-------<yellow><strikethrough>--------<white><strikethrough>--------<yellow><strikethrough>--------<white><strikethrough>-------<yellow><strikethrough>-------'
+  - '<yellow><bold>%currency% Admin Help'
+  - '<yellow><strikethrough>-------<white><strikethrough>-------<yellow><strikethrough>--------<white><strikethrough>--------<yellow><strikethrough>--------<white><strikethrough>-------<yellow><strikethrough>-------'
+  - '<yellow>/%currency% set [player] [amount]'
+  - '<yellow>/%currency% give [player] [amount]'
+  - '<yellow>/%currency% remove [player] [amount]'
+  - '<yellow><strikethrough>-------<white><strikethrough>-------<yellow><strikethrough>--------<white><strikethrough>--------<yellow><strikethrough>--------<white><strikethrough>-------<yellow><strikethrough>-------'
+# How often player data is saved (in seconds)
+player_data_save_interval: 60

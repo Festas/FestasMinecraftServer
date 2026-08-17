@@ -1,0 +1,42 @@
+{
+  "class": "dev.drawethree.xprison.enchants.model.impl.ExplosiveEnchant",
+  "id": 9,
+  "rawName": "explosive",
+  "name": "<green>Explosive</green>",
+  "enabled": true,
+  "increaseCostBy": "baseCost * pow(1.05, level)",
+  "cooldown": 1,
+  "maxLevel": 1000,
+  "chance": 0.001,
+  "currency": "GEMS",
+  "initialCost": 5000,
+  "countBlocksBroken": false,
+  "explosionType": "SPHERE",
+  "currencyToGive": "MONEY",
+  "radius": "2 + (level * 0.008)",
+  "maxRadius": 32,
+  "message": "<gradient:#FFD700:#FFEA00><bold>ENCHANT</bold></gradient> <dark_gray>» </dark_gray><gray>You got </gray><yellow><bold>%amount% %currency% </bold></yellow><gray>from </gray><red><bold>Explosive </bold></red><gray>activation.</gray>",
+  "sounds": true,
+  "useEvents": true,
+  "prestige": {
+    "enabled": true,
+    "maxPrestige": 5,
+    "requiredActivationsFormula": "2000 * pow(10, prestige)",
+    "multiplierPerPrestige": 0.2
+  },
+  "refund": {
+    "enabled": true,
+    "guiSlot": 19,
+    "percentage": 35.0
+  },
+  "gui": {
+    "name": "<green>Explosive</green>",
+    "material": "TNT",
+    "customModelData": 0,
+    "slot": 19,
+    "description": [
+      "<gray>Gives a chance to </gray><green>cause explosions</green>",
+      "<gray>that destroy nearby blocks while mining.</gray>"
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "class": "dev.drawethree.xprison.enchants.model.impl.KeyallsEnchant",
+  "id": 18,
+  "rawName": "keyalls",
+  "name": "<red>Keyalls</red>",
+  "enabled": true,
+  "increaseCostBy": "baseCost * pow(1.05, level)",
+  "maxLevel": 250,
+  "chance": 0.0002,
+  "initialCost": 2500,
+  "currency": "GEMS",
+  "pickaxeLevelRequired": 1,
+  "commands": [
+    "cc giveall physical Token 1",
+    "cc giveall physical Token 2",
+    "cc giveall physical Coal 1",
+    "cc giveall physical Iron 1",
+    "cc giveall physical Gold 1"
+  ],
+  "prestige": {
+    "enabled": false,
+    "maxPrestige": 5,
+    "requiredActivationsFormula": "1000",
+    "multiplierPerPrestige": 0.1
+  },
+  "refund": {
+    "enabled": true,
+    "guiSlot": 25,
+    "percentage": 35.0
+  },
+  "gui": {
+    "name": "<red>Keyalls</red>",
+    "material": "REDSTONE",
+    "customModelData": 0,
+    "slot": 25,
+    "description": [
+      "<gray>Grants a chance to distribute</gray>",
+      "<gray>crate keys to all online players while mining.</gray>"
+    ]
+  }
+}

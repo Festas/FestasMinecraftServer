@@ -7413,3 +7413,303 @@
 
 # Used for the disguise option SoundGroup
 "ZOMBIFIED_PIGLIN": "ZOMBIFIED_PIGLIN"
+
+# Used for the disguise option Particle
+"pause_mob_growth": "pause_mob_growth"
+
+# Used for the disguise option Particle
+"geyser_plume": "geyser_plume"
+
+# Used for the disguise option Particle
+"sulfur_bubbles": "sulfur_bubbles"
+
+# Used for the disguise option Particle
+"geyser": "geyser"
+
+# Used for the disguise option Particle
+"geyser_poof": "geyser_poof"
+
+# Used for the disguise option Particle
+"noxious_gas": "noxious_gas"
+
+# Used for the disguise option Particle
+"noxious_gas_cloud": "noxious_gas_cloud"
+
+# Used for the disguise option Particle
+"reset_mob_growth": "reset_mob_growth"
+
+# Used for the disguise option Particle
+"sulfur_cube_goo": "sulfur_cube_goo"
+
+# Used for the disguise option Particle
+"geyser_base": "geyser_base"
+
+# Description for the disguise option ParticleType
+"The different particles of Minecraft: https://www.spigotmc.org/wiki/lib-s-disguises-faq/#particles": "The different particles of Minecraft: https://www.spigotmc.org/wiki/lib-s-disguises-faq/#particles"
+
+# Used for the disguise option ParticleType
+"PAUSE_MOB_GROWTH": "PAUSE_MOB_GROWTH"
+
+# Used for the disguise option ParticleType
+"RESET_MOB_GROWTH": "RESET_MOB_GROWTH"
+
+# Used for the disguise option ParticleType
+"NOXIOUS_GAS": "NOXIOUS_GAS"
+
+# Used for the disguise option ParticleType
+"NOXIOUS_GAS_CLOUD": "NOXIOUS_GAS_CLOUD"
+
+# Used for the disguise option ParticleType
+"SULFUR_CUBE_GOO": "SULFUR_CUBE_GOO"
+
+# Used for the disguise option ParticleType
+"SULFUR_BUBBLES": "SULFUR_BUBBLES"
+
+# Used for the disguise option ParticleType
+"GEYSER": "GEYSER"
+
+# Used for the disguise option ParticleType
+"GEYSER_BASE": "GEYSER_BASE"
+
+# Used for the disguise option ParticleType
+"GEYSER_PLUME": "GEYSER_PLUME"
+
+# Used for the disguise option ParticleType
+"GEYSER_POOF": "GEYSER_POOF"
+
+# A disguise option name, has description 'The spells that an Illusioner can cast'
+"Illager Spell": "Illager Spell"
+
+# Description for the disguise option Illager Spell
+"The spells that an Illusioner can cast": "The spells that an Illusioner can cast"
+
+# Used for the disguise option Illager Spell
+"SUMMON_VEX": "SUMMON_VEX"
+
+# Used for the disguise option Illager Spell
+"FANGS": "FANGS"
+
+# Used for the disguise option Illager Spell
+"WOLOLO": "WOLOLO"
+
+# Used for the disguise option Illager Spell
+"DISAPPEAR": "DISAPPEAR"
+
+# Used for the disguise option Illager Spell
+"BLINDNESS": "BLINDNESS"
+
+# A disguise option name, has description 'The variant of a zombie nautilus'
+"Zombie Nautilus Variant": "Zombie Nautilus Variant"
+
+# Description for the disguise option Zombie Nautilus Variant
+"The variant of a zombie nautilus": "The variant of a zombie nautilus"
+
+# A disguise option name, has description 'The variant of cat sounds'
+"Cat Sound Variant": "Cat Sound Variant"
+
+# Description for the disguise option Cat Sound Variant
+"The variant of cat sounds": "The variant of cat sounds"
+
+# Used for the disguise option Cat Sound Variant
+"royal": "royal"
+
+# A disguise option name, has description 'The variant of chicken sounds'
+"Chicken Sound Variant": "Chicken Sound Variant"
+
+# Description for the disguise option Chicken Sound Variant
+"The variant of chicken sounds": "The variant of chicken sounds"
+
+# Used for the disguise option Chicken Sound Variant
+"picky": "picky"
+
+# A disguise option name, has description 'The variant of cow sounds'
+"Cow Sound Variant": "Cow Sound Variant"
+
+# Description for the disguise option Cow Sound Variant
+"The variant of cow sounds": "The variant of cow sounds"
+
+# Used for the disguise option Cow Sound Variant
+"moody": "moody"
+
+# A disguise option name, has description 'The variant of pig sounds'
+"Pig Sound Variant": "Pig Sound Variant"
+
+# Description for the disguise option Pig Sound Variant
+"The variant of pig sounds": "The variant of pig sounds"
+
+# Used for the disguise option Pig Sound Variant
+"mini": "mini"
+
+# Used for the disguise option Material
+"CAMEL_HUSK_SPAWN_EGG": "CAMEL_HUSK_SPAWN_EGG"
+
+# Used for the disguise option Material
+"COPPER_NAUTILUS_ARMOR": "COPPER_NAUTILUS_ARMOR"
+
+# Used for the disguise option Material
+"COPPER_SPEAR": "COPPER_SPEAR"
+
+# Used for the disguise option Material
+"DIAMOND_NAUTILUS_ARMOR": "DIAMOND_NAUTILUS_ARMOR"
+
+# Used for the disguise option Material
+"DIAMOND_SPEAR": "DIAMOND_SPEAR"
+
+# Used for the disguise option Material
+"GOLDEN_NAUTILUS_ARMOR": "GOLDEN_NAUTILUS_ARMOR"
+
+# Used for the disguise option Material
+"GOLDEN_SPEAR": "GOLDEN_SPEAR"
+
+# Used for the disguise option Material
+"IRON_NAUTILUS_ARMOR": "IRON_NAUTILUS_ARMOR"
+
+# Used for the disguise option Material
+"IRON_SPEAR": "IRON_SPEAR"
+
+# Used for the disguise option Material
+"MUSIC_DISC_BOUNCE": "MUSIC_DISC_BOUNCE"
+
+# Used for the disguise option Material
+"NAUTILUS_SPAWN_EGG": "NAUTILUS_SPAWN_EGG"
+
+# Used for the disguise option Material
+"NETHERITE_HORSE_ARMOR": "NETHERITE_HORSE_ARMOR"
+
+# Used for the disguise option Material
+"NETHERITE_NAUTILUS_ARMOR": "NETHERITE_NAUTILUS_ARMOR"
+
+# Used for the disguise option Material
+"NETHERITE_SPEAR": "NETHERITE_SPEAR"
+
+# Used for the disguise option Material
+"PARCHED_SPAWN_EGG": "PARCHED_SPAWN_EGG"
+
+# Used for the disguise option Material
+"STONE_SPEAR": "STONE_SPEAR"
+
+# Used for the disguise option Material
+"SULFUR_CUBE_BUCKET": "SULFUR_CUBE_BUCKET"
+
+# Used for the disguise option Material
+"SULFUR_CUBE_SPAWN_EGG": "SULFUR_CUBE_SPAWN_EGG"
+
+# Used for the disguise option Material
+"WOODEN_SPEAR": "WOODEN_SPEAR"
+
+# Used for the disguise option Material
+"ZOMBIE_NAUTILUS_SPAWN_EGG": "ZOMBIE_NAUTILUS_SPAWN_EGG"
+
+# Used for the disguise option Material
+"CHISELED_CINNABAR": "CHISELED_CINNABAR"
+
+# Used for the disguise option Material
+"CHISELED_SULFUR": "CHISELED_SULFUR"
+
+# Used for the disguise option Material
+"CINNABAR": "CINNABAR"
+
+# Used for the disguise option Material
+"CINNABAR_BRICK_SLAB": "CINNABAR_BRICK_SLAB"
+
+# Used for the disguise option Material
+"CINNABAR_BRICK_STAIRS": "CINNABAR_BRICK_STAIRS"
+
+# Used for the disguise option Material
+"CINNABAR_BRICK_WALL": "CINNABAR_BRICK_WALL"
+
+# Used for the disguise option Material
+"CINNABAR_BRICKS": "CINNABAR_BRICKS"
+
+# Used for the disguise option Material
+"CINNABAR_SLAB": "CINNABAR_SLAB"
+
+# Used for the disguise option Material
+"CINNABAR_STAIRS": "CINNABAR_STAIRS"
+
+# Used for the disguise option Material
+"CINNABAR_WALL": "CINNABAR_WALL"
+
+# Used for the disguise option Material
+"GOLDEN_DANDELION": "GOLDEN_DANDELION"
+
+# Used for the disguise option Material
+"POLISHED_CINNABAR": "POLISHED_CINNABAR"
+
+# Used for the disguise option Material
+"POLISHED_CINNABAR_SLAB": "POLISHED_CINNABAR_SLAB"
+
+# Used for the disguise option Material
+"POLISHED_CINNABAR_STAIRS": "POLISHED_CINNABAR_STAIRS"
+
+# Used for the disguise option Material
+"POLISHED_CINNABAR_WALL": "POLISHED_CINNABAR_WALL"
+
+# Used for the disguise option Material
+"POLISHED_SULFUR": "POLISHED_SULFUR"
+
+# Used for the disguise option Material
+"POLISHED_SULFUR_SLAB": "POLISHED_SULFUR_SLAB"
+
+# Used for the disguise option Material
+"POLISHED_SULFUR_STAIRS": "POLISHED_SULFUR_STAIRS"
+
+# Used for the disguise option Material
+"POLISHED_SULFUR_WALL": "POLISHED_SULFUR_WALL"
+
+# Used for the disguise option Material
+"POTENT_SULFUR": "POTENT_SULFUR"
+
+# Used for the disguise option Material
+"POTTED_GOLDEN_DANDELION": "POTTED_GOLDEN_DANDELION"
+
+# Used for the disguise option Material
+"SULFUR": "SULFUR"
+
+# Used for the disguise option Material
+"SULFUR_BRICK_SLAB": "SULFUR_BRICK_SLAB"
+
+# Used for the disguise option Material
+"SULFUR_BRICK_STAIRS": "SULFUR_BRICK_STAIRS"
+
+# Used for the disguise option Material
+"SULFUR_BRICK_WALL": "SULFUR_BRICK_WALL"
+
+# Used for the disguise option Material
+"SULFUR_BRICKS": "SULFUR_BRICKS"
+
+# Used for the disguise option Material
+"SULFUR_SLAB": "SULFUR_SLAB"
+
+# Used for the disguise option Material
+"SULFUR_SPIKE": "SULFUR_SPIKE"
+
+# Used for the disguise option Material
+"SULFUR_STAIRS": "SULFUR_STAIRS"
+
+# Used for the disguise option Material
+"SULFUR_WALL": "SULFUR_WALL"
+
+# Used for the disguise option Potion Effect
+"minecraft:breath_of_the_nautilus": "minecraft:breath_of_the_nautilus"
+
+# Used for the disguise option SoundGroup
+"CAMEL_HUSK": "CAMEL_HUSK"
+
+# Used for the disguise option SoundGroup
+"PARCHED": "PARCHED"
+
+# Used for the disguise option SoundGroup
+"ZOMBIE_NAUTILUS": "ZOMBIE_NAUTILUS"
+
+# A disguise option name, has description 'Creates a fake entity to simulate a hitbox that would otherwise not be there, Interaction is default using '<width.0>:<height.0>'. 'Slime:<size>', <Living>:<scale.0>. Add an extra ':<y-offset.0>' for offsetting Y location. Read more at https://www.spigotmc.org/wiki/lib-s-disguises-using-the-commands/#interactive-bounding-boxes'
+"Interactive Box": "Interactive Box"
+
+# Description for the disguise option Interactive Box
+"Creates a fake entity to simulate a hitbox that would otherwise not be there, Interaction is default using '<width.0>:<height.0>'. 'Slime:<size>', <Living>:<scale.0>. Add an extra ':<y-offset.0>' for offsetting Y location. Read more at https://www.spigotmc.org/wiki/lib-s-disguises-using-the-commands/#interactive-bounding-boxes": "Creates a fake entity to simulate a hitbox that would otherwise not be there, Interaction is default using '<width.0>:<height.0>'. 'Slime:<size>', <Living>:<scale.0>. Add an extra ':<y-offset.0>' for offsetting Y location. Read more at https://www.spigotmc.org/wiki/lib-s-disguises-using-the-commands/#interactive-bounding-boxes"
+
+# A disguise option name, has description 'Sets the server-side hitbox half-extents as width,height,depth (full block sizes, not half-widths). Example: 1,2,1'
+"Server Hitbox": "Server Hitbox"
+
+# Description for the disguise option Server Hitbox
+"Sets the server-side hitbox half-extents as width,height,depth (full block sizes, not half-widths). Example: 1,2,1": "Sets the server-side hitbox half-extents as width,height,depth (full block sizes, not half-widths). Example: 1,2,1"

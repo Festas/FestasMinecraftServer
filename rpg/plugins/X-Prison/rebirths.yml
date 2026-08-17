@@ -1,0 +1,152 @@
+messages:
+  no-permission: "<gradient:#FFD700:#FFEA00><bold>REBIRTH</bold></gradient> <dark_gray>»</dark_gray> <red>You do not have permission to use this command.</red>"
+  player-only: "<gradient:#FFD700:#FFEA00><bold>REBIRTH</bold></gradient> <dark_gray>»</dark_gray> <red>Only players can use this command.</red>"
+  current-rebirth: "<gradient:#FFD700:#FFEA00><bold>REBIRTH</bold></gradient> <dark_gray>»</dark_gray> <gray>You are currently <gold>%rebirth%</gold></gray>"
+  rebirth-set: "<gradient:#FFD700:#FFEA00><bold>REBIRTH</bold></gradient> <dark_gray>»</dark_gray> <gray>Set <gold>%player%</gold>'s rebirth to <gold>%rebirth%</gold></gray>"
+  player-not-found: "<gradient:#FFD700:#FFEA00><bold>REBIRTH</bold></gradient> <dark_gray>»</dark_gray> <red>Player not found.</red>"
+  invalid-number: "<gradient:#FFD700:#FFEA00><bold>REBIRTH</bold></gradient> <dark_gray>»</dark_gray> <red>Invalid number. Please enter a valid integer.</red>"
+  success: "<gradient:#FFD700:#FFEA00><bold>REBIRTH</bold></gradient> <dark_gray>»</dark_gray> <green>You are now <gold><bold>Rebirth %rebirth%</bold></gold></green>"
+  fail: "<gradient:#FFD700:#FFEA00><bold>REBIRTH</bold></gradient> <dark_gray>»</dark_gray> <red>You do not meet all the requirements to rebirth.</red>"
+  max-rebirth: "<gradient:#FFD700:#FFEA00><bold>REBIRTH</bold></gradient> <dark_gray>»</dark_gray> <red>You have reached the maximum rebirth level!</red>"
+  requirement-rank: "<gradient:#FFD700:#FFEA00><bold>REBIRTH</bold></gradient> <dark_gray>»</dark_gray> <red>You must be at least Rank <white>%rank%</white> to rebirth.</red>"
+  requirement-prestige: "<gradient:#FFD700:#FFEA00><bold>REBIRTH</bold></gradient> <dark_gray>»</dark_gray> <red>You must be at least Prestige <white>%prestige%</white> to rebirth.</red>"
+  requirement-currency: "<gradient:#FFD700:#FFEA00><bold>REBIRTH</bold></gradient> <dark_gray>»</dark_gray> <red>You need <white>%amount% %currency%</white> to rebirth.</red>"
+  invalid-rebirth: "<gradient:#FFD700:#FFEA00><bold>REBIRTH</bold></gradient> <dark_gray>»</dark_gray> <red>Invalid rebirth ID.</red>"
+  no-rebirth: "<gradient:#FFD700:#FFEA00><bold>REBIRTH</bold></gradient> <dark_gray>»</dark_gray> <gray>You have not yet reborn.</gray>"
+# Title shown to player on rebirth. Supports MiniMessage. Placeholders: %rebirth% (new rebirth ID), %rebirth_prefix% (new rebirth prefix)
+rebirth-title:
+  enabled: true
+  title: '&c&lREBIRTH'
+  subtitle: '&aYou are now &eRebirth %rebirth%'
+  fade-in: 1
+  stay: 3
+  fade-out: 1
+# Sound played to player on rebirth. sound must be a valid Bukkit Sound enum name.
+rebirth-sound:
+  enabled: true
+  sound: UI_TOAST_CHALLENGE_COMPLETE
+  volume: 1.0
+  pitch: 1.0
+rebirths:
+  '0': # Default Rebirth
+    prefix: <gradient:#FFFF00:#FFD700:#FFA500><bold>R0</bold></gradient>
+    requirements:
+      - type: rank
+        enabled: false
+        value: 1 #Required Rank ID
+      - type: prestige
+        enabled: false
+        value: 0 #Required Prestige ID
+      - type: currency
+        enabled: false
+        currency: money
+        value: 10000000.0 #Required amount of money currency
+      - type: currency
+        enabled: false
+        currency: tokens
+        value: 10000000.0 #Required amount of tokens currency
+    rewards:
+      commands:
+        - lp user %player% permission set xprison.rebirth0 true #Commands to be executed when player rebirths
+  #'1':
+    #prefix: <gradient:#FFFF00:#FFD700:#FFA500><bold>R1</bold></gradient>
+    #requirements:
+      #- type: rank
+        #enabled: true
+        #value: 26 #Required Rank ID
+      #- type: prestige
+        #enabled: true
+        #value: 10 #Required Prestige ID
+      #- type: currency
+        #enabled: true
+        #currency: money
+        #value: 10000000 #Required amount of money currency
+      #- type: currency
+        #enabled: true
+        #currency: tokens
+        #value: 10000000 #Required amount of tokens currency
+    #rewards:
+      #commands:
+        #- lp user %player% permission set xprison.rebirth1 true
+
+# ---------------------------------------------------------------------------
+# Rebirths GUI (opened with /rebirths). Fully configurable.
+# Each rebirth is drawn using one of the four state templates under gui.rebirth
+# (owned/current/next/locked). The next/locked templates may include a
+# '%requirements%' lore line which expands into one line per enabled
+# requirement, coloured met/unmet.
+# Item placeholders: %id%, %prefix% / %rebirth%
+# ---------------------------------------------------------------------------
+gui:
+  title: '<gradient:#FFD700:#FFA500><bold>REBIRTHS</bold></gradient>'
+  rows: 6
+  filler: BLACK_STAINED_GLASS_PANE
+  rebirth-slots: [10, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25, 28, 29, 30, 31, 32, 33, 34]
+  # Wrappers applied to each requirement line in the %requirements% expansion.
+  requirement-met: '<green>✔ <gray>%requirement%'
+  requirement-unmet: '<red>✖ <gray>%requirement%'
+  # How each requirement type is described. %value% is the rank/prestige prefix
+  # or required amount; %currency% is the currency name (currency type only).
+  requirement-format:
+    rank: 'Rank %value%'
+    prestige: 'Prestige %value%'
+    currency: '%value% %currency%'
+  rebirth:
+    owned:
+      material: LIME_STAINED_GLASS_PANE
+      name: '%prefix% <dark_gray>(<green>Reached</green>)'
+      lore:
+        - '<gray>Rebirth <white>#%id%'
+        - '<green>✔ Already reborn.'
+    current:
+      material: NETHER_STAR
+      glow: true
+      name: '%prefix% <dark_gray>(<yellow>Current</yellow>)'
+      lore:
+        - '<gray>Rebirth <white>#%id%'
+        - '<yellow>➤ Your current rebirth.'
+    next:
+      material: BEACON
+      name: '%prefix% <dark_gray>(<gold>Next</gold>)'
+      lore:
+        - '<gray>Rebirth <white>#%id%'
+        - ' '
+        - '<gray>Requirements:'
+        - '%requirements%'
+        - ' '
+        - '<yellow>Click to rebirth!'
+    locked:
+      material: RED_STAINED_GLASS_PANE
+      name: '%prefix% <dark_gray>(<red>Locked</red>)'
+      lore:
+        - '<gray>Rebirth <white>#%id%'
+        - ' '
+        - '<gray>Requirements:'
+        - '%requirements%'
+        - '<red>🔒 Rebirth to unlock.'
+  items:
+    info:
+      slot: 4
+      material: BOOK
+      name: '<gold><bold>Rebirths'
+      lore:
+        - '<gray>Rebirth resets your rank and prestige'
+        - '<gray>in exchange for permanent rewards.'
+        - ' '
+        - '<gray>Use <yellow>/rebirth <gray>or click the'
+        - '<gray>next rebirth below.'
+    close:
+      slot: 49
+      material: BARRIER
+      name: '<red><bold>Close'
+      lore: []
+    prev-page:
+      slot: 48
+      material: ARROW
+      name: '<yellow>« Previous Page'
+      lore: []
+    next-page:
+      slot: 50
+      material: ARROW
+      name: '<yellow>Next Page »'
+      lore: []

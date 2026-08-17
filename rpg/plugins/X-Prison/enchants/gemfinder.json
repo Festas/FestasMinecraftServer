@@ -1,0 +1,36 @@
+{
+  "class": "dev.drawethree.xprison.enchants.model.impl.GemFinderEnchant",
+  "id": 22,
+  "rawName": "gemfinder",
+  "name": "<green>Gem Finder</green>",
+  "enabled": true,
+  "increaseCostBy": "baseCost * pow(1.05, level)",
+  "maxLevel": 1000,
+  "chance": 0.01,
+  "currency": "TOKENS",
+  "pickaxeLevelRequired": 1,
+  "amountToGive": "level * 500",
+  "initialCost": 250,
+  "currencyToGive": "GEMS",
+  "prestige": {
+    "enabled": true,
+    "maxPrestige": 10,
+    "requiredActivationsFormula": "2000 * pow(10, prestige)",
+    "multiplierPerPrestige": 0.25
+  },
+  "refund": {
+    "enabled": true,
+    "guiSlot": 33,
+    "percentage": 40.0
+  },
+  "gui": {
+    "name": "<green>Gem Finder</green>",
+    "material": "EMERALD",
+    "customModelData": 0,
+    "slot": 34,
+    "description": [
+      "<gray>Increases your chance to discover rare gems</gray>",
+      "<gray>while mining.</gray>"
+    ]
+  }
+}
