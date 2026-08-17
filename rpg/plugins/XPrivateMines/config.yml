@@ -95,8 +95,8 @@ auto-save-interval-seconds: 90
 # How often (in seconds) plugin saves all mine data.
 
 economy:
-  type: Vault # [Available: Vault, X-Prison, ExcellentEconomy, PlayerPoints]
-  currency: tokens # currency name, only used for X-Prison and ExcellentEconomy
+  type: X-Prison # [Available: Vault, X-Prison, ExcellentEconomy, PlayerPoints]
+  currency: money # currency name, only used for X-Prison and ExcellentEconomy
 
 player-cooldowns:
   mine-reset: 10 # in seconds

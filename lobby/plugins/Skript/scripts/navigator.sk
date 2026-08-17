@@ -29,6 +29,8 @@ command /guide:
 
 # --- 2. ALIASES (Direktwahl) ---
 command /rpg:
+    description: Öffnet die Server-Auswahl (Mining-Server)
+    aliases: /mining
     trigger:
         execute player command "dm open server_selector"
 

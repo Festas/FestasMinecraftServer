@@ -439,26 +439,26 @@ items:
       - "[player] titel set schatten"
       - "[message] &aTitel &8Schatten &aaktiviert!"
 
-  titel_krieger:
+  titel_bergmann:
     priority: 1
     slot: 15
-    material: IRON_SWORD
-    display_name: "&cKrieger"
+    material: IRON_PICKAXE
+    display_name: "&fBergmann"
     lore:
-      - "&7Der Titel eines tapferen Kriegers."
+      - "&7Der Titel eines fleißigen Bergmanns."
       - "&7Kosten: &e8.000 Münzen"
       - ""
-      - '%lore_has_permission_cosmetics.titel.krieger%'
+      - '%lore_has_permission_cosmetics.titel.bergmann%'
     click_requirement:
       requirements:
         permission:
           type: has permission
-          permission: cosmetics.titel.krieger
+          permission: cosmetics.titel.bergmann
           deny_commands:
             - "[message] &cDu hast diesen Titel noch nicht freigeschaltet!"
     click_commands:
-      - "[player] titel set krieger"
-      - "[message] &aTitel &cKrieger &aaktiviert!"
+      - "[player] titel set bergmann"
+      - "[message] &aTitel &fBergmann &aaktiviert!"
 
   titel_weiser:
     priority: 1

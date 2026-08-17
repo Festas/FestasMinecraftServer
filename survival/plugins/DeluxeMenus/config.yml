@@ -22,6 +22,4 @@ gui_menus:
     file: warps.yml
   warps_survival:
     file: warps_survival.yml
-  mmohud_menu:
-    file: mmohud_menu.yml
 

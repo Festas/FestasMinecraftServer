@@ -48,30 +48,30 @@ items:
       - ''
       - '&eBefehle: &7/rankup, /shop, /jobs, /plot'
 
-  # --- RPG SERVER ---
+  # --- MINING SERVER (recycelter rpg-Slot) ---
   'rpg_guide':
-    material: DIAMOND_SWORD
+    material: DIAMOND_PICKAXE
     slot: 12
-    display_name: '&5&l⚔ RPG Server'
+    display_name: '&b&l⛏ Mining Server'
     lore:
-      - '&7Der RPG Server bietet eine'
-      - '&7vollständige MMO-Erfahrung:'
+      - '&7Der Mining Server dreht sich ums'
+      - '&7Abbauen, Aufsteigen und Aufwerten:'
       - ''
-      - '&6Klassen:'
-      - '&8» &fKrieger &7- Tank & Nahkampf'
-      - '&8» &fMagier &7- Magie & Fernkampf'
-      - '&8» &fAssassine &7- Stealth & Schaden'
-      - '&8» &fBogenschütze &7- Fernkampf & Fallen'
-      - '&8» &fSchamane &7- Heilung & Support'
-      - '&8» &fBeschwörer &7- Kreaturen beschwören'
+      - '&6Abbau-Zonen:'
+      - '&8» &fEigene Zonen &7die du nach und nach freischaltest'
+      - '&8» &fAuto-Reset &7füllt die Zonen wieder auf'
+      - '&8» &fAutosell &7verkauft Blöcke direkt beim Abbau'
       - ''
-      - '&6Features:'
-      - '&8» &fDungeons &7mit Bossen und Loot'
-      - '&8» &fQuests &7mit spannender Story'
-      - '&8» &fCustom Mobs &7mit besonderen Fähigkeiten'
-      - '&8» &fSkill-Trees &7für jede Klasse'
+      - '&6Progression:'
+      - '&8» &fRänge &7durch Geld verdienen (Rankup)'
+      - '&8» &fPrestige &7für Multiplikatoren'
+      - '&8» &fPrivate Mines &7für dich allein'
       - ''
-      - '&eBefehle: &7/class, /skills, /quests'
+      - '&6Spitzhacken:'
+      - '&8» &fAufwertbare Spitzhacken &7bauen mehr Blöcke auf einmal ab'
+      - '&8» &fEnchants &7für Tempo, Boni und Extras'
+      - ''
+      - '&eBefehle: &7/mine, /rankup, /prestige, /pmine'
 
   # --- SKYBLOCK ---
   'skyblock_guide':
@@ -79,7 +79,7 @@ items:
     slot: 14
     display_name: '&b&l🏝 Skyblock'
     lore:
-      - '&7MMO Skyblock mit RPG-Elementen:'
+      - '&7Überarbeiteter Skyblock mit Freunde-Koop:'
       - ''
       - '&6Skyblock:'
       - '&8» &fEigene Insel &7bauen und erweitern'
@@ -87,16 +87,14 @@ items:
       - '&8» &fInsel-Upgrades &7und Level-System'
       - '&8» &fCoop-Inseln &7mit Freunden'
       - ''
-      - '&6MMO-System:'
-      - '&8» &f6 Klassen &7(wie auf RPG)'
-      - '&8» &fSkills & Level &7Progression'
+      - '&6Progression:'
       - '&8» &fCollections &7für Belohnungen'
       - '&8» &fBazaar &7für den Marktplatz'
       - ''
-      - '&7Deine Klasse und Items werden'
-      - '&7zwischen RPG und Skyblock synchronisiert!'
+      - '&7Lade deine Freunde ein und baut'
+      - '&7gemeinsam an einer Insel!'
       - ''
-      - '&eBefehle: &7/is, /class, /skills'
+      - '&eBefehle: &7/is, /is invite'
 
   # --- NETZWERK INFO ---
   'network_info':
