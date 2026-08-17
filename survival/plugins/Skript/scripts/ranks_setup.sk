@@ -143,6 +143,79 @@ command /setupranktags:
         wait 5 ticks
         send "&7- maincharacter &8(Main-Character)" to console
 
+        # --- CMI Autorank-Track + cmi.rank Nodes (idempotent, mehrfach ausfuehren OK) ---
+        send "&eSetze CMI Autorank-Track (idempotent)..." to console
+        execute console command "luckperms createtrack autorank"
+        wait 15 ticks
+        execute console command "luckperms track autorank append default"
+        wait 15 ticks
+        execute console command "luckperms track autorank append lauch"
+        wait 15 ticks
+        execute console command "luckperms track autorank append knecht"
+        wait 15 ticks
+        execute console command "luckperms track autorank append chiller"
+        wait 15 ticks
+        execute console command "luckperms track autorank append ticker"
+        wait 15 ticks
+        execute console command "luckperms track autorank append hustler"
+        wait 15 ticks
+        execute console command "luckperms track autorank append macher"
+        wait 15 ticks
+        execute console command "luckperms track autorank append tuersteher"
+        wait 15 ticks
+        execute console command "luckperms track autorank append bratan"
+        wait 15 ticks
+        execute console command "luckperms track autorank append bre"
+        wait 15 ticks
+        execute console command "luckperms track autorank append ehrenmann"
+        wait 15 ticks
+        execute console command "luckperms track autorank append loewe"
+        wait 15 ticks
+        execute console command "luckperms track autorank append maschine"
+        wait 15 ticks
+        execute console command "luckperms track autorank append baba"
+        wait 15 ticks
+        execute console command "luckperms track autorank append maincharacter"
+        wait 15 ticks
+        send "&7- autorank Track: default -> maincharacter gesetzt" to console
+
+        send "&eSetze cmi.rank Erkennungs-Nodes fuer CMI..." to console
+        execute console command "luckperms group default permission set cmi.rank.default true"
+        wait 5 ticks
+        execute console command "luckperms group lauch permission set cmi.rank.lauch true"
+        wait 5 ticks
+        execute console command "luckperms group knecht permission set cmi.rank.knecht true"
+        wait 5 ticks
+        execute console command "luckperms group chiller permission set cmi.rank.chiller true"
+        wait 5 ticks
+        execute console command "luckperms group ticker permission set cmi.rank.ticker true"
+        wait 5 ticks
+        execute console command "luckperms group hustler permission set cmi.rank.hustler true"
+        wait 5 ticks
+        execute console command "luckperms group macher permission set cmi.rank.macher true"
+        wait 5 ticks
+        execute console command "luckperms group tuersteher permission set cmi.rank.tuersteher true"
+        wait 5 ticks
+        execute console command "luckperms group bratan permission set cmi.rank.bratan true"
+        wait 5 ticks
+        execute console command "luckperms group bre permission set cmi.rank.bre true"
+        wait 5 ticks
+        execute console command "luckperms group ehrenmann permission set cmi.rank.ehrenmann true"
+        wait 5 ticks
+        execute console command "luckperms group loewe permission set cmi.rank.loewe true"
+        wait 5 ticks
+        execute console command "luckperms group maschine permission set cmi.rank.maschine true"
+        wait 5 ticks
+        execute console command "luckperms group baba permission set cmi.rank.baba true"
+        wait 5 ticks
+        execute console command "luckperms group maincharacter permission set cmi.rank.maincharacter true"
+        wait 5 ticks
+        send "&7- cmi.rank.* Nodes fuer default -> maincharacter gesetzt" to console
+
+        execute console command "luckperms group default permission unset autorank"
+        wait 5 ticks
+        send "&7- legacy Node 'autorank' auf default entfernt (falls vorhanden)" to console
+
         # --- Donator-Raenge ---
         execute console command "luckperms creategroup flexer"
         wait 15 ticks
@@ -273,4 +346,4 @@ command /setupranktags:
         wait 5 ticks
         send "&7- inhaber &8(Inhaber)" to console
 
-        send "&aFERTIG! Alle Rang-Tags wurden gesetzt." to console
+        send "&aFERTIG! Alle Rang-Tags, autorank-Track und cmi.rank-Nodes wurden gesetzt." to console
