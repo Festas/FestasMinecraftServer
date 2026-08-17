@@ -11,6 +11,7 @@ Dokumentation für den Survival-Server mit integriertem Tycoon-Gamemode.
 - [TYCOON.md](TYCOON.md) — Komplette Tycoon-Gamemode-Referenz (Mechaniken, Systeme, Befehle)
 - [PLOTS.md](PLOTS.md) — Plot-System (Multi-Plot, Merging, Reset-Verhalten, Permissions)
 - [PROGRESSION.md](PROGRESSION.md) — Rangaufstieg, Prestige, Economy-Fluss
+- [PLUGINS.md](PLUGINS.md) — Fokussierter Plugin-Stack: Ist-Bestand + empfohlene Extra-Plugins (Anti-Cheat, Logging, Backups u. a.)
 
 ---
 
@@ -45,6 +46,8 @@ Dokumentation für den Survival-Server mit integriertem Tycoon-Gamemode.
 | **WorldGuard** / **FAWE** / **AxiomPaper** | Regionen-Schutz & Building |
 
 > Vollständige, ordnergenaue Plugin-Liste siehe [../PLUGINS.md](../PLUGINS.md#survival-server-plugins).
+> Fokussierter Stack inkl. **empfohlener Extra-Plugins** (Anti-Cheat, Block-Logging, Backups, Auto-Restart):
+> [PLUGINS.md](PLUGINS.md).
 > Bei der 26.2-Aufräumaktion entfernt: **EssentialsX**, **GriefPrevention**, **PlayerPoints**, **DecentHolograms** (Basis-Befehle & Hologramme laufen jetzt über CMI).
 
 ---
