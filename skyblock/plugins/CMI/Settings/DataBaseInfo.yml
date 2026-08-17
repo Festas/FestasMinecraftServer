@@ -1,13 +1,13 @@
 storage:
   # storage method, can be MySQL or sqlite
   # ATTENTION! DON'T USE SAME DATABASE TABLES FOR MORE THEN ONE SERVER, YOU WILL HAVE UNEXPECTED ISSUES. EACH SERVER SHOULD HAVE ITS OWN DATABASE TABLE SETUP
-  method: MySQL
+  method: sqlite
 mysql:
   # Requires Mysql.
-  username: CHANGE_ME
-  password: 'CHANGE_ME'
-  hostname: 172.25.0.1:3306
-  database: s4_cmi
+  username: root
+  password: ''
+  hostname: localhost:3306
+  database: minecraft
   # Valid characters are a-z 0-9 and _
   tablePrefix: CMI_
   # If you have no clue what these values do, then keep it at default values

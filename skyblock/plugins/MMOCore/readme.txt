@@ -1,1 +1,0 @@
-Hier sind alle Klassen und die ganze Gamelogic enthalten. Ich habe sechs klassen von SamusDEV hier drinnen (awakened_klasse) die noch auf deutsch übersetzt werden müssen. Generell muss alles auf deutsch übersetzt werden
