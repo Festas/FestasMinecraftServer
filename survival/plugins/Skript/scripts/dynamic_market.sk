@@ -177,7 +177,7 @@ command /boerse:
             set {_price} to getMarketPrice({_item})
             set {_trend} to getTrend({_item})
             set {_multi} to {boerse_multi::%{_item}%}
-            send "&8  %{_name}%: &e%{_price}%€ &8(&7%{_multi}%%&8) %{_trend}%"
+            send "&8  %{_name}%: &e%{_price}%€ &8(&7%{_multi}%\%&8) %{_trend}%"
 
         send ""
         send "&8  &m──────────────────────────────────"
@@ -209,11 +209,11 @@ command /boerse detail <text>:
         send ""
         send "{@prefix}&7Basispreis: &f%{_base}%€"
         send "{@prefix}&7Aktueller Preis: &e%{_current}%€"
-        send "{@prefix}&7Multiplikator: &f%{_multi}%%"
+        send "{@prefix}&7Multiplikator: &f%{_multi}%\%"
         send "{@prefix}&7Trend: %{_trend}%"
         send "{@prefix}&7Verkäufe (aktuell): &f%{_sold}%"
-        send "{@prefix}&7Min. Preis: &c%{_base} * 50 / 100%€ &7(50%%)"
-        send "{@prefix}&7Max. Preis: &a%{_base} * 200 / 100%€ &7(200%%)"
+        send "{@prefix}&7Min. Preis: &c%{_base} * 50 / 100%€ &7(50\%)"
+        send "{@prefix}&7Max. Preis: &a%{_base} * 200 / 100%€ &7(200\%)"
         send ""
         send "&8&m─────────────────────────────────────"
 

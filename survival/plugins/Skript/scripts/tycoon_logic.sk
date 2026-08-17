@@ -292,9 +292,9 @@ command /tycoon_perform_rankup <player> <text> <text>:
         send "&8[&6Tycoon&8] &eAufstieg wird vorbereitet... &7(Bitte warten)" to {_p}
         
         # 1. FREEZE
-        apply potion of slowness of tier 255 without particles to {_p} for 8 seconds
-        apply potion of jump boost of tier 200 without particles to {_p} for 8 seconds
-        apply potion of blindness of tier 1 without particles to {_p} for 4 seconds
+        apply slowness 255 to {_p} for 8 seconds
+        apply jump boost 200 to {_p} for 8 seconds
+        apply blindness 1 to {_p} for 4 seconds
         
         # 5. FINALER RESET
         clear {_p}'s inventory
