@@ -60,17 +60,21 @@ Vollständiger, für dieses Setup optimierter Plugin-Stack (inkl. Recycling- und
 [PLUGINS.md](PLUGINS.md). Shortlist inkl. 26.2-Verfügbarkeit in
 [../NEW_SERVERS.md → Abschnitt 3.2](../NEW_SERVERS.md#32-mining-spezifisch).
 
-- **Mining-/Zonen-Kern** (custom Spitzhacken, Abbau-Regionen, Auto-Regeneration — Blocker zuerst verifizieren)
+- **Mining-/Zonen-Kern** — zwei Wege: **(A, empfohlen)** ein gebündelter Prison-/Mining-Core (**X-Prison**,
+  alt. EdPrison/VortexPrisonCore) deckt Spitzhacke, Mehrblock-Abbau, Zonen-Auto-Reset, Auto-Sell & Prestige in
+  einem Plugin ab; **(B)** modular via **EcoItems** (Spitzhacke) + **EcoEnchants** (Area-Abbau) + **AxMines**
+  (Zonen/Auto-Regeneration). 26.2-Build zuerst verifizieren (Blocker).
 - **Region-/Schutz-Plugin** (WorldGuard) — bereits im Netzwerk (Zonengrenzen, kein Griefing)
 - **WorldEdit/FAWE** (Zonen bauen/zurücksetzen) — bereits im Netzwerk
-- **Economy** (Vault-kompatibel) + **Shop/Auto-Sell** (Blöcke verkaufen)
-- **Cosmetics/Battle-Pass**-Plugin (Retention)
+- **Economy** (Vault) + **Shop/Auto-Sell** (**EconomyShopGUI**; bei Weg A Core-intern)
+- **Cosmetics/Battle-Pass** (**BattlePass** oder Skript-Pass; **PlayerParticles** für Trails recyceln)
 
 ---
 
 ## Offene Punkte
 
-- Konkretes 26.2-taugliches Plugin für **Spitzhacken-Upgrades + Mehrblock-Abbau** festlegen (Blocker).
+- Konkretes 26.2-taugliches Plugin für **Spitzhacken-Upgrades + Mehrblock-Abbau** festlegen: Weg A
+  (**X-Prison**-Core) oder Weg B (**EcoItems + EcoEnchants + AxMines**) — 26.2-Build bestätigen (Blocker).
 - Zonen-Design: Anzahl Zonen zum Launch, Block-Sets, Freischalt-Kosten, Balancing der Verkaufspreise.
 - Abbau-Muster pro Spitzhacken-Stufe (1×1 → 3×3 → …) und Auto-Regenerations-Tempo festlegen.
 - Battle-Pass-Umfang und Cosmetic-Währung (siehe offene Economy-Frage in

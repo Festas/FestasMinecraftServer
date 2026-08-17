@@ -112,12 +112,12 @@ Die Weichenstellung fällt auf einen **überarbeiteten Skyblock** plus einen neu
 
 | Plugin | Zweck | 26.2 | Hinweis |
 |--------|-------|:----:|--------|
-| Mining-/Zonen-Kern (aufwertbare **Spitzhacke**, Mehrblock-Abbau, Regionen) | Kern-Loop | 🔶 prüfen | Etabliertes, gepflegtes Plugin wählen (Blocker!) |
-| **Auto-Regeneration** der Abbau-Zonen | Blöcke füllen sich wieder auf | 🔶 prüfen | Ggf. im Zonen-Kern enthalten |
+| Mining-/Zonen-Kern — **A) X-Prison** (Core) *oder* **B) EcoItems + EcoEnchants + AxMines** (modular) | Kern-Loop: Spitzhacke, Mehrblock-Abbau, Zonen | 🔶 prüfen | A = wenigste Plugins/Wartung (empfohlen), B = flexibler; Blocker! |
+| **Auto-Regeneration** der Abbau-Zonen (in X-Prison bzw. **AxMines**/JetsPrisonMines enthalten) | Blöcke füllen sich wieder auf | 🔶 prüfen | Bei Weg A im Core enthalten |
 | WorldGuard | Zonengrenzen, Schutz (kein Griefing) | ✅ | Bereits im Netzwerk |
 | WorldEdit/FAWE | Zonen bauen/zurücksetzen | ✅ | Bereits im Netzwerk |
-| Shop/Auto-Sell (Vault-kompatibel) | Blöcke verkaufen → Upgrades finanzieren | 🔶 prüfen | Economy-Sink & -Quelle |
-| Cosmetics-Plugin | Trails, Effekte, Battle-Pass | 🔶 prüfen | Retention/Monetarisierung |
+| **EconomyShopGUI** (Shop/Auto-Sell, Vault-kompatibel) | Blöcke verkaufen → Upgrades finanzieren | 🔶 prüfen | Bei Weg A Core-intern; Economy-Sink & -Quelle |
+| **BattlePass** / Skript-Pass + **PlayerParticles** (Cosmetics) | Trails, Effekte, Battle-Pass | 🔶 prüfen | Retention/Monetarisierung |
 
 ### 3.3 Skyblock-spezifisch
 

@@ -2,8 +2,9 @@
 
 Vollständige Übersicht aller verwendeten Plugins pro Server.
 
-> **📌 Server-spezifische „optimale" Plugin-Stacks:** Für die beiden neu ausgerichteten Server gibt es
-> fokussierte Stack-Dokumente mit Empfehlungen und offenen Entscheidungen:
+> **📌 Server-spezifische „optimale" Plugin-Stacks:** Für jeden Server gibt es fokussierte Stack-Dokumente mit
+> Ist-Bestand, Empfehlungen und offenen Entscheidungen:
+> [lobby/PLUGINS.md](lobby/PLUGINS.md) · [survival/PLUGINS.md](survival/PLUGINS.md) ·
 > [skyblock/PLUGINS.md](skyblock/PLUGINS.md) · [mining/PLUGINS.md](mining/PLUGINS.md).
 
 > **⚠️ Stand: Umstellung auf 26.2** — Alle Server laufen auf **Minecraft 26.2**. Der Fokus liegt aktuell auf **Lobby und Survival**; deren Plugin-Listen wurden frisch aufgeräumt und spiegeln den echten Ordnerinhalt wider. **Skyblock** wird überarbeitet und behalten (ohne Gilden, mit Freunde-Koop); zusätzlich kommt ein neuer **Mining**-Server, der den **`rpg`-Slot recycelt**. Der Abschnitt zu **RPG** ist **Archiv** — der RPG-**Spielmodus** wird eingestellt, der Server-Slot `rpg` wird zum Mining-Server.
@@ -117,6 +118,7 @@ Vollständige Übersicht aller verwendeten Plugins pro Server.
 ## Lobby Server Plugins
 
 > **Aktiv.** Aufgeräumt und neu übertragen auf 26.2. Diese Liste entspricht dem Inhalt von `lobby/plugins/`.
+> **Fokussierter Stack inkl. Retention-Empfehlungen:** [lobby/PLUGINS.md](lobby/PLUGINS.md).
 
 ### Management & Core
 
@@ -186,6 +188,8 @@ Vollständige Übersicht aller verwendeten Plugins pro Server.
 ## Survival Server Plugins
 
 > **Aktiv.** Aufgeräumt und neu übertragen auf 26.2. Diese Liste entspricht dem Inhalt von `survival/plugins/`.
+> **Fokussierter Stack inkl. empfohlener Extra-Plugins (Anti-Cheat, Logging, Backups u. a.):**
+> [survival/PLUGINS.md](survival/PLUGINS.md).
 
 ### Tycoon & Progression
 
