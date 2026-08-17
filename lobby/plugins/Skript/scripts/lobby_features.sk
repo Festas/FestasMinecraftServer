@@ -15,7 +15,7 @@ on script load:
     set {lobby_msgs::4} to "&c✦ &7Lies die Regeln: &e/rules &c✦"
     set {lobby_msgs::5} to "&b✦ &7Hilfe brauchst du? &e/guide &b✦"
     set {lobby_msgs::6} to "&6✦ &7Tycoon: 25 Ränge & Dynamische Börse! &6✦"
-    set {lobby_msgs::7} to "&a✦ &7RPG: 6 Klassen, Dungeons & Quests! &a✦"
+    set {lobby_msgs::7} to "&a✦ &7Mining: Abbau-Zonen & immer stärkere Spitzhacken! &a✦"
     set {lobby_msgs::8} to "&3✦ &7Skyblock: Inseln, Minions & Skills! &3✦"
     set {lobby_msgs::9} to "&e✦ &7Vote für den Server: &a/vote &e✦"
     set {lobby_msgs::10} to "&5✦ &7NEU: Prestige-System & Boss-Events! &5✦"

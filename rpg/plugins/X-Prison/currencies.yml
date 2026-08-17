@@ -24,7 +24,7 @@ messages:
 currencies:
   money:
     enabled: true # If false, players won't be able to use this currency
-    starting-amount: 1000000  # Initial balance for new players
+    starting-amount: 500  # Initial balance for new players
     max-amount: "1E48"  # Effectively unlimited (supports S-scale and beyond); set a plain number to impose a cap
     display-name: "Money"  # Shown in GUI or messages
     format: "#,##0.##"  # Number formatting
@@ -40,7 +40,7 @@ currencies:
         - '<yellow>➥ <white>Right-Click to Redeem'  # Description/lore line
   tokens:
     enabled: true
-    starting-amount: 1000000
+    starting-amount: 0
     max-amount: "1E48"  # Effectively unlimited (supports S-scale and beyond); set a plain number to impose a cap
     display-name: "Tokens"
     format: "#.##"
@@ -56,7 +56,7 @@ currencies:
         - '<yellow>➥ <white>Right-Click to Redeem'
   gems:
     enabled: true
-    starting-amount: 1000000
+    starting-amount: 0
     max-amount: "1E48"  # Effectively unlimited (supports S-scale and beyond); set a plain number to impose a cap
     display-name: "Gems"
     format: "#.##"

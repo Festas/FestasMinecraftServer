@@ -25,7 +25,7 @@ messages:
   lucky_mode_disabled: '<gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>Lucky Mode <red>Disabled</red>.'
   explosive_disabled: '<gradient:#FF5555:#AA0000:#550000><bold>EXPLOSIVE</bold></gradient> <dark_gray>»</dark_gray> <white>Enchantment <yellow><bold>DISABLED</bold></yellow>'
   explosive_enabled: '<gradient:#FF5555:#AA0000:#550000><bold>EXPLOSIVE</bold></gradient> <dark_gray>»</dark_gray> <white>Enchantment <yellow><bold>ENABLED</bold></yellow>'
-  value_no_permission: '<gradient:#FFFF00:#FFD700:#FFA500><bold>VALUE</bold></gradient> <dark_gray>»</dark_gray> <white>No Permission, Unlock at <yellow>store.yourserver.com</yellow>'
+  value_no_permission: '<gradient:#FFFF00:#FFD700:#FFA500><bold>VALUE</bold></gradient> <dark_gray>»</dark_gray> <white>No Permission, Unlock at <yellow>store.festas-builds.com</yellow>'
   value_no_pickaxe: '<gradient:#FFFF00:#FFD700:#FFA500><bold>VALUE</bold></gradient> <dark_gray>»</dark_gray> <white>You must hold a pickaxe in your hand.'
   value_value: '<gradient:#FFFF00:#FFD700:#FFA500><bold>VALUE</bold></gradient> <dark_gray>»</dark_gray> <yellow>%player%''s</yellow> <white>Pickaxe Value: <yellow>%amount%</yellow>'
   value_cooldown: '<gradient:#FFFF00:#FFD700:#FFA500><bold>VALUE</bold></gradient> <dark_gray>»</dark_gray> <white>Please wait <yellow>%time%</yellow> Seconds before using this command again.'

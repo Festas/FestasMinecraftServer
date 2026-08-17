@@ -36,7 +36,7 @@ motd:
   # The MOTD that will be broadcasted to Minecraft: Bedrock Edition clients. This is irrelevant if "passthrough-motd" is set to true.
   # If either of these are empty, the respective string will default to "Geyser"
   primary-motd: Festas Builds
-  secondary-motd: Survival + Tycoon + RPG
+  secondary-motd: Survival + Tycoon + Mining
 
   # Whether Geyser should relay the MOTD from the Java server to Bedrock players.
   passthrough-motd: true
