@@ -27,7 +27,8 @@ Die Spalte **Status** ordnet jedes Plugin ein:
 | **NextGens** | Generator-System — **Kern des Tycoon** (25 Tiers × Sub-Levels, Auto-Produktion) | ✅ Kern |
 | **Rankup** | 25-stufige, geldbasierte Rang-Progression | ✅ Kern |
 | **Skript** | Custom Tycoon-Logik (Sell Wand, Chunk Collector, Prestige, Casino, Boss-/Weekly-Events, Daily Rewards, dynamische Börse) | ✅ Kern |
-| **Autorank** | Spielzeit-basierte Belohnungen/Meilensteine | 🧹 Redundanz prüfen |
+| **CMI** (Rang-Engine) | Zeitbasierte Rang-Leiter (`autorank`-Track) — treibt LuckPerms per `AutoRankUp`, siehe [ZEITRANG_CMI.md](ZEITRANG_CMI.md) | ✅ Kern |
+| ~~**Autorank**~~ | ~~Spielzeit-basierte Belohnungen/Meilensteine~~ — **entfernt**, durch CMI-Rang-Engine ersetzt | ❌ Entfernt |
 
 ---
 
@@ -160,7 +161,7 @@ Die Spalte **Status** ordnet jedes Plugin ein:
 | Aktuell | Vorschlag | Warum wechseln (Trade-off) | Status |
 |---------|-----------|----------------------------|:------:|
 | **ChestShop** (Schild-basiert, alt) | **QuickShop-Hikari** *(frei)* | Moderne GUI, Bedrock-freundlicher, aktiv gepflegt, bessere Preis-/Log-Features. **Migration** der Spieler-Läden nötig → nur wenn Player-Shops wichtig sind. | 🔁 Upgrade prüfen |
-| **Autorank** | **CMI**-eigene Playtime-/AutoRank-Funktion *(vorhanden)* oder **DeluxeRankup** *(paid)* | CMI deckt zeitbasierte Ränge bereits ab → Autorank evtl. **redundant** (siehe [C](#c-redundanzen--aufräum-kandidaten)). | 🔁 Upgrade prüfen |
+| ~~**Autorank**~~ | **CMI**-eigene Playtime-/AutoRank-Funktion *(umgesetzt)* | ✅ **Erledigt:** CMI treibt die zeitbasierte Leiter (`autorank`-Track) über `AutoRankUp`; Autorank wurde entfernt. Siehe [ZEITRANG_CMI.md](ZEITRANG_CMI.md). | ✅ Erledigt |
 | **GlobalMarketPlus** | **AkariAuctionHouse** / **zAuctionHouse** | Nur falls GMP-Pflege/26.2-Support wackelt; sonst behalten. | 🔁 Nur bei Bedarf |
 | **BlueMap** | *(behalten)* | Bereits Best-in-Class; kein Wechsel nötig. | 🟢 Behalten |
 | **ShopGUIPlus** *(paid)* | *(behalten)* | Guter Standard; nur Balancing pflegen. | 🟢 Behalten |
@@ -178,7 +179,7 @@ Die Spalte **Status** ordnet jedes Plugin ein:
 
 | Plugin | Prüfen | Status |
 |--------|--------|:------:|
-| **Autorank** vs. **CMI** | CMI kann Playtime-/AutoRanks → evtl. **eines entfernen** | 🧹 Redundanz prüfen |
+| ~~**Autorank** vs. **CMI**~~ | **Erledigt:** CMI übernimmt Playtime-/AutoRanks; Autorank entfernt | ✅ Erledigt |
 | **AxiomPaper** + **FAWE** | Beide behalten (Axiom = Client-Building, FAWE = Skripte/Resets), aber Zweck dokumentieren | 🟢 Bewusst behalten |
 | **LibsDisguises** | Nur für Events/Bosse → Nutzen vs. Pflegeaufwand abwägen | 🧹 Redundanz prüfen |
 
@@ -190,7 +191,7 @@ Die Spalte **Status** ordnet jedes Plugin ein:
 - **A2–A4** (CoreProtect, Backuper, SimpleAutoRestart) als betriebskritische Basis nachrüsten.
 - **A6/A7** (DiscordSRV, NuVotifier + VotingPlugin) netzwerkweit planen; Vote-Farming via **AntiVPN** absichern.
 - **ChestShop → QuickShop-Hikari** entscheiden (Migrationsaufwand vs. Nutzen).
-- **Autorank vs. CMI** klären und ggf. eines entfernen.
+- ~~**Autorank vs. CMI** klären und ggf. eines entfernen.~~ ✅ **Erledigt:** CMI-Rang-Engine treibt die zeitbasierte Leiter, Autorank entfernt — siehe [ZEITRANG_CMI.md](ZEITRANG_CMI.md).
 - **26.2-Builds** aller ➕/🔁-Kandidaten bestätigen.
 
 ---

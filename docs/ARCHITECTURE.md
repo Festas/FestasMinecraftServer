@@ -113,7 +113,7 @@ Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
 - **NextGens** - Generator-System (Tycoon-Kern, 25 Tier × Sub-Levels)
 - **Jobs** - Job-System für Economy
 - **Rankup** - Rang-Progression-System (25 Tycoon-Ränge: Erde → Bedrock)
-- **Autorank** - Spielzeit-basierte Belohnungen (Meilensteine)
+- **CMI** (Rang-Engine) - zeitbasierte Rang-Leiter (`autorank`-Track, 14 Stufen) über `AutoRankUp` (ersetzt Autorank; siehe [survival/ZEITRANG_CMI.md](survival/ZEITRANG_CMI.md))
 - **Skript** - Custom Tycoon-Logik (Sell Wand, Chunk Collector, Nitwit Boss, Casino, Tutorial, Daily/Weekly Rewards, Prestige, dynamische Börse)
 - **PlotSquared** - Land-Claiming-System (Tycoon-Plots + Freebuild)
 - **Multiverse-Core** (+Inventories) - Verwaltung der Welten `tycoon`/`town`/`freebuild` mit getrennten Inventaren
@@ -146,7 +146,7 @@ Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
 - Plot-Reset bei Rangaufstieg (nur Haupt-Plot, zusätzliche Plots bleiben)
 - Prestige-System (10 Stufen mit permanentem Sell-Bonus bis +200%)
 - Tägliche Login-Belohnungen mit Streak-System (daily_rewards.sk)
-- Spielzeit-Belohnungen über Autorank (Meilensteine)
+- Spielzeit-basierte Rang-Leiter über die CMI-Rang-Engine (`autorank`-Track, netzwerkweit via LuckPerms; ersetzt Autorank)
 - Tutorial-System für neue Spieler (tycoon_tutorial.sk)
 
 > Siehe [docs/survival/](../docs/survival/) für vollständige Tycoon-Dokumentation.
