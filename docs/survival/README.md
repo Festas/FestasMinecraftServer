@@ -63,6 +63,7 @@ Dokumentation für den Survival-Server mit integriertem Tycoon-Gamemode.
 | `tycoon_tutorial.sk` | Onboarding-Tutorial für neue Spieler |
 | `prestige.sk` | Prestige/Rebirth-System (10 Stufen) |
 | `rankup.sk` | Rankup-Feier-Effekte (Partikel, Sounds) |
+| `ranks_setup.sk` | Setzt Tag (LuckPerms-Prefix) & Gewicht für alle Ränge — Befehl `/setupranktags` |
 | `dynamic_market.sk` | Börse mit dynamischen Preisen |
 | `achievements.sk` | 23 Achievements mit Belohnungen |
 | `daily_rewards.sk` | Tägliche Login-Belohnungen |

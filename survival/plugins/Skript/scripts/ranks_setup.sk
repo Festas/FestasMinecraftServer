@@ -1,0 +1,276 @@
+# ============================================================================
+# RANG-TAGS SETUP (LuckPerms Prefixes)
+# ----------------------------------------------------------------------------
+# Setzt fuer ALLE Raenge automatisch das korrekte Gewicht (weight) und den
+# richtigen Tag (LuckPerms-Prefix) - aehnlich wie /sthc (tycoon_setup.sk),
+# nur fuer die Haupt-Rangleiter (autorank-Track) sowie Donator- und Team-Raenge.
+#
+# Aufruf:  /setupranktags        (Permission: op)
+#
+# Hinweise:
+# 1. LuckPerms ist netzwerkweit geteilt (shared s4_perms) -> einmal auf
+#    Survival ausfuehren genuegt, gilt sofort auf allen Servern.
+# 2. Idempotent: kann jederzeit gefahrlos erneut ausgefuehrt werden. Passt du
+#    einen Tag hier an, einfach den Befehl erneut ausfuehren = fertig.
+# 3. Tycoon-Raenge (tycoon_*) werden hier bewusst NICHT angefasst, die haben
+#    ihr eigenes Setup ueber /sthc (tycoon_setup.sk, world=tycoon Kontext).
+# 4. Farbcodes: "&#rrggbb" = Hex-Farbe, "&x"/"&l" = klassische Codes.
+#    Prefix-Werte mit Leerzeichen stehen in doppelten Anfuehrungszeichen
+#    (in Skript per "" escaped). Das Leerzeichen am Ende trennt Tag vom Namen.
+# ============================================================================
+
+command /setupranktags:
+    permission: op
+    trigger:
+        send "&eStarte Rang-Tag Setup (LuckPerms)..." to console
+
+        # --- Haupt-Rangleiter (autorank-Track: default -> maincharacter) ---
+        execute console command "luckperms group default setweight 100"
+        wait 5 ticks
+        execute console command "luckperms group default meta setprefix 1 ""&#9e9e9e[&7NPC&#9e9e9e]&7 """
+        wait 5 ticks
+        send "&7- default &8(NPC)" to console
+
+        execute console command "luckperms creategroup lauch"
+        wait 15 ticks
+        execute console command "luckperms group lauch setweight 200"
+        wait 5 ticks
+        execute console command "luckperms group lauch meta setprefix 200 ""&#bdffbd[&#e3ffe3🌱 Lauch&#bdffbd]&7 """
+        wait 5 ticks
+        send "&7- lauch &8(Lauch)" to console
+
+        execute console command "luckperms creategroup knecht"
+        wait 15 ticks
+        execute console command "luckperms group knecht setweight 300"
+        wait 5 ticks
+        execute console command "luckperms group knecht meta setprefix 300 ""&#8a5a2a[&#b07b46⚒ Knecht&#8a5a2a]&7 """
+        wait 5 ticks
+        send "&7- knecht &8(Knecht)" to console
+
+        execute console command "luckperms creategroup chiller"
+        wait 15 ticks
+        execute console command "luckperms group chiller setweight 400"
+        wait 5 ticks
+        execute console command "luckperms group chiller meta setprefix 400 ""&#85f2ff[&#bdfaff❄ Chiller&#85f2ff]&7 """
+        wait 5 ticks
+        send "&7- chiller &8(Chiller)" to console
+
+        execute console command "luckperms creategroup ticker"
+        wait 15 ticks
+        execute console command "luckperms group ticker setweight 500"
+        wait 5 ticks
+        execute console command "luckperms group ticker meta setprefix 500 ""&#11ff00[&#59ff4f💊 Ticker&#11ff00]&7 """
+        wait 5 ticks
+        send "&7- ticker &8(Ticker)" to console
+
+        execute console command "luckperms creategroup hustler"
+        wait 15 ticks
+        execute console command "luckperms group hustler setweight 600"
+        wait 5 ticks
+        execute console command "luckperms group hustler meta setprefix 600 ""&#ffaa00[&#ffcc00💼 Hustler&#ffaa00]&7 """
+        wait 5 ticks
+        send "&7- hustler &8(Hustler)" to console
+
+        execute console command "luckperms creategroup macher"
+        wait 15 ticks
+        execute console command "luckperms group macher setweight 700"
+        wait 5 ticks
+        execute console command "luckperms group macher meta setprefix 700 ""&#003cff[&#4570ff🛠 Macher&#003cff]&7 """
+        wait 5 ticks
+        send "&7- macher &8(Macher)" to console
+
+        execute console command "luckperms creategroup tuersteher"
+        wait 15 ticks
+        execute console command "luckperms group tuersteher setweight 800"
+        wait 5 ticks
+        execute console command "luckperms group tuersteher meta setprefix 800 ""&#4a4a4a[&#ff3333🛡 Türsteher&#4a4a4a]&7 """
+        wait 5 ticks
+        send "&7- tuersteher &8(Türsteher)" to console
+
+        execute console command "luckperms creategroup bratan"
+        wait 15 ticks
+        execute console command "luckperms group bratan setweight 900"
+        wait 5 ticks
+        execute console command "luckperms group bratan meta setprefix 900 ""&#aa00ff[&#d475ff🤜🤛 Bratan&#aa00ff]&7 """
+        wait 5 ticks
+        send "&7- bratan &8(Bratan)" to console
+
+        execute console command "luckperms creategroup bre"
+        wait 15 ticks
+        execute console command "luckperms group bre setweight 1000"
+        wait 5 ticks
+        execute console command "luckperms group bre meta setprefix 1000 ""&#ff0066[&#ff4d94🧢 Bre&#ff0066]&7 """
+        wait 5 ticks
+        send "&7- bre &8(Bre)" to console
+
+        execute console command "luckperms creategroup ehrenmann"
+        wait 15 ticks
+        execute console command "luckperms group ehrenmann setweight 1100"
+        wait 5 ticks
+        execute console command "luckperms group ehrenmann meta setprefix 1100 ""&#ff0000[&#ffffff❤ Ehrenmann&#ff0000]&7 """
+        wait 5 ticks
+        send "&7- ehrenmann &8(Ehrenmann)" to console
+
+        execute console command "luckperms creategroup loewe"
+        wait 15 ticks
+        execute console command "luckperms group loewe setweight 1200"
+        wait 5 ticks
+        execute console command "luckperms group loewe meta setprefix 1200 ""&#ff8000[&#ffb366🦁 Löwe&#ff8000]&7 """
+        wait 5 ticks
+        send "&7- loewe &8(Löwe)" to console
+
+        execute console command "luckperms creategroup maschine"
+        wait 15 ticks
+        execute console command "luckperms group maschine setweight 1300"
+        wait 5 ticks
+        execute console command "luckperms group maschine meta setprefix 1300 ""&#00eaff[&#75f6ff🤖 Maschine&#00eaff]&7 """
+        wait 5 ticks
+        send "&7- maschine &8(Maschine)" to console
+
+        execute console command "luckperms creategroup baba"
+        wait 15 ticks
+        execute console command "luckperms group baba setweight 1400"
+        wait 5 ticks
+        execute console command "luckperms group baba meta setprefix 1400 ""&#8f0000[&#ff0000🔥 &lBABA&#8f0000]&7 """
+        wait 5 ticks
+        send "&7- baba &8(BABA)" to console
+
+        execute console command "luckperms creategroup maincharacter"
+        wait 15 ticks
+        execute console command "luckperms group maincharacter setweight 1500"
+        wait 5 ticks
+        execute console command "luckperms group maincharacter meta setprefix 1500 ""&#ff00ea&lM&#d400ea&lA&#aa00eb&lI&#7f00eb&lN &#5500ec&lC&#2a00ec&lH&#0000ec&lA&#0055ec&lR&r """
+        wait 5 ticks
+        send "&7- maincharacter &8(Main-Character)" to console
+
+        # --- Donator-Raenge ---
+        execute console command "luckperms creategroup flexer"
+        wait 15 ticks
+        execute console command "luckperms group flexer setweight 2100"
+        wait 5 ticks
+        execute console command "luckperms group flexer meta setprefix 2100 ""&8[&#bfff00&l💪 FLEXER&8]&r """
+        wait 5 ticks
+        send "&7- flexer &8(Flexer)" to console
+
+        execute console command "luckperms creategroup richkid"
+        wait 15 ticks
+        execute console command "luckperms group richkid setweight 2200"
+        wait 5 ticks
+        execute console command "luckperms group richkid meta setprefix 2200 ""&8[&#00eaff&l💎 RICH KID&8]&r """
+        wait 5 ticks
+        send "&7- richkid &8(Rich-Kid)" to console
+
+        execute console command "luckperms creategroup goennjamin"
+        wait 15 ticks
+        execute console command "luckperms group goennjamin setweight 2300"
+        wait 5 ticks
+        execute console command "luckperms group goennjamin meta setprefix 2300 ""&8[&#7300ff&l💸 GÖNNJAMIN&8]&r """
+        wait 5 ticks
+        send "&7- goennjamin &8(Gönnjamin)" to console
+
+        execute console command "luckperms creategroup gucci"
+        wait 15 ticks
+        execute console command "luckperms group gucci setweight 2400"
+        wait 5 ticks
+        execute console command "luckperms group gucci meta setprefix 2400 ""&8[&#ff00c8&l👜 GUCCI&8]&r """
+        wait 5 ticks
+        send "&7- gucci &8(Gucci)" to console
+
+        execute console command "luckperms creategroup rolex"
+        wait 15 ticks
+        execute console command "luckperms group rolex setweight 2500"
+        wait 5 ticks
+        execute console command "luckperms group rolex meta setprefix 2500 ""&8[&#ff8800&l⌚ ROLEX&8]&r """
+        wait 5 ticks
+        send "&7- rolex &8(Rolex)" to console
+
+        execute console command "luckperms creategroup pate"
+        wait 15 ticks
+        execute console command "luckperms group pate setweight 2600"
+        wait 5 ticks
+        execute console command "luckperms group pate meta setprefix 2600 ""&8[&#008f13&l🌹 PATE&8]&r """
+        wait 5 ticks
+        send "&7- pate &8(Pate)" to console
+
+        execute console command "luckperms creategroup scheich"
+        wait 15 ticks
+        execute console command "luckperms group scheich setweight 2700"
+        wait 5 ticks
+        execute console command "luckperms group scheich meta setprefix 2700 ""&8[&#e3d67f&l👳 SCHEICH&8]&r """
+        wait 5 ticks
+        send "&7- scheich &8(Scheich)" to console
+
+        execute console command "luckperms creategroup oligarch"
+        wait 15 ticks
+        execute console command "luckperms group oligarch setweight 2800"
+        wait 5 ticks
+        execute console command "luckperms group oligarch meta setprefix 2800 ""&8[&#1100ff&l⛴ OLIGARCH&8]&r """
+        wait 5 ticks
+        send "&7- oligarch &8(Oligarch)" to console
+
+        execute console command "luckperms creategroup systemdribbler"
+        wait 15 ticks
+        execute console command "luckperms group systemdribbler setweight 2900"
+        wait 5 ticks
+        execute console command "luckperms group systemdribbler meta setprefix 2900 ""&8[&#ff0000&l⚽ DRIBBLER&8]&r """
+        wait 5 ticks
+        send "&7- systemdribbler &8(Systemdribbler)" to console
+
+        execute console command "luckperms creategroup koenig"
+        wait 15 ticks
+        execute console command "luckperms group koenig setweight 3000"
+        wait 5 ticks
+        execute console command "luckperms group koenig meta setprefix 3000 ""&8[&#ffd000&l👑 KÖNIG&8]&r """
+        wait 5 ticks
+        send "&7- koenig &8(König)" to console
+
+        execute console command "luckperms creategroup endgegner"
+        wait 15 ticks
+        execute console command "luckperms group endgegner setweight 3100"
+        wait 5 ticks
+        execute console command "luckperms group endgegner meta setprefix 3100 ""&8[&#590000&l👹 ENDGEGNER&8]&r """
+        wait 5 ticks
+        send "&7- endgegner &8(Endgegner)" to console
+
+        execute console command "luckperms creategroup adminvater"
+        wait 15 ticks
+        execute console command "luckperms group adminvater setweight 3200"
+        wait 5 ticks
+        execute console command "luckperms group adminvater meta setprefix 3200 ""&8[&#00ff00&l💻 ADMIN SEIN VATER&8]&r """
+        wait 5 ticks
+        send "&7- adminvater &8(AdminVater)" to console
+
+        # --- Team-Raenge ---
+        execute console command "luckperms creategroup security"
+        wait 15 ticks
+        execute console command "luckperms group security setweight 4000"
+        wait 5 ticks
+        execute console command "luckperms group security meta setprefix 4000 ""&8[&#008cff&l👮 SECURITY&8]&f """
+        wait 5 ticks
+        send "&7- security &8(Security)" to console
+
+        execute console command "luckperms creategroup manager"
+        wait 15 ticks
+        execute console command "luckperms group manager setweight 4100"
+        wait 5 ticks
+        execute console command "luckperms group manager meta setprefix 4100 ""&8[&#009e0d&l📈 MANAGER&8]&f """
+        wait 5 ticks
+        send "&7- manager &8(Manager)" to console
+
+        execute console command "luckperms creategroup vorstand"
+        wait 15 ticks
+        execute console command "luckperms group vorstand setweight 4200"
+        wait 5 ticks
+        execute console command "luckperms group vorstand meta setprefix 4200 ""&8[&#ff0000&l⚖ VORSTAND&8]&f """
+        wait 5 ticks
+        send "&7- vorstand &8(Vorstand)" to console
+
+        execute console command "luckperms creategroup inhaber"
+        wait 15 ticks
+        execute console command "luckperms group inhaber setweight 4300"
+        wait 5 ticks
+        execute console command "luckperms group inhaber meta setprefix 4300 ""&8[&#590000&l👑 INHABER&8]&f """
+        wait 5 ticks
+        send "&7- inhaber &8(Inhaber)" to console
+
+        send "&aFERTIG! Alle Rang-Tags wurden gesetzt." to console
