@@ -87,30 +87,14 @@ Die Rangnamen in `Settings/Ranks.yml` sind **identisch** mit den LuckPerms-Grupp
 
 Die **aktive** LuckPerms-Konfiguration liegt in der MariaDB (`s4_perms`), **nicht** im Repo
 (die Datei `meine_raenge.json.gz` ist ein Export/Backup-Snapshot). Der Repo-Export ist bereits
-aktualisiert; auf dem **Live-Server** müssen die Erkennungs-Nodes einmalig gesetzt werden:
+aktualisiert; auf dem **Live-Server** übernimmt jetzt `/setupranktags` (`survival/plugins/Skript/scripts/ranks_setup.sk`) automatisch:
 
-```
-lp group lauch         permission set cmi.rank.lauch true
-lp group knecht        permission set cmi.rank.knecht true
-lp group chiller       permission set cmi.rank.chiller true
-lp group ticker        permission set cmi.rank.ticker true
-lp group hustler       permission set cmi.rank.hustler true
-lp group macher        permission set cmi.rank.macher true
-lp group tuersteher    permission set cmi.rank.tuersteher true
-lp group bratan        permission set cmi.rank.bratan true
-lp group bre           permission set cmi.rank.bre true
-lp group ehrenmann     permission set cmi.rank.ehrenmann true
-lp group loewe         permission set cmi.rank.loewe true
-lp group maschine      permission set cmi.rank.maschine true
-lp group baba          permission set cmi.rank.baba true
-lp group maincharacter permission set cmi.rank.maincharacter true
+- Anlegen des `autorank`-Tracks (`createtrack`) inkl. Reihenfolge
+  `default → lauch → knecht → chiller → ticker → hustler → macher → tuersteher → bratan → bre → ehrenmann → loewe → maschine → baba → maincharacter`.
+- Setzen aller `cmi.rank.<name>`-Erkennungs-Nodes an den Track-Gruppen (inkl. `cmi.rank.default`).
+- Bereinigung des verwaisten Legacy-Nodes via `lp group default permission unset autorank`.
 
-# Verwaisten Autorank-Node aufräumen (optional):
-lp group default permission unset autorank
-```
-
-Alternativ statt der Einzelbefehle: `/lp import meine_raenge` (Achtung — importiert den kompletten
-Export, überschreibt ggf. zwischenzeitliche Live-Änderungen).
+Die Befehle sind idempotent; erneutes Ausführen von `/setupranktags` ist unkritisch.
 
 ### 5.1 Spielzeit-Quelle prüfen
 `config.yml → PlayTimeFromStats: true` — CMI liest die Spielzeit aus den Vanilla-Statistiken.
@@ -122,7 +106,7 @@ aktuell: allgemein alle 60 s, pro Spieler alle 120 s). Ein Veteran mit z. B. 1.5
 viele Intervalle „hochklettern" und dabei **alle** Geld-/Celebration-Belohnungen nacheinander erhalten.
 
 **Empfohlene Reihenfolge:**
-1. Erst die `cmi.rank.<name>`-Nodes setzen (5.).
+1. Erst `/setupranktags` auf Survival ausführen (setzt Track + `cmi.rank.<name>`-Nodes + Cleanup automatisch).
 2. Bestehende Spieler **einmalig** per Bulk auf ihre korrekte Sprosse setzen (an ihrer bekannten
    Spielzeit ausgerichtet), z. B. `lp user <name> parent set <gruppe>` **bevor** `ranks: true`
    greift — so überspringt CMI das Nachzahlen aller Zwischenstufen.
