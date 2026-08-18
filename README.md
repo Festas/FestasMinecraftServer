@@ -12,7 +12,7 @@ Dieses Repository enthält alle Konfigurationen für ein Minecraft Paper Server 
 
 ### Aktiver Fokus
 - **Lobby**: Haupt-Hub für Spieler-Routing und Server-Navigation
-- **Survival**: Survival-Server mit Tycoon-Gamemode (eigene Economy)
+- **Survival**: Survival-Server mit Town und Freebuild (Tycoon-Gamemode aktuell deaktiviert – kommt auf eigenem Server)
 
 ### Wird eingestellt (Archiv, in Ablösung)
 - **RPG**: Vollständiger MMO-RPG Server
@@ -64,7 +64,7 @@ Das (auslaufende) MMO bot ein umfassendes Klassen-System mit **6 Klassen** (MMOC
 ### Aktive Server (Lobby & Survival)
 
 - **CMI** (+CMILib): Core-Management, Chat, Teleport, Kits, Economy-Backend
-- **NextGens**: Generator-System (Tycoon-Kern auf Survival)
+- **NextGens**: Generator-System (Tycoon-Kern, aktuell deaktiviert – kommt auf eigenem Server)
 - **Jobs** & **Rankup**: Economy-Jobs und Rang-Progression (Survival)
 - **PlotSquared**: Plot-Claiming (Survival)
 - **ShopGUIPlus** & **GlobalMarketPlus**: Shop & Marktplatz (Survival)
@@ -108,7 +108,7 @@ Umfassende Dokumentation findest du im [`/docs`](docs/) Verzeichnis:
 - **[Economy-System](docs/economy/README.md)** - Währungen und Shops
 
 ### Server-spezifische Dokumentation
-- **[Survival-Server](docs/survival/README.md)** — Tycoon, Plots, Progression *(aktiv)*
+- **[Survival-Server](docs/survival/README.md)** — Survival, Town, Freebuild *(aktiv; Tycoon deaktiviert — kommt auf eigenem Server)*
 - **[Skyblock-Server](docs/skyblock/README.md)** — Inseln, Freunde-Koop, Progression *(Umbau — ohne Gilden)*
 - **[Prison-Server](docs/prison/README.md)** — Abbau-Zonen, aufwertbare Spitzhacken *(neu; recycelt den `prison/`-Slot)*
 - **[RPG-Server (Archiv)](docs/prison/README.md)** - Zonen, Quests, Dungeons, Mobs, NPCs *(Spielmodus eingestellt; Slot `rpg` → Mining)*
