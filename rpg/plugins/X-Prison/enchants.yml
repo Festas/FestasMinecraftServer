@@ -2,63 +2,63 @@ messages:
   pickaxe_level_required: <gradient:#FFFF00:#FFD700:#FFA500><bold>VERZAUBERUNG</bold></gradient> <dark_gray>»</dark_gray> <white>Deine Spitzhacke muss <yellow>Stufe %pickaxe_level%</yellow> <white>sein, um diese Verzauberung zu kaufen!
   no_pickaxe_found: <gradient:#FFFF00:#FFD700:#FFA500><bold>VERZAUBERUNG</bold></gradient> <dark_gray>»</dark_gray> <white>Du hast keine Diamantspitzhacke dabei!
   enchant_max_level: <gradient:#FFFF00:#FFD700:#FFA500><bold>VERZAUBERUNG</bold></gradient> <dark_gray>»</dark_gray> <white>Diese Verzauberung ist bereits maximiert.
-  enchant_max_level_exceed: <gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>This transaction would exceed the max level for this enchant.
-  enchant_min_level_exceed: <gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>This transaction would exceed the min level for this enchant.
+  enchant_max_level_exceed: <gradient:#FFFF00:#FFD700:#FFA500><bold>VERZAUBERUNG</bold></gradient> <dark_gray>»</dark_gray> <white>Dieser Kauf würde das Maximallevel dieser Verzauberung überschreiten.
+  enchant_min_level_exceed: <gradient:#FFFF00:#FFD700:#FFA500><bold>VERZAUBERUNG</bold></gradient> <dark_gray>»</dark_gray> <white>Diese Rückerstattung würde das Minimallevel dieser Verzauberung unterschreiten.
   not_enough: <gradient:#FFFF00:#FFD700:#FFA500><bold>VERZAUBERUNG</bold></gradient> <dark_gray>»</dark_gray> <white>Du hast nicht genug <yellow>%currency%</yellow>!
-  enchant_bought: <gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>You have spent <yellow>%amount%</yellow> <white>%currency%</white>
-  enchant_bought_multiple: <gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>You have bought <yellow>%amount%</yellow> levels of <reset>%enchant%</reset> <white>for <yellow>%cost%</yellow> <white>%currency%</white>
-  enchant_refunded: <gradient:#FFFF00:#FFD700:#FFA500><bold>REFUND</bold></gradient> <dark_gray>»</dark_gray> <white>You have refunded <yellow>%amount%</yellow> levels of %enchant%
-  enchant_refund_amount: <gradient:#FFFF00:#FFD700:#FFA500><bold>REFUND</bold></gradient> <dark_gray>»</dark_gray> <white>You have received <yellow>%amount%</yellow> <white>%currency%</white> back
-  enchant_cant_disenchant: <gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>This enchant can't be disenchanted.
-  enchant_no_level: <gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>You do not have this enchant!
-  charity_other: <gradient:#FFFF00:#FFD700:#FFA500><bold>CHARITY</bold></gradient> <dark_gray>»</dark_gray> <yellow>%player%'s</yellow> <white>enchant found you <yellow>%amount%</yellow>
-  charity_your: <gradient:#FFFF00:#FFD700:#FFA500><bold>CHARITY</bold></gradient> <dark_gray>»</dark_gray> <white>Your enchant found you <yellow>%amount%</yellow>
-  blessing_other: <gradient:#FFFF00:#FFD700:#FFA500><bold>BLESSING</bold></gradient> <dark_gray>»</dark_gray> <yellow>%player%'s</yellow> <white>enchant found you <yellow>%amount%</yellow> <white>Tokens
-  blessing_your: <gradient:#FFFF00:#FFD700:#FFA500><bold>BLESSING</bold></gradient> <dark_gray>»</dark_gray> <white>Your enchant found you <yellow>%amount%</yellow> <white>Tokens
-  layer_disabled: <gradient:#FFFF00:#FFD700:#FFA500><bold>JACKHAMMER</bold></gradient> <dark_gray>»</dark_gray> <white>Enchantment <yellow><bold>DISABLED</bold></yellow>
-  layer_enabled: <gradient:#FFFF00:#FFD700:#FFA500><bold>JACKHAMMER</bold></gradient> <dark_gray>»</dark_gray> <white>Enchantment <yellow><bold>ENABLED</bold></yellow>
-  lucky_booster_on: <gradient:#FFFF00:#FFD700:#FFA500><bold>LUCKYBOOSTER</bold></gradient> <dark_gray>»</dark_gray> <white>Lucky Mode has <yellow><bold>activated</bold></yellow>, <gold><bold>X2 Money & Tokens</bold></gold> for <yellow>5:00 Minutes</yellow>
-  lucky_booster_off: <gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>Lucky Mode has <yellow><bold>deactivated</bold></yellow>.
-  block_booster_on: <gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>Double Blocks has <yellow><bold>activated</bold></yellow>, <gold><bold>X2 Blocks</bold></gold> for <yellow>5:00 Minutes</yellow>
-  block_booster_off: <gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>Double Blocks has <yellow><bold>deactivated</bold></yellow>
-  lucky_mode_timeleft: '<gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>Lucky Mode Activated For: <green><bold>%timeleft%</bold></green>.'
+  enchant_bought: <gradient:#FFFF00:#FFD700:#FFA500><bold>VERZAUBERUNG</bold></gradient> <dark_gray>»</dark_gray> <white>Du hast <yellow>%amount%</yellow> <white>%currency% ausgegeben.
+  enchant_bought_multiple: <gradient:#FFFF00:#FFD700:#FFA500><bold>VERZAUBERUNG</bold></gradient> <dark_gray>»</dark_gray> <white>Du hast <yellow>%amount%</yellow> <white>Level von <reset>%enchant%</reset> <white>für <yellow>%cost%</yellow> <white>%currency% gekauft.
+  enchant_refunded: <gradient:#FFFF00:#FFD700:#FFA500><bold>RÜCKERSTATTUNG</bold></gradient> <dark_gray>»</dark_gray> <white>Du hast <yellow>%amount%</yellow> <white>Level von %enchant% zurückerstattet.
+  enchant_refund_amount: <gradient:#FFFF00:#FFD700:#FFA500><bold>RÜCKERSTATTUNG</bold></gradient> <dark_gray>»</dark_gray> <white>Du hast <yellow>%amount%</yellow> <white>%currency% zurückerhalten.
+  enchant_cant_disenchant: <gradient:#FFFF00:#FFD700:#FFA500><bold>VERZAUBERUNG</bold></gradient> <dark_gray>»</dark_gray> <white>Diese Verzauberung kann nicht zurückerstattet werden.
+  enchant_no_level: <gradient:#FFFF00:#FFD700:#FFA500><bold>VERZAUBERUNG</bold></gradient> <dark_gray>»</dark_gray> <white>Du besitzt diese Verzauberung nicht.
+  charity_other: <gradient:#FFFF00:#FFD700:#FFA500><bold>CHARITY</bold></gradient> <dark_gray>»</dark_gray> <white>Die Verzauberung von <yellow>%player%</yellow> <white>hat dir <yellow>%amount%</yellow> gebracht.
+  charity_your: <gradient:#FFFF00:#FFD700:#FFA500><bold>CHARITY</bold></gradient> <dark_gray>»</dark_gray> <white>Deine Verzauberung hat dir <yellow>%amount%</yellow> gebracht.
+  blessing_other: <gradient:#FFFF00:#FFD700:#FFA500><bold>BLESSING</bold></gradient> <dark_gray>»</dark_gray> <white>Die Verzauberung von <yellow>%player%</yellow> <white>hat dir <yellow>%amount%</yellow> <white>Token gebracht.
+  blessing_your: <gradient:#FFFF00:#FFD700:#FFA500><bold>BLESSING</bold></gradient> <dark_gray>»</dark_gray> <white>Deine Verzauberung hat dir <yellow>%amount%</yellow> <white>Token gebracht.
+  layer_disabled: <gradient:#FFFF00:#FFD700:#FFA500><bold>JACKHAMMER</bold></gradient> <dark_gray>»</dark_gray> <white>Verzauberung <yellow><bold>DEAKTIVIERT</bold></yellow>.
+  layer_enabled: <gradient:#FFFF00:#FFD700:#FFA500><bold>JACKHAMMER</bold></gradient> <dark_gray>»</dark_gray> <white>Verzauberung <yellow><bold>AKTIVIERT</bold></yellow>.
+  lucky_booster_on: '<gradient:#FFFF00:#FFD700:#FFA500><bold>LUCKYBOOSTER</bold></gradient> <dark_gray>»</dark_gray> <white>Lucky Mode wurde aktiviert: <gold><bold>x2 Geld & Token</bold></gold> <white>für <yellow>5:00 Minuten</yellow>.'
+  lucky_booster_off: <gradient:#FFFF00:#FFD700:#FFA500><bold>VERZAUBERUNG</bold></gradient> <dark_gray>»</dark_gray> <white>Lucky Mode wurde <yellow><bold>deaktiviert</bold></yellow>.
+  block_booster_on: '<gradient:#FFFF00:#FFD700:#FFA500><bold>VERZAUBERUNG</bold></gradient> <dark_gray>»</dark_gray> <white>Doppelte Blöcke wurden aktiviert: <gold><bold>x2 Blöcke</bold></gold> <white>für <yellow>5:00 Minuten</yellow>.'
+  block_booster_off: <gradient:#FFFF00:#FFD700:#FFA500><bold>VERZAUBERUNG</bold></gradient> <dark_gray>»</dark_gray> <white>Doppelte Blöcke wurden <yellow><bold>deaktiviert</bold></yellow>.
+  lucky_mode_timeleft: '<gradient:#FFFF00:#FFD700:#FFA500><bold>VERZAUBERUNG</bold></gradient> <dark_gray>»</dark_gray> <white>Lucky Mode aktiv für: <green><bold>%timeleft%</bold></green>.'
   lucky_mode_disabled: <gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>Lucky Mode ist <red>deaktiviert</red>.
-  explosive_disabled: <gradient:#FF5555:#AA0000:#550000><bold>EXPLOSIVE</bold></gradient> <dark_gray>»</dark_gray> <white>Enchantment <yellow><bold>DISABLED</bold></yellow>
-  explosive_enabled: <gradient:#FF5555:#AA0000:#550000><bold>EXPLOSIVE</bold></gradient> <dark_gray>»</dark_gray> <white>Enchantment <yellow><bold>ENABLED</bold></yellow>
-  value_no_permission: <gradient:#FFFF00:#FFD700:#FFA500><bold>VALUE</bold></gradient> <dark_gray>»</dark_gray> <white>No Permission, Unlock at <yellow>store.festas-builds.com</yellow>
-  value_no_pickaxe: <gradient:#FFFF00:#FFD700:#FFA500><bold>VALUE</bold></gradient> <dark_gray>»</dark_gray> <white>You must hold a pickaxe in your hand.
-  value_value: '<gradient:#FFFF00:#FFD700:#FFA500><bold>VALUE</bold></gradient> <dark_gray>»</dark_gray> <yellow>%player%''s</yellow> <white>Pickaxe Value: <yellow>%amount%</yellow>'
-  value_cooldown: <gradient:#FFFF00:#FFD700:#FFA500><bold>VALUE</bold></gradient> <dark_gray>»</dark_gray> <white>Please wait <yellow>%time%</yellow> Seconds before using this command again.
-  pickaxe_given: <gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>You have given pickaxe to <yellow>%player%</yellow>
-  pickaxe_received: <gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>You have received pickaxe from <yellow>%sender%</yellow>
-  pickaxe_inventory_full: <gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <yellow>%player%</yellow> <white>has full inventory!
+  explosive_disabled: <gradient:#FF5555:#AA0000:#550000><bold>EXPLOSIVE</bold></gradient> <dark_gray>»</dark_gray> <white>Verzauberung <yellow><bold>DEAKTIVIERT</bold></yellow>.
+  explosive_enabled: <gradient:#FF5555:#AA0000:#550000><bold>EXPLOSIVE</bold></gradient> <dark_gray>»</dark_gray> <white>Verzauberung <yellow><bold>AKTIVIERT</bold></yellow>.
+  value_no_permission: <gradient:#FFFF00:#FFD700:#FFA500><bold>WERT</bold></gradient> <dark_gray>»</dark_gray> <white>Keine Berechtigung – freischaltbar unter <yellow>store.festas-builds.com</yellow>.
+  value_no_pickaxe: <gradient:#FFFF00:#FFD700:#FFA500><bold>WERT</bold></gradient> <dark_gray>»</dark_gray> <white>Du musst eine Spitzhacke in der Hand halten.
+  value_value: '<gradient:#FFFF00:#FFD700:#FFA500><bold>WERT</bold></gradient> <dark_gray>»</dark_gray> <white>Spitzhacken-Wert von <yellow>%player%</yellow><white>: <yellow>%amount%</yellow>'
+  value_cooldown: <gradient:#FFFF00:#FFD700:#FFA500><bold>WERT</bold></gradient> <dark_gray>»</dark_gray> <white>Bitte warte <yellow>%time%</yellow> Sekunden, bevor du den Befehl erneut nutzt.
+  pickaxe_given: <gradient:#FFFF00:#FFD700:#FFA500><bold>VERZAUBERUNG</bold></gradient> <dark_gray>»</dark_gray> <white>Du hast <yellow>%player%</yellow> <white>eine Spitzhacke gegeben.
+  pickaxe_received: <gradient:#FFFF00:#FFD700:#FFA500><bold>VERZAUBERUNG</bold></gradient> <dark_gray>»</dark_gray> <white>Du hast von <yellow>%sender%</yellow> <white>eine Spitzhacke erhalten.
+  pickaxe_inventory_full: <gradient:#FFFF00:#FFD700:#FFA500><bold>VERZAUBERUNG</bold></gradient> <dark_gray>»</dark_gray> <yellow>%player%</yellow> <white>hat ein volles Inventar!
   prestige_finder: <gradient:#FFFF00:#FFD700:#FFA500><bold>PRESTIGE FINDER</bold></gradient> <dark_gray>»</dark_gray> <white>Du hast beim Minen <yellow>x%prestige%</yellow> Prestige gefunden!
-  transaction_in_progress: <gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>Please wait for your other transaction to complete.
+  transaction_in_progress: <gradient:#FFFF00:#FFD700:#FFA500><bold>VERZAUBERUNG</bold></gradient> <dark_gray>»</dark_gray> <white>Bitte warte, bis deine andere Transaktion abgeschlossen ist.
   enchant_status_locked: <gray>Gesperrte Verzauberung
-  enchant_status_unlocked: <gray>Unlocked Enchant
-  enchant_status_max: <gray>Maxed Enchant
-  enchant_passive: <white>Passive
-  enchant_max_enchants: <gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>You have maximum amount of enchants applied!
-  world_disabled: <gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <red>You can't use pickaxe in this world!</red>
-  enchant_prestige_not_max: <gradient:#FFFF00:#FFD700:#FFA500><bold>PRESTIGE</bold></gradient> <dark_gray>»</dark_gray> <white>You must <yellow>max out</yellow> this enchant before prestiging!
-  enchant_prestige_max_prestige: <gradient:#FFFF00:#FFD700:#FFA500><bold>PRESTIGE</bold></gradient> <dark_gray>»</dark_gray> <white>This enchant has already reached its <yellow>maximum prestige!</yellow>
-  enchant_prestige_not_enough: <gradient:#FFFF00:#FFD700:#FFA500><bold>PRESTIGE</bold></gradient> <dark_gray>»</dark_gray> <white>You need <yellow>%required%</yellow> activations but only have <yellow>%current%</yellow>!
-  enchant_prestiged: '<gradient:#FFFF00:#FFD700:#FFA500><bold>PRESTIGE</bold></gradient> <dark_gray>»</dark_gray> <white>%enchant% <yellow>prestiged to <gold>Level %prestige%</gold>!</yellow> Multiplier: <green>+%multiplier%%</green>'
-  enchant_toggled_on: <gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>You have <green><bold>ENABLED</bold></green> <reset>%enchant%</reset><white>.
-  enchant_toggled_off: <gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>You have <red><bold>DISABLED</bold></red> <reset>%enchant%</reset><white>.
-  all_proc_message: <gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>Your <yellow>%enchant%</yellow> <white>enchant procced!
-  enchants_admin_no_permission: <gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <red>You do not have permission to use this command!
-  no_permission_enchantmenu: <gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <red>You do not have permission to open the enchant menu!
-  no_permission_disenchant: <gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <red>You do not have permission to open the disenchant menu!
-  no_permission_feature: <gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <red>You do not have permission to use this.
-  cannot_pickup_not_owner: <gradient:#FFFF00:#FFD700:#FFA500><bold>SOULBOUND</bold></gradient> <dark_gray>»</dark_gray> <white>This pickaxe is soulbound to <yellow>%owner%</yellow>.
-  cannot_use_not_owner: <gradient:#FFFF00:#FFD700:#FFA500><bold>SOULBOUND</bold></gradient> <dark_gray>»</dark_gray> <white>You can't use a pickaxe soulbound to <yellow>%owner%</yellow>.
-  cannot_drop_pickaxe: <gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <red>You can't drop your pickaxe.
-  cannot_store_pickaxe: <gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <red>You can't store your pickaxe in containers.
-  pickaxe_returned: <gradient:#FFFF00:#FFD700:#FFA500><bold>SOULBOUND</bold></gradient> <dark_gray>»</dark_gray> <white>Your soulbound pickaxe was returned to you.
-  unsoulbind_success: <gradient:#FFFF00:#FFD700:#FFA500><bold>SOULBOUND</bold></gradient> <dark_gray>»</dark_gray> <white>Cleared the owner of that pickaxe.
-  unsoulbind_no_pickaxe: <gradient:#FFFF00:#FFD700:#FFA500><bold>SOULBOUND</bold></gradient> <dark_gray>»</dark_gray> <red>Hold a supported pickaxe to unsoulbind it.
-  no_permission_unsoulbind: <gradient:#FFFF00:#FFD700:#FFA500><bold>SOULBOUND</bold></gradient> <dark_gray>»</dark_gray> <red>You do not have permission to use this command!
+  enchant_status_unlocked: <gray>Freigeschaltet
+  enchant_status_max: <gray>Maximiert
+  enchant_passive: <white>Passiv
+  enchant_max_enchants: <gradient:#FFFF00:#FFD700:#FFA500><bold>VERZAUBERUNG</bold></gradient> <dark_gray>»</dark_gray> <white>Du hast die maximale Anzahl an Verzauberungen erreicht!
+  world_disabled: <gradient:#FFFF00:#FFD700:#FFA500><bold>VERZAUBERUNG</bold></gradient> <dark_gray>»</dark_gray> <red>In dieser Welt kannst du deine Spitzhacke nicht benutzen!</red>
+  enchant_prestige_not_max: <gradient:#FFFF00:#FFD700:#FFA500><bold>PRESTIGE</bold></gradient> <dark_gray>»</dark_gray> <white>Du musst diese Verzauberung zuerst <yellow>maximieren</yellow>, bevor du sie prestigst!
+  enchant_prestige_max_prestige: <gradient:#FFFF00:#FFD700:#FFA500><bold>PRESTIGE</bold></gradient> <dark_gray>»</dark_gray> <white>Diese Verzauberung hat bereits ihr <yellow>maximales Prestige</yellow> erreicht!
+  enchant_prestige_not_enough: <gradient:#FFFF00:#FFD700:#FFA500><bold>PRESTIGE</bold></gradient> <dark_gray>»</dark_gray> <white>Du brauchst <yellow>%required%</yellow> Aktivierungen, hast aber nur <yellow>%current%</yellow>!
+  enchant_prestiged: '<gradient:#FFFF00:#FFD700:#FFA500><bold>PRESTIGE</bold></gradient> <dark_gray>»</dark_gray> <white>%enchant% <yellow>ist jetzt Prestige <gold>Level %prestige%</gold></yellow>! Bonus: <green>+%multiplier%%</green>'
+  enchant_toggled_on: <gradient:#FFFF00:#FFD700:#FFA500><bold>VERZAUBERUNG</bold></gradient> <dark_gray>»</dark_gray> <white>Du hast <green><bold>AKTIVIERT</bold></green> <reset>%enchant%</reset><white>.
+  enchant_toggled_off: <gradient:#FFFF00:#FFD700:#FFA500><bold>VERZAUBERUNG</bold></gradient> <dark_gray>»</dark_gray> <white>Du hast <red><bold>DEAKTIVIERT</bold></red> <reset>%enchant%</reset><white>.
+  all_proc_message: <gradient:#FFFF00:#FFD700:#FFA500><bold>VERZAUBERUNG</bold></gradient> <dark_gray>»</dark_gray> <white>Deine Verzauberung <yellow>%enchant%</yellow> <white>hat ausgelöst!
+  enchants_admin_no_permission: <gradient:#FFFF00:#FFD700:#FFA500><bold>VERZAUBERUNG</bold></gradient> <dark_gray>»</dark_gray> <red>Dafür hast du keine Berechtigung!
+  no_permission_enchantmenu: <gradient:#FFFF00:#FFD700:#FFA500><bold>VERZAUBERUNG</bold></gradient> <dark_gray>»</dark_gray> <red>Du darfst das Verzauberungsmenü nicht öffnen!
+  no_permission_disenchant: <gradient:#FFFF00:#FFD700:#FFA500><bold>VERZAUBERUNG</bold></gradient> <dark_gray>»</dark_gray> <red>Du darfst das Rückerstattungsmenü nicht öffnen!
+  no_permission_feature: <gradient:#FFFF00:#FFD700:#FFA500><bold>VERZAUBERUNG</bold></gradient> <dark_gray>»</dark_gray> <red>Dafür hast du keine Berechtigung.
+  cannot_pickup_not_owner: <gradient:#FFFF00:#FFD700:#FFA500><bold>SOULBOUND</bold></gradient> <dark_gray>»</dark_gray> <white>Diese Spitzhacke ist an <yellow>%owner%</yellow> gebunden.
+  cannot_use_not_owner: <gradient:#FFFF00:#FFD700:#FFA500><bold>SOULBOUND</bold></gradient> <dark_gray>»</dark_gray> <white>Du kannst keine an <yellow>%owner%</yellow> gebundene Spitzhacke nutzen.
+  cannot_drop_pickaxe: <gradient:#FFFF00:#FFD700:#FFA500><bold>VERZAUBERUNG</bold></gradient> <dark_gray>»</dark_gray> <red>Du kannst deine Spitzhacke nicht droppen.
+  cannot_store_pickaxe: <gradient:#FFFF00:#FFD700:#FFA500><bold>VERZAUBERUNG</bold></gradient> <dark_gray>»</dark_gray> <red>Du kannst deine Spitzhacke nicht in Containern lagern.
+  pickaxe_returned: <gradient:#FFFF00:#FFD700:#FFA500><bold>SOULBOUND</bold></gradient> <dark_gray>»</dark_gray> <white>Deine soulbound Spitzhacke wurde dir zurückgegeben.
+  unsoulbind_success: <gradient:#FFFF00:#FFD700:#FFA500><bold>SOULBOUND</bold></gradient> <dark_gray>»</dark_gray> <white>Der Besitzer dieser Spitzhacke wurde entfernt.
+  unsoulbind_no_pickaxe: <gradient:#FFFF00:#FFD700:#FFA500><bold>SOULBOUND</bold></gradient> <dark_gray>»</dark_gray> <red>Halte eine unterstützte Spitzhacke in der Hand, um sie zu lösen.
+  no_permission_unsoulbind: <gradient:#FFFF00:#FFD700:#FFA500><bold>SOULBOUND</bold></gradient> <dark_gray>»</dark_gray> <red>Dafür hast du keine Berechtigung!
 max-enchants: -1
 keep-pickaxes-on-death: true
 soulbinding:
@@ -370,7 +370,7 @@ enchant_upgrade_menu:
       name: <green><bold>MAX VERBESSERN</bold></green>
       lore:
       - ' <italic:false><green>▎</green> <white>Upgrade bis </white><green>Level %to_level%</green>'
-      - ' <italic:false><green>▎</green> <white>Buys as many levels as you can afford.</white>'
+      - ' <italic:false><green>▎</green> <white>Kauft so viele Level, wie du dir leisten kannst.</white>'
       - ''
       - <italic:false><gray><italic>(( Klicke zum Kaufen ))</italic></gray>
   maxed_item:
@@ -383,31 +383,31 @@ enchant_upgrade_menu:
     - 24
     material: YELLOW_STAINED_GLASS_PANE
     custom_model_data: 0
-    name: <yellow><bold>Maxed!</bold></yellow>
+    name: <yellow><bold>Maximiert!</bold></yellow>
     lore:
     - ' <italic:false><yellow>▎</yellow> <white>Level: </white><yellow>%current_level% / %max_level%</yellow>'
     - ''
-    - <italic:false><gold><bold>ENCHANT MAXED</bold></gold>
+    - <italic:false><gold><bold>VERZAUBERUNG MAXIMIERT</bold></gold>
   toggle_item:
     slot: 40
     enabled_state:
       material: LIME_STAINED_GLASS_PANE
       custom_model_data: 0
-      name: '<white>Enchant: <green><bold>ENABLED</bold></green>'
+      name: '<white>Verzauberung: <green><bold>AN</bold></green>'
       lore:
       - <gray><italic>(( Klicke, um diese Verzauberung zu deaktivieren ))</italic></gray>
       - ''
-      - <italic:false><gray>While disabled, this enchant will</gray>
-      - <italic:false><gray>not trigger while you mine.</gray>
+      - <italic:false><gray>Ist sie deaktiviert, löst diese Verzauberung</gray>
+      - <italic:false><gray>beim Minen nicht mehr aus.</gray>
     disabled_state:
       material: RED_STAINED_GLASS_PANE
       custom_model_data: 0
-      name: '<white>Enchant: <red><bold>DISABLED</bold></red>'
+      name: '<white>Verzauberung: <red><bold>AUS</bold></red>'
       lore:
       - <gray><italic>(( Klicke, um diese Verzauberung zu aktivieren ))</italic></gray>
       - ''
-      - <italic:false><gray>This enchant is currently turned off</gray>
-      - <italic:false><gray>and will not trigger while you mine.</gray>
+      - <italic:false><gray>Diese Verzauberung ist aktuell ausgeschaltet</gray>
+      - <italic:false><gray>und löst beim Minen nicht aus.</gray>
   prestige_item:
     enabled: true
     slot: 38
@@ -423,12 +423,12 @@ enchant_upgrade_menu:
     slot: 42
     material: COMPASS
     custom_model_data: 0
-    name: <red><bold>BACK</bold></red>
+    name: <red><bold>ZURÜCK</bold></red>
     lore:
-    - <gray><italic>(( Return to the enchant menu ))</italic></gray>
+    - <gray><italic>(( Zurück zum Verzauberungsmenü ))</italic></gray>
   decorations: {}
 pickaxe_settings:
-  title: <gradient:#FFA500:#FFD700>Pickaxe Settings</gradient>
+  title: <gradient:#FFA500:#FFD700>Spitzhacken-Einstellungen</gradient>
   lines: 5
   empty_slots: BLACK_STAINED_GLASS_PANE
   default-states:
@@ -442,20 +442,21 @@ pickaxe_settings:
     enabled_state:
       material: PAPER
       custom_model_data: 0
-      name: '<white>Minuten-Zusammenfassung: <green><bold>ON</bold></green>'
+      name: '<white>Minuten-Zusammenfassung: <green><bold>AN</bold></green>'
       lore:
       - ' '
-      - <italic:false><gray>A summary of currencies earned from</gray>
-      - <italic:false><gray>mining is shown periodically while you mine.</gray>
+      - <italic:false><gray>Zeigt dir regelmäßig eine Übersicht</gray>
+      - <italic:false><gray>über deine Mining-Einnahmen.</gray>
       - ' '
       - <italic:false><gray><italic>(( Klicke für AUS ))</italic></gray>
     disabled_state:
       material: PAPER
       custom_model_data: 0
-      name: '<white>Minuten-Zusammenfassung: <red><bold>OFF</bold></red>'
+      name: '<white>Minuten-Zusammenfassung: <red><bold>AUS</bold></red>'
       lore:
       - ' '
-      - <italic:false><gray>The periodic mining summary is hidden.</gray>
+      - <italic:false><gray>Die regelmäßige Mining-Zusammenfassung</gray>
+      - <italic:false><gray>wird ausgeblendet.</gray>
       - ' '
       - <italic:false><gray><italic>(( Klicke für AN ))</italic></gray>
   all_proc_toggle:
@@ -463,21 +464,21 @@ pickaxe_settings:
     enabled_state:
       material: COMPARATOR
       custom_model_data: 0
-      name: '<white>All Enchants Proc Message: <green><bold>ON</bold></green>'
+      name: '<white>Alle-Procs-Nachricht: <green><bold>AN</bold></green>'
       lore:
       - ' '
-      - <italic:false><gray>A message is displayed whenever any</gray>
-      - <italic:false><gray>enchantment on your pickaxe procs.</gray>
+      - <italic:false><gray>Bei jeder ausgelösten Verzauberung</gray>
+      - <italic:false><gray>wird eine Nachricht angezeigt.</gray>
       - ' '
       - <italic:false><gray><italic>(( Klicke für AUS ))</italic></gray>
     disabled_state:
       material: COMPARATOR
       custom_model_data: 0
-      name: '<white>All Enchants Proc Message: <red><bold>OFF</bold></red>'
+      name: '<white>Alle-Procs-Nachricht: <red><bold>AUS</bold></red>'
       lore:
       - ' '
-      - <italic:false><gray>No message is shown when your</gray>
-      - <italic:false><gray>enchantments proc.</gray>
+      - <italic:false><gray>Bei ausgelösten Verzauberungen</gray>
+      - <italic:false><gray>wird keine Nachricht angezeigt.</gray>
       - ' '
       - <italic:false><gray><italic>(( Klicke für AN ))</italic></gray>
   virtual_break_toggle:
@@ -485,21 +486,21 @@ pickaxe_settings:
     enabled_state:
       material: GLASS
       custom_model_data: 0
-      name: '<white>Virtual Block Breaking: <green><bold>ON</bold></green>'
+      name: '<white>Virtueller Blockabbau: <green><bold>AN</bold></green>'
       lore:
       - ' '
-      - <italic:false><gray>Area enchant procs give rewards</gray>
-      - <italic:false><gray>without visually breaking blocks.</gray>
+      - <italic:false><gray>Flächen-Verzauberungen geben Belohnungen,</gray>
+      - <italic:false><gray>ohne Blöcke sichtbar zu zerstören.</gray>
       - ' '
       - <italic:false><gray><italic>(( Klicke für AUS ))</italic></gray>
     disabled_state:
       material: GLASS
       custom_model_data: 0
-      name: '<white>Virtual Block Breaking: <red><bold>OFF</bold></red>'
+      name: '<white>Virtueller Blockabbau: <red><bold>AUS</bold></red>'
       lore:
       - ' '
-      - <italic:false><gray>Area enchant procs break blocks</gray>
-      - <italic:false><gray>in the world as normal.</gray>
+      - <italic:false><gray>Flächen-Verzauberungen bauen Blöcke</gray>
+      - <italic:false><gray>normal in der Welt ab.</gray>
       - ' '
       - <italic:false><gray><italic>(( Klicke für AN ))</italic></gray>
   animations_toggle:
@@ -507,28 +508,28 @@ pickaxe_settings:
     enabled_state:
       material: BLAZE_POWDER
       custom_model_data: 0
-      name: '<white>Enchant Animations: <green><bold>ON</bold></green>'
+      name: '<white>Verzauberungs-Animationen: <green><bold>AN</bold></green>'
       lore:
       - ' '
-      - <italic:false><gray>Enchant animations are played</gray>
-      - <italic:false><gray>when an enchant is activated.</gray>
+      - <italic:false><gray>Animationen werden abgespielt,</gray>
+      - <italic:false><gray>wenn eine Verzauberung auslöst.</gray>
       - ' '
       - <italic:false><gray><italic>(( Klicke für AUS ))</italic></gray>
     disabled_state:
       material: GUNPOWDER
       custom_model_data: 0
-      name: '<white>Enchant Animations: <red><bold>OFF</bold></red>'
+      name: '<white>Verzauberungs-Animationen: <red><bold>AUS</bold></red>'
       lore:
       - ' '
-      - <italic:false><gray>Enchant animations are hidden</gray>
-      - <italic:false><gray>when an enchant is activated.</gray>
+      - <italic:false><gray>Animationen werden ausgeblendet,</gray>
+      - <italic:false><gray>wenn eine Verzauberung auslöst.</gray>
       - ' '
       - <italic:false><gray><italic>(( Klicke für AN ))</italic></gray>
   enchant_notifications_button:
     slot: 16
     material: DIAMOND_PICKAXE
     custom_model_data: 0
-    name: <gradient:#FF55FF:#AA00AA><bold>ENCHANT NOTIFICATIONS</bold></gradient>
+    name: <gradient:#FF55FF:#AA00AA><bold>VERZAUBERUNGS-HINWEISE</bold></gradient>
     lore:
     - ' '
     - <italic:false><gray>Lege fest, welche Verzauberungen</gray>
@@ -539,12 +540,12 @@ pickaxe_settings:
     slot: 40
     material: COMPASS
     custom_model_data: 0
-    name: <red><bold>BACK</bold></red>
+    name: <red><bold>ZURÜCK</bold></red>
     lore:
-    - <gray><italic>(( Return to the enchant menu ))</italic></gray>
+    - <gray><italic>(( Zurück zum Verzauberungsmenü ))</italic></gray>
   decorations: {}
 enchant_notifications:
-  title: <gradient:#FF55FF:#AA00AA>Enchant Notifications</gradient>
+  title: <gradient:#FF55FF:#AA00AA>Verzauberungs-Hinweise</gradient>
   lines: 6
   empty_slots: BLACK_STAINED_GLASS_PANE
   slots:
@@ -595,7 +596,7 @@ enchant_notifications:
     custom_model_data: 0
     name: <red><bold>BACK</bold></red>
     lore:
-    - <gray><italic>(( Return to Pickaxe Settings ))</italic></gray>
+    - <gray><italic>(( Zurück zu den Spitzhacken-Einstellungen ))</italic></gray>
   previous_page:
     slot: 48
     material: ARROW
@@ -637,9 +638,9 @@ pickaxe_slot_menu:
   selected_item:
     material: EMERALD_BLOCK
     custom_model_data: 0
-    name: <green>Slot %slot% <bold>(SELECTED)</bold></green>
+    name: <green>Slot %slot% <bold>(AUSGEWÄHLT)</bold></green>
     lore:
-    - <green><italic>(( Your pickaxe is here ))</italic></green>
+    - <green><italic>(( Hier liegt deine Spitzhacke ))</italic></green>
   available_item:
     material: LIME_STAINED_GLASS_PANE
     custom_model_data: 0
@@ -651,9 +652,9 @@ pickaxe_slot_menu:
     material: COMPASS
     custom_model_data: 0
     slot: 22
-    name: <red><bold>BACK</bold></red>
+    name: <red><bold>ZURÜCK</bold></red>
     lore:
-    - <gray><italic>(( Return to the enchant menu ))</italic></gray>
+    - <gray><italic>(( Zurück zum Verzauberungsmenü ))</italic></gray>
 disenchant_menu:
   title: <gradient:#FFD700:#FFA500>Rückerstattungs-Menü</gradient>
   empty_slots: GRAY_STAINED_GLASS_PANE
@@ -736,9 +737,9 @@ disenchant_menu:
     - ' <italic:false><yellow>▎</yellow> <white>Deine Aktivierung: </white><yellow>%chance%</yellow>'
     - ' '
     - <italic:false><yellow>1 Level zurückerstatten</yellow>
-    - ' <italic:false><yellow>▎</yellow> <white>You will receive: </white><yellow>%refund%</yellow> <white>%currency%</white>'
-    - ' <italic:false><yellow>▎</yellow> <white>Press </white><yellow><bold>Q</bold></yellow> <white>to refund as many levels</white>'
-    - ' <italic:false><yellow>▎</yellow> <white>of this enchantment as you can.</white>'
+    - ' <italic:false><yellow>▎</yellow> <white>Du erhältst: </white><yellow>%refund%</yellow> <white>%currency%</white>'
+    - ' <italic:false><yellow>▎</yellow> <white>Drücke </white><yellow><bold>Q</bold></yellow> <white>für so viele Level,</white>'
+    - ' <italic:false><yellow>▎</yellow> <white>wie möglich zurück.</white>'
     - ' '
     - <gray><italic>Klicke zum Rückerstatten</italic></gray>
   help_item:
@@ -749,8 +750,7 @@ disenchant_menu:
     custom_model_data: 0
     lore:
     - <gray><italic>(( Hier siehst du, wie du</italic></gray>
-    - <gray><italic>(( Hier siehst du, wie du</italic></gray>
-    - <gray><italic>disenchant enchantments ))</italic></gray>
+    - <gray><italic>Verzauberungen zurückerstattest ))</italic></gray>
     - ''
     - <italic:false><yellow><bold>* </bold></yellow><yellow>Linksklick </yellow><dark_gray>» </dark_gray><white>1 Level zurück</white>
     - <italic:false><yellow><bold>* </bold></yellow><yellow>Rechtsklick </yellow><dark_gray>» </dark_gray><white>10 Level zurück</white>

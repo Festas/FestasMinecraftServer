@@ -91,7 +91,7 @@ quests:
       commands:
       - money give %player% 25000
       messages:
-      - <green>+ $25,000 <gray>(goal scaled x%multiplier% for your rank)
+      - '<green>+ $25.000 <gray>(für deinen Rang skaliert: x%multiplier%)'
       sound: ENTITY_PLAYER_LEVELUP
   daily_earn_tokens:
     type: EARN_CURRENCY
@@ -284,7 +284,7 @@ quests:
       material: TOTEM_OF_UNDYING
       name: <aqua>Neuanfang
       lore:
-      - <gray>Rebirthe zum ersten Mal.
+      - <gray>Führe zum ersten Mal einen Rebirth durch.
       - ''
       - '<gray>Fortschritt: <white>%progress%</white><gray>/<white>%target%</white> <gray>(<white>%percent%</white><gray>)'
       - '%bar%'
