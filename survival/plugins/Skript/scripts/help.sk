@@ -1,0 +1,13 @@
+# Pfad: plugins/Skript/scripts/help.sk
+# /help Befehl + regelmäßiger Broadcast – Survival
+
+# --- /help BEFEHL ---
+command /help:
+    description: Öffnet das Hilfe-Menü
+    aliases: /hilfe
+    trigger:
+        execute player command "dm open help_menu"
+
+# --- AUTO-BROADCAST (alle 10 Minuten) ---
+every 10 minutes:
+    broadcast "&8[&a&lSurvival&8] &7Neu hier? Tippe &e/help &7und erfahre alles über Jobs, Shops und Plots!"

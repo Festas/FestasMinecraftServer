@@ -1,0 +1,183 @@
+# Pfad: plugins/DeluxeMenus/gui_menus/help_menu.yml
+# Lobby Help-Menü – geöffnet über /help
+menu_title: '&8» &b❓ Lobby Hilfe'
+open_command: help_menu
+size: 45
+
+items:
+
+  # ==============================================================
+  # FILLER
+  # ==============================================================
+  'filler':
+    material: CYAN_STAINED_GLASS_PANE
+    slots:
+      - '0-8'
+      - '36-44'
+    display_name: '&f'
+    priority: 2
+
+  'filler2':
+    material: BLACK_STAINED_GLASS_PANE
+    slots:
+      - '9'
+      - '17'
+      - '18'
+      - '26'
+      - '27'
+      - '35'
+    display_name: '&f'
+    priority: 2
+
+  # ==============================================================
+  # HEADER
+  # ==============================================================
+  'header':
+    material: NETHER_STAR
+    slot: 4
+    priority: 1
+    display_name: '&b&l❓ Lobby Hilfe'
+    lore:
+      - '&7Willkommen auf Festas Builds!'
+      - '&7Hier erfährst du alles über die Lobby.'
+
+  # ==============================================================
+  # NAVIGATOR
+  # ==============================================================
+  'navigator':
+    material: COMPASS
+    slot: 10
+    priority: 1
+    display_name: '&b&l🧭 Navigator'
+    lore:
+      - '&7Der Navigator ist dein Kompass'
+      - '&7in Slot 5 deines Inventars.'
+      - ''
+      - '&8» &fRechtsklick &7auf den Kompass'
+      - '&8» &fOder tippe &e/navigator'
+      - ''
+      - '&7Wähle damit deinen Server aus!'
+
+  # ==============================================================
+  # SERVER-AUSWAHL
+  # ==============================================================
+  'servers':
+    material: ENDER_PEARL
+    slot: 12
+    priority: 1
+    display_name: '&a&l🌐 Server wechseln'
+    lore:
+      - '&7Wechsle zwischen den Spielmodi:'
+      - ''
+      - '&8» &f&lSurvival &7– Jobs, Shops, Plots'
+      - '&8» &f&lMining &7– Abbauen & Aufwerten'
+      - '&8» &f&lSkyblock &7– Insel bauen mit Freunden'
+      - ''
+      - '&e/navigator &8– &7Server-Auswahl öffnen'
+    left_click_commands:
+      - '[openguimenu] server_selector'
+    right_click_commands:
+      - '[openguimenu] server_selector'
+
+  # ==============================================================
+  # NETZWERK-GUIDE
+  # ==============================================================
+  'guide':
+    material: KNOWLEDGE_BOOK
+    slot: 14
+    priority: 1
+    display_name: '&a&l📖 Netzwerk Guide'
+    lore:
+      - '&7Ausführliche Infos zu allen'
+      - '&7Servern und Spielmodi.'
+      - ''
+      - '&e/guide &8– &7Guide öffnen'
+    left_click_commands:
+      - '[openguimenu] network_guide'
+    right_click_commands:
+      - '[openguimenu] network_guide'
+
+  # ==============================================================
+  # REGELN
+  # ==============================================================
+  'rules':
+    material: BOOK
+    slot: 16
+    priority: 1
+    display_name: '&c&l📜 Serverregeln'
+    lore:
+      - '&7Lies unsere Regeln,'
+      - '&7damit du nichts falsch machst.'
+      - ''
+      - '&e/rules &8– &7Regeln anzeigen'
+    left_click_commands:
+      - '[openguimenu] rules'
+    right_click_commands:
+      - '[openguimenu] rules'
+
+  # ==============================================================
+  # FREUNDE & PARTY
+  # ==============================================================
+  'friends':
+    material: PLAYER_HEAD
+    slot: 28
+    priority: 1
+    display_name: '&d&l🤝 Freunde & Party'
+    lore:
+      - '&7Spiele gemeinsam mit Freunden!'
+      - ''
+      - '&8» &fFreundesliste &7server-übergreifend'
+      - '&8» &fParty &7für alle Server'
+      - ''
+      - '&e/friend &8– &7Freundesliste'
+      - '&e/party &8– &7Party verwalten'
+
+  # ==============================================================
+  # WICHTIGE BEFEHLE
+  # ==============================================================
+  'commands':
+    material: COMMAND_BLOCK
+    slot: 30
+    priority: 1
+    display_name: '&e&l⌨ Wichtige Befehle'
+    lore:
+      - '&e/navigator &8– &7Server-Auswahl'
+      - '&e/guide &8– &7Netzwerk Guide'
+      - '&e/rules &8– &7Serverregeln'
+      - '&e/msg <Spieler> &8– &7Private Nachricht'
+      - '&e/friend &8– &7Freundesliste'
+      - '&e/party &8– &7Party verwalten'
+      - '&e/help &8– &7Dieses Menü'
+
+  # ==============================================================
+  # SUPPORT
+  # ==============================================================
+  'support':
+    material: ENDER_EYE
+    slot: 32
+    priority: 1
+    display_name: '&c&l❓ Hilfe & Support'
+    lore:
+      - '&7Brauchst du Hilfe? So erreichst du uns:'
+      - ''
+      - '&8» &fDiscord: &7discord.gg/festasbuilds'
+      - '&8» &fIn-Game: &7/report <Spieler> <Grund>'
+      - '&8» &fTeam: &7Schreibe einen Moderator an'
+      - ''
+      - '&7Erstelle ein Ticket auf Discord'
+      - '&7für schnelle Hilfe!'
+
+  # ==============================================================
+  # SCHLIESSEN
+  # ==============================================================
+  'close':
+    material: ARROW
+    slot: 40
+    priority: 1
+    display_name: '&7&l✖ Schließen'
+    lore:
+      - '&7Menü schließen'
+    left_click_commands:
+      - '[close]'
+    right_click_commands:
+      - '[close]'

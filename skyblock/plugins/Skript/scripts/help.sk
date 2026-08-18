@@ -1,0 +1,13 @@
+# Pfad: plugins/Skript/scripts/help.sk
+# /help Befehl + regelmäßiger Broadcast – Skyblock
+
+# --- /help BEFEHL ---
+command /help:
+    description: Öffnet das Hilfe-Menü
+    aliases: /hilfe
+    trigger:
+        execute player command "dm open help_menu"
+
+# --- AUTO-BROADCAST (alle 10 Minuten) ---
+every 10 minutes:
+    broadcast "&8[&b&lSkyblock&8] &7Weißt du nicht wie es losgeht? Tippe &e/help &7für alles über Inseln, Minions und mehr!"

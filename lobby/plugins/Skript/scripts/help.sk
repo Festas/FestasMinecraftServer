@@ -1,0 +1,13 @@
+# Pfad: plugins/Skript/scripts/help.sk
+# /help Befehl + regelmäßiger Broadcast – Lobby
+
+# --- /help BEFEHL ---
+command /help:
+    description: Öffnet das Hilfe-Menü
+    aliases: /hilfe
+    trigger:
+        execute player command "dm open help_menu"
+
+# --- AUTO-BROADCAST (alle 10 Minuten) ---
+every 10 minutes:
+    broadcast "&8[&b&lFestas&8] &7Nicht sicher was du tun kannst? Tippe &e/help &7für eine Übersicht!"

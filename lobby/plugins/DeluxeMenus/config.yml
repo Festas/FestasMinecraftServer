@@ -21,3 +21,5 @@ gui_menus:
     file: rules.yml
   network_guide:
     file: network_guide.yml
+  help_menu:
+    file: help_menu.yml
