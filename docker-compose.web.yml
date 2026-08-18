@@ -14,9 +14,9 @@ services:
     # Restart policy
     restart: unless-stopped
 
-    # Bind to localhost only so nginx on the host can proxy to 127.0.0.1:8101
+    # Bind to localhost only so nginx on the host can proxy to 127.0.0.1:8201
     ports:
-      - "127.0.0.1:8101:80"
+      - "127.0.0.1:8201:80"
 
     # Mount the shared data directory (written by the Velocity FestasPlayerList plugin)
     # read-only so the website can serve /api/players.json. Relative ./data resolves next to
