@@ -1,0 +1,12 @@
+{
+    "online": 0,
+    "max": 0,
+    "updated": 0,
+    "showNames": true,
+    "servers": [
+        { "name": "lobby", "count": 0, "players": [] },
+        { "name": "survival", "count": 0, "players": [] },
+        { "name": "mining", "count": 0, "players": [] },
+        { "name": "skyblock", "count": 0, "players": [] }
+    ]
+}

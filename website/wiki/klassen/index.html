@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klassen | Festas Builds Wiki</title>
+    <link rel="icon" type="image/svg+xml" href="../../images/favicon.svg">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../css/wiki.css">
+</head>
+<body>
+    <div class="wiki-layout">
+        <!-- Sidebar -->
+        <aside class="wiki-sidebar">
+            <div class="sidebar-header">
+                <a href="../../index.html" class="sidebar-logo">
+                    <span>🏗️</span> Festas Builds
+                </a>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3>📖 Wiki</h3>
+                    <ul>
+                        <li><a href="../index.html">Startseite</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h3>🏆 Ränge</h3>
+                    <ul>
+                        <li><a href="../raenge/index.html">Übersicht</a></li>
+                        <li><a href="../raenge/zeit-raenge.html">⏳ Zeit-Ränge</a></li>
+                        <li><a href="../raenge/geld-raenge.html">💎 Geld-Ränge</a></li>
+                        <li><a href="../raenge/tycoon-raenge.html">🏭 Tycoon-Ränge</a></li>
+                        <li><a href="../raenge/team-raenge.html">👮 Team-Ränge</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h3>🎮 Spielmodi</h3>
+                    <ul>
+                        <li><a href="../spielmodi/index.html">Übersicht</a></li>
+                        <li><a href="../spielmodi/sky-survival.html">🏝️ Skyblock</a></li>
+                        <li><a href="../spielmodi/tycoon.html">🏭 Tycoon</a></li>
+                        <li><a href="../spielmodi/town.html">🏘️ Town</a></li>
+                        <li><a href="../spielmodi/freebuild.html">🎨 Freebuild</a></li>
+                        <li><a href="../spielmodi/mining.html">⛏️ Mining (Prison)</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h3>📜 Sonstiges</h3>
+                    <ul>
+                        <li><a href="../befehle/index.html">⌨️ Befehle</a></li>
+                        <li><a href="../regeln/index.html">📋 Regeln</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Sidebar Toggle for Mobile -->
+        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Menü öffnen">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+        <!-- Main Content -->
+        <main class="wiki-content">
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a> /
+                <a href="../index.html">Wiki</a> /
+                <span>Klassen</span>
+            </div>
+
+            <h1>⚔️ Klassen-System</h1>
+            <p class="wiki-intro">
+                6 einzigartige Klassen · Level 1–100 · auf MMO-RPG und MMO-Skyblock identisch.
+                Wähle deinen Spielstil – vom Tank-Krieger bis zum Beschwörer – und steige über 100 Level auf.
+            </p>
+
+            <div class="class-tabs" role="tablist" aria-label="Klassen auswählen">
+                <button class="class-tab active" data-class="krieger" role="tab" aria-selected="true">⚔️ Krieger</button>
+                <button class="class-tab" data-class="magier" role="tab" aria-selected="false">🔮 Magier</button>
+                <button class="class-tab" data-class="assassine" role="tab" aria-selected="false">🗡️ Assassine</button>
+                <button class="class-tab" data-class="bogenschuetze" role="tab" aria-selected="false">🏹 Bogenschütze</button>
+                <button class="class-tab" data-class="schamane" role="tab" aria-selected="false">🌿 Schamane</button>
+                <button class="class-tab" data-class="beschwoerer" role="tab" aria-selected="false">💀 Beschwörer</button>
+            </div>
+
+            <div class="class-panels">
+                <div class="class-panel active" data-class="krieger" role="tabpanel" aria-label="Krieger Klasse">
+                    <div class="class-panel-inner">
+                        <div class="class-icon-large" aria-hidden="true">⚔️</div>
+                        <div class="class-info">
+                            <h3>Krieger</h3>
+                            <p class="class-role">Tank &amp; Melee DPS – Halte die Front und schütze dein Team.</p>
+                            <div class="class-stats">
+                                <div class="stat"><span class="stat-label">Rolle</span><span class="stat-value">Tank / DPS</span></div>
+                                <div class="stat"><span class="stat-label">Ressource</span><span class="stat-value stat-rage">⚡ Wut</span></div>
+                                <div class="stat"><span class="stat-label">Rüstung</span><span class="stat-value">Platte</span></div>
+                                <div class="stat"><span class="stat-label">Waffe</span><span class="stat-value">Schwert / Axt</span></div>
+                            </div>
+                            <div class="class-prosCons">
+                                <div class="pros"><h4>Stärken</h4><ul><li>Hohe Verteidigung &amp; Sustain</li><li>Starker Nahkampfschaden</li><li>Gruppenschutz / Aggro-Halt</li></ul></div>
+                                <div class="cons"><h4>Schwächen</h4><ul><li>Geringe Mobilität</li><li>Keine Reichweite</li></ul></div>
+                            </div>
+                            <p class="class-playstyle"><strong>Spielstil:</strong> Frontlinie, Wut durch Schaden aufbauen und in mächtige Fähigkeiten umsetzen. Im PvP stark gegen Assassinen, schwach gegen Magier.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="class-panel" data-class="magier" role="tabpanel" aria-label="Magier Klasse">
+                    <div class="class-panel-inner">
+                        <div class="class-icon-large" aria-hidden="true">🔮</div>
+                        <div class="class-info">
+                            <h3>Magier</h3>
+                            <p class="class-role">Ranged Magic DPS – Vernichte Feinde mit mächtigen Zaubern.</p>
+                            <div class="class-stats">
+                                <div class="stat"><span class="stat-label">Rolle</span><span class="stat-value">Ranged DPS</span></div>
+                                <div class="stat"><span class="stat-label">Ressource</span><span class="stat-value stat-mana">💧 Mana</span></div>
+                                <div class="stat"><span class="stat-label">Rüstung</span><span class="stat-value">Stoff</span></div>
+                                <div class="stat"><span class="stat-label">Waffe</span><span class="stat-value">Stab</span></div>
+                            </div>
+                            <div class="class-prosCons">
+                                <div class="pros"><h4>Stärken</h4><ul><li>Höchster Zauberschaden</li><li>AoE-Fähigkeiten</li><li>Hohe Burst-Potenz</li></ul></div>
+                                <div class="cons"><h4>Schwächen</h4><ul><li>Niedrige Verteidigung</li><li>Mana-abhängig</li></ul></div>
+                            </div>
+                            <p class="class-playstyle"><strong>Spielstil:</strong> Aus sicherer Distanz zaubern. Dominiert Krieger durch Reichweite, ist aber verwundbar gegen Assassinen.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="class-panel" data-class="assassine" role="tabpanel" aria-label="Assassine Klasse">
+                    <div class="class-panel-inner">
+                        <div class="class-icon-large" aria-hidden="true">🗡️</div>
+                        <div class="class-info">
+                            <h3>Assassine</h3>
+                            <p class="class-role">Burst Melee DPS – Schlag zu, bevor der Feind reagiert.</p>
+                            <div class="class-stats">
+                                <div class="stat"><span class="stat-label">Rolle</span><span class="stat-value">Melee DPS</span></div>
+                                <div class="stat"><span class="stat-label">Ressource</span><span class="stat-value stat-energy">⚡ Energie</span></div>
+                                <div class="stat"><span class="stat-label">Rüstung</span><span class="stat-value">Leder</span></div>
+                                <div class="stat"><span class="stat-label">Waffe</span><span class="stat-value">Dual Dolche</span></div>
+                            </div>
+                            <div class="class-prosCons">
+                                <div class="pros"><h4>Stärken</h4><ul><li>Höchster Burst-Schaden</li><li>Sehr hohe Mobilität</li><li>Hohe Krit-Rate</li></ul></div>
+                                <div class="cons"><h4>Schwächen</h4><ul><li>Niedrige Verteidigung</li><li>Kein Sustain</li></ul></div>
+                            </div>
+                            <p class="class-playstyle"><strong>Spielstil:</strong> Schnelle Treffer-Serien aus dem Schatten. Konter zum Magier (Mobilität), unterliegt dem Krieger.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="class-panel" data-class="bogenschuetze" role="tabpanel" aria-label="Bogenschütze Klasse">
+                    <div class="class-panel-inner">
+                        <div class="class-icon-large" aria-hidden="true">🏹</div>
+                        <div class="class-info">
+                            <h3>Bogenschütze</h3>
+                            <p class="class-role">Ranged Physical DPS – Triff Ziele präzise aus der Distanz.</p>
+                            <div class="class-stats">
+                                <div class="stat"><span class="stat-label">Rolle</span><span class="stat-value">Ranged DPS</span></div>
+                                <div class="stat"><span class="stat-label">Ressource</span><span class="stat-value stat-focus">🎯 Fokus</span></div>
+                                <div class="stat"><span class="stat-label">Rüstung</span><span class="stat-value">Leder / Ketten</span></div>
+                                <div class="stat"><span class="stat-label">Waffe</span><span class="stat-value">Bogen / Armbrust</span></div>
+                            </div>
+                            <div class="class-prosCons">
+                                <div class="pros"><h4>Stärken</h4><ul><li>Konstanter Fernkampfschaden</li><li>Kein Mana-Limit</li><li>Sehr gutes Solospiel</li></ul></div>
+                                <div class="cons"><h4>Schwächen</h4><ul><li>Geringe Mobilität</li><li>Schwächer im Burst</li></ul></div>
+                            </div>
+                            <p class="class-playstyle"><strong>Spielstil:</strong> Mittlere Distanz, stetige DPS. Fokus durch Treffer aufbauen und in Spezialschüsse umsetzen.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="class-panel" data-class="schamane" role="tabpanel" aria-label="Schamane Klasse">
+                    <div class="class-panel-inner">
+                        <div class="class-icon-large" aria-hidden="true">🌿</div>
+                        <div class="class-info">
+                            <h3>Schamane</h3>
+                            <p class="class-role">Support &amp; Heiler – Halte dein Team am Leben.</p>
+                            <div class="class-stats">
+                                <div class="stat"><span class="stat-label">Rolle</span><span class="stat-value">Support / Heiler</span></div>
+                                <div class="stat"><span class="stat-label">Ressource</span><span class="stat-value stat-mana">💧 Mana</span></div>
+                                <div class="stat"><span class="stat-label">Rüstung</span><span class="stat-value">Ketten</span></div>
+                                <div class="stat"><span class="stat-label">Waffe</span><span class="stat-value">Stab / Streitkolben</span></div>
+                            </div>
+                            <div class="class-prosCons">
+                                <div class="pros"><h4>Stärken</h4><ul><li>Gruppenheilung</li><li>Mächtige Buffs</li><li>Vielseitige Unterstützung</li></ul></div>
+                                <div class="cons"><h4>Schwächen</h4><ul><li>Niedriger Solo-Schaden</li><li>Geringe Verteidigung</li></ul></div>
+                            </div>
+                            <p class="class-playstyle"><strong>Spielstil:</strong> Hinter der Frontlinie agieren, Gruppe heilen, Buffs verteilen. Unersetzlich in Dungeons.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="class-panel" data-class="beschwoerer" role="tabpanel" aria-label="Beschwörer Klasse">
+                    <div class="class-panel-inner">
+                        <div class="class-icon-large" aria-hidden="true">💀</div>
+                        <div class="class-info">
+                            <h3>Beschwörer</h3>
+                            <p class="class-role">Summoner &amp; Pet-Klasse – Befehlige mächtige Diener.</p>
+                            <div class="class-stats">
+                                <div class="stat"><span class="stat-label">Rolle</span><span class="stat-value">Beschwörer</span></div>
+                                <div class="stat"><span class="stat-label">Ressource</span><span class="stat-value stat-mana">💧 Mana + Slots</span></div>
+                                <div class="stat"><span class="stat-label">Rüstung</span><span class="stat-value">Stoff</span></div>
+                                <div class="stat"><span class="stat-label">Waffe</span><span class="stat-value">Stab</span></div>
+                            </div>
+                            <div class="class-prosCons">
+                                <div class="pros"><h4>Stärken</h4><ul><li>Crowd Control</li><li>Vielseitige Beschwörungen</li><li>Passiver Schadensoutput</li></ul></div>
+                                <div class="cons"><h4>Schwächen</h4><ul><li>Komplex zu spielen</li><li>Abhängig von Minions</li></ul></div>
+                            </div>
+                            <p class="class-playstyle"><strong>Spielstil:</strong> Eine Armada an Beschwörungen koordinieren, Gegner verlangsamen und indirekt kämpfen.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skill system summary -->
+            <div class="skill-system">
+                <div class="skill-system-item"><span class="skill-num">100</span><span class="skill-label">Max Level</span></div>
+                <div class="skill-system-item"><span class="skill-num">1</span><span class="skill-label">Skill-Punkt pro Level</span></div>
+                <div class="skill-system-item"><span class="skill-num">Lv. 50</span><span class="skill-label">Ultimate freischalten</span></div>
+                <div class="skill-system-item"><span class="skill-num">5</span><span class="skill-label">Primär-Stats (STR / INT / DEX / VIT / WIS)</span></div>
+                <div class="skill-system-item"><span class="skill-num">7&nbsp;Tage</span><span class="skill-label">Klassenwechsel-Cooldown</span></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../../js/config.js"></script>
+    <script src="../../js/main.js"></script>
+</body>
+</html>

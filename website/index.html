@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>festas_builds – Minecraft Server | Lobby · Survival · Mining · Skyblock · Java &amp; Bedrock</title>
+    <meta name="description" content="festas_builds – deutsches Minecraft-Netzwerk mit 4 Servern: Lobby, Survival (Tycoon + Town + Freebuild), Mining (Prison) und Skyblock. Crossplay Java &amp; Bedrock. IP: mc.festas-builds.com">
+    <meta name="keywords" content="Minecraft, Server, Skyblock, Survival, Tycoon, Town, Freebuild, Mining, Prison, Java, Bedrock, Geyser, festas_builds, 26.2">
+    <meta name="author" content="festas_builds">
+    <link rel="canonical" href="https://mc.festas-builds.com">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="festas_builds – Minecraft Server">
+    <meta property="og:description" content="Lobby · Survival · Mining · Skyblock – vier Server auf einem Netzwerk. Survival mit Tycoon, Town &amp; Freebuild. Mining (Prison) mit aufwertbarer Spitzhacke. Skyblock mit Freunde-Koop. Crossplay Java &amp; Bedrock.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mc.festas-builds.com">
+    <meta property="og:image" content="https://mc.festas-builds.com/images/og-image.jpg">
+    <meta property="og:site_name" content="festas_builds Minecraft Server">
+    <meta property="og:locale" content="de_DE">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="festas_builds – Minecraft Server">
+    <meta name="twitter:description" content="Lobby · Survival · Mining · Skyblock – vier Server auf einem Netzwerk. Survival mit Tycoon, Town &amp; Freebuild. Mining (Prison) mit aufwertbarer Spitzhacke. Skyblock mit Freunde-Koop. Crossplay Java &amp; Bedrock.">
+    <meta name="twitter:image" content="https://mc.festas-builds.com/images/og-image.jpg">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "GameServer",
+      "name": "festas_builds Minecraft Netzwerk",
+      "description": "Deutsches Minecraft-Netzwerk mit 4 Servern (Lobby, Survival mit Tycoon/Town/Freebuild, Mining/Prison, Skyblock). Crossplay Java &amp; Bedrock Support. Version 26.2.",
+      "game": {
+        "@type": "VideoGame",
+        "name": "Minecraft",
+        "operatingSystem": "Java, Bedrock"
+      },
+      "url": "https://mc.festas-builds.com",
+      "playersOnline": "0-100",
+      "maximumAttendeeCapacity": 100,
+      "serverStatus": "Online"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "festas_builds",
+      "url": "https://mc.festas-builds.com",
+      "description": "Minecraft Netzwerk – Lobby, Survival (Tycoon + Town + Freebuild), Mining (Prison) und Skyblock auf Minecraft 26.2"
+    }
+    </script>
+
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <header class="site-header" id="siteHeader">
+        <div class="header-container">
+            <a href="#" class="header-logo" aria-label="festas_builds Startseite">
+                <span class="logo-icon" aria-hidden="true">🏗️</span>
+                <span class="logo-text">festas_builds</span>
+            </a>
+
+            <nav class="main-nav" id="mainNav" aria-label="Hauptnavigation">
+                <ul class="nav-links">
+                    <li><a href="#servers" class="nav-link">Server</a></li>
+                    <li><a href="#players" class="nav-link">Online</a></li>
+                    <li><a href="#join" class="nav-link">Beitreten</a></li>
+                    <li><a href="wiki/index.html" class="nav-link">Wiki</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a href="https://discord.gg/BTNgMT5uw" class="btn btn-discord" target="_blank" rel="noopener noreferrer" aria-label="Discord beitreten">
+                    💬 Discord
+                </a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Hell-/Dunkelmodus umschalten">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mainNav">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero" id="hero">
+            <div class="hero-glow" aria-hidden="true"></div>
+            <div class="hero-content">
+                <p class="hero-eyebrow">✦ Deutsches Minecraft Netzwerk ✦</p>
+                <h1 class="hero-title">festas_builds</h1>
+                <p class="hero-tagline">Lobby &middot; Survival &middot; Mining &middot; Skyblock – vier Server, ein Netzwerk.</p>
+
+                <div class="server-ip-box">
+                    <span id="serverIp">mc.festas-builds.com</span>
+                    <button id="copyBtn" class="btn-copy" aria-label="Server-IP kopieren">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                        Kopieren
+                    </button>
+                </div>
+
+                <div class="server-status">
+                    <span class="status-indicator" aria-hidden="true"></span>
+                    <span class="status-text">Prüfe Status…</span>
+                    <span class="status-sep" aria-hidden="true">·</span>
+                    <span id="playerCount">– Spieler online</span>
+                </div>
+
+                <div class="hero-version">
+                    <span>MC <span id="minecraftVersion">26.2</span></span>
+                    <span class="dot" aria-hidden="true">·</span>
+                    <span id="serverSoftware">Paper</span>
+                    <span class="dot" aria-hidden="true">·</span>
+                    <span>Java &amp; Bedrock</span>
+                </div>
+
+                <div class="hero-ctas">
+                    <a href="#join" class="btn btn-primary">⚔️ Jetzt spielen</a>
+                    <a href="https://discord.gg/BTNgMT5uw" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">💬 Discord</a>
+                </div>
+            </div>
+            <div class="hero-scroll-hint" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+        </section>
+
+        <!-- AT A GLANCE -->
+        <section class="section" id="highlights" aria-label="Netzwerk auf einen Blick">
+            <div class="container">
+                <div class="highlights reveal">
+                    <div class="highlight-item">
+                        <div class="highlight-icon" aria-hidden="true">🌍</div>
+                        <div class="highlight-value">4</div>
+                        <div class="highlight-label">Server</div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon" aria-hidden="true">🏭</div>
+                        <div class="highlight-value">25</div>
+                        <div class="highlight-label">Tycoon-Ränge</div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon" aria-hidden="true">⛏️</div>
+                        <div class="highlight-value">Mining</div>
+                        <div class="highlight-label">Prison-Loop</div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon" aria-hidden="true">🏝️</div>
+                        <div class="highlight-value">Skyblock</div>
+                        <div class="highlight-label">Freunde-Koop</div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon" aria-hidden="true">📱</div>
+                        <div class="highlight-value">Crossplay</div>
+                        <div class="highlight-label">Java &amp; Bedrock</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- CORE VALUE -->
+        <section class="section section-alt" id="usps" aria-label="Was uns auszeichnet">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2 class="section-title">Warum festas_builds?</h2>
+                    <p class="section-subtitle">Drei Dinge, die uns einzigartig machen</p>
+                </div>
+                <div class="usp-grid usp-grid-3 reveal">
+                    <div class="usp-item">
+                        <div class="usp-icon" aria-hidden="true">🔄</div>
+                        <h3 class="usp-title">Cosmetics &amp; Ränge synchron</h3>
+                        <p class="usp-desc">Cosmetics und globale Ränge gelten auf allen Servern. Inventare sind server-isoliert – kein ungewollter Itemverlust beim Wechsel.</p>
+                    </div>
+                    <div class="usp-item">
+                        <div class="usp-icon" aria-hidden="true">🧩</div>
+                        <h3 class="usp-title">Vielfalt auf einem Netzwerk</h3>
+                        <p class="usp-desc">Generator-Tycoon über 25 Ränge, Prison-artiger Mining-Loop mit aufwertbarer Spitzhacke und Skyblock mit Freunde-Koop – alles hinter einem Proxy.</p>
+                    </div>
+                    <div class="usp-item">
+                        <div class="usp-icon" aria-hidden="true">📱</div>
+                        <h3 class="usp-title">Java &amp; Bedrock</h3>
+                        <p class="usp-desc">Voller Crossplay per Geyser &amp; Floodgate: spiele am PC, Handy oder auf der Konsole – ganz ohne Java-Account.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVER OVERVIEW -->
+        <section class="section" id="servers">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2 class="section-title">Unsere Server</h2>
+                    <p class="section-subtitle">Vier Welten hinter einem Proxy &ndash; Details im Wiki</p>
+                </div>
+
+                <div class="server-detail-grid reveal">
+                    <article class="server-detail">
+                        <div class="server-detail-head">
+                            <div class="server-detail-icon" aria-hidden="true">🏛️</div>
+                            <div>
+                                <h3 class="server-detail-title">Lobby</h3>
+                                <p class="server-detail-sub">Hub &amp; Server-Navigation</p>
+                            </div>
+                        </div>
+                        <p class="server-detail-desc">Dein Willkommens-Hub mit NPC-Server-Selector &ndash; von hier startest du in jede Welt.</p>
+                        <a class="server-detail-link" href="wiki/spielmodi/index.html">Mehr im Wiki →</a>
+                    </article>
+                    <article class="server-detail featured">
+                        <div class="server-detail-head">
+                            <div class="server-detail-icon" aria-hidden="true">🏭</div>
+                            <div>
+                                <h3 class="server-detail-title">Survival</h3>
+                                <p class="server-detail-sub">Survival + Generator-Tycoon + Plot-Welten</p>
+                            </div>
+                        </div>
+                        <p class="server-detail-desc">Klassisches Survival mit dem Tycoon-Modus als Herzstück (25 Ränge + 10 Prestige-Stufen) sowie den zwei Plot-Welten <strong>Town</strong> (Stadt) und <strong>Freebuild</strong> (Kreativ).</p>
+                        <a class="server-detail-link" href="wiki/spielmodi/tycoon.html">Mehr im Wiki →</a>
+                    </article>
+                    <article class="server-detail featured">
+                        <div class="server-detail-head">
+                            <div class="server-detail-icon" aria-hidden="true">⛏️</div>
+                            <div>
+                                <h3 class="server-detail-title">Mining (Prison)</h3>
+                                <p class="server-detail-sub">Casual-Server mit Abbau-Loop</p>
+                            </div>
+                        </div>
+                        <p class="server-detail-desc">Baue in freischaltbaren Zonen ab, verkaufe deine Beute und werte deine Spitzhacke auf &ndash; ein entspannter Prison-Loop ohne Druck.</p>
+                        <a class="server-detail-link" href="wiki/spielmodi/mining.html">Mehr im Wiki →</a>
+                    </article>
+                    <article class="server-detail featured">
+                        <div class="server-detail-head">
+                            <div class="server-detail-icon" aria-hidden="true">🏝️</div>
+                            <div>
+                                <h3 class="server-detail-title">Skyblock</h3>
+                                <p class="server-detail-sub">Insel-Aufbau mit Freunde-Koop</p>
+                            </div>
+                        </div>
+                        <p class="server-detail-desc">Starte auf einer kleinen Insel, baue sie gemeinsam mit Freunden aus und vervollständige Challenges &ndash; ohne Gilden, dafür mit echtem Koop.</p>
+                        <a class="server-detail-link" href="wiki/spielmodi/sky-survival.html">Mehr im Wiki →</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- LIVE PLAYER LIST -->
+        <section class="section section-alt" id="players">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2 class="section-title">Wer ist online?</h2>
+                    <p class="section-subtitle">Live-Überblick &ndash; wer gerade auf welchem Server spielt</p>
+                </div>
+
+                <div class="players-panel reveal">
+                    <div class="players-summary">
+                        <span class="status-indicator" id="playersStatusDot" aria-hidden="true"></span>
+                        <span class="players-summary-text" id="playersSummary">Lade Spielerliste &hellip;</span>
+                    </div>
+
+                    <div class="players-grid" id="playersGrid" aria-live="polite"></div>
+
+                    <p class="players-updated" id="playersUpdated" hidden></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW TO JOIN -->
+        <section class="section" id="join">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2 class="section-title">Beitreten</h2>
+                    <p class="section-subtitle">In drei Schritten ins Abenteuer</p>
+                </div>
+                <div class="join-grid reveal">
+                    <article class="card join-card">
+                        <div class="join-badge">☕ Java</div>
+                        <h3 class="card-title">Java Edition</h3>
+                        <ol class="join-steps">
+                            <li>Starte Minecraft Java Edition (26.2)</li>
+                            <li>Gehe zu <strong>Mehrspieler</strong></li>
+                            <li>Klicke auf <strong>Server hinzufügen</strong></li>
+                            <li>Gib die Server-Adresse ein und tritt dem Server bei</li>
+                        </ol>
+                        <div class="join-ip">
+                            <code>mc.festas-builds.com</code>
+                            <span class="join-port">Port: 25565</span>
+                        </div>
+                        <div class="join-version">Minecraft <strong>26.2</strong> · Paper · Velocity Proxy</div>
+                    </article>
+                    <article class="card join-card">
+                        <div class="join-badge">📱 Bedrock</div>
+                        <h3 class="card-title">Bedrock Edition</h3>
+                        <ol class="join-steps">
+                            <li>Starte Minecraft Bedrock Edition (Mobile, Konsole, Win10)</li>
+                            <li>Gehe zu <strong>Spielen → Server</strong></li>
+                            <li>Scrolle zu <strong>Server hinzufügen</strong></li>
+                            <li>Gib Adresse und Port ein</li>
+                        </ol>
+                        <div class="join-ip">
+                            <code>mc.festas-builds.com</code>
+                            <span class="join-port">Port: 19132</span>
+                        </div>
+                        <div class="join-version">Geyser + Floodgate · Kein Java-Account nötig</div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">🏗️ festas_builds</div>
+                    <p class="footer-tagline">Lobby · Survival · Mining · Skyblock – ein Netzwerk.</p>
+                    <p class="footer-ip">mc.festas-builds.com</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#servers">Server</a></li>
+                        <li><a href="#join">Beitreten</a></li>
+                        <li><a href="wiki/index.html">Wiki</a></li>
+                        <li><a href="wiki/spielmodi/index.html">Spielmodi</a></li>
+                        <li><a href="wiki/raenge/index.html">Ränge</a></li>
+                        <li><a href="wiki/regeln/index.html">Regeln</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="https://discord.gg/BTNgMT5uw" target="_blank" rel="noopener noreferrer">💬 Discord</a></li>
+                        <li><a href="https://mc-maps.festas-builds.com" target="_blank" rel="noopener noreferrer">🗺️ BlueMap</a></li>
+                        <li><a href="mailto:eric@festas-builds.com">📧 Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Rechtliches</h4>
+                    <ul>
+                        <li><a href="impressum.html">Impressum</a></li>
+                        <li><a href="datenschutz.html">Datenschutz</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> festas_builds. Nicht offiziell mit Mojang assoziiert.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/config.js" onerror="void(0)"></script>
+    <script src="js/main.js"></script>
+    <script>document.getElementById('currentYear').textContent = new Date().getFullYear();</script>
+</body>
+</html>

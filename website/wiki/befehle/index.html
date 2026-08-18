@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Befehle | Festas Builds Wiki</title>
+    <link rel="icon" type="image/svg+xml" href="../../images/favicon.svg">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../css/wiki.css">
+</head>
+<body>
+    <div class="wiki-layout">
+        <!-- Sidebar -->
+        <aside class="wiki-sidebar">
+            <div class="sidebar-header">
+                <a href="../../index.html" class="sidebar-logo">
+                    <span>🏗️</span> Festas Builds
+                </a>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3>📖 Wiki</h3>
+                    <ul>
+                        <li><a href="../index.html">Startseite</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h3>🏆 Ränge</h3>
+                    <ul>
+                        <li><a href="../raenge/index.html">Übersicht</a></li>
+                        <li><a href="../raenge/zeit-raenge.html">⏳ Zeit-Ränge</a></li>
+                        <li><a href="../raenge/geld-raenge.html">💎 Geld-Ränge</a></li>
+                        <li><a href="../raenge/tycoon-raenge.html">🏭 Tycoon-Ränge</a></li>
+                        <li><a href="../raenge/team-raenge.html">👮 Team-Ränge</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h3>🎮 Spielmodi</h3>
+                    <ul>
+                        <li><a href="../spielmodi/index.html">Übersicht</a></li>
+                        <li><a href="../spielmodi/sky-survival.html">🦅 Sky Survival</a></li>
+                        <li><a href="../spielmodi/tycoon.html">🏭 Tycoon</a></li>
+                        <li><a href="../spielmodi/town.html">🏘️ Town</a></li>
+                        <li><a href="../spielmodi/freebuild.html">🎨 Freebuild</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h3>📜 Sonstiges</h3>
+                    <ul>
+                        <li><a href="index.html" class="active">⌨️ Befehle</a></li>
+                        <li><a href="../regeln/index.html">📋 Regeln</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+        
+        <!-- Sidebar Toggle for Mobile -->
+        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Menü öffnen">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        
+        <!-- Main Content -->
+        <main class="wiki-content">
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a> / 
+                <a href="../index.html">Wiki</a> / 
+                <span>Befehle</span>
+            </div>
+            
+            <h1>⌨️ Befehls-Übersicht</h1>
+            <p class="wiki-intro">
+                Hier findest du alle wichtigen Befehle auf dem Festas Builds Server, 
+                sortiert nach Kategorien. Seit der CMI-Migration haben viele Befehle das <code>/cmi</code> Präfix!
+            </p>
+            
+            <!-- CMI Info Box -->
+            <div class="cmi-info-box">
+                <div class="cmi-header">
+                    <span class="cmi-icon">⚡</span>
+                    <span class="cmi-title">CMI Befehls-System</span>
+                </div>
+                <p class="cmi-description">
+                    Wir nutzen jetzt CMI (Custom Minecraft Inventory) für erweiterte Features! 
+                    Die meisten Befehle haben nun das <code>/cmi</code> Präfix.
+                </p>
+                <div class="cmi-features">
+                    <div class="cmi-feature">
+                        <code>/cmi</code>
+                        <span>Zeige alle verfügbaren CMI-Befehle</span>
+                    </div>
+                    <div class="cmi-feature">
+                        <code>/cmi help</code>
+                        <span>Hilfe zu CMI-Befehlen</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Navigation -->
+            <section class="commands-section">
+                <h2>🏠 Basis & Navigation</h2>
+                <div class="command-list">
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/cmi spawn</div>
+                            <div class="command-description">Teleportiere zum Server-Spawn</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/cmi warp [Name]</div>
+                            <div class="command-description">Teleportiere zu einem Warp-Punkt (sky, tycoon, town, freebuild)</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/cmi sethome [Name]</div>
+                            <div class="command-description">Setze einen Home-Punkt (Anzahl abhängig vom Rang)</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/cmi home [Name]</div>
+                            <div class="command-description">Teleportiere zu einem deiner Home-Punkte</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/cmi delhome [Name]</div>
+                            <div class="command-description">Lösche einen Home-Punkt</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/cmi back</div>
+                            <div class="command-description">Teleportiere zur letzten Position (ab BABA-Rang, auch nach Tod)</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/top</div>
+                            <div class="command-description">Teleportiere zum höchsten Block (ab Rolex) ⚡ CMI Extra</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/cmi tpa [Spieler]</div>
+                            <div class="command-description">Sende Teleport-Anfrage zu einem Spieler</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/cmi tpahere [Spieler]</div>
+                            <div class="command-description">Lade einen Spieler zu dir ein</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/cmi tpaccept</div>
+                            <div class="command-description">Akzeptiere Teleport-Anfrage</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/cmi tpdeny</div>
+                            <div class="command-description">Lehne Teleport-Anfrage ab</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Economy -->
+            <section class="commands-section">
+                <h2>💰 Wirtschaft</h2>
+                <div class="command-list">
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/cmi balance</div>
+                            <div class="command-description">Zeige dein Guthaben (kurz: /cmi bal)</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/shop</div>
+                            <div class="command-description">Öffne den Server-Shop</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/sell all</div>
+                            <div class="command-description">Verkaufe alle verkaufbaren Items im Inventar</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/sell hand</div>
+                            <div class="command-description">Verkaufe das Item in deiner Hand</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/cmi pay [Spieler] [Betrag]</div>
+                            <div class="command-description">Überweise Geld an einen Spieler</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/ah</div>
+                            <div class="command-description">Öffne das Auktionshaus (Markt)</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/ah sell [Preis]</div>
+                            <div class="command-description">Verkaufe Item in deiner Hand im Auktionshaus</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Jobs -->
+            <section class="commands-section">
+                <h2>💼 Jobs</h2>
+                <div class="command-list">
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/jobs browse</div>
+                            <div class="command-description">Zeige verfügbare Jobs</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/jobs join [Job]</div>
+                            <div class="command-description">Trete einem Job bei (Anzahl abhängig vom Rang)</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/jobs leave [Job]</div>
+                            <div class="command-description">Verlasse einen Job</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/jobs info [Job]</div>
+                            <div class="command-description">Zeige Informationen über einen Job</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/jobs stats</div>
+                            <div class="command-description">Zeige deine Job-Statistiken</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Utility -->
+            <section class="commands-section">
+                <h2>🛠️ Nützliches</h2>
+                <div class="command-list">
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/cmi workbench</div>
+                            <div class="command-description">Öffne eine Werkbank (ab Knecht-Rang)</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/cmi enderchest</div>
+                            <div class="command-description">Öffne deine Enderchest (ab Ticker-Rang)</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/cmi hat</div>
+                            <div class="command-description">Trage das Item in deiner Hand als Hut (ab Hustler-Rang)</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/cmi dispose</div>
+                            <div class="command-description">Öffne einen Müll-Eimer (ab Macher-Rang)</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/cmi anvil</div>
+                            <div class="command-description">Öffne einen Amboss (ab Bratan-Rang)</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/cmi feed</div>
+                            <div class="command-description">Fülle deinen Hunger (ab Ehrenmann-Rang)</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/cmi repair</div>
+                            <div class="command-description">Repariere Item in der Hand (ab Löwe-Rang)</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/cmi repair all</div>
+                            <div class="command-description">Repariere alle Items (ab Rich Kid)</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/hdb</div>
+                            <div class="command-description">Öffne die Head Database (ab Maschine-Rang)</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/cmi condense</div>
+                            <div class="command-description">Komprimiere Items (z.B. Nuggets zu Barren) (ab Rolex)</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/cmi heal</div>
+                            <div class="command-description">Heile dich vollständig (ab Gucci)</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/cmi fly</div>
+                            <div class="command-description">Toggle Flugmodus (ab Flexer im Tycoon, König überall)</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- CMI Extras -->
+            <section class="commands-section">
+                <h2>⚡ CMI Extra Features</h2>
+                <div class="command-list">
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/sit</div>
+                            <div class="command-description">Setze dich auf Treppen, Stufen und andere Blöcke (alle Spieler)</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/playtime</div>
+                            <div class="command-description">Zeige deine Spielzeit auf dem Server an (alle Spieler)</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/stats</div>
+                            <div class="command-description">Deine persönlichen Statistiken anzeigen (alle Spieler)</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/recipe [Item]</div>
+                            <div class="command-description">Zeige Crafting-Rezepte für Items an (ab Lauch)</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/colors</div>
+                            <div class="command-description">Zeige alle verfügbaren Farbcodes an (ab Chiller)</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/armorstand</div>
+                            <div class="command-description">Pose Rüstungsständer mit einem visuellen Editor (ab Macher)</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/signedit</div>
+                            <div class="command-description">Bearbeite Schilder per Rechtsklick (ab Bratan)</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/glow [Farbe]</div>
+                            <div class="command-description">Leucht-Effekt in allen Farben (ab Flexer)</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/top</div>
+                            <div class="command-description">Teleportiere zum höchsten Block (ab Rolex)</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/cmi nick [Name]</div>
+                            <div class="command-description">Setze einen farbigen Nickname (ab Gucci)</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/cmi prefix [Text]</div>
+                            <div class="command-description">Setze deinen eigenen Chat-Präfix (Admin sein Vater)</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/cmi elytra</div>
+                            <div class="command-description">Fliege mit Elytra ohne Feuerwerk (Admin sein Vater)</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Plot Commands -->
+            <section class="commands-section">
+                <h2>🏗️ Plot-Befehle</h2>
+                <div class="command-list">
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/plot auto</div>
+                            <div class="command-description">Claime automatisch ein freies Plot</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/plot home</div>
+                            <div class="command-description">Teleportiere zu deinem Plot</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/plot add [Spieler]</div>
+                            <div class="command-description">Füge Spieler zu deinem Plot hinzu</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/plot trust [Spieler]</div>
+                            <div class="command-description">Gib Spieler permanente Build-Rechte</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/plot kick [Spieler]</div>
+                            <div class="command-description">Kicke Spieler von deinem Plot (ab Türsteher-Rang)</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/plot biome [Biom]</div>
+                            <div class="command-description">Ändere das Biom deines Plots (ab Macher-Rang)</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/plot music</div>
+                            <div class="command-description">Setze Hintergrundmusik (ab Bratan-Rang)</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/plot clear</div>
+                            <div class="command-description">Lösche dein Plot komplett (Vorsicht!)</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Tycoon -->
+            <section class="commands-section">
+                <h2>🏭 Tycoon</h2>
+                <div class="command-list">
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/rankup</div>
+                            <div class="command-description">Steige zum nächsten Tycoon-Rang auf</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/nextgen</div>
+                            <div class="command-description">Öffne das Generator-Menü</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/voidchest</div>
+                            <div class="command-description">Verwalte VoidChests (ab Gold-Rang)</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/chunkloader</div>
+                            <div class="command-description">Verwalte Chunk Loader (ab Kupfer-Rang)</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Social -->
+            <section class="commands-section">
+                <h2>💬 Soziales</h2>
+                <div class="command-list">
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/msg [Spieler] [Nachricht]</div>
+                            <div class="command-description">Sende private Nachricht an Spieler</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/r [Nachricht]</div>
+                            <div class="command-description">Antworte auf letzte Privatnachricht</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/ignore [Spieler]</div>
+                            <div class="command-description">Ignoriere Nachrichten eines Spielers</div>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <div>
+                            <div class="command-name">/list</div>
+                            <div class="command-description">Zeige alle Online-Spieler</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="quick-info" style="margin-top: var(--spacing-lg);">
+                <h2>💡 Hinweise</h2>
+                <div style="color: var(--text-light); opacity: 0.9;">
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--gold);">ℹ️</span>
+                            Viele Befehle sind erst ab bestimmten Rängen verfügbar. 
+                            Siehe <a href="../raenge/zeit-raenge.html" style="color: var(--sky-blue);">Zeit-Ränge</a> 
+                            und <a href="../raenge/geld-raenge.html" style="color: var(--sky-blue);">Geld-Ränge</a>.
+                        </li>
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--gold);">⌨️</span>
+                            Bei den meisten Befehlen kannst du <code>/help [Befehl]</code> nutzen für mehr Infos.
+                        </li>
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--gold);">📝</span>
+                            Eckige Klammern <code>[Text]</code> bedeuten, dass du den Text durch 
+                            einen eigenen Wert ersetzen musst.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <script src="../../js/config.js"></script>
+    <script src="../../js/main.js"></script>
+</body>
+</html>

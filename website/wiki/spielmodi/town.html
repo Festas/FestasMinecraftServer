@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Town | Festas Builds Wiki</title>
+    <link rel="icon" type="image/svg+xml" href="../../images/favicon.svg">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../css/wiki.css">
+</head>
+<body>
+    <div class="wiki-layout">
+        <!-- Sidebar -->
+        <aside class="wiki-sidebar">
+            <div class="sidebar-header">
+                <a href="../../index.html" class="sidebar-logo">
+                    <span>🏗️</span> Festas Builds
+                </a>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3>📖 Wiki</h3>
+                    <ul>
+                        <li><a href="../index.html">Startseite</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h3>🏆 Ränge</h3>
+                    <ul>
+                        <li><a href="../raenge/index.html">Übersicht</a></li>
+                        <li><a href="../raenge/zeit-raenge.html">⏳ Zeit-Ränge</a></li>
+                        <li><a href="../raenge/geld-raenge.html">💎 Geld-Ränge</a></li>
+                        <li><a href="../raenge/tycoon-raenge.html">🏭 Tycoon-Ränge</a></li>
+                        <li><a href="../raenge/team-raenge.html">👮 Team-Ränge</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h3>🎮 Spielmodi</h3>
+                    <ul>
+                        <li><a href="index.html">Übersicht</a></li>
+                        <li><a href="sky-survival.html">🏝️ Skyblock</a></li>
+                        <li><a href="tycoon.html">🏭 Tycoon</a></li>
+                        <li><a href="town.html" class="active">🏘️ Town</a></li>
+                        <li><a href="freebuild.html">🎨 Freebuild</a></li>
+                        <li><a href="mining.html">⛏️ Mining (Prison)</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h3>📜 Sonstiges</h3>
+                    <ul>
+                        <li><a href="../befehle/index.html">⌨️ Befehle</a></li>
+                        <li><a href="../regeln/index.html">📋 Regeln</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+        
+        <!-- Sidebar Toggle for Mobile -->
+        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Menü öffnen">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        
+        <!-- Main Content -->
+        <main class="wiki-content">
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a> / 
+                <a href="../index.html">Wiki</a> / 
+                <a href="index.html">Spielmodi</a> / 
+                <span>Town</span>
+            </div>
+            
+            <div class="gamemode-card">
+                <div class="gamemode-header">
+                    <span class="gamemode-icon">🏘️</span>
+                    <h1 class="gamemode-title">Town</h1>
+                </div>
+                
+                <p class="gamemode-description">
+                    Im Town-Modus kannst du gemeinsam mit anderen Spielern Städte gründen, 
+                    verwalten und ausbauen! Gründe deine eigene Stadt, lade Freunde ein, 
+                    oder trete einer bestehenden Stadt bei. Verwalte Grundstücke, sammle 
+                    Steuern und baue die größte und schönste Stadt auf dem Server!
+                </p>
+                
+                <div class="gamemode-features">
+                    <h3>✨ Features</h3>
+                    <ul>
+                        <li>Gründe deine eigene Stadt oder trete einer bei</li>
+                        <li>Stadt-Grundstücke (Plots) für Mitglieder vergeben</li>
+                        <li>Stadt-Bank für gemeinsame Ressourcen</li>
+                        <li>Steuersystem zur Finanzierung der Stadt</li>
+                        <li>Stadt-Ränge und Rechte-Verwaltung</li>
+                        <li>PvP-Schutz in deiner Stadt</li>
+                        <li>Vollständige Survival-Welt mit normaler Ressourcen-Generierung</li>
+                        <li>Stadt-Kriege und Allianzen (optional)</li>
+                    </ul>
+                </div>
+                
+                <div class="gamemode-features">
+                    <h3>🎯 Spielziel</h3>
+                    <ul>
+                        <li>Gründe eine erfolgreiche, wachsende Stadt</li>
+                        <li>Rekrutiere Einwohner und verwalte deine Community</li>
+                        <li>Baue beeindruckende Stadt-Strukturen gemeinsam</li>
+                        <li>Erweitere dein Stadt-Territorium</li>
+                        <li>Werde die größte oder reichste Stadt auf dem Server</li>
+                        <li>Bilde Allianzen oder rivaliere mit anderen Städten</li>
+                    </ul>
+                </div>
+                
+                <div class="gamemode-features">
+                    <h3>🛠️ Wichtige Befehle</h3>
+                    <ul>
+                        <li><code>/town</code> oder <code>/t</code> - Town-Hauptmenü</li>
+                        <li><code>/town new &lt;Name&gt;</code> - Gründe eine neue Stadt</li>
+                        <li><code>/town spawn</code> - Teleportiere zum Stadt-Spawn</li>
+                        <li><code>/town invite &lt;Spieler&gt;</code> - Lade Spieler in deine Stadt ein</li>
+                        <li><code>/town claim</code> - Claime einen Chunk für deine Stadt</li>
+                        <li><code>/town set</code> - Stadt-Einstellungen verwalten</li>
+                        <li><code>/town deposit &lt;Betrag&gt;</code> - Geld in Stadt-Bank einzahlen</li>
+                        <li><code>/town withdraw &lt;Betrag&gt;</code> - Geld abheben (Bürgermeister)</li>
+                        <li><code>/plot claim</code> - Claime ein Stadt-Grundstück</li>
+                        <li><code>/resident</code> - Zeige deine Einwohner-Infos</li>
+                    </ul>
+                </div>
+                
+                <div class="gamemode-features">
+                    <h3>👥 Stadt-Ränge</h3>
+                    <ul>
+                        <li><strong>Bürgermeister:</strong> Gründer der Stadt, volle Kontrolle</li>
+                        <li><strong>Co-Bürgermeister:</strong> Stellvertreter mit erweiterten Rechten</li>
+                        <li><strong>Assistent:</strong> Kann Spieler einladen und Plots vergeben</li>
+                        <li><strong>Einwohner:</strong> Reguläres Stadt-Mitglied</li>
+                    </ul>
+                </div>
+                
+                <div class="gamemode-features">
+                    <h3>💡 Tipps für Bürgermeister</h3>
+                    <ul>
+                        <li>Wähle einen strategischen Ort für deine Stadt</li>
+                        <li>Setze faire Steuern – zu hoch und Spieler verlassen die Stadt</li>
+                        <li>Plane Straßen und Grundstücke vor dem massiven Ausbau</li>
+                        <li>Vergib klare Rollen an vertrauenswürdige Mitglieder</li>
+                        <li>Halte die Stadt-Bank gefüllt für Expansionen</li>
+                        <li>Organisiere gemeinsame Bau-Projekte</li>
+                        <li>Nutze den Stadt-Chat für Community-Building</li>
+                    </ul>
+                </div>
+                
+                <div class="gamemode-features">
+                    <h3>💡 Tipps für Einwohner</h3>
+                    <ul>
+                        <li>Suche eine aktive Stadt mit guter Community</li>
+                        <li>Respektiere die Stadt-Regeln des Bürgermeisters</li>
+                        <li>Trage zur Stadt-Bank bei, um Expansionen zu unterstützen</li>
+                        <li>Baue schön auf deinem Grundstück – es repräsentiert die Stadt</li>
+                        <li>Hilf bei gemeinsamen Projekten mit</li>
+                        <li>Kommuniziere aktiv im Stadt-Chat</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <section class="quick-info" style="margin-top: var(--spacing-lg);">
+                <h2>🚀 Schnellstart (Stadt gründen)</h2>
+                <div style="color: var(--text-light); opacity: 0.9;">
+                    <ol style="padding-left: 1.5rem;">
+                        <li style="padding: 0.5rem 0;">
+                            Teleportiere mit <code>/warp town</code> zur Town-Welt
+                        </li>
+                        <li style="padding: 0.5rem 0;">
+                            Finde einen geeigneten Ort für deine Stadt
+                        </li>
+                        <li style="padding: 0.5rem 0;">
+                            Gründe deine Stadt mit <code>/town new [Name]</code>
+                        </li>
+                        <li style="padding: 0.5rem 0;">
+                            Claime den ersten Chunk mit <code>/town claim</code>
+                        </li>
+                        <li style="padding: 0.5rem 0;">
+                            Setze einen Spawn-Punkt mit <code>/town set spawn</code>
+                        </li>
+                        <li style="padding: 0.5rem 0;">
+                            Lade Freunde ein mit <code>/town invite [Spieler]</code>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+            
+            <section class="quick-info" style="margin-top: var(--spacing-lg);">
+                <h2>🚀 Schnellstart (Stadt beitreten)</h2>
+                <div style="color: var(--text-light); opacity: 0.9;">
+                    <ol style="padding-left: 1.5rem;">
+                        <li style="padding: 0.5rem 0;">
+                            Teleportiere mit <code>/warp town</code> zur Town-Welt
+                        </li>
+                        <li style="padding: 0.5rem 0;">
+                            Schaue dir verfügbare Städte an (frag im Chat oder <code>/town list</code>)
+                        </li>
+                        <li style="padding: 0.5rem 0;">
+                            Warte auf eine Einladung von einem Bürgermeister
+                        </li>
+                        <li style="padding: 0.5rem 0;">
+                            Akzeptiere mit <code>/town accept</code>
+                        </li>
+                        <li style="padding: 0.5rem 0;">
+                            Claime ein Grundstück mit <code>/plot claim</code>
+                        </li>
+                        <li style="padding: 0.5rem 0;">
+                            Beginne mit dem Bauen in deiner neuen Stadt!
+                        </li>
+                    </ol>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <script src="../../js/config.js"></script>
+    <script src="../../js/main.js"></script>
+</body>
+</html>

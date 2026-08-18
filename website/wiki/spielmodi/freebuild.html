@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freebuild | Festas Builds Wiki</title>
+    <link rel="icon" type="image/svg+xml" href="../../images/favicon.svg">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../css/wiki.css">
+</head>
+<body>
+    <div class="wiki-layout">
+        <!-- Sidebar -->
+        <aside class="wiki-sidebar">
+            <div class="sidebar-header">
+                <a href="../../index.html" class="sidebar-logo">
+                    <span>🏗️</span> Festas Builds
+                </a>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3>📖 Wiki</h3>
+                    <ul>
+                        <li><a href="../index.html">Startseite</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h3>🏆 Ränge</h3>
+                    <ul>
+                        <li><a href="../raenge/index.html">Übersicht</a></li>
+                        <li><a href="../raenge/zeit-raenge.html">⏳ Zeit-Ränge</a></li>
+                        <li><a href="../raenge/geld-raenge.html">💎 Geld-Ränge</a></li>
+                        <li><a href="../raenge/tycoon-raenge.html">🏭 Tycoon-Ränge</a></li>
+                        <li><a href="../raenge/team-raenge.html">👮 Team-Ränge</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h3>🎮 Spielmodi</h3>
+                    <ul>
+                        <li><a href="index.html">Übersicht</a></li>
+                        <li><a href="sky-survival.html">🏝️ Skyblock</a></li>
+                        <li><a href="tycoon.html">🏭 Tycoon</a></li>
+                        <li><a href="town.html">🏘️ Town</a></li>
+                        <li><a href="freebuild.html" class="active">🎨 Freebuild</a></li>
+                        <li><a href="mining.html">⛏️ Mining (Prison)</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h3>📜 Sonstiges</h3>
+                    <ul>
+                        <li><a href="../befehle/index.html">⌨️ Befehle</a></li>
+                        <li><a href="../regeln/index.html">📋 Regeln</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+        
+        <!-- Sidebar Toggle for Mobile -->
+        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Menü öffnen">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        
+        <!-- Main Content -->
+        <main class="wiki-content">
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a> / 
+                <a href="../index.html">Wiki</a> / 
+                <a href="index.html">Spielmodi</a> / 
+                <span>Freebuild</span>
+            </div>
+            
+            <div class="gamemode-card">
+                <div class="gamemode-header">
+                    <span class="gamemode-icon">🎨</span>
+                    <h1 class="gamemode-title">Freebuild</h1>
+                </div>
+                
+                <p class="gamemode-description">
+                    Der Freebuild-Modus bietet dir kreative Plot-Grundstücke, auf denen du 
+                    ohne Überlebenszwang bauen kannst! Nutze WorldEdit, verschiedene Heads aus der 
+                    Head Database, und alle verfügbaren Blöcke, um deine kreativen Ideen umzusetzen.
+                </p>
+                
+                <div class="gamemode-features">
+                    <h3>✨ Features</h3>
+                    <ul>
+                        <li>Plot-System mit verschiedenen Größen</li>
+                        <li>Kreativ-ähnliche Bau-Erfahrung im Survival-Kontext</li>
+                        <li>WorldEdit für fortgeschrittene Builder (höhere Ränge)</li>
+                        <li>Head Database mit tausenden Custom Heads (/hdb)</li>
+                        <li>Plot-Biome ändern (höhere Ränge)</li>
+                        <li>Plot-Musik & Wetter einstellen</li>
+                        <li>Spieler zu deinem Plot einladen</li>
+                        <li>Plot-Rating & Showcase-System</li>
+                    </ul>
+                </div>
+                
+                <div class="gamemode-features">
+                    <h3>🎯 Spielziel</h3>
+                    <ul>
+                        <li>Baue beeindruckende Kreationen auf deinen Plots</li>
+                        <li>Nimm an Bau-Wettbewerben teil</li>
+                        <li>Zeige deine Builds der Community</li>
+                        <li>Sammle Ratings und Feedback von anderen Spielern</li>
+                        <li>Nutze mehrere Plots für große Projekte (höhere Ränge)</li>
+                        <li>Werde zum besten Builder auf dem Server</li>
+                    </ul>
+                </div>
+                
+                <div class="gamemode-features">
+                    <h3>🛠️ Wichtige Befehle</h3>
+                    <ul>
+                        <li><code>/plot auto</code> - Claime automatisch ein freies Plot</li>
+                        <li><code>/plot home</code> - Teleportiere zu deinem Plot</li>
+                        <li><code>/plot add &lt;Spieler&gt;</code> - Füge Spieler zu deinem Plot hinzu</li>
+                        <li><code>/plot trust &lt;Spieler&gt;</code> - Gib Spieler Build-Rechte</li>
+                        <li><code>/plot deny &lt;Spieler&gt;</code> - Sperre Spieler von deinem Plot</li>
+                        <li><code>/plot clear</code> - Lösche dein Plot (Vorsicht!)</li>
+                        <li><code>/plot biome &lt;Biom&gt;</code> - Ändere das Biom (ab Macher-Rang)</li>
+                        <li><code>/plot music</code> - Setze Hintergrundmusik (ab Bratan-Rang)</li>
+                        <li><code>/hdb</code> - Öffne die Head Database (ab Maschine-Rang)</li>
+                        <li><code>/plot visit &lt;Spieler&gt;</code> - Besuche andere Plots</li>
+                    </ul>
+                </div>
+                
+                <div class="gamemode-features">
+                    <h3>📏 Plot-Größen nach Rang</h3>
+                    <ul>
+                        <li><strong>NPC-Rang:</strong> 1 Plot (Standard-Größe)</li>
+                        <li><strong>Hustler-Rang:</strong> 2 Plots</li>
+                        <li><strong>Bre-Rang:</strong> 3 Plots</li>
+                        <li><strong>Maschine-Rang:</strong> 4 Plots</li>
+                        <li><strong>Main Character:</strong> 5 Plots</li>
+                        <li><strong>Rolex (Geld):</strong> 6 Plots</li>
+                        <li><strong>Oligarch (Geld):</strong> 7 Plots</li>
+                        <li><strong>Endgegner (Geld):</strong> 10 Plots</li>
+                        <li><strong>Admin sein Vater (Geld):</strong> 50 Plots</li>
+                    </ul>
+                </div>
+                
+                <div class="gamemode-features">
+                    <h3>💡 Bau-Tipps</h3>
+                    <ul>
+                        <li>Plane dein Build vorher – nutze ggf. Skizzen oder Referenzen</li>
+                        <li>Nutze verschiedene Texturen für mehr Detail</li>
+                        <li>Die Head Database bietet tausende Deko-Möglichkeiten</li>
+                        <li>Experimentiere mit verschiedenen Biomen für Atmosphäre</li>
+                        <li>Lade Freunde ein, um gemeinsam zu bauen</li>
+                        <li>WorldEdit (höhere Ränge) beschleunigt große Projekte massiv</li>
+                        <li>Besuche andere Plots für Inspiration</li>
+                        <li>Nimm an Bau-Events teil für Belohnungen</li>
+                    </ul>
+                </div>
+                
+                <div class="gamemode-features">
+                    <h3>🏆 Plot-Rating System</h3>
+                    <ul>
+                        <li>Andere Spieler können dein Plot bewerten</li>
+                        <li>Gute Ratings erhöhen deine Builder-Reputation</li>
+                        <li>Top-bewertete Plots werden featured</li>
+                        <li>Nutze <code>/plot rate</code> um Plots zu bewerten</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <section class="quick-info" style="margin-top: var(--spacing-lg);">
+                <h2>🚀 Schnellstart</h2>
+                <div style="color: var(--text-light); opacity: 0.9;">
+                    <ol style="padding-left: 1.5rem;">
+                        <li style="padding: 0.5rem 0;">
+                            Teleportiere mit <code>/warp freebuild</code> zum Freebuild
+                        </li>
+                        <li style="padding: 0.5rem 0;">
+                            Claime dein erstes Plot mit <code>/plot auto</code>
+                        </li>
+                        <li style="padding: 0.5rem 0;">
+                            Sammle Baumaterialien (farme oder kaufe im Shop)
+                        </li>
+                        <li style="padding: 0.5rem 0;">
+                            Beginne mit dem Bauen deiner Idee!
+                        </li>
+                        <li style="padding: 0.5rem 0;">
+                            Nutze <code>/hdb</code> für Custom Heads (ab Maschine-Rang)
+                        </li>
+                        <li style="padding: 0.5rem 0;">
+                            Lade Freunde ein mit <code>/plot add [Spieler]</code>
+                        </li>
+                        <li style="padding: 0.5rem 0;">
+                            Zeige dein fertiges Build der Community!
+                        </li>
+                    </ol>
+                </div>
+            </section>
+            
+            <div style="background: rgba(125, 189, 84, 0.1); border: 1px solid rgba(125, 189, 84, 0.3); border-radius: var(--radius-md); padding: var(--spacing-md); margin-top: var(--spacing-lg);">
+                <strong style="color: var(--grass-green);">💡 Tipp:</strong>
+                <p style="margin-top: var(--spacing-xs); color: var(--text-light); opacity: 0.9;">
+                    Kombiniere Freebuild mit anderen Modi! Farme Ressourcen im Tycoon, 
+                    verdiene Geld und kaufe höhere Ränge für mehr Plots und bessere Build-Tools.
+                </p>
+            </div>
+        </main>
+    </div>
+    
+    <script src="../../js/config.js"></script>
+    <script src="../../js/main.js"></script>
+</body>
+</html>
