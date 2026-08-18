@@ -22,7 +22,7 @@ messages:
   block_booster_on: '<gradient:#FFFF00:#FFD700:#FFA500><bold>VERZAUBERUNG</bold></gradient> <dark_gray>»</dark_gray> <white>Doppelte Blöcke wurden aktiviert: <gold><bold>x2 Blöcke</bold></gold> <white>für <yellow>5:00 Minuten</yellow>.'
   block_booster_off: <gradient:#FFFF00:#FFD700:#FFA500><bold>VERZAUBERUNG</bold></gradient> <dark_gray>»</dark_gray> <white>Doppelte Blöcke wurden <yellow><bold>deaktiviert</bold></yellow>.
   lucky_mode_timeleft: '<gradient:#FFFF00:#FFD700:#FFA500><bold>VERZAUBERUNG</bold></gradient> <dark_gray>»</dark_gray> <white>Lucky Mode aktiv für: <green><bold>%timeleft%</bold></green>.'
-  lucky_mode_disabled: <gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>Lucky Mode ist <red>deaktiviert</red>.
+  lucky_mode_disabled: <gradient:#FFFF00:#FFD700:#FFA500><bold>VERZAUBERUNG</bold></gradient> <dark_gray>»</dark_gray> <white>Lucky Mode ist <red>deaktiviert</red>.
   explosive_disabled: <gradient:#FF5555:#AA0000:#550000><bold>EXPLOSIVE</bold></gradient> <dark_gray>»</dark_gray> <white>Verzauberung <yellow><bold>DEAKTIVIERT</bold></yellow>.
   explosive_enabled: <gradient:#FF5555:#AA0000:#550000><bold>EXPLOSIVE</bold></gradient> <dark_gray>»</dark_gray> <white>Verzauberung <yellow><bold>AKTIVIERT</bold></yellow>.
   value_no_permission: <gradient:#FFFF00:#FFD700:#FFA500><bold>WERT</bold></gradient> <dark_gray>»</dark_gray> <white>Keine Berechtigung – freischaltbar unter <yellow>store.festas-builds.com</yellow>.
@@ -271,10 +271,10 @@ enchant_menu:
     material: COMPARATOR
     custom_model_data: 0
     slot: 5
-    name: <gradient:#FFA500:#FFD700><bold>PICKAXE SETTINGS</bold></gradient>
+    name: <gradient:#FFA500:#FFD700><bold>SPITZHACKEN-EINSTELLUNGEN</bold></gradient>
     lore:
     - ' '
-    - <italic:false><gray>Adjust how your pickaxe behaves.</gray>
+    - <italic:false><gray>Passe das Verhalten deiner Spitzhacke an.</gray>
     - ' '
     - <italic:false><gray><italic>(( Klicke zum Öffnen ))</italic></gray>
   locked_item:
@@ -284,12 +284,12 @@ enchant_menu:
     name: <gray><bold>???</bold> <dark_gray>Gesperrte Verzauberung</dark_gray>
     lore:
     - ''
-    - <italic:false><gray><italic>A mysterious enchant, hidden</italic></gray>
-    - <italic:false><gray><italic>until you're strong enough...</italic></gray>
+    - <italic:false><gray><italic>Eine geheimnisvolle Verzauberung, verborgen</italic></gray>
+    - <italic:false><gray><italic>bis du stark genug bist...</italic></gray>
     - ''
-    - <italic:false><yellow>▎</yellow> <white>Unlocks at Pickaxe Level <yellow>%required_pickaxe_level%</yellow>
+    - <italic:false><yellow>▎</yellow> <white>Freischaltung ab Spitzhacken-Stufe <yellow>%required_pickaxe_level%</yellow>
     - ''
-    - <italic:false><gray><italic>(( Reach Pickaxe Level %required_pickaxe_level% to unlock! ))</italic></gray>
+    - <italic:false><gray><italic>(( Erreiche Spitzhacken-Stufe %required_pickaxe_level%, um sie freizuschalten! ))</italic></gray>
 enchant_upgrade_menu:
   title: '%enchant%'
   lines: 5
@@ -573,28 +573,28 @@ enchant_notifications:
   enabled_state:
     material: LIME_STAINED_GLASS_PANE
     custom_model_data: 0
-    name: '<white>%enchant%<white>: <green><bold>ON</bold></green>'
+    name: '<white>%enchant%<white>: <green><bold>AN</bold></green>'
     lore:
     - ' '
-    - <italic:false><gray>You receive notifications for</gray>
-    - <italic:false><gray>this enchant.</gray>
+    - <italic:false><gray>Du erhältst Benachrichtigungen für</gray>
+    - <italic:false><gray>diese Verzauberung.</gray>
     - ' '
     - <italic:false><gray><italic>(( Klicke für AUS ))</italic></gray>
   disabled_state:
     material: RED_STAINED_GLASS_PANE
     custom_model_data: 0
-    name: '<white>%enchant%<white>: <red><bold>OFF</bold></red>'
+    name: '<white>%enchant%<white>: <red><bold>AUS</bold></red>'
     lore:
     - ' '
-    - <italic:false><gray>Notifications for this enchant</gray>
-    - <italic:false><gray>are turned off.</gray>
+    - <italic:false><gray>Benachrichtigungen für diese</gray>
+    - <italic:false><gray>Verzauberung sind deaktiviert.</gray>
     - ' '
     - <italic:false><gray><italic>(( Klicke für AN ))</italic></gray>
   back_item:
     slot: 49
     material: COMPASS
     custom_model_data: 0
-    name: <red><bold>BACK</bold></red>
+    name: <red><bold>ZURÜCK</bold></red>
     lore:
     - <gray><italic>(( Zurück zu den Spitzhacken-Einstellungen ))</italic></gray>
   previous_page:
@@ -786,17 +786,17 @@ disenchant_menu:
 Pickaxe:
   level-format: NUMBER
   max-level-format: <gradient:#FFD700:#FFA500><bold>MAX</bold></gradient>
-  disabled-format: <strikethrough><gray>%Enchant% %Level%</gray></strikethrough> <red>[OFF]</red>
+  disabled-format: <strikethrough><gray>%Enchant% %Level%</gray></strikethrough> <red>[AUS]</red>
   lore-update-interval: 5
   lore:
   - ''
-  - <italic:false><gradient:#FFD700:#FFA500><bold>❖ </bold></gradient><gradient:#FFEEAD:#FFB347><bold>PICKAXE STATS</bold></gradient><gradient:#FFD700:#FFA500><bold> ❖</bold></gradient>
-  - '<italic:false><white><bold>┃ </bold><yellow>Owner: <white>%player_name%</white>'
-  - '<italic:false><white><bold>┃ </bold><yellow>Soulbound to: <white>%Owner%</white>'
+  - <italic:false><gradient:#FFD700:#FFA500><bold>❖ </bold></gradient><gradient:#FFEEAD:#FFB347><bold>SPITZHACKENWERTE</bold></gradient><gradient:#FFD700:#FFA500><bold> ❖</bold></gradient>
+  - '<italic:false><white><bold>┃ </bold><yellow>Besitzer: <white>%player_name%</white>'
+  - '<italic:false><white><bold>┃ </bold><yellow>Seelengebunden an: <white>%Owner%</white>'
   - '<italic:false><white><bold>┃ </bold><yellow>Level: <white>%PickaxeLevel%</white> <gray>[<white>%PickaxeProgress%</white><gray>]</gray>'
-  - '<italic:false><white><bold>┃ </bold><yellow>Exp: <white>%Exp%</white> <gray>/ <white>%Exp_Required%</white>'
+  - '<italic:false><white><bold>┃ </bold><yellow>Erfahrung: <white>%Exp%</white> <gray>/ <white>%Exp_Required%</white>'
   - ''
-  - <italic:false><gradient:#DA70D6:#BA55D3><bold>❖ </bold></gradient><gradient:#EE82EE:#DDA0DD><bold>TOKEN ENCHANTS</bold></gradient><gradient:#DA70D6:#BA55D3><bold> ❖</bold></gradient>
+  - <italic:false><gradient:#DA70D6:#BA55D3><bold>❖ </bold></gradient><gradient:#EE82EE:#DDA0DD><bold>TOKEN-VERZAUBERUNGEN</bold></gradient><gradient:#DA70D6:#BA55D3><bold> ❖</bold></gradient>
   - <italic:false><white><bold>┃ </bold><gold>%Enchant-1%</gold>
   - <italic:false><white><bold>┃ </bold><gold>%Enchant-2%</gold>
   - <italic:false><white><bold>┃ </bold><gold>%Enchant-3%</gold>
@@ -812,7 +812,7 @@ Pickaxe:
   - <italic:false><white><bold>┃ </bold><gold>%Enchant-19%</gold>
   - <italic:false><white><bold>┃ </bold><gold>%Enchant-22%</gold>
   - ''
-  - <italic:false><gradient:#7FFFD4:#40E0D0><bold>❖ </bold></gradient><gradient:#00FFFF:#00CED1><bold>GEM ENCHANTS</bold></gradient><gradient:#7FFFD4:#40E0D0><bold> ❖</bold></gradient>
+  - <italic:false><gradient:#7FFFD4:#40E0D0><bold>❖ </bold></gradient><gradient:#00FFFF:#00CED1><bold>EDELSTEIN-VERZAUBERUNGEN</bold></gradient><gradient:#7FFFD4:#40E0D0><bold> ❖</bold></gradient>
   - <italic:false><white><bold>┃ </bold><aqua>%Enchant-9%</aqua>
   - <italic:false><white><bold>┃ </bold><aqua>%Enchant-10%</aqua>
   - <italic:false><white><bold>┃ </bold><aqua>%Enchant-15%</aqua>

@@ -47,7 +47,7 @@ unlimited_prestiges:
     - money give %player% 1
   rewards:
     10:
-    - tokens give %player% 10
+      - tokens give %player% 10
 Prestige:
   '0':
     Prefix: <white><bold>P0</bold></white>
