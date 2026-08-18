@@ -75,7 +75,7 @@ Announcer:
     &7oder setze alles mit &d/gamble all&7!
 RestartWarning:
   Enabled: true
-  Type: OneTime
+  Type: Repeat
   PerformOn:
     '1':
       Hour: 3
@@ -101,6 +101,8 @@ RestartWarning:
   - cmi save-all
   - delay! 1
   - kickall! &cDer Server startet neu. Wir sind gleich zurück!
+  - delay! 1
+  - stop
 LuckyWinner:
   Enabled: true
   Type: Repeat
