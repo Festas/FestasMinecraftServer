@@ -48,7 +48,8 @@ Die Spalte **Status** ordnet jedes Plugin ein:
 
 | Plugin | Zweck | Status |
 |--------|-------|:------:|
-| **PlotSquared** | Plot-Claiming (Tycoon-Plots + Freebuild), Merging, Schematics | ✅ Kern |
+| **Lands** | Chunk-basiertes Land-Claiming in der Survival-Welt — Griefing-Schutz, Claim-Blöcke (Spielzeit + Geld), Rollen-GUI, Nationen, BlueMap-Integration | ✅ Kern |
+| **PlotSquared** | Plot-Claiming (`freebuild`-Welt) + ehem. `town`-Welt (jetzt durch Lands ersetzt), Schematics | ✅ Kern |
 | **Multiverse-Core** (+ **Multiverse-Inventories**) | Welten `tycoon`/`town`/`freebuild` mit getrennten Inventaren | ✅ Kern |
 | **VoidGen** | Void-/Leerwelt-Generator (Plot-/Freebuild-Welten) | 🟢 Vorhanden |
 | **Chunky** | Chunk-Pre-Generierung (Performance) | 🟢 Vorhanden |
@@ -187,6 +188,7 @@ Die Spalte **Status** ordnet jedes Plugin ein:
 
 ## Offene Punkte
 
+- ~~**Town-Welt: PlotSquared → Lands**~~ ✅ **Erledigt:** Lands installiert und konfiguriert (`plugins/Lands/`). Land-Claiming läuft chunk-basiert in `world`/`town`; PlotSquared bleibt für `freebuild` (und ggf. Tycoon) bestehen.
 - **A1 Anti-Cheat (GrimAC)** auf Survival ausrollen — höchste Priorität (Duping-/Exploit-Schutz).
 - **A2–A4** (CoreProtect, Backuper, SimpleAutoRestart) als betriebskritische Basis nachrüsten.
 - **A6/A7** (DiscordSRV, NuVotifier + VotingPlugin) netzwerkweit planen; Vote-Farming via **AntiVPN** absichern.
@@ -204,6 +206,6 @@ Die Spalte **Status** ordnet jedes Plugin ein:
 
 ---
 
-**Letzte Aktualisierung:** 2026-08-17
+**Letzte Aktualisierung:** 2026-08-18
 
 **Status:** ✅ Aktiv (26.2) — Ist-Bestand + empfohlene Extra-Plugins

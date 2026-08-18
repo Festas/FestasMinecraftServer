@@ -33,7 +33,7 @@ features:
   upkeep: true
   # Taxes can be further configured in the taxes section (this file).
   # For taxes to work, Vault and a economy plugin, that supports Vault, needs to be installed.
-  taxes: true
+  taxes: false
   # Lands and nations can be in relations, such as ally, enemy and neutral.
   # If you disable this option, all existing relations will be deleted.
   # This is useful in combination with wars. However, you can also use it with wars disabled.
@@ -53,6 +53,9 @@ general:
   #   'world:false' -> Only server admins can claim in this world to create admin lands etc.
   claim-worlds_list:
     - 'world'
+    - 'world_nether'
+    - 'world_the_end'
+    - 'town'
 
   # Default: English (en-US) - no download required.
   # This defines the default language. You can place multiple locales in the plugin's "Language" folder to display different locales depending on the player's locale.
@@ -60,7 +63,7 @@ general:
   # To access translations, other than en-US, execute /translations in the Discord server.
   # The translation name should match the official language code (https://www.oracle.com/java/technologies/javase/jdk8-jre8-suported-locales.html).
   # This option also affects the grouping and decimal separator for currency formatting.
-  language: 'en-US'
+  language: 'de_DE'
   # Force default language? This will make changes to language files impossible and will always use the default.
   # This has the benefit of always receiving fixes, such as spelling mistakes, for the default locale.
   # You should only use this option if your language matches "en-US". For other locales it won't work.
@@ -251,7 +254,7 @@ land:
     # NOTE: This includes also one chunk claim, which will be claimed automatically on land creation.
     # NOTE: PLAYERS WITH THE lands.free.lands.<number> PERMISSION MIGHT BYPASS THAT.
     #   More info: https://wiki.incredibleplugins.com/lands/permissions/permissions#numbered-permissions
-    costs: 0.0
+    costs: 500.0
     mainblock:
       # Toggle the placement of new mainblocks.
       # This doesn't remove existing ones. However, existing ones can manually be deleted.

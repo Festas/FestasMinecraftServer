@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Town | Festas Builds Wiki</title>
+    <title>Town — Land Claiming | Festas Builds Wiki</title>
     <link rel="icon" type="image/svg+xml" href="../../images/favicon.svg">
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -81,143 +81,219 @@
             <div class="gamemode-card">
                 <div class="gamemode-header">
                     <span class="gamemode-icon">🏘️</span>
-                    <h1 class="gamemode-title">Town</h1>
+                    <h1 class="gamemode-title">Town — Land Claiming</h1>
                 </div>
                 
                 <p class="gamemode-description">
-                    Im Town-Modus kannst du gemeinsam mit anderen Spielern Städte gründen, 
-                    verwalten und ausbauen! Gründe deine eigene Stadt, lade Freunde ein, 
-                    oder trete einer bestehenden Stadt bei. Verwalte Grundstücke, sammle 
-                    Steuern und baue die größte und schönste Stadt auf dem Server!
+                    Im Survival-Modus kannst du dir Land <strong>claimen</strong> — also dauerhaft sichern und 
+                    vor Griefing schützen. Mit dem <strong>Lands</strong>-System claimst du Chunks 
+                    (16×16-Block-Bereiche) direkt in der normalen Survival-Welt. Je mehr du spielst 
+                    und verdienst, desto mehr Land kannst du beanspruchen. Baue dein Territorium 
+                    Stück für Stück aus, gründe ein Land, lade Freunde ein und schließe dich 
+                    zu Nationen zusammen!
                 </p>
-                
+
                 <div class="gamemode-features">
                     <h3>✨ Features</h3>
                     <ul>
-                        <li>Gründe deine eigene Stadt oder trete einer bei</li>
-                        <li>Stadt-Grundstücke (Plots) für Mitglieder vergeben</li>
-                        <li>Stadt-Bank für gemeinsame Ressourcen</li>
-                        <li>Steuersystem zur Finanzierung der Stadt</li>
-                        <li>Stadt-Ränge und Rechte-Verwaltung</li>
-                        <li>PvP-Schutz in deiner Stadt</li>
-                        <li>Vollständige Survival-Welt mit normaler Ressourcen-Generierung</li>
-                        <li>Stadt-Kriege und Allianzen (optional)</li>
+                        <li>Chunk-basiertes Land-Claiming direkt in der Survival-Welt</li>
+                        <li>Vollständiger Griefing-Schutz — Fremde können in deinem Land nicht bauen, abbauen oder Kisten öffnen</li>
+                        <li>Land mit eigener Kasse, Rollen und Berechtigungen</li>
+                        <li>Claim-Blöcke durch Spielzeit verdienen <em>oder</em> mit Geld kaufen</li>
+                        <li>Land wächst mit deinem Kontostand — je reicher, desto größer</li>
+                        <li>Nationen: mehrere Länder verbünden sich zu einer mächtigen Allianz</li>
+                        <li>Übersichtliches GUI zur Verwaltung aller Einstellungen</li>
+                        <li>Ländergrenzen sichtbar auf der BlueMap-Webkarte</li>
+                        <li>PvP individuell konfigurierbar (Schutz an/aus)</li>
+                        <li>Land-Chat für interne Kommunikation</li>
                     </ul>
                 </div>
-                
+
+                <div class="gamemode-features">
+                    <h3>🔑 Claim-Blöcke — so funktioniert das System</h3>
+                    <ul>
+                        <li>Jeder Spieler besitzt <strong>Claim-Blöcke</strong> — damit werden Chunks geclaimt.</li>
+                        <li>Ein Chunk kostet <strong>256 Claim-Blöcke</strong> (= ein 16×16-Block-Bereich).</li>
+                        <li><strong>Durch Spielzeit</strong> erhältst du alle 10 Minuten automatisch 50 Blöcke.</li>
+                        <li><strong>Mit Geld kaufen:</strong> 100 Claim-Blöcke für 100€ (über <code>/lands buy</code>).</li>
+                        <li>Beim Start bekommt jedes Land <strong>512 Blöcke geschenkt</strong> (= 2 Chunks gratis).</li>
+                        <li>Es gibt kein Maximum — dein Land kann unbegrenzt wachsen!</li>
+                    </ul>
+                </div>
+
                 <div class="gamemode-features">
                     <h3>🎯 Spielziel</h3>
                     <ul>
-                        <li>Gründe eine erfolgreiche, wachsende Stadt</li>
-                        <li>Rekrutiere Einwohner und verwalte deine Community</li>
-                        <li>Baue beeindruckende Stadt-Strukturen gemeinsam</li>
-                        <li>Erweitere dein Stadt-Territorium</li>
-                        <li>Werde die größte oder reichste Stadt auf dem Server</li>
-                        <li>Bilde Allianzen oder rivaliere mit anderen Städten</li>
+                        <li>Sichere dein Gebiet gegen Griefing und baue ungestört</li>
+                        <li>Erweitere dein Land durch Spielzeit und Geld verdienen</li>
+                        <li>Gründe ein Land, lade Freunde ein und baut gemeinsam</li>
+                        <li>Schließe dich mit anderen Ländern zu einer Nation zusammen</li>
+                        <li>Werde das größte oder stärkste Land auf dem Server</li>
                     </ul>
                 </div>
-                
+
+                <div class="gamemode-features">
+                    <h3>👥 Rollen im Land</h3>
+                    <ul>
+                        <li><strong>🏛️ Bürgermeister:</strong> Gründer des Landes — volle Kontrolle über alle Einstellungen</li>
+                        <li><strong>⭐ Stellvertreter:</strong> Kann das Land verwalten und Mitglieder einladen/entfernen</li>
+                        <li><strong>🏠 Einwohner:</strong> Reguläres Mitglied mit Bau- und Abbaurechten im Land</li>
+                        <li><strong>👁️ Besucher:</strong> Kein Mitglied — kann nur betreten, soweit erlaubt</li>
+                    </ul>
+                </div>
+
                 <div class="gamemode-features">
                     <h3>🛠️ Wichtige Befehle</h3>
                     <ul>
-                        <li><code>/town</code> oder <code>/t</code> - Town-Hauptmenü</li>
-                        <li><code>/town new &lt;Name&gt;</code> - Gründe eine neue Stadt</li>
-                        <li><code>/town spawn</code> - Teleportiere zum Stadt-Spawn</li>
-                        <li><code>/town invite &lt;Spieler&gt;</code> - Lade Spieler in deine Stadt ein</li>
-                        <li><code>/town claim</code> - Claime einen Chunk für deine Stadt</li>
-                        <li><code>/town set</code> - Stadt-Einstellungen verwalten</li>
-                        <li><code>/town deposit &lt;Betrag&gt;</code> - Geld in Stadt-Bank einzahlen</li>
-                        <li><code>/town withdraw &lt;Betrag&gt;</code> - Geld abheben (Bürgermeister)</li>
-                        <li><code>/plot claim</code> - Claime ein Stadt-Grundstück</li>
-                        <li><code>/resident</code> - Zeige deine Einwohner-Infos</li>
+                        <li><code>/lands</code> — Land-Verwaltungsmenü (GUI) öffnen</li>
+                        <li><code>/lands create &lt;Name&gt;</code> — Neues Land gründen (kostet 500€)</li>
+                        <li><code>/lands claim</code> — Den aktuellen Chunk zu deinem Land hinzufügen</li>
+                        <li><code>/lands unclaim</code> — Den aktuellen Chunk freigeben</li>
+                        <li><code>/lands invite &lt;Spieler&gt;</code> — Spieler ins Land einladen</li>
+                        <li><code>/lands spawn</code> — Zum Land-Spawn teleportieren</li>
+                        <li><code>/lands setspawn</code> — Land-Spawn an deiner Position setzen</li>
+                        <li><code>/lands info [Land]</code> — Informationen über ein Land anzeigen</li>
+                        <li><code>/lands deposit &lt;Betrag&gt;</code> — Geld in die Landkasse einzahlen</li>
+                        <li><code>/lands withdraw &lt;Betrag&gt;</code> — Geld aus der Landkasse abheben</li>
+                        <li><code>/lands buy</code> — Claim-Blöcke mit Geld kaufen</li>
+                        <li><code>/lands list</code> — Alle Länder auf dem Server anzeigen</li>
+                        <li><code>/lands map</code> — Mini-Karte der Chunks im Chat anzeigen</li>
+                        <li><code>/lands leave</code> — Land verlassen (nicht für Bürgermeister)</li>
+                        <li><code>/lands delete</code> — Land auflösen (nur Bürgermeister)</li>
+                        <li><code>/nation create &lt;Name&gt;</code> — Nation gründen (kostet 2.000€)</li>
+                        <li><code>/nation invite &lt;Land&gt;</code> — Land zur Nation einladen</li>
                     </ul>
                 </div>
-                
+
                 <div class="gamemode-features">
-                    <h3>👥 Stadt-Ränge</h3>
+                    <h3>🌍 Nationen</h3>
                     <ul>
-                        <li><strong>Bürgermeister:</strong> Gründer der Stadt, volle Kontrolle</li>
-                        <li><strong>Co-Bürgermeister:</strong> Stellvertreter mit erweiterten Rechten</li>
-                        <li><strong>Assistent:</strong> Kann Spieler einladen und Plots vergeben</li>
-                        <li><strong>Einwohner:</strong> Reguläres Stadt-Mitglied</li>
+                        <li>Mehrere Länder können sich zu einer <strong>Nation</strong> zusammenschließen</li>
+                        <li>Nationen bieten gemeinsame Diplomatie und stärken den Zusammenhalt</li>
+                        <li>Eine Nation zu gründen kostet <strong>2.000€</strong></li>
+                        <li>Der Nationenführer ist der Bürgermeister des Gründerlandes</li>
+                        <li>Mitglieder-Länder profitieren von geteilter Stärke</li>
                     </ul>
                 </div>
-                
+
                 <div class="gamemode-features">
-                    <h3>💡 Tipps für Bürgermeister</h3>
+                    <h3>🛡️ Schutz-Einstellungen (Flags)</h3>
                     <ul>
-                        <li>Wähle einen strategischen Ort für deine Stadt</li>
-                        <li>Setze faire Steuern – zu hoch und Spieler verlassen die Stadt</li>
-                        <li>Plane Straßen und Grundstücke vor dem massiven Ausbau</li>
-                        <li>Vergib klare Rollen an vertrauenswürdige Mitglieder</li>
-                        <li>Halte die Stadt-Bank gefüllt für Expansionen</li>
-                        <li>Organisiere gemeinsame Bau-Projekte</li>
-                        <li>Nutze den Stadt-Chat für Community-Building</li>
+                        <li><strong>Bauen/Abbauen:</strong> Standardmäßig nur für Mitglieder erlaubt</li>
+                        <li><strong>Kisten/Container:</strong> Nur Mitglieder können öffnen</li>
+                        <li><strong>PvP:</strong> Kann vom Bürgermeister aktiviert oder deaktiviert werden</li>
+                        <li><strong>Mob-Schaden:</strong> Konfigurierbar (Creeper-Schutz etc.)</li>
+                        <li><strong>Feuer:</strong> Feuerausbreitung kann deaktiviert werden</li>
+                        <li>Alle Flags sind über das GUI (<code>/lands</code>) einfach zu verwalten</li>
                     </ul>
                 </div>
-                
+
                 <div class="gamemode-features">
-                    <h3>💡 Tipps für Einwohner</h3>
+                    <h3>💡 Tipps</h3>
                     <ul>
-                        <li>Suche eine aktive Stadt mit guter Community</li>
-                        <li>Respektiere die Stadt-Regeln des Bürgermeisters</li>
-                        <li>Trage zur Stadt-Bank bei, um Expansionen zu unterstützen</li>
-                        <li>Baue schön auf deinem Grundstück – es repräsentiert die Stadt</li>
-                        <li>Hilf bei gemeinsamen Projekten mit</li>
-                        <li>Kommuniziere aktiv im Stadt-Chat</li>
+                        <li>Plane dein Territorium vorher — geclaímte Chunks müssen zusammenhängen</li>
+                        <li>Investiere dein verdientes Geld in Claim-Blöcke, um schneller zu wachsen</li>
+                        <li>Setze einen Land-Spawn an einem zentralen Ort mit <code>/lands setspawn</code></li>
+                        <li>Fälle den Chunk, in dem du baust, zuerst — dann baue in alle Richtungen aus</li>
+                        <li>Die BlueMap zeigt deine Ländergrenzen auf der Webkarte — gut für die Übersicht!</li>
+                        <li>Schließe dich einer Nation an, um mit anderen Ländern kooperieren zu können</li>
+                        <li>Nutze die Landkasse (<code>/lands deposit</code>) für gemeinsame Projekte</li>
                     </ul>
                 </div>
             </div>
-            
+
+            <!-- Schnellstart -->
             <section class="quick-info" style="margin-top: var(--spacing-lg);">
-                <h2>🚀 Schnellstart (Stadt gründen)</h2>
+                <h2>🚀 Schnellstart — Land gründen</h2>
                 <div style="color: var(--text-light); opacity: 0.9;">
                     <ol style="padding-left: 1.5rem;">
                         <li style="padding: 0.5rem 0;">
-                            Teleportiere mit <code>/warp town</code> zur Town-Welt
+                            Starte auf dem Survival-Server und erkunde die Welt
                         </li>
                         <li style="padding: 0.5rem 0;">
-                            Finde einen geeigneten Ort für deine Stadt
+                            Finde einen freien Bereich — tippe <code>/lands map</code> um geclaímed Land zu sehen
                         </li>
                         <li style="padding: 0.5rem 0;">
-                            Gründe deine Stadt mit <code>/town new [Name]</code>
+                            Gründe dein Land mit <code>/lands create &lt;Name&gt;</code> (kostet 500€)
                         </li>
                         <li style="padding: 0.5rem 0;">
-                            Claime den ersten Chunk mit <code>/town claim</code>
+                            Claime deinen ersten Chunk mit <code>/lands claim</code> — du startest mit 512 Claim-Blöcken (= 2 Chunks)
                         </li>
                         <li style="padding: 0.5rem 0;">
-                            Setze einen Spawn-Punkt mit <code>/town set spawn</code>
+                            Setze deinen Spawn mit <code>/lands setspawn</code>
                         </li>
                         <li style="padding: 0.5rem 0;">
-                            Lade Freunde ein mit <code>/town invite [Spieler]</code>
+                            Lade Freunde ein mit <code>/lands invite &lt;Spieler&gt;</code>
+                        </li>
+                        <li style="padding: 0.5rem 0;">
+                            Verdiene Geld, kaufe Claim-Blöcke mit <code>/lands buy</code> und erweitere dein Territorium!
                         </li>
                     </ol>
                 </div>
             </section>
-            
+
+            <!-- Schnellstart beitreten -->
             <section class="quick-info" style="margin-top: var(--spacing-lg);">
-                <h2>🚀 Schnellstart (Stadt beitreten)</h2>
+                <h2>🚀 Schnellstart — Land beitreten</h2>
                 <div style="color: var(--text-light); opacity: 0.9;">
                     <ol style="padding-left: 1.5rem;">
                         <li style="padding: 0.5rem 0;">
-                            Teleportiere mit <code>/warp town</code> zur Town-Welt
+                            Schau dir verfügbare Länder mit <code>/lands list</code> an
                         </li>
                         <li style="padding: 0.5rem 0;">
-                            Schaue dir verfügbare Städte an (frag im Chat oder <code>/town list</code>)
+                            Bitte einen Bürgermeister, dich einzuladen
                         </li>
                         <li style="padding: 0.5rem 0;">
-                            Warte auf eine Einladung von einem Bürgermeister
+                            Akzeptiere die Einladung mit <code>/lands accept</code>
                         </li>
                         <li style="padding: 0.5rem 0;">
-                            Akzeptiere mit <code>/town accept</code>
+                            Teleportiere mit <code>/lands spawn &lt;Land&gt;</code> zum Land-Spawn
                         </li>
                         <li style="padding: 0.5rem 0;">
-                            Claime ein Grundstück mit <code>/plot claim</code>
-                        </li>
-                        <li style="padding: 0.5rem 0;">
-                            Beginne mit dem Bauen in deiner neuen Stadt!
+                            Fang an zu bauen — du bist nun vollständig geschützt!
                         </li>
                     </ol>
+                </div>
+            </section>
+
+            <!-- Kosten-Übersicht -->
+            <section class="quick-info" style="margin-top: var(--spacing-lg);">
+                <h2>💰 Kosten-Übersicht</h2>
+                <div style="color: var(--text-light); opacity: 0.9; overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; margin-top: 0.5rem;">
+                        <thead>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.15);">
+                                <th style="text-align: left; padding: 0.5rem 1rem; color: var(--accent);">Aktion</th>
+                                <th style="text-align: left; padding: 0.5rem 1rem; color: var(--accent);">Kosten</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.07);">
+                                <td style="padding: 0.5rem 1rem;">Land gründen</td>
+                                <td style="padding: 0.5rem 1rem;">500€</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.07);">
+                                <td style="padding: 0.5rem 1rem;">Startmenge Claim-Blöcke</td>
+                                <td style="padding: 0.5rem 1rem;">512 Blöcke gratis (= 2 Chunks)</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.07);">
+                                <td style="padding: 0.5rem 1rem;">Claim-Blöcke kaufen</td>
+                                <td style="padding: 0.5rem 1rem;">100 Blöcke für 100€</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.07);">
+                                <td style="padding: 0.5rem 1rem;">1 Chunk claimen</td>
+                                <td style="padding: 0.5rem 1rem;">256 Claim-Blöcke</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.07);">
+                                <td style="padding: 0.5rem 1rem;">Claim-Blöcke durch Spielzeit</td>
+                                <td style="padding: 0.5rem 1rem;">50 Blöcke alle 10 Minuten (kostenlos)</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.5rem 1rem;">Nation gründen</td>
+                                <td style="padding: 0.5rem 1rem;">2.000€</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </section>
         </main>

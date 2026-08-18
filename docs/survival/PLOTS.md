@@ -15,8 +15,12 @@ Jeder Spieler erhält beim Start (`/tycoon start`) einen kostenlosen Plot in der
 | Welt | Größe | Biom | Gamemode | Kosten | Schematic |
 |------|-------|------|----------|--------|-----------|
 | `tycoon` | 32×32 | Basalt Deltas | Survival | Erster kostenlos, weitere $1M | `tycoon.schem` |
-| `town` | 64×64 | Cherry Grove | Survival | Kostenlos | Keine |
+| ~~`town`~~ | — | — | — | **Lands** (Chunk-Claiming) — kein PlotSquared mehr | — |
 | `freebuild` | 64×64 | Lush Caves | Creative | Kostenlos | Keine |
+
+> **Hinweis:** Die `town`-Welt wird nicht mehr von PlotSquared verwaltet. Land-Claiming in der
+> Survival-Welt (`world`, `world_nether`, `world_the_end`, `town`) läuft jetzt über das Plugin
+> **Lands** (Chunk-basiert, Griefing-Schutz, Nationen). Konfiguration: [`survival/plugins/Lands/`](../../survival/plugins/Lands/).
 
 ---
 
@@ -173,4 +177,4 @@ Die Tycoon-Schematic (`tycoon.schem`) wird bei jedem neuen Plot und bei jedem Ra
 
 ---
 
-**Letzte Aktualisierung:** 2026-04-11
+**Letzte Aktualisierung:** 2026-08-18
