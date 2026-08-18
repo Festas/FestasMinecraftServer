@@ -54,12 +54,8 @@ items:
     material: GRASS_BLOCK
     slot: 12
     priority: 1
-    display_name: '&a&l🌳 Survival / Tycoon'
+    display_name: '&a&l🌳 Survival'
     lore:
-      - '&7Klassisches Survival mit'
-      - '&7Tycoon-Modus und Wirtschaft!'
-      - ''
-      - '&7Generatoren &8| &f25 Tier-Stufen'
       - '&7Jobs &8| &f13 Berufe'
       - '&7Plots &8| &fBaue & Handle'
       - ''
@@ -87,7 +83,7 @@ items:
       - '&7Minions &8| &fAutomatische Farmen'
       - '&7Inseln &8| &fBaue im Himmel'
       - ''
-      - '&7Status: &aOnline'
+      - '&7Status: &eIm Aufbau'
       - ''
       - '&e► Klicke zum Verbinden'
     left_click_commands:
