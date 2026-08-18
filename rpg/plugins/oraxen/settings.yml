@@ -1,0 +1,408 @@
+debug: false
+Plugin:
+  keep_this_up_to_date: true
+  language: english
+  commands:
+    repair:
+      oraxen_durability_only: false
+  generation:
+    default_assets: true
+    default_configs: true
+  formatting:
+    inventory_titles: true
+    titles: true
+    subtitles: true
+    action_bar: true
+    anvil: true
+    signs: true
+    chat: true
+    books: true
+  auto_update_paper_config: true
+  introduction:
+    enabled: true # Set to false to suppress the first-run welcome message entirely
+    console_sent: true # Internal flag — set to true after the welcome message has been shown
+
+WorldEdit:
+  noteblock_mechanic: false
+  stringblock_mechanic: false
+  furniture_mechanic: false
+
+ConfigsTools:
+  skipped_model_data_numbers: []
+  disable_automatic_model_data: false
+  disable_automatic_glyph_code: false
+  error_item:
+    material: PODZOL
+    excludeFromInventory: false
+    injectID: false
+
+Glyphs:
+  emoji_list_permission_only: true
+  unicode_completions: true
+  chat_hover_text: <glyph_placeholder>
+
+Chat:
+  chat_handler: MODERN
+
+CustomArmor:
+  type: COMPONENT
+  disable_leather_repair: true
+  component_settings:
+    auto_assign_component: true
+  trims_settings:
+    material_replacement: CHAINMAIL
+    auto_assign_settings: true
+  shader_settings:
+    type: FANCY
+    armor_resolution: 16
+    animated_armor_framerate: 24
+    generate_shader_compatible_armor: true
+    generate_armor_shader_files: true
+    generate_custom_armor_textures: true
+  auto_select_type: true # If true, Oraxen will replace incompatible armor types with the best type for the detected server version
+
+CustomBlocks:
+  block_correction: NMS
+
+ItemUpdater:
+  update_items: true
+  override_renamed_items: false
+  override_item_lore: false
+  update_items_on_reload: true
+  update_tile_entity_contents: true # Update items in loaded block inventories, such as chests and furnaces
+  update_entity_contents: true # Update items held by loaded entities, such as item frames, mobs and ender chests
+
+FurnitureUpdater:
+  update_furniture: true
+  update_on_reload: false
+  update_on_load: false
+  experimental_furniture_type_update: false
+  experimental_fix_broken_furniture: false
+
+Pack:
+  generation:
+    generate: true
+    excluded_file_extensions: []
+    appearance:
+      item_properties: true
+      model_data_ids: false
+      model_data_float: false
+      generate_predicates: false
+    verify_pack_files: true
+    fix_force_unicode_glyphs: true
+    texture_slicer: true
+    atlas:
+      exclude_malformed_from_atlas: true
+      generate: true
+      type: SPRITE
+    auto_generated_models_follow_texture_path: false
+    compression: BEST_COMPRESSION
+    protection: true
+    comment: The content of this texture pack belongs to the owner.
+    # If true, Oraxen will not create or modify pack.mcmeta.
+    # The file at plugins/Oraxen/pack/pack.mcmeta will be included in the final pack exactly as provided.
+    # This also disables automatic overlay entries, so you must manage overlays in pack.mcmeta yourself.
+    disable_mcmeta_generation: false
+    # MULTI-VERSION RESOURCE PACKS
+    # Enable this for servers with players on multiple Minecraft versions (ViaVersion/ProtocolSupport).
+    # When enabled, generates two pack files: one for clients on 1.21.3 and below, and one for 1.21.4+.
+    #
+    # Supported versions: 1.20 through 1.21.3, and 1.21.4+
+    # Each pack declares the full metadata range required by clients in its group.
+    #
+    # Requirements:
+    # - ViaVersion OR ProtocolSupport plugin for version detection (without these, all players get server version pack)
+    # - Upload type must be "lobfile", "polymath", or "external" (NOT "self-host" - can only serve one file)
+    #
+    # How it works:
+    # - On player join, detects their client version via ViaVersion/ProtocolSupport API
+    # - Sends the 1.21.3- or 1.21.4+ pack matching their client's pack_format
+    # - Players without version detection receive the server's version pack as fallback
+    multi_version_packs: false
+    obfuscation:
+      # NONE keeps generated resource keys readable.
+      # SIMPLE renames pack-internal model, texture, and sound file paths while preserving namespaces.
+      # FULL also replaces namespaces used by renamed resources.
+      type: NONE
+  
+  import:
+    merge_duplicate_fonts: true
+    merge_duplicates: true
+    retain_custom_model_data: true
+    merge_item_base_models: false
+    # Removes imported minecraft core shader files from pack/assets and uploads/*.zip merges.
+    # Useful when external packs override Oraxen-generated text/scoreboard shaders.
+    remove_core_shaders_from_imported_packs: false
+  
+  upload:
+    enabled: true
+    type: self-host
+    
+    polymath:
+      server: atlas.oraxen.com
+      secret: oraxen
+    
+    self-host:
+      # Deine funktionierende IP-Einstellung
+      host: 0.0.0.0
+      port: 25600
+      domain: 128.140.99.121:25600
+    lobfile:
+      api-key: ''
+      pack-name: Oraxen # Will use <pack-name>_<version> when using multi version packs
+  
+  dispatch:
+    delay: -1
+    mandatory: true
+    prompt: <#fa4943>Accept the pack...
+    send: false # Should the pack be sent to the player.
+    mode: JOIN # PRE-JOIN, JOIN; Mode to use when sending the pack.
+    timeout: 30s # Time to wait for a response when using PRE-JOIN mode before continuing login.
+    # Client versions that should not receive the pack. Quote every rule, e.g. '< 1.12', '= 1.21.11' or '> 1.21.11'.
+    exclude: []
+    # Temporarily disable these when the pack loads.
+    disable:
+      movement: true # Disable movement while the pack loads.
+      damage: true # Disable damage while the pack loads.
+    layer: '' # The pack layer to use, allowing multiple packs to be used. Set to non empty value to stop Oraxen from clearing resourcepacks sent by your proxy.
+  
+  receive:
+    enabled: true
+    loaded:
+      actions:
+        sound:
+          enabled: false
+          type: minecraft:welcome
+          volume: 1.0
+          pitch: 1.0
+        delay: 5
+        message:
+          enabled: false
+          type: ACTION_BAR
+          content: <#55ffa4><bold>ResourcePack loaded
+        commands:
+          console: []
+          player: []
+          opped_player: []
+    accepted:
+      actions:
+        message:
+          type: ACTION_BAR
+          content: <#55ffa4><bold>ResourcePack accepted
+          enabled: false
+        commands:
+          console: []
+          player: []
+          opped_player: []
+    denied:
+      actions:
+        message:
+          enabled: false
+          type: CHAT
+          content: <red>You refused the ResourcePack...
+        commands:
+          console: []
+          player: []
+          opped_player: []
+    failed_download:
+      actions:
+        message:
+          enabled: false
+          type: CHAT
+          content: <red>You failed to download...
+        commands:
+          console: []
+          player: []
+          opped_player: []
+    failed_reload:
+      actions:
+        commands:
+          console: []
+          player: []
+          opped_player: []
+    downloaded:
+      actions:
+        commands:
+          console: []
+          player: []
+          opped_player: []
+    invalid_url:
+      actions:
+        commands:
+          console: []
+          player: []
+          opped_player: []
+    discarded:
+      actions:
+        commands:
+          console: []
+          player: []
+          opped_player: []
+
+Misc:
+  reset_recipes: true
+  add_recipes_to_book: true
+  hide_scoreboard_numbers: false
+  hide_scoreboard_background: false
+  hide_tablist_background: false
+  armor_equip_event_bypass:
+  - FURNACE
+  - CHEST
+  - TRAPPED_CHEST
+  - BEACON
+  - DISPENSER
+  - DROPPER
+  - HOPPER
+  - WORKBENCH
+  - ENCHANTMENT_TABLE
+  - ENDER_CHEST
+  - ANVIL
+  - BED_BLOCK
+  - FENCE_GATE
+  - SPRUCE_FENCE_GATE
+  - BIRCH_FENCE_GATE
+  - ACACIA_FENCE_GATE
+  - JUNGLE_FENCE_GATE
+  - DARK_OAK_FENCE_GATE
+  - IRON_DOOR_BLOCK
+  - WOODEN_DOOR
+  - SPRUCE_DOOR
+  - BIRCH_DOOR
+  - JUNGLE_DOOR
+  - ACACIA_DOOR
+  - DARK_OAK_DOOR
+  - WOOD_BUTTON
+  - STONE_BUTTON
+  - TRAP_DOOR
+  - IRON_TRAPDOOR
+  - DIODE_BLOCK_OFF
+  - DIODE_BLOCK_ON
+  - REDSTONE_COMPARATOR_OFF
+  - REDSTONE_COMPARATOR_ON
+  - FENCE
+  - SPRUCE_FENCE
+  - BIRCH_FENCE
+  - JUNGLE_FENCE
+  - DARK_OAK_FENCE
+  - ACACIA_FENCE
+  - NETHER_FENCE
+  - BREWING_STAND
+  - CAULDRON
+  - LEGACY_SIGN_POST
+  - LEGACY_WALL_SIGN
+  - LEGACY_SIGN
+  - ACACIA_SIGN
+  - ACACIA_WALL_SIGN
+  - BIRCH_SIGN
+  - BIRCH_WALL_SIGN
+  - DARK_OAK_SIGN
+  - DARK_OAK_WALL_SIGN
+  - JUNGLE_SIGN
+  - JUNGLE_WALL_SIGN
+  - OAK_SIGN
+  - OAK_WALL_SIGN
+  - SPRUCE_SIGN
+  - SPRUCE_WALL_SIGN
+  - LEVER
+  - BLACK_SHULKER_BOX
+  - BLUE_SHULKER_BOX
+  - BROWN_SHULKER_BOX
+  - CYAN_SHULKER_BOX
+  - GRAY_SHULKER_BOX
+  - GREEN_SHULKER_BOX
+  - LIGHT_BLUE_SHULKER_BOX
+  - LIME_SHULKER_BOX
+  - MAGENTA_SHULKER_BOX
+  - ORANGE_SHULKER_BOX
+  - PINK_SHULKER_BOX
+  - PURPLE_SHULKER_BOX
+  - RED_SHULKER_BOX
+  - SILVER_SHULKER_BOX
+  - WHITE_SHULKER_BOX
+  - YELLOW_SHULKER_BOX
+  - DAYLIGHT_DETECTOR_INVERTED
+  - DAYLIGHT_DETECTOR
+  - BARREL
+  - BLAST_FURNACE
+  - SMOKER
+  - CARTOGRAPHY_TABLE
+  - COMPOSTER
+  - GRINDSTONE
+  - LECTERN
+  - LOOM
+  - STONECUTTER
+  - BELL
+  
+  shield_display: '{"thirdperson_righthand":{"rotation":[0,90,0],"translation":[10,6,-4],"scale":[1,1,1]},"thirdperson_lefthand":{"rotation":[0,90,0],"translation":[10,6,12],"scale":[1,1,1]},"firstperson_righthand":{"rotation":[0,180,5],"translation":[-10,2,-10],"scale":[1.25,1.25,1.25]},"firstperson_lefthand":{"rotation":[0,180,5],"translation":[10,0,-10],"scale":[1.25,1.25,1.25]},"gui":{"rotation":[15,-25,-5],"translation":[2,3,0],"scale":[0.65,0.65,0.65]},"fixed":{"rotation":[0,180,0],"translation":[-2,4,-5],"scale":[0.5,0.5,0.5]},"ground":{"rotation":[0,0,0],"translation":[4,4,2],"scale":[0.25,0.25,0.25]}}'
+  
+  bow_display: '{"thirdperson_righthand":{"rotation":[-80,260,-40],"translation":[-1,-2,2.5],"scale":[0.9,0.9,0.9]},"thirdperson_lefthand":{"rotation":[-80,-280,40],"translation":[-1,-2,2.5],"scale":[0.9,0.9,0.9]},"firstperson_righthand":{"rotation":[0,-90,25],"translation":[1.13,3.2,1.13],"scale":[0.68,0.68,0.68]},"firstperson_lefthand":{"rotation":[0,90,-25],"translation":[1.13,3.2,1.13],"scale":[0.68,0.68,0.68]}}'
+  
+  crossbow_display: '{"thirdperson_righthand":{"rotation":[-90,0,-60],"translation":[2,0.1,-3],"scale":[0.9,0.9,0.9]},"thirdperson_lefthand":{"rotation":[-90,0,30],"translation":[2,0.1,-3],"scale":[0.9,0.9,0.9]},"firstperson_righthand":{"rotation":[-90,0,-55],"translation":[1.13,3.2,1.13],"scale":[0.68,0.68,0.68]},"firstperson_lefthand":{"rotation":[-90,0,35],"translation":[1.13,3.2,1.13],"scale":[0.68,0.68,0.68]}}'
+
+oraxen_inventory:
+  # Ich habe hier die Glyphen (<glyph:menu_items> etc.) entfernt und durch normalen Text ersetzt.
+  # "         " dient als grobe Zentrierung, da wir keine negativen Shifts mehr nutzen.
+  main_menu_title: '         <gradient:#ffaa00:#ffff55><bold>Server Menü</bold></gradient>'
+  menu_rows: 6
+  menu_size: 45
+  menu_layout:
+    armors:
+      slot: 1
+      icon: emerald_chestplate
+      displayname: <green>Rüstungen
+      title: <main_menu_title>
+    blocks:
+      slot: 2
+      icon: orax_ore
+      displayname: <green>Blöcke
+      title: <main_menu_title>
+    furniture:
+      slot: 3
+      icon: chair
+      displayname: <green>Möbel
+      title: <main_menu_title>
+    flowers:
+      slot: 4
+      icon: dailily
+      displayname: <green>Blumen
+      title: <main_menu_title>
+    hats:
+      slot: 5
+      icon: crown
+      displayname: <green>Hüte
+      title: <main_menu_title>
+    items:
+      slot: 6
+      icon: ruby
+      displayname: <green>Items
+      title: <main_menu_title>
+    mystical:
+      slot: 7
+      icon: legendary_hammer
+      displayname: <green>Mystisch
+      title: <main_menu_title>
+    plants:
+      slot: 8
+      icon: weed_leaf
+      displayname: <green>Pflanzen
+      title: <main_menu_title>
+    skins:
+      slot: 9
+      icon: wood_sword
+      displayname: <green>Skins
+      title: <main_menu_title>
+    tools:
+      slot: 10
+      icon: iron_serpe
+      displayname: <green>Werkzeuge
+      title: <main_menu_title>
+    weapons:
+      slot: 11
+      icon: energy_crystal_sword
+      displayname: <green>Waffen
+      title: <main_menu_title>
+TextEffects:
+  enabled: true # Master toggle for all text effects
+  shader:
+    template: auto # auto, effects_only, animated_only
+    encoding: alpha_lsb # Encoding strategy for text effects
