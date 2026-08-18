@@ -71,7 +71,7 @@ Das (auslaufende) MMO bot ein umfassendes Klassen-System mit **6 Klassen** (MMOC
 - **DeluxeMenus** & **Skript**: GUIs und Custom-Logik (Lobby & Survival)
 - **Oraxen**: Custom Items und Texturen
 - **LuckPerms**, **PlaceholderAPI**, **Vault**, **ProtocolLib**: Basis-Infrastruktur
-- **BlueMap**: 3D-Web-Karte (Survival)
+- **BlueMap**: 3D-Web-Karten (Survival & Mining)
 
 ### Skyblock (Umbau) & auslaufender RPG-Server
 

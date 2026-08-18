@@ -20,6 +20,7 @@ Technische Infrastruktur für das MinecraftMMO-Netzwerk.
 
 ## Siehe auch
 
+- [BlueMap-Setup](BLUEMAP.md)
 - [Datenbank-Schema](DATENBANKEN.md)
 - [Backup-Strategien](BACKUPS.md)
 - [Architektur-Dokumentation](../ARCHITECTURE.md)

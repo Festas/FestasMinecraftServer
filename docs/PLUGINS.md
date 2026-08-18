@@ -272,7 +272,9 @@ Vollständige Übersicht aller verwendeten Plugins pro Server.
 - **Funktion:** 3D-Web-Karte (Live-Rendering, Marker)
 - **Web-UI Survival:** `http://<server-ip>:8100`
 - **Web-UI Mining (RPG-Slot):** `http://<server-ip>:8101`
-- **Öffentlich:** `https://mc-maps.festas-builds.com` (Nginx Reverse-Proxy, siehe unten)
+- **Öffentlich (Survival):** `https://survival.festas-builds.com`
+- **Öffentlich (Mining):** `https://mining.festas-builds.com`
+- **Reverse-Proxy-Setup:** `docs/infrastructure/BLUEMAP.md`
 
 ### Core, Management & Bibliotheken
 
