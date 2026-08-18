@@ -1,0 +1,150 @@
+name: Deploy Website
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'website/**'
+      - '.github/workflows/deploy-website.yml'
+  workflow_dispatch:
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    outputs:
+      image_sha: ${{ steps.image_sha.outputs.sha }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Get short SHA
+        id: image_sha
+        run: echo "sha=$(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./website
+          file: ./website/Dockerfile
+          push: true
+          # Hier kannst du bei Bedarf Build-Args anpassen
+          build-args: |
+            MINECRAFT_VERSION=1.21.10
+            SERVER_SOFTWARE=Paper
+            DISCORD_INVITE_CODE=BTNgMT5uw
+          tags: |
+            ghcr.io/festas/minecraft-server-web:${{ steps.image_sha.outputs.sha }}
+            ghcr.io/festas/minecraft-server-web:latest
+
+  deploy:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Validate GHCR_PAT secret
+        run: |
+          if [ -z "${{ secrets.GHCR_PAT }}" ]; then
+            echo "::error::GHCR_PAT secret is missing."
+            exit 1
+          fi
+
+      - name: Deploy to server
+        uses: appleboy/ssh-action@v1.0.3
+        env:
+          IMAGE_SHA: ${{ needs.build-and-push.outputs.image_sha }}
+          REGISTRY: ghcr.io
+          IMAGE_NAME: festas/minecraft-server-web
+          GHCR_PAT: ${{ secrets.GHCR_PAT }}
+          GHCR_ACTOR: ${{ github.actor }}
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          envs: IMAGE_SHA,REGISTRY,IMAGE_NAME,GHCR_PAT,GHCR_ACTOR
+          script: |
+            set -e
+
+            DEPLOY_DIR="/home/deploy/minecraft-website"
+            mkdir -p "$DEPLOY_DIR"
+            # Shared directory the Velocity FestasPlayerList plugin writes players.json into.
+            # Mounted read-only into the web container and served at /api/players.json.
+            mkdir -p "$DEPLOY_DIR/data"
+            cd "$DEPLOY_DIR"
+
+            # Login
+            echo "$GHCR_PAT" | docker login ghcr.io -u "$GHCR_ACTOR" --password-stdin
+
+            # Pull
+            docker pull "${REGISTRY}/${IMAGE_NAME}:${IMAGE_SHA}"
+
+            # Docker Compose erstellen
+            # Bindet auf 127.0.0.1:8100 damit nginx auf dem Host proxyen kann
+            cat > docker-compose.yml <<EOF_COMPOSE
+            services:
+              minecraft-web:
+                image: ${REGISTRY}/${IMAGE_NAME}:${IMAGE_SHA}
+                container_name: minecraft-web
+                restart: unless-stopped
+                ports:
+                  - "127.0.0.1:8100:80"
+                volumes:
+                  - ./data:/usr/share/nginx/html/api:ro
+                healthcheck:
+                  test: ["CMD-SHELL", "curl -f http://localhost/ || exit 1"]
+                  interval: 30s
+                  timeout: 10s
+                  retries: 3
+                  start_period: 10s
+                deploy:
+                  resources:
+                    limits:
+                      cpus: '0.5'
+                      memory: 256M
+                    reservations:
+                      memory: 64M
+            EOF_COMPOSE
+
+            # Deployment starten (Docker Compose kümmert sich um den Recreate)
+            docker compose up -d --remove-orphans
+
+            # Health Check
+            echo "Warte auf Health-Status..."
+            for i in {1..30}; do
+              HEALTH=$(docker inspect --format='{{.State.Health.Status}}' minecraft-web 2>/dev/null || echo "starting")
+              if [ "$HEALTH" = "healthy" ]; then
+                echo "✓ Container ist gesund!"
+                break
+              fi
+              if [ $i -eq 30 ]; then
+                echo "✗ Timeout beim Health-Check."
+                docker logs minecraft-web --tail=50
+                exit 1
+              fi
+              sleep 2
+            done
+
+            # Cleanup
+            docker image prune -f --filter "until=24h"
+
+      - name: Deployment summary
+        if: success()
+        run: |
+          echo "## Deployment Successful! 🚀" >> "$GITHUB_STEP_SUMMARY"
+          echo "Website URL: https://mc.festas-builds.com" >> "$GITHUB_STEP_SUMMARY"
