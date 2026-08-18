@@ -26,15 +26,9 @@ items:
   'survival_guide':
     material: GRASS_BLOCK
     slot: 10
-    display_name: '&a&l🌳 Survival / Tycoon'
+    display_name: '&a&l🌳 Survival'
     lore:
-      - '&7Der Survival/Tycoon Server bietet:'
-      - ''
-      - '&6Tycoon-Modus:'
-      - '&8» &fGeneratoren &7produzieren Items'
-      - '&8» &fSell-Wand &7(Markt-Zepter) zum Verkaufen'
-      - '&8» &f25 Ränge &7von Erde bis Bedrock'
-      - '&8» &fRankup &7durch Geld verdienen'
+      - '&7Der Survival Server bietet:'
       - ''
       - '&6Wirtschaft:'
       - '&8» &f13 Jobs &7(Miner, Farmer, Builder ...)'
@@ -43,6 +37,7 @@ items:
       - '&8» &fCasino &7mit Münzwurf und Glücksspiel'
       - ''
       - '&6Bauen:'
+      - '&8» &fBauen &7in der Survival Welt'
       - '&8» &fPlots &7für sicheres Bauen'
       - '&8» &fFreebuild &7für kreatives Bauen'
       - ''
