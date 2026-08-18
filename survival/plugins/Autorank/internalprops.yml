@@ -9,32 +9,32 @@ leaderboards:
   daily_time:
     cached leaderboard:
     - '-------- Leaderboard (Daily time) --------'
-    - §61 | §bElexian - §70 days, 2 hours and 0 minutes.
+    - §61 | §bElexian - §70 days, 2 hours and 7 minutes.
     - '------------------------------------'
-    last updated: 1787055781329
+    last updated: 1787069193815
   weekly_time:
     cached leaderboard:
     - '-------- Leaderboard (Weekly time) --------'
-    - §61 | §bElexian - §70 days, 3 hours and 59 minutes.
+    - §61 | §bElexian - §70 days, 4 hours and 6 minutes.
     - §62 | §bFestas - §70 days, 1 hour and 58 minutes.
     - '------------------------------------'
-    last updated: 1787055781337
+    last updated: 1787069193820
   monthly_time:
     cached leaderboard:
     - '-------- Leaderboard (Monthly time) --------'
-    - §61 | §bElexian - §70 days, 3 hours and 59 minutes.
+    - §61 | §bElexian - §70 days, 4 hours and 6 minutes.
     - §62 | §bFestas - §70 days, 1 hour and 58 minutes.
     - '------------------------------------'
-    last updated: 1787055781343
+    last updated: 1787069193825
   total_time:
     cached leaderboard:
     - '-------- Leaderboard (All time) --------'
     - §61 | §bFestas - §72 days, 16 hours and 36 minutes.
-    - §62 | §bElexian - §72 days, 4 hours and 12 minutes.
+    - §62 | §bElexian - §72 days, 4 hours and 19 minutes.
     - §63 | §b_YoshisWorld_ - §70 days, 0 hours and 33 minutes.
     - §64 | §bShanaFNS - §70 days, 0 hours and 30 minutes.
     - '------------------------------------'
-    last updated: 1787055781346
+    last updated: 1787069193828
 is converted to new format: true
 tracked week: 34
 tracked month: 8
