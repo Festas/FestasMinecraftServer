@@ -85,7 +85,7 @@ Internet
    ↓
 Nginx (Port 80/443)
    ↓ proxy_pass
-minecraft-web container (127.0.0.1:8100 → Port 80)
+minecraft-web container (127.0.0.1:8101 → Port 80)
 ```
 
 ---
@@ -159,7 +159,7 @@ repository. The configuration file for this service is:
 Festas/Link-in-Bio/nginx/sites-available/mc.festas-builds.com.conf
 ```
 
-The nginx config proxies `mc.festas-builds.com` to `http://127.0.0.1:8100`, where
+The nginx config proxies `mc.festas-builds.com` to `http://127.0.0.1:8101`, where
 the `minecraft-web` container listens. No changes to nginx are needed unless the
 port or domain changes.
 
@@ -185,7 +185,7 @@ TTL: 3600
 
 ### Docker Network
 
-The website container binds to `127.0.0.1:8100` on the host. No external Docker
+The website container binds to `127.0.0.1:8101` on the host. No external Docker
 network is required — the host nginx reverse proxy connects directly to this port.
 
 ---
@@ -298,7 +298,7 @@ Possible statuses:
 
 3. **Verify port binding:**
    ```bash
-   curl -I http://127.0.0.1:8100/
+   curl -I http://127.0.0.1:8101/
    ```
 
 4. **Test the container directly:**

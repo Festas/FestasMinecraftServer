@@ -1,6 +1,6 @@
 # Docker Compose configuration for festas_builds Minecraft Server Website
 # This file defines the web service that serves the static website
-# The service binds to localhost:8100 so the host nginx reverse proxy can reach it
+# The service binds to localhost:8101 so the host nginx reverse proxy can reach it
 
 services:
   minecraft-web:
@@ -14,9 +14,9 @@ services:
     # Restart policy
     restart: unless-stopped
 
-    # Bind to localhost only so nginx on the host can proxy to 127.0.0.1:8100
+    # Bind to localhost only so nginx on the host can proxy to 127.0.0.1:8101
     ports:
-      - "127.0.0.1:8100:80"
+      - "127.0.0.1:8101:80"
 
     # Mount the shared data directory (written by the Velocity FestasPlayerList plugin)
     # read-only so the website can serve /api/players.json. Relative ./data resolves next to
@@ -43,9 +43,9 @@ services:
           memory: 64M
 
 # Notes:
-# 1. The container binds to 127.0.0.1:8100 on the host.
+# 1. The container binds to 127.0.0.1:8101 on the host.
 #    The nginx reverse proxy (managed in the Link-in-Bio repo) proxies
-#    mc.festas-builds.com → http://127.0.0.1:8100
+#    mc.festas-builds.com → http://127.0.0.1:8101
 #    Config: Festas/Link-in-Bio/nginx/sites-available/mc.festas-builds.com.conf
 #
 # 2. To deploy:
