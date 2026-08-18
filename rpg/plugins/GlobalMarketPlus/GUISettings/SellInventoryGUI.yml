@@ -1,0 +1,83 @@
+English:
+    GUI-Title: '&8&lBulk upload &5&l| &b&lSelling'
+    GUI-Size: 54
+    Buttons-Label: false
+    GUI-Effects:
+        On-Open:
+            Open-Delay: 0.5
+            Messages:
+            - '{prefix}&bYou are using &r{currency} &bas the currency system, after upload all will use this as the currency unit.'
+            ClientSounds:
+                'sound':
+                    Sound: ENTITY_EXPERIENCE_ORB_PICKUP
+                    Delay: 0
+                    Volume: 1
+                    Pitch: 1
+    Allow-Move-Buttons:
+        Enabled: true
+        Return-Moved-Buttons: true
+    Function-Buttons:
+        Equality-Upload:
+            Name: '&9&lEquality upload'
+            Item: 'PLAYER_HEAD'
+            Head-Textures: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmQ0N2RkODU2ZDY0YmVlZjdiNzE0ZTE5ZDI5NDdlZThhZThkOTk5NTczZDNmYTM5NzY4NzdhYmQ2MTEyMSJ9fX0='
+            Lores:
+            - ''
+            - '&c&lDescription: '
+            - '&7&7After clicking this button,'
+            - '&7all items in the GUI will be uploaded.'
+            - ''
+            - '&dPrice: &e${money}'
+            - '&dTaxed: &e${money}&bx&eTax Rate&bx&eItem Amount'
+            - ''
+            - '&aClick to upload'
+            Location:
+                Slot: 48
+        Average-Upload:
+            Name: '&9&lAverage upload'
+            Item: 'PLAYER_HEAD'
+            Head-Textures: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmM4Y2RjYmI5ODkzNjgxZDg1ODRiMzFlYTA2NDMzZjkzNTI0ODA1NDVlYTkzOGE5ZTZlZGVhOWFjNDkzM2Y5NiJ9fX0='
+            Lores:
+            - ''
+            - '&c&lDescription: '
+            - '&7&7After clicking this button,'
+            - '&7all items in the GUI will be uploaded.'
+            - ''
+            - '&dPrice: &e${money}&b/&eAmount &7.'
+            - '&dTaxed: &e${money}&bx&eTax Rate &7.'
+            - ''
+            - '&aClick to upload'
+            Location:
+                Slot: 52
+    Custom-Buttons:
+        'None':
+            Name: '&f'
+            Item: BLACK_STAINED_GLASS_PANE
+            Location:
+                Slots: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 18, 19, 27, 28, 36, 37, 45, 47, 49, 50, 51, 53]
+        'Description':
+            Name: '&e&lDescription'
+            Item: MAP
+            Lores:
+            - '&8&l▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬'
+            - '  &7Here is &c&lGlobal&4&lMarket&6&lPlus&7''s upload inventory,'
+            - '  &7Put the items in the GUI to upload in batches.'
+            - '  &c&lNotice: &7each slot will be listed as a merchandise,'
+            - '  &7If there are items that need to be stacked, '
+            - '  &7please put them into the same grid after stacking.'
+            - '&8&l▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬'
+            Location:
+                Slot-Of-X: 1
+                Slot-Of-Y: 6 
+        'Open Market':
+            Name: '&c&lOpen Global Market'
+            Item: PLAYER_HEAD
+            Head-Textures: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDdjYzY2ODc0MjNkMDU3MGQ1NTZhYzUzZTA2NzZjYjU2M2JiZGQ5NzE3Y2Q4MjY5YmRlYmVkNmY2ZDRlN2JmOCJ9fX0='
+            Lores:
+            - ''
+            - '&eClick to open'
+            Commands:
+            - 'gmp market gui'
+            Location:
+                Slot-Of-X: 9
+                Slot-Of-Y: 6
