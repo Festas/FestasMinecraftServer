@@ -1,7 +1,0 @@
-tiers:
-  '1':
-    name: Tier 1
-    upgrade-cost: 0
-    blocks:
-      STONE: 80
-      COBBLESTONE: 20

@@ -25,7 +25,7 @@ Alle Spielwelten werden **täglich um 3:00 Uhr** gesichert, wenn die Serverlast 
 | Lobby    | `world`                                | Wöchentlich (statische Map) |
 | Survival | `world`, `world_nether`, `world_the_end` | Täglich     |
 | Skyblock | `world`, Island-Daten                  | Täglich     |
-| RPG      | `world`, Dungeon-Instanzen             | Täglich     |
+| Prison   | `world`, Mine-Bereiche                 | Täglich     |
 
 ### Verfahren
 
@@ -129,7 +129,7 @@ Alle Plugin-Konfigurationen werden über **dieses Git-Repository** versioniert. 
 - `lobby/` – Lobby-Server-Plugins
 - `survival/` – Survival-Server-Plugins
 - `skyblock/` – Skyblock-Server-Plugins
-- `rpg/` – RPG-Server-Plugins
+- `mining/` – Prison-Server-Plugins
 
 ### Wiederherstellung
 
@@ -179,7 +179,6 @@ Empfohlene Optionen:
 
 - [Infrastruktur Übersicht](README.md)
 - [Datenbanken](DATENBANKEN.md)
-- [Synchronisierung](SYNCHRONISIERUNG.md)
 - [Architektur-Dokumentation](../ARCHITECTURE.md)
 
 ---
