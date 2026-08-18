@@ -1,0 +1,16 @@
+color: "#1565C0"
+title: "✨  Multiplier Activated!"
+description: "**{player}** just received a **{multiplier}** {currency_name} multiplier!\nTime to grind while it lasts. 🚀"
+thumbnail: true
+footer: "X-Prison Core • Discord Sync"
+show-timestamp: true
+fields:
+  - name: "📈 Multiplier"
+    value: "**{multiplier}**"
+    inline: true
+  - name: "⏱️ Duration"
+    value: "{duration}"
+    inline: true
+  - name: "💰 Currency"
+    value: "{currency_name}"
+    inline: true

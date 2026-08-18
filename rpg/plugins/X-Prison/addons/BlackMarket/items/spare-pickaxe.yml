@@ -1,0 +1,36 @@
+# Requires: Enchants module  (/givefirstjoinpickaxe <player>)
+# Hands out a fresh starter pickaxe. Lifetime-capped so it stays a novelty rather than a
+# way to farm pickaxes.
+id: spare-pickaxe
+
+enabled: true
+weight: 4
+
+price: 8000000
+currency: tokens
+
+discountable: true
+bulk-buy-amount: 1
+
+stock: 2
+limit-per-rotation: 1
+limit-lifetime: 3
+
+display:
+  material: NETHERITE_PICKAXE
+  glow: true
+  name: "<gradient:#ff512f:#dd2476><bold>Smuggled Pickaxe</bold></gradient>"
+  lore:
+    - "<gray>Serial numbers filed off."
+    - "<gray>A clean, unenchanted spare."
+    - "<dark_gray><italic>Three per prisoner. Ever.</italic>"
+    - ""
+    - "%price-block%"
+    - "%stock-block%"
+    - "%limit-block%"
+    - "%status-block%"
+
+give-items: { }
+
+commands:
+  - 'givefirstjoinpickaxe %player%'

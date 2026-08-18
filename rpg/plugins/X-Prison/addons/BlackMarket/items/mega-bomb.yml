@@ -1,0 +1,33 @@
+# Requires: Bombs module  (/bombs give <player> <type> <amount>)
+id: mega-bomb
+
+enabled: true
+weight: 8
+
+price: 2000000
+currency: tokens
+
+discountable: true
+bulk-buy-amount: 1
+
+stock: 3
+limit-per-rotation: 1
+limit-lifetime: 0
+
+display:
+  material: TNT_MINECART
+  glow: true
+  name: "<gradient:#ff512f:#dd2476><bold>Mega Charge</bold></gradient>"
+  lore:
+    - "<gray>Industrial demolition grade."
+    - "<gray>Clears a very large radius."
+    - ""
+    - "%price-block%"
+    - "%stock-block%"
+    - "%limit-block%"
+    - "%status-block%"
+
+give-items: { }
+
+commands:
+  - 'bombs give %player% mega 1'

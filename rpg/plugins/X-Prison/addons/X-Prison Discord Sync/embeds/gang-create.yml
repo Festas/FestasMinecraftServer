@@ -1,0 +1,7 @@
+color: "#43A047"
+title: "⚔️  New Gang Founded!"
+description: "**{player}** has founded the gang **{gang_name}**!\nA new force has risen on the server. ⚔️"
+thumbnail: true
+footer: "X-Prison Core • Discord Sync"
+show-timestamp: true
+fields: []

@@ -1,0 +1,13 @@
+color: "#E53935"
+title: "🔥  Rebirth!"
+description: "**{player}** has transcended and been reborn as **{new_rebirth}**!\nThis is the pinnacle of dedication. 🔥"
+thumbnail: true
+footer: "X-Prison Core • Discord Sync"
+show-timestamp: true
+fields:
+  - name: "♻️ Rebirth"
+    value: "{old_rebirth} **→** {new_rebirth}"
+    inline: true
+  - name: "🆔 Rebirth ID"
+    value: "`#{rebirth_id}`"
+    inline: true

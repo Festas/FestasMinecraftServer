@@ -1,0 +1,47 @@
+{
+  "class": "dev.drawethree.animatedenchants3.enchant.MagmaSurgeEnchant",
+  "id": 1012,
+  "rawName": "magmasurge",
+  "name": "<gradient:#FFB030:#FF3000>Magma Surge</gradient>",
+  "enabled": true,
+  "increaseCostBy": "baseCost * pow(1.07, level)",
+  "maxLevel": 25,
+  "initialCost": 65,
+  "currency": "GEMS",
+  "pickaxeLevelRequired": 1,
+  "chance": 0.08,
+  "currencyToGive": "money",
+  "countBlocksBroken": true,
+  "sounds": true,
+  "useEvents": true,
+  "targetMode": "CURRENT_BLOCK",
+  "impactsPerTrigger": 3,
+  "impactsPerLevel": 0.1,
+  "radiusBase": 2.0,
+  "radiusPerLevel": 0.06,
+  "durationTicks": 20,
+  "maxParticlesPerFrame": 120,
+  "message": "<gradient:#FFB030:#FF3000><bold>MAGMA SURGE</bold></gradient> <dark_gray>»</dark_gray> <white>A molten eruption sold for <yellow>%amount%</yellow> <white>%currency%</white>",
+  "prestige": {
+    "enabled": false,
+    "maxPrestige": 5,
+    "requiredActivationsFormula": "2000 * pow(10, prestige)",
+    "multiplierPerPrestige": 0.2
+  },
+  "refund": {
+    "enabled": true,
+    "guiSlot": 49,
+    "percentage": 50.0
+  },
+  "gui": {
+    "name": "<gradient:#FFB030:#FF3000>Magma Surge</gradient>",
+    "material": "MAGMA_BLOCK",
+    "slot": 49,
+    "customModelData": 0,
+    "description": [
+      "<gray>Swells a rising dome of molten rock that</gray>",
+      "<gray>erupts upward, blasting away a hemisphere</gray>",
+      "<gray>of blocks above and around you.</gray>"
+    ]
+  }
+}

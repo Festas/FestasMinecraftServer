@@ -1,0 +1,198 @@
+Enabled: true
+# Das System prüft automatisch im Hintergrund
+AutoRankUp:
+  Enabled: true
+  # Alle 5 Minuten prüfen (reicht völlig, spart Performance)
+  CheckInterval: 300
+  # Soll der Spieler eine Info bekommen, dass er bald aufsteigt?
+  Notify: true
+  # false = Spieler muss online sein, um aufzusteigen (wichtig für Celebrations)
+  AutoRankUpPass: false
+
+List:
+  # ==========================================================
+  # 1. LAUCH (1 Stunde / 3600 Sekunden)
+  # ==========================================================
+  Lauch:
+    NextRank: Knecht
+    Requirements:
+      PlayTime: 3600
+    Commands:
+      # 1. Promote via LuckPerms Track (Dein Wunsch)
+      - asConsole! lp user [playerName] promote autorank
+      
+      # 2. Geld geben (1000)
+      - asConsole! cmi money give [playerName] 1000
+      
+      # 3. Deine Custom Skripte (Übernommen aus Paths.yml)
+      - asConsole! tycoon_celebrate_rankup [playerName] Lauch normal
+      - asConsole! tycoon_msg [playerName] &8[&bRang&8] &aGlückwunsch! Du bist kein NPC mehr, sondern ein &fLauch&a!
+
+  # ==========================================================
+  # 2. KNECHT (5 Stunden / 18000 Sekunden)
+  # ==========================================================
+  Knecht:
+    NextRank: Chiller
+    Requirements:
+      PlayTime: 18000
+    Commands:
+      - asConsole! lp user [playerName] promote autorank
+      - asConsole! cmi money give [playerName] 5000
+      - asConsole! tycoon_celebrate_rankup [playerName] Knecht normal
+      - asConsole! tycoon_msg [playerName] &8[&bRang&8] &aRespekt! Du hast dich zum &eKnecht &ahochgearbeitet!
+
+  # ==========================================================
+  # 3. CHILLER (12 Stunden / 43200 Sekunden)
+  # ==========================================================
+  Chiller:
+    NextRank: Ticker
+    Requirements:
+      PlayTime: 43200
+    Commands:
+      - asConsole! lp user [playerName] promote autorank
+      - asConsole! cmi money give [playerName] 10000
+      - asConsole! tycoon_celebrate_rankup [playerName] Chiller normal
+      - asConsole! tycoon_msg [playerName] &8[&bRang&8] &aDu bist jetzt offiziell ein &bChiller&a!
+
+  # ==========================================================
+  # 4. TICKER (24 Stunden / 86400 Sekunden)
+  # ==========================================================
+  Ticker:
+    NextRank: Hustler
+    Requirements:
+      PlayTime: 86400
+    Commands:
+      - asConsole! lp user [playerName] promote autorank
+      - asConsole! cmi money give [playerName] 25000
+      - asConsole! tycoon_celebrate_rankup [playerName] Ticker normal
+      - asConsole! tycoon_msg [playerName] &8[&bRang&8] &aGeschäfte laufen? Du bist nun &aTicker&a!
+
+  # ==========================================================
+  # 5. HUSTLER (48 Stunden / 172800 Sekunden)
+  # ==========================================================
+  Hustler:
+    NextRank: Macher
+    Requirements:
+      PlayTime: 172800
+    Commands:
+      - asConsole! lp user [playerName] promote autorank
+      - asConsole! cmi money give [playerName] 50000
+      - asConsole! tycoon_celebrate_rankup [playerName] Hustler mid
+      - asConsole! tycoon_msg [playerName] &8[&bRang&8] &aJeden Tag am Hustlen. Rang: &6Hustler&a!
+
+  # ==========================================================
+  # 6. MACHER (100 Stunden / 360000 Sekunden)
+  # ==========================================================
+  Macher:
+    NextRank: Tuersteher
+    Requirements:
+      PlayTime: 360000
+    Commands:
+      - asConsole! lp user [playerName] promote autorank
+      - asConsole! cmi money give [playerName] 100000
+      - asConsole! tycoon_celebrate_rankup [playerName] Macher mid
+      - asConsole! tycoon_msg [playerName] &8[&bRang&8] &aDu bist ein echter &9Macher&a geworden!
+
+  # ==========================================================
+  # 7. TÜRSTEHER (150 Stunden / 540000 Sekunden)
+  # ==========================================================
+  Tuersteher:
+    NextRank: Bratan
+    Requirements:
+      PlayTime: 540000
+    Commands:
+      - asConsole! lp user [playerName] promote autorank
+      - asConsole! cmi money give [playerName] 150000
+      - asConsole! tycoon_celebrate_rankup [playerName] Türsteher mid
+      - asConsole! tycoon_msg [playerName] &8[&bRang&8] &aDu kontrollierst jetzt den Block. &8Türsteher&a!
+
+  # ==========================================================
+  # 8. BRATAN (250 Stunden / 900000 Sekunden)
+  # ==========================================================
+  Bratan:
+    NextRank: Bre
+    Requirements:
+      PlayTime: 900000
+    Commands:
+      - asConsole! lp user [playerName] promote autorank
+      - asConsole! cmi money give [playerName] 250000
+      - asConsole! tycoon_celebrate_rankup [playerName] Bratan mid
+      - asConsole! tycoon_msg [playerName] &8[&bRang&8] &aDu gehörst zur Familie. &5Bratan&a!
+
+  # ==========================================================
+  # 9. BRE (400 Stunden / 1440000 Sekunden)
+  # ==========================================================
+  Bre:
+    NextRank: Ehrenmann
+    Requirements:
+      PlayTime: 1440000
+    Commands:
+      - asConsole! lp user [playerName] promote autorank
+      - asConsole! cmi money give [playerName] 400000
+      - asConsole! tycoon_celebrate_rankup [playerName] Bre mid
+      - asConsole! tycoon_msg [playerName] &8[&bRang&8] &aWas geht, &dBre&a?
+
+  # ==========================================================
+  # 10. EHRENMANN (600 Stunden / 2160000 Sekunden)
+  # ==========================================================
+  Ehrenmann:
+    NextRank: Loewe
+    Requirements:
+      PlayTime: 2160000
+    Commands:
+      - asConsole! lp user [playerName] promote autorank
+      - asConsole! cmi money give [playerName] 750000
+      - asConsole! tycoon_celebrate_rankup [playerName] Ehrenmann high
+      - asConsole! tycoon_msg [playerName] &8[&bRang&8] &aAbsoluter &cEhrenmann&a!
+
+  # ==========================================================
+  # 11. LÖWE (800 Stunden / 2880000 Sekunden)
+  # ==========================================================
+  Loewe:
+    NextRank: Maschine
+    Requirements:
+      PlayTime: 2880000
+    Commands:
+      - asConsole! lp user [playerName] promote autorank
+      - asConsole! cmi money give [playerName] 1000000
+      - asConsole! tycoon_celebrate_rankup [playerName] Löwe high
+      - asConsole! tycoon_msg [playerName] &8[&bRang&8] &aEin echter &6Löwe&a!
+
+  # ==========================================================
+  # 12. MASCHINE (1000 Stunden / 3600000 Sekunden)
+  # ==========================================================
+  Maschine:
+    NextRank: Baba
+    Requirements:
+      PlayTime: 3600000
+    Commands:
+      - asConsole! lp user [playerName] promote autorank
+      - asConsole! cmi money give [playerName] 2000000
+      - asConsole! tycoon_celebrate_rankup [playerName] Maschine high
+      - asConsole! tycoon_msg [playerName] &8[&bRang&8] &aDu funktionierst wie eine &bMaschine&a!
+
+  # ==========================================================
+  # 13. BABA (1250 Stunden / 4500000 Sekunden)
+  # ==========================================================
+  Baba:
+    NextRank: MainCharacter
+    Requirements:
+      PlayTime: 4500000
+    Commands:
+      - asConsole! lp user [playerName] promote autorank
+      - asConsole! cmi money give [playerName] 5000000
+      - asConsole! tycoon_celebrate_rankup [playerName] BABA god
+      - asConsole! tycoon_msg [playerName] &8[&bRang&8] &aDu bist der &4BABA&a im Geschäft!
+
+  # ==========================================================
+  # 14. MAIN CHARACTER (1500 Stunden / 5400000 Sekunden)
+  # ==========================================================
+  MainCharacter:
+    # Letzter Rang
+    Requirements:
+      PlayTime: 5400000
+    Commands:
+      - asConsole! lp user [playerName] promote autorank
+      - asConsole! cmi money give [playerName] 10000000
+      - asConsole! tycoon_celebrate_rankup [playerName] Main-Character god
+      - asConsole! tycoon_msg [playerName] &8[&bRang&8] &aDu bist der &bMain Character&a dieses Servers!

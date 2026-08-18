@@ -1,0 +1,10 @@
+color: "#00BCD4"
+title: "⛏️  Pickaxe Level Up!"
+description: "**{player}**'s pickaxe just powered up — more blocks, more speed! ⚡"
+thumbnail: true
+footer: "X-Prison Core • Discord Sync"
+show-timestamp: true
+fields:
+  - name: "📈 Level"
+    value: "`{old_level}` **→** `{new_level}`"
+    inline: true

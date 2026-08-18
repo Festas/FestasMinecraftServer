@@ -1,0 +1,237 @@
+# ============================================================
+#  X-Prison - Auto Miner
+# ------------------------------------------------------------
+#  The Auto Miner simulates real mining while a player is AFK
+#  inside an Auto Miner region. Each reward cycle "mines" blocks
+#  from the region's block pool and runs them through your real
+#  AutoSell + Enchants + Multipliers pipeline - so income scales
+#  with the player's pickaxe, enchants and active multipliers.
+#
+#  Players need Auto Miner TIME (given via /aam give, sold in a
+#  shop, vote rewards, etc.) AND must hold a supported pickaxe.
+#  Their TIER (upgraded in the /autominer GUI) controls how good
+#  their Auto Miner is.
+# ============================================================
+
+settings:
+  # Currency simulated income is paid in when the AutoSell module
+  # cannot provide one. AutoSell's own currency is used otherwise.
+  earning-currency: 'money'
+  # Keep running the legacy per-region 'rewards' console commands
+  # each cycle (for servers migrating from the old Auto Miner).
+  # Regions without a 'blocks' pool always run their commands.
+  run-legacy-commands: false
+
+# ------------------------------------------------------------
+#  GUI opened by /autominer
+#
+#  Every item below is fully configurable: change the material,
+#  slot, display name and lore freely. The placeholders shown in
+#  the lore (e.g. %time_left%) are replaced at runtime - you may
+#  reorder, remove or duplicate any line.
+#
+#  Custom model data:
+#   Every item supports an optional 'custom_model_data: <number>'
+#   field. It sets the item's CustomModelData so a resource pack can
+#   give it a custom texture/model. Leave it 0 (or remove the line)
+#   for no custom model. For items using 'use-tier-icon', the model
+#   data is still applied on top of the tier icon material.
+#
+#  Available placeholders:
+#   status item  : %time_left% %tier% %blocks_per_cycle%
+#                  %reward_multiplier% %reward_period% %in_region%
+#                  %income_per_cycle%
+#   stats item   : %blocks_mined% %money_earned%
+#   upgrade item : %next_tier% %next_blocks_per_cycle%
+#                  %next_reward_multiplier% %next_reward_period%
+#                  %upgrade_cost% %upgrade_currency%
+# ------------------------------------------------------------
+gui:
+  title: '<dark_gray><bold>Auto Miner'
+  lines: 3
+  # Auto-refresh the GUI while it is open so live values (time left, income,
+  # lifetime stats) update on their own. The refresh interval follows the
+  # player's tier reward-period (the cycle length). Set to false to disable.
+  auto-refresh: true
+  # Material used to fill empty slots. Set to AIR to disable.
+  filler: GRAY_STAINED_GLASS_PANE
+  # Strings substituted for the %in_region% placeholder.
+  in-region-yes: '<green>Yes'
+  in-region-no: '<red>No'
+  # Optional cosmetic frame. Each entry is a normal item (material/name/lore/glow)
+  # at a single 'slot' or a list of 'slots'.
+  decorations:
+    top:
+      material: ORANGE_STAINED_GLASS_PANE
+      name: '<gold><bold>Auto Miner'
+      slots: [0, 1, 2, 3, 4, 5, 6, 7, 8]
+    sides:
+      material: YELLOW_STAINED_GLASS_PANE
+      name: ' '
+      slots: [9, 17]
+    bottom:
+      material: ORANGE_STAINED_GLASS_PANE
+      name: ' '
+      slots: [18, 19, 20, 21, 23, 24, 25, 26]
+  items:
+    # Shows the player's current Auto Miner status.
+    # use-tier-icon: true makes the icon follow the player's tier
+    # (the 'material' below is only used as a fallback).
+    status:
+      slot: 11
+      use-tier-icon: true
+      material: IRON_PICKAXE
+      # Resource-pack CustomModelData for this item (0 = none).
+      # Applied even when use-tier-icon swaps in the tier icon.
+      custom_model_data: 0
+      name: '<gold><bold>Auto Miner'
+      lore:
+        - '<gray>Your current Auto Miner status.'
+        - ' '
+        - '<white>Time left: <yellow>%time_left%'
+        - '<white>Tier: <yellow>%tier%'
+        - '<white>Blocks / cycle: <yellow>%blocks_per_cycle%'
+        - '<white>Reward multiplier: <yellow>x%reward_multiplier%'
+        - '<white>Cycle speed: <yellow>every %reward_period%s'
+        - ' '
+        - '<white>In mining region: %in_region%'
+        - '<white>Est. income / cycle: <green>%income_per_cycle%'
+    # Lifetime statistics.
+    stats:
+      slot: 13
+      material: BOOK
+      # Resource-pack CustomModelData for this item (0 = none).
+      custom_model_data: 0
+      name: '<yellow><bold>Statistics'
+      lore:
+        - '<gray>Your lifetime Auto Miner stats.'
+        - ' '
+        - '<white>Blocks mined: <yellow>%blocks_mined%'
+        - '<white>Money earned: <green>%money_earned%'
+    # Upgrade button (shown while a higher tier is available).
+    # use-tier-icon: true makes the icon follow the NEXT tier.
+    upgrade:
+      slot: 15
+      use-tier-icon: false
+      material: EMERALD
+      # Resource-pack CustomModelData for this item (0 = none).
+      # Applied even when use-tier-icon swaps in the next-tier icon.
+      custom_model_data: 0
+      name: '<green><bold>Upgrade Auto Miner'
+      lore:
+        - '<gray>Upgrade to the next tier:'
+        - ' '
+        - '<white>Next tier: %next_tier%'
+        - '<white>Blocks / cycle: <yellow>%next_blocks_per_cycle%'
+        - '<white>Reward multiplier: <yellow>x%next_reward_multiplier%'
+        - '<white>Cycle speed: <yellow>every %next_reward_period%s'
+        - ' '
+        - '<white>Cost: <green>%upgrade_cost% <gray>%upgrade_currency%'
+        - ' '
+        - '<yellow>Click to upgrade!'
+    # Shown in the upgrade slot when the player is at the max tier.
+    max-tier:
+      material: BARRIER
+      # Resource-pack CustomModelData for this item (0 = none).
+      custom_model_data: 0
+      name: '<red><bold>Max Tier Reached'
+      lore:
+        - '<gray>Your Auto Miner is fully upgraded!'
+    # Close button.
+    close:
+      slot: 22
+      material: BARRIER
+      # Resource-pack CustomModelData for this item (0 = none).
+      custom_model_data: 0
+      name: '<red><bold>Close'
+      lore: []
+
+# ------------------------------------------------------------
+#  Upgrade tiers. Players start at the lowest tier and upgrade
+#  in the /autominer GUI. The highest tier is the cap.
+#
+#  blocks-per-cycle  : blocks simulated each reward cycle
+#  reward-multiplier : flat multiplier on simulated income
+#  reward-period     : seconds between reward cycles
+#  upgrade-cost      : cost to upgrade INTO this tier
+#  upgrade-currency  : currency used to pay the upgrade cost
+# ------------------------------------------------------------
+tiers:
+  1:
+    display-name: '&7Tier I'
+    icon: STONE_PICKAXE
+    blocks-per-cycle: 5
+    reward-multiplier: 1.0
+    reward-period: 5
+    upgrade-cost: 0
+    upgrade-currency: 'tokens'
+  2:
+    display-name: '&aTier II'
+    icon: IRON_PICKAXE
+    blocks-per-cycle: 10
+    reward-multiplier: 1.25
+    reward-period: 5
+    upgrade-cost: 5000
+    upgrade-currency: 'tokens'
+  3:
+    display-name: '&bTier III'
+    icon: GOLDEN_PICKAXE
+    blocks-per-cycle: 15
+    reward-multiplier: 1.5
+    reward-period: 4
+    upgrade-cost: 25000
+    upgrade-currency: 'tokens'
+  4:
+    display-name: '&dTier IV'
+    icon: DIAMOND_PICKAXE
+    blocks-per-cycle: 25
+    reward-multiplier: 2.0
+    reward-period: 4
+    upgrade-cost: 100000
+    upgrade-currency: 'tokens'
+  5:
+    display-name: '&6&lTier V'
+    icon: NETHERITE_PICKAXE
+    blocks-per-cycle: 40
+    reward-multiplier: 3.0
+    reward-period: 3
+    upgrade-cost: 500000
+    upgrade-currency: 'tokens'
+
+# ------------------------------------------------------------
+#  Auto Miner regions (WorldGuard region name = key)
+#
+#  blocks : weighted pool of blocks the Auto Miner "mines".
+#           Weights are relative (they do not need to total 100).
+#  rewards: optional legacy console commands (see settings).
+# ------------------------------------------------------------
+auto-miner-regions:
+  automine:
+    world: world
+    blocks:
+      STONE: 50.0
+      COAL_ORE: 30.0
+      IRON_ORE: 15.0
+      GOLD_ORE: 5.0
+    rewards: []
+
+messages:
+  auto_miner_time_remove: '<gradient:#FFFF00:#FFD700:#FFA500><bold>AUTOMINER</bold></gradient> <dark_gray>»</dark_gray> <gray>You have removed <white>%time% %timeunit% <gray>from <white>%player%<gray>.'
+  not_enough_tokens: '<gradient:#FFFF00:#FFD700:#FFA500><bold>AUTOMINER</bold></gradient> <dark_gray>»</dark_gray> <yellow>You do not have enough tokens! (Needed: %tokens%)'
+  not_a_number: '<gradient:#FFFF00:#FFD700:#FFA500><bold>AUTOMINER</bold></gradient> <dark_gray>»</dark_gray> <yellow>%input% is not a number!'
+  player_not_online: '<gradient:#FFFF00:#FFD700:#FFA500><bold>AUTOMINER</bold></gradient> <dark_gray>»</dark_gray> <white>Player <yellow>%player% <red>is not online!'
+  auto_miner_enabled: ''
+  auto_miner_disabled: ''
+  auto_miner_no_pickaxe: ''
+  # Sent once in chat when a player starts auto-mining (enters a region with time
+  # and a supported pickaxe). Leave empty to disable.
+  auto_miner_start: '<gradient:#FFFF00:#FFD700:#FFA500><bold>AUTOMINER</bold></gradient> <dark_gray>»</dark_gray> <green>Your Auto Miner is now running!'
+  # Sent once in chat when a player stops auto-mining (leaves the region, runs out
+  # of time or unequips their pickaxe). Leave empty to disable.
+  auto_miner_stop: '<gradient:#FFFF00:#FFD700:#FFA500><bold>AUTOMINER</bold></gradient> <dark_gray>»</dark_gray> <red>Your Auto Miner has stopped.'
+  auto_miner_time: '<gradient:#FFFF00:#FFD700:#FFA500><bold>AUTOMINER</bold></gradient> <dark_gray>»</dark_gray> <white>You have <yellow>%time% <gray>of Auto-Miner time.'
+  auto_miner_time_add: '<gradient:#FFFF00:#FFD700:#FFA500><bold>AUTOMINER</bold></gradient> <dark_gray>»</dark_gray> <white>You added <yellow>%time% %timeunit% <white>to <yellow>%player%<gray>.'
+  no_permission_autominer_info: '<gradient:#FFFF00:#FFD700:#FFA500><bold>AUTOMINER</bold></gradient> <dark_gray>»</dark_gray> <red>You do not have permission to use /autominer!'
+  tier_upgraded: '<gradient:#FFFF00:#FFD700:#FFA500><bold>AUTOMINER</bold></gradient> <dark_gray>»</dark_gray> <white>You upgraded your Auto Miner to <yellow>%name%<white>!'
+  tier_max: '<gradient:#FFFF00:#FFD700:#FFA500><bold>AUTOMINER</bold></gradient> <dark_gray>»</dark_gray> <yellow>Your Auto Miner is already at the maximum tier!'
+  tier_not_enough: '<gradient:#FFFF00:#FFD700:#FFA500><bold>AUTOMINER</bold></gradient> <dark_gray>»</dark_gray> <red>You cannot afford this upgrade! (Cost: %cost% %currency%)'

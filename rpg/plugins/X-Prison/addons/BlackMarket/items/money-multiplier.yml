@@ -1,0 +1,33 @@
+# Requires: Multipliers module  (/pmulti <player> <currency> <amount> <duration> <unit>)
+id: money-multiplier
+
+enabled: true
+weight: 16
+
+price: 1200000
+currency: tokens
+
+discountable: true
+bulk-buy-amount: 1
+
+stock: 8
+limit-per-rotation: 1
+limit-lifetime: 0
+
+display:
+  material: GOLD_INGOT
+  glow: true
+  name: "<yellow><bold>Rigged Scales <white>— 2x Money, 1h"
+  lore:
+    - "<gray>Doubles your money income for one hour."
+    - "<gray>The guards will not notice. Probably."
+    - ""
+    - "%price-block%"
+    - "%stock-block%"
+    - "%limit-block%"
+    - "%status-block%"
+
+give-items: { }
+
+commands:
+  - 'pmulti %player% money 2.0 1 HOURS'

@@ -1,0 +1,884 @@
+messages:
+  pickaxe_level_required: '<gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>Your pickaxe must be <yellow>Level %pickaxe_level%</yellow> to buy this enchantment!'
+  no_pickaxe_found: '<gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>You do not have any diamond pickaxe!'
+  enchant_max_level: '<gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>You have already maxed out this enchantment.'
+  enchant_max_level_exceed: '<gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>This transaction would exceed the max level for this enchant.'
+  enchant_min_level_exceed: '<gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>This transaction would exceed the min level for this enchant.'
+  not_enough: '<gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>You do not have enough <yellow>%currency%</yellow>!'
+  enchant_bought: '<gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>You have spent <yellow>%amount%</yellow> <white>%currency%</white>'
+  enchant_bought_multiple: '<gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>You have bought <yellow>%amount%</yellow> levels of <reset>%enchant%</reset> <white>for <yellow>%cost%</yellow> <white>%currency%</white>'
+  enchant_refunded: '<gradient:#FFFF00:#FFD700:#FFA500><bold>REFUND</bold></gradient> <dark_gray>»</dark_gray> <white>You have refunded <yellow>%amount%</yellow> levels of %enchant%'
+  enchant_refund_amount: '<gradient:#FFFF00:#FFD700:#FFA500><bold>REFUND</bold></gradient> <dark_gray>»</dark_gray> <white>You have received <yellow>%amount%</yellow> <white>%currency%</white> back'
+  enchant_cant_disenchant: '<gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>This enchant can''t be disenchanted.'
+  enchant_no_level: '<gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>You do not have this enchant!'
+  charity_other: '<gradient:#FFFF00:#FFD700:#FFA500><bold>CHARITY</bold></gradient> <dark_gray>»</dark_gray> <yellow>%player%''s</yellow> <white>enchant found you <yellow>%amount%</yellow>'
+  charity_your: '<gradient:#FFFF00:#FFD700:#FFA500><bold>CHARITY</bold></gradient> <dark_gray>»</dark_gray> <white>Your enchant found you <yellow>%amount%</yellow>'
+  blessing_other: '<gradient:#FFFF00:#FFD700:#FFA500><bold>BLESSING</bold></gradient> <dark_gray>»</dark_gray> <yellow>%player%''s</yellow> <white>enchant found you <yellow>%amount%</yellow> <white>Tokens'
+  blessing_your: '<gradient:#FFFF00:#FFD700:#FFA500><bold>BLESSING</bold></gradient> <dark_gray>»</dark_gray> <white>Your enchant found you <yellow>%amount%</yellow> <white>Tokens'
+  layer_disabled: '<gradient:#FFFF00:#FFD700:#FFA500><bold>JACKHAMMER</bold></gradient> <dark_gray>»</dark_gray> <white>Enchantment <yellow><bold>DISABLED</bold></yellow>'
+  layer_enabled: '<gradient:#FFFF00:#FFD700:#FFA500><bold>JACKHAMMER</bold></gradient> <dark_gray>»</dark_gray> <white>Enchantment <yellow><bold>ENABLED</bold></yellow>'
+  lucky_booster_on: '<gradient:#FFFF00:#FFD700:#FFA500><bold>LUCKYBOOSTER</bold></gradient> <dark_gray>»</dark_gray> <white>Lucky Mode has <yellow><bold>activated</bold></yellow>, <gold><bold>X2 Money & Tokens</bold></gold> for <yellow>5:00 Minutes</yellow>'
+  lucky_booster_off: '<gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>Lucky Mode has <yellow><bold>deactivated</bold></yellow>.'
+  block_booster_on: '<gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>Double Blocks has <yellow><bold>activated</bold></yellow>, <gold><bold>X2 Blocks</bold></gold> for <yellow>5:00 Minutes</yellow>'
+  block_booster_off: '<gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>Double Blocks has <yellow><bold>deactivated</bold></yellow>'
+  lucky_mode_timeleft: '<gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>Lucky Mode Activated For: <green><bold>%timeleft%</bold></green>.'
+  lucky_mode_disabled: '<gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>Lucky Mode <red>Disabled</red>.'
+  explosive_disabled: '<gradient:#FF5555:#AA0000:#550000><bold>EXPLOSIVE</bold></gradient> <dark_gray>»</dark_gray> <white>Enchantment <yellow><bold>DISABLED</bold></yellow>'
+  explosive_enabled: '<gradient:#FF5555:#AA0000:#550000><bold>EXPLOSIVE</bold></gradient> <dark_gray>»</dark_gray> <white>Enchantment <yellow><bold>ENABLED</bold></yellow>'
+  value_no_permission: '<gradient:#FFFF00:#FFD700:#FFA500><bold>VALUE</bold></gradient> <dark_gray>»</dark_gray> <white>No Permission, Unlock at <yellow>store.festas-builds.com</yellow>'
+  value_no_pickaxe: '<gradient:#FFFF00:#FFD700:#FFA500><bold>VALUE</bold></gradient> <dark_gray>»</dark_gray> <white>You must hold a pickaxe in your hand.'
+  value_value: '<gradient:#FFFF00:#FFD700:#FFA500><bold>VALUE</bold></gradient> <dark_gray>»</dark_gray> <yellow>%player%''s</yellow> <white>Pickaxe Value: <yellow>%amount%</yellow>'
+  value_cooldown: '<gradient:#FFFF00:#FFD700:#FFA500><bold>VALUE</bold></gradient> <dark_gray>»</dark_gray> <white>Please wait <yellow>%time%</yellow> Seconds before using this command again.'
+  pickaxe_given: '<gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>You have given pickaxe to <yellow>%player%</yellow>'
+  pickaxe_received: '<gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>You have received pickaxe from <yellow>%sender%</yellow>'
+  pickaxe_inventory_full: '<gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <yellow>%player%</yellow> <white>has full inventory!'
+  prestige_finder: '<gradient:#FFFF00:#FFD700:#FFA500><bold>PRESTIGE FINDER</bold></gradient> <dark_gray>»</dark_gray> <white>You''ve just found a <yellow>X%prestige%</yellow> Prestige Level while mining.'
+  transaction_in_progress: '<gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>Please wait for your other transaction to complete.'
+  enchant_status_locked: '<gray>Locked Enchant'
+  enchant_status_unlocked: '<gray>Unlocked Enchant'
+  enchant_status_max: '<gray>Maxed Enchant'
+  enchant_passive: '<white>Passive'
+  enchant_max_enchants: '<gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>You have maximum amount of enchants applied!'
+  world_disabled: '<gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <red>You can''t use pickaxe in this world!</red>'
+  enchant_prestige_not_max: '<gradient:#FFFF00:#FFD700:#FFA500><bold>PRESTIGE</bold></gradient> <dark_gray>»</dark_gray> <white>You must <yellow>max out</yellow> this enchant before prestiging!'
+  enchant_prestige_max_prestige: '<gradient:#FFFF00:#FFD700:#FFA500><bold>PRESTIGE</bold></gradient> <dark_gray>»</dark_gray> <white>This enchant has already reached its <yellow>maximum prestige!</yellow>'
+  enchant_prestige_not_enough: '<gradient:#FFFF00:#FFD700:#FFA500><bold>PRESTIGE</bold></gradient> <dark_gray>»</dark_gray> <white>You need <yellow>%required%</yellow> activations but only have <yellow>%current%</yellow>!'
+  enchant_prestiged: '<gradient:#FFFF00:#FFD700:#FFA500><bold>PRESTIGE</bold></gradient> <dark_gray>»</dark_gray> <white>%enchant% <yellow>prestiged to <gold>Level %prestige%</gold>!</yellow> Multiplier: <green>+%multiplier%%</green>'
+  enchant_toggled_on: '<gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>You have <green><bold>ENABLED</bold></green> <reset>%enchant%</reset><white>.'
+  enchant_toggled_off: '<gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>You have <red><bold>DISABLED</bold></red> <reset>%enchant%</reset><white>.'
+  # Shown for every enchant proc while the "All Enchants Proc Message" pickaxe setting is ON. Placeholder: %enchant%.
+  all_proc_message: '<gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>Your <yellow>%enchant%</yellow> <white>enchant procced!'
+  enchants_admin_no_permission: '<gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <red>You do not have permission to use this command!'
+  no_permission_enchantmenu: '<gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <red>You do not have permission to open the enchant menu!'
+  no_permission_disenchant: '<gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <red>You do not have permission to open the disenchant menu!'
+  no_permission_feature: '<gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <red>You do not have permission to use this.'
+  cannot_pickup_not_owner: '<gradient:#FFFF00:#FFD700:#FFA500><bold>SOULBOUND</bold></gradient> <dark_gray>»</dark_gray> <white>This pickaxe is soulbound to <yellow>%owner%</yellow>.'
+  cannot_use_not_owner: '<gradient:#FFFF00:#FFD700:#FFA500><bold>SOULBOUND</bold></gradient> <dark_gray>»</dark_gray> <white>You can''t use a pickaxe soulbound to <yellow>%owner%</yellow>.'
+  cannot_drop_pickaxe: '<gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <red>You can''t drop your pickaxe.'
+  cannot_store_pickaxe: '<gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <red>You can''t store your pickaxe in containers.'
+  pickaxe_returned: '<gradient:#FFFF00:#FFD700:#FFA500><bold>SOULBOUND</bold></gradient> <dark_gray>»</dark_gray> <white>Your soulbound pickaxe was returned to you.'
+  unsoulbind_success: '<gradient:#FFFF00:#FFD700:#FFA500><bold>SOULBOUND</bold></gradient> <dark_gray>»</dark_gray> <white>Cleared the owner of that pickaxe.'
+  unsoulbind_no_pickaxe: '<gradient:#FFFF00:#FFD700:#FFA500><bold>SOULBOUND</bold></gradient> <dark_gray>»</dark_gray> <red>Hold a supported pickaxe to unsoulbind it.'
+  no_permission_unsoulbind: '<gradient:#FFFF00:#FFD700:#FFA500><bold>SOULBOUND</bold></gradient> <dark_gray>»</dark_gray> <red>You do not have permission to use this command!'
+# Maximum number of enchants on a pickaxe, -1 = UNLIMITED
+max-enchants: -1
+# Should we keep Enchanted pickaxes in players inventory when they die?
+keep-pickaxes-on-death: true
+# Pickaxe Soulbinding - bind a pickaxe to its owner so it can't be stolen or lost.
+# Add a line such as '<gray>Soulbound to: <yellow>%Owner%' to 'Pickaxe.lore' to display the owner.
+soulbinding:
+  # Master switch for the soulbinding feature.
+  enabled: true
+  # Automatically bind a pickaxe to the first player who holds/picks it up.
+  bind-on-first-hold: true
+  # Stop other players from picking a soulbound pickaxe off the ground.
+  block-pickup-by-others: true
+  # Stop other players from mining / using a soulbound pickaxe.
+  block-use-by-others: true
+  # Return a lost/dropped soulbound pickaxe to its owner instead of letting it be taken or despawn.
+  auto-return-to-owner: true
+# Inventory protection for enchanted pickaxes.
+inventory-protection:
+  # Prevent players from dropping their enchanted pickaxe.
+  prevent-dropping: true
+  # Prevent storing enchanted pickaxes in chests, shulkers, ender chests, hoppers, item frames, etc.
+  block-storing-in-containers: true
+  # Prevent enchanted pickaxes from despawning while on the ground (Paper/Folia only).
+  prevent-ground-despawn: true
+# Should use unbreakable permission to handle unbreakable pickaxes?
+use-unbreakable-permission: false
+# Require players to hold 'xprison.enchants.use.<enchant>' for an enchant to trigger while mining.
+#  false (default): every enchant works unless that permission is explicitly set to false (negative gate).
+#  true: an enchant only works if the player explicitly has its use permission (positive grant).
+require-enchant-use-permission: false
+# Packet-mine safety optimisation for AoE / area enchants (Explosive, Layer, Nuke, Laser Beam, addons).
+#  true (default, recommended): when a packet-mines plugin is active, any area enchant set to
+#    'useEvents: true' (fire a Bukkit BlockBreakEvent per block) is automatically downgraded to the
+#    aggregate event. Per-block events buy nothing on packet mines - the mine is already told about the
+#    break directly - but cost one full event dispatch per broken block, which drops TPS and spikes ping.
+#    X-Prison's own systems (quests, battle pass, boosters, statistics, mine reset) keep working.
+#  false: honour the configured 'useEvents' value unchanged. Only needed if a THIRD-PARTY plugin must
+#    see a per-block BlockBreakEvent for packet-mined blocks. Expect TPS loss under heavy AoE.
+# Either way, the situation is logged once per enchant so you can see what happened.
+optimize-packet-mining: true
+# Formatting of the %xprison_pickaxe_value% placeholder.
+# The placeholder adds up everything spent on the held pickaxe's enchants and groups the
+# total per currency, so Tokens and Gems are never mixed into one meaningless number.
+# Related placeholders:
+#  %xprison_pickaxe_value_<currency>%      - only that currency, formatted (e.g. tokens, gems)
+#  %xprison_pickaxe_value_<currency>_raw%  - only that currency, plain unformatted digits
+pickaxe-value:
+  # Rendered once per currency. %value% uses that currency's own format/prefix/suffix from
+  # currencies.yml, %currency% is its display-name.
+  entry-format: "%value% %currency%"
+  # Placed between two currency entries.
+  separator: "<gray>, </gray>"
+  # Shown when the held item has no enchants at all.
+  empty: "<gray>0</gray>"
+# Fly enchant settings.
+fly:
+  # When a pickaxe is put away, the Fly enchant normally revokes flight.
+  # To avoid stripping flight that was granted elsewhere:
+  #  - Players in Creative/Spectator never have their flight touched.
+  #  - Players holding any permission listed below keep their flight.
+  # Example: essentials.fly, xprison.fly.keep
+  keep-permissions:
+    - xprison.fly.keep
+# Action to open Enchanting menu while holding pickaxe. For multiple, separate them with ',' (LEFT_CLICK_BLOCK,RIGHT_CLICK_BLOCK,LEFT_CLICK_AIR,RIGHT_CLICK_AIR,PHYSICAL)
+open-enchant-menu-action: "RIGHT_CLICK_AIR,RIGHT_CLICK_BLOCK"
+# Enchant Menu Settings
+enchant_menu:
+  title: '<gradient:#FFD700:#FFA500>Pickaxe Menu</gradient>'
+  empty_slots: GRAY_STAINED_GLASS_PANE
+  lines: 6
+  pickaxe_slot: 4
+  pickaxe_enabled: true
+  # Slots that hold enchant icons, and the order overflow fills them in.
+  # Every enchant keeps the `slot` (and optional `page`) set in its own file under enchants/.
+  # Anything that collides with an already-taken slot, or sits outside this list, is moved to
+  # the next free slot automatically - spilling onto extra pages - so you can add as many
+  # enchants as you like and none of them will ever go missing.
+  # NOTE: unlike enchant_notifications.slots, this list does NOT decide the order enchants
+  # appear in. It only decides which slots are usable, and the order overflow fills them.
+  # Keep these clear of the fixed items below (help, pickaxe, currency tabs, page arrows).
+  enchant_slots: [9, 10, 11, 12, 13, 14, 15, 16, 17,
+                  18, 19, 20, 21, 22, 23, 24, 25, 26,
+                  27, 28, 29, 30, 31, 32, 33, 34, 35,
+                  36, 37, 38, 39, 40, 41, 42, 43, 44]
+  # Page arrows. Only shown when there is more than one page of enchants.
+  # %page% = the page being viewed, %total_pages% = how many pages there are.
+  previous_page:
+    slot: 45
+    material: ARROW
+    custom_model_data: 0
+    name: '<yellow><bold>PREVIOUS PAGE</bold></yellow>'
+    lore:
+      - ' '
+      - '<italic:false><gray>Page <white>%page%</white> of <white>%total_pages%</white></gray>'
+      - ' '
+      - '<italic:false><gray><italic>(( Click to go back ))</italic></gray>'
+  next_page:
+    slot: 53
+    material: ARROW
+    custom_model_data: 0
+    name: '<yellow><bold>NEXT PAGE</bold></yellow>'
+    lore:
+      - ' '
+      - '<italic:false><gray>Page <white>%page%</white> of <white>%total_pages%</white></gray>'
+      - ' '
+      - '<italic:false><gray><italic>(( Click to go forward ))</italic></gray>'
+  # How many levels each click adds in the ADMIN /createpickaxe menu.
+  # Keys are click types (LEFT, RIGHT, MIDDLE, SHIFT_RIGHT); values are the number of levels to add.
+  admin-click-amounts:
+    LEFT: 1
+    RIGHT: 10
+    MIDDLE: 100
+    SHIFT_RIGHT: 100
+  item:
+    lore:
+      - '<italic:false><white>%status%</white>'
+      - ' '
+      - '<italic:false><yellow>Description</yellow>'
+      - '<italic:false><gray>%description%</gray>'
+      - ' '
+      - '<italic:false><yellow>✦ Information</yellow>'
+      - ' <italic:false><yellow>▎</yellow> <white>Level: </white><yellow>%current_level%</yellow> <white>/</white> <yellow>%max_level%</yellow>'
+      - ' <italic:false><yellow>▎</yellow> <white>Base Activation Chance: </white><yellow>%base_chance%</yellow>'
+      - ' <italic:false><yellow>▎</yellow> <white>Your Activation Chance: </white><yellow>%chance%</yellow>'
+      - ' <italic:false><yellow>▎</yellow> <white>Next Activation Chance: </white><yellow>%next_chance%</yellow>'
+      - ''
+      - '<italic:false><yellow>✦ Upgrades</yellow>'
+      - ' <italic:false><yellow>▎</yellow> <white>Price: </white><yellow>%cost%</yellow> <white>%currency%</white>'
+      - ' <italic:false><yellow>▎</yellow> <white>Press </white><yellow><bold>Q</bold></yellow> <white>to purchase as many levels of this</white>'
+      - ' <italic:false><yellow>▎</yellow> <white>enchantment as you can afford.</white>'
+      - ''
+      - '%prestige_info%'
+      - ''
+      - '<italic:false><gray>Unlocks at Pickaxe Level </gray><white><italic>%pickaxe_level%</italic></white>'
+      - ''
+      - '<italic:false><gray><italic>Click to upgrade</italic></gray>'
+  prestige_info_lore:
+    - '<italic:false><yellow>✦ Prestige</yellow>'
+    - ' <italic:false><yellow>▎</yellow> <white>Level: </white><yellow>%prestige% / %prestige_max%</yellow>'
+    - ' <italic:false><yellow>▎</yellow> <white>Progress: </white><yellow>%prestige_progress% / %prestige_required%</yellow>'
+    - ' <italic:false><yellow>▎</yellow> <white>Bonus: </white><yellow>+%prestige_multiplier%%</yellow>'
+  prestige_ready_lore:
+    - ' <italic:false><green>✔ Shift+Left Click to Prestige!</green>'
+  currency-enchants-items:
+    tokens:
+      enabled: true
+      material: SUNFLOWER
+      slot: 48
+      custom_model_data: 0
+      name: '<yellow><bold>Token Enchants</bold></yellow>'
+      lore:
+        - '<italic:false><gray>Click to view this category</gray>'
+    gems:
+      enabled: true
+      material: EMERALD
+      slot: 49
+      custom_model_data: 0
+      name: '<green><bold>Gem Enchants</bold></green>'
+      lore:
+        - '<italic:false><gray>Click to view this category</gray>'
+    money:
+      enabled: true
+      material: PAPER
+      slot: 50
+      custom_model_data: 100
+      name: '<gold><bold>Money Enchants</bold></gold>'
+      lore:
+        - '<italic:false><gray>Click to view this category</gray>'
+  help_item:
+    enabled: true
+    material: BOOK
+    slot: 2
+    custom_model_data: 0
+    name: '<yellow><bold>HOW IT WORKS?</bold></yellow>'
+    lore:
+      - '<gray><italic>(( Here you can find how to</italic></gray>'
+      - '<gray><italic>upgrade your enchantments ))</italic></gray>'
+      - ''
+      - '<italic:false><yellow><bold>* </bold></yellow><white>Click an enchant to open its</white>'
+      - '<italic:false>  <white>upgrade menu.</white>'
+      - '<italic:false><yellow><bold>* </bold></yellow><white>Buy <yellow>1 / 5 / 25 / 50</yellow> or <yellow>MAX</yellow> levels.</white>'
+      - '<italic:false><yellow><bold>* </bold></yellow><white>Toggle each enchant <green>ON</green><white>/<red>OFF</red> <white>for yourself.</white>'
+      - ' '
+      - '<gray><italic>(( Click on the enchant to begin ))</italic></gray>'
+  # Opens the Pickaxe Quality menu (requires the pickaxe_quality module to be enabled).
+  quality_item:
+    enabled: true
+    material: NETHER_STAR
+    custom_model_data: 0
+    slot: 3
+    name: '<gradient:#00E5FF:#00838F><bold>PICKAXE QUALITY</bold></gradient>'
+    lore:
+      - ' '
+      - '<italic:false><gray>Upgrade your pickaxe''s quality tier</gray>'
+      - '<italic:false><gray>for permanent mining boosts.</gray>'
+      - ' '
+      - '<italic:false><white>Current: </white>%tier_name% <dark_gray>(%tier%/%max_tier%)</dark_gray>'
+      - ' '
+      - '<italic:false><gray><italic>(( Click to open Pickaxe Quality ))</italic></gray>'
+  disenchant_item:
+    enabled: true
+    material: ANVIL
+    custom_model_data: 0
+    slot: 6
+    name: '<yellow><bold>ENCHANTMENT REFUND</bold></yellow>'
+    lore:
+      - '<gray><italic>(( Click here to open ))</italic></gray>'
+  skins_item:
+    enabled: true
+    material: DIAMOND_PICKAXE
+    custom_model_data: 0
+    slot: 7
+    name: '<light_purple><bold>SKINS</bold></light_purple>'
+    lore:
+      - ' '
+      - '<italic:false><gray>Skins give various boosts</gray>'
+      - '<italic:false><gray>to help with your progression.</gray>'
+      - ' '
+      - '<italic:false><white>Click to view <light_purple>Skins</light_purple></white>'
+  # Opens the "Choose Pickaxe Slot" menu (pickaxe_slot_menu below).
+  pickaxe_slot_item:
+    enabled: true
+    material: LIME_STAINED_GLASS_PANE
+    custom_model_data: 0
+    slot: 8
+    name: '<aqua><bold>PICKAXE SLOT</bold></aqua>'
+    lore:
+      - '<gray><italic>(( Choose which hotbar slot</italic></gray>'
+      - '<gray><italic>your pickaxe sits in ))</italic></gray>'
+      - ''
+      - '<italic:false><white>Click to choose</white>'
+  # Opens the "Pickaxe Settings" menu (pickaxe_settings section below).
+  settings_item:
+    enabled: true
+    material: COMPARATOR
+    custom_model_data: 0
+    slot: 5
+    name: '<gradient:#FFA500:#FFD700><bold>PICKAXE SETTINGS</bold></gradient>'
+    lore:
+      - ' '
+      - '<italic:false><gray>Adjust how your pickaxe behaves.</gray>'
+      - ' '
+      - '<italic:false><gray><italic>(( Click to open settings ))</italic></gray>'
+  # Placeholder shown IN PLACE OF an enchant whose required pickaxe level the player has not reached
+  # yet, hiding the real enchant behind a mysterious "locked" icon until they are strong enough.
+  # Set enabled: false to always show the real enchant (with its %status% lore instead).
+  # Placeholders: %enchant% (real enchant name), %required_pickaxe_level% (level needed).
+  locked_item:
+    enabled: true
+    material: GRAY_DYE
+    custom_model_data: 0
+    name: '<gray><bold>???</bold> <dark_gray>Locked Enchant</dark_gray>'
+    lore:
+      - ''
+      - '<italic:false><gray><italic>A mysterious enchant, hidden</italic></gray>'
+      - '<italic:false><gray><italic>until you''re strong enough...</italic></gray>'
+      - ''
+      - '<italic:false><yellow>▎</yellow> <white>Unlocks at Pickaxe Level <yellow>%required_pickaxe_level%</yellow>'
+      - ''
+      - '<italic:false><gray><italic>(( Reach Pickaxe Level %required_pickaxe_level% to unlock! ))</italic></gray>'
+
+# Per-enchant upgrade menu. Opened when a player clicks an enchant in the enchant_menu above.
+# Lets players buy a fixed number of levels (or MAX) and personally toggle the enchant on/off.
+# %enchant% in the title is the enchant's display name, WITH its own colors from the enchant JSON -
+# so a color you put around it in the title has no visible effect. Use %enchant_plain% instead to
+# insert the name without its colors and have the title's own color apply, e.g.
+# title: '<dark_gray>%enchant_plain%</dark_gray>'
+# Enchant-info placeholders (%status%, %description%, %current_level%, %max_level%, %chance%,
+# %prestige_info% ...) work in enchant_display and prestige_item lore exactly like the main menu.
+enchant_upgrade_menu:
+  title: '%enchant%'
+  lines: 5
+  empty_slots: GRAY_STAINED_GLASS_PANE
+  # Non-clickable info icon. Uses the enchant's own icon and the main-menu placeholders.
+  enchant_display:
+    enabled: true
+    slot: 4
+    lore:
+      - '<italic:false><white>%status%</white>'
+      - ' '
+      - '<italic:false><yellow>Description</yellow>'
+      - '<italic:false><gray>%description%</gray>'
+      - ' '
+      - '<italic:false><yellow>✦ Information</yellow>'
+      - ' <italic:false><yellow>▎</yellow> <white>Level: </white><yellow>%current_level%</yellow> <white>/</white> <yellow>%max_level%</yellow>'
+      - ' <italic:false><yellow>▎</yellow> <white>Base Activation Chance: </white><yellow>%base_chance%</yellow>'
+      - ' <italic:false><yellow>▎</yellow> <white>Your Activation Chance: </white><yellow>%chance%</yellow>'
+      - ' <italic:false><yellow>▎</yellow> <white>Next Activation Chance: </white><yellow>%next_chance%</yellow>'
+      - ''
+      - '%prestige_info%'
+      - ''
+      - '<italic:false><gray>Unlocks at Pickaxe Level </gray><white><italic>%pickaxe_level%</italic></white>'
+  # Upgrade buttons. Each entry buys `amount` levels (an integer) or `max` (as many as you can
+  # afford). Add / remove / reorder entries freely - the key name is cosmetic; only `amount`,
+  # `slot` & `enabled` are read by the plugin. The rest is a standard config item.
+  # Placeholders: %amount% (levels this click buys), %from_level%, %to_level%, %cost%, %currency%, %max_level%.
+  upgrade_buttons:
+    one:
+      enabled: true
+      amount: 1
+      slot: 20
+      material: LIME_STAINED_GLASS_PANE
+      custom_model_data: 0
+      name: '<green><bold>+%amount% Level</bold></green>'
+      lore:
+        - ' <italic:false><green>▎</green> <white>Levels: </white><green>%from_level% → %to_level%</green>'
+        - ' <italic:false><green>▎</green> <white>Price: </white><green>%cost%</green> <white>%currency%</white>'
+        - ''
+        - '<italic:false><gray><italic>(( Click to purchase ))</italic></gray>'
+    five:
+      enabled: true
+      amount: 5
+      slot: 21
+      material: LIME_STAINED_GLASS_PANE
+      custom_model_data: 0
+      name: '<green><bold>+%amount% Levels</bold></green>'
+      lore:
+        - ' <italic:false><green>▎</green> <white>Levels: </white><green>%from_level% → %to_level%</green>'
+        - ' <italic:false><green>▎</green> <white>Price: </white><green>%cost%</green> <white>%currency%</white>'
+        - ''
+        - '<italic:false><gray><italic>(( Click to purchase ))</italic></gray>'
+    twentyfive:
+      enabled: true
+      amount: 25
+      slot: 22
+      material: LIME_STAINED_GLASS_PANE
+      custom_model_data: 0
+      name: '<green><bold>+%amount% Levels</bold></green>'
+      lore:
+        - ' <italic:false><green>▎</green> <white>Levels: </white><green>%from_level% → %to_level%</green>'
+        - ' <italic:false><green>▎</green> <white>Price: </white><green>%cost%</green> <white>%currency%</white>'
+        - ''
+        - '<italic:false><gray><italic>(( Click to purchase ))</italic></gray>'
+    fifty:
+      enabled: true
+      amount: 50
+      slot: 23
+      material: LIME_STAINED_GLASS_PANE
+      custom_model_data: 0
+      name: '<green><bold>+%amount% Levels</bold></green>'
+      lore:
+        - ' <italic:false><green>▎</green> <white>Levels: </white><green>%from_level% → %to_level%</green>'
+        - ' <italic:false><green>▎</green> <white>Price: </white><green>%cost%</green> <white>%currency%</white>'
+        - ''
+        - '<italic:false><gray><italic>(( Click to purchase ))</italic></gray>'
+    max:
+      enabled: true
+      amount: max
+      slot: 24
+      material: GREEN_STAINED_GLASS_PANE
+      custom_model_data: 0
+      name: '<green><bold>Upgrade MAX</bold></green>'
+      lore:
+        - ' <italic:false><green>▎</green> <white>Upgrade towards </white><green>Level %to_level%</green>'
+        - ' <italic:false><green>▎</green> <white>Buys as many levels as you can afford.</white>'
+        - ''
+        - '<italic:false><gray><italic>(( Click to purchase ))</italic></gray>'
+  # Shown INSTEAD of the upgrade buttons once the enchant is at its max level. Set `slots` (a list)
+  # to fill the whole button row, or a single `slot`. Placeholders: %current_level%, %max_level%.
+  maxed_item:
+    enabled: true
+    slots: [20, 21, 22, 23, 24]
+    material: YELLOW_STAINED_GLASS_PANE
+    custom_model_data: 0
+    name: '<yellow><bold>Maxed!</bold></yellow>'
+    lore:
+      - ' <italic:false><yellow>▎</yellow> <white>Level: </white><yellow>%current_level% / %max_level%</yellow>'
+      - ''
+      - '<italic:false><gold><bold>ENCHANT MAXED</bold></gold>'
+  # Personal on/off toggle. State is stored on the pickaxe (per-pickaxe). A disabled enchant will
+  # not trigger while mining. Two visual states below.
+  toggle_item:
+    slot: 40
+    enabled_state:
+      material: LIME_STAINED_GLASS_PANE
+      custom_model_data: 0
+      name: '<white>Enchant: <green><bold>ENABLED</bold></green>'
+      lore:
+        - '<gray><italic>(( Click to disable this enchant ))</italic></gray>'
+        - ''
+        - '<italic:false><gray>While disabled, this enchant will</gray>'
+        - '<italic:false><gray>not trigger while you mine.</gray>'
+    disabled_state:
+      material: RED_STAINED_GLASS_PANE
+      custom_model_data: 0
+      name: '<white>Enchant: <red><bold>DISABLED</bold></red>'
+      lore:
+        - '<gray><italic>(( Click to enable this enchant ))</italic></gray>'
+        - ''
+        - '<italic:false><gray>This enchant is currently turned off</gray>'
+        - '<italic:false><gray>and will not trigger while you mine.</gray>'
+  # Prestige button. Only shown for prestigeable enchants. Reuses the prestige placeholders.
+  prestige_item:
+    enabled: true
+    slot: 38
+    material: NETHER_STAR
+    custom_model_data: 0
+    name: '<light_purple><bold>PRESTIGE</bold></light_purple>'
+    lore:
+      - '%prestige_info%'
+      - ''
+      - '<italic:false><gray><italic>(( Click to prestige this enchant ))</italic></gray>'
+  # Returns to the enchant menu.
+  back_item:
+    enabled: true
+    slot: 42
+    material: COMPASS
+    custom_model_data: 0
+    name: '<red><bold>BACK</bold></red>'
+    lore:
+      - '<gray><italic>(( Return to the enchant menu ))</italic></gray>'
+  # Optional decorative border/filler items (see other menus). Empty by default.
+  decorations: {}
+
+# "Pickaxe Settings" menu. Per-pickaxe preferences the player controls from the enchant menu.
+# Every toggle is stored on the pickaxe (per-pickaxe NBT). New pickaxes start at the default-states below.
+pickaxe_settings:
+  title: '<gradient:#FFA500:#FFD700>Pickaxe Settings</gradient>'
+  lines: 5
+  empty_slots: BLACK_STAINED_GLASS_PANE
+  # Starting state for a pickaxe the player has never toggled. Once a player flips a setting, their choice is kept.
+  default-states:
+    summary: true
+    all-proc-message: false
+    virtual-break: false
+    enchant-notifications: true
+    enchant-animations: true
+  # If enabled, a summary of the currencies earned from mining is shown periodically while you mine.
+  summary_toggle:
+    slot: 10
+    enabled_state:
+      material: PAPER
+      custom_model_data: 0
+      name: '<white>Last Minute Summary: <green><bold>ON</bold></green>'
+      lore:
+        - ' '
+        - '<italic:false><gray>A summary of currencies earned from</gray>'
+        - '<italic:false><gray>mining is shown periodically while you mine.</gray>'
+        - ' '
+        - '<italic:false><gray><italic>(( Click to turn OFF ))</italic></gray>'
+    disabled_state:
+      material: PAPER
+      custom_model_data: 0
+      name: '<white>Last Minute Summary: <red><bold>OFF</bold></red>'
+      lore:
+        - ' '
+        - '<italic:false><gray>The periodic mining summary is hidden.</gray>'
+        - ' '
+        - '<italic:false><gray><italic>(( Click to turn ON ))</italic></gray>'
+  # If enabled, a message is displayed when ANY enchantment on your pickaxe procs.
+  all_proc_toggle:
+    slot: 12
+    enabled_state:
+      material: COMPARATOR
+      custom_model_data: 0
+      name: '<white>All Enchants Proc Message: <green><bold>ON</bold></green>'
+      lore:
+        - ' '
+        - '<italic:false><gray>A message is displayed whenever any</gray>'
+        - '<italic:false><gray>enchantment on your pickaxe procs.</gray>'
+        - ' '
+        - '<italic:false><gray><italic>(( Click to turn OFF ))</italic></gray>'
+    disabled_state:
+      material: COMPARATOR
+      custom_model_data: 0
+      name: '<white>All Enchants Proc Message: <red><bold>OFF</bold></red>'
+      lore:
+        - ' '
+        - '<italic:false><gray>No message is shown when your</gray>'
+        - '<italic:false><gray>enchantments proc.</gray>'
+        - ' '
+        - '<italic:false><gray><italic>(( Click to turn ON ))</italic></gray>'
+  # If enabled, area enchant procs give rewards without visually breaking blocks.
+  virtual_break_toggle:
+    slot: 14
+    enabled_state:
+      material: GLASS
+      custom_model_data: 0
+      name: '<white>Virtual Block Breaking: <green><bold>ON</bold></green>'
+      lore:
+        - ' '
+        - '<italic:false><gray>Area enchant procs give rewards</gray>'
+        - '<italic:false><gray>without visually breaking blocks.</gray>'
+        - ' '
+        - '<italic:false><gray><italic>(( Click to turn OFF ))</italic></gray>'
+    disabled_state:
+      material: GLASS
+      custom_model_data: 0
+      name: '<white>Virtual Block Breaking: <red><bold>OFF</bold></red>'
+      lore:
+        - ' '
+        - '<italic:false><gray>Area enchant procs break blocks</gray>'
+        - '<italic:false><gray>in the world as normal.</gray>'
+        - ' '
+        - '<italic:false><gray><italic>(( Click to turn ON ))</italic></gray>'
+  # If enabled, enchant animations are played when an enchant is activated.
+  animations_toggle:
+    slot: 28
+    enabled_state:
+      material: BLAZE_POWDER
+      custom_model_data: 0
+      name: '<white>Enchant Animations: <green><bold>ON</bold></green>'
+      lore:
+        - ' '
+        - '<italic:false><gray>Enchant animations are played</gray>'
+        - '<italic:false><gray>when an enchant is activated.</gray>'
+        - ' '
+        - '<italic:false><gray><italic>(( Click to turn OFF ))</italic></gray>'
+    disabled_state:
+      material: GUNPOWDER
+      custom_model_data: 0
+      name: '<white>Enchant Animations: <red><bold>OFF</bold></red>'
+      lore:
+        - ' '
+        - '<italic:false><gray>Enchant animations are hidden</gray>'
+        - '<italic:false><gray>when an enchant is activated.</gray>'
+        - ' '
+        - '<italic:false><gray><italic>(( Click to turn ON ))</italic></gray>'
+  # Opens the per-enchant notification menu (enchant_notifications section below).
+  enchant_notifications_button:
+    slot: 16
+    material: DIAMOND_PICKAXE
+    custom_model_data: 0
+    name: '<gradient:#FF55FF:#AA00AA><bold>ENCHANT NOTIFICATIONS</bold></gradient>'
+    lore:
+      - ' '
+      - '<italic:false><gray>Choose which enchants notify you</gray>'
+      - '<italic:false><gray>when they proc.</gray>'
+      - ' '
+      - '<italic:false><gray><italic>(( Click to open ))</italic></gray>'
+  # Returns to the enchant menu.
+  back_item:
+    slot: 40
+    material: COMPASS
+    custom_model_data: 0
+    name: '<red><bold>BACK</bold></red>'
+    lore:
+      - '<gray><italic>(( Return to the enchant menu ))</italic></gray>'
+  # Optional decorative border/filler items. Empty by default.
+  decorations: {}
+
+# "Enchant Notifications" menu. Lists only the enchants that send a proc message; each can be
+# silenced per-pickaxe here. The enchant still procs - only its message is turned off.
+enchant_notifications:
+  title: '<gradient:#FF55FF:#AA00AA>Enchant Notifications</gradient>'
+  lines: 6
+  empty_slots: BLACK_STAINED_GLASS_PANE
+  # Where the per-enchant toggles are placed, in order.
+  slots: [10, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25, 28, 29, 30, 31, 32, 33, 34]
+  # Shown for an enchant whose notifications are ON. Placeholder: %enchant%.
+  enabled_state:
+    material: LIME_STAINED_GLASS_PANE
+    custom_model_data: 0
+    name: '<white>%enchant%<white>: <green><bold>ON</bold></green>'
+    lore:
+      - ' '
+      - '<italic:false><gray>You receive notifications for</gray>'
+      - '<italic:false><gray>this enchant.</gray>'
+      - ' '
+      - '<italic:false><gray><italic>(( Click to turn OFF ))</italic></gray>'
+  # Shown for an enchant whose notifications are OFF. Placeholder: %enchant%.
+  disabled_state:
+    material: RED_STAINED_GLASS_PANE
+    custom_model_data: 0
+    name: '<white>%enchant%<white>: <red><bold>OFF</bold></red>'
+    lore:
+      - ' '
+      - '<italic:false><gray>Notifications for this enchant</gray>'
+      - '<italic:false><gray>are turned off.</gray>'
+      - ' '
+      - '<italic:false><gray><italic>(( Click to turn ON ))</italic></gray>'
+  # Returns to the Pickaxe Settings menu.
+  back_item:
+    slot: 49
+    material: COMPASS
+    custom_model_data: 0
+    name: '<red><bold>BACK</bold></red>'
+    lore:
+      - '<gray><italic>(( Return to Pickaxe Settings ))</italic></gray>'
+  # Page navigation. Both buttons only appear when there is more than one page of enchants,
+  # and each one only while there is a page to go to. Placeholders: %page%, %total_pages%.
+  previous_page:
+    slot: 48
+    material: ARROW
+    custom_model_data: 0
+    name: '<yellow><bold>PREVIOUS PAGE</bold></yellow>'
+    lore:
+      - ' '
+      - '<italic:false><gray>Page <white>%page%</white> of <white>%total_pages%</white></gray>'
+      - ' '
+      - '<italic:false><gray><italic>(( Click to go back a page ))</italic></gray>'
+  next_page:
+    slot: 50
+    material: ARROW
+    custom_model_data: 0
+    name: '<yellow><bold>NEXT PAGE</bold></yellow>'
+    lore:
+      - ' '
+      - '<italic:false><gray>Page <white>%page%</white> of <white>%total_pages%</white></gray>'
+      - ' '
+      - '<italic:false><gray><italic>(( Click to go forward a page ))</italic></gray>'
+  # Optional decorative border/filler items. Empty by default.
+  decorations: {}
+
+# "Choose Pickaxe Slot" menu. Players pick which hotbar slot (1-9) their pickaxe stays in.
+# The choice is remembered and the pickaxe is auto-moved back to it on join, respawn & pickup.
+pickaxe_slot_menu:
+  title: '<gradient:#55FF55:#00AA00>Choose Pickaxe Slot</gradient>'
+  lines: 3
+  empty_slots: GRAY_STAINED_GLASS_PANE
+  # GUI positions representing hotbar slots 1..9 (order matters, exactly 9 entries).
+  hotbar_slots: [9, 10, 11, 12, 13, 14, 15, 16, 17]
+  # Non-clickable preview of the player's pickaxe.
+  pickaxe_display:
+    enabled: true
+    slot: 4
+  # Shown on the slot the pickaxe is currently in. %slot% = hotbar number (1-9).
+  selected_item:
+    material: EMERALD_BLOCK
+    custom_model_data: 0
+    name: '<green>Slot %slot% <bold>(SELECTED)</bold></green>'
+    lore:
+      - '<green><italic>(( Your pickaxe is here ))</italic></green>'
+  # Shown on every other hotbar slot. Click to move the pickaxe there. %slot% = hotbar number.
+  available_item:
+    material: LIME_STAINED_GLASS_PANE
+    custom_model_data: 0
+    name: '<green>Slot %slot%</green>'
+    lore:
+      - '<gray><italic>(( Click to move your pickaxe here ))</italic></gray>'
+  # Returns to the enchant menu.
+  back_item:
+    enabled: true
+    material: COMPASS
+    custom_model_data: 0
+    slot: 22
+    name: '<red><bold>BACK</bold></red>'
+    lore:
+      - '<gray><italic>(( Return to the enchant menu ))</italic></gray>'
+
+disenchant_menu:
+  title: '<gradient:#FFD700:#FFA500>Disenchant Menu</gradient>'
+  empty_slots: GRAY_STAINED_GLASS_PANE
+  lines: 6
+  pickaxe_slot: 4
+  pickaxe_enabled: true
+  # Slots that hold refundable enchant icons, and the order overflow fills them in.
+  # Each enchant keeps the `refund.guiSlot` (and optional `refund.guiPage`) from its own file
+  # under enchants/. Anything that collides, or sits outside this list, is moved to the next
+  # free slot automatically and spills onto extra pages, so nothing is ever hidden.
+  # Keep these clear of the fixed items below (help, pickaxe, currency tabs, page arrows).
+  enchant_slots: [9, 10, 11, 12, 13, 14, 15, 16, 17,
+                  18, 19, 20, 21, 22, 23, 24, 25, 26,
+                  27, 28, 29, 30, 31, 32, 33, 34, 35,
+                  36, 37, 38, 39, 40, 41, 42, 43, 44]
+  # Page arrows. Only shown when there is more than one page of enchants.
+  # %page% = the page being viewed, %total_pages% = how many pages there are.
+  previous_page:
+    slot: 45
+    material: ARROW
+    custom_model_data: 0
+    name: '<yellow><bold>PREVIOUS PAGE</bold></yellow>'
+    lore:
+      - ' '
+      - '<italic:false><gray>Page <white>%page%</white> of <white>%total_pages%</white></gray>'
+      - ' '
+      - '<italic:false><gray><italic>(( Click to go back ))</italic></gray>'
+  next_page:
+    slot: 53
+    material: ARROW
+    custom_model_data: 0
+    name: '<yellow><bold>NEXT PAGE</bold></yellow>'
+    lore:
+      - ' '
+      - '<italic:false><gray>Page <white>%page%</white> of <white>%total_pages%</white></gray>'
+      - ' '
+      - '<italic:false><gray><italic>(( Click to go forward ))</italic></gray>'
+  # How many levels each click refunds in the disenchant menu.
+  # Keys are click types (LEFT, RIGHT, MIDDLE, SHIFT_RIGHT, DROP); values are a number of levels
+  # or the literal "max" to refund every level at once.
+  click-amounts:
+    LEFT: 1
+    RIGHT: 10
+    MIDDLE: 100
+    SHIFT_RIGHT: 100
+    DROP: max
+  item:
+    lore:
+      - '<italic:false><white>%status%</white>'
+      - ' '
+      - '<italic:false><yellow>Description</yellow>'
+      - '<italic:false><gray>%description%</gray>'
+      - ' '
+      - '<italic:false><yellow>Information</yellow>'
+      - ' <italic:false><yellow>▎</yellow> <white>Level: </white><yellow>%current_level%</yellow> <white>/</white> <yellow>%max_level%</yellow>'
+      - ' <italic:false><yellow>▎</yellow> <white>Base Activation Chance: </white><yellow>%base_chance%</yellow>'
+      - ' <italic:false><yellow>▎</yellow> <white>Your Activation Chance: </white><yellow>%chance%</yellow>'
+      - ' '
+      - '<italic:false><yellow>Disenchant 1 Level</yellow>'
+      - ' <italic:false><yellow>▎</yellow> <white>You will receive: </white><yellow>%refund%</yellow> <white>%currency%</white>'
+      - ' <italic:false><yellow>▎</yellow> <white>Press </white><yellow><bold>Q</bold></yellow> <white>to refund as many levels</white>'
+      - ' <italic:false><yellow>▎</yellow> <white>of this enchantment as you can.</white>'
+      - ' '
+      - '<gray><italic>Click to disenchant</italic></gray>'
+  help_item:
+    enabled: true
+    material: NAME_TAG
+    slot: 2
+    name: '<yellow><bold>HOW IT WORKS?</bold></yellow>'
+    custom_model_data: 0
+    lore:
+      - '<gray><italic>(( Here you can find how to</italic></gray>'
+      - '<gray><italic>(( Here you can find how to</italic></gray>'
+      - '<gray><italic>disenchant enchantments ))</italic></gray>'
+      - ''
+      - '<italic:false><yellow><bold>* </bold></yellow><yellow>Left-Click </yellow><dark_gray>» </dark_gray><white>Disenchant 1 Level</white>'
+      - '<italic:false><yellow><bold>* </bold></yellow><yellow>Right-Click </yellow><dark_gray>» </dark_gray><white>Disenchant 10 Levels</white>'
+      - '<italic:false><yellow><bold>* </bold></yellow><yellow>Middle-Click </yellow><dark_gray>» </dark_gray><white>Disenchant 100 Levels</white>'
+      - '<italic:false><yellow><bold>* </bold></yellow><yellow>Press Q </yellow><dark_gray>» </dark_gray><white>Disenchant MAX</white>'
+      - ' '
+      - '<gray><italic>(( Click on the enchant to disenchant ))</italic></gray>'
+  currency-enchants-items:
+    tokens:
+      enabled: true
+      material: SUNFLOWER
+      slot: 48
+      custom_model_data: 0
+      name: '<yellow><bold>Token Enchants</bold></yellow>'
+      lore:
+        - '<italic:false><gray>Click to view this category</gray>'
+    gems:
+      enabled: true
+      material: EMERALD
+      slot: 49
+      custom_model_data: 0
+      name: '<green><bold>Gem Enchants</bold></green>'
+      lore:
+        - '<italic:false><gray>Click to view this category</gray>'
+    money:
+      enabled: true
+      material: PAPER
+      slot: 50
+      custom_model_data: 100
+      name: '<gold><bold>Money Enchants</bold></gold>'
+      lore:
+        - '<italic:false><gray>Click to view this category</gray>'
+# Format of every pickaxe that has UPC Enchants on it
+# %Enchant-X% represents the name + level of specific enchant (X = id)
+Pickaxe:
+  # NUMBER = All levels as numbers
+  # ROMAN = All levels as roman numbers
+  # FIXED = First 10 levels as roman,
+  level-format: NUMBER
+  # Shown in place of the level number once an enchant reaches its maxLevel.
+  # Raw MiniMessage. Use %Level% inside it if you still want the number (e.g. '<gold>MAX</gold> <gray>(%Level%)'.
+  # Leave empty ('') to always show the plain level, even when maxed.
+  max-level-format: '<gradient:#FFD700:#FFA500><bold>MAX</bold></gradient>'
+  # Shown for enchants the player has personally toggled OFF on their pickaxe.
+  # Unlike max-level-format this replaces the WHOLE enchant line, so you can grey the name out too.
+  # Raw MiniMessage. Placeholders: %Enchant% (name), %Level% (the formatted level, or the
+  # max-level-format badge above once the enchant is maxed).
+  # Leave empty ('') to render toggled-off enchants the same as active ones.
+  disabled-format: '<strikethrough><gray>%Enchant% %Level%</gray></strikethrough> <red>[OFF]</red>'
+  # Number of blocks the lore will be updated
+  lore-update-interval: 5
+  lore:
+    - ''
+    - '<italic:false><gradient:#FFD700:#FFA500><bold>❖ </bold></gradient><gradient:#FFEEAD:#FFB347><bold>PICKAXE STATS</bold></gradient><gradient:#FFD700:#FFA500><bold> ❖</bold></gradient>'
+    - '<italic:false><white><bold>┃ </bold><yellow>Owner: <white>%player_name%</white>'
+    - '<italic:false><white><bold>┃ </bold><yellow>Soulbound to: <white>%Owner%</white>'
+    - '<italic:false><white><bold>┃ </bold><yellow>Level: <white>%PickaxeLevel%</white> <gray>[<white>%PickaxeProgress%</white><gray>]</gray>'
+    - '<italic:false><white><bold>┃ </bold><yellow>Exp: <white>%Exp%</white> <gray>/ <white>%Exp_Required%</white>'
+    - ''
+    - '<italic:false><gradient:#DA70D6:#BA55D3><bold>❖ </bold></gradient><gradient:#EE82EE:#DDA0DD><bold>TOKEN ENCHANTS</bold></gradient><gradient:#DA70D6:#BA55D3><bold> ❖</bold></gradient>'
+    - '<italic:false><white><bold>┃ </bold><gold>%Enchant-1%</gold>'
+    - '<italic:false><white><bold>┃ </bold><gold>%Enchant-2%</gold>'
+    - '<italic:false><white><bold>┃ </bold><gold>%Enchant-3%</gold>'
+    - '<italic:false><white><bold>┃ </bold><gold>%Enchant-4%</gold>'
+    - '<italic:false><white><bold>┃ </bold><gold>%Enchant-5%</gold>'
+    - '<italic:false><white><bold>┃ </bold><gold>%Enchant-6%</gold>'
+    - '<italic:false><white><bold>┃ </bold><gold>%Enchant-7%</gold>'
+    - '<italic:false><white><bold>┃ </bold><gold>%Enchant-8%</gold>'
+    - '<italic:false><white><bold>┃ </bold><gold>%Enchant-11%</gold>'
+    - '<italic:false><white><bold>┃ </bold><gold>%Enchant-12%</gold>'
+    - '<italic:false><white><bold>┃ </bold><gold>%Enchant-13%</gold>'
+    - '<italic:false><white><bold>┃ </bold><gold>%Enchant-14%</gold>'
+    - '<italic:false><white><bold>┃ </bold><gold>%Enchant-19%</gold>'
+    - '<italic:false><white><bold>┃ </bold><gold>%Enchant-22%</gold>'
+    - ''
+    - '<italic:false><gradient:#7FFFD4:#40E0D0><bold>❖ </bold></gradient><gradient:#00FFFF:#00CED1><bold>GEM ENCHANTS</bold></gradient><gradient:#7FFFD4:#40E0D0><bold> ❖</bold></gradient>'
+    - '<italic:false><white><bold>┃ </bold><aqua>%Enchant-9%</aqua>'
+    - '<italic:false><white><bold>┃ </bold><aqua>%Enchant-10%</aqua>'
+    - '<italic:false><white><bold>┃ </bold><aqua>%Enchant-15%</aqua>'
+    - '<italic:false><white><bold>┃ </bold><aqua>%Enchant-16%</aqua>'
+    - '<italic:false><white><bold>┃ </bold><aqua>%Enchant-17%</aqua>'
+    - '<italic:false><white><bold>┃ </bold><aqua>%Enchant-18%</aqua>'
+    - '<italic:false><white><bold>┃ </bold><aqua>%Enchant-20%</aqua>'
+    - '<italic:false><white><bold>┃ </bold><aqua>%Enchant-21%</aqua>'
+    - '<italic:false><white><bold>┃ </bold><aqua>%Enchant-23%</aqua>'
+    - '<italic:false><white><bold>┃ </bold><aqua>%Enchant-26%</aqua>'
+
+# First Join Pickaxe Settings
+first-join-pickaxe:
+  # Should we give this pickaxe to players when they first join?
+  enabled: true
+  # Name of pickaxe
+  name: '<gray>[<gradient:#FFD700:#FFA500><bold>STARTER PICKAXE</bold></gradient><gray>]'
+  # Material of pickaxe
+  material: DIAMOND_PICKAXE
+  # Raw names + levels of specific enchants for first join pickaxe
+  enchants:
+    - efficiency 10
+    - unbreaking 10
+    - fortune 10
+    - fly 1
+    - tokenfinder 1
+    - gemfinder 1
+# Worlds where enchants are disabled
+disabled-worlds:
+  - world_nether
+  - world_the_end

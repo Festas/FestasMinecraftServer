@@ -1,0 +1,41 @@
+prefix: "&8[&bDiscord&8]&r "
+
+help: "&7Usage: &b/{command} link &7| &b/{command} unlink &7| &b/{command} status"
+
+link:
+  already-linked: "&eAlready linked to &b{discord_name}&e."
+  code-generated: "&aGo to Discord and run &b/link {code}&a. &7(Expires in {expiry})"
+  not-found: "&cInvalid code. Run &b/{command} link &cin-game first."
+  expired: "&cCode expired. Run &b/{command} link &cagain."
+
+unlink:
+  success: "&aDiscord account unlinked."
+  not-linked: "&cYou have no linked Discord account."
+
+status:
+  linked: "&aLinked to &b{discord_name} &asince &7{date}&a."
+  not-linked: "&7Not linked. Run &b/{command} link &7to connect."
+
+disabled: "&cDiscord sync is currently disabled."
+
+admin:
+  reloaded: "&a[Discord Sync] Config reloaded."
+  status-header: "&6[Discord Sync] Status:"
+  status-bot: "  Bot: {status}"
+  status-bot-online: "&aONLINE"
+  status-bot-offline: "&cOFFLINE"
+  status-queue: "  &7Queue depth: &f{depth}"
+  status-linked: "  &7Linked accounts: &f{count}"
+  leaderboard-triggered: "&a[Discord Sync] Leaderboard post triggered."
+  leaderboard-not-running: "&c[Discord Sync] Leaderboard scheduler is not running."
+  force-link-success: "&a[Discord Sync] Force-linked &f{player} &ato Discord ID &f{discord_id}&a."
+  force-link-usage: "&cUsage: &f/{command} link <player> <discord-id>"
+  force-unlink-success: "&a[Discord Sync] Unlinked &f{player}&a."
+  force-unlink-not-found: "&e[Discord Sync] &f{player} &ehad no linked account."
+  force-unlink-usage: "&cUsage: &f/{command} unlink <player>"
+  usage-header: "&6[Discord Sync] Commands:"
+  usage-reload: "  &7/{command} reload"
+  usage-status: "  &7/{command} status"
+  usage-leaderboard: "  &7/{command} leaderboard"
+  usage-link: "  &7/{command} link <player> <discord-id>"
+  usage-unlink: "  &7/{command} unlink <player>"

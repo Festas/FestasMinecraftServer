@@ -1,0 +1,107 @@
+# ============================================================================
+#  X-Prison Momentum
+#  Reward active mining: breaking blocks builds a "streak" that climbs through
+#  the tiers below, each granting a currency multiplier on your mining income
+#  and shown on a live bossbar. Stop mining and you drop one tier at a time
+#  until momentum is lost. Momentum is never saved — a restart wipes it.
+#
+#  All text is MiniMessage: https://docs.advntr.dev/minimessage/format.html
+# ============================================================================
+
+# Master switch for the whole addon.
+enabled: true
+
+# Prefix prepended to every command/chat message below (not the bossbar).
+prefix: "<gradient:#f7971e:#ffd200><bold>MOMENTUM</bold></gradient> <dark_gray>» </dark_gray>"
+
+command:
+  name: "momentum"
+  aliases:
+    - "mom"
+  # Permission required to run "/momentum reload". Showing your own status is open to everyone.
+  admin-permission: "xprison.momentum.admin"
+
+# Which currencies the momentum multiplier boosts. Only income earned from MINING
+# (i.e. selling mined blocks) for these currencies is multiplied. Names are the
+# currency ids from X-Prison's currency config (case-insensitive).
+boosted-currencies:
+  - money
+
+# Also apply the momentum multiplier to Pickaxe XP earned from active mining
+# (manual breaks and area enchants; AutoMiner XP is never boosted — momentum
+# rewards ACTIVE mining). Requires X-Prison 2026.2.9.0 or newer.
+boost-pickaxe-exp: false
+
+streak:
+  # Streak gained per block broken. 1 = one point per block.
+  per-block: 1
+
+afk:
+  # Seconds of no mining before momentum starts to decay.
+  threshold-seconds: 30
+  # Once decaying, drop one tier every this many seconds until momentum is lost.
+  decay-interval-seconds: 15
+
+bossbar:
+  enabled: true
+  # Global bossbar title. Placeholders: {tier}, {streak}, {multiplier}
+  # (a tier may override this with its own "title:" — see TRANSCENDENT below).
+  title: "➷ <yellow>{tier}</yellow> <gray>{streak} streak</gray> <dark_gray>·</dark_gray> <green>+{multiplier} money</green>"
+
+# ── Tiers ────────────────────────────────────────────────────────────────────
+# Add as many tiers as you like. Each is unlocked at "streak-required" blocks and
+# grants "multiplier" percent extra mining income while active. The bar fills from
+# the current tier toward the next tier's threshold; the highest tier is always full.
+#
+#   name:            display name shown on the bar
+#   streak-required: streak needed to reach this tier (the lowest tier should be 0)
+#   multiplier:      bonus percent, e.g. 150.0 -> +150% income (a 2.5x multiplier)
+#   suffix:          text after the multiplier number on the bar ("%" or "x")
+#   color:           bossbar colour (PINK, BLUE, RED, GREEN, YELLOW, PURPLE, WHITE)
+#   style:           SOLID or SEGMENTED_6 / SEGMENTED_10 / SEGMENTED_12 / SEGMENTED_20
+#   title:           OPTIONAL per-tier bossbar title override (MiniMessage)
+tiers:
+  on-fire:
+    name: "On Fire"
+    streak-required: 0
+    multiplier: 50.0
+    suffix: "%"
+    color: YELLOW
+    style: SOLID
+  unstoppable:
+    name: "Unstoppable"
+    streak-required: 500
+    multiplier: 150.0
+    suffix: "%"
+    color: RED
+    style: SOLID
+  rampage:
+    name: "Rampage"
+    streak-required: 5000
+    multiplier: 400.0
+    suffix: "%"
+    color: PINK
+    style: SOLID
+  cataclysm:
+    name: "Cataclysm"
+    streak-required: 25000
+    multiplier: 1200.0
+    suffix: "%"
+    color: PURPLE
+    style: SOLID
+  transcendent:
+    name: "TRANSCENDENT"
+    streak-required: 100000
+    multiplier: 5000.0
+    suffix: "x"
+    color: PINK
+    style: SEGMENTED_10
+    title: "➷ <gradient:#ff5ff2:#ff9ff3><bold>{tier}</bold></gradient> <gray>{streak} streak</gray> <dark_gray>·</dark_gray> <light_purple>+{multiplier} money</light_purple>"
+
+# ── Messages (MiniMessage; prefix is added automatically) ────────────────────
+messages:
+  no-permission: "<red>You don't have permission to do that.</red>"
+  reloaded: "<green>Momentum config reloaded.</green>"
+  players-only: "<red>Only players can view momentum status.</red>"
+  status-none: "<gray>You have no active momentum. Start mining to build a streak!</gray>"
+  status: "<white>Tier <yellow>%tier%</yellow> — <gray>%streak% streak</gray>, <green>+%multiplier% money</green> <dark_gray>(</dark_gray><aqua>%progress%%</aqua> <gray>to next</gray><dark_gray>)</dark_gray>"

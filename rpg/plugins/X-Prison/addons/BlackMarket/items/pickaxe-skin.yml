@@ -1,0 +1,45 @@
+# Requires: Pickaxe Skins module + a permission plugin with a console command (LuckPerms).
+#
+# Skins are unlocked by PERMISSION, not by a give command — see the 'permission' field on each
+# skin in pickaxe-skins.yml. Selling a skin therefore means granting that node.
+#
+# BEFORE GOING LIVE, CHECK TWO THINGS:
+#   1. You run LuckPerms (or edit the command below for your permission plugin). If neither is
+#      present the command silently fails and the player is still charged.
+#   2. The skin id and node match your pickaxe-skins.yml. 'plasma' is the shipped default.
+#
+# limit-lifetime is 1 on purpose: the unlock is permanent, so nobody should ever buy it twice.
+id: pickaxe-skin
+
+enabled: true
+weight: 3
+
+price: 12000000
+currency: tokens
+
+discountable: true
+bulk-buy-amount: 1
+
+stock: 1
+limit-per-rotation: 1
+limit-lifetime: 1
+
+display:
+  material: DIAMOND_PICKAXE
+  glow: true
+  name: "<gradient:#9b59b6:#8e44ad><bold>Plasma Skin</bold></gradient>"
+  lore:
+    - "<gray>A permanent cosmetic skin for"
+    - "<gray>your pickaxe. Apply it with <white>/skins<gray>."
+    - ""
+    - "<dark_gray><italic>Unlocked forever. One per prisoner.</italic>"
+    - ""
+    - "%price-block%"
+    - "%stock-block%"
+    - "%limit-block%"
+    - "%status-block%"
+
+give-items: { }
+
+commands:
+  - 'lp user %player% permission set pickaxeskins.skin.plasma true'

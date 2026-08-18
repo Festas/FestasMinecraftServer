@@ -1,0 +1,56 @@
+{
+  "class": "dev.drawethree.xprison.enchant.BombFinderEnchant",
+  "id": 99,
+  "rawName": "bombfinder",
+  "name": "<red>Bomb Finder</red>",
+  "enabled": true,
+  "increaseCostBy": "baseCost * pow(1.05, level)",
+  "maxLevel": 1000,
+  "chance": 0.000005,
+  "initialCost": 5000,
+  "pickaxeLevelRequired": 1,
+  "currency": "GEMS",
+  "refund": {
+    "enabled": true,
+    "guiSlot": 30,
+    "percentage": 50.0
+  },
+  "gui": {
+    "name": "<red>Bomb Finder</red>",
+    "material": "TNT",
+    "customModelData": 0,
+    "slot": 37,
+    "description": [
+      "<gray>Increases your chance to discover</gray>",
+      "<gray>rare bombs while mining.</gray>"
+    ]
+  },
+  "prestige": {
+	"enabled": true,
+	"maxPrestige": 5,
+	"requiredActivationsFormula": "2000 * pow(10, prestige)",
+	"multiplierPerPrestige": 0.2
+  },
+  "commands": [
+    {
+      "commands": ["bombs give %player% tiny 1"],
+      "chance": 50
+    },
+    {
+      "commands": ["bombs give %player% small 1"],
+      "chance": 25
+    },
+    {
+      "commands": ["bombs give %player% normal 1"],
+      "chance": 10
+    },
+    {
+      "commands": ["bombs give %player% large 1"],
+      "chance": 5
+    },
+    {
+      "commands": ["bombs give %player% mega 1"],
+      "chance": 1
+    }
+  ]
+}

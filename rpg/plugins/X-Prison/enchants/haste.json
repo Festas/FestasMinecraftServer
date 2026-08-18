@@ -1,0 +1,32 @@
+{
+  "class": "dev.drawethree.xprison.enchants.model.impl.HasteEnchant",
+  "id": 4,
+  "rawName": "haste",
+  "name": "<light_purple>Haste</light_purple>",
+  "enabled": true,
+  "increaseCostBy": "baseCost * pow(2, level)",
+  "maxLevel": 10,
+  "initialCost": 1000,
+  "currency": "TOKENS",
+  "prestige": {
+    "enabled": false,
+    "maxPrestige": 5,
+    "requiredActivationsFormula": "1000",
+    "multiplierPerPrestige": 0.1
+  },
+  "refund": {
+    "enabled": true,
+    "guiSlot": 22,
+    "percentage": 40.0
+  },
+  "gui": {
+    "name": "<light_purple>Haste</light_purple>",
+    "material": "GHAST_TEAR",
+    "customModelData": 0,
+    "slot": 22,
+    "description": [
+      "<gray>Increases your pickaxe swing speed,</gray>",
+      "<gray>letting you mine faster.</gray>"
+    ]
+  }
+}

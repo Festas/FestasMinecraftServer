@@ -1,0 +1,48 @@
+{
+  "class": "dev.drawethree.animatedenchants.enchant.TornadoEnchant",
+  "id": 1004,
+  "rawName": "tornado",
+  "name": "<gradient:#B0B0B0:#FFFFFF>Tornado</gradient>",
+  "enabled": true,
+  "increaseCostBy": "baseCost * pow(1.07, level)",
+  "maxLevel": 25,
+  "initialCost": 65,
+  "currency": "GEMS",
+  "pickaxeLevelRequired": 1,
+  "chance": 0.08,
+  "currencyToGive": "money",
+  "countBlocksBroken": true,
+  "sounds": true,
+  "useEvents": true,
+  "targetMode": "CURRENT_BLOCK",
+  "impactsPerTrigger": 3,
+  "impactsPerLevel": 0.1,
+  "radius": 2.0,
+  "funnelHeight": 6,
+  "stepPerTick": 0.3,
+  "durationTicks": 32,
+  "maxParticlesPerFrame": 120,
+  "message": "<gradient:#B0B0B0:#FFFFFF><bold>TORNADO</bold></gradient> <dark_gray>»</dark_gray> <white>Swept up <yellow>%amount%</yellow> <white>%currency%</white>",
+  "prestige": {
+    "enabled": false,
+    "maxPrestige": 5,
+    "requiredActivationsFormula": "2000 * pow(10, prestige)",
+    "multiplierPerPrestige": 0.2
+  },
+  "refund": {
+    "enabled": true,
+    "guiSlot": 41,
+    "percentage": 50.0
+  },
+  "gui": {
+    "name": "<gradient:#B0B0B0:#FFFFFF>Tornado</gradient>",
+    "material": "FEATHER",
+    "slot": 41,
+    "customModelData": 0,
+    "description": [
+      "<gray>Spawns a roaming funnel that sweeps</gray>",
+      "<gray>across the mine, shredding and selling</gray>",
+      "<gray>every block along its path.</gray>"
+    ]
+  }
+}

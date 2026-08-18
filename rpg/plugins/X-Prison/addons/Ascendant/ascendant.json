@@ -1,0 +1,52 @@
+{
+  "class": "dev.drawethree.ascendant.enchant.AscendantEnchant",
+  "id": 1102,
+  "rawName": "ascendant",
+  "name": "<gradient:#FFD700:#FF5EE0>Ascendant</gradient>",
+  "enabled": true,
+  "increaseCostBy": "baseCost * pow(1.08, level)",
+  "maxLevel": 25,
+  "initialCost": 250,
+  "currency": "GEMS",
+  "pickaxeLevelRequired": 1,
+  "chance": 0.03,
+  "xpToGive": "10 + (level * 5)",
+  "questProgress": "1 + (level * 0.2)",
+  "questTarget": "closest",
+  "streakCurrency": "money",
+  "streakBase": "1000 + (level * 250)",
+  "streakPerStreak": 0.1,
+  "premiumOnly": true,
+  "nonPremiumMultiplier": 0.0,
+  "sounds": true,
+  "message": "<gradient:#FFD700:#FF5EE0><bold>ASCENDANT</bold></gradient> <dark_gray>»</dark_gray> <white>+<yellow>%xp%</yellow> BP XP<gray>,</gray> quest progress <gray>&</gray> <gold>%bonus%</gold> <white>streak bonus <dark_gray>(x%streak% streak)</dark_gray>",
+  "fallback": {
+    "enabled": true,
+    "currency": "money"
+  },
+  "prestige": {
+    "enabled": false,
+    "maxPrestige": 5,
+    "requiredActivationsFormula": "2000 * pow(10, prestige)",
+    "multiplierPerPrestige": 0.25
+  },
+  "refund": {
+    "enabled": true,
+    "guiSlot": 47,
+    "percentage": 50.0
+  },
+  "gui": {
+    "name": "<gradient:#FFD700:#FF5EE0>Ascendant</gradient>",
+    "material": "NETHER_STAR",
+    "slot": 47,
+    "customModelData": 0,
+    "description": [
+      "<gray>The capstone enchant. Every proc feeds</gray>",
+      "<gray>all three progression systems at once:</gray>",
+      "<yellow>Battle Pass XP</yellow><gray>, bonus</gray> <aqua>quest progress</aqua>",
+      "<gray>and a</gray> <gold>login-streak-scaled bonus</gold><gray>.</gray>",
+      "",
+      "<light_purple>Premium Pass required</light_purple> <gray>for full power.</gray>"
+    ]
+  }
+}

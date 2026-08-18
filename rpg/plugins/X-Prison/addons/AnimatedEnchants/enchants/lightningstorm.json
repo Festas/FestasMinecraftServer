@@ -1,0 +1,49 @@
+{
+  "class": "dev.drawethree.animatedenchants.enchant.LightningStormEnchant",
+  "id": 1003,
+  "rawName": "lightningstorm",
+  "name": "<gradient:#78C8FF:#FFFFFF>Lightning Storm</gradient>",
+  "enabled": true,
+  "increaseCostBy": "baseCost * pow(1.07, level)",
+  "maxLevel": 25,
+  "initialCost": 60,
+  "currency": "GEMS",
+  "pickaxeLevelRequired": 1,
+  "chance": 0.1,
+  "currencyToGive": "money",
+  "countBlocksBroken": true,
+  "sounds": true,
+  "useEvents": true,
+  "targetMode": "CURRENT_BLOCK",
+  "impactsPerTrigger": 3,
+  "impactsPerLevel": 0.1,
+  "columnsBase": 2.0,
+  "columnsPerLevel": 0.2,
+  "columnHeight": 6,
+  "spread": 5,
+  "strikeIntervalTicks": 4,
+  "maxParticlesPerFrame": 120,
+  "message": "<gradient:#78C8FF:#FFFFFF><bold>LIGHTNING STORM</bold></gradient> <dark_gray>»</dark_gray> <white>Bolts sold for <yellow>%amount%</yellow> <white>%currency%</white>",
+  "prestige": {
+    "enabled": false,
+    "maxPrestige": 5,
+    "requiredActivationsFormula": "2000 * pow(10, prestige)",
+    "multiplierPerPrestige": 0.2
+  },
+  "refund": {
+    "enabled": true,
+    "guiSlot": 40,
+    "percentage": 50.0
+  },
+  "gui": {
+    "name": "<gradient:#78C8FF:#FFFFFF>Lightning Storm</gradient>",
+    "material": "LIGHTNING_ROD",
+    "slot": 40,
+    "customModelData": 0,
+    "description": [
+      "<gray>Summons a storm that strikes columns</gray>",
+      "<gray>across the mine one after another,</gray>",
+      "<gray>shattering and selling each one hit.</gray>"
+    ]
+  }
+}

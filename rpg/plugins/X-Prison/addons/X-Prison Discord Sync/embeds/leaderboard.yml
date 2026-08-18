@@ -1,0 +1,7 @@
+color: "#FFD700"
+title: "🏆  {category} Leaderboard"
+description: "{entries}"
+thumbnail: false
+footer: "X-Prison Core • Discord Sync"
+show-timestamp: true
+fields: []

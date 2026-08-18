@@ -1,0 +1,10 @@
+color: "#8BC34A"
+title: "🤝  Player Joined a Gang!"
+description: "**{player}** has joined **{gang_name}**!\nWelcome to the crew. 🤝"
+thumbnail: true
+footer: "X-Prison Core • Discord Sync"
+show-timestamp: true
+fields:
+  - name: "👥 Members"
+    value: "{member_count}"
+    inline: true

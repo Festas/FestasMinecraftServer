@@ -1,0 +1,160 @@
+# Enable debug logging — set to true only when troubleshooting; produces very verbose output
+debug: false
+
+bot:
+  token: "REPLACE_ME"
+  guild-id: "REPLACE_ME"
+
+commands:
+  # In-game player command name and aliases (e.g. /discord link)
+  # Changes take effect after server restart.
+  player-command: "discord"
+  player-command-aliases: []
+  # In-game admin command name and aliases (e.g. /xpdiscord reload)
+  admin-command: "xpdiscord"
+  admin-command-aliases: []
+  # Discord role ID required to use /prison slash commands.
+  # Leave empty ("") to allow all server members to use these commands.
+  required-role-id: ""
+  # Cooldown in seconds between /prison slash command uses per Discord user. Set to 0 to disable.
+  cooldown-seconds: 5
+
+webhooks:
+  progression: "REPLACE_ME"
+  gangs: "REPLACE_ME"
+  mines: "REPLACE_ME"
+  multipliers: "REPLACE_ME"
+  connections: "REPLACE_ME"
+
+leaderboard-channel-id: "REPLACE_ME"
+
+primary-currency: "tokens"
+
+events:
+  rank-up:
+    enabled: true
+    webhook: progression
+    min-rank-id: 0
+    dm-linked-player: true
+
+  prestige:
+    enabled: true
+    webhook: progression
+    dm-linked-player: true
+
+  rebirth:
+    enabled: true
+    webhook: progression
+    dm-linked-player: true
+
+  pickaxe-level-up:
+    enabled: true
+    webhook: progression
+
+  gang-create:
+    enabled: true
+    webhook: gangs
+
+  gang-disband:
+    enabled: true
+    webhook: gangs
+
+  gang-join:
+    enabled: false
+    webhook: gangs
+
+  gang-leave:
+    enabled: false
+    webhook: gangs
+
+  mine-reset:
+    enabled: false
+    webhook: mines
+
+  multiplier-received:
+    enabled: true
+    webhook: multipliers
+
+  player-join:
+    enabled: true
+    webhook: connections
+
+  player-leave:
+    enabled: true
+    webhook: connections
+
+chat-sync:
+  enabled: false
+  channel-id: "REPLACE_ME"
+  # Discord role ID required to have messages relayed to Minecraft. Leave empty ("") to allow everyone.
+  required-role-id: ""
+  # Plain text format for MC → Discord. Available placeholders: {player}, {message}.
+  # Also supports PlaceholderAPI placeholders (e.g. %xprison_rank_prefix%) if PAPI is installed.
+  mc-to-discord-format: "[{player}] {message}"
+  # MiniMessage format for Discord → MC. Available placeholders: {username}, {message}.
+  discord-to-mc-format: "<aqua>[Discord]</aqua> <white>{username}</white><gray>: {message}</gray>"
+
+leaderboards:
+  enabled: true
+  schedule: DAILY
+  post-time: "18:00"
+  top: 10
+  boards:
+    - RANK
+    - PRESTIGE
+    - REBIRTH
+    - GANGS
+  currencies:
+    - tokens
+  # When true, the scheduler edits the existing leaderboard message instead of posting a new one.
+  persistent-messages: true
+
+account-linking:
+  enabled: true
+  code-expiry-seconds: 300
+  # Max /link attempts per Discord user per hour to prevent brute-forcing. Set to 0 to disable.
+  max-attempts-per-hour: 5
+
+role-sync:
+  enabled: false
+  # Milestone roles: player keeps all earned roles (rank 20 has both rank-10 and rank-20 roles)
+  rank-roles:
+    10: "ROLE_ID_HERE"
+    20: "ROLE_ID_HERE"
+  prestige-roles:
+    1: "ROLE_ID_HERE"
+    5: "ROLE_ID_HERE"
+  rebirth-roles:
+    1: "ROLE_ID_HERE"
+  # Role granted to all players who link their Minecraft account. Removed on unlink if remove-on-unlink is true.
+  linked-role-id: ""
+  # Remove all milestone roles and linked-role when a player unlinks their account.
+  remove-on-unlink: false
+
+presence:
+  enabled: true
+  # How often (seconds) to refresh the bot's Discord status
+  update-interval-seconds: 30
+  # Activity type: PLAYING, WATCHING, LISTENING, COMPETING
+  activity-type: WATCHING
+  # Placeholders: {online}, {max}. Also supports server-level PlaceholderAPI placeholders if PAPI is installed.
+  text: "{online} players online"
+
+server-health:
+  enabled: false
+  # Webhook URL to receive TPS/memory alerts (create a dedicated admin-only channel webhook).
+  webhook: "REPLACE_ME"
+  # How often (seconds) to sample TPS and memory. Minimum: 10.
+  check-interval-seconds: 30
+  tps-alert:
+    enabled: true
+    # Fire an alert when the 1-minute TPS average drops below this value.
+    threshold: 17.0
+    # Minimum seconds between repeated TPS alerts (prevents spam).
+    cooldown-seconds: 300
+  memory-alert:
+    enabled: true
+    # Fire an alert when JVM memory usage exceeds this percentage of max heap.
+    threshold-percent: 85
+    # Minimum seconds between repeated memory alerts.
+    cooldown-seconds: 300

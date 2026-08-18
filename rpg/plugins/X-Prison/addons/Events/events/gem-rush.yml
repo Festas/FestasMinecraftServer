@@ -1,0 +1,48 @@
+# Gem Rush - double gems from mining.
+# NOTE: requires a currency named "gems" to be registered in X-Prison.
+id: gem-rush
+display-name: "<aqua>Gem Rush"
+enabled: true
+duration: 1200            # seconds (20 minutes)
+weight: 6
+
+bossbar:
+  color: BLUE
+  style: SOLID
+  title: "<gradient:#00c6ff:#0072ff><bold>Gem Rush</bold></gradient> <white>(%multiplier%x Gems) <gray>(%time%)"
+
+effects:
+  - type: CURRENCY_MULTIPLIER
+    currency: gems
+    multiplier: 2.0
+    apply-to-causes: [MINING, MINING_OTHERS]
+
+notifications:
+  start:
+    title:
+      enabled: true
+      title: "<aqua><bold>GEM RUSH!"
+      subtitle: "<white>Earn <aqua>2x Gems <white>for 20 minutes"
+      fade-in: 1
+      stay: 3
+      fade-out: 1
+    sound:
+      enabled: true
+      sound: ENTITY_PLAYER_LEVELUP
+      volume: 1.0
+      pitch: 1.4
+    broadcast: "<aqua>Gem Rush has begun! <white>Earn <aqua>2x Gems <white>for the next 20 minutes!"
+  end:
+    title:
+      enabled: true
+      title: "<gray>Gem Rush ended"
+      subtitle: ""
+      fade-in: 1
+      stay: 2
+      fade-out: 1
+    sound:
+      enabled: true
+      sound: BLOCK_NOTE_BLOCK_BASS
+      volume: 1.0
+      pitch: 1.0
+    broadcast: "<gray>Gem Rush has ended. Thanks for playing!"

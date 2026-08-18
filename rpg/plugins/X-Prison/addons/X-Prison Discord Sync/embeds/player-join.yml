@@ -1,0 +1,6 @@
+color: "#43B581"
+title: "✅  Player Connected"
+description: "**{player}** just joined the server!\nWelcome — glad to have you here. 👋"
+thumbnail: true
+footer: "X-Prison Core • Discord Sync"
+show-timestamp: true

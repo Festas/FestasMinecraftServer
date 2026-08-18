@@ -1,0 +1,229 @@
+# ============================================================================
+#  X-Prison-Pets  —  main configuration
+#
+#  Pets are pure items. Right-click a pet in hand to toggle it active, and use
+#  the Pet Upgrade / Pet Prestige buttons in /pets (or shift-right-click a held
+#  pet) to open its upgrade menu. All text is MiniMessage — gradients, hex and
+#  legacy '&' codes are all supported (https://docs.advntr.dev/minimessage/format.html).
+#
+#  Permissions:
+#    xprison.pets.use            open /pets and use pet items
+#    xprison.pets.admin          /petsadmin
+#    xprison.pets.active.<n>     raise a player's active-pet limit to <n>
+#    xprison.pets.limit.bypass   unlimited active pets (same as xprison.pets.active.*)
+# ============================================================================
+
+# Layout version of this file. Do not edit — the addon uses it to migrate your
+# settings when keys move between releases, and backs up any file it rewrites.
+config-version: 2
+
+general:
+  # How many pets a player may have active (boosting) at once. Raise per-player
+  # with the xprison.pets.active.<n> permission, or bypass entirely.
+  max-active-pets: 1
+  # Shown in place of level/cost values once a pet has reached its maximum level.
+  maxed-text: "<gradient:#f7971e:#ffd200>Maxed</gradient>"
+
+  # How many rendered pet icons to keep cached for the menus.
+  # Drawing a pet icon means rendering its name and every lore line; the result depends only on how
+  # the pet LOOKS (type, rarity, level, prestige, active), so players holding identical pets share a
+  # single render. Raise it if you have many pets or players; 0 disables caching entirely.
+  icon-cache-size: 512
+
+  # Hard ceiling on the COMBINED boost of all of a player's active pets, per boost
+  # target. -1 disables the ceiling. A value of 2.0 means pets can at most triple a
+  # gain (base + 2.0). Worth setting if you hand out xprison.pets.active.<n>.
+  max-total-boost: -1
+  # Falloff applied to each additional active pet after the strongest, per target.
+  # 1.0 = plain addition (every pet counts fully). 0.5 = the 2nd pet counts half,
+  # the 3rd a quarter, and so on. Pets are always ranked strongest-first, so a
+  # player's inventory order can never change their income.
+  diminishing-returns: 1.0
+
+  # How long a player's active-pet limit stays cached, in seconds.
+  # Resolving xprison.pets.active.<n> means scanning every permission the player
+  # holds — under LuckPerms that is routinely thousands of nodes, and it would
+  # otherwise happen on the block-break path. Granting a player a new limit takes
+  # effect within this many seconds (instantly on rejoin). 0 disables caching.
+  permission-cache-seconds: 30
+  # Backstop for how long a player's active-pet snapshot may be reused before it is
+  # rebuilt from their inventory. Pet-related inventory changes refresh it
+  # immediately; this only catches pets moved by another plugin's API calls.
+  snapshot-max-age-seconds: 60
+
+# Server-wide handling of pets that level by mining.
+# NOT to be confused with the per-pet 'xp:' block in pets.yml, which decides
+# whether and how fast a pet earns XP. This block decides what the addon does
+# with the XP it has already earned.
+xp:
+  # How often banked XP is written back to pet items, in seconds. XP is banked in
+  # memory and normally written on level-up, logout and clean shutdown; without
+  # this, a crash would discard every player's unbanked XP. 0 restores that older
+  # behaviour. A crash now costs at most this many seconds of mining.
+  write-interval-seconds: 60
+  # Whether a pet must be active (boosting) to earn XP. Set false to let pets in
+  # the inventory level up as well.
+  require-active: true
+  # Extra XP per rarity tier: tier 0 earns 1.0x, tier 1 earns 1.25x, and so on.
+  # 0 makes every rarity earn XP at the same rate.
+  rarity-multiplier-step: 0.25
+  # Optional live progress while mining, shown above the hotbar.
+  actionbar:
+    enabled: false
+    # Minimum ticks between two action bar updates for the same player (20 = 1s).
+    throttle-ticks: 20
+  # Appearance of the %xp_bar% placeholder used in lore and the action bar.
+  bar:
+    length: 20
+    filled: "<green>|"
+    empty: "<dark_gray>|"
+
+# Which gains pets are allowed to boost. Both lists were previously hard-coded.
+boosts:
+  # Currency pets boost these ReceiveCauses. Default: mining income only.
+  # Valid: MINING, MINING_OTHERS, PAY, GIVE, REDEEM, LUCKY_BLOCK, REFUND, UNKNOWN
+  currency-causes:
+    - MINING
+    - MINING_OTHERS
+  # Pickaxe pets boost these exp sources. Default: mining-driven gains only, so
+  # pickaxe XP granted through the API by other addons is left untouched.
+  # Valid: MANUAL, AREA_ENCHANTS, AUTOMINER, API
+  pickaxe-xp-sources:
+    - MANUAL
+    - AREA_ENCHANTS
+    - AUTOMINER
+
+pet-egg:
+  # Item used for Pet Eggs. Supports vanilla materials and ItemsAdder/Nexo/Oraxen ids.
+  material: GHAST_SPAWN_EGG
+  # Add an enchant glint to eggs.
+  glow: true
+
+  hatching:
+    # When true, opening an egg plays the animated hatching menu. When false the
+    # pet is granted instantly (no menu) and dropped if the inventory is full.
+    enabled: true
+    # Length of the hatch animation, in ticks (20 ticks = 1 second).
+    animation-ticks: 60
+    # Ticks to wait after the reveal before the menu closes itself (0 = stay open).
+    close-delay-ticks: 40
+    # Pane colours cycled during the spin. Any stained-glass (or other) materials.
+    frames:
+      - WHITE_STAINED_GLASS_PANE
+      - LIGHT_BLUE_STAINED_GLASS_PANE
+      - YELLOW_STAINED_GLASS_PANE
+      - LIME_STAINED_GLASS_PANE
+      - PINK_STAINED_GLASS_PANE
+    # Sound looped during the spin (or NONE).
+    animation-sound: BLOCK_NOTE_BLOCK_HAT
+    # Sound + particles on the final reveal (or NONE).
+    reveal-sound: ENTITY_PLAYER_LEVELUP
+    reveal-particles: TOTEM_OF_UNDYING
+
+# ----------------------------------------------------------------------------
+#  Pet Fusion — combine duplicates into the next rarity up
+#
+#  Duplicate pets are otherwise dead weight. A fusion consumes N pets of the SAME
+#  type and rarity, charges a cost, and rolls a chance to produce one pet a step
+#  up the rarity ladder (the order rarities are declared below).
+#
+#  The pets consumed are always the player's weakest copies, so a failed fusion
+#  never eats their best one.
+# ----------------------------------------------------------------------------
+fusion:
+  enabled: true
+  # What the fused pet inherits: NONE | HIGHEST_LEVEL | AVERAGE_LEVEL
+  carry-over: NONE
+  # What happens to the inputs when the chance roll fails:
+  #   CONSUME_INPUTS  all inputs are lost
+  #   REFUND_ONE      all but one are lost
+  #   KEEP_INPUTS     nothing is lost (the cost is still charged)
+  on-fail: CONSUME_INPUTS
+  default:
+    # How many duplicates one fusion consumes (minimum 2).
+    amount: 5
+    # Success probability, 0.0–1.0.
+    chance: 1.0
+    cost-currency: tokens
+    # exp4j formula. 'tier' is the SOURCE rarity's position in the ladder,
+    # starting at 0 for the first rarity declared.
+    cost-formula: "50000 * pow(2, tier)"
+  # Per-rarity tuning, keyed by the rarity being consumed. Any field left out is
+  # inherited from 'default'. Use this to make the top of the ladder much harder.
+  overrides:
+    masterful:
+      amount: 8
+      chance: 0.35
+
+# ----------------------------------------------------------------------------
+#  Permission defaults
+#
+#  An addon has no plugin.yml, so without these every node would be unknown to
+#  Bukkit and default to op-only — ordinary players would be told they lack
+#  permission for /pets on a fresh install.
+#
+#  Accepted values: true (everyone) | op (operators only) | false (nobody)
+#  An explicit grant or denial in LuckPerms always overrides these.
+#
+#  Set 'use' to false if you would rather sell pet access as a rank perk, then
+#  grant xprison.pets.use to the ranks that should have it.
+# ----------------------------------------------------------------------------
+permissions:
+  # xprison.pets.use — open /pets, activate pets, open Pet Eggs.
+  use: true
+  # xprison.pets.admin — /petsadmin.
+  admin: op
+
+# Level milestones and prestige rewards are defined per pet in pets.yml.
+rewards:
+  # When false (default) each level milestone pays out at most ONCE per pet, tracked
+  # on the item itself. Prestiging resets a pet to level 1, so leaving this true lets
+  # a player re-cross the same milestones every prestige cycle and farm the rewards.
+  milestones-repeat-after-prestige: false
+
+# Feedback played on pet upgrades / prestige. A value of NONE disables it.
+effects:
+  upgrade-sound: ENTITY_EXPERIENCE_ORB_PICKUP
+  upgrade-particles: HAPPY_VILLAGER
+  prestige-sound: UI_TOAST_CHALLENGE_COMPLETE
+  prestige-particles: TOTEM_OF_UNDYING
+
+# Interface sounds. Each has a name (or NONE), volume and pitch.
+sounds:
+  gui-open:
+    name: BLOCK_CHEST_OPEN
+    volume: 0.5
+    pitch: 1.2
+  gui-click:
+    name: UI_BUTTON_CLICK
+    volume: 0.5
+    pitch: 1.0
+  purchase-success:
+    name: ENTITY_EXPERIENCE_ORB_PICKUP
+    volume: 0.7
+    pitch: 1.4
+  purchase-fail:
+    name: ENTITY_VILLAGER_NO
+    volume: 0.7
+    pitch: 1.0
+
+# Fully configurable rarities. Add, rename or remove any entry — the id (the key)
+# is what pets.yml boost bands, commands and items reference. Declaration order is
+# the display order. Higher weight = more common; weight 0 = never rolled (admin-only).
+rarities:
+  common:    { name: "Common",    color: "<gray>",         weight: 600 }
+  rare:      { name: "Rare",      color: "<aqua>",         weight: 250 }
+  legendary: { name: "Legendary", color: "<gold>",         weight: 100 }
+  mythical:  { name: "Mythical",  color: "<light_purple>", weight: 40 }
+  masterful: { name: "Masterful", color: "<red>",          weight: 9 }
+  pristine:  { name: "Pristine",  color: "<dark_red>",     weight: 1 }
+
+commands:
+  pets:
+    name: pets
+    aliases:
+      - pet
+  petsadmin:
+    name: petsadmin
+    aliases:
+      - petadmin

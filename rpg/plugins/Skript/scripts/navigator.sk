@@ -1,0 +1,28 @@
+# --- KONFIGURATION ---
+# WICHTIG: Hier KEINE Anführungszeichen nutzen!
+options:
+    lobby_server: lobby
+
+# --- BEFEHL ---
+command /lobby:
+    description: Teleportiert dich zur Lobby
+    aliases: /l, /hub, /lob
+    trigger:
+        message "&7Du wirst zur &bLobby &7gesendet..."
+        
+        # Methode 1: BungeeCord Command (benötigt SkQuery/SkBee)
+        # Da wir die Anführungszeichen oben entfernt haben, wird hier jetzt "lobby" draus.
+        connect player to server "{@lobby_server}"
+
+# --- FALLBACK ---
+# Falls der "connect"-Befehl oben nicht geht (weil Addon fehlt), 
+# kann man diesen Command nutzen, den Velocity abfängt.
+
+command /server <text>:
+    trigger:
+        stop
+        
+command /warpmenu:
+    aliases: /wm, /warpm
+    trigger:
+        make player execute command "/dm open warps"

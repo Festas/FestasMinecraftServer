@@ -1,0 +1,91 @@
+# ============================================================================
+#  X-Prison-Pets  —  messages   (MiniMessage; legacy '&' codes also supported)
+# ============================================================================
+
+prefix: "<dark_gray>[<gradient:#f7971e:#ffd200>Pets</gradient><dark_gray>] <reset>"
+
+messages:
+
+  # ── General ────────────────────────────────────────────────────────────────
+  no_permission: "<red>You don't have permission to do that."
+  players_only: "<red>Only a player can use that command."
+  # Shown when X-Prison's Currencies module is not running. Without it nothing can be
+  # bought, so players are told the server is misconfigured rather than that they are broke.
+  economy_unavailable: "<red>Pet upgrades are unavailable — the server's economy module is not running. Please tell an administrator."
+  player_not_found: "<red>Player '<white>%player%<red>' is not online."
+  unknown_pet_type: "<red>Unknown pet type '<white>%type%<red>'. See pets.yml for valid ids."
+  unknown_rarity: "<red>Unknown rarity '<white>%rarity%<red>'."
+  # %value% — a give-egg token that matched neither an egg id, a rarity nor a number.
+  unknown_egg_or_rarity: "<red>'<white>%value%<red>' is not a known egg, rarity or amount."
+  no_eggs_defined: "<red>No eggs are defined in eggs.yml."
+  reloaded: "<green>Pets configuration reloaded."
+  usage: "<gray>Usage: <white>%usage%"
+  random_rarity: "Random"
+
+  # ── Eggs ───────────────────────────────────────────────────────────────────
+  # %color%, %rarity%, %pet%
+  egg_hatched: "<green>Your egg hatched into a %color%%rarity% <reset>%pet%<green>!"
+
+  # ── Activating pets ────────────────────────────────────────────────────────
+  # %pet%
+  pet_activated: "<green>Activated <reset>%pet%<green>."
+  pet_deactivated: "<gray>Deactivated <reset>%pet%<gray>."
+  # %limit%
+  active_limit_reached: "<red>You can only have <white>%limit%<red> active pet(s). Deactivate one first."
+  # Shown when a player tries to wear a pet — pets are carried, not equipped.
+  pet_cannot_be_worn: "<red>Pets can't be worn. Keep it in your inventory and right-click to activate it."
+
+  # ── Upgrades ───────────────────────────────────────────────────────────────
+  # %pet%, %level%
+  upgrade_success: "<green>Upgraded <reset>%pet%<green> to level <white>%level%<green>."
+  # %pet%, %levels%, %level%
+  upgrade_bulk_success: "<green>Bought <white>%levels%<green> levels — <reset>%pet%<green> is now level <white>%level%<green>."
+  # %currency%
+  upgrade_insufficient: "<red>You can't afford that upgrade (need more <white>%currency%<red>)."
+  upgrade_max_level: "<yellow>That pet is already at max level. Prestige it to grow further!"
+  # %pet% — a pet set to level-source: XP cannot be bought with currency at all.
+  upgrade_xp_only: "<yellow>%pet%<yellow> levels by mining, not by buying. Keep it active and mine!"
+  # %pet%, %levels%, %prestiges%
+  max_out_done: "<green>Maxed <reset>%pet%<green>: bought <white>%levels%<green> levels and <white>%prestiges%<green> prestige(s)."
+  max_out_none: "<yellow>Not enough currency to buy any levels."
+
+  # ── Pet XP (pets that level themselves while you mine) ─────────────────────
+  # %pet%, %levels%, %level%, %maxlevel% — set to "" to silence.
+  pet_xp_level_up: "<green>Your <reset>%pet%<green> reached level <white>%level%<dark_gray>/<white>%maxlevel%<green>!"
+  # Shown above the hotbar while mining, only if xp.actionbar.enabled is true in config.yml.
+  # %pet%, %level%, %maxlevel%, %xp%, %xp_needed%, %xp_percent%, %xp_bar%
+  pet_xp_actionbar: "<reset>%pet% <dark_gray>| <white>%level%<dark_gray>/<white>%maxlevel% <dark_gray>| %xp_bar% <dark_gray>| <yellow>%xp_percent%"
+
+  # ── Fusion ─────────────────────────────────────────────────────────────────
+  # %pet%, %color%, %rarity%
+  fusion_success: "<green>Fusion succeeded! You received a %color%%rarity% <reset>%pet%<green>."
+  # %pet%, %consumed%
+  fusion_failed: "<red>The fusion failed — <white>%consumed%<red> pet(s) were consumed."
+  # %required%
+  fusion_not_enough: "<red>You need <white>%required%<red> matching pets to fuse."
+  # %currency%
+  fusion_insufficient: "<red>You can't afford that fusion (need more <white>%currency%<red>)."
+  fusion_no_next_rarity: "<yellow>That pet is already at the highest rarity."
+  fusion_disabled: "<red>Pet fusion is disabled on this server."
+
+  # ── Admin ──────────────────────────────────────────────────────────────────
+  # %amount%, %player%, %pet%, %color%, %rarity%
+  admin_gave_pet: "<green>Gave <white>%amount%x <green>%color%%rarity% <reset>%pet%<green> to <white>%player%<green>."
+  # %amount%, %player%, %egg%, %color%, %rarity%
+  admin_gave_egg: "<green>Gave <white>%amount%x <green>%color%%rarity% <green>%egg% to <white>%player%<green>."
+  # %amount%, %color%, %rarity%, %pet%
+  received_pet: "<gray>You received <white>%amount%x <gray>%color%%rarity% <reset>%pet%<gray> from an administrator!"
+
+  # Config validation — /petsadmin validate re-runs the check that also runs at startup.
+  # %count%
+  validate_clean: "<green>Configuration validated — no problems found."
+  # %problem% — shown once per problem, with no prefix so long lines stay readable.
+  validate_problem: "<red>▸ <gray>%problem%"
+  validate_summary: "<yellow><white>%count%<yellow> configuration problem(s) found. The addon still runs, but the affected features will not behave as configured."
+
+  # Admin help (shown with no prefix). %command% is the configured label, e.g. /petsadmin.
+  admin_help_title: "<gradient:#f7971e:#ffd200><bold>Pets Admin</bold></gradient>"
+  admin_help_give: "<gray>%command% give <white><player> <type> <rarity> [amount]"
+  admin_help_give_egg: "<gray>%command% give-egg <white><player> [egg] [rarity] [amount]"
+  admin_help_reload: "<gray>%command% reload"
+  admin_help_validate: "<gray>%command% validate <dark_gray>— re-check your configuration"

@@ -1,0 +1,61 @@
+# ============================================================
+#  X-Prison Events
+#  Server-wide timed events that apply temporary multipliers
+#  (money, tokens, gems, Battle Pass XP, enchant procs, ...)
+#  and show a live countdown bossbar to every online player.
+#
+#  Each event is defined in its own file under the /events folder.
+#  Multiple events can run at the same time - each gets its own bossbar.
+#  All text uses MiniMessage: https://docs.advntr.dev/minimessage/format.html
+# ============================================================
+
+enabled: true
+
+command:
+  name: events
+  aliases: [event]
+  # Permission required to view /events. Leave empty to allow everyone.
+  permission: ""
+
+# How multiple concurrently-active events that boost the SAME dimension combine:
+#   MULTIPLY -> factors multiply   (two 2x money events => 4x money)
+#   HIGHEST  -> strongest applies  (two 2x money events => 2x money)
+stacking: MULTIPLY
+
+messages:
+  prefix: "<gradient:#f7971e:#ffd200><bold>EVENTS</bold></gradient> <dark_gray>» </dark_gray>"
+  no-permission: "<red>You don't have permission to do that."
+  unknown-event: "<red>No event with id <yellow>%event%<red>."
+  event-started: "<green>Started event <yellow>%event%<green>."
+  event-already-active: "<red>Event <yellow>%event% <red>is already running."
+  event-stopped: "<green>Stopped event <yellow>%event%<green>."
+  event-not-active: "<red>Event <yellow>%event% <red>is not running."
+  stopped-all: "<green>Stopped <yellow>%count% <green>active event(s)."
+  reloaded: "<green>Events configuration reloaded."
+  list-header: "<gray>Active events (<yellow>%count%<gray>):"
+  list-active-line: "<gray>» <white>%event% <gray>- <yellow>%time% <gray>left"
+  list-none: "<gray>There are no active events right now."
+
+# Default bossbar look, used when an event file omits its own bossbar settings.
+bossbar-defaults:
+  color: YELLOW          # PINK, BLUE, RED, GREEN, YELLOW, PURPLE, WHITE
+  style: SOLID           # SOLID, SEGMENTED_6, SEGMENTED_10, SEGMENTED_12, SEGMENTED_20
+
+# Fallback sound played on start/end when a notification section omits its own.
+default-sound: BLOCK_NOTE_BLOCK_PLING
+
+# Automatic event scheduler.
+scheduler:
+  enabled: false
+  # ROTATION   -> every <interval> seconds, start a weighted-random event from the pool
+  # SEQUENTIAL -> every <interval> seconds, start the next pool event in order
+  # OFF        -> never auto-start (manual /events start only)
+  mode: ROTATION
+  interval: 3600           # seconds between automatic starts
+  min-online-players: 1    # don't auto-start below this many players online
+  prevent-duplicates: true # never auto-start an event that is already running
+  # How many distinct events to start each interval (capped at the number of
+  # eligible events). ROTATION picks them weighted-random, SEQUENTIAL in order.
+  events-per-interval: 1
+  # Events eligible for auto-start. Empty = every enabled event.
+  pool: []

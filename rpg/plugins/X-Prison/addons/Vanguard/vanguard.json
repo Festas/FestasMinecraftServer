@@ -1,0 +1,45 @@
+{
+  "class": "dev.drawethree.vanguard.enchant.VanguardEnchant",
+  "id": 1101,
+  "rawName": "vanguard",
+  "name": "<gradient:#00E0FF:#7B2FFF>Vanguard</gradient>",
+  "enabled": true,
+  "increaseCostBy": "baseCost * pow(1.07, level)",
+  "maxLevel": 25,
+  "initialCost": 60,
+  "currency": "GEMS",
+  "pickaxeLevelRequired": 1,
+  "chance": 0.05,
+  "xpToGive": "5 + (level * 3)",
+  "sounds": true,
+  "message": "<gradient:#00E0FF:#7B2FFF><bold>VANGUARD</bold></gradient> <dark_gray>»</dark_gray> <white>+<aqua>%amount%</aqua> <white>Battle Pass XP",
+  "fallback": {
+    "enabled": true,
+    "currency": "money"
+  },
+  "prestige": {
+    "enabled": false,
+    "maxPrestige": 5,
+    "requiredActivationsFormula": "2000 * pow(10, prestige)",
+    "multiplierPerPrestige": 0.2
+  },
+  "refund": {
+    "enabled": true,
+    "guiSlot": 46,
+    "percentage": 50.0
+  },
+  "gui": {
+    "name": "<gradient:#00E0FF:#7B2FFF>Vanguard</gradient>",
+    "material": "EXPERIENCE_BOTTLE",
+    "slot": 46,
+    "customModelData": 0,
+    "description": [
+      "<gray>Every proc pours bonus <aqua>Battle Pass XP</aqua>",
+      "<gray>straight into your current season,</gray>",
+      "<gray>racing you up the tiers as you mine.</gray>",
+      "",
+      "<dark_gray>Falls back to a currency reward on servers</dark_gray>",
+      "<dark_gray>without an active Battle Pass season.</dark_gray>"
+    ]
+  }
+}

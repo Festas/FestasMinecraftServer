@@ -1,0 +1,34 @@
+{
+  "class": "dev.drawethree.xprison.enchants.model.impl.TokenFinderEnchant",
+  "id": 14,
+  "rawName": "tokenfinder",
+  "name": "<yellow>Token Finder</yellow>",
+  "enabled": true,
+  "increaseCostBy": "baseCost * pow(1.05, level)",
+  "maxLevel": 2000,
+  "chance": 1.0,
+  "amountToGive": "level * 2500",
+  "currency": "TOKENS",
+  "initialCost": 10,
+  "currencyToGive": "TOKENS",
+  "prestige": {
+    "enabled": true,
+    "maxPrestige": 10,
+    "requiredActivationsFormula": "5000 * pow(10, prestige)",
+    "multiplierPerPrestige": 0.25
+  },
+  "refund": {
+    "enabled": true,
+    "guiSlot": 32,
+    "percentage": 40.0
+  },
+  "gui": {
+    "name": "<yellow>Token Finder</yellow>",
+    "material": "SUNFLOWER",
+    "slot": 32,
+    "description": [
+      "<gray>Boosts the amount of tokens</gray>",
+      "<gray>you earn while mining.</gray>"
+    ]
+  }
+}

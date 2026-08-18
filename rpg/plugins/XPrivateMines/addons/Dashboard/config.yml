@@ -1,0 +1,18 @@
+port: 8090
+host: ''
+
+superuser:
+  username: admin
+  password: changeme
+
+jwt:
+  secret: 7iUEoxSEHB1IrWtQ2Sv6KfWNtmQzLctk/jRBHIn6pKw=
+  expiry-hours: 24
+
+cors:
+  allowed-origins: '*'
+
+demo:
+  enabled: false
+  username: demo
+  password: demo

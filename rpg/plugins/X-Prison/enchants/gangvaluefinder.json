@@ -1,0 +1,35 @@
+{
+  "class": "dev.drawethree.xprison.enchants.model.impl.GangValueFinderEnchant",
+  "id": 23,
+  "rawName": "gang-value-finder",
+  "name": "<yellow>Gang Value Finder</yellow>",
+  "enabled": true,
+  "increaseCostBy": "baseCost * pow(1.05, level)",
+  "maxLevel": 500,
+  "chance": 0.0002,
+  "amountToGive": "level * 2",
+  "currency": "GEMS",
+  "pickaxeLevelRequired": 1,
+  "initialCost": 250,
+  "prestige": {
+    "enabled": true,
+    "maxPrestige": 5,
+    "requiredActivationsFormula": "5000 * pow(10, prestige)",
+    "multiplierPerPrestige": 0.2
+  },
+  "refund": {
+    "enabled": true,
+    "guiSlot": 28,
+    "percentage": 40.0
+  },
+  "gui": {
+    "name": "<yellow>Gang Value Finder</yellow>",
+    "material": "GOLD_INGOT",
+    "customModelData": 0,
+    "slot": 28,
+    "description": [
+      "<gray>Grants a chance to uncover <yellow>Gang Value</yellow></gray>",
+      "<gray>while mining blocks.</gray>"
+    ]
+  }
+}

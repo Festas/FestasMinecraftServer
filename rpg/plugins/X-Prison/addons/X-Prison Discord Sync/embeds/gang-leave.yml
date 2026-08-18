@@ -1,0 +1,10 @@
+color: "#FF8F00"
+title: "🚪  Player Left a Gang"
+description: "**{player}** has departed from **{gang_name}**."
+thumbnail: true
+footer: "X-Prison Core • Discord Sync"
+show-timestamp: true
+fields:
+  - name: "📋 Reason"
+    value: "{reason}"
+    inline: true

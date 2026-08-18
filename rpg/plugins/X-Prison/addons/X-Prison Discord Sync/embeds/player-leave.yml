@@ -1,0 +1,6 @@
+color: "#F04747"
+title: "👋  Player Disconnected"
+description: "**{player}** has left the server.\nSee you next time! 👋"
+thumbnail: true
+footer: "X-Prison Core • Discord Sync"
+show-timestamp: true

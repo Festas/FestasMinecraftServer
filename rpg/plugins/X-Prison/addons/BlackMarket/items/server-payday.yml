@@ -1,0 +1,40 @@
+# Requires: Multipliers module  (/gmulti <currency> <amount> <duration> <unit>)
+#
+# The flagship item: one player pays, THE WHOLE SERVER benefits. Deliberately expensive,
+# one in stock, and lifetime-capped — it should be a server event, not a routine purchase.
+# Pair it with a broadcast so everyone knows who funded it.
+id: server-payday
+
+enabled: true
+weight: 2
+
+price: 25000000
+currency: tokens
+
+discountable: true
+bulk-buy-amount: 1
+
+stock: 1
+limit-per-rotation: 1
+limit-lifetime: 2
+
+display:
+  material: BEACON
+  glow: true
+  name: "<gradient:#8e2de2:#4a00e0><bold>SERVER PAYDAY</bold></gradient>"
+  lore:
+    - "<gray>Buy a <white>2x money multiplier <gray>for"
+    - "<gray><bold>everyone<reset><gray> on the server, for 30 minutes."
+    - ""
+    - "<dark_gray><italic>Only one exists per rotation.</italic>"
+    - ""
+    - "%price-block%"
+    - "%stock-block%"
+    - "%limit-block%"
+    - "%status-block%"
+
+give-items: { }
+
+commands:
+  - 'gmulti money 2.0 30 MINUTES'
+  - 'broadcast &d&l%player% &dhas bought a SERVER PAYDAY! &f2x money for 30 minutes!'

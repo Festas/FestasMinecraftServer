@@ -1,0 +1,31 @@
+port: 8085
+
+# Public hostname or IP shown in the /xprison dashboard command.
+# Example: play.myserver.com  or  203.0.113.10
+# Leave empty to display "http://<your-server-ip>:<port>" as a reminder to set this.
+host: ''
+
+# Superuser account created on first start if the users table is empty.
+# The plain-text password is hashed with bcrypt and the hash is stored instead.
+superuser:
+  username: admin
+  password: changeme
+
+jwt:
+  # Leave blank to auto-generate a random secret on first start (recommended).
+  # The generated secret is written back to this file.
+  secret: 7C1ELEBxqC2qNPhkFgT0bUKroXLWi+wa8kxZha6f534=
+  expiry-hours: 24
+
+cors:
+  # Restrict to your panel domain in production (e.g. https://panel.myserver.com).
+  # Use "*" only during development or if the server is behind an authenticated proxy.
+  allowed-origins: '*'
+
+# Demo account — created automatically on startup.
+# Set enabled: false to disable demo access entirely.
+# Credentials are shown on the login page so potential customers can try the dashboard.
+demo:
+  enabled: false
+  username: demo
+  password: demo

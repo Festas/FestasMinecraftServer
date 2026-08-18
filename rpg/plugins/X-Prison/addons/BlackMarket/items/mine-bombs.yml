@@ -1,0 +1,35 @@
+# Requires: Bombs module  (/bombs give <player> <type> <amount>)
+# Valid types in a default install: tiny, small, normal, large, mega
+id: mine-bombs
+
+enabled: true
+weight: 18
+
+price: 400000
+currency: tokens
+
+discountable: true
+# Shift-click buys 4 lots (12 bombs).
+bulk-buy-amount: 4
+
+stock: 20
+limit-per-rotation: 4
+limit-lifetime: 0
+
+display:
+  material: TNT
+  glow: false
+  name: "<red><bold>Mine Bombs <white>— x3"
+  lore:
+    - "<gray>Three standard charges, no paperwork."
+    - "<dark_gray><italic>Shift-click to buy 4 lots at once.</italic>"
+    - ""
+    - "%price-block%"
+    - "%stock-block%"
+    - "%limit-block%"
+    - "%status-block%"
+
+give-items: { }
+
+commands:
+  - 'bombs give %player% normal 3'

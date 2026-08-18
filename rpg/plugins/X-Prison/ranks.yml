@@ -1,0 +1,109 @@
+messages:
+  no_permission: '<red><bold>(!) <white>You do not have a permission to do that!'
+  rank_up: '<gradient:#FFD700:#FFEA00><bold>RANKUP</bold> <dark_gray>»</dark_gray></gradient> <white>Congratulations, you ranked up from <yellow>%Rank-1% <white>to <yellow>%Rank-2%<white>.'
+  not_enough_currency: '<gradient:#FFD700:#FFEA00><bold>RANKUP</bold> <dark_gray>»</dark_gray></gradient> <white>You don''t have enough %currency% to rankup. You need <yellow>%cost% %currency%'
+  prestige_needed: '<gradient:#FFD700:#FFEA00><bold>RANKUP</bold> <dark_gray>»</dark_gray></gradient> <white>Please use <yellow>/prestige'
+  rank_set: '<gradient:#FFD700:#FFEA00><bold>RANKUP</bold> <dark_gray>»</dark_gray></gradient> <white>You have set %player%''s rank to %rank%'
+# Delimiter on progress bar
+progress-bar-delimiter: ":"
+# Length of progress bar
+progress-bar-length: 20
+# Currency this module works with (eg. money, tokens, gems)
+currency: "money"
+#Should players auto rankup if they have enough currency to rank up ?
+auto-rank-up: false
+#Interval in seconds to check for possible auto rank up
+auto-rank-up-interval: 2
+# Title shown to player on rank-up. Supports MiniMessage. Placeholders: %rank% (new rank prefix), %old_rank% (old rank prefix)
+rankup-title:
+  enabled: true
+  title: '&5&lRANKUP'
+  subtitle: '&aYou reached &e%rank%'
+  fade-in: 1
+  stay: 3
+  fade-out: 1
+# Sound played to player on rank-up. sound must be a valid Bukkit Sound enum name.
+rankup-sound:
+  enabled: true
+  sound: UI_TOAST_CHALLENGE_COMPLETE
+  volume: 1.0
+  pitch: 1.0
+# Ranks settings
+Ranks:
+  '1':
+    Prefix: <green><bold>A</bold></green>
+    Cost: 0
+    CMD:
+      - lp user %player% perm set essentials.warps.A
+
+# ---------------------------------------------------------------------------
+# Ranks GUI (opened with /ranks). Fully configurable.
+# Each rank is drawn in one of the four state templates below depending on the
+# viewing player's progress: owned (already passed), current (their rank),
+# next (the rank they can buy - clicking it ranks up), locked (further away).
+# Placeholders for rank items: %id%, %prefix% / %rank%, %cost%, %currency%
+# ---------------------------------------------------------------------------
+gui:
+  title: '<gradient:#FFD700:#FFA500><bold>RANKS</bold></gradient>'
+  rows: 6
+  filler: BLACK_STAINED_GLASS_PANE
+  # Slots where ranks are placed (one page). Add/remove slots to resize.
+  rank-slots: [10, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25, 28, 29, 30, 31, 32, 33, 34]
+  rank:
+    owned:
+      material: LIME_STAINED_GLASS_PANE
+      glow: false
+      name: '%prefix% <dark_gray>(<green>Unlocked</green>)'
+      lore:
+        - '<gray>Rank <white>#%id%'
+        - '<green>✔ You already own this rank.'
+    current:
+      material: NETHER_STAR
+      glow: true
+      name: '%prefix% <dark_gray>(<yellow>Your Rank</yellow>)'
+      lore:
+        - '<gray>Rank <white>#%id%'
+        - '<yellow>➤ This is your current rank.'
+    next:
+      material: GOLD_INGOT
+      glow: false
+      name: '%prefix% <dark_gray>(<gold>Next</gold>)'
+      lore:
+        - '<gray>Rank <white>#%id%'
+        - '<gray>Cost: <gold>%cost% <gray>%currency%'
+        - ' '
+        - '<yellow>Click to rank up!'
+    locked:
+      material: RED_STAINED_GLASS_PANE
+      glow: false
+      name: '%prefix% <dark_gray>(<red>Locked</red>)'
+      lore:
+        - '<gray>Rank <white>#%id%'
+        - '<gray>Cost: <gold>%cost% <gray>%currency%'
+        - '<red>🔒 Rank up to unlock.'
+  items:
+    info:
+      slot: 4
+      material: BOOK
+      name: '<yellow><bold>Ranks'
+      lore:
+        - '<gray>Rank up to access better mines'
+        - '<gray>and unlock rewards along the way.'
+        - ' '
+        - '<gray>Use <yellow>/rankup <gray>or click the'
+        - '<gray>next rank below to advance.'
+    close:
+      slot: 49
+      material: BARRIER
+      name: '<red><bold>Close'
+      lore: []
+    prev-page:
+      slot: 48
+      material: ARROW
+      name: '<yellow>« Previous Page'
+      lore: []
+    next-page:
+      slot: 50
+      material: ARROW
+      name: '<yellow>Next Page »'
+      lore: []

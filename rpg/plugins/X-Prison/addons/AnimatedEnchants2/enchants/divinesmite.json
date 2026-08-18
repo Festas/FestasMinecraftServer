@@ -1,0 +1,49 @@
+{
+  "class": "dev.drawethree.animatedenchants2.enchant.DivineSmiteEnchant",
+  "id": 1005,
+  "rawName": "divinesmite",
+  "name": "<gradient:#FFF6C0:#FFC93C>Divine Smite</gradient>",
+  "enabled": true,
+  "increaseCostBy": "baseCost * pow(1.07, level)",
+  "maxLevel": 25,
+  "initialCost": 50,
+  "currency": "GEMS",
+  "pickaxeLevelRequired": 1,
+  "chance": 0.1,
+  "currencyToGive": "money",
+  "countBlocksBroken": true,
+  "sounds": true,
+  "useEvents": true,
+  "targetMode": "CURRENT_BLOCK",
+  "impactsPerTrigger": 3,
+  "impactsPerLevel": 0.1,
+  "radiusBase": 1.0,
+  "radiusPerLevel": 0.04,
+  "pillarHeight": 10,
+  "fallHeight": 18.0,
+  "durationTicks": 16,
+  "maxParticlesPerFrame": 120,
+  "message": "<gradient:#FFF6C0:#FFC93C><bold>DIVINE SMITE</bold></gradient> <dark_gray>»</dark_gray> <white>A pillar of light sold for <yellow>%amount%</yellow> <white>%currency%</white>",
+  "prestige": {
+    "enabled": false,
+    "maxPrestige": 5,
+    "requiredActivationsFormula": "2000 * pow(10, prestige)",
+    "multiplierPerPrestige": 0.2
+  },
+  "refund": {
+    "enabled": true,
+    "guiSlot": 42,
+    "percentage": 50.0
+  },
+  "gui": {
+    "name": "<gradient:#FFF6C0:#FFC93C>Divine Smite</gradient>",
+    "material": "BEACON",
+    "slot": 42,
+    "customModelData": 0,
+    "description": [
+      "<gray>Calls down a pillar of holy light</gray>",
+      "<gray>that obliterates a tall column of</gray>",
+      "<gray>blocks where it strikes.</gray>"
+    ]
+  }
+}

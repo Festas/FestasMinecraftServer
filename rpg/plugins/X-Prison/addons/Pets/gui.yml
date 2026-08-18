@@ -1,0 +1,301 @@
+# ============================================================================
+#  X-Prison-Pets  —  GUI layouts   (MiniMessage)
+#
+#  Every menu is fully configurable: slots, materials (vanilla or
+#  ItemsAdder/Nexo/Oraxen ids), names, lore, glow and custom_model_data.
+#  Item names and lore are rendered without the default italic — add <italic>
+#  yourself if you want it.
+# ============================================================================
+
+# The tooltip rendered on every pet item.
+# Placeholders: %pet% %active% %description% %boost_display% %rarity_color%
+#               %rarity% %prestige% %prestige_boost% %level% %maxlevel% %boost% %progress%
+pet-item:
+  name: "%pet% <dark_gray>(%active%<dark_gray>)"
+  lore:
+    - "<gray>Once equipped, %description%."
+    - ""
+    - "<aqua>Information:"
+    - "<gray>▸ Rarity: %rarity_color%%rarity%"
+    - "<gray>▸ Prestige: <white>%prestige% <gray>(%prestige_boost% Boost)"
+    - "<gray>▸ Level: <white>%level%<dark_gray>/<white>%maxlevel%"
+    - "<gray>▸ Boost: <green>%boost%x %boost_display%"
+    - "<gray>▸ Progress: <yellow>%progress%"
+    - ""
+    - "<yellow>Right-Click <gray>to toggle active."
+    - "<yellow>Shift-Right-Click <gray>to upgrade."
+  # Appended only for pets that earn XP by mining (per-pet 'xp:' block in pets.yml).
+  # Purchase-only pets never show this. Set it to [] to hide it entirely.
+  # Placeholders: %xp% %xp_needed% %xp_percent% %xp_bar%
+  lore-xp:
+    - ""
+    - "<aqua>Mined XP:"
+    - "<gray>▸ %xp%<dark_gray>/<white>%xp_needed% <dark_gray>(<yellow>%xp_percent%<dark_gray>)"
+    - "%xp_bar%"
+
+# /pets — informational catalog of every pet type, plus the Upgrade / Prestige buttons.
+# Per pet the boost table is built from 'header' + a 'rarity-format' block per rarity.
+# Placeholders: %pet% %description% %boost_display% %rarity_color% %rarity% %min% %max%
+catalog:
+  title: "<dark_gray>Pets"
+  rows: 6
+  filler: BLACK_STAINED_GLASS_PANE
+  pet-slots: [10, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25]
+  name: "%pet%"
+  header:
+    - "<gray>Once equipped, %description%."
+    - ""
+    - "<aqua>Boosts:"
+  rarity-format:
+    - "%rarity_color%%rarity%"
+    - "<gray>▸ %boost_display%s: <green>%min%x <gray>- <green>%max%x"
+  upgrades-item:
+    slot: 48
+    material: ANVIL
+    name: "<gradient:#f7971e:#ffd200><bold>Pet Upgrades</bold></gradient>"
+    lore:
+      - "<gray>Spend currency to raise a pet's"
+      - "<gray>level and boost power."
+      - ""
+      - "<yellow>Click <gray>to pick a pet to upgrade."
+  prestige-item:
+    slot: 50
+    material: NETHER_STAR
+    name: "<gradient:#c471ed:#f64f59><bold>Pet Prestiges</bold></gradient>"
+    lore:
+      - "<gray>Reset a maxed pet for a permanent"
+      - "<gray>boost multiplier that stacks forever."
+      - ""
+      - "<yellow>Click <gray>to pick a pet to prestige."
+  # Paging controls. The arrows are only drawn when there is a page to go to, so
+  # a server with few pets sees no change. Placeholders: %page% %pages%
+  previous-page:
+    slot: 45
+    material: ARROW
+    name: "<gray>« Previous Page"
+  next-page:
+    slot: 53
+    material: ARROW
+    name: "<gray>Next Page »"
+  page-info:
+    slot: 49
+    material: PAPER
+    name: "<gray>Page <white>%page%<dark_gray>/<white>%pages%"
+  # Only shown when fusion.enabled is true in config.yml.
+  fusion-item:
+    slot: 46
+    material: CRAFTING_TABLE
+    name: "<gradient:#00c6ff:#0072ff><bold>Pet Fusion</bold></gradient>"
+    lore:
+      - "<gray>Combine duplicate pets into"
+      - "<gray>a higher rarity."
+      - ""
+      - "<yellow>Click <gray>to open fusion."
+
+# Pet picker opened by the Upgrade / Prestige buttons. Lists the pets you own; click
+# one to open its upgrade or prestige menu. The click hint is appended to each pet's lore.
+select:
+  title-upgrade: "<dark_gray>Select a Pet to Upgrade"
+  title-prestige: "<dark_gray>Select a Pet to Prestige"
+  rows: 6
+  filler: BLACK_STAINED_GLASS_PANE
+  pet-slots: [10, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25, 28, 29, 30, 31, 32, 33, 34]
+  click-hint-upgrade:
+    - ""
+    - "<yellow>Click <gray>to upgrade this pet."
+    - "<yellow>Shift-Click <gray>to toggle active."
+  click-hint-prestige:
+    - ""
+    - "<yellow>Click <gray>to prestige this pet."
+    - "<yellow>Shift-Click <gray>to toggle active."
+  # Paging controls — see the notes in the catalog section above.
+  previous-page:
+    slot: 45
+    material: ARROW
+    name: "<gray>« Previous Page"
+  next-page:
+    slot: 53
+    material: ARROW
+    name: "<gray>Next Page »"
+  page-info:
+    slot: 4
+    material: PAPER
+    name: "<gray>Page <white>%page%<dark_gray>/<white>%pages%"
+  empty:
+    slot: 22
+    material: BARRIER
+    name: "<red>No Pets Found"
+    lore:
+      - "<gray>You don't own any pets yet."
+      - "<gray>Open a Pet Egg to get started!"
+  back:
+    slot: 49
+    material: ARROW
+    name: "<gray>« Back"
+
+# Upgrade menu for a single pet (levels only).
+upgrade:
+  title: "<dark_gray>Pet Upgrade"
+  rows: 3
+  filler: BLACK_STAINED_GLASS_PANE
+  pet-slot: 4
+  buttons:
+    back:
+      slot: 18
+      material: ARROW
+      name: "<gray>« Back"
+    upgrade:
+      slot: 22
+      material: ANVIL
+      name: "<gradient:#f7971e:#ffd200><bold>Upgrade Pet</bold></gradient>"
+      lore:
+        - "<gray>Level: <white>%level%<dark_gray>/<white>%maxlevel%"
+        - "<gray>Boost: <green>%boost%x %boost_display%"
+        - "<gray>Next level cost: <white>%next_cost% %currency%"
+        - ""
+        - "<gray>Bulk Upgrade <dark_gray>(Right-Click)<gray>:"
+        - "<gray>▸ Levels: <white>%bulk_levels%"
+        - "<gray>▸ Cost: <white>%bulk_cost% %currency%"
+        - ""
+        - "<yellow>Left-Click: <gray>buy one level"
+        - "<yellow>Right-Click: <gray>buy as many as you can"
+    # Shown instead of 'upgrade' for pets set to level-source: XP in pets.yml.
+    # Those pets cannot be bought with currency at all — they level by mining.
+    xp-only:
+      slot: 22
+      material: EXPERIENCE_BOTTLE
+      name: "<gradient:#00c6ff:#0072ff><bold>Levels by Mining</bold></gradient>"
+      lore:
+        - "<gray>Level: <white>%level%<dark_gray>/<white>%maxlevel%"
+        - "<gray>Boost: <green>%boost%x %boost_display%"
+        - ""
+        - "<gray>This pet cannot be bought with currency."
+        - "<gray>Keep it active and mine to level it up."
+    # Shown instead of 'upgrade' when the Currencies module is missing, so players
+    # are told the server is misconfigured rather than "you can't afford that".
+    unavailable:
+      slot: 22
+      material: BARRIER
+      name: "<red><bold>Upgrades Unavailable</bold></red>"
+      lore:
+        - "<gray>The server's economy module is not running,"
+        - "<gray>so pets cannot be upgraded right now."
+        - ""
+        - "<gray>Ask an administrator to check the console."
+
+# Prestige menu for a single pet (max-out + prestige).
+prestige:
+  title: "<dark_gray>Pet Prestige"
+  rows: 3
+  filler: BLACK_STAINED_GLASS_PANE
+  pet-slot: 4
+  buttons:
+    back:
+      slot: 18
+      material: ARROW
+      name: "<gray>« Back"
+    prestige:
+      slot: 22
+      material: NETHER_STAR
+      name: "<gradient:#c471ed:#f64f59><bold>Max Level & Prestige</bold></gradient>"
+      lore:
+        - "<gray>Prestige: <white>%prestige%<dark_gray>/<white>%max_prestige%"
+        - "<gray>Prestige boost: <light_purple>%prestige_boost%"
+        - ""
+        - "<gray>Buys all levels to max and prestiges,"
+        - "<gray>repeating until you run out of currency"
+        - "<gray>or reach max prestige."
+        - ""
+        - "<gray>Next max-out cost: <white>%max_cost% %currency%"
+        - ""
+        - "<yellow>Click <gray>to max level & prestige!"
+
+# Pet Fusion menu — one entry per group of duplicates you own. Groups that are
+# not yet fusable are still listed, showing how many more you need.
+# Placeholders: %pet% %rarity% %rarity_color% %next_rarity% %next_rarity_color%
+#               %owned% %required% %missing% %chance% %cost% %currency%
+fusion:
+  title: "<dark_gray>Pet Fusion"
+  rows: 6
+  filler: BLACK_STAINED_GLASS_PANE
+  pet-slots: [10, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25, 28, 29, 30, 31, 32, 33, 34]
+  name: "%rarity_color%%rarity% <reset>%pet%"
+  # Shown when you have enough duplicates and can pay.
+  lore-ready:
+    - "<gray>Combine <white>%required%x <gray>into <white>1x %next_rarity_color%%next_rarity%<gray>."
+    - ""
+    - "<gray>▸ Owned: <white>%owned%<dark_gray>/<white>%required%"
+    - "<gray>▸ Success chance: <yellow>%chance%"
+    - "<gray>▸ Cost: <white>%cost% %currency%"
+    - ""
+    - "<yellow>Click <gray>to fuse!"
+  # Shown when you do not yet own enough duplicates.
+  lore-not-enough:
+    - "<gray>Combine <white>%required%x <gray>into <white>1x %next_rarity_color%%next_rarity%<gray>."
+    - ""
+    - "<gray>▸ Owned: <white>%owned%<dark_gray>/<white>%required%"
+    - "<gray>▸ Cost: <white>%cost% %currency%"
+    - ""
+    - "<red>Need <white>%missing%<red> more."
+  # Shown for a group already at the top of the rarity ladder (it is listed but not
+  # clickable, so a player holding only max-rarity duplicates knows why).
+  lore-max-rarity:
+    - "<gray>Owned: <white>%owned%"
+    - ""
+    - "<yellow>Already at the highest rarity."
+  # Shown when you have the duplicates but not the currency.
+  lore-cannot-afford:
+    - "<gray>Combine <white>%required%x <gray>into <white>1x %next_rarity_color%%next_rarity%<gray>."
+    - ""
+    - "<gray>▸ Owned: <white>%owned%<dark_gray>/<white>%required%"
+    - "<gray>▸ Success chance: <yellow>%chance%"
+    - "<gray>▸ Cost: <red>%cost% %currency%"
+    - ""
+    - "<red>You cannot afford this."
+  empty:
+    slot: 22
+    material: BARRIER
+    name: "<red>Nothing to Fuse"
+    lore:
+      - "<gray>You need duplicate pets of the"
+      - "<gray>same type and rarity to fuse."
+  previous-page:
+    slot: 45
+    material: ARROW
+    name: "<gray>« Previous Page"
+  next-page:
+    slot: 53
+    material: ARROW
+    name: "<gray>Next Page »"
+  page-info:
+    slot: 4
+    material: PAPER
+    name: "<gray>Page <white>%page%<dark_gray>/<white>%pages%"
+  back:
+    slot: 49
+    material: ARROW
+    name: "<gray>« Back"
+
+# The hatching animation menu (used when pet-egg.hatching.enabled is true).
+hatching:
+  title: "<gradient:#f7971e:#ffd200>Hatching...</gradient>"
+  filler: BLACK_STAINED_GLASS_PANE
+  pet-slot: 13
+  # The centre item's name while the egg spins.
+  spinner-name: "<yellow>Hatching..."
+
+# The Pet Egg item. Each egg's NAME and icon come from eggs.yml; this section
+# styles the shared tooltip body. The reward and rarity lists are auto-filled
+# from the egg's own pet pool and rarity weights.
+egg-item:
+  rewards-header: "<green>Possible Rewards:"
+  reward-line: "<gray>▸ %pet%"
+  rarities-header: "<green>Possible Rarities:"
+  # Used when the egg has show-odds: false, or for a forced-rarity egg.
+  rarity-line: "<gray>▸ %rarity_color%%rarity%"
+  # Used when the egg has show-odds: true. %chance% is that rarity's real
+  # probability for THIS egg, e.g. "60%", "9.0%", "0.10%".
+  rarity-odds-line: "<gray>▸ %rarity_color%%rarity% <dark_gray>(<white>%chance%<dark_gray>)"
+  footer:
+    - ""
+    - "<yellow>Right-click to open!"

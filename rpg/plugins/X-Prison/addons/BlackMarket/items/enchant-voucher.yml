@@ -1,0 +1,47 @@
+# Requires: Currency module (gems + tokens)
+#
+# NOTE ON VOUCHERS
+# X-Prison Core has no built-in voucher system — in the X-Prison ecosystem, vouchers come from a
+# separate voucher plugin (the VoucherFinder enchant addon simply runs 'voucher give %player% <id>').
+#
+# So this ships as a pure-core enchant voucher: it pays out tokens, which ARE the enchanting
+# currency in X-Prison, bought with gems. That makes it a gem sink that converts premium currency
+# into enchant power, and it works on any server with no extra plugins.
+#
+# If you DO run a voucher plugin and would rather hand out a real voucher item, replace the
+# command below with your own, for example:
+#   commands:
+#     - 'voucher give %player% enchant-25'
+id: enchant-voucher
+
+enabled: true
+weight: 9
+
+price: 750
+currency: gems
+
+discountable: true
+bulk-buy-amount: 1
+
+stock: 4
+limit-per-rotation: 1
+limit-lifetime: 0
+
+display:
+  material: ENCHANTED_BOOK
+  glow: true
+  name: "<gradient:#00c6ff:#0072ff><bold>Enchant Voucher</bold></gradient>"
+  lore:
+    - "<gray>Worth <white>1,000,000 <gray>tokens at the"
+    - "<gray>enchant menu. No questions asked."
+    - "<dark_gray><italic>Open it with /enchantmenu.</italic>"
+    - ""
+    - "%price-block%"
+    - "%stock-block%"
+    - "%limit-block%"
+    - "%status-block%"
+
+give-items: { }
+
+commands:
+  - 'tokens give %player% 1000000'

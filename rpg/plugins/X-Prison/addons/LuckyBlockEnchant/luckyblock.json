@@ -1,0 +1,66 @@
+{
+  "class": "dev.drawethree.xprison.enchant.LuckyBlockEnchant",
+  "id": 102,
+  "rawName": "luckyblock",
+  "name": "&eLucky Block",
+  "enabled": true,
+  "increaseCostBy": 250,
+  "maxLevel": 100,
+  "currency": "GEMS",
+  "initialCost": 1000,
+  "chance": 0.015,
+  "pickaxeLevelRequired": 1,
+  "message": "&6Lucky Block spawned! &aBreak it to receive a random reward!",
+  "rewards": [
+    {
+      "command": "tokens give %player% 1000000",
+      "message": "&aYou received &e1,000,000 &atokens!",
+      "weight": 30
+    },
+    {
+      "command": "eco give %player% 20000000",
+      "message": "&aYou received &e$20,000,000&f!",
+      "weight": 30
+    },
+    {
+      "command": "crate givekey %player% legendary 2",
+      "message": "&6You received &e2x &lLegendary Crate Keys!",
+      "weight": 20
+    },
+    {
+      "command": "sellmulti %player% 2.5 10 MINUTES",
+      "message": "&bSell Multiplier &fx2.5 &bfor 10 minutes activated!",
+      "weight": 10
+    },
+    {
+      "command": "tokenmulti %player% 2.5 10 MINUTES",
+      "message": "&bToken Multiplier &fx2.5 &bfor 10 minutes activated!",
+      "weight": 10
+    }
+  ],
+  "prestige": {
+	"enabled": true,
+	"maxPrestige": 5,
+	"requiredActivationsFormula": "2000 * pow(10, prestige)",
+	"multiplierPerPrestige": 0.2
+  },
+  "refund": {
+    "enabled": true,
+    "guiSlot": 53,
+    "percentage": 50.0
+  },
+  "gui": {
+    "name": "&eLucky Block",
+    "material": "SPONGE",
+    "customModelData": 0,
+    "slot": 53,
+    "description": [
+      "&7&o(( Chance to spawn a Lucky Block while mining ))",
+      "&7&oBreak it to receive an OP reward!",
+      "",
+      "&fScales with level:",
+      "&f➤ &7Level 1: 0.015%",
+      "&f➤ &7Level 100: 1.5% max chance"
+    ]
+  }
+}

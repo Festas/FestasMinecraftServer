@@ -1,0 +1,34 @@
+# Requires: Battle Pass module
+# /battlepass booster give <player> <multiplier> <duration> <unit>
+id: battlepass-booster
+
+enabled: true
+weight: 5
+
+price: 5000000
+currency: tokens
+
+discountable: true
+bulk-buy-amount: 1
+
+stock: 2
+limit-per-rotation: 1
+limit-lifetime: 0
+
+display:
+  material: NETHER_STAR
+  glow: true
+  name: "<gradient:#f7971e:#ffd200><bold>Inside Contact</bold></gradient> <white>— 2x BP XP, 2h"
+  lore:
+    - "<gray>Someone on the inside is doubling"
+    - "<gray>every entry in your file for two hours."
+    - ""
+    - "%price-block%"
+    - "%stock-block%"
+    - "%limit-block%"
+    - "%status-block%"
+
+give-items: { }
+
+commands:
+  - 'battlepass booster give %player% 2.0 2 HOURS'

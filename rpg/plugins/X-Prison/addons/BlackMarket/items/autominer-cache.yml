@@ -1,0 +1,33 @@
+# Requires: Auto Miner module  (/aam give <player> <time> <unit>)
+id: autominer-cache
+
+enabled: true
+weight: 15
+
+price: 900000
+currency: tokens
+
+discountable: true
+bulk-buy-amount: 1
+
+stock: 10
+limit-per-rotation: 2
+limit-lifetime: 0
+
+display:
+  material: CLOCK
+  glow: true
+  name: "<aqua><bold>Auto Miner Cache <white>— 2 hours"
+  lore:
+    - "<gray>Two hours of automated mining,"
+    - "<gray>skimmed off someone else's rig."
+    - ""
+    - "%price-block%"
+    - "%stock-block%"
+    - "%limit-block%"
+    - "%status-block%"
+
+give-items: { }
+
+commands:
+  - 'aam give %player% 2 HOURS'

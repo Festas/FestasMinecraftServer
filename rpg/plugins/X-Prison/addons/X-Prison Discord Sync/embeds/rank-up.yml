@@ -1,0 +1,13 @@
+color: "#FFD700"
+title: "⬆️  Rank Up!"
+description: "Congratulations to **{player}** for reaching **{new_rank}**!\nKeep grinding — the top is within reach. 🏆"
+thumbnail: true
+footer: "X-Prison Core • Discord Sync"
+show-timestamp: true
+fields:
+  - name: "📊 Progression"
+    value: "{old_rank} **→** {new_rank}"
+    inline: true
+  - name: "🆔 Rank ID"
+    value: "`#{rank_id}`"
+    inline: true

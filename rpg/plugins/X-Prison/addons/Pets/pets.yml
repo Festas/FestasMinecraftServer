@@ -1,0 +1,178 @@
+# ============================================================================
+#  X-Prison-Pets  —  pet definitions
+#
+#  Each key under 'pets:' is a unique pet type id (lowercase, digits, underscore).
+#
+#  A pet has ONE boost target and, per rarity, a min->max boost band. The live
+#  boost scales from `min` (level 1) to `max` (max level), then a permanent
+#  prestige multiplier is applied on top:
+#
+#     levelValue     = min + (max - min) * (level - 1) / (maxLevel - 1)
+#     effectiveBoost = levelValue * (1 + prestige * per-prestige-percent)
+#
+#  Currency pets boost the currency you earn WHILE MINING (the pickaxe pet grants
+#  bonus pickaxe XP per block). Keep the description wording in step with that.
+#
+#  Fields:
+#    display-name          MiniMessage pet name (gradients / hex / '&' supported).
+#    description           One-line MiniMessage phrase, slotted into "Once equipped, ...".
+#    boost-target          "pickaxe_xp", "enchant_proc" (raises pickaxe enchant trigger
+#                          chance), or a currency name (e.g. tokens/gems/money).
+#    boost-display         What the boost is called in tooltips (e.g. "Token").
+#    material              Icon. PLAYER_HEAD (+ head-texture), a vanilla material,
+#                          or an ItemsAdder/Nexo/Oraxen id.
+#    head-texture          Base64 skin value (used when material is PLAYER_HEAD).
+#    custom-model-data     Optional CMD for resource-pack icons.
+#    max-level             Level cap before the pet can prestige.
+#    max-prestige          How many times the pet can prestige.
+#    per-prestige-percent  Permanent boost added per prestige (0.25 = +25%).
+#    cost-currency         Currency spent to upgrade this pet's level.
+#    cost-formula          exp4j formula (variable: level) = cost to buy the NEXT level.
+#    weight                Relative chance of this pet being picked once an egg has rolled a
+#                          rarity. All pets default to 100, i.e. an even split. Halve it to make
+#                          a pet twice as rare as its siblings; set 0 to keep it out of eggs
+#                          entirely (admin-give only).
+#    rarities              Per-rarity { min, max } boost band, keyed by rarity id.
+#    xp                    Optional. Lets the pet earn levels by MINING as well as by
+#                          purchase. Omit (or enabled: false) to keep it purchase-only.
+#                            enabled           turn mined XP on for this pet
+#                            level-source      PURCHASE | XP | BOTH (default BOTH)
+#                            per-block         XP granted per block mined
+#                            rarity-multiplier scale per-block by the pet's rarity rank
+#                            formula           exp4j (variable: level) = XP for the NEXT level
+#    milestones            Optional. <level>: { commands, messages, sound } paid out the
+#                          first time the pet reaches that level. Placeholders: %player%
+#                          %pet% %rarity% %level% %prestige% %threshold%.
+#    prestige-rewards      Optional. Same shape, keyed by prestige number.
+# ============================================================================
+
+pets:
+
+  token_pet:
+    display-name: "<gradient:#f7971e:#ffd200>Token Pet</gradient>"
+    description: "increases the <yellow>Tokens</yellow><gray> you earn while mining"
+    boost-target: tokens
+    boost-display: "Token"
+    material: PLAYER_HEAD
+    head-texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjA4OGYyZWI4NjI4YzRjOWE5MTM1MDYzNjc2NmRlYTIyY2Q2ZmRlODI0MGM2NGI0M2EyY2NmZmJiYjM2OTI4ZCJ9fX0="
+    custom-model-data: 0
+    max-level: 40
+    max-prestige: 10
+    per-prestige-percent: 0.25
+    cost-currency: tokens
+    cost-formula: "5000 * pow(1.18, level)"
+    weight: 100
+    # This pet also levels itself while you mine, alongside paid upgrades.
+    xp:
+      enabled: true
+      level-source: BOTH
+      per-block: 1.0
+      rarity-multiplier: true
+      formula: "250 * pow(1.14, level)"
+    # Paid out the first time this pet reaches each level.
+    milestones:
+      10:
+        messages:
+          - "<green>Your <reset>%pet%<green> reached level <white>%level%<green>!"
+        sound: ENTITY_PLAYER_LEVELUP
+      25:
+        commands:
+          - "tokens give %player% 25000"
+        messages:
+          - "<gold>Milestone! <gray>+25,000 Tokens for reaching level <white>%threshold%<gray>."
+        sound: UI_TOAST_CHALLENGE_COMPLETE
+    prestige-rewards:
+      1:
+        messages:
+          - "<light_purple>First prestige on your <reset>%pet%<light_purple>!"
+        sound: UI_TOAST_CHALLENGE_COMPLETE
+    rarities:
+      common:    { min: 0.045, max: 0.19 }
+      rare:      { min: 0.085, max: 0.255 }
+      legendary: { min: 0.145, max: 0.34 }
+      mythical:  { min: 0.205, max: 0.425 }
+      masterful: { min: 0.265, max: 0.56 }
+      pristine:  { min: 0.405, max: 0.9 }
+
+  money_pet:
+    display-name: "<gradient:#56ab2f:#a8e063>Money Pet</gradient>"
+    description: "increases the <green>Money</green><gray> you earn while mining"
+    boost-target: money
+    boost-display: "Money"
+    material: PLAYER_HEAD
+    head-texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjdmOGQ4YzM5Zjk5MjFhNjRkN2I3NTVkZTMyMmU0NDFmZGVkNGI3NzVhNzY1N2UwYjMxOTZiNmZkYTg2MzY0NiJ9fX0="
+    custom-model-data: 0
+    max-level: 40
+    max-prestige: 10
+    per-prestige-percent: 0.25
+    cost-currency: money
+    cost-formula: "10000 * pow(1.18, level)"
+    rarities:
+      common:    { min: 0.05, max: 0.20 }
+      rare:      { min: 0.09, max: 0.27 }
+      legendary: { min: 0.15, max: 0.36 }
+      mythical:  { min: 0.21, max: 0.45 }
+      masterful: { min: 0.28, max: 0.60 }
+      pristine:  { min: 0.42, max: 0.95 }
+
+  gem_pet:
+    display-name: "<gradient:#00c6ff:#0072ff>Gem Pet</gradient>"
+    description: "increases the <aqua>Gems</aqua><gray> you earn while mining"
+    boost-target: gems
+    boost-display: "Gem"
+    material: PLAYER_HEAD
+    head-texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTBkZDIwZDI5ZDc3NmI3OWU0ODUyMDBhYmVkY2M2ZDk0YzExYmQ0Y2E1YjE0OWM2MGE0MDQxYzQ2NjhiYjZhOCJ9fX0="
+    custom-model-data: 0
+    max-level: 40
+    max-prestige: 10
+    per-prestige-percent: 0.25
+    cost-currency: gems
+    cost-formula: "1000 * pow(1.18, level)"
+    rarities:
+      common:    { min: 0.31, max: 0.6 }
+      rare:      { min: 0.36, max: 0.7 }
+      legendary: { min: 0.41, max: 0.8 }
+      mythical:  { min: 0.46, max: 0.9 }
+      masterful: { min: 0.51, max: 1.1 }
+      pristine:  { min: 0.71, max: 1.7 }
+
+  pickaxe_pet:
+    display-name: "<gradient:#f85032:#e73827>Pickaxe Pet</gradient>"
+    description: "boosts all <red>Pickaxe XP</red><gray> you gain while mining"
+    boost-target: pickaxe_xp
+    boost-display: "Pickaxe XP"
+    material: PLAYER_HEAD
+    head-texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGQzMTZhNjQwOTlkODk2ZjY2OWQwZjA4ODUyMDIxN2E4M2RlY2Q0YTNiNjdlNTdhZjg5YjMzZDIwYzMyMWYzNCJ9fX0="
+    custom-model-data: 0
+    max-level: 100
+    max-prestige: 15
+    per-prestige-percent: 0.25
+    cost-currency: tokens
+    cost-formula: "25000 * pow(1.16, level)"
+    rarities:
+      common:    { min: 0.10, max: 0.50 }
+      rare:      { min: 0.20, max: 0.75 }
+      legendary: { min: 0.35, max: 1.00 }
+      mythical:  { min: 0.55, max: 1.25 }
+      masterful: { min: 0.80, max: 1.50 }
+      pristine:  { min: 1.10, max: 1.80 }
+
+  enchant_pet:
+    display-name: "<gradient:#c471ed:#f64f59>Enchant Pet</gradient>"
+    description: "increases how often your <light_purple>Pickaxe Enchants</light_purple><gray> trigger while mining"
+    boost-target: enchant_proc
+    boost-display: "Enchant Trigger"
+    material: ENCHANTED_BOOK
+    custom-model-data: 0
+    max-level: 100
+    max-prestige: 15
+    per-prestige-percent: 0.25
+    cost-currency: tokens
+    cost-formula: "25000 * pow(1.16, level)"
+    rarities:
+      common:    { min: 0.05, max: 0.25 }
+      rare:      { min: 0.10, max: 0.35 }
+      legendary: { min: 0.18, max: 0.50 }
+      mythical:  { min: 0.28, max: 0.70 }
+      masterful: { min: 0.40, max: 0.95 }
+      pristine:  { min: 0.60, max: 1.20 }

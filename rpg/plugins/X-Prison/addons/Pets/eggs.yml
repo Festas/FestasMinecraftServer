@@ -1,0 +1,73 @@
+# ============================================================================
+#  X-Prison-Pets  —  egg definitions
+#
+#  Each key under 'eggs:' is a unique egg id. The FIRST egg defined is the
+#  default: it is what "/petsadmin give-egg <player>" hands out when no egg is
+#  named, and what an egg created before egg types existed is treated as.
+#
+#  Give a specific egg with:
+#    /petsadmin give-egg <player> <egg> [rarity] [amount]
+#
+#  Fields:
+#    name              MiniMessage item name. %rarity% expands to the forced
+#                      rarity's name (plus a trailing space), or nothing.
+#    material          Icon. A vanilla material, PLAYER_HEAD (+ head-texture),
+#                      or an ItemsAdder/Nexo/Oraxen id.
+#    head-texture      Base64 skin value (used when material is PLAYER_HEAD).
+#    custom-model-data Optional CMD for resource-pack icons.
+#    glow              Adds an enchant glint.
+#    pet-pool          Pet type ids this egg can yield. Use ["*"] (or omit) for
+#                      every pet in pets.yml.
+#    rarity-weights    Per-rarity roll weights that OVERRIDE the global table in
+#                      config.yml. Omit to inherit the global weights. Weight 0
+#                      means this egg can never roll that rarity.
+#    show-odds         List each possible rarity's exact chance in the tooltip.
+#    animation-ticks   Hatch spin length for this egg, in ticks. -1 inherits
+#                      pet-egg.hatching.animation-ticks from config.yml.
+# ============================================================================
+
+eggs:
+
+  # The everyday egg — inherits the global rarity table and can roll any pet.
+  basic:
+    name: "<gradient:#f7971e:#ffd200><bold>%rarity%Pet Egg</bold></gradient>"
+    material: GHAST_SPAWN_EGG
+    head-texture: ""
+    custom-model-data: 0
+    glow: true
+    pet-pool: ["*"]
+    rarity-weights: {}
+    show-odds: true
+    animation-ticks: -1
+
+  # A premium egg: Common and Rare are impossible, and the top tiers are far
+  # more likely than on the basic egg.
+  legendary_egg:
+    name: "<gradient:#c471ed:#f64f59><bold>%rarity%Legendary Egg</bold></gradient>"
+    material: DRAGON_EGG
+    head-texture: ""
+    custom-model-data: 0
+    glow: true
+    pet-pool: ["*"]
+    rarity-weights:
+      common: 0
+      rare: 0
+      legendary: 600
+      mythical: 300
+      masterful: 90
+      pristine: 10
+    show-odds: true
+    animation-ticks: 80
+
+  # A themed egg that only ever yields the Pickaxe Pet, on the global odds.
+  pickaxe_egg:
+    name: "<gradient:#f85032:#e73827><bold>%rarity%Pickaxe Egg</bold></gradient>"
+    material: NETHERITE_PICKAXE
+    head-texture: ""
+    custom-model-data: 0
+    glow: true
+    pet-pool:
+      - pickaxe_pet
+    rarity-weights: {}
+    show-odds: true
+    animation-ticks: -1

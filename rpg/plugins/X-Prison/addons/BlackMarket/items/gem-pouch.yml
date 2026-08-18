@@ -1,0 +1,33 @@
+# Requires: Currency module (gems + tokens)
+id: gem-pouch
+
+enabled: true
+weight: 10
+
+price: 3000000
+currency: tokens
+
+discountable: true
+bulk-buy-amount: 1
+
+stock: 5
+limit-per-rotation: 1
+limit-lifetime: 0
+
+display:
+  material: EMERALD
+  glow: true
+  name: "<gradient:#00d2ff:#3a7bd5><bold>Gem Pouch</bold></gradient>"
+  lore:
+    - "<gray>Rough, uncut, and definitely stolen."
+    - "<gray>Pays out <white>500 <gray>gems."
+    - ""
+    - "%price-block%"
+    - "%stock-block%"
+    - "%limit-block%"
+    - "%status-block%"
+
+give-items: { }
+
+commands:
+  - 'gems give %player% 500'

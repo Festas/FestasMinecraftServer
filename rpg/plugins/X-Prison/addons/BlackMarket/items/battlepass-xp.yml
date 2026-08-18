@@ -1,0 +1,35 @@
+# Requires: Battle Pass module  (/battlepass addxp <player> <amount>)
+# The player must be online — they always are when buying, but keep that in mind if you
+# repurpose this command elsewhere.
+id: battlepass-xp
+
+enabled: true
+weight: 12
+
+price: 1500000
+currency: tokens
+
+discountable: true
+bulk-buy-amount: 1
+
+stock: 8
+limit-per-rotation: 2
+limit-lifetime: 0
+
+display:
+  material: WRITABLE_BOOK
+  glow: true
+  name: "<green><bold>Forged Paperwork <white>— 2,500 BP XP"
+  lore:
+    - "<gray>Backdated records. Instant progress"
+    - "<gray>on your Battle Pass."
+    - ""
+    - "%price-block%"
+    - "%stock-block%"
+    - "%limit-block%"
+    - "%status-block%"
+
+give-items: { }
+
+commands:
+  - 'battlepass addxp %player% 2500'

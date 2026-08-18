@@ -1,0 +1,18 @@
+last-rotation-id: 2
+rotation:
+  id: 2
+  started-at: 1787025768485
+  ends-at: 1787047368485
+  entries:
+  - item: token-cache
+    discount: 50
+    initial-stock: 12
+    remaining-stock: 12
+  - item: autominer-cache
+    discount: 0
+    initial-stock: 10
+    remaining-stock: 10
+  - item: mine-bombs
+    discount: 25
+    initial-stock: 20
+    remaining-stock: 20

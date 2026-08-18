@@ -1,0 +1,10 @@
+color: "#B71C1C"
+title: "💀  Gang Disbanded"
+description: "The gang **{gang_name}** has been dissolved.\nNothing lasts forever. 🪦"
+thumbnail: false
+footer: "X-Prison Core • Discord Sync"
+show-timestamp: true
+fields:
+  - name: "👥 Members Lost"
+    value: "{member_count}"
+    inline: true

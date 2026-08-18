@@ -1,0 +1,378 @@
+# ============================================================================
+#  X-Prison  ·  Black Market
+# ----------------------------------------------------------------------------
+#  A rotating, limited-stock shop. Each rotation the market draws a handful of
+#  items from the pool in items/, optionally discounts them, and caps how many
+#  each player (and the server as a whole) may buy before the stock is gone.
+#
+#  Every string below is MiniMessage. Legacy '&' colour codes also work.
+#  Docs: https://docs.adventure.kyori.net/minimessage/format.html
+#
+#  THE DEFAULT ITEM POOL sells real X-Prison content — tokens, gems, Auto Miner time,
+#  multipliers, mine bombs, Battle Pass progress and a server-wide payday. Each file in
+#  items/ names the module it needs at the top. If you do not run a given module, either
+#  delete that file or set 'enabled: false' in it; the market simply skips it.
+#
+#  PRICES assume a mid-to-large economy. If your server's numbers are smaller or larger,
+#  scale every 'price' in items/ by the same factor rather than tuning them individually —
+#  the pool is balanced relative to itself.
+# ----------------------------------------------------------------------------
+#  ITEM FILES  —  every field an items/*.yml may set
+#
+#    id                  Unique key. Defaults to the filename. Used by state.yml and by the
+#                        %xprisonblackmarket_<id>_*% placeholders, so it may not contain a dot
+#                        or a space; an item that breaks this rule is skipped with a warning.
+#    enabled             false leaves the file in place but drops it from the pool.
+#    weight              Relative draw chance against every other enabled item. Higher = commoner.
+#    price               Cost of ONE unit, before any discount. Read as text, so OP-scale
+#                        numbers keep full precision.
+#    currency            Currency to charge in. Omit to use 'default-currency' below. Each item
+#                        may use a different one.
+#    permission          Only players holding this node may buy it. Others still see the entry,
+#                        rendered with the 'status-no-permission' lore block.
+#    discountable        false exempts the item from discount rolls entirely.
+#    bulk-buy-amount     Units bought in one go on a shift-click.
+#    stock               Units available to the WHOLE SERVER this rotation. 0 = unlimited.
+#    limit-per-rotation  Units one player may buy per rotation. 0 = unlimited.
+#    limit-lifetime      Units one player may ever buy. 0 = unlimited.
+#    display             The GUI icon: material, name, lore, glow, custom_model_data.
+#    give-items          Real items handed over on purchase. A material this server does not
+#                        know is refused outright rather than silently substituted.
+#    commands            Console commands run on purchase. Supports %player%, %amount%, %item%.
+#
+#  MATERIALS
+#    Anywhere a material is accepted you may use a vanilla name (DIAMOND_PICKAXE) or a custom
+#    content id resolved through X-Prison's own resolver — 'nexo:<id>', 'oraxen:<id>' or an
+#    ItemsAdder 'namespace:id'. Custom ids are passed through unchecked because the providing
+#    plugin may load after this addon does.
+#
+#  PLACEHOLDERAPI  (all prefixed %xprisonblackmarket_...%)
+#    open            true/false            timeleft        until restock, or close in SCHEDULED
+#    next_open       until the next opening, blank when always open
+#    rotation        current rotation id   slots           how many entries are stocked
+#    slot_<n>_id     slot_<n>_name         slot_<n>_price  slot_<n>_discount   slot_<n>_stock
+#                    (1-indexed; blank when that slot is not stocked)
+#    <id>_stock      units left this rotation, blank when that item has unlimited stock
+#    <id>_bought     units this player has ever bought
+#    <id>_discount   percent off this rotation, blank when the item is not stocked
+# ============================================================================
+
+enabled: true
+
+command:
+  name: blackmarket
+  aliases: [ bm, market ]
+  # Leave empty for everyone. Set a node to restrict access.
+  permission: ''
+  admin-permission: 'xprison.blackmarket.admin'
+
+# Currency used when an item does not declare its own. Must exist in currencies.yml.
+default-currency: tokens
+
+# Ask for confirmation before charging the player.
+confirm-purchases: true
+
+# How many items are stocked per rotation.
+slots: 3
+
+# How often the persisted state (stock + purchase counters) is flushed to disk.
+state-save-interval-seconds: 30
+
+# Register PlaceholderAPI placeholders when PAPI is installed.
+placeholders: true
+
+
+# ============================================================================
+#  SCHEDULE
+# ============================================================================
+schedule:
+  # ALWAYS_OPEN - the market can always be opened; stock rotates on a timer.
+  # SCHEDULED   - the market only opens during defined windows.
+  mode: ALWAYS_OPEN
+
+  # Timezone for 'open-at' clock times. Empty = server default.
+  timezone: ''
+
+  always-open:
+    # Accepts 30s, 45m, 6h, 1d, or combinations like 1d12h30m.
+    rotate-every: 6h
+
+  scheduled:
+    # Fixed daily opening times (HH:mm). Takes priority over 'every' when set.
+    open-at: [ '12:00', '18:00', '22:00' ]
+    # Rolling interval, used only when 'open-at' is empty.
+    every: 6h
+    # How long the market stays open once it opens.
+    duration: 30m
+    # Draw fresh stock every time the market opens.
+    rotate-on-open: true
+
+
+# ============================================================================
+#  LIMITS
+#  Any value <= 0 means "no limit". Items may override each of these.
+# ============================================================================
+limits:
+  # Total units available to the whole server per rotation.
+  default-stock: 10
+  # How many units one player may buy from a single rotation.
+  default-per-player-per-rotation: 2
+  # How many units one player may ever buy of an item.
+  default-per-player-lifetime: 0
+  bypass-permission: 'xprison.blackmarket.bypass.limit'
+
+
+# ============================================================================
+#  DISCOUNTS
+#  Rolled once per item per rotation, so every player sees the same price.
+# ============================================================================
+discounts:
+  enabled: true
+  # Probability (0.0 - 1.0) that any given stocked item is discounted.
+  chance: 0.35
+  tiers:
+    - { percent: 10, weight: 50 }
+    - { percent: 25, weight: 30 }
+    - { percent: 50, weight: 15 }
+    - { percent: 75, weight: 5 }
+
+
+# ============================================================================
+#  BOSS BAR
+# ============================================================================
+bossbar:
+  enabled: true
+  # Show a bar counting down to the next rotation / market close.
+  color: PURPLE
+  style: SEGMENTED_10
+  open-title: "<gradient:#8e2de2:#4a00e0><bold>BLACK MARKET</bold></gradient> <dark_gray>| <white>Closes in <light_purple>%time%"
+  rotation-title: "<gradient:#8e2de2:#4a00e0><bold>BLACK MARKET</bold></gradient> <dark_gray>| <white>New stock in <light_purple>%time%"
+  # Show a bar counting down to the next opening while closed (SCHEDULED mode).
+  show-when-closed: true
+  closed-title: "<dark_gray><bold>BLACK MARKET</bold> <dark_gray>| <gray>Opens in <white>%time%"
+
+
+# ============================================================================
+#  ANNOUNCEMENTS
+# ============================================================================
+announcements:
+  market-open:
+    enabled: true
+    broadcast: "<dark_gray>▏ <gradient:#8e2de2:#4a00e0><bold>THE BLACK MARKET IS OPEN</bold></gradient> <dark_gray>· <gray>closes in <white>%duration%"
+    title:
+      enabled: true
+      title: "<gradient:#8e2de2:#4a00e0><bold>BLACK MARKET</bold></gradient>"
+      subtitle: "<gray>New contraband has arrived"
+      fade-in: 1
+      stay: 3
+      fade-out: 1
+    sound:
+      enabled: true
+      sound: BLOCK_BEACON_ACTIVATE
+      volume: 1.0
+      pitch: 0.8
+
+  market-close:
+    enabled: true
+    broadcast: "<dark_gray>▏ <dark_purple><bold>The Black Market has closed.</bold> <gray>Next opening in <white>%next%"
+    title:
+      enabled: false
+      title: ""
+      subtitle: ""
+      fade-in: 1
+      stay: 3
+      fade-out: 1
+    sound:
+      enabled: true
+      sound: BLOCK_BEACON_DEACTIVATE
+      volume: 1.0
+      pitch: 0.8
+
+  rotation:
+    enabled: true
+    broadcast: "<dark_gray>▏ <light_purple>The Black Market restocked. <gray>Run <white>/%command% <gray>to browse."
+    title:
+      enabled: true
+      title: "<gradient:#8e2de2:#4a00e0><bold>BLACK MARKET</bold></gradient>"
+      subtitle: "<gray>Fresh stock — <white>/%command%"
+      fade-in: 1
+      stay: 3
+      fade-out: 1
+    sound:
+      enabled: true
+      sound: BLOCK_NOTE_BLOCK_PLING
+      volume: 0.7
+      pitch: 1.4
+
+
+# ============================================================================
+#  SOUNDS  (played to the buying player)
+# ============================================================================
+sounds:
+  purchase-success:
+    enabled: true
+    sound: ENTITY_PLAYER_LEVELUP
+    volume: 1.0
+    pitch: 1.4
+  purchase-fail:
+    enabled: true
+    sound: ENTITY_VILLAGER_NO
+    volume: 1.0
+    pitch: 1.0
+  click:
+    enabled: true
+    sound: UI_BUTTON_CLICK
+    volume: 0.6
+    pitch: 1.0
+
+
+# ============================================================================
+#  TIME FORMATTING  (used by %time%, %time-left%, %next%)
+# ============================================================================
+time-format:
+  day: 'd'
+  hour: 'h'
+  minute: 'm'
+  second: 's'
+  separator: ' '
+  zero: '0s'
+  # Shown where a countdown does not exist at all - for example %next% after /blackmarket close
+  # on an ALWAYS_OPEN market, which has no scheduled reopening to count down to.
+  unknown: '?'
+
+
+# ============================================================================
+#  MAIN GUI
+# ============================================================================
+gui:
+  title: "<gradient:#8e2de2:#4a00e0><bold>BLACK MARKET</bold></gradient>"
+  rows: 5
+  # Redraw once a second so countdowns tick and stock bought by others updates live.
+  live-refresh: true
+  filler: BLACK_STAINED_GLASS_PANE
+  # Slots the rotating stock is placed in. Extra slots beyond 'slots' are ignored.
+  item-slots: [ 20, 22, 24 ]
+
+  decorations:
+    frame:
+      material: PURPLE_STAINED_GLASS_PANE
+      name: ' '
+      slots: [ 0, 8, 36, 44 ]
+    accent:
+      material: MAGENTA_STAINED_GLASS_PANE
+      name: ' '
+      slots: [ 1, 7, 37, 43 ]
+
+  # Icon swapped in when an entry can no longer be bought.
+  states:
+    sold-out:
+      material: GRAY_STAINED_GLASS_PANE
+    limit-reached:
+      material: ORANGE_STAINED_GLASS_PANE
+
+  # Lore blocks. Any lore line in an item's 'display.lore' containing one of these
+  # keys is replaced by the matching list, so entries render conditionally.
+  lore-blocks:
+    price:
+      - "<dark_gray>▪ <gray>Price: <gold>%price% <gray>%currency%"
+    price-discounted:
+      - "<dark_gray>▪ <gray>Price: <gold>%price% <gray>%currency% <dark_gray>(<red><strikethrough>%base-price%</strikethrough><dark_gray>)"
+      - "<green>▪ <bold>%discount%% OFF</bold>"
+    stock:
+      - "<dark_gray>▪ <gray>Stock left: <white>%stock%<dark_gray>/<gray>%stock-max%"
+    stock-unlimited: [ ]
+    limit:
+      - "<dark_gray>▪ <gray>You have bought: <white>%bought%<dark_gray>/<gray>%limit%"
+    limit-unlimited: [ ]
+    status-buy:
+      - ""
+      - "<yellow>▶ Click to purchase"
+    status-sold-out:
+      - ""
+      - "<red><bold>SOLD OUT"
+    status-limit-reached:
+      - ""
+      - "<gold><bold>PURCHASE LIMIT REACHED"
+    status-no-permission:
+      - ""
+      - "<red>You cannot buy this."
+
+  buttons:
+    info:
+      slot: 4
+      material: CLOCK
+      glow: true
+      name: "<light_purple><bold>Market Status"
+      # %time-left% counts down to the next restock in ALWAYS_OPEN mode, but to the market
+      # CLOSING in SCHEDULED mode. Reword this line if you run SCHEDULED.
+      lore:
+        - "<dark_gray>▪ <gray>Restocks in: <white>%time-left%"
+        - "<dark_gray>▪ <gray>Rotation: <white>#%rotation%"
+        - ""
+        - "<gray>Stock is limited and shared"
+        - "<gray>by everyone on the server."
+    close:
+      slot: 40
+      material: BARRIER
+      name: "<red><bold>Close"
+      lore: [ ]
+
+
+# ============================================================================
+#  CONFIRMATION GUI  (used when confirm-purchases is true)
+# ============================================================================
+confirm-gui:
+  title: "<dark_gray><bold>Confirm purchase"
+  rows: 3
+  filler: BLACK_STAINED_GLASS_PANE
+  preview-slot: 13
+  confirm:
+    slot: 11
+    material: LIME_WOOL
+    name: "<green><bold>Confirm"
+    lore:
+      - "<dark_gray>▪ <gray>Pay <gold>%total-price% <gray>%currency%"
+      - "<dark_gray>▪ <gray>Amount: <white>%amount%"
+      - "<dark_gray>▪ <gray>Balance: <gold>%balance%"
+  cancel:
+    slot: 15
+    material: RED_WOOL
+    name: "<red><bold>Cancel"
+    lore:
+      - "<gray>Return to the market."
+
+
+# ============================================================================
+#  MESSAGES
+# ============================================================================
+messages:
+  prefix: "<dark_gray>[<gradient:#8e2de2:#4a00e0><bold>BM</bold></gradient><dark_gray>] "
+
+  no-permission: "<red>You do not have permission to do that."
+  # The "console must name a player" message now lives in X-Prison's own config.yml under
+  # menus.messages.players_only, so it reads the same across every X-Prison menu command.
+  addon-disabled: "<red>The Black Market is currently disabled."
+
+  market-closed: "<gray>The Black Market is <red>closed<gray>. It opens in <white>%next%<gray>."
+  market-closed-no-schedule: "<gray>The Black Market is <red>closed<gray>."
+  market-empty: "<gray>The Black Market has nothing in stock right now."
+
+  purchase-success: "<green>Purchased <white>%amount%x %item% <green>for <gold>%price% <gray>%currency%<green>."
+  purchase-failed: "<red>The purchase could not be completed."
+  purchase-cancelled: "<gray>Purchase cancelled."
+  insufficient-funds: "<red>You need <gold>%price% <gray>%currency% <red>to buy this."
+  invalid-currency: "<red>The currency <white>%currency% <red>is not configured on this server."
+  inventory-full: "<red>Your inventory is full."
+  sold-out: "<red>That item is sold out for this rotation."
+  limit-reached-rotation: "<red>You have already bought your <white>%limit%<red> of this item this rotation."
+  limit-reached-lifetime: "<red>You have reached the lifetime limit of <white>%limit%<red> for this item."
+  refunded: "<yellow>Your purchase failed and <gold>%price% <gray>%currency% <yellow>was refunded."
+
+  admin-reloaded: "<green>Black Market configuration reloaded."
+  admin-rotated: "<green>The market has been restocked."
+  admin-opened: "<green>The market has been forced open."
+  admin-closed: "<green>The market has been forced closed."
+  admin-auto: "<green>The market now follows its configured schedule again."
+  admin-limits-reset: "<green>Reset Black Market purchase limits for <white>%player%<green>."
+  admin-player-not-found: "<red>No player found with the name <white>%player%<red>."
+  admin-usage: "<gray>Usage: <white>/%command% <reload|rotate|open|close|auto|resetlimits <player>><newline><gray>Open the menu for somebody else (NPCs): <white>/%command% open <player>"

@@ -1,0 +1,13 @@
+color: "#7B2FBE"
+title: "⭐  Prestige Achieved!"
+description: "**{player}** has reached a new prestige milestone — **{new_prestige}**!\nA true dedication to the grind. 💜"
+thumbnail: true
+footer: "X-Prison Core • Discord Sync"
+show-timestamp: true
+fields:
+  - name: "🌟 Prestige"
+    value: "{old_prestige} **→** {new_prestige}"
+    inline: true
+  - name: "🆔 Prestige ID"
+    value: "`#{prestige_id}`"
+    inline: true

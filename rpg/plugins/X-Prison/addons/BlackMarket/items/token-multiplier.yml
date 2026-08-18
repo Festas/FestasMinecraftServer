@@ -1,0 +1,33 @@
+# Requires: Multipliers module  (/pmulti <player> <currency> <amount> <duration> <unit>)
+id: token-multiplier
+
+enabled: true
+weight: 10
+
+price: 2500000
+currency: tokens
+
+discountable: true
+bulk-buy-amount: 1
+
+stock: 5
+limit-per-rotation: 1
+limit-lifetime: 0
+
+display:
+  material: EXPERIENCE_BOTTLE
+  glow: true
+  name: "<light_purple><bold>Skimmed Ledger <white>— 1.5x Tokens, 2h"
+  lore:
+    - "<gray>Two hours of inflated token payouts."
+    - "<gray>The numbers were never checked."
+    - ""
+    - "%price-block%"
+    - "%stock-block%"
+    - "%limit-block%"
+    - "%status-block%"
+
+give-items: { }
+
+commands:
+  - 'pmulti %player% tokens 1.5 2 HOURS'

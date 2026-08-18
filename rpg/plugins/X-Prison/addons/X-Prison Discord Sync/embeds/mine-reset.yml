@@ -1,0 +1,13 @@
+color: "#5D4037"
+title: "🪨  Mine Reset!"
+description: "Mine **{mine_name}** has been fully reset and is ready to be mined!\nGet in there before it's gone. ⛏️"
+thumbnail: false
+footer: "X-Prison Core • Discord Sync"
+show-timestamp: true
+fields:
+  - name: "🧱 Total Blocks"
+    value: "{total_blocks}"
+    inline: true
+  - name: "👷 Players Inside"
+    value: "{player_count}"
+    inline: true

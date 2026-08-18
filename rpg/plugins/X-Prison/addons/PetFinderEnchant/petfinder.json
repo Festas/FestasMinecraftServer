@@ -1,0 +1,53 @@
+{
+  "_comment": [
+    "Pet Finder - drops Pet Eggs while mining. Requires the X-Prison Pets addon.",
+    "",
+    "Each entry below forces a specific egg rarity. The rarity ids must match the keys",
+    "under 'rarities:' in plugins/X-Prison/addons/Pets/config.yml - if you rename or add",
+    "a rarity there, update this table too.",
+    "",
+    "'chance' inside 'commands' is the relative weight of that entry once the enchant procs.",
+    "The top-level 'chance' is the per-block-break proc chance, in percent."
+  ],
+
+  "class": "dev.drawethree.xprison.enchant.PetFinderEnchant",
+  "id": 103,
+  "rawName": "petfinder",
+  "name": "<light_purple>Pet Finder</light_purple>",
+  "enabled": true,
+  "increaseCostBy": "baseCost * pow(1.05, level)",
+  "maxLevel": 1000,
+  "chance": 0.000025,
+  "initialCost": 1000,
+  "pickaxeLevelRequired": 1,
+  "currency": "GEMS",
+  "prestige": {
+    "enabled": false,
+    "maxPrestige": 5,
+    "requiredActivationsFormula": "1000",
+    "multiplierPerPrestige": 0.1
+  },
+  "refund": {
+    "enabled": true,
+    "guiSlot": 32,
+    "percentage": 50.0
+  },
+  "gui": {
+    "name": "<light_purple>Pet Finder</light_purple>",
+    "material": "TURTLE_EGG",
+    "customModelData": 0,
+    "slot": 32,
+    "description": [
+      "<gray>Discover pet eggs</gray>",
+      "<gray>while mining.</gray>"
+    ]
+  },
+  "commands": [
+    { "commands": ["petsadmin give-egg %player% common 1"], "chance": 45 },
+    { "commands": ["petsadmin give-egg %player% rare 1"], "chance": 27 },
+    { "commands": ["petsadmin give-egg %player% legendary 1"], "chance": 15 },
+    { "commands": ["petsadmin give-egg %player% mythical 1"], "chance": 8 },
+    { "commands": ["petsadmin give-egg %player% masterful 1"], "chance": 4 },
+    { "commands": ["petsadmin give-egg %player% pristine 1"], "chance": 1 }
+  ]
+}

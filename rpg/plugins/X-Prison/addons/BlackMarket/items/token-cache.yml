@@ -1,0 +1,34 @@
+# Requires: Currency module (tokens + money)
+# Buy tokens with money — the market controls the exchange rate, and it changes with the discount.
+id: token-cache
+
+enabled: true
+weight: 20
+
+price: 15000000
+currency: money
+
+discountable: true
+bulk-buy-amount: 1
+
+stock: 12
+limit-per-rotation: 3
+limit-lifetime: 0
+
+display:
+  material: SUNFLOWER
+  glow: true
+  name: "<gold><bold>Token Cache"
+  lore:
+    - "<gray>A briefcase of unmarked tokens."
+    - "<gray>Pays out <white>250,000 <gray>tokens."
+    - ""
+    - "%price-block%"
+    - "%stock-block%"
+    - "%limit-block%"
+    - "%status-block%"
+
+give-items: { }
+
+commands:
+  - 'tokens give %player% 250000'

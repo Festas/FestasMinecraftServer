@@ -1,0 +1,49 @@
+# Payday - double money from mining and selling.
+id: payday
+display-name: "<gold>Payday"
+enabled: true
+duration: 1800            # seconds (30 minutes)
+weight: 10                # relative chance when the scheduler is in ROTATION mode
+
+bossbar:
+  color: YELLOW
+  style: SOLID
+  # Placeholders: %name% %multiplier% %time%
+  title: "<gradient:#f7971e:#ffd200><bold>Payday</bold></gradient> <white>(%multiplier%x Money) <gray>(%time%)"
+
+effects:
+  - type: CURRENCY_MULTIPLIER
+    currency: money
+    multiplier: 2.0
+    # Which currency-receive causes are boosted. Empty = all causes.
+    apply-to-causes: [MINING, MINING_OTHERS]
+
+notifications:
+  start:
+    title:
+      enabled: true
+      title: "<gold><bold>PAYDAY!"
+      subtitle: "<white>Earn <yellow>2x Money <white>for 30 minutes"
+      fade-in: 1
+      stay: 3
+      fade-out: 1
+    sound:
+      enabled: true
+      sound: ENTITY_PLAYER_LEVELUP
+      volume: 1.0
+      pitch: 1.0
+    broadcast: "<gold>Payday has begun! <white>Earn <yellow>2x Money <white>for the next 30 minutes!"
+  end:
+    title:
+      enabled: true
+      title: "<gray>Payday ended"
+      subtitle: ""
+      fade-in: 1
+      stay: 2
+      fade-out: 1
+    sound:
+      enabled: true
+      sound: BLOCK_NOTE_BLOCK_BASS
+      volume: 1.0
+      pitch: 1.0
+    broadcast: "<gray>Payday has ended. Thanks for playing!"

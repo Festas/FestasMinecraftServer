@@ -1,0 +1,13 @@
+color: "#E64A19"
+title: "💣  Bomb Detonated!"
+description: "**{player}** unleashed a **{bomb_name}** on the mine!\nThe blocks never saw it coming. 💥"
+thumbnail: true
+footer: "X-Prison Core • Discord Sync"
+show-timestamp: true
+fields:
+  - name: "💥 Blocks Destroyed"
+    value: "{blocks_affected}"
+    inline: true
+  - name: "🔫 Bomb Type"
+    value: "{bomb_name}"
+    inline: true

@@ -1,0 +1,180 @@
+messages:
+  no_permission: '<gradient:#FFD700:#FFAA00><bold>(!)</bold></gradient> <white>You do not have a permission to do that!'
+  prestige_up: '<gradient:#FFD700:#FFAA00><bold>PRESTIGE</bold> <dark_gray>»</dark_gray></gradient> <white>Congratulations, you prestiged up to <white>%Prestige%'
+  not_enough_currency_prestige: '<gradient:#FFD700:#FFAA00><bold>PRESTIGE</bold> <dark_gray>»</dark_gray></gradient> <white>You don''t have enough %currency% to prestige. You need <yellow>%cost% %currency%'
+  last_prestige: '<gradient:#FFD700:#FFAA00><bold>PRESTIGE</bold> <dark_gray>»</dark_gray></gradient> <white>You are at the last Prestige and have no more Prestiges.'
+  not_last_rank: '<gradient:#FFD700:#FFAA00><bold>PRESTIGE</bold> <dark_gray>»</dark_gray></gradient> <white>You must be last rank to prestige.'
+  top_updating: '<gradient:#FFD700:#FFAA00><bold>PRESTIGE</bold> <dark_gray>»</dark_gray></gradient>  <white>currently updating...'
+  prestige_set: '<gradient:#FFD700:#FFAA00><bold>PRESTIGE</bold> <dark_gray>»</dark_gray></gradient> <white>You have set <yellow>%player%''s <white>prestige to <yellow>%amount%'
+  prestige_add: '<gradient:#FFD700:#FFAA00><bold>PRESTIGE</bold> <dark_gray>»</dark_gray></gradient> <white>You have added <yellow>%amount% <white>prestige to  <yellow>%player%'
+  prestige_remove: '<gradient:#FFD700:#FFAA00><bold>PRESTIGE</bold> <dark_gray>»</dark_gray></gradient> <white>You have removed %amount% prestige from <yellow>%player%'
+  max_prestige_started: '<gradient:#FFD700:#FFAA00><bold>PRESTIGE</bold> <dark_gray>»</dark_gray></gradient> <white>Started /maxprestige. This might take a while...'
+  max_prestige_done: '<gradient:#FFD700:#FFAA00><bold>RANKUP</bold> <dark_gray>»</dark_gray></gradient> <white>Congratulations, you''ve max prestiged from <yellow>%start_prestige% <white>to <yellow>%prestige%<white>.'
+# Interval in minutes for saving player data into database
+player_data_save_interval: 10
+# Should we reset player rank after he prestiges ?
+reset_rank_after_prestige: true
+# Amount of players displayed in top lists
+top_players_amount: 10
+# Currency this module works with (eg. money, Tokens, Gems)
+currency: "money"
+#Should players auto prestige if they have enough currency to rank up ?
+auto-prestige: false
+#Interval in seconds to check for possible prestige
+auto-prestige-interval: 2
+# Title shown to player on prestige. Supports MiniMessage. Placeholders: %prestige% (new prestige prefix), %old_prestige% (old prestige prefix)
+prestige-title:
+  enabled: true
+  title: '&6&lPRESTIGE'
+  subtitle: '&aYou reached &e%prestige%'
+  fade-in: 1
+  stay: 3
+  fade-out: 1
+# Sound played to player on prestige. sound must be a valid Bukkit Sound enum name.
+prestige-sound:
+  enabled: true
+  sound: UI_TOAST_CHALLENGE_COMPLETE
+  volume: 1.0
+  pitch: 1.0
+prestige-top-format:
+  - '<yellow><strikethrough>-------<white><strikethrough>-------<yellow><strikethrough>--------<white><strikethrough>--------<yellow><strikethrough>--------<white><strikethrough>-------<yellow><strikethrough>-------'
+  - '<yellow><bold>PRESTIGE TOP'
+  - '{FOR_EACH_PLAYER} <white><bold>#%position%. <yellow>%player% <dark_gray>» <white>%prestige% Prestige'
+  - '<yellow><strikethrough>-------<white><strikethrough>-------<yellow><strikethrough>--------<white><strikethrough>--------<yellow><strikethrough>--------<white><strikethrough>-------<yellow><strikethrough>-------'
+# Infinite prestiges settings
+unlimited_prestiges:
+  # Should we enable infinite prestiges ?
+  enabled: false
+  # Top limit of prestige
+  max_prestige: 1000000
+  # Initial cost of prestige
+  prestige_cost: 1000000
+  # Increasing cost of prestige
+  increase_cost:
+    enabled: true
+    increase_cost_by: 1.25
+  # Prestige prefix
+  prefix: '<dark_green><bold>P%prestige%'
+  # Rewarding players after each prestige
+  rewards-per-prestige:
+    enabled: false
+    # Commands to be exectured
+    rewards:
+      - 'money give %player% 1'
+  # Rewarding players on different prestiges
+  rewards:
+    10:
+      - 'tokens give %player% 10'
+# Manual prestige settings
+Prestige:
+  '0':
+    Prefix: <white><bold>P0</bold></white>
+  #'1':
+    #Prefix: <dark_green><bold>P1</bold></dark_green>
+    #Cost: 10000000
+    #CMD:
+      #- pmine forceexpand %player%
+      #- pmine forceupgrade %player% A
+
+# ---------------------------------------------------------------------------
+# Prestiges GUI (opened with /prestiges). Fully configurable.
+# In manual mode the prestiges listed under "Prestige:" are shown paginated,
+# using the state templates under gui.prestige (owned/current/next/locked).
+# In unlimited mode (unlimited_prestiges.enabled: true) a status view is shown
+# instead, using the items under gui.unlimited.
+# Item placeholders: %id%, %prefix% / %prestige%, %cost%, %currency%
+# Progress item placeholders: %progress%, %bar%
+# ---------------------------------------------------------------------------
+gui:
+  title: '<gradient:#2ecc71:#27ae60><bold>PRESTIGES</bold></gradient>'
+  rows: 6
+  filler: BLACK_STAINED_GLASS_PANE
+  # Slots for the paginated list (manual mode).
+  prestige-slots: [10, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25, 28, 29, 30, 31, 32, 33, 34]
+  prestige:
+    owned:
+      material: LIME_STAINED_GLASS_PANE
+      name: '%prefix% <dark_gray>(<green>Reached</green>)'
+      lore:
+        - '<gray>Prestige <white>#%id%'
+        - '<green>✔ Already prestiged.'
+    current:
+      material: NETHER_STAR
+      glow: true
+      name: '%prefix% <dark_gray>(<yellow>Current</yellow>)'
+      lore:
+        - '<gray>Prestige <white>#%id%'
+        - '<yellow>➤ Your current prestige.'
+    next:
+      material: EMERALD
+      name: '%prefix% <dark_gray>(<green>Next</green>)'
+      lore:
+        - '<gray>Prestige <white>#%id%'
+        - '<gray>Cost: <gold>%cost% <gray>%currency%'
+        - ' '
+        - '<yellow>Click to prestige!'
+    locked:
+      material: RED_STAINED_GLASS_PANE
+      name: '%prefix% <dark_gray>(<red>Locked</red>)'
+      lore:
+        - '<gray>Prestige <white>#%id%'
+        - '<gray>Cost: <gold>%cost% <gray>%currency%'
+        - '<red>🔒 Prestige to unlock.'
+  # Status view used when unlimited_prestiges is enabled.
+  unlimited:
+    current:
+      slot: 11
+      material: NETHER_STAR
+      glow: true
+      name: '<yellow><bold>Current Prestige'
+      lore:
+        - '<gray>You are <white>%prefix%'
+        - '<gray>Prestige level: <white>%id%'
+    next:
+      slot: 13
+      material: EMERALD
+      name: '<green><bold>Next Prestige'
+      lore:
+        - '<gray>Next: <white>%prefix%'
+        - '<gray>Cost: <gold>%cost% <gray>%currency%'
+        - ' '
+        - '<yellow>Click to prestige!'
+    max:
+      slot: 13
+      material: BARRIER
+      name: '<red><bold>Max Prestige'
+      lore:
+        - '<gray>You have reached the highest prestige!'
+    progress:
+      slot: 15
+      bar-length: 20
+      bar-delimiter: '|'
+      material: EXPERIENCE_BOTTLE
+      name: '<aqua><bold>Progress'
+      lore:
+        - '<gray>Progress to next prestige:'
+        - '%bar%'
+        - '<white>%progress%%'
+  items:
+    info:
+      slot: 4
+      material: BOOK
+      name: '<green><bold>Prestiges'
+      lore:
+        - '<gray>Prestige to reset your rank and'
+        - '<gray>unlock permanent rewards.'
+    close:
+      slot: 49
+      material: BARRIER
+      name: '<red><bold>Close'
+      lore: []
+    prev-page:
+      slot: 48
+      material: ARROW
+      name: '<yellow>« Previous Page'
+      lore: []
+    next-page:
+      slot: 50
+      material: ARROW
+      name: '<yellow>Next Page »'
+      lore: []

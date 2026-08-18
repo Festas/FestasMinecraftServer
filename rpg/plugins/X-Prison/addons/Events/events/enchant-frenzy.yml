@@ -1,0 +1,48 @@
+# Enchant Frenzy - boosts the proc rate of all enchants by +20%.
+id: enchant-frenzy
+display-name: "<red>Enchant Frenzy"
+enabled: true
+duration: 900             # seconds (15 minutes)
+weight: 5
+
+bossbar:
+  color: RED
+  style: SOLID
+  title: "<gradient:#ff416c:#ff4b2b><bold>Enchant Frenzy</bold></gradient> <white>(+%multiplier% proc rate) <gray>(%time%)"
+
+effects:
+  - type: ENCHANT_PROC_MULTIPLIER
+    # Multiplies each enchant's trigger chance. 1.20 = +20%.
+    multiplier: 1.20
+    # Restrict to specific enchants by raw name or id. Empty = every enchant.
+    enchants: []
+
+notifications:
+  start:
+    title:
+      enabled: true
+      title: "<red><bold>ENCHANT FRENZY!"
+      subtitle: "<white>All enchants proc <red>20% <white>more often for 15 minutes"
+      fade-in: 1
+      stay: 3
+      fade-out: 1
+    sound:
+      enabled: true
+      sound: ENTITY_ENDER_DRAGON_GROWL
+      volume: 0.6
+      pitch: 1.4
+    broadcast: "<red>Enchant Frenzy has begun! <white>All enchants proc <red>20% <white>more often for the next 15 minutes!"
+  end:
+    title:
+      enabled: true
+      title: "<gray>Enchant Frenzy ended"
+      subtitle: ""
+      fade-in: 1
+      stay: 2
+      fade-out: 1
+    sound:
+      enabled: true
+      sound: BLOCK_NOTE_BLOCK_BASS
+      volume: 1.0
+      pitch: 1.0
+    broadcast: "<gray>Enchant Frenzy has ended. Thanks for playing!"
