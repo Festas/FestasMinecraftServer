@@ -22,7 +22,7 @@ messages:
   block_booster_on: <gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>Double Blocks has <yellow><bold>activated</bold></yellow>, <gold><bold>X2 Blocks</bold></gold> for <yellow>5:00 Minutes</yellow>
   block_booster_off: <gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>Double Blocks has <yellow><bold>deactivated</bold></yellow>
   lucky_mode_timeleft: '<gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>Lucky Mode Activated For: <green><bold>%timeleft%</bold></green>.'
-  lucky_mode_disabled: <gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>Lucky Mode <red>Disabled</red>.
+  lucky_mode_disabled: <gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>Lucky Mode ist <red>deaktiviert</red>.
   explosive_disabled: <gradient:#FF5555:#AA0000:#550000><bold>EXPLOSIVE</bold></gradient> <dark_gray>»</dark_gray> <white>Enchantment <yellow><bold>DISABLED</bold></yellow>
   explosive_enabled: <gradient:#FF5555:#AA0000:#550000><bold>EXPLOSIVE</bold></gradient> <dark_gray>»</dark_gray> <white>Enchantment <yellow><bold>ENABLED</bold></yellow>
   value_no_permission: <gradient:#FFFF00:#FFD700:#FFA500><bold>VALUE</bold></gradient> <dark_gray>»</dark_gray> <white>No Permission, Unlock at <yellow>store.festas-builds.com</yellow>
@@ -34,7 +34,7 @@ messages:
   pickaxe_inventory_full: <gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <yellow>%player%</yellow> <white>has full inventory!
   prestige_finder: <gradient:#FFFF00:#FFD700:#FFA500><bold>PRESTIGE FINDER</bold></gradient> <dark_gray>»</dark_gray> <white>Du hast beim Minen <yellow>x%prestige%</yellow> Prestige gefunden!
   transaction_in_progress: <gradient:#FFFF00:#FFD700:#FFA500><bold>ENCHANT</bold></gradient> <dark_gray>»</dark_gray> <white>Please wait for your other transaction to complete.
-  enchant_status_locked: <gray>Locked Enchant
+  enchant_status_locked: <gray>Gesperrte Verzauberung
   enchant_status_unlocked: <gray>Unlocked Enchant
   enchant_status_max: <gray>Maxed Enchant
   enchant_passive: <white>Passive
@@ -129,22 +129,22 @@ enchant_menu:
     slot: 45
     material: ARROW
     custom_model_data: 0
-    name: <yellow><bold>PREVIOUS PAGE</bold></yellow>
+    name: <yellow><bold>VORHERIGE SEITE</bold></yellow>
     lore:
     - ' '
-    - <italic:false><gray>Page <white>%page%</white> of <white>%total_pages%</white></gray>
+    - <italic:false><gray>Seite <white>%page%</white> von <white>%total_pages%</white></gray>
     - ' '
-    - <italic:false><gray><italic>(( Click to go back ))</italic></gray>
+    - <italic:false><gray><italic>(( Klicke, um zurückzugehen ))</italic></gray>
   next_page:
     slot: 53
     material: ARROW
     custom_model_data: 0
-    name: <yellow><bold>NEXT PAGE</bold></yellow>
+    name: <yellow><bold>NÄCHSTE SEITE</bold></yellow>
     lore:
     - ' '
-    - <italic:false><gray>Page <white>%page%</white> of <white>%total_pages%</white></gray>
+    - <italic:false><gray>Seite <white>%page%</white> von <white>%total_pages%</white></gray>
     - ' '
-    - <italic:false><gray><italic>(( Click to go forward ))</italic></gray>
+    - <italic:false><gray><italic>(( Klicke, um weiterzugehen ))</italic></gray>
   admin-click-amounts:
     LEFT: 1
     RIGHT: 10
@@ -154,95 +154,95 @@ enchant_menu:
     lore:
     - <italic:false><white>%status%</white>
     - ' '
-    - <italic:false><yellow>Description</yellow>
+    - <italic:false><yellow>Beschreibung</yellow>
     - <italic:false><gray>%description%</gray>
     - ' '
-    - <italic:false><yellow>✦ Information</yellow>
+    - <italic:false><yellow>✦ Informationen</yellow>
     - ' <italic:false><yellow>▎</yellow> <white>Level: </white><yellow>%current_level%</yellow> <white>/</white> <yellow>%max_level%</yellow>'
-    - ' <italic:false><yellow>▎</yellow> <white>Base Activation Chance: </white><yellow>%base_chance%</yellow>'
-    - ' <italic:false><yellow>▎</yellow> <white>Your Activation Chance: </white><yellow>%chance%</yellow>'
-    - ' <italic:false><yellow>▎</yellow> <white>Next Activation Chance: </white><yellow>%next_chance%</yellow>'
+    - ' <italic:false><yellow>▎</yellow> <white>Basis-Aktivierung: </white><yellow>%base_chance%</yellow>'
+    - ' <italic:false><yellow>▎</yellow> <white>Deine Aktivierung: </white><yellow>%chance%</yellow>'
+    - ' <italic:false><yellow>▎</yellow> <white>Nächste Aktivierung: </white><yellow>%next_chance%</yellow>'
     - ''
     - <italic:false><yellow>✦ Upgrades</yellow>
-    - ' <italic:false><yellow>▎</yellow> <white>Price: </white><yellow>%cost%</yellow> <white>%currency%</white>'
-    - ' <italic:false><yellow>▎</yellow> <white>Press </white><yellow><bold>Q</bold></yellow> <white>to purchase as many levels of this</white>'
-    - ' <italic:false><yellow>▎</yellow> <white>enchantment as you can afford.</white>'
+    - ' <italic:false><yellow>▎</yellow> <white>Preis: </white><yellow>%cost%</yellow> <white>%currency%</white>'
+    - ' <italic:false><yellow>▎</yellow> <white>Drücke </white><yellow><bold>Q</bold></yellow> <white>für so viele Level,</white>'
+    - ' <italic:false><yellow>▎</yellow> <white>wie du dir leisten kannst.</white>'
     - ''
     - '%prestige_info%'
     - ''
-    - <italic:false><gray>Unlocks at Pickaxe Level </gray><white><italic>%pickaxe_level%</italic></white>
+    - <italic:false><gray>Freischaltung ab Spitzhacken-Stufe </gray><white><italic>%pickaxe_level%</italic></white>
     - ''
-    - <italic:false><gray><italic>Click to upgrade</italic></gray>
+    - <italic:false><gray><italic>Klicke zum Verbessern</italic></gray>
   prestige_info_lore:
   - <italic:false><yellow>✦ Prestige</yellow>
   - ' <italic:false><yellow>▎</yellow> <white>Level: </white><yellow>%prestige% / %prestige_max%</yellow>'
   - ' <italic:false><yellow>▎</yellow> <white>Progress: </white><yellow>%prestige_progress% / %prestige_required%</yellow>'
   - ' <italic:false><yellow>▎</yellow> <white>Bonus: </white><yellow>+%prestige_multiplier%%</yellow>'
   prestige_ready_lore:
-  - ' <italic:false><green>✔ Shift+Left Click to Prestige!</green>'
+  - ' <italic:false><green>✔ Shift+Linksklick zum Prestigen!</green>'
   currency-enchants-items:
     tokens:
       enabled: true
       material: SUNFLOWER
       slot: 48
       custom_model_data: 0
-      name: <yellow><bold>Token Enchants</bold></yellow>
+      name: <yellow><bold>Token-Verzauberungen</bold></yellow>
       lore:
-      - <italic:false><gray>Click to view this category</gray>
+      - <italic:false><gray>Klicke, um diese Kategorie zu öffnen.</gray>
     gems:
       enabled: true
       material: EMERALD
       slot: 49
       custom_model_data: 0
-      name: <green><bold>Gem Enchants</bold></green>
+      name: <green><bold>Edelstein-Verzauberungen</bold></green>
       lore:
-      - <italic:false><gray>Click to view this category</gray>
+      - <italic:false><gray>Klicke, um diese Kategorie zu öffnen.</gray>
     money:
       enabled: true
       material: PAPER
       slot: 50
       custom_model_data: 100
-      name: <gold><bold>Money Enchants</bold></gold>
+      name: <gold><bold>Geld-Verzauberungen</bold></gold>
       lore:
-      - <italic:false><gray>Click to view this category</gray>
+      - <italic:false><gray>Klicke, um diese Kategorie zu öffnen.</gray>
   help_item:
     enabled: true
     material: BOOK
     slot: 2
     custom_model_data: 0
-    name: <yellow><bold>HOW IT WORKS?</bold></yellow>
+    name: <yellow><bold>SO FUNKTIONIERT ES</bold></yellow>
     lore:
-    - <gray><italic>(( Here you can find how to</italic></gray>
-    - <gray><italic>upgrade your enchantments ))</italic></gray>
+    - <gray><italic>(( Hier siehst du, wie du</italic></gray>
+    - <gray><italic>deine Verzauberungen verbesserst ))</italic></gray>
     - ''
-    - <italic:false><yellow><bold>* </bold></yellow><white>Click an enchant to open its</white>
-    - <italic:false>  <white>upgrade menu.</white>
-    - <italic:false><yellow><bold>* </bold></yellow><white>Buy <yellow>1 / 5 / 25 / 50</yellow> or <yellow>MAX</yellow> levels.</white>
-    - <italic:false><yellow><bold>* </bold></yellow><white>Toggle each enchant <green>ON</green><white>/<red>OFF</red> <white>for yourself.</white>
+    - <italic:false><yellow><bold>* </bold></yellow><white>Klicke auf eine Verzauberung, um das</white>
+    - <italic:false>  <white>Upgrade-Menü zu öffnen.</white>
+    - <italic:false><yellow><bold>* </bold></yellow><white>Kaufe <yellow>1 / 5 / 25 / 50</yellow> oder <yellow>MAX</yellow> Level.</white>
+    - <italic:false><yellow><bold>* </bold></yellow><white>Schalte jede Verzauberung für dich <green>AN</green><white>/<red>AUS</red>.</white>
     - ' '
-    - <gray><italic>(( Click on the enchant to begin ))</italic></gray>
+    - <gray><italic>(( Klicke auf eine Verzauberung, um zu beginnen ))</italic></gray>
   quality_item:
     enabled: true
     material: NETHER_STAR
     custom_model_data: 0
     slot: 3
-    name: <gradient:#00E5FF:#00838F><bold>PICKAXE QUALITY</bold></gradient>
+    name: <gradient:#00E5FF:#00838F><bold>SPITZHACKEN-QUALITÄT</bold></gradient>
     lore:
     - ' '
-    - <italic:false><gray>Upgrade your pickaxe's quality tier</gray>
-    - <italic:false><gray>for permanent mining boosts.</gray>
+    - <italic:false><gray>Verbessere die Qualitätsstufe deiner</gray>
+    - <italic:false><gray>Spitzhacke für dauerhafte Mining-Boni.</gray>
     - ' '
-    - '<italic:false><white>Current: </white>%tier_name% <dark_gray>(%tier%/%max_tier%)</dark_gray>'
+    - '<italic:false><white>Aktuell: </white>%tier_name% <dark_gray>(%tier%/%max_tier%)</dark_gray>'
     - ' '
-    - <italic:false><gray><italic>(( Click to open Pickaxe Quality ))</italic></gray>
+    - <italic:false><gray><italic>(( Klicke, um die Qualität zu öffnen ))</italic></gray>
   disenchant_item:
     enabled: true
     material: ANVIL
     custom_model_data: 0
     slot: 6
-    name: <yellow><bold>ENCHANTMENT REFUND</bold></yellow>
+    name: <yellow><bold>VERZAUBERUNG ERSTATTEN</bold></yellow>
     lore:
-    - <gray><italic>(( Click here to open ))</italic></gray>
+    - <gray><italic>(( Klicke hier zum Öffnen ))</italic></gray>
   skins_item:
     enabled: true
     material: DIAMOND_PICKAXE
@@ -251,10 +251,10 @@ enchant_menu:
     name: <light_purple><bold>SKINS</bold></light_purple>
     lore:
     - ' '
-    - <italic:false><gray>Skins give various boosts</gray>
-    - <italic:false><gray>to help with your progression.</gray>
+    - <italic:false><gray>Skins geben dir verschiedene Boni</gray>
+    - <italic:false><gray>für deinen Fortschritt.</gray>
     - ' '
-    - <italic:false><white>Click to view <light_purple>Skins</light_purple></white>
+    - <italic:false><white>Klicke, um <light_purple>Skins</light_purple> anzusehen.</white>
   pickaxe_slot_item:
     enabled: true
     material: LIME_STAINED_GLASS_PANE
@@ -262,10 +262,10 @@ enchant_menu:
     slot: 8
     name: <aqua><bold>PICKAXE SLOT</bold></aqua>
     lore:
-    - <gray><italic>(( Choose which hotbar slot</italic></gray>
-    - <gray><italic>your pickaxe sits in ))</italic></gray>
+    - <gray><italic>(( Wähle, auf welchem Hotbar-Slot</italic></gray>
+    - <gray><italic>deine Spitzhacke liegt ))</italic></gray>
     - ''
-    - <italic:false><white>Click to choose</white>
+    - <italic:false><white>Klicke zum Auswählen</white>
   settings_item:
     enabled: true
     material: COMPARATOR
@@ -276,12 +276,12 @@ enchant_menu:
     - ' '
     - <italic:false><gray>Adjust how your pickaxe behaves.</gray>
     - ' '
-    - <italic:false><gray><italic>(( Click to open settings ))</italic></gray>
+    - <italic:false><gray><italic>(( Klicke zum Öffnen ))</italic></gray>
   locked_item:
     enabled: true
     material: GRAY_DYE
     custom_model_data: 0
-    name: <gray><bold>???</bold> <dark_gray>Locked Enchant</dark_gray>
+    name: <gray><bold>???</bold> <dark_gray>Gesperrte Verzauberung</dark_gray>
     lore:
     - ''
     - <italic:false><gray><italic>A mysterious enchant, hidden</italic></gray>
@@ -300,18 +300,18 @@ enchant_upgrade_menu:
     lore:
     - <italic:false><white>%status%</white>
     - ' '
-    - <italic:false><yellow>Description</yellow>
+    - <italic:false><yellow>Beschreibung</yellow>
     - <italic:false><gray>%description%</gray>
     - ' '
-    - <italic:false><yellow>✦ Information</yellow>
+    - <italic:false><yellow>✦ Informationen</yellow>
     - ' <italic:false><yellow>▎</yellow> <white>Level: </white><yellow>%current_level%</yellow> <white>/</white> <yellow>%max_level%</yellow>'
-    - ' <italic:false><yellow>▎</yellow> <white>Base Activation Chance: </white><yellow>%base_chance%</yellow>'
-    - ' <italic:false><yellow>▎</yellow> <white>Your Activation Chance: </white><yellow>%chance%</yellow>'
-    - ' <italic:false><yellow>▎</yellow> <white>Next Activation Chance: </white><yellow>%next_chance%</yellow>'
+    - ' <italic:false><yellow>▎</yellow> <white>Basis-Aktivierung: </white><yellow>%base_chance%</yellow>'
+    - ' <italic:false><yellow>▎</yellow> <white>Deine Aktivierung: </white><yellow>%chance%</yellow>'
+    - ' <italic:false><yellow>▎</yellow> <white>Nächste Aktivierung: </white><yellow>%next_chance%</yellow>'
     - ''
     - '%prestige_info%'
     - ''
-    - <italic:false><gray>Unlocks at Pickaxe Level </gray><white><italic>%pickaxe_level%</italic></white>
+    - <italic:false><gray>Freischaltung ab Spitzhacken-Stufe </gray><white><italic>%pickaxe_level%</italic></white>
   upgrade_buttons:
     one:
       enabled: true
@@ -322,9 +322,9 @@ enchant_upgrade_menu:
       name: <green><bold>+%amount% Level</bold></green>
       lore:
       - ' <italic:false><green>▎</green> <white>Levels: </white><green>%from_level% → %to_level%</green>'
-      - ' <italic:false><green>▎</green> <white>Price: </white><green>%cost%</green> <white>%currency%</white>'
+      - ' <italic:false><green>▎</green> <white>Preis: </white><green>%cost%</green> <white>%currency%</white>'
       - ''
-      - <italic:false><gray><italic>(( Click to purchase ))</italic></gray>
+      - <italic:false><gray><italic>(( Klicke zum Kaufen ))</italic></gray>
     five:
       enabled: true
       amount: 5
@@ -334,9 +334,9 @@ enchant_upgrade_menu:
       name: <green><bold>+%amount% Levels</bold></green>
       lore:
       - ' <italic:false><green>▎</green> <white>Levels: </white><green>%from_level% → %to_level%</green>'
-      - ' <italic:false><green>▎</green> <white>Price: </white><green>%cost%</green> <white>%currency%</white>'
+      - ' <italic:false><green>▎</green> <white>Preis: </white><green>%cost%</green> <white>%currency%</white>'
       - ''
-      - <italic:false><gray><italic>(( Click to purchase ))</italic></gray>
+      - <italic:false><gray><italic>(( Klicke zum Kaufen ))</italic></gray>
     twentyfive:
       enabled: true
       amount: 25
@@ -346,9 +346,9 @@ enchant_upgrade_menu:
       name: <green><bold>+%amount% Levels</bold></green>
       lore:
       - ' <italic:false><green>▎</green> <white>Levels: </white><green>%from_level% → %to_level%</green>'
-      - ' <italic:false><green>▎</green> <white>Price: </white><green>%cost%</green> <white>%currency%</white>'
+      - ' <italic:false><green>▎</green> <white>Preis: </white><green>%cost%</green> <white>%currency%</white>'
       - ''
-      - <italic:false><gray><italic>(( Click to purchase ))</italic></gray>
+      - <italic:false><gray><italic>(( Klicke zum Kaufen ))</italic></gray>
     fifty:
       enabled: true
       amount: 50
@@ -358,21 +358,21 @@ enchant_upgrade_menu:
       name: <green><bold>+%amount% Levels</bold></green>
       lore:
       - ' <italic:false><green>▎</green> <white>Levels: </white><green>%from_level% → %to_level%</green>'
-      - ' <italic:false><green>▎</green> <white>Price: </white><green>%cost%</green> <white>%currency%</white>'
+      - ' <italic:false><green>▎</green> <white>Preis: </white><green>%cost%</green> <white>%currency%</white>'
       - ''
-      - <italic:false><gray><italic>(( Click to purchase ))</italic></gray>
+      - <italic:false><gray><italic>(( Klicke zum Kaufen ))</italic></gray>
     max:
       enabled: true
       amount: max
       slot: 24
       material: GREEN_STAINED_GLASS_PANE
       custom_model_data: 0
-      name: <green><bold>Upgrade MAX</bold></green>
+      name: <green><bold>MAX VERBESSERN</bold></green>
       lore:
-      - ' <italic:false><green>▎</green> <white>Upgrade towards </white><green>Level %to_level%</green>'
+      - ' <italic:false><green>▎</green> <white>Upgrade bis </white><green>Level %to_level%</green>'
       - ' <italic:false><green>▎</green> <white>Buys as many levels as you can afford.</white>'
       - ''
-      - <italic:false><gray><italic>(( Click to purchase ))</italic></gray>
+      - <italic:false><gray><italic>(( Klicke zum Kaufen ))</italic></gray>
   maxed_item:
     enabled: true
     slots:
@@ -395,7 +395,7 @@ enchant_upgrade_menu:
       custom_model_data: 0
       name: '<white>Enchant: <green><bold>ENABLED</bold></green>'
       lore:
-      - <gray><italic>(( Click to disable this enchant ))</italic></gray>
+      - <gray><italic>(( Klicke, um diese Verzauberung zu deaktivieren ))</italic></gray>
       - ''
       - <italic:false><gray>While disabled, this enchant will</gray>
       - <italic:false><gray>not trigger while you mine.</gray>
@@ -404,7 +404,7 @@ enchant_upgrade_menu:
       custom_model_data: 0
       name: '<white>Enchant: <red><bold>DISABLED</bold></red>'
       lore:
-      - <gray><italic>(( Click to enable this enchant ))</italic></gray>
+      - <gray><italic>(( Klicke, um diese Verzauberung zu aktivieren ))</italic></gray>
       - ''
       - <italic:false><gray>This enchant is currently turned off</gray>
       - <italic:false><gray>and will not trigger while you mine.</gray>
@@ -417,7 +417,7 @@ enchant_upgrade_menu:
     lore:
     - '%prestige_info%'
     - ''
-    - <italic:false><gray><italic>(( Click to prestige this enchant ))</italic></gray>
+    - <italic:false><gray><italic>(( Klicke, um diese Verzauberung zu prestigieren ))</italic></gray>
   back_item:
     enabled: true
     slot: 42
@@ -442,22 +442,22 @@ pickaxe_settings:
     enabled_state:
       material: PAPER
       custom_model_data: 0
-      name: '<white>Last Minute Summary: <green><bold>ON</bold></green>'
+      name: '<white>Minuten-Zusammenfassung: <green><bold>ON</bold></green>'
       lore:
       - ' '
       - <italic:false><gray>A summary of currencies earned from</gray>
       - <italic:false><gray>mining is shown periodically while you mine.</gray>
       - ' '
-      - <italic:false><gray><italic>(( Click to turn OFF ))</italic></gray>
+      - <italic:false><gray><italic>(( Klicke für AUS ))</italic></gray>
     disabled_state:
       material: PAPER
       custom_model_data: 0
-      name: '<white>Last Minute Summary: <red><bold>OFF</bold></red>'
+      name: '<white>Minuten-Zusammenfassung: <red><bold>OFF</bold></red>'
       lore:
       - ' '
       - <italic:false><gray>The periodic mining summary is hidden.</gray>
       - ' '
-      - <italic:false><gray><italic>(( Click to turn ON ))</italic></gray>
+      - <italic:false><gray><italic>(( Klicke für AN ))</italic></gray>
   all_proc_toggle:
     slot: 12
     enabled_state:
@@ -469,7 +469,7 @@ pickaxe_settings:
       - <italic:false><gray>A message is displayed whenever any</gray>
       - <italic:false><gray>enchantment on your pickaxe procs.</gray>
       - ' '
-      - <italic:false><gray><italic>(( Click to turn OFF ))</italic></gray>
+      - <italic:false><gray><italic>(( Klicke für AUS ))</italic></gray>
     disabled_state:
       material: COMPARATOR
       custom_model_data: 0
@@ -479,7 +479,7 @@ pickaxe_settings:
       - <italic:false><gray>No message is shown when your</gray>
       - <italic:false><gray>enchantments proc.</gray>
       - ' '
-      - <italic:false><gray><italic>(( Click to turn ON ))</italic></gray>
+      - <italic:false><gray><italic>(( Klicke für AN ))</italic></gray>
   virtual_break_toggle:
     slot: 14
     enabled_state:
@@ -491,7 +491,7 @@ pickaxe_settings:
       - <italic:false><gray>Area enchant procs give rewards</gray>
       - <italic:false><gray>without visually breaking blocks.</gray>
       - ' '
-      - <italic:false><gray><italic>(( Click to turn OFF ))</italic></gray>
+      - <italic:false><gray><italic>(( Klicke für AUS ))</italic></gray>
     disabled_state:
       material: GLASS
       custom_model_data: 0
@@ -501,7 +501,7 @@ pickaxe_settings:
       - <italic:false><gray>Area enchant procs break blocks</gray>
       - <italic:false><gray>in the world as normal.</gray>
       - ' '
-      - <italic:false><gray><italic>(( Click to turn ON ))</italic></gray>
+      - <italic:false><gray><italic>(( Klicke für AN ))</italic></gray>
   animations_toggle:
     slot: 28
     enabled_state:
@@ -513,7 +513,7 @@ pickaxe_settings:
       - <italic:false><gray>Enchant animations are played</gray>
       - <italic:false><gray>when an enchant is activated.</gray>
       - ' '
-      - <italic:false><gray><italic>(( Click to turn OFF ))</italic></gray>
+      - <italic:false><gray><italic>(( Klicke für AUS ))</italic></gray>
     disabled_state:
       material: GUNPOWDER
       custom_model_data: 0
@@ -523,7 +523,7 @@ pickaxe_settings:
       - <italic:false><gray>Enchant animations are hidden</gray>
       - <italic:false><gray>when an enchant is activated.</gray>
       - ' '
-      - <italic:false><gray><italic>(( Click to turn ON ))</italic></gray>
+      - <italic:false><gray><italic>(( Klicke für AN ))</italic></gray>
   enchant_notifications_button:
     slot: 16
     material: DIAMOND_PICKAXE
@@ -531,10 +531,10 @@ pickaxe_settings:
     name: <gradient:#FF55FF:#AA00AA><bold>ENCHANT NOTIFICATIONS</bold></gradient>
     lore:
     - ' '
-    - <italic:false><gray>Choose which enchants notify you</gray>
-    - <italic:false><gray>when they proc.</gray>
+    - <italic:false><gray>Lege fest, welche Verzauberungen</gray>
+    - <italic:false><gray>dich bei einem Proc benachrichtigen.</gray>
     - ' '
-    - <italic:false><gray><italic>(( Click to open ))</italic></gray>
+    - <italic:false><gray><italic>(( Klicke zum Öffnen ))</italic></gray>
   back_item:
     slot: 40
     material: COMPASS
@@ -578,7 +578,7 @@ enchant_notifications:
     - <italic:false><gray>You receive notifications for</gray>
     - <italic:false><gray>this enchant.</gray>
     - ' '
-    - <italic:false><gray><italic>(( Click to turn OFF ))</italic></gray>
+    - <italic:false><gray><italic>(( Klicke für AUS ))</italic></gray>
   disabled_state:
     material: RED_STAINED_GLASS_PANE
     custom_model_data: 0
@@ -588,7 +588,7 @@ enchant_notifications:
     - <italic:false><gray>Notifications for this enchant</gray>
     - <italic:false><gray>are turned off.</gray>
     - ' '
-    - <italic:false><gray><italic>(( Click to turn ON ))</italic></gray>
+    - <italic:false><gray><italic>(( Klicke für AN ))</italic></gray>
   back_item:
     slot: 49
     material: COMPASS
@@ -600,25 +600,25 @@ enchant_notifications:
     slot: 48
     material: ARROW
     custom_model_data: 0
-    name: <yellow><bold>PREVIOUS PAGE</bold></yellow>
+    name: <yellow><bold>VORHERIGE SEITE</bold></yellow>
     lore:
     - ' '
-    - <italic:false><gray>Page <white>%page%</white> of <white>%total_pages%</white></gray>
+    - <italic:false><gray>Seite <white>%page%</white> von <white>%total_pages%</white></gray>
     - ' '
-    - <italic:false><gray><italic>(( Click to go back a page ))</italic></gray>
+    - <italic:false><gray><italic>(( Klicke, um eine Seite zurückzugehen ))</italic></gray>
   next_page:
     slot: 50
     material: ARROW
     custom_model_data: 0
-    name: <yellow><bold>NEXT PAGE</bold></yellow>
+    name: <yellow><bold>NÄCHSTE SEITE</bold></yellow>
     lore:
     - ' '
-    - <italic:false><gray>Page <white>%page%</white> of <white>%total_pages%</white></gray>
+    - <italic:false><gray>Seite <white>%page%</white> von <white>%total_pages%</white></gray>
     - ' '
-    - <italic:false><gray><italic>(( Click to go forward a page ))</italic></gray>
+    - <italic:false><gray><italic>(( Klicke, um eine Seite weiterzugehen ))</italic></gray>
   decorations: {}
 pickaxe_slot_menu:
-  title: <gradient:#55FF55:#00AA00>Choose Pickaxe Slot</gradient>
+  title: <gradient:#55FF55:#00AA00>Spitzhacken-Slot wählen</gradient>
   lines: 3
   empty_slots: GRAY_STAINED_GLASS_PANE
   hotbar_slots:
@@ -645,7 +645,7 @@ pickaxe_slot_menu:
     custom_model_data: 0
     name: <green>Slot %slot%</green>
     lore:
-    - <gray><italic>(( Click to move your pickaxe here ))</italic></gray>
+    - <gray><italic>(( Klicke, um deine Spitzhacke hierhin zu verschieben ))</italic></gray>
   back_item:
     enabled: true
     material: COMPASS
@@ -655,7 +655,7 @@ pickaxe_slot_menu:
     lore:
     - <gray><italic>(( Return to the enchant menu ))</italic></gray>
 disenchant_menu:
-  title: <gradient:#FFD700:#FFA500>Disenchant Menu</gradient>
+  title: <gradient:#FFD700:#FFA500>Rückerstattungs-Menü</gradient>
   empty_slots: GRAY_STAINED_GLASS_PANE
   lines: 6
   pickaxe_slot: 4
@@ -701,22 +701,22 @@ disenchant_menu:
     slot: 45
     material: ARROW
     custom_model_data: 0
-    name: <yellow><bold>PREVIOUS PAGE</bold></yellow>
+    name: <yellow><bold>VORHERIGE SEITE</bold></yellow>
     lore:
     - ' '
-    - <italic:false><gray>Page <white>%page%</white> of <white>%total_pages%</white></gray>
+    - <italic:false><gray>Seite <white>%page%</white> von <white>%total_pages%</white></gray>
     - ' '
-    - <italic:false><gray><italic>(( Click to go back ))</italic></gray>
+    - <italic:false><gray><italic>(( Klicke, um zurückzugehen ))</italic></gray>
   next_page:
     slot: 53
     material: ARROW
     custom_model_data: 0
-    name: <yellow><bold>NEXT PAGE</bold></yellow>
+    name: <yellow><bold>NÄCHSTE SEITE</bold></yellow>
     lore:
     - ' '
-    - <italic:false><gray>Page <white>%page%</white> of <white>%total_pages%</white></gray>
+    - <italic:false><gray>Seite <white>%page%</white> von <white>%total_pages%</white></gray>
     - ' '
-    - <italic:false><gray><italic>(( Click to go forward ))</italic></gray>
+    - <italic:false><gray><italic>(( Klicke, um weiterzugehen ))</italic></gray>
   click-amounts:
     LEFT: 1
     RIGHT: 10
@@ -727,62 +727,62 @@ disenchant_menu:
     lore:
     - <italic:false><white>%status%</white>
     - ' '
-    - <italic:false><yellow>Description</yellow>
+    - <italic:false><yellow>Beschreibung</yellow>
     - <italic:false><gray>%description%</gray>
     - ' '
-    - <italic:false><yellow>Information</yellow>
+    - <italic:false><yellow>Informationen</yellow>
     - ' <italic:false><yellow>▎</yellow> <white>Level: </white><yellow>%current_level%</yellow> <white>/</white> <yellow>%max_level%</yellow>'
-    - ' <italic:false><yellow>▎</yellow> <white>Base Activation Chance: </white><yellow>%base_chance%</yellow>'
-    - ' <italic:false><yellow>▎</yellow> <white>Your Activation Chance: </white><yellow>%chance%</yellow>'
+    - ' <italic:false><yellow>▎</yellow> <white>Basis-Aktivierung: </white><yellow>%base_chance%</yellow>'
+    - ' <italic:false><yellow>▎</yellow> <white>Deine Aktivierung: </white><yellow>%chance%</yellow>'
     - ' '
-    - <italic:false><yellow>Disenchant 1 Level</yellow>
+    - <italic:false><yellow>1 Level zurückerstatten</yellow>
     - ' <italic:false><yellow>▎</yellow> <white>You will receive: </white><yellow>%refund%</yellow> <white>%currency%</white>'
     - ' <italic:false><yellow>▎</yellow> <white>Press </white><yellow><bold>Q</bold></yellow> <white>to refund as many levels</white>'
     - ' <italic:false><yellow>▎</yellow> <white>of this enchantment as you can.</white>'
     - ' '
-    - <gray><italic>Click to disenchant</italic></gray>
+    - <gray><italic>Klicke zum Rückerstatten</italic></gray>
   help_item:
     enabled: true
     material: NAME_TAG
     slot: 2
-    name: <yellow><bold>HOW IT WORKS?</bold></yellow>
+    name: <yellow><bold>SO FUNKTIONIERT ES</bold></yellow>
     custom_model_data: 0
     lore:
-    - <gray><italic>(( Here you can find how to</italic></gray>
-    - <gray><italic>(( Here you can find how to</italic></gray>
+    - <gray><italic>(( Hier siehst du, wie du</italic></gray>
+    - <gray><italic>(( Hier siehst du, wie du</italic></gray>
     - <gray><italic>disenchant enchantments ))</italic></gray>
     - ''
-    - <italic:false><yellow><bold>* </bold></yellow><yellow>Left-Click </yellow><dark_gray>» </dark_gray><white>Disenchant 1 Level</white>
-    - <italic:false><yellow><bold>* </bold></yellow><yellow>Right-Click </yellow><dark_gray>» </dark_gray><white>Disenchant 10 Levels</white>
-    - <italic:false><yellow><bold>* </bold></yellow><yellow>Middle-Click </yellow><dark_gray>» </dark_gray><white>Disenchant 100 Levels</white>
-    - <italic:false><yellow><bold>* </bold></yellow><yellow>Press Q </yellow><dark_gray>» </dark_gray><white>Disenchant MAX</white>
+    - <italic:false><yellow><bold>* </bold></yellow><yellow>Linksklick </yellow><dark_gray>» </dark_gray><white>1 Level zurück</white>
+    - <italic:false><yellow><bold>* </bold></yellow><yellow>Rechtsklick </yellow><dark_gray>» </dark_gray><white>10 Level zurück</white>
+    - <italic:false><yellow><bold>* </bold></yellow><yellow>Mittelklick </yellow><dark_gray>» </dark_gray><white>100 Level zurück</white>
+    - <italic:false><yellow><bold>* </bold></yellow><yellow>Q drücken </yellow><dark_gray>» </dark_gray><white>MAX zurückerstatten</white>
     - ' '
-    - <gray><italic>(( Click on the enchant to disenchant ))</italic></gray>
+    - <gray><italic>(( Klicke auf eine Verzauberung zum Rückerstatten ))</italic></gray>
   currency-enchants-items:
     tokens:
       enabled: true
       material: SUNFLOWER
       slot: 48
       custom_model_data: 0
-      name: <yellow><bold>Token Enchants</bold></yellow>
+      name: <yellow><bold>Token-Verzauberungen</bold></yellow>
       lore:
-      - <italic:false><gray>Click to view this category</gray>
+      - <italic:false><gray>Klicke, um diese Kategorie zu öffnen.</gray>
     gems:
       enabled: true
       material: EMERALD
       slot: 49
       custom_model_data: 0
-      name: <green><bold>Gem Enchants</bold></green>
+      name: <green><bold>Edelstein-Verzauberungen</bold></green>
       lore:
-      - <italic:false><gray>Click to view this category</gray>
+      - <italic:false><gray>Klicke, um diese Kategorie zu öffnen.</gray>
     money:
       enabled: true
       material: PAPER
       slot: 50
       custom_model_data: 100
-      name: <gold><bold>Money Enchants</bold></gold>
+      name: <gold><bold>Geld-Verzauberungen</bold></gold>
       lore:
-      - <italic:false><gray>Click to view this category</gray>
+      - <italic:false><gray>Klicke, um diese Kategorie zu öffnen.</gray>
 Pickaxe:
   level-format: NUMBER
   max-level-format: <gradient:#FFD700:#FFA500><bold>MAX</bold></gradient>
