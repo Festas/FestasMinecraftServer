@@ -1,0 +1,320 @@
+English:
+    GUI-Title: '&8&lProfile &5&l| &c&l{target_player}'
+    GUI-Size: 54
+    Allow-To-Return: true
+    Buttons-Label: false
+    Custom-Buttons:
+        'Return':
+            Name: '&b&lReturn to previous menu'
+            Item: BOOK
+            Lores:
+            - ''
+            - '&eClick to return to previous menu'
+            Commands:
+            - 'gmp gui back'
+            Location:
+                Slot-Of-X: 1
+                Slot-Of-Y: 1
+        'Close':
+            Name: '&4&lClose menu'
+            Item: RED_STAINED_GLASS_PANE
+            Lores:
+            - ''
+            - '&eClick to close menu'
+            Close-GUI: true
+            Location:
+                Slot-Of-X: 9
+                Slot-Of-Y: 1
+        'Black boards':
+            Name: '&f'
+            Item: BLACK_STAINED_GLASS_PANE
+            Location:
+                Slots: [2, 8, 10, 11, 12, 13, 15, 16, 17, 18, 19, 27, 28, 36, 37, 45, 47, 48, 49, 50, 51, 52, 53]
+        'White boards':
+            Name: '&f'
+            Item: WHITE_STAINED_GLASS_PANE
+            Location:
+                Slots: [20, 21, 22, 24, 25, 26, 29, 35, 38, 39, 43, 44]
+        'Green boards':
+            Name: '&f'
+            Item: LIME_STAINED_GLASS_PANE
+            Options:
+            - 'HIDE_ENCHANTS'
+            Enchantments:
+            - UNBREAKING:10
+            Location:
+                Slot-Of-X: 5
+                Slot-Of-Y: 2
+        'Refresh':
+            Name: '&aRefresh profile'
+            Item: CHEST_MINECART
+            Lores:
+            - '&8&l▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬'
+            - '  &c&lDescription: '
+            - '  &7Plugin saved some cached data,'
+            - '  &7for management & efficient operations.'
+            - '  &7Examples as follows but not limited to:'
+            - '  &6Player Head&7, &6Groups&7, &6Player Name&7, etc.'
+            - '&8&l▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬'
+            - ''
+            - '&eClick to refresh'
+            Close-GUI: true
+            Commands:
+            - 'gmp profile refresh {target_player}'
+            Location:
+                Slot-Of-X: 5
+                Slot-Of-Y: 3
+        'Set Store Description':
+            Name: '&dSet store''s description'
+            Item: WRITABLE_BOOK
+            Lores:
+            - '&8&l▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬'
+            - '  &c&lNotice: '
+            - '  &7Only specific groups can use!'
+            - ''
+            - '  &f&l▶ &6Now description:'
+            - '  &c· &7!description!'
+            - '&8&l▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬'
+            - ''
+            - '&eClick to set'
+            Messages:
+            - '{prefix}%gmp_gui_profile_storedescription%'
+            Close-GUI: true
+            Location:
+                Slot-Of-X: 3
+                Slot-Of-Y: 4
+        'Set Store Name':
+            Name: '&dSet store''s name'
+            Item: NAME_TAG
+            Lores:
+            - '&8&l▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬'
+            - '  &c&lNotice: '
+            - '  &7Only specific groups can use!'
+            - ''
+            - '  &f&l▶ &6Name: {target_storeName}'
+            - '&8&l▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬'
+            - ''
+            - '&eClick to set'
+            Messages:
+            - '{prefix}%gmp_gui_profile_storename%'
+            Close-GUI: true
+            Location:
+                Slot-Of-X: 4
+                Slot-Of-Y: 4
+        'Hide Merchandises':
+            Name: '&3Hide merchandises'
+            Item: PAINTING
+            Lores:
+            - '&8&l▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬'
+            - '  &c&lDescription: '
+            - '  &7Whether to hide merchandises.'
+            - '  &7Unless in the personal store.'
+            - '  &c&lNotice: '
+            - '  &7Only specific groups can use!'
+            - ''
+            - '  &f&l▶ &6Status: {hiddingMerchandises}'
+            - '&8&l▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬'
+            - ''
+            - '&eClick to switch'
+            Commands:
+            - 'gmp profile set hideMerchandises switch'
+            Refresh-GUI: true
+            Location:
+                Slot-Of-X: 5
+                Slot-Of-Y: 4
+        'Hide Merchant Name':
+            Name: '&3Hide merchant''s name'
+            Item: ITEM_FRAME
+            Lores:
+            - '&8&l▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬'
+            - '  &c&lDescription: '
+            - '  &7Whether to hide the merchant''s name.'
+            - '  &7Unless in the personal store.'
+            - '  &c&lNotice: '
+            - '  &7Only specific groups can use!'
+            - ''
+            - '  &f&l▶ &6Status: {hiddingName}'
+            - '&8&l▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬'
+            - ''
+            - '&eClick to switch'
+            Commands:
+            - 'gmp profile set hidemerchantname switch'
+            Refresh-GUI: true
+            Location:
+                Slot-Of-X: 6
+                Slot-Of-Y: 4
+        'Close Store':
+            Name: '&3Store Closed'
+            Item: CLOCK
+            Lores:
+            - '&8&l▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬'
+            - '  &c&lNotice: '
+            - '  &7Only specific groups can use!'
+            - ''
+            - '  &f&l▶ &6Status: {storeClosed}'
+            - '&8&l▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬'
+            - ''
+            - '&eClick to switch'
+            Commands:
+            - 'gmp profile set storeclosed switch'
+            Refresh-GUI: true
+            Location:
+                Slot-Of-X: 7
+                Slot-Of-Y: 4
+        'Merchandise Sort':
+            Name: '&dSet sort method of merchandises'
+            Item: JUKEBOX
+            Lores:
+            - '&8&l▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬'
+            - '  &c&lNotice: '
+            - '  &7Only specific groups can use!'
+            - ''
+            - '  &f&l▶ &6Selected: &b{target_merchandiseSort}'
+            - '  &c· &7{target_merchandiseSortDescription}'
+            - '&8&l▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬'
+            - ''
+            - '&eClick to set'
+            Commands:
+            - 'gmp profile set merchandiseSort list'
+            Close-GUI: true
+            Location:
+                Slot-Of-X: 4
+                Slot-Of-Y: 5
+        'Mail Sort':
+            Name: '&dSet sort method of mails'
+            Item: END_PORTAL_FRAME
+            Lores:
+            - '&8&l▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬'
+            - '  &c&lNotice: '
+            - '  &7Only specific groups can use!'
+            - ''
+            - '  &f&l▶ &6Selected: &b{target_itemMailSort}'
+            - '  &c· &7{target_itemMailSortDescription}'
+            - '&8&l▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬'
+            - ''
+            - '&eClick to set'
+            Commands:
+            - 'gmp profile set itemMailSort list'
+            Close-GUI: true
+            Location:
+                Slot-Of-X: 5
+                Slot-Of-Y: 5
+        'Locked Mailbox':
+            Name: '&3Locked nailbox'
+            Item: TRIPWIRE_HOOK
+            Lores:
+            - '&8&l▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬'
+            - '  &c&lNotice: '
+            - '  &7Only specific groups can use!'
+            - ''
+            - '  &f&l▶ &6Status: {mailboxLocked}'
+            - '&8&l▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬'
+            - ''
+            - '&eClick to switch'
+            Commands:
+            - 'gmp profile set mailboxLocked switch'
+            Refresh-GUI: true
+            Location:
+                Slot-Of-X: 6
+                Slot-Of-Y: 5
+        'Mailbox':
+            Name: '&d&lMailbox'
+            Item: CHEST
+            Lores:
+            - ''
+            - '&eClick to open'
+            Commands:
+            - 'gmp mailbox gui {player}'
+            Location:
+                Slot-Of-X: 3
+                Slot-Of-Y: 1
+        'Store':
+            Name: '&3&lStore'
+            Item: ENDER_CHEST
+            Lores:
+            - ''
+            - '&eClick to open the personal store'
+            Commands:
+            - 'gmp store view {player}'
+            Location:
+                Slot-Of-X: 4
+                Slot-Of-Y: 1
+        'Profile':
+            Name: '&cProfile'
+            Item: PLAYER_HEAD
+            Options:
+            - 'HIDE_ENCHANTS'
+            Enchantments:
+            - UNBREAKING:10
+            Head-Owner: '{player}'
+            Lores:
+            - '&8&l▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬'
+            - '  &f&l▶ &6Merchant: &d{player}'
+            - '  &f&l▶ &6Group: &c{group}'
+            - '  &f&l▶ &6Category: &3{category}'
+            - '  &f&l▶ &6Balance: &e${displayBalance}'
+            - '  &f&l▶ &6Mails: &a{mails}'
+            - '  &f&l▶ &6Merchandises: &5{merchandises}'
+            - '  &f&l▶ &6Transactions: &9{statistics_totalTransactionsNumber}'
+            - '  &f&l▶ &6Actions: &b{statistics_totalAuctionNumber}'
+            - '&8&l▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬'
+            - ''
+            - '&aIs already the current page'
+            Location:
+                Slot-Of-X: 5
+                Slot-Of-Y: 1
+        'Category':
+            Name: '&5&lCategory'
+            Item: ENCHANTING_TABLE
+            Lores:
+            - '&8&l▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬'
+            - '  &c&lDescription: '
+            - '  &7Categories can be used to '
+            - '  &7filtered merchandises, mail, etc.'
+            - '  &c&lNotice: '
+            - '  &7Only specific groups can use!'
+            - ''
+            - '  &f&l▶ &6Category: {category}'
+            - '&8&l▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬'
+            - ''
+            - '&eClick to open settings GUI'
+            Commands:
+            - 'gmp category gui {player}'
+            Location:
+                Slot-Of-X: 6
+                Slot-Of-Y: 1
+        'All Stores':
+            Name: '&9&lAll Stores'
+            Item: COMPASS
+            Lores:
+            - ''
+            - '&eClick to view all stores'
+            Commands:
+            - 'gmp store list 1 GUI'
+            Location:
+                Slot-Of-X: 7
+                Slot-Of-Y: 1
+        'Description':
+            Name: '&e&lDescription'
+            Item: MAP
+            Lores:
+            - '&8&l▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬'
+            - '  &7Here is the profile GUI of yourself or others'
+            - '  &7You can view profile information here'
+            - '  &7as well as changing your own profile settings.'
+            - '&8&l▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬'
+            Location:
+                Slot-Of-X: 1
+                Slot-Of-Y: 6 
+        'Open Market':
+            Name: '&c&lOpen Global Market'
+            Item: PLAYER_HEAD
+            Head-Textures: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDdjYzY2ODc0MjNkMDU3MGQ1NTZhYzUzZTA2NzZjYjU2M2JiZGQ5NzE3Y2Q4MjY5YmRlYmVkNmY2ZDRlN2JmOCJ9fX0='
+            Lores:
+            - ''
+            - '&eClick to open'
+            Commands:
+            - 'gmp market gui'
+            Location:
+                Slot-Of-X: 9
+                Slot-Of-Y: 6
