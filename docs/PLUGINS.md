@@ -270,7 +270,9 @@ Vollständige Übersicht aller verwendeten Plugins pro Server.
 
 #### BlueMap
 - **Funktion:** 3D-Web-Karte (Live-Rendering, Marker)
-- **Web-UI:** `http://<server-ip>:8100`
+- **Web-UI Survival:** `http://<server-ip>:8100`
+- **Web-UI Mining (RPG-Slot):** `http://<server-ip>:8101`
+- **Öffentlich:** `https://mc-maps.festas-builds.com` (Nginx Reverse-Proxy, siehe unten)
 
 ### Core, Management & Bibliotheken
 
