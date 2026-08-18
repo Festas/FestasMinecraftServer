@@ -125,7 +125,7 @@ DailyRestart:
   PerformOn:
     '1':
       Hour: 4
-      Minute: 10
+      Minute: 5
       Second: 0
   Commands:
   - cmi broadcast &c&lDer Server startet in 5 Minuten neu!
