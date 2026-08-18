@@ -176,7 +176,7 @@ enchant_menu:
   prestige_info_lore:
   - <italic:false><yellow>✦ Prestige</yellow>
   - ' <italic:false><yellow>▎</yellow> <white>Level: </white><yellow>%prestige% / %prestige_max%</yellow>'
-  - ' <italic:false><yellow>▎</yellow> <white>Progress: </white><yellow>%prestige_progress% / %prestige_required%</yellow>'
+  - ' <italic:false><yellow>▎</yellow> <white>Fortschritt: </white><yellow>%prestige_progress% / %prestige_required%</yellow>'
   - ' <italic:false><yellow>▎</yellow> <white>Bonus: </white><yellow>+%prestige_multiplier%%</yellow>'
   prestige_ready_lore:
   - ' <italic:false><green>✔ Shift+Linksklick zum Prestigen!</green>'

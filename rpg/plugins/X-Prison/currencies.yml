@@ -22,7 +22,7 @@ messages:
 currencies:
   money:
     enabled: true
-    starting-amount: 0
+    starting-amount: 500
     max-amount: 1E48
     display-name: Geld
     format: '#,##0'
