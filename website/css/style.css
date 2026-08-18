@@ -121,13 +121,6 @@ img { max-width: 100%; display: block; }
 }
 .btn-secondary:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
 
-.btn-discord {
-    background: #5865f2;
-    color: #fff;
-    font-size: 0.85rem;
-}
-.btn-discord:hover { background: #4752c4; color: #fff; }
-
 /* ── Header / Nav ── */
 .site-header {
     position: sticky;
