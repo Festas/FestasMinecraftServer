@@ -1,0 +1,198 @@
+# Pfad: plugins/DeluxeMenus/gui_menus/help_menu.yml
+# Skyblock Help-Menü – geöffnet über /help
+menu_title: '&8» &b❓ Skyblock Hilfe'
+open_command: help_menu
+size: 45
+
+items:
+
+  # ==============================================================
+  # FILLER
+  # ==============================================================
+  'filler':
+    material: LIGHT_BLUE_STAINED_GLASS_PANE
+    slots:
+      - '0-8'
+      - '36-44'
+    display_name: '&f'
+    priority: 2
+
+  'filler2':
+    material: BLACK_STAINED_GLASS_PANE
+    slots:
+      - '9'
+      - '17'
+      - '18'
+      - '26'
+      - '27'
+      - '35'
+    display_name: '&f'
+    priority: 2
+
+  # ==============================================================
+  # HEADER
+  # ==============================================================
+  'header':
+    material: OAK_SAPLING
+    slot: 4
+    priority: 1
+    display_name: '&b&l❓ Skyblock Hilfe'
+    lore:
+      - '&7Willkommen auf dem Skyblock Server!'
+      - '&7Hier erfährst du alles über deine Insel.'
+
+  # ==============================================================
+  # INSEL STARTEN
+  # ==============================================================
+  'island_start':
+    material: GRASS_BLOCK
+    slot: 10
+    priority: 1
+    display_name: '&a&l🏝 Insel starten'
+    lore:
+      - '&7Erstelle deine eigene Insel'
+      - '&7und baue sie aus!'
+      - ''
+      - '&8» &fStarte mit einer &fkleinern Insel'
+      - '&8» &fBaue Farmen &7für Ressourcen'
+      - '&8» &fErweitere deine Insel &7mit Upgrades'
+      - '&8» &fInsel-Level &7durch gesammelte Blöcke'
+      - ''
+      - '&eBefehle:'
+      - '&e/is &8– &7Zur Insel teleportieren'
+      - '&e/is create &8– &7Neue Insel erstellen'
+      - '&e/is home &8– &7Zur eigenen Insel'
+
+  # ==============================================================
+  # KOOP / EINLADEN
+  # ==============================================================
+  'coop':
+    material: PLAYER_HEAD
+    slot: 12
+    priority: 1
+    display_name: '&d&l🤝 Koop & Freunde einladen'
+    lore:
+      - '&7Lade Freunde auf deine Insel ein'
+      - '&7und baut gemeinsam!'
+      - ''
+      - '&8» &fBis zu &f4 Spieler &7pro Insel'
+      - '&8» &fGemeinsam schneller leveln'
+      - '&8» &fRessourcen teilen'
+      - ''
+      - '&eBefehle:'
+      - '&e/is invite <Spieler> &8– &7Spieler einladen'
+      - '&e/is kick <Spieler> &8– &7Spieler entfernen'
+      - '&e/is team &8– &7Team anzeigen'
+
+  # ==============================================================
+  # MINIONS
+  # ==============================================================
+  'minions':
+    material: IRON_GOLEM_SPAWN_EGG
+    slot: 14
+    priority: 1
+    display_name: '&6&l🤖 Minions'
+    lore:
+      - '&7Minions arbeiten automatisch'
+      - '&7für dich auf deiner Insel!'
+      - ''
+      - '&8» &fFarm-Minions &7ernten automatisch'
+      - '&8» &fMiner-Minions &7bauen Blöcke ab'
+      - '&8» &fLager-Minions &7sammeln Items'
+      - '&8» &fUpgraden &7für mehr Geschwindigkeit'
+      - ''
+      - '&eBefehle:'
+      - '&e/minions &8– &7Deine Minions anzeigen'
+
+  # ==============================================================
+  # COLLECTIONS
+  # ==============================================================
+  'collections':
+    material: CHEST
+    slot: 16
+    priority: 1
+    display_name: '&e&l📦 Collections'
+    lore:
+      - '&7Sammle Items und schalte'
+      - '&7Belohnungen frei!'
+      - ''
+      - '&8» &fJedes Item hat eine Collection'
+      - '&8» &fMehr sammeln = &fhöhere Stufe'
+      - '&8» &fJede Stufe = &fneue Belohnung oder Rezept'
+      - ''
+      - '&7Collections sind der Kern des Fortschritts'
+      - '&7auf Skyblock!'
+
+  # ==============================================================
+  # ALLE BEFEHLE
+  # ==============================================================
+  'commands':
+    material: COMMAND_BLOCK
+    slot: 28
+    priority: 1
+    display_name: '&e&l⌨ Alle Befehle'
+    lore:
+      - '&7Die wichtigsten Befehle:'
+      - ''
+      - '&e/is &8– &7Zur Insel'
+      - '&e/is create &8– &7Insel erstellen'
+      - '&e/is home &8– &7Eigene Insel'
+      - '&e/is invite <Spieler> &8– &7Einladen'
+      - '&e/is team &8– &7Team anzeigen'
+      - '&e/minions &8– &7Minions verwalten'
+      - '&e/bal &8– &7Kontostand'
+      - '&e/friend &8– &7Freundesliste'
+      - '&e/lobby &8– &7Zurück zur Lobby'
+
+  # ==============================================================
+  # INSELLEVEL
+  # ==============================================================
+  'island_level':
+    material: EXPERIENCE_BOTTLE
+    slot: 30
+    priority: 1
+    display_name: '&a&l⬆ Insel-Level'
+    lore:
+      - '&7Dein Insel-Level zeigt den Fortschritt!'
+      - ''
+      - '&8» &fPlatziere Blöcke &7auf der Insel'
+      - '&8» &fMehr Blöcke = &fhöheres Level'
+      - '&8» &fHöheres Level = &fmehr Upgrades'
+      - ''
+      - '&eBefehle:'
+      - '&e/is level &8– &7Insel-Level anzeigen'
+      - '&e/is top &8– &7Top-Inseln anzeigen'
+
+  # ==============================================================
+  # SUPPORT
+  # ==============================================================
+  'support':
+    material: ENDER_EYE
+    slot: 32
+    priority: 1
+    display_name: '&c&l❓ Hilfe & Support'
+    lore:
+      - '&7Brauchst du Hilfe? So erreichst du uns:'
+      - ''
+      - '&8» &fDiscord: &7discord.gg/festasbuilds'
+      - '&8» &fIn-Game: &7/report <Spieler> <Grund>'
+      - ''
+      - '&7Erstelle ein Ticket auf Discord'
+      - '&7für schnelle Hilfe!'
+
+  # ==============================================================
+  # ZURÜCK ZUR LOBBY
+  # ==============================================================
+  'lobby':
+    material: ARROW
+    slot: 40
+    priority: 1
+    display_name: '&7&l← Zurück zur Lobby'
+    lore:
+      - '&7Verbinde dich zur Lobby'
+    left_click_commands:
+      - '[close]'
+      - '[player] /lobby'
+    right_click_commands:
+      - '[close]'
+      - '[player] /lobby'

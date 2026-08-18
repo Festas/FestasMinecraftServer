@@ -1,0 +1,200 @@
+# Pfad: plugins/DeluxeMenus/gui_menus/help_menu.yml
+# Survival Help-Menü – geöffnet über /help
+menu_title: '&8» &a❓ Survival Hilfe'
+open_command: help_menu
+size: 45
+
+items:
+
+  # ==============================================================
+  # FILLER
+  # ==============================================================
+  'filler':
+    material: GREEN_STAINED_GLASS_PANE
+    slots:
+      - '0-8'
+      - '36-44'
+    display_name: '&f'
+    priority: 2
+
+  'filler2':
+    material: BLACK_STAINED_GLASS_PANE
+    slots:
+      - '9'
+      - '17'
+      - '18'
+      - '26'
+      - '27'
+      - '35'
+    display_name: '&f'
+    priority: 2
+
+  # ==============================================================
+  # HEADER
+  # ==============================================================
+  'header':
+    material: GRASS_BLOCK
+    slot: 4
+    priority: 1
+    display_name: '&a&l❓ Survival Hilfe'
+    lore:
+      - '&7Willkommen auf dem Survival Server!'
+      - '&7Hier erfährst du alles, was du wissen musst.'
+
+  # ==============================================================
+  # JOBS
+  # ==============================================================
+  'jobs':
+    material: IRON_PICKAXE
+    slot: 10
+    priority: 1
+    display_name: '&6&l⚒ Jobs'
+    lore:
+      - '&7Mit Jobs verdienst du Geld,'
+      - '&7indem du spielst!'
+      - ''
+      - '&8» &fWähle bis zu &e2 Jobs &7gleichzeitig'
+      - '&8» &f13 Berufe: &7Miner, Farmer, Builder ...'
+      - '&8» &fDurchführen = Geld verdienen'
+      - ''
+      - '&eBefehle:'
+      - '&e/jobs &8– &7Alle Jobs anzeigen'
+      - '&e/jobs join <Job> &8– &7Job beitreten'
+      - '&e/jobs leave <Job> &8– &7Job verlassen'
+
+  # ==============================================================
+  # WIRTSCHAFT / SHOPS
+  # ==============================================================
+  'economy':
+    material: GOLD_INGOT
+    slot: 12
+    priority: 1
+    display_name: '&e&l💰 Wirtschaft & Shops'
+    lore:
+      - '&7Kaufe und verkaufe Items'
+      - '&7mit anderen Spielern!'
+      - ''
+      - '&8» &fShop &7– Kaufe Grundmaterialien'
+      - '&8» &fMarktplatz &7– Handel mit Spielern'
+      - '&8» &fChestShop &7– Eigne Läden bauen'
+      - ''
+      - '&eBefehle:'
+      - '&e/shop &8– &7Server-Shop öffnen'
+      - '&e/market &8– &7Spieler-Marktplatz'
+      - '&e/bal &8– &7Kontostand anzeigen'
+
+  # ==============================================================
+  # PLOTS / BAUEN
+  # ==============================================================
+  'plots':
+    material: OAK_LOG
+    slot: 14
+    priority: 1
+    display_name: '&2&l🏗 Plots & Bauen'
+    lore:
+      - '&7Sichere dir ein eigenes Grundstück'
+      - '&7und baue was du willst!'
+      - ''
+      - '&8» &fPlot &7– Sicheres Grundstück für dich'
+      - '&8» &fFreebuild &7– Bauen in der Welt'
+      - '&8» &fPlot teilen &7– Freunde einladen'
+      - ''
+      - '&eBefehle:'
+      - '&e/plot auto &8– &7Plot automatisch holen'
+      - '&e/plot home &8– &7Zum Plot teleportieren'
+      - '&e/plot add <Spieler> &8– &7Spieler einladen'
+
+  # ==============================================================
+  # RANKUP
+  # ==============================================================
+  'rankup':
+    material: EXPERIENCE_BOTTLE
+    slot: 16
+    priority: 1
+    display_name: '&b&l⬆ Ränge & Rankup'
+    lore:
+      - '&7Steige im Rang auf und'
+      - '&7schalte Vorteile frei!'
+      - ''
+      - '&8» &fVerdiene Geld &7durch Jobs'
+      - '&8» &fKaufe deinen Rang &7mit /rankup'
+      - '&8» &fHöhere Ränge &7= mehr Rechte'
+      - ''
+      - '&eBefehle:'
+      - '&e/rankup &8– &7Nächsten Rang kaufen'
+      - '&e/ranks &8– &7Alle Ränge anzeigen'
+
+  # ==============================================================
+  # ALLE BEFEHLE
+  # ==============================================================
+  'commands':
+    material: COMMAND_BLOCK
+    slot: 28
+    priority: 1
+    display_name: '&e&l⌨ Alle Befehle'
+    lore:
+      - '&7Die wichtigsten Befehle:'
+      - ''
+      - '&e/jobs &8– &7Jobs verwalten'
+      - '&e/shop &8– &7Server-Shop'
+      - '&e/market &8– &7Spieler-Marktplatz'
+      - '&e/plot auto &8– &7Plot holen'
+      - '&e/rankup &8– &7Rang aufsteigen'
+      - '&e/warp &8– &7Warps anzeigen'
+      - '&e/bal &8– &7Kontostand'
+      - '&e/friend &8– &7Freundesliste'
+      - '&e/party &8– &7Party verwalten'
+      - '&e/lobby &8– &7Zurück zur Lobby'
+
+  # ==============================================================
+  # WARPS
+  # ==============================================================
+  'warps':
+    material: ENDER_PEARL
+    slot: 30
+    priority: 1
+    display_name: '&5&l🌀 Warps'
+    lore:
+      - '&7Teleportiere dich zu wichtigen Orten!'
+      - ''
+      - '&eBefehle:'
+      - '&e/warpmenu &8– &7Warp-Menü öffnen'
+      - '&e/warp <Name> &8– &7Direkt zum Warp'
+    left_click_commands:
+      - '[openguimenu] warps'
+    right_click_commands:
+      - '[openguimenu] warps'
+
+  # ==============================================================
+  # SUPPORT
+  # ==============================================================
+  'support':
+    material: ENDER_EYE
+    slot: 32
+    priority: 1
+    display_name: '&c&l❓ Hilfe & Support'
+    lore:
+      - '&7Brauchst du Hilfe? So erreichst du uns:'
+      - ''
+      - '&8» &fDiscord: &7discord.gg/festasbuilds'
+      - '&8» &fIn-Game: &7/report <Spieler> <Grund>'
+      - ''
+      - '&7Erstelle ein Ticket auf Discord'
+      - '&7für schnelle Hilfe!'
+
+  # ==============================================================
+  # ZURÜCK ZUR LOBBY
+  # ==============================================================
+  'lobby':
+    material: ARROW
+    slot: 40
+    priority: 1
+    display_name: '&7&l← Zurück zur Lobby'
+    lore:
+      - '&7Verbinde dich zur Lobby'
+    left_click_commands:
+      - '[close]'
+      - '[player] /lobby'
+    right_click_commands:
+      - '[close]'
+      - '[player] /lobby'

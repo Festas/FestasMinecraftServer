@@ -23,7 +23,7 @@ command /rules:
 
 command /guide:
     description: Zeigt den Netzwerk-Guide
-    aliases: /info, /hilfe, /help2
+    aliases: /info, /help2
     trigger:
         execute player command "dm open network_guide"
 
