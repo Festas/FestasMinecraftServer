@@ -22,7 +22,8 @@ window.MC_CONFIG = {
     playersAPI: '/api/players.json',
     
     // External links
-    bluemapURL: 'https://mc-maps.festas-builds.com',
+    bluemapURL: 'https://survival.festas-builds.com',
+    bluemapMiningURL: 'https://mining.festas-builds.com',
     statsURL: 'https://mc-stats.festas-builds.com',
     githubURL: 'https://github.com/Festas/Minecraft-Server',
     

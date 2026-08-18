@@ -88,7 +88,8 @@ Edit `index.html`:
 
 Edit `js/config.template.js`:
 ```javascript
-bluemapURL: 'https://mc-maps.festas-builds.com',
+bluemapURL: 'https://survival.festas-builds.com',
+bluemapMiningURL: 'https://mining.festas-builds.com',
 ```
 
 ### Server status & online players
