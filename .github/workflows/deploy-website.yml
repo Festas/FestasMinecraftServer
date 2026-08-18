@@ -34,7 +34,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.GHCR_PAT }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
@@ -58,26 +58,19 @@ jobs:
       contents: read
 
     steps:
-      - name: Validate GHCR_PAT secret
-        run: |
-          if [ -z "${{ secrets.GHCR_PAT }}" ]; then
-            echo "::error::GHCR_PAT secret is missing."
-            exit 1
-          fi
-
       - name: Deploy to server
         uses: appleboy/ssh-action@v1.0.3
         env:
           IMAGE_SHA: ${{ needs.build-and-push.outputs.image_sha }}
           REGISTRY: ghcr.io
           IMAGE_NAME: festas/minecraft-server-web
-          GHCR_PAT: ${{ secrets.GHCR_PAT }}
+          GHCR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GHCR_ACTOR: ${{ github.actor }}
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          envs: IMAGE_SHA,REGISTRY,IMAGE_NAME,GHCR_PAT,GHCR_ACTOR
+          envs: IMAGE_SHA,REGISTRY,IMAGE_NAME,GHCR_TOKEN,GHCR_ACTOR
           script: |
             set -e
 
@@ -89,7 +82,7 @@ jobs:
             cd "$DEPLOY_DIR"
 
             # Login
-            echo "$GHCR_PAT" | docker login ghcr.io -u "$GHCR_ACTOR" --password-stdin
+            echo "$GHCR_TOKEN" | docker login ghcr.io -u "$GHCR_ACTOR" --password-stdin
 
             # Pull
             docker pull "${REGISTRY}/${IMAGE_NAME}:${IMAGE_SHA}"
