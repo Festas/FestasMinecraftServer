@@ -1,12 +1,44 @@
 {
-    "online": 0,
-    "max": 0,
-    "updated": 0,
+    "online": 8,
+    "max": 120,
+    "updated": 1723980000,
     "showNames": true,
     "servers": [
-        { "name": "lobby", "count": 0, "players": [] },
-        { "name": "survival", "count": 0, "players": [] },
-        { "name": "mining", "count": 0, "players": [] },
-        { "name": "skyblock", "count": 0, "players": [] }
+        {
+            "name": "lobby",
+            "online": true,
+            "count": 2,
+            "max": 40,
+            "uptimeSeconds": 93600,
+            "updated": 1723980000,
+            "players": ["Festas", "BuilderBen"]
+        },
+        {
+            "name": "survival",
+            "online": true,
+            "count": 4,
+            "max": 40,
+            "uptimeSeconds": 211200,
+            "updated": 1723980000,
+            "players": ["Alex", "Sam", "Robin", "Casey"]
+        },
+        {
+            "name": "mining",
+            "online": false,
+            "count": 0,
+            "max": 20,
+            "uptimeSeconds": 0,
+            "updated": 1723980000,
+            "players": []
+        },
+        {
+            "name": "skyblock",
+            "online": true,
+            "count": 2,
+            "max": 20,
+            "uptimeSeconds": 43200,
+            "updated": 1723980000,
+            "players": ["SkyKid", "IslandPro"]
+        }
     ]
 }

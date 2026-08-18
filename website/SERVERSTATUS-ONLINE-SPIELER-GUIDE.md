@@ -39,10 +39,15 @@ Minimales JSON-Format:
   "updated": 0,
   "showNames": true,
   "servers": [
-    { "name": "lobby", "count": 0, "players": [] },
-    { "name": "survival", "count": 0, "players": [] },
-    { "name": "mining", "count": 0, "players": [] },
-    { "name": "skyblock", "count": 0, "players": [] }
+    {
+      "name": "lobby",
+      "online": true,
+      "count": 0,
+      "max": 40,
+      "uptimeSeconds": 0,
+      "updated": 0,
+      "players": []
+    }
   ]
 }
 ```
@@ -50,6 +55,10 @@ Minimales JSON-Format:
 Feldregeln:
 
 - `updated`: Unix-Zeitstempel (Sekunden)
+- `servers[].online`: bevorzugt explizit setzen; fehlt der Wert, nutzt das Frontend eine defensive Heuristik (`count > 0`, Spielernamen oder `uptimeSeconds`)
+- `servers[].max`: optional, für Anzeige `count/max`
+- `servers[].uptimeSeconds`: optional, wird als lesbare Uptime (`1d 2h 3m`) angezeigt
+- `servers[].updated`: optionaler Zeitstempel pro Unterserver
 - `showNames: false` blendet Spielernamen aus und zeigt nur Zahlen
 - `online` kann gesetzt werden; wenn nicht vorhanden, summiert das Frontend die Server-Counts
 
@@ -66,12 +75,13 @@ Datei: `website/js/main.js`
 - `initServerStatus()`:
   - nutzt `statusAPI` + `serverAddress`
   - zeigt `Online`, `Offline` oder `Status unbekannt`
+  - nutzt bei Ausfall der Status-API einen Fallback über `players.json` (`Eingeschränkt`)
   - zeigt `x/y Spieler online` (bei bekanntem Max) oder `x Spieler online`
 - `initPlayerList()`:
   - lädt `playersAPI` alle 30s
-  - rendert je Unterserver Karten
+  - rendert je Unterserver Karten inkl. Onlinebadge, `count` (optional `/max`), Uptime und optionaler Spielernamenliste
   - zeigt bei Ausfall eine klare Nichtverfügbarkeits-Meldung
-  - markiert Daten als potenziell veraltet, wenn `updated` zu alt ist
+  - markiert Daten als potenziell veraltet, wenn `updated`/`servers[].updated` zu alt ist
 
 ## 5) Backend/Proxy-Writer (Empfehlung)
 
