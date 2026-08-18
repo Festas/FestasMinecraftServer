@@ -92,3 +92,19 @@ items:
     right_click_commands:
       - '[close]'
       - '[connect] skyblock'
+
+  # --- GUIDE LINK ---
+  'guide':
+    material: KNOWLEDGE_BOOK
+    slot: 22
+    priority: 1
+    display_name: '&a&l📖 Netzwerk Guide'
+    lore:
+      - '&7Alles über unsere Spielmodi'
+      - '&7und das Netzwerk.'
+      - ''
+      - '&e► Klicke zum Öffnen'
+    left_click_commands:
+      - '[openguimenu] network_guide'
+    right_click_commands:
+      - '[openguimenu] network_guide'

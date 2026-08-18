@@ -49,13 +49,16 @@ function updateNavigator(p: player):
     if world of {_p} is "{@lobby_world}":
         # Inventar leeren (nur Lobby-Items behalten)
         loop all items in {_p}'s inventory:
-            if loop-item is not compass:
+            if loop-item is not compass and loop-item is not book:
                 remove loop-item from {_p}'s inventory
-            else if name of loop-item does not contain "Navigator":
+            else if name of loop-item does not contain "Navigator" and name of loop-item does not contain "Guide":
                 remove loop-item from {_p}'s inventory
         # Navigator-Kompass in Slot 4 setzen
         if slot 4 of {_p}'s inventory is not compass:
             set slot 4 of {_p}'s inventory to compass named "&b&lNavigator &7(Rechtsklick)" with lore "&7Wähle deinen Server"
+        # Guide-Buch in Slot 8 setzen
+        if slot 8 of {_p}'s inventory is not book:
+            set slot 8 of {_p}'s inventory to book named "&a&l📖 Netzwerk Guide &7(Rechtsklick)" with lore "&7Lies alles über unser Netzwerk"
         # Spielmodus und Zustand setzen
         set {_p}'s gamemode to adventure
         set {_p}'s hunger to 20
@@ -66,8 +69,8 @@ function updateNavigator(p: player):
 
     else:
         loop all items in {_p}'s inventory:
-            if loop-item is compass:
-                if name of loop-item contains "Navigator":
+            if loop-item is compass or loop-item is book:
+                if name of loop-item contains "Navigator" or "Guide":
                     remove loop-item from {_p}'s inventory
 
 # --- EVENTS ---
@@ -86,18 +89,18 @@ on respawn:
 
 on death of player:
     loop drops:
-        if loop-value is compass:
-            if name of loop-value contains "Navigator":
+        if loop-value is compass or book:
+            if name of loop-value contains "Navigator" or "Guide":
                 remove loop-value from drops
 
 # --- 4. SCHUTZ & INTERAKTION ---
 
 on inventory click:
     if world of player is "{@lobby_world}":
-        if index of event-slot is 4:
+        if index of event-slot is 4 or 8:
             cancel event
-        if event-item is compass:
-            if name of event-item contains "Navigator":
+        if event-item is compass or event-item is book:
+            if name of event-item contains "Navigator" or "Guide":
                 cancel event
 
 on drop:
@@ -114,6 +117,10 @@ on click:
             if name of player's tool contains "Navigator":
                 cancel event
                 execute player command "navigator"
+        else if player's tool is book:
+            if name of player's tool contains "Guide":
+                cancel event
+                execute player command "guide"
 
 # --- 5. DOPPELSPRUNG (Double-Jump) ---
 
