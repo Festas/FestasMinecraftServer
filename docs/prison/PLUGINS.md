@@ -1,17 +1,17 @@
 # Mining-Server — Optimaler Plugin-Stack
 
 > **🟡 Geplant / Aufbau (Stand 26.2).** Empfohlener Plugin-Stack für den neuen **Mining**-Server (Abbau-Zonen
-> mit **aufwertbaren Spitzhacken**). Der Server **recycelt den `rpg`-Slot** — der Ordner
-> [`rpg/`](../../rpg/) enthält aktuell noch den **Alt-RPG-Stack**, der schrittweise durch die hier gelisteten
+> mit **aufwertbaren Spitzhacken**). Der Server **recycelt den `prison`-Slot** — der Ordner
+> [`prison/`](../../prison/) enthält aktuell noch den **Alt-Prison-Stack**, der schrittweise durch die hier gelisteten
 > Mining-Plugins ersetzt wird. Übergeordnete Referenz: [../PLUGINS.md](../PLUGINS.md) ·
 > Weichenstellung: [../NEW_SERVERS.md](../NEW_SERVERS.md).
 
 Die Spalte **Status** ordnet jedes Plugin für den Umbau ein:
 
 - ✅ **Kern** — für den Abbau-Loop erforderlich.
-- ♻️ **Recycelt** — bereits in [`rpg/plugins/`](../../rpg/plugins/) vorhanden und für Mining weiterverwendbar.
+- ♻️ **Recycelt** — bereits in [`prison/plugins/`](../../prison/plugins/) vorhanden und für Mining weiterverwendbar.
 - 🔶 **Auswählen/Prüfen** — Plugin bzw. 26.2-Build muss noch festgelegt/verifiziert werden (**Blocker**).
-- 🧹 **Entfernen** — gehört zum Alt-RPG-Spielmodus und wird beim Umbau abgebaut.
+- 🧹 **Entfernen** — gehört zum Alt-Prison-Spielmodus und wird beim Umbau abgebaut.
 
 > ⚠️ **26.2-Blocker-Check:** Für **jedes** Plugin muss ein aktueller **26.2**-Build bestätigt sein.
 > Der **Mining-Kern** (Spitzhacken-Upgrades + Mehrblock-Abbau + Auto-Regeneration) ist der kritischste Punkt —
@@ -93,7 +93,7 @@ Plugin ab. Das minimiert Schnittstellen und Wartung — ideal für den Solo-Betr
 | Plugin | Zweck | Status |
 |--------|-------|:------:|
 | **BattlePass** (premium) *oder* **Skript**-basierter Pass | Missionen, Tier-Belohnungen, Cosmetic-Unlocks — Langzeit-Bindung | 🔶 26.2 prüfen |
-| **PlayerParticles** *(recyceln statt entfernen)* | Trails/Partikel-Cosmetics — kostenlos, bereits im `rpg/`-Bestand | ♻️ Recycelt |
+| **PlayerParticles** *(recyceln statt entfernen)* | Trails/Partikel-Cosmetics — kostenlos, bereits im `prison/`-Bestand | ♻️ Recycelt |
 | **Ränge / Prestige** | Progression nach den Zonen: **LuckPerms + Skript** (bereits im Stack) — oder direkt aus dem Core (Weg 1A) | 🔶 Prüfen |
 
 ---
@@ -113,7 +113,7 @@ Plugin ab. Das minimiert Schnittstellen und Wartung — ideal für den Solo-Betr
 | Plugin | Zweck | Status |
 |--------|-------|:------:|
 | **CMI** (+ **CMILib**) | Core-Management (Spawn, Teleport, Chat, Hologramme) | ♻️ Recycelt |
-| **LuckPerms** | Permissions/Ränge (Kontext `server=rpg` bleibt erhalten) | ♻️ Recycelt |
+| **LuckPerms** | Permissions/Ränge (Kontext `server=prison` bleibt erhalten) | ♻️ Recycelt |
 | **PlaceholderAPI** | Platzhalter (fast alle Plugins) | ♻️ Recycelt |
 | **ProtocolLib** | Packet-Basis (Backend) | ♻️ Recycelt |
 | **CommandAPI** | Command-Bibliothek (Backend) | ♻️ Recycelt |
@@ -143,20 +143,20 @@ Plugin ab. Das minimiert Schnittstellen und Wartung — ideal für den Solo-Betr
 
 ---
 
-## 9. Beim Umbau zu entfernen (Alt-RPG-Spielmodus)
+## 9. Beim Umbau zu entfernen (Alt-Prison-Spielmodus)
 
-Diese Plugins gehören zum eingestellten RPG-Spielmodus und werden beim Umbau des `rpg/`-Slots **abgebaut**
-(vorher Spielerdaten sichern, siehe [../NEW_SERVERS.md → Abschnitt 5](../NEW_SERVERS.md#5-rückbau-des-rpg-spielmodus-slot-recycling)):
+Diese Plugins gehören zum eingestellten Prison-Spielmodus und werden beim Umbau des `prison/`-Slots **abgebaut**
+(vorher Spielerdaten sichern, siehe [../NEW_SERVERS.md → Abschnitt 5](../NEW_SERVERS.md#5-rückbau-des-prison-spielmodus-slot-recycling)):
 
 | Plugin | Alt-Funktion | Status |
 |--------|--------------|:------:|
-| **MythicMobs**, **MythicDungeons**, **MythicRPG**, **MythicAchievements**, **MythicHUD** | RPG-Mobs/Dungeons/Scaling | 🧹 Entfernen |
+| **MythicMobs**, **MythicDungeons**, **MythicPrison**, **MythicAchievements**, **MythicHUD** | Prison-Mobs/Dungeons/Scaling | 🧹 Entfernen |
 | **MMOCore**, **MMOItems**, **MythicLib** | Klassen/Custom-Items | 🧹 Entfernen |
 | **BetonQuest**, **Citizens** | Quests & NPCs | 🧹 Entfernen |
 | **ModelEngine**, **LibsDisguises**, **DecentHolograms** | 3D-Models/Verkleidungen/Hologramme (Hologramme via CMI) | 🧹 Entfernen |
 | **PlayerParticles** | Partikel/Trails — **behalten** und für Mining-Cosmetics recyceln (siehe Abschnitt 4) | ♻️ Recycelt |
-| **Aurora**, **AuroraCollections** | RPG-Collections/Achievements | 🧹 Entfernen |
-| **DeluxeBazaar**, **GlobalMarketPlus**, **PlayerPoints** | RPG-Handel/Punkte | 🧹 Entfernen |
+| **Aurora**, **AuroraCollections** | Prison-Collections/Achievements | 🧹 Entfernen |
+| **DeluxeBazaar**, **GlobalMarketPlus**, **PlayerPoints** | Prison-Handel/Punkte | 🧹 Entfernen |
 | **RoseLoot**, **RoseStacker**, **RoseGarden** | Loot/Stacking/Lib (nur behalten, falls vom Mining-Kern gebraucht) | 🔶 Prüfen |
 | **ExecutableItems**, **SCore**, **NBTAPI** | Item-Actions/Libs (nur bei Bedarf behalten) | 🔶 Prüfen |
 | **BlueMap**, **AxiomPaper** | Web-Karte/Advanced-Building (optional für Zonen-Bau) | 🔶 Prüfen |
@@ -190,4 +190,4 @@ Diese Plugins gehören zum eingestellten RPG-Spielmodus und werden beim Umbau de
 
 **Letzte Aktualisierung:** 2026-08-16
 
-**Status:** 🟡 Geplant / Aufbau — recycelt den `rpg`-Slot
+**Status:** 🟡 Geplant / Aufbau — recycelt den `prison`-Slot

@@ -10,10 +10,8 @@
 2. [Server-Details](#2-server-details)
    - [Lobby](#21-lobby)
    - [Survival / Tycoon](#22-survival--tycoon)
-   - [Mining — Neu](#23-mining--neu)
+   - [Prison — Neu](#23-mining--neu)
    - [Skyblock — Umbau](#24-skyblock--umbau-ohne-gilden-freunde-koop)
-   - [RPG (MMO) — Archiv](#25-rpg-mmo--archiv-wird-eingestellt)
-3. [Klassen-System — Archiv](#3-klassen-system--archiv-mmo)
 4. [Item-System](#4-item-system)
 5. [Economy-System](#5-economy-system)
 6. [Technische Infrastruktur](#6-technische-infrastruktur)
@@ -31,7 +29,7 @@
 **Sprache:** Deutsch (primär)  
 **Status:** Umstellung auf 26.2 — Fokus auf Lobby & Survival
 
-> **⚠️ Umbruch:** Aktiv weiterentwickelt werden **Lobby** und **Survival** (Plugins frisch aufgeräumt). Dazu ein **überarbeiteter Skyblock** (ohne Gilden, mit Freunde-Koop) und ein neuer **Mining**-Server (Abbau-Zonen mit aufwertbaren Spitzhacken) — Weichenstellung, Bewertung und Plugin-Shortlist in [NEW_SERVERS.md](NEW_SERVERS.md). Der **RPG**-Abschnitt in diesem Dokument gilt als **Archiv/Referenz**; er wird zeitnah eingestellt.
+> **⚠️ Umbruch:** Aktiv weiterentwickelt werden **Lobby** und **Survival** (Plugins frisch aufgeräumt). Dazu ein **überarbeiteter Skyblock** (ohne Gilden, mit Freunde-Koop) und ein neuer **Prison**-Server (Abbau-Zonen mit aufwertbaren Spitzhacken) — Weichenstellung, Bewertung und Plugin-Shortlist in [NEW_SERVERS.md](NEW_SERVERS.md). 
 
 ### Netzwerk-Architektur
 
@@ -44,13 +42,12 @@ Velocity Proxy  (mc.festas-builds.com)
     ├──► Lobby          Haupt-Hub, Server-Navigation           [AKTIV]
     ├──► Survival       Standard Survival + Tycoon-Gamemode     [AKTIV]
     ├──► Skyblock       Koop-Skyblock, ohne Gilden              [NEU → Umbau]
-    ├──► Mining         Abbau-Zonen, aufwertbare Spitzhacken    [NEU → Aufbau]
-    └──► RPG            Vollständiger MMO-RPG Open-World-Server  [ARCHIV → Abbau]
+    ├──► Prison         Abbau-Zonen, aufwertbare Spitzhacken    [NEU → Aufbau]
 
-    Skyblock (überarbeitet) & Mining sind die neuen Server; RPG wird eingestellt (Konzept: NEW_SERVERS.md)
+    Skyblock (überarbeitet) & Prison sind die neuen Server;  (Konzept: NEW_SERVERS.md)
 ```
 
-Der aktive Fokus liegt auf dem **Survival/Tycoon**-Erlebnis und der **Lobby** als Hub. Hinzu kommen ein **überarbeiteter Skyblock** (Koop, ohne Gilden) und ein neuer **Mining**-Server. Der auslaufende **RPG**-Server kombinierte Konzepte aus **Hypixel Skyblock** (Progression, Minions, Collections) und **Wynncraft** (Klassen, Quests, Story) — diese Inhalte werden mit der Abschaltung abgelöst; ausgewählte Bausteine leben in den neuen Servern weiter.
+Der aktive Fokus liegt auf dem **Survival/Tycoon**-Erlebnis und der **Lobby** als Hub. Hinzu kommen ein **überarbeiteter Skyblock** (Koop, ohne Gilden) und ein neuer **Prison**-Server. Der auslaufende **RPG**-Server kombinierte Konzepte aus **Hypixel Skyblock** (Progression, Minions, Collections) und **Wynncraft** (Klassen, Quests, Story) — diese Inhalte werden mit der Abschaltung abgelöst; ausgewählte Bausteine leben in den neuen Servern weiter.
 
 ---
 
@@ -72,7 +69,7 @@ Der aktive Fokus liegt auf dem **Survival/Tycoon**-Erlebnis und der **Lobby** al
 - **AFK-System**: Auto-Kick nach 15 Minuten Inaktivität
 - **Hologramme** für Spielerzahlen und Server-Info (via CMI)
 
-> **Hinweis:** Bei der 26.2-Aufräumaktion wurden FancyNpcs und DecentHolograms entfernt; die Navigation läuft jetzt rein über DeluxeMenus + Skript, Hologramme über CMI. Der `server_selector` verweist auf **Survival**, **Skyblock** und **Mining** — die Mining-Karte nutzt den **recycelten `rpg`-Slot** (`[connect] rpg`).
+> **Hinweis:** Bei der 26.2-Aufräumaktion wurden FancyNpcs und DecentHolograms entfernt; die Navigation läuft jetzt rein über DeluxeMenus + Skript, Hologramme über CMI. Der `server_selector` verweist auf **Survival**, **Skyblock** und **Prison** — die Prison-Karte nutzt den **recycelten `prison`-Slot** (`[connect] prison`).
 
 #### Besonderheiten
 - Keine Gameplay-Elemente — reine Navigation
@@ -178,10 +175,10 @@ Nach Rang 25 kann man prestigen — alles wird zurückgesetzt, aber ein permanen
 
 ---
 
-### 2.3 Mining — *Neu*
+### 2.3 Prison — *Neu*
 
-> **🟡 Neu / Aufbauphase.** Einer der zwei neuen Server; **recycelt den `rpg`-Slot** (Ordner `rpg/`,
-> Server-Name `rpg`). Konzept: [mining/README.md](mining/README.md) · [NEW_SERVERS.md](NEW_SERVERS.md).
+> **🟡 Neu / Aufbauphase.** Einer der zwei neuen Server; **recycelt den `prison`-Slot** (Ordner `prison/`,
+> Server-Name `prison`). Konzept: [prison/README.md](prison/README.md) · [NEW_SERVERS.md](NEW_SERVERS.md).
 
 **Funktion:** Casual-Server mit **Abbau-Zonen** und aufwertbaren Spitzhacken
 **Version:** Paper 26.2 (geplant)
@@ -244,7 +241,7 @@ Minions nutzen ein Health-System und müssen gepflegt werden. Verknüpfte Kisten
 | Kategorie | Beschreibung |
 |-----------|-------------|
 | **Farming** (16 Collections) | Pflanzen, Ernte-Items |
-| **Mining** (8 Collections) | Erze, Steinarten |
+| **Prison** (8 Collections) | Erze, Steinarten |
 | **Combat** (8 Collections) | Mob-Drops |
 | **Foraging** (8 Collections) | Holzarten, Blätter |
 | **Fishing** (4 Collections) | Fische, Meeresitems |
@@ -555,7 +552,7 @@ Zwischen RPG ↔ Skyblock werden synchronisiert:
 
 > Dieser Abschnitt enthält einen fertigen Prompt, den du einem AI Agenten (z.B. GPT-4, Claude, Gemini, Cursor AI o.ä.) übergeben kannst, um eine vollständige Website für das MinecraftMMO Netzwerk zu erstellen oder eine bestehende Website zu überarbeiten.
 
-> **⚠️ Hinweis (26.2-Umstellung):** Der folgende Prompt beschreibt noch ein **älteres Server-Setup**. Aktueller Stand: Fokus auf **Lobby & Survival**, dazu ein **überarbeiteter Skyblock** (ohne Gilden, mit Freunde-Koop) und ein neuer **Mining**-Server (Abbau-Zonen); der **RPG**-Server wird eingestellt. Der Prompt sollte vor Verwendung entsprechend angepasst werden (Server-Karten, Klassen-/MMO-Sektionen, Version **26.2**).
+> **⚠️ Hinweis (26.2-Umstellung):** Der folgende Prompt beschreibt noch ein **älteres Server-Setup**. Aktueller Stand: Fokus auf **Lobby & Survival**, dazu ein **überarbeiteter Skyblock** (ohne Gilden, mit Freunde-Koop) und ein neuer **Prison**-Server (Abbau-Zonen). Der Prompt sollte vor Verwendung entsprechend angepasst werden (Server-Karten, Klassen-/MMO-Sektionen, Version **26.2**).
 
 ---
 
@@ -612,7 +609,7 @@ Hypixel-inspirierter Skyblock mit vollständiger MMO-Klassen-Integration.
 - Persönliche und Coop-Islands (SuperiorSkyblock2)
 - 8 Minion-Typen: Miner, Farmer, Fisher, Lumberjack, Slayer, Collector, Feeder, Seller
 - 6 MMO-Klassen spielbar (identisch mit RPG, Daten synchronisiert)
-- 5 Collection-Kategorien: Farming (16), Mining (8), Combat (8), Foraging (8), Fishing (4)
+- 5 Collection-Kategorien: Farming (16), Prison (8), Combat (8), Foraging (8), Fishing (4)
 - Prestige-System (10 Stufen mit Titeln und passiven Buffs)
 - Pet-System (6 Typen, leveln durch Mob-Kills)
 - Bazaar-System (Instant-Buy/Sell wie Hypixel)
@@ -743,7 +740,7 @@ Vollständiger Wynncraft-inspirierter MMO-RPG Server mit Open World.
 
 ### Hero-Section
 - Großes Banner mit Server-Name und Tagline
-- Tagline-Vorschläge: "Erlebe ein einzigartiges Minecraft-Netzwerk auf Version 26.2" oder "Mining trifft Skyblock — Abbau & Koop"
+- Tagline-Vorschläge: "Erlebe ein einzigartiges Minecraft-Netzwerk auf Version 26.2" oder "Prison trifft Skyblock — Abbau & Koop"
 - Server-IP prominent mit Kopier-Button
 - Minecraft-Version Badge, Bedrock-Badge
 - "Jetzt spielen"-Button (klickt und zeigt IP zum Kopieren)
@@ -754,7 +751,7 @@ Vier Karten für die 4 Server:
 - Lobby (Icon: Kompass)
 - Survival/Tycoon (Icon: Generator oder Diamant)
 - Skyblock (Icon: Grassblock auf Wolke)
-- Mining (Icon: Spitzhacke)
+- Prison (Icon: Spitzhacke)
 Jede Karte: kurze Beschreibung, wichtigste Features als Liste, kleines "Mehr erfahren"-Link
 
 ### Features / Highlights Section

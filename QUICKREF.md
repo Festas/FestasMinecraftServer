@@ -16,7 +16,7 @@ MinecraftMMO/
 │   └── plugins/        # Survival-Plugins (NextGens, Jobs, Rankup, PlotSquared, etc.)
 ├── skyblock/           # Skyblock Server Konfigurationen      (UMBAU — ohne Gilden, Freunde-Koop)
 │   └── plugins/        # Skyblock-Plugins (SuperiorSkyblock2, JetsMinions, etc.)
-├── rpg/                # Mining Server Konfigurationen       (RECYCELT aus RPG — Aufbau)
+├── prison/                # Mining Server Konfigurationen       (RECYCELT aus RPG — Aufbau)
 │   └── plugins/        # Mining-/Zonen-Kern, WorldGuard, Shop/Auto-Sell, etc. (+ Alt-RPG-Archiv)
 └── docs/               # Dokumentation
 ```
@@ -34,21 +34,21 @@ MinecraftMMO/
 ### 1. Neues Item erstellen *(Archiv — MMO)*
 
 ```bash
-cd rpg/plugins/MMOItems/
+cd prison/plugins/MMOItems/
 # Bearbeite oder erstelle eine Item-Konfigurationsdatei
 ```
 
 ### 2. Neuen Mob erstellen
 
 ```bash
-cd rpg/plugins/MythicMobs/Mobs/
+cd prison/plugins/MythicMobs/Mobs/
 # Bearbeite oder erstelle eine Mob-Konfigurationsdatei
 ```
 
 ### 3. Neue Quest erstellen
 
 ```bash
-cd rpg/plugins/BetonQuest/
+cd prison/plugins/BetonQuest/
 # Bearbeite oder erstelle eine Quest-Konfigurationsdatei
 ```
 
@@ -224,12 +224,12 @@ Display: '&6Text'
 ```bash
 # Komplettes Backup erstellen (aktive Server + Proxy)
 tar -czf mmo-backup-$(date +%Y%m%d).tar.gz \
-  lobby/ survival/ skyblock/ rpg/ proxy/
+  lobby/ survival/ skyblock/ prison/ proxy/
 
-# Hinweis: rpg/ ist der recycelte Slot des alten RPG-Servers (wird zum Mining-Server) und enthält
-# noch Alt-RPG-Configs; vor dem Content-Umbau ein separates Archiv-Backup des rpg/-Ordners ziehen:
+# Hinweis: prison/ ist der recycelte Slot des alten RPG-Servers (wird zum Prison-Server) und enthält
+# noch Alt-RPG-Configs; vor dem Content-Umbau ein separates Archiv-Backup des prison/-Ordners ziehen:
 tar -czf mmo-archive-$(date +%Y%m%d).tar.gz \
-  rpg/
+  prison/
 ```
 
 ## Repository-Befehle

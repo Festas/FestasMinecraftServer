@@ -15,9 +15,9 @@ einfach, schnell verständlich und Bedrock-freundlich.
 | Eigenschaft | Wert |
 |-------------|------|
 | **Slot** | Casual |
-| **Server-Name (Velocity/Proxy)** | `rpg` *(recycelt — der alte RPG-Slot wird wiederverwendet)* |
+| **Server-Name (Velocity/Proxy)** | `prison` *(recycelt — der alte Prison-Slot wird wiederverwendet)* |
 | **Version** | Paper 26.2 (geplant) |
-| **Ordner** | [`rpg/`](../../rpg/) *(recycelt aus dem alten RPG-Server)* |
+| **Ordner** | [`prison/`](../../prison/) *(recycelt aus dem alten Prison-Server)* |
 | **Economy** | Server-isoliert; optionale netzwerkweite Cosmetic-Währung |
 | **Datenbank** | Eigenes MariaDB-Schema (isoliert) |
 | **Bedrock-Support** | Ja (Geyser/Floodgate) — GUIs müssen Bedrock-tauglich sein |
