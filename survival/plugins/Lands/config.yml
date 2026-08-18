@@ -1,0 +1,144 @@
+# =============================================================
+# LANDS — Land Claim Plugin
+# Konfiguration für Festas Builds · Survival-Server
+# Spigot: https://www.spigotmc.org/resources/53313/
+# Wiki:   https://docs.angeschossen.de/lands/
+# =============================================================
+
+Settings:
+  # Sprache der Plugin-Nachrichten.
+  # Die Sprachdatei wird beim ersten Start unter plugins/Lands/lang/ generiert.
+  # Für Festas Builds wird Deutsch verwendet (de_DE).
+  Language: de_DE
+
+  # Datenbank-Speicher
+  Storage:
+    Database:
+      # Typ: sqlite (empfohlen für kleine bis mittlere Server)
+      # Für MySQL: type: mysql + Host/Port/User/Password/Database angeben
+      Type: sqlite
+      # MySQL-Optionen (nur relevant wenn Type: mysql)
+      # Host: localhost
+      # Port: 3306
+      # User: root
+      # Password: ""
+      # Database: lands
+
+  Misc:
+    # Debug-Ausgaben in der Konsole (nur für Fehlersuche aktivieren)
+    Debug: false
+
+# =============================================================
+# WELTEN
+# Lands ist nur in den hier genannten Welten aktiv.
+# Die Survival-Hauptwelt und town sind aktiviert.
+# =============================================================
+Worlds:
+  # Whitelist-Modus: Nur die gelisteten Welten sind aktiv.
+  # Auf 'false' setzen für Blacklist-Modus.
+  Whitelist: true
+  List:
+    - world
+    - world_nether
+    - world_the_end
+    - town
+
+# =============================================================
+# ECONOMY (Vault / CMI)
+# =============================================================
+Economy:
+  # Vault-Anbindung aktivieren (CMI stellt die Economy bereit)
+  Vault: true
+
+  # Kosten zum Erstellen eines Landes (€-Symbol aus CMI)
+  Creation:
+    Cost: 500.0
+
+  # Steuern: täglich fällige Zahlung pro Chunk in die Land-Bank.
+  # Deaktiviert – vereinfacht das Spielerlebnis für neue Spieler.
+  Taxes:
+    Enabled: false
+
+# =============================================================
+# CLAIM-BLÖCKE
+# Claim-Blöcke bestimmen, wie viele Chunks ein Land claimen kann.
+# Spieler erhalten Blöcke durch Spielzeit ODER kaufen sie mit Geld.
+# 1 Chunk = 256 Claim-Blöcke
+# =============================================================
+Claimblocks:
+  # Claim-Blöcke beim Start (=2 Chunks als kostenloser Einstieg)
+  Starting: 512
+
+  # Maximum an Claim-Blöcken pro Spieler (0 = unbegrenzt)
+  Maximum: 0
+
+  # Spielzeit-Belohnung: alle 10 Minuten 50 Blöcke
+  Earn:
+    Enabled: true
+    Amount: 50
+    Interval: 10  # Minuten
+
+  # Kauf von Claim-Blöcken mit Geld
+  Buy:
+    Enabled: true
+    # Preis für 'Amount' Claim-Blöcke
+    Amount: 100
+    Cost: 100.0   # 100 Claim-Blöcke für 100€
+
+# =============================================================
+# CHUNK-KOSTEN
+# Jeder geclaimed Chunk kostet diese Anzahl an Claim-Blöcken.
+# 256 Blöcke = 1 Chunk (16×16 Blöcke)
+# =============================================================
+Chunks:
+  Cost: 256
+
+# =============================================================
+# LAND-EINSTELLUNGEN
+# =============================================================
+Land:
+  # Maximale Mitgliederzahl pro Land (0 = unbegrenzt)
+  Members:
+    Maximum: 0
+
+  # Land-Chat (/lc oder /landchat)
+  Chat:
+    Enabled: true
+
+  # Spawn-Teleport
+  Spawn:
+    Teleport:
+      # Verzögerung in Sekunden (0 = sofort)
+      Delay: 3
+      # Teleport-Kosten (0 = kostenlos)
+      Cost: 0.0
+
+  # Standardmäßig gesperrte Aktionen für fremde Spieler
+  # (Flags können Bürgermeister im GUI individuell anpassen)
+  Default_Flags:
+    Wilderness: false
+
+# =============================================================
+# NATIONEN
+# Mehrere Länder können sich zu einer Nation zusammenschließen.
+# =============================================================
+Nations:
+  Enabled: true
+  # Kosten zum Gründen einer Nation
+  Creation:
+    Cost: 2000.0
+
+# =============================================================
+# KRIEGE (deaktiviert — kann später aktiviert werden)
+# =============================================================
+Wars:
+  Enabled: false
+
+# =============================================================
+# INTEGRATIONEN
+# =============================================================
+Integration:
+  # BlueMap: Ländergrenzen auf der 3D-Webkarte anzeigen
+  BlueMap: true
+  # PlaceholderAPI: %lands_*% Platzhalter aktivieren
+  PlaceholderAPI: true

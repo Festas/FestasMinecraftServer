@@ -1,0 +1,239 @@
+# =============================================================
+# LANDS — Deutsche Sprachdatei (de_DE)
+# Festas Builds · Survival-Server
+#
+# Diese Datei übersetzt alle Lands-Nachrichten ins Deutsche.
+# Farbcodes: & + Buchstabe (z.B. &a = Grün, &c = Rot, &e = Gelb)
+# Platzhalter: %player%, %land%, %nation%, %amount%, %cost%, etc.
+# =============================================================
+
+prefix: "&8[&6Land&8] &r"
+
+# ─────────────────────────────────────────────
+# ALLGEMEIN
+# ─────────────────────────────────────────────
+general:
+  no_permission: "&cDu hast keine Berechtigung für diesen Befehl."
+  player_not_found: "&cDer Spieler &e%player% &cwurde nicht gefunden."
+  land_not_found: "&cDas Land &e%land% &cwurde nicht gefunden."
+  nation_not_found: "&cDie Nation &e%nation% &cwurde nicht gefunden."
+  not_in_land: "&cDu befindest dich in keinem Land."
+  not_land_owner: "&cDu bist kein Bürgermeister dieses Landes."
+  not_land_member: "&cDu bist kein Mitglied dieses Landes."
+  player_already_member: "&e%player% &cist bereits Mitglied dieses Landes."
+  invalid_name: "&cUngültiger Name. Erlaubt sind Buchstaben, Zahlen und Bindestriche."
+  not_enough_money: "&cDu hast nicht genug Geld. Benötigt: &e%cost%€&c."
+  no_land_here: "&cHier gibt es kein geclaimes Land."
+  wilderness: "&7Du befindest dich in der freien Wildnis."
+  land_name_display: "&6%land%"
+  page_not_found: "&cSeite %page% existiert nicht."
+
+# ─────────────────────────────────────────────
+# LAND ERSTELLEN
+# ─────────────────────────────────────────────
+create:
+  success: "&aLand &6%land% &awurde erfolgreich gegründet!"
+  cost: "&7Gründungskosten: &e%cost%€"
+  already_has_land: "&cDu hast bereits ein Land. Du kannst nur ein Land besitzen."
+  name_taken: "&cDer Name &e%land% &cist bereits vergeben."
+  already_claimed: "&cDieser Chunk ist bereits von einem anderen Land geclamet."
+  too_long: "&cDer Name darf maximal %max% Zeichen lang sein."
+  too_short: "&cDer Name muss mindestens %min% Zeichen lang sein."
+
+# ─────────────────────────────────────────────
+# LAND CLAIMEN
+# ─────────────────────────────────────────────
+claim:
+  success: "&aDieser Chunk wurde erfolgreich zu &6%land% &ageclamet!"
+  claimblocks_cost: "&7Kosten: &e%cost% &7Claim-Blöcke (verbleibend: &e%remaining%&7)"
+  not_enough_claimblocks: "&cDu hast nicht genug Claim-Blöcke. Benötigt: &e%cost%&c, vorhanden: &e%current%&c."
+  already_claimed: "&cDieser Chunk ist bereits von &6%land% &cgeclamet."
+  too_far: "&cDu kannst nur Chunks claimen, die an dein Land angrenzen."
+  limit_reached: "&cDu hast das maximale Chunk-Limit erreicht."
+  unclaim_success: "&aDieser Chunk wurde erfolgreich freigegeben."
+  unclaim_last: "&cDu kannst den letzten Chunk nicht freigeben, solange du Mitglieder hast."
+
+# ─────────────────────────────────────────────
+# CLAIM-BLÖCKE
+# ─────────────────────────────────────────────
+claimblocks:
+  current: "&7Deine Claim-Blöcke: &e%amount%"
+  earn: "&7Du hast &e%amount% &7Claim-Blöcke für deine Spielzeit erhalten."
+  buy_success: "&aDu hast &e%amount% &aClaim-Blöcke für &e%cost%€ &agekauft."
+  buy_menu_title: "&8» &6Claim-Blöcke kaufen"
+  maximum_reached: "&cDu hast das Maximum an Claim-Blöcken erreicht (&e%max%&c)."
+
+# ─────────────────────────────────────────────
+# MITGLIEDER
+# ─────────────────────────────────────────────
+members:
+  invite_sent: "&aDu hast &e%player% &aeine Einladung zu &6%land% &agesendet."
+  invite_received: "&e%player% &7hat dich zu Land &6%land% &7eingeladen. Tippe &a/lands accept &7zum Beitreten."
+  invite_expired: "&cDie Einladung für &6%land% &cist abgelaufen."
+  joined: "&e%player% &aist &6%land% &abeigetreten!"
+  join_success: "&aDu bist &6%land% &abeigetreten!"
+  left: "&e%player% &chat &6%land% &cverlassen."
+  leave_success: "&aDu hast &6%land% &averlassen."
+  kicked: "&e%player% &cwurde aus &6%land% &centfernt."
+  kick_success: "&aDu hast &e%player% &aaus dem Land entfernt."
+  owner_cannot_leave: "&cDu bist der Bürgermeister und kannst das Land nicht verlassen. Übergib zuerst das Bürgermeister-Amt."
+  accept: "/lands accept"
+  deny: "/lands deny"
+
+# ─────────────────────────────────────────────
+# ROLLEN / RECHTE
+# ─────────────────────────────────────────────
+roles:
+  owner: "Bürgermeister"
+  co_owner: "Stellvertreter"
+  member: "Einwohner"
+  visitor: "Besucher"
+  set_success: "&aDie Rolle von &e%player% &awurde auf &6%role% &agesetzt."
+  no_permission_role: "&cDeine Rolle erlaubt diese Aktion nicht."
+
+# ─────────────────────────────────────────────
+# SCHUTZ / FLAGS
+# ─────────────────────────────────────────────
+flags:
+  pvp_disabled: "&cPvP ist in diesem Land deaktiviert."
+  build_denied: "&cDu darfst hier nicht bauen. Dieses Land gehört &6%land%&c."
+  break_denied: "&cDu darfst hier nicht abbauen. Dieses Land gehört &6%land%&c."
+  interact_denied: "&cDu darfst hier nicht interagieren. Dieses Land gehört &6%land%&c."
+  container_denied: "&cDu darfst diese Kiste nicht öffnen. Dieses Land gehört &6%land%&c."
+  enter: "&7Du betrittst &6%land%&7."
+  leave_land: "&7Du verlässt &6%land%&7."
+  enter_wilderness: "&7Du betrittst die freie Wildnis."
+
+# ─────────────────────────────────────────────
+# LAND-INFO
+# ─────────────────────────────────────────────
+info:
+  header: "&8&m─────────────────────────&r"
+  name: " &6Land: &e%land%"
+  owner: " &6Bürgermeister: &e%owner%"
+  members: " &6Mitglieder: &e%members%"
+  chunks: " &6Chunks: &e%chunks%"
+  balance: " &6Landkasse: &e%balance%€"
+  claimblocks: " &6Claim-Blöcke: &e%claimblocks%"
+  footer: "&8&m─────────────────────────&r"
+
+# ─────────────────────────────────────────────
+# LAND AUFLÖSEN
+# ─────────────────────────────────────────────
+delete:
+  confirm: "&cBist du sicher, dass du dein Land auflösen möchtest? Tippe &e/lands delete confirm &czum Bestätigen."
+  success: "&aDein Land &6%land% &awurde aufgelöst."
+  members_notified: "&cDein Land &6%land% &cwurde vom Bürgermeister aufgelöst."
+
+# ─────────────────────────────────────────────
+# LAND UMBENENNEN
+# ─────────────────────────────────────────────
+rename:
+  success: "&aDein Land wurde in &6%land% &aumbenannt."
+  name_taken: "&cDieser Name ist bereits vergeben."
+
+# ─────────────────────────────────────────────
+# LAND-BANK
+# ─────────────────────────────────────────────
+bank:
+  deposit_success: "&aDu hast &e%amount%€ &ain die Landkasse eingezahlt."
+  withdraw_success: "&aDu hast &e%amount%€ &aaus der Landkasse entnommen."
+  not_enough_in_bank: "&cDie Landkasse hat nicht genug Geld (vorhanden: &e%balance%€&c)."
+  balance: "&7Landkasse: &e%balance%€"
+
+# ─────────────────────────────────────────────
+# STEUERN (deaktiviert, aber Nachrichten vorbereitet)
+# ─────────────────────────────────────────────
+taxes:
+  due: "&7Steuern fällig für &6%land%&7: &e%amount%€&7 (aus Landkasse)"
+  paid: "&aSteuern für &6%land% &abezahlt: &e%amount%€"
+  not_enough: "&cDie Landkasse hat nicht genug Geld für die Steuern. Land wird aufgelöst!"
+  reminder: "&7Steuern für &6%land% &7sind in &e%time% &7fällig."
+
+# ─────────────────────────────────────────────
+# SPAWN
+# ─────────────────────────────────────────────
+spawn:
+  set_success: "&aLand-Spawn wurde gesetzt."
+  teleport_success: "&aDu wurdest zu &6%land% &ateleportiert."
+  teleport_countdown: "&7Teleportation in &e%time% &7Sekunden... Nicht bewegen!"
+  teleport_cancelled: "&cTeleportation abgebrochen (Bewegung erkannt)."
+  no_spawn: "&cFür dieses Land wurde kein Spawn gesetzt."
+  public: "&7Dieser Spawn ist öffentlich zugänglich."
+  not_public: "&cDieser Spawn ist nicht öffentlich."
+
+# ─────────────────────────────────────────────
+# NATIONEN
+# ─────────────────────────────────────────────
+nation:
+  create_success: "&aNation &6%nation% &awurde gegründet!"
+  create_cost: "&7Gründungskosten: &e%cost%€"
+  name_taken: "&cDer Nationenname &e%nation% &cist bereits vergeben."
+  join_success: "&aDein Land ist der Nation &6%nation% &abeigetreten!"
+  leave_success: "&aDein Land hat die Nation &6%nation% &averlassen."
+  kicked: "&cDein Land wurde aus der Nation &6%nation% &centfernt."
+  invite_sent: "&aDu hast Land &6%land% &aeine Einladung zur Nation &6%nation% &agesendet."
+  invite_received: "&7Nation &6%nation% &7lädt dein Land &6%land% &7ein. Tippe &a/nation accept &7zum Beitreten."
+  delete_success: "&aDie Nation &6%nation% &awurde aufgelöst."
+  info_header: "&8&m─────────────────────────&r"
+  info_name: " &6Nation: &e%nation%"
+  info_leader: " &6Nationenführer: &e%leader%"
+  info_lands: " &6Mitglied-Länder: &e%lands%"
+  info_footer: "&8&m─────────────────────────&r"
+
+# ─────────────────────────────────────────────
+# KRIEGE (vorbereitet, aktuell deaktiviert)
+# ─────────────────────────────────────────────
+war:
+  disabled: "&cKriege sind auf diesem Server deaktiviert."
+  declare_success: "&eDu hast &6%target% &eden Krieg erklärt!"
+  peace_success: "&aFrieden wurde mit &6%target% &ageschlossen."
+  start: "&c&lKrieg! &e%attacker% &chat &e%defender% &cden Krieg erklärt!"
+  end_attacker_wins: "&6%attacker% &ahat den Krieg gegen &6%defender% &agewonnen!"
+  end_defender_wins: "&6%defender% &ahat den Krieg gegen &6%attacker% &averteidigt!"
+
+# ─────────────────────────────────────────────
+# HILFE / BEFEHLE
+# ─────────────────────────────────────────────
+help:
+  header: "&8» &6Lands Befehle &8«"
+  lands: "&e/lands &7— Land-Verwaltungsmenü öffnen"
+  lands_create: "&e/lands create <Name> &7— Neues Land gründen"
+  lands_claim: "&e/lands claim &7— Aktuellen Chunk claimen"
+  lands_unclaim: "&e/lands unclaim &7— Aktuellen Chunk freigeben"
+  lands_info: "&e/lands info [Land] &7— Land-Informationen anzeigen"
+  lands_invite: "&e/lands invite <Spieler> &7— Spieler einladen"
+  lands_kick: "&e/lands kick <Spieler> &7— Mitglied entfernen"
+  lands_leave: "&e/lands leave &7— Land verlassen"
+  lands_spawn: "&e/lands spawn [Land] &7— Zum Land-Spawn teleportieren"
+  lands_setspawn: "&e/lands setspawn &7— Land-Spawn setzen"
+  lands_deposit: "&e/lands deposit <Betrag> &7— Geld in Landkasse einzahlen"
+  lands_withdraw: "&e/lands withdraw <Betrag> &7— Geld aus Landkasse abheben"
+  lands_buy: "&e/lands buy &7— Claim-Blöcke kaufen"
+  lands_delete: "&e/lands delete &7— Land auflösen"
+  lands_list: "&e/lands list &7— Alle Länder anzeigen"
+  lands_map: "&e/lands map &7— Karte der Chunks anzeigen"
+  nation_create: "&e/nation create <Name> &7— Neue Nation gründen"
+  nation_invite: "&e/nation invite <Land> &7— Land einladen"
+  nation_leave: "&e/nation leave &7— Nation verlassen"
+
+# ─────────────────────────────────────────────
+# GUI-TITEL
+# ─────────────────────────────────────────────
+gui:
+  main_title: "&8» &6Land Verwaltung"
+  members_title: "&8» &6Mitglieder von %land%"
+  flags_title: "&8» &6Berechtigungen von %land%"
+  roles_title: "&8» &6Rollen von %land%"
+  chunks_title: "&8» &6Chunks von %land%"
+  bank_title: "&8» &6Landkasse von %land%"
+  buy_claimblocks_title: "&8» &6Claim-Blöcke kaufen"
+  nation_title: "&8» &6Nation Verwaltung"
+  lands_list_title: "&8» &6Alle Länder"
+  confirmation_title: "&8» &cBestätigung erforderlich"
+  close: "&cSchließen"
+  back: "&7← Zurück"
+  next_page: "&7Nächste Seite →"
+  prev_page: "&7← Vorherige Seite"
+  confirm: "&aJa, bestätigen"
+  cancel: "&cAbbrechen"

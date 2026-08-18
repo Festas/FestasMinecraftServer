@@ -35,7 +35,8 @@ Dokumentation für den Survival-Server mit Town- und Freebuild-Welten.
 | Plugin | Funktion |
 |--------|----------|
 | **NextGens** | Generator-System (25 Tier × Sub-Levels) — aktuell deaktiviert (Tycoon kommt auf eigenem Server) |
-| **PlotSquared** | Plot-Claiming, Merging, Schematics |
+| **PlotSquared** | Plot-Claiming, Merging, Schematics (`freebuild`-Welt) |
+| **Lands** | Chunk-basiertes Land-Claiming in Survival-Welt — Griefing-Schutz, Claim-Blöcke, Nationen, GUI |
 | **Rankup** | Rang-Progression |
 | **ShopGUIPlus** | Shop-GUI mit dynamischen Preisen |
 | **GlobalMarketPlus** / **ChestShop** | Marktplatz & Spieler-Läden |
@@ -81,4 +82,4 @@ Dokumentation für den Survival-Server mit Town- und Freebuild-Welten.
 
 ---
 
-**Letzte Aktualisierung:** 2026-08-15
+**Letzte Aktualisierung:** 2026-08-18
