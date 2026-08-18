@@ -88,7 +88,7 @@ Edit `index.html`:
 
 Edit `js/config.template.js`:
 ```javascript
-bluemapURL: 'https://mc-maps.festas-builds.com';
+bluemapURL: 'https://mc-maps.festas-builds.com',
 ```
 
 ### Server status & online players
