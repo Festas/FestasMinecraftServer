@@ -160,4 +160,4 @@ items:
     lore:
       - '&7Zurück zum Server-Menü'
     left_click_commands:
-      - '[close]'
+      - '[openguimenu] server_selector'
