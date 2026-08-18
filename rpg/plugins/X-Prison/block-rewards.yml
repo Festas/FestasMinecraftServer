@@ -1,6 +1,0 @@
-block-rewards:
-  '100':
-    message: '<gradient:#FFD700:#FFEA00><bold>BLOCKS</bold></gradient> <dark_gray>»</dark_gray> <white>You have mined <yellow>100</yellow> <white>Blocks'
-    commands:
-      - tokens give %player% 10000000
-      - tm msg %player% &e&lREWARD\n&fYou have mined &e100 &fBlocks

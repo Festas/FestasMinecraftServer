@@ -15,14 +15,13 @@
                     │  ├─ s4_stats (Plan)       │
                     │  ├─ s4_husk (HuskSync)    │
                     │  ├─ s4_party (PAF)        │
-                    │  ├─ s4_bazaar (Bazaar)    │
-                    │  └─ s4_mmocore (MMOCore)  │
+                    │  └─ s4_bazaar (Bazaar)    │
                     └────────────┬─────────────┘
                                  │
         ┌────────────┬───────────┼───────────┬────────────┐
         │            │           │           │            │
    ┌────▼───┐  ┌────▼───┐ ┌────▼────┐ ┌────▼───┐  ┌────▼───┐
-   │ Proxy  │  │ Lobby  │ │Survival │ │Skyblock│  │  RPG   │
+   │ Proxy  │  │ Lobby  │ │Survival │ │Skyblock│  │ Prison │
    └────────┘  └────────┘ └─────────┘ └────────┘  └────────┘
 
                     ┌──────────────────────────┐
@@ -30,12 +29,11 @@
                     │   172.18.0.1:6379         │
                     │                           │
                     │  HuskSync Session-Cache   │
-                    │  Temporäre Inventar-Daten │
                     └────────────┬─────────────┘
                                  │
                         ┌────────┴────────┐
                    ┌────▼───┐       ┌────▼───┐
-                   │Skyblock│       │  RPG   │
+                   │  Lobby │       │ Prison │
                    └────────┘       └────────┘
 ```
 
@@ -47,19 +45,17 @@
 
 | Datenbank     | Plugin          | Zweck                                        | Server                              |
 |---------------|-----------------|----------------------------------------------|-------------------------------------|
-| `s4_perms`    | LuckPerms       | Permissions, Gruppen, Tracks                 | Proxy, Lobby, Survival, Skyblock, RPG |
-| `s4_stats`    | Plan             | Spieler-Statistiken, Server-Analytics        | Proxy, RPG                          |
-| `s4_husk`     | HuskSync        | Inventar-, Health-, XP-Synchronisation       | Skyblock, RPG                       |
+| `s4_perms`    | LuckPerms       | Permissions, Gruppen, Tracks                 | Proxy, Lobby, Survival, Skyblock, Prison |
+| `s4_stats`    | Plan             | Spieler-Statistiken, Server-Analytics        | Proxy, Prison                       |
+| `s4_husk`     | HuskSync        | Ränge und Cosmetics                          | Lobby, Prison                       |
 | `s4_party`    | PartyAndFriends | Party- und Freundeslisten-Daten              | Proxy                               |
-| `s4_bazaar`   | DeluxeBazaar    | Bazaar-Angebote und Transaktionen            | Skyblock, RPG                       |
-| `s4_mmocore`  | MMOCore         | Klassen, Level, Skills, Skill-Trees          | Skyblock, RPG                       |
+| `s4_bazaar`   | DeluxeBazaar    | Bazaar-Angebote und Transaktionen            | Skyblock, Prison                    |
 
 ### Redis
 
 | Verwendung                | Zweck                                           | Server         |
 |---------------------------|-------------------------------------------------|----------------|
-| HuskSync Session-Cache    | Temporäre Inventar-Daten beim Server-Wechsel    | Skyblock, RPG  |
-| Player-Session-Daten      | Aktive Spielersitzungen und Live-Sync           | Skyblock, RPG  |
+| HuskSync Session-Cache    | Temporäre Daten beim Server-Wechsel             | Alle           |
 
 **TTL (Time To Live):**
 - Session-Daten: 30 Minuten
@@ -103,7 +99,6 @@ useSSL: false
 | LuckPerms | 10         | 1800000 ms   | 5000 ms             |
 | HuskSync  | Standard   | Standard      | 5000 ms             |
 | Plan      | Standard   | Standard      | 5000 ms             |
-| MMOCore   | Standard   | Standard      | 5000 ms             |
 
 LuckPerms verwendet eine feste Pool-Größe von **10 Verbindungen**, da es von allen Servern gleichzeitig auf `s4_perms` zugreift. Andere Plugins nutzen die jeweiligen Standard-Werte.
 
@@ -133,9 +128,8 @@ Detaillierte Informationen zur Backup-Strategie, Aufbewahrungsfristen und Wieder
 
 - [Infrastruktur Übersicht](README.md)
 - [Backup-Strategien](BACKUPS.md)
-- [Synchronisierung](SYNCHRONISIERUNG.md)
 - [Architektur-Dokumentation](../ARCHITECTURE.md)
 
 ---
 
-**Letzte Aktualisierung:** 2026-04-10
+**Letzte Aktualisierung:** 2026-08-18
