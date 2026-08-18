@@ -1,0 +1,271 @@
+# Here you can edit all GUI menus.
+#
+# If you encounter any issues or have questions:
+# Discord: https://discord.incredibleplugins.com
+#
+# Wiki: https://wiki.incredibleplugins.com/general/menus/gui-menus
+
+general:
+  inbox-filter:
+    war: <t:negative>War ⚔</t>
+  war:
+    defenders: <t:positive>Defenders</t>
+    attackers: <t:negative>Attackers</t>
+
+physical:
+  capture_flag:
+    name: <t:regular_heading>Capture Flag
+    lore:
+    - <t:regular>Place this flag on the enemy land
+    - during war in order to capture it.
+
+gui:
+  war:
+    title: <t:menu_title>War
+    items:
+      default:
+        war_attackers:
+          name: <t:negative_heading>Attacker <v:object>
+          lore:
+          - <t:decoration>✖ </t><t:regular>View all attacking lands.
+          - '   Players: <t:regular_value><v:players></t>'
+          - ''
+          - <t:regular_heading>Progress</t>
+          - ' <t:decoration>• </t><t:regular>Captures: <t:regular_value><v:cap></t>'
+          - ' <t:decoration>• </t><t:regular>Kills: <t:regular_value><v:kills></t>'
+          - '   <t:decoration>= </t><t:regular_value><v:points></t> / <t:regular_value><v:towin></t>
+            <t:regular>points to win'
+          - '   <v:bar>'
+          material: IRON_SWORD
+          slots: 11
+        war_defenders:
+          name: <t:positive_heading>Defender <v:object>
+          lore:
+          - <t:decoration>✖ </t><t:regular>View all defending lands.
+          - '   Players: <t:regular_value><v:players></t>'
+          - ''
+          - <t:regular_heading>Progress</t>
+          - ' <t:decoration>• </t><t:regular>Captures: <t:regular_value><v:cap></t>'
+          - ' <t:decoration>• </t><t:regular>Kills: <t:regular_value><v:kills></t>'
+          - '   <t:decoration>= </t><t:regular_value><v:points></t> / <t:regular_value><v:towin></t>
+            <t:regular>points to win'
+          - '   <v:bar>'
+          material: SHIELD
+          slots: 12
+        war_points:
+          name: <t:regular_heading>Point Distribution
+          lore:
+          - <t:regular>A team needs<t:regular_value> <v:points></t> points to win.
+          - ' <t:decoration>• </t><t:regular>Kill: <t:regular_value><v:p_kill></t>
+            point(s)'
+          - ' <t:decoration>• </t><t:regular>Capture: <t:regular_value><v:p_cap></t>
+            point(s)'
+          - '    <t:decoration>• </t><t:regular>To capture an enemy area, place'
+          - '      a capture flag inside it. You'
+          - '      can see the crafting recipe'
+          - '      for it in this menu.'
+          - ''
+          - ' <t:decoration>• </t><t:regular>If no team reaches <t:regular_value><v:points></t>
+            points, the war'
+          - '   will timeout in<t:time> <v:time></t>.'
+          material: IRON_INGOT
+          slots: 13
+        war_points_declaration:
+          name: <t:regular_heading>Point Distribution
+          lore:
+          - <t:regular>A team needs<t:regular_value> <v:points></t> points to win.
+          - ' <t:decoration>• </t><t:regular>Kill: <t:regular_value><v:p_kill></t>
+            point(s)'
+          - ' <t:decoration>• </t><t:regular>Capture: <t:regular_value><v:p_cap></t>
+            point(s)'
+          - '    <t:decoration>• </t><t:regular>To capture an enemy area, place'
+          - '      a capture flag inside it. You'
+          - '      can see the crafting recipe'
+          - '      for it in this menu.'
+          - ''
+          - ' <t:decoration>• </t><t:regular>The war will start in:<t:time> <v:time></t>'
+          material: IRON_INGOT
+          slots: 13
+        child_failure_permission:
+          name: <t:error_heading>Not allowed
+          lore:
+          - <t:error>You're not allowed to do
+          - this for <t:decoration>(</t><t:error_value><v:object></t>)<t:error>.
+          - ' <t:decoration>• </t><t:regular>The owner can give you'
+          - '   permission to do so.'
+          - '   Flag: <t:regular_value><v:flag></t>'
+        recipe:
+          name: <t:regular_heading>Capture flag Recipe
+          lore:
+          - <t:decoration>✖</t> <t:regular>Click here to see the recipe
+          - '   of the capture flag item.'
+          material: BEACON
+          slots: 15
+        child_failure_none:
+          name: <t:error_heading>No Claims
+          lore:
+          - <t:error>The enemy <t:error_value><v:enemy></t> has no claims
+          - to teleport to.
+        flags:
+          name: <t:regular_heading>Active Flags
+          lore:
+          - <t:regular>Involved players can do the following
+          - 'things in affected lands:'
+          - <v:settings>
+          material: IRON_PICKAXE
+          slots: 14
+        spawn:
+          name: <t:regular_heading>Spawn
+          lore:
+          - <t:regular>Teleport to the enemy's border.
+          material: ENDER_PEARL
+          slots: 9
+        declaration_start:
+          name: <t:regular_heading>Start
+          lore:
+          - <t:regular>The war will start in<t:time> <v:time></t>.
+          - Until then each team has time to prepare.
+          material: CLOCK
+          slots: 15
+        surrender:
+          name: <t:error_heading>Surrender
+          lore:
+          - '<action:primary><label>Surrender</label><desc><t:regular>Surrender this
+            war and concede to the enemy. The war goal is then applied for your side:'
+          - '  <v:outcome></desc></action>'
+          material: WHITE_BANNER
+          slots: 29
+          bedrock:
+            detail: true
+  list_wars:
+    title: <t:menu_title>Ongoing Wars
+    items:
+      default:
+        entry_object:
+          name: <t:regular_heading><v:attacker> vs. <v:defender>
+          lore:
+          - ' <t:decoration>• </t><t:regular>Progress:<t:regular_value> <v:points></t>
+            <t:decoration>/</t><t:regular_value> <v:points_towin></t> <t:regular>points'
+          - '   <t:regular_value><v:points_bar></t>'
+          - ''
+          - ' <t:decoration>• </t><t:regular>Timeout: <t:time><v:timeout></t>'
+          - ' <t:decoration>• </t><t:regular>Attacker: <v:attacker>'
+          - ' <t:decoration>• </t><t:regular>Defender: <v:defender>'
+          material: IRON_SWORD
+  list_war_lands:
+    title: <t:menu_title><v:team>
+    items:
+      default:
+        entry_object:
+          name: <t:entry_heading><v:land>
+          lore:
+          - <t:user_content><v:title></t>
+          - <t:decoration>✖ </t><t:regular>View information about this land.
+          material: INHERIT
+        entry_object_ally:
+          name: <t:entry_heading>Ally <v:land>
+          lore:
+          - <t:user_content><v:title></t>
+          - <t:decoration>✖ </t><t:regular>View information about this land.
+          material: INHERIT
+  war-declaration_confirm:
+    title: <t:menu_title>Declare War
+    items:
+      default:
+        cancel-declaration:
+          name: <t:error_heading>Cancel War Declaration
+          lore:
+          - <t:decoration>✖ </t><t:regular>Discard this declaration
+          - '   before it''s sent to the enemy.'
+          material: skin:548d7d1e03e1af145b0125ab841285672b421265da2ab915015f9058438ba2d8
+          slots: 37
+        send-declaration:
+          name: <t:positive_heading>Send War Declaration
+          lore:
+          - <t:decoration>✖ </t><t:regular>Send this war declaration
+          - '   to the enemy.'
+          material: skin:ffec3d25ae0d147c342c45370e0e43300a4e48a5b43f9bb858babff756144dac
+          slots: 45
+        mode:
+          name: '<t:regular_heading>Mode: <v:mode>'
+          lore:
+          - <t:decoration>✖ </t><t:regular>Click to change the war mode.
+          - ''
+          - <v:description>
+          material: DIAMOND_SWORD
+          slots: 21
+        goal:
+          name: '<t:regular_heading>Goal: <v:goal>'
+          lore:
+          - <t:decoration>✖ </t><t:regular>Click to change the war goal.
+          - ''
+          - '<t:decoration>• </t>If the attacker wins:'
+          - '  <v:outcome_attacker>'
+          - ''
+          - '<t:decoration>• </t>If the attacker loses:'
+          - '  <v:outcome_defender>'
+          material: WRITABLE_BOOK
+          slots: 25
+  list_war-declaration_mode:
+    title: <t:menu_title>Choose War Mode
+    items:
+      default:
+        entry_object:
+          name: <t:entry_heading><v:name>
+          lore:
+          - <v:description>
+          material: PAPER
+        entry_object_selected:
+          name: <t:positive_heading>✔ <v:name>
+          lore:
+          - <v:description>
+          material: ENCHANTED_BOOK
+        child_failure_not_applicable:
+          name: <t:error_heading>Not available
+          lore:
+          - <t:error>This mode can't be used
+          - for this war.
+          material: BARRIER
+  list_war-declaration_goal:
+    title: <t:menu_title>Choose War Goal
+    items:
+      default:
+        entry_object:
+          name: <t:entry_heading><v:name>
+          lore:
+          - '<t:decoration>• </t><t:regular>If the attacker wins:'
+          - '  <v:outcome_attacker>'
+          - ''
+          - '<t:decoration>• </t>If the attacker loses:'
+          - '  <v:outcome_defender>'
+          material: PAPER
+        entry_object_selected:
+          name: <t:positive_heading>✔ <v:name>
+          lore:
+          - '<t:decoration>• </t><t:regular>If the attacker wins:'
+          - '  <v:outcome_attacker>'
+          - ''
+          - '<t:decoration>• </t>If the attacker loses:'
+          - '  <v:outcome_defender>'
+          material: ENCHANTED_BOOK
+        child_failure_not_applicable:
+          name: <t:error_heading>Not available
+          lore:
+          - <t:error>This goal can't be used
+          - for this war.
+          material: BARRIER
+  war_capture_recipe:
+    title: <t:menu_title>Capture Flag Recipe
+  war_info:
+    title: <t:menu_title>War Info
+    items:
+      default:
+        war_attackers:
+          material: IRON_SWORD
+          slots: 21
+        war_defenders:
+          material: SHIELD
+          slots: 23
+        war_points:
+          material: IRON_INGOT
+          slots: 25
