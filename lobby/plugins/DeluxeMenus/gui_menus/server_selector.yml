@@ -46,7 +46,6 @@ items:
       - '&7Wähle deinen Spielmodus!'
       - ''
       - '&8» &7Website: &fmc.festas-builds.com'
-      - '&8» &7Discord: &fdiscord.gg/festasbuilds'
     left_click_commands:
       - '[refresh]'
 
