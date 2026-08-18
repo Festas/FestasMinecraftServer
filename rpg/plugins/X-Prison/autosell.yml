@@ -1,55 +1,60 @@
 messages:
-  autosell_enable: <gradient:#FFFF00:#FFD700:#FFA500><bold>AUTOSELL</bold></gradient> <dark_gray>»</dark_gray> <gray>You've <yellow><bold>ENABLED</bold> <gray>Autosell.
-  autosell_disable: <gradient:#FFFF00:#FFD700:#FFA500><bold>AUTOSELL</bold></gradient> <dark_gray>»</dark_gray> <gray>You've <red><bold>DISABLED</bold> <gray>Autosell.
-  sell_all_complete: <gradient:#FFFF00:#FFD700:#FFA500><bold>SELLALL</bold></gradient> <dark_gray>»</dark_gray> <gray>You've sold your inventory for <yellow>%price%
-  sell_all_nothing: <gradient:#FFFF00:#FFD700:#FFA500><bold>SELLALL</bold></gradient> <dark_gray>»</dark_gray> <red>You have nothing to sell!
-  not_in_region: '&e&l(!) &cYou must be in region to use /sellall'
-  invalid_region: '&e&l(!) &cYou have specified invalid region.'
-  no_permission_autosell_toggle: <gradient:#FFFF00:#FFD700:#FFA500><bold>AUTOSELL</bold></gradient> <dark_gray>»</dark_gray> <red>You do not have permission to toggle autosell feature!
-  no_permission_sell: '&e&l(!) &cYou do not have permission to sell in this region! (%perm%)'
-  no_permission_sellall: <gradient:#FFFF00:#FFD700:#FFA500><bold>SELLALL</bold></gradient> <dark_gray>»</dark_gray> <red>You do not have permission to use /sellall!
-# Should be autosell enabled automatically on player join?
+  autosell_enable: <gradient:#FFFF00:#FFD700:#FFA500><bold>AUTOSELL</bold></gradient> <dark_gray>»</dark_gray> <gray>Du hast AutoSell <yellow><bold>AKTIVIERT</bold></yellow>.
+  autosell_disable: <gradient:#FFFF00:#FFD700:#FFA500><bold>AUTOSELL</bold></gradient> <dark_gray>»</dark_gray> <gray>Du hast AutoSell <red><bold>DEAKTIVIERT</bold></red>.
+  sell_all_complete: <gradient:#FFFF00:#FFD700:#FFA500><bold>SELLALL</bold></gradient> <dark_gray>»</dark_gray> <gray>Du hast dein Inventar für <yellow>%price%</yellow> <gray>verkauft.
+  sell_all_nothing: <gradient:#FFFF00:#FFD700:#FFA500><bold>SELLALL</bold></gradient> <dark_gray>»</dark_gray> <red>Du hast nichts zu verkaufen!
+  not_in_region: '&e&l(!) &cDu musst dich in einer Mine befinden, um /sellall zu nutzen.'
+  invalid_region: '&e&l(!) &cDiese Region ist ungültig.'
+  no_permission_autosell_toggle: <gradient:#FFFF00:#FFD700:#FFA500><bold>AUTOSELL</bold></gradient> <dark_gray>»</dark_gray> <red>Du darfst AutoSell nicht umschalten!
+  no_permission_sell: '&e&l(!) &cDu darfst in dieser Region nicht verkaufen! (%perm%)'
+  no_permission_sellall: <gradient:#FFFF00:#FFD700:#FFA500><bold>SELLALL</bold></gradient> <dark_gray>»</dark_gray> <red>Du darfst /sellall nicht benutzen!
 enable-autosell-automatically: true
-
-# Should blocks be smelted when mined? Example: STONE -> COBBLESTONE, IRON_ORE -> IRON_INGOT
-# Applies to every drop that lands in the player's inventory, including blocks broken by area
-# enchants (Explosive, Jackhammer, Nuke, Layer, ...) and by Bombs.
-# It does not change AutoSell earnings: sold blocks are priced by block type and never become items,
-# so a player with AutoSell on is unaffected.
 auto-smelt:
   enabled: false
   map:
     STONE: COBBLESTONE
-# IRON_ORE: IRON_INGOT
-
-# Notification when player has full inventory
 inventory_full_notification:
-  # Should players be notified if they have full inventory?
   enabled: true
   title:
-    # Set enabled: false to fall back to the chat message below instead
     enabled: true
-    text: '&e&lInventory Full!'
-    subtitle: '&7Type /sellall to sell your inventory'
+    text: '&e&lInventar voll!'
+    subtitle: '&7Nutze /sellall zum Verkaufen'
     fade-in: 1
     stay: 3
     fade-out: 1
-  chat: <red><bold>(!)</bold> <yellow>Your inventory is full! Type /sellall to sell your inventory
-# Live action bar showing earnings while auto-selling / using /sellall.
-# Earnings are batched and shown once every flush-ticks to avoid spam while mining.
+  chat: <red><bold>(!)</bold> <yellow>Dein Inventar ist voll! Nutze /sellall zum Verkaufen.
 earnings-actionbar:
   enabled: false
-  # %price% = total earned this mining session, %currency% = currency display name
   format: <green>+ %price% %currency%
-  # How often (in server ticks, 20 = 1s) the action bar is refreshed
   flush-ticks: 15
-  # The action bar shows a running total for the current mining "session". When the player
-  # stops mining for this many seconds, the session resets back to 0.
   reset-after-seconds: 3
-# GOLD_ORE: 250.0
-# Per region sell prices defined here
 per-region-sell-prices: {}
-# Currency this module works with (eg. Money, Tokens, Gems)
 currency: money
 global-sell-prices:
-  STONE: '50.0'
+  COBBLESTONE: '1.0'
+  STONE: '1.0'
+  COAL_ORE: '8.0'
+  DEEPSLATE_COAL_ORE: '10.0'
+  COPPER_ORE: '12.0'
+  DEEPSLATE_COPPER_ORE: '15.0'
+  IRON_ORE: '20.0'
+  DEEPSLATE_IRON_ORE: '25.0'
+  LAPIS_ORE: '45.0'
+  DEEPSLATE_LAPIS_ORE: '55.0'
+  REDSTONE_ORE: '50.0'
+  DEEPSLATE_REDSTONE_ORE: '60.0'
+  GOLD_ORE: '70.0'
+  DEEPSLATE_GOLD_ORE: '85.0'
+  EMERALD_ORE: '135.0'
+  DEEPSLATE_EMERALD_ORE: '165.0'
+  DIAMOND_ORE: '180.0'
+  DEEPSLATE_DIAMOND_ORE: '220.0'
+  COAL_BLOCK: '90.0'
+  IRON_BLOCK: '250.0'
+  GOLD_BLOCK: '420.0'
+  LAPIS_BLOCK: '550.0'
+  REDSTONE_BLOCK: '600.0'
+  EMERALD_BLOCK: '1100.0'
+  DIAMOND_BLOCK: '1500.0'
+  ANCIENT_DEBRIS: '2500.0'
+  NETHERITE_BLOCK: '9000.0'

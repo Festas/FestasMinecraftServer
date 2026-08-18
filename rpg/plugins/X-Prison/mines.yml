@@ -1,60 +1,46 @@
-# Messages sent to players for mine-related actions. Supports MiniMessage formatting.
 messages:
-  no_permission: "<gradient:#FFD700:#FFAA00><bold>(!)</bold></gradient> <white>You do not have a permission to do that!"
-  selection_valid: "<gradient:#FFD700:#FFAA00>Your selection is valid.</gradient> <gray>You can now create a mine by <yellow>/mines create <name>"
-  selection_invalid: "<gradient:#FFD700:#FFAA00>Your selection is invalid.</gradient> <gray>Please make a selection via our selection tool <yellow>/mines tool"
-  selection_point_set: "<gradient:#FFD700:#FFAA00>Point <yellow>%position%</gradient> <gray>set to: <yellow>%location%"
-  selection_tool_given: "<gradient:#FFD700:#FFAA00>You were given x1 Selection Tool!</gradient>"
-  mine_exists: "<gradient:#FFD700:#FFAA00>Mine with such name already exists!</gradient>"
-  mine_not_exists: "<gradient:#FFD700:#FFAA00>Mine with such name does not exist!</gradient>"
-  mine_created: "<gradient:#FFD700:#FFAA00>Mine <yellow>%mine%</gradient> <gray>has been created! Use <yellow>/mines panel %mine%</yellow> <gray>to edit it."
-  mine_redefined: "<gradient:#FFD700:#FFAA00>You have redefined mine region for mine <yellow>%mine%</gradient>."
-  mine_deleted: "<gradient:#FFD700:#FFAA00>Mine <yellow>%mine%</gradient> <gray>has been deleted!"
-  mine_teleport: "<gradient:#FFD700:#FFAA00>You have been teleported to mine <yellow>%mine%!</gradient>"
-  mine_no_teleport_location: "<gradient:#FFD700:#FFAA00>Mine <yellow>%mine%</gradient> <gray>does not have teleport location set!"
-  mine_no_item_in_hand: "<gradient:#FFD700:#FFAA00>You must have some item in hand!</gradient>"
-  mine_block_added: "<gradient:#FFD700:#FFAA00>You have added <yellow>%block%</gradient> <gray>to <yellow>%mine%</yellow>! Please set its percentages in <yellow>/mines panel %mine%"
-  mine_teleport_set: "<gradient:#FFD700:#FFAA00>You have set the teleport location for Mine <yellow>%mine%!</gradient>"
-  mine_resetting: "<gradient:#FFD700:#FFAA00><bold>(!)</bold> Mine <yellow>%mine%</gradient> <gray>will be reset in <yellow>5 seconds</yellow>!"
-  mine_reset: "<gradient:#FFD700:#FFAA00>Mine <yellow>%mine%</gradient> <gray>was reset."
-  mine_saved: "<gradient:#FFD700:#FFAA00>Mine <yellow>%mine%</gradient> <gray>saved."
-  mine_already_reset: "<gradient:#FFD700:#FFAA00>Mine <yellow>%mine%</gradient> <gray>is already resetting!"
-  mine_hologram_create: "<gradient:#FFD700:#FFAA00>Hologram <yellow>%type%</gradient> <gray>for mine <yellow>%mine%</yellow> created at your location."
-  mine_hologram_create_no_decentholograms: "<gradient:#FFD700:#FFAA00>Hologram <yellow>%type%</gradient> <gray>for mine <yellow>%mine%</yellow> was saved, but <red>DecentHolograms is not installed</red> so it won't show. <gray>Install the DecentHolograms plugin and it will appear automatically."
-  mine_hologram_delete: "<gradient:#FFD700:#FFAA00>Hologram <yellow>%type%</gradient> <gray>for mine <yellow>%mine%</yellow> was removed."
-  mine_all_reset_success: "<gradient:#FFD700:#FFAA00>All mines were reset.</gradient>"
-  mine_all_reset_started: "<gradient:#FFD700:#FFAA00>Started reset of all mines.</gradient>"
-  mine_renamed: "<gradient:#FFD700:#FFAA00>Mine <yellow>%mine%</gradient> <gray>was renamed to <yellow>%new_name%</yellow>."
-
-# WorldGuard region settings applied when a mine is created.
-# Requires WorldGuard to be installed for any of these to take effect.
+  no_permission: <gradient:#FFD700:#FFAA00><bold>(!)</bold></gradient> <white>Dafür hast du keine Berechtigung!
+  selection_valid: <gradient:#FFD700:#FFAA00>Deine Auswahl ist gültig.</gradient> <gray>Du kannst jetzt mit <yellow>/mines create <name></yellow> eine Mine erstellen.
+  selection_invalid: <gradient:#FFD700:#FFAA00>Deine Auswahl ist ungültig.</gradient> <gray>Erstelle zuerst mit <yellow>/mines tool</yellow> eine Auswahl.
+  selection_point_set: <gradient:#FFD700:#FFAA00>Punkt <yellow>%position%</yellow></gradient> <gray>wurde auf <yellow>%location%</yellow> gesetzt.
+  selection_tool_given: <gradient:#FFD700:#FFAA00>Du hast x1 Auswahl-Werkzeug erhalten!</gradient>
+  mine_exists: <gradient:#FFD700:#FFAA00>Eine Mine mit diesem Namen existiert bereits!</gradient>
+  mine_not_exists: <gradient:#FFD700:#FFAA00>Eine Mine mit diesem Namen existiert nicht!</gradient>
+  mine_created: <gradient:#FFD700:#FFAA00>Mine <yellow>%mine%</yellow></gradient> <gray>wurde erstellt! Bearbeite sie mit <yellow>/mines panel %mine%</yellow>.
+  mine_redefined: <gradient:#FFD700:#FFAA00>Die Region von Mine <yellow>%mine%</yellow> <gray>wurde neu gesetzt.</gray>
+  mine_deleted: <gradient:#FFD700:#FFAA00>Mine <yellow>%mine%</yellow> <gray>wurde gelöscht!</gray>
+  mine_teleport: <gradient:#FFD700:#FFAA00>Du wurdest zu Mine <yellow>%mine%</yellow> teleportiert!</gradient>
+  mine_no_teleport_location: <gradient:#FFD700:#FFAA00>Mine <yellow>%mine%</yellow> <gray>hat keinen Teleportpunkt gesetzt!</gray>
+  mine_no_item_in_hand: <gradient:#FFD700:#FFAA00>Du musst ein Item in der Hand halten!</gradient>
+  mine_block_added: <gradient:#FFD700:#FFAA00><yellow>%block%</yellow> <gray>wurde zu <yellow>%mine%</yellow> hinzugefügt! Passe die Prozente in <yellow>/mines panel %mine%</yellow> an.</gray>
+  mine_teleport_set: <gradient:#FFD700:#FFAA00>Der Teleportpunkt für Mine <yellow>%mine%</yellow> wurde gesetzt!</gradient>
+  mine_resetting: <gradient:#FFD700:#FFAA00><bold>(!)</bold> Mine <yellow>%mine%</yellow> <gray>wird in <yellow>5 Sekunden</yellow> zurückgesetzt!</gray>
+  mine_reset: <gradient:#FFD700:#FFAA00>Mine <yellow>%mine%</yellow> <gray>wurde zurückgesetzt.</gray>
+  mine_saved: <gradient:#FFD700:#FFAA00>Mine <yellow>%mine%</yellow> <gray>wurde gespeichert.</gray>
+  mine_already_reset: <gradient:#FFD700:#FFAA00>Mine <yellow>%mine%</yellow> <gray>wird bereits zurückgesetzt!</gray>
+  mine_hologram_create: <gradient:#FFD700:#FFAA00>Hologramm <yellow>%type%</yellow> <gray>für Mine <yellow>%mine%</yellow> wurde an deiner Position erstellt.</gray>
+  mine_hologram_create_no_decentholograms: <gradient:#FFD700:#FFAA00>Das Hologramm <yellow>%type%</yellow> <gray>für Mine <yellow>%mine%</yellow> wurde gespeichert, aber <red>DecentHolograms ist nicht installiert</red>.</gray>
+  mine_hologram_delete: <gradient:#FFD700:#FFAA00>Hologramm <yellow>%type%</yellow> <gray>für Mine <yellow>%mine%</yellow> wurde entfernt.</gray>
+  mine_all_reset_success: <gradient:#FFD700:#FFAA00>Alle Minen wurden zurückgesetzt.</gradient>
+  mine_all_reset_started: <gradient:#FFD700:#FFAA00>Das Zurücksetzen aller Minen wurde gestartet.</gradient>
+  mine_renamed: <gradient:#FFD700:#FFAA00>Mine <yellow>%mine%</yellow> <gray>wurde in <yellow>%new_name%</yellow> umbenannt.</gray>
 region-settings:
-  # Automatically create a WorldGuard region with the settings below when a new mine is created.
   auto-create-wg-region: true
-  # Region name pattern. %mine% is replaced with the mine's name.
-  name: "%mine%"
-  # WorldGuard region priority.
+  name: '%mine%'
   priority: 2
-  # WorldGuard flags set on every auto-created mine region. Add or remove flags as needed.
   flags:
     block-break: ALLOW
     upc-enchants: ALLOW
-
-# Lines displayed by the hologram that floats above each mine.
-# Supports legacy color codes (&a, &7, etc.). Placeholders: %mine%, %blocks%, %time%.
 holograms:
-  # Hologram shown when the mine resets based on remaining block percentage.
   blocks_left:
-    - ' '
-    - '&7-- &6There are &3%blocks%% &6blocks left in mine &3%mine% &7--'
-    - ' '
-  # Hologram shown after a reset listing how many blocks were mined.
+  - ' '
+  - '&7-- &6In Mine &3%mine% &6sind noch &3%blocks%% &6Blöcke übrig &7--'
+  - ' '
   blocks_mined:
-    - ' '
-    - '&7-- &3%blocks% blocks &ahave been mined &7--'
-    - ' '
-  # Hologram shown for timed resets, counting down to the next reset.
+  - ' '
+  - '&7-- &3%blocks% Blöcke &awurden bereits abgebaut &7--'
+  - ' '
   timed_reset:
-    - ' '
-    - '&7-- &3%time% &6left till next reset &7--'
-    - ' '
+  - ' '
+  - '&7-- &3%time% &6bis zum nächsten Reset &7--'
+  - ' '
