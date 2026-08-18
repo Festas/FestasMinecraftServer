@@ -114,8 +114,11 @@ jobs:
                       memory: 64M
             EOF_COMPOSE
 
-            # Deployment starten (Docker Compose kümmert sich um den Recreate)
-            docker compose up -d --remove-orphans
+            # Stoppe den laufenden Container, um den Port freizugeben
+            docker compose down --remove-orphans || true
+
+            # Deployment starten
+            docker compose up -d
 
             # Health Check
             echo "Warte auf Health-Status..."
