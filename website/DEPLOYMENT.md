@@ -37,7 +37,7 @@ The website is a modern, responsive landing page that provides:
 - How-to-join instructions for Java and Bedrock Edition
 - Plugin showcase
 - Server rules
-- Links to BlueMap and Discord
+- Links to BlueMap and contact options
 
 The website is containerized using Docker and served via nginx, integrated with
 the existing host nginx reverse proxy infrastructure.
@@ -237,13 +237,13 @@ Then visit `http://localhost:8000` (or `8080` for Docker).
 
 ### Customization Guide
 
-Build-time values (Minecraft version, server software, Discord invite) are
+Build-time values (Minecraft version and server software) are
 injected via `website/js/config.template.js` and the `deploy-website.yml`
 build args. Other content lives directly in the HTML/CSS/JS:
 
 - **Server IP** – edit `website/index.html` (`<span id="serverIp">`)
 - **Features** – edit the `.features-grid` section in `website/index.html`
-- **BlueMap / Discord URLs** – edit `website/js/config.template.js`
+- **BlueMap / Stats URLs** – edit `website/js/config.template.js`
 - **Colors** – edit the `:root` section in `website/css/style.css`
 
 ---
@@ -394,5 +394,5 @@ The nginx configuration includes security headers:
 ## 📝 Notes
 
 - The website is static (HTML/CSS/JS only) — no backend required.
-- BlueMap and Discord links are configured via `website/js/config.template.js`.
+- BlueMap and stats links are configured via `website/js/config.template.js`.
 - Consider adding analytics (Google Analytics, Plausible, etc.) if desired.

@@ -11,7 +11,7 @@ Modern, responsive landing page for the festas_builds Minecraft server.
 - 📖 How-to-join instructions for Java and Bedrock Edition
 - 🔌 Plugin highlights
 - 📜 Server rules
-- 🗺️ Links to BlueMap and Discord (configurable)
+- 🗺️ Links to BlueMap and contact options
 - 📱 Fully responsive design
 - 🌙 Dark mode friendly
 - ⚡ Fast and lightweight (nginx + alpine)
@@ -84,19 +84,17 @@ Edit `index.html`:
 <span class="ip-address" id="serverIp">mc.festas-builds.com</span>
 ```
 
-### Add BlueMap URL
+### Update BlueMap URL
 
-Edit `js/main.js`:
+Edit `js/config.template.js`:
 ```javascript
-const bluemapUrl = 'https://map.festas-builds.com';
+bluemapURL: 'https://mc-maps.festas-builds.com',
 ```
 
-### Add Discord Link
+### Server status & online players
 
-Edit `js/main.js`:
-```javascript
-const discordUrl = 'https://discord.gg/your-invite';
-```
+For the full implementation and rollout guide, see
+[`SERVERSTATUS-ONLINE-SPIELER-GUIDE.md`](SERVERSTATUS-ONLINE-SPIELER-GUIDE.md).
 
 ### Change Colors
 

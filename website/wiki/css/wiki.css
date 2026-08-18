@@ -1074,10 +1074,6 @@
     border-radius: var(--radius-md);
 }
 
-.discord-link {
-    color: var(--sky-blue);
-}
-
 .rules-info-section {
     margin-top: var(--spacing-lg);
 }

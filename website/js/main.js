@@ -115,7 +115,11 @@ function _showCopyFeedback(btn) {
 
 /* ── Server Status ──────────────────────────── */
 function initServerStatus() {
-    const API = 'https://api.mcsrvstat.us/3/mc.festas-builds.com';
+    const cfg = window.MC_CONFIG || {};
+    const ipEl = document.getElementById('serverIp');
+    const serverAddress = String(cfg.serverAddress || (ipEl && ipEl.textContent) || 'mc.festas-builds.com').trim();
+    const statusBase = String(cfg.statusAPI || 'https://api.mcsrvstat.us/3/').replace(/\/+$/, '/');
+    const API = statusBase + encodeURIComponent(serverAddress);
 
     async function checkStatus() {
         const indicator = document.querySelector('.status-indicator');
@@ -133,7 +137,9 @@ function initServerStatus() {
                 if (playerCount) {
                     const cur = data.players?.online ?? 0;
                     const max = data.players?.max ?? 0;
-                    playerCount.textContent = cur + '/' + max + ' Spieler online';
+                    playerCount.textContent = max > 0
+                        ? cur + '/' + max + ' Spieler online'
+                        : cur + ' Spieler online';
                 }
             } else {
                 if (indicator) { indicator.className = 'status-indicator offline'; }
@@ -143,6 +149,7 @@ function initServerStatus() {
         } catch {
             if (indicator) { indicator.className = 'status-indicator'; }
             if (statusText) statusText.textContent = 'Status unbekannt';
+            if (playerCount) playerCount.textContent = '– Spieler online';
         }
     }
 
@@ -248,7 +255,8 @@ function initPlayerList() {
     function render(data) {
         const servers = Array.isArray(data.servers) ? data.servers : [];
         const showNames = data.showNames !== false;
-        const online = Math.max(0, Number(data.online) || 0);
+        const totalFromServers = servers.reduce((sum, server) => sum + Math.max(0, Number(server.count) || 0), 0);
+        const online = Math.max(0, Number(data.online) || totalFromServers);
 
         setState('online');
         summary.textContent = online === 0
