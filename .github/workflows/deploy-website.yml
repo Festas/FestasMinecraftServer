@@ -34,7 +34,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.GHCR_TOKEN }}
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
@@ -64,7 +64,7 @@ jobs:
           IMAGE_SHA: ${{ needs.build-and-push.outputs.image_sha }}
           REGISTRY: ghcr.io
           IMAGE_NAME: festas/minecraft-server-web
-          GHCR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GHCR_TOKEN: ${{ secrets.GHCR_TOKEN }}
           GHCR_ACTOR: ${{ github.actor }}
         with:
           host: ${{ secrets.SSH_HOST }}
