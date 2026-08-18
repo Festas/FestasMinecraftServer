@@ -1,6 +1,25 @@
 block-rewards:
-  '100':
-    message: '<gradient:#FFD700:#FFEA00><bold>BLOCKS</bold></gradient> <dark_gray>»</dark_gray> <white>You have mined <yellow>100</yellow> <white>Blocks'
+  '1000':
+    message: <gradient:#FFD700:#FFEA00><bold>BLÖCKE</bold></gradient> <dark_gray>»</dark_gray> <white>Meilenstein! Du hast <yellow>1.000</yellow> <white>Blöcke abgebaut.
     commands:
-      - tokens give %player% 10000000
-      - tm msg %player% &e&lREWARD\n&fYou have mined &e100 &fBlocks
+    - tokens give %player% 250
+  '5000':
+    message: <gradient:#FFD700:#FFEA00><bold>BLÖCKE</bold></gradient> <dark_gray>»</dark_gray> <white>Meilenstein! Du hast <yellow>5.000</yellow> <white>Blöcke abgebaut.
+    commands:
+    - money give %player% 15000
+    - tokens give %player% 750
+  '25000':
+    message: <gradient:#FFD700:#FFEA00><bold>BLÖCKE</bold></gradient> <dark_gray>»</dark_gray> <white>Starke Leistung! <yellow>25.000</yellow> <white>Blöcke wurden erreicht.
+    commands:
+    - tokens give %player% 5000
+    - gems give %player% 10
+  '100000':
+    message: <gradient:#FFD700:#FFEA00><bold>BLÖCKE</bold></gradient> <dark_gray>»</dark_gray> <white>Du hast <yellow>100.000</yellow> <white>Blöcke geknackt!
+    commands:
+    - money give %player% 250000
+    - gems give %player% 50
+  '500000':
+    message: <gradient:#FFD700:#FFEA00><bold>BLÖCKE</bold></gradient> <dark_gray>»</dark_gray> <white>Legende! <yellow>500.000</yellow> <white>abgebaute Blöcke.
+    commands:
+    - tokens give %player% 50000
+    - gems give %player% 100
