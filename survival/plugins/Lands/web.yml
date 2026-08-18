@@ -7,7 +7,7 @@ map:
     # Should land markers be hidden by default?
     hide: false
     # The name of the layer where users can see the marked lands.
-    layer: 'Lands'
+    layer: 'Länder'
     # If you want your players activity to be more anonymous, you can specify an update interval.
     # This helps to prevent enemies spying dynmap to track player activity.
     # Time units: d, h, m, s -> Example: 1h
@@ -47,7 +47,7 @@ map:
         admin_2: '#ffcc00'
 
   dynmap:
-    enabled: true
+    enabled: false
     # Link to the map for the /lands map link command.
     # Add the "{dynmap}" placeholder to the "map.link" message in the locale file to display the link there.
     # If no link is set for any active map type, the command will be disabled.
@@ -117,7 +117,7 @@ map:
 
 
   squaremap:
-    enabled_3: true
+    enabled_3: false
     # Link to the map for the /lands map link command.
     # Add the "{squaremap}" placeholder to the "map.link" message in the locale file to display the link there.
     # If no link is set for any active map type, the command will be disabled.
@@ -145,7 +145,7 @@ map:
       thickness_3: 2
 
   Pl3xMap:
-    enabled_4: true
+    enabled_4: false
     # Link to the map for the /lands map link command.
     # Add the "{pl3xmap}" placeholder to the "map.link" message in the locale file to display the link there.
     # If no link is set for any active map type, the command will be disabled.
