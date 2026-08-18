@@ -257,7 +257,7 @@ gui:
   war_capture_recipe:
     title: <t:menu_title>Capture Flag Recipe
   war_info:
-    title: <t:menu_title>Krieg Info
+    title: <t:menu_title>Kriegsinfo
     items:
       default:
         war_attackers:
