@@ -114,43 +114,126 @@ function _showCopyFeedback(btn) {
 }
 
 /* ── Server Status ──────────────────────────── */
+function toNonNegativeNumber(value) {
+    const n = Number(value);
+    return Number.isFinite(n) && n > 0 ? n : 0;
+}
+
+function inferServerOnline(server) {
+    if (!server || typeof server !== 'object') return false;
+    if (typeof server.online === 'boolean') return server.online;
+
+    const count = toNonNegativeNumber(server.count);
+    if (count > 0) return true;
+
+    if (Array.isArray(server.players) && server.players.length > 0) return true;
+    if (toNonNegativeNumber(server.uptimeSeconds) > 0) return true;
+
+    return false;
+}
+
+function normalizeServers(value) {
+    return Array.isArray(value) ? value.filter((entry) => entry && typeof entry === 'object') : [];
+}
+
+function sumServerCounts(servers) {
+    return servers.reduce((sum, server) => sum + toNonNegativeNumber(server.count), 0);
+}
+
+function sumServerMax(servers) {
+    return servers.reduce((sum, server) => sum + toNonNegativeNumber(server.max), 0);
+}
+
+function totalOnlineFromSnapshot(snapshot) {
+    const servers = normalizeServers(snapshot && snapshot.servers);
+    const totalFromServers = sumServerCounts(servers);
+    const rootOnline = Number(snapshot && snapshot.online);
+    return Number.isFinite(rootOnline) && rootOnline >= 0 ? rootOnline : totalFromServers;
+}
+
+function totalMaxFromSnapshot(snapshot) {
+    const servers = normalizeServers(snapshot && snapshot.servers);
+    const totalFromServers = sumServerMax(servers);
+    const rootMax = Number(snapshot && snapshot.max);
+    return Number.isFinite(rootMax) && rootMax > 0 ? rootMax : totalFromServers;
+}
+
+function formatCountWithOptionalMax(count, max) {
+    return max > 0 ? count + '/' + max : String(count);
+}
+
+function formatDuration(totalSeconds) {
+    const seconds = Math.floor(Number(totalSeconds));
+    if (!Number.isFinite(seconds) || seconds < 0) return '—';
+
+    const days = Math.floor(seconds / 86400);
+    const hours = Math.floor((seconds % 86400) / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
+
+    const parts = [];
+    if (days > 0) parts.push(days + 'd');
+    if (hours > 0 || days > 0) parts.push(hours + 'h');
+    parts.push(minutes + 'm');
+    return parts.join(' ');
+}
+
 function initServerStatus() {
     const cfg = window.MC_CONFIG || {};
     const ipEl = document.getElementById('serverIp');
     const serverAddress = String(cfg.serverAddress || (ipEl && ipEl.textContent) || 'mc.festas-builds.com').trim();
     const statusBase = String(cfg.statusAPI || 'https://api.mcsrvstat.us/3/').replace(/\/+$/, '/');
-    const API = statusBase + encodeURIComponent(serverAddress);
+    const statusAPI = statusBase + encodeURIComponent(serverAddress);
+    const playersAPI = String(cfg.playersAPI || '/api/players.json');
 
-    async function checkStatus() {
+    async function readPlayersFallback() {
+        try {
+            const res = await fetch(playersAPI, { cache: 'no-store' });
+            if (!res.ok) return null;
+            const data = await res.json();
+            return data && typeof data === 'object' ? data : null;
+        } catch {
+            return null;
+        }
+    }
+
+    function setHeroState(state, text, countText) {
         const indicator = document.querySelector('.status-indicator');
         const statusText = document.querySelector('.status-text');
         const playerCount = document.getElementById('playerCount');
 
+        if (indicator) indicator.className = state ? 'status-indicator ' + state : 'status-indicator';
+        if (statusText) statusText.textContent = text;
+        if (playerCount) playerCount.textContent = countText;
+    }
+
+    async function checkStatus() {
         try {
-            const res = await fetch(API);
+            const res = await fetch(statusAPI, { cache: 'no-store' });
             if (!res.ok) throw new Error('HTTP ' + res.status);
             const data = await res.json();
+            const online = Boolean(data && data.online);
+            const current = toNonNegativeNumber(data && data.players && data.players.online);
+            const max = toNonNegativeNumber(data && data.players && data.players.max);
 
-            if (data.online) {
-                if (indicator) { indicator.className = 'status-indicator online'; }
-                if (statusText) statusText.textContent = 'Online';
-                if (playerCount) {
-                    const cur = data.players?.online ?? 0;
-                    const max = data.players?.max ?? 0;
-                    playerCount.textContent = max > 0
-                        ? cur + '/' + max + ' Spieler online'
-                        : cur + ' Spieler online';
-                }
+            if (online) {
+                setHeroState('online', 'Online', formatCountWithOptionalMax(current, max) + ' Spieler online');
             } else {
-                if (indicator) { indicator.className = 'status-indicator offline'; }
-                if (statusText) statusText.textContent = 'Offline';
-                if (playerCount) playerCount.textContent = '– Spieler online';
+                setHeroState('offline', 'Offline', '0 Spieler online');
             }
+            return;
         } catch {
-            if (indicator) { indicator.className = 'status-indicator'; }
-            if (statusText) statusText.textContent = 'Status unbekannt';
-            if (playerCount) playerCount.textContent = '– Spieler online';
+            // Try to derive a useful fallback from /api/players.json.
         }
+
+        const fallback = await readPlayersFallback();
+        if (fallback) {
+            const online = totalOnlineFromSnapshot(fallback);
+            const max = totalMaxFromSnapshot(fallback);
+            setHeroState('limited', 'Eingeschränkt', formatCountWithOptionalMax(online, max) + ' Spieler online');
+            return;
+        }
+
+        setHeroState('', 'Status unbekannt', '– Spieler online');
     }
 
     checkStatus();
@@ -194,9 +277,20 @@ function initPlayerList() {
         return n === 1 ? '1 Spieler' : n + ' Spieler';
     }
 
+    function latestUpdatedTimestamp(rootUpdated, servers) {
+        let latest = toNonNegativeNumber(rootUpdated);
+        servers.forEach((server) => {
+            latest = Math.max(latest, toNonNegativeNumber(server.updated));
+        });
+        return latest;
+    }
+
     function buildCard(server, showNames) {
         const info = metaFor(server.name);
-        const count = Math.max(0, Number(server.count) || 0);
+        const online = inferServerOnline(server);
+        const count = toNonNegativeNumber(server.count);
+        const max = toNonNegativeNumber(server.max);
+        const uptime = formatDuration(server.uptimeSeconds);
 
         const card = document.createElement('article');
         card.className = 'player-server';
@@ -216,15 +310,25 @@ function initPlayerList() {
         title.textContent = info.label;
         head.appendChild(title);
 
+        const status = document.createElement('span');
+        status.className = 'player-server-status ' + (online ? 'online' : 'offline');
+        status.textContent = online ? 'Online' : 'Offline';
+        head.appendChild(status);
+
         const badge = document.createElement('span');
         badge.className = 'player-server-count';
-        badge.textContent = String(count);
+        badge.textContent = formatCountWithOptionalMax(count, max);
         head.appendChild(badge);
 
         card.appendChild(head);
 
         const body = document.createElement('div');
         body.className = 'player-server-body';
+
+        const uptimeLine = document.createElement('p');
+        uptimeLine.className = 'player-meta';
+        uptimeLine.textContent = 'Uptime: ' + uptime;
+        body.appendChild(uptimeLine);
 
         if (count === 0) {
             const empty = document.createElement('p');
@@ -253,15 +357,17 @@ function initPlayerList() {
     }
 
     function render(data) {
-        const servers = Array.isArray(data.servers) ? data.servers : [];
-        const showNames = data.showNames !== false;
-        const totalFromServers = servers.reduce((sum, server) => sum + Math.max(0, Number(server.count) || 0), 0);
-        const online = Math.max(0, Number(data.online) || totalFromServers);
+        const snapshot = data && typeof data === 'object' ? data : {};
+        const servers = normalizeServers(snapshot.servers);
+        const showNames = snapshot.showNames !== false;
+        const online = totalOnlineFromSnapshot(snapshot);
+        const max = totalMaxFromSnapshot(snapshot);
+        const anyOnline = servers.some((server) => inferServerOnline(server));
 
-        setState('online');
+        setState(anyOnline ? 'online' : 'offline');
         summary.textContent = online === 0
             ? 'Gerade ist niemand online'
-            : playersLabel(online) + ' online';
+            : formatCountWithOptionalMax(online, max) + ' Spieler online';
 
         clear(grid);
         if (!servers.length) {
@@ -274,11 +380,11 @@ function initPlayerList() {
         }
 
         if (updated) {
-            const ts = Number(data.updated) || 0;
+            const ts = latestUpdatedTimestamp(snapshot.updated, servers);
             const ageS = ts > 0 ? Math.floor(Date.now() / 1000) - ts : 0;
             if (ts > 0 && ageS > STALE_AFTER_S) {
                 updated.hidden = false;
-                updated.textContent = 'Daten evtl. veraltet – Proxy nicht erreichbar?';
+                updated.textContent = 'Daten möglicherweise veraltet';
                 setState('');
             } else {
                 updated.hidden = true;
@@ -290,6 +396,10 @@ function initPlayerList() {
         clear(grid);
         setState('offline');
         summary.textContent = 'Spielerliste momentan nicht verfügbar';
+        const note = document.createElement('p');
+        note.className = 'player-empty';
+        note.textContent = 'Spielerdaten konnten nicht geladen werden. Bitte später erneut versuchen.';
+        grid.appendChild(note);
         if (updated) updated.hidden = true;
     }
 
