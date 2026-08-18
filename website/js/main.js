@@ -114,7 +114,7 @@ function _showCopyFeedback(btn) {
 }
 
 /* ── Server Status ──────────────────────────── */
-function toNonNegativeNumber(value) {
+function toPositiveNumberOrZero(value) {
     const n = Number(value);
     return Number.isFinite(n) && n > 0 ? n : 0;
 }
@@ -123,11 +123,11 @@ function inferServerOnline(server) {
     if (!server || typeof server !== 'object') return false;
     if (typeof server.online === 'boolean') return server.online;
 
-    const count = toNonNegativeNumber(server.count);
+    const count = toPositiveNumberOrZero(server.count);
     if (count > 0) return true;
 
     if (Array.isArray(server.players) && server.players.length > 0) return true;
-    if (toNonNegativeNumber(server.uptimeSeconds) > 0) return true;
+    if (toPositiveNumberOrZero(server.uptimeSeconds) > 0) return true;
 
     return false;
 }
@@ -137,11 +137,11 @@ function normalizeServers(value) {
 }
 
 function sumServerCounts(servers) {
-    return servers.reduce((sum, server) => sum + toNonNegativeNumber(server.count), 0);
+    return servers.reduce((sum, server) => sum + toPositiveNumberOrZero(server.count), 0);
 }
 
 function sumServerMax(servers) {
-    return servers.reduce((sum, server) => sum + toNonNegativeNumber(server.max), 0);
+    return servers.reduce((sum, server) => sum + toPositiveNumberOrZero(server.max), 0);
 }
 
 function totalOnlineFromSnapshot(snapshot) {
@@ -212,8 +212,8 @@ function initServerStatus() {
             if (!res.ok) throw new Error('HTTP ' + res.status);
             const data = await res.json();
             const online = Boolean(data && data.online);
-            const current = toNonNegativeNumber(data && data.players && data.players.online);
-            const max = toNonNegativeNumber(data && data.players && data.players.max);
+            const current = toPositiveNumberOrZero(data && data.players && data.players.online);
+            const max = toPositiveNumberOrZero(data && data.players && data.players.max);
 
             if (online) {
                 setHeroState('online', 'Online', formatCountWithOptionalMax(current, max) + ' Spieler online');
@@ -278,9 +278,9 @@ function initPlayerList() {
     }
 
     function latestUpdatedTimestamp(rootUpdated, servers) {
-        let latest = toNonNegativeNumber(rootUpdated);
+        let latest = toPositiveNumberOrZero(rootUpdated);
         servers.forEach((server) => {
-            latest = Math.max(latest, toNonNegativeNumber(server.updated));
+            latest = Math.max(latest, toPositiveNumberOrZero(server.updated));
         });
         return latest;
     }
@@ -288,8 +288,8 @@ function initPlayerList() {
     function buildCard(server, showNames) {
         const info = metaFor(server.name);
         const online = inferServerOnline(server);
-        const count = toNonNegativeNumber(server.count);
-        const max = toNonNegativeNumber(server.max);
+        const count = toPositiveNumberOrZero(server.count);
+        const max = toPositiveNumberOrZero(server.max);
         const uptime = formatDuration(server.uptimeSeconds);
 
         const card = document.createElement('article');
