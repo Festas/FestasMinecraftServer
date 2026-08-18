@@ -111,14 +111,6 @@
 #         OpenBarrel - defines amount of interactions with open barrel.
 #         DropCount - defines amount of interactions with drop count.
 
-# ==========================================================================
-# Zeitbasierte Rang-Leiter (autorank-Track) - CMI AutoRankUp Engine
-# Nur auf Survival aktiv (Modules.yml ranks: true) = einzige Rankup-Autoritaet.
-# Rangnamen == LuckPerms-Gruppen des 'autorank'-Tracks. Aufstieg via
-# 'lp ... promote autorank' -> Rang gilt sofort netzwerkweit (shared s4_perms).
-# Erkennung der aktuellen Stufe: cmi.rank.<name>-Node je Track-Gruppe +
-# config.yml Ranks.PermissionCheck: true (hoechstes Gewicht = aktuelle Stufe).
-# ==========================================================================
 default:
   Enabled: true
   DisplayName: '&7Default'
@@ -136,10 +128,11 @@ lauch:
   StatsRequirements:
   - PlayTime:3600
   Commands:
-  - 'asConsole! lp user [playerName] promote autorank'
-  - 'asConsole! cmi money give [playerName] 1000'
-  - 'asConsole! tycoon_celebrate_rankup [playerName] Lauch normal'
-  - 'asConsole! tycoon_msg [playerName] &8[&bRang&8] &aGlückwunsch! Du bist kein NPC mehr, sondern ein &fLauch&a!'
+  - asConsole! lp user [playerName] promote autorank
+  - asConsole! cmi money give [playerName] 1000
+  - asConsole! tycoon_celebrate_rankup [playerName] Lauch normal
+  - asConsole! tycoon_msg [playerName] &8[&bRang&8] &aGlückwunsch! Du bist kein NPC
+    mehr, sondern ein &fLauch&a!
 knecht:
   Enabled: true
   DisplayName: '&aKnecht'
@@ -150,10 +143,11 @@ knecht:
   StatsRequirements:
   - PlayTime:18000
   Commands:
-  - 'asConsole! lp user [playerName] promote autorank'
-  - 'asConsole! cmi money give [playerName] 5000'
-  - 'asConsole! tycoon_celebrate_rankup [playerName] Knecht normal'
-  - 'asConsole! tycoon_msg [playerName] &8[&bRang&8] &aRespekt! Du hast dich zum &eKnecht &ahochgearbeitet!'
+  - asConsole! lp user [playerName] promote autorank
+  - asConsole! cmi money give [playerName] 5000
+  - asConsole! tycoon_celebrate_rankup [playerName] Knecht normal
+  - asConsole! tycoon_msg [playerName] &8[&bRang&8] &aRespekt! Du hast dich zum &eKnecht
+    &ahochgearbeitet!
 chiller:
   Enabled: true
   DisplayName: '&aChiller'
@@ -164,10 +158,11 @@ chiller:
   StatsRequirements:
   - PlayTime:43200
   Commands:
-  - 'asConsole! lp user [playerName] promote autorank'
-  - 'asConsole! cmi money give [playerName] 10000'
-  - 'asConsole! tycoon_celebrate_rankup [playerName] Chiller normal'
-  - 'asConsole! tycoon_msg [playerName] &8[&bRang&8] &aDu bist jetzt offiziell ein &bChiller&a!'
+  - asConsole! lp user [playerName] promote autorank
+  - asConsole! cmi money give [playerName] 10000
+  - asConsole! tycoon_celebrate_rankup [playerName] Chiller normal
+  - asConsole! tycoon_msg [playerName] &8[&bRang&8] &aDu bist jetzt offiziell ein
+    &bChiller&a!
 ticker:
   Enabled: true
   DisplayName: '&aTicker'
@@ -178,10 +173,11 @@ ticker:
   StatsRequirements:
   - PlayTime:86400
   Commands:
-  - 'asConsole! lp user [playerName] promote autorank'
-  - 'asConsole! cmi money give [playerName] 25000'
-  - 'asConsole! tycoon_celebrate_rankup [playerName] Ticker normal'
-  - 'asConsole! tycoon_msg [playerName] &8[&bRang&8] &aGeschäfte laufen? Du bist nun &aTicker&a!'
+  - asConsole! lp user [playerName] promote autorank
+  - asConsole! cmi money give [playerName] 25000
+  - asConsole! tycoon_celebrate_rankup [playerName] Ticker normal
+  - asConsole! tycoon_msg [playerName] &8[&bRang&8] &aGeschäfte laufen? Du bist nun
+    &aTicker&a!
 hustler:
   Enabled: true
   DisplayName: '&6Hustler'
@@ -192,10 +188,11 @@ hustler:
   StatsRequirements:
   - PlayTime:172800
   Commands:
-  - 'asConsole! lp user [playerName] promote autorank'
-  - 'asConsole! cmi money give [playerName] 50000'
-  - 'asConsole! tycoon_celebrate_rankup [playerName] Hustler mid'
-  - 'asConsole! tycoon_msg [playerName] &8[&bRang&8] &aJeden Tag am Hustlen. Rang: &6Hustler&a!'
+  - asConsole! lp user [playerName] promote autorank
+  - asConsole! cmi money give [playerName] 50000
+  - asConsole! tycoon_celebrate_rankup [playerName] Hustler mid
+  - 'asConsole! tycoon_msg [playerName] &8[&bRang&8] &aJeden Tag am Hustlen. Rang:
+    &6Hustler&a!'
 macher:
   Enabled: true
   DisplayName: '&6Macher'
@@ -206,10 +203,11 @@ macher:
   StatsRequirements:
   - PlayTime:360000
   Commands:
-  - 'asConsole! lp user [playerName] promote autorank'
-  - 'asConsole! cmi money give [playerName] 100000'
-  - 'asConsole! tycoon_celebrate_rankup [playerName] Macher mid'
-  - 'asConsole! tycoon_msg [playerName] &8[&bRang&8] &aDu bist ein echter &9Macher&a geworden!'
+  - asConsole! lp user [playerName] promote autorank
+  - asConsole! cmi money give [playerName] 100000
+  - asConsole! tycoon_celebrate_rankup [playerName] Macher mid
+  - asConsole! tycoon_msg [playerName] &8[&bRang&8] &aDu bist ein echter &9Macher&a
+    geworden!
 tuersteher:
   Enabled: true
   DisplayName: '&6Türsteher'
@@ -220,10 +218,11 @@ tuersteher:
   StatsRequirements:
   - PlayTime:540000
   Commands:
-  - 'asConsole! lp user [playerName] promote autorank'
-  - 'asConsole! cmi money give [playerName] 150000'
-  - 'asConsole! tycoon_celebrate_rankup [playerName] Türsteher mid'
-  - 'asConsole! tycoon_msg [playerName] &8[&bRang&8] &aDu kontrollierst jetzt den Block. &8Türsteher&a!'
+  - asConsole! lp user [playerName] promote autorank
+  - asConsole! cmi money give [playerName] 150000
+  - asConsole! tycoon_celebrate_rankup [playerName] Türsteher mid
+  - asConsole! tycoon_msg [playerName] &8[&bRang&8] &aDu kontrollierst jetzt den Block.
+    &8Türsteher&a!
 bratan:
   Enabled: true
   DisplayName: '&6Bratan'
@@ -234,10 +233,10 @@ bratan:
   StatsRequirements:
   - PlayTime:900000
   Commands:
-  - 'asConsole! lp user [playerName] promote autorank'
-  - 'asConsole! cmi money give [playerName] 250000'
-  - 'asConsole! tycoon_celebrate_rankup [playerName] Bratan mid'
-  - 'asConsole! tycoon_msg [playerName] &8[&bRang&8] &aDu gehörst zur Familie. &5Bratan&a!'
+  - asConsole! lp user [playerName] promote autorank
+  - asConsole! cmi money give [playerName] 250000
+  - asConsole! tycoon_celebrate_rankup [playerName] Bratan mid
+  - asConsole! tycoon_msg [playerName] &8[&bRang&8] &aDu gehörst zur Familie. &5Bratan&a!
 bre:
   Enabled: true
   DisplayName: '&6Bre'
@@ -248,10 +247,10 @@ bre:
   StatsRequirements:
   - PlayTime:1440000
   Commands:
-  - 'asConsole! lp user [playerName] promote autorank'
-  - 'asConsole! cmi money give [playerName] 400000'
-  - 'asConsole! tycoon_celebrate_rankup [playerName] Bre mid'
-  - 'asConsole! tycoon_msg [playerName] &8[&bRang&8] &aWas geht, &dBre&a?'
+  - asConsole! lp user [playerName] promote autorank
+  - asConsole! cmi money give [playerName] 400000
+  - asConsole! tycoon_celebrate_rankup [playerName] Bre mid
+  - asConsole! tycoon_msg [playerName] &8[&bRang&8] &aWas geht, &dBre&a?
 ehrenmann:
   Enabled: true
   DisplayName: '&cEhrenmann'
@@ -262,10 +261,10 @@ ehrenmann:
   StatsRequirements:
   - PlayTime:2160000
   Commands:
-  - 'asConsole! lp user [playerName] promote autorank'
-  - 'asConsole! cmi money give [playerName] 750000'
-  - 'asConsole! tycoon_celebrate_rankup [playerName] Ehrenmann high'
-  - 'asConsole! tycoon_msg [playerName] &8[&bRang&8] &aAbsoluter &cEhrenmann&a!'
+  - asConsole! lp user [playerName] promote autorank
+  - asConsole! cmi money give [playerName] 750000
+  - asConsole! tycoon_celebrate_rankup [playerName] Ehrenmann high
+  - asConsole! tycoon_msg [playerName] &8[&bRang&8] &aAbsoluter &cEhrenmann&a!
 loewe:
   Enabled: true
   DisplayName: '&cLöwe'
@@ -276,10 +275,10 @@ loewe:
   StatsRequirements:
   - PlayTime:2880000
   Commands:
-  - 'asConsole! lp user [playerName] promote autorank'
-  - 'asConsole! cmi money give [playerName] 1000000'
-  - 'asConsole! tycoon_celebrate_rankup [playerName] Löwe high'
-  - 'asConsole! tycoon_msg [playerName] &8[&bRang&8] &aEin echter &6Löwe&a!'
+  - asConsole! lp user [playerName] promote autorank
+  - asConsole! cmi money give [playerName] 1000000
+  - asConsole! tycoon_celebrate_rankup [playerName] Löwe high
+  - asConsole! tycoon_msg [playerName] &8[&bRang&8] &aEin echter &6Löwe&a!
 maschine:
   Enabled: true
   DisplayName: '&cMaschine'
@@ -290,10 +289,10 @@ maschine:
   StatsRequirements:
   - PlayTime:3600000
   Commands:
-  - 'asConsole! lp user [playerName] promote autorank'
-  - 'asConsole! cmi money give [playerName] 2000000'
-  - 'asConsole! tycoon_celebrate_rankup [playerName] Maschine high'
-  - 'asConsole! tycoon_msg [playerName] &8[&bRang&8] &aDu funktionierst wie eine &bMaschine&a!'
+  - asConsole! lp user [playerName] promote autorank
+  - asConsole! cmi money give [playerName] 2000000
+  - asConsole! tycoon_celebrate_rankup [playerName] Maschine high
+  - asConsole! tycoon_msg [playerName] &8[&bRang&8] &aDu funktionierst wie eine &bMaschine&a!
 baba:
   Enabled: true
   DisplayName: '&4BABA'
@@ -304,10 +303,10 @@ baba:
   StatsRequirements:
   - PlayTime:4500000
   Commands:
-  - 'asConsole! lp user [playerName] promote autorank'
-  - 'asConsole! cmi money give [playerName] 5000000'
-  - 'asConsole! tycoon_celebrate_rankup [playerName] BABA god'
-  - 'asConsole! tycoon_msg [playerName] &8[&bRang&8] &aDu bist der &4BABA&a im Geschäft!'
+  - asConsole! lp user [playerName] promote autorank
+  - asConsole! cmi money give [playerName] 5000000
+  - asConsole! tycoon_celebrate_rankup [playerName] BABA god
+  - asConsole! tycoon_msg [playerName] &8[&bRang&8] &aDu bist der &4BABA&a im Geschäft!
 maincharacter:
   Enabled: true
   DisplayName: '&4MainCharacter'
@@ -316,7 +315,8 @@ maincharacter:
   StatsRequirements:
   - PlayTime:5400000
   Commands:
-  - 'asConsole! lp user [playerName] promote autorank'
-  - 'asConsole! cmi money give [playerName] 10000000'
-  - 'asConsole! tycoon_celebrate_rankup [playerName] Main-Character god'
-  - 'asConsole! tycoon_msg [playerName] &8[&bRang&8] &aDu bist der &bMain Character&a dieses Servers!'
+  - asConsole! lp user [playerName] promote autorank
+  - asConsole! cmi money give [playerName] 10000000
+  - asConsole! tycoon_celebrate_rankup [playerName] Main-Character god
+  - asConsole! tycoon_msg [playerName] &8[&bRang&8] &aDu bist der &bMain Character&a
+    dieses Servers!

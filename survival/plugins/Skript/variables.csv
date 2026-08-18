@@ -50,7 +50,8 @@ ach_rewards::sell_1m, long, 00000000004C4B40
 ach_rewards::sell_10k, long, 000000000000C350
 ach_rewards::sell_100k, long, 000000000007A120
 achievement.6e874670-66e9-48dd-b16f-48029fc0c645.gamble_win, boolean, 01
-achievement.count.6e874670-66e9-48dd-b16f-48029fc0c645, long, 0000000000000001
+achievement.6e874670-66e9-48dd-b16f-48029fc0c645.rich_1m, boolean, 01
+achievement.count.6e874670-66e9-48dd-b16f-48029fc0c645, long, 0000000000000002
 achievement.count.e316e06a-8b70-4d7e-9636-f2085ddade33, long, 0000000000000001
 achievement.e316e06a-8b70-4d7e-9636-f2085ddade33.gamble_win, boolean, 01
 boerse_base::coal, long, 0000000000000014
@@ -77,30 +78,30 @@ boerse_base::redstone, long, 00000000000000C8
 "boerse_base::redstone block", long, 0000000000000708
 boerse_base::stone, long, 000000000000000A
 "boerse_base::stone bricks", long, 0000000000000014
-boerse_multi::coal, double, 405A000000000000
-"boerse_multi::coal block", double, 405A000000000000
-"boerse_multi::coarse dirt", double, 405A000000000000
-"boerse_multi::copper block", double, 405A000000000000
-"boerse_multi::copper ingot", double, 405A000000000000
-"boerse_multi::crying obsidian", double, 405A000000000000
-boerse_multi::diamond, double, 405A000000000000
-"boerse_multi::diamond block", double, 405A000000000000
-boerse_multi::dirt, double, 405A000000000000
-boerse_multi::emerald, double, 405A000000000000
-"boerse_multi::emerald block", double, 405A000000000000
-"boerse_multi::gold block", double, 405A000000000000
-"boerse_multi::gold ingot", double, 405A000000000000
-"boerse_multi::iron block", double, 405A000000000000
-"boerse_multi::iron ingot", double, 405A000000000000
-"boerse_multi::lapis block", double, 405A000000000000
-"boerse_multi::lapis lazuli", double, 405A000000000000
-"boerse_multi::netherite ingot", double, 405A000000000000
-"boerse_multi::netherite scrap", double, 405A000000000000
-boerse_multi::obsidian, double, 405A000000000000
-boerse_multi::redstone, double, 405A000000000000
-"boerse_multi::redstone block", double, 405A000000000000
-boerse_multi::stone, double, 405A000000000000
-"boerse_multi::stone bricks", double, 405A000000000000
+boerse_multi::coal, double, 4067A00000000000
+"boerse_multi::coal block", long, 00000000000000C8
+"boerse_multi::coarse dirt", long, 00000000000000C8
+"boerse_multi::copper block", long, 00000000000000C8
+"boerse_multi::copper ingot", long, 00000000000000C8
+"boerse_multi::crying obsidian", long, 00000000000000C8
+boerse_multi::diamond, long, 00000000000000C8
+"boerse_multi::diamond block", long, 00000000000000C8
+boerse_multi::dirt, long, 00000000000000C8
+boerse_multi::emerald, long, 00000000000000C8
+"boerse_multi::emerald block", long, 00000000000000C8
+"boerse_multi::gold block", long, 00000000000000C8
+"boerse_multi::gold ingot", long, 00000000000000C8
+"boerse_multi::iron block", long, 00000000000000C8
+"boerse_multi::iron ingot", long, 00000000000000C8
+"boerse_multi::lapis block", long, 00000000000000C8
+"boerse_multi::lapis lazuli", long, 00000000000000C8
+"boerse_multi::netherite ingot", long, 00000000000000C8
+"boerse_multi::netherite scrap", long, 00000000000000C8
+boerse_multi::obsidian, long, 00000000000000C8
+boerse_multi::redstone, long, 00000000000000C8
+"boerse_multi::redstone block", long, 00000000000000C8
+boerse_multi::stone, long, 00000000000000C8
+"boerse_multi::stone bricks", long, 00000000000000C8
 boerse_sold::coal, long, 0000000000000000
 "boerse_sold::coal block", long, 0000000000000000
 "boerse_sold::coarse dirt", long, 0000000000000000
@@ -154,10 +155,10 @@ casino_loss::e316e06a-8b70-4d7e-9636-f2085ddade33, long, 0000000000001388
 "collector::tycoon:-58.5,-9.5,-18.5", offlineplayer, 810475756964800455554944820B6D6F737473696762697473046E87467066E948DD0C6C656173747369676269747304B16F48029FC0C645
 "collector::tycoon:-57.5,-11.5,20.5", offlineplayer, 810475756964800455554944820B6D6F73747369676269747304E316E06A8B704D7E0C6C6561737473696762697473049636F2085DDADE33
 "collector::tycoon:-19.5,-11.5,59.5", offlineplayer, 810475756964800455554944820B6D6F73747369676269747304C0B032948D244B2E0C6C6561737473696762697473048C58BA64C0C93204
-daily.lastclaim.25f22b83-f8f4-4bf5-b8d7-9fdb2c53e1ab, date, 810974696D657374616D7004000001A006F73FB1
-daily.lastclaim.6e874670-66e9-48dd-b16f-48029fc0c645, date, 810974696D657374616D7004000001A0071010BB
+daily.lastclaim.25f22b83-f8f4-4bf5-b8d7-9fdb2c53e1ab, date, 810974696D657374616D7004000001A01126F43E
+daily.lastclaim.6e874670-66e9-48dd-b16f-48029fc0c645, date, 810974696D657374616D7004000001A011631DE9
 daily.lastclaim.8546f1ab-5805-4633-800c-7030c555b563, date, 810974696D657374616D7004000001A007054790
-daily.streak.25f22b83-f8f4-4bf5-b8d7-9fdb2c53e1ab, long, 0000000000000001
+daily.streak.25f22b83-f8f4-4bf5-b8d7-9fdb2c53e1ab, long, 0000000000000002
 daily.streak.6e874670-66e9-48dd-b16f-48029fc0c645, long, 0000000000000001
 daily.streak.8546f1ab-5805-4633-800c-7030c555b563, long, 0000000000000001
 eco.daily_gamble_loss, double, 41014DAA97DBF48A

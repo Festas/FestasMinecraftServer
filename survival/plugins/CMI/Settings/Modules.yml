@@ -155,7 +155,6 @@ noTarget: true
 #  
 # Handles rankup system
 # Applies for servers from 1.7.x and up
-# Survival = einzige Rankup-Autoritaet fuer den zeitbasierten autorank-Track (siehe Settings/Ranks.yml)
 ranks: true
 #  
 # Handles votifier system
