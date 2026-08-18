@@ -6,22 +6,22 @@
 # Wiki: https://wiki.incredibleplugins.com/general/menus/gui-menus
 
 general:
-  all: <green>All</green>
+  all: <green>Alle</green>
   previous: <t:regular>previous</t>
   nation:
     managed:
-      nation: <t:error>Managed by Nation</t>
-      land: <t:error>Managed by Lands</t>
+      nation: <t:error>Von der Nation verwaltet</t>
+      land: <t:error>Von Lands verwaltet</t>
   inbox-filter:
-    general: <t:regular>General</t>
-    members: <t:cmd>Members ☺</t>
-    economy: <t:cost>Economy $</t>
-    relations: <t:regular_value>Relations</t>
-    posts: <t:regular>Posts</t>
-    storage: <t:regular>Storage</t>
-  wYes: <green>Yes</green>
-  wnormal: <t:regular>member</t>
-  wvassal: <t:negative>vassal</t>
+    general: <t:regular>Allgemein</t>
+    members: <t:cmd>Mitglieder ☺</t>
+    economy: <t:cost>Wirtschaft €</t>
+    relations: <t:regular_value>Beziehungen</t>
+    posts: <t:regular>Beiträge</t>
+    storage: <t:regular>Lager</t>
+  wYes: <green>Ja</green>
+  wnormal: <t:regular>Mitglied</t>
+  wvassal: <t:negative>Vasall</t>
   search-by:
     name: <t:regular>Name</t>
     tag: <t:regular>Tag</t>
@@ -30,18 +30,18 @@ general:
       nation: '<t:entity_nation>Nation</t> '
       land: '<t:entity_land>Land</t> '
   value:
-    none: <red>None</red>
-    unlimited: <green>unlimited</green>
+    none: <red>Keine</red>
+    unlimited: <green>unbegrenzt</green>
     click:
-      primary: <t:decoration>✖</t> <t:click>LEFT CLICK<newline>   </t>
-      secondary: <t:decoration>✖</t> <t:click>RIGHT CLICK<newline>   </t>
-      tertiary: <t:decoration>✖</t> <t:click>SHIFT + LEFT Click<newline>   </t>
-      quaternary: <t:decoration>✖</t> <t:click>SHIFT + RIGHT Click<newline>   </t>
-      remove: <t:decoration>✖</t> <t:click>DROP<newline>   </t>
+      primary: <t:decoration>✖</t> <t:click>LINKSKLICK<newline>   </t>
+      secondary: <t:decoration>✖</t> <t:click>RECHTSKLICK<newline>   </t>
+      tertiary: <t:decoration>✖</t> <t:click>SHIFT + LINKSKLICK<newline>   </t>
+      quaternary: <t:decoration>✖</t> <t:click>SHIFT + RECHTSKLICK<newline>   </t>
+      remove: <t:decoration>✖</t> <t:click>WERFEN<newline>   </t>
       label: <t:regular><v:label></t>
-  enabled: <green>Enabled</green>
+  enabled: <green>Aktiviert</green>
   offline: <red>Offline</red>
-  never: <t:regular>Never</t>
+  never: <t:regular>Nie</t>
   rentables:
     cost: <t:regular_value>Cost</t>
     price_blocks_ratio: <t:regular_value>Price-blocks ratio</t>
@@ -56,64 +56,64 @@ general:
       ratio-kd: Kills/Deaths
       level: Level
       chunks: Chunks
-      members: Members
+      members: Mitglieder
       ratio-wl: Won/Lost
-  now: <green>Now</green>
-  wNo: <red>No</red>
-  disabled: <red>Disabled</red>
+  now: <green>Jetzt</green>
+  wNo: <red>Nein</red>
+  disabled: <red>Deaktiviert</red>
   directions:
-    north: North
-    east: East
-    south: South
-    west: West
+    north: Norden
+    east: Osten
+    south: Süden
+    west: Westen
 
 physical:
   selection:
-    name: <t:regular_heading>Selection Tool
+    name: <t:regular_heading>Auswahlwerkzeug
     lore:
-    - <t:regular>Use this tool to create a selection.
-    - 'Selections can be used for:'
-    - ' <t:decoration>• </t><t:regular>Claiming'
-    - ' <t:decoration>• </t><t:regular>Unclaiming'
-    - ' <t:decoration>• </t><t:regular>Resizing areas'
+    - <t:regular>Nutze dieses Werkzeug, um eine Auswahl zu erstellen.
+    - 'Auswahlen können genutzt werden für:'
+    - ' <t:decoration>• </t><t:regular>Claimen'
+    - ' <t:decoration>• </t><t:regular>Freigeben'
+    - ' <t:decoration>• </t><t:regular>Bereiche vergrößern/verkleinern'
     material: GOLDEN_HOE
   currency:
     material: GOLD_INGOT
   claim_block_radius:
-    name: <t:regular_heading>Radius Claimblock
+    name: <t:regular_heading>Radius-Claimblock
     lore:
-    - <t:regular>You can claim a radius of
-    - chunks by placing this block
-    - in the wilderness.
+    - <t:regular>Du kannst einen Radius von
+    - Chunks claimen, indem du diesen Block
+    - in der Wildnis platzierst.
     - ''
-    - ' <t:decoration>• </t><t:regular>Owner:<t:regular_value> <v:owner></t>'
+    - ' <t:decoration>• </t><t:regular>Besitzer:<t:regular_value> <v:owner></t>'
     - ' <t:decoration>• </t><t:regular>Radius:<t:regular_value> <v:radius></t> <t:decoration>(</t><t:regular_value>=
       <v:chunks> chunks</t><t:decoration>)</t>'
     material: GRASS_BLOCK
   claim_block:
     name: <t:regular_heading>Claimblock
     lore:
-    - <t:regular>You can claim a chunk
-    - by placing this block
-    - in the wilderness.
+    - <t:regular>Du kannst einen Chunk claimen,
+    - indem du diesen Block
+    - in der Wildnis platzierst.
     - ''
-    - ' <t:decoration>• </t><t:regular>Owner:<t:regular_value> <v:owner></t>'
+    - ' <t:decoration>• </t><t:regular>Besitzer:<t:regular_value> <v:owner></t>'
     material: GRASS_BLOCK
   info:
-    name: <t:regular_heading>Info Tool
+    name: <t:regular_heading>Info-Werkzeug
     lore:
-    - <t:regular>Use this tool to get
-    - information about the claim
-    - you're pointing at.
+    - <t:regular>Nutze dieses Werkzeug, um
+    - Informationen über den Claim
+    - anzusehen, den du anvisierst.
     material: FEATHER
   camp:
-    name: <t:regular_heading>Camp
+    name: <t:regular_heading>Lager
     lore:
-    - <t:regular>Place this item to create a temporary
-    - camp that will be deleted after
+    - <t:regular>Platziere dieses Item, um ein temporäres
+    - Lager zu erstellen, das nach
     - <t:time><v:time></t>.
     - ' <t:decoration>• </t><t:regular>Radius:<t:regular_value> <v:radius></t>'
-    - ' <t:decoration>• </t><t:regular>Camps can''t be expanded.'
+    - ' <t:decoration>• </t><t:regular>Lager können nicht erweitert werden.'
     material: CAMPFIRE
   capture_flag:
     material: BEACON
@@ -688,57 +688,57 @@ gui:
           material: OAK_FENCE
           slots: 31
         lands:
-          name: <t:entity_land><b>Your Lands</t>
+          name: <t:entity_land><b>Deine Länder</t>
           lore:
-          - <t:decoration>✖ </t><t:regular>Manage lands that you're part of.
-          - '    <t:decoration>• </t><t:regular>Own: <t:regular_value><v:own></t>'
-          - '    <t:decoration>• </t><t:regular>Trusted: <t:regular_value><v:trusted></t>'
+          - <t:decoration>✖ </t><t:regular>Verwalte Länder, in denen du Mitglied bist.
+          - '    <t:decoration>• </t><t:regular>Eigene: <t:regular_value><v:own></t>'
+          - '    <t:decoration>• </t><t:regular>Vertraut: <t:regular_value><v:trusted></t>'
           material: skin:8449b9318e33158e64a46ab0de121c3d40000e3332c1574932b3c849d8fa0dc2
           slots: 11
         flags:
-          name: <t:regular_heading>Settings
+          name: <t:regular_heading>Einstellungen
           lore:
-          - <t:decoration>✖ </t><t:regular>Edit personal settings.
+          - <t:decoration>✖ </t><t:regular>Bearbeite deine persönlichen Einstellungen.
           material: skin:ec2ff244dfc9dd3a2cef63112e7502dc6367b0d02132950347b2b479a72366dd
           slots: 32
         invites:
-          name: <t:regular_heading>Invites & Requests
+          name: <t:regular_heading>Einladungen & Anfragen
           lore:
-          - <t:decoration>✖ </t><t:regular>View your received invites.
-          - '   Other lands can invite you to join them,'
-          - '   request you to become their new owner'
-          - '   or request your land to be merged'
-          - '   into theirs.'
+          - <t:decoration>✖ </t><t:regular>Sieh dir deine erhaltenen Einladungen an.
+          - '   Andere Länder können dich einladen,'
+          - '   ihr neuer Besitzer zu werden,'
+          - '   oder dein Land soll mit ihrem'
+          - '   Land zusammengeführt werden.'
           - ''
-          - '    <t:decoration>• </t><t:regular>Amount: <t:regular_value><v:invites></t>'
+          - '    <t:decoration>• </t><t:regular>Anzahl: <t:regular_value><v:invites></t>'
           material: WRITABLE_BOOK
           slots: 13
         nations:
-          name: <t:entity_nation><b>Your Nations</t>
+          name: <t:entity_nation><b>Deine Nationen</t>
           lore:
-          - <t:decoration>✖ </t><t:regular>View nations that you're part of.
-          - '    <t:decoration>• </t><t:regular>Own: <t:regular_value><v:own></t>'
-          - '    <t:decoration>• </t><t:regular>Trusted: <t:regular_value><v:trusted></t>'
+          - <t:decoration>✖ </t><t:regular>Sieh Nationen, in denen du Mitglied bist.
+          - '    <t:decoration>• </t><t:regular>Eigene: <t:regular_value><v:own></t>'
+          - '    <t:decoration>• </t><t:regular>Vertraut: <t:regular_value><v:trusted></t>'
           material: skin:45587da7fe7336e8ab9f791ea5e2cfc8a827ca959567eb9d53a647babf948d5
           slots: 12
         all-lands:
-          name: <t:entity_land><b>All Lands</t>
+          name: <t:entity_land><b>Alle Länder</t>
           lore:
-          - <t:decoration>✖ </t><t:regular>View all lands of this server.
-          - '    <t:decoration>• </t><t:regular>Total amount: <t:regular_value><v:lands></t>'
+          - <t:decoration>✖ </t><t:regular>Sieh alle Länder dieses Servers.
+          - '    <t:decoration>• </t><t:regular>Gesamt: <t:regular_value><v:lands></t>'
           material: skin:c9c8881e42915a9d29bb61a16fb26d059913204d265df5b439b3d792acd56
           slots: 29
         all-nations:
-          name: <t:entity_nation><b>All Nations</t>
+          name: <t:entity_nation><b>Alle Nationen</t>
           lore:
-          - <t:decoration>✖ </t><t:regular>View all nations of this server.
-          - '    <t:decoration>• </t><t:regular>Total amount: <t:regular_value><v:nations></t>'
+          - <t:decoration>✖ </t><t:regular>Sieh alle Nationen dieses Servers.
+          - '    <t:decoration>• </t><t:regular>Gesamt: <t:regular_value><v:nations></t>'
           material: skin:cf40942f364f6cbceffcf1151796410286a48b1aeba77243e218026c09cd1
           slots: 30
         map:
-          name: <t:regular_heading>Map
+          name: <t:regular_heading>Karte
           lore:
-          - <t:decoration>✖ </t><t:regular>View the claims map.
+          - <t:decoration>✖ </t><t:regular>Öffne die Claim-Karte.
           material: MAP
           slots: 33
       patches:
@@ -842,7 +842,7 @@ gui:
           material: INHERIT
           slots: 21
         map:
-          name: <t:regular_heading>Map
+          name: <t:regular_heading>Karte
           lore:
           - <t:decoration>✖ </t><t:regular>Open the map menu.
           material: MAP
@@ -1786,7 +1786,7 @@ gui:
           - <t:regular>To leave a land use <t:cmd>/<v:cmd></t>
           - <t:regular>instead.
   list_admin_lands:
-    title: <t:menu_title>Admin Lands
+    title: <t:menu_title>Admin-Länder
     items:
       default:
         add:
@@ -1854,7 +1854,7 @@ gui:
     items:
       default:
         lands:
-          name: <t:regular_heading>Manage Admin Lands
+          name: <t:regular_heading>Admin-Länder verwalten
           lore:
           - <t:decoration>✖ </t><t:regular>View and manage admin lands.
           - '    <t:decoration>• </t><t:regular>Manage them the same way as normal
@@ -1868,12 +1868,12 @@ gui:
           material: skin:8449b9318e33158e64a46ab0de121c3d40000e3332c1574932b3c849d8fa0dc2
           slots: 25
         child_failure_world:
-          name: <t:error_heading>Not a Lands world
+          name: <t:error_heading>Keine Lands-Welt
           lore:
-          - <t:error>The world you're currently standing
-          - in must be a Lands claim world.
-          - ' <t:decoration>• </t><t:regular>You can add claim worlds'
-          - '   in the plugin config.'
+          - <t:error>Die Welt, in der du gerade stehst,
+          - muss eine Lands-Claim-Welt sein.
+          - ' <t:decoration>• </t><t:regular>Du kannst Claim-Welten'
+          - '   in der Plugin-Konfiguration hinzufügen.'
         wilderness:
           name: <t:regular_heading>Wilderness Flags
           lore:
@@ -1915,7 +1915,7 @@ gui:
           category_members:
             slots: 40
   list_player_lands:
-    title: <t:menu_title>Your Lands
+    title: <t:menu_title>Deine Länder
     items:
       default:
         entry_land_own:
@@ -2018,7 +2018,7 @@ gui:
           - '   your own land and be trusted'
           - '   in another one at the same time.'
         child_failure_lands:
-          name: <t:error_heading>Max Lands
+          name: <t:error_heading>Maximale Länder
           lore:
           - <t:error>You can't join another land.
           - ' <t:decoration>• </t><t:regular>You reached your maximum'
@@ -2187,7 +2187,7 @@ gui:
           material: skin:e8b8c6a46d87cf86a55df214cf84bf45cca25edb9a676e96364dd6a6eea235b3
           slots: 13
         lands:
-          name: <t:regular_heading>Lands</t> <t:decoration>(</t><t:regular_value><v:amount></t><t:decoration>)</t>
+          name: <t:regular_heading>Länder</t> <t:decoration>(</t><t:regular_value><v:amount></t><t:decoration>)</t>
           lore:
           - <t:cmd><v:lands></t>
           material: skin:8449b9318e33158e64a46ab0de121c3d40000e3332c1574932b3c849d8fa0dc2
@@ -2710,7 +2710,7 @@ gui:
           bedrock:
             detail: true
         lands:
-          name: <t:regular_heading>Lands</t> <t:decoration>(</t><t:regular_value><v:amount></t><t:decoration>)</t>
+          name: <t:regular_heading>Länder</t> <t:decoration>(</t><t:regular_value><v:amount></t><t:decoration>)</t>
           lore:
           - <t:regular_value><v:lands></t>
           material: OAK_SIGN

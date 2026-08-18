@@ -7,21 +7,21 @@
 
 general:
   inbox-filter:
-    war: <t:negative>War ⚔</t>
+    war: <t:negative>Krieg ⚔</t>
   war:
-    defenders: <t:positive>Defenders</t>
-    attackers: <t:negative>Attackers</t>
+    defenders: <t:positive>Verteidiger</t>
+    attackers: <t:negative>Angreifer</t>
 
 physical:
   capture_flag:
-    name: <t:regular_heading>Capture Flag
+    name: <t:regular_heading>Eroberungsflagge
     lore:
-    - <t:regular>Place this flag on the enemy land
-    - during war in order to capture it.
+    - <t:regular>Platziere diese Flagge im feindlichen Land
+    - um es während eines Krieges zu erobern.
 
 gui:
   war:
-    title: <t:menu_title>War
+    title: <t:menu_title>Krieg
     items:
       default:
         war_attackers:
@@ -257,7 +257,7 @@ gui:
   war_capture_recipe:
     title: <t:menu_title>Capture Flag Recipe
   war_info:
-    title: <t:menu_title>War Info
+    title: <t:menu_title>Krieg Info
     items:
       default:
         war_attackers:

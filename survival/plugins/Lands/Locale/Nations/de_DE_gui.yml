@@ -8,9 +8,9 @@
 general:
   nation:
     role:
-      capital: <t:entity_land><b>Capital</t>
+      capital: <t:entity_land><b>Hauptland</t>
       land: <t:entity_land><b>Land</t>
-      vassal: <t:negative><b>Vassal</t>
+      vassal: <t:negative><b>Vasall</t>
 
 gui:
   nation:
@@ -18,106 +18,106 @@ gui:
     items:
       default:
         role:
-          name: <t:regular_heading>Nation Role
+          name: <t:regular_heading>Nationsrolle
           lore:
-          - <t:decoration>✖ </t><t:regular>Configure what nation members
-          - '   can do in each land that is part'
-          - '   of this nation.'
+          - <t:decoration>✖ </t><t:regular>Lege fest, was Nationsmitglieder
+          - '   in jedem Land tun dürfen, das Teil'
+          - '   dieser Nation ist.'
           - ''
-          - <t:decoration>✖ </t><t:negative>Vassal lands don't receive this role
-          - '   and their players can''t use it on your lands.'
+          - <t:decoration>✖ </t><t:negative>Vasallenländer erhalten diese Rolle nicht
+          - '   und ihre Spieler können sie in deinen Ländern nicht nutzen.'
           material: INHERIT
           slots: 30
         level:
           name: <t:regular_heading>Level
           lore:
-          - <t:decoration>✖ </t><t:regular>View level progression and
-          - '   attributes.'
+          - <t:decoration>✖ </t><t:regular>Sieh Fortschritt und
+          - '   Attribute.'
           material: EXPERIENCE_BOTTLE
           slots: 15
         war:
-          name: <t:negative_heading>Active War
+          name: <t:negative_heading>Aktiver Krieg
           lore:
-          - <t:decoration>✖ </t><t:regular>Get information about
-          - '   the current war.'
+          - <t:decoration>✖ </t><t:regular>Zeige Informationen über
+          - '   den aktuellen Krieg.'
           material: IRON_SWORD
           slots: 12
         taxes:
-          name: <t:regular_heading>Taxes
+          name: <t:regular_heading>Steuern
           lore:
-          - <t:decoration>✖ </t><t:regular>Tax lands that are part of
-          - '   this nation by their size.'
+          - <t:decoration>✖ </t><t:regular>Besteuere Länder, die Teil
+          - '   dieser Nation sind, nach ihrer Größe.'
           - ''
-          - '   <t:decoration>• </t><t:regular>Member tax:<t:cost> <v:tax></t>'
-          - '   <t:decoration>• </t><t:regular>Vassal tax:<t:cost> <v:vassal_tax></t>'
+          - '   <t:decoration>• </t><t:regular>Mitgliedersteuer:<t:cost> <v:tax></t>'
+          - '   <t:decoration>• </t><t:regular>Vasallensteuer:<t:cost> <v:vassal_tax></t>'
           material: GOLD_INGOT
           slots: 29
         child_failure_spawn_teleport:
-          name: <t:error_heading>Not Allowed to Teleport
+          name: <t:error_heading>Teleport nicht erlaubt
           lore:
-          - <t:error>You're not allowed to teleport
-          - to the capital's spawn.
-          - ' <t:decoration>• </t><t:regular>The capital''s owner can give your'
-          - '   role permission to do so.'
+          - <t:error>Du darfst dich nicht zum Spawn
+          - des Hauptlands teleportieren.
+          - ' <t:decoration>• </t><t:regular>Der Besitzer des Hauptlands kann'
+          - '   deiner Rolle die Berechtigung dafür geben.'
         effects:
-          name: <t:regular_heading>Effects
+          name: <t:regular_heading>Effekte
           lore:
-          - <t:decoration>✖ </t><t:regular>Set effects to be active within
-          - '   your nation. Effects can be unlocked'
-          - '   through nation level progression.'
+          - <t:decoration>✖ </t><t:regular>Lege Effekte fest, die in
+          - '   deiner Nation aktiv sind. Effekte werden'
+          - '   durch den Nationsfortschritt freigeschaltet.'
           material: POTION
           slots: 31
         spawn:
           name: <t:regular_heading>Spawn
           lore:
-          - <t:decoration>✖ </t><t:regular>Teleport to the capital's spawn.
+          - <t:decoration>✖ </t><t:regular>Teleportiere dich zum Spawn des Hauptlands.
           material: ENDER_PEARL
           slots: 9
         stats:
-          name: <t:regular_heading>Statistics
+          name: <t:regular_heading>Statistiken
           lore:
-          - '<t:regular>Total players: <t:regular_value><v:members></t>'
+          - '<t:regular>Spieler gesamt: <t:regular_value><v:members></t>'
           - ''
-          - <t:regular_heading>Economy</t>
+          - <t:regular_heading>Wirtschaft</t>
           - ' <t:decoration>• </t><t:regular>Nation'
-          - '   Balance: <t:regular_value><v:balance></t>'
-          - '   Nation pays<t:cost> <v:upkeep></t> upkeep'
+          - '   Kontostand: <t:regular_value><v:balance></t>'
+          - '   Die Nation zahlt<t:cost> <v:upkeep></t> Unterhalt'
           - '   in <t:time><v:upkeep_next></t>.'
-          - ' <t:decoration>• </t><t:regular>Next land tax collection in'
+          - ' <t:decoration>• </t><t:regular>Nächste Landsteuer in'
           - <t:time><v:upkeep_next_land></t>.
           material: skin:d01afe973c5482fdc71e6aa10698833c79c437f21308ea9a1a095746ec274a0f
           slots: 16
         lands:
-          name: <t:regular_heading>Lands
+          name: <t:regular_heading>Länder
           lore:
-          - <t:decoration>✖ </t><t:regular>Manage lands that are part
-          - '   of this nation.'
+          - <t:decoration>✖ </t><t:regular>Verwalte Länder, die Teil
+          - '   dieser Nation sind.'
           material: skin:8449b9318e33158e64a46ab0de121c3d40000e3332c1574932b3c849d8fa0dc2
           slots: 11
         no-war:
-          name: <t:positive_heading>Peaceful
+          name: <t:positive_heading>Friedlich
           lore:
-          - <t:regular>Your nation isn't engaged in any
-          - war. Everything is peaceful.
+          - <t:regular>Deine Nation befindet sich in keinem
+          - Krieg. Alles ist friedlich.
           material: WOODEN_SWORD
           slots: 12
         relations:
-          name: <t:regular_heading>Relations
+          name: <t:regular_heading>Beziehungen
           lore:
-          - <t:decoration>✖ </t><t:regular>Manage your relations with other
-          - '   lands and nations.'
+          - <t:decoration>✖ </t><t:regular>Verwalte deine Beziehungen zu
+          - '   anderen Ländern und Nationen.'
           material: LIME_BANNER
           slots: 14
         inbox:
-          name: <t:regular_heading>Inbox</t> <t:decoration>(</t><t:regular_value><v:amount></t><t:decoration>)</t>
+          name: <t:regular_heading>Posteingang</t> <t:decoration>(</t><t:regular_value><v:amount></t><t:decoration>)</t>
           lore:
-          - <t:decoration>✖ </t><t:regular>View inbox messages.
+          - <t:decoration>✖ </t><t:regular>Sieh Nachrichten im Posteingang.
           - ''
           - <t:regular_value><v:inbox></t>
           material: skin:6bf3fcdccffd963e4334818108e1e9ae3a80566d0d3d2d4ab3051a2cd811348c
           slots: 13
         various:
-          name: <t:regular_heading>Miscellaneous Settings
+          name: <t:regular_heading>Sonstige Einstellungen
           lore:
           - <t:decoration>✖ </t><t:regular>Edit the nation name, tag
           - '   icon etc.'
@@ -130,7 +130,7 @@ gui:
           - ' <t:decoration>• </t><t:regular>Set spawn point:'
           - '   <t:cmd>/<v:cmd></t>'
   nation_various:
-    title: <t:menu_title>Miscellaneous
+    title: <t:menu_title>Sonstiges
     items:
       default:
         object_name:
@@ -177,11 +177,11 @@ gui:
           enchanted: true
           material: POTION
   list_nation_lands:
-    title: <t:menu_title>Nation Members
+    title: <t:menu_title>Nationsmitglieder
     items:
       default:
         add:
-          name: <t:positive_heading>Add Land
+          name: <t:positive_heading>Land hinzufügen
           lore:
           - <t:decoration>✖ </t><t:regular>Invite a land to join your nation.
           - '   Available:<t:regular_value> <v:lands></t> <t:decoration>/</t><t:limit>
@@ -189,7 +189,7 @@ gui:
           material: skin:ffec3d25ae0d147c342c45370e0e43300a4e48a5b43f9bb858babff756144dac
           slots: 39
         members_online:
-          name: <t:regular_heading>Online Members
+          name: <t:regular_heading>Online-Mitglieder
           lore:
           - <t:decoration>✖ </t><t:regular>View members that are online.
           material: CLOCK
@@ -206,13 +206,13 @@ gui:
           bedrock:
             detail: true
         remove:
-          name: <t:negative_heading>Remove Land
+          name: <t:negative_heading>Land entfernen
           lore:
           - <t:decoration>✖ </t><t:regular>Remove a land from your nation.
           material: skin:548d7d1e03e1af145b0125ab841285672b421265da2ab915015f9058438ba2d8
           slots: 43
   list_player_nations:
-    title: <t:menu_title>Your Nations
+    title: <t:menu_title>Deine Nationen
     items:
       default:
         entry_nation_own:
