@@ -1,8 +1,10 @@
-# Survival / Tycoon Server — Übersicht
+# Survival Server — Übersicht
 
-Dokumentation für den Survival-Server mit integriertem Tycoon-Gamemode.
+Dokumentation für den Survival-Server mit Town- und Freebuild-Welten.
 
 > **✅ Aktiv (26.2).** Dieser Server ist neben der Lobby einer der beiden **aktiv gepflegten** Server. Die Plugins wurden auf 26.2 aufgeräumt und neu übertragen.
+
+> **⚠️ Tycoon deaktiviert:** Der Tycoon-Gamemode existiert auf dem Survival-Server aktuell nicht mehr. Der Fokus liegt vollständig auf reinem Survival mit **Town** und **Freebuild**. Tycoon wird in Zukunft auf einem eigenen Server im Netzwerk verfügbar sein.
 
 ---
 
@@ -20,10 +22,10 @@ Dokumentation für den Survival-Server mit integriertem Tycoon-Gamemode.
 | Eigenschaft | Wert |
 |-------------|------|
 | **Version** | Paper 26.2 |
-| **Gamemode** | Survival + Tycoon (Generator-basiert) |
+| **Gamemode** | Survival (Town + Freebuild; Tycoon deaktiviert — kommt auf eigenem Server) |
 | **Economy** | Vault (CMI) — separat von MMO-Servern |
 | **Datenbank** | MySQL/MariaDB (isoliert) |
-| **Welten** | `tycoon` (Hauptwelt), `town` (Stadt), `freebuild` (Kreativ) |
+| **Welten** | `world` (Hauptwelt), `town` (Stadt), `freebuild` (Kreativ) |
 | **Bedrock-Support** | Ja (Geyser/Floodgate) |
 
 ---
@@ -32,13 +34,13 @@ Dokumentation für den Survival-Server mit integriertem Tycoon-Gamemode.
 
 | Plugin | Funktion |
 |--------|----------|
-| **NextGens** | Generator-System (25 Tier × Sub-Levels) |
+| **NextGens** | Generator-System (25 Tier × Sub-Levels) — aktuell deaktiviert (Tycoon kommt auf eigenem Server) |
 | **PlotSquared** | Plot-Claiming, Merging, Schematics |
-| **Rankup** | 25-stufige Rang-Progression |
+| **Rankup** | Rang-Progression |
 | **ShopGUIPlus** | Shop-GUI mit dynamischen Preisen |
 | **GlobalMarketPlus** / **ChestShop** | Marktplatz & Spieler-Läden |
-| **Skript** | Custom Tycoon-Logik (Sell Wand, Collector, Tutorial, etc.) |
-| **Multiverse-Core** (+Inventories) | Welten `tycoon`/`town`/`freebuild` mit getrennten Inventaren |
+| **Skript** | Custom-Logik (Sell Wand, Economy, Events etc.) |
+| **Multiverse-Core** (+Inventories) | Welten `town`/`freebuild` mit getrennten Inventaren |
 | **LuckPerms** | Rang-Permissions und Plot-Limits |
 | **CMI** (+CMILib) | Economy, Teleport, Kits, Chat-Formatierung, Hologramme |
 | **Jobs** | Berufe für zusätzliches Einkommen |
@@ -54,6 +56,7 @@ Dokumentation für den Survival-Server mit integriertem Tycoon-Gamemode.
 
 ## Skript-Dateien
 
+<!-- Tycoon deaktiviert – kommt auf eigenem Server; tycoon_*.sk aktuell nicht aktiv
 | Datei | Funktion |
 |-------|----------|
 | `tycoon_logic.sk` | Kern-System: Preise, Sell Wand, Start, Rankup-Reset |
@@ -61,6 +64,10 @@ Dokumentation für den Survival-Server mit integriertem Tycoon-Gamemode.
 | `tycoon_item.sk` | Tycoon Manager Clock-Item & GUI-Einstieg |
 | `tycoon_setup.sk` | LuckPerms-Gruppen und Permissions Setup |
 | `tycoon_tutorial.sk` | Onboarding-Tutorial für neue Spieler |
+-->
+
+| Datei | Funktion |
+|-------|----------|
 | `prestige.sk` | Prestige/Rebirth-System (10 Stufen) |
 | `rankup.sk` | Rankup-Feier-Effekte (Partikel, Sounds) |
 | `ranks_setup.sk` | Setzt Tag (LuckPerms-Prefix) & Gewicht für alle Ränge — Befehl `/setupranktags` |
