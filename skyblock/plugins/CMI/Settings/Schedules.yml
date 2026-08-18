@@ -119,3 +119,33 @@ Announcer:
   - broadcast! &eKits can be accesed with &e/kits
   - broadcast! &eIf you need help, ask staff
   - broadcast! &eAdvertisement of other servers will be punished
+DailyRestart:
+  Enabled: true
+  Type: Repeat
+  PerformOn:
+    '1':
+      Hour: 4
+      Minute: 10
+      Second: 0
+  Commands:
+  - cmi broadcast &c&lDer Server startet in 5 Minuten neu!
+  - delay! 240
+  - cmi broadcast &c&lDer Server startet in 1 Minute neu!
+  - delay! 50
+  - cmi broadcast &c&lNeustart in 10 Sekunden...
+  - actionbar! &cNeustart in 10 Sekunden...
+  - delay! 5
+  - actionbar! &cNeustart in 5 Sekunden...
+  - delay! 1
+  - actionbar! &cNeustart in 4 Sekunden...
+  - delay! 1
+  - actionbar! &cNeustart in 3 Sekunden...
+  - delay! 1
+  - actionbar! &cNeustart in 2 Sekunden...
+  - delay! 1
+  - actionbar! &cNeustart in 1 Sekunde...
+  - cmi save-all
+  - delay! 1
+  - kickall! &cDer Server startet neu. Wir sind gleich zurück!
+  - delay! 1
+  - stop
