@@ -52,7 +52,7 @@ dialogs:
     inputs:
       days:
         type: number-range
-        label: Kürzele
+        label: Tage
         label-format: '<v:label>: <v:value>'
         start: 0
         end: 30

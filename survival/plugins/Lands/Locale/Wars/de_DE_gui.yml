@@ -52,7 +52,7 @@ gui:
           - '   <v:bar>'
           material: SHIELD
           slots: 12
-        war_Punkte:
+        war_points:
           name: <t:regular_heading>Point Distribution
           lore:
           - <t:regular>A team needs<t:regular_value> <v:points></t> Punkte to win.
@@ -70,7 +70,7 @@ gui:
           - '   will timeout in<t:time> <v:time></t>.'
           material: IRON_INGOT
           slots: 13
-        war_Punkte_declaration:
+        war_points_declaration:
           name: <t:regular_heading>Point Distribution
           lore:
           - <t:regular>A team needs<t:regular_value> <v:points></t> Punkte to win.

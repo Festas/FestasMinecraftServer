@@ -1367,10 +1367,10 @@ lands:
             area again.
           none: <t:error>The area<t:error_value> <v:area> </t>of land<t:error_value>
             <v:land> </t>doesn't have a spawn set.
-          teleport: <t:error>Du darfst dich nicht teleportieren to this area. <t:regular>The
-            land owner can give you dafür die Berechtigung geben.
-          enter: <t:error>You're not allowed to enter this area. <t:regular>The land
-            owner can give you dafür die Berechtigung geben.
+          teleport: <t:error>Du darfst dich nicht in diesen Bereich teleportieren. <t:regular>Der
+            Landbesitzer kann dir dafür die Berechtigung geben.
+          enter: <t:error>Du darfst diesen Bereich nicht betreten. <t:regular>Der Landbesitzer
+            kann dir dafür die Berechtigung geben.
           success: <t:regular>Successfully teleported to the spawn of area<t:regular_value>
             <v:area> </t>of land<t:entity_land> <v:land></t>.
         set:
@@ -1433,7 +1433,7 @@ lands:
             set: <t:regular>You successfully set player<t:regular_value> <v:player>
               </t>as the new owner of land<t:entity_land> <v:land></t>.
             target: |
-              <hover:show_text:"<t:regular>Klicke, um dein Einladungsmenü zu öffnen."><click:run_command:"/<v:cmd_invites>"><t:regular>Player<t:regular_value> <v:player> </t>hat dich eingeladen, neuer Besitzer des Landes<t:entity_land> <v:land></t>.</click></hover> <t:regular>Upkeep:<t:cost> <v:upkeep></t>
+              <hover:show_text:"<t:regular>Klicke, um dein Einladungsmenü zu öffnen."><click:run_command:"/<v:cmd_invites>"><t:regular>Spieler<t:regular_value> <v:player> </t>hat dich eingeladen, neuer Besitzer des Landes<t:entity_land> <v:land></t> zu werden.</click></hover> <t:regular>Unterhalt:<t:cost> <v:upkeep></t>
                 <hover:show_text:"<t:regular>Klicke hier, um diese Einladung anzunehmen."><click:run_command:"/<v:cmd_accept>"><t:positive>✔ Annehmen: <t:cmd>/<v:cmd_accept> </t><java><t:click>[CLICK]</t></java></click></hover>
                 <hover:show_text:"<t:regular>Klicke hier, um diese Einladung abzulehnen."><click:run_command:"/<v:cmd_deny>"><t:negative>✘ Ablehnen: <t:cmd>/<v:cmd_deny> </t><java><t:click>[CLICK]</t></java></click></hover>
         add:
@@ -1460,7 +1460,7 @@ lands:
           added-temporary: <t:regular>Successfully added player<t:regular_value> <v:player>
             </t>to the whole land<t:entity_land> <v:land> </t>for<t:time> <v:time></t>.
           notification: |
-            <hover:show_text:"<t:regular>Klicke, um dein Einladungsmenü zu öffnen."><click:run_command:"/<v:cmd_invites>"><t:regular>Player<t:regular_value> <v:player> </t>hat dich eingeladen, ihrem Land<t:entity_land> <v:land></t>.</click></hover> <t:regular>Taxes:<t:cost> <v:tax></t>
+            <hover:show_text:"<t:regular>Klicke, um dein Einladungsmenü zu öffnen."><click:run_command:"/<v:cmd_invites>"><t:regular>Spieler<t:regular_value> <v:player> </t>hat dich eingeladen, ihrem Land<t:entity_land> <v:land></t> beizutreten.</click></hover> <t:regular>Steuern:<t:cost> <v:tax></t>
               <hover:show_text:"<t:regular>Klicke hier, um diese Einladung anzunehmen."><click:run_command:"/<v:cmd_accept>"><t:positive>✔ Annehmen: <t:cmd>/<v:cmd_accept> </t><java><t:click>[CLICK]</t></java></click></hover>
               <hover:show_text:"<t:regular>Klicke hier, um diese Einladung abzulehnen."><click:run_command:"/<v:cmd_deny>"><t:negative>✘ Ablehnen: <t:cmd>/<v:cmd_deny> </t><java><t:click>[CLICK]</t></java></click></hover>
           inviter:
@@ -1838,7 +1838,7 @@ lands:
             <!st><t:decoration>• </t><t:prefix>Lands:</t><t:cost> <v:lands_upkeep> </t><t:regular>from<t:regular_value> <v:lands> </t>lands
                <t:regular>Unclaimed a total of<t:regular_value> <v:chunks> </t>chunks. <ingame><hover:show_text:"<t:regular>Chunks will be unclaimed, if a land can't afford to pay the upkeep for them."><t:decoration>[INFO</t><t:decoration>]</t></hover></ingame>
             <t:decoration>• </t><t:entity_nation>Nations:</t><t:cost> <v:nations_upkeep> </t><t:regular>from<t:regular_value> <v:nations> </t>nations
-               <t:regular>Löschend<t:regular_value> <v:nations_deleted> </t>nations. <ingame><hover:show_text:"<t:regular>Nations will be deleted, if they can't afford to pay their upkeep."><t:decoration>[INFO</t><t:decoration>]</t></hover></ingame>
+               <t:regular>Gelöscht:<t:regular_value> <v:nations_deleted> </t>Nationen. <ingame><hover:show_text:"<t:regular>Nationen werden gelöscht, wenn sie ihren Unterhalt nicht bezahlen können."><t:decoration>[INFO</t><t:decoration>]</t></hover></ingame>
             <ingame><reset><t:regular><st>━━━━━━━━━‹━<!st> <t:negative_heading>Upkeep Collected</t> <t:regular><st>━›━━━━━━━━━</ingame>
         none: <t:regular>You currently don't have to pay upkeep for any land.
         header: <noprefix><t:regular><st>━━━━━━━━━‹━<!st> <t:negative_heading>Upcoming

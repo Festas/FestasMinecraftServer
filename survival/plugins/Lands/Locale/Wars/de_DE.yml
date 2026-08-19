@@ -282,7 +282,7 @@ wars:
           <t:regular>needs to end first.
         defender: <t:error>You currently can't declare war against them. <t:regular>The
           target <v:object> <t:regular>is already engaged in a war.
-      min-Spieler:
+      min-players:
         attacker: <t:error>You can't engage in a war, because<t:error_value> <v:object></t>
           needs more trusted players. <t:regular>The required minimum for attackers
           to declare war is<t:limit> <v:min></t> players.

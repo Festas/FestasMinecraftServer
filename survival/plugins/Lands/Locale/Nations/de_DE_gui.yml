@@ -124,7 +124,7 @@ gui:
           material: BEACON
           slots: 32
         child_failure_spawn_none:
-          name: <t:error_heading>No Spawnpunkt
+          name: <t:error_heading>Kein Spawnpunkt
           lore:
           - <t:error>The capital hasn't set a spawn yet.
           - ' <t:decoration>• </t><t:regular>Set spawn point:'

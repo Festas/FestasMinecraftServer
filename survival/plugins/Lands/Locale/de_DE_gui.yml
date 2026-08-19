@@ -237,17 +237,17 @@ common:
       child_failure_noaccess:
         name: <t:error_heading>Nicht erlaubt
         lore:
-        - <t:error>Das darfst du nicht tun that.
-        - ' <t:decoration>• </t><t:regular>The owner of <v:object><t:regular> can
-          give your'
-        - '   role dafür die Berechtigung geben.'
+        - <t:error>Das darfst du nicht tun.
+        - ' <t:decoration>• </t><t:regular>Der Besitzer von <v:object><t:regular> kann
+          deiner'
+        - '   Rolle dafür die Berechtigung geben.'
         - '   Flag: <t:regular_value><v:flag></t>'
       child_success_membership-request_sent:
         name: <t:success_heading>Sent Membership Request
         lore:
         - <t:regular>They can now accept your membership request.
       child_failure_spawn_none:
-        name: <t:error_heading>No Spawnpunkt
+        name: <t:error_heading>Kein Spawnpunkt
         lore:
         - <t:error>This land doesn't have set a spawn yet.
         - ' <t:decoration>• </t><t:regular>Set spawn point:'
@@ -1307,7 +1307,7 @@ gui:
           - '   to admin lands and the Wilderness section of <t:cmd>/<v:cmd></t><t:regular>.'
           material: INHERIT
         entry_player_trust:
-          name: '<v:enabled_symbol> <t:entry_heading>Spieler hinzufügens: <v:enabled>'
+          name: '<v:enabled_symbol> <t:entry_heading>Spieler hinzufügen: <v:enabled>'
           lore:
           - <t:decoration>✖ </t><t:regular>Allow this role to add
           - '   other players?'
@@ -1383,7 +1383,7 @@ gui:
           - ' <t:decoration>• </t><t:regular>Each land of this nation can configure'
           - '   it individually.'
         child_failure_cancelled:
-          name: <t:error_heading>Abbrechenled by Plugin
+          name: <t:error_heading>Vom Plugin abgebrochen
           lore:
           - <t:error>Toggling this flag has been
           - cancelled by a 3rd party plugin.
@@ -1659,7 +1659,7 @@ gui:
           name: <t:success_heading>Spawn set
           lore:
           - <t:regular>You set the spawn at your current position.
-  list_area_Spieler:
+  list_area_players:
     title: <t:menu_title>Trusted Players
     items:
       default:
@@ -1696,8 +1696,8 @@ gui:
           - ' <t:decoration>• </t><t:regular>Their role<t:regular_value> <v:role></t>
             has a higher'
           - '   or equal priority than yours.'
-        child_failure_max-Spieler:
-          name: <t:error_heading>Max Members
+        child_failure_max-players:
+          name: <t:error_heading>Maximale Mitgliederzahl
           lore:
           - <t:error>This land reached its maximum
           - amount of<t:error_value> <v:max></t> members.
@@ -2180,8 +2180,8 @@ gui:
           - <t:time><v:date></t>
           material: CLOCK
           slots: 11
-        Spieler:
-          name: <t:regular_heading>Players</t> <t:decoration>(</t><t:regular_value><v:amount></t><t:decoration>)</t>
+        players:
+          name: <t:regular_heading>Spieler</t> <t:decoration>(</t><t:regular_value><v:amount></t><t:decoration>)</t>
           lore:
           - <t:cmd><v:players></t>
           material: skin:e8b8c6a46d87cf86a55df214cf84bf45cca25edb9a676e96364dd6a6eea235b3
@@ -2532,7 +2532,7 @@ gui:
           - '      enter or teleport into it.'
           material: skin:ffec3d25ae0d147c342c45370e0e43300a4e48a5b43f9bb858babff756144dac
           slots: 40
-  list_role_Spieler:
+  list_role_players:
     title: <t:menu_title>Players
     items:
       default:
