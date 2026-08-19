@@ -80,3 +80,10 @@ test-server/
 
 # Plugin JARs (binary files)
 **/plugins/*.jar
+
+# Python (tools/plan-players-export and other Python helpers)
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
