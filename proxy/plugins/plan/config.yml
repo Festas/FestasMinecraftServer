@@ -62,11 +62,20 @@ Webserver:
     Public_html_directory: "public_html"
     Security:
         SSL_certificate:
-            KeyStore_path: Cert.jks
+            # "proxy" = reverse-proxy HTTPS mode. Plan keeps serving plain HTTP on
+            # port 8804 (nginx proxy_pass stays http://127.0.0.1:8804) but builds all
+            # links/requests as https://, so the React dashboard's API base becomes
+            # https://mc-stats.festas-builds.com instead of http://. Without this, Plan
+            # advertises http:// and the browser blocks every /v1/ request served on the
+            # https:// page as mixed content -> only the sidebar renders, content stays
+            # blank. See https://github.com/plan-player-analytics/Plan/wiki/SSL-Certificate-(HTTPS)-Set-Up#if-behind-a-proxy
+            KeyStore_path: proxy
             Key_pass: default
             Store_pass: default
             Alias: alias
-        # HTTPS is required for Login.
+        # HTTPS is required for Login. With KeyStore_path: proxy above, Plan now treats
+        # the connection as HTTPS, so authentication is active: register a web user with
+        # "/planproxy register" (or set Disable_authentication: true for an open dashboard).
         Disable_authentication: false
         # Disable /auth/register endpoint
         Disable_registration: false

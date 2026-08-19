@@ -59,7 +59,12 @@ Webserver:
     Public_html_directory: "public_html"
     Security:
         SSL_certificate:
-            KeyStore_path: Cert.jks
+            # "proxy" = reverse-proxy HTTPS mode, kept identical to the proxy config so all
+            # four Plan configs stay consistent. This backend's own webserver is disabled in
+            # network mode (the Velocity proxy serves the dashboard), so this only takes effect
+            # if the webserver role ever moves here. See proxy/plugins/plan/config.yml and
+            # https://github.com/plan-player-analytics/Plan/wiki/SSL-Certificate-(HTTPS)-Set-Up#if-behind-a-proxy
+            KeyStore_path: proxy
             Key_pass: default
             Store_pass: default
             Alias: alias
