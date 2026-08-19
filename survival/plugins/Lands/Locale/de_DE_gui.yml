@@ -7,7 +7,7 @@
 
 general:
   all: <green>Alle</green>
-  previous: <t:regular>previous</t>
+  previous: <t:regular>Zurück</t>
   nation:
     managed:
       nation: <t:error>Von der Nation verwaltet</t>
@@ -43,13 +43,13 @@ general:
   offline: <red>Offline</red>
   never: <t:regular>Nie</t>
   rentables:
-    cost: <t:regular_value>Cost</t>
-    price_blocks_ratio: <t:regular_value>Price-blocks ratio</t>
-    size: <t:regular_value>Size</t>
-    buy: <t:regular_value>Buy</t>
-    rent: <t:regular_value>Rent</t>
-    rental: <t:regular_value>Rental</t>
-    sell: <t:regular_value>Sell</t>
+    cost: <t:regular_value>Kosten</t>
+    price_blocks_ratio: <t:regular_value>Preis-Block-Verhältnis</t>
+    size: <t:regular_value>Größe</t>
+    buy: <t:regular_value>Kaufen</t>
+    rent: <t:regular_value>Mieten</t>
+    rental: <t:regular_value>Mietdauer</t>
+    sell: <t:regular_value>Verkaufen</t>
   top:
     sorting:
       balance: Balance
@@ -123,105 +123,105 @@ common:
   items:
     default:
       child_failure_message:
-        name: <t:error_heading>Failure
+        name: <t:error_heading>Fehler
         lore:
         - <t:error><v:message></t>
       child_success_message:
-        name: <t:success_heading>Success
+        name: <t:success_heading>Erfolg
         lore:
         - <t:success><v:message></t>
       child_failure_teleport:
-        name: <t:error_heading>Teleportation failed
+        name: <t:error_heading>Teleportation fehlgeschlagen
         lore:
         - <t:error>The teleportation failed because of
         - 'the following cause: <t:error_value><v:result></t>'
       child_failure_player_trusted:
-        name: <t:error_heading>Already trusted
+        name: <t:error_heading>Bereits vertraut
         lore:
         - <t:error>You're already part of this land.
       child_failure_permission:
-        name: <t:error_heading>Missing Permission
+        name: <t:error_heading>Fehlende Berechtigung
         lore:
-        - <t:error>You're not allowed to do this.
+        - <t:error>Das darfst du nicht tun.
       child_failure_teleport_enter:
-        name: <t:error_heading>Not Allowed to Enter
+        name: <t:error_heading>Zutritt verboten
         lore:
-        - <t:error>You're not allowed to enter the
-        - area, in which the destination
-        - is located.
+        - <t:error>Du darfst den
+        - Bereich nicht betreten, in dem sich das Ziel
+        - befindet.
         - ' <t:decoration>• </t><t:regular>The land owner can give you'
-        - '   permission to do so.'
+        - '   dafür die Berechtigung geben.'
       refresh_page_previous:
-        name: <t:regular_heading>Previous Page
+        name: <t:regular_heading>Vorherige Seite
         lore:
-        - '<t:decoration>✖ </t><t:regular>Current: <t:regular_value><v:current></t>
+        - '<t:decoration>✖ </t><t:regular>Aktuell: <t:regular_value><v:current></t>
           / <t:regular_value><v:pages></t>'
         material: ARROW
         slots: 38
       child_failure_no-item:
-        name: <t:error_heading>No Item at Cursor
+        name: <t:error_heading>Kein Item am Cursor
         lore:
-        - <t:error>You need to drag an item
-        - from your inventory here.
+        - <t:error>Du musst ein Item
+        - aus deinem Inventar hierher ziehen.
       child_failure_spawn_cooldown:
-        name: <t:error_heading>Cooldown active
+        name: <t:error_heading>Abklingzeit aktiv
         lore:
-        - <t:error>You must wait another<t:error_value> <v:time></t>
-        - before you can teleport to any
-        - land spawn again.
+        - <t:error>Du musst noch<t:error_value> <v:time></t> warten
+        - bevor du dich erneut zu einem
+        - Landspawn teleportieren kannst.
       child_failure_teleport_unsafe:
-        name: <t:error_heading>Unsafe
+        name: <t:error_heading>Unsicher
         lore:
-        - <t:error>Couldn't teleport to this destination,
-        - because it's not safe.
+        - <t:error>Teleportation zu diesem Ziel fehlgeschlagen,
+        - weil es dort nicht sicher ist.
       back:
-        name: <t:regular_heading>Back
+        name: <t:regular_heading>Zurück
         lore:
-        - <t:decoration>✖ </t><t:regular>Go back to
+        - <t:decoration>✖ </t><t:regular>Zurück zu
         - '   <t:regular_value><v:back></t>.'
         material: RED_STAINED_GLASS_PANE
         slots: 37
       refresh_page_next:
-        name: <t:regular_heading>Next Page
+        name: <t:regular_heading>Nächste Seite
         lore:
-        - '<t:decoration>✖ </t><t:regular>Current: <t:regular_value><v:current></t>
+        - '<t:decoration>✖ </t><t:regular>Aktuell: <t:regular_value><v:current></t>
           / <t:regular_value><v:pages></t>'
         material: ARROW
         slots: 44
       child_failure_cost:
-        name: <t:error_heading>Not enough Money
+        name: <t:error_heading>Nicht genug Geld
         lore:
-        - <t:error>You need <t:cost><v:cost></t> to do this.
+        - <t:error>Du benötigst <t:cost><v:cost></t> dafür.
       child_failure_spawn_cost:
-        name: <t:error_heading>Not enough Money
+        name: <t:error_heading>Nicht genug Geld
         lore:
-        - <t:error>You need <t:cost><v:cost></t> to pay for
-        - the teleportation.
+        - <t:error>Du benötigst <t:cost><v:cost></t> für
+        - die Teleportation.
       child_failure_noaccess_owner:
-        name: <t:error_heading>Not allowed
+        name: <t:error_heading>Nicht erlaubt
         lore:
-        - <t:error>Only the owner of <t:error_value><v:object></t> can do that.
+        - <t:error>Nur der Besitzer von <t:error_value><v:object></t> kann das tun.
       child_failure_spawn_teleport:
-        name: <t:error_heading>Not Allowed to Teleport
+        name: <t:error_heading>Teleportation nicht erlaubt
         lore:
-        - <t:error>You're not allowed to teleport
-        - to this particular land spawn.
+        - <t:error>Du darfst dich nicht teleportieren
+        - zu diesem Landspawn.
         - ' <t:decoration>• </t><t:regular>The land owner can give you'
-        - '   permission to do so.'
+        - '   dafür die Berechtigung geben.'
       child_failure_spawn_war:
-        name: <t:error_heading>Active War
+        name: <t:error_heading>Aktiver Krieg
         lore:
         - <t:error>You currently can't teleport to
         - this particular land spawn.
         - ' <t:decoration>• </t><t:regular>They''re currently engaged in a war,'
         - '   for another <t:time><v:time></t>.'
       child_failure_membership-request_not-looking:
-        name: <t:error_heading>Not looking for Members
+        name: <t:error_heading>Sucht keine Mitglieder
         lore:
         - <t:error>This land isn't looking for
         - new members.
       child_failure_page_previous:
-        name: <t:error_heading>No Previous Page
+        name: <t:error_heading>Keine vorherige Seite
       child_success_player_trusted:
         name: <t:success_heading>You're now trusted
         lore:
@@ -229,25 +229,25 @@ common:
         - accepted your request.
         - ' <t:decoration>• </t><t:regular>Leave a land: <t:cmd>/<v:cmd></t>'
       child_failure_page_next:
-        name: <t:error_heading>No Next Page
+        name: <t:error_heading>Keine nächste Seite
       child_success_membership-request_revoked:
         name: <t:success_heading>Membership Request Revoked
         lore:
         - <t:success>You revoked your membership request.
       child_failure_noaccess:
-        name: <t:error_heading>Not allowed
+        name: <t:error_heading>Nicht erlaubt
         lore:
-        - <t:error>You're not allowed to do that.
+        - <t:error>Das darfst du nicht tun that.
         - ' <t:decoration>• </t><t:regular>The owner of <v:object><t:regular> can
           give your'
-        - '   role permission to do so.'
+        - '   role dafür die Berechtigung geben.'
         - '   Flag: <t:regular_value><v:flag></t>'
       child_success_membership-request_sent:
         name: <t:success_heading>Sent Membership Request
         lore:
         - <t:regular>They can now accept your membership request.
       child_failure_spawn_none:
-        name: <t:error_heading>No Spawnpoint
+        name: <t:error_heading>No Spawnpunkt
         lore:
         - <t:error>This land doesn't have set a spawn yet.
         - ' <t:decoration>• </t><t:regular>Set spawn point:'
@@ -326,7 +326,7 @@ gui:
           name: <t:regular_heading>Name
           lore:
           - <t:decoration>✖</t> <t:regular>Rename this area.
-          - '   Current: <t:user_content><v:name></t>'
+          - '   Aktuell: <t:user_content><v:name></t>'
           material: NAME_TAG
           slots: 20
         icon:
@@ -438,7 +438,7 @@ gui:
           - <t:error>You're not allowed to edit
           - roles in this area.
           - ' <t:decoration>• </t><t:regular>The land owner can give your'
-          - '   role permission to do so.'
+          - '   role dafür die Berechtigung geben.'
         management:
           name: <t:regular_heading>Management Flags
           lore:
@@ -456,7 +456,7 @@ gui:
           name: <t:regular_heading>Rename
           lore:
           - <t:decoration>✖ </t><t:regular>Rename this role.
-          - '   Current: <t:user_content><v:name></t>'
+          - '   Aktuell: <t:user_content><v:name></t>'
           material: NAME_TAG
           slots: 12
         child_failure_nation:
@@ -506,7 +506,7 @@ gui:
           - <action:remove><label>Revoke Invitation</label></action>
           material: INHERIT
         child_failure_access:
-          name: <t:error_heading>Not allowed
+          name: <t:error_heading>Nicht erlaubt
           lore:
           - <t:error>You're not allowed to revoke
           - invites in this area.
@@ -778,7 +778,7 @@ gui:
         refresh_toggle:
           name: '<t:regular_heading>World: <v:world>'
           lore:
-          - <t:decoration>✖ </t><t:regular>Click here to toggle
+          - <t:decoration>✖ </t><t:regular>Klicke hier, um
           - '   the world.'
           material: skin:8449b9318e33158e64a46ab0de121c3d40000e3332c1574932b3c849d8fa0dc2
           slots: 41
@@ -886,7 +886,7 @@ gui:
         player-management:
           name: <t:regular_heading>Player Management
           lore:
-          - <t:decoration>✖ </t><t:regular>Manage members, banned players,
+          - <t:decoration>✖ </t><t:regular>Mitglieder verwalten, banned players,
           - '   invites and membership requests.'
           material: skin:e8b8c6a46d87cf86a55df214cf84bf45cca25edb9a676e96364dd6a6eea235b3
           slots: 12
@@ -952,14 +952,14 @@ gui:
           - ''
           - <t:regular_heading>Economy</t>
           - ' <t:decoration>• </t><t:regular>Land'
-          - '   Balance: <t:regular_value><v:balance></t>'
+          - '   Kontostand: <t:regular_value><v:balance></t>'
           - '   Next claim cost: <t:regular_value><v:chunk_cost></t>'
           - '   Upkeep of<t:cost> <v:upkeep></t> in:'
           - '   <t:time><v:upkeep_next></t>'
           - ' <t:decoration>• </t><t:regular>You'
           - '   Total claimed chunks:<t:regular_value> <v:player_chunks_used></t>
             <t:decoration>/</t> <t:regular_value><v:player_chunks></t>'
-          - '   Balance: <t:regular_value><v:balance_player></t>'
+          - '   Kontostand: <t:regular_value><v:balance_player></t>'
           - '   Taxes of<t:cost> <v:taxes></t> in:'
           - '   <t:time><v:taxes_next></t>'
           material: skin:d01afe973c5482fdc71e6aa10698833c79c437f21308ea9a1a095746ec274a0f
@@ -1015,7 +1015,7 @@ gui:
           members:
             name: <t:regular_heading>Members
             lore:
-            - <t:decoration>✖ </t><t:regular>Manage members.
+            - <t:decoration>✖ </t><t:regular>Mitglieder verwalten.
             material: skin:e8b8c6a46d87cf86a55df214cf84bf45cca25edb9a676e96364dd6a6eea235b3
             slots: 11
           roles:
@@ -1039,7 +1039,7 @@ gui:
           - '      by this flag.'
           material: PHANTOM_SPAWN_EGG
         child_failure_permission:
-          name: <t:error_heading>Missing Permission
+          name: <t:error_heading>Fehlende Berechtigung
           lore:
           - <t:error>You're missing permission
           - to edit this flag.
@@ -1125,16 +1125,16 @@ gui:
           - '      by using pistons from the wilderness.'
           material: PISTON
         child_failure_access:
-          name: <t:error_heading>Not allowed
+          name: <t:error_heading>Nicht erlaubt
           lore:
           - <t:error>You're not allowed to edit
           - roles in this area.
           - ' <t:decoration>• </t><t:regular>The land owner can give your'
-          - '   role permission to do so.'
+          - '   role dafür die Berechtigung geben.'
         entry_general_admin:
           name: '<v:enabled_symbol> <t:entry_heading><v:flag>: <v:enabled>'
           lore:
-          - '<t:decoration>✖ </t><t:regular>Click to toggle:'
+          - '<t:decoration>✖ </t><t:regular>Klicke zum Umschalten:'
           - 'Description:'
           - ' <t:decoration>• </t><t:user_content><v:desc></t>'
           - ' • <t:regular>This is an admin flag. It only applies'
@@ -1178,7 +1178,7 @@ gui:
         entry_general_player:
           name: '<v:enabled_symbol> <t:entry_heading><v:flag>: <v:enabled>'
           lore:
-          - '<t:decoration>✖ </t><t:regular>Click to toggle:'
+          - '<t:decoration>✖ </t><t:regular>Klicke zum Umschalten:'
           - 'Description:'
           - <t:user_content><v:desc></t>
           material: INHERIT
@@ -1212,7 +1212,7 @@ gui:
           - '   are toggled per role, not'
           - '   here.'
           - ''
-          - <t:decoration>✖ </t><t:regular>Click here to manage roles.
+          - <t:decoration>✖ </t><t:regular>Klicke hier, um Rollen zu verwalten.
           material: skin:e8b8c6a46d87cf86a55df214cf84bf45cca25edb9a676e96364dd6a6eea235b3
           slots: 41
   list_role_settings:
@@ -1249,7 +1249,7 @@ gui:
           - '      or are part of the same role.'
           material: skin:548d7d1e03e1af145b0125ab841285672b421265da2ab915015f9058438ba2d8
         entry_land_enter:
-          name: '<v:enabled_symbol> <t:entry_heading>Enter this Area: <v:enabled>'
+          name: '<v:enabled_symbol> <t:entry_heading>Enter this Bereich: <v:enabled>'
           lore:
           - <t:decoration>✖ </t><t:regular>Allow this role to enter this area?
           - '    <t:decoration>• </t><t:regular>Regardless of this flag players'
@@ -1300,14 +1300,14 @@ gui:
         entry_general_admin:
           name: '<v:enabled_symbol> <t:entry_heading><v:flag>: <v:enabled>'
           lore:
-          - '<t:decoration>✖ </t><t:regular>Click to toggle:'
+          - '<t:decoration>✖ </t><t:regular>Klicke zum Umschalten:'
           - '    <t:decoration>• </t><t:regular>Description:'
           - '      <t:user_content><v:desc></t>'
           - ' <t:decoration>• </t><t:regular>This is an admin flag. It only applies'
           - '   to admin lands and the Wilderness section of <t:cmd>/<v:cmd></t><t:regular>.'
           material: INHERIT
         entry_player_trust:
-          name: '<v:enabled_symbol> <t:entry_heading>Add Players: <v:enabled>'
+          name: '<v:enabled_symbol> <t:entry_heading>Spieler hinzufügens: <v:enabled>'
           lore:
           - <t:decoration>✖ </t><t:regular>Allow this role to add
           - '   other players?'
@@ -1352,7 +1352,7 @@ gui:
           - <t:decoration>✖ </t><t:regular>Allow this role to trade with villagers?
           material: EMERALD
         child_failure_permission:
-          name: <t:error_heading>Missing Permission
+          name: <t:error_heading>Fehlende Berechtigung
           lore:
           - <t:error>You're missing permission to
           - toggle this flag in any land.
@@ -1383,7 +1383,7 @@ gui:
           - ' <t:decoration>• </t><t:regular>Each land of this nation can configure'
           - '   it individually.'
         child_failure_cancelled:
-          name: <t:error_heading>Cancelled by Plugin
+          name: <t:error_heading>Abbrechenled by Plugin
           lore:
           - <t:error>Toggling this flag has been
           - cancelled by a 3rd party plugin.
@@ -1450,12 +1450,12 @@ gui:
           - <t:decoration>✖ </t><t:regular>Allow this role to open containers?
           material: CHEST
         child_failure_access:
-          name: <t:error_heading>Not allowed
+          name: <t:error_heading>Nicht erlaubt
           lore:
           - <t:error>You're not allowed to
           - edit roles in this area.
           - ' <t:decoration>• </t><t:regular>The land owner can give your'
-          - '   role permission to do so.'
+          - '   role dafür die Berechtigung geben.'
         entry_no_damage:
           name: '<v:enabled_symbol> <t:entry_heading>No Damage: <v:enabled>'
           lore:
@@ -1534,7 +1534,7 @@ gui:
         entry_general_player:
           name: '<v:enabled_symbol> <t:entry_heading><v:flag>: <v:enabled>'
           lore:
-          - '<t:decoration>✖ </t><t:regular>Click to toggle:'
+          - '<t:decoration>✖ </t><t:regular>Klicke zum Umschalten:'
           - '    <t:decoration>• </t><t:regular>Description:'
           - '      <t:user_content><v:desc></t>'
           material: INHERIT
@@ -1561,15 +1561,15 @@ gui:
           - area while it is rented or sold.
           - ' <t:decoration>• </t><t:regular>Current tenant:<t:regular_value> <v:player></t>'
         child_failure_access:
-          name: <t:error_heading>Not allowed
+          name: <t:error_heading>Nicht erlaubt
           lore:
           - <t:regular>The area owner can give your
-          - role permission to do so.
+          - role dafür die Berechtigung geben.
           - ' <t:decoration>• </t><t:regular>Flag: <t:regular_value><v:flag></t>'
         player-management:
           name: <t:regular_heading>Player Management
           lore:
-          - <t:decoration>✖ </t><t:regular>Manage members, banned players,
+          - <t:decoration>✖ </t><t:regular>Mitglieder verwalten, banned players,
           - '   invites and membership requests.'
           material: skin:e8b8c6a46d87cf86a55df214cf84bf45cca25edb9a676e96364dd6a6eea235b3
           slots: 11
@@ -1659,12 +1659,12 @@ gui:
           name: <t:success_heading>Spawn set
           lore:
           - <t:regular>You set the spawn at your current position.
-  list_area_players:
+  list_area_Spieler:
     title: <t:menu_title>Trusted Players
     items:
       default:
         add:
-          name: <t:positive_heading>Add Player
+          name: <t:positive_heading>Spieler hinzufügen
           lore:
           - <t:regular>Available:<t:regular_value> <v:players></t> <t:decoration>/</t><t:limit>
             <v:max></t>
@@ -1696,13 +1696,13 @@ gui:
           - ' <t:decoration>• </t><t:regular>Their role<t:regular_value> <v:role></t>
             has a higher'
           - '   or equal priority than yours.'
-        child_failure_max-players:
+        child_failure_max-Spieler:
           name: <t:error_heading>Max Members
           lore:
           - <t:error>This land reached its maximum
           - amount of<t:error_value> <v:max></t> members.
         refresh_toggle:
-          name: '<t:regular_heading>View only Area: <v:current>'
+          name: '<t:regular_heading>View only Bereich: <v:current>'
           lore:
           - <t:decoration>✖ </t><t:regular>Display only players who are
           - '   trusted in this area <t:decoration>(</t><t:regular_value><v:area></t><t:decoration>)</t><t:regular>?'
@@ -1741,7 +1741,7 @@ gui:
           name: <t:entry_heading><v:player>
           lore:
           - <t:regular>Role:<t:regular_value> <v:role></t>
-          - <t:regular>Temporary trust expires in<t:regular_value> <v:time></t>
+          - <t:regular>Temporäres Vertrauen endet in<t:regular_value> <v:time></t>
           - ''
           - <action:primary><label>More Information</label></action>
           - <action:tertiary><label>▲ Promote</label></action>
@@ -1756,7 +1756,7 @@ gui:
           - <t:error>You're not allowed to remove
           - players.
           - ' <t:decoration>• </t><t:regular>The land owner can give your'
-          - '   role permission to do so.'
+          - '   role dafür die Berechtigung geben.'
         remove:
           name: <t:negative_heading>Remove Player
           material: skin:548d7d1e03e1af145b0125ab841285672b421265da2ab915015f9058438ba2d8
@@ -1779,7 +1779,7 @@ gui:
           lore:
           - <t:error>You're not allowed to set roles.
           - <t:decoration>• </t><t:regular>The land owner can give your
-          - '  role permission to do so.'
+          - '  role dafür die Berechtigung geben.'
         child_failure_self:
           name: <t:error_heading>Can't remove yourself
           lore:
@@ -1810,9 +1810,9 @@ gui:
           material: skin:1811917c644f04f56b68c9c71b33ac082c2601c24409be78c2063d4df2a86525
           slots: 41
         delete:
-          name: <t:negative_heading>Delete completely
+          name: <t:negative_heading>Löschen completely
           lore:
-          - <t:decoration>✖ </t><t:regular>Delete an admin land completely.
+          - <t:decoration>✖ </t><t:regular>Löschen an admin land completely.
           material: skin:548d7d1e03e1af145b0125ab841285672b421265da2ab915015f9058438ba2d8
           slots: 42
   player-management:
@@ -1822,7 +1822,7 @@ gui:
         members:
           name: <t:regular_heading>Members
           lore:
-          - <t:decoration>✖ </t><t:regular>Manage members.
+          - <t:decoration>✖ </t><t:regular>Mitglieder verwalten.
           material: skin:e8b8c6a46d87cf86a55df214cf84bf45cca25edb9a676e96364dd6a6eea235b3
           slots: 11
         members_online:
@@ -2039,7 +2039,7 @@ gui:
         info:
           name: <t:regular_heading>Information
           lore:
-          - ' <t:decoration>• </t><t:regular>Area:<t:regular_value> <v:area></t>'
+          - ' <t:decoration>• </t><t:regular>Bereich:<t:regular_value> <v:area></t>'
           - ' <t:decoration>• </t><t:regular>Land:<t:entity_land> <v:land></t>'
           - ' <t:decoration>• </t><t:regular>Received:<t:time> <v:time></t>'
           - ' <t:decoration>• </t><t:regular>Sender: <v:sender>'
@@ -2063,7 +2063,7 @@ gui:
           - <t:decoration>✖ </t><t:regular>Teleport
           material: INHERIT
         entry_area_buy:
-          name: '<t:entry_heading>Buy Area: <v:area>'
+          name: '<t:entry_heading>Buy Bereich: <v:area>'
           lore:
           - '<t:decoration>• </t><t:regular>Size: <t:regular_value><v:size></t> blocks'
           - <t:decoration>• </t><t:regular>Cost:<t:cost> <v:costs></t>
@@ -2073,11 +2073,11 @@ gui:
         refresh_sort:
           name: '<t:regular_heading>Sort by: <t:regular_value><v:mode></t>'
           lore:
-          - <t:decoration>✖ </t><t:regular>Click to toggle the sort mode.
+          - <t:decoration>✖ </t><t:regular>Klicke, um den Sortiermodus zu ändern.
           material: HOPPER
           slots: 41
         entry_area_rent:
-          name: '<t:entry_heading>Rent Area: <v:area>'
+          name: '<t:entry_heading>Rent Bereich: <v:area>'
           lore:
           - '<t:decoration>• </t><t:regular>Size: <t:regular_value><v:size></t> blocks'
           - <t:decoration>• </t><t:regular>Cost:<t:cost> <v:costs></t> per <t:time><v:time></t>
@@ -2091,11 +2091,11 @@ gui:
           - <t:regular>You need to wait another<t:time> <v:time></t>
           - before you can teleport to an offer again.
   action-confirm:
-    title: <t:menu_title>Confirm this Action
+    title: <t:menu_title>Diese Aktion bestätigen
     items:
       default:
         confirm:
-          name: <t:positive_heading>Confirm
+          name: <t:positive_heading>Bestätigen
           material: LIME_STAINED_GLASS_PANE
           slots:
           - 1-4
@@ -2105,7 +2105,7 @@ gui:
           - 37-40
           sound_click: entity.player.levelup
         cancel:
-          name: <t:negative_heading>Cancel
+          name: <t:negative_heading>Abbrechen
           material: RED_STAINED_GLASS_PANE
           slots:
           - 6-9
@@ -2115,10 +2115,10 @@ gui:
           - 42-45
           sound_click: block.anvil.hit
         info:
-          name: <t:regular_heading>Confirm this Action
+          name: <t:regular_heading>Diese Aktion bestätigen
           lore:
-          - <t:regular>Click <t:positive_heading>Confirm</t> to confirm or
-          - <t:negative_heading>Cancel</t> to abort this action.
+          - <t:regular>Click <t:positive_heading>Bestätigen</t> to confirm or
+          - <t:negative_heading>Abbrechen</t> to abort this action.
           material: OAK_SIGN
           slots:
           - 5
@@ -2170,7 +2170,7 @@ gui:
         level:
           name: <t:regular_heading>Level
           lore:
-          - <t:decoration>✖ </t><t:regular>Click here to view information
+          - <t:decoration>✖ </t><t:regular>Klicke hier, um Informationen anzuzeigen
           - '   about the current and next level.'
           material: BEACON
           slots: 15
@@ -2180,7 +2180,7 @@ gui:
           - <t:time><v:date></t>
           material: CLOCK
           slots: 11
-        players:
+        Spieler:
           name: <t:regular_heading>Players</t> <t:decoration>(</t><t:regular_value><v:amount></t><t:decoration>)</t>
           lore:
           - <t:cmd><v:players></t>
@@ -2239,12 +2239,12 @@ gui:
           - <t:error>This area reached the maximum
           - amount of<t:error_value> <v:max></t> roles.
         child_failure_access:
-          name: <t:error_heading>Not allowed
+          name: <t:error_heading>Nicht erlaubt
           lore:
           - <t:error>You're not allowed to edit roles
           - in this area.
           - ' <t:decoration>• </t><t:regular>The land owner can give your'
-          - '   role permission to do so.'
+          - '   role dafür die Berechtigung geben.'
         entry_object_system_priority:
           name: <t:entry_heading><v:role>
           lore:
@@ -2260,7 +2260,7 @@ gui:
           - <action:primary><label>Edit Role</label></action>
           - <action:tertiary><label>Higher Priority</label></action>
           - <action:quaternary><label>Lower Priority</label></action>
-          - <action:remove><label>Delete Role</label></action>
+          - <action:remove><label>Löschen Role</label></action>
           material: INHERIT
           bedrock:
             detail: true
@@ -2283,7 +2283,7 @@ gui:
           - ' <t:decoration>• </t><t:regular>It is required for player'
           - '   management.'
         delete:
-          name: <t:negative_heading>Delete Role
+          name: <t:negative_heading>Löschen Role
           material: skin:548d7d1e03e1af145b0125ab841285672b421265da2ab915015f9058438ba2d8
           slots: 42
         child_failure_priority:
@@ -2305,7 +2305,7 @@ gui:
         entry_chunk_wilderness:
           name: <green>Wilderness
           lore:
-          - <t:decoration>✖ </t><t:regular>Click to claim this chunk.
+          - <t:decoration>✖ </t><t:regular>Klicke, um diesen Chunk zu claimen.
           material: GREEN_STAINED_GLASS_PANE
         entry_chunk_untrusted:
           name: <t:negative_heading><v:land>
@@ -2350,12 +2350,12 @@ gui:
         refresh_select-land:
           name: <t:regular_heading>Claim for:<t:entity_land> <v:land></t>
           lore:
-          - <t:decoration>✖ </t><t:regular>Click to select the land you
+          - <t:decoration>✖ </t><t:regular>Klicke, um das Land auszuwählen, das du
           - '   want to claim wilderness chunks for.'
           material: FILLED_MAP
           slots: 53
         child_failure_permission:
-          name: <t:error_heading>Missing Permission
+          name: <t:error_heading>Fehlende Berechtigung
           lore:
           - <t:error>You're missing permission
           - to claim chunks.
@@ -2417,7 +2417,7 @@ gui:
           - <action:primary><label>Manage this area</label></action>
           material: INHERIT
         child_failure_access:
-          name: <t:error_heading>Not allowed
+          name: <t:error_heading>Nicht erlaubt
           lore:
           - <t:error>You're not allowed to delete
           - areas in this land.
@@ -2428,7 +2428,7 @@ gui:
           lore:
           - <t:user_content><v:description></t>
           - <action:primary><label>Manage this area</label></action>
-          - <action:remove><label>Delete this area</label></action>
+          - <action:remove><label>Löschen this area</label></action>
           material: INHERIT
         create:
           name: <t:positive_heading>Create Area
@@ -2445,7 +2445,7 @@ gui:
           - '   select a lower and upper corner.'
           - <t:decoration>2. </t><t:regular>Execute <t:cmd>/<v:cmd></t>
           - '  <t:regular>to resize this area to the selection.'
-          - <action:remove><label>Delete this area</label></action>
+          - <action:remove><label>Löschen this area</label></action>
           material: ACACIA_FENCE
           bedrock:
             detail: true
@@ -2468,9 +2468,9 @@ gui:
           - <t:error>This land reached its maximum
           - amount of<t:error_value> <v:max></t> areas.
         delete:
-          name: <t:negative_heading>Delete Area
+          name: <t:negative_heading>Löschen Area
           lore:
-          - <t:decoration>✖ </t><t:regular>Delete an area of
+          - <t:decoration>✖ </t><t:regular>Löschen an area of
           - '   this land.'
           material: skin:548d7d1e03e1af145b0125ab841285672b421265da2ab915015f9058438ba2d8
           slots: 42
@@ -2506,7 +2506,7 @@ gui:
           bedrock:
             detail: true
         refresh_toggle:
-          name: '<t:regular_heading>View only Area: <v:current>'
+          name: '<t:regular_heading>View only Bereich: <v:current>'
           lore:
           - <t:decoration>✖ </t><t:regular>Display only players who are
           - '   banned in this area <t:decoration>(</t><t:regular_value><v:area></t><t:decoration>)</t><t:regular>?'
@@ -2532,7 +2532,7 @@ gui:
           - '      enter or teleport into it.'
           material: skin:ffec3d25ae0d147c342c45370e0e43300a4e48a5b43f9bb858babff756144dac
           slots: 40
-  list_role_players:
+  list_role_Spieler:
     title: <t:menu_title>Players
     items:
       default:
@@ -2598,7 +2598,7 @@ gui:
         refresh_search:
           name: <t:regular_heading>Search
           lore:
-          - '<action:primary><label>Search</label><desc><t:regular>Current: <t:user_content><v:search></t></desc></action>'
+          - '<action:primary><label>Search</label><desc><t:regular>Aktuell: <t:user_content><v:search></t></desc></action>'
           - '<action:secondary><label>Search By: <t:regular_value><v:mode></t></label></action>'
           - <action:remove><label>Reset Search</label></action>
           material: SPYGLASS
@@ -2756,13 +2756,13 @@ gui:
         enemies:
           name: <t:regular_heading>Enemies
           lore:
-          - <t:decoration>✖ </t><t:regular>Manage enemies.
+          - <t:decoration>✖ </t><t:regular>Feinde verwalten.
           material: RED_BANNER
           slots: 22
         allies:
           name: <t:regular_heading>Allies
           lore:
-          - <t:decoration>✖ </t><t:regular>Manage allies.
+          - <t:decoration>✖ </t><t:regular>Verbündete verwalten.
           material: LIME_BANNER
           slots: 20
   list_relation:
@@ -2853,7 +2853,7 @@ gui:
           bedrock:
             detail: true
         entry_ally:
-          name: <t:entry_heading>Ally <v:object>
+          name: <t:entry_heading>Verbündeter <v:object>
           lore:
           - <t:decoration>• </t><t:regular>Owner:<t:regular_value> <v:owner></t>
           - '<t:decoration>• </t><t:regular>Level: <t:regular_value><v:level></t>'
@@ -2871,7 +2871,7 @@ gui:
           material: skin:548d7d1e03e1af145b0125ab841285672b421265da2ab915015f9058438ba2d8
           slots: 42
         entry_enemy:
-          name: <t:entry_heading>Enemy <v:object>
+          name: <t:entry_heading>Feind <v:object>
           lore:
           - <t:decoration>• </t><t:regular>Owner:<t:regular_value> <v:owner></t>
           - '<t:decoration>• </t><t:regular>Level: <t:regular_value><v:level></t>'
@@ -2887,7 +2887,7 @@ gui:
           - <t:error>All relations are managed by the nation
           - <t:error_value><v:nation></t>, which your land is part of.
         child_war:
-          name: <t:error_heading>Current War
+          name: <t:error_heading>Aktueller Krieg
           lore:
           - <t:error>You can't do this while <v:object>
           - is engaged in a war.
@@ -2932,7 +2932,7 @@ gui:
           name: <t:entry_heading><v:player>
           material: INHERIT
         refresh_toggle:
-          name: '<t:regular_heading>View only Area: <v:current>'
+          name: '<t:regular_heading>View only Bereich: <v:current>'
           lore:
           - <t:decoration>✖ </t><t:regular>Display only players who are
           - '   trusted in this area <t:decoration>(</t><t:regular_value><v:area></t><t:decoration>)</t><t:regular>?'
@@ -2979,7 +2979,7 @@ gui:
           material: GOLD_INGOT
           slots: 14
         confirm_rental:
-          name: <t:positive_heading>Confirm
+          name: <t:positive_heading>Bestätigen
           lore:
           - <t:decoration>✖ </t><t:regular>Setup this area for rental.
           - '   <t:decoration>• </t><t:regular>Interval:<t:time> <v:interval></t>'
@@ -2989,7 +2989,7 @@ gui:
           material: LIME_STAINED_GLASS_PANE
           slots: 45
         confirm_sell:
-          name: <t:positive_heading>Confirm
+          name: <t:positive_heading>Bestätigen
           lore:
           - <t:decoration>✖ </t><t:regular>Setup this area to be sold.
           - '   <t:decoration>• </t><t:regular>Total cost:<t:cost> <v:cost></t>'
@@ -3040,7 +3040,7 @@ gui:
           data:
             modify: -5
         confirm:
-          name: <t:positive_heading>Confirm
+          name: <t:positive_heading>Bestätigen
           material: LIME_STAINED_GLASS_PANE
           slots: 45
   select_value:
@@ -3066,7 +3066,7 @@ gui:
           data:
             modify: 500
         current:
-          name: '<t:regular_heading>Current: <v:value>'
+          name: '<t:regular_heading>Aktuell: <v:value>'
           material: GOLD_INGOT
           slots: 23
         refresh_minus-3:
@@ -3088,7 +3088,7 @@ gui:
           data:
             modify: -1
         confirm:
-          name: <t:positive_heading>Confirm
+          name: <t:positive_heading>Bestätigen
           material: LIME_STAINED_GLASS_PANE
           slots: 45
 skulls:

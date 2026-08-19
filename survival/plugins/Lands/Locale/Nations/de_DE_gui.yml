@@ -124,7 +124,7 @@ gui:
           material: BEACON
           slots: 32
         child_failure_spawn_none:
-          name: <t:error_heading>No Spawnpoint
+          name: <t:error_heading>No Spawnpunkt
           lore:
           - <t:error>The capital hasn't set a spawn yet.
           - ' <t:decoration>• </t><t:regular>Set spawn point:'
@@ -153,7 +153,7 @@ gui:
           - '   active at the same time, by'
           - '   reaching a higher level.'
         child_failure_locked:
-          name: <t:error_heading>Level too low
+          name: <t:error_heading>Level zu niedrig
           lore:
           - <t:error>Your nation needs to reach
           - level<t:error_value> <v:level></t> before you're
@@ -201,14 +201,14 @@ gui:
           - <t:user_content><v:title></t>
           - ''
           - <action:primary><label>View Information</label></action>
-          - <action:remove><label>Remove from Nation</label></action>
+          - <action:remove><label>Aus Nation entfernen</label></action>
           material: INHERIT
           bedrock:
             detail: true
         remove:
           name: <t:negative_heading>Land entfernen
           lore:
-          - <t:decoration>✖ </t><t:regular>Remove a land from your nation.
+          - <t:decoration>✖ </t><t:regular>Entferne ein Land aus deiner Nation.
           material: skin:548d7d1e03e1af145b0125ab841285672b421265da2ab915015f9058438ba2d8
           slots: 43
   list_player_nations:
@@ -221,8 +221,8 @@ gui:
           - <t:regular>You own this nation.
           - ' <t:decoration>• </t><t:regular>Lands: <t:regular_value><v:lands></t>'
           - ' <t:decoration>• </t><t:regular>Chunks: <t:regular_value><v:chunks></t>'
-          - ' <t:decoration>• </t><t:regular>Total members: <t:regular_value><v:members></t>'
-          - <action:primary><label>Open Nation Menu</label></action>
+          - ' <t:decoration>• </t><t:regular>Mitglieder gesamt: <t:regular_value><v:members></t>'
+          - <action:primary><label>Nationsmenü öffnen</label></action>
           - <action:secondary><label>View Information</label></action>
           material: INHERIT
           bedrock:
@@ -232,9 +232,9 @@ gui:
           lore:
           - <t:regular>You're trusted in this nation.
           - ' <t:decoration>• </t><t:regular>Lands: <t:regular_value><v:lands></t>'
-          - ' <t:decoration>• </t><t:regular>Total chunks: <t:regular_value><v:chunks></t>'
-          - ' <t:decoration>• </t><t:regular>Total members: <t:regular_value><v:members></t>'
-          - <action:primary><label>Open Nation Menu</label></action>
+          - ' <t:decoration>• </t><t:regular>Chunks gesamt: <t:regular_value><v:chunks></t>'
+          - ' <t:decoration>• </t><t:regular>Mitglieder gesamt: <t:regular_value><v:members></t>'
+          - <action:primary><label>Nationsmenü öffnen</label></action>
           - <action:secondary><label>View Information</label></action>
           material: INHERIT
           bedrock:

@@ -61,44 +61,44 @@ general:
   top:
     hologram:
       land:
-        title: '<t:regular><st>━━━━━━━━━━━━━━‹━<!st> <t:prefix>Top 10 Lands </t><t:decoration>(</t><t:regular>Total:
+        title: '<t:regular><st>━━━━━━━━━━━━━━‹━<!st> <t:prefix>Top 10 Länder </t><t:decoration>(</t><t:regular>Gesamt:
           <t:regular_value><v:total></t><t:decoration>) </t><t:regular><st>━›━━━━━━━━━━━━━━'
         entry: <t:regular_heading>#<v:pos> <t:entity_land><v:object></t> <t:regular_value><v:sorting></t>:<t:regular_value>
           <v:value></t>
-        footer: '<t:regular><st>━━━━━━━━━━━━━━‹━<!st> <t:prefix>Top 10 Lands </t><t:decoration>(</t><t:regular>Total:
+        footer: '<t:regular><st>━━━━━━━━━━━━━━‹━<!st> <t:prefix>Top 10 Länder </t><t:decoration>(</t><t:regular>Gesamt:
           <t:regular_value><v:total></t><t:decoration>) </t><t:regular><st>━›━━━━━━━━━━━━━━'
   integration:
     dynmap:
       land:
         description: |
-          <div><span style="font-size: 200%;"><span style="color: <v:land_color>;"><v:land></span><br/></span><v:title></div><ul><li>Level: <v:level></li><li>Balance: <v:balance></li><li>Chunks: <v:chunks></li><li>Created at: <v:created_at></li><li>Players (<v:members_amount>): <v:members></li><li>Allies: <v:allies></li><li>Enemies: <v:enemies></li></ul>
+          <div><span style="font-size: 200%;"><span style="color: <v:land_color>;"><v:land></span><br/></span><v:title></div><ul><li>Level: <v:level></li><li>Kontostand: <v:balance></li><li>Chunks: <v:chunks></li><li>Erstellt am: <v:created_at></li><li>Spieler (<v:members_amount>): <v:members></li><li>Verbündete: <v:allies></li><li>Feinde: <v:enemies></li></ul>
         spawn: '<div class="\&quot;infowindow\&quot;"><span style="font-size: 200%;"><span
-          style="color: <v:land_color>;">Spawnpoint</span></span></div> <div class="\&quot;infowindow\&quot;"><br
-          />Open to untrusted: <v:public></div> <ul> <li>If this spawn is open to
-          untrusted, anyone can teleport to it by executing /<v:cmd>.</li> </ul>'
+          style="color: <v:land_color>;">Spawnpunkt</span></span></div> <div class="\&quot;infowindow\&quot;"><br
+          />Offen für Unvertraute: <v:public></div> <ul> <li>If this spawn is open to
+          kann sich jeder mit /<v:cmd> dorthin teleportieren.</li> </ul>'
     bluemap:
       land:
         description: |
-          <div><span style="font-size: 200%;"><span style="color: <v:land_color>;"><v:land></span><br/></span><v:title></div><ul><li>Level: <v:level></li><li>Balance: <v:balance></li><li>Chunks: <v:chunks></li><li>Created at: <v:created_at></li><li>Players (<v:members_amount>): <v:members></li><li>Allies: <v:allies></li><li>Enemies: <v:enemies></li></ul>
-        spawn: 'Spawnpoint of land <v:land>. Open to untrusted: <v:public>. If this
+          <div><span style="font-size: 200%;"><span style="color: <v:land_color>;"><v:land></span><br/></span><v:title></div><ul><li>Level: <v:level></li><li>Kontostand: <v:balance></li><li>Chunks: <v:chunks></li><li>Erstellt am: <v:created_at></li><li>Spieler (<v:members_amount>): <v:members></li><li>Verbündete: <v:allies></li><li>Feinde: <v:enemies></li></ul>
+        spawn: 'Spawnpunkt of land <v:land>. Offen für Unvertraute: <v:public>. If this
           spawn is open to untrusted players, anyone can teleport to it by executing
           /<v:cmd>.'
     squaremap:
       land:
         description: |
-          <div><span style="font-size: 200%;"><span style="color: <v:land_color>;"><v:land></span><br/></span><v:title></div><ul><li>Level: <v:level></li><li>Balance: <v:balance></li><li>Chunks: <v:chunks></li><li>Created at: <v:created_at></li><li>Players (<v:members_amount>): <v:members></li><li>Allies: <v:allies></li><li>Enemies: <v:enemies></li></ul>
+          <div><span style="font-size: 200%;"><span style="color: <v:land_color>;"><v:land></span><br/></span><v:title></div><ul><li>Level: <v:level></li><li>Kontostand: <v:balance></li><li>Chunks: <v:chunks></li><li>Erstellt am: <v:created_at></li><li>Spieler (<v:members_amount>): <v:members></li><li>Verbündete: <v:allies></li><li>Feinde: <v:enemies></li></ul>
         spawn: '<div class="\&quot;infowindow\&quot;"><span style="font-size: 200%;"><span
-          style="color: <v:land_color>;">Spawnpoint</span></span></div> <div class="\&quot;infowindow\&quot;"><br
-          />Open to untrusted: <v:public></div> <ul> <li>If this spawn is open to
-          untrusted, anyone can teleport to it by executing /<v:cmd>.</li> </ul>'
+          style="color: <v:land_color>;">Spawnpunkt</span></span></div> <div class="\&quot;infowindow\&quot;"><br
+          />Offen für Unvertraute: <v:public></div> <ul> <li>If this spawn is open to
+          kann sich jeder mit /<v:cmd> dorthin teleportieren.</li> </ul>'
     pl3xmap:
       land:
         description: |
-          <div><span style="font-size: 200%;"><span style="color: <v:land_color>;"><v:land></span><br/></span><v:title></div><ul><li>Level: <v:level></li><li>Balance: <v:balance></li><li>Chunks: <v:chunks></li><li>Created at: <v:created_at></li><li>Players (<v:members_amount>): <v:members></li><li>Allies: <v:allies></li><li>Enemies: <v:enemies></li></ul>
+          <div><span style="font-size: 200%;"><span style="color: <v:land_color>;"><v:land></span><br/></span><v:title></div><ul><li>Level: <v:level></li><li>Kontostand: <v:balance></li><li>Chunks: <v:chunks></li><li>Erstellt am: <v:created_at></li><li>Spieler (<v:members_amount>): <v:members></li><li>Verbündete: <v:allies></li><li>Feinde: <v:enemies></li></ul>
         spawn: '<div class="\&quot;infowindow\&quot;"><span style="font-size: 200%;"><span
-          style="color: <v:land_color>;">Spawnpoint</span></span></div> <div class="\&quot;infowindow\&quot;"><br
-          />Open to untrusted: <v:public></div> <ul> <li>If this spawn is open to
-          untrusted, anyone can teleport to it by executing /<v:cmd>.</li> </ul>'
+          style="color: <v:land_color>;">Spawnpunkt</span></span></div> <div class="\&quot;infowindow\&quot;"><br
+          />Offen für Unvertraute: <v:public></div> <ul> <li>If this spawn is open to
+          kann sich jeder mit /<v:cmd> dorthin teleportieren.</li> </ul>'
   inbox:
     general:
       created: <t:regular>Land<t:entity_land> <v:0> </t>created.
@@ -147,19 +147,19 @@ general:
         warning: <t:negative>Couldn't pay upkeep cost:<t:error_value> <v:0></t>
         unclaim: <t:negative>Couldn't pay the complete upkeep cost of<t:error_value>
           <v:0></t>. The last<t:error_value> <v:1> </t>claimed chunk(s) were unclaimed.
-        paid: <t:regular>Paid upkeep cost:<t:cost> <v:0> </t>New balance:<t:regular_value>
+        paid: <t:regular>Paid upkeep cost:<t:cost> <v:0> </t>Neuer Kontostand:<t:regular_value>
           <v:1></t>
       bank:
         withdraw: <t:negative>Player<t:error_value> <v:0> </t>withdrew<t:error_value>
-          <v:1></t>. New balance:<t:error_value> <v:2></t>
+          <v:1></t>. Neuer Kontostand:<t:error_value> <v:2></t>
         deposit: <t:regular>Player<t:regular_value> <v:0> </t>deposited<t:cost> <v:1></t>.
-          New balance:<t:regular_value> <v:2></t>
+          Neuer Kontostand:<t:regular_value> <v:2></t>
       taxes:
         warning: <t:negative>Player<t:error_value> <v:0> </t>couldn't pay taxes.
         untrusted: <t:negative>Player<t:error_value> <v:0> </t>couldn't pay taxes.
           They're now untrusted.
-        received: '<t:regular>Received total of<t:cost> <v:0> </t>taxes from land
-          members. New balance: <t:regular_value><v:1></t>'
+        received: '<t:regular>Erhalten insgesamt<t:cost> <v:0> </t>taxes from land
+          members. Neuer Kontostand: <t:regular_value><v:1></t>'
     relation:
       ally:
         offer: <t:regular_value><v:0> </t><t:regular>wants to be allied with us.
@@ -217,7 +217,7 @@ general:
 help:
   help:
     root:
-      header: <noprefix><hover:show_text:"<t:regular>Click here to navigate to the
+      header: <noprefix><hover:show_text:"<t:regular>Klicke hier, um zur
         previous page."><click:run_command:"/<v:cmd> <v:previous>"><t:regular><b><st>━━<!b><!st><t:cmd><b>«<!b></t><t:regular><b><st>━</click></hover>
         <!b><!st><t:prefix>Lands Commands </t><t:regular>Page<t:regular_value> <v:page>
         </t><t:decoration>/</t><t:regular_value> <v:pages></t> <hover:show_text:"<t:regular>Click
@@ -225,12 +225,12 @@ help:
       footer: |
         <noprefix>
         <t:regular>Click on the arrows below to navigate.
-        <hover:show_text:"<t:regular>Click here to navigate to the previous page."><click:run_command:"/<v:cmd> <v:previous>"><t:regular><b><st>━━<!b><!st><t:cmd><b>«<!b></t><t:regular><b><st>━</click></hover> <!b><!st><t:prefix>Lands Commands </t><t:regular>Page<t:regular_value> <v:page> </t><t:decoration>/</t><t:regular_value> <v:pages></t> <hover:show_text:"<t:regular>Click here to go to the next page."><click:run_command:"/<v:cmd> <v:next>"><t:regular><b><st>━<!b><!st><t:cmd><b>»<!b></t><t:regular><b><st>━━</click></hover>
+        <hover:show_text:"<t:regular>Klicke hier, um zur previous page."><click:run_command:"/<v:cmd> <v:previous>"><t:regular><b><st>━━<!b><!st><t:cmd><b>«<!b></t><t:regular><b><st>━</click></hover> <!b><!st><t:prefix>Lands Commands </t><t:regular>Page<t:regular_value> <v:page> </t><t:decoration>/</t><t:regular_value> <v:pages></t> <hover:show_text:"<t:regular>Klicke hier, um zur nächsten Seite zu wechseln."><click:run_command:"/<v:cmd> <v:next>"><t:regular><b><st>━<!b><!st><t:cmd><b>»<!b></t><t:regular><b><st>━━</click></hover>
     sub:
       unknown: |
         <t:error>The subcommand<t:error_value> <v:command> </t>doesn't exist.
-          <hover:show_text:"<t:regular>Click here to get a list of available commands"><click:run_command:"/<v:cmd>"><t:regular>✖ View commands: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
-      header: <noprefix><hover:show_text:"<t:regular>Click here to navigate to the
+          <hover:show_text:"<t:regular>Klicke hier, um eine Liste verfügbarer Befehle zu erhalten"><click:run_command:"/<v:cmd>"><t:regular>✖ Befehle anzeigen: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
+      header: <noprefix><hover:show_text:"<t:regular>Klicke hier, um zur
         previous page."><click:run_command:"/<v:cmd> <v:previous>"><t:regular><b><st>━━━━━<!b><!st><t:cmd><b>«<!b></t><t:regular><b><st>━</click></hover>
         <!b><!st><t:prefix>Sub Commands </t><t:regular>Page<t:regular_value> <v:page>
         </t><t:decoration>/</t><t:regular_value> <v:pages></t> <hover:show_text:"<t:regular>Click
@@ -238,362 +238,362 @@ help:
       footer: |
         <noprefix>
         <t:regular>Click on the arrows below to navigate.
-        <hover:show_text:"<t:regular>Click here to navigate to the previous page."><click:run_command:"/<v:cmd> <v:previous>"><t:regular><b><st>━━━━━<!b><!st><t:cmd><b>«<!b></t><t:regular><b><st>━</click></hover> <!b><!st><t:prefix>Sub Commands </t><t:regular>Page<t:regular_value> <v:page> </t><t:decoration>/</t><t:regular_value> <v:pages></t> <hover:show_text:"<t:regular>Click here to go to the next page."><click:run_command:"/<v:cmd> <v:next>"><t:regular><b><st>━<!b><!st><t:cmd><b>»<!b></t><t:regular><b><st>━━━━━</click></hover>
+        <hover:show_text:"<t:regular>Klicke hier, um zur previous page."><click:run_command:"/<v:cmd> <v:previous>"><t:regular><b><st>━━━━━<!b><!st><t:cmd><b>«<!b></t><t:regular><b><st>━</click></hover> <!b><!st><t:prefix>Sub Commands </t><t:regular>Page<t:regular_value> <v:page> </t><t:decoration>/</t><t:regular_value> <v:pages></t> <hover:show_text:"<t:regular>Klicke hier, um zur nächsten Seite zu wechseln."><click:run_command:"/<v:cmd> <v:next>"><t:regular><b><st>━<!b><!st><t:cmd><b>»<!b></t><t:regular><b><st>━━━━━</click></hover>
   command:
     lands:
-      help: <hover:show_text:"<t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+      help: <hover:show_text:"<t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
         <v:subcmd> <v:args> - </t><t:regular>Get help</click></hover>
-      confirmtp: <hover:show_text:"<t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
-        <v:subcmd> </t><t:decoration>- </t><t:regular>Confirm unsafe teleport destination</click></hover>
-      claim: <hover:show_text:"<t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+      confirmtp: <hover:show_text:"<t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+        <v:subcmd> </t><t:decoration>- </t><t:regular>Unsicheres Teleportziel bestätigen</click></hover>
+      claim: <hover:show_text:"<t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
         <v:subcmd> </t><t:decoration>- </t><t:regular>Auto create land and claim</click></hover>
-      create: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+      create: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
         <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Create land</click></hover>
       land:
-        main: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+        main: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
           <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Manage your land</click></hover>
-        menu: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+        menu: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
           <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Open menu</click></hover>
-        chat: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+        chat: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
           <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Chat with members</click></hover>
-        delete: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
-          delete <v:args> </t><t:decoration>- </t><t:regular>Delete land</click></hover>
-        leave: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
-          <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Leave land</click></hover>
-        rename: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
-          <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Rename land</click></hover>
-        storage: <hover:show_text:"<t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
-          <v:subcmd> </t><t:decoration>- </t><t:regular>Open item storage</click></hover>
+        delete: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          delete <v:args> </t><t:decoration>- </t><t:regular>Land löschen</click></hover>
+        leave: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Land verlassen</click></hover>
+        rename: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Land umbenennen</click></hover>
+        storage: <hover:show_text:"<t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          <v:subcmd> </t><t:decoration>- </t><t:regular>Item-Lager öffnen</click></hover>
         claim:
-          main: <hover:show_text:"<t:regular>Claim using different techniques <t:decoration>(</t><t:cmd>/selection</t><t:regular>,
-            fill, auto, radius<t:decoration>)</t><t:regular>. <t:regular>Click to
-            copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent> <v:subcmd>
-            <v:args> </t><t:decoration>- </t><t:regular>Claim chunk(s)</click></hover>
-          auto: <hover:show_text:"<t:regular>This will claim all chunks that you enter,
-            while moving. Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
-            <v:subcmd> </t><t:decoration>- </t><t:regular>Claim while moving</click></hover>
-          fill: <hover:show_text:"<t:regular>Claim all chunks inside a shape to fill
-            it. Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          main: <hover:show_text:"<t:regular>Claime mit verschiedenen Methoden <t:decoration>(</t><t:cmd>/selection</t><t:regular>,
+            fill, auto, radius<t:decoration>)</t><t:regular>. <t:regular>Klicke zum
+            Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent> <v:subcmd>
+            <v:args> </t><t:decoration>- </t><t:regular>Chunk(s) claimen</click></hover>
+          auto: <hover:show_text:"<t:regular>Dies claimt alle Chunks, die du beim
+            Laufen betrittst. Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            <v:subcmd> </t><t:decoration>- </t><t:regular>Beim Laufen claimen</click></hover>
+          fill: <hover:show_text:"<t:regular>Claime alle Chunks innerhalb einer Form, um sie zu füllen
+            it. Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> </t><t:decoration>- </t><t:regular>Claim chunks inside shape</click></hover>
           radius: <hover:show_text:"<t:regular>Claim all chunks in a specified radius.
-            Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Claim radius</click></hover>
           list: <hover:show_text:"<t:regular>This command will show you all claims
-            of your land. <t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            of your land. <t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>List claims of
             your land</click></hover>
-          merge: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          merge: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Merge land into
             your current</click></hover>
           mlc: <hover:show_text:"<t:regular>Claim the chunk at a specific location.
-            Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Claim location</click></hover>
         unclaim:
           main: <hover:show_text:"<t:regular>This also supports chunk selections.
-            <t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            <t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> </t><t:decoration>- </t><t:regular>Unclaim chunk(s)</click></hover>
           radius: <hover:show_text:"<t:regular>Unclaim all chunks in a specified radius.
-            Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Unclaim radius</click></hover>
           auto: <hover:show_text:"<t:regular>This will unclaim all chunks that you
-            enter, while moving. Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            enter, while moving. Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> </t><t:decoration>- </t><t:regular>Unclaim while moving</click></hover>
-          all: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          all: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> </t><t:decoration>- </t><t:regular>Unclaim all chunks</click></hover>
         spawn:
-          main: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          main: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Teleport or set
             spawn</click></hover>
-          set: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          set: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> </t><t:decoration>- </t><t:regular>Set land spawn</click></hover>
           teleport: <hover:show_text:"<t:regular>Teleport a player to the land or
-            area spawn. Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            area spawn. Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Teleport to spawn</click></hover>
         member:
-          main: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
-            <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Manage members</click></hover>
-          menu: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
-            <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Open member management
+          main: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Mitglieder verwalten</click></hover>
+          menu: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Mitgliederverwaltung öffnen
             menu</click></hover>
-          add: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
-            <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Add player to the
+          add: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Spieler hinzufügen zu
             whole land</click></hover>
-          remove: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
-            <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Remove player from
+          remove: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Spieler entfernen aus
             the whole land</click></hover>
-          setRole: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
-            <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Set role</click></hover>
-          setowner: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
-            <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Transfer ownership</click></hover>
-          ban: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          setRole: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Rolle setzen</click></hover>
+          setowner: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Besitz übertragen</click></hover>
+          ban: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Ban player</click></hover>
-          unban: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          unban: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Unban player</click></hover>
         area:
-          main: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          main: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Manage area</click></hover>
-          menu: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          menu: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Open area menu</click></hover>
-          resize: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          resize: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Resize subarea</click></hover>
           member:
-            main: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            main: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
               <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Manage area members</click></hover>
-            menu: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            menu: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
               <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Open area member
               management menu</click></hover>
-            add: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            add: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
               <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Add player to
               this area</click></hover>
-            remove: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            remove: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
               <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Remove player
               from this area</click></hover>
-            setRole: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
-              <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Set role in this
+            setRole: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+              <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Rolle setzen in this
               area</click></hover>
-            ban: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            ban: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
               <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Ban player from
               this area</click></hover>
-            unban: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            unban: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
               <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Unban player
               from this area</click></hover>
           spawn:
-            main: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            main: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
               <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Teleport to area
               spawn</click></hover>
-            set: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            set: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
               <v:subcmd> </t><t:decoration>- </t><t:regular>Set area spawn</click></hover>
           rental:
-            main: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            main: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
               <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Manage rental</click></hover>
-            info: <hover:show_text:"<t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            info: <hover:show_text:"<t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
               <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>View rental information</click></hover>
             remove:
-              main: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+              main: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
                 <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Manage rental
                 removal</click></hover>
               offer: <hover:show_text:"<t:regular>Players won't be able to extend
-                their rental. <t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
-                <v:subcmd> </t><t:decoration>- </t><t:regular>Remove offer</click></hover>
+                their rental. <t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+                <v:subcmd> </t><t:decoration>- </t><t:regular>Angebot entfernen</click></hover>
               tenant: <hover:show_text:"<t:regular>Remove the current tenant by paying
-                a compensation to them. <t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+                a compensation to them. <t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
                 <v:subcmd> </t><t:decoration>- </t><t:regular>Remove tenant</click></hover>
         bank:
-          main: <hover:show_text:"<t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          main: <hover:show_text:"<t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> </t><t:decoration>- </t><t:regular>Manage bank</click></hover>
-          balance: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          balance: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Check balance</click></hover>
-          deposit: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          deposit: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Deposit money</click></hover>
-          withdraw: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          withdraw: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Withdraw money</click></hover>
         relation:
           main: <hover:show_text:"<t:regular>Add lands and nations as your allies
-            or enemies. Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
-            <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Manage relations</click></hover>
+            or enemies. Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Beziehungen verwalten</click></hover>
           ally:
             main: <hover:show_text:"<t:regular>Add lands and nations as your allies.
-              Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
-              <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Manage allies</click></hover>
+              Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+              <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Verbündete verwalten</click></hover>
             add: <hover:show_text:"<t:regular>Add a land or nation as your ally. Click
               to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent> <v:subcmd>
-              <v:args> </t><t:decoration>- </t><t:regular>Add ally</click></hover>
+              <v:args> </t><t:decoration>- </t><t:regular>Verbündeten hinzufügen</click></hover>
             remove: <hover:show_text:"<t:regular>End relation with an ally. Click
               to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent> <v:subcmd>
-              <v:args> </t><t:decoration>- </t><t:regular>Remove ally</click></hover>
+              <v:args> </t><t:decoration>- </t><t:regular>Verbündeten entfernen</click></hover>
           enemy:
             main: <hover:show_text:"<t:regular>Add lands and nations as your enemies.
-              Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
-              <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Manage enemies</click></hover>
+              Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+              <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Feinde verwalten</click></hover>
             add: <hover:show_text:"<t:regular>Declare a land or nation an enemy. Click
               to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent> <v:subcmd>
-              <v:args> </t><t:decoration>- </t><t:regular>Add enemy</click></hover>
+              <v:args> </t><t:decoration>- </t><t:regular>Feind hinzufügen</click></hover>
             remove: <hover:show_text:"<t:regular>Send neutralization request to an
-              enemy. Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
-              <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Remove enemy</click></hover>
+              enemy. Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+              <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Feind entfernen</click></hover>
       view:
         main: <hover:show_text:"<t:regular>This command will visualize nearby claims
-          too. <t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          too. <t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
           <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Information about
           claims</click></hover>
         disable: <hover:show_text:"<t:regular>Disable the current visualization. Click
           to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent> <v:subcmd>
           </t><t:decoration>- </t><t:regular>Disable visualization</click></hover>
         here: <hover:show_text:"<t:regular>Visualize the subarea you're current standing
-          in. <t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          in. <t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
           <v:subcmd> </t><t:decoration>- </t><t:regular>Visualize subarea</click></hover>
         stay: <hover:show_text:"<t:regular>The visualization will no longer follow
-          your height. <t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          your height. <t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
           <v:subcmd> </t><t:decoration>- </t><t:regular>Lock y position</click></hover>
       
-      menu: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+      menu: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
         <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Open menu</click></hover>
-      wild: <hover:show_text:"<t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+      wild: <hover:show_text:"<t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
         <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Teleport to random
         location</click></hover>
-      rtp: <hover:show_text:"<t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+      rtp: <hover:show_text:"<t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
         <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Teleport to random
         location</click></hover>
-      top: <hover:show_text:"<t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+      top: <hover:show_text:"<t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
         <v:subcmd> </t><t:decoration>- </t><t:regular>Show top lands</click></hover>
       selection:
         main: <hover:show_text:"<t:regular>With this command you can create a selection
           to resize a subarea, or expand your selection to infinite y levels. <t:regular>Click
           to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent> <v:subcmd>
-          <v:args> </t><t:decoration>- </t><t:regular>Selection mode</click></hover>
-        expand: <hover:show_text:"<t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          <v:args> </t><t:decoration>- </t><t:regular>Auswahl mode</click></hover>
+        expand: <hover:show_text:"<t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
           <v:subcmd> </t><t:decoration>- </t><t:regular>Expand selection</click></hover>
       invites:
-        main: <hover:show_text:"<t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+        main: <hover:show_text:"<t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
           <v:subcmd> </t><t:decoration>- </t><t:regular>Manage invites</click></hover>
-        menu: <hover:show_text:"<t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+        menu: <hover:show_text:"<t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
           <v:subcmd> </t><t:decoration>- </t><t:regular>Open menu</click></hover>
         accept: <hover:show_text:"<t:regular>You can view all your received invites
-          in the invites list. <t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          in the invites list. <t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
           <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Accept invite</click></hover>
-        decline: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+        decline: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
           <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Decline invite</click></hover>
       info:
-        main: <hover:show_text:"<t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+        main: <hover:show_text:"<t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
           <v:subcmd> </t><t:decoration>- </t><t:regular>View information</click></hover>
-        player: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+        player: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
           <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>View player information</click></hover>
-        land: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+        land: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
           <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>View land information</click></hover>
       map:
-        main: <hover:show_text:"<t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+        main: <hover:show_text:"<t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
           <v:subcmd> </t><t:decoration>- </t><t:regular>View map</click></hover>
-        link: <hover:show_text:"<t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+        link: <hover:show_text:"<t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
           <v:subcmd> </t><t:decoration>- </t><t:regular>Get link to web map</click></hover>
-      list: <hover:show_text:"<t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+      list: <hover:show_text:"<t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
         <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>List all lands</click></hover>
       eco:
-        main: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+        main: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
           <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Taxes & upkeep info</click></hover>
-        taxes: <hover:show_text:"<t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+        taxes: <hover:show_text:"<t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
           <v:subcmd> </t><t:decoration>- </t><t:regular>Show upcoming tax payments</click></hover>
-        upkeep: <hover:show_text:"<t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+        upkeep: <hover:show_text:"<t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
           <v:subcmd> </t><t:decoration>- </t><t:regular>Show upcoming upkeep payments.</click></hover>
       unstuck: <hover:show_text:"<t:regular>In case you got stuck in a land. <t:regular>Click
         to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent> <v:subcmd>
         </t><t:decoration>- </t><t:regular>Teleport out of traps</click></hover>
       rental:
         main: <hover:show_text:"<t:regular>Manage rented area at your current position.
-          <t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          <t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
           <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Manage rental</click></hover>
-        cancel: <hover:show_text:"<t:regular>Cancel your rental of the sub area at
-          your current position. <t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
-          <v:subcmd> </t><t:decoration>- </t><t:regular>Cancel rental</click></hover>
+        cancel: <hover:show_text:"<t:regular>Abbrechen your rental of the sub area at
+          your current position. <t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          <v:subcmd> </t><t:decoration>- </t><t:regular>Abbrechen rental</click></hover>
         info: <hover:show_text:"<t:regular>Show information about the rental of the
-          sub area at your current position. <t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          sub area at your current position. <t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
           <v:subcmd> </t><t:decoration>- </t><t:regular>Show info</click></hover>
         list: <hover:show_text:"<t:regular>View all rental offers from all lands.
-          <t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          <t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
           <v:subcmd> </t><t:decoration>- </t><t:regular>View all rental offers</click></hover>
       
       admin:
-        main: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+        main: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
           <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Admin commands</click></hover>
-        listperms: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+        listperms: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
           <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>List permissions
           a player has</click></hover>
         koth:
-          main: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          main: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Manage KoTH arenas</click></hover>
-          create: <hover:show_text:"<t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          create: <hover:show_text:"<t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> </t><t:decoration>- </t><t:regular>Create KoTH arena</click></hover>
         debug:
-          main: <hover:show_text:"<t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          main: <hover:show_text:"<t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> </t><t:decoration>- </t><t:regular>Shows loaded data stats</click></hover>
-          tasks: <hover:show_text:"<t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          tasks: <hover:show_text:"<t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> </t><t:decoration>- </t><t:regular>Stats about tasks</click></hover>
-        reload: <hover:show_text:"<t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+        reload: <hover:show_text:"<t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
           <v:subcmd> </t><t:decoration>- </t><t:regular>Reload config and messages</click></hover>
-        about: <hover:show_text:"<t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+        about: <hover:show_text:"<t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
           <v:subcmd> </t><t:decoration>- </t><t:regular>Show information about Lands</click></hover>
-        chatspy: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+        chatspy: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
           <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Listen to chat</click></hover>
-        dismiss: <hover:show_text:"<t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+        dismiss: <hover:show_text:"<t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
           <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Dismiss notes</click></hover>
-        import: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+        import: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
           <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Import claims from
           3rd party</click></hover>
-        menu: <hover:show_text:"<t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+        menu: <hover:show_text:"<t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
           <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Open admin menu</click></hover>
-        deleteinactive: <hover:show_text:"<t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
-          <v:subcmd> </t><t:decoration>- </t><t:regular>Delete inactive players/lands</click></hover>
-        migratedb: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+        deleteinactive: <hover:show_text:"<t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          <v:subcmd> </t><t:decoration>- </t><t:regular>Löschen inactive players/lands</click></hover>
+        migratedb: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
           <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Migrate database</click></hover>
         limits:
-          main: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          main: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Refresh or migrate
             limits</click></hover>
-          refresh: <hover:show_text:"<t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          refresh: <hover:show_text:"<t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> </t><t:decoration>- </t><t:regular>Sync player, land and nation
             limits</click></hover>
-          migrate: <hover:show_text:"<t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          migrate: <hover:show_text:"<t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> </t><t:decoration>- </t><t:regular>Migrate perms to new limits</click></hover>
         player:
-          main: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          main: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Special player
             administration</click></hover>
-          menu: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          menu: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> </t><t:decoration>- </t><t:regular>Open menu of player</click></hover>
-          limits: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          limits: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> </t><t:decoration>- </t><t:regular>View player limits</click></hover>
-          delete: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
-            <v:subcmd> </t><t:decoration>- </t><t:regular>Delete player and his lands</click></hover>
+          delete: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            <v:subcmd> </t><t:decoration>- </t><t:regular>Löschen player and his lands</click></hover>
           give:
-            main: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            main: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
               <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Give to player</click></hover>
-            camp: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            camp: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
               <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Give camp items</click></hover>
-            claimblock: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            claimblock: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
               <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Give claimblocks</click></hover>
-            first-join-items: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            first-join-items: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
               <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Give enabled
               first join items</click></hover>
-            limit: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            limit: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
               <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Modify limits</click></hover>
         
-        resetworld: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
-          <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Delete all claims
+        resetworld: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Löschen all claims
           in world</click></hover>
         hologram:
-          main: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          main: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Manage leaderboard
             holograms</click></hover>
-          create: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          create: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Create hologram</click></hover>
-          delete: <hover:show_text:"<t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
-            <v:subcmd> </t><t:decoration>- </t><t:regular>Delete nearby hologram</click></hover>
-          list: <hover:show_text:"<t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          delete: <hover:show_text:"<t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            <v:subcmd> </t><t:decoration>- </t><t:regular>Löschen nearby hologram</click></hover>
+          list: <hover:show_text:"<t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> </t><t:decoration>- </t><t:regular>List holograms</click></hover>
         land:
-          main: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          main: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Special land administration</click></hover>
-          setflag: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          setflag: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Set flag state</click></hover>
-          resetflag: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          resetflag: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Reset flag state
             to roles.yml</click></hover>
-          removespawn: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          removespawn: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Remove spawn of
             a land</click></hover>
-          addrole: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          addrole: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Add custom role
             from roles.yml</click></hover>
-          menu: <hover:show_text:"<t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          menu: <hover:show_text:"<t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> </t><t:decoration>- </t><t:regular>Open menu</click></hover>
-          limits: <hover:show_text:"<t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          limits: <hover:show_text:"<t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> </t><t:decoration>- </t><t:regular>View land limits</click></hover>
           bank:
-            main: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            main: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
               <v:subcmd> </t><t:decoration>- </t><t:regular>Edit bank balance</click></hover>
-            modify: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            modify: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
               <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Add (+) or remove
               (-) funds</click></hover>
-            set: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            set: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
               <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Set funds</click></hover>
 
 lands:
@@ -602,10 +602,10 @@ lands:
       new:
         posts: |
           <t:regular>There are <t:regular_value><v:amount> </t>new messages posted by members of your land<t:entity_land> <v:land></t>. Latest: <t:user_content><v:latest></t>
-            <hover:show_text:"<t:regular>Click to view them"><click:run_command:"/<v:cmd>"><t:regular>✖ View them: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
+            <hover:show_text:"<t:regular>Klicke, um sie anzusehen"><click:run_command:"/<v:cmd>"><t:regular>✖ View them: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
         general: |
           <t:regular>There are <t:regular_value><v:amount> </t>new inbox messages for the land<t:entity_land> <v:land></t>. Latest: <t:user_content><v:latest></t>
-            <hover:show_text:"<t:regular>Click to view them"><click:run_command:"/<v:cmd>"><t:regular>✖ View them: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
+            <hover:show_text:"<t:regular>Klicke, um sie anzusehen"><click:run_command:"/<v:cmd>"><t:regular>✖ View them: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
     feature-disabled: <t:error>This feature was disabled by an administrator. <t:regular>They
       need to enable setting '<t:regular_value><v:setting></t><t:decoration>'</t><t:regular>
       in config, to let you use this feature.
@@ -661,7 +661,7 @@ lands:
       area: '<t:error>You''re not allowed to do this in this area (area:<t:error_value>
         <v:area> </t>land:<t:error_value> <v:land></t>). <t:decoration>Flag: </t><t:regular_value><v:flag></t>'
       banned: <t:error>You're not allowed to enter this area. <t:regular>You've been
-        banned from this area <t:decoration>(</t><t:regular>Area:<t:regular_value>
+        banned from this area <t:decoration>(</t><t:regular>Bereich:<t:regular_value>
         <v:area> </t>Land:<t:entity_land> <v:land></t><t:decoration>)</t><t:regular>.
       claimblock: <t:error>You don't own this claimblock. <t:regular>It belongs to<t:regular_value>
         <v:player></t>.
@@ -783,7 +783,7 @@ lands:
         land: <t:error>You can't edit this player in the land<t:error_value> <v:land></t>.
           <t:regular>Their role<t:regular_value> <v:role> </t>has a higher or equal
           priority than yours.
-        area: <t:error>You can't edit this player in this area (<t:error>Area:<t:error_value>
+        area: <t:error>You can't edit this player in this area (<t:error>Bereich:<t:error_value>
           <v:area> </t>Land:<t:error_value> <v:land></t>). <t:regular>Their role<t:regular_value>
           <v:role> </t>has a higher or equal priority than yours.
       weight:
@@ -861,7 +861,7 @@ lands:
           total time:<t:time> <v:max-time></t>
         success: |
           <t:regular>You set area<t:regular_value> <v:area> </t>for rent. The tenant will pay<t:cost> <v:cost> </t>each<t:time> <v:time></t>.
-            <hover:show_text:"<t:regular>Click here to remove the rental offer."><click:run_command:"/<v:cmd>"><t:decoration>✖ </t><t:regular>Remove offer: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
+            <hover:show_text:"<t:regular>Klicke hier, um das Mietangebot zu entfernen."><click:run_command:"/<v:cmd>"><t:decoration>✖ </t><t:regular>Angebot entfernen: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
         invalid: |
           <t:regular>Your line format is invalid (<t:regular_value><v:line></t>. line)
            <t:decoration>1. line:</t><t:regular> Lands
@@ -871,8 +871,8 @@ lands:
         info: |
           <noprefix>
           <t:regular><st>━━━━━━━━━‹━<!st> <t:time><b>Rent Area <!b></t><t:regular><st>━›━━━━━━━━━
-          <hover:show_text:"<t:regular>Click here to visualize this area."><click:run_command:"/<v:cmd>"><!st><t:decoration>• </t><t:regular>Land:<t:entity_land> <v:land> </t><java><t:click>[CLICK]</t></java></click></hover>
-           <t:decoration>• </t><t:regular>Area:<t:regular_value> <v:area>
+          <hover:show_text:"<t:regular>Klicke hier, um diesen Bereich zu visualisieren."><click:run_command:"/<v:cmd>"><!st><t:decoration>• </t><t:regular>Land:<t:entity_land> <v:land> </t><java><t:click>[CLICK]</t></java></click></hover>
+           <t:decoration>• </t><t:regular>Bereich:<t:regular_value> <v:area>
            </t><t:decoration>• </t><t:regular>Cost:<t:cost> <v:cost> </t>each <t:time><v:time>
            </t><t:decoration>• </t><t:regular>Max time:<t:time> <v:max>
           </t><reset><t:regular><st>━━━━━━━━━‹━<!st> <t:time><b>Rent Area <!b></t><t:regular><st>━›━━━━━━━━━
@@ -888,12 +888,12 @@ lands:
         success: |
           <t:regular>You rented area<t:regular_value> <v:area> </t>of land<t:entity_land> <v:land> </t>for<t:cost> <v:cost></t>. It will expire in<t:time> <v:time></t>.
             <t:decoration>✖ </t><t:regular>Adding more time: Click on the sign or hologram
-            <hover:show_text:"<t:regular>Click here to cancel your rental."><click:run_command:"/<v:cmd>"><t:decoration>✖ </t><t:regular>Cancelling rental: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
+            <hover:show_text:"<t:regular>Klicke hier, um deine Miete zu kündigen."><click:run_command:"/<v:cmd>"><t:decoration>✖ </t><t:regular>Miete kündigen: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
         info: |
           <noprefix>
           <t:regular><st>━━━━━━━━━‹━<!st> <t:time><b>Rented Info <!b></t><t:regular><st>━›━━━━━━━━━
-          <hover:show_text:"<t:regular>Click here to visualize this area."><click:run_command:"/<v:cmd>"><!st><t:decoration>• </t><t:regular>Land:<t:entity_land> <v:land> </t><java><t:click>[CLICK]</t></java></click></hover>
-           <t:decoration>• </t><t:regular>Area:<t:regular_value> <v:area>
+          <hover:show_text:"<t:regular>Klicke hier, um diesen Bereich zu visualisieren."><click:run_command:"/<v:cmd>"><!st><t:decoration>• </t><t:regular>Land:<t:entity_land> <v:land> </t><java><t:click>[CLICK]</t></java></click></hover>
+           <t:decoration>• </t><t:regular>Bereich:<t:regular_value> <v:area>
            </t><t:decoration>• </t><t:regular>Tenant:<t:regular_value> <v:player>
            </t><t:decoration>• </t><t:regular>Time left:<t:time> <v:left>
            </t><t:decoration>• </t><t:regular>Rent:<t:cost> <v:cost> </t>each<t:time> <v:time>
@@ -912,7 +912,7 @@ lands:
         tenant:
           confirm: |
             <t:error>Please confirm that you want to pay<t:cost> <v:cost> </t>as compensation to the tenant<t:error_value> <v:player> </t>in order to remove them:
-              <hover:show_text:"<t:regular>Click here to confirm this action and payment."><click:run_command:"/<v:cmd>"><t:positive>✔ Confirm: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
+              <hover:show_text:"<t:regular>Klicke hier, um diese Aktion und Zahlung zu bestätigen."><click:run_command:"/<v:cmd>"><t:positive>✔ Bestätigen: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
           success: <t:regular>You removed the tenant<t:regular_value> <v:player> </t>from
             area<t:regular_value> <v:area> </t>of land<t:entity_land> <v:land> </t>and
             paid<t:cost> <v:cost> </t>as compensation.
@@ -928,10 +928,10 @@ lands:
           success:
             area: |
               <t:regular>You set area<t:regular_value> <v:area> </t>for sale. Cost:<t:cost> <v:cost></t>
-                <hover:show_text:"<t:regular>Click to remove this offer."><click:run_command:"/<v:cmd>"><t:decoration>✖ </t><t:regular>Remove offer: <t:cmd>/<v:cmd></t></click></hover>
+                <hover:show_text:"<t:regular>Klicke, um dieses Angebot zu entfernen."><click:run_command:"/<v:cmd>"><t:decoration>✖ </t><t:regular>Angebot entfernen: <t:cmd>/<v:cmd></t></click></hover>
             land: |
               <t:regular>You set the whole land<t:entity_land> <v:land> </t>for sale. Cost:<t:cost> <v:cost></t>
-                <hover:show_text:"<t:regular>Click to remove this offer."><click:run_command:"/<v:cmd>"><t:decoration>✖ </t><t:regular>Remove offer: <t:cmd>/<v:cmd></t></click></hover>
+                <hover:show_text:"<t:regular>Klicke, um dieses Angebot zu entfernen."><click:run_command:"/<v:cmd>"><t:decoration>✖ </t><t:regular>Angebot entfernen: <t:cmd>/<v:cmd></t></click></hover>
           invalid: |
             <t:regular>Your line format is invalid (<t:regular_value><v:line></t>. line)
              <t:decoration>1. line:</t><t:regular> Lands
@@ -950,21 +950,21 @@ lands:
             area: |
               <noprefix>
               <t:regular><st>━━━━━━━━━‹━<!st> <t:time><b>Buy Area <!b></t><t:regular><st>━›━━━━━━━━━
-              <hover:show_text:"<t:regular>Click here to visualize this area."><click:run_command:"/<v:cmd>"><!st><t:regular>Land:<t:entity_land> <v:land> </t><java><t:click>[CLICK]</t></java></click></hover>
-               <t:regular>Area:<t:regular_value> <v:area>
+              <hover:show_text:"<t:regular>Klicke hier, um diesen Bereich zu visualisieren."><click:run_command:"/<v:cmd>"><!st><t:regular>Land:<t:entity_land> <v:land> </t><java><t:click>[CLICK]</t></java></click></hover>
+               <t:regular>Bereich:<t:regular_value> <v:area>
                </t>Cost:<t:cost> <v:cost>
               </t><reset><t:regular><st>━━━━━━━━━‹━<!st> <t:time><b>Buy Area <!b></t><t:regular><st>━›━━━━━━━━━
             land: |
               <noprefix>
               <t:regular><st>━━━━━━━━━‹━<!st> <t:time><b>Buy Land <!b></t><t:regular><st>━›━━━━━━━━━
-              <hover:show_text:"<t:regular>Click here to visualize this land."><click:run_command:"/<v:cmd>"><!st><t:regular>Land:<t:entity_land> <v:land> </t><java><t:click>[CLICK]</t></java></click></hover>
+              <hover:show_text:"<t:regular>Klicke hier, um dieses Land zu visualisieren."><click:run_command:"/<v:cmd>"><!st><t:regular>Land:<t:entity_land> <v:land> </t><java><t:click>[CLICK]</t></java></click></hover>
               <t:regular>Cost:<t:cost> <v:cost>
               </t><reset><t:regular><st>━━━━━━━━━‹━<!st> <t:time><b>Buy Land <!b></t><t:regular><st>━›━━━━━━━━━
         sold: |
           <noprefix>
           <t:regular>---------‹- <t:time><b>Area Sold <!b></t><t:regular>›---------
-          <hover:show_text:"<t:regular>Click here to visualize this area."><click:run_command:"/<v:cmd>"><t:regular>Land:<t:entity_land> <v:land> </t><java><t:click>[CLICK]</t></java></click></hover>
-           <t:regular>Area:<t:regular_value> <v:area>
+          <hover:show_text:"<t:regular>Klicke hier, um diesen Bereich zu visualisieren."><click:run_command:"/<v:cmd>"><t:regular>Land:<t:entity_land> <v:land> </t><java><t:click>[CLICK]</t></java></click></hover>
+           <t:regular>Bereich:<t:regular_value> <v:area>
            </t>Sold to<t:regular_value> <v:player> </t>for<t:cost> <v:cost></t>.
           <t:regular>---------‹- <t:time><b>Area Sold <!b></t><t:regular>›---------
     general:
@@ -980,15 +980,15 @@ lands:
           a member of.
         land: '<t:error>You''re not allowed to do this for this land<t:error_value>
           <v:land></t>. <t:decoration>Flag: </t><t:regular_value><v:flag></t>'
-        owner: <t:error>You're not allowed to do this for the land<t:error_value>
+        owner: <t:error>Das darfst du nicht tun this for the land<t:error_value>
           <v:land></t>. <t:regular>Only the land owner can do this. <t:regular>Specify
           your own land as the argument instead, or create one <t:decoration>(/</t><t:cmd><v:cmd_create></t><t:decoration>)</t><t:regular>.
-        area: <t:error>You're not allowed to do this in the area<t:error_value> <v:area>
+        area: <t:error>Das darfst du nicht tun this in the area<t:error_value> <v:area>
           </t>of land<t:error_value> <v:land></t>.
         position:
           flag: '<t:error>You''re not allowed to do this for the land<t:error_value>
             <v:land> </t>at your current position. <t:decoration>Flag: </t><t:regular_value><v:flag></t>'
-          untrusted: <t:error>You're not allowed to do this for the land<t:error_value>
+          untrusted: <t:error>Das darfst du nicht tun this for the land<t:error_value>
             <v:land> </t>at your current position. <t:regular>You're not trusted in
             this land.
       object:
@@ -1034,7 +1034,7 @@ lands:
       input:
         confirm: |
           <t:regular>Please confirm this action <t:decoration>(</t><t:cmd>/<v:input></t><t:decoration>) </t><t:regular>by clicking below:
-            <hover:show_text:"<t:regular>Click here to confirm this action."><click:run_command:"/<v:fullcmd>"><t:positive>✔ Confirm: <t:cmd>/<v:fullcmd> </t><java><t:click>[CLICK]</t></java></click></hover>
+            <hover:show_text:"<t:regular>Klicke hier, um diese Aktion zu bestätigen."><click:run_command:"/<v:fullcmd>"><t:positive>✔ Bestätigen: <t:cmd>/<v:fullcmd> </t><java><t:click>[CLICK]</t></java></click></hover>
         land: <t:error>The land<t:error_value> <v:input> </t>doesn't exist.
         area: <t:error>The area<t:error_value> <v:input> </t>doesn't exist in this
           land.
@@ -1089,9 +1089,9 @@ lands:
             <t:decoration>(</t><t:regular>yours: <t:regular_value><v:submitted></t><t:decoration>)</t><t:regular>.'
     claim:
       already-member: |
-        <t:error>You're already part of a land. <t:regular>Use these commands instead:
-          <hover:show_text:"<t:regular>Click to copy, then replace the <t:cmd>land argument</t><t:regular> with your land's name."><click:suggest_command:"/<v:cmd_claim>"><t:regular>✖ Claim more chunks: <t:cmd>/<v:cmd_claim> </t><java><t:click>[CLICK]</t></java></click></hover>
-          <hover:show_text:"<t:regular>Click here to create your own land instead."><click:run_command:"/<v:cmd_create>"><t:regular>✖ Create new land: <t:cmd>/<v:cmd_create> </t><java><t:click>[CLICK]</t></java></click></hover>
+        <t:error>You're already part of a land. <t:regular>Use these commands stattdessen:
+          <hover:show_text:"<t:regular>Klicke zum Kopieren und ersetze dann das <t:cmd>Land-Argument</t><t:regular> durch deinen Landnamen."><click:suggest_command:"/<v:cmd_claim>"><t:regular>✖ Mehr Chunks claimen: <t:cmd>/<v:cmd_claim> </t><java><t:click>[CLICK]</t></java></click></hover>
+          <hover:show_text:"<t:regular>Klicke hier, um stattdessen dein eigenes Land zu erstellen."><click:run_command:"/<v:cmd_create>"><t:regular>✖ Neues Land erstellen: <t:cmd>/<v:cmd_create> </t><java><t:click>[CLICK]</t></java></click></hover>
     create:
       land-other: <t:error>You're not allowed to have your own land and be a member
         of another land. <t:regular>You need to leave land<t:entity_land> <v:land>
@@ -1104,9 +1104,9 @@ lands:
       success:
         land: |
           <t:regular>Successfully created land<t:entity_land> <v:land> </t>for<t:cost> <v:cost></t>.
-            <hover:show_text:"<t:regular>Claim more chunks using <t:cmd>/<v:cmd_claim></t><t:regular> and its subcommands."><click:suggest_command:"/<v:cmd_claim>"><t:regular>✖ Expand land: <t:cmd>/<v:cmd_claim> </t><java><t:click>[CLICK]</t></java></click></hover>
-            <hover:show_text:"<t:regular>Click here to open your land's menu."><click:run_command:"/<v:cmd_menu>"><t:regular>✖ Manage land: <t:cmd>/<v:cmd_menu> </t><java><t:click>[CLICK]</t></java></click></hover>
-            <hover:show_text:"<t:regular>Click here to view all available commands for your land."><click:run_command:"/<v:cmd_help>"><t:regular>✖ More commands: <t:cmd>/<v:cmd_help> </t><java><t:click>[CLICK]</t></java></click></hover>
+            <hover:show_text:"<t:regular>Mehr Chunks claimen using <t:cmd>/<v:cmd_claim></t><t:regular> and its subcommands."><click:suggest_command:"/<v:cmd_claim>"><t:regular>✖ Expand land: <t:cmd>/<v:cmd_claim> </t><java><t:click>[CLICK]</t></java></click></hover>
+            <hover:show_text:"<t:regular>Klicke hier, um das Menü deines Landes zu öffnen."><click:run_command:"/<v:cmd_menu>"><t:regular>✖ Land verwalten: <t:cmd>/<v:cmd_menu> </t><java><t:click>[CLICK]</t></java></click></hover>
+            <hover:show_text:"<t:regular>Klicke hier, um alle verfügbaren Befehle für dein Land anzuzeigen."><click:run_command:"/<v:cmd_help>"><t:regular>✖ Mehr Befehle: <t:cmd>/<v:cmd_help> </t><java><t:click>[CLICK]</t></java></click></hover>
         camp: <t:regular>You created the camp<t:entity_land> <v:land> </t>at your
           current position. <t:regular>You paid<t:cost> <v:cost></t>. The camp can't
           be expanded and will expire in<t:time> <v:time></t>.
@@ -1167,7 +1167,7 @@ lands:
         deactivated: <t:regular>Successfully deactivated land chat.
         none: |
           <t:error>You need to enable chat mode first:
-            <hover:show_text:"<t:regular>Click to copy the command."><click:run_command:"/<v:cmd>"><t:regular>✖ <t:regular>Enable chat mode: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
+            <hover:show_text:"<t:regular>Klicke, um den Befehl zu kopieren."><click:run_command:"/<v:cmd>"><t:regular>✖ <t:regular>Chatmodus aktivieren: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
         format:
           minecraft: <noprefix><t:entity_land><v:land> </t><t:decoration>| </t><t:regular_value><v:role>
             </t><t:regular_value><v:player_display> </t><t:decoration>»</t><t:user_content>
@@ -1175,32 +1175,32 @@ lands:
           discord: <noprefix><t:entity_land><v:land> </t><t:decoration>| </t><t:entity_nation>Discord
             </t><t:regular_value><v:player_display> </t><t:decoration>»</t><t:user_content>
             <v:message></t>
-          spy: <noprefix><t:decoration>[</t><t:negative>ChatSpy<t:decoration>] </t><t:entity_land><v:land>
+          spy: <noprefix><t:decoration>[</t><t:negative>Chat-Spion<t:decoration>] </t><t:entity_land><v:land>
             </t>| <t:regular_value><v:role> </t><t:regular_value><v:player_display>
             </t><t:decoration>»</t><t:user_content> <v:message></t>
       delete:
         confirm: |
           <t:regular>Please confirm the deletion of land<t:entity_land> <v:land> </t>by clicking below:
-            <hover:show_text:"<t:regular>Click here to confirm this action."><click:run_command:"/<v:fullcmd>"><t:positive>✔ Confirm: <t:cmd>/<v:fullcmd> </t><java><t:click>[CLICK]</t></java></click></hover>
+            <hover:show_text:"<t:regular>Klicke hier, um diese Aktion zu bestätigen."><click:run_command:"/<v:fullcmd>"><t:positive>✔ Bestätigen: <t:cmd>/<v:fullcmd> </t><java><t:click>[CLICK]</t></java></click></hover>
         broadcast: <t:regular>The land<t:entity_land> <v:land> </t>was deleted by<t:regular_value>
           <v:player></t>.
         rented: |
           <t:error>You can't delete this land, because its area<t:error_value> <v:area> </t>is rented or bought by<t:error_value> <v:player></t>.
-            <hover:show_text:"<t:regular>Click here to remove the tenant."><click:run_command:"/<v:cmd>"><t:regular>✖ <t:regular>To remove the tenant, execute <t:cmd>/<v:cmd> </t><java><t:click>[CLICK] </t></java><t:regular>while standing in that area.</click></hover>'
+            <hover:show_text:"<t:regular>Klicke hier, um den Mieter zu entfernen."><click:run_command:"/<v:cmd>"><t:regular>✖ <t:regular>Um den Mieter zu entfernen, führe <t:cmd>/<v:cmd> </t><java><t:click>[CLICK] </t></java><t:regular>aus, während du in diesem Bereich stehst.</click></hover>'
         success: <t:regular>Successfully deleted your land<t:entity_land> <v:land></t>.
           You got<t:regular_value> <v:back> </t>back from claim costs and the bank
           balance.
       leave:
         owner: |
           <t:error>You can't leave this land. <t:regular>As the owner of a land you can delete the land or just transfer the ownership.
-            <hover:show_text:"<t:regular>Click to delete land<t:entity_land> <v:land></t>."><click:run_command:"/<v:cmd_delete>"><t:negative>✘ Delete <java><t:click>[CLICK]</t></java></click></hover>
-            <hover:show_text:"<t:regular>Click to copy this command."><click:suggest_command:"/<v:cmd_setowner> "><t:positive>✔ Transfer ownership <java><t:click>[CLICK]</t></java></click></hover>
+            <hover:show_text:"<t:regular>Klicke, um Land zu löschen<t:entity_land> <v:land></t>."><click:run_command:"/<v:cmd_delete>"><t:negative>✘ Löschen <java><t:click>[CLICK]</t></java></click></hover>
+            <hover:show_text:"<t:regular>Klicke, um diesen Befehl zu kopieren."><click:suggest_command:"/<v:cmd_setowner> "><t:positive>✔ Besitz übertragen <java><t:click>[CLICK]</t></java></click></hover>
         untrusted: <t:regular>You aren't trusted in any areas of land<t:entity_land>
           <v:land></t>.
         success: <t:regular>Successfully left the whole land<t:entity_land> <v:land></t>.
         confirm: |
           <t:regular>Please confirm that you want to leave the whole land<t:entity_land> <v:land></t> and that <t:regular_value><v:chunks></t> chunks, that you claimed, may be unclaimed:
-            <hover:show_text:"<t:regular>Click here to confirm this action."><click:run_command:"/<v:fullcmd>"><t:positive>✔ Confirm: <t:cmd>/<v:fullcmd> </t><java><t:click>[CLICK]</t></java></click></hover>
+            <hover:show_text:"<t:regular>Klicke hier, um diese Aktion zu bestätigen."><click:run_command:"/<v:fullcmd>"><t:positive>✔ Bestätigen: <t:cmd>/<v:fullcmd> </t><java><t:click>[CLICK]</t></java></click></hover>
       rename:
         success: <t:regular>Successfully set the new name<t:regular_value> <v:name>
           </t>for the land<t:entity_land> <v:land></t>. You paid<t:cost> <v:cost></t>.
@@ -1216,7 +1216,7 @@ lands:
             in config, to let you use this feature.
         camp: |
           <t:error>Your camp<t:error_value> <v:land> </t>can't be expanded. <t:regular>Use a different land instead.
-            <hover:show_text:"<t:regular>Click to copy this command."><click:suggest_command:"/<v:cmd>"><t:regular>✖ Your lands: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
+            <hover:show_text:"<t:regular>Klicke, um diesen Befehl zu kopieren."><click:suggest_command:"/<v:cmd>"><t:regular>✖ Deine Länder: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
         region:
           chunk: '<t:error>You can''t claim land here. <t:regular>This chunk already
             belongs to another region management plugin: <t:regular_value><v:plugin></t>'
@@ -1228,17 +1228,17 @@ lands:
           <t:regular>You're only trusted there temporarily.
         no-nearby: |
           <t:error>Couldn't find any nearby claim that you're allowed to expand. <t:regular>You need to create a land first.
-            <hover:show_text:"<t:regular>Click to copy this command."><click:suggest_command:"/<v:cmd>"><t:regular>✖ Create: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
+            <hover:show_text:"<t:regular>Klicke, um diesen Befehl zu kopieren."><click:suggest_command:"/<v:cmd>"><t:regular>✖ Erstellen: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
         none: <t:error>Couldn't claim any chunks for land<t:entity_land> <v:land></t><t:regular>.
           <t:regular>They may already be claimed, lie outside the world border, or
           were blocked by another plugin.
         initial:
           world: |
             <t:error>Land<t:error_value> <v:land> </t>can only claim in the world it was originally created in <t:decoration>(</t><t:error_value><v:world></t>)<t:error>. <t:regular>Create a new land for the world you're currently in <t:decoration>(</t><t:regular_value><v:current></t>)<t:regular> instead.
-              <hover:show_text:"<t:regular>Click to copy this command."><click:suggest_command:"/<v:cmd>"><t:regular>✖ Create: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
+              <hover:show_text:"<t:regular>Klicke, um diesen Befehl zu kopieren."><click:suggest_command:"/<v:cmd>"><t:regular>✖ Erstellen: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
           server: |
             <t:error>Land<t:error_value> <v:land> </t>can only claim on the server it was originally created on <t:decoration>(</t><t:error_value><v:server></t>)<t:error>. <t:regular>Create a new land for the server you're currently on <t:decoration>(</t><t:regular_value><v:current></t>)<t:regular> instead.
-              <hover:show_text:"<t:regular>Click to copy this command."><click:suggest_command:"/<v:cmd>"><t:regular>✖ Create: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
+              <hover:show_text:"<t:regular>Klicke, um diesen Befehl zu kopieren."><click:suggest_command:"/<v:cmd>"><t:regular>✖ Erstellen: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
         chunk-distance:
           land: <t:error>This is too near to land<t:error_value> <v:land></t>. <t:regular>The
             minimum distance around lands, that aren't part of a nation, is<t:limit>
@@ -1292,7 +1292,7 @@ lands:
         merge:
           confirm: |
             <t:regular>Please confirm that you want to merge land<t:entity_land> <v:merge> </t>into<t:entity_land> <v:land></t> for <t:cost><v:cost></t>:
-              <hover:show_text:"<t:regular>Click here to confirm this action."><click:run_command:"/<v:fullcmd>"><t:positive>✔ Confirm: <t:cmd>/<v:fullcmd> </t><java><t:click>[CLICK]</t></java></click></hover>
+              <hover:show_text:"<t:regular>Klicke hier, um diese Aktion zu bestätigen."><click:run_command:"/<v:fullcmd>"><t:positive>✔ Bestätigen: <t:cmd>/<v:fullcmd> </t><java><t:click>[CLICK]</t></java></click></hover>
           same: <t:error>You can't merge land<t:error_value> <v:merge> </t>into itself.
             <t:regular>Please specify a different land.
           already: <t:error>You already requested the land<t:error_value> <v:merge></t>
@@ -1331,7 +1331,7 @@ lands:
             <v:land> </t>and got<t:regular_value> <v:back> </t>back.
           confirm: |
             <t:regular>Please confirm that you want to unclaim all claims of land<t:entity_land> <v:land></t>:
-              <hover:show_text:"<t:regular>Click here to confirm this action."><click:run_command:"/<v:fullcmd>"><t:positive>✔ Confirm: <t:cmd>/<v:fullcmd> </t><java><t:click>[CLICK]</t></java></click></hover>
+              <hover:show_text:"<t:regular>Klicke hier, um diese Aktion zu bestätigen."><click:run_command:"/<v:fullcmd>"><t:positive>✔ Bestätigen: <t:cmd>/<v:fullcmd> </t><java><t:click>[CLICK]</t></java></click></hover>
         selection:
           empty: <t:error>You did not unclaim any chunks, because they are not claimed
             or you're not allowed to unclaim any of them.
@@ -1353,7 +1353,7 @@ lands:
       spawn:
         not-exist: <t:error>There's no spawn set for land<t:error_value> <v:land></t>.
           <t:regular>Someone needs to set it first by executing <t:cmd>/<v:cmd></t><t:regular>.
-        not-allowed: <t:error>You're not allowed to teleport to the spawn of land<t:error_value>
+        not-allowed: <t:error>Du darfst dich nicht teleportieren to the spawn of land<t:error_value>
           <v:land></t>. <t:regular>They need to give you permission in their role
           settings to do so.
         chunk: <t:regular>Land<t:entity_land> <v:land> </t>hasn't set a land spawn
@@ -1367,16 +1367,16 @@ lands:
             area again.
           none: <t:error>The area<t:error_value> <v:area> </t>of land<t:error_value>
             <v:land> </t>doesn't have a spawn set.
-          teleport: <t:error>You're not allowed to teleport to this area. <t:regular>The
-            land owner can give you permission to do so.
+          teleport: <t:error>Du darfst dich nicht teleportieren to this area. <t:regular>The
+            land owner can give you dafür die Berechtigung geben.
           enter: <t:error>You're not allowed to enter this area. <t:regular>The land
-            owner can give you permission to do so.
+            owner can give you dafür die Berechtigung geben.
           success: <t:regular>Successfully teleported to the spawn of area<t:regular_value>
             <v:area> </t>of land<t:entity_land> <v:land></t>.
         set:
           not-claimed-by: <t:error>The spawn can only be set inside your land<t:error_value>
             <v:land></t>.
-          success: <title><t:success_heading>Spawnpoint set<subtitle><t:regular>Cost:<t:cost>
+          success: <title><t:success_heading>Spawnpunkt set<subtitle><t:regular>Cost:<t:cost>
             <v:cost></t>
       member:
         setrole:
@@ -1389,7 +1389,7 @@ lands:
               land or nation.
             visitor: |
               <t:error>You can't set the<t:error_value> <v:role> </t>role. <t:regular>If you want to remove this player, use the following command:
-                <hover:show_text:"<t:regular>Click to remove player<t:regular_value> <v:player></t>."><click:run_command:"/<v:cmd>"><t:regular>✖ Remove: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
+                <hover:show_text:"<t:regular>Klicke, um Spieler zu entfernen<t:regular_value> <v:player></t>."><click:run_command:"/<v:cmd>"><t:regular>✖ Entfernen: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
             tenant: '<t:error>You can''t set the<t:error_value> <v:role> </t>role.
               <t:regular>It must be obtained through a rent or sell sign: <t:regular_value><v:wiki></t>'
           untrusted: <t:error>The player<t:error_value> <v:player> </t>isn't trusted
@@ -1400,7 +1400,7 @@ lands:
         setowner:
           confirm: |
             <t:regular>Please confirm that you want to set player<t:regular_value> <v:player> </t>as the new owner of land<t:entity_land> <v:land></t>:
-              <hover:show_text:"<t:regular>Click here to confirm this action."><click:run_command:"/<v:fullcmd>"><t:positive>✔ Confirm: <t:cmd>/<v:fullcmd> </t><java><t:click>[CLICK]</t></java></click></hover>
+              <hover:show_text:"<t:regular>Klicke hier, um diese Aktion zu bestätigen."><click:run_command:"/<v:fullcmd>"><t:positive>✔ Bestätigen: <t:cmd>/<v:fullcmd> </t><java><t:click>[CLICK]</t></java></click></hover>
           inviter:
             max:
               ownlands: <t:error>The player<t:error_value> <v:player> </t>isn't allowed
@@ -1433,9 +1433,9 @@ lands:
             set: <t:regular>You successfully set player<t:regular_value> <v:player>
               </t>as the new owner of land<t:entity_land> <v:land></t>.
             target: |
-              <hover:show_text:"<t:regular>Click to open your invites menu."><click:run_command:"/<v:cmd_invites>"><t:regular>Player<t:regular_value> <v:player> </t>invited you to become the new owner of land<t:entity_land> <v:land></t>.</click></hover> <t:regular>Upkeep:<t:cost> <v:upkeep></t>
-                <hover:show_text:"<t:regular>Click here to accept this invite."><click:run_command:"/<v:cmd_accept>"><t:positive>✔ Accept: <t:cmd>/<v:cmd_accept> </t><java><t:click>[CLICK]</t></java></click></hover>
-                <hover:show_text:"<t:regular>Click here to deny this invite."><click:run_command:"/<v:cmd_deny>"><t:negative>✘ Deny: <t:cmd>/<v:cmd_deny> </t><java><t:click>[CLICK]</t></java></click></hover>
+              <hover:show_text:"<t:regular>Klicke, um dein Einladungsmenü zu öffnen."><click:run_command:"/<v:cmd_invites>"><t:regular>Player<t:regular_value> <v:player> </t>hat dich eingeladen, neuer Besitzer des Landes<t:entity_land> <v:land></t>.</click></hover> <t:regular>Upkeep:<t:cost> <v:upkeep></t>
+                <hover:show_text:"<t:regular>Klicke hier, um diese Einladung anzunehmen."><click:run_command:"/<v:cmd_accept>"><t:positive>✔ Annehmen: <t:cmd>/<v:cmd_accept> </t><java><t:click>[CLICK]</t></java></click></hover>
+                <hover:show_text:"<t:regular>Klicke hier, um diese Einladung abzulehnen."><click:run_command:"/<v:cmd_deny>"><t:negative>✘ Ablehnen: <t:cmd>/<v:cmd_deny> </t><java><t:click>[CLICK]</t></java></click></hover>
         add:
           flag: <t:error>The player<t:error_value> <v:player></t> doesn't want to
             receive invites from any land. <t:regular>They can change this in their
@@ -1460,9 +1460,9 @@ lands:
           added-temporary: <t:regular>Successfully added player<t:regular_value> <v:player>
             </t>to the whole land<t:entity_land> <v:land> </t>for<t:time> <v:time></t>.
           notification: |
-            <hover:show_text:"<t:regular>Click to open your invites menu."><click:run_command:"/<v:cmd_invites>"><t:regular>Player<t:regular_value> <v:player> </t>invited you to join their land<t:entity_land> <v:land></t>.</click></hover> <t:regular>Taxes:<t:cost> <v:tax></t>
-              <hover:show_text:"<t:regular>Click here to accept this invite."><click:run_command:"/<v:cmd_accept>"><t:positive>✔ Accept: <t:cmd>/<v:cmd_accept> </t><java><t:click>[CLICK]</t></java></click></hover>
-              <hover:show_text:"<t:regular>Click here to deny this invite."><click:run_command:"/<v:cmd_deny>"><t:negative>✘ Deny: <t:cmd>/<v:cmd_deny> </t><java><t:click>[CLICK]</t></java></click></hover>
+            <hover:show_text:"<t:regular>Klicke, um dein Einladungsmenü zu öffnen."><click:run_command:"/<v:cmd_invites>"><t:regular>Player<t:regular_value> <v:player> </t>hat dich eingeladen, ihrem Land<t:entity_land> <v:land></t>.</click></hover> <t:regular>Taxes:<t:cost> <v:tax></t>
+              <hover:show_text:"<t:regular>Klicke hier, um diese Einladung anzunehmen."><click:run_command:"/<v:cmd_accept>"><t:positive>✔ Annehmen: <t:cmd>/<v:cmd_accept> </t><java><t:click>[CLICK]</t></java></click></hover>
+              <hover:show_text:"<t:regular>Klicke hier, um diese Einladung abzulehnen."><click:run_command:"/<v:cmd_deny>"><t:negative>✘ Ablehnen: <t:cmd>/<v:cmd_deny> </t><java><t:click>[CLICK]</t></java></click></hover>
           inviter:
             own-land: <t:error>Player<t:error_value> <v:player> </t>can't be invited
               to join another land. <t:regular>They're not allowed to have their own
@@ -1476,7 +1476,7 @@ lands:
               <v:land> </t>reached its maximum of<t:limit> <v:members> </t>members.
             banned: |
               <t:error>You can't add player<t:error_value> <v:player></t> in the land<t:error_value> <v:land></t>. <t:regular>They're banned in the whole land.
-                <hover:show_text:"<t:regular>Click here to unban this player from the whole land."><click:run_command:"/<v:cmd>"><t:positive>✔ Unban: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
+                <hover:show_text:"<t:regular>Klicke hier, um diesen Spieler im gesamten Land zu entbannen."><click:run_command:"/<v:cmd>"><t:positive>✔ Unban: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
           target:
             own-land: <t:error>You can't join this land. <t:regular>You need to delete
               your own land<t:entity_land> <v:land></t> first.
@@ -1531,7 +1531,7 @@ lands:
                 land or nation.
               visitor: |
                 <t:error>You can't set the<t:error_value> <v:role> </t>role. <t:regular>If you want to remove this player, use the following command:
-                  <hover:show_text:"<t:regular>Click to remove player<t:regular_value> <v:player></t>."><click:run_command:"/<v:cmd>"><t:regular>✖ Remove: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
+                  <hover:show_text:"<t:regular>Klicke, um Spieler zu entfernen<t:regular_value> <v:player></t>."><click:run_command:"/<v:cmd>"><t:regular>✖ Entfernen: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
               tenant: '<t:error>You can''t set the<t:error_value> <v:role> </t>role.
                 <t:regular>It must be obtained through a rent or sell sign: <t:regular_value><v:wiki></t>'
             untrusted: <t:error>The player<t:error_value> <v:player> </t>isn't trusted
@@ -1553,7 +1553,7 @@ lands:
               than zero.
             trusted: |
               <t:regular>The player<t:regular_value> <v:player> </t>is already added to the subarea<t:regular_value> <v:area> </t>of land<t:entity_land> <v:land></t>.
-                <hover:show_text:"<t:regular>Click here to add them to the whole land instead of just this specific subarea."><click:run_command:"/<v:cmd_land>"><t:regular>✖ Add to whole land: <t:regular_value>/<v:cmd_land> </t><java><t:click>[CLICK]</t></java></click></hover>
+                <hover:show_text:"<t:regular>Klicke hier, um sie dem gesamten Land statt nur diesem Unterbereich hinzuzufügen."><click:run_command:"/<v:cmd_land>"><t:regular>✖ Dem gesamten Land hinzufügen: <t:regular_value>/<v:cmd_land> </t><java><t:click>[CLICK]</t></java></click></hover>
             invited: <t:error>The player<t:error_value> <v:player> </t>is already
               invited to the subarea<t:error_value> <v:area> </t>of land<t:error_value>
               <v:land></t>. <t:regular>The invite has been sent<t:time> <v:time> </t>ago.
@@ -1567,9 +1567,9 @@ lands:
               <v:player> </t>to the area<t:regular_value> <v:area> </t>of land<t:entity_land>
               <v:land> </t>for<t:time> <v:time></t>.
             notification: |
-              <hover:show_text:"<t:regular>Click to open your invites menu."><click:run_command:"/<v:cmd_invites>"><t:regular>Player<t:regular_value> <v:player> </t>invited you to join the area<t:regular_value> <v:area> </t>of their land<t:entity_land> <v:land></t>.</click></hover> <t:regular>Taxes:<t:cost> <v:tax></t>
-                <hover:show_text:"<t:regular>Click here to accept this invite."><click:run_command:"/<v:cmd_accept>"><t:positive>✔ Accept: <t:cmd>/<v:cmd_accept> </t><java><t:click>[CLICK]</t></java></click></hover>
-                <hover:show_text:"<t:regular>Click here to deny this invite."><click:run_command:"/<v:cmd_deny>"><t:negative>✘ Deny: <t:cmd>/<v:cmd_deny> </t><java><t:click>[CLICK]</t></java></click></hover>
+              <hover:show_text:"<t:regular>Klicke, um dein Einladungsmenü zu öffnen."><click:run_command:"/<v:cmd_invites>"><t:regular>Player<t:regular_value> <v:player> </t>invited you to join the area<t:regular_value> <v:area> </t>of their land<t:entity_land> <v:land></t>.</click></hover> <t:regular>Taxes:<t:cost> <v:tax></t>
+                <hover:show_text:"<t:regular>Klicke hier, um diese Einladung anzunehmen."><click:run_command:"/<v:cmd_accept>"><t:positive>✔ Annehmen: <t:cmd>/<v:cmd_accept> </t><java><t:click>[CLICK]</t></java></click></hover>
+                <hover:show_text:"<t:regular>Klicke hier, um diese Einladung abzulehnen."><click:run_command:"/<v:cmd_deny>"><t:negative>✘ Ablehnen: <t:cmd>/<v:cmd_deny> </t><java><t:click>[CLICK]</t></java></click></hover>
             inviter:
               own-land: <t:error>Player<t:error_value> <v:player> </t>can't be invited
                 to join another land. <t:regular>They're not allowed to have their
@@ -1583,7 +1583,7 @@ lands:
                 <v:land> </t>reached its maximum of<t:limit> <v:members> </t>members.
               banned: |
                 <t:error>You can't add player<t:error_value> <v:player></t> to the area<t:error_value> <v:area></t> of land<t:error_value> <v:land></t>. <t:regular>They're banned.
-                  <hover:show_text:"<t:regular>Click here to unban this player."><click:run_command:"/<v:cmd>"><t:positive>✔ Unban: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
+                  <hover:show_text:"<t:regular>Klicke hier, um diesen Spieler zu entbannen."><click:run_command:"/<v:cmd>"><t:positive>✔ Unban: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
             target:
               own-land: <t:error>You can't join this land. <t:regular>You need to
                 delete your own land<t:entity_land> <v:land></t> first.
@@ -1599,19 +1599,19 @@ lands:
               here to copy this command."><click:suggest_command:"/<v:cmd>"><t:regular>New
               owners can be set using <t:cmd>/<v:cmd></t><t:regular>. <java><t:click>[CLICK]</t></java></click></hover>
             already: |
-              <t:regular>The player<t:regular_value> <v:player> </t>isn't added to this specific subarea <t:decoration>(</t><t:regular>Area:<t:regular_value> <v:area> </t>Land:<t:entity_land> <v:land></t><t:decoration>).
-                </t><hover:show_text:"<t:regular>Click here to remove them from the whole land instead of just this specific subarea."><click:run_command:"/<v:cmd_land>"><t:regular>✖ Remove from whole land: <t:regular_value>/<v:cmd_land> </t><java><t:click>[CLICK]</t></java></click></hover>
+              <t:regular>The player<t:regular_value> <v:player> </t>isn't added to this specific subarea <t:decoration>(</t><t:regular>Bereich:<t:regular_value> <v:area> </t>Land:<t:entity_land> <v:land></t><t:decoration>).
+                </t><hover:show_text:"<t:regular>Klicke hier, um sie aus dem gesamten Land statt nur diesem Unterbereich zu entfernen."><click:run_command:"/<v:cmd_land>"><t:regular>✖ Aus dem gesamten Land entfernen: <t:regular_value>/<v:cmd_land> </t><java><t:click>[CLICK]</t></java></click></hover>
             revoke: <t:regular>Successfully revoked the invite for player<t:regular_value>
-              <v:player> </t>in this area <t:decoration>(</t><t:regular>Area:<t:regular_value>
+              <v:player> </t>in this area <t:decoration>(</t><t:regular>Bereich:<t:regular_value>
               <v:area> </t>Land:<t:entity_land> <v:land></t><t:decoration>)</t><t:regular>.
               The player isn't added.
             success: <t:regular>Successfully removed player<t:regular_value> <v:player>
-              </t>from this area <t:decoration>(</t><t:regular>Area:<t:regular_value>
+              </t>from this area <t:decoration>(</t><t:regular>Bereich:<t:regular_value>
               <v:area> </t>Land:<t:entity_land> <v:land></t><t:decoration>)</t><t:regular>.
           ban:
             already: |
               <t:regular>Player<t:regular_value> <v:player> </t>is already banned in the specific subarea<t:regular_value> <v:area> </t>of land<t:entity_land> <v:land></t>.
-                <hover:show_text:"<t:regular>Click here to ban them from the whole land instead of just this specific subarea."><click:run_command:"/<v:cmd_land>"><t:regular>✖ Ban from whole land: <t:regular_value>/<v:cmd_land> </t><java><t:click>[CLICK]</t></java></click></hover>
+                <hover:show_text:"<t:regular>Klicke hier, um sie im gesamten Land statt nur diesem Unterbereich zu bannen."><click:run_command:"/<v:cmd_land>"><t:regular>✖ Im gesamten Land bannen: <t:regular_value>/<v:cmd_land> </t><java><t:click>[CLICK]</t></java></click></hover>
             success: <t:regular>Successfully banned player<t:regular_value> <v:player>
               </t>in the area<t:regular_value> <v:area> </t>of land<t:entity_land>
               <v:land></t>. They won't be able to enter it or teleport to the spawn,
@@ -1622,13 +1622,13 @@ lands:
               area.
           unban:
             success: <t:regular>Successfully unbanned player<t:regular_value> <v:player>
-              </t>from this area <t:decoration>(</t><t:regular>Area:<t:regular_value>
+              </t>from this area <t:decoration>(</t><t:regular>Bereich:<t:regular_value>
               <v:area> </t>Land:<t:entity_land> <v:land></t><t:decoration>)</t><t:regular>.
         spawn:
           set:
             not-claimed-by: <t:error>The spawn can only be set inside the area<t:error_value>
               <v:area> </t>of land<t:error_value> <v:land></t>.
-            success: <title><t:success_heading>Spawnpoint set<subtitle><t:regular>Cost:<t:cost>
+            success: <title><t:success_heading>Spawnpunkt set<subtitle><t:regular>Cost:<t:cost>
               <v:cost></t>
         resize:
           selection: <t:error>You need to create a selection first. <t:regular>Use
@@ -1637,8 +1637,8 @@ lands:
             can be deleted in the areas menu of the land.
           confirm: |
             <t:error>Your selection has a low height. <t:regular>Sub areas, unlike claims, have a height and do not extend from the bottom to the top by default.
-              <hover:show_text:"<t:regular>Click here to proceed."><click:run_command:"/<v:cmd_confirm>"> <t:regular>✖ Proceed: <t:cmd>/<v:cmd_confirm> </t><java><t:click>[CLICK]</t></java></click></hover>
-              <hover:show_text:"<t:regular>Click here to expand the selection from the bottom to the top of the claim."><click:run_command:"/<v:cmd_expand>"> <t:regular>✖ Expand fully: <t:cmd>/<v:cmd_expand> </t><java><t:click>[CLICK]</t></java></click></hover>
+              <hover:show_text:"<t:regular>Klicke hier, um fortzufahren."><click:run_command:"/<v:cmd_confirm>"> <t:regular>✖ Fortfahren: <t:cmd>/<v:cmd_confirm> </t><java><t:click>[CLICK]</t></java></click></hover>
+              <hover:show_text:"<t:regular>Klicke hier, um die Auswahl vom unteren bis zum oberen Rand des Claims zu erweitern."><click:run_command:"/<v:cmd_expand>"> <t:regular>✖ Vollständig erweitern: <t:cmd>/<v:cmd_expand> </t><java><t:click>[CLICK]</t></java></click></hover>
           size: <t:error>Your selection is too small. <t:regular>The minimum size
             is<t:limit> <v:min> </t>blocks and yours is<t:regular_value> <v:current></t>.
           success: <t:regular>You successfully resized the area<t:regular_value> <v:area>
@@ -1688,23 +1688,22 @@ lands:
         disabled: <t:regular>Your selection isn't any longer expanded from bottom
           to the top.
       status:
-        complete: '<title><t:success_heading>Selection Complete<subtitle><t:regular>Claim:
+        complete: '<title><t:success_heading>Auswahl Complete<subtitle><t:regular>Claim:
           <t:cmd><b>/<v:cmd_claim><actionbar><!b><t:regular_heading>Assign to a subarea:
           <!b><t:cmd><b>/<v:cmd_resize></t>'
-        progress: '<title><t:regular_heading>Selection<subtitle><t:regular>Left: <t:regular_value><v:first>
+        progress: '<title><t:regular_heading>Auswahl<subtitle><t:regular>Left: <t:regular_value><v:first>
           </t>Right: <t:regular_value><v:second></t><actionbar><t:regular_heading>Set
-          corner: left/right click block <t:regular><b>Cancel: <!b><t:regular>Change
+          corner: left/right click block <t:regular><b>Abbrechen: <!b><t:regular>Change
           tool slot'
         reminder: |
-          <t:regular>Selection is complete: Following actions can be executed:
-            <hover:show_text:"<t:regular>Click here to claim this selection."><click:run_command:"/<v:cmd_claim>"><t:regular>✖ Claim: <t:cmd>/<v:cmd_claim> </t><java><t:click>[CLICK]</t></java></click></hover>
-            <hover:show_text:"<t:regular>Click here to unclaim this selection."><click:run_command:"/<v:cmd_unclaim>"><t:regular>✖ Unclaim: <t:cmd>/<v:cmd_unclaim> </t><java><t:click>[CLICK]</t></java></click></hover>
-            <hover:show_text:"<t:regular>Assign this selection to a subarea."><click:suggest_command:"/<v:cmd_resize>"><t:regular>✖ Subarea: <t:cmd>/<v:cmd_resize> </t><java><t:click>[CLICK]</t></java></click></hover>
-        not-complete: <t:error>Your selection is not complete. <t:regular>Please make
-          sure that both positions are set. <hover:show_text:"<t:regular>Click here
-          to toggle the selection mode."><click:run_command:"/<v:cmd>"><t:regular>You
-          can toggle the selection mode by executing <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
-        disabled: <title><t:regular_heading>Selection<subtitle><t:negative>Mode disabled
+          <t:regular>Auswahl ist vollständig: Folgende Aktionen können ausgeführt werden:
+            <hover:show_text:"<t:regular>Klicke hier, um diese Auswahl zu claimen."><click:run_command:"/<v:cmd_claim>"><t:regular>✖ Claimen: <t:cmd>/<v:cmd_claim> </t><java><t:click>[CLICK]</t></java></click></hover>
+            <hover:show_text:"<t:regular>Klicke hier, um diese Auswahl freizugeben."><click:run_command:"/<v:cmd_unclaim>"><t:regular>✖ Freigeben: <t:cmd>/<v:cmd_unclaim> </t><java><t:click>[CLICK]</t></java></click></hover>
+            <hover:show_text:"<t:regular>Weise diese Auswahl einem Unterbereich zu."><click:suggest_command:"/<v:cmd_resize>"><t:regular>✖ Unterbereich: <t:cmd>/<v:cmd_resize> </t><java><t:click>[CLICK]</t></java></click></hover>
+        not-complete: <t:error>Deine Auswahl ist nicht vollständig. <t:regular>Bitte stelle sicher, dass beide Positionen gesetzt sind. <hover:show_text:"<t:regular>Click here
+          um den Auswahlmodus umzuschalten."><click:run_command:"/<v:cmd>"><t:regular>Du
+          kannst den Auswahlmodus umschalten mit <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
+        disabled: <title><t:regular_heading>Auswahl<subtitle><t:negative>Modus deaktiviert
     invites:
       accept:
         max: <t:error>You can't be part of any more lands. <t:regular>You reached
@@ -1780,11 +1779,11 @@ lands:
       info: |
         <noprefix>
         <t:regular><st>━━━━━━━━━‹━<!st> <t:time><b>Land View <!b></t><st>━›━━━━━━━━━<!st>
-        <hover:show_text:"<t:regular>Click here to get more information about this land."><click:run_command:"/<v:cmd>"><t:decoration>• </t>Land: <t:entity_land><v:land></t> <java><t:click>[CLICK]</t></java></click></hover>
+        <hover:show_text:"<t:regular>Klicke hier, um mehr Informationen über dieses Land zu erhalten."><click:run_command:"/<v:cmd>"><t:decoration>• </t>Land: <t:entity_land><v:land></t> <java><t:click>[CLICK]</t></java></click></hover>
         <t:decoration>• </t>Level: <t:regular_value><v:level></t>
         <t:decoration>• </t>Nation:<t:entity_nation> <v:nation></t>
         <t:decoration>• </t>Chunk X: <t:regular_value><v:x></t>, Z: <t:regular_value><v:z></t>, claimed at<t:time> <v:date></t>
-        <b>Area:<!b><t:regular_value> <v:area></t>
+        <b>Bereich:<!b><t:regular_value> <v:area></t>
         <t:decoration>• </t>Tax:<t:cost> <v:tax></t>
         <t:decoration>• </t>Players:<t:regular_value> <v:players></t>
         <t:decoration>• </t>Description:<t:user_content> <v:description></t>
@@ -1792,15 +1791,15 @@ lands:
       area: |
         <noprefix>
         <t:regular><st>━━━━━━━━━‹━<!st> <t:time><b>Area View <!b></t><st>━›━━━━━━━━━<!st>
-        <hover:show_text:"<t:regular>Click here to get more information about this land."><click:run_command:"/<v:cmd_land>"><t:decoration>• </t>Land: <t:entity_land><v:land></t> <java><t:click>[CLICK]</t></java></click></hover>
+        <hover:show_text:"<t:regular>Klicke hier, um mehr Informationen über dieses Land zu erhalten."><click:run_command:"/<v:cmd_land>"><t:decoration>• </t>Land: <t:entity_land><v:land></t> <java><t:click>[CLICK]</t></java></click></hover>
         <t:decoration>• </t>Level: <t:regular_value><v:level></t>
-        <hover:show_text:"<t:regular>Click here to get more information about this area."><click:run_command:"/<v:cmd_area>"><b>Area:<!b><t:regular_value> <v:area></t> <java><t:click>[CLICK]</t></java></click></hover>
+        <hover:show_text:"<t:regular>Klicke hier, um mehr Informationen über diesen Bereich zu erhalten."><click:run_command:"/<v:cmd_area>"><b>Bereich:<!b><t:regular_value> <v:area></t> <java><t:click>[CLICK]</t></java></click></hover>
         <t:decoration>• </t>Tax:<t:cost> <v:tax></t>
         <t:decoration>• </t>Players:<t:regular_value> <v:players></t>
         <t:decoration>• </t>Description:<t:user_content> <v:description></t>
         <reset><t:regular><st>━━━━━━━━━‹━<!st> <t:time><b>Area View <!b></t><st>━›━━━━━━━━━</t>
     map:
-      link: '<hover:show_text:"<t:regular>Click to open the dynmap."><click:open_url:"<v:dynmap>"><t:regular>Link
+      link: '<hover:show_text:"<t:regular>Klicke, um die Dynmap zu öffnen."><click:open_url:"<v:dynmap>"><t:regular>Link
         to dynmap: <java><t:click>[CLICK]</t></java></click></hover>'
     unstuck:
       success: <t:regular>Successfully teleported into the nearest unclaimed location.
@@ -1814,7 +1813,7 @@ lands:
             <t:cost><v:tax></t>'
           footer: |
             <noprefix><t:regular>You need to pay a total of <t:cost><v:total></t> in <t:time><v:next></t><t:regular>.
-            <t:regular>Balance: <t:regular_value><v:balance>
+            <t:regular>Kontostand: <t:regular_value><v:balance>
             </t><st>━━━━━━━━━‹━<!st> <t:negative_heading>Upcoming Taxes</t> <t:regular><st>━›━━━━━━━━━
         changes:
           header: |
@@ -1826,8 +1825,8 @@ lands:
           footer: |
             <noprefix>
             <t:regular>Payment in:<t:time> <v:next>
-            </t>Balance: <t:regular_value><v:balance>
-            </t><t:decoration>More info: </t><t:cmd>/<v:cmd>
+            </t>Kontostand: <t:regular_value><v:balance>
+            </t><t:decoration>Mehr Infos: </t><t:cmd>/<v:cmd>
             </t><t:regular><st>━━━━━━━━━‹━<!st> <t:error_value>Tax Change </t><t:regular><st>━›━━━━━━━━━
       upkeep:
         broadcast:
@@ -1839,25 +1838,25 @@ lands:
             <!st><t:decoration>• </t><t:prefix>Lands:</t><t:cost> <v:lands_upkeep> </t><t:regular>from<t:regular_value> <v:lands> </t>lands
                <t:regular>Unclaimed a total of<t:regular_value> <v:chunks> </t>chunks. <ingame><hover:show_text:"<t:regular>Chunks will be unclaimed, if a land can't afford to pay the upkeep for them."><t:decoration>[INFO</t><t:decoration>]</t></hover></ingame>
             <t:decoration>• </t><t:entity_nation>Nations:</t><t:cost> <v:nations_upkeep> </t><t:regular>from<t:regular_value> <v:nations> </t>nations
-               <t:regular>Deleted<t:regular_value> <v:nations_deleted> </t>nations. <ingame><hover:show_text:"<t:regular>Nations will be deleted, if they can't afford to pay their upkeep."><t:decoration>[INFO</t><t:decoration>]</t></hover></ingame>
+               <t:regular>Löschend<t:regular_value> <v:nations_deleted> </t>nations. <ingame><hover:show_text:"<t:regular>Nations will be deleted, if they can't afford to pay their upkeep."><t:decoration>[INFO</t><t:decoration>]</t></hover></ingame>
             <ingame><reset><t:regular><st>━━━━━━━━━‹━<!st> <t:negative_heading>Upkeep Collected</t> <t:regular><st>━›━━━━━━━━━</ingame>
         none: <t:regular>You currently don't have to pay upkeep for any land.
         header: <noprefix><t:regular><st>━━━━━━━━━‹━<!st> <t:negative_heading>Upcoming
           Upkeep</t> <t:regular><st>━›━━━━━━━━━
-        entry: <noprefix><hover:show_text:"<t:regular>Click here to deposit the required
+        entry: <noprefix><hover:show_text:"<t:regular>Klicke hier, um den erforderlichen
           money."><click:run_command:"/<v:cmd>"><t:regular_value><v:covered> </t><t:entity_land><v:land></t><t:regular>:<t:cost>
           <v:upkeep_form> </t><java><t:click>[CLICK]</t></java></click></hover>
         footer: |
-          <noprefix><t:regular>Your lands need to pay a total of <t:cost><v:total></t> in <t:time><v:next> </t><t:regular>in order to keep up all claims or membership in their nation. <t:regular>Click above to deposit money into your land's banks.
+          <noprefix><t:regular>Deine Länder need to pay a total of <t:cost><v:total></t> in <t:time><v:next> </t><t:regular>in order to keep up all claims or membership in their nation. <t:regular>Click above to deposit money into your land's banks.
           <t:regular><st>━━━━━━━━━‹━<!st> <t:negative_heading>Upcoming Upkeep</t> <t:regular><st>━›━━━━━━━━━
     confirmtp:
       none: <t:error>You have no active teleportation.
     admin:
       listperms:
-        header: <noprefix><hover:show_text:"<t:regular>Click here to navigate to the
+        header: <noprefix><hover:show_text:"<t:regular>Klicke hier, um zur
           previous page."><click:run_command:"/<v:cmd> <v:player> <v:previous>"><t:regular>----------<t:cmd><b>«<!b></t><t:regular>-</click></hover>
-          <t:prefix>Perm List </t><t:regular>Page<t:regular_value> <v:page> </t><t:decoration>/</t><t:regular_value>
-          <v:pages></t> <hover:show_text:"<t:regular>Click here to go to the next
+          <t:prefix>Rechte-Liste </t><t:regular>Page<t:regular_value> <v:page> </t><t:decoration>/</t><t:regular_value>
+          <v:pages></t> <hover:show_text:"<t:regular>Klicke hier, um zur nächsten
           page."><click:run_command:"/<v:cmd> <v:player> <v:next>"><t:regular>-<t:cmd><b>»<!b></t><t:regular>----------</click></hover>
         footer: |
           <noprefix>
@@ -1865,17 +1864,17 @@ lands:
 
            <red>Red = wildcard perms
            <yellow>Yellow = numbered perms
-          </t><hover:show_text:"<t:regular>Click here to navigate to the previous page."><click:run_command:"/<v:cmd> <v:player> <v:previous>"><t:regular>----------<t:cmd><b>«<!b></t><t:regular>-</click></hover> <t:prefix>Perm List </t><t:regular>Page<t:regular_value> <v:page> </t><t:decoration>/</t><t:regular_value> <v:pages></t> <hover:show_text:"<t:regular>Click here to go to the next page."><click:run_command:"/<v:cmd> <v:player> <v:next>"><t:regular>-<t:cmd><b>»<!b></t><t:regular>----------</click></hover>
+          </t><hover:show_text:"<t:regular>Klicke hier, um zur previous page."><click:run_command:"/<v:cmd> <v:player> <v:previous>"><t:regular>----------<t:cmd><b>«<!b></t><t:regular>-</click></hover> <t:prefix>Rechte-Liste </t><t:regular>Page<t:regular_value> <v:page> </t><t:decoration>/</t><t:regular_value> <v:pages></t> <hover:show_text:"<t:regular>Klicke hier, um zur nächsten Seite zu wechseln."><click:run_command:"/<v:cmd> <v:player> <v:next>"><t:regular>-<t:cmd><b>»<!b></t><t:regular>----------</click></hover>
       limits:
         migrate:
           confirm: |
             <t:negative>Please confirm that you configured all your limit packs in <v:file>. Migrating the old permissions to the new limits will calculate the difference between the numbered permission and the limit pack.<t:regular> Therefore all limit packs should be configured beforehand. Otherwise, you might not get the correct results.<t:error_value> It's also recommended that you take a backup of your database in case you want to revert this action.
-              </t><hover:show_text:"</t><t:regular>Click here to confirm this action."><click:run_command:"/<v:fullcmd>"><t:positive>✔ Confirm: <t:cmd>/<v:fullcmd> </t><java><t:click>[CLICK]</t></java></click></hover>
+              </t><hover:show_text:"</t><t:regular>Klicke hier, um diese Aktion zu bestätigen."><click:run_command:"/<v:fullcmd>"><t:positive>✔ Bestätigen: <t:cmd>/<v:fullcmd> </t><java><t:click>[CLICK]</t></java></click></hover>
       land:
         addrole:
           confirm: |
             <t:negative>Executing this command can lead to lands having the same role multiple times. <t:regular>For example newly created lands that already have this role inherited from roles.yml. Also executing this command for the same role multiple times will lead to role duplicates in affected lands. <t:regular>Please confirm this action:
-              <hover:show_text:"<t:regular>Click here to confirm this action."><click:run_command:"/<v:fullcmd>"><t:positive>✔ Confirm: <t:cmd>/<v:fullcmd> </t><java><t:click>[CLICK]</t></java></click></hover>
+              <hover:show_text:"<t:regular>Klicke hier, um diese Aktion zu bestätigen."><click:run_command:"/<v:fullcmd>"><t:positive>✔ Bestätigen: <t:cmd>/<v:fullcmd> </t><java><t:click>[CLICK]</t></java></click></hover>
 list:
   swear-words: []
   hologram:
@@ -1883,7 +1882,7 @@ list:
       main:
       - <t:regular>Land<t:entity_land> <v:land></t>
       - <t:regular>Inbox:<t:user_content> <v:inbox></t>
-      - '<t:regular>Balance: <t:regular_value><v:balance></t>'
+      - '<t:regular>Kontostand: <t:regular_value><v:balance></t>'
       - '<t:regular>Upkeep and taxes in: <t:time><v:upkeep_next></t>'
       main_camp:
       - <t:regular>Land<t:entity_land> <v:land></t>
@@ -1893,31 +1892,31 @@ list:
     - <t:regular_heading>Rent <v:area>
     - <t:cost><v:cost> </t><t:regular>each <t:time><v:time></t>
     - '<t:regular>Max duration: <t:time><v:max></t>'
-    - <t:decoration>Click to rent.</t>
+    - <t:decoration>Klicke zum Mieten.</t>
     sell:
       area:
       - <t:positive>Buy
-      - '<t:regular>Area: <t:regular_value><v:area></t>'
+      - '<t:regular>Bereich: <t:regular_value><v:area></t>'
       - <t:cost><v:cost> </t><t:regular>in total
-      - <t:decoration>Click to purchase.</t>
+      - <t:decoration>Klicke zum Kaufen.</t>
       land:
       - <t:positive>Buy
       - '<t:regular>Land: <t:entity_land><v:land></t>'
       - <t:cost><v:cost> </t><t:regular>in total
-      - <t:decoration>Click to purchase.</t>
+      - <t:decoration>Klicke zum Kaufen.</t>
     rented:
     - <t:regular>Area<t:regular_value> <v:area></t>
     - <t:regular>Tenant:<t:regular_value> <v:player></t>
     - <t:time><v:time> </t><t:regular>left
     - <t:cost><v:cost> </t><t:regular>each <t:time><v:time></t>
-    - '<t:decoration>Shift + click: Cancel</t>'
+    - '<t:decoration>Shift + Klick: Abbrechen</t>'
     - '<t:decoration>Click: Add more time</t>'
     sold:
       area:
       - <t:positive>Sold
-      - '<t:regular>Area: <t:regular_value><v:area></t>'
+      - '<t:regular>Bereich: <t:regular_value><v:area></t>'
       - <t:regular>To:<t:regular_value> <v:player></t>
-      - '<t:decoration>Shift + click: Cancel</t>'
+      - '<t:decoration>Shift + Klick: Abbrechen</t>'
       land:
       - <t:positive>Sold
       - '<t:regular>Land: <t:entity_land><v:land></t>'
@@ -1941,21 +1940,21 @@ list:
       - <t:regular_heading>Buy Area
       - <t:regular_value><v:area></t>
       - '<t:regular>Cost: <t:cost><v:cost></t>'
-      - <t:regular>Click to buy.
+      - <t:regular>Klicke zum Kaufen.
       land:
       - <t:regular_heading>Buy Land
       - <t:entity_land><v:land></t>
       - '<t:regular>Cost: <t:cost><v:cost></t>'
-      - <t:regular>Click to buy.
+      - <t:regular>Klicke zum Kaufen.
     rented:
     - <t:regular_heading>Rented
-    - '<t:regular>Area: <t:regular_value><v:area></t>'
+    - '<t:regular>Bereich: <t:regular_value><v:area></t>'
     - '<t:regular>To: <t:regular_value><v:player></t>'
     - '<t:regular>Left: <t:time><v:time></t>'
     sold:
       area:
       - <t:regular_heading>Sold
-      - '<t:regular>Area: <t:regular_value><v:area></t>'
+      - '<t:regular>Bereich: <t:regular_value><v:area></t>'
       - '<t:regular>To: <t:regular_value><v:player></t>'
       land:
       - <t:regular_heading>Sold

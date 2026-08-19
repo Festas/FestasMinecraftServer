@@ -25,7 +25,7 @@ gui:
     items:
       default:
         war_attackers:
-          name: <t:negative_heading>Attacker <v:object>
+          name: <t:negative_heading>Angreifer <v:object>
           lore:
           - <t:decoration>✖ </t><t:regular>View all attacking lands.
           - '   Players: <t:regular_value><v:players></t>'
@@ -34,12 +34,12 @@ gui:
           - ' <t:decoration>• </t><t:regular>Captures: <t:regular_value><v:cap></t>'
           - ' <t:decoration>• </t><t:regular>Kills: <t:regular_value><v:kills></t>'
           - '   <t:decoration>= </t><t:regular_value><v:points></t> / <t:regular_value><v:towin></t>
-            <t:regular>points to win'
+            <t:regular>Punkte to win'
           - '   <v:bar>'
           material: IRON_SWORD
           slots: 11
         war_defenders:
-          name: <t:positive_heading>Defender <v:object>
+          name: <t:positive_heading>Verteidiger <v:object>
           lore:
           - <t:decoration>✖ </t><t:regular>View all defending lands.
           - '   Players: <t:regular_value><v:players></t>'
@@ -48,14 +48,14 @@ gui:
           - ' <t:decoration>• </t><t:regular>Captures: <t:regular_value><v:cap></t>'
           - ' <t:decoration>• </t><t:regular>Kills: <t:regular_value><v:kills></t>'
           - '   <t:decoration>= </t><t:regular_value><v:points></t> / <t:regular_value><v:towin></t>
-            <t:regular>points to win'
+            <t:regular>Punkte to win'
           - '   <v:bar>'
           material: SHIELD
           slots: 12
-        war_points:
+        war_Punkte:
           name: <t:regular_heading>Point Distribution
           lore:
-          - <t:regular>A team needs<t:regular_value> <v:points></t> points to win.
+          - <t:regular>A team needs<t:regular_value> <v:points></t> Punkte to win.
           - ' <t:decoration>• </t><t:regular>Kill: <t:regular_value><v:p_kill></t>
             point(s)'
           - ' <t:decoration>• </t><t:regular>Capture: <t:regular_value><v:p_cap></t>
@@ -66,14 +66,14 @@ gui:
           - '      for it in this menu.'
           - ''
           - ' <t:decoration>• </t><t:regular>If no team reaches <t:regular_value><v:points></t>
-            points, the war'
+            Punkte, the war'
           - '   will timeout in<t:time> <v:time></t>.'
           material: IRON_INGOT
           slots: 13
-        war_points_declaration:
+        war_Punkte_declaration:
           name: <t:regular_heading>Point Distribution
           lore:
-          - <t:regular>A team needs<t:regular_value> <v:points></t> points to win.
+          - <t:regular>A team needs<t:regular_value> <v:points></t> Punkte to win.
           - ' <t:decoration>• </t><t:regular>Kill: <t:regular_value><v:p_kill></t>
             point(s)'
           - ' <t:decoration>• </t><t:regular>Capture: <t:regular_value><v:p_cap></t>
@@ -87,70 +87,70 @@ gui:
           material: IRON_INGOT
           slots: 13
         child_failure_permission:
-          name: <t:error_heading>Not allowed
+          name: <t:error_heading>Nicht erlaubt
           lore:
-          - <t:error>You're not allowed to do
+          - <t:error>Das darfst du nicht tun
           - this for <t:decoration>(</t><t:error_value><v:object></t>)<t:error>.
-          - ' <t:decoration>• </t><t:regular>The owner can give you'
-          - '   permission to do so.'
+          - ' <t:decoration>• </t><t:regular>Der Besitzer kann dir'
+          - '   dafür die Berechtigung geben.'
           - '   Flag: <t:regular_value><v:flag></t>'
         recipe:
-          name: <t:regular_heading>Capture flag Recipe
+          name: <t:regular_heading>Eroberungsflaggen-Rezept
           lore:
-          - <t:decoration>✖</t> <t:regular>Click here to see the recipe
-          - '   of the capture flag item.'
+          - <t:decoration>✖</t> <t:regular>Klicke hier, um das Rezept zu sehen
+          - '   des Eroberungsflaggen-Items.'
           material: BEACON
           slots: 15
         child_failure_none:
-          name: <t:error_heading>No Claims
+          name: <t:error_heading>Keine Claims
           lore:
-          - <t:error>The enemy <t:error_value><v:enemy></t> has no claims
-          - to teleport to.
+          - <t:error>Der Feind <t:error_value><v:enemy></t> hat keine Claims
+          - zu denen man sich teleportieren kann.
         flags:
-          name: <t:regular_heading>Active Flags
+          name: <t:regular_heading>Aktive Flags
           lore:
-          - <t:regular>Involved players can do the following
-          - 'things in affected lands:'
+          - <t:regular>Beteiligte Spieler können Folgendes
+          - 'in betroffenen Ländern tun:'
           - <v:settings>
           material: IRON_PICKAXE
           slots: 14
         spawn:
           name: <t:regular_heading>Spawn
           lore:
-          - <t:regular>Teleport to the enemy's border.
+          - <t:regular>Teleportiere dich an die Grenze des Feindes.
           material: ENDER_PEARL
           slots: 9
         declaration_start:
           name: <t:regular_heading>Start
           lore:
-          - <t:regular>The war will start in<t:time> <v:time></t>.
-          - Until then each team has time to prepare.
+          - <t:regular>Der Krieg startet in<t:time> <v:time></t>.
+          - Bis dahin hat jedes Team Zeit zur Vorbereitung.
           material: CLOCK
           slots: 15
         surrender:
-          name: <t:error_heading>Surrender
+          name: <t:error_heading>Aufgeben
           lore:
-          - '<action:primary><label>Surrender</label><desc><t:regular>Surrender this
-            war and concede to the enemy. The war goal is then applied for your side:'
+          - '<action:primary><label>Aufgeben</label><desc><t:regular>Ergib diesen
+            Krieg und unterliege dem Feind. Das Kriegsziel wird dann auf deine Seite angewendet:'
           - '  <v:outcome></desc></action>'
           material: WHITE_BANNER
           slots: 29
           bedrock:
             detail: true
   list_wars:
-    title: <t:menu_title>Ongoing Wars
+    title: <t:menu_title>Laufende Kriege
     items:
       default:
         entry_object:
           name: <t:regular_heading><v:attacker> vs. <v:defender>
           lore:
-          - ' <t:decoration>• </t><t:regular>Progress:<t:regular_value> <v:points></t>
-            <t:decoration>/</t><t:regular_value> <v:points_towin></t> <t:regular>points'
+          - ' <t:decoration>• </t><t:regular>Fortschritt:<t:regular_value> <v:points></t>
+            <t:decoration>/</t><t:regular_value> <v:points_towin></t> <t:regular>Punkte'
           - '   <t:regular_value><v:points_bar></t>'
           - ''
           - ' <t:decoration>• </t><t:regular>Timeout: <t:time><v:timeout></t>'
-          - ' <t:decoration>• </t><t:regular>Attacker: <v:attacker>'
-          - ' <t:decoration>• </t><t:regular>Defender: <v:defender>'
+          - ' <t:decoration>• </t><t:regular>Angreifer: <v:attacker>'
+          - ' <t:decoration>• </t><t:regular>Verteidiger: <v:defender>'
           material: IRON_SWORD
   list_war_lands:
     title: <t:menu_title><v:team>
@@ -160,54 +160,54 @@ gui:
           name: <t:entry_heading><v:land>
           lore:
           - <t:user_content><v:title></t>
-          - <t:decoration>✖ </t><t:regular>View information about this land.
+          - <t:decoration>✖ </t><t:regular>Informationen über dieses Land anzeigen.
           material: INHERIT
         entry_object_ally:
-          name: <t:entry_heading>Ally <v:land>
+          name: <t:entry_heading>Verbündeter <v:land>
           lore:
           - <t:user_content><v:title></t>
-          - <t:decoration>✖ </t><t:regular>View information about this land.
+          - <t:decoration>✖ </t><t:regular>Informationen über dieses Land anzeigen.
           material: INHERIT
   war-declaration_confirm:
-    title: <t:menu_title>Declare War
+    title: <t:menu_title>Krieg erklären
     items:
       default:
         cancel-declaration:
-          name: <t:error_heading>Cancel War Declaration
+          name: <t:error_heading>Kriegserklärung abbrechen
           lore:
-          - <t:decoration>✖ </t><t:regular>Discard this declaration
-          - '   before it''s sent to the enemy.'
+          - <t:decoration>✖ </t><t:regular>Verwirf diese Kriegserklärung
+          - '   bevor sie an den Feind gesendet wird.'
           material: skin:548d7d1e03e1af145b0125ab841285672b421265da2ab915015f9058438ba2d8
           slots: 37
         send-declaration:
-          name: <t:positive_heading>Send War Declaration
+          name: <t:positive_heading>Kriegserklärung senden
           lore:
-          - <t:decoration>✖ </t><t:regular>Send this war declaration
-          - '   to the enemy.'
+          - <t:decoration>✖ </t><t:regular>Sende diese Kriegserklärung
+          - '   an den Feind.'
           material: skin:ffec3d25ae0d147c342c45370e0e43300a4e48a5b43f9bb858babff756144dac
           slots: 45
         mode:
-          name: '<t:regular_heading>Mode: <v:mode>'
+          name: '<t:regular_heading>Modus: <v:mode>'
           lore:
-          - <t:decoration>✖ </t><t:regular>Click to change the war mode.
+          - <t:decoration>✖ </t><t:regular>Klicke, um den Kriegsmodus zu ändern.
           - ''
           - <v:description>
           material: DIAMOND_SWORD
           slots: 21
         goal:
-          name: '<t:regular_heading>Goal: <v:goal>'
+          name: '<t:regular_heading>Ziel: <v:goal>'
           lore:
-          - <t:decoration>✖ </t><t:regular>Click to change the war goal.
+          - <t:decoration>✖ </t><t:regular>Klicke, um das Kriegsziel zu ändern.
           - ''
-          - '<t:decoration>• </t>If the attacker wins:'
+          - '<t:decoration>• </t>Wenn der Angreifer gewinnt:'
           - '  <v:outcome_attacker>'
           - ''
-          - '<t:decoration>• </t>If the attacker loses:'
+          - '<t:decoration>• </t>Wenn der Angreifer verliert:'
           - '  <v:outcome_defender>'
           material: WRITABLE_BOOK
           slots: 25
   list_war-declaration_mode:
-    title: <t:menu_title>Choose War Mode
+    title: <t:menu_title>Kriegsmodus wählen
     items:
       default:
         entry_object:
@@ -233,19 +233,19 @@ gui:
         entry_object:
           name: <t:entry_heading><v:name>
           lore:
-          - '<t:decoration>• </t><t:regular>If the attacker wins:'
+          - '<t:decoration>• </t><t:regular>Wenn der Angreifer gewinnt:'
           - '  <v:outcome_attacker>'
           - ''
-          - '<t:decoration>• </t>If the attacker loses:'
+          - '<t:decoration>• </t>Wenn der Angreifer verliert:'
           - '  <v:outcome_defender>'
           material: PAPER
         entry_object_selected:
           name: <t:positive_heading>✔ <v:name>
           lore:
-          - '<t:decoration>• </t><t:regular>If the attacker wins:'
+          - '<t:decoration>• </t><t:regular>Wenn der Angreifer gewinnt:'
           - '  <v:outcome_attacker>'
           - ''
-          - '<t:decoration>• </t>If the attacker loses:'
+          - '<t:decoration>• </t>Wenn der Angreifer verliert:'
           - '  <v:outcome_defender>'
           material: ENCHANTED_BOOK
         child_failure_not_applicable:
@@ -266,6 +266,6 @@ gui:
         war_defenders:
           material: SHIELD
           slots: 23
-        war_points:
+        war_Punkte:
           material: IRON_INGOT
           slots: 25

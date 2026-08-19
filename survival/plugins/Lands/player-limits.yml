@@ -50,7 +50,7 @@ packs:
       # Amount of lands they can create free of charge (in case creation cost is configured).
       player_lands_owned_free: 0
       # Amount of lands a player can be trusted in (owned lands excluded).
-      player_lands_trusted: 1
+      player_lands_trusted: 3
       # Amount of temporary camps they can have at the same time.
       player_camps_owned: 1
       # Amount of chunks a player can claim across all lands (owned & trusted).
@@ -66,7 +66,7 @@ packs:
       # You can increase the max size for each trusted player by editing the "increase-land_size" option in this file.
       land_size: 100
       # Amount of players they can trust to each land they own.
-      land_members: 20
+      land_members: 25
       # Amount of parts the lands they own can be split into. Allowing the creation of outposts.
       # If set to 1, no splits allowed.
       land_parts: 1

@@ -738,7 +738,7 @@ camp:
   radius: 1
   # Set the default camp name. For spaces to work, the option "spaces" must be enabled in the
   # land creation section in this file.
-  default-name: "{player}'s Camp"
+  default-name: "{player}-Lager"
 
 
 # Options for /lands relations and /nations relations
@@ -808,7 +808,7 @@ random-teleport:
 introduction:
   # Notify these players until they reached this playtime.
   # 0 disabled this section completely.
-  max-playtime_time: 10m
+  max-playtime_time: 30m
   # Reminders can be sent multiple times, but they have a cooldown to prevent spam and annoyance.
   reminder:
     # Send a warning that the placed container isn't protected when placing it in wilderness.
