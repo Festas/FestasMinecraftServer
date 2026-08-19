@@ -26,11 +26,11 @@ Plugin:
 # -----------------------------------------------------
 Database:
     MySQL:
-        Host: 172.25.0.1
-        Port: 3306
-        User: u4_MaaC4xwYZ0
-        Password: "eMKLKiOlHc+LJxx!SN4pmTd+"
-        Database: s4_stats
+        Host: __PLAN_DB_HOST__
+        Port: __PLAN_DB_PORT__
+        User: __PLAN_DB_USER__
+        Password: "__PLAN_DB_PASSWORD__"
+        Database: __PLAN_DB_DATABASE__
         # Launch options to append after mysql driver address
         Launch_options: "?rewriteBatchedStatements=true&serverTimezone=UTC"
         Max_connections: 8

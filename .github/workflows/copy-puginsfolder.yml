@@ -37,6 +37,55 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
+      - name: Inject Plan DB credentials for repo-to-server sync
+        if: github.event.inputs.direction == 'Repo → Server'
+        env:
+          PLAN_STATS_DB_ENV: ${{ secrets.PLAN_STATS_DB_ENV }}
+        run: |
+          if [ -z "$PLAN_STATS_DB_ENV" ]; then
+            echo "::error::Missing secret PLAN_STATS_DB_ENV"
+            exit 1
+          fi
+
+          tmp_env="$(mktemp)"
+          printf '%s\n' "$PLAN_STATS_DB_ENV" > "$tmp_env"
+          set -a
+          . "$tmp_env"
+          set +a
+          rm -f "$tmp_env"
+
+          for required in PLAN_DB_HOST PLAN_DB_PORT PLAN_DB_DATABASE PLAN_DB_USER PLAN_DB_PASSWORD; do
+            if [ -z "${!required:-}" ]; then
+              echo "::error::Missing $required in PLAN_STATS_DB_ENV"
+              exit 1
+            fi
+          done
+
+          python3 - <<'PY'
+          from pathlib import Path
+          import os
+
+          replacements = {
+              "__PLAN_DB_HOST__": os.environ["PLAN_DB_HOST"],
+              "__PLAN_DB_PORT__": os.environ["PLAN_DB_PORT"],
+              "__PLAN_DB_DATABASE__": os.environ["PLAN_DB_DATABASE"],
+              "__PLAN_DB_USER__": os.environ["PLAN_DB_USER"],
+              "__PLAN_DB_PASSWORD__": os.environ["PLAN_DB_PASSWORD"],
+          }
+          for path in (
+              Path("proxy/plugins/plan/config.yml"),
+              Path("lobby/plugins/Plan/config.yml"),
+              Path("rpg/plugins/Plan/config.yml"),
+              Path("survival/plugins/Plan/config.yml"),
+          ):
+              if not path.exists():
+                  continue
+              text = path.read_text()
+              for old, new in replacements.items():
+                  text = text.replace(old, new)
+              path.write_text(text)
+          PY
+
       - name: Sync Plugins
         run: |
           SERVER_NAME="${{ github.event.inputs.server }}"
@@ -110,6 +159,39 @@ jobs:
               "$LOCAL_DIR/" \
               "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${SERVER_PATH}/"
           fi
+
+      - name: Sanitize Plan config after server sync
+        if: github.event.inputs.direction == 'Server → Repo'
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          mappings = {
+              "Host": "__PLAN_DB_HOST__",
+              "Port": "__PLAN_DB_PORT__",
+              "User": "__PLAN_DB_USER__",
+              "Password": '"__PLAN_DB_PASSWORD__"',
+              "Database": "__PLAN_DB_DATABASE__",
+          }
+          for path in (
+              Path("proxy/plugins/plan/config.yml"),
+              Path("lobby/plugins/Plan/config.yml"),
+              Path("rpg/plugins/Plan/config.yml"),
+              Path("survival/plugins/Plan/config.yml"),
+          ):
+              if not path.exists():
+                 continue
+              lines = path.read_text().splitlines()
+              for i, line in enumerate(lines):
+                 stripped = line.strip()
+                 for field, replacement in mappings.items():
+                     prefix = f"{field}:"
+                     if stripped.startswith(prefix):
+                         indent = line[: len(line) - len(line.lstrip())]
+                         lines[i] = f"{indent}{prefix} {replacement}"
+                         break
+              path.write_text("\n".join(lines) + "\n")
+          PY
 
       - name: Commit and Push Changes
         if: github.event.inputs.direction == 'Server → Repo'

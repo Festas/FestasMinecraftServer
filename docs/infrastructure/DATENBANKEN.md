@@ -81,6 +81,22 @@ password: CHANGE_ME
 useSSL: true
 ```
 
+### GitHub Actions Secret für Plan
+
+Die Plan-Zugangsdaten werden nicht mehr im Repository gespeichert. Stattdessen
+werden sie während des Deployments aus dem GitHub-Secret
+`PLAN_STATS_DB_ENV` in die Plan-Konfigurationen injiziert.
+
+Format des Secrets:
+
+```bash
+PLAN_DB_HOST='172.25.0.1'
+PLAN_DB_PORT='3306'
+PLAN_DB_DATABASE='s4_plan'
+PLAN_DB_USER='CHANGE_ME'
+PLAN_DB_PASSWORD='CHANGE_ME'
+```
+
 ### Redis
 
 ```yaml

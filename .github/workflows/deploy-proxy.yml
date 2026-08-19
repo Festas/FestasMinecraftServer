@@ -27,6 +27,40 @@ jobs:
           chmod 600 ~/.ssh/deploy_key
           ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
+      - name: Inject Plan DB credentials
+        env:
+          PLAN_STATS_DB_ENV: ${{ secrets.PLAN_STATS_DB_ENV }}
+        run: |
+          if [ -z "$PLAN_STATS_DB_ENV" ]; then
+            echo "::error::Missing secret PLAN_STATS_DB_ENV"
+            exit 1
+          fi
+
+          tmp_env="$(mktemp)"
+          printf '%s\n' "$PLAN_STATS_DB_ENV" > "$tmp_env"
+          set -a
+          . "$tmp_env"
+          set +a
+          rm -f "$tmp_env"
+
+          for required in PLAN_DB_HOST PLAN_DB_PORT PLAN_DB_DATABASE PLAN_DB_USER PLAN_DB_PASSWORD; do
+            if [ -z "${!required:-}" ]; then
+              echo "::error::Missing $required in PLAN_STATS_DB_ENV"
+              exit 1
+            fi
+          done
+
+          python3 - <<'PY'
+          from pathlib import Path
+          import os
+
+          path = Path("proxy/plugins/plan/config.yml")
+          text = path.read_text()
+          for key in ("HOST", "PORT", "DATABASE", "USER", "PASSWORD"):
+              text = text.replace(f"__PLAN_DB_{key}__", os.environ[f"PLAN_DB_{key}"])
+          path.write_text(text)
+          PY
+
       - name: Get Changed Files
         id: changed_files
         run: |
@@ -142,4 +176,3 @@ jobs:
             exit 1
           fi
           echo "✅ Deployment verifiziert."
-
