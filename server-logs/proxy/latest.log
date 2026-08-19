@@ -1,76 +1,71 @@
-[08:23:34] [main/INFO] [com.velocitypowered.proxy.VelocityServer]: Booting up Velocity 4.1.0-SNAPSHOT (git-4772ca30-b21)...
-[08:23:34] [main/INFO] [com.velocitypowered.proxy.network.ConnectionManager]: Connections will use epoll channels, libdeflate (Linux x86_64) compression, OpenSSL 3.x.x (Linux x86_64) ciphers
-[08:23:34] [main/INFO] [com.velocitypowered.proxy.VelocityServer]: Loading localizations...
-[08:23:34] [main/INFO] [com.velocitypowered.proxy.VelocityServer]: Loading plugins...
-[08:23:34] [main/INFO] [com.velocitypowered.proxy.plugin.VelocityPluginManager]: Loaded plugin cmiv 1.0.1.2 by Zrips
-[08:23:34] [main/INFO] [com.velocitypowered.proxy.plugin.VelocityPluginManager]: Loaded plugin forceresourcepacks 1.12.33 (build 813) by Phoenix616
-[08:23:35] [main/INFO] [com.velocitypowered.proxy.plugin.VelocityPluginManager]: Loaded plugin minimotd-velocity 2.2.2 by jmp
-[08:23:35] [main/INFO] [com.velocitypowered.proxy.plugin.VelocityPluginManager]: Loaded plugin mysqlandconfigurateforvelocity 3.0.0-RELEASE by Simonsator
-[08:23:35] [main/INFO] [com.velocitypowered.proxy.plugin.VelocityPluginManager]: Loaded plugin plan 5.8 build 3605 by AuroraLS3
-[08:23:35] [main/INFO] [com.velocitypowered.proxy.plugin.VelocityPluginManager]: Loaded plugin skinsrestorer 15.12.5 by knat, AlexProgrammerDE, Blackfire62, McLive
-[08:23:35] [main/INFO] [com.velocitypowered.proxy.plugin.VelocityPluginManager]: Loaded plugin velocity-scoreboard-api 2.1.0 by William278, NEZNAMY
-[08:23:35] [main/INFO] [com.velocitypowered.proxy.plugin.VelocityPluginManager]: Loaded plugin tab 5.4.0 by NEZNAMY
-[08:23:35] [main/INFO] [com.velocitypowered.proxy.VelocityServer]: Loaded 9 plugins
-[08:23:35] [CMIV - Task Executor #0/INFO] [cmiv]: Registering event listeners
-[08:23:35] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Loading config!
-[08:23:35] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Loaded config.yml
-[08:23:35] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Loaded players.conf
-[08:23:35] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Debug level: FINE
-[08:23:35] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Loaded key.yml
-[08:23:35] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Found locales pt-br, zh_cn, en
-[08:23:35] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Loading packs:
-[08:23:35] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: oraxen_pack_rpg - http://128.140.99.121/rpg.zip - 
-[08:23:35] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: oraxen_pack_survival - http://128.140.99.121/survival.zip - 
-[08:23:35] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: empty - http://cdn.moep.tv/files/Empty.zip - 01517226212d27586ea0c5d6aff1aa5492dd2484
-[08:23:35] [CMIV - Task Executor #0/WARN] [forceresourcepacks]: No empty pack defined!
-[08:23:35] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Loading global assignment...
-[08:23:35] [CMIV - Task Executor #0/WARN] [forceresourcepacks]: No pack with the name none defined?
-[08:23:35] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Loading server assignments...
-[08:23:35] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Loading assignment for server skyblock...
-[08:23:35] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Loading assignment for server rpg...
-[08:23:35] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Loading assignment for server lobby...
-[08:23:35] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Loading assignment for server survival...
-[08:23:35] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Loaded joined.yml
-[08:23:35] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Update notifications are enabled!
-[08:23:35] [CMIV - Task Executor #0/INFO] [plan]: §2
-[08:23:35] [CMIV - Task Executor #0/INFO] [plan]: §2           ██▌
-[08:23:35] [CMIV - Task Executor #0/INFO] [plan]: §2     ██▌   ██▌
-[08:23:35] [CMIV - Task Executor #0/INFO] [plan]: §2  ██▌██▌██▌██▌  §2Player Analytics
-[08:23:35] [CMIV - Task Executor #0/INFO] [plan]: §2  ██▌██▌██▌██▌  §fv5.8 build 3605
-[08:23:35] [CMIV - Task Executor #0/INFO] [plan]: §2
-[08:23:35] [CMIV - Task Executor #0/INFO] [plan]: Locale: 'English' by AuroraLS3
-[08:23:35] [CMIV - Task Executor #0/INFO] [plan]: Downloading MySQL Driver, this may take a while...
-[08:23:35] [MiniMOTD - Task Executor #0/INFO] [minimotd-velocity]: There is an update available for MiniMOTD!
-[08:23:35] [MiniMOTD - Task Executor #0/INFO] [minimotd-velocity]: This server is running version v2.2.2, which is 2 versions outdated.
-[08:23:35] [MiniMOTD - Task Executor #0/INFO] [minimotd-velocity]: Download the latest version, v2.2.4 from Modrinth at the link below:
-[08:23:35] [MiniMOTD - Task Executor #0/INFO] [minimotd-velocity]: https://modrinth.com/plugin/minimotd
-[08:23:35] [Plan - Task Executor #0/INFO] [plan]: You're using the latest version.
-[08:23:36] [CMIV - Task Executor #0/ERROR] [plan]: ----------------------------------------
-[08:23:36] [CMIV - Task Executor #0/ERROR] [plan]: Error: Failed to start MySQL: Communications link failure. Plan could not connect to MySQL-
-- Check that database address 'localhost:3306' accessible.
-- Check that database called 'Plan' exists inside MySQL.
-- Check that MySQL user 'root' has privileges to access the database.
-- Check that other MySQL settings in Plan config correct.
-  More help: https://github.com/plan-player-analytics/Plan/wiki/Bungee-Set-Up#step-2-create-a-mysql-database-for-plan
-[08:23:36] [CMIV - Task Executor #0/ERROR] [plan]: ----------------------------------------
-[08:23:36] [CMIV - Task Executor #0/ERROR] [plan]: Plugin Failed to Initialize Correctly. If this issue is caused by config settings you can use /planvelocity reload
-[08:23:36] [CMIV - Task Executor #0/INFO] [plan]: Processing complete.
-[08:23:36] [CMIV - Task Executor #0/INFO] [plan]: Waiting for unfinished transactions to avoid data loss..
-[08:23:36] [CMIV - Task Executor #0/INFO] [plan]: Transaction queue closed.
-[08:23:36] [CMIV - Task Executor #0/INFO] [plan]: Player Analytics Disabled.
-[08:23:37] [SkinsRestorer - Task Executor #0/INFO] [skinsrestorer]: ----------------------------------------------
-[08:23:37] [SkinsRestorer - Task Executor #0/INFO] [skinsrestorer]:     +===================+
-[08:23:37] [SkinsRestorer - Task Executor #0/INFO] [skinsrestorer]:     |   SkinsRestorer   |
-[08:23:37] [SkinsRestorer - Task Executor #0/INFO] [skinsrestorer]:     |-------------------|
-[08:23:37] [SkinsRestorer - Task Executor #0/INFO] [skinsrestorer]:     +===================+
-[08:23:37] [SkinsRestorer - Task Executor #0/INFO] [skinsrestorer]: ----------------------------------------------
-[08:23:37] [SkinsRestorer - Task Executor #0/INFO] [skinsrestorer]:     Version: 15.12.5
-[08:23:37] [SkinsRestorer - Task Executor #0/INFO] [skinsrestorer]:     Commit: 98b9488
-[08:23:37] [SkinsRestorer - Task Executor #0/INFO] [skinsrestorer]:     This is the latest version!
-[08:23:37] [SkinsRestorer - Task Executor #0/INFO] [skinsrestorer]: ----------------------------------------------
-[08:23:37] [SkinsRestorer - Task Executor #0/INFO] [skinsrestorer]: Do you have issues? Read our troubleshooting guide: https://skinsrestorer.net/docs/troubleshooting
-[08:23:37] [SkinsRestorer - Task Executor #0/INFO] [skinsrestorer]: Want to support SkinsRestorer or receive priority support? Become a supporter: https://skinsrestorer.net/pricing
-[08:23:37] [CMIV - Task Executor #0/INFO] [VelocityScoreboardAPI]: Successfully injected Scoreboard API.
-[08:23:37] [CMIV - Task Executor #0/INFO] [TAB]: Enabled in 84ms
-[08:23:37] [Netty epoll Boss #0/INFO] [com.velocitypowered.proxy.network.ConnectionManager]: Listening on /[0:0:0:0:0:0:0:0]:25565
-[08:23:37] [main/INFO] [com.velocitypowered.proxy.Velocity]: Done (3.52s)!
+[09:32:56] [main/INFO] [com.velocitypowered.proxy.VelocityServer]: Booting up Velocity 4.1.0-SNAPSHOT (git-4772ca30-b21)...
+[09:32:56] [main/INFO] [com.velocitypowered.proxy.network.ConnectionManager]: Connections will use epoll channels, libdeflate (Linux x86_64) compression, OpenSSL 3.x.x (Linux x86_64) ciphers
+[09:32:56] [main/INFO] [com.velocitypowered.proxy.VelocityServer]: Loading localizations...
+[09:32:56] [main/INFO] [com.velocitypowered.proxy.VelocityServer]: Loading plugins...
+[09:32:56] [main/INFO] [com.velocitypowered.proxy.plugin.VelocityPluginManager]: Loaded plugin cmiv 1.0.1.2 by Zrips
+[09:32:57] [main/INFO] [com.velocitypowered.proxy.plugin.VelocityPluginManager]: Loaded plugin forceresourcepacks 1.12.33 (build 813) by Phoenix616
+[09:32:57] [main/INFO] [com.velocitypowered.proxy.plugin.VelocityPluginManager]: Loaded plugin minimotd-velocity 2.2.2 by jmp
+[09:32:57] [main/INFO] [com.velocitypowered.proxy.plugin.VelocityPluginManager]: Loaded plugin mysqlandconfigurateforvelocity 3.0.0-RELEASE by Simonsator
+[09:32:57] [main/INFO] [com.velocitypowered.proxy.plugin.VelocityPluginManager]: Loaded plugin plan 5.8 build 3605 by AuroraLS3
+[09:32:57] [main/INFO] [com.velocitypowered.proxy.plugin.VelocityPluginManager]: Loaded plugin skinsrestorer 15.12.5 by knat, AlexProgrammerDE, Blackfire62, McLive
+[09:32:57] [main/INFO] [com.velocitypowered.proxy.plugin.VelocityPluginManager]: Loaded plugin velocity-scoreboard-api 2.1.0 by William278, NEZNAMY
+[09:32:57] [main/INFO] [com.velocitypowered.proxy.plugin.VelocityPluginManager]: Loaded plugin tab 5.4.0 by NEZNAMY
+[09:32:57] [main/INFO] [com.velocitypowered.proxy.VelocityServer]: Loaded 9 plugins
+[09:32:57] [CMIV - Task Executor #0/INFO] [cmiv]: Registering event listeners
+[09:32:57] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Loading config!
+[09:32:57] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Loaded config.yml
+[09:32:57] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Loaded players.conf
+[09:32:57] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Debug level: FINE
+[09:32:57] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Loaded key.yml
+[09:32:57] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Found locales pt-br, zh_cn, en
+[09:32:57] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Loading packs:
+[09:32:57] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: oraxen_pack_rpg - http://128.140.99.121/rpg.zip - 
+[09:32:57] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: oraxen_pack_survival - http://128.140.99.121/survival.zip - 
+[09:32:57] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: empty - http://cdn.moep.tv/files/Empty.zip - 01517226212d27586ea0c5d6aff1aa5492dd2484
+[09:32:57] [CMIV - Task Executor #0/WARN] [forceresourcepacks]: No empty pack defined!
+[09:32:57] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Loading global assignment...
+[09:32:57] [CMIV - Task Executor #0/WARN] [forceresourcepacks]: No pack with the name none defined?
+[09:32:57] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Loading server assignments...
+[09:32:57] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Loading assignment for server skyblock...
+[09:32:57] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Loading assignment for server rpg...
+[09:32:57] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Loading assignment for server lobby...
+[09:32:57] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Loading assignment for server survival...
+[09:32:57] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Loaded joined.yml
+[09:32:57] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Update notifications are enabled!
+[09:32:58] [CMIV - Task Executor #0/INFO] [plan]: §2
+[09:32:58] [CMIV - Task Executor #0/INFO] [plan]: §2           ██▌
+[09:32:58] [CMIV - Task Executor #0/INFO] [plan]: §2     ██▌   ██▌
+[09:32:58] [CMIV - Task Executor #0/INFO] [plan]: §2  ██▌██▌██▌██▌  §2Player Analytics
+[09:32:58] [CMIV - Task Executor #0/INFO] [plan]: §2  ██▌██▌██▌██▌  §fv5.8 build 3605
+[09:32:58] [CMIV - Task Executor #0/INFO] [plan]: §2
+[09:32:58] [CMIV - Task Executor #0/INFO] [plan]: Locale: 'English' by AuroraLS3
+[09:32:58] [CMIV - Task Executor #0/INFO] [plan]: Downloading MySQL Driver, this may take a while...
+[09:32:58] [Plan - Task Executor #0/INFO] [plan]: You're using the latest version.
+[09:32:58] [MiniMOTD - Task Executor #0/INFO] [minimotd-velocity]: There is an update available for MiniMOTD!
+[09:32:58] [MiniMOTD - Task Executor #0/INFO] [minimotd-velocity]: This server is running version v2.2.2, which is 2 versions outdated.
+[09:32:58] [MiniMOTD - Task Executor #0/INFO] [minimotd-velocity]: Download the latest version, v2.2.4 from Modrinth at the link below:
+[09:32:58] [MiniMOTD - Task Executor #0/INFO] [minimotd-velocity]: https://modrinth.com/plugin/minimotd
+[09:32:59] [CMIV - Task Executor #0/ERROR] [plan]: ----------------------------------------
+[09:32:59] [CMIV - Task Executor #0/ERROR] [plan]: Error: Failed to start MySQL: Failed to initialize pool: Access denied for user 'u4_MaaC4xwYZ0'@'172.25.0.2' (using password: YES)
+[09:32:59] [CMIV - Task Executor #0/ERROR] [plan]: ----------------------------------------
+[09:32:59] [CMIV - Task Executor #0/ERROR] [plan]: Plugin Failed to Initialize Correctly. If this issue is caused by config settings you can use /planvelocity reload
+[09:32:59] [CMIV - Task Executor #0/INFO] [plan]: Processing complete.
+[09:32:59] [CMIV - Task Executor #0/INFO] [plan]: Waiting for unfinished transactions to avoid data loss..
+[09:32:59] [CMIV - Task Executor #0/INFO] [plan]: Transaction queue closed.
+[09:32:59] [CMIV - Task Executor #0/INFO] [plan]: Player Analytics Disabled.
+[09:33:00] [SkinsRestorer - Task Executor #0/INFO] [skinsrestorer]: ----------------------------------------------
+[09:33:00] [SkinsRestorer - Task Executor #0/INFO] [skinsrestorer]:     +===================+
+[09:33:00] [SkinsRestorer - Task Executor #0/INFO] [skinsrestorer]:     |   SkinsRestorer   |
+[09:33:00] [SkinsRestorer - Task Executor #0/INFO] [skinsrestorer]:     |-------------------|
+[09:33:00] [SkinsRestorer - Task Executor #0/INFO] [skinsrestorer]:     +===================+
+[09:33:00] [SkinsRestorer - Task Executor #0/INFO] [skinsrestorer]: ----------------------------------------------
+[09:33:00] [SkinsRestorer - Task Executor #0/INFO] [skinsrestorer]:     Version: 15.12.5
+[09:33:00] [SkinsRestorer - Task Executor #0/INFO] [skinsrestorer]:     Commit: 98b9488
+[09:33:00] [SkinsRestorer - Task Executor #0/INFO] [skinsrestorer]:     This is the latest version!
+[09:33:00] [SkinsRestorer - Task Executor #0/INFO] [skinsrestorer]: ----------------------------------------------
+[09:33:00] [SkinsRestorer - Task Executor #0/INFO] [skinsrestorer]: Do you have issues? Read our troubleshooting guide: https://skinsrestorer.net/docs/troubleshooting
+[09:33:00] [SkinsRestorer - Task Executor #0/INFO] [skinsrestorer]: Want to support SkinsRestorer or receive priority support? Become a supporter: https://skinsrestorer.net/pricing
+[09:33:00] [CMIV - Task Executor #0/INFO] [VelocityScoreboardAPI]: Successfully injected Scoreboard API.
+[09:33:01] [CMIV - Task Executor #0/INFO] [TAB]: Enabled in 265ms
+[09:33:01] [Netty epoll Boss #0/INFO] [com.velocitypowered.proxy.network.ConnectionManager]: Listening on /[0:0:0:0:0:0:0:0]:25565
+[09:33:01] [main/INFO] [com.velocitypowered.proxy.Velocity]: Done (5.03s)!
