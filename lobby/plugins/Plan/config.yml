@@ -49,7 +49,9 @@ Webserver:
         # %port% is replaced automatically with Webserver.Port
         Address: mc-stats.festas-builds.com
     # Internal IP usually does not need to be changed, only change it if you know what you're doing!
-    # 0.0.0.0 allocates Internal (local) IP automatically for the WebServer.
+    # 0.0.0.0 makes the webserver listen on all interfaces inside the container so that
+    # the host nginx reverse-proxy can reach it via the container IP (e.g. 172.25.0.x).
+    # Port 8804 must be blocked in UFW / the host firewall so it is not reachable from outside.
     Internal_IP: 0.0.0.0
     # Use absolute path ("C:\Example\Path", "/var/example/path") or relative ("public_html" -> {server}/plugins/Plan/public_html)
     # NOTE: All files in this directory can be read by anyone who can access the webserver.
@@ -69,9 +71,9 @@ Webserver:
         # https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
         CORS:
             Allow_origin: "*"
-        # Allows using the whitelist with a reverse-proxy.
+        # Allows using the whitelist & brute-force shield with a reverse-proxy.
         # ! Make sure non-proxy access is not possible, it would allow IP spoofing !
-        Use_X-Forwarded-For_Header: false
+        Use_X-Forwarded-For_Header: true
         Access_log:
             Print_to_console: false
             Remove_logs_after_days: 30
