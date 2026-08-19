@@ -74,14 +74,14 @@ general:
           <div><span style="font-size: 200%;"><span style="color: <v:land_color>;"><v:land></span><br/></span><v:title></div><ul><li>Level: <v:level></li><li>Kontostand: <v:balance></li><li>Chunks: <v:chunks></li><li>Erstellt am: <v:created_at></li><li>Spieler (<v:members_amount>): <v:members></li><li>Verbündete: <v:allies></li><li>Feinde: <v:enemies></li></ul>
         spawn: '<div class="\&quot;infowindow\&quot;"><span style="font-size: 200%;"><span
           style="color: <v:land_color>;">Spawnpunkt</span></span></div> <div class="\&quot;infowindow\&quot;"><br
-          />Offen für Unvertraute: <v:public></div> <ul> <li>If this spawn is open to
-          kann sich jeder mit /<v:cmd> dorthin teleportieren.</li> </ul>'
+          />Offen für Unvertraute: <v:public></div> <ul> <li>If this spawn is open
+          to kann sich jeder mit /<v:cmd> dorthin teleportieren.</li> </ul>'
     bluemap:
       land:
         description: |
           <div><span style="font-size: 200%;"><span style="color: <v:land_color>;"><v:land></span><br/></span><v:title></div><ul><li>Level: <v:level></li><li>Kontostand: <v:balance></li><li>Chunks: <v:chunks></li><li>Erstellt am: <v:created_at></li><li>Spieler (<v:members_amount>): <v:members></li><li>Verbündete: <v:allies></li><li>Feinde: <v:enemies></li></ul>
-        spawn: 'Spawnpunkt of land <v:land>. Offen für Unvertraute: <v:public>. If this
-          spawn is open to untrusted players, anyone can teleport to it by executing
+        spawn: 'Spawnpunkt of land <v:land>. Offen für Unvertraute: <v:public>. If
+          this spawn is open to untrusted players, anyone can teleport to it by executing
           /<v:cmd>.'
     squaremap:
       land:
@@ -89,16 +89,16 @@ general:
           <div><span style="font-size: 200%;"><span style="color: <v:land_color>;"><v:land></span><br/></span><v:title></div><ul><li>Level: <v:level></li><li>Kontostand: <v:balance></li><li>Chunks: <v:chunks></li><li>Erstellt am: <v:created_at></li><li>Spieler (<v:members_amount>): <v:members></li><li>Verbündete: <v:allies></li><li>Feinde: <v:enemies></li></ul>
         spawn: '<div class="\&quot;infowindow\&quot;"><span style="font-size: 200%;"><span
           style="color: <v:land_color>;">Spawnpunkt</span></span></div> <div class="\&quot;infowindow\&quot;"><br
-          />Offen für Unvertraute: <v:public></div> <ul> <li>If this spawn is open to
-          kann sich jeder mit /<v:cmd> dorthin teleportieren.</li> </ul>'
+          />Offen für Unvertraute: <v:public></div> <ul> <li>If this spawn is open
+          to kann sich jeder mit /<v:cmd> dorthin teleportieren.</li> </ul>'
     pl3xmap:
       land:
         description: |
           <div><span style="font-size: 200%;"><span style="color: <v:land_color>;"><v:land></span><br/></span><v:title></div><ul><li>Level: <v:level></li><li>Kontostand: <v:balance></li><li>Chunks: <v:chunks></li><li>Erstellt am: <v:created_at></li><li>Spieler (<v:members_amount>): <v:members></li><li>Verbündete: <v:allies></li><li>Feinde: <v:enemies></li></ul>
         spawn: '<div class="\&quot;infowindow\&quot;"><span style="font-size: 200%;"><span
           style="color: <v:land_color>;">Spawnpunkt</span></span></div> <div class="\&quot;infowindow\&quot;"><br
-          />Offen für Unvertraute: <v:public></div> <ul> <li>If this spawn is open to
-          kann sich jeder mit /<v:cmd> dorthin teleportieren.</li> </ul>'
+          />Offen für Unvertraute: <v:public></div> <ul> <li>If this spawn is open
+          to kann sich jeder mit /<v:cmd> dorthin teleportieren.</li> </ul>'
   inbox:
     general:
       created: <t:regular>Land<t:entity_land> <v:0> </t>created.
@@ -217,8 +217,8 @@ general:
 help:
   help:
     root:
-      header: <noprefix><hover:show_text:"<t:regular>Klicke hier, um zur
-        previous page."><click:run_command:"/<v:cmd> <v:previous>"><t:regular><b><st>━━<!b><!st><t:cmd><b>«<!b></t><t:regular><b><st>━</click></hover>
+      header: <noprefix><hover:show_text:"<t:regular>Klicke hier, um zur previous
+        page."><click:run_command:"/<v:cmd> <v:previous>"><t:regular><b><st>━━<!b><!st><t:cmd><b>«<!b></t><t:regular><b><st>━</click></hover>
         <!b><!st><t:prefix>Lands Commands </t><t:regular>Page<t:regular_value> <v:page>
         </t><t:decoration>/</t><t:regular_value> <v:pages></t> <hover:show_text:"<t:regular>Click
         here to go to the next page."><click:run_command:"/<v:cmd> <v:next>"><t:regular><b><st>━<!b><!st><t:cmd><b>»<!b></t><t:regular><b><st>━━</click></hover>
@@ -230,8 +230,8 @@ help:
       unknown: |
         <t:error>The subcommand<t:error_value> <v:command> </t>doesn't exist.
           <hover:show_text:"<t:regular>Klicke hier, um eine Liste verfügbarer Befehle zu erhalten"><click:run_command:"/<v:cmd>"><t:regular>✖ Befehle anzeigen: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
-      header: <noprefix><hover:show_text:"<t:regular>Klicke hier, um zur
-        previous page."><click:run_command:"/<v:cmd> <v:previous>"><t:regular><b><st>━━━━━<!b><!st><t:cmd><b>«<!b></t><t:regular><b><st>━</click></hover>
+      header: <noprefix><hover:show_text:"<t:regular>Klicke hier, um zur previous
+        page."><click:run_command:"/<v:cmd> <v:previous>"><t:regular><b><st>━━━━━<!b><!st><t:cmd><b>«<!b></t><t:regular><b><st>━</click></hover>
         <!b><!st><t:prefix>Sub Commands </t><t:regular>Page<t:regular_value> <v:page>
         </t><t:decoration>/</t><t:regular_value> <v:pages></t> <hover:show_text:"<t:regular>Click
         here to go to the next page."><click:run_command:"/<v:cmd> <v:next>"><t:regular><b><st>━<!b><!st><t:cmd><b>»<!b></t><t:regular><b><st>━━━━━</click></hover>
@@ -272,8 +272,8 @@ help:
           auto: <hover:show_text:"<t:regular>Dies claimt alle Chunks, die du beim
             Laufen betrittst. Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> </t><t:decoration>- </t><t:regular>Beim Laufen claimen</click></hover>
-          fill: <hover:show_text:"<t:regular>Claime alle Chunks innerhalb einer Form, um sie zu füllen
-            it. Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+          fill: <hover:show_text:"<t:regular>Claime alle Chunks innerhalb einer Form,
+            um sie zu füllen it. Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> </t><t:decoration>- </t><t:regular>Claim chunks inside shape</click></hover>
           radius: <hover:show_text:"<t:regular>Claim all chunks in a specified radius.
             Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
@@ -313,14 +313,14 @@ help:
           main: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Mitglieder verwalten</click></hover>
           menu: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
-            <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Mitgliederverwaltung öffnen
-            menu</click></hover>
+            <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Mitgliederverwaltung
+            öffnen menu</click></hover>
           add: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
-            <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Spieler hinzufügen zu
-            whole land</click></hover>
+            <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Spieler hinzufügen
+            zu whole land</click></hover>
           remove: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
-            <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Spieler entfernen aus
-            the whole land</click></hover>
+            <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Spieler entfernen
+            aus the whole land</click></hover>
           setRole: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Rolle setzen</click></hover>
           setowner: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
@@ -349,8 +349,8 @@ help:
               <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Remove player
               from this area</click></hover>
             setRole: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
-              <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Rolle setzen in this
-              area</click></hover>
+              <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Rolle setzen
+              in this area</click></hover>
             ban: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
               <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Ban player from
               this area</click></hover>
@@ -481,8 +481,8 @@ help:
         main: <hover:show_text:"<t:regular>Manage rented area at your current position.
           <t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
           <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Manage rental</click></hover>
-        cancel: <hover:show_text:"<t:regular>Abbrechen your rental of the sub area at
-          your current position. <t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+        cancel: <hover:show_text:"<t:regular>Abbrechen your rental of the sub area
+          at your current position. <t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
           <v:subcmd> </t><t:decoration>- </t><t:regular>Abbrechen rental</click></hover>
         info: <hover:show_text:"<t:regular>Show information about the rental of the
           sub area at your current position. <t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
@@ -980,9 +980,9 @@ lands:
           a member of.
         land: '<t:error>You''re not allowed to do this for this land<t:error_value>
           <v:land></t>. <t:decoration>Flag: </t><t:regular_value><v:flag></t>'
-        owner: <t:error>Das darfst du nicht tun this for the land<t:error_value>
-          <v:land></t>. <t:regular>Only the land owner can do this. <t:regular>Specify
-          your own land as the argument instead, or create one <t:decoration>(/</t><t:cmd><v:cmd_create></t><t:decoration>)</t><t:regular>.
+        owner: <t:error>Das darfst du nicht tun this for the land<t:error_value> <v:land></t>.
+          <t:regular>Only the land owner can do this. <t:regular>Specify your own
+          land as the argument instead, or create one <t:decoration>(/</t><t:cmd><v:cmd_create></t><t:decoration>)</t><t:regular>.
         area: <t:error>Das darfst du nicht tun this in the area<t:error_value> <v:area>
           </t>of land<t:error_value> <v:land></t>.
         position:
@@ -1175,8 +1175,8 @@ lands:
           discord: <noprefix><t:entity_land><v:land> </t><t:decoration>| </t><t:entity_nation>Discord
             </t><t:regular_value><v:player_display> </t><t:decoration>»</t><t:user_content>
             <v:message></t>
-          spy: <noprefix><t:decoration>[</t><t:negative>Chat-Spion<t:decoration>] </t><t:entity_land><v:land>
-            </t>| <t:regular_value><v:role> </t><t:regular_value><v:player_display>
+          spy: <noprefix><t:decoration>[</t><t:negative>Chat-Spion<t:decoration>]
+            </t><t:entity_land><v:land> </t>| <t:regular_value><v:role> </t><t:regular_value><v:player_display>
             </t><t:decoration>»</t><t:user_content> <v:message></t>
       delete:
         confirm: |
@@ -1367,10 +1367,10 @@ lands:
             area again.
           none: <t:error>The area<t:error_value> <v:area> </t>of land<t:error_value>
             <v:land> </t>doesn't have a spawn set.
-          teleport: <t:error>Du darfst dich nicht in diesen Bereich teleportieren. <t:regular>Der
+          teleport: <t:error>Du darfst dich nicht in diesen Bereich teleportieren.
+            <t:regular>Der Landbesitzer kann dir dafür die Berechtigung geben.
+          enter: <t:error>Du darfst diesen Bereich nicht betreten. <t:regular>Der
             Landbesitzer kann dir dafür die Berechtigung geben.
-          enter: <t:error>Du darfst diesen Bereich nicht betreten. <t:regular>Der Landbesitzer
-            kann dir dafür die Berechtigung geben.
           success: <t:regular>Successfully teleported to the spawn of area<t:regular_value>
             <v:area> </t>of land<t:entity_land> <v:land></t>.
         set:
@@ -1700,8 +1700,9 @@ lands:
             <hover:show_text:"<t:regular>Klicke hier, um diese Auswahl zu claimen."><click:run_command:"/<v:cmd_claim>"><t:regular>✖ Claimen: <t:cmd>/<v:cmd_claim> </t><java><t:click>[CLICK]</t></java></click></hover>
             <hover:show_text:"<t:regular>Klicke hier, um diese Auswahl freizugeben."><click:run_command:"/<v:cmd_unclaim>"><t:regular>✖ Freigeben: <t:cmd>/<v:cmd_unclaim> </t><java><t:click>[CLICK]</t></java></click></hover>
             <hover:show_text:"<t:regular>Weise diese Auswahl einem Unterbereich zu."><click:suggest_command:"/<v:cmd_resize>"><t:regular>✖ Unterbereich: <t:cmd>/<v:cmd_resize> </t><java><t:click>[CLICK]</t></java></click></hover>
-        not-complete: <t:error>Deine Auswahl ist nicht vollständig. <t:regular>Bitte stelle sicher, dass beide Positionen gesetzt sind. <hover:show_text:"<t:regular>Click here
-          um den Auswahlmodus umzuschalten."><click:run_command:"/<v:cmd>"><t:regular>Du
+        not-complete: <t:error>Deine Auswahl ist nicht vollständig. <t:regular>Bitte
+          stelle sicher, dass beide Positionen gesetzt sind. <hover:show_text:"<t:regular>Click
+          here um den Auswahlmodus umzuschalten."><click:run_command:"/<v:cmd>"><t:regular>Du
           kannst den Auswahlmodus umschalten mit <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
         disabled: <title><t:regular_heading>Auswahl<subtitle><t:negative>Modus deaktiviert
     invites:
@@ -1853,8 +1854,8 @@ lands:
       none: <t:error>You have no active teleportation.
     admin:
       listperms:
-        header: <noprefix><hover:show_text:"<t:regular>Klicke hier, um zur
-          previous page."><click:run_command:"/<v:cmd> <v:player> <v:previous>"><t:regular>----------<t:cmd><b>«<!b></t><t:regular>-</click></hover>
+        header: <noprefix><hover:show_text:"<t:regular>Klicke hier, um zur previous
+          page."><click:run_command:"/<v:cmd> <v:player> <v:previous>"><t:regular>----------<t:cmd><b>«<!b></t><t:regular>-</click></hover>
           <t:prefix>Rechte-Liste </t><t:regular>Page<t:regular_value> <v:page> </t><t:decoration>/</t><t:regular_value>
           <v:pages></t> <hover:show_text:"<t:regular>Klicke hier, um zur nächsten
           page."><click:run_command:"/<v:cmd> <v:player> <v:next>"><t:regular>-<t:cmd><b>»<!b></t><t:regular>----------</click></hover>

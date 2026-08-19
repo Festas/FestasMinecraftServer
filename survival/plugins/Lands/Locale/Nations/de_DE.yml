@@ -50,8 +50,8 @@ general:
         spawn: '<div class="\&quot;infowindow\&quot;"><span style="font-size: 200%;"><span
           style="color: <v:land_color>;">Spawnpunkt der Hauptstadt</span><br /></span>This
           spawn belongs to the capital of nation <v:nation>.</div><div class="\&quot;infowindow\&quot;"><br
-          />Offen für Unvertraute: <v:public></div><ul><li>Wenn dieser Spawn für Unvertraute offen ist,
-          anyone can teleport to it by executing /<v:cmd>.</li></ul>'
+          />Offen für Unvertraute: <v:public></div><ul><li>Wenn dieser Spawn für Unvertraute
+          offen ist, anyone can teleport to it by executing /<v:cmd>.</li></ul>'
       nation:
         description: |
           <div><span style="font-size: 200%;"><span style="color: <v:land_color>;"><v:land></span><br /></span><v:title></div><ul><li>Level: <v:level></li><li>Kontostand: <v:balance></li><li>Chunks: <v:chunks></li><li>Erstellt am: <v:created_at></li><li>Spieler (<v:members_amount>): <v:members></li></ul><p><strong>Dieses Land gehört zur Nation <v:nation>:</strong></p><ul><li>Level: <v:level_nation></li><li>Hauptstadt: <v:capital></li><li>Gegründet am: <v:nation_created_at></li><li>Länder (Anzahl: <v:lands_amount>, Spieler: <v:members_amount_nation>): <v:lands></li></ul>
@@ -60,8 +60,8 @@ general:
         spawn: '<div class="\&quot;infowindow\&quot;"><span style="font-size: 200%;"><span
           style="color: <v:land_color>;">Spawnpunkt der Hauptstadt</span><br /></span>This
           spawn belongs to the capital of nation <v:nation>.</div><div class="\&quot;infowindow\&quot;"><br
-          />Offen für Unvertraute: <v:public></div><ul><li>Wenn dieser Spawn für Unvertraute offen ist,
-          anyone can teleport to it by executing /<v:cmd>.</li></ul>'
+          />Offen für Unvertraute: <v:public></div><ul><li>Wenn dieser Spawn für Unvertraute
+          offen ist, anyone can teleport to it by executing /<v:cmd>.</li></ul>'
       nation:
         description: |
           <div><span style="font-size: 200%;"><span style="color: <v:land_color>;"><v:land></span><br /></span><v:title></div><ul><li>Level: <v:level></li><li>Kontostand: <v:balance></li><li>Chunks: <v:chunks></li><li>Erstellt am: <v:created_at></li><li>Spieler (<v:members_amount>): <v:members></li></ul><p><strong>Dieses Land gehört zur Nation <v:nation>:</strong></p><ul><li>Level: <v:level_nation></li><li>Hauptstadt: <v:capital></li><li>Gegründet am: <v:nation_created_at></li><li>Länder (Anzahl: <v:lands_amount>, Spieler: <v:members_amount_nation>): <v:lands></li></ul>
@@ -70,8 +70,8 @@ general:
         spawn: '<div class="\&quot;infowindow\&quot;"><span style="font-size: 200%;"><span
           style="color: <v:land_color>;">Spawnpunkt der Hauptstadt</span><br /></span>This
           spawn belongs to the capital of nation <v:nation>.</div><div class="\&quot;infowindow\&quot;"><br
-          />Offen für Unvertraute: <v:public></div><ul><li>Wenn dieser Spawn für Unvertraute offen ist,
-          anyone can teleport to it by executing /<v:cmd>.</li></ul>'
+          />Offen für Unvertraute: <v:public></div><ul><li>Wenn dieser Spawn für Unvertraute
+          offen ist, anyone can teleport to it by executing /<v:cmd>.</li></ul>'
       nation:
         description: |
           <div><span style="font-size: 200%;"><span style="color: <v:land_color>;"><v:land></span><br /></span><v:title></div><ul><li>Level: <v:level></li><li>Kontostand: <v:balance></li><li>Chunks: <v:chunks></li><li>Erstellt am: <v:created_at></li><li>Spieler (<v:members_amount>): <v:members></li></ul><p><strong>Dieses Land gehört zur Nation <v:nation>:</strong></p><ul><li>Level: <v:level_nation></li><li>Hauptstadt: <v:capital></li><li>Gegründet am: <v:nation_created_at></li><li>Länder (Anzahl: <v:lands_amount>, Spieler: <v:members_amount_nation>): <v:lands></li></ul>
@@ -80,8 +80,8 @@ general:
         spawn: '<div class="\&quot;infowindow\&quot;"><span style="font-size: 200%;"><span
           style="color: <v:land_color>;">Spawnpunkt der Hauptstadt</span><br /></span>This
           spawn belongs to the capital of nation <v:nation>.</div><div class="\&quot;infowindow\&quot;"><br
-          />Offen für Unvertraute: <v:public></div><ul><li>Wenn dieser Spawn für Unvertraute offen ist,
-          anyone can teleport to it by executing /<v:cmd>.</li></ul>'
+          />Offen für Unvertraute: <v:public></div><ul><li>Wenn dieser Spawn für Unvertraute
+          offen ist, anyone can teleport to it by executing /<v:cmd>.</li></ul>'
       nation:
         description: |
           <div><span style="font-size: 200%;"><span style="color: <v:land_color>;"><v:land></span><br /></span><v:title></div><ul><li>Level: <v:level></li><li>Kontostand: <v:balance></li><li>Chunks: <v:chunks></li><li>Erstellt am: <v:created_at></li><li>Spieler (<v:members_amount>): <v:members></li></ul><p><strong>Dieses Land gehört zur Nation <v:nation>:</strong></p><ul><li>Level: <v:level_nation></li><li>Hauptstadt: <v:capital></li><li>Gegründet am: <v:nation_created_at></li><li>Länder (Anzahl: <v:lands_amount>, Spieler: <v:members_amount_nation>): <v:lands></li></ul>
@@ -123,8 +123,7 @@ nations:
         <t:regular_value><v:current></t><t:decoration>)</t><t:regular>.'
       success: <t:regular>You successfully created the nation<t:entity_nation> <v:nation></t>
         with the land<t:entity_land> <v:land></t> as the capital. <hover:show_text:"<t:regular>Open
-        the menu."><click:run_command:"/<v:cmd>"><t:regular>Klicke hier, um das
-        menu.</click></hover>
+        the menu."><click:run_command:"/<v:cmd>"><t:regular>Klicke hier, um das menu.</click></hover>
     nation:
       chat:
         activated: <t:regular>Activated nation chat. Send a message in public chat
@@ -139,9 +138,9 @@ nations:
           discord: <noprefix><t:entity_nation>Nation <v:nation></t> <t:decoration>|
             </t><t:entity_nation>Discord </t><t:regular_value><v:player_display></t>
             <t:decoration>»</t><t:user_content> <v:message></t>
-          spy: <noprefix><t:decoration>[</t><t:negative>Chat-Spion<t:decoration>] </t><t:entity_nation>Nation
-            <v:nation> </t>| <t:regular_value><v:player_display> </t>»<t:user_content>
-            <v:message></t>
+          spy: <noprefix><t:decoration>[</t><t:negative>Chat-Spion<t:decoration>]
+            </t><t:entity_nation>Nation <v:nation> </t>| <t:regular_value><v:player_display>
+            </t>»<t:user_content> <v:message></t>
       delete:
         confirm: |
           <t:regular>Please confirm the deletion of nation<t:entity_nation> <v:nation></t> by clicking below:
@@ -283,7 +282,8 @@ help:
           leave: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Leave nation</click></hover>
           accept: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
-            <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Nationseinladung annehmen</click></hover>
+            <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Nationseinladung
+            annehmen</click></hover>
           decline: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Decline nation
             invite</click></hover>

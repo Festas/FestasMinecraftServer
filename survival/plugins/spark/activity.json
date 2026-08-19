@@ -1,1 +1,54 @@
-[]
+[
+  {
+    "user": {
+      "type": "player",
+      "name": "Festas",
+      "uniqueId": "6e874670-66e9-48dd-b16f-48029fc0c645"
+    },
+    "time": 1787087311133,
+    "type": "Profiler",
+    "data": {
+      "type": "url",
+      "value": "https://spark.lucko.me/F40OqtQE37"
+    }
+  },
+  {
+    "user": {
+      "type": "player",
+      "name": "Festas",
+      "uniqueId": "6e874670-66e9-48dd-b16f-48029fc0c645"
+    },
+    "time": 1787087309631,
+    "type": "Profiler",
+    "data": {
+      "type": "url",
+      "value": "https://spark.lucko.me/u8nxjJdHdg"
+    }
+  },
+  {
+    "user": {
+      "type": "player",
+      "name": "Festas",
+      "uniqueId": "6e874670-66e9-48dd-b16f-48029fc0c645"
+    },
+    "time": 1787087308861,
+    "type": "Profiler (live)",
+    "data": {
+      "type": "url",
+      "value": "https://spark.lucko.me/zHYfa99i4C"
+    }
+  },
+  {
+    "user": {
+      "type": "player",
+      "name": "Festas",
+      "uniqueId": "6e874670-66e9-48dd-b16f-48029fc0c645"
+    },
+    "time": 1787087307709,
+    "type": "Profiler (live)",
+    "data": {
+      "type": "url",
+      "value": "https://spark.lucko.me/wHf5NCfzUJ"
+    }
+  }
+]

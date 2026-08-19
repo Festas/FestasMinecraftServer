@@ -131,7 +131,8 @@ gui:
           name: <t:error_heading>Aufgeben
           lore:
           - '<action:primary><label>Aufgeben</label><desc><t:regular>Ergib diesen
-            Krieg und unterliege dem Feind. Das Kriegsziel wird dann auf deine Seite angewendet:'
+            Krieg und unterliege dem Feind. Das Kriegsziel wird dann auf deine Seite
+            angewendet:'
           - '  <v:outcome></desc></action>'
           material: WHITE_BANNER
           slots: 29
@@ -267,5 +268,8 @@ gui:
           material: SHIELD
           slots: 23
         war_Punkte:
+          material: IRON_INGOT
+          slots: 25
+        war_points:
           material: IRON_INGOT
           slots: 25

@@ -1,252 +1,252 @@
-# Wiki-Seite (Konfiguration): hhttps://wiki.incredibleplugins.com/lands/configuration/wars
-# Erklärung für Spieler: https://wiki.incredibleplugins.com/lands/players/general/wars
+# Wiki Page (configuration): hhttps://wiki.incredibleplugins.com/lands/configuration/wars
+# Explanation for players: https://wiki.incredibleplugins.com/lands/players/general/wars
 
-# Kriege aktivieren?
-# HINWEIS: Diese Einstellung erfordert einen Server-Neustart.
+# Enable wars?
+# NOTE: This setting requires server reload / restart.
 enabled: false
 
-# Sollen Kriege nur zwischen Nationen und nicht einzelnen Ländern möglich sein?
+# Should wars only be possible between nations and not single lands?
 only-nations: false
 
-# Kriegsmodi und -ziele (welcher Modus/Ziel Standard ist, sowie Einstellungen pro Modus/Ziel) sind definiert in
+# War modes and goals (which mode/goal is default, per-mode/goal settings) are defined in
 # Modules/Wars/modes.yml.
 
-# Kriegserklärungseinstellungen
+# War declaration settings
 declaration:
-  # Voraussetzungen, die bestimmen, ob ein Krieg überhaupt erklärt werden darf. Wenn eine nicht erfüllt ist, wird die Erklärung abgelehnt.
+  # Requirements that gate whether a war may be declared at all. If any isn't met, the declaration is refused.
   requirements:
-    # Mindestanzahl vertrauter Spieler festlegen, die ein Land haben muss, um an einem Krieg teilnehmen zu dürfen.
+    # Set the minimum amount of trusted players a land needs to have to be allowed to engaged in a war.
     min-players:
-      # Mindestanzahl vertrauter Spieler für den erklärenden Angreifer.
-      # (Das _3-Suffix wird beim Laden entfernt; es hält nur diesen Blattschlüssel textuell unterschiedlich von den
-      # anderen 'attacker'-Schlüsseln in dieser Datei, damit keine doppelter-Schlüssel-Warnung entsteht - entspricht defender_3)
+      # Set minimum amount of trusted players for the declaring attacker.
+      # (the _3 suffix is stripped on load; it only keeps this leaf key textually distinct from the
+      # other 'attacker' keys in this file so the duplicate-key check doesn't warn - matches defender_3)
       attacker_3: 0
-      # Mindestanzahl vertrauter Spieler für den Verteidiger, um eine Kriegserklärung zu erhalten.
+      # Set minimum amount of trusted players for the defender to receive a war declaration.
       defender_3: 0
-    # Mindestanzahl beanspruchter Chunks. 0 = kein Minimum.
+    # Minimum amount of claimed chunks. 0 = no minimum.
     min-chunks:
       attacker: 0
       defender: 0
     min-balance:
-      # Mindestguthaben des Landes für Angreifer, um einen Krieg beginnen zu können.
+      # Set the minimum land balance for attackers to be able to start a war.
       attacker_2: 5000
-      # Mindestguthaben für Verteidiger, damit ihnen direkt der Krieg erklärt werden kann.
-      # Sie können trotzdem in einen Krieg verwickelt werden, wenn sie Teil einer Nation mit höherem Guthaben sind.
+      # Set the minimum balance for defenders to have war declared against them directly.
+      # They can still be engaged in war, if they're part of a nation that has a balance higher than this.
       defender_2: 0
     min-age:
-      # Mindestalter eines Angreifers.
+      # Set the minimum age of a attacker.
       attacker_time: 0d
-      # Mindestalter eines Verteidigers.
+      # Set the minimum age of a defender.
       defender_time: 0d
-    # Anti-Grief-Stufengrenze: Kriegserklärungen nur zwischen Haltern erlauben, die maximal so viele STUFEN auseinanderliegen,
-    # damit ein Halter hoher Stufe keinen viel schwächeren farmen kann. Die Prüfung ist symmetrisch – auch
-    # ein Halter niedriger Stufe kann keinen viel stärkeren angreifen. Unabhängigkeitskriege und Admin-Editor sind ausgenommen.
-    # -1 = deaktiviert (jede Kombination erlaubt). 0 = nur gleiche Stufe, 1 = eine Stufe rauf oder runter, usw.
-    # Hinweis: Land- und Nationsstufen sind getrennte Leitern, daher vergleicht eine gemischte Land-vs-Nation-Begegnung ihre
-    # Stufenpositionen nur grob.
+    # Anti-grief level gate: only allow a war declaration between holders within this many LEVELS of each
+    # other, so a high-level holder can't just farm a much weaker one. The check is symmetric - a low-level
+    # holder also can't declare on a much higher one. Independence wars and admin-editor staff are exempt.
+    # -1 disables it (any matchup allowed). 0 = same level only, 1 = one level up or down, etc.
+    # Note: land and nation levels are separate ladders, so a mixed land-vs-nation matchup compares their
+    # level positions only loosely.
     max-level-difference: -1
-    # Sollen Angreifer Kriegserklärungen nur an Länder oder Nationen senden können, wo mindestens ein Spieler online ist?
+    # Should attackers only be able to send war declarations to lands or nations where at least one player is online?
     online: false
-    # Definieren, wann eine Erklärung gesendet werden kann.
+    # Define when a declaration can be sent.
     send-time:
-      # Wochentag. 1 = Montag, 7 = Sonntag.
-      # Beispiel: 1,2,3 -> Erlaubt das Senden an Montag, Mittwoch und Donnerstag.
-      # Standard: 1-7 -> Alle Tage erlaubt.
+      # Day of the week. 1 is Monday and 7 is Sunday.
+      # Example: 1,2,3 -> Allows a declaration be sent on Monday, Wednesday and Thursday.
+      # Default: 1-7 -> Allows all days.
       days_range: "1-7"
-      # Stunden der oben definierten Tage, in denen eine Erklärung gesendet werden kann.
-      # Verwendet das 24-Stunden-Format. Standard ist 0-23, das alle Stunden des Tages einschließt.
-      # Weiteres Beispiel: 20-23;0-4 -> 20 Uhr bis 4 Uhr
+      # Hours of the above defined days during which a declaration can be sent.
+      # Uses 24 hour format. Default is 0-23 which includes any hour of the day.
+      # Another example: 20-23;0-4 -> 8pm till 4am
       hours_range: "0-23"
 
-  # Wie viel Zeit soll den Verteidigerländern zur Kriegsvorbereitung gegeben werden?
-  # HINWEIS: Zeiteinheit sind Sekunden
-  # Standard ist ein Tag
+  # How much time do you want to give the defender lands for war preparation, before it will start?
+  # NOTE: Timeunit is seconds
+  # Default is one day
   preparation_time: 1d
-  # Soll eine Broadcast-Nachricht an den ganzen Server gesendet werden?
-  # Die Nachricht kann in der Sprachdatei bearbeitet werden.
+  # Should a broadcast message be sent to the whole server?
+  # You can edit the message in your language file.
   broadcast: true
-  # Sollen Kriegserklärungen einer gegenseitigen Zustimmung bedürfen?
-  # Wenn aktiviert, muss das Verteidigerland die Erklärung bestätigen, bevor der Krieg beginnen kann. Dies geschieht mit /Wars declare <angreifer>
-  # Eine Kriegserklärung kann mit /Wars deny abgelehnt werden
-  # HINWEIS: Diese Einstellung erfordert einen Server-Neustart.
+  # Should war declarations need a mutual acceptation?
+  # If enabled, the defender land needs to confirm the declaration before the war can start. They need to do this by executing /Wars declare <attacker>
+  # They can deny a war declaration by executing /Wars deny
+  # NOTE: This setting requires server reload / restart.
   mutual:
     enabled_2: false
     # Should the declaration be deleted if the enemy did not accept it during the configured period?
     # You can disable this by setting the value to 0.
     declaration-timeout_time: 5d
 
-# HINWEIS: Aufgeben (während der Vorbereitung oder im aktiven Krieg) wendet einfach das Kriegsziel-Ergebnis für die
-# aufgebende Seite an – es gibt keinen festzulegenden Tribut. Was eine Kapitulation kostet, wird pro Ziel in
-# modes.yml konfiguriert (z. B. der 'surrender'-Status des Klassischen Ziels, meist milder als eine erkämpfte Niederlage).
+# NOTE: Surrendering (during preparation or an active war) simply applies the war goal's outcome for the
+# surrendering side - there is no tribute to set. What a surrender costs is configured per goal in
+# modes.yml (e.g. the classic goal's 'surrender' state, usually milder than a fought loss).
 
-# Wann immer ein Feind einen Leuchtturm am Rand eines Landes platziert, wird eine Einnahme-Fahne erstellt.
-# Die Angreifer müssen diesen Punkt dann eine Weile halten, um den Chunk einzunehmen.
-# HINWEIS: Punktwerte (capture/break/explode) und das Punktziel werden pro Kriegsmodus in modes.yml definiert,
-# da sie nur für Modi relevant sind, die durch Punkte gewonnen werden.
+# Whenever an enemy places a beacon on the outskirts of a land, a capture flag will be created.
+# The attackers then need to hold this point for a while to capture the chunk.
+# NOTE: Point values (capture/break/explode) and the points-to-win are defined per war mode in modes.yml,
+# since they only matter for modes that win by points (e.g. the classic mode).
 capture:
   enabled_3: true
-  # Ein Einnahmepunkt muss gecraftet werden. Spieler können das Rezept in ihrem /war-Menü sehen.
+  # A capture point must be crafted. Players can see the recipe in their /war menu.
   recipe_list:
     - 'AIR,RED_STAINED_GLASS_PANE,AIR'
     - 'AIR,BEACON,AIR'
     - 'IRON_BLOCK,IRON_BLOCK,IRON_BLOCK'
-  # Maximale Anzahl gleichzeitig platzierbarer Einnahmepunkte pro Team.
+  # Set the maximum amount of capture points a team can have placed at the same time.
   max: 3
-  # Dem Team das Platzieren einer Einnahme-Fahne nur alle x Zeit erlauben.
+  # Only allow the team to place a capture flag every period.
   place-cooldown_time: 10m
-  # Sollen nur Spieler mit dem MANAGE_WAR-Flag Einnahme-Fahnen für ihr Land platzieren können?
-  # Wenn aktiviert, können Landbesitzer per Rollensystem einschränken, wer Fahnen platzieren darf.
+  # Should only be players with the MANAGE_WAR flag be able to place capture flags for their land?
+  # If enabled, land owners can restrict who can place flags using the role system.
   restrict-placement: false
-  # Chunk-Radius festlegen, der von der Einnahme-Fahne betroffen ist. Invasoren beginnen die Einnahme beim Betreten des beanspruchten Bereichs.
-  # Bei 1 ist nur der Chunk betroffen, in dem die Einnahme-Fahne platziert ist.
-  # HINWEIS: Sollte nicht größer als die Server-Sichtweite sein.
+  # Set the chunks radius that will be affected by the capture flag. Invaders will start capturing once they enter the claimed area.
+  # If set to 1, only the chunk in which the capture flag is placed in, is affected.
+  # NOTE: This shouldn't be greater than your servers view distance.
   radius: 1
-  # Soll der eingenommene Bereich freigegeben werden?
+  # Should the captured area become unclaimed?
   unclaim: true
-  # Soll der freigegebene Bereich vom Feind beansprucht werden?
+  # Should the unclaimed area become claimed by the enemy?
   claim: false
-  # Die Invasoren müssen die Einnahme-Fahne so lange halten, um den Chunk einzunehmen.
+  # The invaders need to hold the capture flag this long, to capture the chunk.
   hold_time: 10m
-  # In regelmäßigen Abständen ein Feuerwerk spawnen, wenn Spieler im Bereich sind.
+  # Spawn a firework every period, if any players are in the area.
   firework_time: 30s
-  # Soll ein Einnahme-Fahnen-Gegenstand beim Entfernen der Fahne fallen gelassen werden?
+  # Should a capture flag item be dropped at removal of the capture flag?
   drop: false
-  # Spielern des Teams, das die Fahne platziert hat, erlauben, sie auch zu brechen.
+  # Allow players of the team that placed the flag to break it as well.
   invaders-break: true
-  # Y-Ebenen begrenzen, auf denen Einnahme-Fahnen platziert werden können.
+  # Limit y levels on which capture flags are placeable.
   y:
     min: 30
     max_2: 127
 
   durability:
-    # Das Haltbarkeitssystem der Einnahme-Fahne aktivieren.
+    # Enable the capture flag durability system.
     enabled_5: false
-    # Gesamt-Lebenspunkte einer Einnahme-Fahne beim Platzieren.
+    # Total health points of a capture flag when placed.
     max-health: 100.0
-    # Schaden an der Fahne, wenn ein Spieler einen ihrer Blöcke vollständig bricht.
+    # Damage dealt to the flag when a player fully breaks one of its blocks.
     block-break-damage: 25.0
-    # Schaden an der Fahne durch eine Explosion.
+    # Damage dealt to the flag when hit by an explosion.
     explosion-damage_2: 50.0
 
-    # HINWEIS: Diese Bonuspunkte werden nur in Kriegsmodi vergeben, die durch Punkte gewonnen werden (siehe modes.yml). Modi, die
-    # den Sieg anders entscheiden, ignorieren sie.
+    # NOTE: These bonus points are only awarded in war modes that win by points (see modes.yml). Modes that
+    # decide victory another way ignore them.
     health-reward:
-      # Wie oft Bonuspunkte für das Invasoren-Team geprüft und vergeben werden. Unterstützt 30s, 1m usw.
+      # How often to check and award bonus points to the invader team. Supports 30s, 1m, etc.
       health-interval_time: 1m
-      # Ton für das Team, das Punkte erhält.
+      # Sound played for the team that is rewarded points.
       reward-sound_sound: "entity.experience_orb.pickup"
       invader:
-        # Punkte für das platzierende Team pro Intervall.
-        # Deaktivieren: auf 0 setzen
+        # Points awarded to the placing team per interval.
+        # Disable: set to 0
         amount: 0
-        # Lebensprozentzahl (0-100), die die Fahne erreichen oder überschreiten muss, um dem platzierenden Team Bonuspunkte zu geben.
+        # Health percentage (0-100) the flag must be at or above to award bonus points to the placing team.
         threshold: 75
       defender:
-        # Punkte für das gegnerische Team, wenn die Fahnengesundheit erstmals unter den Schwellenwert fällt.
-        # Deaktivieren: auf 0 setzen
+        # Points awarded to the opposing team when the flag health first drops below the threshold.
+        # Disable: set to 0
         amount_2: 0
-        # Lebensprozentzahl (0-100), unterhalb derer gegnerische Spieler im Fahnenbereich belohnt werden.
+        # Health percentage (0-100) below which the opposing team players in the flag area are rewarded.
         threshold_2: 25
 
 
-# Ton-Konfiguration
-# Soundnamen können mit /playsound ingame gefunden werden.
-# Format: sound,lautstärke,tonhöhe
-# Lautstärke und Tonhöhe sind optional.
-# Ton deaktivieren: Wert auf '' setzen
+# Sound configuration
+# You can find the sound names by using the /playsound command ingame.
+# Format: sound,volume,pitch
+# The volume and pitch parameter are optional. They allow you to control how the sound is played.
+# Disabling a sound: Just set it to ''
 sounds:
   capture:
     place_sound: 'block.bell.use'
 
-# Intervall der Kriegsstatus-Nachricht. Diese erscheint während des Krieges und informiert Spieler, die evtl. offline waren, dass ihr Land an einem Krieg teilnimmt.
+# War status message interval. This message appears while the war is running. This is very useful to inform players, which might have been offline for some time, that their land is participating in a war.
 status-interval_time: 15m
 
-# Sollen Spieler, die an einem Krieg beteiligt sind, auf Dynmap ausgeblendet werden?
-# HINWEIS: Mit BlueMap ist das aktuell nicht möglich.
+# Should players, which are engaged in a war, be hidden from dynmap?
+# NOTE: It's currently not possible to do that with BlueMap.
 hide-player: true
 
-# Soll Lands ein Feind- oder Verbündeten-Namensschild über Spielern anzeigen, die im Krieg sind?
-# Wenn bereits ein Scoreboard- oder Tablist-Plugin vorhanden ist, wird empfohlen, stattdessen den %rel_lands_war_relation% PlaceholderAPI-Platzhalter zu verwenden.
-# HINWEIS: Nur Spieler im selben Krieg sehen diese.
-# HINWEIS: Bei Folia statt Spigot/Paper: Folia unterstützt Scoreboards derzeit nicht.
+# Should Lands set a enemy or ally nametag above players that are at war?
+# If you already have a scoreboard or tablist plugin on your server, it's recommended to use the %rel_lands_war_relation% PlaceholderAPI placeholder instead.
+# NOTE: Only players that are in the same war, will see these.
+# NOTE: If you use Folia instead of spigot/paper: Folia doesn't support scoreboard at this time.
 nametag: true
 
-# Hier kann eine Liste von Befehlen definiert werden, die nicht ausgeführt werden sollen, während ein Spieler an einem Krieg beteiligt ist.
+# Here you can define a list of commands, which shouldn't get executed while a player is engaged in a war.
 cmd-blacklist_list: [ ]
 
-# Kampfeinstellungen, die Spieler auch ingame ändern können.
-# Spieler benötigen bestimmte Berechtigungen dafür. Diese befinden sich im Wiki.
+# Combat settings, which can also be changed ingame by players.
+# Please note that they need certain permissions in order to change the settings. You can find them in the wiki.
 combat:
-  # Teammitgliedern erlauben, sich gegenseitig zu töten. Dies zählt nicht zu den Kriegs-Kill-Statistiken.
+  # Allow teammates killing each other. This won't count to the war kill stats.
   friendly_fire:
     default_2: true
 
 shield:
-  # Konfigurieren, wann ein Land einen Kriegsschild erhalten soll.
-  # Wenn ein Kriegsschild aktiv ist, können andere Länder das Land nicht angreifen.
-  # HINWEIS: Der Schild nach Kriegsende (inkl. Kapitulation) wird pro Ziel in modes.yml konfiguriert.
+  # Configure when a land should get a war shield.
+  # If a war shield is active, other lands can't attack the land.
+  # NOTE: The shield granted after a war ends (including a surrender) is configured per goal in modes.yml.
   activation:
-    # Einem neuen Land oder einer neuen Nation einen Kriegsschild geben?
-    # 0 = deaktivieren.
+    # Give war shield to a new land or nation?
+    # Use 0 to disable this.
     creation_time: 1d
 
-# Konfigurieren, was passiert, wenn ein Krieg beginnt.
+# Configure what happens when a war starts.
 start:
-  # Soll eine Nachricht an den ganzen Server gesendet werden?
-  # Die Nachricht kann in der Sprachdatei bearbeitet werden.
+  # Should a message be broadcasted to the whole server?
+  # You can edit the message in your language file.
   broadcast_2: true
 
-# Hier können natürliche Flags während eines Krieges aktiviert werden.
-# Liste verfügbarer Landflags: https://wiki.incredibleplugins.com/lands/configuration/natural-flags
+# Here you can enable natural flags during a war.
+# List of available land-flags: https://wiki.incredibleplugins.com/lands/configuration/natural-flags
 land-flags_list: [ ]
 
-# Sollen Spieler ihr Inventar behalten, wenn sie während eines Krieges sterben?
+# Should players keep their inventory, if they die during a war?
 keep-inventory:
   enabled_4: false
   mode: false
 
-# Was Feinde IN einem Land tun dürfen, mit dem sie im Krieg sind (Kisten öffnen, bestimmte Blöcke brechen usw.).
-# Dies ist das Aktionsset während des Krieges; das separate Nachkriegs-Überfall-Set befindet sich unter goals.raid.actions in modes.yml.
-# "role-flags_list", "block-place_list" und "block-break_list" im Abschnitt "actions" unten bearbeiten, um es einzuschränken.
+# What enemies may do IN a land they're at war with (opening chests, breaking specific blocks, etc.).
+# This is the in-war action set; the separate post-war raid set lives under goals.raid.actions in modes.yml.
+# Edit "role-flags_list", "block-place_list" and "block-break_list" in the "actions" section below to limit it.
 in-land:
-  # Einschränken, wann Feinde bestimmte Aktionen ausführen können (bearbeitbar im Abschnitt "actions" unten).
+  # Limit when enemies are able to do certain actions (editable in the "actions" section below).
   restrictions:
-    # Anzahl der Spieler der Verteidiger festlegen, die online sein müssen, bevor Angreifer im Land interagieren können.
-    # Bei Nationen: Dieser Wert gilt für das Land, das gerade invadiert wird. Nicht die gesamte Nation.
-    # Diese Option betrifft auch Einnahme-Fahnen.
-    # HINWEIS: Um Plünderungen auch ohne Online-Verteidiger zu erlauben, diesen Wert auf 0 setzen.
-    # HINWEIS: Diese Einstellung erfordert einen Server-Neustart.
+    # Set an amount of players of the defenders, which need to be online before the attackers can interact in the land.
+    # If nations are involved: This value is applied to the land that is currently being invaded. Not the whole nation (collection of lands).
+    # This option also affects capture flags.
+    # NOTE: If you want to allow pillages WHILE no defender is online, set this option to 0.
+    # NOTE: This setting requires server reload / restart.
     min-players: 1
-    # Zeitraum festlegen, in dem Spieler das Land noch angreifen können, nachdem der letzte Spieler des Ziellandes den Server verlassen hat.
+    # Set a time period where players are still able to attack the land after the last player of the target land left the server.
     cooldown_logging_time: 1m
 
-  # Sollen Spieler auch in den Ländern der Verbündeten beider Seiten kämpfen können oder nur
-  # in dem Land, das den Krieg erklärt oder gegen das er erklärt wurde?
+  # Should players be able to fight in the lands of the allies of both sides as well or just
+  # in the land that declared war or got declared war against?
   allies-war-field: false
 
-  # Einschränken, was Feinde im Land während eines Krieges tun können.
+  # Limit what enemies are able to do in the land during a war.
   actions:
-    # Spielern erlauben, folgendes im Feindland zu tun (nur während des Krieges).
-    # Verfügbare Aktionen: https://wiki.incredibleplugins.com/lands/configuration/roles-and-their-flags#flags
-    # HINWEIS: BLOCK_PLACE oder BLOCK_BREAK hinzufügen erlaubt das Brechen/Platzieren ALLER Blöcke. Für spezifische Blöcke die Listen unten verwenden.
-    # HINWEIS: Im Krieg haben Angreifer und Verteidiger auch die Flags der nicht-vertrauten Rolle des zu invadierenden Bereichs.
-    # HINWEIS: Um das Zünden und Explodieren von TNT zu erlauben, BLOCK_IGNITE zu dieser Liste und TNT_GRIEFING zu land-flags_list oben hinzufügen.
+    # Allow players doing the following things in the enemy land (only during war).
+    # Available actions: https://wiki.incredibleplugins.com/lands/configuration/roles-and-their-flags#flags
+    # NOTE: Adding BLOCK_PLACE or BLOCK_BREAK to this list will allow invaders to break, place ALL blocks. If you want to specify blocks, please use the lists below.
+    # NOTE: In war the attackers and defenders also have the flags of the untrusted role of the area they're invading.
+    # NOTE: If you want to allow players to ignite and explode tnt blocks you need to add BLOCK_IGNITE to this list and TNT_GRIEFING to land-flags_list above.
     role-flags_list:
       - ITEM_PICKUP
       - ATTACK_PLAYER
       - LAND_ENTER
 
-    # Platzierung bestimmter Blöcke erlauben, wenn das Land an einem Krieg beteiligt ist.
-    # HINWEIS: Wird nur benötigt, wenn BLOCK_PLACE NICHT in role-settings_list oben ist.
-    # Werte: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
+    # Allow the placement of specific blocks if the land part of a war.
+    # NOTE: This is only needed if BLOCK_PLACE is NOT in the role-settings_list above.
+    # Values: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
     block-place_list:
       - LADDER
       - VINE
       - SCAFFOLDING
 
-    # Brechen bestimmter Blöcke erlauben, wenn das Land an einem Krieg beteiligt ist.
-    # HINWEIS: Wird nur benötigt, wenn BLOCK_BREAK NICHT in role-settings_list oben ist.
-    # Werte: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
+    # Allow breaking of specific blocks if the land part of a war.
+    # NOTE: This is only needed if BLOCK_BREAK is NOT in the role-settings_list above.
+    # Values: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
     block-break_list:
       - LADDER
       - VINE

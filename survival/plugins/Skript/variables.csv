@@ -78,7 +78,7 @@ boerse_base::redstone, long, 00000000000000C8
 "boerse_base::redstone block", long, 0000000000000708
 boerse_base::stone, long, 000000000000000A
 "boerse_base::stone bricks", long, 0000000000000014
-boerse_multi::coal, double, 4067E00000000000
+boerse_multi::coal, long, 00000000000000C8
 "boerse_multi::coal block", long, 00000000000000C8
 "boerse_multi::coarse dirt", long, 00000000000000C8
 "boerse_multi::copper block", long, 00000000000000C8
@@ -267,4 +267,5 @@ tycoon_prices::redstone, long, 00000000000000C8
 tycoon_prices::stone, long, 000000000000000A
 "tycoon_prices::stone bricks", long, 0000000000000014
 tycoon_prices::tuff, long, 0000000000001F40
+weekly_event, long, 0000000000000004
 

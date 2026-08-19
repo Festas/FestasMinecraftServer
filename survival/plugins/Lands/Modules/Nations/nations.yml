@@ -1,111 +1,111 @@
-# Erklärung für Spieler: https://wiki.incredibleplugins.com/lands/players/general/nations
+# Explanation for players: https://wiki.incredibleplugins.com/lands/players/general/nations
 
-# Nationen aktivieren?
-# HINWEIS: Diese Einstellung erfordert einen Server-Neustart.
+# Enable nations?
+# NOTE: This setting requires server reload / restart.
 enabled: true
 
 nation:
-  # Erstellung anpassen
+  # Customize the creation
   creation:
-    # Erstellungskosten festlegen
+    # Set the creation cost
     costs: 20000.0
-    # Eine bestimmte Land-Stufe für die Nationserststellung voraussetzen. 1 = diese Voraussetzung deaktivieren.
-    # HINWEIS: Dies muss der Abschnittsname der jeweiligen Stufe sein.
-    # Diese Option erfordert einen Server-Neustart.
+    # Require a specific land level to be able to create a nation. You can set this to 1 in order to disable this.
+    # NOTE: This must be the section name of the specific level.
+    # This option requires server reload / restart.
     capital-level: 5
-    # Sollen neue Nationen eine zufällige Farbe für ihren Namen erhalten?
-    # HINWEIS: Hat keine Wirkung, wenn nation.name.color auf false gesetzt ist.
+    # Should new nations get a random color for their name?
+    # NOTE: This option has no effect if nation.name.color is set to false.
     random-color: false
 
-  # Nationsname-Optionen
+  # Nation name options
   name:
-    # Sollen Leerzeichen in Nationsnamen erlaubt sein?
-    # Leerzeichen werden durch einen Unterstrich ersetzt, wenn der Name als Befehlsparameter angezeigt wird.
-    # Wenn diese Option nachträglich deaktiviert wird, werden Leerzeichen aus bestehenden Nationen entfernt.
+    # Should spaces be allowed in nation names?
+    # Spaces will be replaced with an underscore, when being displayed as a command parameter.
+    # Disabling this option at a later time, will also remove spaces from existing nations.
     spaces: false
-    # Mindestlänge des Nationsnamens
+    # Minimum nation name length
     min-length: 5
-    # Maximale Namenlänge der Nation
-    # Maximale Länge: 80 bei MySQL, 32 bei SQLite (inkl. Farbcodes).
-    # Namen filtern: https://wiki.incredibleplugins.com/general/locale-and-config/messages#filter-swear-words-and-forbidden-names
+    # Maximum nation name length
+    # The maximum possible length is 80 when using MySQL and 32 when using SQLite (including color codes).
+    # How to filter names: https://wiki.incredibleplugins.com/general/locale-and-config/messages#filter-swear-words-and-forbidden-names
     max-length: 24
-    # Sollen Farben in Nationsnamen erlaubt sein?
-    # Wenn nachträglich deaktiviert, werden Farben aus bestehenden Nationen entfernt.
+    # Should colors be allowed in nation names?
+    # Disabling this option at a later time, will also remove color from existing nations.
     color: true
-    # Sollen Formatierungen wie Fett, Unterstrichen usw. in Nationsnamen erlaubt sein?
+    # Should nation names be allowed to include formatting, such as bold, underlined etc.?
     format: true
-    # Sollen Zahlen in Nationsnamen erlaubt sein?
+    # Should numbers be allowed in nation names?
     numbers: true
-    # Nur lateinische Buchstaben für Nationsnamen erlauben?
-    # Wenn aktiviert: Keine chinesischen Buchstaben usw.
+    # Allow only latin letters for nation names?
+    # If enabled: They won't be able to use chinese letters etc.
     only-latin: false
 
-    # Umbenennungseinstellungen
-    # Befehl: /nations rename
+    # Rename settings
+    # Command: /nations rename
     rename:
-      # Kosten für jede Namensänderung.
+      # Costs x each time the name is changed.
       costs_2: 10000.0
-      # Die Nation muss x warten, bevor sie den Namen wieder ändern kann.
-      # Bypass-Berechtigung: lands.bypass.cooldown.rename_nation
+      # Nation needs to wait x until they can change their name again.
+      # Bypass permission: lands.bypass.cooldown.rename_nation
       cooldown_rename_time: 1d
 
-  # Nations-Tag-Optionen
+  # Nation tag options
   tag:
-    # Tags aktivieren?
-    # HINWEIS: Diese Einstellung erfordert einen Server-Neustart.
+    # Enable tags?
+    # NOTE: This setting required server reload / restart.
     enabled_2: false
-    # Mindestlänge des Nations-Tags
+    # Minimum nation tag length
     min-length_2: 1
-    # Maximale Länge des Nations-Tags
-    # Maximale Länge: 80 bei MySQL, 32 bei SQLite (inkl. Farbcodes).
+    # Maximum nation tag length
+    # The maximum possible length is 80 when using MySQL and 32 when using SQLite (including color codes).
     max-length_2: 4
-    # Sollen Farben in Nationstags erlaubt sein?
-    # Wenn nachträglich deaktiviert, werden Farben aus bestehenden Nationen entfernt.
+    # Should colors be allowed in nation tags?
+    # Disabling this option at a later time, will also remove color from existing nations.
     color_2: false
-    # Sollen Formatierungen in Nationstags erlaubt sein?
+    # Should nation tags be allowed to include formatting, such as bold, underlined etc.?
     format_2: false
-    # Sollen Zahlen in Nationstags erlaubt sein?
+    # Should numbers be allowed in nation tags?
     numbers_2: false
-    # Nur lateinische Buchstaben für Nationstags erlauben?
-    # Wenn aktiviert: Keine chinesischen Buchstaben usw.
+    # Allow only latin letters for nation tags?
+    # If enabled: They won't be able to use chinese letters etc.
     only-latin_2: false
 
-# Land-bezogene Einstellungen
+# Land related settings
 land:
-  # Maximale Entfernung zwischen der Hauptstadt und dem einzuladenden Land festlegen.
-  # 0 = Option deaktivieren.
+  # Set a maximum distance between the capital and the land that they want to invite to their nation.
+  # 0 disables this option.
   max-distance: 0
 
 
-# Länder, die Teil einer Nation sind, Steuern zahlen lassen.
-# Wenn ein Land Mitglied einer Nation ist, zahlt es keinen Unterhalt mehr an den Server. Stattdessen
-# zahlt es Steuern an die Nation. Um Missbrauch zu verhindern, wird empfohlen, den Nationsunterhalt zu aktivieren,
-# damit die Nation je nach Größe Unterhalt an den Server zahlt.
-# HINWEIS: Diese Option ist an die Unterhalt-Option aus config.yml gebunden. Unterhalt muss in config.yml aktiviert sein.
+# Let lands, which are part of a nation pay taxes.
+# If a land is member of a nation they won't pay upkeep to the server anymore. Instead
+# they will pay taxes to the nation. To prevent abuse of this, it's recommended enabling nations upkeep,
+# so the nation needs to pay upkeep to the server depending on their size.
+# NOTE: This option is bound to the upkeep option from config.yml. Upkeep needs to be enabled in config.yml.
 taxes:
-  # Mindest-Steuerwert pro Chunk festlegen.
+  # Set the minimum tax value per chunk.
   min: 0
-  # Maximalen Steuerwert festlegen, den die Nation PRO CHUNK ihrer Länder setzen kann.
-  # HINWEIS: Gesamtzahlung pro Land = Landgröße (Chunks) * Kosten
+  # Set the maximum tax value the nation should be able to set PER CHUNK of their lands?
+  # NOTE: Final payment would be for each land: land size (chunks) * cost
   max: 5.0
-  # Den konfigurierten Land-Unterhalt als Mindestbetrag verwenden
-  # Soll ein Land aus der Nation entfernt werden, wenn es die Steuer nicht zahlen kann?
+  # Use the configured land upkeep as the minimum amount
+  # Should a land be removed from the nation, if it can't pay the tax?
   remove-land: true
-  # Separate Steuerlimits für Vasallenländer (unterworfene Mitglieder, die über das Vasallenkriegsziel hinzugefügt wurden). Der
-  # Oberherr setzt die Vasallensteuer mit dem Schalter im Nations-Steuermenü; sie wird auf diese Werte begrenzt.
+  # Separate tax limits for vassal lands (subjugated members added via the vassalage war goal). The
+  # overlord sets the vassal tax with the toggle in the nation taxes menu; it is clamped to these.
   vassal:
     min: 0
     max: 5.0
 
 
-# Eine Nation zahlen lassen, damit sie bestehen bleibt.
+# Let a nation pay money to the server in order to keep it up.
 upkeep:
   enabled_4: true
-  # Unterhaltskosten pro Chunk für eine Nation festlegen.
+  # Set the upkeep costs for a nation per chunk.
   per-chunk: 3.0
-  # Soll eine Nation gelöscht werden, wenn sie die Unterhaltskosten nicht zahlen kann?
-  # HINWEIS: Dadurch werden keine Länder gelöscht.
+  # Should a nation get deleted if it can't pay the upkeep costs?
+  # NOTE: This does not delete any lands.
   delete-nation: true
-  # Nation vom Unterhalt ausschließen, wenn sie kürzlich erstellt wurde?
-  # Schließt Nationen von ihrer ersten Unterhalts-Zahlung aus, wenn sie jünger als x sind.
+  # Exclude nation from upkeep, if it was recently created?
+  # This excludes nations from their first upkeep payment, if they're younger than x time.
   nopay_time: 2d

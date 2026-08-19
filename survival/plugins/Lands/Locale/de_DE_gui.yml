@@ -238,8 +238,8 @@ common:
         name: <t:error_heading>Nicht erlaubt
         lore:
         - <t:error>Das darfst du nicht tun.
-        - ' <t:decoration>• </t><t:regular>Der Besitzer von <v:object><t:regular> kann
-          deiner'
+        - ' <t:decoration>• </t><t:regular>Der Besitzer von <v:object><t:regular>
+          kann deiner'
         - '   Rolle dafür die Berechtigung geben.'
         - '   Flag: <t:regular_value><v:flag></t>'
       child_success_membership-request_sent:

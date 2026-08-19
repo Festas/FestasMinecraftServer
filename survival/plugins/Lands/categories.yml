@@ -10,27 +10,27 @@ land:
   categories:
     members:
       enabled: true
-      # Land-Besitzern erlauben, eine Option zum automatischen Annehmen neuer Mitgliedsanfragen zu aktivieren.
-      # Wenn false, wird die Option auch für bestehende Länder beim Server-Neustart deaktiviert.
+      # Allow land owners to enable a option to automatically accept new membership requests.
+      # If set to false, the option is also disabled for existing lands, when the server is restarted.
       allow-auto-accept: true
       name: '&eMitglieder gesucht ☺'
       description:
-        - '&7Dieses Land sucht aktiv'
-        - '&7nach neuen Mitgliedern.'
+      - '&7Dieses Land sucht aktiv'
+      - '&7nach neuen Mitgliedern.'
     shop:
       enabled: true
       name: '&cShop $'
       description:
-        - '&7Dieses Land enthält Shops.'
+      - '&7Dieses Land enthält Shops.'
     pvp:
       enabled: true
       name: '&4PvP-Arena ⚔'
       description:
-        - '&7Dieses Land verfügt über'
-        - '&7eine PvP-Arena.'
+      - '&7Dieses Land verfügt über'
+      - '&7eine PvP-Arena.'
     mobfarm:
       enabled: true
       name: '&9Mobfarm'
       description:
-        - '&7Dieses Land verfügt über'
-        - '&7eine Mobfarm.'
+      - '&7Dieses Land verfügt über'
+      - '&7eine Mobfarm.'

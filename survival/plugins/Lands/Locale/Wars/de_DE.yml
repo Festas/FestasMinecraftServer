@@ -25,8 +25,8 @@ general:
         mutual:
           sent: <t:regular>Sent war request to<t:entity_land> <v:0></t>. They need
             to accept it.
-          received: '<t:negative_value><v:0></t> <t:negative>hat eine Kriegsanfrage gesendet. Annehmen:
-            <t:cmd>/<v:1></t>'
+          received: '<t:negative_value><v:0></t> <t:negative>hat eine Kriegsanfrage
+            gesendet. Annehmen: <t:cmd>/<v:1></t>'
           denied: <t:regular>Mutual war declaration denied by<t:entity_land> <v:0></t>.
       surrender:
         sent: <t:negative>We surrendered to<t:negative_value> <v:0></t> before the
@@ -74,8 +74,8 @@ general:
       fight: <t:negative>Fight</t>
     mode:
       skirmish:
-        description: <t:regular>Erreiche<t:regular_value> <v:points></t> Punkte oder gewinne
-          by timeout.
+        description: <t:regular>Erreiche<t:regular_value> <v:points></t> Punkte oder
+          gewinne by timeout.
     goal:
       skirmish:
         outcome: <t:regular><v:winner> <t:regular>robs<t:cost> <v:robbery></t> from
@@ -96,8 +96,8 @@ general:
 wars:
   mode:
     skirmish:
-      description: <t:regular>Erreiche<t:regular_value> <v:points></t> Punkte oder gewinne
-        by timeout.
+      description: <t:regular>Erreiche<t:regular_value> <v:points></t> Punkte oder
+        gewinne by timeout.
   goal:
     skirmish:
       outcome: <t:regular><v:winner> <t:regular>robs money from <v:loser><t:regular>.
@@ -156,8 +156,8 @@ wars:
       place:
         wilderness: <t:error>You can't place a capture flag in the wilderness. <t:regular>You
           need to place it inside an enemy land.
-        overlap: <t:error>Eroberungsblöcke müssen so platziert werden, dass das Leuchtfeuer nicht
-          overlap with the wilderness.
+        overlap: <t:error>Eroberungsblöcke müssen so platziert werden, dass das Leuchtfeuer
+          nicht overlap with the wilderness.
         region: <t:error>Can't place capture flag here. <t:regular>It overlaps with
           a capture region of another capture flag.
         outskirts: <t:error>Can't place capture flag here. <t:regular>You must place
@@ -174,11 +174,12 @@ wars:
           team can place a capture flag again.
         max: <t:error>Your team already placed the maximum amount of<t:error_value>
           <v:max></t> simultaneously capture flags.
-        invader: '<title><t:success>Eroberungspunkt<subtitle><t:success>placed in enemy
-          land: <v:land>, <v:x>, <v:y>, <v:z><actionbar><t:success>Join them to capture
-          the area.'
-        defender: '<title><t:error>Eroberungspunkt<subtitle><t:error>placed in our land:
-          <v:land>, <v:x>, <v:y>, <v:z><actionbar><t:error>Go there to join the defenders.'
+        invader: '<title><t:success>Eroberungspunkt<subtitle><t:success>placed in
+          enemy land: <v:land>, <v:x>, <v:y>, <v:z><actionbar><t:success>Join them
+          to capture the area.'
+        defender: '<title><t:error>Eroberungspunkt<subtitle><t:error>placed in our
+          land: <v:land>, <v:x>, <v:y>, <v:z><actionbar><t:error>Go there to join
+          the defenders.'
       destroy:
         presence: <t:error>You currently can't break this capture flag. <t:regular>There
           are still<t:regular_value> <v:players></t> enemy players in this area.
@@ -219,10 +220,10 @@ wars:
       online: '<actionbar><t:error>Can''t capture: Min. of<t:error_value> <v:min></t>
         player(s) of land<t:error_value> <v:land></t> need to be online.'
       success:
-        invader: <title><t:success>Eroberungspunkt<subtitle><t:success>we captured <v:chunks>
-          Chunk(s) von <v:land><actionbar><t:success><b>+ <v:points> Punkte
-        defender: <title><t:error>Eroberungspunkt<subtitle><t:error>enemy captured <v:chunks>
-          chunk(s) of <v:land>
+        invader: <title><t:success>Eroberungspunkt<subtitle><t:success>we captured
+          <v:chunks> Chunk(s) von <v:land><actionbar><t:success><b>+ <v:points> Punkte
+        defender: <title><t:error>Eroberungspunkt<subtitle><t:error>enemy captured
+          <v:chunks> chunk(s) of <v:land>
   command:
     declare:
       not-allowed: <t:error>Du darfst keinen Krieg starten für<t:error_value> <v:object></t>.
@@ -239,19 +240,19 @@ wars:
       nation: <t:error>You can't declare war against<t:error_value> <v:object></t>.
         <t:regular>Sie sind Teil derselben Nation<t:entity_nation> <v:nation></t>.
       min-balance:
-        attacker: '<t:error>Diese Kriegserklärung kann nicht gesendet werden. <t:regular>Die Angreifer
-          <v:object> <t:regular>benötigen ein Mindestguthaben von<t:limit> <v:min></t> in
-          um einen Krieg zu beginnen. Zahle Geld in deine Landbank ein: <hover:show_text:"<t:regular>Click
-          hier, um <v:min> in deine Landbank einzuzahlen."><click:run_command:"/<v:cmd>"><t:cmd>/<v:cmd>
-          </t><java><t:click>[CLICK]</t></java></click></hover>'
+        attacker: '<t:error>Diese Kriegserklärung kann nicht gesendet werden. <t:regular>Die
+          Angreifer <v:object> <t:regular>benötigen ein Mindestguthaben von<t:limit>
+          <v:min></t> in um einen Krieg zu beginnen. Zahle Geld in deine Landbank
+          ein: <hover:show_text:"<t:regular>Click hier, um <v:min> in deine Landbank
+          einzuzahlen."><click:run_command:"/<v:cmd>"><t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>'
         defender: <t:error>Das Guthaben der Verteidiger <v:object> <t:error>ist zu
-          niedrig. <t:regular>Du kannst nur andere angreifen, die ein Mindestguthaben von<t:limit>
-          <v:min></t>.
+          niedrig. <t:regular>Du kannst nur andere angreifen, die ein Mindestguthaben
+          von<t:limit> <v:min></t>.
       min-chunks:
-        attacker: '<t:error>Diese Kriegserklärung kann nicht gesendet werden. <t:regular>Die Angreifer
-          <v:object> <t:regular>benötigen mindestens<t:limit> <v:min></t> chunks
-          um einen Krieg zu beginnen. Claime: <hover:show_text:"<t:regular>Klicke hier,
-          um zu claimen."><click:run_command:"/<v:cmd>"><t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>'
+        attacker: '<t:error>Diese Kriegserklärung kann nicht gesendet werden. <t:regular>Die
+          Angreifer <v:object> <t:regular>benötigen mindestens<t:limit> <v:min></t>
+          chunks um einen Krieg zu beginnen. Claime: <hover:show_text:"<t:regular>Klicke
+          hier, um zu claimen."><click:run_command:"/<v:cmd>"><t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>'
         defender: <t:error>Die Anzahl der Claims der Verteidiger <v:object> <t:error>ist
           zu niedrig. <t:regular>You can only attack others that have a minimum amount
           of<t:limit> <v:min></t> chunks.
@@ -507,8 +508,8 @@ lands:
           try again after the war is over.
   message:
     blacklist:
-      war: <t:error>Du darfst diesen Befehl nicht nutzen, während du beteiligt bist an
-        a war.
+      war: <t:error>Du darfst diesen Befehl nicht nutzen, während du beteiligt bist
+        an a war.
     capture:
       dropped: <t:error>Some capture flags lie on the ground. <t:regular>There was
         no space left in your inventory.

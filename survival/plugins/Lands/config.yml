@@ -1,686 +1,690 @@
-# Ressourcen-Seite: https://www.spigotmc.org/resources/53313
+# Resource page: https://www.spigotmc.org/resources/53313
 # Discord: https://discord.incredibleplugins.com
 
-# Bei Problemen bitte im Discord-Support-Server oder per Privatnachricht melden.
-# Fehler werden in der Regel beim nächsten Update behoben, wenn sie gemeldet werden.
-# Die IDs in einigen Einstellungsnamen (_<Zahl>) können ignoriert werden.
+# If you encounter any issues, please report them
+# to the Discord support server or through a private message.
+# Bugs or problems are usually fixed at the next update, if you report them.
+# You can ignore the IDs in some setting names (_<number>).
 #
-# Wenn du ein Plugin suchst, das Chunks beim Entbeanspruchen oder in der Wildnis regeneriert,
-# wird das WildRegeneration-Plugin empfohlen: https://polymart.org/resource/wildregeneration.2096
+# If you're looking for a plugin to regenerate chunks at unclaim or wilderness, it's recommended
+# to use the WildRegeneration plugin: https://polymart.org/resource/wildregeneration.2096
 
 
 ########################################
-# BASISMODUS
+# BASIC MODE
 ########################################
-# Wenn aktiviert, deaktiviert Lands erweiterte Funktionen wie Kriege, Nationen, Unterhalt und Steuern.
-# Das Aktivieren dieser Option deaktiviert alle erweiterten Funktionen. Es werden nur die
-# grundlegenden Funktionen aktiviert. Diese Option ist für Server gedacht, die ein sehr einfaches
-# Setup wünschen und Spielern nur das Beanspruchen und Vertrauen ermöglichen wollen.
-# Das Aktivieren erzwingt die Deaktivierung einiger Funktionen, die nicht wieder aktiviert werden können,
-# solange der Basismodus aktiv ist.
-# HINWEIS: Diese Einstellung erfordert einen Server-Neustart/-Neustart.
+# If enabled, Lands will disable advanced features, like wars, nations, upkeep and taxes.
+# Enabling this option will disable all advanced features. Meaning that only the bare
+# minimum of features will be enabled. This option is meant for servers that want to
+# have a very simple setup and only want players to use the claiming and trusting players
+# feature of the plugin. Enabling this option will forcefully disable some features, that
+# can't be turned back on as long as basic-mode is enabled.
+# NOTE: This setting requires server reload / restart.
 basic-mode: false
 
 
 ########################################
-# HAUPTFUNKTIONEN
+# MAJOR FEATURES
 ########################################
-# Hier können wichtige Funktionen schnell ein-/ausgeschaltet werden.
-# HINWEIS: Diese Einstellungen erfordern einen Server-Neustart/-Neustart.
+# Here you can quickly toggle some major features.
+# NOTE: These settings require server reload / restart.
 features:
-  # Der Unterhalt kann im Abschnitt "upkeep" (diese Datei) weiter konfiguriert werden.
+  # Ukeep can be further configured in the upkeep section (this file).
   upkeep: true
-  # Steuern können im Abschnitt "taxes" (diese Datei) weiter konfiguriert werden.
-  # Für Steuern werden Vault und ein Economy-Plugin benötigt, das Vault unterstützt.
+  # Taxes can be further configured in the taxes section (this file).
+  # For taxes to work, Vault and a economy plugin, that supports Vault, needs to be installed.
   taxes: false
-  # Länder und Nationen können Beziehungen haben, z. B. Verbündete, Feinde und Neutrale.
-  # Wenn diese Option deaktiviert wird, werden alle bestehenden Beziehungen gelöscht.
-  # Nützlich in Kombination mit Kriegen, aber auch ohne Kriege verwendbar.
+  # Lands and nations can be in relations, such as ally, enemy and neutral.
+  # If you disable this option, all existing relations will be deleted.
+  # This is useful in combination with wars. However, you can also use it with wars disabled.
   relations: true
 
 
-# Allgemeine Optionen
+# General options
 general:
-  # Welten, in denen Spieler Gebiete beanspruchen können. Mit * werden alle Welten hinzugefügt.
-  # Optional können Parameter gesetzt werden: ob normale Spieler (ohne Admin-Berechtigung) beanspruchen dürfen
-  # und die minimale/maximale Beanspruchungshöhe. Format: <weltname>:<beanspruchen>:<min-höhe>:<max-höhe>
-  # HINWEIS: Die Mindesthöhe kann nicht kleiner als die Server-Mindesthöhe sein, und die Maximalhöhe nicht größer als die Server-Maximalhöhe. Admin-Länder werden immer maximal hoch beansprucht.
-  # HINWEIS: Diese Einstellung erfordert einen Server-Neustart.
-  # Beispiele:
-  #   'world' -> Maximale Beanspruchungshöhe, Beanspruchen für Spieler aktiviert.
-  #   'world:true:30:319' -> Beanspruchungshöhe von 30 bis 319, Beanspruchen für Spieler aktiviert.
-  #   'world:false' -> Nur Server-Admins können in dieser Welt beanspruchen (z. B. für Admin-Länder).
+  # Worlds where players should be able to claim. You can add all worlds by adding * to the list.
+  # You can also set optional parameters such as, if claiming should be enabled for regular players without admin perms (permission: lands.admin.disabled-features)
+  # and the minimum and maximum claim height. The format is a follows: <worldname>:<claiming>:<min-height>:<max-height>
+  # NOTE: Minimum height can't be lower than your server's min height and maximum height can't be higher than your servers maximum height. The claim height of admin lands will always be maxed out.
+  # NOTE: This setting requires server reload / restart.
+  # Examples:
+  #   'world' -> This results in the max claim height and claiming enabled for players.
+  #   'world:true:30:319' -> This results in a claim height of 30 to 319 and claiming enabled for players.
+  #   'world:false' -> Only server admins can claim in this world to create admin lands etc.
   claim-worlds_list:
     - 'world'
     - 'world_nether'
     - 'world_the_end'
     - 'town'
 
-  # Standard: Englisch (en-US) – kein Download erforderlich.
-  # Legt die Standardsprache fest. Mehrere Sprachdateien können im "Language"-Ordner des Plugins abgelegt werden,
-  # um abhängig vom Spieler-Locale unterschiedliche Sprachen anzuzeigen.
-  # Community-Übersetzungen sind im Discord verfügbar: https://discord.incredibleplugins.com
-  # Zur Übersetzungssuche /translations im Discord-Server ausführen.
-  # Der Übersetzungsname sollte dem offiziellen Sprachcode entsprechen (https://www.oracle.com/java/technologies/javase/jdk8-jre8-suported-locales.html).
-  # Diese Option beeinflusst auch Trennzeichen für Währungsformatierungen.
+  # Default: English (en-US) - no download required.
+  # This defines the default language. You can place multiple locales in the plugin's "Language" folder to display different locales depending on the player's locale.
+  # You can access translations maintained by the community in our Discord: https://discord.incredibleplugins.com
+  # To access translations, other than en-US, execute /translations in the Discord server.
+  # The translation name should match the official language code (https://www.oracle.com/java/technologies/javase/jdk8-jre8-suported-locales.html).
+  # This option also affects the grouping and decimal separator for currency formatting.
   language: 'de_DE'
-  # Standardsprache erzwingen? Änderungen an Sprachdateien werden ignoriert, es wird immer die Standardsprache verwendet.
-  # Nützlich um immer Korrekturen (z. B. Rechtschreibfehler) der Standardsprache zu erhalten.
-  # Nur verwenden, wenn die Sprache "en-US" ist – für andere Sprachen funktioniert dies nicht.
+  # Force default language? This will make changes to language files impossible and will always use the default.
+  # This has the benefit of always receiving fixes, such as spelling mistakes, for the default locale.
+  # You should only use this option if your language matches "en-US". For other locales it won't work.
   force-default: false
 
-  # Soll das Land bearbeitet werden, auf dem der Spieler steht, statt des Landes aus /lands edit?
-  # Für /lands claim muss das Beanspruchungsland weiterhin mit /lands edit gesetzt werden.
+  # Edit the land you're standing in instead of the land from /lands edit?
+  # For /lands claim you will still need to set the claim land with /lands edit.
   edit-by-loc: false
 
-  # Veraltet: Stattdessen die neue Limits-Datei verwenden: https://wiki.incredibleplugins.com/general/locale-and-config/limits
-  # Wenn aktiviert, werden Limit-Berechtigungen addiert statt den höchsten Wert zu nehmen.
-  # Beispiel: Ein Spieler hat lands.chunks.5 und lands.chunks.2.
-  #          Aktiviert: Ergibt ein Limit von 7 Chunks.
-  #          Deaktiviert: Ergibt ein Limit von 5 Chunks.
+  # Deprecated: Use the new limits file instead: https://wiki.incredibleplugins.com/general/locale-and-config/limits
+  # If enabled, limit permissions will be combined instead of just taking the highest value.
+  # Example: A player has the permission lands.chunks.5 and lands.chunks.2.
+  #          If enabled: This will result in a limit of 7 chunks.
+  #          If disabled: This will result in a limit of 5 chunks.
   permission-stacking: false
 
-  # Spielern beim ersten Beitreten Gegenstände geben.
-  # Das Aussehen der Gegenstände kann in der GUI-Sprachdatei bearbeitet werden.
+  # Give players items at first join.
+  # The item appearance can be edited in the GUI language file.
   first-join-items:
-    # Das Auswahlwerkzeug ermöglicht das Beanspruchen.
+    # The selection tool allows them to claim.
     selection:
-      # Slot oder Menge kleiner als 1 = kein Gegenstand beim ersten Beitreten.
+      # Setting the slot or the amount of an item to a value lower than 1, will not give the item on first join.
       slot_4: 1
       amount: 1
-      # Wenn deaktiviert, können Spieler diesen Gegenstand überhaupt nicht verwenden.
+      # If disabled, players won't be able to use this item at all.
       usage: true
-    # Das Info-Werkzeug zeigt Informationen über einen Anspruch beim Anklicken.
+    # The info tool shows information about a claim when clicking on it.
     info:
       slot_5: 2
       amount_2: 1
       usage_2: true
-    # Der Lagerblock erstellt beim Platzieren einen temporären Anspruch.
+    # The camp block creates a temporary claim at placement.
     camp:
       slot_6: 3
       amount_3: 1
       usage_3: true
-    # Anspruchsblöcke beanspruchen dauerhaft den Chunk, in dem sie platziert wurden, bis der Spieler den Chunk freigibt.
+    # Claim blocks claim the chunk they were placed into permanently, until the player unclaims the chunk.
     claim_block:
       slot_7: 4
-      # Beansprucht einen bestimmten Chunk-Radius.
-      # 0 = nur der aktuelle Chunk
-      # 1 = (radius+1)² = 9 Chunks
+      # Claims a specific radius of chunks.
+      # 0 = only the current chunk
+      # 1 = (radius+1)² = 9 chunks
       claim-radius_2: 1
       amount_4: 1
       usage_4: true
 
-  # Wenn false, werden Chat-Nachrichtenteile, die in [V]text[/T] eingeschlossen sind, nur an Spieler
-  # mit der Berechtigung lands.admin.verbose gesendet. Diese Einstellung gilt nur für Chat-Nachrichten.
+  # If false, chat message parts that are enclosed by [V]text[/T] will only be sent to players
+  # that have the lands.admin.verbose permission. This setting only applies to chat messages.
   verbose: false
 
-  # Das Plugin ruft Spielerskins und -namen von Mojang ab.
-  # Wenn deaktiviert, können Spielerskins nicht in Menüs angezeigt werden, und Namensänderungen
-  # werden erst beim nächsten Beitritt des Spielers übernommen.
+  # The plugin fetches player skins and names from Mojang.
+  # If disabled, player skins can't be displayed in the menus and name changes will only apply, when they join the server.
   fetch-skins-names: true
 
-  # Datumsformat
-  # MM: Monat
-  # dd: Tag des Monats
-  # yyyy: Jahr
-  # hh: Stunden
-  # mm: Minuten
-  # ss: Sekunden
-  # HINWEIS: Diese Einstellungen erfordern einen Server-Neustart.
+  # Date format
+  # MM: Month
+  # dd: Day of month
+  # yyyy: Year
+  # hh: hours
+  # mm: minutes
+  # ss: seconds
+  # NOTE: These settings require server reload / restart.
   date-format:
-    # Zeitzone für Datumsausgaben festlegen.
-    # Beispiel: Europe/Berlin oder GMT+1:00
-    # Zeitzonen-Liste: https://timezonedb.com/time-zones
-    # Wenn leer, wird die Zeitzone des Servers verwendet.
+    # Set the time zone for date text outputs.
+    # Example: America/Los_Angeles or GMT-8:00
+    # List of time zones: https://timezonedb.com/time-zones
+    # If empty, it uses the time zone of the machine your server is running on.
     time-zone: ''
-    # Allgemeines Format für Einladungen usw.
-    # Beispiele:
-    #   Amerikanisches 12-Stunden-Format (a = 12-Stunden): MM/dd/yyyy hh:mm a
-    #   Deutsches 24-Stunden-Format: dd.MM.yyyy hh:mm
+    # General format for invites etc.
+    # Examples:
+    #   American 12 hour format (a = 12 hour format): MM/dd/yyyy hh:mm a
+    #   German 24 hour format: dd.MM.yyyy hh:mm
     general: 'dd.MM.yyyy HH:mm'
-    # Format für Neuigkeiten im Land-Menü (Posteingang).
+    # Format for news messages in the land menu (inbox).
     inbox: 'dd.MM.'
-    # Format, wenn nur eine Uhrzeit angezeigt wird.
-    # Beispiele:
-    #   Amerikanisches 12-Stunden-Format (a = 12-Stunden): hh:mm a
-    #   Deutsches 24-Stunden-Format: hh:mm
+    # Format used when only a time displayed.
+    # Examples:
+    #   American 12 hour format (a = 12 hour format): hh:mm a
+    #   German 24 hour format: hh:mm
     time_2: 'HH:mm'
 
-  # Format aller wirtschaftsbezogenen Anzeigen festlegen.
+  # Set the format of all economy related displays.
   # Info: https://docs.oracle.com/javase/7/docs/api/java/text/DecimalFormat.html
-  # HINWEIS: Diese Einstellung erfordert einen Server-Neustart.
+  # NOTE: This setting requires server reload / restart.
   eco-format:
-    # Empfohlenes Format für Gegenstands-Economy und Spieler-Erfahrung: "# Goldbarren" oder "# Erfahrung"
+    # Recommended format for item economy and player experience: "# gold ingot(s)" or "# experience"
     normal: '#,##0.00€'
-    # Das Kurzformat verwendet das normale Format, wenn der Wert kleiner als 1000 ist.
-    # Dieses Format wird nur dort verwendet, wo wenig Platz ist, z. B. auf Schildern.
-    # Konvertierung: 1000000000 = 1G, 1000000 = 1M, 1000 = 1k ({value} = Zahl, {unit} = Einheit)
+    # The short format will use the normal format if the value is lower than 1000.
+    # This format is only used in cases where there is not much space, like on signs.
+    # This will convert balances like the following:
+    # 1000000000 = 1B whereas {value} = 1 and {unit} = B
+    # 1000000 = 1M
+    # 1000 = 1k
     short-unit: '{value}{unit}€'
 
-  # Sollen Spieler mit der Berechtigung (lands.admin) über neue Updates informiert werden?
+  # Should players with the permission (lands.admin) be notified that there is a new update available?
   upd-notify: false
-  # Bedrock-Formulare für Bedrock-Spieler anbieten statt der normalen GUI?
+  # Provide bedrock forms for bedrock players, instead of the normal GUI?
   bedrock-forms: true
-  # Hologramm-Plugin festlegen. Das Plugin muss installiert sein. Wenn leer, entscheidet das Plugin.
-  # Unterstützte Plugins: CMI, DecentHolograms, FancyHolograms, HolographicDisplays
+  # Specify a hologram plugin that should be used for holograms. The plugin needs to be installed. If empty, the plugin decides which to use.
+  # Supported plugins: CMI, DecentHolograms, FancyHolograms, HolographicDisplays
   hologram-provider: ""
 
-# Allgemeine Optionen für wirtschaftliche Aufgaben (Steuern, Unterhalt und Nationsunterhalt).
-# Jede Aufgabe hat einen eigenen Abschnitt in dieser Datei und in nations.yml.
-# Diese Optionen erfordern einen Server-Neustart.
+# General options for economic tasks, that apply to taxes, upkeep and nation upkeep.
+# Each task has its own section, in this file and nations.yml, with specified options.
+# These options require server reload / restart.
 economic:
-  # Standardkonfiguration: Steuern, Unterhalt und Nationsunterhalt werden täglich um Mitternacht eingezogen.
+  # Default configuration: taxes, upkeep and nation upkeep are collected every day at midnight.
   interval:
-    # Anzahl der Tage zwischen den Zahlungen.
-    # Beispiel:
-    # 1 = täglich zur angegebenen Uhrzeit.
-    # 2 = jeden zweiten Tag zur angegebenen Uhrzeit.
+    # Set amount of days between each payment.
+    # Example:
+    # 1 = executes every day at the time specified at the top of this section.
+    # 2 = executes every second day at the time specified at the top of this section.
     days_2: 7
-    # Tageszeit für den Einzug. Steuern, Unterhalt und Nationsunterhalt werden nach x Tagen zu dieser Zeit eingezogen.
-    # Format: 24-Stunden-Format.
+    # Set the time of day. Collect taxes, upkeep and nation upkeep at this time after x days.
+    # Format: 24 hour format.
     time: '04:00:00'
-    # Mindestzeit zwischen einem Änderungsversuch von Steuer/Unterhalt und der nächsten Einziehung.
+    # Set the minimum time between a player's attempt to change the tax or upkeep and the next collection.
     change-cooldown_time: 2d
 
-  # Land oder Nation benachrichtigen, wenn die Mittel für den Unterhalt nicht ausreichen.
-  # Die konfigurierte Zeit definiert einen Zeitraum vor der eigentlichen Unterhaltseinziehung.
-  # Beispiel: 12h = Länder und Nationen frühestens 12 Stunden vor der Einziehung benachrichtigen.
+  # Altert the land or nation, if their funds are insufficient for upkeep.
+  # The configured time defines a period before the actual upkeep collection.
+  # Example: 12h = alert lands and nations at earliest 12 hours before the upkeep collecting, if their funds are insufficient.
   insufficient-altert_time: 2d
 
 
-# Unterhalt kann im Abschnitt "features" umgeschaltet werden.
-# Unterhalt = Länder zahlen einen definierten Betrag an den Server, um ihr beanspruchtes Land zu behalten.
-# Steuern = Vertraute Spieler zahlen in einem definierten Intervall Steuern.
+# Upkeep can be toggled in the "features" section.
+# Upkeep = Lands pay a defined amount of money to the server in order to keep their claimed land.
+# Taxes = Trusted players pay a defined amount of tax per defined interval.
 upkeep:
-  # Wie viel soll ein Land pro Chunk zahlen?
-  # HINWEIS: Gesamtzahlung = Landgröße (Chunks) * Kosten
+  # How much should a land pay per chunk?
+  # NOTE: Final payment would be land size (chunks) * cost
   per-chunk: 3.0
-  # Sollen die zuletzt beanspruchten Chunks, für die das Land nicht zahlen konnte, gelöscht werden?
-  # Beispiel: Das Land hat 10 beanspruchte Chunks, kann aber nur für 6 zahlen. Die 4 zuletzt beanspruchten Chunks werden gelöscht.
-  # Dies setzt sich jeden Unterhalts-Zyklus fort, bis keine Ansprüche mehr übrig sind.
+  # Should the last claimed chunks, which the land could not pay for, be deleted?
+  # Example: The land has 10 claimed chunks, but it can pay the upkeep only for 6. So the 4 last claimed chunks will be deleted.
+  # This continues each upkeep cicle until no claims are left.
   unclaim: false
-  # Land vom Unterhalt ausschließen, wenn es kürzlich erstellt wurde?
-  # Verhindert, dass kürzlich erstellte Länder einen Chunk verlieren, wenn der Besitzer/die Landbank nicht genug Geld hat (bei aktiviertem delete-chunk).
-  # Nur Länder, die älter als x Sekunden sind, müssen zahlen.
+  # Exclude land from upkeep, if it was recently created?
+  # This will prevent recently created lands getting a chunk deleted, if the land owner / land bank doesn't have enough money (and if delete-chunk enabled).
+  # So only lands, which are older than x seconds, will need to pay this.
   nopay_time: 2d
-  # Landmitglieder, die Geld einzahlen können, an bevorstehende Unterhaltskosten erinnern, solange das Geld nicht ausreicht.
-  # Verhilft Spielern, den Überblick zu behalten und keine Ansprüche oder Mitgliedschaft zu verlieren.
-  # Sendet in der konfigurierten Zeit innerhalb des "insufficient-altert_time" eine Erinnerung.
+  # Remind land members, which can deposit money into their lands, about upcoming upkeep payments until they have enough money to pay it.
+  # This helps your players lands keeping track of it and not loosing claims or their membership in the nation.
+  # This will send a reminder ever configured period while in "insufficient-altert_time" from above.
   upkeep-reminder_time: 1h
 
 
-# Steuern können im Abschnitt "features" umgeschaltet werden.
-# Steuern = Vertraute Spieler zahlen in einem definierten Intervall Steuern.
-# Miete = Spieler können einen Bereich ihrer Wahl mieten, ohne vertraut werden zu müssen. Sie entscheiden selbst wie lange.
-# Das Intervall kann im Abschnitt "economic" konfiguriert werden.
+# Taxes can be toggled in the "features" section.
+# Taxes = Trusted players pay a defined amount of tax per defined interval.
+# Rent = The players can rent an area of their choice without needing to get trusted. They can decide how long they want to rent it.
+# The interval can be configured in the "economic" section.
 taxes:
-  # Minimalen Steuerwert festlegen.
+  # Set the minimum tax value.
   min_2: 0
-  # Maximalen Steuerwert für einen einzelnen Bereich festlegen (ohne Teilbereiche = Standard-Bereich).
+  # Set max tax value for a single area (if a land has no sub areas then this will be the default area)
   max_3: 10.0
-  # Landmitglied aus dem Bereich entfernen, wenn es die Steuern nicht zahlen kann?
+  # Untrust a land member from the area if he couldn't pay the taxes?
   untrust-member: true
-  # Spieler über bevorstehende Steuerzahlungen informieren.
-  # Standard: Lands sendet alle zwei Stunden eine Benachrichtigung, wenn das Geld nicht ausreicht.
-  # Deaktivieren: 0
+  # Announce upcoming tax payments to players.
+  # Default: Lands will sent a player every two hours a notice, if they don't have enough to pay their taxes.
+  # Disable: 0
   taxes-announcement_time: 2h
 
 
-# Allgemeine Teleportationsoptionen.
-# Befehlsspezifische Optionen befinden sich in den jeweiligen Abschnitten.
+# General teleportation options.
+# Command specific teleportation options can be found in their sections.
 teleport:
-  # Allgemeine Teleportationskosten. Bestimmte Funktionen können spezifische Optionen haben, die dies überschreiben.
+  # General teleportation cost. Some features might have specific options, which override this.
   costs_9: 0
-  # Teleportationskosten für Spieler, die dem Server zum ersten Mal beigetreten sind, auf 0 setzen.
-  # Beispiel: 1d = Spieler, die vor 23 Stunden beigetreten sind, zahlen keine Teleportationskosten.
+  # Set the cost of any teleportation to 0 for players that joined the server for the first time.
+  # You can define a time span here. Example: 1d = players that joined the server 23 hours ago, won't pay for any teleportation.
   first-join_time: 2h
-  # Wartezeit
-  # Zeiteinheit: Sekunden
+  # Waittime
+  # Timeunit: seconds
   wait: 3
 
 
-# Ein Land besteht aus Chunks, die mit dem Befehl /claim oder mit dem Anspruchswerkzeug beansprucht werden.
-# Dieser Abschnitt und der "chunk"-Abschnitt enthalten Beanspruchungsoptionen.
+# A land consists of a collection of chunks which are claimed via the /claim command or with the claim tool.
+# This section and the "chunk" section contain claiming options.
 land:
-  # Landerstellung
+  # Land creation
   creation:
-    # Die Erstellung eines Landes (/lands create) erzwingen, bevor Chunks beansprucht werden können.
-    # Wenn false, erstellt Lands automatisch ein Land mit dem Spielernamen.
-    # Der Name kann im Land-Menü oder mit /lands rename <name> geändert werden.
+    # Force the creation of a land (/lands create) before a land is able to claim chunks.
+    # If set to false, Lands will auto generate a land with the name of the player.
+    # The name can be changed in the land menu or with /lands rename <name>.
     force: false
-    # Kosten für die Erstellung eines Landes (/lands create).
-    # HINWEIS: Enthält auch einen Chunk-Anspruch, der beim Erstellen automatisch beansprucht wird.
-    # HINWEIS: SPIELER MIT DER BERECHTIGUNG lands.free.lands.<zahl> KÖNNTEN DAS UMGEHEN.
-    #   Mehr Infos: https://wiki.incredibleplugins.com/lands/permissions/permissions#numbered-permissions
+    # The cost to create a land (/lands create).
+    # NOTE: This includes also one chunk claim, which will be claimed automatically on land creation.
+    # NOTE: PLAYERS WITH THE lands.free.lands.<number> PERMISSION MIGHT BYPASS THAT.
+    #   More info: https://wiki.incredibleplugins.com/lands/permissions/permissions#numbered-permissions
     costs: 2500.0
     mainblock:
-      # Platzierung neuer Hauptblöcke umschalten.
-      # Bestehende werden nicht entfernt, können aber manuell gelöscht werden.
+      # Toggle the placement of new mainblocks.
+      # This doesn't remove existing ones. However, existing ones can manually be deleted.
       enabled_3: true
-      # Kosten für die Neupositionierung des Hauptblocks nach der Landerstellung.
+      # Cost to repositon the mainblock after land creation.
       reposition-costs: 0
 
-    # Einen Chunk-Radius bei der Landerstellung beanspruchen. Diese initialen Ansprüche kosten nichts.
-    # HINWEIS: 0 = nur der Chunk, in dem der Spieler gerade steht.
-    # HINWEIS: -1 = keine Chunks werden beansprucht.
-    # HINWEIS: Dieser Wert kann nicht größer als die Server-Sichtweite sein.
+    # Claim a radius of chunks at land creation. These initial claims won't cost the land anything.
+    # NOTE: 0 = only the chunk in which the player currently stands.
+    # NOTE: -1 = no chunks will be claimed
+    # NOTE: This value can't be higher than your servers view distance.
     claim-radius: 0
-    # Neuen Ländern eine zufällige Farbe für ihren Namen geben?
-    # HINWEIS: Hat keine Wirkung, wenn land.name.color_2 auf false gesetzt ist.
+    # Should new lands get a random color for their name?
+    # NOTE: This option has no effect if land.name.color_2 is set to false.
     random-color: false
 
-  # Land-Namensoptionen
+  # Land name options
   name:
-    # Sollen Leerzeichen in Landnamen erlaubt sein?
-    # Leerzeichen werden durch einen Unterstrich ersetzt, wenn der Name als Befehlsparameter angezeigt wird.
-    # Wenn diese Option nachträglich deaktiviert wird, werden Leerzeichen aus bestehenden Ländern entfernt.
-    # HINWEIS: Diese Einstellung erfordert einen Server-Neustart.
+    # Should spaces be allowed in land names?
+    # Spaces will be replaced with an underscore, when being displayed as a command parameter.
+    # Disabling this option at a later time, will also remove spaces from existing lands.
+    # NOTE: This setting required server reload / restart.
     spaces: false
-    # Mindestlänge des Landnamens
+    # Minimum land name length
     min-length: 5
-    # Maximale Landnamenlänge
-    # Maximale Länge: 80 bei MySQL, 32 bei SQLite (inkl. Farbcodes).
-    # Namen filtern: https://wiki.incredibleplugins.com/general/locale-and-config/messages#filter-swear-words-and-forbidden-names
+    # Maximum land name length
+    # The maximum possible length is 80 when using MySQL and 32 when using SQLite (including color codes).
+    # How to filter names: https://wiki.incredibleplugins.com/general/locale-and-config/messages#filter-swear-words-and-forbidden-names
     max-length: 24
-    # Sollen Farben in Landnamen erlaubt sein?
-    # Wenn nachträglich deaktiviert, werden Farben aus bestehenden Ländern entfernt.
+    # Should colors be allowed in land names?
+    # Disabling this option at a later time, will also remove color from existing lands.
     color_2: true
-    # Sollen Formatierungen wie Fett, Unterstrichen usw. in Landnamen erlaubt sein?
+    # Should land names be allowed to include formatting, such as bold, underlined etc.?
     format: true
-    # Sollen Zahlen in Landnamen erlaubt sein?
+    # Should numbers be allowed in land names?
     numbers: true
-    # Nur lateinische Buchstaben für Landnamen erlauben?
-    # Wenn aktiviert: Keine chinesischen Buchstaben usw.
+    # Allow only Latin letters for land names?
+    # If enabled: They won't be able to use Chinese letters etc.
     only-latin: false
 
-    # Umbenennungseinstellungen
-    # Befehl: /lands rename
+    # Rename settings
+    # Command: /lands rename
     rename:
-      # Kosten für jede Namensänderung.
+      # Costs to rename a land.
       costs_5: 10000.0
-      # Cooldown für die Umbenennung.
-      # Bypass-Berechtigung: lands.bypass.cooldown.rename_land
+      # Cooldown to rename the land.
+      # Bypass permission: lands.bypass.cooldown.rename_land
       cooldown_rename_time: 1d
 
-  # Land-Tag-Optionen
+  # Land tag options
   tag:
-    # Tags aktivieren?
-    # HINWEIS: Diese Einstellung erfordert einen Server-Neustart.
+    # Enable tags?
+    # NOTE: This setting required server reload / restart.
     enabled_8: false
-    # Mindestlänge des Land-Tags
+    # Minimum land tag length
     min-length_2: 1
-    # Maximale Land-Tag-Länge
-    # Maximale Länge: 80 bei MySQL, 32 bei SQLite (inkl. Farbcodes).
+    # Maximum land tag length
+    # The maximum possible length is 80 when using MySQL and 32 when using SQLite (including color codes).
     max-length_2: 4
-    # Farben in Land-Tags erlauben?
-    # Wenn nachträglich deaktiviert, werden Farben aus bestehenden Ländern entfernt.
+    # Should colors be allowed in land tags?
+    # Disabling this option at a later time, will also remove color from existing lands.
     color_6: false
-    # Formatierungen wie Fett, Unterstrichen usw. in Land-Tags erlauben?
+    # Should land tags be allowed to include formatting, such as bold, underlined etc.?
     format_2: false
-    # Zahlen in Land-Tags erlauben?
+    # Should numbers be allowed in land tags?
     numbers_2: false
-    # Nur lateinische Buchstaben für Land-Tags erlauben?
-    # Wenn aktiviert: Keine chinesischen Buchstaben usw.
+    # Allow only latin letters for land tags?
+    # If enabled: They won't be able to use Chinese letters etc.
     only-latin_2: false
 
-  # Optionen für den Land-Eingangstitel
+  # Land enter title options
   title:
-    # Eine separate Nachricht (Aktionsleiste) mit dem aktuellen Land oder der Nation dauerhaft anzeigen, solange der Spieler im Land ist?
-    # Die Nachricht verschwindet, wenn der Spieler in die Wildnis geht oder sich nicht mehr bewegt.
-    # HINWEIS: Diese Einstellung erfordert einen Server-Neustart.
+    # Display a separate (actionbar) message with the current land or nation for the whole time a player is inside a land or nation?
+    # The message disappears if the player goes into wilderness or stops moving.
+    # NOTE: This setting required server reload / restart.
     permanent-msg: true
-    # Sollen Spieler PlaceholderAPI-Platzhalter im Land-Titel verwenden können?
+    # Should players be allowed to use PlaceholderAPI placeholders, in the land title?
     placeholderapi:
-      # Sollen Spieler PlaceholderAPI-Platzhalter von Lands verwenden können?
-      # PlaceholderAPI muss nicht installiert sein.
+      # Should players be allowed to use PlaceholderAPI placeholders provided by Lands?
+      # This does not require PlaceholderAPI to be installed.
       lands: true
-      # Sollen Spieler PlaceholderAPI-Platzhalter von Drittanbieter-Plugins und Lands verwenden können?
-      # Erfordert eine installierte PlaceholderAPI.
+      # Should players be allowed to use PlaceholderAPI placeholders provided by 3rd party plugins and Lands?
+      # This requires PlaceholderAPI to be installed.
       3rd-party: false
 
-  # Minimale euklidische Entfernung in Chunks (16 Blöcke). Spieler können in dieser Pufferzone nicht beanspruchen,
-  # außer wenn ihre Rolle das LAND_CLAIM_BORDER-Flag im benachbarten Land hat.
+  # Set the minimum Euclidean distance in chunks (16 blocks). Players won't be able to claim in this buffer zone,
+  # unless their role has the LAND_CLAIM_BORDER flag in the neighboring land.
   chunk-distance:
-    # Verfügbare Distanzmodi: SQUARE, EUCLIDEAN, DIAMOND_SHAPE
-    # SQUARE - prüft Chunks um den zu beanspruchenden Chunk in quadratischer Form
-    # EUCLIDEAN - misst euklidischen Abstand vom zu beanspruchenden Chunk zu benachbarten Chunks
-    # DIAMOND_SHAPE - erstellt eine rautenförmige Pufferzone um Ansprüche
+    # Available distance modes: SQUARE, EUCLIDEAN, DIAMOND_SHAPE
+    # SQUARE - checks chunks around the chunk that is being claimed in a square shape
+    # EUCLIDEAN - measures Euclidean distance from chunk that is being claimed to neighbouring chunks
+    # DIAMOND_SHAPE - creates buffer zone in form of a diamond around claims
     mode_3: "EUCLIDEAN"
-    # Größe der Pufferzone um ein Land, das nicht zu einer Nation gehört.
+    # Size of buffer zone around a land that isn't part of a nation.
     land_2: 1
-    # Größe der Pufferzone um ein Land, das zu einer Nation gehört.
-    # Dieser Wert gilt nur für umliegende Länder. Wenn eine Nation expandiert und der benachbarte Anspruch
-    # nicht zu einer Nation gehört, wird stattdessen der Wert "land_2" verwendet.
+    # Size of buffer zone around a land that is part of a nation.
+    # This value only applies to surrounding lands. That means that if a nation tries to expand and the
+    # neighbouring claim isn't part of a nation, the "land_2" value from above will be used instead.
     nation: 3
 
-  # Länder müssen in der Nähe ihrer bestehenden Ansprüche beanspruchen.
+  # Force lands to claim near their claims.
   force-near:
     enabled_2: true
-    # Sollen Beanspruchungsversuche, die die force-near-Einschränkungen verletzen würden, als neue Länder behandelt werden?
+    # Should claim attempts that would violate the force-near restrictions be treated as new lands?
     treat-as-new: true
 
-  # Dünne oder lineare Landformen verhindern. Verwendet das diskrete isoperimetrische Verhältnis:
-  # Verhältnis = 16 * Chunks / Umfang². Ein perfektes Quadrat hat den Wert 1.0; eine 1-breite Linie ~0.
+  # Prevent thin or linear land shapes. Uses the discrete isoperimetric quotient:
+  # ratio = 16 * chunks / perimeter^2. A perfect square scores 1.0; a 1-wide line scores ~0.
   shape:
     enabled_17: false
-    # Minimales Kompaktheitsverhältnis (0.0 = keine Einschränkung, 1.0 = nur perfekte Quadrate erlaubt).
-    # Beispiel: 0.5 blockiert 1x10-Linien (~0.33), erlaubt aber 3x10-Rechtecke (~0.83).
+    # Minimum compactness ratio (0.0 = no restriction, 1.0 = perfect square required).
+    # Example thresholds: 0.5 blocks 1x10 lines (ratio ~0.33) but allows 3x10 rectangles (ratio ~0.83).
     min-compactness: 0.5
-    # Mindestanzahl beanspruchter Chunks, bevor die Formprüfung greift.
+    # Minimum number of claimed chunks before the shape check applies.
     min-chunks: 5
 
-  # Verhindert, dass Spieler ein anderes Land vollständig einkreisen, sodass es sich nicht mehr ausdehnen kann.
-  # Ein Anspruch wird abgelehnt, wenn er dazu führen würde, dass das betroffene Land keine freien Nachbarn mehr hat.
+  # Prevent players from completely encircling another land so it cannot expand.
+  # A claim is denied if it would leave the targeted land with zero claimable neighbors.
   prevent-encirclement:
     enabled_9: false
-    # Radius (in Chunks) um den neuen Anspruch, um potenziell eingekreiste Länder zu suchen.
+    # Radius (in chunks) around the new claim to search for potentially encircled lands.
     check-radius: 5
 
-  # Sollen Chunks freigegeben werden, wenn der Spieler das Land verlässt und der Landbesitzer keine weiteren Chunks beanspruchen darf (player_chunks-Limit aus player-limits.yml)?
+  # Should chunks be unclaimed if the player that claimed them leaves the land and the land owner is not allowed to claim any more chunks (player_chunks limit from player-limits.yml)?
   leave-unclaim: false
 
-  # Chunk-Beanspruchung durch Platzieren eines speziellen Anspruchsblocks.
-  # Anspruchsblöcke können mit /lands admin player <spieler> give claimblock [menge] vergeben werden.
-  # Wenn Spieler nicht per Befehl beanspruchen sollen, einfach keine lands.command.claim-Berechtigung geben.
-  # Wenn Spieler keine Anspruchsblöcke nutzen sollen, einfach keine Anspruchsblöcke geben.
+  # Chunk claiming by placing a special claim block.
+  # You can give claimblocks by executing the command /lands admin player <player> give claimblock [amount]
+  # If you don't want your players to claim via command, just don't give them lands.command.claim.
+  # If you don't want your players to claim with claimblocks, just don't give them claimblocks.
   claimblock:
-    # Soll nur der Besitzer des Anspruchsblocks diesen verwenden können?
-    # HINWEIS: Wenn deaktiviert, könnten Spieler Anspruchsblöcke weitergeben. Bei späterer Aktivierung könnten bereits
-    # weitergegebene Blöcke noch von jedem genutzt werden.
+    # Should only the owner of the claim block be able to use it?
+    # NOTE: If disabled, players could give claimblocks to other players which then can use these claimblocks too. Also if enabled again in the future,
+    # already given claimblocks could still be used by everyone.
     only-owner: true
-    # Sollen Anspruchsblöcke nicht gegen das player_chunks-Limit zählen?
+    # Should claimblocks not count towards the player_chunks limit?
     ignore-max: true
-    # Sollen Anspruchsblöcke zurückerstattet werden, wenn ein mit Anspruchsblock beanspruchter Chunk freigegeben wird?
+    # Should claimblocks be refunded, if players unclaim a chunk that was claimed with a claimblock?
     refund: true
 
-  # Landspawn-Einstellungen
+  # Landspawn settings
   spawn:
-    # Erstellungseinstellungen (/lands setspawn)
+    # Creation settings (/lands setspawn)
     creation:
-      # Landspawn automatisch bei der Landerstellung setzen (/lands create)?
-      # HINWEIS: Der Spawnpunkt kann immer mit /lands setspawn geändert werden.
+      # Automatically set land spawn on land creation (/lands create)?
+      # NOTE: The spawnpoint can always be changed with /lands setspawn.
       auto: true
-      # Kosten
+      # Costs
       cost:
-        # Kosten für die erstmalige Setzung
+        # Cost for first time set
         set: 0.0
-        # Kosten für das Ändern des Spawns
+        # Cost for changing spawn
         change: 0.0
 
-    # Teleportationseinstellungen
+    # Teleportation settings
     teleport:
-      # Kosten für die Teleportation zu einem Landspawn, wenn der Spieler dem Land nicht vertraut ist.
+      # Cost for teleportation to a land spawn, if the player is not trusted in the land.
       costs:
         value_3: 0.0
-        # Sollen die Teleportationskosten an das Land weitergegeben werden?
+        # Should the cost of the teleportation be given to the land?
         give-land: false
         pay:
-          # Sollen nicht vertraute Spieler die Teleportationskosten zahlen?
+          # Should untrusted players pay the teleport costs?
           untrusted: true
-          # Sollen vertraute Spieler die Teleportationskosten zahlen?
+          # Should trusted players pay the teleport costs?
           trusted: false
-      # Cooldown für die Teleportation zu einem Landspawn für vertraute Spieler.
-      # Gilt nicht für Spieler, die dem Land nicht vertraut sind.
+      # Cooldown for teleportation to a land spawn, if a player is trusted in the land.
+      # This cooldown won't apply to players that aren't trusted in the land.
       spawn-cooldown_time: 0s
-      # Spieler nach dem Tod zum Landspawn teleportieren?
+      # Teleport a player to the land spawn after they died?
       re-spawn: true
 
-  # Miet-/Verkaufsbereich-Einstellungen – Wiki: https://github.corent:m/Angeschossen/Lands/wiki/Rent-System
-  # Miete = Spieler können einen Bereich ihrer Wahl mieten ohne vertraut werden zu müssen.
-  # Steuern = Vertraute Spieler zahlen in einem definierten Intervall Steuern.
-  # Wenn Miete oder Verkauf deaktiviert ist, können Spieler mit der Berechtigung "lands.admin.disabled-features" trotzdem Bereiche zur Miete anbieten.
+  # Rent/sell areas settings - Wiki: https://github.corent:m/Angeschossen/Lands/wiki/Rent-System
+  # Rent = The players can rent an area of their choice without needing to get trusted. They can decide how long they want to rent it.
+  # Taxes = Trusted players pay a defined amount of tax per defined interval.
+  # If rent or sell is disabled, players with the permission "lands.admin.disabled-features" can still setup areas for rental.
   rent:
-    # Sollen Spieler Teilbereiche zur Miete anbieten können?
+    # Allow your players to set sub areas available for rent?
     rent: true
-    # Sollen Spieler Teilbereiche oder ihr ganzes Land verkaufen können?
+    # Allow your players to sell sub areas or their whole land?
     sell: true
-    # Sollen Miet-Transaktionen an die Landbank gesendet werden?
-    # HINWEIS: Gilt nur, wenn Banken generell aktiviert sind (Option: enabled_13).
-    # Wenn deaktiviert, geht die Transaktion auf das persönliche Konto des Besitzers.
+    # Should rent transactions be sent to the land bank?
+    # NOTE: This will only take effect, if banks are generally enabled (option: enabled_13).
+    # If disabled the transaction will be sent to the owners personal account.
     bank: false
-    # Hologramme statt Schilder verwenden? Nach dem Einrichten des Miet- oder Verkaufsschilds verschwindet es und ein klickbares Hologramm erscheint.
-    # HINWEIS: Wird nur aktiviert, wenn das Hologramm-Plugin klickbare Hologramme über seine Entwickler-API unterstützt. Bekannte Plugins: CMI.
+    # Use holograms instead of signs? If enabled, after setting up the rent or sell sign, the sign will disappear and a clickable hologram will appear.
+    # NOTE: This will only be activated, if your hologram plugin supports clickable holograms via their developer API. Current known plugins to do that: CMI
     holograms: false
-    # Teleportation über den /lands rentlist-Befehl.
+    # Teleportation through the /lands rentlist command.
     teleport:
-      # Kosten für die Teleportation zu einem mietbaren Bereich.
+      # Cost for teleportation to a rentable area.
       costs_7: 0.0
-      # Cooldown für die Teleportation zu einem mietbaren Bereich.
+      # Cooldown for teleportation to a rentable area.
       rent-tp-cooldown_time: 0s
 
-  # Einladungseinstellungen
+  # Invite settings
   invite:
-    # Wenn Einladungen deaktiviert sind, können Spieler andere direkt mit /lands trust vertrauen.
-    # Diese Option erfordert einen Server-Neustart.
+    # If you disable invites, players can directly trust
+    # other players with /lands trust.
+    # This option requires server reload / restart.
     enabled_16: true
-    # Sollen Landbesitzer anderen Ländern vertraut werden können?
-    # Wenn deaktiviert, können Landbesitzer (die mindestens ein Land besitzen) kein Mitglied in einem anderen Land sein.
+    # Should land owners be able to get trusted to other lands?
+    # If disabled, land owners can't be part of another land, if they own at least one land.
     invite-owner: true
 
-  # Einstellungen für temporäres Vertrauen. Ein Spieler kann für eine begrenzte Zeit vertraut werden via
-  # /land <land> member add <spieler> <dauer> (z. B. 3d5h) oder über den "Spieler hinzufügen"-Dialog.
-  # Ein temporär vertrauter Spieler ist von Steuern für den Bereich befreit und kann das Land nicht beanspruchen/freigeben,
-  # es sei denn, er hat auch ein nicht-temporäres Vertrauen in einem anderen Bereich.
-  # Nach Ablauf der Dauer wird das Vertrauen automatisch entzogen.
+  # Temporary trust settings. A player can be trusted for a limited time via
+  # /land <land> member add <player> <duration> (e.g. 3d5h), or via the "add player" dialog.
+  # A temporarily-trusted player is exempt from taxes for the area they're temp-trusted in and
+  # cannot claim/unclaim for the land unless they also have a non-temporary trust in another area.
+  # When the duration expires they are automatically untrusted.
   temporary-trust:
-    # Maximale Dauer in Tagen, für die ein Spieler temporär vertraut werden kann.
-    # Begrenzt auch den Tages-Schieberegler im "Spieler hinzufügen"-Dialog.
+    # The maximum duration a player can be temporarily trusted for, in days.
+    # Also caps the day slider in the "add player" dialog.
     max-days: 30
 
-  # Broadcast-Einstellungen
+  # Broadcast settings
   broadcast:
-    # Wenn jemand ein neues Land erstellt.
-    # Nachricht: land.create.broadcast
+    # If someone created a new land.
+    # Message: land.create.broadcast
     create: true
-    # Wenn jemand sein Land löscht (nur wenn es Ansprüche hat, um Spam zu verhindern).
-    # Nachricht: land.delete.broadcast
+    # If someone deleted his land. This broadcast will only be sent, if the land has any claims (this prevents spam).
+    # Message: land.delete.broadcast
     delete: true
 
-  # Einstellungen für /lands chat
+  # Settings for /lands chat
   chat:
-    # Sollen /lands chat-Nachrichten an die Konsole weitergeleitet werden?
+    # Should /lands chat messages be forwarded to console?
     forward: false
-    # Soll der globale Chat für Spieler mit aktiviertem /lands chat toggle stummgeschaltet werden?
-    # HINWEIS: Diese Einstellung erfordert einen Server-Neustart.
+    # Should global chat be muted for a player if they have /lands chat toggle enabled?
+    # NOTE: This setting required server reload / restart.
     mute-global: false
 
-  # Flug-Einstellungen (Flags befinden sich im Rollen-Abschnitt)
+  # Fly Settings (Flags can be found in the roles section)
   fly:
-    # Wenn Flugkontrolle deaktiviert ist, hat das FLY-Flag aus roles.yml keine Wirkung.
-    # Um den Flug in der Wildnis zu verbieten, das Fly-Flag im Admin-Menü umschalten: /lands admin menu
+    # If you disable flight control, the FLY flag from roles.yml won't have any effect.
+    # If you want to disallow flight in the wilderness, you need to toggle the fly flag in the admin menu: /lands admin menu
     enabled_4: true
-    # Diese Option betrifft nur Welten, die nicht in claim-worlds_list sind.
-    # In Welten aus claim-worlds_list wird der Flug über das FLY-Flag gesteuert.
-    # Um den Flug in der Wildnis von Beanspruchungs-Welten zu steuern, einfach /lands admin menu ausführen während man in der Welt steht.
-    # Diese Liste erlaubt oder verbietet den Flug in Welten außerhalb von claim-worlds_list. Wichtig beim Weltenwechsel.
-    # Wildcard (*) fügt alle Welten hinzu.
-    # Eintragsformat: "weltName:flugErlaubt"
-    # Beispiel:
-    #   world:false -> Wenn world nicht in claim-worlds_list ist, wird der Flug in dieser Welt deaktiviert.
-    #   world:true -> Wenn world nicht in claim-worlds_list ist, wird der Flug beim Betreten nicht deaktiviert.
-    #   Wenn world in claim-worlds_list ist, wird der Flug über das FLY-Flag in /lands admin menu gesteuert.
+    # This option only affects worlds that aren't in claim-worlds_list.
+    # For worlds of claim-worlds_list this option is irrelevant, since flight is controlled via the FLY flag.
+    # To toggle flight control in wilderness of claim worlds, just execute /lands admin menu while standing in the world.
+    # This list allows you to deny or allow flight in worlds that aren't in claim-worlds_list. This is important if players are switching worlds.
+    # You can use wildcard (*) to add all worlds to this list.
+    # Entry format is as follows: "worldName:allowFly"
+    # Example:
+    #   world:false -> if world isn't part of claim-worlds_list, flight will be disabled in this world.
+    #   world:true -> if world isn't part of claim-worlds_list, flight won't be disabled when players enter this world.
+    #   If world is part of claim-worlds_list, the flight control will be controlled via the FLY flag in /lands admin menu or the menu of claims.
     flight-control-worlds_list: [ ]
-    # Verzögerung für die Flugdeaktivierung, wenn ein Spieler an dieser Position nicht fliegen darf.
-    # Zeiteinheit: Sekunden
+    # Set the fly deactivation delay if a player is not allowed to fly at this position.
+    # Timeunit: Seconds
     disable-delay: 3
-    # Berechtigung prüfen, bevor Lands den Flug für einen Spieler wieder aktiviert.
-    # Lands reaktiviert den Flug nur, wenn es ihn zuvor deaktiviert hat und der Spieler jetzt wieder fliegen darf.
-    # Diese Berechtigung ist eine zusätzliche Anforderung neben dem FLY-Rollen-Flag.
+    # Set a permission to check before Lands reactivates flight for a player.
+    # Lands only reactivates flight, if Lands previously disabled it for the player and they're now allowed to fly again
+    # at their current location. This permission just adds another requirement, besides the fly role flag.
     reactivate-perm: ''
 
-  # /lands setowner-Einstellungen
+  # /lands setowner Settings
   setowner:
-    # Wenn diese Option deaktiviert wird, werden die Befehle /lands accept und /lands deny entfernt, WENN auch Einladungen deaktiviert sind.
+    # Disabling this option will remove the /lands accept and /lands deny command, IF invites are also disabled.
     enabled_12: true
-    # Das Land (oder der Landbesitzer, wenn Banken deaktiviert sind) muss diesen Betrag zahlen, um einen neuen Besitzer zu setzen.
-    # Verhindert den Missbrauch von Besitzerwechseln zur Umgehung von Einschränkungen.
+    # The land (or the land owner, if banks are disabled) will need to pay this amount in order to set a new owner.
+    # This prevents abusing of ownership transfers in order to bypass limitations.
     costs_6: 5000.0
-    # Erlaubt dem Besitzer nur, wenn die letzte Besitzeränderung einige Zeit zurückliegt.
+    # Allow the owner of a land to only, if the last owner change was some time ago?
     owner-change-cooldown_time: 0s
 
-  # Wenn aktiviert, können Landmitglieder Gegenstände mit /lands storage lagern.
-  # Auf den Lager kann auch durch Klicken auf den Fass des Hauptblocks zugegriffen werden.
-  # WARNUNG: Wenn diese Option deaktiviert wird, werden alle Gegenstände im Lager gelöscht.
+  # If enabled, allows land members to store items in the /lands storage command.
+  # The storage can also be accessed by clicking on the land mainblock's barrel.
+  # WARNING: If you disable this option, all items in the land storages will be deleted.
   storage: true
 
-  # Inaktive Länder löschen, wenn der Besitzer seit x Tagen offline ist. Diese Aufgabe wird alle 6 Stunden ausgeführt.
-  # HINWEIS: Bei Änderungen an diesen Einstellungen wird ein Datenbank-Backup empfohlen, um versehentliche Fehler zu vermeiden.
-  #           Andernfalls riskiert man eine unwiderrufliche Löschung von Ländern.
-  # HINWEIS: Diese Einstellungen erfordern einen Server-Neustart.
+  # Delete inactive Lands, if the owner is offline since x days. This task executes every 6 hours.
+  # NOTE: When changing any of these settings, it's recommended to take a backup of the database, in case you misconfigure anything accidentally.
+  #       Otherwise, you're risking irreversible land deletion.
+  # NOTE: These settings require server reload / restart.
   expiration:
-    # Wie lange muss ein Besitzer offline sein, um als inaktiv zu gelten?
-    # Ermöglicht verschiedene Kategorien inaktiver Spieler nach ihrer Spielzeit.
-    # Format: 'spielzeit:offline-zeit'
-    # Spielzeit = Zeit, die der Spieler auf dem Server gespielt hat (inkl. Zeit vor der Lands-Installation).
+    # How long does an owner need to be offline, to be considered inactive?
+    # This option allows you to create different categories of inactive players depending on their playtime.
+    # Format: 'playtime:offline-time'
+    # Playtime is considered the time that they played on the server. The time before Lands was installed is included.
     #
-    # Beispiel:
+    # Example:
     # owner_list:
     #  - '15m:7d'
     #  - '30m:14d'
     #  - '12h:30d'
     #  - '1d:60d'
     #  - '15d:80d'
-    #  - '30d:never' <- "never" im letzten Eintrag bedeutet, dass Spieler mit mehr als 15 Tagen Spielzeit nie als inaktiv gelten.
+    #  - '30d:never' <- Using "never" in the last entry means that players with more than 15 days playtime will never be considered as inactive.
     #
-    # '15m:7d' und '30m:14d' bedeutet: Besitzer mit höchstens 15 Minuten Spielzeit gelten als inaktiv, wenn sie seit 7 Tagen offline sind.
-    # Besitzer mit mehr als 15 Minuten und weniger als 30 Minuten Spielzeit gelten als inaktiv nach 14 Tagen Offline-Zeit.
-    # Hat ein Besitzer mehr Spielzeit als alle Einträge, wird der Eintrag mit der höchsten Spielzeit verwendet.
-    # '30d:never' bedeutet, dass das Land nie gelöscht oder der Besitzer geändert wird.
-    # Inaktive Besitzer werden je nach Konfiguration entweder durch ein Mitglied ersetzt oder ihr Land wird gelöscht.
-    # Eine leere Liste deaktiviert diese Option.
+    # '15m:7d' and '30m:14d' means that land owners that have less or equal 15 minutes of playtime, will be considered inactive, if they're offline since at least 7 days.
+    # Owners that have more than 15 minutes of playtime and less than 30 minutes will be considered as inactive, if they're offline since at least 14 days.
+    # If a owner has more playtime than all the entries, it will use the entry with the highest playtime and compare the offline time against that entry.
+    # '30d:never' means that the land will never be deleted or the owner changed.
+    # Inactive land owners get, depending on your configuration, either untrusted and a new owner is set or their land get's deleted.
+    # An empty list disables this option.
     owner_list: [ ]
 
-    # Wie lange muss ein Landmitglied offline sein, um als inaktiv zu gelten?
-    # Inaktive Landmitglieder werden aus dem Land entfernt.
-    # Folgt demselben Muster wie owner_list oben.
+    # How long does a land member need to be offline, to be considered inactive?
+    # Inactive land members get untrusted.
+    # This section follows the same pattern as the owner_list above.
     member_list: [ ]
 
-    # Soll ein inaktiver Besitzer durch ein Landmitglied ersetzt werden?
-    # Lands setzt immer das Mitglied mit der höchsten Rolle als neuen Besitzer.
-    # Wenn kein Mitglied mehr übrig ist, wird das Land gelöscht.
+    # Should an inactive owner be replaced by a land member?
+    # Lands will always try to set the member with the highest role as the new owner.
+    # If there's no member left, the land will be deleted.
     replace-owner: true
-    # Sollen Spieler, die aus dem Spielerdaten-Ordner der primären Welt gelöscht wurden, entfernt werden?
-    # HINWEIS: Empfohlen ist diese Option deaktiviert zu lassen. Bei aktivierter Option und gelöschtem Spielerdaten-Ordner können JE NACH Ablaufeinstellungen ALLE betroffenen Länder gelöscht werden.
+    # Should players, which have been deleted from the servers playerdata folder (primary world), be deleted?
+    # NOTE: It is recommended to keep this disabled. If this is enabled and you delete the playerdata folder in your primary world, it MAY DELETE ALL AFFECTED LANDS depending on your expiration settings.
     delete-invalid: false
-    # Sollen Länder ohne Ansprüche gelöscht werden, wenn sie mindestens x Tage alt sind?
-    # Mit 0 deaktivieren. Nur aktiv, wenn "land.creation.claim-radius" größer als -1 ist.
+    # Should lands, which have no claims, be deleted if they're at least x days old?
+    # You can disable this option by using 0. This option will only be active if "land.creation.claim-radius" is larger than -1.
     no-claims: 0
 
-  # Sollen Spieler beim Tod in einem Land ihr Inventar behalten?
-  # Diese Option wird zwangsweise aktiviert, wenn der Spieler in einem Bereich stirbt, in dem er keine Gegenstände aufheben kann.
-  # Für Kriege in wars.yml konfigurieren.
-  # HINWEIS: Wenn ein anderes Plugin keep-inventory ändert, diese Option deaktiviert lassen.
+  # Should players keep their inventory, if they die inside a land?
+  # This option is forcefully enabled, if the player dies inside an area where they can't pick up items.
+  # For wars this can be configured in wars.yml.
+  # NOTE: If you use another plugin that modifies keep-inventory, keep this disabled.
   keep-inventory:
     enabled_11: false
     mode_4: false
 
-  # Spezifische Kampfeinstellungen, die keine Kriege betreffen.
+  # Specified combat settings which do not affect wars.
   combat:
-    # Kampfmarkierung
+    # Combat tagging
     tag:
-      # Wenn ein Spieler einen anderen angreift, wird er für x (Zeiteinheit) markiert, sodass andere Spieler
-      # ihn unabhängig von Land-Einstellungen angreifen können.
-      # 0s = deaktiviert
+      # If a player attacks another player, they will by tagged for x (timeunit) so that, regardless of land settings,
+      # other players can attack them.
+      # 0s = disabled
       tag_time: 10s
-      # Welten konfigurieren, in denen Kampfmarkierungen aktiv sein sollen.
-      # HINWEIS: Wenn leer, in allen Beanspruchungs-Welten aus claim-worlds_list aktiv.
+      # Configure worlds in which combat tags should be enabled.
+      # NOTE: If empty, it's enabled in all claim worlds from claim-worlds_list.
       tag-worlds_list: [ ]
-      # Soll ein Spieler getötet werden, wenn er sich mit aktiver Kampfmarkierung ausloggt?
+      # Should a player be killed, if they log out while having a combat tag set on them?
       quit-kill: false
-      # Befehle ausführen, wenn ein Spieler sich mit aktiver Kampfmarkierung ausloggt.
-      # Platzhalter für den Spielernamen: {player}
+      # Execute commands when a player logs out with an active combat tag.
+      # Player name placeholder: {player}
       quit-cmds_list: [ ]
-      # Kampfmarkierung beim Tod entfernen?
+      # Remove the combat tag upon death?
       death-remove: true
-      # Teleportation bei aktiver Kampfmarkierung verweigern?
+      # Deny teleportation if player has active combat tag?
       deny-teleport: true
-      # Flug während des Kampfes deaktivieren?
+      # Disable fly during combat?
       disable-fly: true
 
-    # Sollen Spieler, die Mitglieder im gleichen Land sind, in der Wildnis kämpfen können?
-    # HINWEIS: Diese Option erfordert einen Server-Neustart.
+    # Should players, which are members in a common land, be able to fight in wilderness?
+    # NOTE: This option requires server restart / reload.
     ally-wilderness: true
-    # Dorf-Überfälle blockieren, wenn der Initiator keine Spieler im Anspruch angreifen darf?
+    # Block village raids if the initiator is not allowed to attack players in the claim?
     block-raids: true
 
-  # Anspruchslimits pro Welt festlegen.
-  # Beispiel: Mit der Berechtigung lands.chunks.5 können Spieler 5 Chunks in jeder Beanspruchungs-Welt beanspruchen
-  # statt 5 Chunks insgesamt.
-  # HINWEIS: Gilt nur für Beanspruchungsberechtigungen: lands.chunks.<zahl>, lands.ownlands.<zahl>
-  # Empfohlen: deaktiviert lassen.
+  # Set claim limits per world.
+  # Example: If you set the permission lands.chunks.5 for your players,
+  # they will be able to claim 5 chunks in each claim world instead of 5 chunks in general.
+  # NOTE: This only applies for claim permissions: lands.chunks.<number>, lands.ownlands.<number>
+  # It is recommended to keep this disabled.
   claim-limits-per-world: false
 
-  # Landbank-Einstellungen (/lands balance)
+  # Land bank settings (/lands balance)
   bank:
-    # Wenn aktiviert, werden Landaktionen wie /lands claim vom Landkonto abgebucht statt direkt vom Spieler.
-    # Wenn deaktiviert, werden auch /lands deposit und /lands withdraw deaktiviert.
-    # HINWEIS: Vor dem Deaktivieren sicherstellen, dass das Economy-Plugin Transaktionen für Offline-Spieler unterstützt.
-    # Sonst können Funktionen wie Steuern und Unterhalt zu unerwarteten Ergebnissen führen.
-    # HINWEIS: Diese Einstellung erfordert einen Server-Neustart.
+    # If enabled, land actions like /lands claim will take the money from the land bank
+    # instead of directly from the player. Disabling this option, will also disable the "/lands deposit" and "/lands withdraw" commands.
+    # NOTE: If you want to disable this option, please make sure your economy plugin supports transactions
+    # for offline players. Otherwise, features such as taxes and upkeep might lead to unexpected results.
+    # NOTE: This setting requires server reload / restart.
     enabled_13: true
-    # Maximales Guthaben setzen. Spieler können nicht mehr einzahlen als diesen Betrag.
-    # Wenn der Wert kleiner als der Unterhalt eines Landes ist, wird er automatisch angepasst.
-    # 0 = Option komplett deaktivieren.
+    # Set a maximum balance. Players won't be deposit more than that.
+    # If the value is lower than a land's upkeep, it will automatically be adjusted to the land's upkeep.
+    # Use 0 to disable this option completely.
     max-balance: 0
-    # Soll Geld vom persönlichen Guthaben des Spielers abgebucht werden, wenn z. B. beim Beanspruchen nicht genug in der Landbank ist?
-    # Wenn deaktiviert und beim Unterhaltseinzug nicht genug in der Landbank ist, kann der Unterhalt nicht bezahlt werden.
+    # Should money be taken from the players personal balance, if they for example try to claim, but the land bank doesn't have enough money?
+    # If disabled and they don't have enough money in the land bank during upkeep collection, they won't be able to pay the upkeep.
     fallback-personal: true
 
 
-# Jeder Chunk entspricht einem 16x16-Blöcke-Bereich.
+# Each chunk represents a 16x16 blocks area.
 chunk:
-  # Kosten für das Beanspruchen von Chunks. In manchen Fällen ist das Beanspruchen kostenlos:
-  # HINWEIS: Diese Kosten sind nur aktiv, wenn die Berechtigung lands.free.chunks.<zahl> des Spielers kleiner als
-  # die aktuelle Chunk-Anzahl des Landes ist UND die aktuelle Chunk-Anzahl größer/gleich "claim-radius" ist.
-  # Mehr Infos: https://wiki.incredibleplugins.com/lands/permissions/permissions#numbered-permissions
+  # Cost to claim chunks. In some cases the claim might be free:
+  # NOTE: This cost will only be active if the players lands.free.chunks.<number> permission is lower than the current chunks amount
+  # of the land AND if the current chunks amount is greater or equals to the option called "claim-radius".
+  # More info: https://wiki.incredibleplugins.com/lands/permissions/permissions#numbered-permissions
   costs_2: 0.0
-  # Kostenerhöhung pro Chunk-Anspruch.
+  # Increase cost per chunk claim.
   cost-increase:
-    # Verfügbare Modi:
-    # PERCENTAGE: Z. B. 10% auf den normalen Anspruchspreis pro Anspruch aufschlagen.
-    # ADD: Z. B. 10 Münzen zu den Beanspruchungskosten jedes Mal hinzufügen.
-    # DEFAULT: Diese Option deaktivieren.
+    # Available modes:
+    # PERCENTAGE: For example putting 10% per claim on top of the normal claim price per claim.
+    # ADD: For example adding 10 dollars to the claim cost every time the land claims a chunk.
+    # DEFAULT: Disables this option.
     mode: 'DEFAULT'
     value: 2
-    # Maximale Beanspruchungskosten festlegen.
-    # HINWEIS: 0 = Option deaktivieren.
+    # Set the maximum claim cost.
+    # NOTE: Set this to 0 in order to disable that option.
     max_2: 0.0
 
-  # Rückerstattungseinstellungen (Chunk freigeben: /lands unclaim)
+  # Cashback settings (Chunk unclaim: /lands unclaim)
   cashback:
-    # Verfügbare Modi:
-    # PERCENTAGE: Z. B. 10% des Kaufpreises zurückerstatten.
-    # ADD: Z. B. einfach 10 Münzen zurückgeben.
-    # DEFAULT: Diese Option deaktivieren.
+    # Available modes:
+    # PERCENTAGE: For example giving them 10% from the buy price back.
+    # ADD: For example giving them just 10 dollars back.
+    # DEFAULT: Disables this option.
     mode_2: 'PERCENTAGE'
-    # Auf 0 setzen, um dies zu deaktivieren.
-    # Bei Anspruchsblöcken (/lands admin player <spieler> give) reicht ein Wert > 0, um jeden Block bei Freigabe zurückzugeben.
+    # Set this value to 0, if you want to disable this.
+    # If you use claimblocks (/lands admin player <player> give), this value just needs to be greater than 0 to give them
+    # each claimblock back at unclaim, if the chunk was claimed with an claimblock.
     value_2: 15
 
-  # Chunk-Teleportationsoptionen
+  # Chunk teleportation options
   teleport:
-    # Teleportations-Cooldown
-    # Bypass-Berechtigung: lands.bypass.cooldown.teleport
+    # Teleportation cooldown
+    # Bypass permission: lands.bypass.cooldown.teleport
     chunk-tp-cooldown_time: 3m
-    # Kosten für eine Teleportation.
+    # Cost for a teleportation.
     costs_3: 0
 
-  # Nur in der Ausgangswelt beanspruchen, in der das Land erstellt wurde?
-  # Das bedeutet, dass ein Land nur Ansprüche in einer Welt haben kann.
+  # Allow claiming only in the initial world, in which the land was created?
+  # This means that a land can only have claims in one world.
   initial-world: false
 
-  # Chunks automatisch beanspruchen, während man auf ihnen steht.
+  # Auto claim chunks while standing on them.
   auto-action:
-    # HINWEIS: Diese Einstellung erfordert einen Server-Neustart.
+    # NOTE: This setting requires server reload / restart.
     enabled_14: true
-    # Nach wie viel Zeit soll die Auto-Aktion gestoppt werden?
+    # After how long should the auto-action be stopped?
     stop_time: 2m
 
-  # Konfiguration natürlicher Flags. Rollen-Flags können in der roles.yml-Datei konfiguriert werden.
-  # Liste verfügbarer landFlags: https://wiki.incredibleplugins.com/lands/configuration/natural-flags
-  # HINWEIS: Diese Option erfordert einen Server-Neustart.
+  # Natural flags configuration. Role flags can be configured in the roles.yml file.
+  # List of available landFlags: https://wiki.incredibleplugins.com/lands/configuration/natural-flags
+  # NOTE: This option requires server reload / restart.
   land-flags:
-    # Standard-Naturflags für neue Länder konfigurieren.
+    # Configure DEFAULT natural flags which will apply to new land creations.
     default_list:
       - monster_spawn
       - phantom_spawn
@@ -689,366 +693,373 @@ chunk:
       - plant_growth
       - snow_melt
 
-    # Naturflags, die im Flags-Menü angezeigt werden sollen.
-    # Standard: Alle spielerbezogenen Naturflags werden angezeigt.
+    # Natural flags which should be visible in the flags menu.
+    # Default: Displays all player related natural flags.
     display_list:
       - 'all'
 
     monster_spawn:
-      # Spawnen aus Spawner-Blöcken verhindern, wenn das Monster-Spawn-Flag nicht gesetzt ist?
+      # Prevent spawning from spawner blocks, if the monster spawn flag isn't set?
       spawners: false
-      # Monster entfernen, die ein Land oder die Wildnis betreten, wo Monster-Spawnen deaktiviert ist? Monster mit einem benutzerdefinierten Namen werden nicht entfernt.
-      # HINWEIS: Entfernt auch Monster, die von Spawnern gespawnt wurden.
-      # Diese Option erfordert einen Server-Neustart.
+      # Remove monsters that enter a land or wilderness where monster spawning is disabled? Monsters with a custom name won't be removed.
+      # NOTE: This will also remove monsters spawned by spawners.
+      # This option requires server reload / restart.
       remove_2: false
 
     animal_spawn:
-      # Tiere entfernen, die ein Land oder die Wildnis betreten, wo Tier-Spawnen deaktiviert ist? Tiere mit einem benutzerdefinierten Namen werden nicht entfernt.
-      # HINWEIS: Empfohlen ist diese Option deaktiviert zu lassen. Sie kann Inkompatibilitäten mit Drittanbieter-Mob-Plugins verursachen und könnte die Serverleistung beeinträchtigen.
-      # HINWEIS: Entfernt auch Tiere, die von Spawnern gespawnt wurden.
-      # Diese Option erfordert einen Server-Neustart.
+      # Remove animals that enter a land or wilderness where animal spawning is disabled? Animals with a custom name won't be removed.
+      # NOTE: It is recommended to keep this disabled. It can cause incompatibilities with 3rd party mob plugins and might affect your servers performance due minecraft limitations.
+      # NOTE: This will also remove animals spawned by spawners.
+      # This option requires server reload / restart.
       remove_3: false
 
 
-# Spieler können blockgroße (keine Chunks) Teilbereiche in ihren Ländern erstellen.
+# Players can create block-sized (not chunks) sub-areas inside their lands.
 sub-area:
-  # Teilbereiche mit /lands selection in Ländern erstellen ermöglichen?
+  # Make it possible to create sub areas, using /lands selection, inside lands?
   enabled_22: true
-  # Cooldown für die Teleportation zu einem Bereich innerhalb des eigenen Landes.
+  # Cooldown for the teleportation to an area inside your land.
   teleport-cooldown_time: 0s
 
 
-# Lager sind temporäre Länder, die nach einem definierten Zeitraum gelöscht werden.
-# Lager-Gegenstände können beim ersten Beitreten oder mit /lands player <spieler> give vergeben werden.
+# Camps are temporary lands that will get deleted after a defined period.
+# Camp items can be given at first join or by executing /lands player <player> give
 camp:
-  # HINWEIS: Diese Einstellung erfordert einen Server-Neustart.
+  # NOTE: This setting requires server reload / restart.
   enabled_21: true
-  # Wie viel soll es kosten? Inkl. der beanspruchten Chunks.
+  # Set how much it should cost. This also includes the chunks that are being claimed.
   costs_8: 0
-  # Nach wie viel Zeit sollen Lager gelöscht werden?
-  # 0 = niemals
+  # After how much time should camps be deleted?
+  # 0 = never
   expire_time: 1d
-  # Standard-Chunk-Radius konfigurieren.
-  # Überschreibbar mit /lands player <spieler> give camp <radius> [silent]
-  # 0 = nur der Chunk, in dem das Lager-Item platziert wird.
+  # Configure the default radius of chunks to claim.
+  # You can override this executing /lands player <player> give camp <radius> [silent]
+  # 0 = only the chunk in which the camp item is placed.
   radius: 1
-  # Standard-Lagernamen setzen. Für Leerzeichen muss die Option "spaces" im Landerstellungs-Abschnitt aktiviert sein.
+  # Set the default camp name. For spaces to work, the option "spaces" must be enabled in the
+  # land creation section in this file.
   default-name: "{player}-Lager"
 
 
-# Optionen für /lands relations und /nations relations
+# Options for /lands relations and /nations relations
 relations:
-  # Neue Beziehungen an alle Spieler auf dem Server senden?
+  # Broadcast new relations to all players on the server?
   broadcast: true
 
 
-# Spieler können persönliche Flags umschalten, um ihre Erfahrung anzupassen.
+# Players can toggle personal flags to customize their experience.
 player:
   flags:
-    # Standard-Flags-Liste konfigurieren, die aktiviert ist.
-    # Gilt nur für neue Spieler oder solche, die noch keine Flags umgeschaltet haben.
+    # Configure a default list of flags that is enabled.
+    # This only applies to new players, or those who haven't toggeled any flags yet.
     default_2_list:
       - 'receive_invites'
       - 'enter_messages'
       - 'show_inbox'
 
-    # Flags konfigurieren, die im Menü angezeigt werden sollen.
-    # ALL = alle Flags werden angezeigt.
+    # Configure which flags should be displayed in the menu.
+    # ALL = all flags are displayed.
     display_2_list:
       - 'all'
 
 
-# Konfiguration des /lands unstuck-Befehls.
-# Zweck: Spielern ermöglichen, aus Standorten in Ländern heraus zu teleportieren, wo sie gefangen sind.
-# Z. B. ein Spieler findet einen Weg in ein Land, aber kann keinen Ausweg finden.
-# Dieser Befehl teleportiert ihn zur nächsten Wildnis-Stelle.
+# This is the configuration of the /lands unstuck command.
+# Purpose of this command is to let players be able to teleported out of locations in lands where they got trapped.
+# For example a player finds a way walking into a land, but can't find a way out.
+# This command will teleported them to the nearest wilderness location.
 unstuck:
-  # Cooldown für diesen Befehl festlegen.
+  # Set the cooldown for this command.
   unstuck-cooldown_time: 1h
-  # Bewegung während der Unstuck-Teleportation erlauben?
+  # Allow movement during unstuck teleportation?
   allow-movement: false
 
 
-# Zufallsteleportation (/lands wild)
-# Bei Verwendung den Spawn jeder Welt mit /setworldspawn setzen.
+# Random teleportation (/lands wild)
+# When using this make sure to set the spawn of each world using /setworldspawn.
 random-teleport:
-  # Welten, in denen Spieler /lands wild verwenden können.
-  # '*' als Eintrag erlaubt alle Welten.
-  # Minimale und maximale Entfernung (außer Weltgrenze) können angegeben werden: weltName:minEntfernung:maxEntfernung
-  # Die Entfernung wird vom Weltspawn (/setworldspawn) gemessen.
-  # Die maximale Entfernung kann nicht größer als die Weltgrenze sein.
+  # Worlds where players should be able to use /lands wild.
+  # You can use '*' as an entry, to allow all worlds.
+  # If you want to specify a minimum and maximum distance, besides the world border, use this entry format: worldName:minDistance:maxDistance
+  # The minimum and maximum distance is measured from the world spawn (/setworldspawn).
+  # The maximum distance can't be larger than the size of your world border.
   wild-worlds_list:
     - "world:800:30000"
 
-  # Sollen Berechtigungen für Zufallsteleportation weltbasiert statt nur lands.command.wild sein?
-  # Beispiel: Welt 'A': lands.command.wild.a, Welt 'B': lands.command.wild.b
+  # Should permissions for random teleportation be per world based instead of just lands.command.wild?
+  # Example: world 'A': lands.command.wild.a, world 'B': lands.command.wild.b
   world-perms: false
 
-  # In diese Welt werden Spieler teleportiert, wenn sie nicht in einer oben definierten Welt sind.
-  # HINWEIS: Der Weltname unterscheidet Groß-/Kleinschreibung.
+  # Players will be random teleported in this world, if they're currently not in a world defined above.
+  # NOTE: The world name is case-sensitive.
   backup: 'world'
-  # Befehlscooldown (/lands wild)
+  # Command (/lands wild) cooldown
   rtp-cooldown_time: 10m
-  # Teleportationskosten
+  # Teleportation cost
   costs_4: 0.0
-  # Erweiterte Biom-Prüfung: Wenn der benutzerdefinierte Weltgenerator oder heruntergeladene Karten keine Biom-Karten
-  # korrekt implementiert haben, lädt diese Option den Ziel-Chunk vor der Teleportation, um das Biom zu prüfen.
-  # Verhindert Teleportationen in Ozeane wegen fehlerhafter Biom-Karten.
-  # HINWEIS: Diese Option kostet Performance und sollte deaktiviert werden, wenn nicht benötigt. Die meisten
-  # Weltgeneratoren benötigen diese Option nicht.
+  # Extensive biome check: If your custom world generator or downloaded map does not have biome maps properly implemented, this option
+  # will load the destination chunk before teleportation to check to biome. This will prevent players getting teleported into oceans, because the biome
+  # map of your world generator or downloaded map is not registered at the server. Please note that this option will cost performance
+  # and should be disabled if not needed. Most world generators do not need this option as they support retrieving the biome without loading the destination chunk
+  # before the teleportation counter starts.
   extensive-check: false
 
 
-# Neue Spieler mit dem Beanspruchen vertraut machen.
+# Introduce new players to claiming.
 introduction:
-  # Spieler benachrichtigen, bis sie diese Spielzeit erreicht haben.
-  # 0 deaktiviert diesen Abschnitt komplett.
+  # Notify these players until they reached this playtime.
+  # 0 disabled this section completely.
   max-playtime_time: 30m
-  # Erinnerungen können mehrfach gesendet werden, haben aber einen Cooldown gegen Spam.
+  # Reminders can be sent multiple times, but they have a cooldown to prevent spam and annoyance.
   reminder:
-    # Warnung senden, wenn ein platzierter Behälter in der Wildnis nicht geschützt ist.
-    # Wird nur gesendet, wenn der Spieler noch kein Land-Mitglied ist.
+    # Send a warning that the placed container isn't protected when placing it in wilderness.
+    # Will only be sent if the player isn't part of any land already.
     container-placement: true
 
 
-# Sound-Konfiguration
-# Sound-Namen können mit /playsound ingame gefunden werden.
-# Format: sound,lautstärke,tonhöhe
-# Lautstärke und Tonhöhe sind optional.
-# Ton deaktivieren: Wert auf '' setzen
+# Sound configuration
+# You can find the sound names by using the /playsound command ingame.
+# Format: sound,volume,pitch
+# The volume and pitch parameter are optional. They allow you to control how the sound is played.
+# Disabling a sound: Just set it to ''
 sounds:
-  # Bei /lands create
+  # At /lands create
   create-land_sound: 'block.anvil.use,0.25'
-  # Ton bei /claim abspielen?
-  # Gilt nicht für Radius- und Anspruchsblock-Claims.
+  # Play a sound on /claim?
+  # This does not include radius and claimblock claims.
   claim_sound: 'item.shovel.flatten'
-  # Wird abgespielt, wenn ein Spieler eine Benachrichtigung erhält, z. B. bei einer Einladung via /trust.
+  # Sent when a player receives a notification. For example when the player receives an invitation at /trust.
   notification_sound: 'entity.experience_orb.pickup,0.25'
-  # Wird für den Spieler abgespielt, der jemanden eingeladen oder vertraut hat.
+  # Played for the player that invited or trusted someone.
   invite-sent_sound: 'item.armor.equip_elytra'
-  # Wird für den Zielspieler bei /lands ban abgespielt.
+  # Played for the target player at /lands ban
   banned_sound: 'block.iron_door.close'
 
-  # Ton, der abgespielt wird, wenn Lands einen Spieler teleportiert.
-  # Töne können durch Setzen auf '' deaktiviert werden.
+  # Sound which should be played whenever a player gets teleported by Lands.
+  # Sounds can be disabled by setting their value to ''
   teleport:
     teleported_sound: 'entity.enderman.teleport'
     countdown_sound: 'block.lever.click'
 
-  # Ton abspielen, wenn der Flug eines Spielers nach Deaktivierung durch Lands wieder aktiviert wird.
-  # Deaktivieren: Auf '' setzen
+  # Play a sound when the players fly gets re-enabled after it has been disabled by Lands before.
+  # You can disable this, by setting it to ''
   fly-re-enable_sound: 'item.armor.equip_elytra'
 
 
-# Bestenlisten für Länder und Nationen
-# Umfasst /lands top, /nations top, Bestenlisten-Schilder und Hologramme
+# Top lands and nations leaderboard options
+# Includes /lands top, /nations top, leaderboard signs and holograms
 top-lands:
-  # Soll Lands den Kontostand von Ländern durch 1000 teilen und "k" anhängen, wenn er größer/gleich 1000 ist?
-  # HINWEIS: Beeinflusst auch die "[...]_balance" PAPI-Platzhalter.
-  # Beispiel: 1400 = 1k
+  # Should Lands divide the balance of the lands by 1000 and append "k" to it, if the balance is greater or equal to 1000?
+  # NOTE: This also influences the "[...]_balance" papi placeholders.
+  # Example: 1400 = 1k
   divide: false
-  # Schild-Bestenlisten-Einstellungen
+  # Sign lederboard settings
   sign:
     head:
       enabled_5: true
-      # Kopf des Landbesitzers auf dem Block über dem Bestenlisten-Schild platzieren?
+      # Place the head of the land owner on top of the block, where the leaderboard sign is?
       above: false
-  # Hologramme (/lands admin hologram)
+  # Holograms (/lands admin hologram)
   hologram:
-    # Einen Gegenstand festlegen, der über dem Hologramm erscheint.
-    # AIR = Gegenstand deaktivieren.
-    # HINWEIS: Es kann bis zu zwei Minuten dauern, bis der Gegenstand aktualisiert wird.
+    # Set an item, which should appear over the hologram.
+    # You can set this to AIR, if you want to disable this.
+    # NOTE: It may take up to two minutes to update the item.
     item: 'DIAMOND_HELMET'
-  # Länder von Bestenlisten ausschließen, Spieler mit diesen UUIDs.
-  # UUID von Spielernamen: https://mcuuid.net/
-  # HINWEIS: Änderungen können einige Minuten dauern bis sie wirksam sind.
+  # Exclude lands from being in top lists from players
+  # with these UUIDs. Get UID from player name: https://mcuuid.net/
+  # NOTE: Changes to this option might take a few minutes to take effect.
   exclude-uids_list:
     - '8667ba71-b85a-4004-af54-457a9734eed7'
 
 
-# Visualisierungsoptionen für /lands view usw.
+# Visualization options for /lands view etc.
 visualization:
   type:
-    # Wildnis
+    # Wilderness
     wilderness:
-      # Partikel: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html#enum.constant.summary
+      # Particles can be found here:
+      # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html#enum.constant.summary
       particle: 'REDSTONE'
-      # HINWEIS: Nur die Farbe des REDSTONE-Partikels kann geändert werden.
-      # Hex-Werte: https://www.google.com/search?q=color+picker
+      # NOTE: Only the color of the REDSTONE particle can be changed.
+      # To edit the color you need to insert the hex values given here:
+      # https://www.google.com/search?q=color+picker
       color: '#00bd0a'
-      # Dauer in Sekunden
+      # Duration in seconds
       duration: 20
       rows: 1
-      # Blöcke statt Partikel für Teilbereiche (nicht Land-Grenzen) verwenden:
-      # HINWEIS: Nicht empfohlen mit 'only-corners' (unten), da das Senden von Block-Änderungen an Spieler
-      # zu Lag beim Client führen kann. Auch Partikel sind serverseitig performanter.
-      # HINWEIS: Wenn leer oder AIR, wird der konfigurierte Partikel oben verwendet.
+      # If you want to use blocks instead of particles for sub AREAS (not land border):
+      # NOTE: It is not recommended to use this with the option 'only-corners' (from below) as sending block changes to players might cause lag at their client. Also using particles performs better on the server side.
+      # NOTE: If empty or AIR, it will use the configured particle from above.
       block: ''
-    # Wenn der Spieler Landbesitzer ist.
+    # If the player is the land owner.
     own:
       particle_3: 'REDSTONE'
-      # HINWEIS: Nur die Farbe des REDSTONE-Partikels kann geändert werden.
-      # Hex-Werte: https://www.google.com/search?q=color+picker
+      # NOTE: Only the color of the REDSTONE particle can be changed.
+      # To edit the color you need to insert the hex values given here:
+      # https://www.google.com/search?q=color+picker
       color_3: '#1eff00'
       duration_3: 4
       rows_3: 1
-      # Blöcke statt Partikel für Teilbereiche (nicht Land-Grenzen) verwenden:
-      # HINWEIS: Nicht empfohlen mit 'only-corners'.
-      # HINWEIS: Wenn leer oder AIR, wird der konfigurierte Partikel verwendet.
+      # If you want to use blocks instead of particles for sub AREAS (not land border):
+      # NOTE: It is not recommended to use this with the option 'only-corners' (from below) as sending block changes to players might cause lag at their client. Also using particles performs better on the server side.
+      # NOTE: If empty or AIR, it will use the configured particle from above.
       block_2: ''
-    # Wenn der Spieler dem Land vertraut ist.
+    # If the player is trusted in the land.
     trusted:
       particle_4: 'REDSTONE'
-      # HINWEIS: Nur die Farbe des REDSTONE-Partikels kann geändert werden.
-      # Hex-Werte: https://www.google.com/search?q=color+picker
+      # NOTE: Only the color of the REDSTONE particle can be changed.
+      # To edit the color you need to insert the hex values given here:
+      # https://www.google.com/search?q=color+picker
       color_4: '#f2f200'
       duration_4: 4
       rows_4: 1
-      # Blöcke statt Partikel für Teilbereiche (nicht Land-Grenzen) verwenden:
-      # HINWEIS: Nicht empfohlen mit 'only-corners'.
-      # HINWEIS: Wenn leer oder AIR, wird der konfigurierte Partikel verwendet.
+      # If you want to use blocks instead of particles for sub AREAS (not land border):
+      # NOTE: It is not recommended to use this with the option 'only-corners' (from below) as sending block changes to players might cause lag at their client. Also using particles performs better on the server side.
+      # NOTE: If empty or AIR, it will use the configured particle from above.
       block_3: ''
-    # Wenn der Spieler dem Land nicht vertraut ist.
+    # If player isn't trusted in the land.
     untrusted:
       particle_5: 'REDSTONE'
-      # HINWEIS: Nur die Farbe des REDSTONE-Partikels kann geändert werden.
-      # Hex-Werte: https://www.google.com/search?q=color+picker
+      # NOTE: Only the color of the REDSTONE particle can be changed.
+      # To edit the color you need to insert the hex values given here:
+      # https://www.google.com/search?q=color+picker
       color_5: '#ff0000'
       duration_5: 4
       rows_5: 1
-      # Blöcke statt Partikel für Teilbereiche (nicht Land-Grenzen) verwenden:
-      # HINWEIS: Nicht empfohlen mit 'only-corners'.
-      # HINWEIS: Wenn leer oder AIR, wird der konfigurierte Partikel verwendet.
+      # If you want to use blocks instead of particles for sub AREAS (not land border):
+      # NOTE: It is not recommended to use this with the option 'only-corners' (from below) as sending block changes to players might cause lag at their client. Also using particles performs better on the server side.
+      # NOTE: If empty or AIR, it will use the configured particle from above.
       block_4: ''
-    # Auswahlmodus visualisieren (/lands selection)
+    # Visualize selection mode (/lands selection)
     selection:
       particle_8: 'REDSTONE'
-      # HINWEIS: Nur die Farbe des REDSTONE-Partikels kann geändert werden.
-      # Hex-Werte: https://www.google.com/search?q=color+picker
+      # NOTE: Only the color of the REDSTONE particle can be changed.
+      # To edit the color you need to insert the hex values given here:
+      # https://www.google.com/search?q=color+picker
       color_8: '#ff9d00'
-      # Bleibt dauerhaft, bis der Auswahlmodus deaktiviert wird.
-      # Durch Bearbeiten dieses Werts änderbar.
+      # Will stay permanent until selection mode is disabled.
+      # You can change that by editing this value.
       duration_8: -1
       rows_8: 1
 
-  # /lands view-Visualisierung
+  # /lands view visualization
   view:
-    # Soll Lands Land-Grenzen automatisch anzeigen, sobald der Spieler beitritt?
-    # HINWEIS: duration_9 (unten) auf -1 setzen, um die Visualisierung dauerhaft zu machen.
+    # Should Lands display land borders automatically once the player joins?
+    # NOTE: You can set duration_9 (below) to -1 to make the visualization permanent.
     join: false
-    # Intervall der erscheinenden Partikel.
-    # Minimum: eine Sekunde.
+    # The interval of the particles appearing.
+    # The minimum is one second.
     view-interval_time: 1s
-    # Dauer der Land-Ansicht.
-    # Zeiteinheit: Sekunden. Dauerhaft: -1
+    # Duration of land view.
+    # Time unit is seconds. You can make this permanent by setting the value to -1
     duration_9: 60
-    # Soll die Grenzvisualisierung auf der anfänglichen Höhe (y-Block) bleiben?
-    # Wenn false: Die Grenze folgt der Position des Spielers nach oben und unten.
-    # HINWEIS: Dies ist ein Standard. Spieler können es mit /lands view stay umschalten.
+    # Should the border visualization stay at the initial height (y-block)?
+    # If false: The border will follow the players position up and downwards.
+    # NOTE: This is a default. Players can still toggle it by executing /lands view stay.
     y-lock: false
-    # Maximale Block-Entfernung vom Spieler, in der Teilbereiche visualisiert werden.
-    # Empfohlen: 112
+    # Set the maximum block distance from the player in which sub areas should be visualized.
+    # Recommended: 112
     area-radius: 112
-    # Sichtweite in Chunks.
-    # 0 = Sichtweite des Servers
+    # Set the view distance in chunks.
+    # 0 = your server's view distance
     chunk-radius: 0
 
-  # Sollen bei Teilbereichen nur die Ecken visualisiert werden?
-  # HINWEIS: Betrifft nicht Land-Grenzen.
+  # Should for sub areas only the corners be visualized?
+  # NOTE: This does not affect borders of lands.
   only-corners: true
-  # Y-Offset setzen (Höhe der Visualisierung anpassen)
+  # Set a y offset (adjust height of visulization)
   offset: 0
 
-  # /lands map-Einstellungen
+  # /lands map settings
   map:
-    # Sollen Spieler einen Chunk im /lands map-Menü durch Klicken beanspruchen können?
+    # Should players be able to claim a chunk by clicking on it in the /lands map menu?
     claim: true
-    # Maximale Chunk-Entfernung für den "Diesen Chunk beanspruchen"-Hinweis im Auswahlwerkzeug und bei Behälter-Platzierungswarnungen.
-    # X-Länge (links nach rechts)
+    # Maximum chunk distance allowed for the "claim this chunk" hint shown by the
+    # selection tool and container-placement warning.
+    # X Length (left to right)
     length: 15
-    # Y-Höhe (oben)
+    # Y Height (up)
     height: 10
 
 
-# Befehlsoptionen
+# Command options
 command:
-  # Separate Berechtigungen für bestimmte Unterbefehle hinzufügen.
+  # Add separate permissions for specific subcommands.
   inherit-perm:
-    # Standardmäßig gibt lands.command.claim auch Zugriff auf Anspruchs-Unterbefehle wie /lands claim auto usw.
-    # Wenn diese Option deaktiviert wird, erhält jeder Unterbefehl seinen eigenen Berechtigungsknoten: lands.command.claim.auto usw.
+    # By default, the lands.command.claim command also gives access to claim subcommands, such as /lands claim auto etc.
+    # By disabling this option, each subcommand gets their own permission node: lands.command.claim.auto etc.
     claim_2: true
 
-  # Wird für Zeitbelohnungen und den Befehl "/lands player <spieler> give permission chunk" benötigt.
+  # This is needed for time rewards and the "/lands player <player> give permission chunk" command
   permission-plugin:
-    # Befehl des Berechtigungs-Plugins zum Hinzufügen von Berechtigungen.
-    # {player} = Spielername
-    # {uuid} = Spieler-UUID
-    # {permission} = Die Lands-Berechtigung
+    # Your permissions plugins command to add permissions.
+    # {player} The player's name
+    # {uuid} = The player's UUID
+    # {permission} = The Lands permission
     add: 'Luckperms user {player} permission set {permission}'
-    # Befehl des Berechtigungs-Plugins zum Entfernen von Berechtigungen.
+    # Your permission plugins command to remove permissions.
     remove: 'Luckperms user {player} permission unset {permission}'
 
-  # Diese Optionen erfordern einen Server-Neustart.
+  # These options require a server reload / restart.
   alias:
-    # Aliase für den /lands-Befehl festlegen
-    # HINWEIS: Diese Einstellung erfordert einen Server-Neustart.
+    # Set aliases for the /lands command
+    # NOTE: This setting requires server reload / restart.
     lands_list: [ ]
 
-    # Aliase für den /wars-Befehl festlegen
-    # Wird nur benötigt, wenn Kriege aktiviert sind.
-    # HINWEIS: Diese Einstellung erfordert einen Server-Neustart.
+    # Set aliases for the /wars command
+    # This is only needed, if wars is enabled.
+    # NOTE: This setting requires server reload / restart.
     wars_list:
       - 'w'
 
-    # Aliase für den /nations-Befehl festlegen
-    # Wird nur benötigt, wenn Nationen aktiviert sind.
-    # HINWEIS: Diese Einstellung erfordert einen Server-Neustart.
+    # Set aliases for the /nations command
+    # This is only needed, if nations is enabled.
+    # NOTE: This setting requires server reload / restart.
     nations_list:
       - 'n'
 
-  # Befehle blockieren
-  # Groß-/Kleinschreibung wird nicht unterschieden.
+  # Block commands
+  # They are not case-sensitive.
   blacklist:
-    # Betrifft alle Spieler, die in einem Land stehen, in dem sie nicht vertraut sind.
+    # This affects all players which are standing in a land, where they aren't trusted.
     nottrusted_list:
       - sethome
 
-    # Betrifft alle Spieler, die in einem Land stehen.
+    # This affects all players, which are standing in a land.
     general_list: [ ]
 
 
-# Land-Menü-Optionen (/lands menu)
+# Lands menu options (/lands menu)
 gui:
-  # Eine zusätzliche Definitions-Datei erstellen, in der Slots, Elementtypen usw. konfiguriert werden.
-  # Nützlich, wenn mehrere Sprachdateien gepflegt werden und Element-Slots, Modelldaten usw. gleich bleiben sollen.
-  # In dieser Datei kann alles konfiguriert werden, was nicht sprachspezifisch ist.
+  # Create an additional definitions file in which slots, item types etc. are configured.
+  # This is useful, if you maintain multiple locale files and want item slots, model data etc. to be the same across all locales.
+  # In that file you can configure everything that isn't locale specific.
   definitions-file: false
-  # Soll Lands die Länge von Element-Lore-Zeilen automatisch anpassen?
-  # Empfohlene Länge: 35.
-  # HINWEIS: 0 = deaktiviert.
+  # Should Lands automatically adjust the length of item lore lines?
+  # Recommended length is 35.
+  # NOTE: Set this to 0 to disable it.
   max-lore-length: 0
-  # Soll das /lands list-Menü nur Länder anzeigen, zu denen der Spieler teleportieren kann?
-  # Spieler können es danach selbst umschalten. Dies ist nur ein Standardwert.
+  # Should the /lands list menu show only lands where to player can teleport to?
+  # Players can still toggle it afterward. This is just a default setting.
   list-only-public: false
-  # Fortschrittsbalken anpassen, die an verschiedenen Stellen der Benutzeroberfläche angezeigt werden.
+  # Customize progress bars that are displayed in various placed of the UI.
   progress:
     symbol:
-      # Das anzuzeigende Symbol.
+      # The symbol to display.
       symbol: "|"
-      # 100% entspricht x Symbolen
+      # 100% equals x symbols
       amount_5: 50
     color:
-      # Farbe für den abgeschlossenen Teil.
+      # Color used for completed part.
       completed: "#00e617"
-      # Farbe für den nicht abgeschlossenen Teil.
+      # Color used for uncompleted part.
       uncompleted: "#4a4a4a"
 
 
-# Datenbankoptionen
+# Database options
 database:
-  # MySQL-Datenbank
-  # Verbindungslimits usw. müssen in der MySQL-Server-Konfiguration korrekt eingestellt sein.
-  # Zur Synchronisierung von Ländern und Ansprüchen über Server hinweg: https://wiki.incredibleplugins.com/lands/configuration/database#synchronizing-claims-across-servers
+  # MySQL database
+  # To use this without issues, your connection limits etc. need to be configured properly in your MySQL server configuration.
+  # If you want to synchronize lands and claims across servers, please read the setup instructions: https://wiki.incredibleplugins.com/lands/configuration/database#synchronizing-claims-across-servers
   mysql-v2:
     enabled_19: false
     address_2: 'localhost'
@@ -1056,116 +1067,116 @@ database:
     username_2: 'minecraft'
     password_2: 'password'
     database_2: 'lands'
-    # Maximale Lebensdauer einer MySQL-Verbindung. Verbindungen, die älter als der definierte Zeitraum sind, werden vom Verbindungspool geschlossen.
+    # Max lifetime of a MySQL connection. The connection pool will close connections older than the defined period.
     max-life_time: 10m
 
-    # Empfehlung: Eindeutiges Tabellen-Präfix setzen, wenn das Plugin eine Datenbank mit anderen Plugins teilt.
+    # It is highly recommended to set a unique table prefix if the plugin shares a database with other plugins.
     table-prefix_2: 'lands_'
 
-  # Wird nur benötigt, um Länder, Nationen und Ansprüche über Server zu synchronisieren.
+  # Only needed if you want to synchronize lands, nations and claims across servers.
   redis:
     enabled_6: false
-    # Redis-URL muss mit redis:// oder rediss:// (SSL-Verbindung) beginnen.
+    # Redis url should start with redis:// or rediss:// (for SSL connection).
     address_3: "redis://127.0.0.1"
     port_3: 6379
-    # Datenbankindex. Kein anderes Plugin sollte denselben Index verwenden.
+    # Database index. No other plugin should use the same index.
     database-index: 1
     username_3: "default"
     password_3: "password"
-    # Dieser Server-Name sollte dem Namen entsprechen, der in BungeeCord oder Velocity konfiguriert wurde.
-    # HINWEIS: Bei Multipaper wird dieser Wert durch Multipapers eigene Namensgebung überschrieben.
-    # HINWEIS: Diese Option kann in server-name.yml überschrieben werden, damit diese Datei (config.yml) auf andere Server kopiert werden kann.
+    # This should be the name that you configured for this server in your BungeeCord or Velocity config.
+    # NOTE: If you're using multipaper, this option will be overridden by multipaper's own name decision.
+    # NOTE: This option can be overridden in server-name.yml to allow you copying this file (config.yml) to other servers without adjust this section.
     server-name: "server-1"
-    # Diese Option sollte nur auf EINEM der Server aktiviert sein, die mit derselben Lands-Datenbank und Redis verbunden sind.
-    # Wenn true: Dieser Server führt Aufgaben wie Unterhalt, Steuern usw. für alle Länder über alle verbundenen Server aus.
-    # HINWEIS: Bei Multipaper den tatsächlichen Namen der Multipaper-Instanz angeben, die Master-Server sein soll (nicht der Multipaper-Master).
-    # HINWEIS: Diese Option kann in server-name.yml überschrieben werden.
+    # This option should only be enabled on ONE of the servers that are connected to the same Lands database and Redis.
+    # If true: This server will execute tasks, such as upkeep, taxes etc. for all lands across all servers that are connected to the same Lands database and Redis.
+    # NOTE: If you're using multipaper, make sure to provide the actual name of the multipaper instance that should be the master server (not the multipaper master).
+    # NOTE: This option can be overridden in server-name.yml to allow you copying this file (config.yml) to other servers without adjust this section.
     master: false
 
-  # Wenn Lands keine Verbindung zur MySQL-Datenbank herstellen kann (z. B. ungültige oder veraltete Anmeldedaten).
-  # Sollen Spieler am Beitreten gehindert werden, wenn keine Datenbankverbindung möglich ist?
-  # Kann passieren, wenn die Datenbank-Anmeldedaten geändert werden, aber nicht in dieser Konfiguration aktualisiert werden.
+  # If Lands can't connect to your MySQL database, because for example the credentials are invalid or outdated.
+  # Should Lands disallow players to join the server, if it couldn't connect to the database?
+  # This can happen if you change the database credentials, but forget to update it in this config.
   error-disallow-join: true
 
 
-# Drittanbieter-Plugin-Optionen
+# 3rd party plugin options
 integration:
-  # Management-Integrationen
+  # Management integrations
   manager:
     WorldEdit:
-      # Verwendung von WorldEdit in Ländern anderer Spieler, denen man nicht vertraut, verbieten?
-      # Bei FAWE: Spieler können mit "fawe.lands"-Berechtigung Schutzmechanismen umgehen.
-      # Bei FAWE muss "region-restrictions" in der FAWE-Konfiguration aktiviert sein.
+      # Disallow WorldEdit use in other players lands, where the player isn't trusted?
+      # If you use FAWE, please keep in mind that players can bypass protections with worldedit, if the have the "fawe.lands" permission.
+      # Also when using FAWE "region-restrictions" must be enabled in the FAWE config.
       enabled_7: true
 
-    # Lands-Claim-Flag auch auf globale Regionen in Welt-Manager-Plugins wie WorldGuard anwenden?
-    # HINWEIS: Nur aktivieren, wenn das Beanspruchen in der Wildnis verboten werden soll.
-    #       Für die Verwaltung von Wildnis-Flags wie Block-Brechen stattdessen /lands admin menu verwenden.
-    # Diese Option erfordert einen Server-Neustart.
+    # Apply the lands-claim flag also to global regions in world manager plugins, like WorldGuard?
+    # NOTE: This option should only be enabled, if you want to disallow claiming in the wilderness.
+    #       If you want to manage wilderness flags like block breaking, use /lands admin menu instead.
+    # This option requires server reload / restart.
     global-regions: false
 
-  # Optionen für das Drittanbieter-Plugin MythicMobs.
+  # Options for the 3rd party plugin MythicMobs.
   mythicmobs:
-    # Mob-IDs aus MythicMobs hinzufügen, die das Tier- und Monster-Spawn-Flag umgehen sollen.
-    # Wildcard "*" fügt alle MythicMobs-Mobs hinzu.
+    # Here you can add mob IDs from the MythicMobs plugin, that should bypass the animal and monster spawn flag.
+    # The wildcard "*" adds all mobs of MythicMobs to this list.
     bypass-spawn-flags_list:
       - "*"
 
-  # Sollen Skins vom Drittanbieter-Plugin SkinsRestorer abgerufen werden?
-  # Erfordert, dass die Option "general.fetch-skins-names" aktiviert ist.
+  # Should skins be fetched from the 3rd party plugin SkinsRestorer.
+  # This option requires the option "general.fetch-skins-names" to be enabled.
   skins-restorer: false
 
-  # Optionen für Fahrzeuge des Vehicles-Plugins. Betrifft keine Minecraft-Vanilla-Fahrzeuge.
-  # Wenn aktiviert:
-  #   Verbietet die Platzierung von Fahrzeugen in einem Land, wenn der Spieler keine Fahrzeug-Nutzungsberechtigung hat.
-  #   Erlaubt Landmitgliedern, Fahrzeuge anderer Spieler im Land aufzuheben, auch ohne Fahrzeugbesitz.
-  # Wenn deaktiviert, können nicht vertraute Spieler Fahrzeuge platzieren, die Landmitglieder nicht entfernen können.
+  # Options for vehicles of the Vehicles plugin. This doesn't affect Minecraft vanilla vehicles.
+  # If enabled:
+  #   Disallows the placement of vehicles in a land if the player isn't allowed to use vehicles in it.
+  #   Allow land members to pickup vehicles from other players in the land, even if they don't own the vehicle.
+  # If disabled, untrusted players can place vehicles, which can't be removed by land members, in lands.
   vehicles: true
 
-  # Soll Lands Luckperms-Kontext für das Setzen von Berechtigungen bereitstellen?
+  # Should Lands provide Luckperms context for setting permissions?
   luckperms-context: true
 
-  # Economy-Einstellungen
-  # Wenn alle Typen deaktiviert sind, wird stattdessen die gegenstandsbasierte Economy verwendet.
-  # HINWEIS: Bei Änderungen dieser Option auch "eco-format" in dieser Konfiguration anpassen.
+  # Economy settings
+  # If all types are disabled, the item based economy will be used instead.
+  # NOTE: When changing these option you might also want to adjust the "eco-format" in this config.
   economy:
     vault:
-      # Es wird ein Economy-Plugin benötigt, das Vault unterstützt.
+      # You need an economy plugin, which supports Vault, to let this work.
       enabled_10: true
-      # Server-Bank-Kontoname. Unterhalt wird hierhin überwiesen. Leer = Funktion deaktiviert.
+      # Server bank account name. Upkeep will go here. Empty means, that this feature is disabled.
       server-bank: ''
-    # Spieler-Erfahrung
+    # Player experience
     exp:
       enabled_15: false
-    # Gegenstands-Währung wird verwendet, wenn alle anderen Economy-Optionen deaktiviert oder nicht verfügbar sind.
-    # Die Währungs-Gegenstände können in der GUI-Sprachdatei geändert werden (nach "currency" suchen). Die Sprachdatei ist unter /plugins/Lands/Language/deinlocale_gui.yml zu finden.
-    # Model-Data für die Währungs-Gegenstände kann auch in der GUI-Sprachdatei gesetzt werden: https://wiki.incredibleplugins.com/general/menus/gui-menus#set-custom-model-data
-    # Bitte beachten: Steuern können nicht aktiviert werden, wenn keine Vault-Economy verwendet wird.
+    # Item currency is used when all other economy options are disabled or unavailable.
+    # The currency item can be changed in the GUI locale file. Just search for "currency" there. The locale file is located under /plugins/Lands/Language/yourlocale_gui.yml.
+    # You can also apply model-data to the currency item in the GUI locale file: https://wiki.incredibleplugins.com/general/menus/gui-menus#set-custom-model-data
+    # Please note that taxes can't be enabled, if you don't use Vault economy.
     items:
-      # Wenn aktiviert, gehören nur Gegenstände mit demselben Namen, derselben Beschreibung usw. zur Währung.
-      # Nicht nur Gegenstände desselben Typs oder mit denselben Model-Data.
+      # If enabled, only items that have the same name, lore etc. will belong to the currency.
+      # Not just items of the same type or items with the same model-data.
       strict: false
 
 
-# Dieser Abschnitt muss wahrscheinlich nicht bearbeitet werden.
+# You most likely don't need to edit this section.
 entities:
-  # Hier kann angegeben werden, welche Entitäten als Tier oder Monster gelten.
-  # Betrifft alle Teile des Plugins, die diese Entitätsgruppen einbeziehen.
-  # Enthält die Liste "default": Neue Entitäten zukünftiger Updates, die zu dieser Kategorie gehören, werden automatisch hinzugefügt.
-  # Bestimmte Entitäten aus der "default"-Liste entfernen: Sowohl "default" als auch "-entitätstyp" zur Liste hinzufügen (beachte das Minus vor dem Entitätstyp).
+  # You can specify here which entities should be considered an animal or monster.
+  # This affects all parts of the plugin, that involves these entity groups.
+  # If the list contains "default": New entities of future updates, that are part of this category will be added automatically.
+  # You can remove specific entities from the "default" list by adding both "default" and "-entity_type" to the list. Note the minus before the entity type.
   animals_list:
     - 'default'
   monsters_list:
     - 'default'
 
 
-# Protokollierung konfigurieren
+# Configure logging
 logging:
-  # Kann bei der Fehlersuche hilfreich sein, wenn man uns einen Fehlerbericht einreicht.
-  # Nützlich auch zum Debuggen von Variablen für events.yml.
+  # We might ask you to enable this, when you submit a bugreport.
+  # It's also helpful to debug variables for events.yml.
   debug: false
-  # Beim Herunterfahren alles zwangsweise speichern, auch wenn keine Datenänderungen vorliegen.
+  # Forcefully save everything at shutdown, even if the data had no changes.
   force-save: false
-  # Aufrufer von Events usw. identifizieren.
-  # Verfügbar: land_balance_changed
+  # Identify caller of events etc.
+  # Available: land_balance_changed
   print-callstack_list: [ ]

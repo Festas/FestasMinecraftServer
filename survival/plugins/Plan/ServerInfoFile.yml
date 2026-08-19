@@ -1,0 +1,6 @@
+# Changing the UUID in this file will make Plan regard your server as a completely new server
+# Tread with caution.
+Server:
+    ID: 1
+    UUID: "f043fc4c-b0eb-4149-a06a-42f84104d620"
+    Web_address: "http://localhost:8804"
