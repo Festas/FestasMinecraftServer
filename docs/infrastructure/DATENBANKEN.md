@@ -85,7 +85,7 @@ useSSL: true
 
 Die Plan-Zugangsdaten werden nicht mehr im Repository gespeichert. Stattdessen
 werden sie während des Deployments aus dem GitHub-Secret
-`PLAN_STATS_DB_ENV` in die Plan-Konfigurationen injiziert.
+`PLAN_DB_ENV` in die Plan-Konfigurationen injiziert.
 
 Format des Secrets (für die neue Plan-Datenbank `s4_plan`):
 

@@ -40,15 +40,15 @@ jobs:
       - name: Inject Plan DB credentials for repo-to-server sync
         if: github.event.inputs.direction == 'Repo → Server'
         env:
-          PLAN_STATS_DB_ENV: ${{ secrets.PLAN_STATS_DB_ENV }}
+          PLAN_DB_ENV: ${{ secrets.PLAN_DB_ENV }}
         run: |
-          if [ -z "$PLAN_STATS_DB_ENV" ]; then
-            echo "::error::Missing secret PLAN_STATS_DB_ENV"
+          if [ -z "$PLAN_DB_ENV" ]; then
+            echo "::error::Missing secret PLAN_DB_ENV"
             exit 1
           fi
 
           tmp_env="$(mktemp)"
-          printf '%s\n' "$PLAN_STATS_DB_ENV" > "$tmp_env"
+          printf '%s\n' "$PLAN_DB_ENV" > "$tmp_env"
           set -a
           . "$tmp_env"
           set +a
@@ -56,7 +56,7 @@ jobs:
 
           for required in PLAN_DB_HOST PLAN_DB_PORT PLAN_DB_DATABASE PLAN_DB_USER PLAN_DB_PASSWORD; do
             if [ -z "${!required:-}" ]; then
-              echo "::error::Missing $required in PLAN_STATS_DB_ENV"
+              echo "::error::Missing $required in PLAN_DB_ENV"
               exit 1
             fi
           done
@@ -183,6 +183,7 @@ jobs:
                   continue
               lines = path.read_text().splitlines(keepends=True)
               in_mysql_block = False
+              mysql_indent = None
               for i, line in enumerate(lines):
                   raw = line.rstrip("\r\n")
                   line_ending = line[len(raw):]
@@ -190,8 +191,9 @@ jobs:
                   indent_len = len(raw) - len(raw.lstrip())
                   if stripped == "MySQL:":
                       in_mysql_block = True
+                      mysql_indent = indent_len
                       continue
-                  if in_mysql_block and indent_len < 8 and stripped and not stripped.startswith("#"):
+                  if in_mysql_block and mysql_indent is not None and indent_len <= mysql_indent and stripped and not stripped.startswith("#"):
                       in_mysql_block = False
                   if not in_mysql_block:
                       continue
