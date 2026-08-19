@@ -1,17 +1,17 @@
-last-rotation-id: 4
+last-rotation-id: 5
 rotation:
-  id: 4
-  started-at: 1787068969444
-  ends-at: 1787090569444
+  id: 5
+  started-at: 1787127727439
+  ends-at: 1787149327439
   entries:
-  - item: spare-pickaxe
+  - item: mega-bomb
     discount: 0
-    initial-stock: 2
-    remaining-stock: 2
-  - item: autominer-cache
+    initial-stock: 3
+    remaining-stock: 3
+  - item: gem-pouch
     discount: 10
-    initial-stock: 10
-    remaining-stock: 10
+    initial-stock: 5
+    remaining-stock: 5
   - item: enchant-voucher
     discount: 0
     initial-stock: 4

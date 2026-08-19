@@ -1,0 +1,30 @@
+mines:
+  143dea84-67a0-4484-b067-999a908a7247:
+    owner: 6e874670-66e9-48dd-b16f-48029fc0c645
+    schematic: pmine
+    x-offset: 0
+    z-offset: 0
+    banned-players: []
+    open: false
+    tax: 10.0
+    entryfee: 500000.0
+    expandLevel: 10
+    reset-percentage: 50
+    spawn:
+      ==: org.bukkit.Location
+      world_key: minecraft:private_mines
+      x: 0.0
+      y: 100.0
+      z: 0.0
+      pitch: 0.0
+      yaw: 0.0
+    reset-teleport:
+      ==: org.bukkit.Location
+      world_key: minecraft:private_mines
+      x: -27.0
+      y: 102.0
+      z: 25.0
+      pitch: 0.0
+      yaw: 0.0
+    unclaimed-money: 0.0
+    tier: '1'

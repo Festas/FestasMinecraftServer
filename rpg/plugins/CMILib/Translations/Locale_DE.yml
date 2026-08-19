@@ -427,128 +427,128 @@ info:
     zombified_piglin: Zombified piglin
   # Avoid adding color codes to the enchant name
   EnchantNames:
-    thorns: Dornen
-    density: Density
-    power: Power
-    knockback: Rückstoss
-    lunge: Lunge
-    multishot: Multishot
-    aqua_affinity: Aqua_Affinity
-    fire_aspect: Verbrennung
-    silk_touch: Behutsamkeit
-    swift_sneak: Swift_Sneak
-    flame: Flame
-    riptide: Sog
-    fortune: Fortune
-    frost_walker: Eisläufer
-    punch: Punch
-    binding_curse: FluchderBindung
-    loyalty: Treue
-    channeling: Entladung
-    respiration: Respiration
-    piercing: Durchdringung
-    efficiency: Efficiency
-    unbreaking: Unbreaking
-    lure: Köder
-    protection: Protection
-    fire_protection: Fire_Protection
-    blast_protection: Blast_Protection
-    looting: Looting
-    sharpness: Sharpness
-    feather_falling: Feather_Falling
-    depth_strider: Wasserläufer
-    infinity: Infinity
-    sweeping_edge: Schwungkraft
-    impaling: Harpune
-    soul_speed: Soul_Speed
-    bane_of_arthropods: Bane_Of_Arthropods
-    vanishing_curse: FluchdesVerschwindens
-    quick_charge: Schnellladen
-    luck_of_the_sea: Luck_Of_The_Sea
-    breach: Breach
     wind_burst: Wind_Burst
-    mending: Reperatur
-    projectile_protection: Projectile_Protection
+    lure: Köder
     smite: Smite
+    respiration: Respiration
+    flame: Flame
+    multishot: Multishot
+    power: Power
+    soul_speed: Soul_Speed
+    vanishing_curse: FluchdesVerschwindens
+    depth_strider: Wasserläufer
+    riptide: Sog
+    sharpness: Sharpness
+    channeling: Entladung
+    fortune: Fortune
+    blast_protection: Blast_Protection
+    fire_aspect: Verbrennung
+    efficiency: Efficiency
+    density: Density
+    quick_charge: Schnellladen
+    knockback: Rückstoss
+    looting: Looting
+    silk_touch: Behutsamkeit
+    unbreaking: Unbreaking
+    piercing: Durchdringung
+    swift_sneak: Swift_Sneak
+    feather_falling: Feather_Falling
+    projectile_protection: Projectile_Protection
+    breach: Breach
+    fire_protection: Fire_Protection
+    aqua_affinity: Aqua_Affinity
+    punch: Punch
+    impaling: Harpune
+    luck_of_the_sea: Luck_Of_The_Sea
+    mending: Reperatur
+    sweeping_edge: Schwungkraft
+    lunge: Lunge
+    bane_of_arthropods: Bane_Of_Arthropods
+    infinity: Infinity
+    loyalty: Treue
+    thorns: Dornen
+    binding_curse: FluchderBindung
+    frost_walker: Eisläufer
+    protection: Protection
   PotionEffectAliases:
-    slowness:
-    - Slowness
-    wither:
-    - Wither
-    dolphinsgrace:
-    - Dolphins grace
-    resistance:
-    - Resistance
-    haste:
-    - Haste
-    heroofthevillage:
-    - Hero of the village
-    strength:
-    - Strength
-    blindness:
-    - Blindheit
-    invisibility:
-    - Unsichtbarkeit
-    poison:
-    - Vergiftung
-    windcharged:
-    - Wind charged
-    absorption:
-    - Absonderung
     hunger:
     - Hunger
-    darkness:
-    - Darkness
-    waterbreathing:
-    - Water breathing
     miningfatigue:
     - Mining fatigue
-    nightvision:
-    - Night vision
+    slowfalling:
+    - Slow falling
+    conduitpower:
+    - Conduit power
+    trialomen:
+    - Trial omen
+    poison:
+    - Vergiftung
+    haste:
+    - Haste
+    instantdamage:
+    - Instant damage
     infested:
     - Infested
-    levitation:
-    - Schwebekraft
+    luck:
+    - Glück
+    nausea:
+    - Nausea
     badomen:
     - Bad omen
+    slowness:
+    - Slowness
     unluck:
     - Unglück
+    dolphinsgrace:
+    - Dolphins grace
+    glowing:
+    - Leuchten
+    healthboost:
+    - Health boost
+    resistance:
+    - Resistance
+    oozing:
+    - Oozing
+    windcharged:
+    - Wind charged
+    fireresistance:
+    - Fire resistance
+    darkness:
+    - Darkness
+    raidomen:
+    - Raid omen
     weaving:
     - Weaving
     instanthealth:
     - Instant health
-    trialomen:
-    - Trial omen
-    instantdamage:
-    - Instant damage
-    luck:
-    - Glück
-    regeneration:
-    - Regeneration
-    oozing:
-    - Oozing
-    conduitpower:
-    - Conduit power
-    healthboost:
-    - Health boost
-    glowing:
-    - Leuchten
-    slowfalling:
-    - Slow falling
-    raidomen:
-    - Raid omen
-    saturation:
-    - Sättigung
     jumpboost:
     - Jump boost
+    levitation:
+    - Schwebekraft
+    nightvision:
+    - Night vision
     weakness:
     - Schwäche
-    nausea:
-    - Nausea
+    regeneration:
+    - Regeneration
+    invisibility:
+    - Unsichtbarkeit
+    blindness:
+    - Blindheit
+    heroofthevillage:
+    - Hero of the village
+    absorption:
+    - Absonderung
     speed:
     - Schnelligkeit
-    fireresistance:
-    - Fire resistance
+    waterbreathing:
+    - Water breathing
+    strength:
+    - Strength
+    saturation:
+    - Sättigung
+    wither:
+    - Wither
 dialog:
   signEditor: Sign Editor
   update: Update

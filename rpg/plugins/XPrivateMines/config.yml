@@ -10,7 +10,7 @@ enable-metrics: false
 private-mines-world: private_mines
 # Name of the world where private mines are placed.
 
-last-x: 0
+last-x: 250
 last-z: 0
 # Internal use only. Tracks placement coordinates for the next mine. Do not modify manually!
 
