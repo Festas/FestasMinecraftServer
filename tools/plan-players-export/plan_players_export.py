@@ -26,6 +26,7 @@ import argparse
 import json
 import os
 import sys
+import tempfile
 import time
 from typing import Any, Dict, List, Optional
 
@@ -273,8 +274,10 @@ def connect(db_settings: Dict[str, Any]):
     }
 
     # SSL handling mirrors Plan's own "useSSL: true". When a CA file is supplied we
-    # verify the certificate; otherwise PyMySQL negotiates TLS in PREFERRED mode
-    # (encrypt if the server offers it) without pinning a self-signed internal CA.
+    # verify the certificate. Otherwise we rely on PyMySQL's PREFERRED mode
+    # (encrypt if the server offers TLS, without pinning a self-signed internal CA).
+    # PREFERRED mode requires PyMySQL >= 1.2.0 (see requirements.txt); on older
+    # releases a ca-less connection would silently be plaintext.
     if db_settings["ssl"]:
         ca = db_settings.get("ssl_ca")
         if ca:
@@ -300,16 +303,27 @@ def write_atomic(path: str, snapshot: Dict[str, Any]) -> None:
     """Write the snapshot JSON atomically so nginx never reads a partial file."""
     directory = os.path.dirname(os.path.abspath(path))
     os.makedirs(directory, exist_ok=True)
-    tmp_path = f"{path}.tmp"
     payload = json.dumps(snapshot, ensure_ascii=False, separators=(",", ":"))
 
-    with open(tmp_path, "w", encoding="utf-8") as handle:
-        handle.write(payload)
-        handle.flush()
-        os.fsync(handle.fileno())
-    # World-readable so the web container (different uid via bind mount) can read it.
-    os.chmod(tmp_path, 0o644)
-    os.replace(tmp_path, path)
+    # Write to a unique temp file in the same directory (so os.replace stays atomic
+    # on one filesystem) and only then swap it in. A unique name means two overlapping
+    # runs never clobber each other's partial write before the rename.
+    fd, tmp_path = tempfile.mkstemp(prefix=".players.", suffix=".tmp", dir=directory)
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as handle:
+            handle.write(payload)
+            handle.flush()
+            os.fsync(handle.fileno())
+        # World-readable so the web container (different uid via bind mount) can read it.
+        os.chmod(tmp_path, 0o644)
+        os.replace(tmp_path, path)
+    except BaseException:
+        # Never leave a stray temp file behind if writing/replacing failed.
+        try:
+            os.unlink(tmp_path)
+        except OSError:
+            pass
+        raise
 
 
 # --- Settings assembly (CLI > env > config > defaults) ------------------------
