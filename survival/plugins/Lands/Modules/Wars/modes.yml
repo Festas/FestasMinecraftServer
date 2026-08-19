@@ -32,8 +32,8 @@ modes:
 # Kriegsziele. Das Ergebnis jedes Ziels wird pro Kriegsstatus konfiguriert, damit es milder sein kann, wenn eine Seite aufgibt:
 #   end        - ein erkämpfter Sieg/Niederlage
 #   surrender  - eine Seite hat aufgegeben (während der Vorbereitung oder im aktiven Krieg). Meist milder als 'end'.
-#   draw       - kein entscheidender Gewinner. Bei Unentschieden gibt es keinen Gewinner/Verlierer, Befehle und Schilde haben keine Wirkung
-#                listed below - add them if you want a draw to still grant a shield/run a command.
+#   draw       - kein entscheidender Gewinner. Bei Unentschieden gibt es keinen Gewinner/Verlierer, deshalb haben Befehle und Schilde
+#                unten keine Wirkung - füge sie hinzu, wenn ein Unentschieden trotzdem einen Schild vergeben oder einen Befehl ausführen soll.
 # Jeder Status (unten) verwendet dieselben Optionen:
 #   cmds.winner / cmds.loser - Konsolen-Befehle, die einmalig pro Gewinner-/Verlierer-Land ausgeführt werden.
 #     Platzhalter: {winner}/{loser} (Parametername, keine Leerzeichen), {winner_name}/{loser_name} (Anzeigename),
