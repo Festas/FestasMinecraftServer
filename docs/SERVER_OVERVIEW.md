@@ -189,6 +189,8 @@ Nach Rang 25 kann man prestigen — alles wird zurückgesetzt, aber ein permanen
 - **Freischaltbare Zonen:** Neue Abbau-Zonen mit anderen/wertvolleren Blöcken werden nach und nach freigeschaltet
 - **Verkaufen → Aufwerten → Freischalten:** Blöcke verkaufen finanziert Spitzhacken-Upgrades und Zonen
 - Retention über Ränge/Prestige, Cosmetics und Battle-Pass
+- **Phase 2+ kompakt:** Rankups zwischen Minen, Prestige mit permanenten Boni, Black Market als rotierender
+  Ressourcen-Sink, stufenweise Enchant-Freischaltung und weitere Battlepass-/Quest-Saisons als Endgame-Loop
 
 **Abgrenzung:** Aktives Abbauen und Spitzhacken-Progression statt passiver Generatoren/Plots des Survival/Tycoon.
 
@@ -544,6 +546,7 @@ Zwischen RPG ↔ Skyblock werden synchronisiert:
 - [ ] Hologramme über CMI (Lobby, Spielerzahlen, News)
 - [ ] CDN für Resourcepacks
 - [ ] Parkour-Kurs in der Lobby mit Belohnungen
+- [ ] Mining-Post-Launch: Black Market, weitere Battlepass-/Quest-Saisons und Endgame-Enchant-/Prestige-Balance
 - [ ] Event-Server für spezielle Events
 
 ---
@@ -827,5 +830,5 @@ Erstelle die komplette Website als einzelne HTML-Datei (index.html) mit eingebet
 
 ---
 
-**Letzte Aktualisierung:** 2026-08-15  
+**Letzte Aktualisierung:** 2026-08-19  
 **Version:** 1.1 (26.2-Umstellung: Fokus Lobby & Survival; Skyblock & RPG → Archiv)

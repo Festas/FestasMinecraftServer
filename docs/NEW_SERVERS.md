@@ -119,6 +119,15 @@ Die Weichenstellung fällt auf einen **überarbeiteten Skyblock** plus einen neu
 | **EconomyShopGUI** (Shop/Auto-Sell, Vault-kompatibel) | Blöcke verkaufen → Upgrades finanzieren | 🔶 prüfen | Bei Weg A Core-intern; Economy-Sink & -Quelle |
 | **BattlePass** / Skript-Pass + **PlayerParticles** (Cosmetics) | Trails, Effekte, Battle-Pass | 🔶 prüfen | Retention/Monetarisierung |
 
+**Mining-Ausbau (kompakt, Phase 2+):**
+- **Rank-/Prestige-/Mine-Progression:** klare Mine-Leiter, Rankups zwischen Zonen und Prestige als Loop-Neustart mit
+  permanenten Boni.
+- **Black Market:** rotierender Händler als Ressourcen-Sink für Geld, Tokens, seltene Drops und saisonale Angebote.
+- **Enchant-Balancing:** frühe Enchants schlicht, starke Flächen-/Endgame-Enchants erst über Mine-Tiers,
+  Spitzhacken-Level oder Prestige.
+- **Weitere Battlepass-/Quest-Saisons:** wiederkehrende Seasons mit Mining-, Prestige- und Event-Zielen für
+  langfristige Retention.
+
 ### 3.3 Skyblock-spezifisch
 
 | Plugin | Zweck | 26.2 | Hinweis |
@@ -184,7 +193,8 @@ Premium-Lizenz weiterverwendbar) für PvE-Events/Bosse.
 4. **Prototyp/Testserver** — recycelter `rpg/`-Slot (wird zum Mining-Server) und vorhandene `skyblock/`-Configs iterieren.
 5. **Integration** — Lobby-Selector, HuskSync, Economy, Permissions, Velocity-Routing verdrahten.
 6. **Beta & Balance** — Test-Checklisten aus [CHECKLISTS.md](CHECKLISTS.md) nutzen, Feedback-Runde.
-7. **Launch + Post-Launch** — Content-Update-Kadenz, saisonale Events (Kandidat F als Ergänzung).
+7. **Launch + Post-Launch** — Content-Update-Kadenz, saisonale Events sowie neue Battlepass-/Quest-Saisons; für Mining
+   zusätzlich Black Market, Enchant-Balance und Endgame-Progression iterieren.
 
 ---
 
@@ -208,4 +218,4 @@ Diese Punkte sind bewusst **nicht** vorentschieden und brauchen eine finale Best
 **Verwandte Dokumente:** [PLANNING.md](PLANNING.md) · [SERVER_OVERVIEW.md](SERVER_OVERVIEW.md) ·
 [mining/README.md](mining/README.md) · [skyblock/README.md](skyblock/README.md)
 
-**Letzte Aktualisierung:** 2026-08-16
+**Letzte Aktualisierung:** 2026-08-19
