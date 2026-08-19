@@ -135,7 +135,7 @@ Dokumentation für den überarbeiteten Skyblock-Server — **ohne Gilden**, mit 
 - [Islands-System](ISLANDS.md)
 - [Minions-System](MINIONS.md)
 - [Progression-System](PROGRESSION.md)
-- [Mining-Server](../mining/README.md)
+- [Mining-Server](../prison/README.md)
 - [Neue Server: Skyblock & Mining](../NEW_SERVERS.md)
 
 ---

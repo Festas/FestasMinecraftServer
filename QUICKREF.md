@@ -1,8 +1,6 @@
 # Quick Reference Guide
 
-Schnelle Übersicht über die wichtigsten Befehle und Konzepte.
-
-> **ℹ️ Stand 26.2:** Server läuft auf **Minecraft/Paper 26.2**. Aktiver Fokus: **Lobby** und **Survival**. Dazu kommen ein **überarbeiteter Skyblock** (ohne Gilden, Freunde-Koop) und ein neuer **Mining**-Server. Die MMO-Abschnitte (MythicMobs, Citizens, Quests, Klassen, Item-Tiers, Dungeons) beziehen sich auf den auslaufenden **RPG**-Server — sie gelten als **Archiv**.
+Schnelle Übersicht über Verzeichnisstruktur, Konventionen und häufige Befehle.
 
 ## Verzeichnisstruktur
 
@@ -16,8 +14,8 @@ MinecraftMMO/
 │   └── plugins/        # Survival-Plugins (NextGens, Jobs, Rankup, PlotSquared, etc.)
 ├── skyblock/           # Skyblock Server Konfigurationen      (UMBAU — ohne Gilden, Freunde-Koop)
 │   └── plugins/        # Skyblock-Plugins (SuperiorSkyblock2, JetsMinions, etc.)
-├── prison/                # Mining Server Konfigurationen       (RECYCELT aus RPG — Aufbau)
-│   └── plugins/        # Mining-/Zonen-Kern, WorldGuard, Shop/Auto-Sell, etc. (+ Alt-RPG-Archiv)
+├── prison/             # Mining Server Konfigurationen       (RECYCELT aus RPG — Aufbau)
+│   └── plugins/        # Mining-/Zonen-Kern, WorldGuard, Shop/Auto-Sell, etc.
 └── docs/               # Dokumentation
 ```
 
@@ -25,145 +23,94 @@ MinecraftMMO/
 
 - **README.md** - Projekt-Übersicht
 - **CONTRIBUTING.md** - Richtlinien für Beiträge
-- **.gitignore** - Git-Ausschlüsse
+- **docs/PLUGINS.md** - Vollständige Plugin-Referenz
+- **docs/NEW_SERVERS.md** - Konzept Skyblock & Mining
 
-## Schnellstart
-
-> **⚠️ Archiv:** Die folgenden Schnellstarts (MMOItems, MythicMobs, BetonQuest) betreffen die auslaufenden Server **Skyblock**/**RPG**. Für die aktiven Server bearbeite die Configs unter `lobby/plugins/` bzw. `survival/plugins/` (z. B. `survival/plugins/NextGens/`, `survival/plugins/ShopGUIPlus/`, `lobby/plugins/DeluxeMenus/`).
-
-### 1. Neues Item erstellen *(Archiv — MMO)*
+## Configs bearbeiten
 
 ```bash
-cd prison/plugins/MMOItems/
-# Bearbeite oder erstelle eine Item-Konfigurationsdatei
+# Survival-Config anpassen
+survival/plugins/NextGens/config.yml
+survival/plugins/ShopGUIPlus/config.yml
+
+# Lobby-Config anpassen
+lobby/plugins/DeluxeMenus/gui_menus/server_selector.yml
+lobby/plugins/Skript/scripts/
+
+# Skyblock
+skyblock/plugins/SuperiorSkyblock2/config.yml
 ```
 
-### 2. Neuen Mob erstellen
+## In-Game Befehle (aktive Server)
 
-```bash
-cd prison/plugins/MythicMobs/Mobs/
-# Bearbeite oder erstelle eine Mob-Konfigurationsdatei
-```
-
-### 3. Neue Quest erstellen
-
-```bash
-cd prison/plugins/BetonQuest/
-# Bearbeite oder erstelle eine Quest-Konfigurationsdatei
-```
-
-## In-Game Befehle
-
-> **⚠️ Archiv:** Die folgenden Befehlsgruppen (MythicMobs, Citizens, Quests, Skills/Klassen) sowie die weiter unten stehenden Referenzen (Item-Tiers, Klassen, Mob-Level, Dungeons) gehören zum MMO-Content der auslaufenden Server **Skyblock**/**RPG**.
-
-### MythicMobs
+### CMI (Lobby & Survival)
 
 ```
-/mm items get ITEM_NAME [Anzahl]      # Item erhalten
-/mm mobs spawn MOB_NAME [Anzahl]       # Mob spawnen
-/mm reload                             # Plugin neu laden
+/cmi setspawn                          # Spawn setzen
+/cmi hologram create NAME              # Hologramm erstellen
+/cmi reload                            # Plugin neu laden
+/cmi kit <name>                        # Kit ausgeben
 ```
 
-### Citizens (NPCs)
+### LuckPerms
 
 ```
-/npc create NAME                       # NPC erstellen
-/npc skin [NAME]                       # Skin setzen
-/citizens reload                       # Plugin neu laden
+/lp user <player> group set <group>    # Gruppe setzen
+/lp editor                             # Web-Editor öffnen
+/lp reload                             # Neu laden
 ```
 
-### Quests
+### NextGens (Survival)
 
 ```
-/quests give [Spieler] QUEST_NAME      # Quest geben
-/quests reload                         # Plugin neu laden
+/nextgens reload                       # Config neu laden
+/nextgens give <player> <generator>    # Generator geben
 ```
 
-### Skills/Classes
+### PlotSquared (Survival)
 
 ```
-/class choose [KLASSE]                 # Klasse wählen
-/skills [SKILL]                        # Skill verwenden
-/skills reload                         # Plugin neu laden
+/plot auto                             # Plot claimen
+/plot setowner <player>                # Besitzer setzen
+/plot clear                            # Plot leeren
+/plot reload                           # Neu laden
 ```
 
-## Tier-System
+### Oraxen (Custom Items)
 
-| Tier | Farbe | Code | Werte-Multiplikator |
-|------|-------|------|---------------------|
-| Common | Weiß | `&f` | 1.0x |
-| Uncommon | Grün | `&a` | 1.25x |
-| Rare | Blau | `&9` | 1.5x |
-| Epic | Lila | `&5` | 2.0x |
-| Legendary | Gold | `&6` | 3.0x |
-| Mythic | Pink | `&d` | 5.0x |
+```
+/oraxen reload all                     # Alle Configs neu laden
+/oraxen give <player> <item>           # Custom-Item geben
+```
 
-## Klassen-Übersicht
+### SuperiorSkyblock2 (Skyblock)
 
-| Klasse | Hauptstat | Rolle | Waffen |
-|--------|-----------|-------|--------|
-| Krieger | Stärke | Tank/DPS | Schwert, Axt |
-| Magier | Intelligenz | Ranged DPS | Stab, Zauberbuch |
-| Assassine | Geschwindigkeit | Melee DPS | Dolch |
-| Bogenschütze | Geschick | Ranged DPS | Bogen |
-| Schamane | Weisheit | Support/Healer | Stab, Totem |
-| Beschwörer | Intelligenz | Summoner | Zauberbuch, Stab |
+```
+/is admin reload                       # Neu laden
+/is admin tp <player>                  # Zu Insel teleportieren
+/is admin setbiome <player> <biome>    # Biom setzen
+```
 
-## Beispiel-Items
+### WorldGuard
 
-### Anfänger-Schwert
+```
+/rg define <region>                    # Region definieren
+/rg flag <region> <flag> <value>       # Flag setzen
+/rg reload                             # Neu laden
+```
+
+## YAML-Syntax Referenz
+
 ```yaml
-SWORD_BASIC_COMMON:
-  Id: IRON_SWORD
-  Display: '&fEinfaches Schwert'
-  Damage: 20
-  Tier: COMMON
+# ✅ Korrekt (2 Leerzeichen, Quotes bei &)
+display: '&6&lGoldener Text'
+lore:
+  - '&7Zeile 1'
+  - '&7Zeile 2'
+
+# ❌ Falsch (Tabs, fehlende Quotes)
+display:	&6Text
 ```
-
-### Legendäres Schwert
-```yaml
-SWORD_FIRE_LEGENDARY:
-  Id: DIAMOND_SWORD
-  Display: '&6&lLegendäres Feuerschwert'
-  Damage: 150
-  Tier: LEGENDARY
-  Special: Fire Aspect
-```
-
-## Mob-Level-System
-
-```
-Level 1-25:   Anfänger-Gebiet
-Level 26-50:  Fortgeschrittenen-Gebiet
-Level 51-75:  Experten-Gebiet
-Level 76-100: End-Game-Gebiet
-```
-
-## Dungeon-Schwierigkeiten
-
-| Schwierigkeit | Multiplikator | Empfohlene Gruppe |
-|---------------|---------------|-------------------|
-| Normal | 1.0x | 3-4 Spieler |
-| Hard | 1.5x | 4-5 Spieler |
-| Master | 2.0x | 5 Spieler |
-
-## Datei-Konventionen
-
-### Items
-`KATEGORIE_NAME_TIER.yml`
-- `SWORD_FIRE_LEGENDARY.yml`
-
-### Mobs
-`MOB_NAME_LEVEL.yml`
-- `ZOMBIE_WARRIOR_10.yml`
-
-### Quests
-`KATEGORIE_NUMMER_NAME.yml`
-- `MAIN_01_THE_BEGINNING.yml`
-
-### NPCs
-`FUNKTION_NAME.yml`
-- `MERCHANT_WEAPONS.yml`
 
 ## Farbcodes Referenz
 
@@ -182,79 +129,30 @@ Level 76-100: End-Game-Gebiet
 &r Reset
 ```
 
-## Häufige Fehler
+## Repository-Befehle
 
-### YAML-Syntax
-```yaml
-# ❌ FALSCH (Tabs verwendet)
-Item:
-	Display: 'Text'
+```bash
+git status
+git add .
+git commit -m "Update: Config-Beschreibung"
+git push
 
-# ✅ RICHTIG (2 Leerzeichen)
-Item:
-  Display: 'Text'
-```
-
-### Anführungszeichen
-```yaml
-# ❌ FALSCH (fehlende Anführungszeichen bei &)
-Display: &6Text
-
-# ✅ RICHTIG
-Display: '&6Text'
+# Backup erstellen
+tar -czf backup-$(date +%Y%m%d).tar.gz lobby/ survival/ skyblock/ prison/ proxy/
 ```
 
 ## Hilfreiche Links
 
-- MythicMobs Wiki: https://git.mythiccraft.io/mythiccraft/MythicMobs/-/wikis/home
-- Citizens Wiki: https://wiki.citizensnpcs.co/
 - Paper Docs: https://docs.papermc.io/
+- Velocity Docs: https://docs.papermc.io/velocity
+- LuckPerms Docs: https://luckperms.net/wiki/Home
+- CMI Docs: https://www.zrips.net/cmi/
 - Minecraft Farbcodes: https://minecraft.tools/en/color-code.php
-
-## Plugin-Versionen
-
-| Plugin | Min. Version | Empfohlen |
-|--------|-------------|-----------|
-| MythicMobs | 5.0.0 | 5.7.0+ |
-| Citizens | 2.0.30 | 2.0.35+ |
-| Paper | 26.2 | Latest |
-
-## Backup-Befehl
-
-```bash
-# Komplettes Backup erstellen (aktive Server + Proxy)
-tar -czf mmo-backup-$(date +%Y%m%d).tar.gz \
-  lobby/ survival/ skyblock/ prison/ proxy/
-
-# Hinweis: prison/ ist der recycelte Slot des alten RPG-Servers (wird zum Prison-Server) und enthält
-# noch Alt-RPG-Configs; vor dem Content-Umbau ein separates Archiv-Backup des prison/-Ordners ziehen:
-tar -czf mmo-archive-$(date +%Y%m%d).tar.gz \
-  prison/
-```
-
-## Repository-Befehle
-
-```bash
-# Änderungen anzeigen
-git status
-
-# Dateien hinzufügen
-git add .
-
-# Commit erstellen
-git commit -m "Add: Neue Items"
-
-# Push zu GitHub
-git push
-
-# Aktuellen Stand holen
-git pull
-```
 
 ## Support
 
 Bei Problemen:
 1. YAML-Syntax prüfen
-2. Console-Logs lesen
+2. Console-Logs lesen (`docker logs <container>`)
 3. Plugin-Dokumentation konsultieren
-4. Beispiel-Dateien vergleichen
+4. Beispiel-Dateien im Repo vergleichen

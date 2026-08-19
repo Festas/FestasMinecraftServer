@@ -2,7 +2,7 @@
 
 Dieses Dokument beschreibt die operativen Abläufe für das Minecraft-MMO-Netzwerk. Alle Server laufen in Docker-Containern.
 
-> **ℹ️ Stand 26.2:** Das Netzwerk läuft auf **Minecraft 26.2**. Aktiv betrieben werden **Proxy (Velocity)**, **Lobby** und **Survival**. Die MMO-Server **Skyblock** und **RPG** werden zeitnah eingestellt und durch **zwei neue Server** ersetzt — Betriebsabläufe zu diesen beiden gelten nur noch übergangsweise (Rückbau/Datensicherung).
+> **Stand 26.2:** Das Netzwerk läuft auf **Minecraft 26.2**. Aktiv betrieben werden **Proxy (Velocity)**, **Lobby** und **Survival**. Im Aufbau: **Skyblock** (Umbau) und **Mining** (recycelter `rpg/`-Slot).
 
 ---
 
@@ -25,10 +25,7 @@ docker compose exec redis redis-cli ping
 
 docker compose up -d velocity
 docker compose up -d lobby
-docker compose up -d rpg skyblock survival
-```
-
-> **Hinweis:** Zwischen den Schritten sollte geprüft werden, ob der jeweilige Dienst vollständig hochgefahren ist, bevor der nächste gestartet wird.
+docker compose up -d skyblock survival
 
 ---
 
@@ -46,7 +43,7 @@ Das Herunterfahren erfolgt in **umgekehrter Reihenfolge**. Spieler müssen vorhe
 # Warnung an Spieler senden (über Velocity-Konsole)
 # /alert Der Server wird in 5 Minuten heruntergefahren!
 
-docker compose stop rpg skyblock survival
+docker compose stop skyblock survival
 docker compose stop lobby
 docker compose stop velocity
 docker compose stop mariadb redis
@@ -70,8 +67,7 @@ Folgende Punkte sollten täglich überprüft werden:
 Für das Einsammeln der aktuellen `latest.log`-Dateien gibt es zusätzlich den GitHub-Workflow
 `sync-latest-logs.yml`. Er läuft täglich automatisch und kann bei Bedarf manuell für **alle**
 oder einen einzelnen Server gestartet werden. Die Logs werden im Repository unter
-`server-logs/<server>/latest.log` aktualisiert. **Prison** verwendet dabei den bereits
-übertragenen **`rpg`-Server-Slot**.
+`server-logs/<server>/latest.log` aktualisiert. **Mining** verwendet den **`rpg`-Server-Slot** im Container-Setup.
 
 ---
 
@@ -82,7 +78,7 @@ oder einen einzelnen Server gestartet werden. Die Logs werden im Repository unte
 ```bash
 docker compose stop <servername>
 # Beispiel:
-docker compose stop rpg
+docker compose stop mining
 ```
 
 ### Proxy neu starten
@@ -178,7 +174,7 @@ Die Webhook-URL wird im jeweiligen Monitoring-Tool konfiguriert (z. B. Grafana, 
 ```
 Beispiel-Webhook-Payload:
 {
-  "content": "⚠️ **WARNUNG**: TPS auf RPG-Server bei 16.5 – Untersuchung empfohlen!"
+  "content": "⚠️ **WARNUNG**: TPS auf Survival-Server bei 16.5 – Untersuchung empfohlen!"
 }
 ```
 

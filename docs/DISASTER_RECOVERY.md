@@ -2,7 +2,7 @@
 
 Dieses Dokument beschreibt die Wiederherstellungsverfahren für das Minecraft-MMO-Netzwerk im Katastrophenfall.
 
-> **ℹ️ Stand 26.2:** Priorität bei der Wiederherstellung haben die aktiven Server **Lobby** und **Survival** sowie der **Proxy**. Für die auslaufenden Server **Skyblock** und **RPG** geht es primär um **Datensicherung vor der Abschaltung** (Ersatz durch zwei neue Server).
+> **Stand 26.2:** Priorität bei der Wiederherstellung haben die aktiven Server **Lobby** und **Survival** sowie der **Proxy**. Für Skyblock (Umbau) und den RPG-Slot (Mining-Aufbau) steht Datensicherung vor Content-Übernahme.
 
 ---
 

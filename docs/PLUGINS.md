@@ -2,12 +2,11 @@
 
 Vollständige Übersicht aller verwendeten Plugins pro Server.
 
-> **📌 Server-spezifische „optimale" Plugin-Stacks:** Für jeden Server gibt es fokussierte Stack-Dokumente mit
-> Ist-Bestand, Empfehlungen und offenen Entscheidungen:
+> **📌 Server-spezifische Plugin-Stacks:** Fokussierte Stack-Dokumente mit Ist-Bestand und Empfehlungen:
 > [lobby/PLUGINS.md](lobby/PLUGINS.md) · [survival/PLUGINS.md](survival/PLUGINS.md) ·
-> [skyblock/PLUGINS.md](skyblock/PLUGINS.md) · [mining/PLUGINS.md](mining/PLUGINS.md).
+> [skyblock/PLUGINS.md](skyblock/PLUGINS.md) · [prison/PLUGINS.md](prison/PLUGINS.md).
 
-> **⚠️ Stand: Umstellung auf 26.2** — Alle Server laufen auf **Minecraft 26.2**. Der Fokus liegt aktuell auf **Lobby und Survival**; deren Plugin-Listen wurden frisch aufgeräumt und spiegeln den echten Ordnerinhalt wider. **Skyblock** wird überarbeitet und behalten (ohne Gilden, mit Freunde-Koop); zusätzlich kommt ein neuer **Mining**-Server, der den **`rpg`-Slot recycelt**. Der Abschnitt zu **RPG** ist **Archiv** — der RPG-**Spielmodus** wird eingestellt, der Server-Slot `rpg` wird zum Mining-Server.
+> **Stand 26.2** — Alle Server laufen auf **Minecraft 26.2**. Aktiv gepflegt: **Lobby** und **Survival**. Im Aufbau: **Skyblock** (ohne Gilden, Freunde-Koop) und **Mining** (recycelter `rpg/`-Slot). Der Abschnitt zu **RPG** ist **Archiv** — der RPG-Spielmodus wird eingestellt.
 
 ---
 

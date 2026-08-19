@@ -1,341 +1,46 @@
 # Checklisten-Templates - MinecraftMMO
 
-Wiederverwendbare Checklisten für neue Inhalte, Balance und Testing.
-
-> **ℹ️ Stand 26.2:** Checklisten rund um MMO-Content (**Skyblock**/**RPG**: Klassen, Items, Mobs, Quests, Dungeons) sind **Archiv**, da diese Server eingestellt werden. Aktiv relevant sind die Checklisten für **Lobby** und **Survival**.
+Wiederverwendbare Checklisten für Config-Erstellung, Balance und Testing der aktiven Server.
 
 ---
 
 ## 1. Content-Erstellungs-Checkliste
 
-### Neues Item (Waffe/Rüstung)
+> Spezifische Checklisten (Item, Mob, Quest, Dungeon, Klasse) gehören zum auslaufenden RPG-Server und wurden entfernt. Hier stehen generische Server-Config-Checks.
 
-#### Design & Konzept
-- [ ] Item-Name festgelegt
-- [ ] Item-Typ definiert (Schwert, Bogen, Rüstung, etc.)
-- [ ] Tier bestimmt (Common - Mythic)
-- [ ] Thematik/Design-Richtung klar
-- [ ] Ziel-Level-Range definiert
+### Neue Plugin-Config
 
-#### Stats & Balance
-- [ ] Base-Damage/Defense festgelegt
-- [ ] Sekundär-Stats definiert (Crit, Speed, etc.)
-- [ ] Stat-Werte im Vergleich zu ähnlichen Items balanced
-- [ ] Klassen-Requirements geprüft
-- [ ] Level-Requirements gesetzt
+- [ ] YAML-Syntax geprüft (keine Tabs, korrekte Anführungszeichen)
+- [ ] Credentials als `CHANGE_ME`-Platzhalter — nie echte Passwörter committen
+- [ ] Auf Test-Instanz geladen, keine Console-Errors
+- [ ] Wichtige Features kurz in-game verifiziert
+- [ ] Backup vor aktivem Roll-out erstellt
 
-#### Special Features
-- [ ] Active Ability definiert (falls vorhanden)
-- [ ] Passive Ability definiert (falls vorhanden)
-- [ ] Ability-Cooldowns festgelegt
-- [ ] Ability-Mana-Kosten festgelegt
-- [ ] Set-Bonus definiert (falls Teil eines Sets)
+### Neue Skript-Datei (Skript-Plugin)
 
-#### Lore & Flavor
-- [ ] Display-Name mit Farben
-- [ ] Lore-Text geschrieben
-- [ ] Lore passt zum Netzwerk-Thema
+- [ ] Skript lädt ohne Fehler (`/sk reload <datei>`)
+- [ ] Trigger/Events korrekt definiert
+- [ ] Kein unendlicher Loop, keine Performance-Killer
+- [ ] Edge Cases geprüft (leeres Inventar, offline Spieler, etc.)
+- [ ] In-game getestet
 
-#### Technische Umsetzung
-- [ ] MMOItems YAML erstellt
-- [ ] Oraxen-Integration (falls Custom Texture)
-- [ ] CustomModelData konfiguriert
-- [ ] Item in-game getestet
+### Neue DeluxeMenus-GUI
 
-#### Verteilung & Drops
-- [ ] Drop-Source(n) definiert (Mob, Boss, Dungeon, Quest)
-- [ ] Drop-Chance festgelegt
-- [ ] Alternative Quellen (Shop, Crafting) definiert
-
-#### Dokumentation
-- [ ] Item-Eintrag in internen Docs
-- [ ] Screenshot erstellt
-- [ ] Fundort dokumentiert
-
----
-
-### Neuer Mob/Boss
-
-#### Design & Konzept
-- [ ] Mob-Name festgelegt
-- [ ] Mob-Typ definiert (Zombie, Skeleton, Custom Model)
-- [ ] Thematik/Lore definiert
-- [ ] Level festgelegt
-- [ ] Elite/Boss-Status geklärt
-
-#### Stats
-- [ ] Health (HP) festgelegt
-- [ ] Base-Damage festgelegt
-- [ ] Armor/Defense festgelegt
-- [ ] Movement-Speed festgelegt
-- [ ] Attack-Speed festgelegt
-
-#### Skills & Abilities
-- [ ] Skill-Liste erstellt
-- [ ] Skill-Cooldowns definiert
-- [ ] Skill-Damage/Effects balanciert
-- [ ] Skill-Targeting definiert (Spieler, Random, etc.)
-- [ ] Ultimate-Ability (für Bosse) definiert
-
-#### Loot-Table
-- [ ] Common-Drops definiert
-- [ ] Rare-Drops definiert
-- [ ] Guaranteed-Drops definiert
-- [ ] Currency-Drops festgelegt
-- [ ] XP-Reward festgelegt
-
-#### Spawning
-- [ ] Spawn-Location(en) festgelegt
-- [ ] Spawn-Conditions definiert
-- [ ] Respawn-Timer festgelegt
-- [ ] Spawn-Gruppe/Pack-Größe (falls relevant)
-- [ ] Despawn-Conditions definiert
-
-#### Testing
-- [ ] Mob gespawnt und getestet
-- [ ] Skills funktionieren korrekt
-- [ ] HP/Damage balanced für Level
-- [ ] Loot-Drops verifiziert
-- [ ] Mit Gruppe getestet (für Bosse)
-
-#### Dokumentation
-- [ ] Mob-Eintrag in internen Docs
-- [ ] Spawn-Location dokumentiert
-- [ ] Notable-Drops dokumentiert
-- [ ] Empfohlenes Level/Gruppe dokumentiert
-
----
-
-### Neue Quest
-
-#### Story & Design
-- [ ] Quest-Story geschrieben
-- [ ] Quest-Kategorie definiert (Main, Side, Daily, etc.)
-- [ ] Quest-Name festgelegt
-- [ ] Empfohlenes Level definiert
-- [ ] Geschätzte Completion-Zeit
-
-#### Requirements
-- [ ] Level-Requirement definiert
-- [ ] Vorherige Quests definiert (falls Quest-Chain)
-- [ ] Klassen-Requirement (falls vorhanden)
-- [ ] Item-Requirements (falls vorhanden)
-
-#### Objectives
-- [ ] Haupt-Objectives definiert
-- [ ] Optional-Objectives definiert (falls vorhanden)
-- [ ] Objective-Beschreibungen klar formuliert
-- [ ] Completion-Criteria eindeutig
-
-#### NPCs
-- [ ] Quest-Giver-NPC erstellt/identifiziert
-- [ ] Quest-Completion-NPC definiert
-- [ ] Zwischen-NPCs (falls vorhanden)
-- [ ] Dialoge geschrieben
-
-#### Rewards
-- [ ] XP-Reward festgelegt
-- [ ] Currency-Reward festgelegt
-- [ ] Item-Rewards definiert
-- [ ] Reputation/Achievement (falls relevant)
-
-#### Technical
-- [ ] BetonQuest YAML erstellt
-- [ ] Objectives konfiguriert
-- [ ] Conditions konfiguriert
-- [ ] Events konfiguriert
-- [ ] NPC-Integration abgeschlossen
-
-#### Testing
-- [ ] Quest angenommen
-- [ ] Alle Objectives durchgespielt
-- [ ] Quest abgeschlossen
-- [ ] Rewards verifiziert
-- [ ] Follow-up-Quest getestet
-
-#### Dokumentation
-- [ ] Quest-Eintrag in Docs
-- [ ] Quest-Chain dokumentiert (falls relevant)
-- [ ] Notable-Rewards dokumentiert
-
----
-
-### Neuer Dungeon
-
-#### Konzept & Design
-- [ ] Dungeon-Name festgelegt
-- [ ] Dungeon-Thema definiert
-- [ ] Schwierigkeitsgrad definiert (Normal/Hard/Master)
-- [ ] Empfohlene Spieler-Anzahl festgelegt
-- [ ] Empfohlenes Level festgelegt
-- [ ] Geschätzte Clear-Zeit
-
-#### World-Building
-- [ ] Dungeon-Map gebaut
-- [ ] Spawn-Room erstellt
-- [ ] Boss-Arena(s) erstellt
-- [ ] Loot-Room erstellt
-- [ ] Exit-Portal platziert
-- [ ] Schematic gespeichert
-
-#### Mobs & Encounters
-- [ ] Trash-Mobs definiert
-- [ ] Elite-Mobs definiert
-- [ ] Mini-Bosse definiert (falls vorhanden)
-- [ ] End-Boss definiert
-- [ ] Spawn-Points platziert
-- [ ] Pathing getestet
-
-#### Boss-Mechaniken
-- [ ] Phase 1 Mechanik definiert
-- [ ] Phase 2 Mechanik definiert (falls vorhanden)
-- [ ] Enrage-Timer festgelegt
-- [ ] Boss-Abilities balanciert
-- [ ] Boss-HP für Gruppen-Größe skaliert
-
-#### Loot
-- [ ] Trash-Mob-Loot-Table
-- [ ] Boss-Loot-Table
-- [ ] Chest-Loot definiert
-- [ ] Completion-Rewards definiert
-- [ ] Rare-Drops definiert
-
-#### Entry & Exit
-- [ ] Dungeon-Portal erstellt
-- [ ] Entry-Requirements konfiguriert
-- [ ] Exit-Teleport funktioniert
-- [ ] Instance-System getestet
-
-#### Testing
-- [ ] Solo-Clear-Test (falls möglich)
-- [ ] Gruppen-Clear-Test
-- [ ] Alle Bosse getestet
-- [ ] Time-Limit angemessen
-- [ ] Loot-Balance geprüft
-
-#### Dokumentation
-- [ ] Dungeon-Guide geschrieben
-- [ ] Boss-Mechaniken dokumentiert
-- [ ] Empfohlene Gruppenzusammensetzung
-- [ ] Notable-Loot dokumentiert
-- [ ] Map/Layout dokumentiert
-
----
-
-### Neue Klasse
-
-#### Konzept
-- [ ] Klassen-Name festgelegt
-- [ ] Klassen-Rolle definiert (Tank, DPS, Support, Hybrid)
-- [ ] Thematik/Fantasy klar
-- [ ] Playstyle-Beschreibung geschrieben
-
-#### Stats & Equipment
-- [ ] Haupt-Stats definiert (Stärke, Int, etc.)
-- [ ] Sekundär-Stats definiert
-- [ ] Erlaubte Waffentypen festgelegt
-- [ ] Erlaubte Rüstungstypen festgelegt
-- [ ] Stat-Scaling pro Level definiert
-
-#### Skills
-- [ ] Skill-Tree-Struktur geplant
-- [ ] Active Skills definiert (min. 4-6)
-- [ ] Passive Skills definiert
-- [ ] Ultimate-Ability definiert
-- [ ] Skill-Unlock-Levels festgelegt
-- [ ] Skill-Costs (Mana, Cooldown) balanciert
-
-#### Starter-Setup
-- [ ] Starter-Waffe erstellt
-- [ ] Starter-Rüstung erstellt
-- [ ] Starter-Skills definiert
-- [ ] Tutorial-Informationen (optional)
-
-#### Balance
-- [ ] PvE-Balance mit anderen Klassen verglichen
-- [ ] PvP-Balance getestet (falls relevant)
-- [ ] Solo-Viability geprüft
-- [ ] Gruppen-Rolle geprüft
-
-#### Testing
-- [ ] Klasse wählen getestet
-- [ ] Alle Skills getestet
-- [ ] Level 1-25 Progression getestet
-- [ ] Endgame-Viability getestet
-- [ ] Mit verschiedenen Equipment-Setups getestet
-
-#### Dokumentation
-- [ ] Klassen-Guide geschrieben
-- [ ] Skill-Overview dokumentiert
-- [ ] Empfohlene Stat-Priority
-- [ ] Empfohlene Equipment-Sets
-- [ ] Playstyle-Tipps
+- [ ] GUI öffnet ohne Errors
+- [ ] Alle Button-Actions getestet
+- [ ] Platzhalter werden korrekt aufgelöst (PAPI)
+- [ ] Rechte (`permission:`) korrekt gesetzt
+- [ ] Bedrock-Kompatibilität (Geyser) geprüft
 
 ---
 
 ## 2. Balance-Checkliste
 
-### Item-Balance
+### Allgemeines Economy-Balancing (Survival / Tycoon)
 
-#### Stat-Vergleich
-- [ ] Stats verglichen mit ähnlichen Items
-- [ ] Stats angemessen für Tier
-- [ ] Stats angemessen für Level-Requirement
-- [ ] Keine Outliers (zu stark/schwach)
-
-#### Power-Level
-- [ ] DPS/Protection im erwarteten Range
-- [ ] Nicht strictly better als Alternativen
-- [ ] Trade-offs vorhanden (hoher Dmg = niedrige Def, etc.)
-
-#### Progression
-- [ ] Item passt in Progression-Curve
-- [ ] Upgrade-Path vorhanden
-- [ ] Nicht zu früh/spät verfügbar
-
-#### Accessibility
-- [ ] Nicht zu schwer zu bekommen für Power-Level
-- [ ] Nicht zu leicht zu bekommen für Power-Level
-- [ ] Drop-Rate angemessen
-
----
-
-### Mob/Boss-Balance
-
-#### Stats
-- [ ] HP angemessen für Level
-- [ ] Damage nicht one-shot (außer bei Spezial-Attacks)
-- [ ] Armor/Defense im erwarteten Range
-
-#### Difficulty
-- [ ] Solo-killable (für normale Mobs)
-- [ ] Gruppen-Größe angemessen (für Bosse)
-- [ ] Skills telegrafiert (Spieler können reagieren)
-- [ ] Nicht zu frustrating
-
-#### Rewards
-- [ ] Loot angemessen für Difficulty
-- [ ] XP angemessen für Time-Investment
-- [ ] Currency-Drops balanced
-
----
-
-### Quest-Balance
-
-#### Time Investment
-- [ ] Completion-Zeit angemessen für Rewards
-- [ ] Nicht zu grindy
-- [ ] Objectives abwechslungsreich
-
-#### Difficulty
-- [ ] Quest schaffbar für empfohlenes Level
-- [ ] Nicht zu schwer für Solo-Spieler (außer explizite Gruppen-Quests)
-- [ ] Clear Instructions
-
-#### Rewards
-- [ ] XP angemessen für Quest-Länge
-- [ ] Item-Rewards nützlich für Level
-- [ ] Currency-Rewards balanced
+- [ ] Neue Sell-Preise verglichen mit bestehenden Generator-Tiers
+- [ ] Kein zu schnelles Economy-Wachstum (Inflations-Check)
+- [ ] Rankup-Kosten angemessen für erwartete Spielzeit
 
 ---
 

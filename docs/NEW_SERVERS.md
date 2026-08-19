@@ -216,6 +216,6 @@ Diese Punkte sind bewusst **nicht** vorentschieden und brauchen eine finale Best
 ---
 
 **Verwandte Dokumente:** [PLANNING.md](PLANNING.md) · [SERVER_OVERVIEW.md](SERVER_OVERVIEW.md) ·
-[mining/README.md](mining/README.md) · [skyblock/README.md](skyblock/README.md)
+[prison/README.md](prison/README.md) · [skyblock/README.md](skyblock/README.md)
 
 **Letzte Aktualisierung:** 2026-08-19
