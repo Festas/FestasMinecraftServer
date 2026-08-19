@@ -70,7 +70,8 @@ Folgende Punkte sollten täglich überprüft werden:
 Für das Einsammeln der aktuellen `latest.log`-Dateien gibt es zusätzlich den GitHub-Workflow
 `sync-latest-logs.yml`. Er läuft täglich automatisch und kann bei Bedarf manuell für **alle**
 oder einen einzelnen Server gestartet werden. Die Logs werden im Repository unter
-`server-logs/<server>/latest.log` aktualisiert.
+`server-logs/<server>/latest.log` aktualisiert. **Prison** verwendet dabei den bereits
+übertragenen **`rpg`-Server-Slot**.
 
 ---
 

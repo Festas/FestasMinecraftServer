@@ -16,7 +16,6 @@ on:
           - PROXY
           - SURVIVAL
           - SKYBLOCK
-          - RPG
           - PRISON
 
 permissions:
@@ -54,7 +53,6 @@ jobs:
           SERVER_PATH_SURVIVAL: ${{ secrets.SERVER_PATH_SURVIVAL }}
           SERVER_PATH_SKYBLOCK: ${{ secrets.SERVER_PATH_SKYBLOCK }}
           SERVER_PATH_RPG: ${{ secrets.SERVER_PATH_RPG }}
-          SERVER_PATH_PRISON: ${{ secrets.SERVER_PATH_PRISON }}
         run: |
           set -euo pipefail
 
@@ -105,7 +103,7 @@ jobs:
             servers=("${REQUESTED_SERVER}")
           else
             allow_skip_missing_secret="true"
-            servers=(LOBBY PROXY SURVIVAL SKYBLOCK RPG PRISON)
+            servers=(LOBBY PROXY SURVIVAL SKYBLOCK PRISON)
           fi
 
           failed_servers=()
@@ -116,8 +114,7 @@ jobs:
               PROXY) server_path="$SERVER_PATH_PROXY" ;;
               SURVIVAL) server_path="$SERVER_PATH_SURVIVAL" ;;
               SKYBLOCK) server_path="$SERVER_PATH_SKYBLOCK" ;;
-              RPG) server_path="$SERVER_PATH_RPG" ;;
-              PRISON) server_path="$SERVER_PATH_PRISON" ;;
+              PRISON) server_path="$SERVER_PATH_RPG" ;;
               *)
                 echo "::error::Unbekannter Server: $server_name"
                 failed_servers+=("$server_name")
