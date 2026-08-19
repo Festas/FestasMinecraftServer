@@ -8,13 +8,13 @@ host: ''
 # Superuser account created on first start if the users table is empty.
 # The plain-text password is hashed with bcrypt and the hash is stored instead.
 superuser:
-  username: admin
-  password: changeme
+  username: __XPRISON_DASHBOARD_USER__
+  password: __XPRISON_DASHBOARD_PASSWORD__
 
 jwt:
   # Leave blank to auto-generate a random secret on first start (recommended).
   # The generated secret is written back to this file.
-  secret: 7C1ELEBxqC2qNPhkFgT0bUKroXLWi+wa8kxZha6f534=
+  secret: __XPRISON_DASHBOARD_JWT_SECRET__
   expiry-hours: 24
 
 cors:

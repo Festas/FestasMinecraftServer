@@ -27,6 +27,37 @@ jobs:
           chmod 600 ~/.ssh/deploy_key
           ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
+      - name: Inject LuckPerms DB credentials
+        env:
+          LUCKPERMS_DB_ENV: ${{ secrets.LUCKPERMS_DB_ENV }}
+        run: |
+          if [ -z "$LUCKPERMS_DB_ENV" ]; then
+            echo "::error::Missing secret LUCKPERMS_DB_ENV"
+            exit 1
+          fi
+
+          set -a
+          . <(printf '%s\n' "$LUCKPERMS_DB_ENV")
+          set +a
+
+          for required in LUCKPERMS_DB_ADDRESS LUCKPERMS_DB_DATABASE LUCKPERMS_DB_USER LUCKPERMS_DB_PASSWORD; do
+            if [ -z "${!required:-}" ]; then
+              echo "::error::Missing $required in LUCKPERMS_DB_ENV"
+              exit 1
+            fi
+          done
+
+          python3 - <<'PY'
+          from pathlib import Path
+          import os
+
+          path = Path("survival/plugins/LuckPerms/config.yml")
+          text = path.read_text()
+          for key in ("ADDRESS", "DATABASE", "USER", "PASSWORD"):
+              text = text.replace(f"__LUCKPERMS_DB_{key}__", os.environ[f"LUCKPERMS_DB_{key}"])
+          path.write_text(text)
+          PY
+
       - name: Inject Plan DB credentials
         env:
           PLAN_DB_ENV: ${{ secrets.PLAN_DB_ENV }}
