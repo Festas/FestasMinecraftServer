@@ -82,6 +82,48 @@ bombs:
         - "<gray>Creates explosion in 15x15 radius."
         - " "
       custom_model_data: 0
+  colossal:
+    radius: 18
+    drop_sound: ENTITY_TNT_PRIMED
+    explode_sound: ENTITY_DRAGON_FIREBALL_EXPLODE
+    explosion_delay: 4
+    item:
+      material: FIRE_CHARGE
+      name: "<gradient:#ff6a00:#ee0979><bold>COLOSSAL </gradient><gradient:#ff0000:#800000>Bomb</gradient>"
+      lore:
+        - " "
+        - "<gray>Ideal for clearing full mine lanes."
+        - "<gray>Creates explosion in 18x18 radius."
+        - " "
+      custom_model_data: 0
+  omega:
+    radius: 22
+    drop_sound: ENTITY_TNT_PRIMED
+    explode_sound: ENTITY_GENERIC_EXPLODE
+    explosion_delay: 4
+    item:
+      material: END_CRYSTAL
+      name: "<gradient:#12c2e9:#c471ed><bold>OMEGA </gradient><gradient:#ff0000:#800000>Bomb</gradient>"
+      lore:
+        - " "
+        - "<gray>High-tier contraband for veteran miners."
+        - "<gray>Creates explosion in 22x22 radius."
+        - " "
+      custom_model_data: 0
+  singularity:
+    radius: 27
+    drop_sound: ENTITY_TNT_PRIMED
+    explode_sound: ENTITY_GENERIC_EXPLODE
+    explosion_delay: 5
+    item:
+      material: RESPAWN_ANCHOR
+      name: "<gradient:#30cfd0:#330867><bold>SINGULARITY </gradient><gradient:#ff0000:#800000>Bomb</gradient>"
+      lore:
+        - " "
+        - "<dark_purple>Only the craziest miners use this."
+        - "<gray>Creates explosion in 27x27 radius."
+        - " "
+      custom_model_data: 0
 # Messages
 messages:
   player_offline: "<gradient:#FF5555:#AA0000:#550000><bold>BOMBS</bold></gradient> <dark_gray>»</dark_gray> <yellow>%player% <gray>is not online!"

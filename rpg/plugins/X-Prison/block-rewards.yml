@@ -1,25 +1,66 @@
 block-rewards:
   '1000':
-    message: <gradient:#FFD700:#FFEA00><bold>BLÖCKE</bold></gradient> <dark_gray>»</dark_gray> <white>Meilenstein! Du hast <yellow>1.000</yellow> <white>Blöcke abgebaut.
+    message: '<gradient:#FFD700:#FFEA00><bold>BLÖCKE</bold></gradient> <dark_gray>»</dark_gray> <white>Meilenstein! Du hast <yellow>1.000</yellow> <white>Blöcke abgebaut.'
     commands:
     - tokens give %player% 250
   '5000':
-    message: <gradient:#FFD700:#FFEA00><bold>BLÖCKE</bold></gradient> <dark_gray>»</dark_gray> <white>Meilenstein! Du hast <yellow>5.000</yellow> <white>Blöcke abgebaut.
+    message: '<gradient:#FFD700:#FFEA00><bold>BLÖCKE</bold></gradient> <dark_gray>»</dark_gray> <white>Meilenstein! Du hast <yellow>5.000</yellow> <white>Blöcke abgebaut.'
     commands:
     - money give %player% 15000
     - tokens give %player% 750
+  '10000':
+    message: '<gradient:#FFD700:#FFEA00><bold>BLÖCKE</bold></gradient> <dark_gray>»</dark_gray> <white>Stark! <yellow>10.000</yellow> <white>abgebaute Blöcke bringen dir den nächsten Bonus.'
+    commands:
+    - money give %player% 50000
+    - tokens give %player% 1500
   '25000':
-    message: <gradient:#FFD700:#FFEA00><bold>BLÖCKE</bold></gradient> <dark_gray>»</dark_gray> <white>Starke Leistung! <yellow>25.000</yellow> <white>Blöcke wurden erreicht.
+    message: '<gradient:#FFD700:#FFEA00><bold>BLÖCKE</bold></gradient> <dark_gray>»</dark_gray> <white>Starke Leistung! <yellow>25.000</yellow> <white>Blöcke wurden erreicht.'
     commands:
     - tokens give %player% 5000
     - gems give %player% 10
+  '50000':
+    message: '<gradient:#FFD700:#FFEA00><bold>BLÖCKE</bold></gradient> <dark_gray>»</dark_gray> <white>Du bist heiß gelaufen: <yellow>50.000</yellow> <white>Blöcke!'
+    commands:
+    - money give %player% 150000
+    - tokens give %player% 8000
+    - gems give %player% 20
   '100000':
-    message: <gradient:#FFD700:#FFEA00><bold>BLÖCKE</bold></gradient> <dark_gray>»</dark_gray> <white>Du hast <yellow>100.000</yellow> <white>Blöcke geknackt!
+    message: '<gradient:#FFD700:#FFEA00><bold>BLÖCKE</bold></gradient> <dark_gray>»</dark_gray> <white>Du hast <yellow>100.000</yellow> <white>Blöcke geknackt!' 
     commands:
     - money give %player% 250000
     - gems give %player% 50
+  '250000':
+    message: '<gradient:#FFD700:#FFEA00><bold>BLÖCKE</bold></gradient> <dark_gray>»</dark_gray> <white>Wahnsinn! <yellow>250.000</yellow> <white>Blöcke bringen fette Beute.'
+    commands:
+    - money give %player% 500000
+    - tokens give %player% 20000
+    - gems give %player% 75
   '500000':
-    message: <gradient:#FFD700:#FFEA00><bold>BLÖCKE</bold></gradient> <dark_gray>»</dark_gray> <white>Legende! <yellow>500.000</yellow> <white>abgebaute Blöcke.
+    message: '<gradient:#FFD700:#FFEA00><bold>BLÖCKE</bold></gradient> <dark_gray>»</dark_gray> <white>Legende! <yellow>500.000</yellow> <white>abgebaute Blöcke.'
     commands:
     - tokens give %player% 50000
     - gems give %player% 100
+  '1000000':
+    message: '<gradient:#FFD700:#FFEA00><bold>BLÖCKE</bold></gradient> <dark_gray>»</dark_gray> <white>Eine Million Blöcke! <yellow>1.000.000</yellow> <white>ist geknackt.'
+    commands:
+    - money give %player% 1500000
+    - tokens give %player% 100000
+    - gems give %player% 200
+  '2500000':
+    message: '<gradient:#FFD700:#FFEA00><bold>BLÖCKE</bold></gradient> <dark_gray>»</dark_gray> <white>Unstoppbar: <yellow>2.500.000</yellow> <white>Blöcke auf deinem Konto.'
+    commands:
+    - money give %player% 4000000
+    - tokens give %player% 250000
+    - gems give %player% 350
+  '5000000':
+    message: '<gradient:#FFD700:#FFEA00><bold>BLÖCKE</bold></gradient> <dark_gray>»</dark_gray> <white>Gigantisch! <yellow>5.000.000</yellow> <white>Blöcke wurden pulverisiert.'
+    commands:
+    - money give %player% 10000000
+    - tokens give %player% 500000
+    - gems give %player% 600
+  '10000000':
+    message: '<gradient:#FFD700:#FFEA00><bold>BLÖCKE</bold></gradient> <dark_gray>»</dark_gray> <white>Mythischer Meilenstein: <yellow>10.000.000</yellow> <white>abgebaute Blöcke!' 
+    commands:
+    - money give %player% 25000000
+    - tokens give %player% 1250000
+    - gems give %player% 1000

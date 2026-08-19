@@ -28,46 +28,137 @@ rebirth-sound:
   volume: 1.0
   pitch: 1.0
 rebirths:
-  '0': # Default Rebirth
+  '0':
     prefix: <gradient:#FFFF00:#FFD700:#FFA500><bold>R0</bold></gradient>
     requirements:
       - type: rank
         enabled: false
-        value: 1 #Required Rank ID
+        value: 1
       - type: prestige
         enabled: false
-        value: 0 #Required Prestige ID
+        value: 0
       - type: currency
         enabled: false
         currency: money
-        value: 10000000.0 #Required amount of money currency
+        value: 10000000.0
       - type: currency
         enabled: false
         currency: tokens
-        value: 10000000.0 #Required amount of tokens currency
+        value: 10000000.0
     rewards:
       commands:
-        - lp user %player% permission set xprison.rebirth0 true #Commands to be executed when player rebirths
-  #'1':
-    #prefix: <gradient:#FFFF00:#FFD700:#FFA500><bold>R1</bold></gradient>
-    #requirements:
-      #- type: rank
-        #enabled: true
-        #value: 26 #Required Rank ID
-      #- type: prestige
-        #enabled: true
-        #value: 10 #Required Prestige ID
-      #- type: currency
-        #enabled: true
-        #currency: money
-        #value: 10000000 #Required amount of money currency
-      #- type: currency
-        #enabled: true
-        #currency: tokens
-        #value: 10000000 #Required amount of tokens currency
-    #rewards:
-      #commands:
-        #- lp user %player% permission set xprison.rebirth1 true
+        - lp user %player% permission set xprison.rebirth0 true
+  '1':
+    prefix: <gradient:#FFFF00:#FFD700:#FFA500><bold>R1</bold></gradient>
+    requirements:
+      - type: rank
+        enabled: true
+        value: 10
+      - type: prestige
+        enabled: true
+        value: 10
+      - type: currency
+        enabled: true
+        currency: money
+        value: 25000000000
+      - type: currency
+        enabled: true
+        currency: tokens
+        value: 1500000
+    rewards:
+      commands:
+        - lp user %player% permission set xprison.rebirth1 true
+        - tokens give %player% 250000
+        - gems give %player% 250
+  '2':
+    prefix: <gradient:#ffefba:#ffffff><bold>R2</bold></gradient>
+    requirements:
+      - type: rank
+        enabled: true
+        value: 10
+      - type: prestige
+        enabled: true
+        value: 10
+      - type: currency
+        enabled: true
+        currency: money
+        value: 50000000000
+      - type: currency
+        enabled: true
+        currency: tokens
+        value: 3000000
+    rewards:
+      commands:
+        - lp user %player% permission set xprison.rebirth2 true
+        - tokens give %player% 400000
+        - gems give %player% 400
+  '3':
+    prefix: <gradient:#f7971e:#ffd200><bold>R3</bold></gradient>
+    requirements:
+      - type: rank
+        enabled: true
+        value: 10
+      - type: prestige
+        enabled: true
+        value: 10
+      - type: currency
+        enabled: true
+        currency: money
+        value: 100000000000
+      - type: currency
+        enabled: true
+        currency: tokens
+        value: 6000000
+    rewards:
+      commands:
+        - lp user %player% permission set xprison.rebirth3 true
+        - tokens give %player% 600000
+        - gems give %player% 600
+  '4':
+    prefix: <gradient:#12c2e9:#c471ed><bold>R4</bold></gradient>
+    requirements:
+      - type: rank
+        enabled: true
+        value: 10
+      - type: prestige
+        enabled: true
+        value: 10
+      - type: currency
+        enabled: true
+        currency: money
+        value: 250000000000
+      - type: currency
+        enabled: true
+        currency: tokens
+        value: 12000000
+    rewards:
+      commands:
+        - lp user %player% permission set xprison.rebirth4 true
+        - tokens give %player% 900000
+        - gems give %player% 900
+  '5':
+    prefix: <gradient:#30cfd0:#330867><bold>R5</bold></gradient>
+    requirements:
+      - type: rank
+        enabled: true
+        value: 10
+      - type: prestige
+        enabled: true
+        value: 10
+      - type: currency
+        enabled: true
+        currency: money
+        value: 500000000000
+      - type: currency
+        enabled: true
+        currency: tokens
+        value: 25000000
+    rewards:
+      commands:
+        - lp user %player% permission set xprison.rebirth5 true
+        - tokens give %player% 1250000
+        - gems give %player% 1500
+        - broadcast <gradient:#FFD700:#FFEA00><bold>%player%</bold></gradient> <white>hat <yellow>Rebirth 5</yellow> erreicht!
 
 # ---------------------------------------------------------------------------
 # Rebirths GUI (opened with /rebirths). Fully configurable.
