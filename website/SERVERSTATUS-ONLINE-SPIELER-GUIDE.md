@@ -117,12 +117,46 @@ Der Proxy-/Exporter-Prozess sollte regelmäßig `players.json` atomar schreiben:
 
 Dadurch liest nginx immer konsistente Dateien.
 
+### 5a) Konkrete Quelle A: Plan-DB-Exporter (nur Zahlen, geringster Aufwand)
+
+Im Repo liegt ein fertiger Exporter unter [`tools/plan-players-export/`](../tools/plan-players-export/README.md),
+der `players.json` aus der **Plan-Datenbank** (`s4_plan`) füllt – **rein lesend**,
+ohne neues Plugin.
+
+- **Datenquelle:** neueste `plan_tps`-Zeile je Game-Server (Spalte `players_online`,
+  Proxy via `is_proxy = 0` ausgeschlossen). Genau die Logik, die Plans eigenes
+  Dashboard für „aktuell online" nutzt (neueste Zeile, sofern < 2 Minuten alt).
+- **Mapping:** DB → Website-Key (`lobby|survival|mining|skyblock`) über die **stabile
+  Server-UUID** aus `*/plugins/Plan/ServerInfoFile.yml` (nicht über den Namen).
+- **Betrieb:** systemd-Timer auf dem Host, alle **45 s** (< 90 s), schreibt atomar
+  nach `data/players.json`. Ausrollen über `.github/workflows/deploy-plan-players-export.yml`.
+- **Sicherheit:** dedizierter **Read-only-DB-User** (`SELECT` auf `s4_plan`),
+  Zugangsdaten im Secret `PLAN_RO_DB_ENV` (nie committen), `useSSL: true`.
+
+**Grenzen dieser Quelle (bewusst):**
+
+- `showNames: false` – **keine** Live-Spielernamen (Plan hält aktive Sessions nur im RAM).
+- **Keine** Live-Welten-Aufschlüsselung (`worlds[]` entfällt).
+- **Keine** echte Server-Uptime aus der DB (Karten zeigen `Uptime: —`).
+- Latenz **≤ ~2 min**, `players_online` ist das **Maximum je Minutenfenster**.
+- Server ohne Plan (aktuell Mining/Skyblock) erscheinen als `online:false, count:0`.
+
+### 5b) Konkrete Quelle B: Velocity-Proxy-Writer (Namen/Welten, Echtzeit)
+
+Wenn Namen, Welten oder echte Echtzeit gewünscht sind, ist ein Proxy-Writer die
+überlegene Quelle. Da der JSON-Vertrag identisch bleibt, lässt er sich **ohne
+Frontend-Änderung** nachrüsten oder mit Quelle A kombinieren. Plan bleibt dann für
+Langzeit-Analytics.
+
 ## 6) Deployment
 
 1. Änderungen nach `main` pushen
 2. Workflow `.github/workflows/deploy-website.yml` baut/pusht Image
 3. Deployment-Job startet Container neu
-4. Auf dem Host sicherstellen, dass `data/players.json` vom Proxy/Exporter aktualisiert wird
+4. Auf dem Host sicherstellen, dass `data/players.json` aktualisiert wird – entweder
+   durch den **Plan-DB-Exporter** (`deploy-plan-players-export.yml`, siehe 5a) oder
+   durch einen Proxy/Exporter (siehe 5b)
+
 
 ## 7) Verifikation
 

@@ -18,9 +18,11 @@ services:
     ports:
       - "127.0.0.1:8201:80"
 
-    # Mount the shared data directory (written by the Velocity FestasPlayerList plugin)
-    # read-only so the website can serve /api/players.json. Relative ./data resolves next to
-    # this compose file (in production: /home/deploy/minecraft-website/data).
+    # Mount the shared data directory that holds players.json (served read-only at
+    # /api/players.json). In production the file is written by the Plan-DB exporter
+    # (tools/plan-players-export, deployed via deploy-plan-players-export.yml) and/or
+    # the Velocity FestasPlayerList plugin. Relative ./data resolves next to this
+    # compose file (in production: /home/deploy/minecraft-website/data).
     volumes:
       - ./data:/usr/share/nginx/html/api:ro
 

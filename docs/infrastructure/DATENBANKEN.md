@@ -97,6 +97,13 @@ PLAN_DB_USER='CHANGE_ME'
 PLAN_DB_PASSWORD='CHANGE_ME'
 ```
 
+> **Read-only-Zugang für die Website:** Der Exporter
+> [`tools/plan-players-export`](../../tools/plan-players-export/README.md) liest die
+> Live-Spielerzahlen für `players.json` aus `s4_plan`. Dafür wird ein **separater
+> Benutzer mit nur `SELECT`** (idealerweise nur auf `plan_servers` und `plan_tps`)
+> angelegt und über das Secret `PLAN_RO_DB_ENV` bereitgestellt – **nicht** der
+> RW-User oben (Prinzip der minimalen Berechtigung).
+
 ### Redis
 
 ```yaml
