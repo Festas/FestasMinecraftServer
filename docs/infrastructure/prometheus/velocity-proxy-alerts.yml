@@ -1,0 +1,52 @@
+groups:
+  - name: festas-velocity-proxy
+    rules:
+      - alert: FestasVelocityProxyDown
+        expr: festas_velocity_up == 0
+        for: 1m
+        labels:
+          severity: critical
+          component: velocity-proxy
+        annotations:
+          summary: Velocity-Exporter oder Proxy liefert keine Metriken
+          description: Der Proxy-Exporter meldet festas_velocity_up == 0.
+
+      - alert: FestasVelocityBackendDown
+        expr: festas_velocity_backend_up == 0
+        for: 2m
+        labels:
+          severity: warning
+          component: velocity-proxy
+        annotations:
+          summary: Velocity-Backend nicht erreichbar
+          description: Backend {{ $labels.server }} ist laut Exporter nicht erreichbar.
+
+      - alert: FestasVelocityBackendPingHigh
+        expr: avg_over_time(festas_velocity_backend_ping_ms[5m]) > 250
+        for: 5m
+        labels:
+          severity: warning
+          component: velocity-proxy
+        annotations:
+          summary: Hohe Backend-Latenz am Proxy
+          description: Die durchschnittliche Backend-Latenz liegt seit 5 Minuten über 250 ms.
+
+      - alert: FestasVelocityLoginFailuresHigh
+        expr: increase(festas_velocity_login_failures_total[10m]) > 10
+        for: 2m
+        labels:
+          severity: warning
+          component: velocity-proxy
+        annotations:
+          summary: Viele fehlgeschlagene Proxy-Logins
+          description: In den letzten 10 Minuten wurden mehr als 10 Login-Fehler registriert.
+
+      - alert: FestasVelocityFallbackStorm
+        expr: increase(festas_velocity_fallback_total[10m]) > 5 or increase(festas_velocity_kicked_to_lobby_total[10m]) > 5
+        for: 2m
+        labels:
+          severity: warning
+          component: velocity-proxy
+        annotations:
+          summary: Viele Fallbacks oder Lobby-Redirects am Proxy
+          description: In den letzten 10 Minuten wurden ungewöhnlich viele Fallbacks oder Kicks zur Lobby gezählt.

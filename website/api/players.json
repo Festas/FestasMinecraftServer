@@ -11,7 +11,17 @@
             "max": 40,
             "uptimeSeconds": 93600,
             "updated": 1723980000,
-            "players": ["Festas", "BuilderBen"]
+            "players": ["Festas", "BuilderBen"],
+            "worlds": [
+                {
+                    "name": "spawn",
+                    "online": true,
+                    "count": 2,
+                    "max": 40,
+                    "updated": 1723980000,
+                    "players": ["Festas", "BuilderBen"]
+                }
+            ]
         },
         {
             "name": "survival",
@@ -20,7 +30,33 @@
             "max": 40,
             "uptimeSeconds": 211200,
             "updated": 1723980000,
-            "players": ["Alex", "Sam", "Robin", "Casey"]
+            "players": ["Alex", "Sam", "Robin", "Casey"],
+            "worlds": [
+                {
+                    "name": "survival",
+                    "online": true,
+                    "count": 2,
+                    "max": 20,
+                    "updated": 1723980000,
+                    "players": ["Alex", "Sam"]
+                },
+                {
+                    "name": "town",
+                    "online": true,
+                    "count": 1,
+                    "max": 10,
+                    "updated": 1723980000,
+                    "players": ["Robin"]
+                },
+                {
+                    "name": "freebuild",
+                    "online": true,
+                    "count": 1,
+                    "max": 10,
+                    "updated": 1723980000,
+                    "players": ["Casey"]
+                }
+            ]
         },
         {
             "name": "mining",
@@ -29,7 +65,17 @@
             "max": 20,
             "uptimeSeconds": 0,
             "updated": 1723980000,
-            "players": []
+            "players": [],
+            "worlds": [
+                {
+                    "name": "mine-a",
+                    "online": false,
+                    "count": 0,
+                    "max": 20,
+                    "updated": 1723980000,
+                    "players": []
+                }
+            ]
         },
         {
             "name": "skyblock",
@@ -38,7 +84,17 @@
             "max": 20,
             "uptimeSeconds": 43200,
             "updated": 1723980000,
-            "players": ["SkyKid", "IslandPro"]
+            "players": ["SkyKid", "IslandPro"],
+            "worlds": [
+                {
+                    "name": "islands",
+                    "online": true,
+                    "count": 2,
+                    "max": 20,
+                    "updated": 1723980000,
+                    "players": ["SkyKid", "IslandPro"]
+                }
+            ]
         }
     ]
 }

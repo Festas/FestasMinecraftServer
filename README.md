@@ -115,6 +115,7 @@ Umfassende Dokumentation findest du im [`/docs`](docs/) Verzeichnis:
 
 ### Technische Infrastruktur
 - **[Infrastruktur](docs/infrastructure/README.md)** - Datenbanken, Synchronisation, Backups
+- **[Velocity Exporter](docs/infrastructure/VELOCITY_EXPORTER.md)** - Prometheus-Metriken, Scrape-Setup und Alerts für den Proxy
 - **[OPERATIONS.md](docs/OPERATIONS.md)** - Betriebshandbuch (Start/Stopp, Wartung, Monitoring)
 - **[DISASTER_RECOVERY.md](docs/DISASTER_RECOVERY.md)** - Notfall-Wiederherstellung
 

@@ -871,6 +871,67 @@ img { max-width: 100%; display: block; }
     color: var(--text-muted);
     margin: 0 0 0.5rem;
 }
+.player-worlds-label {
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 0 0 0.75rem;
+}
+.player-worlds {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.75rem;
+}
+.player-world {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: calc(var(--radius) - 6px);
+    padding: 0.8rem 0.9rem;
+}
+.player-world-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.player-world.has-players .player-world-row { margin-bottom: 0.55rem; }
+.player-world-name {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+.player-world-count {
+    margin-left: auto;
+    padding: 0.1rem 0.55rem;
+    border-radius: 999px;
+    background: var(--accent-dim);
+    border: 1px solid var(--border-accent);
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+.player-world-status {
+    padding: 0.08rem 0.45rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    font-size: 0.66rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+.player-world-status.online {
+    color: var(--accent);
+    border-color: var(--border-accent);
+    background: var(--accent-dim);
+}
+.player-world-status.offline {
+    color: #e05252;
+    border-color: rgba(224, 82, 82, 0.4);
+    background: rgba(224, 82, 82, 0.1);
+}
 .player-chips {
     display: flex;
     flex-wrap: wrap;
@@ -887,6 +948,9 @@ img { max-width: 100%; display: block; }
     font-size: 0.83rem;
     color: var(--text-primary);
     word-break: break-word;
+}
+.player-world .player-chips {
+    margin-top: 0.1rem;
 }
 .player-empty {
     font-size: 0.9rem;

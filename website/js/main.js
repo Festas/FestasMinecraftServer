@@ -123,12 +123,25 @@ function inferServerOnline(server) {
     if (!server || typeof server !== 'object') return false;
     if (typeof server.online === 'boolean') return server.online;
 
-    const count = toPositiveNumberOrZero(server.count);
+    const count = resolvedCount(server);
     if (count > 0) return true;
 
     if (Array.isArray(server.players) && server.players.length > 0) return true;
+    if (normalizeWorlds(server.worlds).some((world) => inferWorldOnline(world))) return true;
     if (toPositiveNumberOrZero(server.uptimeSeconds) > 0) return true;
 
+    return false;
+}
+
+function normalizeWorlds(value) {
+    return Array.isArray(value) ? value.filter((entry) => entry && typeof entry === 'object') : [];
+}
+
+function inferWorldOnline(world) {
+    if (!world || typeof world !== 'object') return false;
+    if (typeof world.online === 'boolean') return world.online;
+    if (toPositiveNumberOrZero(world.count) > 0) return true;
+    if (Array.isArray(world.players) && world.players.length > 0) return true;
     return false;
 }
 
@@ -136,12 +149,31 @@ function normalizeServers(value) {
     return Array.isArray(value) ? value.filter((entry) => entry && typeof entry === 'object') : [];
 }
 
+function resolvedCount(entry) {
+    const worlds = normalizeWorlds(entry && entry.worlds);
+    const worldsCount = worlds.reduce((sum, world) => sum + toPositiveNumberOrZero(world.count), 0);
+    const direct = Number(entry && entry.count);
+    if (Number.isFinite(direct) && direct >= 0) {
+        return direct === 0 && worldsCount > 0 ? worldsCount : direct;
+    }
+
+    return worldsCount;
+}
+
+function resolvedMax(entry) {
+    const direct = Number(entry && entry.max);
+    if (Number.isFinite(direct) && direct > 0) return direct;
+
+    return normalizeWorlds(entry && entry.worlds)
+        .reduce((sum, world) => sum + toPositiveNumberOrZero(world.max), 0);
+}
+
 function sumServerCounts(servers) {
-    return servers.reduce((sum, server) => sum + toPositiveNumberOrZero(server.count), 0);
+    return servers.reduce((sum, server) => sum + resolvedCount(server), 0);
 }
 
 function sumServerMax(servers) {
-    return servers.reduce((sum, server) => sum + toPositiveNumberOrZero(server.max), 0);
+    return servers.reduce((sum, server) => sum + resolvedMax(server), 0);
 }
 
 function totalOnlineFromSnapshot(snapshot) {
@@ -181,15 +213,72 @@ function initServerStatus() {
     const cfg = window.MC_CONFIG || {};
     const ipEl = document.getElementById('serverIp');
     const serverAddress = String(cfg.serverAddress || (ipEl && ipEl.textContent) || 'mc.festas-builds.com').trim();
-    const statusBase = String(cfg.statusAPI || 'https://api.mcsrvstat.us/3/').replace(/\/+$/, '/');
-    const statusAPI = statusBase + encodeURIComponent(serverAddress);
     const playersAPI = String(cfg.playersAPI || '/api/players.json');
+
+    function buildStatusSources() {
+        const configured = Array.isArray(cfg.publicStatusSources) ? cfg.publicStatusSources : [];
+        const legacy = cfg.statusAPI ? [{ name: 'mcsrvstat.us', type: 'mcsrvstat', url: cfg.statusAPI }] : [];
+        const defaults = [
+            { name: 'mcsrvstat.us', type: 'mcsrvstat', url: 'https://api.mcsrvstat.us/3/' },
+            { name: 'mcstatus.io', type: 'mcstatusio', url: 'https://api.mcstatus.io/v2/status/java/' }
+        ];
+
+        const unique = new Map();
+        [...configured, ...legacy, ...defaults].forEach((source) => {
+            if (!source || typeof source !== 'object') return;
+            const type = String(source.type || 'mcsrvstat').trim().toLowerCase();
+            const url = String(source.url || '').trim();
+            if (!url) return;
+            const key = type + '|' + url;
+            if (!unique.has(key)) unique.set(key, { name: source.name || type, type, url });
+        });
+
+        return Array.from(unique.values()).map((source) => ({
+            name: String(source.name || source.type),
+            type: source.type,
+            requestURL: String(source.url).replace(/\/+$/, '/') + encodeURIComponent(serverAddress)
+        }));
+    }
+
+    async function fetchJSON(url, timeoutMs) {
+        const controller = new AbortController();
+        let timeoutId = null;
+
+        try {
+            timeoutId = window.setTimeout(() => controller.abort(), timeoutMs);
+            const res = await fetch(url, {
+                cache: 'no-store',
+                signal: controller.signal
+            });
+            if (!res.ok) throw new Error('HTTP ' + res.status);
+            return await res.json();
+        } finally {
+            if (timeoutId) window.clearTimeout(timeoutId);
+        }
+    }
+
+    function parsePublicStatus(source, data) {
+        if (source.type === 'mcstatusio') {
+            const online = typeof data?.online === 'boolean'
+                ? data.online
+                : String(data?.status || '').toLowerCase() === 'online';
+            return {
+                online,
+                current: toPositiveNumberOrZero(data?.players?.online),
+                max: toPositiveNumberOrZero(data?.players?.max)
+            };
+        }
+
+        return {
+            online: Boolean(data && data.online),
+            current: toPositiveNumberOrZero(data && data.players && data.players.online),
+            max: toPositiveNumberOrZero(data && data.players && data.players.max)
+        };
+    }
 
     async function readPlayersFallback() {
         try {
-            const res = await fetch(playersAPI, { cache: 'no-store' });
-            if (!res.ok) return null;
-            const data = await res.json();
+            const data = await fetchJSON(playersAPI, 5000);
             return data && typeof data === 'object' ? data : null;
         } catch {
             return null;
@@ -207,29 +296,30 @@ function initServerStatus() {
     }
 
     async function checkStatus() {
-        try {
-            const res = await fetch(statusAPI, { cache: 'no-store' });
-            if (!res.ok) throw new Error('HTTP ' + res.status);
-            const data = await res.json();
-            const online = Boolean(data && data.online);
-            const current = toPositiveNumberOrZero(data && data.players && data.players.online);
-            const max = toPositiveNumberOrZero(data && data.players && data.players.max);
+        for (const source of buildStatusSources()) {
+            try {
+                const data = await fetchJSON(source.requestURL, 5000);
+                const parsed = parsePublicStatus(source, data);
 
-            if (online) {
-                setHeroState('online', 'Online', formatCountWithOptionalMax(current, max) + ' Spieler online');
-            } else {
-                setHeroState('offline', 'Offline', '0 Spieler online');
+                if (parsed.online) {
+                    setHeroState('online', 'Online', formatCountWithOptionalMax(parsed.current, parsed.max) + ' Spieler online');
+                } else {
+                    setHeroState('offline', 'Offline', '0 Spieler online');
+                }
+                return;
+            } catch {
+                // Try next public source.
             }
-            return;
-        } catch {
-            // Try to derive a useful fallback from /api/players.json.
         }
 
         const fallback = await readPlayersFallback();
         if (fallback) {
             const online = totalOnlineFromSnapshot(fallback);
             const max = totalMaxFromSnapshot(fallback);
-            setHeroState('limited', 'Eingeschränkt', formatCountWithOptionalMax(online, max) + ' Spieler online');
+            const anyOnline = normalizeServers(fallback.servers).some((server) => inferServerOnline(server));
+            const state = anyOnline ? 'limited' : 'offline';
+            const label = anyOnline ? 'Eingeschränkt' : 'Offline';
+            setHeroState(state, label, formatCountWithOptionalMax(online, max) + ' Spieler online');
             return;
         }
 
@@ -281,16 +371,69 @@ function initPlayerList() {
         let latest = toPositiveNumberOrZero(rootUpdated);
         servers.forEach((server) => {
             latest = Math.max(latest, toPositiveNumberOrZero(server.updated));
+            normalizeWorlds(server.worlds).forEach((world) => {
+                latest = Math.max(latest, toPositiveNumberOrZero(world.updated));
+            });
         });
         return latest;
+    }
+
+    function buildPlayersChips(players) {
+        const list = document.createElement('ul');
+        list.className = 'player-chips';
+        players.forEach((name) => {
+            const chip = document.createElement('li');
+            chip.className = 'player-chip';
+            chip.textContent = String(name);
+            list.appendChild(chip);
+        });
+        return list;
+    }
+
+    function buildWorldItem(world, showNames) {
+        const count = toPositiveNumberOrZero(world.count);
+        const max = toPositiveNumberOrZero(world.max);
+        const online = inferWorldOnline(world);
+        const hasNames = showNames && Array.isArray(world.players) && world.players.length > 0;
+
+        const item = document.createElement('li');
+        item.className = 'player-world';
+        if (hasNames) item.classList.add('has-players');
+
+        const row = document.createElement('div');
+        row.className = 'player-world-row';
+
+        const name = document.createElement('span');
+        name.className = 'player-world-name';
+        name.textContent = String(world.name || 'Unbekannte Welt');
+        row.appendChild(name);
+
+        const badge = document.createElement('span');
+        badge.className = 'player-world-count';
+        badge.textContent = formatCountWithOptionalMax(count, max);
+        row.appendChild(badge);
+
+        const status = document.createElement('span');
+        status.className = 'player-world-status ' + (online ? 'online' : 'offline');
+        status.textContent = online ? 'Online' : 'Offline';
+        row.appendChild(status);
+
+        item.appendChild(row);
+
+        if (hasNames) {
+            item.appendChild(buildPlayersChips(world.players));
+        }
+
+        return item;
     }
 
     function buildCard(server, showNames) {
         const info = metaFor(server.name);
         const online = inferServerOnline(server);
-        const count = toPositiveNumberOrZero(server.count);
-        const max = toPositiveNumberOrZero(server.max);
+        const count = resolvedCount(server);
+        const max = resolvedMax(server);
         const uptime = formatDuration(server.uptimeSeconds);
+        const worlds = normalizeWorlds(server.worlds);
 
         const card = document.createElement('article');
         card.className = 'player-server';
@@ -330,21 +473,36 @@ function initPlayerList() {
         uptimeLine.textContent = 'Uptime: ' + uptime;
         body.appendChild(uptimeLine);
 
-        if (count === 0) {
+        if (worlds.length) {
+            const hasWorldNames = showNames && worlds.some((world) => Array.isArray(world.players) && world.players.length);
+
+            const worldsTitle = document.createElement('p');
+            worldsTitle.className = 'player-worlds-label';
+            worldsTitle.textContent = 'Welten';
+            body.appendChild(worldsTitle);
+
+            const worldsList = document.createElement('ul');
+            worldsList.className = 'player-worlds';
+            worlds.forEach((world) => worldsList.appendChild(buildWorldItem(world, showNames)));
+            body.appendChild(worldsList);
+
+            if (count === 0 && !worlds.some((world) => inferWorldOnline(world))) {
+                const empty = document.createElement('p');
+                empty.className = 'player-empty';
+                empty.textContent = 'Niemand online';
+                body.appendChild(empty);
+            }
+
+            if (!hasWorldNames && showNames && Array.isArray(server.players) && server.players.length) {
+                body.appendChild(buildPlayersChips(server.players));
+            }
+        } else if (count === 0) {
             const empty = document.createElement('p');
             empty.className = 'player-empty';
             empty.textContent = 'Niemand online';
             body.appendChild(empty);
         } else if (showNames && Array.isArray(server.players) && server.players.length) {
-            const list = document.createElement('ul');
-            list.className = 'player-chips';
-            server.players.forEach((name) => {
-                const chip = document.createElement('li');
-                chip.className = 'player-chip';
-                chip.textContent = String(name);
-                list.appendChild(chip);
-            });
-            body.appendChild(list);
+            body.appendChild(buildPlayersChips(server.players));
         } else {
             const note = document.createElement('p');
             note.className = 'player-empty';
