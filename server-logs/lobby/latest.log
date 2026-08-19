@@ -1,461 +1,460 @@
-[12:34:46] [ServerMain/INFO]: [bootstrap] Running Java 25 (OpenJDK 64-Bit Server VM 25.0.3+9-LTS; Eclipse Adoptium Temurin-25.0.3+9) on Linux 6.8.0-137-generic (amd64)
-[12:34:46] [ServerMain/INFO]: [bootstrap] Loading Paper 26.2-112-main@c9e894d (2026-08-11T05:18:39Z) for Minecraft 26.2
-[12:34:46] [ServerMain/INFO]: [PluginInitializerManager] Initializing plugins...
-[12:34:47] [ServerMain/INFO]: [PluginInitializerManager] Initialized 16 plugins
-[12:34:47] [ServerMain/INFO]: [PluginInitializerManager] Paper plugins (1):
+[14:18:01] [ServerMain/INFO]: [bootstrap] Running Java 25 (OpenJDK 64-Bit Server VM 25.0.3+9-LTS; Eclipse Adoptium Temurin-25.0.3+9) on Linux 6.8.0-137-generic (amd64)
+[14:18:01] [ServerMain/INFO]: [bootstrap] Loading Paper 26.2-112-main@c9e894d (2026-08-11T05:18:39Z) for Minecraft 26.2
+[14:18:01] [ServerMain/INFO]: [PluginInitializerManager] Initializing plugins...
+[14:18:01] [ServerMain/INFO]: [PluginInitializerManager] Initialized 16 plugins
+[14:18:01] [ServerMain/INFO]: [PluginInitializerManager] Paper plugins (1):
  - CommandAPI (12.0.0)
-[12:34:47] [ServerMain/INFO]: [PluginInitializerManager] Bukkit plugins (15):
+[14:18:01] [ServerMain/INFO]: [PluginInitializerManager] Bukkit plugins (15):
  - CMI (9.8.9.8), CMIEInjector (1.0.2.4), CMILib (1.5.9.9), DeluxeMenus (1.14.1-Release), FastAsyncWorldEdit (2.15.4-SNAPSHOT-1370+dd6a724), LuckPerms (5.5.71), Oraxen (1.218.0), PlaceholderAPI (2.12.3), Plan (5.8 build 3605), ProtocolLib (5.4.0), Skript (2.16.1), TAB-Bridge (6.2.2), Vault (2.20.2), WorldGuard (7.0.18+2392-fa605e6), packetevents (2.13.0)
-[12:34:47] [ServerMain/INFO]: [CommandAPI] Loaded version PaperNMS_26_2
-[12:34:47] [ServerMain/INFO]: [CommandAPI] Hooked into Spigot successfully for Chat/ChatComponents
-[12:34:47] [ServerMain/INFO]: [CommandAPI] Hooked into Adventure for AdventureChat/AdventureChatComponents
-[12:34:47] [ServerMain/INFO]: [CommandAPI] Hooked into Paper for paper-specific API implementations
-[12:34:47] [ServerMain/INFO]: [CommandAPI] Loaded platform CommandAPIPaper > CommandAPIBukkit
-[12:34:50] [DataConverter MCTypeRegistry init thread/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Initialising converters for DataConverter...
-[12:34:50] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
-[12:34:50] [DataConverter MCTypeRegistry init thread/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Finished initialising converters for DataConverter in 500.9ms
-[12:34:53] [ServerMain/INFO]: Loaded 1585 recipes
-[12:34:53] [ServerMain/INFO]: Loaded 1688 advancements
-[12:34:53] [Server thread/INFO]: Starting minecraft server version 26.2
-[12:34:53] [Server thread/INFO]: Loading properties
-[12:34:53] [Server thread/INFO]: This server is running Paper version 26.2-112-main@c9e894d (2026-08-11T05:18:39Z) (Implementing API version 26.2.build.112-stable)
-[12:34:53] [Server thread/INFO]: [spark] This server bundles the spark profiler. For more information please visit https://docs.papermc.io/paper/profiling
-[12:34:53] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[12:34:53] [Server thread/INFO]: Using 4 threads for Netty based IO
-[12:34:54] [Server thread/INFO]: [MoonriseCommon] Paper is using 2 worker threads, 1 I/O threads
-[12:34:54] [Server thread/INFO]: Default game type: SURVIVAL
-[12:34:54] [Server thread/INFO]: Generating keypair
-[12:34:54] [Server thread/INFO]: Starting Minecraft server on 0.0.0.0:25566
-[12:34:55] [Server thread/INFO]: Paper: Using libdeflate (Linux x86_64) compression from Velocity.
-[12:34:55] [Server thread/INFO]: Paper: Using OpenSSL 3.x.x (Linux x86_64) cipher from Velocity.
-[12:34:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loading 11 libraries... please wait
-[12:34:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/springframework/spring-expression/6.0.6/spring-expression-6.0.6.jar
-[12:34:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/springframework/spring-core/6.0.6/spring-core-6.0.6.jar
-[12:34:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/springframework/spring-jcl/6.0.6/spring-jcl-6.0.6.jar
-[12:34:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar
-[12:34:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar
-[12:34:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar
-[12:34:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/commons-logging/commons-logging/1.2/commons-logging-1.2.jar
-[12:34:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/commons-codec/commons-codec/1.11/commons-codec-1.11.jar
-[12:34:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/joml/joml/1.10.5/joml-1.10.5.jar
-[12:34:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-ansi/5.2.0/adventure-text-serializer-ansi-5.2.0.jar
-[12:34:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-api/5.2.0/adventure-api-5.2.0.jar
-[12:34:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/ansi/1.1.1/ansi-1.1.1.jar
-[12:34:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-minimessage/5.2.0/adventure-text-minimessage-5.2.0.jar
-[12:34:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-plain/5.2.0/adventure-text-serializer-plain-5.2.0.jar
-[12:34:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-platform-bukkit/4.4.1/adventure-platform-bukkit-4.4.1.jar
-[12:34:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-platform-api/4.4.1/adventure-platform-api-4.4.1.jar
-[12:34:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-bungeecord/4.4.1/adventure-text-serializer-bungeecord-4.4.1.jar
-[12:34:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-legacy/4.21.0/adventure-text-serializer-legacy-4.21.0.jar
-[12:34:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-nbt/4.21.0/adventure-nbt-4.21.0.jar
-[12:34:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/examination-api/1.3.0/examination-api-1.3.0.jar
-[12:34:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/examination-string/1.3.0/examination-string-1.3.0.jar
-[12:34:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-gson/4.21.0/adventure-text-serializer-gson-4.21.0.jar
-[12:34:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-json/4.21.0/adventure-text-serializer-json-4.21.0.jar
-[12:34:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/option/1.1.0/option-1.1.0.jar
-[12:34:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar
-[12:34:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/com/google/auto/service/auto-service-annotations/1.1.1/auto-service-annotations-1.1.1.jar
-[12:34:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-commons/4.21.0/adventure-text-serializer-commons-4.21.0.jar
-[12:34:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-gson-legacy-impl/4.21.0/adventure-text-serializer-gson-legacy-impl-4.21.0.jar
-[12:34:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-json-legacy-impl/4.21.0/adventure-text-serializer-json-legacy-impl-4.21.0.jar
-[12:34:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-platform-facet/4.4.1/adventure-platform-facet-4.4.1.jar
-[12:34:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-platform-viaversion/4.4.1/adventure-platform-viaversion-4.4.1.jar
-[12:34:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar
-[12:34:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar
-[12:34:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/gs/mclo/java/2.2.1/java-2.2.1.jar
-[12:34:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/team/unnamed/creative-api/1.7.3/creative-api-1.7.3.jar
-[12:34:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-key/4.9.3/adventure-key-4.9.3.jar
-[12:34:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/jetbrains/annotations/23.1.0/annotations-23.1.0.jar
-[12:34:55] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.12.3
-[12:34:55] [Server thread/INFO]: [LuckPerms] Loading server plugin LuckPerms v5.5.71
-[12:34:56] [Server thread/INFO]: [LuckPerms] Loading configuration...
-[12:34:56] [Server thread/INFO]: [Vault] Loading server plugin Vault v2.20.2
-[12:34:56] [Server thread/INFO]: [FastAsyncWorldEdit] Loading server plugin FastAsyncWorldEdit v2.15.4-SNAPSHOT-1370+dd6a724
-[12:34:56] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@7d63721d]
-[12:34:56] [Server thread/INFO]: [ProtocolLib] Loading server plugin ProtocolLib v5.4.0
-[12:34:56] [Server thread/WARN]: [ProtocolLib] Version (MC: 26.2.0) has not yet been tested! Proceed with caution.
-[12:34:57] [Server thread/INFO]: [WorldGuard] Loading server plugin WorldGuard v7.0.18+2392-fa605e6
-[12:34:57] [Server thread/INFO]: [packetevents] Loading server plugin packetevents v2.13.0
-[12:34:57] [Server thread/INFO]: [packetevents] Loading packetevents...
-[12:34:58] [Server thread/INFO]: [packetevents] Loaded packetevents v2.13.0
-[12:34:58] [Server thread/INFO]: [Skript] Loading server plugin Skript v2.16.1
-[12:34:58] [Server thread/INFO]: [CMILib] Loading server plugin CMILib v1.5.9.9
-[12:34:58] [Server thread/INFO]: [Oraxen] Loading server plugin Oraxen v1.218.0
-[12:34:58] [Server thread/INFO]: [CMI] Loading server plugin CMI v9.8.9.8
-[12:34:58] [Server thread/INFO]: [CommandAPI] Loading server plugin CommandAPI v12.0.0
-[12:34:58] [Server thread/INFO]: [DeluxeMenus] Loading server plugin DeluxeMenus v1.14.1-Release
-[12:34:58] [Server thread/WARN]: [DeluxeMenus] Could not setup a NMS hook for your server version! The following Item options will not work: nbt_int, nbt_ints, nbt_string and nbt_strings.
-[12:34:58] [Server thread/INFO]: [CMIEInjector] Loading server plugin CMIEInjector v1.0.2.4
-[12:34:58] [Server thread/INFO]: [TAB-Bridge] Loading server plugin TAB-Bridge v6.2.2
-[12:34:58] [Server thread/INFO]: [Plan] Loading server plugin Plan v5.8 build 3605
-[12:34:58] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[12:34:58] [Server thread/INFO]: [LuckPerms] Enabling LuckPerms v5.5.71
-[12:34:58] [Server thread/INFO]:         __    
-[12:34:58] [Server thread/INFO]:   |    |__)   LuckPerms v5.5.71
-[12:34:58] [Server thread/INFO]:   |___ |      Running on Bukkit - Paper
-[12:34:58] [Server thread/INFO]: 
-[12:34:59] [Server thread/INFO]: [LuckPerms] Loading storage provider... [H2]
-[12:34:59] [Server thread/INFO]: [LuckPerms] Loading internal permission managers...
-[12:34:59] [Server thread/INFO]: [LuckPerms] Performing initial data load...
-[12:34:59] [Server thread/INFO]: [LuckPerms] Successfully enabled. (took 815ms)
-[12:34:59] [Server thread/INFO]: [Vault] Enabling Vault v2.20.2
-[12:34:59] [Server thread/INFO]: [Vault] Enabled Version 2.20.2
-[12:34:59] [Server thread/INFO]: [LuckPerms] Registered Vault permission & chat hook.
-[12:34:59] [Server thread/INFO]: [FastAsyncWorldEdit] Enabling FastAsyncWorldEdit v2.15.4-SNAPSHOT-1370+dd6a724
-[12:34:59] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] LZ4 Compression Binding loaded successfully
-[12:34:59] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] ZSTD Compression Binding loaded successfully
-[12:34:59] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
-[12:34:59] [Server thread/INFO]: WEPIF: Vault detected! Using Vault for permissions
-[12:34:59] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.fawe.v26_2.PaperweightFaweAdapter as the Bukkit adapter
-[12:35:01] [Server thread/INFO]: [ProtocolLib] Enabling ProtocolLib v5.4.0
-[12:35:01] [Server thread/INFO]: [CMIEInjector] Enabling CMIEInjector v1.0.2.4
-[12:35:01] [Server thread/INFO]: [CMIEInjector] Injecting CMI Economy
-[12:35:01] [Server thread/INFO]: [CMIEInjector] [Economy] CMI Economy found: Waiting
-[12:35:01] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
-[12:35:01] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
-[12:35:01] [Server thread/WARN]: Whilst this makes it possible to use Velocity, unless access to your server is properly restricted, it also opens up the ability for hackers to connect with any username they choose.
-[12:35:01] [Server thread/WARN]: Please see https://docs.papermc.io/velocity/security for further information.
-[12:35:01] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
-[12:35:01] [Server thread/INFO]: Preparing level "lobby"
-[12:35:01] [ForkJoinPool.commonPool-worker-3/WARN]: [com.fastasyncworldedit.core.util.UpdateNotification] An update for FastAsyncWorldEdit is available. You are 2 build(s) out of date.
+[14:18:02] [ServerMain/INFO]: [CommandAPI] Loaded version PaperNMS_26_2
+[14:18:02] [ServerMain/INFO]: [CommandAPI] Hooked into Spigot successfully for Chat/ChatComponents
+[14:18:02] [ServerMain/INFO]: [CommandAPI] Hooked into Adventure for AdventureChat/AdventureChatComponents
+[14:18:02] [ServerMain/INFO]: [CommandAPI] Hooked into Paper for paper-specific API implementations
+[14:18:02] [ServerMain/INFO]: [CommandAPI] Loaded platform CommandAPIPaper > CommandAPIBukkit
+[14:18:05] [DataConverter MCTypeRegistry init thread/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Initialising converters for DataConverter...
+[14:18:05] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+[14:18:05] [DataConverter MCTypeRegistry init thread/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Finished initialising converters for DataConverter in 444.5ms
+[14:18:06] [ServerMain/INFO]: Loaded 1585 recipes
+[14:18:06] [ServerMain/INFO]: Loaded 1688 advancements
+[14:18:07] [Server thread/INFO]: Starting minecraft server version 26.2
+[14:18:07] [Server thread/INFO]: Loading properties
+[14:18:07] [Server thread/INFO]: This server is running Paper version 26.2-112-main@c9e894d (2026-08-11T05:18:39Z) (Implementing API version 26.2.build.112-stable)
+[14:18:07] [Server thread/INFO]: [spark] This server bundles the spark profiler. For more information please visit https://docs.papermc.io/paper/profiling
+[14:18:07] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[14:18:07] [Server thread/INFO]: Using 4 threads for Netty based IO
+[14:18:07] [Server thread/INFO]: [MoonriseCommon] Paper is using 2 worker threads, 1 I/O threads
+[14:18:07] [Server thread/INFO]: Default game type: SURVIVAL
+[14:18:07] [Server thread/INFO]: Generating keypair
+[14:18:07] [Server thread/INFO]: Starting Minecraft server on 0.0.0.0:25566
+[14:18:07] [Server thread/INFO]: Paper: Using libdeflate (Linux x86_64) compression from Velocity.
+[14:18:07] [Server thread/INFO]: Paper: Using OpenSSL 3.x.x (Linux x86_64) cipher from Velocity.
+[14:18:07] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loading 11 libraries... please wait
+[14:18:08] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/springframework/spring-expression/6.0.6/spring-expression-6.0.6.jar
+[14:18:08] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/springframework/spring-core/6.0.6/spring-core-6.0.6.jar
+[14:18:08] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/springframework/spring-jcl/6.0.6/spring-jcl-6.0.6.jar
+[14:18:08] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar
+[14:18:08] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar
+[14:18:08] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar
+[14:18:08] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/commons-logging/commons-logging/1.2/commons-logging-1.2.jar
+[14:18:08] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/commons-codec/commons-codec/1.11/commons-codec-1.11.jar
+[14:18:08] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/joml/joml/1.10.5/joml-1.10.5.jar
+[14:18:08] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-ansi/5.2.0/adventure-text-serializer-ansi-5.2.0.jar
+[14:18:08] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-api/5.2.0/adventure-api-5.2.0.jar
+[14:18:08] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/ansi/1.1.1/ansi-1.1.1.jar
+[14:18:08] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-minimessage/5.2.0/adventure-text-minimessage-5.2.0.jar
+[14:18:08] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-plain/5.2.0/adventure-text-serializer-plain-5.2.0.jar
+[14:18:08] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-platform-bukkit/4.4.1/adventure-platform-bukkit-4.4.1.jar
+[14:18:08] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-platform-api/4.4.1/adventure-platform-api-4.4.1.jar
+[14:18:08] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-bungeecord/4.4.1/adventure-text-serializer-bungeecord-4.4.1.jar
+[14:18:08] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-legacy/4.21.0/adventure-text-serializer-legacy-4.21.0.jar
+[14:18:08] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-nbt/4.21.0/adventure-nbt-4.21.0.jar
+[14:18:08] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/examination-api/1.3.0/examination-api-1.3.0.jar
+[14:18:08] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/examination-string/1.3.0/examination-string-1.3.0.jar
+[14:18:08] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-gson/4.21.0/adventure-text-serializer-gson-4.21.0.jar
+[14:18:08] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-json/4.21.0/adventure-text-serializer-json-4.21.0.jar
+[14:18:08] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/option/1.1.0/option-1.1.0.jar
+[14:18:08] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar
+[14:18:08] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/com/google/auto/service/auto-service-annotations/1.1.1/auto-service-annotations-1.1.1.jar
+[14:18:08] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-commons/4.21.0/adventure-text-serializer-commons-4.21.0.jar
+[14:18:08] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-gson-legacy-impl/4.21.0/adventure-text-serializer-gson-legacy-impl-4.21.0.jar
+[14:18:08] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-json-legacy-impl/4.21.0/adventure-text-serializer-json-legacy-impl-4.21.0.jar
+[14:18:08] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-platform-facet/4.4.1/adventure-platform-facet-4.4.1.jar
+[14:18:08] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-platform-viaversion/4.4.1/adventure-platform-viaversion-4.4.1.jar
+[14:18:08] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar
+[14:18:08] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar
+[14:18:08] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/gs/mclo/java/2.2.1/java-2.2.1.jar
+[14:18:08] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/team/unnamed/creative-api/1.7.3/creative-api-1.7.3.jar
+[14:18:08] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-key/4.9.3/adventure-key-4.9.3.jar
+[14:18:08] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/jetbrains/annotations/23.1.0/annotations-23.1.0.jar
+[14:18:08] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.12.3
+[14:18:08] [Server thread/INFO]: [LuckPerms] Loading server plugin LuckPerms v5.5.71
+[14:18:08] [Server thread/INFO]: [LuckPerms] Loading configuration...
+[14:18:08] [Server thread/INFO]: [Vault] Loading server plugin Vault v2.20.2
+[14:18:08] [Server thread/INFO]: [FastAsyncWorldEdit] Loading server plugin FastAsyncWorldEdit v2.15.4-SNAPSHOT-1370+dd6a724
+[14:18:09] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@6e219414]
+[14:18:09] [Server thread/INFO]: [ProtocolLib] Loading server plugin ProtocolLib v5.4.0
+[14:18:09] [Server thread/WARN]: [ProtocolLib] Version (MC: 26.2.0) has not yet been tested! Proceed with caution.
+[14:18:09] [Server thread/INFO]: [WorldGuard] Loading server plugin WorldGuard v7.0.18+2392-fa605e6
+[14:18:09] [Server thread/INFO]: [packetevents] Loading server plugin packetevents v2.13.0
+[14:18:09] [Server thread/INFO]: [packetevents] Loading packetevents...
+[14:18:10] [Server thread/INFO]: [packetevents] Loaded packetevents v2.13.0
+[14:18:10] [Server thread/INFO]: [Skript] Loading server plugin Skript v2.16.1
+[14:18:10] [Server thread/INFO]: [CMILib] Loading server plugin CMILib v1.5.9.9
+[14:18:10] [Server thread/INFO]: [Oraxen] Loading server plugin Oraxen v1.218.0
+[14:18:10] [Server thread/INFO]: [CMI] Loading server plugin CMI v9.8.9.8
+[14:18:10] [Server thread/INFO]: [CommandAPI] Loading server plugin CommandAPI v12.0.0
+[14:18:10] [Server thread/INFO]: [DeluxeMenus] Loading server plugin DeluxeMenus v1.14.1-Release
+[14:18:10] [Server thread/WARN]: [DeluxeMenus] Could not setup a NMS hook for your server version! The following Item options will not work: nbt_int, nbt_ints, nbt_string and nbt_strings.
+[14:18:10] [Server thread/INFO]: [CMIEInjector] Loading server plugin CMIEInjector v1.0.2.4
+[14:18:10] [Server thread/INFO]: [TAB-Bridge] Loading server plugin TAB-Bridge v6.2.2
+[14:18:10] [Server thread/INFO]: [Plan] Loading server plugin Plan v5.8 build 3605
+[14:18:10] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[14:18:10] [Server thread/INFO]: [LuckPerms] Enabling LuckPerms v5.5.71
+[14:18:11] [Server thread/INFO]:         __    
+[14:18:11] [Server thread/INFO]:   |    |__)   LuckPerms v5.5.71
+[14:18:11] [Server thread/INFO]:   |___ |      Running on Bukkit - Paper
+[14:18:11] [Server thread/INFO]: 
+[14:18:11] [Server thread/INFO]: [LuckPerms] Loading storage provider... [H2]
+[14:18:11] [Server thread/INFO]: [LuckPerms] Loading internal permission managers...
+[14:18:11] [Server thread/INFO]: [LuckPerms] Performing initial data load...
+[14:18:11] [Server thread/INFO]: [LuckPerms] Successfully enabled. (took 724ms)
+[14:18:11] [Server thread/INFO]: [Vault] Enabling Vault v2.20.2
+[14:18:11] [Server thread/INFO]: [Vault] Enabled Version 2.20.2
+[14:18:11] [Server thread/INFO]: [LuckPerms] Registered Vault permission & chat hook.
+[14:18:11] [Server thread/INFO]: [FastAsyncWorldEdit] Enabling FastAsyncWorldEdit v2.15.4-SNAPSHOT-1370+dd6a724
+[14:18:11] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] LZ4 Compression Binding loaded successfully
+[14:18:11] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] ZSTD Compression Binding loaded successfully
+[14:18:11] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[14:18:11] [Server thread/INFO]: WEPIF: Vault detected! Using Vault for permissions
+[14:18:12] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.fawe.v26_2.PaperweightFaweAdapter as the Bukkit adapter
+[14:18:12] [Server thread/INFO]: [ProtocolLib] Enabling ProtocolLib v5.4.0
+[14:18:12] [Server thread/INFO]: [CMIEInjector] Enabling CMIEInjector v1.0.2.4
+[14:18:12] [Server thread/INFO]: [CMIEInjector] Injecting CMI Economy
+[14:18:12] [Server thread/INFO]: [CMIEInjector] [Economy] CMI Economy found: Waiting
+[14:18:12] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[14:18:12] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[14:18:12] [Server thread/WARN]: Whilst this makes it possible to use Velocity, unless access to your server is properly restricted, it also opens up the ability for hackers to connect with any username they choose.
+[14:18:12] [Server thread/WARN]: Please see https://docs.papermc.io/velocity/security for further information.
+[14:18:12] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[14:18:12] [Server thread/INFO]: Preparing level "lobby"
+[14:18:12] [ForkJoinPool.commonPool-worker-7/WARN]: [com.fastasyncworldedit.core.util.UpdateNotification] An update for FastAsyncWorldEdit is available. You are 2 build(s) out of date.
 You are running build 1370, the latest version is build 1372.
 Update at https://ci.athion.net/job/FastAsyncWorldEdit
-[12:35:01] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:overworld'...
-[12:35:01] [Server thread/INFO]: Preparing spawn area: 100%
-[12:35:01] [Server thread/INFO]: Prepared spawn area in 3 ms
-[12:35:01] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:the_nether'...
-[12:35:01] [Server thread/INFO]: Preparing spawn area: 100%
-[12:35:01] [Server thread/INFO]: Prepared spawn area in 3 ms
-[12:35:01] [Server thread/INFO]: Done preparing level "lobby" (0.469s)
-[12:35:01] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.12.3
-[12:35:02] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
-[12:35:02] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: vaultunlocked [2.13.1]
-[12:35:02] [Server thread/INFO]: [WorldGuard] Enabling WorldGuard v7.0.18+2392-fa605e6
-[12:35:02] [Server thread/INFO]: [WorldGuard] (lobby) TNT ignition is PERMITTED.
-[12:35:02] [Server thread/INFO]: [WorldGuard] (lobby) Lighters are PERMITTED.
-[12:35:02] [Server thread/INFO]: [WorldGuard] (lobby) Lava fire is PERMITTED.
-[12:35:02] [Server thread/INFO]: [WorldGuard] (lobby) Fire spread is UNRESTRICTED.
-[12:35:02] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'lobby'
-[12:35:02] [Server thread/INFO]: [WorldGuard] (lobby_nether) TNT ignition is PERMITTED.
-[12:35:02] [Server thread/INFO]: [WorldGuard] (lobby_nether) Lighters are PERMITTED.
-[12:35:02] [Server thread/INFO]: [WorldGuard] (lobby_nether) Lava fire is PERMITTED.
-[12:35:02] [Server thread/INFO]: [WorldGuard] (lobby_nether) Fire spread is UNRESTRICTED.
-[12:35:02] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'lobby_nether'
-[12:35:02] [Server thread/INFO]: [WorldGuard] Loading region data...
-[12:35:02] [Server thread/INFO]: [packetevents] Enabling packetevents v2.13.0
-[12:35:02] [packetevents-update-check-thread/INFO]: [packetevents] Checking for updates, please wait...
-[12:35:02] [Server thread/INFO]: [Skript] Enabling Skript v2.16.1
-[12:35:02] [packetevents-update-check-thread/INFO]: [packetevents] You are running the latest release: 2.13.0
-[12:35:03] [ForkJoinPool.commonPool-worker-3/INFO]: [Skript] You're currently running the latest stable version of Skript.
-[12:35:04] [Server thread/INFO]: [Skript]  ~ created by & © Peter Güttinger aka Njol ~
-[12:35:04] [Server thread/INFO]: [CMILib] Enabling CMILib v1.5.9.9
-[12:35:04] [Server thread/INFO]: Server version detection by new method: v26_2_0 Legacy: false Mojang Mappings: true
-[12:35:04] [Server thread/INFO]: Server version: v26_2_0 - 26.2.0 - paper  26.2-112-c9e894d (MC: 26.2)
-[12:35:05] [Server thread/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
-[12:35:05] [Server thread/INFO]: CMI hooked.
-[12:35:05] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: cmil [1.5.9.9]
-[12:35:05] [Server thread/INFO]: PlaceholderAPI hooked.
-[12:35:05] [Server thread/INFO]: Updated (EN) language file. Took 54ms
-[12:35:05] [Server thread/INFO]: [Oraxen] Enabling Oraxen v1.218.0
-[12:35:05] [Server thread/INFO]: Oraxen | [ProtocolLibAdapter] registerTitleListener called
-[12:35:05] [Server thread/INFO]: Oraxen | [ProtocolLibAdapter] Title Listener registered successfully
-[12:35:05] [Server thread/INFO]: Oraxen | Custom paintings already hot reloaded (0 unchanged).
-[12:35:05] [ForkJoinPool.commonPool-worker-3/INFO]: [Skript] Loaded 5750 aliases in 1079ms
-[12:35:05] [Server thread/INFO]: Oraxen | TextEffects.shader.encoding 'alpha_lsb' is deprecated. Using 'effect_font'.
-[12:35:05] [Server thread/INFO]: Oraxen | Loaded 4 text effects
-[12:35:05] [Server thread/INFO]: Oraxen | Loaded 16 glyphs, 0 reference glyphs, 1 animated glyphs
-[12:35:05] [Server thread/INFO]: Oraxen | Hot reloaded 1 new custom jukebox song(s), 0 updated, 0 removed, 0 unchanged.
-[12:35:06] [Server thread/INFO]: Oraxen | Block mechanic caveblock uses legacy 'hardness'/'drop' keys; please migrate them to a 'breaking' rule.
-[12:35:06] [Server thread/INFO]: Oraxen | Block mechanic amethyst_ore uses legacy 'hardness'/'drop' keys; please migrate them to a 'breaking' rule.
-[12:35:06] [Server thread/INFO]: Oraxen | Block mechanic ruby_ore uses legacy 'hardness'/'drop' keys; please migrate them to a 'breaking' rule.
-[12:35:06] [Server thread/INFO]: Oraxen | Block mechanic onyx_ore uses legacy 'hardness'/'drop' keys; please migrate them to a 'breaking' rule.
-[12:35:06] [Server thread/INFO]: Oraxen | Block mechanic orax_ore uses legacy 'hardness'/'drop' keys; please migrate them to a 'breaking' rule.
-[12:35:06] [Server thread/INFO]: Oraxen | Block mechanic brunnera uses legacy 'hardness'/'drop' keys; please migrate them to a 'breaking' rule.
-[12:35:06] [Server thread/INFO]: Oraxen | Block mechanic daffodil uses legacy 'hardness'/'drop' keys; please migrate them to a 'breaking' rule.
-[12:35:06] [Server thread/INFO]: Oraxen | Block mechanic dailily uses legacy 'hardness'/'drop' keys; please migrate them to a 'breaking' rule.
-[12:35:06] [Server thread/INFO]: Oraxen | Successfully loaded on Ubuntu 26.04 LTS (resolute)
-[12:35:06] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: oraxen [1.218.0]
-[12:35:06] [Server thread/INFO]: Oraxen | Plugin "PlaceholderAPI" detected, enabling hooks
-[12:35:06] [Server thread/INFO]: Oraxen | Skript compatibility enabled - Oraxen syntax registered
-[12:35:06] [Server thread/INFO]: Oraxen | Plugin "Skript" detected, enabling hooks
-[12:35:06] [Server thread/INFO]: [CMI] Enabling CMI v9.8.9.8
-[12:35:07] [Server thread/INFO]: _______________________________________________________
-[12:35:07] [Server thread/INFO]:  
-[12:35:07] [Server thread/INFO]:  ██████╗███╗   ███╗██╗
-[12:35:07] [Server thread/INFO]: ██╔════╝████╗ ████║██║
-[12:35:07] [Server thread/INFO]: ██║     ██╔████╔██║██║
-[12:35:07] [Server thread/INFO]: ██║     ██║╚██╔╝██║██║
-[12:35:07] [Server thread/INFO]: ╚██████╗██║ ╚═╝ ██║██║
-[12:35:07] [Server thread/INFO]:  ╚═════╝╚═╝     ╚═╝╚═╝
-[12:35:07] [Server thread/INFO]: _______________________________________________________
-[12:35:07] [Server thread/INFO]: Integrating PaperSpigot async methods
-[12:35:07] [Server thread/INFO]: Vault found. (Loaded: true)
-[12:35:07] [CMI-Thread-1/INFO]: Loaded (-) locale download into memory. Took 7ms
-[12:35:07] [Server thread/INFO]: Loaded (71) 70 Enabled and 1 Disabled modules into memory. Took 136ms
-[12:35:07] [Server thread/INFO]: Initialized Cipher256 AES
-[12:35:07] [Server thread/INFO]: Loaded (61) regular alias into memory. Took 66ms
-[12:35:07] [CMI-Thread-2/INFO]: Loaded (1) custom text's into memory. Took 2ms
-[12:35:07] [Server thread/INFO]: (RandomTeleportation) Can't find world with (lobby_the_end) name
-[12:35:07] [Server thread/INFO]: SQLite 3.49.1 data base type detected
-[12:35:07] [Server thread/INFO]: Loaded (-) SqLite into memory. Took 105ms
-[12:35:07] [Server thread/INFO]: Vault was found - Enabling capabilities. Economy: CMIEconomy
-[12:35:08] [Server thread/INFO]: Loaded (5) warning categories into memory. Took 1ms
-[12:35:08] [Server thread/INFO]: Loaded (3) warning commands into memory. Took 0ms
-[12:35:08] [Server thread/INFO]: Loaded (0) cooldowns into memory. Took 0ms
-[12:35:08] [Server thread/INFO]: Loaded (160) custom mob heads into memory. Took 20ms
-[12:35:08] [Server thread/INFO]: Loaded (4) chat bubble groups into memory. Took 1ms
-[12:35:08] [Server thread/INFO]: Loaded (5) kits into memory. Took 14ms
-[12:35:08] [Server thread/INFO]: Loaded (5) dialogs into memory. Took 8ms
-[12:35:08] [Server thread/INFO]: Loaded (7) ranks into memory. Took 7ms
-[12:35:08] [Server thread/INFO]: Loaded (8) playtime rewards into memory. Took 2ms
-[12:35:08] [Server thread/INFO]: Executed Player DB querry in 1ms
-[12:35:08] [Server thread/INFO]: Loaded (9) player data into memory. Took 8ms
-[12:35:08] [Server thread/INFO]: Loaded (0) playtime records into memory. Took 1ms
-[12:35:08] [Server thread/INFO]: Loaded (0) playtime reward records into memory. Took 0ms
-[12:35:08] [Server thread/INFO]: Loaded (0) custom alias into memory. Took 0ms
-[12:35:08] [Server thread/INFO]: Loaded (-) Registered events into memory. Took 135ms
-[12:35:08] [Server thread/WARN]: org.bukkit.configuration.InvalidConfigurationException: while scanning an anchor
-[12:35:08] [Server thread/WARN]:  in 'reader', line 38, column 46:
-[12:35:08] [Server thread/WARN]:      ... playerName] !&7  &8» &aDiscord: &fdiscord.gg/festasbuilds
-[12:35:08] [Server thread/WARN]:                                          ^
-[12:35:08] [Server thread/WARN]: unexpected character found .(46)
-[12:35:08] [Server thread/WARN]:  in 'reader', line 38, column 55:
-[12:35:08] [Server thread/WARN]:      ... e] !&7  &8» &aDiscord: &fdiscord.gg/festasbuilds
-[12:35:08] [Server thread/WARN]:                                          ^
-[12:35:08] [Server thread/WARN]: 
-[12:35:08] [Server thread/WARN]: 	at org.bukkit.configuration.file.YamlConfiguration.loadFromString(YamlConfiguration.java:112)
-[12:35:08] [Server thread/WARN]: 	at org.bukkit.configuration.file.FileConfiguration.load(FileConfiguration.java:160)
-[12:35:08] [Server thread/WARN]: 	at CMILib1.5.9.9.jar//net.Zrips.CMILib.FileHandler.ConfigReader.getyml(ConfigReader.java:276)
-[12:35:08] [Server thread/WARN]: 	at CMILib1.5.9.9.jar//net.Zrips.CMILib.FileHandler.ConfigReader.<init>(ConfigReader.java:54)
-[12:35:08] [Server thread/WARN]: 	at CMILib1.5.9.9.jar//net.Zrips.CMILib.FileHandler.ConfigReader.<init>(ConfigReader.java:46)
-[12:35:08] [Server thread/WARN]: 	at CMI-9.8.9.8.jar//com.Zrips.CMI.Modules.EventActions.EventActionManager.load(EventActionManager.java:196)
-[12:35:08] [Server thread/WARN]: 	at CMI-9.8.9.8.jar//com.Zrips.CMI.CMIOnEnable.init(CMIOnEnable.java:480)
-[12:35:08] [Server thread/WARN]: 	at CMI-9.8.9.8.jar//com.Zrips.CMI.CMI.onEnable(CMI.java:1404)
-[12:35:08] [Server thread/WARN]: 	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:279)
-[12:35:08] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperPluginInstanceManager.enablePlugin(PaperPluginInstanceManager.java:201)
-[12:35:08] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.enablePlugin(PaperPluginManagerImpl.java:109)
-[12:35:08] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:519)
-[12:35:08] [Server thread/WARN]: 	at org.bukkit.craftbukkit.CraftServer.enablePlugin(CraftServer.java:633)
-[12:35:08] [Server thread/WARN]: 	at org.bukkit.craftbukkit.CraftServer.enablePlugins(CraftServer.java:590)
-[12:35:08] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.initPostWorld(MinecraftServer.java:648)
-[12:35:08] [Server thread/WARN]: 	at net.minecraft.server.dedicated.DedicatedServer.initServer(DedicatedServer.java:343)
-[12:35:08] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1266)
-[12:35:08] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:303)
-[12:35:08] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:1474)
-[12:35:08] [Server thread/WARN]: Caused by: while scanning an anchor
-[12:35:08] [Server thread/WARN]:  in 'reader', line 38, column 46:
-[12:35:08] [Server thread/WARN]:      ... playerName] !&7  &8» &aDiscord: &fdiscord.gg/festasbuilds
-[12:35:08] [Server thread/WARN]:                                          ^
-[12:35:08] [Server thread/WARN]: unexpected character found .(46)
-[12:35:08] [Server thread/WARN]:  in 'reader', line 38, column 55:
-[12:35:08] [Server thread/WARN]:      ... e] !&7  &8» &aDiscord: &fdiscord.gg/festasbuilds
-[12:35:08] [Server thread/WARN]:                                          ^
-[12:35:08] [Server thread/WARN]: 
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.scanner.ScannerImpl.scanAnchor(ScannerImpl.java:1528)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchAnchor(ScannerImpl.java:983)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:416)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:239)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValue.produce(ParserImpl.java:669)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:161)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.comments.CommentEventsCollector$1.peek(CommentEventsCollector.java:57)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.comments.CommentEventsCollector$1.peek(CommentEventsCollector.java:43)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.comments.CommentEventsCollector.collectEvents(CommentEventsCollector.java:136)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.comments.CommentEventsCollector.collectEvents(CommentEventsCollector.java:116)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeScalarNode(Composer.java:249)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:214)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeKeyNode(Composer.java:386)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:357)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:329)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:218)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeSequenceNode(Composer.java:284)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:216)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:396)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:361)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:329)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:218)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:396)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:361)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:329)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:218)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:141)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.getSingleNode(Composer.java:167)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.Yaml.compose(Yaml.java:590)
-[12:35:08] [Server thread/WARN]: 	at org.bukkit.configuration.file.YamlConfiguration.loadFromString(YamlConfiguration.java:105)
-[12:35:08] [Server thread/WARN]: 	... 18 more
-[12:35:08] [Server thread/INFO]: Something went wrong while loading EventCommands.yml! Backup have been saved into plugins/CMILib/FileBackups/2026-08-19 12-35-08 EventCommands.yml
-[12:35:08] [Server thread/WARN]: org.bukkit.configuration.InvalidConfigurationException: while scanning an anchor
-[12:35:08] [Server thread/WARN]:  in 'reader', line 38, column 46:
-[12:35:08] [Server thread/WARN]:      ... playerName] !&7  &8» &aDiscord: &fdiscord.gg/festasbuilds
-[12:35:08] [Server thread/WARN]:                                          ^
-[12:35:08] [Server thread/WARN]: unexpected character found .(46)
-[12:35:08] [Server thread/WARN]:  in 'reader', line 38, column 55:
-[12:35:08] [Server thread/WARN]:      ... e] !&7  &8» &aDiscord: &fdiscord.gg/festasbuilds
-[12:35:08] [Server thread/WARN]:                                          ^
-[12:35:08] [Server thread/WARN]: 
-[12:35:08] [Server thread/WARN]: 	at org.bukkit.configuration.file.YamlConfiguration.loadFromString(YamlConfiguration.java:112)
-[12:35:08] [Server thread/WARN]: 	at org.bukkit.configuration.file.FileConfiguration.load(FileConfiguration.java:160)
-[12:35:08] [Server thread/WARN]: 	at CMILib1.5.9.9.jar//net.Zrips.CMILib.FileHandler.ConfigReader.getyml(ConfigReader.java:276)
-[12:35:08] [Server thread/WARN]: 	at CMILib1.5.9.9.jar//net.Zrips.CMILib.FileHandler.ConfigReader.<init>(ConfigReader.java:54)
-[12:35:08] [Server thread/WARN]: 	at CMILib1.5.9.9.jar//net.Zrips.CMILib.FileHandler.ConfigReader.<init>(ConfigReader.java:46)
-[12:35:08] [Server thread/WARN]: 	at CMI-9.8.9.8.jar//com.Zrips.CMI.Modules.EventActions.EventActionManager.load(EventActionManager.java:196)
-[12:35:08] [Server thread/WARN]: 	at CMI-9.8.9.8.jar//com.Zrips.CMI.CMIOnEnable.init(CMIOnEnable.java:480)
-[12:35:08] [Server thread/WARN]: 	at CMI-9.8.9.8.jar//com.Zrips.CMI.CMI.onEnable(CMI.java:1404)
-[12:35:08] [Server thread/WARN]: 	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:279)
-[12:35:08] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperPluginInstanceManager.enablePlugin(PaperPluginInstanceManager.java:201)
-[12:35:08] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.enablePlugin(PaperPluginManagerImpl.java:109)
-[12:35:08] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:519)
-[12:35:08] [Server thread/WARN]: 	at org.bukkit.craftbukkit.CraftServer.enablePlugin(CraftServer.java:633)
-[12:35:08] [Server thread/WARN]: 	at org.bukkit.craftbukkit.CraftServer.enablePlugins(CraftServer.java:590)
-[12:35:08] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.initPostWorld(MinecraftServer.java:648)
-[12:35:08] [Server thread/WARN]: 	at net.minecraft.server.dedicated.DedicatedServer.initServer(DedicatedServer.java:343)
-[12:35:08] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1266)
-[12:35:08] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:303)
-[12:35:08] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:1474)
-[12:35:08] [Server thread/WARN]: Caused by: while scanning an anchor
-[12:35:08] [Server thread/WARN]:  in 'reader', line 38, column 46:
-[12:35:08] [Server thread/WARN]:      ... playerName] !&7  &8» &aDiscord: &fdiscord.gg/festasbuilds
-[12:35:08] [Server thread/WARN]:                                          ^
-[12:35:08] [Server thread/WARN]: unexpected character found .(46)
-[12:35:08] [Server thread/WARN]:  in 'reader', line 38, column 55:
-[12:35:08] [Server thread/WARN]:      ... e] !&7  &8» &aDiscord: &fdiscord.gg/festasbuilds
-[12:35:08] [Server thread/WARN]:                                          ^
-[12:35:08] [Server thread/WARN]: 
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.scanner.ScannerImpl.scanAnchor(ScannerImpl.java:1528)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchAnchor(ScannerImpl.java:983)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:416)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:239)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValue.produce(ParserImpl.java:669)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:161)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.comments.CommentEventsCollector$1.peek(CommentEventsCollector.java:57)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.comments.CommentEventsCollector$1.peek(CommentEventsCollector.java:43)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.comments.CommentEventsCollector.collectEvents(CommentEventsCollector.java:136)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.comments.CommentEventsCollector.collectEvents(CommentEventsCollector.java:116)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeScalarNode(Composer.java:249)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:214)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeKeyNode(Composer.java:386)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:357)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:329)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:218)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeSequenceNode(Composer.java:284)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:216)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:396)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:361)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:329)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:218)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:396)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:361)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:329)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:218)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:141)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.getSingleNode(Composer.java:167)
-[12:35:08] [Server thread/WARN]: 	at org.yaml.snakeyaml.Yaml.compose(Yaml.java:590)
-[12:35:08] [Server thread/WARN]: 	at org.bukkit.configuration.file.YamlConfiguration.loadFromString(YamlConfiguration.java:105)
-[12:35:08] [Server thread/WARN]: 	... 18 more
-[12:35:08] [Server thread/INFO]: Loaded (EN) language file into memory. Took 147ms
-[12:35:08] [Server thread/INFO]: Loaded (DE) language file into memory. Took 106ms
-[12:35:08] [Server thread/INFO]: Loaded (245) worth values into memory. Took 53ms
-[12:35:08] [Server thread/INFO]: VaultPermissions found. (Loaded: true)
-[12:35:08] [Server thread/INFO]: PlaceholderAPI found. (Loaded: true)
-[12:35:08] [Server thread/INFO]: Loaded (5) schedules into memory. Took 7ms
-[12:35:08] [Server thread/INFO]: Loaded (0) skin cache entries into memory. Took 0ms
-[12:35:08] [Server thread/INFO]: [CMI] Preloading playtimetop statistics
-[12:35:08] [Server thread/INFO]: Loaded (0) ArmorStand templates into memory. Took 0ms
-[12:35:08] [Server thread/INFO]: Version 9.8.9.8 has been enabled
-[12:35:08] [Server thread/INFO]: _______________________________________________________
-[12:35:08] [Server thread/INFO]: [CMIEInjector][Economy] CMI Economy hooked.
-[12:35:08] [Server thread/INFO]: [CommandAPI] Enabling CommandAPI v12.0.0
-[12:35:08] [Server thread/INFO]: [CommandAPI] Hooked into Paper ServerResourcesReloadedEvent
-[12:35:08] [Server thread/INFO]: [DeluxeMenus] Enabling DeluxeMenus v1.14.1-Release
-[12:35:08] [Server thread/INFO]: [DeluxeMenus] Successfully hooked into PlaceholderAPI!
-[12:35:09] [Server thread/INFO]: [DeluxeMenus] Successfully hooked into Vault!
-[12:35:09] [Server thread/WARN]: [DeluxeMenus] Found 'data' option for item: teststone in menu: basics_menu. This option is deprecated and will be removed soon. Please use 'damage' instead.
-[12:35:09] [Server thread/INFO]: [DeluxeMenus] 7 GUI menus loaded!
-[12:35:09] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: deluxemenus [1.14.1-Release]
-[12:35:09] [Server thread/INFO]: [DeluxeMenus] You are running the latest version of DeluxeMenus!
-[12:35:09] [Server thread/INFO]: [TAB-Bridge] Enabling TAB-Bridge v6.2.2
-[12:35:09] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: tab [6.2.2]
-[12:35:09] [Server thread/INFO]: [Plan] Enabling Plan v5.8 build 3605
-[12:35:09] [Server thread/INFO]: [Plan] 
-[12:35:09] [Server thread/INFO]: [Plan]            ██▌
-[12:35:09] [Server thread/INFO]: [Plan]      ██▌   ██▌
-[12:35:09] [Server thread/INFO]: [Plan]   ██▌██▌██▌██▌  Player Analytics
-[12:35:09] [Server thread/INFO]: [Plan]   ██▌██▌██▌██▌  v5.8 build 3605
-[12:35:09] [Server thread/INFO]: [Plan] 
-[12:35:09] [Server thread/INFO]: [Plan] Locale: 'English' by AuroraLS3
-[12:35:09] [Server thread/INFO]: [Plan] Downloading MySQL Driver, this may take a while...
-[12:35:09] [Plan MySQLDB-transaction-thread-1/INFO]: [Plan] Database: Making sure schema is up to date..
-[12:35:09] [Server thread/INFO]: [Plan] MySQL-database connection established.
-[12:35:09] [Server thread/INFO]: [Plan] WebServer was not initialized. (WebServer.DisableWebServer: true)
-[12:35:09] [Server thread/INFO]: [Plan] Loading server identifying information
-[12:35:09] [Server thread/INFO]: [Plan] Server identifier loaded: 82755ba5-91eb-4cca-a6a3-be06d891cb3d
-[12:35:09] [Plan Non critical-pool-3/WARN]: [Plan] Downloading GeoLite2 requires accepting GeoLite2 EULA - see 'Data_gathering.Accept_GeoLite2_EULA' in the config.
-[12:35:09] [Plan Non critical-pool-3/ERROR]: [Plan] Failed to enable geolocation.
-[12:35:09] [Plan Non critical-pool-5/INFO]: [Plan] Proxy server detected in the database - Proxy Webserver address is 'http://mc-stats.festas-builds.com'.
-[12:35:09] [Server thread/INFO]: [Plan] Registered extension: CMI
-[12:35:09] [Server thread/INFO]: [Plan] Registered extension: LuckPerms
-[12:35:09] [Server thread/INFO]: [Plan] Registered extension: PlaceholderAPI
-[12:35:09] [Server thread/INFO]: [Plan] Registered extension: Economy (Vault)
-[12:35:09] [Server thread/INFO]: [Plan] Registered extension: Permission Groups (Vault)
-[12:35:09] [Server thread/INFO]: [Plan] Player Analytics Enabled.
-[12:35:10] [Plan MySQLDB-transaction-thread-1/INFO]: [Plan] All database patches applied successfully.
-[12:35:10] [Server thread/INFO]: [spark] Starting background profiler...
-[12:35:10] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
-[12:35:10] [Server thread/INFO]: Saving chunks for level 'ServerLevel[lobby]'/minecraft:overworld
-[12:35:10] [Server thread/INFO]: Saving chunks for level 'ServerLevel[lobby]'/minecraft:the_nether
-[12:35:10] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
-[12:35:10] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[12:35:10] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
-[12:35:10] [Server thread/INFO]: Running delayed init tasks
-[12:35:10] [Server thread/INFO]: [com.fastasyncworldedit.bukkit.regions.WorldGuardFeature] Plugin 'WorldGuard' found. Using it now.
-[12:35:10] [Server thread/INFO]: [com.fastasyncworldedit.bukkit.FaweBukkit] Attempting to use plugin 'WorldGuard'
-[12:35:10] [Server thread/INFO]: [Skript]     Loaded regions hook for WorldGuard. Please note that Skript's region hooks are deprecated and will be removed in a future release. For WorldGuard support, we recommend using skript-worldguard: https://github.com/SkriptLang/skript-worldguard
-[12:35:10] [Craft Scheduler Thread - 4 - Plan/INFO]: [Plan] You're using the latest version.
-[12:35:10] [Server thread/INFO]: [Skript] Loading variables...
-[12:35:10] [Server thread/INFO]: [Skript] Loaded 16 variables in 0.0 seconds
-[12:35:10] [Server thread/INFO]: [Skript] Line 143: (navigator.sk)
-[12:35:10] [Server thread/INFO]:     Can't understand this structure: on move
-[12:35:10] [Server thread/INFO]:     Line: on move:
-[12:35:10] [Server thread/INFO]:  
-[12:35:11] [Server thread/INFO]: [Skript] Line 52: (navigator.sk)
-[12:35:11] [Server thread/INFO]:     There's no loop that matches 'loop-item is not book'
-[12:35:11] [Server thread/INFO]:     Line: if loop-item is not compass and loop-item is not book:
-[12:35:11] [Server thread/INFO]:  
-[12:35:11] [Server thread/INFO]: [Skript] Line 54: (navigator.sk)
-[12:35:11] [Server thread/INFO]:     There's no loop that matches 'loop-item does not contain "Guide"'
-[12:35:11] [Server thread/INFO]:     Line: else if name of loop-item does not contain "Navigator" and name of loop-item does not contain "Guide":
-[12:35:11] [Server thread/INFO]:  
-[12:35:11] [Server thread/INFO]: [Skript] Line 72: (navigator.sk)
-[12:35:11] [Server thread/INFO]:     There's no loop that matches 'loop-item is book'
-[12:35:11] [Server thread/INFO]:     Line: if loop-item is compass or loop-item is book:
-[12:35:11] [Server thread/INFO]:  
-[12:35:12] [Server thread/INFO]: [Skript] Line 82: (navigator.sk)
-[12:35:12] [Server thread/INFO]:     the time in the world of the player can't be set to '6000' because the latter is neither a time nor a time period
-[12:35:12] [Server thread/INFO]:     Line: set time in world of player to 6000
-[12:35:12] [Server thread/INFO]:  
-[12:35:12] [Server thread/INFO]: [Skript] Line 102: (navigator.sk)
-[12:35:12] [Server thread/INFO]:     There's no item is book in an on inventory click event.
-[12:35:12] [Server thread/INFO]:     Line: if event-item is compass or event-item is book:
-[12:35:12] [Server thread/INFO]:  
-[12:35:12] [Server thread/INFO]: [Skript] Line 156: (navigator.sk)
-[12:35:12] [Server thread/INFO]:     There's no player in an on damage event.
-[12:35:12] [Server thread/INFO]:     Line: if world of player is "{@lobby_world}":
-[12:35:12] [Server thread/INFO]:  
-[12:35:12] [Server thread/INFO]: [Lobby] Announcement-System geladen (10 Nachrichten)!
-[12:35:12] [Server thread/INFO]: [Skript] Loaded 3 scripts with a total of 30 structures in 1.67 seconds
-[12:35:12] [Server thread/INFO]: [Skript] Finished loading.
-[12:35:12] [Server thread/INFO]: [CMI] Permission plugin: LuckPerms5.5.71
-[12:35:12] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: cmi [9.8.9.8]
-[12:35:12] [Server thread/INFO]: [CMI] PlaceholderAPI hooked.
-[12:35:12] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: plan [5.8 build 3605]
-[12:35:12] [Server thread/INFO]: Done (26.167s)! For help, type "help"
-[12:35:12] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: luckperms [5.4-R2]
-[12:35:12] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: player-j17 [1.0.3]
-[12:35:12] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: bungee [2.3]
-[12:35:12] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: vault [1.8.3]
-[12:35:12] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: player [2.0.9]
-[12:35:12] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: playerlist [3.1.0]
-[12:35:12] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: localtime [1.2]
-[12:35:12] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: math [2.0.2]
-[12:35:12] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: statistic [2.0.2]
-[12:35:12] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: server [2.7.3]
-[12:35:12] [Server thread/INFO]: 10 placeholder hook(s) registered!
+[14:18:12] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:overworld'...
+[14:18:12] [Server thread/INFO]: Preparing spawn area: 100%
+[14:18:12] [Server thread/INFO]: Prepared spawn area in 1 ms
+[14:18:12] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:the_nether'...
+[14:18:12] [Server thread/INFO]: Prepared spawn area in 2 ms
+[14:18:12] [Server thread/INFO]: Done preparing level "lobby" (0.268s)
+[14:18:12] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.12.3
+[14:18:13] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
+[14:18:13] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: vaultunlocked [2.13.1]
+[14:18:13] [Server thread/INFO]: [WorldGuard] Enabling WorldGuard v7.0.18+2392-fa605e6
+[14:18:13] [Server thread/INFO]: [WorldGuard] (lobby) TNT ignition is PERMITTED.
+[14:18:13] [Server thread/INFO]: [WorldGuard] (lobby) Lighters are PERMITTED.
+[14:18:13] [Server thread/INFO]: [WorldGuard] (lobby) Lava fire is PERMITTED.
+[14:18:13] [Server thread/INFO]: [WorldGuard] (lobby) Fire spread is UNRESTRICTED.
+[14:18:13] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'lobby'
+[14:18:13] [Server thread/INFO]: [WorldGuard] (lobby_nether) TNT ignition is PERMITTED.
+[14:18:13] [Server thread/INFO]: [WorldGuard] (lobby_nether) Lighters are PERMITTED.
+[14:18:13] [Server thread/INFO]: [WorldGuard] (lobby_nether) Lava fire is PERMITTED.
+[14:18:13] [Server thread/INFO]: [WorldGuard] (lobby_nether) Fire spread is UNRESTRICTED.
+[14:18:13] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'lobby_nether'
+[14:18:13] [Server thread/INFO]: [WorldGuard] Loading region data...
+[14:18:13] [Server thread/INFO]: [packetevents] Enabling packetevents v2.13.0
+[14:18:13] [packetevents-update-check-thread/INFO]: [packetevents] Checking for updates, please wait...
+[14:18:13] [Server thread/INFO]: [Skript] Enabling Skript v2.16.1
+[14:18:13] [packetevents-update-check-thread/INFO]: [packetevents] You are running the latest release: 2.13.0
+[14:18:13] [ForkJoinPool.commonPool-worker-7/INFO]: [Skript] You're currently running the latest stable version of Skript.
+[14:18:14] [Server thread/INFO]: [Skript]  ~ created by & © Peter Güttinger aka Njol ~
+[14:18:14] [Server thread/INFO]: [CMILib] Enabling CMILib v1.5.9.9
+[14:18:14] [Server thread/INFO]: Server version detection by new method: v26_2_0 Legacy: false Mojang Mappings: true
+[14:18:14] [Server thread/INFO]: Server version: v26_2_0 - 26.2.0 - paper  26.2-112-c9e894d (MC: 26.2)
+[14:18:15] [Server thread/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+[14:18:15] [Server thread/INFO]: CMI hooked.
+[14:18:15] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: cmil [1.5.9.9]
+[14:18:15] [Server thread/INFO]: PlaceholderAPI hooked.
+[14:18:15] [Server thread/INFO]: Updated (EN) language file. Took 72ms
+[14:18:15] [Server thread/INFO]: [Oraxen] Enabling Oraxen v1.218.0
+[14:18:15] [Server thread/INFO]: Oraxen | [ProtocolLibAdapter] registerTitleListener called
+[14:18:15] [Server thread/INFO]: Oraxen | [ProtocolLibAdapter] Title Listener registered successfully
+[14:18:15] [Server thread/INFO]: Oraxen | Custom paintings already hot reloaded (0 unchanged).
+[14:18:15] [ForkJoinPool.commonPool-worker-7/INFO]: [Skript] Loaded 5750 aliases in 1070ms
+[14:18:15] [Server thread/INFO]: Oraxen | TextEffects.shader.encoding 'alpha_lsb' is deprecated. Using 'effect_font'.
+[14:18:15] [Server thread/INFO]: Oraxen | Loaded 4 text effects
+[14:18:15] [Server thread/INFO]: Oraxen | Loaded 16 glyphs, 0 reference glyphs, 1 animated glyphs
+[14:18:16] [Server thread/INFO]: Oraxen | Hot reloaded 1 new custom jukebox song(s), 0 updated, 0 removed, 0 unchanged.
+[14:18:16] [Server thread/INFO]: Oraxen | Block mechanic caveblock uses legacy 'hardness'/'drop' keys; please migrate them to a 'breaking' rule.
+[14:18:16] [Server thread/INFO]: Oraxen | Block mechanic amethyst_ore uses legacy 'hardness'/'drop' keys; please migrate them to a 'breaking' rule.
+[14:18:16] [Server thread/INFO]: Oraxen | Block mechanic ruby_ore uses legacy 'hardness'/'drop' keys; please migrate them to a 'breaking' rule.
+[14:18:16] [Server thread/INFO]: Oraxen | Block mechanic onyx_ore uses legacy 'hardness'/'drop' keys; please migrate them to a 'breaking' rule.
+[14:18:16] [Server thread/INFO]: Oraxen | Block mechanic orax_ore uses legacy 'hardness'/'drop' keys; please migrate them to a 'breaking' rule.
+[14:18:16] [Server thread/INFO]: Oraxen | Block mechanic brunnera uses legacy 'hardness'/'drop' keys; please migrate them to a 'breaking' rule.
+[14:18:16] [Server thread/INFO]: Oraxen | Block mechanic daffodil uses legacy 'hardness'/'drop' keys; please migrate them to a 'breaking' rule.
+[14:18:16] [Server thread/INFO]: Oraxen | Block mechanic dailily uses legacy 'hardness'/'drop' keys; please migrate them to a 'breaking' rule.
+[14:18:16] [Server thread/INFO]: Oraxen | Successfully loaded on Ubuntu 26.04 LTS (resolute)
+[14:18:16] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: oraxen [1.218.0]
+[14:18:16] [Server thread/INFO]: Oraxen | Plugin "PlaceholderAPI" detected, enabling hooks
+[14:18:16] [Server thread/INFO]: Oraxen | Skript compatibility enabled - Oraxen syntax registered
+[14:18:16] [Server thread/INFO]: Oraxen | Plugin "Skript" detected, enabling hooks
+[14:18:16] [Server thread/INFO]: [CMI] Enabling CMI v9.8.9.8
+[14:18:16] [Server thread/INFO]: _______________________________________________________
+[14:18:16] [Server thread/INFO]:  
+[14:18:16] [Server thread/INFO]:  ██████╗███╗   ███╗██╗
+[14:18:16] [Server thread/INFO]: ██╔════╝████╗ ████║██║
+[14:18:16] [Server thread/INFO]: ██║     ██╔████╔██║██║
+[14:18:16] [Server thread/INFO]: ██║     ██║╚██╔╝██║██║
+[14:18:16] [Server thread/INFO]: ╚██████╗██║ ╚═╝ ██║██║
+[14:18:16] [Server thread/INFO]:  ╚═════╝╚═╝     ╚═╝╚═╝
+[14:18:16] [Server thread/INFO]: _______________________________________________________
+[14:18:16] [Server thread/INFO]: Integrating PaperSpigot async methods
+[14:18:16] [Server thread/INFO]: Vault found. (Loaded: true)
+[14:18:16] [CMI-Thread-1/INFO]: Loaded (-) locale download into memory. Took 8ms
+[14:18:16] [Server thread/INFO]: Loaded (71) 70 Enabled and 1 Disabled modules into memory. Took 57ms
+[14:18:16] [Server thread/INFO]: Initialized Cipher256 AES
+[14:18:17] [Server thread/INFO]: Loaded (61) regular alias into memory. Took 37ms
+[14:18:17] [CMI-Thread-2/INFO]: Loaded (1) custom text's into memory. Took 2ms
+[14:18:17] [Server thread/INFO]: (RandomTeleportation) Can't find world with (lobby_the_end) name
+[14:18:17] [Server thread/INFO]: SQLite 3.49.1 data base type detected
+[14:18:17] [Server thread/INFO]: Loaded (-) SqLite into memory. Took 88ms
+[14:18:17] [Server thread/INFO]: Vault was found - Enabling capabilities. Economy: CMIEconomy
+[14:18:17] [Server thread/INFO]: Loaded (5) warning categories into memory. Took 1ms
+[14:18:17] [Server thread/INFO]: Loaded (3) warning commands into memory. Took 0ms
+[14:18:17] [Server thread/INFO]: Loaded (0) cooldowns into memory. Took 0ms
+[14:18:17] [Server thread/INFO]: Loaded (160) custom mob heads into memory. Took 13ms
+[14:18:17] [Server thread/INFO]: Loaded (4) chat bubble groups into memory. Took 1ms
+[14:18:17] [Server thread/INFO]: Loaded (5) kits into memory. Took 13ms
+[14:18:17] [Server thread/INFO]: Loaded (5) dialogs into memory. Took 6ms
+[14:18:17] [Server thread/INFO]: Loaded (7) ranks into memory. Took 6ms
+[14:18:17] [Server thread/INFO]: Loaded (8) playtime rewards into memory. Took 1ms
+[14:18:17] [Server thread/INFO]: Executed Player DB querry in 1ms
+[14:18:17] [Server thread/INFO]: Loaded (9) player data into memory. Took 7ms
+[14:18:17] [Server thread/INFO]: Loaded (0) playtime records into memory. Took 4ms
+[14:18:17] [Server thread/INFO]: Loaded (0) playtime reward records into memory. Took 0ms
+[14:18:17] [Server thread/INFO]: Loaded (0) custom alias into memory. Took 0ms
+[14:18:17] [Server thread/INFO]: Loaded (-) Registered events into memory. Took 139ms
+[14:18:17] [Server thread/WARN]: org.bukkit.configuration.InvalidConfigurationException: while scanning an anchor
+[14:18:17] [Server thread/WARN]:  in 'reader', line 38, column 46:
+[14:18:17] [Server thread/WARN]:      ... playerName] !&7  &8» &aDiscord: &fdiscord.gg/festasbuilds
+[14:18:17] [Server thread/WARN]:                                          ^
+[14:18:17] [Server thread/WARN]: unexpected character found .(46)
+[14:18:17] [Server thread/WARN]:  in 'reader', line 38, column 55:
+[14:18:17] [Server thread/WARN]:      ... e] !&7  &8» &aDiscord: &fdiscord.gg/festasbuilds
+[14:18:17] [Server thread/WARN]:                                          ^
+[14:18:17] [Server thread/WARN]: 
+[14:18:17] [Server thread/WARN]: 	at org.bukkit.configuration.file.YamlConfiguration.loadFromString(YamlConfiguration.java:112)
+[14:18:17] [Server thread/WARN]: 	at org.bukkit.configuration.file.FileConfiguration.load(FileConfiguration.java:160)
+[14:18:17] [Server thread/WARN]: 	at CMILib1.5.9.9.jar//net.Zrips.CMILib.FileHandler.ConfigReader.getyml(ConfigReader.java:276)
+[14:18:17] [Server thread/WARN]: 	at CMILib1.5.9.9.jar//net.Zrips.CMILib.FileHandler.ConfigReader.<init>(ConfigReader.java:54)
+[14:18:17] [Server thread/WARN]: 	at CMILib1.5.9.9.jar//net.Zrips.CMILib.FileHandler.ConfigReader.<init>(ConfigReader.java:46)
+[14:18:17] [Server thread/WARN]: 	at CMI-9.8.9.8.jar//com.Zrips.CMI.Modules.EventActions.EventActionManager.load(EventActionManager.java:196)
+[14:18:17] [Server thread/WARN]: 	at CMI-9.8.9.8.jar//com.Zrips.CMI.CMIOnEnable.init(CMIOnEnable.java:480)
+[14:18:17] [Server thread/WARN]: 	at CMI-9.8.9.8.jar//com.Zrips.CMI.CMI.onEnable(CMI.java:1404)
+[14:18:17] [Server thread/WARN]: 	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:279)
+[14:18:17] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperPluginInstanceManager.enablePlugin(PaperPluginInstanceManager.java:201)
+[14:18:17] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.enablePlugin(PaperPluginManagerImpl.java:109)
+[14:18:17] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:519)
+[14:18:17] [Server thread/WARN]: 	at org.bukkit.craftbukkit.CraftServer.enablePlugin(CraftServer.java:633)
+[14:18:17] [Server thread/WARN]: 	at org.bukkit.craftbukkit.CraftServer.enablePlugins(CraftServer.java:590)
+[14:18:17] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.initPostWorld(MinecraftServer.java:648)
+[14:18:17] [Server thread/WARN]: 	at net.minecraft.server.dedicated.DedicatedServer.initServer(DedicatedServer.java:343)
+[14:18:17] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1266)
+[14:18:17] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:303)
+[14:18:17] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:1474)
+[14:18:17] [Server thread/WARN]: Caused by: while scanning an anchor
+[14:18:17] [Server thread/WARN]:  in 'reader', line 38, column 46:
+[14:18:17] [Server thread/WARN]:      ... playerName] !&7  &8» &aDiscord: &fdiscord.gg/festasbuilds
+[14:18:17] [Server thread/WARN]:                                          ^
+[14:18:17] [Server thread/WARN]: unexpected character found .(46)
+[14:18:17] [Server thread/WARN]:  in 'reader', line 38, column 55:
+[14:18:17] [Server thread/WARN]:      ... e] !&7  &8» &aDiscord: &fdiscord.gg/festasbuilds
+[14:18:17] [Server thread/WARN]:                                          ^
+[14:18:17] [Server thread/WARN]: 
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.scanner.ScannerImpl.scanAnchor(ScannerImpl.java:1528)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchAnchor(ScannerImpl.java:983)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:416)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:239)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValue.produce(ParserImpl.java:669)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:161)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.comments.CommentEventsCollector$1.peek(CommentEventsCollector.java:57)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.comments.CommentEventsCollector$1.peek(CommentEventsCollector.java:43)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.comments.CommentEventsCollector.collectEvents(CommentEventsCollector.java:136)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.comments.CommentEventsCollector.collectEvents(CommentEventsCollector.java:116)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeScalarNode(Composer.java:249)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:214)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeKeyNode(Composer.java:386)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:357)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:329)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:218)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeSequenceNode(Composer.java:284)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:216)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:396)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:361)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:329)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:218)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:396)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:361)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:329)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:218)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:141)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.getSingleNode(Composer.java:167)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.Yaml.compose(Yaml.java:590)
+[14:18:17] [Server thread/WARN]: 	at org.bukkit.configuration.file.YamlConfiguration.loadFromString(YamlConfiguration.java:105)
+[14:18:17] [Server thread/WARN]: 	... 18 more
+[14:18:17] [Server thread/INFO]: Something went wrong while loading EventCommands.yml! Backup have been saved into plugins/CMILib/FileBackups/2026-08-19 14-18-17 EventCommands.yml
+[14:18:17] [Server thread/WARN]: org.bukkit.configuration.InvalidConfigurationException: while scanning an anchor
+[14:18:17] [Server thread/WARN]:  in 'reader', line 38, column 46:
+[14:18:17] [Server thread/WARN]:      ... playerName] !&7  &8» &aDiscord: &fdiscord.gg/festasbuilds
+[14:18:17] [Server thread/WARN]:                                          ^
+[14:18:17] [Server thread/WARN]: unexpected character found .(46)
+[14:18:17] [Server thread/WARN]:  in 'reader', line 38, column 55:
+[14:18:17] [Server thread/WARN]:      ... e] !&7  &8» &aDiscord: &fdiscord.gg/festasbuilds
+[14:18:17] [Server thread/WARN]:                                          ^
+[14:18:17] [Server thread/WARN]: 
+[14:18:17] [Server thread/WARN]: 	at org.bukkit.configuration.file.YamlConfiguration.loadFromString(YamlConfiguration.java:112)
+[14:18:17] [Server thread/WARN]: 	at org.bukkit.configuration.file.FileConfiguration.load(FileConfiguration.java:160)
+[14:18:17] [Server thread/WARN]: 	at CMILib1.5.9.9.jar//net.Zrips.CMILib.FileHandler.ConfigReader.getyml(ConfigReader.java:276)
+[14:18:17] [Server thread/WARN]: 	at CMILib1.5.9.9.jar//net.Zrips.CMILib.FileHandler.ConfigReader.<init>(ConfigReader.java:54)
+[14:18:17] [Server thread/WARN]: 	at CMILib1.5.9.9.jar//net.Zrips.CMILib.FileHandler.ConfigReader.<init>(ConfigReader.java:46)
+[14:18:17] [Server thread/WARN]: 	at CMI-9.8.9.8.jar//com.Zrips.CMI.Modules.EventActions.EventActionManager.load(EventActionManager.java:196)
+[14:18:17] [Server thread/WARN]: 	at CMI-9.8.9.8.jar//com.Zrips.CMI.CMIOnEnable.init(CMIOnEnable.java:480)
+[14:18:17] [Server thread/WARN]: 	at CMI-9.8.9.8.jar//com.Zrips.CMI.CMI.onEnable(CMI.java:1404)
+[14:18:17] [Server thread/WARN]: 	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:279)
+[14:18:17] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperPluginInstanceManager.enablePlugin(PaperPluginInstanceManager.java:201)
+[14:18:17] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.enablePlugin(PaperPluginManagerImpl.java:109)
+[14:18:17] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:519)
+[14:18:17] [Server thread/WARN]: 	at org.bukkit.craftbukkit.CraftServer.enablePlugin(CraftServer.java:633)
+[14:18:17] [Server thread/WARN]: 	at org.bukkit.craftbukkit.CraftServer.enablePlugins(CraftServer.java:590)
+[14:18:17] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.initPostWorld(MinecraftServer.java:648)
+[14:18:17] [Server thread/WARN]: 	at net.minecraft.server.dedicated.DedicatedServer.initServer(DedicatedServer.java:343)
+[14:18:17] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1266)
+[14:18:17] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:303)
+[14:18:17] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:1474)
+[14:18:17] [Server thread/WARN]: Caused by: while scanning an anchor
+[14:18:17] [Server thread/WARN]:  in 'reader', line 38, column 46:
+[14:18:17] [Server thread/WARN]:      ... playerName] !&7  &8» &aDiscord: &fdiscord.gg/festasbuilds
+[14:18:17] [Server thread/WARN]:                                          ^
+[14:18:17] [Server thread/WARN]: unexpected character found .(46)
+[14:18:17] [Server thread/WARN]:  in 'reader', line 38, column 55:
+[14:18:17] [Server thread/WARN]:      ... e] !&7  &8» &aDiscord: &fdiscord.gg/festasbuilds
+[14:18:17] [Server thread/WARN]:                                          ^
+[14:18:17] [Server thread/WARN]: 
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.scanner.ScannerImpl.scanAnchor(ScannerImpl.java:1528)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchAnchor(ScannerImpl.java:983)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:416)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:239)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValue.produce(ParserImpl.java:669)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:161)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.comments.CommentEventsCollector$1.peek(CommentEventsCollector.java:57)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.comments.CommentEventsCollector$1.peek(CommentEventsCollector.java:43)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.comments.CommentEventsCollector.collectEvents(CommentEventsCollector.java:136)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.comments.CommentEventsCollector.collectEvents(CommentEventsCollector.java:116)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeScalarNode(Composer.java:249)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:214)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeKeyNode(Composer.java:386)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:357)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:329)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:218)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeSequenceNode(Composer.java:284)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:216)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:396)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:361)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:329)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:218)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:396)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:361)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:329)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:218)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:141)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.composer.Composer.getSingleNode(Composer.java:167)
+[14:18:17] [Server thread/WARN]: 	at org.yaml.snakeyaml.Yaml.compose(Yaml.java:590)
+[14:18:17] [Server thread/WARN]: 	at org.bukkit.configuration.file.YamlConfiguration.loadFromString(YamlConfiguration.java:105)
+[14:18:17] [Server thread/WARN]: 	... 18 more
+[14:18:17] [Server thread/INFO]: Loaded (EN) language file into memory. Took 96ms
+[14:18:17] [Server thread/INFO]: Loaded (DE) language file into memory. Took 70ms
+[14:18:17] [Server thread/INFO]: Loaded (245) worth values into memory. Took 17ms
+[14:18:18] [Server thread/INFO]: VaultPermissions found. (Loaded: true)
+[14:18:18] [Server thread/INFO]: PlaceholderAPI found. (Loaded: true)
+[14:18:18] [Server thread/INFO]: Loaded (5) schedules into memory. Took 3ms
+[14:18:18] [Server thread/INFO]: Loaded (0) skin cache entries into memory. Took 0ms
+[14:18:18] [Server thread/INFO]: [CMI] Preloading playtimetop statistics
+[14:18:18] [Server thread/INFO]: Loaded (0) ArmorStand templates into memory. Took 0ms
+[14:18:18] [Server thread/INFO]: Version 9.8.9.8 has been enabled
+[14:18:18] [Server thread/INFO]: _______________________________________________________
+[14:18:18] [Server thread/INFO]: [CMIEInjector][Economy] CMI Economy hooked.
+[14:18:18] [Server thread/INFO]: [CommandAPI] Enabling CommandAPI v12.0.0
+[14:18:18] [Server thread/INFO]: [CommandAPI] Hooked into Paper ServerResourcesReloadedEvent
+[14:18:18] [Server thread/INFO]: [DeluxeMenus] Enabling DeluxeMenus v1.14.1-Release
+[14:18:18] [Server thread/INFO]: [DeluxeMenus] Successfully hooked into PlaceholderAPI!
+[14:18:18] [Server thread/INFO]: [DeluxeMenus] Successfully hooked into Vault!
+[14:18:18] [Server thread/WARN]: [DeluxeMenus] Found 'data' option for item: teststone in menu: basics_menu. This option is deprecated and will be removed soon. Please use 'damage' instead.
+[14:18:18] [Server thread/INFO]: [DeluxeMenus] 7 GUI menus loaded!
+[14:18:18] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: deluxemenus [1.14.1-Release]
+[14:18:18] [Server thread/INFO]: [DeluxeMenus] You are running the latest version of DeluxeMenus!
+[14:18:18] [Server thread/INFO]: [TAB-Bridge] Enabling TAB-Bridge v6.2.2
+[14:18:18] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: tab [6.2.2]
+[14:18:18] [Server thread/INFO]: [Plan] Enabling Plan v5.8 build 3605
+[14:18:18] [Server thread/INFO]: [Plan] 
+[14:18:18] [Server thread/INFO]: [Plan]            ██▌
+[14:18:18] [Server thread/INFO]: [Plan]      ██▌   ██▌
+[14:18:18] [Server thread/INFO]: [Plan]   ██▌██▌██▌██▌  Player Analytics
+[14:18:18] [Server thread/INFO]: [Plan]   ██▌██▌██▌██▌  v5.8 build 3605
+[14:18:18] [Server thread/INFO]: [Plan] 
+[14:18:18] [Server thread/INFO]: [Plan] Locale: 'English' by AuroraLS3
+[14:18:18] [Server thread/INFO]: [Plan] Downloading MySQL Driver, this may take a while...
+[14:18:18] [Plan MySQLDB-transaction-thread-1/INFO]: [Plan] Database: Making sure schema is up to date..
+[14:18:18] [Server thread/INFO]: [Plan] MySQL-database connection established.
+[14:18:18] [Server thread/INFO]: [Plan] WebServer was not initialized. (WebServer.DisableWebServer: true)
+[14:18:18] [Server thread/INFO]: [Plan] Loading server identifying information
+[14:18:18] [Server thread/INFO]: [Plan] Server identifier loaded: 82755ba5-91eb-4cca-a6a3-be06d891cb3d
+[14:18:18] [Plan Non critical-pool-3/WARN]: [Plan] Downloading GeoLite2 requires accepting GeoLite2 EULA - see 'Data_gathering.Accept_GeoLite2_EULA' in the config.
+[14:18:18] [Plan Non critical-pool-3/ERROR]: [Plan] Failed to enable geolocation.
+[14:18:18] [Plan Non critical-pool-5/INFO]: [Plan] Proxy server detected in the database - Proxy Webserver address is 'http://mc-stats.festas-builds.com'.
+[14:18:19] [Server thread/INFO]: [Plan] Registered extension: CMI
+[14:18:19] [Server thread/INFO]: [Plan] Registered extension: LuckPerms
+[14:18:19] [Server thread/INFO]: [Plan] Registered extension: PlaceholderAPI
+[14:18:19] [Server thread/INFO]: [Plan] Registered extension: Economy (Vault)
+[14:18:19] [Server thread/INFO]: [Plan] Registered extension: Permission Groups (Vault)
+[14:18:19] [Server thread/INFO]: [Plan] Player Analytics Enabled.
+[14:18:19] [Plan MySQLDB-transaction-thread-1/INFO]: [Plan] All database patches applied successfully.
+[14:18:19] [Server thread/INFO]: [spark] Starting background profiler...
+[14:18:19] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
+[14:18:19] [Server thread/INFO]: Saving chunks for level 'ServerLevel[lobby]'/minecraft:overworld
+[14:18:19] [Server thread/INFO]: Saving chunks for level 'ServerLevel[lobby]'/minecraft:the_nether
+[14:18:19] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[14:18:19] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[14:18:19] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[14:18:19] [Server thread/INFO]: Running delayed init tasks
+[14:18:19] [Server thread/INFO]: [com.fastasyncworldedit.bukkit.regions.WorldGuardFeature] Plugin 'WorldGuard' found. Using it now.
+[14:18:19] [Server thread/INFO]: [com.fastasyncworldedit.bukkit.FaweBukkit] Attempting to use plugin 'WorldGuard'
+[14:18:19] [Server thread/INFO]: [Skript]     Loaded regions hook for WorldGuard. Please note that Skript's region hooks are deprecated and will be removed in a future release. For WorldGuard support, we recommend using skript-worldguard: https://github.com/SkriptLang/skript-worldguard
+[14:18:19] [Server thread/INFO]: [Skript] Loading variables...
+[14:18:19] [Server thread/INFO]: [Skript] Loaded 16 variables in 0.0 seconds
+[14:18:19] [Craft Scheduler Thread - 2 - Plan/INFO]: [Plan] You're using the latest version.
+[14:18:19] [Server thread/INFO]: [Skript] Line 143: (navigator.sk)
+[14:18:19] [Server thread/INFO]:     Can't understand this structure: on move
+[14:18:19] [Server thread/INFO]:     Line: on move:
+[14:18:19] [Server thread/INFO]:  
+[14:18:21] [Server thread/INFO]: [Skript] Line 52: (navigator.sk)
+[14:18:21] [Server thread/INFO]:     There's no loop that matches 'loop-item is not book'
+[14:18:21] [Server thread/INFO]:     Line: if loop-item is not compass and loop-item is not book:
+[14:18:21] [Server thread/INFO]:  
+[14:18:21] [Server thread/INFO]: [Skript] Line 54: (navigator.sk)
+[14:18:21] [Server thread/INFO]:     There's no loop that matches 'loop-item does not contain "Guide"'
+[14:18:21] [Server thread/INFO]:     Line: else if name of loop-item does not contain "Navigator" and name of loop-item does not contain "Guide":
+[14:18:21] [Server thread/INFO]:  
+[14:18:21] [Server thread/INFO]: [Skript] Line 72: (navigator.sk)
+[14:18:21] [Server thread/INFO]:     There's no loop that matches 'loop-item is book'
+[14:18:21] [Server thread/INFO]:     Line: if loop-item is compass or loop-item is book:
+[14:18:21] [Server thread/INFO]:  
+[14:18:21] [Server thread/INFO]: [Skript] Line 82: (navigator.sk)
+[14:18:21] [Server thread/INFO]:     the time in the world of the player can't be set to '6000' because the latter is neither a time nor a time period
+[14:18:21] [Server thread/INFO]:     Line: set time in world of player to 6000
+[14:18:21] [Server thread/INFO]:  
+[14:18:21] [Server thread/INFO]: [Skript] Line 102: (navigator.sk)
+[14:18:21] [Server thread/INFO]:     There's no item is book in an on inventory click event.
+[14:18:21] [Server thread/INFO]:     Line: if event-item is compass or event-item is book:
+[14:18:21] [Server thread/INFO]:  
+[14:18:21] [Server thread/INFO]: [Skript] Line 156: (navigator.sk)
+[14:18:21] [Server thread/INFO]:     There's no player in an on damage event.
+[14:18:21] [Server thread/INFO]:     Line: if world of player is "{@lobby_world}":
+[14:18:21] [Server thread/INFO]:  
+[14:18:21] [Server thread/INFO]: [Lobby] Announcement-System geladen (10 Nachrichten)!
+[14:18:21] [Server thread/INFO]: [Skript] Loaded 3 scripts with a total of 30 structures in 1.84 seconds
+[14:18:21] [Server thread/INFO]: [Skript] Finished loading.
+[14:18:21] [Server thread/INFO]: [CMI] Permission plugin: LuckPerms5.5.71
+[14:18:21] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: cmi [9.8.9.8]
+[14:18:21] [Server thread/INFO]: [CMI] PlaceholderAPI hooked.
+[14:18:21] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: plan [5.8 build 3605]
+[14:18:21] [Server thread/INFO]: Done (20.618s)! For help, type "help"
+[14:18:21] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: luckperms [5.4-R2]
+[14:18:21] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: player-j17 [1.0.3]
+[14:18:21] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: bungee [2.3]
+[14:18:21] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: vault [1.8.3]
+[14:18:21] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: player [2.0.9]
+[14:18:21] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: playerlist [3.1.0]
+[14:18:21] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: localtime [1.2]
+[14:18:21] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: math [2.0.2]
+[14:18:21] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: statistic [2.0.2]
+[14:18:21] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: server [2.7.3]
+[14:18:21] [Server thread/INFO]: 10 placeholder hook(s) registered!
