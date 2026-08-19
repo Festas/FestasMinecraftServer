@@ -15,10 +15,16 @@ window.MC_CONFIG = {
     // Max players
     maxPlayers: 20,
     
-    // API endpoints
+    // Öffentliche Quellen für den Netzwerk-Gesamtstatus (oben)
+    publicStatusSources: [
+        { name: 'mcsrvstat.us', type: 'mcsrvstat', url: 'https://api.mcsrvstat.us/3/' },
+        { name: 'mcstatus.io', type: 'mcstatusio', url: 'https://api.mcstatus.io/v2/status/java/' }
+    ],
+
+    // Legacy-Feld; bleibt zur Abwärtskompatibilität bestehen.
     statusAPI: 'https://api.mcsrvstat.us/3/',
 
-    // Live player list written by the Velocity plugin and served same-origin
+    // Live player list written by the proxy/plugin and served same-origin
     playersAPI: '/api/players.json',
     
     // External links
