@@ -69,9 +69,42 @@ jobs:
             mkdir -p "$LOCAL_DIR"
             
             # Rsync: Server → Repo
+            # Sensitive files/folders are explicitly excluded here so they never
+            # reach the GitHub runner. git add -f then commits everything rsync
+            # transferred, bypassing .gitignore.
             rsync -avz --delete \
               --exclude='*.jar' \
               --exclude='*.jar.disabled' \
+              --exclude='*.db' \
+              --exclude='*.mv.db' \
+              --exclude='*.sqlite' \
+              --exclude='*.lock' \
+              --exclude='*.zip' \
+              --exclude='security.key' \
+              --exclude='security.yml' \
+              --exclude='engine.yml' \
+              --exclude='forceresourcepacks/key.yml' \
+              --exclude='LuckPerms/config.yml' \
+              --exclude='HuskSync/config.yml' \
+              --exclude='partyandfriends/config.yml' \
+              --exclude='libertybans/sql.yml' \
+              --exclude='Plan/serverConfiguration/' \
+              --exclude='DeluxeBazaar/config.yml' \
+              --exclude='GlobalMarketPlus/Config.yml' \
+              --exclude='PlayerPoints/config.yml' \
+              --exclude='MMOCore/config.yml' \
+              --exclude='**/bStats/' \
+              --exclude='**/cache/' \
+              --exclude='**/Saves/' \
+              --exclude='**/internal/' \
+              --exclude='**/.hopper/' \
+              --exclude='**/DatabaseBackups/' \
+              --exclude='Skript/backups/' \
+              --exclude='Essentials/userdata/' \
+              --exclude='**/playerdata/' \
+              --exclude='**/sessions/' \
+              --exclude='ProtocolLib/error/' \
+              --exclude='punishments-database.*' \
               -e "ssh -o StrictHostKeyChecking=accept-new" \
               "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${SERVER_PATH}/" \
               "$LOCAL_DIR/"
@@ -96,7 +129,7 @@ jobs:
           SERVER_NAME="${{ github.event.inputs.server }}"
           LOCAL_DIR="${SERVER_NAME,,}/plugins"
           
-          git add "$LOCAL_DIR"
+          git add -f "$LOCAL_DIR"
           
           if git diff --staged --quiet; then
             echo "Keine Änderungen gefunden."
