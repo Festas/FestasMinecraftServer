@@ -69,9 +69,33 @@ jobs:
             mkdir -p "$LOCAL_DIR"
             
             # Rsync: Server → Repo
+            # Only binary and runtime-generated data is excluded.
+            # All config files (including credential files) are transferred
+            # so they can be edited in the repo. Ensure the repo stays private.
             rsync -avz --delete \
               --exclude='*.jar' \
               --exclude='*.jar.disabled' \
+              --exclude='*.db' \
+              --exclude='*.mv.db' \
+              --exclude='*.sqlite' \
+              --exclude='*.lock' \
+              --exclude='*.zip' \
+              --exclude='**/bStats/' \
+              --exclude='**/cache/' \
+              --exclude='**/Saves/' \
+              --exclude='**/internal/' \
+              --exclude='**/.hopper/' \
+              --exclude='**/DatabaseBackups/' \
+              --exclude='Skript/backups/' \
+              --exclude='Essentials/userdata/' \
+              --exclude='**/playerdata/' \
+              --exclude='**/sessions/' \
+              --exclude='ProtocolLib/error/' \
+              --exclude='punishments-database.*' \
+              --exclude='**/world/' \
+              --exclude='**/world_nether/' \
+              --exclude='**/world_the_end/' \
+              --exclude='**/crash-reports/' \
               -e "ssh -o StrictHostKeyChecking=accept-new" \
               "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${SERVER_PATH}/" \
               "$LOCAL_DIR/"
@@ -96,7 +120,7 @@ jobs:
           SERVER_NAME="${{ github.event.inputs.server }}"
           LOCAL_DIR="${SERVER_NAME,,}/plugins"
           
-          git add "$LOCAL_DIR"
+          git add -f "$LOCAL_DIR"
           
           if git diff --staged --quiet; then
             echo "Keine Änderungen gefunden."

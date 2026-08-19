@@ -29,30 +29,8 @@ test-server/
 # Minecraft Server Runtime
 # ========================
 
-# Security keys & secrets
-**/security.key
-**/security.yml
-**/forceresourcepacks/key.yml
-
-# Database credentials (engine.yml contains MySQL/Redis passwords)
-**/engine.yml
-
-# Plugin configs that contain database/Redis credentials
-**/LuckPerms/config.yml
-**/HuskSync/config.yml
-**/partyandfriends/config.yml
-**/libertybans/sql.yml
-**/plan/serverConfiguration/
-**/Plan/serverConfiguration/
-**/DeluxeBazaar/config.yml
-**/GlobalMarketPlus/Config.yml
-**/PlayerPoints/config.yml
-**/MMOCore/config.yml
-
-# bStats tracking
+# Runtime data & caches (not configs, not editable)
 **/bStats/
-
-# Runtime data & caches
 **/cache/
 **/lastupdate
 **/*.lock
@@ -64,7 +42,7 @@ test-server/
 **/ProtocolLib/lastupdate
 **/ProtocolLib/error/
 
-# Database files (HSQLDB, SQLite, etc.)
+# Database files (binary, not editable)
 **/punishments-database.*
 *.db
 *.mv.db
@@ -78,13 +56,11 @@ test-server/
 # Skript backups
 **/Skript/backups/
 
-# Resource pack archives
+# Resource pack archives (binary)
 **/Oraxen/pack/*.zip
 
-# Essentials userdata (contains player IPs - GDPR)
+# Player data & sessions (runtime, contains player IPs - GDPR)
 **/Essentials/userdata/
-
-# Player data & sessions
 **/playerdata/
 **/sessions/
 **/usercache.json
@@ -92,15 +68,7 @@ test-server/
 **/banned-*.json
 **/ops.json
 
-# Server runtime files
-**/server.properties
-**/bukkit.yml
-**/spigot.yml
-**/paper.yml
-**/paper-global.yml
-**/paper-world-defaults.yml
-**/config/paper-*.yml
-eula.txt
+# World data (large binary runtime data)
 **/world/
 **/world_nether/
 **/world_the_end/
