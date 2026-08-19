@@ -1,0 +1,168 @@
+name: Deploy Nginx Configs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'nginx/**'
+      - '.github/workflows/deploy-nginx-configs.yml'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy Nginx configs to Hetzner
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Copy Nginx configs to server
+        uses: appleboy/scp-action@v1.0.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "nginx/sites-available/*.conf,nginx/snippets/*.conf"
+          target: "/tmp/nginx-deploy"
+          strip_components: 0
+
+      - name: Deploy Nginx configs on server
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script_stop: false
+          script: |
+            set -euo pipefail
+            trap 'rc=$?; echo "✗ ERROR (exit=$rc) at line ${LINENO}: ${BASH_COMMAND}" >&2; exit "$rc"' ERR
+
+            echo "=========================================="
+            echo "Deploying Nginx configurations"
+            echo "=========================================="
+
+            # -- 1. Deploy configs --
+            echo "[1/2] Deploying Nginx configurations..."
+
+            if [[ -d "/tmp/nginx-deploy/nginx/sites-available" ]]; then
+              echo "  → Copying sites-available configs..."
+              sudo cp /tmp/nginx-deploy/nginx/sites-available/*.conf /etc/nginx/sites-available/
+
+              echo "  → Installing acme-challenge snippet..."
+              sudo install -d -o root -g root -m 0755 /etc/nginx/snippets
+              sudo install -o root -g root -m 0644 \
+                /tmp/nginx-deploy/nginx/snippets/acme-challenge.conf \
+                /etc/nginx/snippets/acme-challenge.conf
+
+              echo "  → Enabling/skipping vhosts based on SSL cert presence..."
+              ENABLED_COUNT=0
+              SKIPPED_COUNT=0
+              shopt -s nullglob
+              for conf in /etc/nginx/sites-available/festas-builds.com.conf /etc/nginx/sites-available/*.festas-builds.com.conf; do
+                [[ -e "$conf" ]] || continue
+                confname=$(basename "$conf")
+
+                cert_paths=$(grep -E '^[[:space:]]*ssl_certificate[[:space:]]+' "$conf" | awk '{print $2}' | tr -d ';' | sort -u || true)
+                if [[ -z "$cert_paths" ]]; then
+                  sudo ln -sf "../sites-available/$confname" "/etc/nginx/sites-enabled/$confname"
+                  ENABLED_COUNT=$((ENABLED_COUNT + 1))
+                  continue
+                fi
+
+                missing=0
+                while IFS= read -r p; do
+                  [[ -n "$p" ]] || continue
+                  if ! sudo test -f "$p"; then
+                    echo "  ⚠ $confname references missing cert: $p"
+                    missing=1
+                  fi
+                done <<< "$cert_paths"
+
+                if [[ "$missing" -eq 1 ]]; then
+                  echo "  ⚠ Skipping $confname — SSL certificate file not found"
+                  sudo rm -f "/etc/nginx/sites-enabled/$confname"
+                  SKIPPED_COUNT=$((SKIPPED_COUNT + 1))
+                else
+                  sudo ln -sf "../sites-available/$confname" "/etc/nginx/sites-enabled/$confname"
+                  ENABLED_COUNT=$((ENABLED_COUNT + 1))
+                fi
+              done
+
+              echo "✓ Nginx configs deployed ($ENABLED_COUNT enabled, $SKIPPED_COUNT skipped)"
+            else
+              echo "⚠ No Nginx configs found — skipping"
+            fi
+
+            rm -rf /tmp/nginx-deploy
+
+            # -- 2. Test and reload Nginx --
+            echo "[2/2] Reloading Nginx..."
+
+            if sudo nginx -t 2>&1; then
+              if sudo systemctl reload nginx; then
+                echo "✓ Nginx reloaded successfully"
+              else
+                echo "✗ Nginx reload failed despite successful config test"
+                sudo systemctl status nginx --no-pager || true
+                sudo journalctl -u nginx --no-pager -n 50 || true
+                exit 1
+              fi
+            else
+              echo "⚠ Nginx config invalid — attempting to disable sites with missing SSL certs..."
+              shopt -s nullglob
+              for conf in /etc/nginx/sites-enabled/*.conf; do
+                confname=$(basename "$conf")
+                cert_paths=$(grep -E '^[[:space:]]*ssl_certificate[[:space:]]+' "$conf" | awk '{print $2}' | tr -d ';' | sort -u || true)
+                [[ -z "$cert_paths" ]] && continue
+
+                missing=0
+                while IFS= read -r p; do
+                  [[ -n "$p" ]] || continue
+                  if ! sudo test -f "$p"; then
+                    echo "  ⚠ $confname references missing cert: $p"
+                    missing=1
+                  fi
+                done <<< "$cert_paths"
+
+                if [[ "$missing" -eq 1 ]]; then
+                  echo "  Disabling $confname (missing SSL cert)"
+                  sudo rm -f "/etc/nginx/sites-enabled/$confname"
+                fi
+              done
+
+              if sudo nginx -t 2>&1; then
+                sudo systemctl reload nginx
+                echo "✓ Nginx reloaded (some sites disabled due to missing SSL certs)"
+              else
+                sudo nginx -t || true
+                exit 1
+              fi
+            fi
+
+            echo ""
+            echo "=========================================="
+            echo "Nginx deployment complete!"
+            echo "=========================================="
+
+      - name: Show failure logs
+        if: failure()
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            echo "=== Nginx Status ==="
+            sudo systemctl status nginx || true
+            echo ""
+            echo "=== Nginx Config Test ==="
+            sudo nginx -t || true
+            echo ""
+            echo "=== Nginx Error Log ==="
+            sudo tail -30 /var/log/nginx/error.log || true
+            echo ""
+            echo "=== Nginx Journal (latest 80) ==="
+            sudo journalctl -u nginx --no-pager -n 80 || true
