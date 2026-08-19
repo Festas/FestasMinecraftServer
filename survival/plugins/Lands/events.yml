@@ -1,4 +1,4 @@
-# In this file you can execute commands at specific events.
+# In dieser Datei können Befehle bei bestimmten Ereignissen ausgeführt werden.
 # Wiki: https://wiki.incredibleplugins.com/general/locale-and-config/events
 
 events:
@@ -47,10 +47,10 @@ events:
   ChunkDeleteEvent:
     cancel: ''
     commands:
-      # It's recommended to use more specific events for land delete, selection unclaim etc.
-      # Therefore, we only listen to unclaims that affect a single chunk. You're also not able
-      # to cancel this event, if the unclaim type does not equals DEFAULT.
-      # A list of dedicated unclaim events, which also can be cancelled:
+      # Es wird empfohlen, für Land-Löschung, Auswahl-Freigabe usw. spezifischere Events zu verwenden.
+      # Daher werden hier nur Freigaben abgehört, die einen einzelnen Chunk betreffen. Außerdem kann
+      # dieses Event nicht abgebrochen werden, wenn der Freigabe-Typ nicht DEFAULT ist.
+      # Liste dedizierter Freigabe-Events, die auch abgebrochen werden können:
       # LAND_DELETION: LandDeleteEvent
       # SELECTION: LandUnclaimSelectionEvent
       # ALL: LandUnclaimAllEvent
