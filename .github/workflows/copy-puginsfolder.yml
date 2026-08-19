@@ -69,9 +69,9 @@ jobs:
             mkdir -p "$LOCAL_DIR"
             
             # Rsync: Server → Repo
-            # Sensitive files/folders are explicitly excluded here so they never
-            # reach the GitHub runner. git add -f then commits everything rsync
-            # transferred, bypassing .gitignore.
+            # Only binary and runtime-generated data is excluded.
+            # All config files (including credential files) are transferred
+            # so they can be edited in the repo. Ensure the repo stays private.
             rsync -avz --delete \
               --exclude='*.jar' \
               --exclude='*.jar.disabled' \
@@ -80,19 +80,6 @@ jobs:
               --exclude='*.sqlite' \
               --exclude='*.lock' \
               --exclude='*.zip' \
-              --exclude='security.key' \
-              --exclude='security.yml' \
-              --exclude='engine.yml' \
-              --exclude='forceresourcepacks/key.yml' \
-              --exclude='LuckPerms/config.yml' \
-              --exclude='HuskSync/config.yml' \
-              --exclude='partyandfriends/config.yml' \
-              --exclude='libertybans/sql.yml' \
-              --exclude='Plan/serverConfiguration/' \
-              --exclude='DeluxeBazaar/config.yml' \
-              --exclude='GlobalMarketPlus/Config.yml' \
-              --exclude='PlayerPoints/config.yml' \
-              --exclude='MMOCore/config.yml' \
               --exclude='**/bStats/' \
               --exclude='**/cache/' \
               --exclude='**/Saves/' \
@@ -105,6 +92,10 @@ jobs:
               --exclude='**/sessions/' \
               --exclude='ProtocolLib/error/' \
               --exclude='punishments-database.*' \
+              --exclude='**/world/' \
+              --exclude='**/world_nether/' \
+              --exclude='**/world_the_end/' \
+              --exclude='**/crash-reports/' \
               -e "ssh -o StrictHostKeyChecking=accept-new" \
               "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${SERVER_PATH}/" \
               "$LOCAL_DIR/"
