@@ -95,15 +95,15 @@ data:
   # - The standard DB engine port is used by default
   #   (MySQL: 3306, PostgreSQL: 5432, MongoDB: 27017)
   # - Specify as "host:port" if differs
-  address: "172.25.0.1:3306"
+  address: "__LUCKPERMS_DB_ADDRESS__"
 
   # The name of the database to store LuckPerms data in.
   # - This must be created already. Don't worry about this setting if you're using MongoDB.
-  database: "s4_perms"
+  database: "__LUCKPERMS_DB_DATABASE__"
 
   # Credentials for the database.
-  username: u4_qs85LtOXeq
-  password: 'mASixd5b@BHHt!bRmvu^+=Pj'
+  username: __LUCKPERMS_DB_USER__
+  password: '__LUCKPERMS_DB_PASSWORD__'
 
   # These settings apply to the MySQL connection pool.
   # - The default values will be suitable for the majority of users.
