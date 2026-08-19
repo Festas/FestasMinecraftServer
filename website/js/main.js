@@ -217,7 +217,7 @@ function initServerStatus() {
 
     function buildStatusSources() {
         const configured = Array.isArray(cfg.publicStatusSources) ? cfg.publicStatusSources : [];
-        const legacy = cfg.statusAPI ? [{ name: 'statusAPI', type: 'mcsrvstat', url: cfg.statusAPI }] : [];
+        const legacy = cfg.statusAPI ? [{ name: 'mcsrvstat.us', type: 'mcsrvstat', url: cfg.statusAPI }] : [];
         const defaults = [
             { name: 'mcsrvstat.us', type: 'mcsrvstat', url: 'https://api.mcsrvstat.us/3/' },
             { name: 'mcstatus.io', type: 'mcstatusio', url: 'https://api.mcstatus.io/v2/status/java/' }
