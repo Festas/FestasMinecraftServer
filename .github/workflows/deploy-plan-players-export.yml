@@ -92,8 +92,13 @@ jobs:
             if [ ! -x "$APP/venv/bin/python" ]; then
               sudo python3 -m venv "$APP/venv"
             fi
-            sudo "$APP/venv/bin/pip" install --quiet --upgrade pip
-            sudo "$APP/venv/bin/pip" install --quiet -r "$APP/requirements.txt"
+
+            if [ ! -x "$APP/venv/bin/pip" ]; then
+              sudo "$APP/venv/bin/python" -m ensurepip --upgrade || true
+            fi
+
+            sudo "$APP/venv/bin/python" -m pip install --quiet --upgrade pip
+            sudo "$APP/venv/bin/python" -m pip install --quiet -r "$APP/requirements.txt"
 
             echo "[4/5] Installing credentials (chmod 600) and fixing ownership..."
             sudo install -m 600 "$SRC/plan-players-export.env" "$APP/plan-players-export.env"
