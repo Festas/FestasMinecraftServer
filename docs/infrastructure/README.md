@@ -12,6 +12,10 @@ Technische Infrastruktur für das MinecraftMMO-Netzwerk.
 - MySQL/MariaDB - Hauptdatenbank
 - Redis - Cache-System
 
+### Monitoring *(geplant / aktiv vorbereitbar)*
+- Velocity Proxy Exporter - internes Live-Monitoring für Proxy, Backends und Logins
+- Plan - Web-Analytics und Langzeitstatistiken
+
 ### Backups *(aktiv)*
 - Automatische Backup-Strategien
 - Wiederherstellungs-Prozesse
@@ -23,8 +27,9 @@ Technische Infrastruktur für das MinecraftMMO-Netzwerk.
 - [BlueMap-Setup](BLUEMAP.md)
 - [Datenbank-Schema](DATENBANKEN.md)
 - [Backup-Strategien](BACKUPS.md)
+- [Velocity Exporter](VELOCITY_EXPORTER.md)
 - [Architektur-Dokumentation](../ARCHITECTURE.md)
 
 ---
 
-**Letzte Aktualisierung:** 2026-08-15
+**Letzte Aktualisierung:** 2026-08-19

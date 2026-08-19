@@ -104,6 +104,17 @@ docker compose down
 
 ## Monitoring-Empfehlungen
 
+Für das Netzwerk werden zwei Ebenen unterschieden:
+
+- **Plan** für Web-Analytics und Langzeitstatistiken
+- **Velocity Proxy Exporter** für technisches Live-Monitoring über Prometheus
+
+Die konkrete Metrik-Definition und die Prometheus-Beispielkonfiguration liegen unter:
+
+- `docs/infrastructure/VELOCITY_EXPORTER.md`
+- `docs/infrastructure/prometheus/velocity-proxy.yml`
+- `docs/infrastructure/prometheus/velocity-proxy-alerts.yml`
+
 ### TPS (Ticks pro Sekunde)
 
 | Stufe       | Schwellenwert | Aktion                                      |
@@ -133,6 +144,18 @@ docker compose down
 - Peak-Zeiten identifizieren, um Ressourcen entsprechend zu skalieren.
 - Bei konstant hoher Auslastung zusätzliche Server-Instanzen in Betracht ziehen.
 
+### Proxy-spezifische Live-Metriken
+
+Für den **Velocity Proxy** sollen zusätzlich diese Live-Metriken überwacht werden:
+
+- Proxy online/offline (`festas_velocity_up`)
+- Gesamtspieler online (`festas_velocity_players_online`)
+- Spieler je Backend (`festas_velocity_players_by_backend`)
+- Backend-Erreichbarkeit (`festas_velocity_backend_up`)
+- Backend-Latenz (`festas_velocity_backend_ping_ms`)
+- Login-Fehler (`festas_velocity_login_failures_total`)
+- Fallbacks / Kicks zur Lobby (`festas_velocity_fallback_total`, `festas_velocity_kicked_to_lobby_total`)
+
 ---
 
 ## Alerting
@@ -140,6 +163,7 @@ docker compose down
 Für die Benachrichtigung bei kritischen Ereignissen wird eine **Discord-Webhook-Integration** empfohlen.
 
 - Alerts für TPS-Drops, hohe RAM-Auslastung und Festplattenprobleme einrichten.
+- Alerts für Proxy-Ausfall, Backend-Ausfall, hohe Backend-Pings und Login-Fehler einrichten.
 - Webhook-URL im Monitoring-Tool hinterlegen.
 - Verschiedene Kanäle für Warnungen und kritische Alerts verwenden.
 
