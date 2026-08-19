@@ -427,49 +427,49 @@ info:
     zombified_piglin: Zombified piglin
   # Avoid adding color codes to the enchant name
   EnchantNames:
-    wind_burst: Wind_Burst
-    lure: Köder
-    smite: Smite
-    respiration: Respiration
-    flame: Flame
-    multishot: Multishot
-    power: Power
-    soul_speed: Soul_Speed
-    vanishing_curse: FluchdesVerschwindens
     depth_strider: Wasserläufer
-    riptide: Sog
-    sharpness: Sharpness
-    channeling: Entladung
-    fortune: Fortune
-    blast_protection: Blast_Protection
-    fire_aspect: Verbrennung
-    efficiency: Efficiency
-    density: Density
-    quick_charge: Schnellladen
-    knockback: Rückstoss
-    looting: Looting
-    silk_touch: Behutsamkeit
-    unbreaking: Unbreaking
-    piercing: Durchdringung
-    swift_sneak: Swift_Sneak
-    feather_falling: Feather_Falling
-    projectile_protection: Projectile_Protection
-    breach: Breach
-    fire_protection: Fire_Protection
-    aqua_affinity: Aqua_Affinity
-    punch: Punch
-    impaling: Harpune
-    luck_of_the_sea: Luck_Of_The_Sea
+    lure: Köder
     mending: Reperatur
+    unbreaking: Unbreaking
+    feather_falling: Feather_Falling
+    blast_protection: Blast_Protection
+    wind_burst: Wind_Burst
+    efficiency: Efficiency
+    piercing: Durchdringung
+    thorns: Dornen
+    quick_charge: Schnellladen
+    fire_protection: Fire_Protection
+    binding_curse: FluchderBindung
+    density: Density
+    multishot: Multishot
+    flame: Flame
+    knockback: Rückstoss
+    punch: Punch
+    aqua_affinity: Aqua_Affinity
+    smite: Smite
+    fortune: Fortune
+    riptide: Sog
+    breach: Breach
+    loyalty: Treue
+    looting: Looting
     sweeping_edge: Schwungkraft
     lunge: Lunge
+    channeling: Entladung
+    swift_sneak: Swift_Sneak
+    fire_aspect: Verbrennung
+    projectile_protection: Projectile_Protection
+    respiration: Respiration
+    power: Power
     bane_of_arthropods: Bane_Of_Arthropods
     infinity: Infinity
-    loyalty: Treue
-    thorns: Dornen
-    binding_curse: FluchderBindung
     frost_walker: Eisläufer
+    impaling: Harpune
+    luck_of_the_sea: Luck_Of_The_Sea
+    soul_speed: Soul_Speed
+    sharpness: Sharpness
     protection: Protection
+    silk_touch: Behutsamkeit
+    vanishing_curse: FluchdesVerschwindens
   PotionEffectAliases:
     hunger:
     - Hunger

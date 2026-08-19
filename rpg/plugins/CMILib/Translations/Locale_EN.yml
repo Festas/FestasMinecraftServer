@@ -427,49 +427,49 @@ info:
     zombified_piglin: Zombified piglin
   # Avoid adding color codes to the enchant name
   EnchantNames:
-    wind_burst: Wind_Burst
-    lure: Lure
-    smite: Smite
-    respiration: Respiration
-    flame: Flame
-    multishot: Multishot
-    power: Power
-    soul_speed: Soul_Speed
-    vanishing_curse: Vanishing_Curse
     depth_strider: Depth_Strider
-    riptide: Riptide
-    sharpness: Sharpness
-    channeling: Channeling
-    fortune: Fortune
-    blast_protection: Blast_Protection
-    fire_aspect: Fire_Aspect
-    efficiency: Efficiency
-    density: Density
-    quick_charge: Quick_Charge
-    knockback: Knockback
-    looting: Looting
-    silk_touch: Silk_Touch
-    unbreaking: Unbreaking
-    piercing: Piercing
-    swift_sneak: Swift_Sneak
-    feather_falling: Feather_Falling
-    projectile_protection: Projectile_Protection
-    breach: Breach
-    fire_protection: Fire_Protection
-    aqua_affinity: Aqua_Affinity
-    punch: Punch
-    impaling: Impaling
-    luck_of_the_sea: Luck_Of_The_Sea
+    lure: Lure
     mending: Mending
+    unbreaking: Unbreaking
+    feather_falling: Feather_Falling
+    blast_protection: Blast_Protection
+    wind_burst: Wind_Burst
+    efficiency: Efficiency
+    piercing: Piercing
+    thorns: Thorns
+    quick_charge: Quick_Charge
+    fire_protection: Fire_Protection
+    binding_curse: Binding_Curse
+    density: Density
+    multishot: Multishot
+    flame: Flame
+    knockback: Knockback
+    punch: Punch
+    aqua_affinity: Aqua_Affinity
+    smite: Smite
+    fortune: Fortune
+    riptide: Riptide
+    breach: Breach
+    loyalty: Loyalty
+    looting: Looting
     sweeping_edge: Sweeping_Edge
     lunge: Lunge
+    channeling: Channeling
+    swift_sneak: Swift_Sneak
+    fire_aspect: Fire_Aspect
+    projectile_protection: Projectile_Protection
+    respiration: Respiration
+    power: Power
     bane_of_arthropods: Bane_Of_Arthropods
     infinity: Infinity
-    loyalty: Loyalty
-    thorns: Thorns
-    binding_curse: Binding_Curse
     frost_walker: Frost_Walker
+    impaling: Impaling
+    luck_of_the_sea: Luck_Of_The_Sea
+    soul_speed: Soul_Speed
+    sharpness: Sharpness
     protection: Protection
+    silk_touch: Silk_Touch
+    vanishing_curse: Vanishing_Curse
   PotionEffectAliases:
     hunger:
     - Hunger
