@@ -1,509 +1,509 @@
-[11:26:06] [ServerMain/INFO]: [bootstrap] Running Java 25 (OpenJDK 64-Bit Server VM 25.0.3+9-LTS; Eclipse Adoptium Temurin-25.0.3+9) on Linux 6.8.0-137-generic (amd64)
-[11:26:06] [ServerMain/INFO]: [bootstrap] Loading Paper 26.2-112-main@c9e894d (2026-08-11T05:18:39Z) for Minecraft 26.2
-[11:26:06] [ServerMain/INFO]: [PluginInitializerManager] Initializing plugins...
-[11:26:07] [ServerMain/INFO]: [PluginInitializerManager] Initialized 24 plugins
-[11:26:07] [ServerMain/INFO]: [PluginInitializerManager] Bukkit plugins (24):
+[12:19:52] [ServerMain/INFO]: [bootstrap] Running Java 25 (OpenJDK 64-Bit Server VM 25.0.3+9-LTS; Eclipse Adoptium Temurin-25.0.3+9) on Linux 6.8.0-137-generic (amd64)
+[12:19:52] [ServerMain/INFO]: [bootstrap] Loading Paper 26.2-112-main@c9e894d (2026-08-11T05:18:39Z) for Minecraft 26.2
+[12:19:52] [ServerMain/INFO]: [PluginInitializerManager] Initializing plugins...
+[12:19:52] [ServerMain/INFO]: [PluginInitializerManager] Initialized 24 plugins
+[12:19:52] [ServerMain/INFO]: [PluginInitializerManager] Bukkit plugins (24):
  - BlueMap (5.23), CMI (9.8.9.8), CMILib (1.5.9.9), CommandAPI (11.1.0), DeluxeMenus (1.14.1-Release), FastAsyncWorldEdit (2.15.4-SNAPSHOT-1370+dd6a724), GlobalMarketPlus (1.4.1.5), LibsDisguises (26.8.13), LuckPerms (5.5.71), NBTAPI (2.16.0), Oraxen (1.218.0), PlaceholderAPI (2.12.3), Plan (5.8 build 3605), ProtocolLib (5.4.0), Skript (2.16.1), TAB-Bridge (6.2.2), Vault (2.20.2), WorldGuard (7.0.18+2392-fa605e6), X-Prison (2026.3.3.0), XPrisonArmors (1.0.4), XPrivateMines (2026.3.0.9), XRobots (1.2.1), helper (5.6.14), packetevents (2.13.0)
-[11:26:10] [DataConverter MCTypeRegistry init thread/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Initialising converters for DataConverter...
-[11:26:10] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
-[11:26:11] [DataConverter MCTypeRegistry init thread/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Finished initialising converters for DataConverter in 618.6ms
-[11:26:12] [ServerMain/INFO]: Loaded 1585 recipes
-[11:26:12] [ServerMain/INFO]: Loaded 1696 advancements
-[11:26:12] [Server thread/INFO]: Starting minecraft server version 26.2
-[11:26:12] [Server thread/INFO]: Loading properties
-[11:26:12] [Server thread/INFO]: This server is running Paper version 26.2-112-main@c9e894d (2026-08-11T05:18:39Z) (Implementing API version 26.2.build.112-stable)
-[11:26:12] [Server thread/INFO]: [spark] This server bundles the spark profiler. For more information please visit https://docs.papermc.io/paper/profiling
-[11:26:12] [Server thread/INFO]: Using 4 threads for Netty based IO
-[11:26:12] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[11:26:13] [Server thread/INFO]: [MoonriseCommon] Paper is using 2 worker threads, 1 I/O threads
-[11:26:13] [Server thread/INFO]: Default game type: SURVIVAL
-[11:26:13] [Server thread/INFO]: Generating keypair
-[11:26:13] [Server thread/INFO]: Starting Minecraft server on 0.0.0.0:25567
-[11:26:13] [Server thread/INFO]: Paper: Using libdeflate (Linux x86_64) compression from Velocity.
-[11:26:13] [Server thread/INFO]: Paper: Using OpenSSL 3.x.x (Linux x86_64) cipher from Velocity.
-[11:26:13] [Server thread/INFO]: [helper] Initialized helper v5.6.14
-[11:26:13] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loading 11 libraries... please wait
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/springframework/spring-expression/6.0.6/spring-expression-6.0.6.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/springframework/spring-core/6.0.6/spring-core-6.0.6.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/springframework/spring-jcl/6.0.6/spring-jcl-6.0.6.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/commons-logging/commons-logging/1.2/commons-logging-1.2.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/commons-codec/commons-codec/1.11/commons-codec-1.11.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/joml/joml/1.10.5/joml-1.10.5.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-ansi/5.2.0/adventure-text-serializer-ansi-5.2.0.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-api/5.2.0/adventure-api-5.2.0.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/ansi/1.1.1/ansi-1.1.1.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-minimessage/5.2.0/adventure-text-minimessage-5.2.0.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-plain/5.2.0/adventure-text-serializer-plain-5.2.0.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-platform-bukkit/4.4.1/adventure-platform-bukkit-4.4.1.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-platform-api/4.4.1/adventure-platform-api-4.4.1.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-bungeecord/4.4.1/adventure-text-serializer-bungeecord-4.4.1.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-legacy/4.21.0/adventure-text-serializer-legacy-4.21.0.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-nbt/4.21.0/adventure-nbt-4.21.0.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/examination-api/1.3.0/examination-api-1.3.0.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/examination-string/1.3.0/examination-string-1.3.0.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-gson/4.21.0/adventure-text-serializer-gson-4.21.0.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-json/4.21.0/adventure-text-serializer-json-4.21.0.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/option/1.1.0/option-1.1.0.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/com/google/auto/service/auto-service-annotations/1.1.1/auto-service-annotations-1.1.1.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-commons/4.21.0/adventure-text-serializer-commons-4.21.0.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-gson-legacy-impl/4.21.0/adventure-text-serializer-gson-legacy-impl-4.21.0.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-json-legacy-impl/4.21.0/adventure-text-serializer-json-legacy-impl-4.21.0.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-platform-facet/4.4.1/adventure-platform-facet-4.4.1.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-platform-viaversion/4.4.1/adventure-platform-viaversion-4.4.1.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/gs/mclo/java/2.2.1/java-2.2.1.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/team/unnamed/creative-api/1.7.3/creative-api-1.7.3.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-key/4.9.3/adventure-key-4.9.3.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/jetbrains/annotations/23.1.0/annotations-23.1.0.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [X-Prison] Loading 4 libraries... please wait
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [X-Prison] Loaded library /home/container/libraries/com/h2database/h2/2.1.214/h2-2.1.214.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [X-Prison] Loaded library /home/container/libraries/org/xerial/sqlite-jdbc/3.47.1.0/sqlite-jdbc-3.47.1.0.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [X-Prison] Loaded library /home/container/libraries/com/zaxxer/HikariCP/4.0.3/HikariCP-4.0.3.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [X-Prison] Loaded library /home/container/libraries/org/slf4j/slf4j-api/2.0.0-alpha1/slf4j-api-2.0.0-alpha1.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [X-Prison] Loaded library /home/container/libraries/net/objecthunter/exp4j/0.4.8/exp4j-0.4.8.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [XRobots] Loading 3 libraries... please wait
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [XRobots] Loaded library /home/container/libraries/com/h2database/h2/2.1.214/h2-2.1.214.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [XRobots] Loaded library /home/container/libraries/com/zaxxer/HikariCP/4.0.3/HikariCP-4.0.3.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [XRobots] Loaded library /home/container/libraries/org/slf4j/slf4j-api/2.0.0-alpha1/slf4j-api-2.0.0-alpha1.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [XRobots] Loaded library /home/container/libraries/net/objecthunter/exp4j/0.4.8/exp4j-0.4.8.jar
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [BlueMap] Loading 1 libraries... please wait
-[11:26:14] [Server thread/INFO]: [SpigotLibraryLoader] [BlueMap] Loaded library /home/container/libraries/com/flowpowered/flow-math/1.0.3/flow-math-1.0.3.jar
-[11:26:14] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.12.3
-[11:26:14] [Server thread/INFO]: [LuckPerms] Loading server plugin LuckPerms v5.5.71
-[11:26:14] [Server thread/INFO]: [LuckPerms] Loading configuration...
-[11:26:14] [Server thread/INFO]: [Vault] Loading server plugin Vault v2.20.2
-[11:26:14] [Server thread/INFO]: [FastAsyncWorldEdit] Loading server plugin FastAsyncWorldEdit v2.15.4-SNAPSHOT-1370+dd6a724
-[11:26:15] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@619a79e5]
-[11:26:15] [Server thread/INFO]: [WorldGuard] Loading server plugin WorldGuard v7.0.18+2392-fa605e6
-[11:26:15] [Server thread/INFO]: [ProtocolLib] Loading server plugin ProtocolLib v5.4.0
-[11:26:15] [Server thread/WARN]: [ProtocolLib] Version (MC: 26.2.0) has not yet been tested! Proceed with caution.
-[11:26:15] [Server thread/INFO]: [NBTAPI] Loading server plugin NBTAPI v2.16.0
-[11:26:15] [Server thread/INFO]: [NBTAPI] [NBTAPI] Found Minecraft: 26.2.build.112! Trying to find NMS support
-[11:26:15] [Server thread/INFO]: [NBTAPI] [NBTAPI] NMS support 'MC26_2' loaded!
-[11:26:15] [Server thread/INFO]: [NBTAPI] [NBTAPI] Using the plugin 'NBTAPI' to create a bStats instance!
-[11:26:15] [Server thread/INFO]: [Skript] Loading server plugin Skript v2.16.1
-[11:26:15] [Server thread/INFO]: [packetevents] Loading server plugin packetevents v2.13.0
-[11:26:15] [Thread-5/INFO]: [NBTAPI] [NBTAPI] The NBT-API seems to be up-to-date!
-[11:26:16] [Server thread/INFO]: [packetevents] Loading packetevents...
-[11:26:17] [Server thread/INFO]: [packetevents] Loaded packetevents v2.13.0
-[11:26:17] [Server thread/INFO]: [helper] Loading server plugin helper v5.6.14
-[11:26:17] [Server thread/INFO]: [helper] helper (me.lucko.helper) bound to plugin helper - me.lucko.helper.internal.StandalonePlugin
-[11:26:17] [Server thread/INFO]: [Oraxen] Loading server plugin Oraxen v1.218.0
-[11:26:17] [Server thread/INFO]: [CMILib] Loading server plugin CMILib v1.5.9.9
-[11:26:17] [Server thread/INFO]: [X-Prison] Loading server plugin X-Prison v2026.3.3.0
-[11:26:17] [Server thread/INFO]: [X-Prison] Detected server platform: PAPER (Adventure/MiniMessage enabled)
-[11:26:17] [Server thread/INFO]: [CMI] Loading server plugin CMI v9.8.9.8
-[11:26:17] [Server thread/INFO]: [CommandAPI] Loading server plugin CommandAPI v11.1.0
-[11:26:17] [Server thread/INFO]: [CommandAPI] Loaded version PaperNMS_1_21_R7
-[11:26:17] [Server thread/WARN]: [CommandAPI] Loading the CommandAPI with the latest and potentially incompatible NMS implementation.
-[11:26:17] [Server thread/WARN]: [CommandAPI] While you may find success with this, further updates might be necessary to fully support the version you are using.
-[11:26:17] [Server thread/INFO]: [CommandAPI] Hooked into Spigot successfully for Chat/ChatComponents
-[11:26:17] [Server thread/INFO]: [CommandAPI] Hooked into Adventure for AdventureChat/AdventureChatComponents
-[11:26:17] [Server thread/INFO]: [CommandAPI] Hooked into Paper for paper-specific API implementations
-[11:26:17] [Server thread/INFO]: [CommandAPI] Loaded platform CommandAPIPaper > CommandAPIBukkit
-[11:26:17] [Server thread/INFO]: [LibsDisguises] Loading server plugin LibsDisguises v26.8.13
-[11:26:17] [Server thread/INFO]: [GlobalMarketPlus] Loading server plugin GlobalMarketPlus v1.4.1.5
-[11:26:17] [Server thread/INFO]: [DeluxeMenus] Loading server plugin DeluxeMenus v1.14.1-Release
-[11:26:17] [Server thread/WARN]: [DeluxeMenus] Could not setup a NMS hook for your server version! The following Item options will not work: nbt_int, nbt_ints, nbt_string and nbt_strings.
-[11:26:18] [Server thread/INFO]: [XPrivateMines] Loading server plugin XPrivateMines v2026.3.0.9
-[11:26:18] [Server thread/INFO]: [TAB-Bridge] Loading server plugin TAB-Bridge v6.2.2
-[11:26:18] [Server thread/INFO]: [XPrisonArmors] Loading server plugin XPrisonArmors v1.0.4
-[11:26:18] [Server thread/INFO]: [Plan] Loading server plugin Plan v5.8 build 3605
-[11:26:18] [Server thread/INFO]: [XRobots] Loading server plugin XRobots v1.2.1
-[11:26:18] [Server thread/INFO]: [BlueMap] Loading server plugin BlueMap v5.23
-[11:26:18] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[11:26:18] [Server thread/INFO]: [LuckPerms] Enabling LuckPerms v5.5.71
-[11:26:18] [Server thread/INFO]:         __    
-[11:26:18] [Server thread/INFO]:   |    |__)   LuckPerms v5.5.71
-[11:26:18] [Server thread/INFO]:   |___ |      Running on Bukkit - Paper
-[11:26:18] [Server thread/INFO]: 
-[11:26:18] [Server thread/INFO]: [LuckPerms] Loading storage provider... [H2]
-[11:26:18] [Server thread/INFO]: [LuckPerms] Loading internal permission managers...
-[11:26:18] [Server thread/INFO]: [LuckPerms] Performing initial data load...
-[11:26:18] [Server thread/INFO]: [LuckPerms] Successfully enabled. (took 942ms)
-[11:26:18] [Server thread/INFO]: [Vault] Enabling Vault v2.20.2
-[11:26:19] [Server thread/INFO]: [Vault] Enabled Version 2.20.2
-[11:26:19] [Server thread/INFO]: [LuckPerms] Registered Vault permission & chat hook.
-[11:26:19] [Server thread/INFO]: [FastAsyncWorldEdit] Enabling FastAsyncWorldEdit v2.15.4-SNAPSHOT-1370+dd6a724
-[11:26:19] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] LZ4 Compression Binding loaded successfully
-[11:26:19] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] ZSTD Compression Binding loaded successfully
-[11:26:19] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
-[11:26:19] [Server thread/INFO]: WEPIF: Vault detected! Using Vault for permissions
-[11:26:19] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.fawe.v26_2.PaperweightFaweAdapter as the Bukkit adapter
-[11:26:20] [Server thread/INFO]: [ProtocolLib] Enabling ProtocolLib v5.4.0
-[11:26:20] [Server thread/INFO]: [helper] Enabling helper v5.6.14
-[11:26:20] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
-[11:26:20] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
-[11:26:20] [Server thread/WARN]: Whilst this makes it possible to use Velocity, unless access to your server is properly restricted, it also opens up the ability for hackers to connect with any username they choose.
-[11:26:20] [Server thread/WARN]: Please see https://docs.papermc.io/velocity/security for further information.
-[11:26:20] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
-[11:26:20] [Server thread/INFO]: Preparing level "world"
-[11:26:20] [ForkJoinPool.commonPool-worker-5/WARN]: [com.fastasyncworldedit.core.util.UpdateNotification] An update for FastAsyncWorldEdit is available. You are 2 build(s) out of date.
+[12:19:56] [DataConverter MCTypeRegistry init thread/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Initialising converters for DataConverter...
+[12:19:56] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+[12:19:57] [DataConverter MCTypeRegistry init thread/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Finished initialising converters for DataConverter in 626.3ms
+[12:19:59] [ServerMain/INFO]: Loaded 1585 recipes
+[12:19:59] [ServerMain/INFO]: Loaded 1696 advancements
+[12:19:59] [Server thread/INFO]: Starting minecraft server version 26.2
+[12:19:59] [Server thread/INFO]: Loading properties
+[12:19:59] [Server thread/INFO]: This server is running Paper version 26.2-112-main@c9e894d (2026-08-11T05:18:39Z) (Implementing API version 26.2.build.112-stable)
+[12:20:00] [Server thread/INFO]: [spark] This server bundles the spark profiler. For more information please visit https://docs.papermc.io/paper/profiling
+[12:20:00] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[12:20:00] [Server thread/INFO]: Using 4 threads for Netty based IO
+[12:20:00] [Server thread/INFO]: [MoonriseCommon] Paper is using 2 worker threads, 1 I/O threads
+[12:20:00] [Server thread/INFO]: Default game type: SURVIVAL
+[12:20:00] [Server thread/INFO]: Generating keypair
+[12:20:00] [Server thread/INFO]: Starting Minecraft server on 0.0.0.0:25567
+[12:20:00] [Server thread/INFO]: Paper: Using libdeflate (Linux x86_64) compression from Velocity.
+[12:20:00] [Server thread/INFO]: Paper: Using OpenSSL 3.x.x (Linux x86_64) cipher from Velocity.
+[12:20:01] [Server thread/INFO]: [helper] Initialized helper v5.6.14
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loading 11 libraries... please wait
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/springframework/spring-expression/6.0.6/spring-expression-6.0.6.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/springframework/spring-core/6.0.6/spring-core-6.0.6.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/springframework/spring-jcl/6.0.6/spring-jcl-6.0.6.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/commons-logging/commons-logging/1.2/commons-logging-1.2.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/commons-codec/commons-codec/1.11/commons-codec-1.11.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/joml/joml/1.10.5/joml-1.10.5.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-ansi/5.2.0/adventure-text-serializer-ansi-5.2.0.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-api/5.2.0/adventure-api-5.2.0.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/ansi/1.1.1/ansi-1.1.1.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-minimessage/5.2.0/adventure-text-minimessage-5.2.0.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-plain/5.2.0/adventure-text-serializer-plain-5.2.0.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-platform-bukkit/4.4.1/adventure-platform-bukkit-4.4.1.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-platform-api/4.4.1/adventure-platform-api-4.4.1.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-bungeecord/4.4.1/adventure-text-serializer-bungeecord-4.4.1.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-legacy/4.21.0/adventure-text-serializer-legacy-4.21.0.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-nbt/4.21.0/adventure-nbt-4.21.0.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/examination-api/1.3.0/examination-api-1.3.0.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/examination-string/1.3.0/examination-string-1.3.0.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-gson/4.21.0/adventure-text-serializer-gson-4.21.0.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-json/4.21.0/adventure-text-serializer-json-4.21.0.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/option/1.1.0/option-1.1.0.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/com/google/auto/service/auto-service-annotations/1.1.1/auto-service-annotations-1.1.1.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-commons/4.21.0/adventure-text-serializer-commons-4.21.0.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-gson-legacy-impl/4.21.0/adventure-text-serializer-gson-legacy-impl-4.21.0.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-json-legacy-impl/4.21.0/adventure-text-serializer-json-legacy-impl-4.21.0.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-platform-facet/4.4.1/adventure-platform-facet-4.4.1.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-platform-viaversion/4.4.1/adventure-platform-viaversion-4.4.1.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/gs/mclo/java/2.2.1/java-2.2.1.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/team/unnamed/creative-api/1.7.3/creative-api-1.7.3.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-key/4.9.3/adventure-key-4.9.3.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/jetbrains/annotations/23.1.0/annotations-23.1.0.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [X-Prison] Loading 4 libraries... please wait
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [X-Prison] Loaded library /home/container/libraries/com/h2database/h2/2.1.214/h2-2.1.214.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [X-Prison] Loaded library /home/container/libraries/org/xerial/sqlite-jdbc/3.47.1.0/sqlite-jdbc-3.47.1.0.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [X-Prison] Loaded library /home/container/libraries/com/zaxxer/HikariCP/4.0.3/HikariCP-4.0.3.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [X-Prison] Loaded library /home/container/libraries/org/slf4j/slf4j-api/2.0.0-alpha1/slf4j-api-2.0.0-alpha1.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [X-Prison] Loaded library /home/container/libraries/net/objecthunter/exp4j/0.4.8/exp4j-0.4.8.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [XRobots] Loading 3 libraries... please wait
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [XRobots] Loaded library /home/container/libraries/com/h2database/h2/2.1.214/h2-2.1.214.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [XRobots] Loaded library /home/container/libraries/com/zaxxer/HikariCP/4.0.3/HikariCP-4.0.3.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [XRobots] Loaded library /home/container/libraries/org/slf4j/slf4j-api/2.0.0-alpha1/slf4j-api-2.0.0-alpha1.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [XRobots] Loaded library /home/container/libraries/net/objecthunter/exp4j/0.4.8/exp4j-0.4.8.jar
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [BlueMap] Loading 1 libraries... please wait
+[12:20:01] [Server thread/INFO]: [SpigotLibraryLoader] [BlueMap] Loaded library /home/container/libraries/com/flowpowered/flow-math/1.0.3/flow-math-1.0.3.jar
+[12:20:02] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.12.3
+[12:20:02] [Server thread/INFO]: [LuckPerms] Loading server plugin LuckPerms v5.5.71
+[12:20:02] [Server thread/INFO]: [LuckPerms] Loading configuration...
+[12:20:02] [Server thread/INFO]: [Vault] Loading server plugin Vault v2.20.2
+[12:20:02] [Server thread/INFO]: [FastAsyncWorldEdit] Loading server plugin FastAsyncWorldEdit v2.15.4-SNAPSHOT-1370+dd6a724
+[12:20:03] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@6458e08d]
+[12:20:03] [Server thread/INFO]: [WorldGuard] Loading server plugin WorldGuard v7.0.18+2392-fa605e6
+[12:20:03] [Server thread/INFO]: [ProtocolLib] Loading server plugin ProtocolLib v5.4.0
+[12:20:03] [Server thread/WARN]: [ProtocolLib] Version (MC: 26.2.0) has not yet been tested! Proceed with caution.
+[12:20:03] [Server thread/INFO]: [NBTAPI] Loading server plugin NBTAPI v2.16.0
+[12:20:03] [Server thread/INFO]: [NBTAPI] [NBTAPI] Found Minecraft: 26.2.build.112! Trying to find NMS support
+[12:20:03] [Server thread/INFO]: [NBTAPI] [NBTAPI] NMS support 'MC26_2' loaded!
+[12:20:03] [Server thread/INFO]: [NBTAPI] [NBTAPI] Using the plugin 'NBTAPI' to create a bStats instance!
+[12:20:04] [Server thread/INFO]: [Skript] Loading server plugin Skript v2.16.1
+[12:20:04] [Server thread/INFO]: [packetevents] Loading server plugin packetevents v2.13.0
+[12:20:04] [Thread-5/INFO]: [NBTAPI] [NBTAPI] The NBT-API seems to be up-to-date!
+[12:20:04] [Server thread/INFO]: [packetevents] Loading packetevents...
+[12:20:05] [Server thread/INFO]: [packetevents] Loaded packetevents v2.13.0
+[12:20:05] [Server thread/INFO]: [helper] Loading server plugin helper v5.6.14
+[12:20:05] [Server thread/INFO]: [helper] helper (me.lucko.helper) bound to plugin helper - me.lucko.helper.internal.StandalonePlugin
+[12:20:05] [Server thread/INFO]: [Oraxen] Loading server plugin Oraxen v1.218.0
+[12:20:05] [Server thread/INFO]: [CMILib] Loading server plugin CMILib v1.5.9.9
+[12:20:05] [Server thread/INFO]: [X-Prison] Loading server plugin X-Prison v2026.3.3.0
+[12:20:05] [Server thread/INFO]: [X-Prison] Detected server platform: PAPER (Adventure/MiniMessage enabled)
+[12:20:05] [Server thread/INFO]: [CMI] Loading server plugin CMI v9.8.9.8
+[12:20:05] [Server thread/INFO]: [CommandAPI] Loading server plugin CommandAPI v11.1.0
+[12:20:06] [Server thread/INFO]: [CommandAPI] Loaded version PaperNMS_1_21_R7
+[12:20:06] [Server thread/WARN]: [CommandAPI] Loading the CommandAPI with the latest and potentially incompatible NMS implementation.
+[12:20:06] [Server thread/WARN]: [CommandAPI] While you may find success with this, further updates might be necessary to fully support the version you are using.
+[12:20:06] [Server thread/INFO]: [CommandAPI] Hooked into Spigot successfully for Chat/ChatComponents
+[12:20:06] [Server thread/INFO]: [CommandAPI] Hooked into Adventure for AdventureChat/AdventureChatComponents
+[12:20:06] [Server thread/INFO]: [CommandAPI] Hooked into Paper for paper-specific API implementations
+[12:20:06] [Server thread/INFO]: [CommandAPI] Loaded platform CommandAPIPaper > CommandAPIBukkit
+[12:20:06] [Server thread/INFO]: [LibsDisguises] Loading server plugin LibsDisguises v26.8.13
+[12:20:06] [Server thread/INFO]: [GlobalMarketPlus] Loading server plugin GlobalMarketPlus v1.4.1.5
+[12:20:06] [Server thread/INFO]: [DeluxeMenus] Loading server plugin DeluxeMenus v1.14.1-Release
+[12:20:06] [Server thread/WARN]: [DeluxeMenus] Could not setup a NMS hook for your server version! The following Item options will not work: nbt_int, nbt_ints, nbt_string and nbt_strings.
+[12:20:06] [Server thread/INFO]: [XPrivateMines] Loading server plugin XPrivateMines v2026.3.0.9
+[12:20:06] [Server thread/INFO]: [TAB-Bridge] Loading server plugin TAB-Bridge v6.2.2
+[12:20:06] [Server thread/INFO]: [XPrisonArmors] Loading server plugin XPrisonArmors v1.0.4
+[12:20:06] [Server thread/INFO]: [Plan] Loading server plugin Plan v5.8 build 3605
+[12:20:06] [Server thread/INFO]: [XRobots] Loading server plugin XRobots v1.2.1
+[12:20:06] [Server thread/INFO]: [BlueMap] Loading server plugin BlueMap v5.23
+[12:20:06] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[12:20:06] [Server thread/INFO]: [LuckPerms] Enabling LuckPerms v5.5.71
+[12:20:06] [Server thread/INFO]:         __    
+[12:20:06] [Server thread/INFO]:   |    |__)   LuckPerms v5.5.71
+[12:20:06] [Server thread/INFO]:   |___ |      Running on Bukkit - Paper
+[12:20:06] [Server thread/INFO]: 
+[12:20:06] [Server thread/INFO]: [LuckPerms] Loading storage provider... [H2]
+[12:20:07] [Server thread/INFO]: [LuckPerms] Loading internal permission managers...
+[12:20:07] [Server thread/INFO]: [LuckPerms] Performing initial data load...
+[12:20:07] [Server thread/INFO]: [LuckPerms] Successfully enabled. (took 703ms)
+[12:20:07] [Server thread/INFO]: [Vault] Enabling Vault v2.20.2
+[12:20:07] [Server thread/INFO]: [Vault] Enabled Version 2.20.2
+[12:20:07] [Server thread/INFO]: [LuckPerms] Registered Vault permission & chat hook.
+[12:20:07] [Server thread/INFO]: [FastAsyncWorldEdit] Enabling FastAsyncWorldEdit v2.15.4-SNAPSHOT-1370+dd6a724
+[12:20:07] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] LZ4 Compression Binding loaded successfully
+[12:20:07] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] ZSTD Compression Binding loaded successfully
+[12:20:07] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[12:20:07] [Server thread/INFO]: WEPIF: Vault detected! Using Vault for permissions
+[12:20:07] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.fawe.v26_2.PaperweightFaweAdapter as the Bukkit adapter
+[12:20:08] [Server thread/INFO]: [ProtocolLib] Enabling ProtocolLib v5.4.0
+[12:20:08] [Server thread/INFO]: [helper] Enabling helper v5.6.14
+[12:20:08] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[12:20:08] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[12:20:08] [Server thread/WARN]: Whilst this makes it possible to use Velocity, unless access to your server is properly restricted, it also opens up the ability for hackers to connect with any username they choose.
+[12:20:08] [Server thread/WARN]: Please see https://docs.papermc.io/velocity/security for further information.
+[12:20:08] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[12:20:08] [Server thread/INFO]: Preparing level "world"
+[12:20:08] [ForkJoinPool.commonPool-worker-3/WARN]: [com.fastasyncworldedit.core.util.UpdateNotification] An update for FastAsyncWorldEdit is available. You are 2 build(s) out of date.
 You are running build 1370, the latest version is build 1372.
 Update at https://ci.athion.net/job/FastAsyncWorldEdit
-[11:26:20] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:overworld'...
-[11:26:20] [Server thread/INFO]: Preparing spawn area: 100%
-[11:26:20] [Server thread/INFO]: Prepared spawn area in 1 ms
-[11:26:20] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:the_nether'...
-[11:26:20] [Server thread/INFO]: Prepared spawn area in 0 ms
-[11:26:20] [Server thread/INFO]: Done preparing level "world" (0.235s)
-[11:26:20] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.12.3
-[11:26:20] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
-[11:26:20] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: vaultunlocked [2.13.1]
-[11:26:20] [Server thread/INFO]: [WorldGuard] Enabling WorldGuard v7.0.18+2392-fa605e6
-[11:26:20] [Server thread/INFO]: [WorldGuard] (world) TNT ignition is blocked.
-[11:26:20] [Server thread/INFO]: [WorldGuard] (world) Lighters are PERMITTED.
-[11:26:20] [Server thread/INFO]: [WorldGuard] (world) Lava fire is blocked.
-[11:26:20] [Server thread/INFO]: [WorldGuard] (world) Fire spread is UNRESTRICTED.
-[11:26:20] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'world'
-[11:26:20] [Server thread/INFO]: [WorldGuard] (world_nether) TNT ignition is blocked.
-[11:26:20] [Server thread/INFO]: [WorldGuard] (world_nether) Lighters are PERMITTED.
-[11:26:20] [Server thread/INFO]: [WorldGuard] (world_nether) Lava fire is blocked.
-[11:26:20] [Server thread/INFO]: [WorldGuard] (world_nether) Fire spread is UNRESTRICTED.
-[11:26:20] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'world_nether'
-[11:26:20] [Server thread/INFO]: [WorldGuard] Loading region data...
-[11:26:20] [Server thread/INFO]: [NBTAPI] Enabling NBTAPI v2.16.0
-[11:26:20] [Server thread/INFO]: [NBTAPI] Checking bindings...
-[11:26:20] [Server thread/INFO]: [NBTAPI] All Classes were able to link!
-[11:26:20] [Server thread/INFO]: [NBTAPI] All Methods were able to link!
-[11:26:20] [Server thread/INFO]: [NBTAPI] Running NBT reflection test...
-[11:26:22] [Server thread/INFO]: [NBTAPI] Success! This version of NBT-API is compatible with your server.
-[11:26:22] [Server thread/INFO]: [Skript] Enabling Skript v2.16.1
-[11:26:22] [ForkJoinPool.commonPool-worker-5/INFO]: [Skript] You're currently running the latest stable version of Skript.
-[11:26:23] [Server thread/INFO]: [Skript]  ~ created by & © Peter Güttinger aka Njol ~
-[11:26:23] [Server thread/INFO]: [packetevents] Enabling packetevents v2.13.0
-[11:26:23] [packetevents-update-check-thread/INFO]: [packetevents] Checking for updates, please wait...
-[11:26:23] [Server thread/INFO]: [Oraxen] Enabling Oraxen v1.218.0
-[11:26:23] [packetevents-update-check-thread/INFO]: [packetevents] You are running the latest release: 2.13.0
-[11:26:23] [Server thread/INFO]: Oraxen | [ProtocolLibAdapter] registerTitleListener called
-[11:26:23] [Server thread/INFO]: Oraxen | [ProtocolLibAdapter] Title Listener registered successfully
-[11:26:23] [Server thread/INFO]: Oraxen | Custom paintings already hot reloaded (0 unchanged).
-[11:26:23] [Server thread/INFO]: Oraxen | TextEffects.shader.encoding 'alpha_lsb' is deprecated. Using 'effect_font'.
-[11:26:23] [Server thread/INFO]: Oraxen | Loaded 4 text effects
-[11:26:23] [Server thread/INFO]: Oraxen | Loaded 1 glyphs, 0 reference glyphs, 0 animated glyphs
-[11:26:23] [Server thread/INFO]: Oraxen | Hot reloaded 1 new custom jukebox song(s), 0 updated, 0 removed, 0 unchanged.
-[11:26:24] [Server thread/INFO]: Oraxen | Successfully loaded on Ubuntu 26.04 LTS (resolute)
-[11:26:24] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: oraxen [1.218.0]
-[11:26:24] [Server thread/INFO]: Oraxen | Plugin "PlaceholderAPI" detected, enabling hooks
-[11:26:24] [Server thread/INFO]: Oraxen | Skript compatibility enabled - Oraxen syntax registered
-[11:26:24] [Server thread/INFO]: Oraxen | Plugin "Skript" detected, enabling hooks
-[11:26:24] [Server thread/INFO]: [CMILib] Enabling CMILib v1.5.9.9
-[11:26:24] [Server thread/INFO]: Server version detection by new method: v26_2_0 Legacy: false Mojang Mappings: true
-[11:26:24] [Server thread/INFO]: Server version: v26_2_0 - 26.2.0 - paper  26.2-112-c9e894d (MC: 26.2)
-[11:26:24] [ForkJoinPool.commonPool-worker-5/INFO]: [Skript] Loaded 5750 aliases in 1149ms
-[11:26:24] [Server thread/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
-[11:26:24] [Server thread/INFO]: CMI hooked.
-[11:26:24] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: cmil [1.5.9.9]
-[11:26:24] [Server thread/INFO]: PlaceholderAPI hooked.
-[11:26:24] [Server thread/INFO]: Updated (EN) language file. Took 55ms
-[11:26:24] [Server thread/INFO]: Updated (DE) language file. Took 19ms
-[11:26:24] [Server thread/INFO]: [X-Prison] Enabling X-Prison v2026.3.3.0
-[11:26:24] [Server thread/INFO]: 
-[11:26:24] [Server thread/INFO]: ██╗  ██╗      ██████╗ ██████╗ ██╗███████╗ ██████╗ ███╗   ██╗
-[11:26:24] [Server thread/INFO]: ╚██╗██╔╝      ██╔══██╗██╔══██╗██║██╔════╝██╔═══██╗████╗  ██║
-[11:26:24] [Server thread/INFO]:  ╚███╔╝ ████╗ ██████╔╝██████╔╝██║███████╗██║   ██║██╔██╗ ██║
-[11:26:24] [Server thread/INFO]:  ██╔██╗ ╚═══╝ ██╔═══╝ ██╔══██╗██║╚════██║██║   ██║██║╚██╗██║
-[11:26:24] [Server thread/INFO]: ██╔╝ ██╗      ██║     ██║  ██║██║███████║╚██████╔╝██║ ╚████║
-[11:26:24] [Server thread/INFO]: ╚═╝  ╚═╝      ╚═╝     ╚═╝  ╚═╝╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═══╝
-[11:26:24] [Server thread/INFO]: Premium Prison Core  •  v2026.3.3.0  •  by Drawethree
-[11:26:24] [Server thread/INFO]: Website: www.drawethree.dev
-[11:26:24] [Server thread/INFO]: Discord: https://discord.gg/ZeSkmEC6mG
-[11:26:24] [Server thread/INFO]: 
-[11:26:24] [Server thread/INFO]: [com.zaxxer.hikari.HikariDataSource] xprison-0 - Starting...
-[11:26:25] [Server thread/INFO]: [com.zaxxer.hikari.HikariDataSource] xprison-0 - Start completed.
-[11:26:25] [Server thread/INFO]: [X-Prison] §aLoaded §e27 §aglobal sell prices.
-[11:26:25] [Server thread/INFO]: [X-Prison] Registered X-Prison Currency: money
-[11:26:25] [Server thread/INFO]: [X-Prison] Registered X-Prison Currency: tokens
-[11:26:25] [Server thread/INFO]: [X-Prison] Registered X-Prison Currency: gems
-[11:26:25] [Server thread/INFO]: [X-Prison] §aLoaded §e12 Block Rewards
-[11:26:25] [Server thread/INFO]: [X-Prison] §aLoaded Bomb: §etiny
-[11:26:25] [Server thread/INFO]: [X-Prison] §aLoaded Bomb: §esmall
-[11:26:25] [Server thread/INFO]: [X-Prison] §aLoaded Bomb: §enormal
-[11:26:25] [Server thread/INFO]: [X-Prison] §aLoaded Bomb: §elarge
-[11:26:25] [Server thread/INFO]: [X-Prison] §aLoaded Bomb: §emega
-[11:26:25] [Server thread/INFO]: [X-Prison] §aLoaded Bomb: §ecolossal
-[11:26:25] [Server thread/INFO]: [X-Prison] §aLoaded Bomb: §eomega
-[11:26:25] [Server thread/INFO]: [X-Prison] §aLoaded Bomb: §esingularity
-[11:26:25] [Server thread/INFO]: [X-Prison] §fUsing §emoney §fcurrency for Ranks.
-[11:26:25] [Server thread/INFO]: [X-Prison] §aLoaded §e10 Ranks.
-[11:26:25] [Server thread/INFO]: [X-Prison] §fUsing §emoney §fcurrency for Prestiges.
-[11:26:25] [Server thread/INFO]: [X-Prison] §aLoaded §e11 Prestiges.
-[11:26:25] [Server thread/INFO]: [X-Prison] Loaded Rebirth 0
-[11:26:25] [Server thread/INFO]: [X-Prison] Loaded Rebirth 1
-[11:26:25] [Server thread/INFO]: [X-Prison] Loaded Rebirth 2
-[11:26:25] [Server thread/INFO]: [X-Prison] Loaded Rebirth 3
-[11:26:25] [Server thread/INFO]: [X-Prison] Loaded Rebirth 4
-[11:26:25] [Server thread/INFO]: [X-Prison] Loaded Rebirth 5
-[11:26:25] [helper-scheduler-0/INFO]: [X-Prison] Removed expired multipliers from DB.
-[11:26:25] [Server thread/INFO]: [X-Prison] §aLoaded §e0 §amines.
-[11:26:25] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant efficiency loaded successfully.
-[11:26:25] [Server thread/INFO]: [X-Prison] §aRegistered enchant Efficiency created by §eDrawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant keyfinder loaded successfully.
-[11:26:25] [Server thread/INFO]: [X-Prison] §aRegistered enchant §9Key Finder§a created by §eDrawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant laser loaded successfully.
-[11:26:25] [Server thread/INFO]: [X-Prison] §aRegistered enchant §cLaser§a created by §eDrawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant charity loaded successfully.
-[11:26:25] [Server thread/INFO]: [X-Prison] §aRegistered enchant §cCharity§a created by §eDrawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant haste loaded successfully.
-[11:26:25] [Server thread/INFO]: [X-Prison] §aRegistered enchant §dHaste§a created by §eDrawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant explosive loaded successfully.
-[11:26:25] [Server thread/INFO]: [X-Prison] §aRegistered enchant Explosive created by §eDrawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant autosell loaded successfully.
-[11:26:25] [Server thread/INFO]: [X-Prison] §aRegistered enchant §eAutosell§a created by §eDrawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant gemfinder loaded successfully.
-[11:26:25] [Server thread/INFO]: [X-Prison] §aRegistered enchant Gem Finder created by §eDrawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant nightvision loaded successfully.
-[11:26:25] [Server thread/INFO]: [X-Prison] §aRegistered enchant §cNight Vision§a created by §eDrawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant keyalls loaded successfully.
-[11:26:25] [Server thread/INFO]: [X-Prison] §aRegistered enchant §cKeyalls§a created by §eDrawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant tokenmerchant loaded successfully.
-[11:26:25] [Server thread/INFO]: [X-Prison] §aRegistered enchant §6Token Merchant§a created by §eDrawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant fortune loaded successfully.
-[11:26:25] [Server thread/INFO]: [X-Prison] §aRegistered enchant §cFortune§a created by §eDrawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant nuke loaded successfully.
-[11:26:25] [Server thread/INFO]: [X-Prison] §aRegistered enchant §cNuke§a created by §eDrawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant blessing loaded successfully.
-[11:26:25] [Server thread/INFO]: [X-Prison] §aRegistered enchant §eBlessing§a created by §eDrawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant blockbooster loaded successfully.
-[11:26:25] [Server thread/INFO]: [X-Prison] §aRegistered enchant §dBlock Booster§a created by §eDrawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant tokenfinder loaded successfully.
-[11:26:25] [Server thread/INFO]: [X-Prison] §aRegistered enchant §eToken Finder§a created by §eDrawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant jumpboost loaded successfully.
-[11:26:25] [Server thread/INFO]: [X-Prison] §aRegistered enchant §bJump Boost§a created by §eDrawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant fly loaded successfully.
-[11:26:25] [Server thread/INFO]: [X-Prison] §aRegistered enchant §cFly§a created by §eDrawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant unbreaking loaded successfully.
-[11:26:25] [Server thread/INFO]: [X-Prison] §aRegistered enchant §9Unbreaking§a created by §eDrawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant layer loaded successfully.
-[11:26:25] [Server thread/INFO]: [X-Prison] §aRegistered enchant §9Layer§a created by §eDrawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant speed loaded successfully.
-[11:26:25] [Server thread/INFO]: [X-Prison] §aRegistered enchant Speed created by §eDrawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant gang-value-finder loaded successfully.
-[11:26:25] [Server thread/INFO]: [X-Prison] §aRegistered enchant §eGang Value Finder§a created by §eDrawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant prestigefinder loaded successfully.
-[11:26:25] [Server thread/INFO]: [X-Prison] §aRegistered enchant Prestige Finder created by §eDrawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant gemmerchant loaded successfully.
-[11:26:25] [Server thread/INFO]: [X-Prison] §aRegistered enchant §bGem Merchant§a created by §eDrawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant custom-enchant-1 loaded successfully.
-[11:26:25] [Server thread/INFO]: [X-Prison] §aRegistered enchant §eYour Custom Enchant§a created by §eDrawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant salary loaded successfully.
-[11:26:25] [Server thread/INFO]: [X-Prison] §aRegistered enchant §dSalary§a created by §eDrawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] §aLoaded §e26 §aenchantments.
-[11:26:25] [Server thread/WARN]: [X-Prison] §cThere is no such region named automine in world world!
-[11:26:25] [Server thread/INFO]: [X-Prison] §aLoaded §e300 Pickaxe Levels.
-[11:26:25] [Server thread/INFO]: [X-Prison] Loaded pickaxe skin §x§0§0§f§f§f§f§lP§x§0§0§f§4§f§4§ll§x§0§0§e§a§e§a§la§x§0§0§d§f§d§f§ls§x§0§0§d§5§d§5§lm§x§0§0§c§a§c§a§la§x§0§0§c§0§c§0§l-§x§0§0§b§5§b§5§lS§x§0§0§a§b§a§b§lc§x§0§0§a§0§a§0§lh§x§0§0§9§6§9§6§lu§x§0§0§8§b§8§b§lb
-[11:26:25] [Server thread/INFO]: [X-Prison] §aLoaded §e10 §aPickaxe Quality tiers.
-[11:26:25] [helper-scheduler-2/INFO]: [X-Prison] History cleanup: removed entries older than 30 days.
-[11:26:25] [Server thread/INFO]: [X-Prison] §aLoaded Battle Pass season §eseason-1§a with §e20 §atiers.
-[11:26:25] [Server thread/INFO]: [X-Prison] §aLoaded §e18 §aquests (§e9 §adaily, §e5 §aweekly, §e4 §apermanent).
-[11:26:25] [Server thread/INFO]: [X-Prison] §aLoaded Daily Rewards: §e14 §acycle days, §e6 §amilestones.
-[11:26:25] [Server thread/INFO]: [X-Prison] §aEnabled §e20§a/§e20 §amodules: §fAuto Sell, Currencies, Blocks, Bombs, Ranks, Prestiges, Rebirths, Multipliers, Mines, Enchants, Auto Miner, Gangs, Pickaxe Levels, Pickaxe Skins, Pickaxe Quality, History, Mining Stats, BattlePass, Quests, DailyRewards
-[11:26:25] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: xprison [2026.3.3.0]
-[11:26:25] [Server thread/WARN]: [X-Prison] §cSkipping X-PrivateMines-Dashboard-1.0.4.jar: no X-Prison-Addon-Class attribute in manifest.
-[11:26:25] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§f§f§8§0§0§0M§x§f§f§8§7§0§0e§x§f§f§8§d§0§0t§x§f§f§9§4§0§0e§x§f§f§9§b§0§0o§x§f§f§a§1§0§0r§x§f§f§a§8§0§0 §x§f§f§a§f§0§0S§x§f§f§b§5§0§0t§x§f§f§b§c§0§0r§x§f§f§c§3§0§0i§x§f§f§c§9§0§0k§x§f§f§d§0§0§0e§a created by §eDrawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§8§0§0§0§a§0B§x§8§7§0§b§a§bl§x§8§e§1§5§b§5a§x§9§5§2§0§c§0c§x§9§c§2§b§c§ak§x§a§4§3§5§d§5 §x§a§b§4§0§d§fH§x§b§2§4§b§e§ao§x§b§9§5§5§f§4l§x§c§0§6§0§f§fe§a created by §eDrawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§7§8§c§8§f§fL§x§8§2§c§c§f§fi§x§8§b§d§0§f§fg§x§9§5§d§4§f§fh§x§9§f§d§8§f§ft§x§a§8§d§c§f§fn§x§b§2§e§0§f§fi§x§b§c§e§4§f§fn§x§c§5§e§7§f§fg§x§c§f§e§b§f§f §x§d§8§e§f§f§fS§x§e§2§f§3§f§ft§x§e§c§f§7§f§fo§x§f§5§f§b§f§fr§fm§a created by §eDrawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§b§0§b§0§b§0T§x§b§d§b§d§b§do§x§c§a§c§a§c§ar§x§d§8§d§8§d§8n§x§e§5§e§5§e§5a§x§f§2§f§2§f§2d§fo§a created by §eDrawethree
-[11:26:25] [Server thread/INFO]: [X-Prison-Addon/AnimatedEnchants] Animated Enchants enabled — registered 4/4 enchants.
-[11:26:25] [Server thread/INFO]: [X-Prison] Loaded addon: AnimatedEnchants v1.4.0 by Drawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§f§f§f§6§c§0D§x§f§f§f§2§b§4i§x§f§f§e§e§a§8v§x§f§f§e§a§9§ci§x§f§f§e§6§9§0n§x§f§f§e§2§8§4e§x§f§f§d§d§7§8 §x§f§f§d§9§6§cS§x§f§f§d§5§6§0m§x§f§f§d§1§5§4i§x§f§f§c§d§4§8t§x§f§f§c§9§3§ce§a created by §eDrawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§7§b§e§8§d§cS§x§7§4§e§0§d§5o§x§6§d§d§7§c§du§x§6§6§c§f§c§6l§x§5§f§c§6§b§f §x§5§8§b§e§b§7H§x§5§1§b§5§b§0a§x§4§a§a§d§a§8r§x§4§3§a§4§a§1v§x§3§c§9§c§9§ae§x§3§5§9§3§9§2s§x§2§e§8§b§8§bt§a created by §eDrawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§c§7§9§b§f§fA§x§b§f§9§0§f§fr§x§b§8§8§5§f§fc§x§b§0§7§a§f§fa§x§a§8§6§f§f§fn§x§a§1§6§5§f§fe§x§9§9§5§a§f§f §x§9§1§4§f§f§fN§x§8§9§4§4§f§fo§x§8§2§3§9§f§fv§x§7§a§2§e§f§fa§a created by §eDrawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§f§f§f§1§b§8S§x§f§1§e§b§c§2t§x§e§3§e§5§c§ca§x§d§5§d§f§d§6r§x§c§6§d§a§e§1f§x§b§8§d§4§e§ba§x§a§a§c§e§f§5l§x§9§c§c§8§f§fl§a created by §eDrawethree
-[11:26:25] [Server thread/INFO]: [X-Prison-Addon/AnimatedEnchants2] Animated Enchants 2 enabled — registered 4/4 enchants.
-[11:26:25] [Server thread/INFO]: [X-Prison] Loaded addon: AnimatedEnchants2 v1.4.0 by Drawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§a§6§e§3§f§fF§x§9§b§d§b§f§br§x§9§0§d§2§f§7o§x§8§4§c§a§f§3s§x§7§9§c§1§f§0t§x§6§e§b§9§e§cb§x§6§3§b§0§e§8i§x§5§7§a§8§e§4t§x§4§c§9§f§e§0e§a created by §eDrawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§9§c§f§f§3§cV§x§9§2§f§3§3§9e§x§8§9§e§8§3§6n§x§7§f§d§c§3§3o§x§7§6§d§0§3§0m§x§6§c§c§5§2§d §x§6§2§b§9§2§aB§x§5§9§a§d§2§7l§x§4§f§a§1§2§4o§x§4§6§9§6§2§1o§x§3§c§8§a§1§em§a created by §eDrawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§e§a§f§5§f§fG§x§e§1§f§0§f§ca§x§d§8§e§b§f§9l§x§c§f§e§5§f§6e§x§c§6§e§0§f§3 §x§b§d§d§b§f§0C§x§b§3§d§6§e§cu§x§a§a§d§1§e§9t§x§a§1§c§b§e§6t§x§9§8§c§6§e§3e§x§8§f§c§1§e§0r§a created by §eDrawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§f§f§b§0§3§0M§x§f§f§a§3§2§ba§x§f§f§9§6§2§6g§x§f§f§8§a§2§2m§x§f§f§7§d§1§da§x§f§f§7§0§1§8 §x§f§f§6§3§1§3S§x§f§f§5§6§0§eu§x§f§f§4§a§0§ar§x§f§f§3§d§0§5g§x§f§f§3§0§0§0e§a created by §eDrawethree
-[11:26:25] [Server thread/INFO]: [X-Prison-Addon/AnimatedEnchants3] Animated Enchants 3 enabled — registered 4/4 enchants.
-[11:26:25] [Server thread/INFO]: [X-Prison] Loaded addon: AnimatedEnchants3 v1.3.0 by Drawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant ascendant loaded successfully.
-[11:26:25] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§f§f§d§7§0§0A§x§f§f§c§8§1§cs§x§f§f§b§9§3§8c§x§f§f§a§a§5§4e§x§f§f§9§b§7§0n§x§f§f§8§b§8§cd§x§f§f§7§c§a§8a§x§f§f§6§d§c§4n§x§f§f§5§e§e§0t§a created by §eDrawethree
-[11:26:25] [Server thread/INFO]: [X-Prison-Addon/Ascendant] Ascendant enabled — registered 1/1 enchants.
-[11:26:25] [Server thread/INFO]: [X-Prison] Loaded addon: Ascendant v1.1.0 by Drawethree
-[11:26:25] [Server thread/INFO]: [X-Prison-Addon/BlackMarket] Enabling Black Market addon v1.1.0...
-[11:26:25] [Server thread/INFO]: [X-Prison-Addon/BlackMarket] [BlackMarket] Loaded 13 market item(s).
-[11:26:25] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: xprisonblackmarket [1.1.0]
-[11:26:25] [Server thread/INFO]: [X-Prison-Addon/BlackMarket] [BlackMarket] Hooked into PlaceholderAPI.
-[11:26:25] [Server thread/INFO]: [X-Prison-Addon/BlackMarket] Black Market addon enabled with 13 item(s) in the pool.
-[11:26:25] [Server thread/INFO]: [X-Prison] Loaded addon: BlackMarket v1.1.0 by Drawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] §aRegistered enchant §cBomb Finder§a created by §eDrawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] Loaded addon: BombFinderEnchant v1.1 by Drawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] §aRegistered enchant §cCluster Bomb§a created by §eDrawethree
-[11:26:25] [Server thread/INFO]: [X-Prison] Loaded addon: ClusterBombEnchant v1.5 by Drawethree
-[11:26:26] [Server thread/INFO]: [io.javalin.Javalin] Starting Javalin ...
-[11:26:26] [Server thread/INFO]: [org.eclipse.jetty.server.Server] jetty-11.0.23; built: 2024-08-14T01:40:17.906Z; git: 6fcf5ccaebd7ca13a0cb96c96adca699a24080a0; jvm 25.0.3+9-LTS
-[11:26:26] [Server thread/INFO]: [org.eclipse.jetty.server.session.DefaultSessionIdManager] Session workerName=node0
-[11:26:26] [Server thread/INFO]: [org.eclipse.jetty.server.handler.ContextHandler] Started o.e.j.s.ServletContextHandler@54434522{/,null,AVAILABLE}
-[11:26:26] [Server thread/INFO]: [org.eclipse.jetty.server.AbstractConnector] Started ServerConnector@60450554{HTTP/1.1, (http/1.1)}{0.0.0.0:8085}
-[11:26:26] [Server thread/INFO]: [org.eclipse.jetty.server.Server] Started Server@39cf23de{STARTING}[11.0.23,sto=0] @21101ms
-[11:26:26] [Server thread/INFO]: [io.javalin.Javalin] Javalin started in 316ms \o/
-[11:26:26] [Server thread/INFO]: [io.javalin.Javalin] Listening on http://localhost:8085/
-[11:26:26] [Server thread/INFO]: [io.javalin.Javalin] You are running Javalin 6.3.0 (released August 22, 2024. Your Javalin version is 726 days old. Consider checking for a newer version.).
-[11:26:26] [Server thread/INFO]: [X-Prison-Addon/Dashboard] Dashboard started on port 8085 — navigate to http://<your-server-ip>:8085
-[11:26:26] [Server thread/INFO]: [X-Prison] Loaded addon: Dashboard v1.4.0 by Drawethree
-[11:26:26] [Server thread/INFO]: [X-Prison] §aRegistered enchant §bDrill§a created by §eDrawethree
-[11:26:26] [Server thread/INFO]: [X-Prison] Loaded addon: DrillEnchant v1.4 by Drawethree
-[11:26:26] [Server thread/INFO]: [X-Prison] §aRegistered enchant §dEcho Booster§a created by §eDrawethree
-[11:26:26] [Server thread/INFO]: [X-Prison] Loaded addon: EchoBoosterEnchant v1.2 by Drawethree
-[11:26:26] [Server thread/INFO]: [X-Prison-Addon/Events] Enabling Events addon v1.0.2...
-[11:26:26] [Server thread/INFO]: [X-Prison-Addon/Events] [Events] Loaded 6 event(s).
-[11:26:26] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: xprisonevents [1.0.2]
-[11:26:26] [Server thread/INFO]: [X-Prison-Addon/Events] Hooked into PlaceholderAPI.
-[11:26:26] [Server thread/INFO]: [X-Prison-Addon/Events] Events addon enabled with 6 event(s).
-[11:26:26] [Server thread/INFO]: [X-Prison] Loaded addon: Events v1.0.2 by Drawethree
-[11:26:26] [Server thread/INFO]: [X-Prison] §aRegistered enchant §eLucky Block§a created by §eDrawethree
-[11:26:26] [Server thread/INFO]: [X-Prison] Loaded addon: LuckyBlockEnchant v1.5 by Drawethree
-[11:26:26] [Server thread/INFO]: [X-Prison-Addon/Momentum] Enabling Momentum addon v1.0.2...
-[11:26:26] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: xprisonmomentum [1.0.2]
-[11:26:26] [Server thread/INFO]: [X-Prison-Addon/Momentum] [Momentum] Hooked into PlaceholderAPI.
-[11:26:26] [Server thread/INFO]: [X-Prison-Addon/Momentum] Momentum addon enabled with 5 tier(s).
-[11:26:26] [Server thread/INFO]: [X-Prison] Loaded addon: Momentum v1.0.2 by Drawethree
-[11:26:26] [Server thread/INFO]: [X-Prison] §aRegistered enchant §dPet Finder§a created by §eDrawethree
-[11:26:26] [Server thread/INFO]: [X-Prison] Loaded addon: PetFinderEnchant v1.0 by Drawethree
-[11:26:26] [Server thread/INFO]: [X-Prison-Addon/Pets] [Pets] Loaded 6 rarit(ies).
-[11:26:26] [Server thread/INFO]: [X-Prison-Addon/Pets] [Pets] Loaded 5 pet type(s).
-[11:26:26] [Server thread/INFO]: [X-Prison-Addon/Pets] [Pets] Loaded 3 egg type(s).
-[11:26:26] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: xprisonpets [1.3.0]
-[11:26:26] [Server thread/INFO]: [X-Prison-Addon/Pets] [Pets] Built 5 pet icon(s) in 0ms.
-[11:26:26] [Server thread/INFO]: [X-Prison-Addon/Pets] [Pets] Configuration validated — no problems found.
-[11:26:26] [Server thread/INFO]: [X-Prison-Addon/Pets] Pets addon enabled. Pet types: 5
-[11:26:26] [Server thread/INFO]: [X-Prison] Loaded addon: Pets v1.3.0 by Drawethree
-[11:26:26] [Server thread/INFO]: [X-Prison] §aRegistered enchant §eRobot Finder§a created by §eDrawethree
-[11:26:26] [Server thread/INFO]: [X-Prison] Loaded addon: RobotFinderEnchant v1.2 by Drawethree
-[11:26:26] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant vanguard loaded successfully.
-[11:26:26] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§0§0§e§0§f§fV§x§1§2§c§7§f§fa§x§2§3§a§d§f§fn§x§3§5§9§4§f§fg§x§4§6§7§b§f§fu§x§5§8§6§2§f§fa§x§6§9§4§8§f§fr§x§7§b§2§f§f§fd§a created by §eDrawethree
-[11:26:26] [Server thread/INFO]: [X-Prison-Addon/Vanguard] Vanguard enabled — registered 1/1 enchants.
-[11:26:26] [Server thread/INFO]: [X-Prison] Loaded addon: Vanguard v1.1.0 by Drawethree
-[11:26:26] [Server thread/INFO]: [X-Prison] §aRegistered enchant §9Voucher Finder§a created by §eDrawethree
-[11:26:26] [Server thread/INFO]: [X-Prison] Loaded addon: VoucherFinderEnchant v1.2 by Drawethree
-[11:26:26] [Server thread/INFO]: [X-Prison] Loaded 18 addons.
-[11:26:26] [Server thread/INFO]: X-Prison v2026.3.3.0 enabled
-[11:26:26] [Server thread/INFO]: Platform : PAPER (adventure text)
-[11:26:26] [Server thread/INFO]: Database : H2
-[11:26:26] [Server thread/INFO]: Modules  : 20/20
-[11:26:26] [Server thread/INFO]: Addons   : 18
-[11:26:26] [Server thread/INFO]: Startup  : 2107ms
-[11:26:26] [Server thread/INFO]: 
-[11:26:26] [Server thread/INFO]: [CMI] Enabling CMI v9.8.9.8
-[11:26:27] [Server thread/INFO]: _______________________________________________________
-[11:26:27] [Server thread/INFO]:  
-[11:26:27] [Server thread/INFO]:  ██████╗███╗   ███╗██╗
-[11:26:27] [Server thread/INFO]: ██╔════╝████╗ ████║██║
-[11:26:27] [Server thread/INFO]: ██║     ██╔████╔██║██║
-[11:26:27] [Server thread/INFO]: ██║     ██║╚██╔╝██║██║
-[11:26:27] [Server thread/INFO]: ╚██████╗██║ ╚═╝ ██║██║
-[11:26:27] [Server thread/INFO]:  ╚═════╝╚═╝     ╚═╝╚═╝
-[11:26:27] [Server thread/INFO]: _______________________________________________________
-[11:26:27] [Server thread/INFO]: Integrating PaperSpigot async methods
-[11:26:27] [Server thread/INFO]: Vault found. (Loaded: true)
-[11:26:27] [CMI-Thread-1/INFO]: Loaded (-) locale download into memory. Took 4ms
-[11:26:27] [Server thread/INFO]: Loaded (71) 69 Enabled and 2 Disabled modules into memory. Took 43ms
-[11:26:27] [Server thread/INFO]: BlueMap found. (Loaded: false)
-[11:26:27] [Server thread/INFO]: Initialized Cipher256 AES
-[11:26:27] [Server thread/INFO]: Loaded (61) regular alias into memory. Took 26ms
-[11:26:27] [CMI-Thread-2/INFO]: Loaded (1) custom text's into memory. Took 2ms
-[11:26:27] [Server thread/INFO]: (RandomTeleportation) Can't find world with (world_the_end) name
-[11:26:27] [Server thread/INFO]: (RandomTeleportation) Can't find world with (lobby) name
-[11:26:27] [Server thread/INFO]: (RandomTeleportation) Can't find world with (town) name
-[11:26:27] [Server thread/INFO]: (RandomTeleportation) Can't find world with (freebuild) name
-[11:26:27] [Server thread/INFO]: (RandomTeleportation) Can't find world with (tycoon) name
-[11:26:27] [Server thread/INFO]: (RandomTeleportation) Can't find world with (SuperiorWorld) name
-[11:26:27] [Server thread/INFO]: (RandomTeleportation) Can't find world with (Schematics) name
-[11:26:27] [Server thread/INFO]: (RandomTeleportation) Can't find world with (rpg) name
-[11:26:27] [Server thread/INFO]: (RandomTeleportation) Can't find world with (rpg_nether) name
-[11:26:27] [Server thread/INFO]: (RandomTeleportation) Can't find world with (rpg_the_end) name
-[11:26:27] [Server thread/INFO]: SQLite 3.49.1 data base type detected
-[11:26:27] [Server thread/INFO]: Loaded (-) SqLite into memory. Took 84ms
-[11:26:27] [Server thread/INFO]: [CMI] Vault was found but economy engine is missing. Use one from list provided in https://dev.bukkit.org/bukkit-plugins/vault/
-[11:26:27] [Server thread/INFO]: [CMI] Alternatively you can enable CMI economy in config.yml file
-[11:26:27] [Server thread/INFO]: Vault was found but not economy plugin, you will have limited economy support
-[11:26:27] [Server thread/INFO]: Will attempt secondary economy check after server starts.
-[11:26:27] [Server thread/INFO]: Loaded (5) warning categories into memory. Took 0ms
-[11:26:27] [Server thread/INFO]: Loaded (3) warning commands into memory. Took 0ms
-[11:26:27] [Server thread/INFO]: Loaded (0) cooldowns into memory. Took 0ms
-[11:26:27] [Server thread/INFO]: Loaded (160) custom mob heads into memory. Took 23ms
-[11:26:27] [Server thread/INFO]: Loaded (4) chat bubble groups into memory. Took 1ms
-[11:26:27] [Server thread/INFO]: Loaded (5) kits into memory. Took 9ms
-[11:26:27] [Server thread/INFO]: Loaded (5) dialogs into memory. Took 6ms
-[11:26:27] [Server thread/INFO]: Loaded (7) ranks into memory. Took 7ms
-[11:26:27] [Server thread/INFO]: Loaded (8) playtime rewards into memory. Took 1ms
-[11:26:27] [Server thread/INFO]: Executed Player DB querry in 1ms
-[11:26:27] [Server thread/INFO]: Loaded (13) player data into memory. Took 10ms
-[11:26:27] [Server thread/INFO]: Loaded (0) playtime records into memory. Took 1ms
-[11:26:27] [Server thread/INFO]: Loaded (0) playtime reward records into memory. Took 0ms
-[11:26:27] [Server thread/INFO]: Loaded (0) custom alias into memory. Took 0ms
-[11:26:28] [Server thread/INFO]: Loaded (-) Registered events into memory. Took 117ms
-[11:26:28] [Server thread/INFO]: Loaded (0) event action commands into memory. Took 3ms
-[11:26:28] [Server thread/INFO]: Loaded (EN) language file into memory. Took 64ms
-[11:26:28] [Server thread/INFO]: Loaded (DE) language file into memory. Took 50ms
-[11:26:28] [Server thread/INFO]: Loaded (245) worth values into memory. Took 14ms
-[11:26:28] [Server thread/INFO]: Loaded (12) warps into memory. Took 2ms
-[11:26:28] [Server thread/INFO]: VaultPermissions found. (Loaded: true)
-[11:26:28] [Server thread/INFO]: PlaceholderAPI found. (Loaded: true)
-[11:26:28] [Server thread/INFO]: Loaded (5) schedules into memory. Took 4ms
-[11:26:28] [Server thread/INFO]: Loaded (0) skin cache entries into memory. Took 0ms
-[11:26:28] [Server thread/INFO]: [CMI] Preloading playtimetop statistics
-[11:26:28] [Server thread/INFO]: Loaded (0) ArmorStand templates into memory. Took 0ms
-[11:26:28] [Server thread/INFO]: Version 9.8.9.8 has been enabled
-[11:26:28] [Server thread/INFO]: _______________________________________________________
-[11:26:28] [Server thread/INFO]: [CommandAPI] Enabling CommandAPI v11.1.0
-[11:26:28] [Server thread/INFO]: [CommandAPI] Hooked into Paper ServerResourcesReloadedEvent
-[11:26:28] [Server thread/INFO]: [LibsDisguises] Enabling LibsDisguises v26.8.13
-[11:26:28] [Server thread/INFO]: [LibsDisguises] File Name: LibsDisguises-26.8.13-Premium.jar
-[11:26:28] [Server thread/INFO]: [LibsDisguises] Discovered nms version (LD: v26_R2) (MC: 26.2)
-[11:26:28] [Server thread/INFO]: [LibsDisguises] Jenkins Build: #1813
-[11:26:28] [Server thread/INFO]: [LibsDisguises] Build Date: 12/08/2026 23:49
-[11:26:28] [Server thread/INFO]: [LibsDisguises] Build Hash: c77589e8~1
-[11:26:28] [Server thread/INFO]: [LibsDisguises] Registered to: 2433376 (28)
-[11:26:28] [Server thread/INFO]: [LibsDisguises] Premium enabled, thank you for supporting Lib's Disguises!
-[11:26:28] [Server thread/INFO]: [LibsDisguises] Config 'TallSelfDisguises' is set to 'SCALED', LD will scale down (when possible) oversized disguises from self disguise. https://www.spigotmc.org/wiki/lib-s-disguises-faq/#tall-disguises-self-disguises
-[11:26:28] [Server thread/INFO]: [packetevents] Loading block mappings for V_26_2/22...
-[11:26:28] [Server thread/INFO]: [packetevents] Finished loading block mappings for V_26_2/22 in 236.47425ms
-[11:26:29] [Server thread/INFO]: [LibsDisguises] Config is up to date!
-[11:26:29] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: libsdisguises [1.0.0]
-[11:26:29] [Server thread/INFO]: [LibsDisguises] PlaceholderAPI support enabled
-[11:26:29] [Server thread/INFO]: [GlobalMarketPlus] Enabling GlobalMarketPlus v1.4.1.5
-[11:26:29] [Server thread/INFO]: [GlobalMarketPlus] Properties has been loaded!
-[11:26:29] [Server thread/INFO]: [GlobalMarketPlus] Plugin loading...
-[11:26:29] [Server thread/INFO]: [GlobalMarketPlus] Enabled Event Listener .
-[11:26:29] [Server thread/INFO]: [GlobalMarketPlus] Enabled Command Listener .
-[11:26:29] [Server thread/INFO]:   _____  _         _            _    __  __               _           _      _____   _
-[11:26:29] [Server thread/INFO]:  / ____|| |       | |          | |  |  \/  |             | |         | |    |  __ \ | |
-[11:26:29] [Server thread/INFO]: | |  __ | |  ___  | |__   __ _ | |  | \  / |  __ _  _ __ | | __  ___ | |_   | |__) || | _   _  ___
-[11:26:29] [Server thread/INFO]: | | |_ || | / _ \ | '_ \ / _` || |  | |\/| | / _` || '__|| |/ / / _ \| __|  |  ___/ | || | | |/ __|
-[11:26:29] [Server thread/INFO]: | |__| || || (_) || |_) | (_| || |  | |  | || (_| || |   |   < |  __/| |_   | |     | || |_| |\__ \
-[11:26:29] [Server thread/INFO]:  \_____||_| \___/ |_.__/ \__,_||_|  |_|  |_| \__,_||_|   |_|\_\ \___| \__|  |_|     |_| \__,_||___/
-[11:26:29] [Server thread/INFO]: 
-[11:26:29] [Server thread/INFO]: [GlobalMarketPlus] Loading plugins/GlobalMarketPlus-1.4.1.5.jar L=1309622
-[11:26:29] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: gmpapi [1.0.0]
-[11:26:29] [Server thread/INFO]: GlobalMarketPlus >>> Found PlaceholderAPI , everything is OK.
-[11:26:29] [Server thread/INFO]: GlobalMarketPlus >>> Found Vault , but the Economy Engine plugin not found, this function has been disabled.
-[11:26:29] [Server thread/INFO]: [DeluxeMenus] Enabling DeluxeMenus v1.14.1-Release
-[11:26:29] [Server thread/INFO]: [DeluxeMenus] Successfully hooked into PlaceholderAPI!
-[11:26:29] [Server thread/WARN]: [DeluxeMenus] Could not hook into Vault!
+[12:20:08] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:overworld'...
+[12:20:08] [Server thread/INFO]: Preparing spawn area: 100%
+[12:20:08] [Server thread/INFO]: Prepared spawn area in 4 ms
+[12:20:08] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:the_nether'...
+[12:20:08] [Server thread/INFO]: Prepared spawn area in 0 ms
+[12:20:08] [Server thread/INFO]: Done preparing level "world" (0.268s)
+[12:20:08] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.12.3
+[12:20:08] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
+[12:20:08] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: vaultunlocked [2.13.1]
+[12:20:08] [Server thread/INFO]: [WorldGuard] Enabling WorldGuard v7.0.18+2392-fa605e6
+[12:20:08] [Server thread/INFO]: [WorldGuard] (world) TNT ignition is blocked.
+[12:20:08] [Server thread/INFO]: [WorldGuard] (world) Lighters are PERMITTED.
+[12:20:08] [Server thread/INFO]: [WorldGuard] (world) Lava fire is blocked.
+[12:20:08] [Server thread/INFO]: [WorldGuard] (world) Fire spread is UNRESTRICTED.
+[12:20:08] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'world'
+[12:20:08] [Server thread/INFO]: [WorldGuard] (world_nether) TNT ignition is blocked.
+[12:20:08] [Server thread/INFO]: [WorldGuard] (world_nether) Lighters are PERMITTED.
+[12:20:08] [Server thread/INFO]: [WorldGuard] (world_nether) Lava fire is blocked.
+[12:20:08] [Server thread/INFO]: [WorldGuard] (world_nether) Fire spread is UNRESTRICTED.
+[12:20:08] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'world_nether'
+[12:20:08] [Server thread/INFO]: [WorldGuard] Loading region data...
+[12:20:09] [Server thread/INFO]: [NBTAPI] Enabling NBTAPI v2.16.0
+[12:20:09] [Server thread/INFO]: [NBTAPI] Checking bindings...
+[12:20:09] [Server thread/INFO]: [NBTAPI] All Classes were able to link!
+[12:20:09] [Server thread/INFO]: [NBTAPI] All Methods were able to link!
+[12:20:09] [Server thread/INFO]: [NBTAPI] Running NBT reflection test...
+[12:20:10] [Server thread/INFO]: [NBTAPI] Success! This version of NBT-API is compatible with your server.
+[12:20:10] [Server thread/INFO]: [Skript] Enabling Skript v2.16.1
+[12:20:11] [ForkJoinPool.commonPool-worker-2/INFO]: [Skript] You're currently running the latest stable version of Skript.
+[12:20:12] [Server thread/INFO]: [Skript]  ~ created by & © Peter Güttinger aka Njol ~
+[12:20:12] [Server thread/INFO]: [packetevents] Enabling packetevents v2.13.0
+[12:20:12] [packetevents-update-check-thread/INFO]: [packetevents] Checking for updates, please wait...
+[12:20:12] [Server thread/INFO]: [Oraxen] Enabling Oraxen v1.218.0
+[12:20:12] [packetevents-update-check-thread/INFO]: [packetevents] You are running the latest release: 2.13.0
+[12:20:12] [Server thread/INFO]: Oraxen | [ProtocolLibAdapter] registerTitleListener called
+[12:20:12] [Server thread/INFO]: Oraxen | [ProtocolLibAdapter] Title Listener registered successfully
+[12:20:12] [Server thread/INFO]: Oraxen | Custom paintings already hot reloaded (0 unchanged).
+[12:20:12] [Server thread/INFO]: Oraxen | TextEffects.shader.encoding 'alpha_lsb' is deprecated. Using 'effect_font'.
+[12:20:12] [Server thread/INFO]: Oraxen | Loaded 4 text effects
+[12:20:12] [Server thread/INFO]: Oraxen | Loaded 1 glyphs, 0 reference glyphs, 0 animated glyphs
+[12:20:12] [Server thread/INFO]: Oraxen | Hot reloaded 1 new custom jukebox song(s), 0 updated, 0 removed, 0 unchanged.
+[12:20:13] [Server thread/INFO]: Oraxen | Successfully loaded on Ubuntu 26.04 LTS (resolute)
+[12:20:13] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: oraxen [1.218.0]
+[12:20:13] [Server thread/INFO]: Oraxen | Plugin "PlaceholderAPI" detected, enabling hooks
+[12:20:13] [Server thread/INFO]: Oraxen | Skript compatibility enabled - Oraxen syntax registered
+[12:20:13] [Server thread/INFO]: Oraxen | Plugin "Skript" detected, enabling hooks
+[12:20:13] [Server thread/INFO]: [CMILib] Enabling CMILib v1.5.9.9
+[12:20:13] [Server thread/INFO]: Server version detection by new method: v26_2_0 Legacy: false Mojang Mappings: true
+[12:20:13] [Server thread/INFO]: Server version: v26_2_0 - 26.2.0 - paper  26.2-112-c9e894d (MC: 26.2)
+[12:20:13] [ForkJoinPool.commonPool-worker-2/INFO]: [Skript] Loaded 5750 aliases in 929ms
+[12:20:13] [Server thread/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+[12:20:13] [Server thread/INFO]: CMI hooked.
+[12:20:13] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: cmil [1.5.9.9]
+[12:20:13] [Server thread/INFO]: PlaceholderAPI hooked.
+[12:20:13] [Server thread/INFO]: Updated (EN) language file. Took 21ms
+[12:20:13] [Server thread/INFO]: Updated (DE) language file. Took 11ms
+[12:20:13] [Server thread/INFO]: [X-Prison] Enabling X-Prison v2026.3.3.0
+[12:20:13] [Server thread/INFO]: 
+[12:20:13] [Server thread/INFO]: ██╗  ██╗      ██████╗ ██████╗ ██╗███████╗ ██████╗ ███╗   ██╗
+[12:20:13] [Server thread/INFO]: ╚██╗██╔╝      ██╔══██╗██╔══██╗██║██╔════╝██╔═══██╗████╗  ██║
+[12:20:13] [Server thread/INFO]:  ╚███╔╝ ████╗ ██████╔╝██████╔╝██║███████╗██║   ██║██╔██╗ ██║
+[12:20:13] [Server thread/INFO]:  ██╔██╗ ╚═══╝ ██╔═══╝ ██╔══██╗██║╚════██║██║   ██║██║╚██╗██║
+[12:20:13] [Server thread/INFO]: ██╔╝ ██╗      ██║     ██║  ██║██║███████║╚██████╔╝██║ ╚████║
+[12:20:13] [Server thread/INFO]: ╚═╝  ╚═╝      ╚═╝     ╚═╝  ╚═╝╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═══╝
+[12:20:13] [Server thread/INFO]: Premium Prison Core  •  v2026.3.3.0  •  by Drawethree
+[12:20:13] [Server thread/INFO]: Website: www.drawethree.dev
+[12:20:13] [Server thread/INFO]: Discord: https://discord.gg/ZeSkmEC6mG
+[12:20:13] [Server thread/INFO]: 
+[12:20:13] [Server thread/INFO]: [com.zaxxer.hikari.HikariDataSource] xprison-0 - Starting...
+[12:20:13] [Server thread/INFO]: [com.zaxxer.hikari.HikariDataSource] xprison-0 - Start completed.
+[12:20:13] [Server thread/INFO]: [X-Prison] §aLoaded §e27 §aglobal sell prices.
+[12:20:13] [Server thread/INFO]: [X-Prison] Registered X-Prison Currency: money
+[12:20:13] [Server thread/INFO]: [X-Prison] Registered X-Prison Currency: tokens
+[12:20:13] [Server thread/INFO]: [X-Prison] Registered X-Prison Currency: gems
+[12:20:13] [Server thread/INFO]: [X-Prison] §aLoaded §e12 Block Rewards
+[12:20:13] [Server thread/INFO]: [X-Prison] §aLoaded Bomb: §etiny
+[12:20:13] [Server thread/INFO]: [X-Prison] §aLoaded Bomb: §esmall
+[12:20:13] [Server thread/INFO]: [X-Prison] §aLoaded Bomb: §enormal
+[12:20:13] [Server thread/INFO]: [X-Prison] §aLoaded Bomb: §elarge
+[12:20:13] [Server thread/INFO]: [X-Prison] §aLoaded Bomb: §emega
+[12:20:13] [Server thread/INFO]: [X-Prison] §aLoaded Bomb: §ecolossal
+[12:20:13] [Server thread/INFO]: [X-Prison] §aLoaded Bomb: §eomega
+[12:20:13] [Server thread/INFO]: [X-Prison] §aLoaded Bomb: §esingularity
+[12:20:13] [Server thread/INFO]: [X-Prison] §fUsing §emoney §fcurrency for Ranks.
+[12:20:13] [Server thread/INFO]: [X-Prison] §aLoaded §e10 Ranks.
+[12:20:14] [Server thread/INFO]: [X-Prison] §fUsing §emoney §fcurrency for Prestiges.
+[12:20:14] [Server thread/INFO]: [X-Prison] §aLoaded §e11 Prestiges.
+[12:20:14] [Server thread/INFO]: [X-Prison] Loaded Rebirth 0
+[12:20:14] [Server thread/INFO]: [X-Prison] Loaded Rebirth 1
+[12:20:14] [Server thread/INFO]: [X-Prison] Loaded Rebirth 2
+[12:20:14] [Server thread/INFO]: [X-Prison] Loaded Rebirth 3
+[12:20:14] [Server thread/INFO]: [X-Prison] Loaded Rebirth 4
+[12:20:14] [Server thread/INFO]: [X-Prison] Loaded Rebirth 5
+[12:20:14] [helper-scheduler-0/INFO]: [X-Prison] Removed expired multipliers from DB.
+[12:20:14] [Server thread/INFO]: [X-Prison] §aLoaded §e0 §amines.
+[12:20:14] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant efficiency loaded successfully.
+[12:20:14] [Server thread/INFO]: [X-Prison] §aRegistered enchant Efficiency created by §eDrawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant keyfinder loaded successfully.
+[12:20:14] [Server thread/INFO]: [X-Prison] §aRegistered enchant §9Key Finder§a created by §eDrawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant laser loaded successfully.
+[12:20:14] [Server thread/INFO]: [X-Prison] §aRegistered enchant §cLaser§a created by §eDrawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant charity loaded successfully.
+[12:20:14] [Server thread/INFO]: [X-Prison] §aRegistered enchant §cCharity§a created by §eDrawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant haste loaded successfully.
+[12:20:14] [Server thread/INFO]: [X-Prison] §aRegistered enchant §dHaste§a created by §eDrawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant explosive loaded successfully.
+[12:20:14] [Server thread/INFO]: [X-Prison] §aRegistered enchant Explosive created by §eDrawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant autosell loaded successfully.
+[12:20:14] [Server thread/INFO]: [X-Prison] §aRegistered enchant §eAutosell§a created by §eDrawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant gemfinder loaded successfully.
+[12:20:14] [Server thread/INFO]: [X-Prison] §aRegistered enchant Gem Finder created by §eDrawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant nightvision loaded successfully.
+[12:20:14] [Server thread/INFO]: [X-Prison] §aRegistered enchant §cNight Vision§a created by §eDrawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant keyalls loaded successfully.
+[12:20:14] [Server thread/INFO]: [X-Prison] §aRegistered enchant §cKeyalls§a created by §eDrawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant tokenmerchant loaded successfully.
+[12:20:14] [Server thread/INFO]: [X-Prison] §aRegistered enchant §6Token Merchant§a created by §eDrawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant fortune loaded successfully.
+[12:20:14] [Server thread/INFO]: [X-Prison] §aRegistered enchant §cFortune§a created by §eDrawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant nuke loaded successfully.
+[12:20:14] [Server thread/INFO]: [X-Prison] §aRegistered enchant §cNuke§a created by §eDrawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant blessing loaded successfully.
+[12:20:14] [Server thread/INFO]: [X-Prison] §aRegistered enchant §eBlessing§a created by §eDrawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant blockbooster loaded successfully.
+[12:20:14] [Server thread/INFO]: [X-Prison] §aRegistered enchant §dBlock Booster§a created by §eDrawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant tokenfinder loaded successfully.
+[12:20:14] [Server thread/INFO]: [X-Prison] §aRegistered enchant §eToken Finder§a created by §eDrawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant jumpboost loaded successfully.
+[12:20:14] [Server thread/INFO]: [X-Prison] §aRegistered enchant §bJump Boost§a created by §eDrawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant fly loaded successfully.
+[12:20:14] [Server thread/INFO]: [X-Prison] §aRegistered enchant §cFly§a created by §eDrawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant unbreaking loaded successfully.
+[12:20:14] [Server thread/INFO]: [X-Prison] §aRegistered enchant §9Unbreaking§a created by §eDrawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant layer loaded successfully.
+[12:20:14] [Server thread/INFO]: [X-Prison] §aRegistered enchant §9Layer§a created by §eDrawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant speed loaded successfully.
+[12:20:14] [Server thread/INFO]: [X-Prison] §aRegistered enchant Speed created by §eDrawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant gang-value-finder loaded successfully.
+[12:20:14] [Server thread/INFO]: [X-Prison] §aRegistered enchant §eGang Value Finder§a created by §eDrawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant prestigefinder loaded successfully.
+[12:20:14] [Server thread/INFO]: [X-Prison] §aRegistered enchant Prestige Finder created by §eDrawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant gemmerchant loaded successfully.
+[12:20:14] [Server thread/INFO]: [X-Prison] §aRegistered enchant §bGem Merchant§a created by §eDrawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant custom-enchant-1 loaded successfully.
+[12:20:14] [Server thread/INFO]: [X-Prison] §aRegistered enchant §eYour Custom Enchant§a created by §eDrawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant salary loaded successfully.
+[12:20:14] [Server thread/INFO]: [X-Prison] §aRegistered enchant §dSalary§a created by §eDrawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] §aLoaded §e26 §aenchantments.
+[12:20:14] [Server thread/WARN]: [X-Prison] §cThere is no such region named automine in world world!
+[12:20:14] [Server thread/INFO]: [X-Prison] §aLoaded §e300 Pickaxe Levels.
+[12:20:14] [Server thread/INFO]: [X-Prison] Loaded pickaxe skin §x§0§0§f§f§f§f§lP§x§0§0§f§4§f§4§ll§x§0§0§e§a§e§a§la§x§0§0§d§f§d§f§ls§x§0§0§d§5§d§5§lm§x§0§0§c§a§c§a§la§x§0§0§c§0§c§0§l-§x§0§0§b§5§b§5§lS§x§0§0§a§b§a§b§lc§x§0§0§a§0§a§0§lh§x§0§0§9§6§9§6§lu§x§0§0§8§b§8§b§lb
+[12:20:14] [Server thread/INFO]: [X-Prison] §aLoaded §e10 §aPickaxe Quality tiers.
+[12:20:14] [helper-scheduler-1/INFO]: [X-Prison] History cleanup: removed entries older than 30 days.
+[12:20:14] [Server thread/INFO]: [X-Prison] §aLoaded Battle Pass season §eseason-1§a with §e20 §atiers.
+[12:20:14] [Server thread/INFO]: [X-Prison] §aLoaded §e18 §aquests (§e9 §adaily, §e5 §aweekly, §e4 §apermanent).
+[12:20:14] [Server thread/INFO]: [X-Prison] §aLoaded Daily Rewards: §e14 §acycle days, §e6 §amilestones.
+[12:20:14] [Server thread/INFO]: [X-Prison] §aEnabled §e20§a/§e20 §amodules: §fAuto Sell, Currencies, Blocks, Bombs, Ranks, Prestiges, Rebirths, Multipliers, Mines, Enchants, Auto Miner, Gangs, Pickaxe Levels, Pickaxe Skins, Pickaxe Quality, History, Mining Stats, BattlePass, Quests, DailyRewards
+[12:20:14] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: xprison [2026.3.3.0]
+[12:20:14] [Server thread/WARN]: [X-Prison] §cSkipping X-PrivateMines-Dashboard-1.0.4.jar: no X-Prison-Addon-Class attribute in manifest.
+[12:20:14] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§f§f§8§0§0§0M§x§f§f§8§7§0§0e§x§f§f§8§d§0§0t§x§f§f§9§4§0§0e§x§f§f§9§b§0§0o§x§f§f§a§1§0§0r§x§f§f§a§8§0§0 §x§f§f§a§f§0§0S§x§f§f§b§5§0§0t§x§f§f§b§c§0§0r§x§f§f§c§3§0§0i§x§f§f§c§9§0§0k§x§f§f§d§0§0§0e§a created by §eDrawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§8§0§0§0§a§0B§x§8§7§0§b§a§bl§x§8§e§1§5§b§5a§x§9§5§2§0§c§0c§x§9§c§2§b§c§ak§x§a§4§3§5§d§5 §x§a§b§4§0§d§fH§x§b§2§4§b§e§ao§x§b§9§5§5§f§4l§x§c§0§6§0§f§fe§a created by §eDrawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§7§8§c§8§f§fL§x§8§2§c§c§f§fi§x§8§b§d§0§f§fg§x§9§5§d§4§f§fh§x§9§f§d§8§f§ft§x§a§8§d§c§f§fn§x§b§2§e§0§f§fi§x§b§c§e§4§f§fn§x§c§5§e§7§f§fg§x§c§f§e§b§f§f §x§d§8§e§f§f§fS§x§e§2§f§3§f§ft§x§e§c§f§7§f§fo§x§f§5§f§b§f§fr§fm§a created by §eDrawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§b§0§b§0§b§0T§x§b§d§b§d§b§do§x§c§a§c§a§c§ar§x§d§8§d§8§d§8n§x§e§5§e§5§e§5a§x§f§2§f§2§f§2d§fo§a created by §eDrawethree
+[12:20:14] [Server thread/INFO]: [X-Prison-Addon/AnimatedEnchants] Animated Enchants enabled — registered 4/4 enchants.
+[12:20:14] [Server thread/INFO]: [X-Prison] Loaded addon: AnimatedEnchants v1.4.0 by Drawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§f§f§f§6§c§0D§x§f§f§f§2§b§4i§x§f§f§e§e§a§8v§x§f§f§e§a§9§ci§x§f§f§e§6§9§0n§x§f§f§e§2§8§4e§x§f§f§d§d§7§8 §x§f§f§d§9§6§cS§x§f§f§d§5§6§0m§x§f§f§d§1§5§4i§x§f§f§c§d§4§8t§x§f§f§c§9§3§ce§a created by §eDrawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§7§b§e§8§d§cS§x§7§4§e§0§d§5o§x§6§d§d§7§c§du§x§6§6§c§f§c§6l§x§5§f§c§6§b§f §x§5§8§b§e§b§7H§x§5§1§b§5§b§0a§x§4§a§a§d§a§8r§x§4§3§a§4§a§1v§x§3§c§9§c§9§ae§x§3§5§9§3§9§2s§x§2§e§8§b§8§bt§a created by §eDrawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§c§7§9§b§f§fA§x§b§f§9§0§f§fr§x§b§8§8§5§f§fc§x§b§0§7§a§f§fa§x§a§8§6§f§f§fn§x§a§1§6§5§f§fe§x§9§9§5§a§f§f §x§9§1§4§f§f§fN§x§8§9§4§4§f§fo§x§8§2§3§9§f§fv§x§7§a§2§e§f§fa§a created by §eDrawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§f§f§f§1§b§8S§x§f§1§e§b§c§2t§x§e§3§e§5§c§ca§x§d§5§d§f§d§6r§x§c§6§d§a§e§1f§x§b§8§d§4§e§ba§x§a§a§c§e§f§5l§x§9§c§c§8§f§fl§a created by §eDrawethree
+[12:20:14] [Server thread/INFO]: [X-Prison-Addon/AnimatedEnchants2] Animated Enchants 2 enabled — registered 4/4 enchants.
+[12:20:14] [Server thread/INFO]: [X-Prison] Loaded addon: AnimatedEnchants2 v1.4.0 by Drawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§a§6§e§3§f§fF§x§9§b§d§b§f§br§x§9§0§d§2§f§7o§x§8§4§c§a§f§3s§x§7§9§c§1§f§0t§x§6§e§b§9§e§cb§x§6§3§b§0§e§8i§x§5§7§a§8§e§4t§x§4§c§9§f§e§0e§a created by §eDrawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§9§c§f§f§3§cV§x§9§2§f§3§3§9e§x§8§9§e§8§3§6n§x§7§f§d§c§3§3o§x§7§6§d§0§3§0m§x§6§c§c§5§2§d §x§6§2§b§9§2§aB§x§5§9§a§d§2§7l§x§4§f§a§1§2§4o§x§4§6§9§6§2§1o§x§3§c§8§a§1§em§a created by §eDrawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§e§a§f§5§f§fG§x§e§1§f§0§f§ca§x§d§8§e§b§f§9l§x§c§f§e§5§f§6e§x§c§6§e§0§f§3 §x§b§d§d§b§f§0C§x§b§3§d§6§e§cu§x§a§a§d§1§e§9t§x§a§1§c§b§e§6t§x§9§8§c§6§e§3e§x§8§f§c§1§e§0r§a created by §eDrawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§f§f§b§0§3§0M§x§f§f§a§3§2§ba§x§f§f§9§6§2§6g§x§f§f§8§a§2§2m§x§f§f§7§d§1§da§x§f§f§7§0§1§8 §x§f§f§6§3§1§3S§x§f§f§5§6§0§eu§x§f§f§4§a§0§ar§x§f§f§3§d§0§5g§x§f§f§3§0§0§0e§a created by §eDrawethree
+[12:20:14] [Server thread/INFO]: [X-Prison-Addon/AnimatedEnchants3] Animated Enchants 3 enabled — registered 4/4 enchants.
+[12:20:14] [Server thread/INFO]: [X-Prison] Loaded addon: AnimatedEnchants3 v1.3.0 by Drawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant ascendant loaded successfully.
+[12:20:14] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§f§f§d§7§0§0A§x§f§f§c§8§1§cs§x§f§f§b§9§3§8c§x§f§f§a§a§5§4e§x§f§f§9§b§7§0n§x§f§f§8§b§8§cd§x§f§f§7§c§a§8a§x§f§f§6§d§c§4n§x§f§f§5§e§e§0t§a created by §eDrawethree
+[12:20:14] [Server thread/INFO]: [X-Prison-Addon/Ascendant] Ascendant enabled — registered 1/1 enchants.
+[12:20:14] [Server thread/INFO]: [X-Prison] Loaded addon: Ascendant v1.1.0 by Drawethree
+[12:20:14] [Server thread/INFO]: [X-Prison-Addon/BlackMarket] Enabling Black Market addon v1.1.0...
+[12:20:14] [Server thread/INFO]: [X-Prison-Addon/BlackMarket] [BlackMarket] Loaded 13 market item(s).
+[12:20:14] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: xprisonblackmarket [1.1.0]
+[12:20:14] [Server thread/INFO]: [X-Prison-Addon/BlackMarket] [BlackMarket] Hooked into PlaceholderAPI.
+[12:20:14] [Server thread/INFO]: [X-Prison-Addon/BlackMarket] Black Market addon enabled with 13 item(s) in the pool.
+[12:20:14] [Server thread/INFO]: [X-Prison] Loaded addon: BlackMarket v1.1.0 by Drawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] §aRegistered enchant §cBomb Finder§a created by §eDrawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] Loaded addon: BombFinderEnchant v1.1 by Drawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] §aRegistered enchant §cCluster Bomb§a created by §eDrawethree
+[12:20:14] [Server thread/INFO]: [X-Prison] Loaded addon: ClusterBombEnchant v1.5 by Drawethree
+[12:20:15] [Server thread/INFO]: [io.javalin.Javalin] Starting Javalin ...
+[12:20:15] [Server thread/INFO]: [org.eclipse.jetty.server.Server] jetty-11.0.23; built: 2024-08-14T01:40:17.906Z; git: 6fcf5ccaebd7ca13a0cb96c96adca699a24080a0; jvm 25.0.3+9-LTS
+[12:20:15] [Server thread/INFO]: [org.eclipse.jetty.server.session.DefaultSessionIdManager] Session workerName=node0
+[12:20:15] [Server thread/INFO]: [org.eclipse.jetty.server.handler.ContextHandler] Started o.e.j.s.ServletContextHandler@5f796b90{/,null,AVAILABLE}
+[12:20:15] [Server thread/INFO]: [org.eclipse.jetty.server.AbstractConnector] Started ServerConnector@48f49b06{HTTP/1.1, (http/1.1)}{0.0.0.0:8085}
+[12:20:15] [Server thread/INFO]: [org.eclipse.jetty.server.Server] Started Server@5f11d8de{STARTING}[11.0.23,sto=0] @24298ms
+[12:20:15] [Server thread/INFO]: [io.javalin.Javalin] Javalin started in 335ms \o/
+[12:20:15] [Server thread/INFO]: [io.javalin.Javalin] Listening on http://localhost:8085/
+[12:20:15] [Server thread/INFO]: [io.javalin.Javalin] You are running Javalin 6.3.0 (released August 22, 2024. Your Javalin version is 726 days old. Consider checking for a newer version.).
+[12:20:15] [Server thread/INFO]: [X-Prison-Addon/Dashboard] Dashboard started on port 8085 — navigate to http://<your-server-ip>:8085
+[12:20:15] [Server thread/INFO]: [X-Prison] Loaded addon: Dashboard v1.4.0 by Drawethree
+[12:20:15] [Server thread/INFO]: [X-Prison] §aRegistered enchant §bDrill§a created by §eDrawethree
+[12:20:15] [Server thread/INFO]: [X-Prison] Loaded addon: DrillEnchant v1.4 by Drawethree
+[12:20:15] [Server thread/INFO]: [X-Prison] §aRegistered enchant §dEcho Booster§a created by §eDrawethree
+[12:20:15] [Server thread/INFO]: [X-Prison] Loaded addon: EchoBoosterEnchant v1.2 by Drawethree
+[12:20:15] [Server thread/INFO]: [X-Prison-Addon/Events] Enabling Events addon v1.0.2...
+[12:20:15] [Server thread/INFO]: [X-Prison-Addon/Events] [Events] Loaded 6 event(s).
+[12:20:15] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: xprisonevents [1.0.2]
+[12:20:15] [Server thread/INFO]: [X-Prison-Addon/Events] Hooked into PlaceholderAPI.
+[12:20:15] [Server thread/INFO]: [X-Prison-Addon/Events] Events addon enabled with 6 event(s).
+[12:20:15] [Server thread/INFO]: [X-Prison] Loaded addon: Events v1.0.2 by Drawethree
+[12:20:15] [Server thread/INFO]: [X-Prison] §aRegistered enchant §eLucky Block§a created by §eDrawethree
+[12:20:15] [Server thread/INFO]: [X-Prison] Loaded addon: LuckyBlockEnchant v1.5 by Drawethree
+[12:20:15] [Server thread/INFO]: [X-Prison-Addon/Momentum] Enabling Momentum addon v1.0.2...
+[12:20:15] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: xprisonmomentum [1.0.2]
+[12:20:15] [Server thread/INFO]: [X-Prison-Addon/Momentum] [Momentum] Hooked into PlaceholderAPI.
+[12:20:15] [Server thread/INFO]: [X-Prison-Addon/Momentum] Momentum addon enabled with 5 tier(s).
+[12:20:15] [Server thread/INFO]: [X-Prison] Loaded addon: Momentum v1.0.2 by Drawethree
+[12:20:15] [Server thread/INFO]: [X-Prison] §aRegistered enchant §dPet Finder§a created by §eDrawethree
+[12:20:15] [Server thread/INFO]: [X-Prison] Loaded addon: PetFinderEnchant v1.0 by Drawethree
+[12:20:15] [Server thread/INFO]: [X-Prison-Addon/Pets] [Pets] Loaded 6 rarit(ies).
+[12:20:15] [Server thread/INFO]: [X-Prison-Addon/Pets] [Pets] Loaded 5 pet type(s).
+[12:20:15] [Server thread/INFO]: [X-Prison-Addon/Pets] [Pets] Loaded 3 egg type(s).
+[12:20:15] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: xprisonpets [1.3.0]
+[12:20:15] [Server thread/INFO]: [X-Prison-Addon/Pets] [Pets] Built 5 pet icon(s) in 0ms.
+[12:20:15] [Server thread/INFO]: [X-Prison-Addon/Pets] [Pets] Configuration validated — no problems found.
+[12:20:15] [Server thread/INFO]: [X-Prison-Addon/Pets] Pets addon enabled. Pet types: 5
+[12:20:15] [Server thread/INFO]: [X-Prison] Loaded addon: Pets v1.3.0 by Drawethree
+[12:20:15] [Server thread/INFO]: [X-Prison] §aRegistered enchant §eRobot Finder§a created by §eDrawethree
+[12:20:15] [Server thread/INFO]: [X-Prison] Loaded addon: RobotFinderEnchant v1.2 by Drawethree
+[12:20:15] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant vanguard loaded successfully.
+[12:20:15] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§0§0§e§0§f§fV§x§1§2§c§7§f§fa§x§2§3§a§d§f§fn§x§3§5§9§4§f§fg§x§4§6§7§b§f§fu§x§5§8§6§2§f§fa§x§6§9§4§8§f§fr§x§7§b§2§f§f§fd§a created by §eDrawethree
+[12:20:15] [Server thread/INFO]: [X-Prison-Addon/Vanguard] Vanguard enabled — registered 1/1 enchants.
+[12:20:15] [Server thread/INFO]: [X-Prison] Loaded addon: Vanguard v1.1.0 by Drawethree
+[12:20:15] [Server thread/INFO]: [X-Prison] §aRegistered enchant §9Voucher Finder§a created by §eDrawethree
+[12:20:15] [Server thread/INFO]: [X-Prison] Loaded addon: VoucherFinderEnchant v1.2 by Drawethree
+[12:20:15] [Server thread/INFO]: [X-Prison] Loaded 18 addons.
+[12:20:15] [Server thread/INFO]: X-Prison v2026.3.3.0 enabled
+[12:20:15] [Server thread/INFO]: Platform : PAPER (adventure text)
+[12:20:15] [Server thread/INFO]: Database : H2
+[12:20:15] [Server thread/INFO]: Modules  : 20/20
+[12:20:15] [Server thread/INFO]: Addons   : 18
+[12:20:15] [Server thread/INFO]: Startup  : 2256ms
+[12:20:15] [Server thread/INFO]: 
+[12:20:15] [Server thread/INFO]: [CMI] Enabling CMI v9.8.9.8
+[12:20:15] [Server thread/INFO]: _______________________________________________________
+[12:20:15] [Server thread/INFO]:  
+[12:20:15] [Server thread/INFO]:  ██████╗███╗   ███╗██╗
+[12:20:15] [Server thread/INFO]: ██╔════╝████╗ ████║██║
+[12:20:15] [Server thread/INFO]: ██║     ██╔████╔██║██║
+[12:20:15] [Server thread/INFO]: ██║     ██║╚██╔╝██║██║
+[12:20:15] [Server thread/INFO]: ╚██████╗██║ ╚═╝ ██║██║
+[12:20:15] [Server thread/INFO]:  ╚═════╝╚═╝     ╚═╝╚═╝
+[12:20:15] [Server thread/INFO]: _______________________________________________________
+[12:20:15] [Server thread/INFO]: Integrating PaperSpigot async methods
+[12:20:15] [Server thread/INFO]: Vault found. (Loaded: true)
+[12:20:15] [CMI-Thread-1/INFO]: Loaded (-) locale download into memory. Took 11ms
+[12:20:15] [Server thread/INFO]: Loaded (71) 69 Enabled and 2 Disabled modules into memory. Took 45ms
+[12:20:15] [Server thread/INFO]: BlueMap found. (Loaded: false)
+[12:20:15] [Server thread/INFO]: Initialized Cipher256 AES
+[12:20:16] [Server thread/INFO]: Loaded (61) regular alias into memory. Took 37ms
+[12:20:16] [CMI-Thread-2/INFO]: Loaded (1) custom text's into memory. Took 3ms
+[12:20:16] [Server thread/INFO]: (RandomTeleportation) Can't find world with (world_the_end) name
+[12:20:16] [Server thread/INFO]: (RandomTeleportation) Can't find world with (lobby) name
+[12:20:16] [Server thread/INFO]: (RandomTeleportation) Can't find world with (town) name
+[12:20:16] [Server thread/INFO]: (RandomTeleportation) Can't find world with (freebuild) name
+[12:20:16] [Server thread/INFO]: (RandomTeleportation) Can't find world with (tycoon) name
+[12:20:16] [Server thread/INFO]: (RandomTeleportation) Can't find world with (SuperiorWorld) name
+[12:20:16] [Server thread/INFO]: (RandomTeleportation) Can't find world with (Schematics) name
+[12:20:16] [Server thread/INFO]: (RandomTeleportation) Can't find world with (rpg) name
+[12:20:16] [Server thread/INFO]: (RandomTeleportation) Can't find world with (rpg_nether) name
+[12:20:16] [Server thread/INFO]: (RandomTeleportation) Can't find world with (rpg_the_end) name
+[12:20:16] [Server thread/INFO]: SQLite 3.49.1 data base type detected
+[12:20:16] [Server thread/INFO]: Loaded (-) SqLite into memory. Took 91ms
+[12:20:16] [Server thread/INFO]: [CMI] Vault was found but economy engine is missing. Use one from list provided in https://dev.bukkit.org/bukkit-plugins/vault/
+[12:20:16] [Server thread/INFO]: [CMI] Alternatively you can enable CMI economy in config.yml file
+[12:20:16] [Server thread/INFO]: Vault was found but not economy plugin, you will have limited economy support
+[12:20:16] [Server thread/INFO]: Will attempt secondary economy check after server starts.
+[12:20:16] [Server thread/INFO]: Loaded (5) warning categories into memory. Took 0ms
+[12:20:16] [Server thread/INFO]: Loaded (3) warning commands into memory. Took 0ms
+[12:20:16] [Server thread/INFO]: Loaded (0) cooldowns into memory. Took 0ms
+[12:20:16] [Server thread/INFO]: Loaded (160) custom mob heads into memory. Took 10ms
+[12:20:16] [Server thread/INFO]: Loaded (4) chat bubble groups into memory. Took 0ms
+[12:20:16] [Server thread/INFO]: Loaded (5) kits into memory. Took 9ms
+[12:20:16] [Server thread/INFO]: Loaded (5) dialogs into memory. Took 6ms
+[12:20:16] [Server thread/INFO]: Loaded (7) ranks into memory. Took 7ms
+[12:20:16] [Server thread/INFO]: Loaded (8) playtime rewards into memory. Took 1ms
+[12:20:16] [Server thread/INFO]: Executed Player DB querry in 1ms
+[12:20:16] [Server thread/INFO]: Loaded (13) player data into memory. Took 9ms
+[12:20:16] [Server thread/INFO]: Loaded (0) playtime records into memory. Took 0ms
+[12:20:16] [Server thread/INFO]: Loaded (0) playtime reward records into memory. Took 0ms
+[12:20:16] [Server thread/INFO]: Loaded (0) custom alias into memory. Took 0ms
+[12:20:16] [Server thread/INFO]: Loaded (-) Registered events into memory. Took 116ms
+[12:20:16] [Server thread/INFO]: Loaded (0) event action commands into memory. Took 3ms
+[12:20:16] [Server thread/INFO]: Loaded (EN) language file into memory. Took 69ms
+[12:20:16] [Server thread/INFO]: Loaded (DE) language file into memory. Took 49ms
+[12:20:16] [Server thread/INFO]: Loaded (245) worth values into memory. Took 13ms
+[12:20:16] [Server thread/INFO]: Loaded (12) warps into memory. Took 1ms
+[12:20:16] [Server thread/INFO]: VaultPermissions found. (Loaded: true)
+[12:20:16] [Server thread/INFO]: PlaceholderAPI found. (Loaded: true)
+[12:20:16] [Server thread/INFO]: Loaded (5) schedules into memory. Took 3ms
+[12:20:16] [Server thread/INFO]: Loaded (0) skin cache entries into memory. Took 0ms
+[12:20:16] [Server thread/INFO]: [CMI] Preloading playtimetop statistics
+[12:20:16] [Server thread/INFO]: Loaded (0) ArmorStand templates into memory. Took 1ms
+[12:20:17] [Server thread/INFO]: Version 9.8.9.8 has been enabled
+[12:20:17] [Server thread/INFO]: _______________________________________________________
+[12:20:17] [Server thread/INFO]: [CommandAPI] Enabling CommandAPI v11.1.0
+[12:20:17] [Server thread/INFO]: [CommandAPI] Hooked into Paper ServerResourcesReloadedEvent
+[12:20:17] [Server thread/INFO]: [LibsDisguises] Enabling LibsDisguises v26.8.13
+[12:20:17] [Server thread/INFO]: [LibsDisguises] File Name: LibsDisguises-26.8.13-Premium.jar
+[12:20:17] [Server thread/INFO]: [LibsDisguises] Discovered nms version (LD: v26_R2) (MC: 26.2)
+[12:20:17] [Server thread/INFO]: [LibsDisguises] Jenkins Build: #1813
+[12:20:17] [Server thread/INFO]: [LibsDisguises] Build Date: 12/08/2026 23:49
+[12:20:17] [Server thread/INFO]: [LibsDisguises] Build Hash: c77589e8~1
+[12:20:17] [Server thread/INFO]: [LibsDisguises] Registered to: 2433376 (28)
+[12:20:17] [Server thread/INFO]: [LibsDisguises] Premium enabled, thank you for supporting Lib's Disguises!
+[12:20:17] [Server thread/INFO]: [LibsDisguises] Config 'TallSelfDisguises' is set to 'SCALED', LD will scale down (when possible) oversized disguises from self disguise. https://www.spigotmc.org/wiki/lib-s-disguises-faq/#tall-disguises-self-disguises
+[12:20:17] [Server thread/INFO]: [packetevents] Loading block mappings for V_26_2/22...
+[12:20:17] [Server thread/INFO]: [packetevents] Finished loading block mappings for V_26_2/22 in 182.71151ms
+[12:20:18] [Server thread/INFO]: [LibsDisguises] Config is up to date!
+[12:20:18] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: libsdisguises [1.0.0]
+[12:20:18] [Server thread/INFO]: [LibsDisguises] PlaceholderAPI support enabled
+[12:20:18] [Server thread/INFO]: [GlobalMarketPlus] Enabling GlobalMarketPlus v1.4.1.5
+[12:20:18] [Server thread/INFO]: [GlobalMarketPlus] Properties has been loaded!
+[12:20:18] [Server thread/INFO]: [GlobalMarketPlus] Plugin loading...
+[12:20:18] [Server thread/INFO]: [GlobalMarketPlus] Enabled Event Listener .
+[12:20:18] [Server thread/INFO]: [GlobalMarketPlus] Enabled Command Listener .
+[12:20:18] [Server thread/INFO]:   _____  _         _            _    __  __               _           _      _____   _
+[12:20:18] [Server thread/INFO]:  / ____|| |       | |          | |  |  \/  |             | |         | |    |  __ \ | |
+[12:20:18] [Server thread/INFO]: | |  __ | |  ___  | |__   __ _ | |  | \  / |  __ _  _ __ | | __  ___ | |_   | |__) || | _   _  ___
+[12:20:18] [Server thread/INFO]: | | |_ || | / _ \ | '_ \ / _` || |  | |\/| | / _` || '__|| |/ / / _ \| __|  |  ___/ | || | | |/ __|
+[12:20:18] [Server thread/INFO]: | |__| || || (_) || |_) | (_| || |  | |  | || (_| || |   |   < |  __/| |_   | |     | || |_| |\__ \
+[12:20:18] [Server thread/INFO]:  \_____||_| \___/ |_.__/ \__,_||_|  |_|  |_| \__,_||_|   |_|\_\ \___| \__|  |_|     |_| \__,_||___/
+[12:20:18] [Server thread/INFO]: 
+[12:20:18] [Server thread/INFO]: [GlobalMarketPlus] Loading plugins/GlobalMarketPlus-1.4.1.5.jar L=1309622
+[12:20:18] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: gmpapi [1.0.0]
+[12:20:18] [Server thread/INFO]: GlobalMarketPlus >>> Found PlaceholderAPI , everything is OK.
+[12:20:18] [Server thread/INFO]: GlobalMarketPlus >>> Found Vault , but the Economy Engine plugin not found, this function has been disabled.
+[12:20:18] [Server thread/INFO]: [DeluxeMenus] Enabling DeluxeMenus v1.14.1-Release
+[12:20:18] [Server thread/INFO]: [DeluxeMenus] Successfully hooked into PlaceholderAPI!
+[12:20:18] [Server thread/WARN]: [DeluxeMenus] Could not hook into Vault!
 DeluxeMenus will continue to work but some features (such as the 'has money' requirement) may not be available.
-[11:26:29] [Server thread/WARN]: [DeluxeMenus] Found 'data' option for item: teststone in menu: basics_menu. This option is deprecated and will be removed soon. Please use 'damage' instead.
-[11:26:29] [Server thread/INFO]: [DeluxeMenus] 4 GUI menus loaded!
-[11:26:29] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: deluxemenus [1.14.1-Release]
-[11:26:29] [Server thread/INFO]: [DeluxeMenus] You are running the latest version of DeluxeMenus!
-[11:26:29] [Server thread/INFO]: [XPrivateMines] Enabling XPrivateMines v2026.3.0.9
-[11:26:29] [Server thread/INFO]: [XPrivateMines] Creating flat world: private_mines
-[11:26:29] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:private_mines'...
-[11:26:29] [Server thread/INFO]: Prepared spawn area in 0 ms
-[11:26:29] [Server thread/INFO]: [WorldGuard] (private_mines) TNT ignition is blocked.
-[11:26:29] [Server thread/INFO]: [WorldGuard] (private_mines) Lighters are PERMITTED.
-[11:26:29] [Server thread/INFO]: [WorldGuard] (private_mines) Lava fire is blocked.
-[11:26:29] [Server thread/INFO]: [WorldGuard] (private_mines) Fire spread is UNRESTRICTED.
-[11:26:29] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'private_mines'
-[11:26:29] [Server thread/INFO]: [XPrivateMines] World created successfully!
-[11:26:29] [Server thread/INFO]: [XPrivateMines] 
+[12:20:18] [Server thread/WARN]: [DeluxeMenus] Found 'data' option for item: teststone in menu: basics_menu. This option is deprecated and will be removed soon. Please use 'damage' instead.
+[12:20:18] [Server thread/INFO]: [DeluxeMenus] 4 GUI menus loaded!
+[12:20:18] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: deluxemenus [1.14.1-Release]
+[12:20:18] [Server thread/INFO]: [DeluxeMenus] You are running the latest version of DeluxeMenus!
+[12:20:18] [Server thread/INFO]: [XPrivateMines] Enabling XPrivateMines v2026.3.0.9
+[12:20:18] [Server thread/INFO]: [XPrivateMines] Creating flat world: private_mines
+[12:20:18] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:private_mines'...
+[12:20:18] [Server thread/INFO]: Prepared spawn area in 4 ms
+[12:20:18] [Server thread/INFO]: [WorldGuard] (private_mines) TNT ignition is blocked.
+[12:20:18] [Server thread/INFO]: [WorldGuard] (private_mines) Lighters are PERMITTED.
+[12:20:18] [Server thread/INFO]: [WorldGuard] (private_mines) Lava fire is blocked.
+[12:20:18] [Server thread/INFO]: [WorldGuard] (private_mines) Fire spread is UNRESTRICTED.
+[12:20:18] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'private_mines'
+[12:20:18] [Server thread/INFO]: [XPrivateMines] World created successfully!
+[12:20:18] [Server thread/INFO]: [XPrivateMines] 
 
  __  __          ____  ____  _____     ___  _____ _____   __  __ ___ _   _ _____ ____  
  \ \/ /         |  _ \|  _ \|_ _\ \   / / \|_   _| ____| |  \/  |_ _| \ | | ____/ ___| 
@@ -512,33 +512,38 @@ DeluxeMenus will continue to work but some features (such as the 'has money' req
  /_/\_\         |_|   |_| \_\___|  \_/_/   \_\_| |_____| |_|  |_|___|_| \_|_____|____/ 
                                                                                        
 
-[11:26:29] [Server thread/INFO]: [XPrivateMines] 2026.3.0.9
-[11:26:29] [Server thread/INFO]: [XPrivateMines] <white>By: <yellow>[Drawethree]
-[11:26:29] [Server thread/INFO]: [XPrivateMines] <white>Website: <yellow>www.drawethree.dev
-[11:26:29] [Server thread/INFO]: [XPrivateMines] <white>Discord Support: <yellow>https://discord.gg/ZeSkmEC6mG
-[11:26:29] [Server thread/INFO]: [XPrivateMines] Registered main command.
-[11:26:29] [Server thread/INFO]: [XPrivateMines] Using X-Prison currency: money
-[11:26:29] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: xprivatemines [2026.3.0.9]
-[11:26:29] [Server thread/INFO]: [XPrivateMines] Loaded mine tier Tier 1
-[11:26:29] [Server thread/INFO]: [XPrivateMines] ✅ Loaded schematic: pmine.schem
-[11:26:29] [Server thread/INFO]: [XPrivateMines] Hooked into Oraxen.
-[11:26:29] [Server thread/WARN]: [XPrivateMines] <red>Skipping X-PrivateMines-2026.3.0.9.jar: no X-PrivateMines-Addon-Class attribute in manifest.
-[11:26:30] [Server thread/INFO]: [io.javalin.Javalin] Starting Javalin ...
-[11:26:30] [Server thread/INFO]: [org.eclipse.jetty.server.Server] jetty-11.0.23; built: 2024-08-14T01:40:17.906Z; git: 6fcf5ccaebd7ca13a0cb96c96adca699a24080a0; jvm 25.0.3+9-LTS
-[11:26:30] [Server thread/INFO]: [org.eclipse.jetty.server.session.DefaultSessionIdManager] Session workerName=node0
-[11:26:30] [Server thread/INFO]: [org.eclipse.jetty.server.handler.ContextHandler] Started o.e.j.s.ServletContextHandler@665e07e8{/,null,AVAILABLE}
-[11:26:30] [Server thread/INFO]: [org.eclipse.jetty.server.AbstractConnector] Started ServerConnector@7f571eec{HTTP/1.1, (http/1.1)}{0.0.0.0:8090}
-[11:26:30] [Server thread/INFO]: [org.eclipse.jetty.server.Server] Started Server@216346bf{STARTING}[11.0.23,sto=0] @25371ms
-[11:26:30] [Server thread/INFO]: [io.javalin.Javalin] Javalin started in 292ms \o/
-[11:26:30] [Server thread/INFO]: [io.javalin.Javalin] Listening on http://localhost:8090/
-[11:26:30] [Server thread/INFO]: [io.javalin.Javalin] You are running Javalin 6.3.0 (released August 22, 2024. Your Javalin version is 726 days old. Consider checking for a newer version.).
-[11:26:30] [Server thread/INFO]: [X-PrivateMines-Addon/Dashboard] Dashboard started on port 8090 — navigate to http://<your-server-ip>:8090
-[11:26:30] [Server thread/INFO]: [XPrivateMines] Loaded addon: Dashboard v1.0.4 by Drawethree
-[11:26:30] [Server thread/INFO]: [XPrivateMines] Loaded 1 addons.
-[11:26:30] [Server thread/INFO]: [TAB-Bridge] Enabling TAB-Bridge v6.2.2
-[11:26:30] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: tab [6.2.2]
-[11:26:30] [Server thread/INFO]: [XPrisonArmors] Enabling XPrisonArmors v1.0.4
-[11:26:30] [Server thread/INFO]: [XPrisonArmors] 
+[12:20:18] [Server thread/INFO]: [XPrivateMines] 2026.3.0.9
+[12:20:18] [Server thread/INFO]: [XPrivateMines] <white>By: <yellow>[Drawethree]
+[12:20:18] [Server thread/INFO]: [XPrivateMines] <white>Website: <yellow>www.drawethree.dev
+[12:20:18] [Server thread/INFO]: [XPrivateMines] <white>Discord Support: <yellow>https://discord.gg/ZeSkmEC6mG
+[12:20:18] [Server thread/INFO]: [XPrivateMines] Registered main command.
+[12:20:18] [Server thread/INFO]: [XPrivateMines] Using X-Prison currency: money
+[12:20:18] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: xprivatemines [2026.3.0.9]
+[12:20:18] [Server thread/INFO]: [XPrivateMines] Loaded mine tier Tier 1
+[12:20:18] [Server thread/INFO]: [XPrivateMines] ✅ Loaded schematic: pmine.schem
+[12:20:18] [Server thread/INFO]: [XPrivateMines] Hooked into Oraxen.
+[12:20:18] [Server thread/WARN]: [XPrivateMines] <red>Skipping X-PrivateMines-2026.3.0.9.jar: no X-PrivateMines-Addon-Class attribute in manifest.
+[12:20:19] [Server thread/INFO]: [io.javalin.Javalin] Starting Javalin ...
+[12:20:19] [Server thread/INFO]: [org.eclipse.jetty.server.Server] jetty-11.0.23; built: 2024-08-14T01:40:17.906Z; git: 6fcf5ccaebd7ca13a0cb96c96adca699a24080a0; jvm 25.0.3+9-LTS
+[12:20:19] [Server thread/INFO]: [org.eclipse.jetty.server.session.DefaultSessionIdManager] Session workerName=node0
+[12:20:19] [Server thread/INFO]: [org.eclipse.jetty.server.handler.ContextHandler] Started o.e.j.s.ServletContextHandler@4e537bff{/,null,AVAILABLE}
+[12:20:19] [GlobalMarketPlus-Loading/INFO]: GlobalMarketPlus >>> Successfully connected SQLite:Database.db server.
+[12:20:19] [GlobalMarketPlus-Loading/INFO]: GlobalMarketPlus >>> Successfully connected SQLite:Recorder.db server.
+[12:20:19] [Server thread/INFO]: [org.eclipse.jetty.server.AbstractConnector] Started ServerConnector@6f6c3c5d{HTTP/1.1, (http/1.1)}{0.0.0.0:8090}
+[12:20:19] [Server thread/INFO]: [org.eclipse.jetty.server.Server] Started Server@594ead67{STARTING}[11.0.23,sto=0] @28676ms
+[12:20:19] [Server thread/INFO]: [io.javalin.Javalin] Javalin started in 314ms \o/
+[12:20:19] [Server thread/INFO]: [io.javalin.Javalin] Listening on http://localhost:8090/
+[12:20:19] [Server thread/INFO]: [io.javalin.Javalin] You are running Javalin 6.3.0 (released August 22, 2024. Your Javalin version is 726 days old. Consider checking for a newer version.).
+[12:20:19] [Server thread/INFO]: [X-PrivateMines-Addon/Dashboard] Dashboard started on port 8090 — navigate to http://<your-server-ip>:8090
+[12:20:19] [Server thread/INFO]: [XPrivateMines] Loaded addon: Dashboard v1.0.4 by Drawethree
+[12:20:19] [Server thread/INFO]: [XPrivateMines] Loaded 1 addons.
+[12:20:19] [Server thread/INFO]: [TAB-Bridge] Enabling TAB-Bridge v6.2.2
+[12:20:19] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: tab [6.2.2]
+[12:20:19] [Server thread/INFO]: [XPrisonArmors] Enabling XPrisonArmors v1.0.4
+[12:20:19] [GlobalMarketPlus-Loading/INFO]: GlobalMarketPlus >>> Initialized NMS :26.2.build.112-stable
+[12:20:19] [GlobalMarketPlus-Loading/INFO]: GlobalMarketPlus >>> Async threads started.
+[12:20:19] [GlobalMarketPlus-Loading/INFO]: GlobalMarketPlus >>> Plugin successfully enabled 1605ms .
+[12:20:19] [Server thread/INFO]: [XPrisonArmors] 
 
  __  __          ____  ____  ___ ____   ___  _   _      _    ____  __  __  ___  ____  ____  
  \ \/ /         |  _ \|  _ \|_ _/ ___| / _ \| \ | |    / \  |  _ \|  \/  |/ _ \|  _ \/ ___| 
@@ -547,11 +552,11 @@ DeluxeMenus will continue to work but some features (such as the 'has money' req
  /_/\_\         |_|   |_| \_\___|____/ \___/|_| \_| /_/   \_\_| \_\_|  |_|\___/|_| \_\____/ 
                                                                                             
 
-[11:26:30] [Server thread/INFO]: [XPrisonArmors] 1.0.4
-[11:26:30] [Server thread/INFO]: [XPrisonArmors] §fBy: §e[TheRealDrawe]
-[11:26:30] [Server thread/INFO]: [XPrisonArmors] §fWebsite: §ewww.drawethree.dev
-[11:26:30] [Server thread/INFO]: [XPrisonArmors] §fDiscord Support: §ehttps://discord.gg/ZeSkmEC6mG
-[11:26:30] [Server thread/ERROR]: Error occurred while enabling XPrisonArmors v1.0.4 (Is it up to date?)
+[12:20:19] [Server thread/INFO]: [XPrisonArmors] 1.0.4
+[12:20:19] [Server thread/INFO]: [XPrisonArmors] §fBy: §e[TheRealDrawe]
+[12:20:19] [Server thread/INFO]: [XPrisonArmors] §fWebsite: §ewww.drawethree.dev
+[12:20:19] [Server thread/INFO]: [XPrisonArmors] §fDiscord Support: §ehttps://discord.gg/ZeSkmEC6mG
+[12:20:19] [Server thread/ERROR]: Error occurred while enabling XPrisonArmors v1.0.4 (Is it up to date?)
 java.lang.ExceptionInInitializerError
 	at XPrisonArmors-1.0.4.jar//dev.drawethree.xprisonarmors.utils.item.ItemStackBuilder.customModelData(ItemStackBuilder.java:143) ~[?:?]
 	at XPrisonArmors-1.0.4.jar//dev.drawethree.xprisonarmors.manager.ArmorsManager.loadPiece(ArmorsManager.java:131) ~[?:?]
@@ -576,36 +581,31 @@ Caused by: java.lang.NumberFormatException: For input string: "build"
 	at java.base/java.lang.Integer.parseInt(Integer.java:662) ~[?:?]
 	at XPrisonArmors-1.0.4.jar//dev.drawethree.xprisonarmors.utils.compat.MinecraftVersion.<clinit>(MinecraftVersion.java:204) ~[?:?]
 	... 17 more
-[11:26:30] [Server thread/INFO]: [XPrisonArmors] Disabling XPrisonArmors v1.0.4
-[11:26:30] [Server thread/INFO]: [Plan] Enabling Plan v5.8 build 3605
-[11:26:31] [Server thread/INFO]: [Plan] 
-[11:26:31] [Server thread/INFO]: [Plan]            ██▌
-[11:26:31] [Server thread/INFO]: [Plan]      ██▌   ██▌
-[11:26:31] [Server thread/INFO]: [Plan]   ██▌██▌██▌██▌  Player Analytics
-[11:26:31] [Server thread/INFO]: [Plan]   ██▌██▌██▌██▌  v5.8 build 3605
-[11:26:31] [Server thread/INFO]: [Plan] 
-[11:26:31] [Server thread/INFO]: [Plan] Locale: 'English' by AuroraLS3
-[11:26:31] [Server thread/INFO]: [Plan] Downloading MySQL Driver, this may take a while...
-[11:26:31] [GlobalMarketPlus-Loading/INFO]: GlobalMarketPlus >>> Successfully connected SQLite:Database.db server.
-[11:26:31] [GlobalMarketPlus-Loading/INFO]: GlobalMarketPlus >>> Successfully connected SQLite:Recorder.db server.
-[11:26:31] [GlobalMarketPlus-Loading/INFO]: GlobalMarketPlus >>> Initialized NMS :26.2.build.112-stable
-[11:26:31] [Plan MySQLDB-transaction-thread-1/INFO]: [Plan] Database: Making sure schema is up to date..
-[11:26:31] [GlobalMarketPlus-Loading/INFO]: GlobalMarketPlus >>> Async threads started.
-[11:26:31] [Server thread/INFO]: [Plan] MySQL-database connection established.
-[11:26:31] [Server thread/INFO]: [Plan] WebServer was not initialized. (WebServer.DisableWebServer: true)
-[11:26:31] [Server thread/INFO]: [Plan] Loading server identifying information
-[11:26:31] [Server thread/INFO]: [Plan] Server identifier loaded: 851efb50-b513-4c15-9393-0d5d43fc3814
-[11:26:31] [Plan Non critical-pool-3/WARN]: [Plan] Downloading GeoLite2 requires accepting GeoLite2 EULA - see 'Data_gathering.Accept_GeoLite2_EULA' in the config.
-[11:26:31] [Plan Non critical-pool-3/ERROR]: [Plan] Failed to enable geolocation.
-[11:26:31] [GlobalMarketPlus-Loading/INFO]: GlobalMarketPlus >>> Plugin successfully enabled 1913ms .
-[11:26:31] [Plan Non critical-pool-5/INFO]: [Plan] Proxy server detected in the database - Proxy Webserver address is 'http://mc-stats.festas-builds.com'.
-[11:26:31] [Server thread/INFO]: [Plan] Registered extension: CMI
-[11:26:31] [Server thread/INFO]: [Plan] Registered extension: LuckPerms
-[11:26:31] [Server thread/INFO]: [Plan] Registered extension: PlaceholderAPI
-[11:26:31] [Server thread/INFO]: [Plan] Registered extension: Permission Groups (Vault)
-[11:26:31] [Server thread/INFO]: [Plan] Player Analytics Enabled.
-[11:26:31] [Server thread/INFO]: [XRobots] Enabling XRobots v1.2.1
-[11:26:31] [Server thread/INFO]: [XRobots] 
+[12:20:19] [Server thread/INFO]: [XPrisonArmors] Disabling XPrisonArmors v1.0.4
+[12:20:19] [Server thread/INFO]: [Plan] Enabling Plan v5.8 build 3605
+[12:20:20] [Server thread/INFO]: [Plan] 
+[12:20:20] [Server thread/INFO]: [Plan]            ██▌
+[12:20:20] [Server thread/INFO]: [Plan]      ██▌   ██▌
+[12:20:20] [Server thread/INFO]: [Plan]   ██▌██▌██▌██▌  Player Analytics
+[12:20:20] [Server thread/INFO]: [Plan]   ██▌██▌██▌██▌  v5.8 build 3605
+[12:20:20] [Server thread/INFO]: [Plan] 
+[12:20:20] [Server thread/INFO]: [Plan] Locale: 'English' by AuroraLS3
+[12:20:20] [Server thread/INFO]: [Plan] Downloading MySQL Driver, this may take a while...
+[12:20:20] [Plan MySQLDB-transaction-thread-1/INFO]: [Plan] Database: Making sure schema is up to date..
+[12:20:20] [Server thread/INFO]: [Plan] MySQL-database connection established.
+[12:20:20] [Server thread/INFO]: [Plan] WebServer was not initialized. (WebServer.DisableWebServer: true)
+[12:20:20] [Server thread/INFO]: [Plan] Loading server identifying information
+[12:20:20] [Server thread/INFO]: [Plan] Server identifier loaded: 851efb50-b513-4c15-9393-0d5d43fc3814
+[12:20:20] [Plan Non critical-pool-3/WARN]: [Plan] Downloading GeoLite2 requires accepting GeoLite2 EULA - see 'Data_gathering.Accept_GeoLite2_EULA' in the config.
+[12:20:20] [Plan Non critical-pool-3/ERROR]: [Plan] Failed to enable geolocation.
+[12:20:20] [Plan Non critical-pool-5/INFO]: [Plan] Proxy server detected in the database - Proxy Webserver address is 'http://mc-stats.festas-builds.com'.
+[12:20:20] [Server thread/INFO]: [Plan] Registered extension: CMI
+[12:20:20] [Server thread/INFO]: [Plan] Registered extension: LuckPerms
+[12:20:20] [Server thread/INFO]: [Plan] Registered extension: PlaceholderAPI
+[12:20:20] [Server thread/INFO]: [Plan] Registered extension: Permission Groups (Vault)
+[12:20:20] [Server thread/INFO]: [Plan] Player Analytics Enabled.
+[12:20:20] [Server thread/INFO]: [XRobots] Enabling XRobots v1.2.1
+[12:20:20] [Server thread/INFO]: [XRobots] 
 
  __  __          ____   ___  ____   ___ _____ ____  
  \ \/ /         |  _ \ / _ \| __ ) / _ \_   _/ ___| 
@@ -614,106 +614,106 @@ Caused by: java.lang.NumberFormatException: For input string: "build"
  /_/\_\         |_| \_\\___/|____/ \___/ |_| |____/ 
                                                     
 
-[11:26:31] [Server thread/INFO]: [XRobots] 1.2.1
-[11:26:31] [Server thread/INFO]: [XRobots] §fBy: §e[Drawethree]
-[11:26:31] [Server thread/INFO]: [XRobots] §fWebsite: §ehttps://www.drawethree.dev
-[11:26:31] [Server thread/INFO]: [XRobots] §fDiscord Support: §ehttps://discord.gg/ZeSkmEC6mG
-[11:26:31] [Server thread/INFO]: [XRobots] §fUsing §aH2 DB.
-[11:26:31] [Server thread/INFO]: [com.zaxxer.hikari.HikariDataSource] xrobots-0 - Starting...
-[11:26:31] [Plan MySQLDB-transaction-thread-1/INFO]: [Plan] All database patches applied successfully.
-[11:26:31] [Server thread/INFO]: [com.zaxxer.hikari.HikariDataSource] xrobots-0 - Start completed.
-[11:26:31] [Server thread/INFO]: [XRobots] Registered Currency: Geld
-[11:26:31] [Server thread/INFO]: [XRobots] Registered Currency: Edelsteine
-[11:26:31] [Server thread/INFO]: [XRobots] Registered Currency: Token
-[11:26:31] [Server thread/INFO]: [XRobots] Loaded robot type: coal
-[11:26:31] [Server thread/INFO]: [XRobots] Loaded robot type: iron
-[11:26:31] [Server thread/INFO]: [XRobots] Loaded robot type: gold
-[11:26:31] [Server thread/INFO]: [XRobots] Loaded robot type: emerald
-[11:26:31] [Server thread/INFO]: [XRobots] Loaded robot type: diamond
-[11:26:31] [Server thread/INFO]: [XRobots] Loaded robot type: coal_gems
-[11:26:31] [Server thread/INFO]: [XRobots] Loaded robot type: iron_gems
-[11:26:31] [Server thread/INFO]: [XRobots] Loaded robot type: gold_gems
-[11:26:31] [Server thread/INFO]: [XRobots] Loaded robot type: emerald_gems
-[11:26:31] [Server thread/INFO]: [XRobots] Loaded robot type: diamond_gems
-[11:26:31] [Server thread/INFO]: [BlueMap] Enabling BlueMap v5.23
-[11:26:31] [Server thread/INFO]: [BlueMap] Saving all worlds once, to make sure all required world-properties are present...
-[11:26:31] [Server thread/WARN]: A manual (plugin-induced) save has been detected while server is configured to auto-save. This may affect performance.
-[11:26:31] [BlueMap-Load/INFO]: [BlueMap] Loading...
-[11:26:31] [Server thread/INFO]: [spark] Starting background profiler...
-[11:26:32] [Server thread/WARN]: Could not register alias sell because it contains commands that do not exist: shop sell hand
-[11:26:32] [Server thread/WARN]: Could not register alias sellall because it contains commands that do not exist: shop sell all
-[11:26:32] [Server thread/WARN]: Could not register alias hand because it contains commands that do not exist: shop sell hand
-[11:26:32] [Server thread/WARN]: Could not register alias all because it contains commands that do not exist: shop sell all
-[11:26:32] [BlueMap-Load/INFO]: [BlueMap] Loading resources...
-[11:26:32] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
-[11:26:32] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
-[11:26:32] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
-[11:26:32] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:private_mines
-[11:26:32] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
-[11:26:32] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[11:26:32] [Server thread/INFO]: ThreadedAnvilChunkStorage (private_mines): All chunks are saved
-[11:26:32] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
-[11:26:32] [Server thread/INFO]: Running delayed init tasks
-[11:26:32] [Server thread/INFO]: [com.fastasyncworldedit.bukkit.regions.WorldGuardFeature] Plugin 'WorldGuard' found. Using it now.
-[11:26:32] [Server thread/INFO]: [com.fastasyncworldedit.bukkit.FaweBukkit] Attempting to use plugin 'WorldGuard'
-[11:26:32] [Craft Scheduler Thread - 0 - XPrivateMines/INFO]: [XPrivateMines] YAML parse completed in 4ms
-[11:26:32] [Craft Scheduler Thread - 1 - X-Prison/INFO]: [X-Prison-Addon/Dashboard] Player index backfilled: 3 / 3 players.
-[11:26:32] [Server thread/INFO]: [Skript]     Loaded regions hook for WorldGuard. Please note that Skript's region hooks are deprecated and will be removed in a future release. For WorldGuard support, we recommend using skript-worldguard: https://github.com/SkriptLang/skript-worldguard
-[11:26:32] [Craft Scheduler Thread - 0 - XPrivateMines/INFO]: [XPrivateMines] Loaded 1 mines in 44ms (parse 4ms, construct 40ms)
-[11:26:32] [Server thread/INFO]: [Skript] Loading variables...
-[11:26:32] [Craft Scheduler Thread - 6 - Plan/INFO]: [Plan] You're using the latest version.
-[11:26:32] [Server thread/INFO]: [Skript] Loaded 0 variables in 0.0 seconds
-[11:26:32] [Server thread/INFO]: [Skript] All scripts loaded without errors.
-[11:26:32] [Server thread/INFO]: [Skript] Loaded 2 scripts with a total of 6 structures in 0.16 seconds
-[11:26:32] [Server thread/INFO]: [Skript] Finished loading.
-[11:26:32] [Server thread/INFO]: [X-Prison] Custom-content reload detected. Reloading autosell global / region data.
-[11:26:32] [Server thread/INFO]: [X-Prison] §aLoaded §e27 §aglobal sell prices.
-[11:26:32] [Server thread/INFO]: [X-Prison] Custom-content reload detected. Reloading mines.
-[11:26:32] [Server thread/INFO]: [X-Prison] §aLoaded §e0 §amines.
-[11:26:32] [Server thread/INFO]: [XPrivateMines] Loaded mine tier Tier 1
-[11:26:32] [Server thread/INFO]: [XPrivateMines] Oraxen data loaded - refreshed mine tiers and selectable blocks.
-[11:26:32] [Server thread/INFO]: [CMI] Permission plugin: LuckPerms5.5.71
-[11:26:32] [Server thread/INFO]: [CMI] Vault was found but economy engine is missing. Use one from list provided in https://dev.bukkit.org/bukkit-plugins/vault/
-[11:26:32] [Server thread/INFO]: [CMI] Alternatively you can enable CMI economy in config.yml file
-[11:26:32] [Server thread/INFO]: [CMI] Vault was found but not economy plugin, you will have limited economy support
-[11:26:32] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: cmi [9.8.9.8]
-[11:26:32] [Server thread/INFO]: [CMI] PlaceholderAPI hooked.
-[11:26:32] [Server thread/INFO]: GlobalMarketPlus >>> Configuration settings loaded, language: English
-[11:26:32] [Server thread/INFO]: GlobalMarketPlus >>> Loaded 29 files, error 0 .
-[11:26:32] [Server thread/INFO]: GlobalMarketPlus >>> Loaded all of GUIs and 0 custom GUIs.
-[11:26:32] [Server thread/INFO]: GlobalMarketPlus >>> Enabled SQLite .
-[11:26:32] [Server thread/INFO]: GlobalMarketPlus >>> Loaded 0 JSON components
-[11:26:32] [Server thread/INFO]: GlobalMarketPlus >>> Loaded 3 groups
-[11:26:32] [Server thread/INFO]: GlobalMarketPlus >>> Loaded 10 categories
-[11:26:32] [Server thread/INFO]: GlobalMarketPlus >>> Initialization completed, version v1.4.1.5
-[11:26:32] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: plan [5.8 build 3605]
-[11:26:32] [GlobalMarketPlus-TaskThread/INFO]: GlobalMarketPlus >>> Deleting outdated records in the recorder database...
-[11:26:32] [GlobalMarketPlus-TaskThread/INFO]: GlobalMarketPlus >>> Deleted 0 outdated records.
-[11:26:32] [Server thread/INFO]: Done (26.550s)! For help, type "help"
-[11:26:32] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: luckperms [5.4-R2]
-[11:26:32] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: player-j17 [1.0.3]
-[11:26:32] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: utils [1.0.14]
-[11:26:32] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: world [1.2.3]
-[11:26:32] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: vault [1.8.3]
-[11:26:32] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: player [2.0.9]
-[11:26:32] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: checkitem [2.7.9]
-[11:26:32] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: worldguard [1.4.2]
-[11:26:32] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: math [2.0.2]
-[11:26:32] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: parseother [2.0.0]
-[11:26:32] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: pinger [1.0.1]
-[11:26:32] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: statistic [2.0.2]
-[11:26:32] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: server [2.7.3]
-[11:26:32] [Server thread/INFO]: 13 placeholder hook(s) registered!
-[11:26:32] [Craft Scheduler Thread - 6 - Oraxen/INFO]: Oraxen | Automatic upload of the resource pack is enabled, uploading...
-[11:26:32] [Craft Scheduler Thread - 6 - Oraxen/INFO]: Oraxen | Self-hosted resource pack server started on 0.0.0.0:25600
-[11:26:32] [Craft Scheduler Thread - 6 - Oraxen/INFO]: Oraxen | Resourcepack uploaded to http://128.140.99.121:25600/pack.zip in 63ms.
-[11:26:33] [BlueMap-Load/INFO]: [BlueMap] Resources loaded.
-[11:26:33] [BlueMap-Load/INFO]: [BlueMap] Initializing Storage: 'file' (Type: 'bluemap:file')
-[11:26:33] [BlueMap-Load/INFO]: [BlueMap] Loading map 'world'...
-[11:26:33] [BlueMap-Load/INFO]: [BlueMap] Loading map 'overworld'...
-[11:26:33] [BlueMap-Load/INFO]: [BlueMap] Loading map 'private_mines'...
-[11:26:33] [BlueMap-Load/INFO]: [BlueMap] WebServer bound to all network interfaces on port 8103
-[11:26:33] [BlueMap-Webserver/INFO]: [BlueMap] WebServer started.
-[11:26:33] [BlueMap-Load/INFO]: [BlueMap] Loaded!
-[11:26:34] [Craft Scheduler Thread - 0 - XPrivateMines/INFO]: [X-PrivateMines-Addon/Dashboard] Player index backfill complete (1 players seeded).
-[11:26:50] [WorldGuard Region I/O/INFO]: [WorldGuard] Region data changes made in 'private_mines' have been background saved
+[12:20:20] [Server thread/INFO]: [XRobots] 1.2.1
+[12:20:20] [Server thread/INFO]: [XRobots] §fBy: §e[Drawethree]
+[12:20:20] [Server thread/INFO]: [XRobots] §fWebsite: §ehttps://www.drawethree.dev
+[12:20:20] [Server thread/INFO]: [XRobots] §fDiscord Support: §ehttps://discord.gg/ZeSkmEC6mG
+[12:20:20] [Plan MySQLDB-transaction-thread-1/INFO]: [Plan] All database patches applied successfully.
+[12:20:20] [Server thread/INFO]: [XRobots] §fUsing §aH2 DB.
+[12:20:20] [Server thread/INFO]: [com.zaxxer.hikari.HikariDataSource] xrobots-0 - Starting...
+[12:20:20] [Server thread/INFO]: [com.zaxxer.hikari.HikariDataSource] xrobots-0 - Start completed.
+[12:20:20] [Server thread/INFO]: [XRobots] Registered Currency: Geld
+[12:20:20] [Server thread/INFO]: [XRobots] Registered Currency: Edelsteine
+[12:20:20] [Server thread/INFO]: [XRobots] Registered Currency: Token
+[12:20:20] [Server thread/INFO]: [XRobots] Loaded robot type: coal
+[12:20:20] [Server thread/INFO]: [XRobots] Loaded robot type: iron
+[12:20:20] [Server thread/INFO]: [XRobots] Loaded robot type: gold
+[12:20:20] [Server thread/INFO]: [XRobots] Loaded robot type: emerald
+[12:20:20] [Server thread/INFO]: [XRobots] Loaded robot type: diamond
+[12:20:20] [Server thread/INFO]: [XRobots] Loaded robot type: coal_gems
+[12:20:20] [Server thread/INFO]: [XRobots] Loaded robot type: iron_gems
+[12:20:20] [Server thread/INFO]: [XRobots] Loaded robot type: gold_gems
+[12:20:20] [Server thread/INFO]: [XRobots] Loaded robot type: emerald_gems
+[12:20:20] [Server thread/INFO]: [XRobots] Loaded robot type: diamond_gems
+[12:20:20] [Server thread/INFO]: [BlueMap] Enabling BlueMap v5.23
+[12:20:20] [Server thread/INFO]: [BlueMap] Saving all worlds once, to make sure all required world-properties are present...
+[12:20:20] [Server thread/WARN]: A manual (plugin-induced) save has been detected while server is configured to auto-save. This may affect performance.
+[12:20:20] [BlueMap-Load/INFO]: [BlueMap] Loading...
+[12:20:20] [Server thread/INFO]: [spark] Starting background profiler...
+[12:20:21] [Server thread/WARN]: Could not register alias sell because it contains commands that do not exist: shop sell hand
+[12:20:21] [Server thread/WARN]: Could not register alias sellall because it contains commands that do not exist: shop sell all
+[12:20:21] [Server thread/WARN]: Could not register alias hand because it contains commands that do not exist: shop sell hand
+[12:20:21] [Server thread/WARN]: Could not register alias all because it contains commands that do not exist: shop sell all
+[12:20:21] [BlueMap-Load/INFO]: [BlueMap] Loading resources...
+[12:20:21] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
+[12:20:21] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[12:20:21] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[12:20:21] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:private_mines
+[12:20:21] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[12:20:21] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[12:20:21] [Server thread/INFO]: ThreadedAnvilChunkStorage (private_mines): All chunks are saved
+[12:20:21] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[12:20:21] [Server thread/INFO]: Running delayed init tasks
+[12:20:21] [Server thread/INFO]: [com.fastasyncworldedit.bukkit.regions.WorldGuardFeature] Plugin 'WorldGuard' found. Using it now.
+[12:20:21] [Server thread/INFO]: [com.fastasyncworldedit.bukkit.FaweBukkit] Attempting to use plugin 'WorldGuard'
+[12:20:21] [Craft Scheduler Thread - 4 - XPrivateMines/INFO]: [XPrivateMines] YAML parse completed in 1ms
+[12:20:21] [Craft Scheduler Thread - 1 - X-Prison/INFO]: [X-Prison-Addon/Dashboard] Player index backfilled: 3 / 3 players.
+[12:20:21] [Server thread/INFO]: [Skript]     Loaded regions hook for WorldGuard. Please note that Skript's region hooks are deprecated and will be removed in a future release. For WorldGuard support, we recommend using skript-worldguard: https://github.com/SkriptLang/skript-worldguard
+[12:20:21] [Craft Scheduler Thread - 5 - Plan/INFO]: [Plan] You're using the latest version.
+[12:20:21] [Craft Scheduler Thread - 4 - XPrivateMines/INFO]: [XPrivateMines] Loaded 1 mines in 95ms (parse 1ms, construct 94ms)
+[12:20:21] [Server thread/INFO]: [Skript] Loading variables...
+[12:20:21] [Server thread/INFO]: [Skript] Loaded 0 variables in 0.0 seconds
+[12:20:21] [Server thread/INFO]: [Skript] All scripts loaded without errors.
+[12:20:21] [Server thread/INFO]: [Skript] Loaded 2 scripts with a total of 6 structures in 0.24 seconds
+[12:20:21] [Server thread/INFO]: [Skript] Finished loading.
+[12:20:21] [Server thread/INFO]: [X-Prison] Custom-content reload detected. Reloading autosell global / region data.
+[12:20:21] [Server thread/INFO]: [X-Prison] §aLoaded §e27 §aglobal sell prices.
+[12:20:21] [Server thread/INFO]: [X-Prison] Custom-content reload detected. Reloading mines.
+[12:20:21] [Server thread/INFO]: [X-Prison] §aLoaded §e0 §amines.
+[12:20:21] [Server thread/INFO]: [XPrivateMines] Loaded mine tier Tier 1
+[12:20:21] [Server thread/INFO]: [XPrivateMines] Oraxen data loaded - refreshed mine tiers and selectable blocks.
+[12:20:21] [Server thread/INFO]: [CMI] Permission plugin: LuckPerms5.5.71
+[12:20:21] [Server thread/INFO]: [CMI] Vault was found but economy engine is missing. Use one from list provided in https://dev.bukkit.org/bukkit-plugins/vault/
+[12:20:21] [Server thread/INFO]: [CMI] Alternatively you can enable CMI economy in config.yml file
+[12:20:21] [Server thread/INFO]: [CMI] Vault was found but not economy plugin, you will have limited economy support
+[12:20:21] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: cmi [9.8.9.8]
+[12:20:21] [Server thread/INFO]: [CMI] PlaceholderAPI hooked.
+[12:20:21] [Server thread/INFO]: GlobalMarketPlus >>> Configuration settings loaded, language: English
+[12:20:21] [Server thread/INFO]: GlobalMarketPlus >>> Loaded 29 files, error 0 .
+[12:20:21] [Server thread/INFO]: GlobalMarketPlus >>> Loaded all of GUIs and 0 custom GUIs.
+[12:20:21] [Server thread/INFO]: GlobalMarketPlus >>> Enabled SQLite .
+[12:20:21] [Server thread/INFO]: GlobalMarketPlus >>> Loaded 0 JSON components
+[12:20:21] [Server thread/INFO]: GlobalMarketPlus >>> Loaded 3 groups
+[12:20:21] [Server thread/INFO]: GlobalMarketPlus >>> Loaded 10 categories
+[12:20:21] [Server thread/INFO]: GlobalMarketPlus >>> Initialization completed, version v1.4.1.5
+[12:20:21] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: plan [5.8 build 3605]
+[12:20:21] [Server thread/INFO]: Done (30.165s)! For help, type "help"
+[12:20:21] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: luckperms [5.4-R2]
+[12:20:21] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: player-j17 [1.0.3]
+[12:20:21] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: utils [1.0.14]
+[12:20:21] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: world [1.2.3]
+[12:20:21] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: vault [1.8.3]
+[12:20:21] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: player [2.0.9]
+[12:20:21] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: checkitem [2.7.9]
+[12:20:21] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: worldguard [1.4.2]
+[12:20:21] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: math [2.0.2]
+[12:20:21] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: parseother [2.0.0]
+[12:20:21] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: pinger [1.0.1]
+[12:20:21] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: statistic [2.0.2]
+[12:20:21] [GlobalMarketPlus-TaskThread/INFO]: GlobalMarketPlus >>> Deleting outdated records in the recorder database...
+[12:20:21] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: server [2.7.3]
+[12:20:21] [Server thread/INFO]: 13 placeholder hook(s) registered!
+[12:20:21] [GlobalMarketPlus-TaskThread/INFO]: GlobalMarketPlus >>> Deleted 0 outdated records.
+[12:20:22] [Craft Scheduler Thread - 4 - Oraxen/INFO]: Oraxen | Automatic upload of the resource pack is enabled, uploading...
+[12:20:22] [Craft Scheduler Thread - 4 - Oraxen/INFO]: Oraxen | Self-hosted resource pack server started on 0.0.0.0:25600
+[12:20:22] [Craft Scheduler Thread - 4 - Oraxen/INFO]: Oraxen | Resourcepack uploaded to http://128.140.99.121:25600/pack.zip in 49ms.
+[12:20:22] [BlueMap-Load/INFO]: [BlueMap] Resources loaded.
+[12:20:22] [BlueMap-Load/INFO]: [BlueMap] Initializing Storage: 'file' (Type: 'bluemap:file')
+[12:20:22] [BlueMap-Load/INFO]: [BlueMap] Loading map 'world'...
+[12:20:22] [BlueMap-Load/INFO]: [BlueMap] Loading map 'overworld'...
+[12:20:22] [BlueMap-Load/INFO]: [BlueMap] Loading map 'private_mines'...
+[12:20:22] [BlueMap-Load/INFO]: [BlueMap] WebServer bound to all network interfaces on port 8103
+[12:20:22] [BlueMap-Webserver/INFO]: [BlueMap] WebServer started.
+[12:20:22] [BlueMap-Load/INFO]: [BlueMap] Loaded!
+[12:20:23] [Craft Scheduler Thread - 4 - XPrivateMines/INFO]: [X-PrivateMines-Addon/Dashboard] Player index backfill complete (1 players seeded).
+[12:20:38] [WorldGuard Region I/O/INFO]: [WorldGuard] Region data changes made in 'private_mines' have been background saved
