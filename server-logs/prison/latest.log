@@ -717,3 +717,14 @@ Caused by: java.lang.NumberFormatException: For input string: "build"
 [14:18:31] [BlueMap-Load/INFO]: [BlueMap] Loaded!
 [14:18:31] [Craft Scheduler Thread - 4 - XPrivateMines/INFO]: [X-PrivateMines-Addon/Dashboard] Player index backfill complete (1 players seeded).
 [14:18:46] [WorldGuard Region I/O/INFO]: [WorldGuard] Region data changes made in 'private_mines' have been background saved
+[14:28:29] [Server thread/INFO]: [Mining] Nicht sicher wie du anfängst? Tippe /help für eine Übersicht über Zonen, Rankup und mehr!
+[14:38:29] [Server thread/INFO]: [Mining] Nicht sicher wie du anfängst? Tippe /help für eine Übersicht über Zonen, Rankup und mehr!
+[14:48:29] [Server thread/INFO]: [Mining] Nicht sicher wie du anfängst? Tippe /help für eine Übersicht über Zonen, Rankup und mehr!
+[14:58:29] [Server thread/INFO]: [Mining] Nicht sicher wie du anfängst? Tippe /help für eine Übersicht über Zonen, Rankup und mehr!
+[15:03:45] [Server thread/INFO]: herobrine (/172.86.114.38:37234) lost connection: Disconnected
+[15:08:29] [Server thread/INFO]: [Mining] Nicht sicher wie du anfängst? Tippe /help für eine Übersicht über Zonen, Rankup und mehr!
+[15:11:58] [Server thread/INFO]: herobrine (/172.86.114.38:49704) lost connection: Disconnected
+[15:18:22] [helper-scheduler-3/INFO]: [X-Prison] History cleanup: removed entries older than 30 days.
+[15:18:29] [Server thread/INFO]: [Mining] Nicht sicher wie du anfängst? Tippe /help für eine Übersicht über Zonen, Rankup und mehr!
+[15:19:51] [Server thread/INFO]: herobrine (/172.86.114.38:47588) lost connection: Disconnected
+[15:28:29] [Server thread/INFO]: [Mining] Nicht sicher wie du anfängst? Tippe /help für eine Übersicht über Zonen, Rankup und mehr!
