@@ -111,7 +111,7 @@ Nach dem Pushen dieser Config-Änderungen:
 1. `proxy/plugins/plan/config.yml` enthält `Internal_IP: 127.0.0.1` und
    `Use_X-Forwarded-For_Header: true`.
 2. `curl -I https://mc-stats.festas-builds.com` liefert HTTP 200 (oder Plan-Login-Redirect).
-3. `curl -I http://128.140.99.121:8804` von außen schlägt fehl (Verbindung abgelehnt).
+3. `curl -I http://<SERVER-IP>:8804` von außen schlägt fehl (Verbindung abgelehnt).
 4. Plan-Dashboard öffnet sich im Browser ohne weiße Seite.
 
 ---
