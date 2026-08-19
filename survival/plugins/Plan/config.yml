@@ -30,7 +30,7 @@ Database:
         Host: 172.25.0.1
         Port: 3306
         User: u4_MaaC4xwYZ0
-        Password: minecraft
+        Password: "eMKLKiOlHc+LJxx!SN4pmTd+"
         Database: s4_stats
         # Launch options to append after mysql driver address
         Launch_options: "?rewriteBatchedStatements=true&serverTimezone=UTC"
