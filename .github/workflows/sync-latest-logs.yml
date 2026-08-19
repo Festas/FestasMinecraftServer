@@ -33,13 +33,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
         with:
-          fetch-depth: 0
           token: ${{ secrets.PERSONAL_TOKEN }}
 
       - name: Setup SSH
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts
 
@@ -81,13 +82,13 @@ jobs:
 
             echo "📥 Lade ${server_name}: ${remote_log_path}"
 
-            if ! ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=accept-new "${SSH_USER}@${SSH_HOST}" "test -f '${remote_log_path}'"; then
+            if ! ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=yes "${SSH_USER}@${SSH_HOST}" "test -f '${remote_log_path}'"; then
               echo "::error::${server_name}: ${remote_log_path} wurde nicht gefunden."
               return 1
             fi
 
             mkdir -p "$local_dir"
-            scp -i ~/.ssh/id_rsa -o StrictHostKeyChecking=accept-new "${SSH_USER}@${SSH_HOST}:${remote_log_path}" "$tmp_file"
+            scp -i ~/.ssh/id_rsa -o StrictHostKeyChecking=yes "${SSH_USER}@${SSH_HOST}:${remote_log_path}" "$tmp_file"
 
             if [ -f "$local_file" ] && cmp -s "$tmp_file" "$local_file"; then
               echo "ℹ️ ${server_name}: Keine Änderungen."
@@ -134,8 +135,11 @@ jobs:
           fi
 
       - name: Commit and push updated logs
+        env:
+          PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
         run: |
           set -euo pipefail
+          echo "::add-mask::$PERSONAL_TOKEN"
 
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -147,13 +151,8 @@ jobs:
           fi
 
           git commit -m "chore: sync latest server logs"
-          echo "::add-mask::${{ secrets.PERSONAL_TOKEN }}"
-          git remote set-url origin "https://x-access-token:${{ secrets.PERSONAL_TOKEN }}@github.com/${{ github.repository }}"
-          git pull --rebase origin "${GITHUB_REF_NAME}" || {
-            echo "Rebase conflict detected. Aborting and retrying..."
-            git rebase --abort
-            git pull --rebase origin "${GITHUB_REF_NAME}"
-          }
+          git remote set-url origin "https://x-access-token:${PERSONAL_TOKEN}@github.com/${{ github.repository }}"
+          git pull --rebase origin "${GITHUB_REF_NAME}" || { git rebase --abort; exit 1; }
           git push origin "HEAD:${GITHUB_REF_NAME}"
 
       - name: Fail if a server log could not be fetched
