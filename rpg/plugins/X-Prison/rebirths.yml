@@ -158,7 +158,7 @@ rebirths:
         - lp user %player% permission set xprison.rebirth5 true
         - tokens give %player% 1250000
         - gems give %player% 1500
-        - broadcast <gradient:#FFD700:#FFEA00><bold>%player%</bold></gradient> <white>hat <yellow>Rebirth 5</yellow> erreicht!
+        - broadcast <gradient:#FFD700:#FFEA00><bold>%player%</bold></gradient> <white>has reached <yellow>Rebirth 5</yellow>!
 
 # ---------------------------------------------------------------------------
 # Rebirths GUI (opened with /rebirths). Fully configurable.

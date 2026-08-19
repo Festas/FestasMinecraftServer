@@ -199,7 +199,7 @@ tiers:
     upgrade-currency: 'tokens'
   6:
     display-name: '&5&lTier VI'
-    icon: NETHERITE_PICKAXE
+    icon: NETHER_STAR
     blocks-per-cycle: 60
     reward-multiplier: 4.0
     reward-period: 3
@@ -207,7 +207,7 @@ tiers:
     upgrade-currency: 'tokens'
   7:
     display-name: '&c&lTier VII'
-    icon: NETHERITE_PICKAXE
+    icon: BEACON
     blocks-per-cycle: 85
     reward-multiplier: 5.0
     reward-period: 2
@@ -215,7 +215,7 @@ tiers:
     upgrade-currency: 'tokens'
   8:
     display-name: '&e&lTier VIII'
-    icon: NETHERITE_PICKAXE
+    icon: DRAGON_HEAD
     blocks-per-cycle: 120
     reward-multiplier: 6.5
     reward-period: 2
@@ -244,9 +244,9 @@ messages:
   not_enough_tokens: '<gradient:#FFFF00:#FFD700:#FFA500><bold>AUTOMINER</bold></gradient> <dark_gray>»</dark_gray> <yellow>You do not have enough tokens! (Needed: %tokens%)'
   not_a_number: '<gradient:#FFFF00:#FFD700:#FFA500><bold>AUTOMINER</bold></gradient> <dark_gray>»</dark_gray> <yellow>%input% is not a number!'
   player_not_online: '<gradient:#FFFF00:#FFD700:#FFA500><bold>AUTOMINER</bold></gradient> <dark_gray>»</dark_gray> <white>Player <yellow>%player% <red>is not online!'
-  auto_miner_enabled: '<gradient:#FFFF00:#FFD700:#FFA500><bold>AUTOMINER</bold></gradient> <dark_gray>»</dark_gray> <green>Dein Auto-Miner ist jetzt aktiv.'
-  auto_miner_disabled: '<gradient:#FFFF00:#FFD700:#FFA500><bold>AUTOMINER</bold></gradient> <dark_gray>»</dark_gray> <red>Dein Auto-Miner wurde deaktiviert.'
-  auto_miner_no_pickaxe: '<gradient:#FFFF00:#FFD700:#FFA500><bold>AUTOMINER</bold></gradient> <dark_gray>»</dark_gray> <red>Halte eine unterstützte Spitzhacke, um den Auto-Miner zu nutzen.'
+  auto_miner_enabled: '<gradient:#FFFF00:#FFD700:#FFA500><bold>AUTOMINER</bold></gradient> <dark_gray>»</dark_gray> <green>Your Auto Miner is now active.'
+  auto_miner_disabled: '<gradient:#FFFF00:#FFD700:#FFA500><bold>AUTOMINER</bold></gradient> <dark_gray>»</dark_gray> <red>Your Auto Miner was disabled.'
+  auto_miner_no_pickaxe: '<gradient:#FFFF00:#FFD700:#FFA500><bold>AUTOMINER</bold></gradient> <dark_gray>»</dark_gray> <red>Hold a supported pickaxe to use the Auto Miner.'
   # Sent once in chat when a player starts auto-mining (enters a region with time
   # and a supported pickaxe). Leave empty to disable.
   auto_miner_start: '<gradient:#FFFF00:#FFD700:#FFA500><bold>AUTOMINER</bold></gradient> <dark_gray>»</dark_gray> <green>Your Auto Miner is now running!'

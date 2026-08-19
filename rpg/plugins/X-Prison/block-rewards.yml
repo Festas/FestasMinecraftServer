@@ -25,7 +25,7 @@ block-rewards:
     - tokens give %player% 8000
     - gems give %player% 20
   '100000':
-    message: '<gradient:#FFD700:#FFEA00><bold>BLÖCKE</bold></gradient> <dark_gray>»</dark_gray> <white>Du hast <yellow>100.000</yellow> <white>Blöcke geknackt!' 
+    message: '<gradient:#FFD700:#FFEA00><bold>BLÖCKE</bold></gradient> <dark_gray>»</dark_gray> <white>Du hast <yellow>100.000</yellow> <white>Blöcke geknackt!'
     commands:
     - money give %player% 250000
     - gems give %player% 50
@@ -59,7 +59,7 @@ block-rewards:
     - tokens give %player% 500000
     - gems give %player% 600
   '10000000':
-    message: '<gradient:#FFD700:#FFEA00><bold>BLÖCKE</bold></gradient> <dark_gray>»</dark_gray> <white>Mythischer Meilenstein: <yellow>10.000.000</yellow> <white>abgebaute Blöcke!' 
+    message: '<gradient:#FFD700:#FFEA00><bold>BLÖCKE</bold></gradient> <dark_gray>»</dark_gray> <white>Mythischer Meilenstein: <yellow>10.000.000</yellow> <white>abgebaute Blöcke!'
     commands:
     - money give %player% 25000000
     - tokens give %player% 1250000
