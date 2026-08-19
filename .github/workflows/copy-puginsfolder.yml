@@ -181,26 +181,28 @@ jobs:
           ):
               if not path.exists():
                   continue
-              lines = path.read_text().splitlines()
+              lines = path.read_text().splitlines(keepends=True)
               in_mysql_block = False
               for i, line in enumerate(lines):
-                  stripped = line.strip()
-                  indent_len = len(line) - len(line.lstrip())
+                  raw = line.rstrip("\r\n")
+                  line_ending = line[len(raw):]
+                  stripped = raw.strip()
+                  indent_len = len(raw) - len(raw.lstrip())
                   if stripped == "MySQL:":
                       in_mysql_block = True
                       continue
-                  if in_mysql_block and indent_len <= 4 and stripped and not stripped.startswith("#"):
+                  if in_mysql_block and indent_len < 8 and stripped and not stripped.startswith("#"):
                       in_mysql_block = False
                   if not in_mysql_block:
                       continue
                   for field, replacement in mappings.items():
                       prefix = f"{field}:"
                       if stripped.startswith(prefix):
-                          indent = line[:indent_len]
+                          indent = raw[:indent_len]
                           value = f'"{replacement}"' if field == "Password" else replacement
-                          lines[i] = f"{indent}{prefix} {value}"
+                          lines[i] = f"{indent}{prefix} {value}{line_ending}"
                           break
-              path.write_text("\n".join(lines) + "\n")
+              path.write_text("".join(lines))
           PY
 
       - name: Commit and Push Changes
