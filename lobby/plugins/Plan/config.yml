@@ -1,0 +1,13 @@
+Database:
+  # Use MySQL to share data with the Velocity proxy Plan installation
+  Type: MySQL
+  MySQL:
+    Host: localhost
+    Port: 3306
+    Database: Plan
+    User: root
+    Password: ''
+    SSL_mode: disabled
+    Launch_options: "?rewriteBatchedStatements=true&useSSL=false&serverTimezone=UTC"
+Data_gathering:
+  Accept_GeoLite2_EULA: false
