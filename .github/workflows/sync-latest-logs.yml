@@ -1,0 +1,167 @@
+name: Sync latest server logs
+
+on:
+  schedule:
+    - cron: '17 3 * * *'
+  workflow_dispatch:
+    inputs:
+      server:
+        description: 'Welchen Server synchronisieren?'
+        required: true
+        default: ALL
+        type: choice
+        options:
+          - ALL
+          - LOBBY
+          - PROXY
+          - SURVIVAL
+          - SKYBLOCK
+          - RPG
+          - PRISON
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-latest-logs
+  cancel-in-progress: false
+
+jobs:
+  sync-latest-logs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.PERSONAL_TOKEN }}
+
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: Fetch latest logs
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          REQUESTED_SERVER: ${{ github.event.inputs.server }}
+          SERVER_PATH_LOBBY: ${{ secrets.SERVER_PATH_LOBBY }}
+          SERVER_PATH_PROXY: ${{ secrets.SERVER_PATH_PROXY }}
+          SERVER_PATH_SURVIVAL: ${{ secrets.SERVER_PATH_SURVIVAL }}
+          SERVER_PATH_SKYBLOCK: ${{ secrets.SERVER_PATH_SKYBLOCK }}
+          SERVER_PATH_RPG: ${{ secrets.SERVER_PATH_RPG }}
+          SERVER_PATH_PRISON: ${{ secrets.SERVER_PATH_PRISON }}
+        run: |
+          set -euo pipefail
+
+          sync_server() {
+            local server_name="$1"
+            local server_path="$2"
+            local allow_skip_missing_secret="$3"
+            local local_dir="server-logs/${server_name,,}"
+            local local_file="${local_dir}/latest.log"
+            local tmp_file="/tmp/${server_name,,}-latest.log"
+
+            if [ -z "$server_path" ]; then
+              if [ "$allow_skip_missing_secret" = "true" ]; then
+                echo "::warning::Überspringe ${server_name}: SERVER_PATH nicht konfiguriert."
+                return 0
+              fi
+
+              echo "::error::SERVER_PATH für ${server_name} fehlt."
+              return 1
+            fi
+
+            local server_root
+            server_root="$(dirname "$server_path")"
+            local remote_log_path="${server_root}/logs/latest.log"
+
+            echo "📥 Lade ${server_name}: ${remote_log_path}"
+
+            if ! ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=accept-new "${SSH_USER}@${SSH_HOST}" "test -f '${remote_log_path}'"; then
+              echo "::error::${server_name}: ${remote_log_path} wurde nicht gefunden."
+              return 1
+            fi
+
+            mkdir -p "$local_dir"
+            scp -i ~/.ssh/id_rsa -o StrictHostKeyChecking=accept-new "${SSH_USER}@${SSH_HOST}:${remote_log_path}" "$tmp_file"
+
+            if [ -f "$local_file" ] && cmp -s "$tmp_file" "$local_file"; then
+              echo "ℹ️ ${server_name}: Keine Änderungen."
+              rm -f "$tmp_file"
+              return 0
+            fi
+
+            mv "$tmp_file" "$local_file"
+            echo "✅ ${server_name}: latest.log aktualisiert."
+          }
+
+          if [ "${GITHUB_EVENT_NAME}" = "workflow_dispatch" ] && [ -n "${REQUESTED_SERVER:-}" ] && [ "${REQUESTED_SERVER}" != "ALL" ]; then
+            allow_skip_missing_secret="false"
+            servers=("${REQUESTED_SERVER}")
+          else
+            allow_skip_missing_secret="true"
+            servers=(LOBBY PROXY SURVIVAL SKYBLOCK RPG PRISON)
+          fi
+
+          failed_servers=()
+
+          for server_name in "${servers[@]}"; do
+            case "$server_name" in
+              LOBBY) server_path="$SERVER_PATH_LOBBY" ;;
+              PROXY) server_path="$SERVER_PATH_PROXY" ;;
+              SURVIVAL) server_path="$SERVER_PATH_SURVIVAL" ;;
+              SKYBLOCK) server_path="$SERVER_PATH_SKYBLOCK" ;;
+              RPG) server_path="$SERVER_PATH_RPG" ;;
+              PRISON) server_path="$SERVER_PATH_PRISON" ;;
+              *)
+                echo "::error::Unbekannter Server: $server_name"
+                failed_servers+=("$server_name")
+                continue
+                ;;
+            esac
+
+            if ! sync_server "$server_name" "$server_path" "$allow_skip_missing_secret"; then
+              failed_servers+=("$server_name")
+            fi
+          done
+
+          if [ "${#failed_servers[@]}" -gt 0 ]; then
+            printf '%s\n' "${failed_servers[@]}" > /tmp/failed_servers.txt
+          fi
+
+      - name: Commit and push updated logs
+        run: |
+          set -euo pipefail
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -f server-logs
+
+          if git diff --staged --quiet; then
+            echo "Keine Log-Änderungen gefunden."
+            exit 0
+          fi
+
+          git commit -m "chore: sync latest server logs"
+          echo "::add-mask::${{ secrets.PERSONAL_TOKEN }}"
+          git remote set-url origin "https://x-access-token:${{ secrets.PERSONAL_TOKEN }}@github.com/${{ github.repository }}"
+          git pull --rebase origin "${GITHUB_REF_NAME}" || {
+            echo "Rebase conflict detected. Aborting and retrying..."
+            git rebase --abort
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+          }
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: Fail if a server log could not be fetched
+        run: |
+          if [ ! -f /tmp/failed_servers.txt ]; then
+            exit 0
+          fi
+
+          echo "::error::Für diese Server konnte latest.log nicht geladen werden:"
+          cat /tmp/failed_servers.txt
+          exit 1

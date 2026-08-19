@@ -67,6 +67,11 @@ Folgende Punkte sollten täglich überprüft werden:
 | **Logs**           | Fehler- und Warnmeldungen in Server-Logs überprüfen          |
 | **Backups**        | Sicherstellen, dass tägliche Backups erfolgreich waren        |
 
+Für das Einsammeln der aktuellen `latest.log`-Dateien gibt es zusätzlich den GitHub-Workflow
+`sync-latest-logs.yml`. Er läuft täglich automatisch und kann bei Bedarf manuell für **alle**
+oder einen einzelnen Server gestartet werden. Die Logs werden im Repository unter
+`server-logs/<server>/latest.log` aktualisiert.
+
 ---
 
 ## Notfall-Befehle
