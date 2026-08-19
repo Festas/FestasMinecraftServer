@@ -1,0 +1,220 @@
+[2026-08-19 09:10:49.508] [INFO ] [Server thread       ] [Core           ] Detected server platform: PAPER (Adventure/MiniMessage enabled)
+[2026-08-19 09:10:54.940] [INFO ] [Server thread       ] [Core           ] Enabling X-Prison v2026.3.3.0
+════════════════════════════════════════════════════════════════
+  X-Prison session start
+════════════════════════════════════════════════════════════════
+ X-Prison      : 2026.3.3.0
+ Server        : 26.2-112-c9e894d (MC: 26.2)  (api 26.2.build.112-stable)
+ Platform      : PAPER  folia=false
+ Java          : 25.0.3 (Eclipse Adoptium) on Linux amd64
+ Started       : 2026-08-19 09:10:54
+════════════════════════════════════════════════════════════════
+
+[2026-08-19 09:10:55.281] [INFO ] [Server thread       ] [Core           ] Loaded 27 global sell prices.
+[2026-08-19 09:10:55.333] [INFO ] [Server thread       ] [Core           ] Registered X-Prison Currency: money
+[2026-08-19 09:10:55.334] [INFO ] [Server thread       ] [Core           ] Registered X-Prison Currency: tokens
+[2026-08-19 09:10:55.334] [INFO ] [Server thread       ] [Core           ] Registered X-Prison Currency: gems
+[2026-08-19 09:10:55.356] [INFO ] [Server thread       ] [Core           ] Loaded 12 Block Rewards
+[2026-08-19 09:10:55.397] [INFO ] [Server thread       ] [Core           ] Loaded Bomb: tiny
+[2026-08-19 09:10:55.399] [INFO ] [Server thread       ] [Core           ] Loaded Bomb: small
+[2026-08-19 09:10:55.401] [INFO ] [Server thread       ] [Core           ] Loaded Bomb: normal
+[2026-08-19 09:10:55.402] [INFO ] [Server thread       ] [Core           ] Loaded Bomb: large
+[2026-08-19 09:10:55.403] [INFO ] [Server thread       ] [Core           ] Loaded Bomb: mega
+[2026-08-19 09:10:55.404] [INFO ] [Server thread       ] [Core           ] Loaded Bomb: colossal
+[2026-08-19 09:10:55.405] [INFO ] [Server thread       ] [Core           ] Loaded Bomb: omega
+[2026-08-19 09:10:55.407] [INFO ] [Server thread       ] [Core           ] Loaded Bomb: singularity
+[2026-08-19 09:10:55.421] [INFO ] [Server thread       ] [Core           ] Using money currency for Ranks.
+[2026-08-19 09:10:55.422] [INFO ] [Server thread       ] [Core           ] Loaded 10 Ranks.
+[2026-08-19 09:10:55.436] [INFO ] [Server thread       ] [Core           ] Using money currency for Prestiges.
+[2026-08-19 09:10:55.437] [INFO ] [Server thread       ] [Core           ] Loaded 11 Prestiges.
+[2026-08-19 09:10:55.458] [INFO ] [Server thread       ] [Core           ] Loaded Rebirth 0
+[2026-08-19 09:10:55.460] [INFO ] [Server thread       ] [Core           ] Loaded Rebirth 1
+[2026-08-19 09:10:55.460] [INFO ] [Server thread       ] [Core           ] Loaded Rebirth 2
+[2026-08-19 09:10:55.461] [INFO ] [Server thread       ] [Core           ] Loaded Rebirth 3
+[2026-08-19 09:10:55.461] [INFO ] [Server thread       ] [Core           ] Loaded Rebirth 4
+[2026-08-19 09:10:55.461] [INFO ] [Server thread       ] [Core           ] Loaded Rebirth 5
+[2026-08-19 09:10:55.477] [INFO ] [helper-scheduler-0  ] [Core           ] Removed expired multipliers from DB.
+[2026-08-19 09:10:55.499] [INFO ] [Server thread       ] [Core           ] Loaded 0 mines.
+[2026-08-19 09:10:55.546] [INFO ] [Server thread       ] [Core           ] Enchant configuration for enchant efficiency loaded successfully.
+[2026-08-19 09:10:55.546] [INFO ] [Server thread       ] [Core           ] Registered enchant Efficiency created by Drawethree
+[2026-08-19 09:10:55.547] [INFO ] [Server thread       ] [Core           ] Enchant configuration for enchant keyfinder loaded successfully.
+[2026-08-19 09:10:55.548] [INFO ] [Server thread       ] [Core           ] Registered enchant Key Finder created by Drawethree
+[2026-08-19 09:10:55.551] [INFO ] [Server thread       ] [Core           ] Enchant configuration for enchant laser loaded successfully.
+[2026-08-19 09:10:55.551] [INFO ] [Server thread       ] [Core           ] Registered enchant Laser created by Drawethree
+[2026-08-19 09:10:55.552] [INFO ] [Server thread       ] [Core           ] Enchant configuration for enchant charity loaded successfully.
+[2026-08-19 09:10:55.552] [INFO ] [Server thread       ] [Core           ] Registered enchant Charity created by Drawethree
+[2026-08-19 09:10:55.553] [INFO ] [Server thread       ] [Core           ] Enchant configuration for enchant haste loaded successfully.
+[2026-08-19 09:10:55.553] [INFO ] [Server thread       ] [Core           ] Registered enchant Haste created by Drawethree
+[2026-08-19 09:10:55.560] [INFO ] [Server thread       ] [Core           ] Enchant configuration for enchant explosive loaded successfully.
+[2026-08-19 09:10:55.560] [INFO ] [Server thread       ] [Core           ] Registered enchant Explosive created by Drawethree
+[2026-08-19 09:10:55.561] [INFO ] [Server thread       ] [Core           ] Enchant configuration for enchant autosell loaded successfully.
+[2026-08-19 09:10:55.561] [INFO ] [Server thread       ] [Core           ] Registered enchant Autosell created by Drawethree
+[2026-08-19 09:10:55.562] [INFO ] [Server thread       ] [Core           ] Enchant configuration for enchant gemfinder loaded successfully.
+[2026-08-19 09:10:55.562] [INFO ] [Server thread       ] [Core           ] Registered enchant Gem Finder created by Drawethree
+[2026-08-19 09:10:55.563] [INFO ] [Server thread       ] [Core           ] Enchant configuration for enchant nightvision loaded successfully.
+[2026-08-19 09:10:55.563] [INFO ] [Server thread       ] [Core           ] Registered enchant Night Vision created by Drawethree
+[2026-08-19 09:10:55.563] [INFO ] [Server thread       ] [Core           ] Enchant configuration for enchant keyalls loaded successfully.
+[2026-08-19 09:10:55.564] [INFO ] [Server thread       ] [Core           ] Registered enchant Keyalls created by Drawethree
+[2026-08-19 09:10:55.564] [INFO ] [Server thread       ] [Core           ] Enchant configuration for enchant tokenmerchant loaded successfully.
+[2026-08-19 09:10:55.565] [INFO ] [Server thread       ] [Core           ] Registered enchant Token Merchant created by Drawethree
+[2026-08-19 09:10:55.566] [INFO ] [Server thread       ] [Core           ] Enchant configuration for enchant fortune loaded successfully.
+[2026-08-19 09:10:55.566] [INFO ] [Server thread       ] [Core           ] Registered enchant Fortune created by Drawethree
+[2026-08-19 09:10:55.566] [INFO ] [Server thread       ] [Core           ] Enchant configuration for enchant nuke loaded successfully.
+[2026-08-19 09:10:55.567] [INFO ] [Server thread       ] [Core           ] Registered enchant Nuke created by Drawethree
+[2026-08-19 09:10:55.568] [INFO ] [Server thread       ] [Core           ] Enchant configuration for enchant blessing loaded successfully.
+[2026-08-19 09:10:55.568] [INFO ] [Server thread       ] [Core           ] Registered enchant Blessing created by Drawethree
+[2026-08-19 09:10:55.569] [INFO ] [Server thread       ] [Core           ] Enchant configuration for enchant blockbooster loaded successfully.
+[2026-08-19 09:10:55.570] [INFO ] [Server thread       ] [Core           ] Registered enchant Block Booster created by Drawethree
+[2026-08-19 09:10:55.570] [INFO ] [Server thread       ] [Core           ] Enchant configuration for enchant tokenfinder loaded successfully.
+[2026-08-19 09:10:55.570] [INFO ] [Server thread       ] [Core           ] Registered enchant Token Finder created by Drawethree
+[2026-08-19 09:10:55.571] [INFO ] [Server thread       ] [Core           ] Enchant configuration for enchant jumpboost loaded successfully.
+[2026-08-19 09:10:55.571] [INFO ] [Server thread       ] [Core           ] Registered enchant Jump Boost created by Drawethree
+[2026-08-19 09:10:55.572] [INFO ] [Server thread       ] [Core           ] Enchant configuration for enchant fly loaded successfully.
+[2026-08-19 09:10:55.572] [INFO ] [Server thread       ] [Core           ] Registered enchant Fly created by Drawethree
+[2026-08-19 09:10:55.572] [INFO ] [Server thread       ] [Core           ] Enchant configuration for enchant unbreaking loaded successfully.
+[2026-08-19 09:10:55.573] [INFO ] [Server thread       ] [Core           ] Registered enchant Unbreaking created by Drawethree
+[2026-08-19 09:10:55.573] [INFO ] [Server thread       ] [Core           ] Enchant configuration for enchant layer loaded successfully.
+[2026-08-19 09:10:55.573] [INFO ] [Server thread       ] [Core           ] Registered enchant Layer created by Drawethree
+[2026-08-19 09:10:55.574] [INFO ] [Server thread       ] [Core           ] Enchant configuration for enchant speed loaded successfully.
+[2026-08-19 09:10:55.574] [INFO ] [Server thread       ] [Core           ] Registered enchant Speed created by Drawethree
+[2026-08-19 09:10:55.575] [INFO ] [Server thread       ] [Core           ] Enchant configuration for enchant gang-value-finder loaded successfully.
+[2026-08-19 09:10:55.575] [INFO ] [Server thread       ] [Core           ] Registered enchant Gang Value Finder created by Drawethree
+[2026-08-19 09:10:55.575] [INFO ] [Server thread       ] [Core           ] Enchant configuration for enchant prestigefinder loaded successfully.
+[2026-08-19 09:10:55.576] [INFO ] [Server thread       ] [Core           ] Registered enchant Prestige Finder created by Drawethree
+[2026-08-19 09:10:55.576] [INFO ] [Server thread       ] [Core           ] Enchant configuration for enchant gemmerchant loaded successfully.
+[2026-08-19 09:10:55.576] [INFO ] [Server thread       ] [Core           ] Registered enchant Gem Merchant created by Drawethree
+[2026-08-19 09:10:55.578] [INFO ] [Server thread       ] [Core           ] Enchant configuration for enchant custom-enchant-1 loaded successfully.
+[2026-08-19 09:10:55.578] [INFO ] [Server thread       ] [Core           ] Registered enchant Your Custom Enchant created by Drawethree
+[2026-08-19 09:10:55.579] [INFO ] [Server thread       ] [Core           ] Enchant configuration for enchant salary loaded successfully.
+[2026-08-19 09:10:55.579] [INFO ] [Server thread       ] [Core           ] Registered enchant Salary created by Drawethree
+[2026-08-19 09:10:55.579] [INFO ] [Server thread       ] [Core           ] Loaded 26 enchantments.
+[2026-08-19 09:10:55.627] [WARN ] [Server thread       ] [Core           ] There is no such region named automine in world world!
+[2026-08-19 09:10:55.662] [INFO ] [Server thread       ] [Core           ] Loaded 300 Pickaxe Levels.
+[2026-08-19 09:10:55.673] [INFO ] [Server thread       ] [Core           ] Loaded pickaxe skin Plasma-Schub
+[2026-08-19 09:10:55.682] [INFO ] [Server thread       ] [Core           ] Loaded 10 Pickaxe Quality tiers.
+[2026-08-19 09:10:55.709] [INFO ] [helper-scheduler-1  ] [Core           ] History cleanup: removed entries older than 30 days.
+[2026-08-19 09:10:55.721] [INFO ] [Server thread       ] [Core           ] Loaded Battle Pass season season-1 with 20 tiers.
+[2026-08-19 09:10:55.743] [INFO ] [Server thread       ] [Core           ] Loaded 18 quests (9 daily, 5 weekly, 4 permanent).
+[2026-08-19 09:10:55.761] [INFO ] [Server thread       ] [Core           ] Loaded Daily Rewards: 14 cycle days, 6 milestones.
+[2026-08-19 09:10:55.765] [INFO ] [Server thread       ] [Core           ] Enabled 20/20 modules: Auto Sell, Currencies, Blocks, Bombs, Ranks, Prestiges, Rebirths, Multipliers, Mines, Enchants, Auto Miner, Gangs, Pickaxe Levels, Pickaxe Skins, Pickaxe Quality, History, Mining Stats, BattlePass, Quests, DailyRewards
+[2026-08-19 09:10:55.783] [WARN ] [Server thread       ] [Core           ] Skipping X-PrivateMines-Dashboard-1.0.4.jar: no X-Prison-Addon-Class attribute in manifest.
+[2026-08-19 09:10:55.803] [INFO ] [Server thread       ] [Core           ] Registered enchant Meteor Strike created by Drawethree
+[2026-08-19 09:10:55.804] [INFO ] [Server thread       ] [Core           ] Registered enchant Black Hole created by Drawethree
+[2026-08-19 09:10:55.805] [INFO ] [Server thread       ] [Core           ] Registered enchant Lightning Storm created by Drawethree
+[2026-08-19 09:10:55.806] [INFO ] [Server thread       ] [Core           ] Registered enchant Tornado created by Drawethree
+[2026-08-19 09:10:55.806] [INFO ] [Server thread       ] [Addon:AnimatedEnchants] Animated Enchants enabled — registered 4/4 enchants.
+[2026-08-19 09:10:55.806] [INFO ] [Server thread       ] [Core           ] Loaded addon: AnimatedEnchants v1.4.0 by Drawethree
+[2026-08-19 09:10:55.821] [INFO ] [Server thread       ] [Core           ] Registered enchant Divine Smite created by Drawethree
+[2026-08-19 09:10:55.822] [INFO ] [Server thread       ] [Core           ] Registered enchant Soul Harvest created by Drawethree
+[2026-08-19 09:10:55.823] [INFO ] [Server thread       ] [Core           ] Registered enchant Arcane Nova created by Drawethree
+[2026-08-19 09:10:55.823] [INFO ] [Server thread       ] [Core           ] Registered enchant Starfall created by Drawethree
+[2026-08-19 09:10:55.823] [INFO ] [Server thread       ] [Addon:AnimatedEnchants2] Animated Enchants 2 enabled — registered 4/4 enchants.
+[2026-08-19 09:10:55.824] [INFO ] [Server thread       ] [Core           ] Loaded addon: AnimatedEnchants2 v1.4.0 by Drawethree
+[2026-08-19 09:10:55.838] [INFO ] [Server thread       ] [Core           ] Registered enchant Frostbite created by Drawethree
+[2026-08-19 09:10:55.839] [INFO ] [Server thread       ] [Core           ] Registered enchant Venom Bloom created by Drawethree
+[2026-08-19 09:10:55.839] [INFO ] [Server thread       ] [Core           ] Registered enchant Gale Cutter created by Drawethree
+[2026-08-19 09:10:55.840] [INFO ] [Server thread       ] [Core           ] Registered enchant Magma Surge created by Drawethree
+[2026-08-19 09:10:55.840] [INFO ] [Server thread       ] [Addon:AnimatedEnchants3] Animated Enchants 3 enabled — registered 4/4 enchants.
+[2026-08-19 09:10:55.840] [INFO ] [Server thread       ] [Core           ] Loaded addon: AnimatedEnchants3 v1.3.0 by Drawethree
+[2026-08-19 09:10:55.844] [INFO ] [Server thread       ] [Core           ] Enchant configuration for enchant ascendant loaded successfully.
+[2026-08-19 09:10:55.845] [INFO ] [Server thread       ] [Core           ] Registered enchant Ascendant created by Drawethree
+[2026-08-19 09:10:55.845] [INFO ] [Server thread       ] [Addon:Ascendant] Ascendant enabled — registered 1/1 enchants.
+[2026-08-19 09:10:55.845] [INFO ] [Server thread       ] [Core           ] Loaded addon: Ascendant v1.1.0 by Drawethree
+[2026-08-19 09:10:55.848] [INFO ] [Server thread       ] [Addon:BlackMarket] Enabling Black Market addon v1.1.0...
+[2026-08-19 09:10:55.872] [INFO ] [Server thread       ] [Addon:BlackMarket] [BlackMarket] Loaded 13 market item(s).
+[2026-08-19 09:10:55.896] [INFO ] [Server thread       ] [Addon:BlackMarket] [BlackMarket] Hooked into PlaceholderAPI.
+[2026-08-19 09:10:55.896] [INFO ] [Server thread       ] [Addon:BlackMarket] Black Market addon enabled with 13 item(s) in the pool.
+[2026-08-19 09:10:55.896] [INFO ] [Server thread       ] [Core           ] Loaded addon: BlackMarket v1.1.0 by Drawethree
+[2026-08-19 09:10:55.901] [INFO ] [Server thread       ] [Core           ] Registered enchant Bomb Finder created by Drawethree
+[2026-08-19 09:10:55.902] [INFO ] [Server thread       ] [Core           ] Loaded addon: BombFinderEnchant v1.1 by Drawethree
+[2026-08-19 09:10:55.906] [INFO ] [Server thread       ] [Core           ] Registered enchant Cluster Bomb created by Drawethree
+[2026-08-19 09:10:55.906] [INFO ] [Server thread       ] [Core           ] Loaded addon: ClusterBombEnchant v1.5 by Drawethree
+[2026-08-19 09:10:57.310] [INFO ] [Server thread       ] [Addon:Dashboard] Dashboard started on port 8085 — navigate to http://<your-server-ip>:8085
+[2026-08-19 09:10:57.311] [INFO ] [Server thread       ] [Core           ] Loaded addon: Dashboard v1.4.0 by Drawethree
+[2026-08-19 09:10:57.315] [INFO ] [Server thread       ] [Core           ] Registered enchant Drill created by Drawethree
+[2026-08-19 09:10:57.315] [INFO ] [Server thread       ] [Core           ] Loaded addon: DrillEnchant v1.4 by Drawethree
+[2026-08-19 09:10:57.318] [INFO ] [Server thread       ] [Core           ] Registered enchant Echo Booster created by Drawethree
+[2026-08-19 09:10:57.319] [INFO ] [Server thread       ] [Core           ] Loaded addon: EchoBoosterEnchant v1.2 by Drawethree
+[2026-08-19 09:10:57.321] [INFO ] [Server thread       ] [Addon:Events   ] Enabling Events addon v1.0.2...
+[2026-08-19 09:10:57.346] [INFO ] [Server thread       ] [Addon:Events   ] [Events] Loaded 6 event(s).
+[2026-08-19 09:10:57.363] [INFO ] [Server thread       ] [Addon:Events   ] Hooked into PlaceholderAPI.
+[2026-08-19 09:10:57.363] [INFO ] [Server thread       ] [Addon:Events   ] Events addon enabled with 6 event(s).
+[2026-08-19 09:10:57.364] [INFO ] [Server thread       ] [Core           ] Loaded addon: Events v1.0.2 by Drawethree
+[2026-08-19 09:10:57.368] [INFO ] [Server thread       ] [Core           ] Registered enchant Lucky Block created by Drawethree
+[2026-08-19 09:10:57.369] [INFO ] [Server thread       ] [Core           ] Loaded addon: LuckyBlockEnchant v1.5 by Drawethree
+[2026-08-19 09:10:57.371] [INFO ] [Server thread       ] [Addon:Momentum ] Enabling Momentum addon v1.0.2...
+[2026-08-19 09:10:57.384] [INFO ] [Server thread       ] [Addon:Momentum ] [Momentum] Hooked into PlaceholderAPI.
+[2026-08-19 09:10:57.384] [INFO ] [Server thread       ] [Addon:Momentum ] Momentum addon enabled with 5 tier(s).
+[2026-08-19 09:10:57.385] [INFO ] [Server thread       ] [Core           ] Loaded addon: Momentum v1.0.2 by Drawethree
+[2026-08-19 09:10:57.388] [INFO ] [Server thread       ] [Core           ] Registered enchant Pet Finder created by Drawethree
+[2026-08-19 09:10:57.389] [INFO ] [Server thread       ] [Core           ] Loaded addon: PetFinderEnchant v1.0 by Drawethree
+[2026-08-19 09:10:57.416] [INFO ] [Server thread       ] [Addon:Pets     ] [Pets] Loaded 6 rarit(ies).
+[2026-08-19 09:10:57.428] [INFO ] [Server thread       ] [Addon:Pets     ] [Pets] Loaded 5 pet type(s).
+[2026-08-19 09:10:57.430] [INFO ] [Server thread       ] [Addon:Pets     ] [Pets] Loaded 3 egg type(s).
+[2026-08-19 09:10:57.605] [INFO ] [Server thread       ] [Addon:Pets     ] [Pets] Built 5 pet icon(s) in 0ms.
+[2026-08-19 09:10:57.608] [INFO ] [Server thread       ] [Addon:Pets     ] [Pets] Configuration validated — no problems found.
+[2026-08-19 09:10:57.608] [INFO ] [Server thread       ] [Addon:Pets     ] Pets addon enabled. Pet types: 5
+[2026-08-19 09:10:57.608] [INFO ] [Server thread       ] [Core           ] Loaded addon: Pets v1.3.0 by Drawethree
+[2026-08-19 09:10:57.611] [INFO ] [Server thread       ] [Core           ] Registered enchant Robot Finder created by Drawethree
+[2026-08-19 09:10:57.611] [INFO ] [Server thread       ] [Core           ] Loaded addon: RobotFinderEnchant v1.2 by Drawethree
+[2026-08-19 09:10:57.614] [INFO ] [Server thread       ] [Core           ] Enchant configuration for enchant vanguard loaded successfully.
+[2026-08-19 09:10:57.614] [INFO ] [Server thread       ] [Core           ] Registered enchant Vanguard created by Drawethree
+[2026-08-19 09:10:57.615] [INFO ] [Server thread       ] [Addon:Vanguard ] Vanguard enabled — registered 1/1 enchants.
+[2026-08-19 09:10:57.615] [INFO ] [Server thread       ] [Core           ] Loaded addon: Vanguard v1.1.0 by Drawethree
+[2026-08-19 09:10:57.617] [INFO ] [Server thread       ] [Core           ] Registered enchant Voucher Finder created by Drawethree
+[2026-08-19 09:10:57.617] [INFO ] [Server thread       ] [Core           ] Loaded addon: VoucherFinderEnchant v1.2 by Drawethree
+[2026-08-19 09:10:57.618] [INFO ] [Server thread       ] [Core           ] Loaded 18 addons.
+
+════════════════════════════════════════════════════════════════
+  X-Prison ready
+════════════════════════════════════════════════════════════════
+ Text renderer : adventure
+ Database      : H2
+ Debug         : mode=false  sql=false
+ Modules       : 20/20 enabled
+ Addons        : 18
+════════════════════════════════════════════════════════════════
+
+[2026-08-19 09:11:03.164] [INFO ] [Craft Scheduler Thre] [Addon:Dashboard] Player index backfilled: 3 / 3 players.
+[2026-08-19 09:11:03.419] [INFO ] [Server thread       ] [Core           ] Custom-content reload detected. Reloading autosell global / region data.
+[2026-08-19 09:11:03.422] [INFO ] [Server thread       ] [Core           ] Loaded 27 global sell prices.
+[2026-08-19 09:11:03.423] [INFO ] [Server thread       ] [Core           ] Custom-content reload detected. Reloading mines.
+[2026-08-19 09:11:03.423] [INFO ] [Server thread       ] [Core           ] Loaded 0 mines.
+[2026-08-19 09:11:37.044] [INFO ] [Server thread       ] [Core           ] Disabling X-Prison v2026.3.3.0
+[2026-08-19 09:11:37.054] [INFO ] [Server thread       ] [Core           ] Saved all currencies data to DB
+[2026-08-19 09:11:37.058] [INFO ] [Server thread       ] [Core           ] Blocks Broken saved.
+[2026-08-19 09:11:37.064] [INFO ] [Server thread       ] [Core           ] Ranks saved.
+[2026-08-19 09:11:37.067] [INFO ] [Server thread       ] [Core           ] Prestiges saved.
+[2026-08-19 09:11:37.069] [INFO ] [Server thread       ] [Core           ] Rebirths saved.
+[2026-08-19 09:11:37.070] [INFO ] [Server thread       ] [Core           ] Saved global multipliers to DB
+[2026-08-19 09:11:37.070] [INFO ] [Server thread       ] [Core           ] Saved all player multipliers to DB
+[2026-08-19 09:11:37.075] [INFO ] [Server thread       ] [Core           ] Saved online players auto miner data.
+[2026-08-19 09:11:37.076] [INFO ] [Server thread       ] [Core           ] Gangs saved.
+[2026-08-19 09:11:37.083] [INFO ] [Server thread       ] [Core           ] Database Connection closed
+[2026-08-19 09:11:37.084] [INFO ] [Server thread       ] [Core           ] Unregistered enchant Voucher Finder created by Drawethree
+[2026-08-19 09:11:37.084] [INFO ] [Server thread       ] [Core           ] Unregistered enchant Vanguard created by Drawethree
+[2026-08-19 09:11:37.084] [INFO ] [Server thread       ] [Core           ] Unregistered enchant Robot Finder created by Drawethree
+[2026-08-19 09:11:37.086] [INFO ] [Server thread       ] [Addon:Pets     ] Pets addon disabled.
+[2026-08-19 09:11:37.086] [INFO ] [Server thread       ] [Core           ] Unregistered enchant Pet Finder created by Drawethree
+[2026-08-19 09:11:37.087] [INFO ] [Server thread       ] [Addon:Momentum ] Momentum addon disabled.
+[2026-08-19 09:11:37.087] [INFO ] [Server thread       ] [Core           ] Unregistered enchant Lucky Block created by Drawethree
+[2026-08-19 09:11:37.088] [INFO ] [Server thread       ] [Addon:Events   ] Events addon disabled.
+[2026-08-19 09:11:37.088] [INFO ] [Server thread       ] [Core           ] Unregistered enchant Echo Booster created by Drawethree
+[2026-08-19 09:11:37.088] [INFO ] [Server thread       ] [Core           ] Unregistered enchant Drill created by Drawethree
+[2026-08-19 09:11:37.102] [INFO ] [Server thread       ] [Addon:Dashboard] Dashboard stopped.
+[2026-08-19 09:11:37.102] [INFO ] [Server thread       ] [Core           ] Unregistered enchant Cluster Bomb created by Drawethree
+[2026-08-19 09:11:37.103] [INFO ] [Server thread       ] [Core           ] Unregistered enchant Bomb Finder created by Drawethree
+[2026-08-19 09:11:37.109] [INFO ] [Server thread       ] [Addon:BlackMarket] Black Market addon disabled.
+[2026-08-19 09:11:37.110] [INFO ] [Server thread       ] [Core           ] Unregistered enchant Ascendant created by Drawethree
+[2026-08-19 09:11:37.110] [INFO ] [Server thread       ] [Core           ] Unregistered enchant Frostbite created by Drawethree
+[2026-08-19 09:11:37.111] [INFO ] [Server thread       ] [Core           ] Unregistered enchant Venom Bloom created by Drawethree
+[2026-08-19 09:11:37.111] [INFO ] [Server thread       ] [Core           ] Unregistered enchant Gale Cutter created by Drawethree
+[2026-08-19 09:11:37.111] [INFO ] [Server thread       ] [Core           ] Unregistered enchant Magma Surge created by Drawethree
+[2026-08-19 09:11:37.112] [INFO ] [Server thread       ] [Core           ] Unregistered enchant Divine Smite created by Drawethree
+[2026-08-19 09:11:37.112] [INFO ] [Server thread       ] [Core           ] Unregistered enchant Soul Harvest created by Drawethree
+[2026-08-19 09:11:37.113] [INFO ] [Server thread       ] [Core           ] Unregistered enchant Arcane Nova created by Drawethree
+[2026-08-19 09:11:37.113] [INFO ] [Server thread       ] [Core           ] Unregistered enchant Starfall created by Drawethree
+[2026-08-19 09:11:37.114] [INFO ] [Server thread       ] [Core           ] Unregistered enchant Meteor Strike created by Drawethree
+[2026-08-19 09:11:37.114] [INFO ] [Server thread       ] [Core           ] Unregistered enchant Black Hole created by Drawethree
+[2026-08-19 09:11:37.115] [INFO ] [Server thread       ] [Core           ] Unregistered enchant Lightning Storm created by Drawethree
+[2026-08-19 09:11:37.115] [INFO ] [Server thread       ] [Core           ] Unregistered enchant Tornado created by Drawethree
