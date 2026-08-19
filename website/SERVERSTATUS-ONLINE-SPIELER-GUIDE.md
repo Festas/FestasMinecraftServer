@@ -42,7 +42,7 @@ Minimales JSON-Format:
   "servers": [
     {
       "name": "lobby",
-      "online": true,
+      "online": false,
       "count": 0,
       "max": 40,
       "uptimeSeconds": 0,
@@ -51,7 +51,7 @@ Minimales JSON-Format:
       "worlds": [
         {
           "name": "spawn",
-          "online": true,
+          "online": false,
           "count": 0,
           "max": 40,
           "updated": 0,

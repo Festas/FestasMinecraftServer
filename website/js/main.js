@@ -486,7 +486,7 @@ function initPlayerList() {
             worlds.forEach((world) => worldsList.appendChild(buildWorldItem(world, showNames)));
             body.appendChild(worldsList);
 
-            if (count === 0) {
+            if (count === 0 && !worlds.some((world) => inferWorldOnline(world))) {
                 const empty = document.createElement('p');
                 empty.className = 'player-empty';
                 empty.textContent = 'Niemand online';
