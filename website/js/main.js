@@ -238,14 +238,14 @@ function initServerStatus() {
     }
 
     async function fetchJSON(url, timeoutMs) {
-        const controller = typeof AbortController === 'function' ? new AbortController() : null;
+        const controller = new AbortController();
         let timeoutId = null;
 
         try {
-            if (controller) timeoutId = window.setTimeout(() => controller.abort(), timeoutMs);
+            timeoutId = window.setTimeout(() => controller.abort(), timeoutMs);
             const res = await fetch(url, {
                 cache: 'no-store',
-                signal: controller ? controller.signal : undefined
+                signal: controller.signal
             });
             if (!res.ok) throw new Error('HTTP ' + res.status);
             return await res.json();
