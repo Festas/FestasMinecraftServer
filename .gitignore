@@ -42,8 +42,6 @@ test-server/
 **/HuskSync/config.yml
 **/partyandfriends/config.yml
 **/libertybans/sql.yml
-**/plan/config.yml
-**/Plan/config.yml
 **/plan/serverConfiguration/
 **/Plan/serverConfiguration/
 **/DeluxeBazaar/config.yml
