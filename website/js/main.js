@@ -150,11 +150,14 @@ function normalizeServers(value) {
 }
 
 function resolvedCount(entry) {
+    const worlds = normalizeWorlds(entry && entry.worlds);
+    const worldsCount = worlds.reduce((sum, world) => sum + toPositiveNumberOrZero(world.count), 0);
     const direct = Number(entry && entry.count);
-    if (Number.isFinite(direct) && direct >= 0) return direct;
+    if (Number.isFinite(direct) && direct >= 0) {
+        return direct === 0 && worldsCount > 0 ? worldsCount : direct;
+    }
 
-    return normalizeWorlds(entry && entry.worlds)
-        .reduce((sum, world) => sum + toPositiveNumberOrZero(world.count), 0);
+    return worldsCount;
 }
 
 function resolvedMax(entry) {
@@ -482,6 +485,13 @@ function initPlayerList() {
             worldsList.className = 'player-worlds';
             worlds.forEach((world) => worldsList.appendChild(buildWorldItem(world, showNames)));
             body.appendChild(worldsList);
+
+            if (count === 0) {
+                const empty = document.createElement('p');
+                empty.className = 'player-empty';
+                empty.textContent = 'Niemand online';
+                body.appendChild(empty);
+            }
 
             if (!hasWorldNames && showNames && Array.isArray(server.players) && server.players.length) {
                 body.appendChild(buildPlayersChips(server.players));
