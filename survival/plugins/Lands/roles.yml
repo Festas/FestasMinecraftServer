@@ -1,15 +1,15 @@
-# In this file you can edit/add default roles.
-# Please note that each config section (role section) name and role name must be unique.
-# You must insert valid YAML format. To verify your format, you can paste the content of this file here: https://yaml-online-parser.appspot.com
-# Explanation of roles and their flags: https://wiki.incredibleplugins.com/lands/configuration/roles-and-their-flags
-# Please note that changing options in this file may require server reload / restart.
+# In dieser Datei können Standard-Rollen bearbeitet/hinzugefügt werden.
+# Jeder Konfigurationsabschnitt (Rollenabschnitt) und jeder Rollenname muss eindeutig sein.
+# Es muss gültiges YAML-Format verwendet werden. Zum Prüfen des Formats den Inhalt dieser Datei hier einfügen: https://yaml-online-parser.appspot.com
+# Erklärung der Rollen und ihrer Flags: https://wiki.incredibleplugins.com/lands/configuration/roles-and-their-flags
+# Bitte beachten: Änderungen an Optionen in dieser Datei erfordern möglicherweise einen Server-Neustart.
 
-# Default land roles. You can also add your own default roles.
-# The priority of the roles is descending (highest role -> lowest).
+# Standard-Land-Rollen. Eigene Standard-Rollen können ebenfalls hinzugefügt werden.
+# Die Priorität der Rollen ist absteigend (höchste Rolle -> niedrigste).
 land:
-  # Which flags should be displayed in the role settings menu?
-  # You can still set default values below and hide them by removing them from this list.
-  # The order of this list also defines their sorting in the menus.
+  # Welche Flags sollen im Rollen-Einstellungs-Menü angezeigt werden?
+  # Standardwerte können trotzdem gesetzt und ausgeblendet werden, indem sie aus dieser Liste entfernt werden.
+  # Die Reihenfolge dieser Liste bestimmt auch die Sortierung in den Menüs.
   display:
     - BLOCK_PLACE
     - BLOCK_BREAK
@@ -50,36 +50,37 @@ land:
     - SETTING_EDIT_TAXES
     - SETTING_EDIT_VARIOUS
 
-  # Here you can add your own default roles or edit the existing ones. Players will still be able to create new roles in their land menu if they have the required permission.
-  # NOTE: The order of the roles will affect the initial priority of the role. Means that roles at the top have the highest priority and roles at the bottom the lowest.
+  # Hier können eigene Standard-Rollen hinzugefügt oder bestehende bearbeitet werden. Spieler können weiterhin neue Rollen in ihrem Land-Menü erstellen, wenn sie die erforderliche Berechtigung haben.
+  # HINWEIS: Die Reihenfolge der Rollen beeinflusst die anfängliche Priorität. Rollen oben haben die höchste Priorität, Rollen unten die niedrigste.
   ################################################################################################################################
-  # Whenever a new flag is added to Lands, all existing Lands will apply the flag, if specified by the flag author.              #
-  # But for future land creations you need to configure it correctly here. Lands will always send you a popup in console and on  #
-  # admin ingame accounts, if there is a new flag available.                                                                     #
-  # You can force sync / reset flag(s) by using /lands admin land <land | *> resetFlag <flag | all>                              #
+  # Wenn ein neues Flag zu Lands hinzugefügt wird, wird es automatisch auf alle bestehenden Länder angewendet,                  #
+  # wenn vom Flag-Autor so vorgesehen. Für zukünftige Land-Erstellungen muss es hier korrekt konfiguriert werden.               #
+  # Lands zeigt immer eine Benachrichtigung in der Konsole und bei Admin-Accounts ingame,                                        #
+  # wenn ein neues Flag verfügbar ist.                                                                                           #
+  # Flags können mit /lands admin land <land | *> resetFlag <flag | all> synchronisiert/zurückgesetzt werden.                   #
   ################################################################################################################################
   roles:
-    # NOTE: The owner role can not be deleted.
+    # HINWEIS: Die Besitzer-Rolle kann nicht gelöscht werden.
     owner:
       name: '&4&lBesitzer'
-      # The icon supports minecraft URL values (example: https://minecraft-heads.com/) and normal material values.
+      # Das Symbol unterstützt Minecraft-URL-Werte (Beispiel: https://minecraft-heads.com/) und normale Material-Werte.
       icon: 'skin:83f642814fa2551e7763d04060c532adea51015cbfe030cbb78e82c92092a6fb'
-      # Default flag values. Please note that these only apply to new land creations. The flags of the owner role can only be toggled by server administrators.
-      # Using ALL instead of a list will give this role all player flags. Flags which are only for admin lands won't be set for this role.
+      # Standard-Flag-Werte. Gilt nur für neue Land-Erstellungen. Die Flags der Besitzer-Rolle können nur von Server-Administratoren umgeschaltet werden.
+      # ALL statt einer Liste gibt dieser Rolle alle Spieler-Flags. Flags, die nur für Admin-Länder gelten, werden nicht gesetzt.
       default: 'ALL'
 
-    # This role can't be deleted, but is only visible if an area is rented or in admin lands.
+    # Diese Rolle kann nicht gelöscht werden, ist aber nur sichtbar, wenn ein Bereich vermietet wird oder in Admin-Ländern.
     tenant:
       name: '&6&lMieter'
-      # The icon supports minecraft URL values (example: https://minecraft-heads.com/) and normal material values.
+      # Das Symbol unterstützt Minecraft-URL-Werte (Beispiel: https://minecraft-heads.com/) und normale Material-Werte.
       icon: 'skin:d831830a7bd3b1ab05beb98dc2f9fc5ea550b3cf649fd94d483da7cd39f7c063'
-      # Allow lands to toggle specific flags for this role? They can only do this while the area is NOT rented.
-      # WARNING: Keep in mind that this could allow lands to rent out areas, in which tenants can't do much or nothing depending
-      # on the "allow-edit" list. You can add "all" to the list to allow them to toggle all flags for this role.
-      # NOTE: They still need the general toggle permission for the flags. These can be found in the wiki: https://wiki.incredibleplugins.com/lands/configuration/roles-and-their-flags#flags
+      # Sollen Länder bestimmte Flags für diese Rolle umschalten können? Das ist nur möglich, solange der Bereich NICHT vermietet ist.
+      # WARNUNG: Dies könnte Ländern erlauben, Bereiche zu vermieten, in denen Mieter kaum oder gar keine Berechtigungen haben,
+      # je nach "allow-edit"-Liste. "all" zur Liste hinzufügen erlaubt alle Flags für diese Rolle.
+      # HINWEIS: Für das Umschalten werden trotzdem die allgemeinen Umschalt-Berechtigungen benötigt. Diese befinden sich im Wiki: https://wiki.incredibleplugins.com/lands/configuration/roles-and-their-flags#flags
       allow-toggle-flags: []
-      # Default flag values. Please note that these only apply to new rentals.
-      # Only admin lands can change these flags ingame. This prevents lands abusing this and selling areas where the tanant would have no permission to do anything.
+      # Standard-Flag-Werte. Gilt nur für neue Vermietungen.
+      # Nur Admin-Länder können diese Flags ingame ändern. Verhindert, dass Länder Bereiche vermieten, in denen Mieter keine Berechtigungen haben.
       default:
         - BLOCK_PLACE
         - BLOCK_BREAK
@@ -110,14 +111,14 @@ land:
         - PLAYER_UNTRUST
         - PLAYER_BAN
 
-    # This role can be deleted, in case you don't want it.
+    # Diese Rolle kann gelöscht werden, falls sie nicht benötigt wird.
     admin:
       name: '&c&lVerwalter'
-      # The icon supports texture values (example: https://minecraft-heads.com/) and normal material values.
+      # Das Symbol unterstützt Textur-Werte (Beispiel: https://minecraft-heads.com/) und normale Material-Werte.
       icon: 'skin:548e2397834b1a16b15b71a52175ed8ae6919366dfecd3882a85f8236ff5d1d4'
-      # Should members of this role automatically be added to new sub areas?
+      # Sollen Mitglieder dieser Rolle automatisch zu neuen Teilbereichen hinzugefügt werden?
       parent: true
-      # Default flag values. Please note that these only apply to new land creations. Players will be able to change them later in their land menu if the flag is listed under 'display' above.
+      # Standard-Flag-Werte. Gilt nur für neue Land-Erstellungen. Spieler können sie später im Land-Menü ändern, wenn das Flag unter 'display' aufgelistet ist.
       default:
         - BLOCK_PLACE
         - BLOCK_BREAK
@@ -150,12 +151,12 @@ land:
         - SETTING_EDIT_LAND
         - SETTING_EDIT_ROLE
 
-    # NOTE: The member role can not be deleted.
+    # HINWEIS: Die Mitglieder-Rolle kann nicht gelöscht werden.
     member:
       name: '&e&lMitglied'
-      # The icon supports texture values (example: https://minecraft-heads.com/) and normal material values.
+      # Das Symbol unterstützt Textur-Werte (Beispiel: https://minecraft-heads.com/) und normale Material-Werte.
       icon: 'skin:e8b8c6a46d87cf86a55df214cf84bf45cca25edb9a676e96364dd6a6eea235b3'
-      # Default flag values. Please note that these only apply to new land creations. Players will be able to change them later in their land menu if the flag is listed under 'display' above.
+      # Standard-Flag-Werte. Gilt nur für neue Land-Erstellungen. Spieler können sie später im Land-Menü ändern, wenn das Flag unter 'display' aufgelistet ist.
       default:
         - BLOCK_PLACE
         - BLOCK_BREAK
@@ -182,13 +183,13 @@ land:
         - VEHICLE_USE
         - ITEM_PICKUP
 
-    # This role can be deleted, in case you don't want it.
-    # We recommend keeping it, if you have nations enabled and want players from the same nation being able to give them access to specific flags.
+    # Diese Rolle kann gelöscht werden, falls sie nicht benötigt wird.
+    # Empfohlen zu behalten, wenn Nationen aktiviert sind und Spieler derselben Nation Zugriff auf bestimmte Flags erhalten sollen.
     nation:
       name: '&9&lNation'
-      # The icon supports texture values (example: https://minecraft-heads.com/) and normal material values.
+      # Das Symbol unterstützt Textur-Werte (Beispiel: https://minecraft-heads.com/) und normale Material-Werte.
       icon: 'skin:45587da7fe7336e8ab9f791ea5e2cfc8a827ca959567eb9d53a647babf948d5'
-      # Default flag values. Please note that these only apply to new land creations. Players will be able to change them later in their land menu if the flag is listed under 'display' above.
+      # Standard-Flag-Werte. Gilt nur für neue Land-Erstellungen. Spieler können sie später im Land-Menü ändern, wenn das Flag unter 'display' aufgelistet ist.
       default:
         - INTERACT_GENERAL
         - INTERACT_DOOR
@@ -208,9 +209,9 @@ land:
         - ITEM_PICKUP
         - LAND_CLAIM_BORDER
 
-      # A nation has control over the nation role of its lands.
-      # Here you can specify flags which the nation should be able to toggle for the Nation role of its lands.
-      # The nation role can be edited in the nation menu -> /nations menu
+      # Eine Nation hat die Kontrolle über die Nationsrolle ihrer Länder.
+      # Hier können Flags angegeben werden, die die Nation für die Nationsrolle ihrer Länder umschalten kann.
+      # Die Nationsrolle kann im Nationsmenü bearbeitet werden -> /nations menu
       toggleable-by-nation:
         - INTERACT_GENERAL
         - INTERACT_DOOR
@@ -229,12 +230,12 @@ land:
         - ITEM_PICKUP
         - LAND_CLAIM_BORDER
 
-    # This role can be deleted, in case you don't want it.
+    # Diese Rolle kann gelöscht werden, falls sie nicht benötigt wird.
     ally:
       name: '&a&lVerbündete'
-      # The icon supports texture values (example: https://minecraft-heads.com/) and normal material values.
+      # Das Symbol unterstützt Textur-Werte (Beispiel: https://minecraft-heads.com/) und normale Material-Werte.
       icon: 'skin:2567251d71b6f3a4dc03fa01e441de7edf9354794e74aec16c04f141ddf31c70'
-      # Default flag values. Please note that these only apply to new land creations. Players will be able to change them later in their land menu if the flag is listed under 'display' above.
+      # Standard-Flag-Werte. Gilt nur für neue Land-Erstellungen. Spieler können sie später im Land-Menü ändern, wenn das Flag unter 'display' aufgelistet ist.
       default:
         - INTERACT_GENERAL
         - INTERACT_DOOR
@@ -253,12 +254,12 @@ land:
         - ITEM_PICKUP
         - LAND_CLAIM_BORDER
 
-    # NOTE: The visitor role can not be deleted.
+    # HINWEIS: Die Besucher-Rolle kann nicht gelöscht werden.
     visitor:
       name: '&8&lBesucher'
-      # The icon supports texture values (example: https://minecraft-heads.com/) and normal material values.
+      # Das Symbol unterstützt Textur-Werte (Beispiel: https://minecraft-heads.com/) und normale Material-Werte.
       icon: 'skin:126ec1ca185b47aad39f931db8b0a8500ded86a127a204886ed4b3783ad1775c'
-      # Default flag values. Please note that these only apply to new land creations. Players will be able to change them later in their land menu if the flag is listed under 'display' above.
+      # Standard-Flag-Werte. Gilt nur für neue Land-Erstellungen. Spieler können sie später im Land-Menü ändern, wenn das Flag unter 'display' aufgelistet ist.
       default:
         - LAND_ENTER
         - ITEM_PICKUP

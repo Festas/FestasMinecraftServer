@@ -1,57 +1,57 @@
-# In this file you can edit/add default land and nation levels.
-# Please note that each config section (level section) name and level name must be unique.
-# You must insert valid YAML format. To verify your format, you can paste the content of this file here: https://yaml-online-parser.appspot.com
+# In dieser Datei können Standard-Land- und Nationsstufen bearbeitet/hinzugefügt werden.
+# Jeder Konfigurationsabschnitt (Stufenabschnitt) und jeder Stufenname muss eindeutig sein.
+# Es muss gültiges YAML-Format verwendet werden. Zum Prüfen: https://yaml-online-parser.appspot.com
 
-# Default land and nation levels. You can also add your own levels.
-# The order of the levels is ascending (lowest level -> highest).
-# This file can not be reloaded via /lands reload.
+# Standard-Land- und Nationsstufen. Eigene Stufen können ebenfalls hinzugefügt werden.
+# Die Reihenfolge der Stufen ist aufsteigend (niedrigste -> höchste).
+# Diese Datei kann nicht per /lands reload neu geladen werden.
 
 general:
-  # If enabled, lands and nations won't downgrade, if they no longer meet their current level requirements.
+  # Wenn aktiviert, werden Länder und Nationen nicht herabgestuft, wenn sie die Stufenvoraussetzungen nicht mehr erfüllen.
   keep-level: false
 
 land:
-  # Enable land levels?
+  # Land-Stufen aktivieren?
   enabled: true
-  # Here you can edit existing or add new levels.
+  # Hier können bestehende Stufen bearbeitet oder neue hinzugefügt werden.
   levels:
     1:
-      # Set the name of the level.
+      # Namen der Stufe festlegen.
       title: 'Siedlung'
-      # These values are only active if the land isn't a member of any nation.
-      # Attributes of a level will apply on top of whatever the current value for the land or nation is.
+      # Diese Werte sind nur aktiv, wenn das Land kein Mitglied einer Nation ist.
+      # Attribute einer Stufe werden zum aktuellen Wert des Landes oder der Nation addiert.
       attributes:
-        # The chunks attribute will add or remove (= negative value) chunks to the land. That means that the land can claim more (or less) chunks at /claim.
+        # Das Chunks-Attribut fügt dem Land Chunks hinzu oder entfernt sie (= negativer Wert). Das Land kann dann mehr (oder weniger) Chunks mit /claim beanspruchen.
         chunks:
           description: '&7{value} Claims'
           value: 0
         members:
           description: '&7{value} Mitglieder'
           value: 0
-        # The upkeep attribute will higher or lower (= negative value) their upkeep costs by a given value.
-        # This attribute is not active, if the land is part of a nation.
+        # Das Unterhalt-Attribut erhöht oder senkt (= negativer Wert) die Unterhaltskosten um einen bestimmten Wert.
+        # Dieses Attribut ist nicht aktiv, wenn das Land Teil einer Nation ist.
         upkeep:
           description: '&7{value}% Unterhalt'
-          # The increase or decrease is in percent. So setting this value to 5 will increate the upkeep by 5 percent in total (not per chunk).
+          # Die Erhöhung oder Senkung erfolgt in Prozent. Wert 5 erhöht den Unterhalt um insgesamt 5 Prozent (nicht pro Chunk).
           value: 0
     2:
       title: 'Dorf'
       requirements:
-        # Required members to get this level assigned.
+        # Erforderliche Mitglieder für diese Stufenzuweisung.
         members:
           required: 2
           title: 'Vertraue {req} Spielern'
           description:
             - '&7Vertraue {req} Spielern in diesem Land.'
             - '&7Befehl: &e/lands trust'
-        # Required chunks to get this level assigned.
+        # Erforderliche Chunks für diese Stufenzuweisung.
         chunks:
           required: 4
           title: 'Claime {req} Chunks'
           description:
             - '&7Claime {req} Chunks für dieses Land.'
             - '&7Befehl: &e/claim'
-        # Required bank balance to get this level assigned (/lands balance).
+        # Erforderliches Kontoguthaben für diese Stufenzuweisung (/lands balance).
         balance:
           required: 5000
           title: 'Kontostand von {req}€'
@@ -68,18 +68,18 @@ land:
         upkeep:
           description: '&7{value}% Unterhalt'
           value: 5
-      # Execute console commands, if the land reaches this level or gets downgraded from this level to the previous one.
-      # Available placeholders:
-      # {level}: Name of the level
-      # {land}: Parameter name of the land = without spaces.
-      # {land_name}: Name of the land. Might contain spaces.
-      # {owner}: The player name of the land owner.
-      # {member}: The player name a land member.
-      # If the command contains the {member} placeholder, the command will be executed for each player that is trusted in the land.
+      # Konsolen-Befehle ausführen, wenn das Land diese Stufe erreicht oder von dieser Stufe zur vorherigen herabgestuft wird.
+      # Verfügbare Platzhalter:
+      # {level}: Name der Stufe
+      # {land}: Parametername des Landes = ohne Leerzeichen.
+      # {land_name}: Name des Landes. Kann Leerzeichen enthalten.
+      # {owner}: Spielername des Landbesitzers.
+      # {member}: Spielername eines Landmitglieds.
+      # Wenn der Befehl den Platzhalter {member} enthält, wird der Befehl für jeden dem Land vertrauten Spieler ausgeführt.
       commands:
-        # When a land reaches this level.
+        # Wenn ein Land diese Stufe erreicht.
         reached: [ ]
-        # When a land gets downgraded from the next level to this one.
+        # Wenn ein Land von der nächsten Stufe auf diese herabgestuft wird.
         down: [ ]
     3:
       title: 'Stadt'
@@ -186,15 +186,15 @@ land:
 
 
 nation:
-  # Enable nation levels?
+  # Nationsstufen aktivieren?
   enabled: true
-  # Here you can edit existing or add new nation levels.
+  # Hier können bestehende Nationsstufen bearbeitet oder neue hinzugefügt werden.
   levels:
     1:
-      # Set the name of the level.
+      # Namen der Stufe festlegen.
       title: 'Bund'
-      # For the entry level, there are not attributes set. But you could add them anyways, if you modify the value options.
-      # Attributes of a level will apply on top of whatever the current value for the land or nation is.
+      # Für die Eingangsstufe sind keine Attribute gesetzt. Sie können aber trotzdem hinzugefügt werden.
+      # Attribute einer Stufe werden zum aktuellen Wert des Landes oder der Nation addiert.
       attributes:
         chunks:
           description: '&7{value} Claims'
@@ -214,8 +214,8 @@ nation:
     2:
       title: 'Nation'
       requirements:
-        # Required minimum amount of unique lands in the nation.
-        # This does not include the capital land.
+        # Erforderliche Mindestanzahl eindeutiger Länder in der Nation.
+        # Das Hauptstadtland ist nicht enthalten.
         lands:
           required: 3
           title: '{req} Länder'
@@ -223,21 +223,21 @@ nation:
             - '&7Lade {req} Länder in deine Nation ein'
             - '&7und lasse die Einladungen annehmen.'
             - '&7Befehl: &e/nation trust'
-        # Required members (total unique players) to get this level assigned.
+        # Erforderliche Mitglieder (einzigartige Spieler insgesamt) für diese Stufenzuweisung.
         members:
           required: 16
           title: '{req} einzigartige Spieler'
           description:
             - '&7Habe insgesamt {req} vertraute Spieler.'
             - '&7Befehl: &e/lands trust'
-        # Required total chunks to get this level assigned.
+        # Erforderliche Gesamtanzahl an Chunks für diese Stufenzuweisung.
         chunks:
           required: 64
           title: 'Claime {req} Chunks'
           description:
             - '&7Habe insgesamt {req} Claims.'
             - '&7Befehl: &e/claim'
-        # Required total balance (the balance of all lands) to get this level assigned.
+        # Erforderliches Gesamtguthaben (Guthaben aller Länder) für diese Stufenzuweisung.
         balance:
           required: 100000
           title: 'Kontostand von {req}€'
@@ -245,45 +245,45 @@ nation:
             - '&7Lege insgesamt {req}€ in den Landbanken an.'
             - '&7Befehl: &e/lands deposit'
       attributes:
-        # Give each land of the nation x amount of additional chunks.
+        # Jedem Land der Nation x zusätzliche Chunks geben.
         chunks:
           description: '&7{value} Claims'
           value: 20
         lands:
           description: '&7{value} Länder'
           value: 1
-        # Modify upkeep by x percent. This also supports negative values.
-        # The nation pays the upkeep to the server.
+        # Unterhalt um x Prozent ändern. Unterstützt auch negative Werte.
+        # Die Nation zahlt den Unterhalt an den Server.
         upkeep:
           description: '&7{value}% Unterhalt'
           value: 20
-        # Allow nations to activate a specific amount of effects in their nation. Effects can be unlocked through level progression.
+        # Nationen erlauben, eine bestimmte Anzahl von Effekten in ihrer Nation zu aktivieren. Effekte können durch Stufenaufstieg freigeschaltet werden.
         effects:
           description: '&a+ Schaltet Effekte frei: {value}'
-          # Configure a list of unlocked effects for this level. Valid effects: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/potion/PotionEffectType.html
-          # Format: EFFECT:AMPLIFIER
-          # The amiplifier is the strength (level) of the effect. Example: JUMP:2 -> Jump II
+          # Liste freigeschalteter Effekte für diese Stufe konfigurieren. Gültige Effekte: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/potion/PotionEffectType.html
+          # Format: EFFEKT:VERSTÄRKER
+          # Der Verstärker ist die Stärke (Stufe) des Effekts. Beispiel: JUMP:2 -> Sprung II
           value:
             - JUMP
             - SPEED
             - FAST_DIGGING
             - DOLPHINS_GRACE
-        # Modify how many effects can be active at the same time.
+        # Anzahl der gleichzeitig aktiven Effekte ändern.
         effects_amount:
           description: '&a+ Gleichzeitig aktive Effekte: {value}'
           value: 1
-      # Execute console commands, if the nation reaches this level or gets downgraded from this level to the previous one.
-      # Available placeholders:
-      # {level}: Name of the level
-      # {nation}: Name of the nation
-      # {owner}: The player name of nation owner.
-      # {land}: Parameter name of the land that is part of the nation. Doesn't contain spaces.
-      # {land_name}: Name of the land that is part of the nation. May contain spaces.
-      # If the command contains the {land} placeholder, the command will be executed for each land, which is part of the nation.
+      # Konsolen-Befehle ausführen, wenn die Nation diese Stufe erreicht oder von dieser Stufe zur vorherigen herabgestuft wird.
+      # Verfügbare Platzhalter:
+      # {level}: Name der Stufe
+      # {nation}: Name der Nation
+      # {owner}: Spielername des Nationsbesitzers.
+      # {land}: Parametername des Landes, das zur Nation gehört. Enthält keine Leerzeichen.
+      # {land_name}: Name des Landes, das zur Nation gehört. Kann Leerzeichen enthalten.
+      # Wenn der Befehl den Platzhalter {land} enthält, wird der Befehl für jedes Land ausgeführt, das zur Nation gehört.
       commands:
-        # When a nation reaches this level.
+        # Wenn eine Nation diese Stufe erreicht.
         reached: [ ]
-        # When a nation gets downgraded from the next level to this one.
+        # Wenn eine Nation von der nächsten Stufe auf diese herabgestuft wird.
         down: [ ]
     3:
       title: 'Imperium'
@@ -343,9 +343,9 @@ nation:
         down: [ ]
 
 
-# You can disable sounds by setting them to ''
+# Töne können durch Setzen auf '' deaktiviert werden.
 sound:
-  # Played to each player of the land or nation on level up.
+  # Wird bei Stufenaufstieg für jeden Spieler des Landes oder der Nation abgespielt.
   up: 'block.bell.use'
-  # Played to each player of the land or nation on level down.
+  # Wird bei Stufenabstieg für jeden Spieler des Landes oder der Nation abgespielt.
   down: 'block.anvil.destroy'

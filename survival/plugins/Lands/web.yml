@@ -1,171 +1,171 @@
-# Web integration
-# Supports (Dynmap, BlueMap, squaremap)
-# All three can be used at the same time.
-# Changes in this section require server reload / restart.
+# Web-Integration
+# Unterstützt (Dynmap, BlueMap, squaremap)
+# Alle drei können gleichzeitig verwendet werden.
+# Änderungen in diesem Abschnitt erfordern einen Server-Neustart.
 map:
   general:
-    # Should land markers be hidden by default?
+    # Sollen Land-Markierungen standardmäßig ausgeblendet sein?
     hide: false
-    # The name of the layer where users can see the marked lands.
+    # Name der Ebene, in der Spieler markierte Länder sehen können.
     layer: 'Länder'
-    # If you want your players activity to be more anonymous, you can specify an update interval.
-    # This helps to prevent enemies spying dynmap to track player activity.
-    # Time units: d, h, m, s -> Example: 1h
-    # Default: 0 = use default handling defined by Lands (recommended)
-    # This option requires server reload / restart.
+    # Für mehr Anonymität der Spieleraktivität kann ein Aktualisierungsintervall angegeben werden.
+    # Verhindert, dass Feinde Dynmap nutzen, um Spieleraktivität zu verfolgen.
+    # Zeiteinheiten: d, h, m, s -> Beispiel: 1h
+    # Standard: 0 = Standardverhalten von Lands verwenden (empfohlen)
+    # Diese Option erfordert einen Server-Neustart.
     update_time: 0
     land:
-      # Should admin lands (/lands admin menu) be displayed?
+      # Sollen Admin-Länder (/lands admin menu) angezeigt werden?
       show-admin: true
-      # Should only lands, that are part of a nation, appear on the map?
-      # Note: This option requires server reload / restart.
+      # Sollen nur Länder, die Teil einer Nation sind, auf der Karte erscheinen?
+      # Hinweis: Diese Option erfordert einen Server-Neustart.
       only-nation: false
-      # To edit the color you need to insert the hex values given here:
+      # Zur Bearbeitung der Farbe die Hex-Werte von hier verwenden:
       # https://www.google.com/search?q=color+picker
       color:
         from-name:
-          # Set the color depending on the land's name?
+          # Farbe nach dem Land-Namen setzen?
           land: false
-          # Set the color depending on the nation's name?
+          # Farbe nach dem Nationsname setzen?
           nation: true
-        # Default colors, if the land name has no color set or from-name option is disabled.
-        # Color picker: https://www.google.com/search?q=color+picker
+        # Standardfarben, wenn der Land-Name keine Farbe hat oder from-name deaktiviert ist.
+        # Farbauswahl: https://www.google.com/search?q=color+picker
         land: '#00ff00'
         admin: '#ffff00'
     border:
-      # Default border color:
-      # Color picker: https://www.google.com/search?q=color+picker
+      # Standard-Grenzfarbe:
+      # Farbauswahl: https://www.google.com/search?q=color+picker
       color:
         from-name:
-          # Set the color depending on the land's name?
+          # Farbe nach dem Land-Namen setzen?
           land_2: false
-          # Set the color depending on the nation's name?
+          # Farbe nach dem Nationsname setzen?
           nation_2: true
-        # Default colors, if the land name has no color set or from-name option is disabled.
-        # Color picker: https://www.google.com/search?q=color+picker
+        # Standardfarben, wenn der Land-Name keine Farbe hat oder from-name deaktiviert ist.
+        # Farbauswahl: https://www.google.com/search?q=color+picker
         land_2: '#009933'
         admin_2: '#ffcc00'
 
   dynmap:
     enabled: false
-    # Link to the map for the /lands map link command.
-    # Add the "{dynmap}" placeholder to the "map.link" message in the locale file to display the link there.
-    # If no link is set for any active map type, the command will be disabled.
+    # Link zur Karte für den Befehl /lands map link.
+    # Den Platzhalter "{dynmap}" zur Nachricht "map.link" in der Sprachdatei hinzufügen, um den Link dort anzuzeigen.
+    # Wenn für keinen aktiven Kartentyp ein Link gesetzt ist, wird der Befehl deaktiviert.
     link: "http://127.0.0.1:8123"
-    # Set the spawn icon
-    # You can disable this by setting icon to ''
+    # Spawn-Symbol setzen
+    # Deaktivieren: icon auf '' setzen
     spawn:
-      # Set the icon. If empty, no icon will be displayed.
+      # Symbol festlegen. Wenn leer, wird kein Symbol angezeigt.
       icon: 'greenflag'
-      # Set the icon for a nation's capital. If empty, no icon will be displayed.
+      # Symbol für die Hauptstadt einer Nation festlegen. Wenn leer, wird kein Symbol angezeigt.
       icon-capital: 'greenflag'
-      # Set minimum zoom. The icon won't display, if the zoom in your browser is greater (mousewheel).
+      # Mindestzoom festlegen. Das Symbol wird nicht angezeigt, wenn der Zoom im Browser größer ist (Mausrad).
       min-zoom: 0
     land:
-      # Opactiy of the land. Needs to be between 0 (lowest) and 1 (highest).
+      # Deckkraft des Landes. Muss zwischen 0 (niedrigste) und 1 (höchste) liegen.
       opacity: 0.35
     border:
-      # Opactiy of the land border. Needs to be between 0 (lowest) and 1 (highest).
+      # Deckkraft der Landgrenze. Muss zwischen 0 (niedrigste) und 1 (höchste) liegen.
       opacity_2: 1
-      # Thickness of the border.
+      # Dicke der Grenze.
       thickness: 2
 
   bluemap:
     enabled_2: true
-    # Link to the map for the /lands map link command.
-    # Add the "{bluemap}" placeholder to the "map.link" message in the locale file to display the link there.
-    # If no link is set for any active map type, the command will be disabled.
+    # Link zur Karte für den Befehl /lands map link.
+    # Den Platzhalter "{bluemap}" zur Nachricht "map.link" in der Sprachdatei hinzufügen, um den Link dort anzuzeigen.
+    # Wenn für keinen aktiven Kartentyp ein Link gesetzt ist, wird der Befehl deaktiviert.
     link_2: "http://127.0.0.1:8100"
-    # Set the spawn icon
-    # You can disable this by setting icon to ''
+    # Spawn-Symbol setzen
+    # Deaktivieren: icon auf '' setzen
     spawn:
-      # Set the icon
-      # NOTE: This needs to be the absolute image address. Recommended imgage size: 32 x 32 pixels
-      # Path is relative to the "bluemap" folder in your server.
-      # Example: 'assets\steve.png'
+      # Symbol festlegen
+      # HINWEIS: Dies muss die absolute Bildadresse sein. Empfohlene Bildgröße: 32 x 32 Pixel
+      # Pfad ist relativ zum "bluemap"-Ordner auf dem Server.
+      # Beispiel: 'assets\steve.png'
       icon_2: ''
-      # Center the icon
+      # Symbol zentrieren
       icon-anchor:
-        # If you want the icon to be centered you should set this to half of the icon width in pixels.
+        # Für eine Zentrierung sollte hier die halbe Symbolbreite in Pixeln eingetragen werden.
         x: 25
-        # If you want the icon to be centered you should set this to half of the icon height in pixels.
+        # Für eine Zentrierung sollte hier die halbe Symbolhöhe in Pixeln eingetragen werden.
         y: 25
-      # Set the icon for a nations capital.
-      # NOTE: This needs to be the absolute image address. Recommended imgage size: 32 x 32 pixels
-      # Path is relative to the "bluemap" folder in your server.
-      # Example: 'assets\steve.png'
+      # Symbol für die Hauptstadt einer Nation festlegen.
+      # HINWEIS: Dies muss die absolute Bildadresse sein. Empfohlene Bildgröße: 32 x 32 Pixel
+      # Pfad ist relativ zum "bluemap"-Ordner auf dem Server.
+      # Beispiel: 'assets\steve.png'
       icon-capital_2: ''
-      # Center the icon
+      # Symbol zentrieren
       icon-capital-anchor:
-        # If you want the icon to be centered you should set this to half of the icon width in pixels.
+        # Für eine Zentrierung sollte hier die halbe Symbolbreite in Pixeln eingetragen werden.
         x_2: 25
-        # If you want the icon to be centered you should set this to half of the icon height in pixels.
+        # Für eine Zentrierung sollte hier die halbe Symbolhöhe in Pixeln eingetragen werden.
         y_2: 25
-      # Set minimum zoom. The icon won't display, if the zoom in your browser is smaller (mousewheel).
+      # Mindestzoom festlegen. Das Symbol wird nicht angezeigt, wenn der Zoom im Browser kleiner ist (Mausrad).
       min-zoom_2: 5
-    # Set the markers height.
+    # Marker-Höhe setzen.
     height: 62
     land:
-      # Opactiy of the land. Needs to be between 0 (lowest) and 1 (highest).
+      # Deckkraft des Landes. Muss zwischen 0 (niedrigste) und 1 (höchste) liegen.
       opacity_3: 0.35
-      # Should 3D markers be used to visualize claims? That means that they extend to the min and max height of the claim.
+      # Sollen 3D-Marker zur Visualisierung von Ansprüchen verwendet werden? Das bedeutet, sie erstrecken sich bis zur minimalen und maximalen Höhe des Anspruchs.
       3d: false
 
     border:
-      # Opactiy of the land border. Needs to be between 0 (lowest) and 1 (highest).
+      # Deckkraft der Landgrenze. Muss zwischen 0 (niedrigste) und 1 (höchste) liegen.
       opacity_4: 1
 
 
   squaremap:
     enabled_3: false
-    # Link to the map for the /lands map link command.
-    # Add the "{squaremap}" placeholder to the "map.link" message in the locale file to display the link there.
-    # If no link is set for any active map type, the command will be disabled.
+    # Link zur Karte für den Befehl /lands map link.
+    # Den Platzhalter "{squaremap}" zur Nachricht "map.link" in der Sprachdatei hinzufügen, um den Link dort anzuzeigen.
+    # Wenn für keinen aktiven Kartentyp ein Link gesetzt ist, wird der Befehl deaktiviert.
     link_3: "http://127.0.0.1:8080"
-    # Set the spawn icon
-    # You can disable this by setting icon to ''
+    # Spawn-Symbol setzen
+    # Deaktivieren: icon auf '' setzen
     spawn:
-      # Set the icon
-      # NOTE: This needs to be the absolute image address. Recommended imgage size: 32 x 32 pixels
-      # Example: 'path-to-server\bluemap\web\assets\steve.png'
+      # Symbol festlegen
+      # HINWEIS: Dies muss die absolute Bildadresse sein. Empfohlene Bildgröße: 32 x 32 Pixel
+      # Beispiel: 'pfad-zum-server\bluemap\web\assets\steve.png'
       icon_3: ''
-      # Set the icon for a nations capital.
-      # NOTE: This needs to be the absolute image address. Recommended imgage size: 32 x 32 pixels
-      # Example: 'path-to-server\bluemap\web\assets\steve.png'
+      # Symbol für die Hauptstadt einer Nation festlegen.
+      # HINWEIS: Dies muss die absolute Bildadresse sein. Empfohlene Bildgröße: 32 x 32 Pixel
+      # Beispiel: 'pfad-zum-server\bluemap\web\assets\steve.png'
       icon-capital_3: ''
-      # Set minimum zoom. The icon won't display, if the zoom in your browser is smaller (mousewheel).
+      # Mindestzoom festlegen. Das Symbol wird nicht angezeigt, wenn der Zoom im Browser kleiner ist (Mausrad).
       min-zoom_3: 126
     land:
-      # Opactiy of the land. Needs to be between 0 (transparent) and 255 (completely opaque).
+      # Deckkraft des Landes. Muss zwischen 0 (transparent) und 255 (vollständig opak) liegen.
       opacity_5: 0.35
     border:
-      # Opactiy of the land border. Needs to be between 0 (transparent) and 255 (completely opaque).
+      # Deckkraft der Landgrenze. Muss zwischen 0 (transparent) und 255 (vollständig opak) liegen.
       opacity_6: 1
-      # Thickness of the border.
+      # Dicke der Grenze.
       thickness_3: 2
 
   Pl3xMap:
     enabled_4: false
-    # Link to the map for the /lands map link command.
-    # Add the "{pl3xmap}" placeholder to the "map.link" message in the locale file to display the link there.
-    # If no link is set for any active map type, the command will be disabled.
+    # Link zur Karte für den Befehl /lands map link.
+    # Den Platzhalter "{pl3xmap}" zur Nachricht "map.link" in der Sprachdatei hinzufügen, um den Link dort anzuzeigen.
+    # Wenn für keinen aktiven Kartentyp ein Link gesetzt ist, wird der Befehl deaktiviert.
     link_4: "http://127.0.0.1:5555"
-    # Set the spawn icon
-    # You can disable this by setting icon to ''
+    # Spawn-Symbol setzen
+    # Deaktivieren: icon auf '' setzen
     spawn:
-      # Set the icon
-      # NOTE: This needs to be the absolute image address. Recommended imgage size: 32 x 32 pixels
-      # Example: 'path-to-server\bluemap\web\assets\steve.png'
+      # Symbol festlegen
+      # HINWEIS: Dies muss die absolute Bildadresse sein. Empfohlene Bildgröße: 32 x 32 Pixel
+      # Beispiel: 'pfad-zum-server\bluemap\web\assets\steve.png'
       icon_4: ''
-      # Set the icon for a nations capital.
-      # NOTE: This needs to be the absolute image address. Recommended imgage size: 32 x 32 pixels
-      # Example: 'path-to-server\bluemap\web\assets\steve.png'
+      # Symbol für die Hauptstadt einer Nation festlegen.
+      # HINWEIS: Dies muss die absolute Bildadresse sein. Empfohlene Bildgröße: 32 x 32 Pixel
+      # Beispiel: 'pfad-zum-server\bluemap\web\assets\steve.png'
       icon-capital_4: ''
     land:
-      # Opactiy of the land. Needs to be between 0 (lowest) and 1 (highest).
+      # Deckkraft des Landes. Muss zwischen 0 (niedrigste) und 1 (höchste) liegen.
       opacity_7: 0.6
     border:
-      # Opactiy of the land border. Needs to be between 0 (lowest) and 1 (highest).
+      # Deckkraft der Landgrenze. Muss zwischen 0 (niedrigste) und 1 (höchste) liegen.
       opacity_8: 0.9
-      # Thickness of the border.
+      # Dicke der Grenze.
       thickness_4: 2

@@ -1,29 +1,29 @@
-# Here you can disable the limits file to use permission based limits instead.
-# Disabling this is not recommended as some features won't work with permission based limits.
-# NOTE: This setting requires server reload / restart.
+# Hier kann die Limits-Datei deaktiviert werden, um stattdessen berechtigungsbasierte Limits zu verwenden.
+# Das Deaktivieren wird nicht empfohlen, da einige Funktionen mit berechtigungsbasierten Limits nicht funktionieren.
+# HINWEIS: Diese Einstellung erfordert einen Server-Neustart.
 enabled: true
 
-# In this file you can configure numbered limits for all players.
-# You can create multiple limit packs, if you want players to get different limits. Just add them in the "packs" section.
+# In dieser Datei können nummerierte Limits für alle Spieler konfiguriert werden.
+# Es können mehrere Limit-Pakete erstellt werden, wenn Spieler unterschiedliche Limits erhalten sollen. Diese im Abschnitt "packs" hinzufügen.
 #
-# A pack is assigned if the player has a specific permission.
-# A player can only have one pack. Every time a player joins, the pack gets evaluated.
-# They will get the first pack in the list that they have permission for.
-# So your order could be something like this: owner, admin, member etc.
+# Ein Paket wird zugewiesen, wenn der Spieler eine bestimmte Berechtigung hat.
+# Ein Spieler kann nur ein Paket haben. Bei jedem Beitreten wird das Paket neu ausgewertet.
+# Das erste Paket in der Liste, für das der Spieler berechtigt ist, wird zugewiesen.
+# Die Reihenfolge könnte z. B. so sein: owner, admin, member usw.
 #
-# You can disable limits by setting the value to -1. However, in general, it's recommended to set limits to prevent abuse.
-# Limits that are not added to a pack, will automatically be set to 0 for the pack.
+# Limits können durch Setzen des Werts auf -1 deaktiviert werden. Allgemein empfohlen ist, Limits zu setzen, um Missbrauch zu verhindern.
+# Limits, die nicht in einem Paket vorhanden sind, werden für dieses Paket automatisch auf 0 gesetzt.
 #
-# Changes to this file can be applied to all players, lands and nations, using the "/lands admin reload" command.
+# Änderungen an dieser Datei können mit dem Befehl "/lands admin reload" auf alle Spieler, Länder und Nationen angewendet werden.
 packs:
-  # If enabled, all packs the player has, will be merged and the limits stacked.
-  # Basically the limit of each pack that the player has, will be added on top of each other.
-  # If you change this value, you may want to update already configured packs accordingly.
+  # Wenn aktiviert, werden alle Pakete, die ein Spieler hat, zusammengeführt und die Limits addiert.
+  # Das Limit jedes Pakets, das der Spieler hat, wird zum Limit der anderen Pakete hinzugefügt.
+  # Bei Änderung dieses Werts sollten bereits konfigurierte Pakete entsprechend angepasst werden.
   stack: false
-  # Pack for server admins that removes nearly all limits for them.
-  # You can remove this, if you don't want it.
+  # Paket für Server-Admins, das fast alle Limits entfernt.
+  # Kann entfernt werden, wenn es nicht benötigt wird.
   admin:
-    # Required permission to get this pack assigned.
+    # Erforderliche Berechtigung für die Zuweisung dieses Pakets.
     permission: "lands.admin.no_limits"
     limits:
       player_lands_owned: -1
@@ -45,61 +45,61 @@ packs:
 
   default:
     limits:
-      # Amount of lands the player can own.
+      # Anzahl der Länder, die der Spieler besitzen kann.
       player_lands_owned: 1
-      # Amount of lands they can create free of charge (in case creation cost is configured).
+      # Anzahl der Länder, die kostenlos erstellt werden können (falls Erstellungskosten konfiguriert sind).
       player_lands_owned_free: 0
-      # Amount of lands a player can be trusted in (owned lands excluded).
-      player_lands_trusted: 1
-      # Amount of temporary camps they can have at the same time.
+      # Anzahl der Länder, denen ein Spieler vertraut werden kann (eigene Länder ausgenommen).
+      player_lands_trusted: 3
+      # Anzahl der temporären Lager, die gleichzeitig vorhanden sein können.
       player_camps_owned: 1
-      # Amount of chunks a player can claim across all lands (owned & trusted).
-      # "land_size" is used to limit lands in their size.
+      # Anzahl der Chunks, die ein Spieler über alle Länder hinweg beanspruchen kann (eigene & vertraute).
+      # "land_size" begrenzt die Größe einzelner Länder.
       player_chunks: -1
-      # Amount of chunks the player can claim free of charge combined for all lands they own
-      # and that they are trusted in (in case claim cost is configuted).
+      # Anzahl der Chunks, die der Spieler kostenlos beanspruchen kann (kombiniert für alle eigenen Länder
+      # und Länder, denen er vertraut ist), falls Beanspruchungskosten konfiguriert sind.
       player_chunks_free: 0
-      # How many areas a player can rent across all lands.
+      # Anzahl der Bereiche, die ein Spieler über alle Länder hinweg mieten kann.
       player_rentals: 1
-      # How many chunks each land they own can claim max. This can be used to limit land sizes.
-      # "player_chunks" is used to control how many chunks each player can claim.
-      # You can increase the max size for each trusted player by editing the "increase-land_size" option in this file.
+      # Maximale Chunk-Anzahl, die jedes eigene Land beanspruchen kann. Begrenzt die Landgröße.
+      # "player_chunks" steuert, wie viele Chunks jeder Spieler insgesamt beanspruchen kann.
+      # Die maximale Größe kann durch Bearbeiten der Option "increase-land_size" pro vertrautem Spieler erhöht werden.
       land_size: 100
-      # Amount of players they can trust to each land they own.
-      land_members: 20
-      # Amount of parts the lands they own can be split into. Allowing the creation of outposts.
-      # If set to 1, no splits allowed.
+      # Anzahl der Spieler, die jedem eigenen Land vertraut werden können.
+      land_members: 25
+      # Anzahl der Teile, in die eigene Länder aufgeteilt werden können. Ermöglicht die Erstellung von Außenposten.
+      # Bei 1 sind keine Aufteilungen erlaubt.
       land_parts: 1
-      # Amount of sub areas they can create for each land they own.
+      # Anzahl der Teilbereiche, die für jedes eigene Land erstellt werden können.
       land_areas: 20
-      # Amount of allies they can add for each land they own.
+      # Anzahl der Verbündeten, die für jedes eigene Land hinzugefügt werden können.
       land_allies: 10
-      # Amount of enemies they can add for each land they own.
+      # Anzahl der Feinde, die für jedes eigene Land hinzugefügt werden können.
       land_enemies: 20
-      # Amount of roles they can create for each area in their owned lands.
+      # Anzahl der Rollen, die für jeden Bereich in eigenen Ländern erstellt werden können.
       area_roles: 20
-      # Amount of lands they can add to the nation that they own.
+      # Anzahl der Länder, die der Nation des Spielers hinzugefügt werden können.
       nation_lands: 10
 
 
-# Increases the land_size limit of the land for each trusted player.
-# Please note that this only increases the max size. Depending on your configuration of the limit packs,
-# this might not increase the actual amount of chunks that can be claimed, as this is modified by the
-# player_chunks limit as well. This setting only influences the max theoretical size of the land, if
-# the player_chunks limit is set.
+# Erhöht das land_size-Limit des Landes für jeden vertrauten Spieler.
+# Beachte, dass dies nur die maximale Größe erhöht. Je nach Konfiguration der Limit-Pakete
+# kann dies die tatsächlich beanspruchbaren Chunks nicht erhöhen, da diese auch durch das
+# player_chunks-Limit beeinflusst werden. Diese Einstellung beeinflusst nur die theoretische Maximalgröße des Landes,
+# wenn das player_chunks-Limit gesetzt ist.
 increase-land_size: 5
 
-# By setting up time rewards you can increase a players limit according to their time that they played on the server.
-# A player will receive additional limits each configured period. The playtime is calculated by the server.
-# If you delete the primary world, the playtime of players will likely reset. This is handled by the server itself.
+# Durch die Einrichtung von Zeitbelohnungen kann das Spielerlimit entsprechend seiner Spielzeit erhöht werden.
+# Ein Spieler erhält in jedem konfigurierten Zeitraum zusätzliche Limits. Die Spielzeit wird vom Server berechnet.
+# Wird die primäre Welt gelöscht, wird die Spielzeit der Spieler wahrscheinlich zurückgesetzt (serverseitig).
 time-rewards:
   player_lands_owned:
-    # Players receive one additional owned land each configured period.
-    # Time units are: s = seconds, m = minutes, h = hours, d = days
-    # 0s = disabled
+    # Spieler erhalten ein zusätzliches eigenes Land pro konfiguriertem Zeitraum.
+    # Zeiteinheiten: s = Sekunden, m = Minuten, h = Stunden, d = Tage
+    # 0s = deaktiviert
     time: 0s
-    # Set the maximum amount of owned lands that they can receive through their play time.
-    # -1 = no limit
+    # Maximale Anzahl eigener Länder, die durch Spielzeit erhalten werden können.
+    # -1 = kein Limit
     max: -1
   player_lands_owned_free:
     time: 0s

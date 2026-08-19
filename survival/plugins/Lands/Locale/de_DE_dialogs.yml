@@ -7,52 +7,52 @@
 
 dialogs:
   confirm:
-    title: Confirm
+    title: Bestätigen
     bodies:
       info:
         text: <v:message>
     buttons:
       confirm:
-        label: <t:positive>Confirm
-        tooltip: Click here to confirm.
+        label: <t:positive>Bestätigen
+        tooltip: Klicke hier, um zu bestätigen.
       discard:
-        label: <t:negative>Cancel
-        tooltip: Click to cancel.
+        label: <t:negative>Abbrechen
+        tooltip: Klicke, um abzubrechen.
   input:
-    title: Input
+    title: Eingabe
     inputs:
       text:
         label: Text
       player:
-        label: Player
+        label: Spieler
     buttons:
       confirm:
-        label: <t:positive>Confirm
-        tooltip: Click here to confirm your input.
+        label: <t:positive>Bestätigen
+        tooltip: Klicke hier, um deine Eingabe zu bestätigen.
       discard:
-        label: <t:negative>Discard
-        tooltip: Click to discard your input.
+        label: <t:negative>Verwerfen
+        tooltip: Klicke, um deine Eingabe zu verwerfen.
   add_member:
-    title: Add Player
+    title: Spieler hinzufügen
     inputs:
       name:
-        label: Player
+        label: Spieler
     buttons:
       add:
-        label: <t:positive>Add
-        tooltip: Trust this player permanently.
+        label: <t:positive>Hinzufügen
+        tooltip: Vertraue diesem Spieler dauerhaft.
       add-temporary:
-        label: <t:regular_value>Add temporarily
-        tooltip: Trust this player for a limited time.
+        label: <t:regular_value>Temporär hinzufügen
+        tooltip: Vertraue diesem Spieler für eine begrenzte Zeit.
       discard:
-        label: <t:negative>Discard
-        tooltip: Click to discard.
+        label: <t:negative>Verwerfen
+        tooltip: Klicke, um zu verwerfen.
   add_member_duration:
-    title: Temporary trust
+    title: Temporäres Vertrauen
     inputs:
       days:
         type: number-range
-        label: Days
+        label: Tage
         label-format: '<v:label>: <v:value>'
         start: 0
         end: 30
@@ -60,7 +60,7 @@ dialogs:
         initial: 0
       hours:
         type: number-range
-        label: Hours
+        label: Stunden
         label-format: '<v:label>: <v:value>'
         start: 0
         end: 23
@@ -68,37 +68,37 @@ dialogs:
         initial: 0
     bodies:
       info:
-        text: The player will be trusted only for the selected duration. A temporarily-trusted
-          player doesn't pay taxes and can't claim or unclaim unless they're also
-          permanently trusted in another area.
+        text: Der Spieler wird nur für die ausgewählte Dauer vertraut. Ein temporär
+          vertrauter Spieler zahlt keine Steuern und kann weder claimen noch freigeben,
+          außer er ist in einem anderen Bereich dauerhaft vertraut.
     buttons:
       add:
-        label: <t:positive>Add
-        tooltip: Trust this player for the selected duration.
+        label: <t:positive>Hinzufügen
+        tooltip: Vertraue diesem Spieler für die gewählte Dauer.
       back:
-        label: <t:regular>Back
-        tooltip: Go back.
+        label: <t:regular>Zurück
+        tooltip: Gehe zurück.
   land_create:
-    title: Create a New Land
+    title: Neues Land erstellen
     inputs:
       name:
         label: Name
       tag:
-        label: Tag
+        label: Kürzel
     bodies:
       info:
-        text: Creating this land will cost you<t:cost> <v:cost></t>. For your new
-          land<t:regular_value> <v:chunks></t> chunks will be claimed, if there is
-          enough space.
+        text: Das Erstellen dieses Landes kostet dich<t:cost> <v:cost></t>. Für dein
+          neues Land werden<t:regular_value> <v:chunks></t> Chunks geclaimt, sofern
+          genug Platz vorhanden ist.
       tag:
-        text: The tag is the short version of your land's name.
+        text: Das Kürzel ist die Kurzform des Landnamens.
         item:
           material: NAME_TAG
           hide-tooltip: true
     buttons:
       confirm:
-        label: <t:positive>Create
-        tooltip: Click here to create a new land.
+        label: <t:positive>Erstellen
+        tooltip: Klicke hier, um ein neues Land zu erstellen.
       discard:
-        label: <t:negative>Discard
-        tooltip: Click to discard the land creation.
+        label: <t:negative>Verwerfen
+        tooltip: Klicke, um die Landerstellung zu verwerfen.

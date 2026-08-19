@@ -13,8 +13,8 @@ general:
         preparation_time: preparation time
   inbox:
     war:
-      shield: <t:regular>Received additional war shield time of<t:time> <v:0></t>.
-        Total:<t:time> <v:1></t>
+      shield: <t:regular>Zusätzliche Kriegsschild-Zeit erhalten:<t:time> <v:0></t>.
+        Gesamt:<t:time> <v:1></t>
       start: <t:regular>The war against<t:entity_land> <v:0></t> has started. Timeout:<t:time>
         <v:1></t>
       declaration:
@@ -25,7 +25,7 @@ general:
         mutual:
           sent: <t:regular>Sent war request to<t:entity_land> <v:0></t>. They need
             to accept it.
-          received: '<t:negative_value><v:0></t> <t:negative>sent a war request. Accept:
+          received: '<t:negative_value><v:0></t> <t:negative>hat eine Kriegsanfrage gesendet. Annehmen:
             <t:cmd>/<v:1></t>'
           denied: <t:regular>Mutual war declaration denied by<t:entity_land> <v:0></t>.
       surrender:
@@ -35,13 +35,13 @@ general:
           the war started. We robbed<t:cost> <v:1></t> from them.
       end:
         won: <t:regular>We've won the war against the enemy<t:entity_land> <v:0></t>
-          with<t:regular_value> <v:1></t> points. They only had<t:regular_value> <v:2></t>
-          points. We robbed<t:cost> <v:4></t> from them. The war took <t:time><v:3></t>.
+          with<t:regular_value> <v:1></t> Punkte. They only had<t:regular_value> <v:2></t>
+          Punkte. We robbed<t:cost> <v:4></t> from them. The war took <t:time><v:3></t>.
         draw: <t:regular>The war against<t:entity_land> <v:0></t> ended in a draw
-          with<t:regular_value> <v:1></t> points.
+          with<t:regular_value> <v:1></t> Punkte.
         lost: <t:regular>We've lost the war against the enemy<t:entity_land> <v:0></t>
-          with<t:regular_value> <v:1></t> points. They had<t:regular_value> <v:2></t>
-          points. They robbed<t:cost> <v:4></t> from us. The war took <t:time><v:3></t>.
+          with<t:regular_value> <v:1></t> Punkte. They had<t:regular_value> <v:2></t>
+          Punkte. They robbed<t:cost> <v:4></t> from us. The war took <t:time><v:3></t>.
         annex:
           won: <t:regular>We annexed the enemy<t:entity_land> <v:0></t>! Their lands
             were unclaimed. The war took <t:time><v:1></t>.
@@ -64,7 +64,7 @@ general:
             <t:negative>for the next<t:time> <v:1></t>.
   wars:
     object:
-      enemy: <t:error_value>Enemy</t>
+      enemy: <t:error_value>Feind</t>
       ally: <t:regular_value>Ally</t>
     nametag:
       enemy: <t:error_value>ENEMY </t><t:decoration>| </t>
@@ -74,7 +74,7 @@ general:
       fight: <t:negative>Fight</t>
     mode:
       skirmish:
-        description: <t:regular>Reach<t:regular_value> <v:points></t> points, or win
+        description: <t:regular>Erreiche<t:regular_value> <v:points></t> Punkte oder gewinne
           by timeout.
     goal:
       skirmish:
@@ -96,7 +96,7 @@ general:
 wars:
   mode:
     skirmish:
-      description: <t:regular>Reach<t:regular_value> <v:points></t> points, or win
+      description: <t:regular>Erreiche<t:regular_value> <v:points></t> Punkte oder gewinne
         by timeout.
   goal:
     skirmish:
@@ -122,13 +122,13 @@ wars:
     end:
       broadcast:
         won: <t:regular><v:winner><t:regular> won the war against <v:loser><t:regular>
-          with<t:regular_value> <v:winner_points></t> vs.<t:regular_value> <v:loser_points></t>
-          points, robbing<t:cost> <v:robbery></t>. It took<t:time> <v:time></t>.
+          with<t:regular_value> <v:winner_Punkte></t> vs.<t:regular_value> <v:loser_Punkte></t>
+          Punkte, robbing<t:cost> <v:robbery></t>. It took<t:time> <v:time></t>.
         surrendered:
           preparation: <v:loser> <t:regular>surrendered to <v:winner><t:regular> before
             the war started, robbed of<t:cost> <v:robbery></t>.
         draw: <t:regular>The war between <v:attacker> <t:regular>and <v:defender>
-          <t:regular>ended in a draw with<t:regular_value> <v:points></t> points.
+          <t:regular>endete unentschieden mit<t:regular_value> <v:points></t> Punkten.
           It took<t:time> <v:time></t>.
         annex: <t:regular><v:winner><t:regular> annexed <v:loser><t:regular> and unclaimed
           their lands. It took<t:time> <v:time></t>.
@@ -148,15 +148,15 @@ wars:
       killer:
         attackers: '<t:regular>Our team mate<t:regular_value> <v:attacker></t> killed
           the defender<t:regular_value> <v:defender></t>: <t:positive><b>+ <v:points>
-          points'
+          Punkte'
         defenders: '<t:regular>Our team mate<t:regular_value> <v:defender></t> killed
           the attacker<t:regular_value> <v:attacker></t>: <t:positive><b>+ <v:points>
-          points'
+          Punkte'
     capture:
       place:
         wilderness: <t:error>You can't place a capture flag in the wilderness. <t:regular>You
           need to place it inside an enemy land.
-        overlap: <t:error>Capture blocks must be placed in a way that the beacon wouldn't
+        overlap: <t:error>Eroberungsblöcke müssen so platziert werden, dass das Leuchtfeuer nicht
           overlap with the wilderness.
         region: <t:error>Can't place capture flag here. <t:regular>It overlaps with
           a capture region of another capture flag.
@@ -174,18 +174,18 @@ wars:
           team can place a capture flag again.
         max: <t:error>Your team already placed the maximum amount of<t:error_value>
           <v:max></t> simultaneously capture flags.
-        invader: '<title><t:success>Capture Point<subtitle><t:success>placed in enemy
+        invader: '<title><t:success>Eroberungspunkt<subtitle><t:success>placed in enemy
           land: <v:land>, <v:x>, <v:y>, <v:z><actionbar><t:success>Join them to capture
           the area.'
-        defender: '<title><t:error>Capture Point<subtitle><t:error>placed in our land:
+        defender: '<title><t:error>Eroberungspunkt<subtitle><t:error>placed in our land:
           <v:land>, <v:x>, <v:y>, <v:z><actionbar><t:error>Go there to join the defenders.'
       destroy:
         presence: <t:error>You currently can't break this capture flag. <t:regular>There
           are still<t:regular_value> <v:players></t> enemy players in this area.
-        invader: <title><t:error>Capture Point<subtitle><t:error>in enemy land <v:land>
+        invader: <title><t:error>Eroberungspunkt<subtitle><t:error>in enemy land <v:land>
           has been destroyed
-        defender: <title><t:success>Capture Point<subtitle><t:success>removed from
-          our land <v:land><actionbar><t:success><b>+ <v:points> points
+        defender: <title><t:success>Eroberungspunkt<subtitle><t:success>removed from
+          our land <v:land><actionbar><t:success><b>+ <v:points> Punkte
         invaders-break: <t:error>Invaders aren't allowed to break their own capture
           flags.
       progress:
@@ -195,11 +195,11 @@ wars:
           broadcast: '<bossbar:white:solid><t:regular>Capturing paused - <t:regular_value><v:progress>%</t>,
             x: <t:regular_value><v:x></t>, y: <t:regular_value><v:y></t>, z: <t:regular_value><v:z></t>'
         invaders:
-          broadcast: '<bossbar:red:solid><t:error>Enemy is capturing - <v:progress>%,
+          broadcast: '<bossbar:red:solid><t:error>Feind is capturing - <v:progress>%,
             <v:invaders> invader(s), x: <v:x>, y: <v:y>, z: <v:z>'
           invaders: <bossbar:red:solid><t:error>We are capturing - <v:progress>%,
             <v:defenders> defender(s)
-          defenders: <bossbar:red:solid><t:error>Enemy is capturing - <v:progress>%,
+          defenders: <bossbar:red:solid><t:error>Feind is capturing - <v:progress>%,
             <v:invaders> invader(s)
         defenders:
           broadcast: '<bossbar:green:solid><t:positive>We are capturing back - <v:progress>%,
@@ -209,51 +209,51 @@ wars:
           defenders: <bossbar:green:solid><t:positive>We are capturing back - <v:progress>%,
             <v:invaders> invader(s)
       health:
-        status: '<bossbar:white:solid><t:regular>Capture flag health: <t:regular_value><v:health>%</t>'
-        invaders: <t:positive>Your capture flag is healthy! <t:positive><b>+<v:points>
-          <!b><t:regular>points awarded to your team.
-        defenders: <t:positive>The enemy capture flag is weakened! <t:positive><b>+<v:points>
-          <!b><t:regular>points rewarded.
-        damage: '<t:regular>Capture flag: <t:error_value>-<v:damage></t> hp <t:decoration>|
+        status: '<bossbar:white:solid><t:regular>Eroberungsflaggen-Leben: <t:regular_value><v:health>%</t>'
+        invaders: <t:positive>Deine Eroberungsflagge ist intakt! <t:positive><b>+<v:points>
+          <!b><t:regular>Punkte awarded to your team.
+        defenders: <t:positive>Die Eroberungsflagge des Feindes ist geschwächt! <t:positive><b>+<v:points>
+          <!b><t:regular>Punkte rewarded.
+        damage: '<t:regular>Eroberungsflagge: <t:error_value>-<v:damage></t> hp <t:decoration>|
           </t><t:error_value><v:health>%</t> <t:regular>remaining.'
       online: '<actionbar><t:error>Can''t capture: Min. of<t:error_value> <v:min></t>
         player(s) of land<t:error_value> <v:land></t> need to be online.'
       success:
-        invader: <title><t:success>Capture Point<subtitle><t:success>we captured <v:chunks>
-          chunk(s) from <v:land><actionbar><t:success><b>+ <v:points> points
-        defender: <title><t:error>Capture Point<subtitle><t:error>enemy captured <v:chunks>
+        invader: <title><t:success>Eroberungspunkt<subtitle><t:success>we captured <v:chunks>
+          Chunk(s) von <v:land><actionbar><t:success><b>+ <v:points> Punkte
+        defender: <title><t:error>Eroberungspunkt<subtitle><t:error>enemy captured <v:chunks>
           chunk(s) of <v:land>
   command:
     declare:
-      not-allowed: <t:error>You're not allowed to start a war for<t:error_value> <v:object></t>.
+      not-allowed: <t:error>Du darfst keinen Krieg starten für<t:error_value> <v:object></t>.
         <t:regular>The leader of <v:object> <t:regular>needs to do this.
       hours: '<t:error>You can only declare war during the following hours:<t:error_value>
         <v:hours></t> <t:decoration>(</t><t:regular>current time:<t:time> <v:current></t>,
         time zone: <t:time><v:timezone></t><t:decoration>)</t>'
       enemies: |
         <t:error>You must add<t:error_value> <v:object></t> as an enemy first.
-          <hover:show_text:"<t:regular>Click here to add <v:object> <t:regular>as an enemy in order to declare war on them."><click:run_command:"/<v:cmd>"><t:regular>✖ Add as Enemy: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
+          <hover:show_text:"<t:regular>Klicke hier, um <v:object> <t:regular>als Feind hinzuzufügen, damit du ihnen den Krieg erklären kannst."><click:run_command:"/<v:cmd>"><t:regular>✖ Als Feind hinzufügen: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
       ally: |
-        <t:error>You can't declare war against your ally<t:error_value> <v:object></t>.
-          <hover:show_text:"<t:regular>Click here to manage your relations."><click:run_command:"/<v:cmd>"><t:regular>✖ Manage Relations: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
+        <t:error>Du kannst deinem Verbündeten nicht den Krieg erklären<t:error_value> <v:object></t>.
+          <hover:show_text:"<t:regular>Klicke hier, um deine Beziehungen zu verwalten."><click:run_command:"/<v:cmd>"><t:regular>✖ Beziehungen verwalten: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
       nation: <t:error>You can't declare war against<t:error_value> <v:object></t>.
-        <t:regular>They're part of the same nation<t:entity_nation> <v:nation></t>.
+        <t:regular>Sie sind Teil derselben Nation<t:entity_nation> <v:nation></t>.
       min-balance:
-        attacker: '<t:error>Can''t send this declaration. <t:regular>The attackers
-          <v:object> <t:regular>need a minimum balance of<t:limit> <v:min></t> in
-          order to start a war. Deposit money into your land bank: <hover:show_text:"<t:regular>Click
-          here to deposit <v:min> into your land bank."><click:run_command:"/<v:cmd>"><t:cmd>/<v:cmd>
+        attacker: '<t:error>Diese Kriegserklärung kann nicht gesendet werden. <t:regular>Die Angreifer
+          <v:object> <t:regular>benötigen ein Mindestguthaben von<t:limit> <v:min></t> in
+          um einen Krieg zu beginnen. Zahle Geld in deine Landbank ein: <hover:show_text:"<t:regular>Click
+          hier, um <v:min> in deine Landbank einzuzahlen."><click:run_command:"/<v:cmd>"><t:cmd>/<v:cmd>
           </t><java><t:click>[CLICK]</t></java></click></hover>'
-        defender: <t:error>The balance of the defenders <v:object> <t:error>is too
-          low. <t:regular>You can only attack others that have a minimum balance of<t:limit>
+        defender: <t:error>Das Guthaben der Verteidiger <v:object> <t:error>ist zu
+          niedrig. <t:regular>Du kannst nur andere angreifen, die ein Mindestguthaben von<t:limit>
           <v:min></t>.
       min-chunks:
-        attacker: '<t:error>Can''t send this declaration. <t:regular>The attackers
-          <v:object> <t:regular>need a minimum amount of<t:limit> <v:min></t> chunks
-          in order to start a war. Claim: <hover:show_text:"<t:regular>Click here
-          to claim."><click:run_command:"/<v:cmd>"><t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>'
-        defender: <t:error>The claim amount of the defenders <v:object> <t:error>is
-          too low. <t:regular>You can only attack others that have a minimum amount
+        attacker: '<t:error>Diese Kriegserklärung kann nicht gesendet werden. <t:regular>Die Angreifer
+          <v:object> <t:regular>benötigen mindestens<t:limit> <v:min></t> chunks
+          um einen Krieg zu beginnen. Claime: <hover:show_text:"<t:regular>Klicke hier,
+          um zu claimen."><click:run_command:"/<v:cmd>"><t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>'
+        defender: <t:error>Die Anzahl der Claims der Verteidiger <v:object> <t:error>ist
+          zu niedrig. <t:regular>You can only attack others that have a minimum amount
           of<t:limit> <v:min></t> chunks.
       min-age:
         attacker: <t:error>Can't send this declaration. <t:regular>The attackers <v:object>
@@ -303,109 +303,109 @@ wars:
         to <v:object> <t:regular>hasn't been accepted yet.
     info:
       war: |
-        <t:regular_heading>Current War:</t>
-        <t:decoration>- </t><t:regular>Attacker <v:attacker><t:regular>:
+        <t:regular_heading>Aktueller Krieg:</t>
+        <t:decoration>- </t><t:regular>Angreifer <v:attacker><t:regular>:
              <t:decoration>• </t><t:regular>Captures: <t:regular_value><v:att_cap></t>
              <t:decoration>• </t><t:regular>Kills: <t:regular_value><v:att_kills></t>
-               <t:decoration>= </t><t:regular_value><v:att_points></t> / <t:regular_value><v:towin></t> <t:regular>points to win
+               <t:decoration>= </t><t:regular_value><v:att_Punkte></t> / <t:regular_value><v:towin></t> <t:regular>Punkte to win
                <v:att_bar>
-        <t:decoration>- </t><t:regular>Defender <v:defender><t:regular>:
+        <t:decoration>- </t><t:regular>Verteidiger <v:defender><t:regular>:
              <t:decoration>• </t><t:regular>Captures: <t:regular_value><v:def_cap></t>
              <t:decoration>• </t><t:regular>Kills: <t:regular_value><v:def_kills></t>
-               <t:decoration>= </t><t:regular_value><v:def_points></t> / <t:regular_value><v:towin></t> <t:regular>points to win
+               <t:decoration>= </t><t:regular_value><v:def_Punkte></t> / <t:regular_value><v:towin></t> <t:regular>Punkte to win
                <v:def_bar>
 
         <t:regular>Timeout:<t:time> ~<v:time></t>
-        <hover:show_text:"<t:regular>Click here to open the war menu."><click:run_command:"/<v:cmd>"><t:regular>More info: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
+        <hover:show_text:"<t:regular>Klicke hier, um das war menu."><click:run_command:"/<v:cmd>"><t:regular>Mehr Infos: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
       declaration:
         normal: |
-          <t:regular_heading>War Declaration:</t>
-            <t:decoration>• </t><t:regular>Attacker: <v:attacker>
-            <t:decoration>• </t><t:regular>Defender: <v:defender>
+          <t:regular_heading>Kriegserklärung:</t>
+            <t:decoration>• </t><t:regular>Angreifer: <v:attacker>
+            <t:decoration>• </t><t:regular>Verteidiger: <v:defender>
             <t:decoration>• </t><t:regular>Starts in:
               <t:time>~<v:time></t>
 
-          <hover:show_text:"<t:regular>Click here to open the war menu."><click:run_command:"/<v:cmd>"><t:regular>More info: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
+          <hover:show_text:"<t:regular>Klicke hier, um das war menu."><click:run_command:"/<v:cmd>"><t:regular>Mehr Infos: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
         mutual:
           defender: |
-            <t:regular_heading>War Declaration:</t>
-              <t:decoration>• </t><t:regular>Attacker: <v:attacker>
-              <t:decoration>• </t><t:regular>Defender: <v:defender>
+            <t:regular_heading>Kriegserklärung:</t>
+              <t:decoration>• </t><t:regular>Angreifer: <v:attacker>
+              <t:decoration>• </t><t:regular>Verteidiger: <v:defender>
 
-            <hover:show_text:"<t:regular>Click here to accept the war declaration."><click:run_command:"/<v:cmd_accept>"><t:positive>✔ Accept: <t:cmd>/<v:cmd_accept> </t><java><t:click>[CLICK]</t></java></click></hover>
-            <hover:show_text:"<t:regular>Click here to deny the war declaration."><click:run_command:"/<v:cmd_deny>"><t:negative>✘ Deny: <t:cmd>/<v:cmd_deny> </t><java><t:click>[CLICK]</t></java></click></hover>
+            <hover:show_text:"<t:regular>Klicke hier, um die Kriegserklärung anzunehmen."><click:run_command:"/<v:cmd_accept>"><t:positive>✔ Annehmen: <t:cmd>/<v:cmd_accept> </t><java><t:click>[CLICK]</t></java></click></hover>
+            <hover:show_text:"<t:regular>Klicke hier, um die Kriegserklärung abzulehnen."><click:run_command:"/<v:cmd_deny>"><t:negative>✘ Ablehnen: <t:cmd>/<v:cmd_deny> </t><java><t:click>[CLICK]</t></java></click></hover>
           attacker: |
-            <t:regular_heading>War Declaration:</t>
-              <t:decoration>• </t><t:regular>Attacker: <v:attacker>
-              <t:decoration>• </t><t:regular>Defender: <v:defender>
+            <t:regular_heading>Kriegserklärung:</t>
+              <t:decoration>• </t><t:regular>Angreifer: <v:attacker>
+              <t:decoration>• </t><t:regular>Verteidiger: <v:defender>
 
             <t:regular>The defender hasn't accepted
             the declaration yet.
 help:
   command:
     wars:
-      menu: <hover:show_text:"<t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
-        <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Open war menu</click></hover>
-      deny: <hover:show_text:"<t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+      menu: <hover:show_text:"<t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+        <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Kriegsmenü öffnen</click></hover>
+      deny: <hover:show_text:"<t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
         <v:subcmd> </t><t:decoration>- </t><t:regular>Deny mutual war declaration</click></hover>
-      spawn: <hover:show_text:"<t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
-        <v:subcmd> </t><t:decoration>- </t><t:regular>Teleport to enemy</click></hover>
-      declare: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+      spawn: <hover:show_text:"<t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+        <v:subcmd> </t><t:decoration>- </t><t:regular>Zum Feind teleportieren</click></hover>
+      declare: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
         <v:subcmd> <v:args> - </t><t:regular>Declare war</click></hover>
-      list: <hover:show_text:"<t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+      list: <hover:show_text:"<t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
         <v:subcmd> - </t><t:regular>View active wars</click></hover>
       info:
-        main: <hover:show_text:"<t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+        main: <hover:show_text:"<t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
           <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Info about war</click></hover>
-        captureflag: <hover:show_text:"<t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+        captureflag: <hover:show_text:"<t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
           <v:subcmd> </t><t:decoration>- </t><t:regular>View captureflag recipe</click></hover>
       admin:
-        main: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+        main: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
           <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Special war administration</click></hover>
-        start: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+        start: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
           <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Start war</click></hover>
-        end: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+        end: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
           <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>End war</click></hover>
     lands:
       land:
         war:
           main: <hover:show_text:"<t:regular>Declare war on an enemy or manage an
-            ongoing war. Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
-            <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Manage war</click></hover>
-          menu: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
-            <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>War menu</click></hover>
-          declare: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            ongoing war. Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Krieg verwalten</click></hover>
+          menu: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Kriegsmenü</click></hover>
+          declare: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Declare war</click></hover>
           info:
-            main: <hover:show_text:"<t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            main: <hover:show_text:"<t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
               <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>View war information</click></hover>
-            captureflag: <hover:show_text:"<t:regular>Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            captureflag: <hover:show_text:"<t:regular>Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
               <v:subcmd> </t><t:decoration>- </t><t:regular>View captureflag recipe</click></hover>
-          spawn: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
-            <v:subcmd> </t><t:decoration>- </t><t:regular>Teleport to war spawn</click></hover>
+          spawn: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            <v:subcmd> </t><t:decoration>- </t><t:regular>Zum Kriegsspawn teleportieren</click></hover>
           decline: <hover:show_text:"<t:regular>Decline a mutual war declaration.
-            Click to execute."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            Klicke zum Ausführen."><click:run_command:"/<v:fullcmd>"><t:cmd><v:parent>
             <v:subcmd> </t><t:decoration>- </t><t:regular>Decline war</click></hover>
       admin:
         land:
           war:
-            main: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            main: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
               <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Special war administration</click></hover>
-            start: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            start: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
               <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Start war</click></hover>
-            end: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            end: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
               <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>End war</click></hover>
           shield:
-            main: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            main: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
               <v:subcmd> </t><t:decoration>- </t><t:regular>Edit shield time</click></hover>
-            modify: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            modify: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
               <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Add (+) or remove
               (-) time</click></hover>
-            set: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            set: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
               <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Set time</click></hover>
         player:
           give:
-            captureflag: <hover:show_text:"<t:regular>Click to copy."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
+            captureflag: <hover:show_text:"<t:regular>Klicke zum Kopieren."><click:suggest_command:"/<v:fullcmd>"><t:cmd><v:parent>
               <v:subcmd> <v:args> </t><t:decoration>- </t><t:regular>Give to captureblocks</click></hover>
 
 lands:
@@ -438,7 +438,7 @@ lands:
         declare:
           confirm: |
             <t:regular>Please confirm that you <t:decoration>(</t><t:regular><v:attacker><t:decoration>) </t><t:regular>want to declare war against <v:defender><t:regular>:
-              <hover:show_text:"<t:regular>Click here to confirm this action."><click:run_command:"/<v:fullcmd>"><t:positive>✔ Confirm: <t:cmd>/<v:fullcmd> </t><java><t:click>[CLICK]</t></java></click></hover>
+              <hover:show_text:"<t:regular>Klicke hier, um diese Aktion zu bestätigen."><click:run_command:"/<v:fullcmd>"><t:positive>✔ Bestätigen: <t:cmd>/<v:fullcmd> </t><java><t:click>[CLICK]</t></java></click></hover>
           admin: <t:error>You can't declare war against admin lands.
           peaceful: <t:error>This land has been marked as peaceful by a server admin.
             <t:regular>It can't engage in any wars.
@@ -452,7 +452,7 @@ lands:
             overlord.
           enemies: |
             <t:error>You must add<t:error_value> <v:object></t> as an enemy first.
-              <hover:show_text:"<t:regular>Click here to add <v:object> <t:regular>as an enemy in order to declare war on them."><click:run_command:"/<v:cmd>"><t:regular>✖ Add as Enemy: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
+              <hover:show_text:"<t:regular>Klicke hier, um <v:object> <t:regular>als Feind hinzuzufügen, damit du ihnen den Krieg erklären kannst."><click:run_command:"/<v:cmd>"><t:regular>✖ Als Feind hinzufügen: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
           war-shield: <t:error>You currently can't declare war against<t:error_value>
             <v:object></t>. <t:regular>They have a war shield for the next<t:time>
             <v:time></t>.
@@ -507,7 +507,7 @@ lands:
           try again after the war is over.
   message:
     blacklist:
-      war: <t:error>You're not allowed to use this command while you're engaged in
+      war: <t:error>Du darfst diesen Befehl nicht nutzen, während du beteiligt bist an
         a war.
     capture:
       dropped: <t:error>Some capture flags lie on the ground. <t:regular>There was
@@ -527,7 +527,7 @@ nations:
         declare:
           confirm: |
             <t:regular>Please confirm that you <t:decoration>(</t><t:regular><v:attacker><t:decoration>) </t><t:regular>want to declare war against <v:defender><t:regular>:
-              <hover:show_text:"<t:regular>Click here to confirm this action."><click:run_command:"/<v:fullcmd>"><t:positive>✔ Confirm: <t:cmd>/<v:fullcmd> </t><java><t:click>[CLICK]</t></java></click></hover>
+              <hover:show_text:"<t:regular>Klicke hier, um diese Aktion zu bestätigen."><click:run_command:"/<v:fullcmd>"><t:positive>✔ Bestätigen: <t:cmd>/<v:fullcmd> </t><java><t:click>[CLICK]</t></java></click></hover>
           admin: <t:error>You can't declare war against admin lands.
           peaceful: <t:error>This land has been marked as peaceful by a server admin.
             <t:regular>It can't engage in any wars.
@@ -541,7 +541,7 @@ nations:
             overlord.
           enemies: |
             <t:error>You must add<t:error_value> <v:object></t> as an enemy first.
-              <hover:show_text:"<t:regular>Click here to add <v:object> <t:regular>as an enemy in order to declare war on them."><click:run_command:"/<v:cmd>"><t:regular>✖ Add as Enemy: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
+              <hover:show_text:"<t:regular>Klicke hier, um <v:object> <t:regular>als Feind hinzuzufügen, damit du ihnen den Krieg erklären kannst."><click:run_command:"/<v:cmd>"><t:regular>✖ Als Feind hinzufügen: <t:cmd>/<v:cmd> </t><java><t:click>[CLICK]</t></java></click></hover>
           war-shield: <t:error>You currently can't declare war against<t:error_value>
             <v:object></t>. <t:regular>They have a war shield for the next<t:time>
             <v:time></t>.

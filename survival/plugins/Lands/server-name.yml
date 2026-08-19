@@ -1,14 +1,15 @@
-# This file is only relevant if Redis is enabled in config.yml.
-# Here you can override the server-name and master option for Redis.
-# Since copying the config.yml from one server to another will cause issues, if you don't adjust
-# the Redis server-name and master option, you can configure these values in this file, so they override the config.yml Redis options.
-# Just remove the comments at the option lines and set your desired value.
+# Diese Datei ist nur relevant, wenn Redis in config.yml aktiviert ist.
+# Hier können der Server-Name und die Master-Option für Redis überschrieben werden.
+# Da das Kopieren der config.yml von einem Server auf einen anderen zu Problemen führen kann,
+# wenn Server-Name und Master-Option für Redis nicht angepasst werden, können diese Werte in
+# dieser Datei konfiguriert werden, sodass sie die Redis-Optionen in config.yml überschreiben.
+# Einfach die Kommentare vor den gewünschten Optionszeilen entfernen und den Wert setzen.
 
-# This should be the name that you configured for this server in your BungeeCord or Velocity config.
-# NOTE: If you're using multipaper, this option will be overridden by multipaper's own name decision.
+# Dies sollte der Name sein, der für diesen Server in der BungeeCord- oder Velocity-Konfiguration eingetragen ist.
+# HINWEIS: Bei Multipaper wird diese Option durch Multipapers eigene Namensgebung überschrieben.
 #server-name: "server-1"
 
-# This option should only be enabled on ONE of the servers that are connected to the same Lands database and Redis.
-# If true: This server will execute tasks, such as upkeep, taxes etc. for all lands across all servers that are connected to the same Lands database and Redis.
-# NOTE: If you're using multipaper, make sure to provide the actual name of the multipaper instance that should be the master server (not the multipaper master).
+# Diese Option sollte nur auf EINEM der Server aktiviert sein, die mit derselben Lands-Datenbank und Redis verbunden sind.
+# Wenn true: Dieser Server führt Aufgaben wie Unterhalt, Steuern usw. für alle Länder über alle verbundenen Server aus.
+# HINWEIS: Bei Multipaper den tatsächlichen Namen der Multipaper-Instanz angeben, die Master-Server sein soll (nicht der Multipaper-Master).
 #master: false

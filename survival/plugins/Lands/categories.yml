@@ -1,17 +1,17 @@
-# In this file you can configure categories. Land categories can be set
-# in the various options menu of a land. This helps players finding
-# for example shop lands in the /lands list menu.
+# In dieser Datei können Kategorien konfiguriert werden. Land-Kategorien können
+# im Verschiedenes-Optionen-Menü eines Landes gesetzt werden. Damit können Spieler
+# z. B. Shop-Länder im /lands list-Menü einfacher finden.
 #
-# You can add your own categories and delete existing ones.
-# NOTE: A server reload or restart is required for any changes of this file to take effect.
+# Eigene Kategorien können hinzugefügt und bestehende gelöscht werden.
+# HINWEIS: Ein Server-Neustart oder -Reload ist erforderlich, damit Änderungen dieser Datei wirksam werden.
 
 land:
   enabled: true
   categories:
     members:
       enabled: true
-      # Allow land owners to enable a option to automatically accept new membership requests.
-      # If set to false, the option is also disabled for existing lands, when the server is restarted.
+      # Land-Besitzern erlauben, eine Option zum automatischen Annehmen neuer Mitgliedsanfragen zu aktivieren.
+      # Wenn false, wird die Option auch für bestehende Länder beim Server-Neustart deaktiviert.
       allow-auto-accept: true
       name: '&eMitglieder gesucht ☺'
       description:

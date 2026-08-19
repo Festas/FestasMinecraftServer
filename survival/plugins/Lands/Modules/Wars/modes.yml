@@ -1,48 +1,48 @@
-# War modes and goals.
-# A war mode decides how a war is scored and won; a war goal decides what the winner gets when it
-# ends. Each mode/goal is registered in code; this file holds its configurable settings and marks the
-# mode and goal that are used by default for newly declared wars (default: true).
-# You can add optional properties per entry - they simply won't do anything unless the mode/goal reads
-# them.
+# Kriegsmodi und -ziele.
+# Ein Kriegsmodus bestimmt, wie ein Krieg gewertet und gewonnen wird; ein Kriegsziel bestimmt, was der Gewinner erhält,
+# wenn er endet. Jeder Modus/Ziel ist im Code registriert; diese Datei enthält konfigurierbare Einstellungen und markiert
+# den Modus und das Ziel, die standardmäßig für neu erklärte Kriege verwendet werden (default: true).
+# Pro Eintrag können optionale Eigenschaften hinzugefügt werden – sie haben keine Wirkung, wenn der Modus/das Ziel
+# sie nicht liest.
 
 modes:
-  # The built-in skirmish mode: score from kills, captures and points; ends on points-to-win or timeout.
+  # Der integrierte Gefecht-Modus: Punkte durch Kills, Einnahmen und Punkte; endet bei Punktziel oder Zeitüberschreitung.
   skirmish:
     default: true
-    # Extra goals applied to every war of this mode, on top of the war's chosen primary goal.
-    # e.g. add 'raid' to let the winner's members raid the loser's lands after the war.
+    # Zusätzliche Ziele, die bei jedem Krieg dieses Modus gelten, zusätzlich zum gewählten Primärziel.
+    # Z. B. 'raid' hinzufügen, um den Mitgliedern des Gewinners zu erlauben, die Länder des Verlierers nach dem Krieg zu überfallen.
     add-goals: [ ]
-    # How long a war of this mode may last before it ends by timeout (the higher-scoring team wins, or a
-    # draw if tied). Set to 0 for no time limit.
+    # Wie lange ein Krieg in diesem Modus dauern kann, bevor er durch Zeitüberschreitung endet (das Team mit mehr Punkten gewinnt,
+    # oder Unentschieden bei Gleichstand). 0 = kein Zeitlimit.
     timeout: 36h
     points:
-      # Points per kill.
+      # Punkte pro Kill.
       kill: 1
-      # Points for capturing/breaking/exploding a capture flag (see the "capture" section in wars.yml).
+      # Punkte für das Einnehmen/Brechen/Explodieren einer Einnahme-Fahne (siehe Abschnitt "capture" in wars.yml).
       capture-flag:
         capture: 5
         break: 3
         explode: 5
-      # How many points a team needs to win. Calculated as (smallest team's player count) * per-player,
-      # but never less than min.
+      # Wie viele Punkte ein Team zum Gewinnen benötigt. Berechnet als (kleinste Team-Spielerzahl) * per-player,
+      # mindestens jedoch min.
       towin:
         per-player: 5
         min: 100
 
-# War goals. Every goal's outcome is configured per war-state so it can be milder when a side gives up:
-#   end        - a fought win/loss
-#   surrender  - a side conceded (during preparation or an active war). Usually less punishing than 'end'.
-#   draw       - no decisive winner. A draw has no winner/loser, so cmds and shields do nothing and aren't
-#                listed below - add them if you want a draw to still grant a shield/run a command.
-# Every state (below) takes the same options:
-#   cmds.winner / cmds.loser - Console commands run once per winner/loser land when the war resolves.
-#     Placeholders: {winner}/{loser} (parameter name, no spaces), {winner_name}/{loser_name} (display name),
-#     {winner_owner}/{loser_owner} (owner). Set a list to [] to disable it.
-#   shield.winner / shield.loser - War shield granted to the winner / loser after the war resolves (0 = none).
-# Goals may add their own options (e.g. the skirmish goal's 'robbery').
+# Kriegsziele. Das Ergebnis jedes Ziels wird pro Kriegsstatus konfiguriert, damit es milder sein kann, wenn eine Seite aufgibt:
+#   end        - ein erkämpfter Sieg/Niederlage
+#   surrender  - eine Seite hat aufgegeben (während der Vorbereitung oder im aktiven Krieg). Meist milder als 'end'.
+#   draw       - kein entscheidender Gewinner. Bei Unentschieden gibt es keinen Gewinner/Verlierer, deshalb haben Befehle und Schilde
+#                unten keine Wirkung - füge sie hinzu, wenn ein Unentschieden trotzdem einen Schild vergeben oder einen Befehl ausführen soll.
+# Jeder Status (unten) verwendet dieselben Optionen:
+#   cmds.winner / cmds.loser - Konsolen-Befehle, die einmalig pro Gewinner-/Verlierer-Land ausgeführt werden.
+#     Platzhalter: {winner}/{loser} (Parametername, keine Leerzeichen), {winner_name}/{loser_name} (Anzeigename),
+#     {winner_owner}/{loser_owner} (Besitzer). Liste auf [] setzen = deaktivieren.
+#   shield.winner / shield.loser - Kriegsschild für den Gewinner/Verlierer nach Kriegsende (0 = keiner).
+# Ziele können eigene Optionen hinzufügen (z. B. die 'robbery'-Option des Gefecht-Ziels).
 goals:
-  # The raid goal: the winner's members may act on the loser's lands for a window after the war (limited to
-  # the flags/blocks in 'actions'). Also usable as an add-on on top of another goal (modes.<id>.add-goals).
+  # Das Überfall-Ziel: Die Mitglieder des Gewinners können nach dem Krieg für einen Zeitraum in den Ländern des Verlierers agieren
+  # (begrenzt auf die Flags/Blöcke in 'actions'). Auch als Zusatz zu einem anderen Ziel verwendbar (modes.<id>.add-goals).
   raid:
     default: true
     duration: 1h
@@ -60,26 +60,26 @@ goals:
       shield:
         winner: 0
         loser: 0
-    # Which actions the winner's members may perform on a raided land. role-flags grants a flag
-    # outright (e.g. BLOCK_BREAK -> break any block); block-break/block-place instead allow only the
-    # listed materials when the flag itself isn't granted - so raiders can breach and loot without
-    # levelling the whole base. Flag names: see the roles-and-their-flags wiki page.
+    # Welche Aktionen die Mitglieder des Gewinners in einem überfallenen Land durchführen dürfen. role-flags gewährt ein Flag
+    # direkt (z. B. BLOCK_BREAK -> jeden Block brechen); block-break/block-place erlauben stattdessen nur die
+    # aufgelisteten Materialien, wenn das Flag nicht gewährt wird – so können Räuber eindringen und plündern, ohne
+    # die gesamte Basis zu zerstören. Flag-Namen: siehe Wiki-Seite roles-and-their-flags.
     actions:
-      # Loot containers, open doors/hatches, flip levers/buttons and pick up drops - but not break/place
-      # freely (that's limited to the material lists below).
+      # Behälter plündern, Türen/Luken öffnen, Hebel/Knöpfe umlegen und Drops aufheben – aber nicht frei brechen/platzieren
+      # (das ist auf die Materiallisten unten begrenzt).
       role-flags:
         - INTERACT_CONTAINER
         - INTERACT_DOOR
         - INTERACT_TRAPDOOR
         - INTERACT_MECHANISM
         - ITEM_PICKUP
-      # Common wall/base blocks a raider may break to breach into a claim. This is a curated set - enough
-      # to tunnel through a typical build, but not the whole block palette, so raiders can't level
-      # everything or destroy valuables/decoration. Doors, hatches and gates are intentionally NOT here:
-      # the INTERACT_DOOR/INTERACT_TRAPDOOR flags above already let raiders open them, so breaking them
-      # would be pointless. Materials your server version doesn't have are ignored.
+      # Häufige Wand-/Basisblöcke, die ein Räuber brechen darf. Ein gezieltes Set – ausreichend
+      # zum Tunneln durch ein typisches Gebäude, aber nicht die ganze Block-Palette, damit Räuber nicht
+      # alles zerstören können. Türen, Luken und Tore sind absichtlich NICHT enthalten:
+      # die Flags INTERACT_DOOR/INTERACT_TRAPDOOR oben erlauben das Öffnen bereits, daher wäre das Brechen
+      # nutzlos. Materialien, die die Server-Version nicht hat, werden ignoriert.
       block-break:
-        # Wood (all variants, so a base can't dodge raids by picking a different wood)
+        # Holz (alle Varianten, damit eine Basis Überfälle nicht durch eine andere Holzart umgehen kann)
         - OAK_PLANKS
         - SPRUCE_PLANKS
         - BIRCH_PLANKS
@@ -104,7 +104,7 @@ goals:
         - BAMBOO_BLOCK
         - CRIMSON_STEM
         - WARPED_STEM
-        # Stone
+        # Stein
         - COBBLESTONE
         - MOSSY_COBBLESTONE
         - STONE
@@ -112,17 +112,17 @@ goals:
         - COBBLED_DEEPSLATE
         - DEEPSLATE_BRICKS
         - TUFF
-        # Earth
+        # Erde
         - DIRT
         - COARSE_DIRT
         - GRASS_BLOCK
         - SAND
         - GRAVEL
-        # Glass and climbables
+        # Glas und Kletterbares
         - GLASS
         - GLASS_PANE
         - LADDER
-      # Blocks a raider may place to bridge/climb into the base.
+      # Blöcke, die ein Räuber platzieren darf, um in die Basis zu gelangen.
       block-place:
         - LADDER
         - SCAFFOLDING
@@ -130,9 +130,9 @@ goals:
         - COBBLESTONE
         - OAK_PLANKS
 
-  # The skirmish goal: a low-consequence war - the winner robs money from the loser and runs commands, but
-  # no one loses claims. 'robbery': trailing % = percentage of the loser's bank balance (e.g. 75%), a plain
-  # number = a flat amount (capped at what the loser has).
+  # Das Gefecht-Ziel: ein Krieg mit geringen Konsequenzen – der Gewinner raubt Geld vom Verlierer und führt Befehle aus,
+  # aber niemand verliert Ansprüche. 'robbery': % am Ende = Prozent des Bankguthabens des Verlierers (z. B. 75%), eine
+  # Zahl = ein fester Betrag (begrenzt auf das, was der Verlierer hat).
   skirmish:
     end:
       robbery: 75%
@@ -151,8 +151,8 @@ goals:
         winner: 7d
         loser: 7d
 
-  # The annexation goal: the winner unclaims all of the loser's war lands (the loser is paid the usual
-  # unclaim cash-back into its bank). No ownership transfer.
+  # Das Annexionsziel: Der Gewinner gibt alle Kriegsländer des Verlierers frei (der Verlierer erhält die übliche
+  # Rückerstattung in seine Bank). Kein Besitzerwechsel.
   annex:
     default: false
     end:
@@ -170,14 +170,14 @@ goals:
         winner: 0
         loser: 3d
 
-  # The vassalage goal: the winning nation subjugates the loser. The loser's lands are absorbed into the
-  # winner's nation as restricted VASSAL members. Only usable when the attacker is a nation.
+  # Das Vasallenziel: Die Gewinnersnation unterwirft den Verlierer. Die Länder des Verlierers werden als
+  # eingeschränkte VASALLEN-Mitglieder in die Gewinnernation aufgenommen. Nur verwendbar, wenn der Angreifer eine Nation ist.
   vassal:
     default: false
-    # Also transfer the loser's bank balance to the winner's nation bank when it is vassalized.
+    # Auch das Bankguthaben des Verlierers bei Vasallierung in die Nationbank des Gewinners übertragen.
     seize-treasury: false
-    # The loser is absorbed into the winner's nation (not left independent), so it gets no shield by
-    # default - but both winner.shield and loser.shield are honored if you set them.
+    # Der Verlierer wird in die Gewinnernation aufgenommen (bleibt nicht unabhängig), erhält daher standardmäßig keinen Schild –
+    # aber winner.shield und loser.shield werden berücksichtigt, wenn sie gesetzt werden.
     end:
       cmds:
         winner: [ ]
@@ -193,9 +193,9 @@ goals:
         winner: 0
         loser: 0
 
-  # The independence goal: applied only via '/land <vassal> war independence' - a vassal wages war to
-  # secede from its overlord. If the vassal wins it stays free; if the overlord wins or the war draws,
-  # the vassal is re-subjugated and can't declare independence again for this cooldown.
+  # Das Unabhängigkeitsziel: Wird nur über '/land <vasall> war independence' angewendet – ein Vasall führt Krieg,
+  # um sich von seinem Oberherrn zu lösen. Wenn der Vasall gewinnt, bleibt er frei; wenn der Oberherr gewinnt oder Unentschieden,
+  # wird der Vasall erneut unterworfen und kann für diesen Cooldown keine Unabhängigkeit mehr erklären.
   independence:
     default: false
     cooldown: 7d
