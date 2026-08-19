@@ -12,8 +12,8 @@ general:
   command:
     argument:
       type:
-        nation: nation
-        capital: capital
+        nation: Nation
+        capital: Hauptland
   inbox:
     economy:
       upkeep:

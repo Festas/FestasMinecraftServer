@@ -8,56 +8,56 @@
 general:
   prefix:
     normal: <t:decoration>[</t><t:prefix>Lands</t><t:decoration>] </t>
-    help: '<t:decoration>[</t><t:prefix>Lands</t><t:decoration>] </t><t:regular>Usage: '
-  wYes: <t:positive>Yes</t>
-  wNo: <t:negative>No</t>
+    help: '<t:decoration>[</t><t:prefix>Lands</t><t:decoration>] </t><t:regular>Verwendung: '
+  wYes: <t:positive>Ja</t>
+  wNo: <t:negative>Nein</t>
   value:
-    none: <t:decoration>None</t>
-    unlimited: <t:positive>unlimited</t>
-  enabled: <t:positive>Enabled</t>
-  disabled: <t:negative>Disabled</t>
-  wilderness: <dark_green>Wilderness</dark_green>
+    none: <t:decoration>Keine</t>
+    unlimited: <t:positive>unbegrenzt</t>
+  enabled: <t:positive>Aktiviert</t>
+  disabled: <t:negative>Deaktiviert</t>
+  wilderness: <dark_green>Wildnis</dark_green>
   server: Server
   affiliation:
     land: <t:decoration>[</t><t:entity_land><v:land></t><t:decoration>]</t>
   relation:
-    ally: <t:regular_value>Ally</t>
-    enemy: <t:error_value>Enemy</t>
+    ally: <t:regular_value>Verbündet</t>
+    enemy: <t:error_value>Feind</t>
     neutral: <t:regular_value>Neutral</t>
   day:
-    sunday: Sunday
-    monday: Monday
-    tuesday: Tuesday
-    wednesday: Wednesday
-    thursday: Thursday
-    friday: Friday
-    saturday: Saturday
+    sunday: Sonntag
+    monday: Montag
+    tuesday: Dienstag
+    wednesday: Mittwoch
+    thursday: Donnerstag
+    friday: Freitag
+    saturday: Samstag
   land:
     title:
       land:
-        normal: <t:regular>%level% of<t:regular_value> %owner%</t>.
-        levels-disabled: <t:regular>of<t:regular_value> %owner%</t>.
-      camp: <t:regular>Camp of<t:regular_value> %owner%</t>.
-      admin: <t:regular>This land belongs to the server.
-    default-area: Default
+        normal: <t:regular>%level% von<t:regular_value> %owner%</t>.
+        levels-disabled: <t:regular>von<t:regular_value> %owner%</t>.
+      camp: <t:regular>Lager von<t:regular_value> %owner%</t>.
+      admin: <t:regular>Dieses Land gehört dem Server.
+    default-area: Standard
   area:
     description:
-      default: <t:regular>New claims will belong to this area.
-      sub: <t:regular>This is a subarea, which can have special flags and members.
-      rented: <t:positive>This area is rented by player <v:player>.
-      sold: <t:positive>This area is sold to player <v:player>.
+      default: <t:regular>Neue Claims gehören zu diesem Bereich.
+      sub: <t:regular>Dies ist ein Unterbereich mit eigenen Flags und Mitgliedern.
+      rented: <t:positive>Dieser Bereich ist an <v:player> vermietet.
+      sold: <t:positive>Dieser Bereich wurde an <v:player> verkauft.
   time:
-    days: day(s)
-    hours: hour(s)
-    minutes: minute(s)
-    seconds: second(s)
+    days: Tag(e)
+    hours: Stunde(n)
+    minutes: Minute(n)
+    seconds: Sekunde(n)
   status:
     online: <t:positive>online
     offline: <t:negative>offline
   input:
     name: Name
-    tag: Tag
-    title: Title
+    tag: Kürzel
+    title: Titel
   top:
     hologram:
       land:

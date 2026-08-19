@@ -13,22 +13,24 @@ land:
       # Allow land owners to enable a option to automatically accept new membership requests.
       # If set to false, the option is also disabled for existing lands, when the server is restarted.
       allow-auto-accept: true
-      name: '&eLooking for Members ☺'
+      name: '&eMitglieder gesucht ☺'
       description:
-        - '&7This land is actively searching'
-        - '&7for new members.'
+        - '&7Dieses Land sucht aktiv'
+        - '&7nach neuen Mitgliedern.'
     shop:
       enabled: true
       name: '&cShop $'
       description:
-        - '&7This land contains shops.'
+        - '&7Dieses Land enthält Shops.'
     pvp:
       enabled: true
-      name: '&4PvP Arena ⚔'
+      name: '&4PvP-Arena ⚔'
       description:
-        - '&7This land features a PvP arena.'
+        - '&7Dieses Land verfügt über'
+        - '&7eine PvP-Arena.'
     mobfarm:
       enabled: true
       name: '&9Mobfarm'
       description:
-        - '&7This land features a mobfarm.'
+        - '&7Dieses Land verfügt über'
+        - '&7eine Mobfarm.'

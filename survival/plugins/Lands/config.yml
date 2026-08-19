@@ -136,28 +136,28 @@ general:
     # Examples:
     #   American 12 hour format (a = 12 hour format): MM/dd/yyyy hh:mm a
     #   German 24 hour format: dd.MM.yyyy hh:mm
-    general: 'MM/dd/yyyy hh:mm a'
+    general: 'dd.MM.yyyy HH:mm'
     # Format for news messages in the land menu (inbox).
-    inbox: 'MMMMM dd'
+    inbox: 'dd.MM.'
     # Format used when only a time displayed.
     # Examples:
     #   American 12 hour format (a = 12 hour format): hh:mm a
     #   German 24 hour format: hh:mm
-    time_2: 'hh:mm a'
+    time_2: 'HH:mm'
 
   # Set the format of all economy related displays.
   # Info: https://docs.oracle.com/javase/7/docs/api/java/text/DecimalFormat.html
   # NOTE: This setting requires server reload / restart.
   eco-format:
     # Recommended format for item economy and player experience: "# gold ingot(s)" or "# experience"
-    normal: '$#,##0.00'
+    normal: '#,##0.00€'
     # The short format will use the normal format if the value is lower than 1000.
     # This format is only used in cases where there is not much space, like on signs.
     # This will convert balances like the following:
     # 1000000000 = 1B whereas {value} = 1 and {unit} = B
     # 1000000 = 1M
     # 1000 = 1k
-    short-unit: '${value}{unit}'
+    short-unit: '{value}{unit}€'
 
   # Should players with the permission (lands.admin) be notified that there is a new update available?
   upd-notify: false
@@ -180,7 +180,7 @@ economic:
     days_2: 7
     # Set the time of day. Collect taxes, upkeep and nation upkeep at this time after x days.
     # Format: 24 hour format.
-    time: '23:00:00'
+    time: '04:00:00'
     # Set the minimum time between a player's attempt to change the tax or upkeep and the next collection.
     change-cooldown_time: 2d
 
@@ -254,7 +254,7 @@ land:
     # NOTE: This includes also one chunk claim, which will be claimed automatically on land creation.
     # NOTE: PLAYERS WITH THE lands.free.lands.<number> PERMISSION MIGHT BYPASS THAT.
     #   More info: https://wiki.incredibleplugins.com/lands/permissions/permissions#numbered-permissions
-    costs: 500.0
+    costs: 2500.0
     mainblock:
       # Toggle the placement of new mainblocks.
       # This doesn't remove existing ones. However, existing ones can manually be deleted.
@@ -266,7 +266,7 @@ land:
     # NOTE: 0 = only the chunk in which the player currently stands.
     # NOTE: -1 = no chunks will be claimed
     # NOTE: This value can't be higher than your servers view distance.
-    claim-radius: 1
+    claim-radius: 0
     # Should new lands get a random color for their name?
     # NOTE: This option has no effect if land.name.color_2 is set to false.
     random-color: false
