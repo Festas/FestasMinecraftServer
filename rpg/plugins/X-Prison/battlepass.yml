@@ -3,7 +3,7 @@ season:
   display-name: <gradient:#00c6ff:#0072ff><bold>Saison 1</bold></gradient>
   start-date: ''
   end-date: ''
-max-tier: 10
+max-tier: 20
 xp:
   base: 750
   increment: 350
@@ -301,7 +301,7 @@ tiers:
     free:
       display:
         material: NETHER_STAR
-        name: <white><bold>Stufe 10</bold> <gray>- <green>Kostenlos <gray>(Finale)
+        name: <white><bold>Stufe 10</bold> <gray>- <green>Kostenlos <gray>(Finale I)
         lore:
         - '<gray>Belohnung: <green>$1,000,000'
         - ''
@@ -315,7 +315,7 @@ tiers:
     premium:
       display:
         material: BEACON
-        name: <light_purple><bold>Stufe 10</bold> <gray>- <light_purple>Premium <gray>(Finale)
+        name: <light_purple><bold>Stufe 10</bold> <gray>- <light_purple>Premium <gray>(Finale I)
         lore:
         - '<gray>Belohnung: <green>200 Edelsteine <gray>+ <aqua>10,000 Tokens'
         - ''
@@ -326,6 +326,285 @@ tiers:
         - tokens give %player% 10000
         messages:
         - <green><bold>+ 200 Edelsteine <gray>& <aqua><bold>10,000 Tokens
+        sound: UI_TOAST_CHALLENGE_COMPLETE
+  11:
+    free:
+      display:
+        material: DIAMOND_BLOCK
+        name: <white>Stufe 11 <gray>- <green>Kostenlos
+        lore:
+        - '<gray>Belohnung: <aqua>7,500 Tokens'
+        - ''
+        - '%status%'
+      rewards:
+        commands:
+        - tokens give %player% 7500
+        messages:
+        - <aqua>+ 7,500 Tokens
+    premium:
+      display:
+        material: EMERALD_BLOCK
+        name: <white>Stufe 11 <gray>- <light_purple>Premium
+        lore:
+        - '<gray>Belohnung: <green>120 Edelsteine'
+        - ''
+        - '%status%'
+      rewards:
+        commands:
+        - gems give %player% 120
+        messages:
+        - <green>+ 120 Edelsteine
+  12:
+    free:
+      display:
+        material: PAPER
+        name: <white>Stufe 12 <gray>- <green>Kostenlos
+        lore:
+        - '<gray>Belohnung: <green>$1,500,000'
+        - ''
+        - '%status%'
+      rewards:
+        commands:
+        - money give %player% 1500000
+        messages:
+        - <green>+ $1,500,000
+    premium:
+      display:
+        material: DIAMOND
+        name: <white>Stufe 12 <gray>- <light_purple>Premium
+        lore:
+        - '<gray>Belohnung: <aqua>15,000 Tokens'
+        - ''
+        - '%status%'
+      rewards:
+        commands:
+        - tokens give %player% 15000
+        messages:
+        - <aqua>+ 15,000 Tokens
+  13:
+    free:
+      display:
+        material: EMERALD
+        name: <white>Stufe 13 <gray>- <green>Kostenlos
+        lore:
+        - '<gray>Belohnung: <green>150 Edelsteine'
+        - ''
+        - '%status%'
+      rewards:
+        commands:
+        - gems give %player% 150
+        messages:
+        - <green>+ 150 Edelsteine
+    premium:
+      display:
+        material: GOLD_BLOCK
+        name: <white>Stufe 13 <gray>- <light_purple>Premium
+        lore:
+        - '<gray>Belohnung: <green>$2,000,000'
+        - ''
+        - '%status%'
+      rewards:
+        commands:
+        - money give %player% 2000000
+        messages:
+        - <green>+ $2,000,000
+  14:
+    free:
+      display:
+        material: CHEST
+        name: <white>Stufe 14 <gray>- <green>Kostenlos
+        lore:
+        - '<gray>Belohnung: <aqua>20,000 Tokens'
+        - ''
+        - '%status%'
+      rewards:
+        commands:
+        - tokens give %player% 20000
+        messages:
+        - <aqua>+ 20,000 Tokens
+    premium:
+      display:
+        material: ENDER_CHEST
+        name: <white>Stufe 14 <gray>- <light_purple>Premium
+        lore:
+        - '<gray>Belohnung: <green>225 Edelsteine'
+        - ''
+        - '%status%'
+      rewards:
+        commands:
+        - gems give %player% 225
+        messages:
+        - <green>+ 225 Edelsteine
+  15:
+    free:
+      display:
+        material: NETHERITE_INGOT
+        name: <white><bold>Stufe 15</bold> <gray>- <green>Kostenlos <gray>(Boss)
+        lore:
+        - '<gray>Belohnung: <green>$3,000,000 <gray>+ <aqua>5,000 Tokens'
+        - ''
+        - '%status%'
+      rewards:
+        commands:
+        - money give %player% 3000000
+        - tokens give %player% 5000
+        messages:
+        - <green><bold>+ $3,000,000 <gray>& <aqua><bold>5,000 Tokens
+        sound: UI_TOAST_CHALLENGE_COMPLETE
+    premium:
+      display:
+        material: BEACON
+        name: <light_purple><bold>Stufe 15</bold> <gray>- <light_purple>Premium <gray>(Boss)
+        lore:
+        - '<gray>Belohnung: <green>300 Edelsteine <gray>+ <aqua>25,000 Tokens'
+        - ''
+        - '%status%'
+      rewards:
+        commands:
+        - gems give %player% 300
+        - tokens give %player% 25000
+        messages:
+        - <green><bold>+ 300 Edelsteine <gray>& <aqua><bold>25,000 Tokens
+        sound: UI_TOAST_CHALLENGE_COMPLETE
+  16:
+    free:
+      display:
+        material: AMETHYST_SHARD
+        name: <white>Stufe 16 <gray>- <green>Kostenlos
+        lore:
+        - '<gray>Belohnung: <green>250 Edelsteine'
+        - ''
+        - '%status%'
+      rewards:
+        commands:
+        - gems give %player% 250
+        messages:
+        - <green>+ 250 Edelsteine
+    premium:
+      display:
+        material: DIAMOND_BLOCK
+        name: <white>Stufe 16 <gray>- <light_purple>Premium
+        lore:
+        - '<gray>Belohnung: <aqua>30,000 Tokens'
+        - ''
+        - '%status%'
+      rewards:
+        commands:
+        - tokens give %player% 30000
+        messages:
+        - <aqua>+ 30,000 Tokens
+  17:
+    free:
+      display:
+        material: GOLDEN_PICKAXE
+        name: <white>Stufe 17 <gray>- <green>Kostenlos
+        lore:
+        - '<gray>Belohnung: <green>$4,500,000'
+        - ''
+        - '%status%'
+      rewards:
+        commands:
+        - money give %player% 4500000
+        messages:
+        - <green>+ $4,500,000
+    premium:
+      display:
+        material: EMERALD_BLOCK
+        name: <white>Stufe 17 <gray>- <light_purple>Premium
+        lore:
+        - '<gray>Belohnung: <green>350 Edelsteine'
+        - ''
+        - '%status%'
+      rewards:
+        commands:
+        - gems give %player% 350
+        messages:
+        - <green>+ 350 Edelsteine
+  18:
+    free:
+      display:
+        material: CHEST_MINECART
+        name: <white>Stufe 18 <gray>- <green>Kostenlos
+        lore:
+        - '<gray>Belohnung: <aqua>40,000 Tokens'
+        - ''
+        - '%status%'
+      rewards:
+        commands:
+        - tokens give %player% 40000
+        messages:
+        - <aqua>+ 40,000 Tokens
+    premium:
+      display:
+        material: NETHERITE_BLOCK
+        name: <white>Stufe 18 <gray>- <light_purple>Premium
+        lore:
+        - '<gray>Belohnung: <green>$6,000,000'
+        - ''
+        - '%status%'
+      rewards:
+        commands:
+        - money give %player% 6000000
+        messages:
+        - <green>+ $6,000,000
+  19:
+    free:
+      display:
+        material: EXPERIENCE_BOTTLE
+        name: <white>Stufe 19 <gray>- <green>Kostenlos
+        lore:
+        - '<gray>Belohnung: <green>500 Edelsteine'
+        - ''
+        - '%status%'
+      rewards:
+        commands:
+        - gems give %player% 500
+        messages:
+        - <green>+ 500 Edelsteine
+    premium:
+      display:
+        material: DIAMOND_BLOCK
+        name: <white>Stufe 19 <gray>- <light_purple>Premium
+        lore:
+        - '<gray>Belohnung: <aqua>60,000 Tokens'
+        - ''
+        - '%status%'
+      rewards:
+        commands:
+        - tokens give %player% 60000
+        messages:
+        - <aqua>+ 60,000 Tokens
+  20:
+    free:
+      display:
+        material: DRAGON_EGG
+        name: <green><bold>Stufe 20</bold> <gray>- <green>Kostenlos <gray>(Finale II)
+        lore:
+        - '<gray>Belohnung: <green>$10,000,000 <gray>+ <green>250 Edelsteine'
+        - ''
+        - '%status%'
+      rewards:
+        commands:
+        - money give %player% 10000000
+        - gems give %player% 250
+        messages:
+        - <green><bold>+ $10,000,000 <gray>& <green><bold>250 Edelsteine
+        sound: UI_TOAST_CHALLENGE_COMPLETE
+    premium:
+      display:
+        material: DRAGON_HEAD
+        name: <light_purple><bold>Stufe 20</bold> <gray>- <light_purple>Premium <gray>(Finale II)
+        lore:
+        - '<gray>Belohnung: <green>1,000 Edelsteine <gray>+ <aqua>100,000 Tokens'
+        - ''
+        - '%status%'
+      rewards:
+        commands:
+        - gems give %player% 1000
+        - tokens give %player% 100000
+        - broadcast <gradient:#00c6ff:#0072ff><bold>%player%</bold></gradient> <white>hat den Battlepass bis <yellow>Stufe 20</yellow> abgeschlossen!
+        messages:
+        - <green><bold>+ 1,000 Edelsteine <gray>& <aqua><bold>100,000 Tokens
         sound: UI_TOAST_CHALLENGE_COMPLETE
 gui:
   title: <gradient:#ff512f:#dd2476><bold>Battlepass</bold></gradient> <aqua>(Belohnungen)</aqua>

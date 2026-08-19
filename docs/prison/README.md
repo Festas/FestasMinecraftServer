@@ -51,6 +51,7 @@ einfach, schnell verständlich und Bedrock-freundlich.
 | **Ränge/Prestige** | Langzeit-Progression nach den Zonen | ⬜ Phase 2 |
 | **Cosmetics/Battle-Pass** | Retention, Belohnungen | ⬜ Phase 2 |
 | **Verzauberungen/Boosts der Spitzhacke** | Zusätzliche Effekte (Auto-Sell, Multiplier) | ⬜ Phase 2 |
+| **Black Market** | Rotierende Late-Game-Angebote als Ressourcen-Sink | ⬜ Phase 3 |
 
 ---
 
@@ -82,7 +83,54 @@ Vollständiger, für dieses Setup optimierter Plugin-Stack (inkl. Recycling- und
 
 ---
 
+## Ausbau ab Phase 2
+
+### Rank-/Prestige-/Mine-Progression
+
+- **Klare Mine-Leiter:** Jede Zone soll einen klaren Zweck haben: Einstieg, Midgame, Endgame und Prestige-Vorbereitung.
+- **Rankups zwischen Zonen:** Nach mehreren Spitzhacken-Upgrades folgt jeweils ein Rankup, das neue Minen, Shops oder
+  Utility-Funktionen freischaltet.
+- **Prestige als Loop-Neustart:** Prestige setzt Rang- und Minen-Fortschritt kontrolliert zurück, gibt aber permanente
+  Boni wie Sell-Multiplikatoren, kosmetische Titel oder kleine Komfort-Freischaltungen.
+- **Endgame-Ziele:** Nach der letzten Mine bleiben Prestige-Stufen, seltene Enchants, saisonale Ziele und Ranglisten als
+  langfristige Motivation aktiv.
+
+### Black Market
+
+- **Rotierender Händler:** Der Black Market wechselt regelmäßig sein Angebot und schafft Gründe, auch nach dem täglichen
+  Progress wiederzukommen.
+- **Ressourcen-Sink:** Angebote sollten gezielt Geld, Tokens oder seltene Drops aus dem Umlauf ziehen, um Inflation zu
+  bremsen.
+- **Gezielte Belohnungen:** Fokus auf Booster, kosmetische Spitzhacken-Skins, temporäre Mine-Buffs, seltene Enchant-Items
+  und saisonale Sammelobjekte statt roher Pay-to-Win-Power.
+- **Progressions-Kopplung:** Einzelne Angebote können an Rang, Prestige oder Mine-Tier gebunden werden, damit der Black
+  Market die Progression ergänzt statt überspringt.
+
+### Enchant-Balancing
+
+- **Frühe Enchants schlicht halten:** Start-Minen profitieren vor allem von Tempo-, Fortune- oder kleinen Auto-Sell-
+  Effekten; große Flächen-Enchants kommen erst später.
+- **Stufenweise Freischaltung:** Explosive, Layer-, Nuke- oder ähnliche Mehrblock-Effekte werden an Mine-Tiers,
+  Spitzhacken-Level oder Prestige geknüpft.
+- **Kostenkurve statt Power-Sprünge:** Starke Enchants sollen teuer skalieren und im Endgame ein Investment-Ziel sein,
+  ohne Midgame-Minen sofort zu entwerten.
+- **Bedrock-/Performance-Fokus:** Enchant-Kombinationen müssen so begrenzt sein, dass Mine-Resets, Partikel und
+  Block-Updates auch bei vielen gleichzeitigen Spielern stabil bleiben.
+
+### Weitere Battlepass-/Quest-Saisons
+
+- **Saison-Modell statt Einmal-Content:** Nach dem Launch sollten neue Battlepass- und Quest-Saisons in festen Zyklen
+  nachgeliefert werden.
+- **Aufgabenmix:** Saisonziele kombinieren Blöcke abbauen, Mine-Freischaltungen, Prestige-Schritte, Daily-Streaks und
+  Community-Events.
+- **Belohnungsstruktur:** Freie und Premium-Schienen belohnen vor allem Cosmetics, Titel, Partikel, Booster und Black-
+  Market-Währung; Gameplay-Power bleibt kontrolliert.
+- **Wiederverwendung mit Variation:** Bestehende Minen, Events und Enchants werden saisonal neu gerahmt, damit mit
+  überschaubarem Pflegeaufwand regelmäßig frischer Content entsteht.
+
+---
+
 **Verwandt:** [PLUGINS.md](PLUGINS.md) · [../NEW_SERVERS.md](../NEW_SERVERS.md) · [../PLANNING.md](../PLANNING.md) ·
 [../skyblock/README.md](../skyblock/README.md)
 
-**Letzte Aktualisierung:** 2026-08-16
+**Letzte Aktualisierung:** 2026-08-19

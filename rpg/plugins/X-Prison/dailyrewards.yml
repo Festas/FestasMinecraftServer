@@ -129,6 +129,99 @@ cycle:
       messages:
       - <aqua><bold>+ 1,000 Tokens <gray>& <green>20 Edelsteine
       sound: UI_TOAST_CHALLENGE_COMPLETE
+  8:
+    display:
+      material: LAPIS_LAZULI
+      name: <white>Tag 8
+      lore:
+      - '<gray>Belohnung: <aqua>1,500 Tokens'
+      - ''
+      - '%status%'
+    rewards:
+      commands:
+      - tokens give %player% 1500
+      messages:
+      - <aqua>+ 1,500 Tokens
+  9:
+    display:
+      material: EMERALD
+      name: <white>Tag 9
+      lore:
+      - '<gray>Belohnung: <green>$125,000'
+      - ''
+      - '%status%'
+    rewards:
+      commands:
+      - money give %player% 125000
+      messages:
+      - <green>+ $125,000
+  10:
+    display:
+      material: EXPERIENCE_BOTTLE
+      name: <white>Tag 10
+      lore:
+      - '<gray>Belohnung: <green>25 Edelsteine'
+      - ''
+      - '%status%'
+    rewards:
+      commands:
+      - gems give %player% 25
+      messages:
+      - <green>+ 25 Edelsteine
+  11:
+    display:
+      material: SUNFLOWER
+      name: <white>Tag 11
+      lore:
+      - '<gray>Belohnung: <aqua>2,500 Tokens'
+      - ''
+      - '%status%'
+    rewards:
+      commands:
+      - tokens give %player% 2500
+      messages:
+      - <aqua>+ 2,500 Tokens
+  12:
+    display:
+      material: GOLDEN_PICKAXE
+      name: <white>Tag 12
+      lore:
+      - '<gray>Belohnung: <green>$200,000'
+      - ''
+      - '%status%'
+    rewards:
+      commands:
+      - money give %player% 200000
+      messages:
+      - <green>+ $200,000
+  13:
+    display:
+      material: AMETHYST_SHARD
+      name: <white>Tag 13
+      lore:
+      - '<gray>Belohnung: <green>40 Edelsteine'
+      - ''
+      - '%status%'
+    rewards:
+      commands:
+      - gems give %player% 40
+      messages:
+      - <green>+ 40 Edelsteine
+  14:
+    display:
+      material: NETHER_STAR
+      name: <gold><bold>Tag 14</bold>
+      lore:
+      - '<gray>Belohnung: <aqua>5.000 Tokens <gray>+ <green>75 Edelsteine'
+      - ''
+      - '%status%'
+    rewards:
+      commands:
+      - tokens give %player% 5000
+      - gems give %player% 75
+      messages:
+      - <aqua><bold>+ 5.000 Tokens <gray>& <green>75 Edelsteine
+      sound: UI_TOAST_CHALLENGE_COMPLETE
 milestones:
   7:
     rewards:
@@ -141,8 +234,9 @@ milestones:
     rewards:
       commands:
       - gems give %player% 125
+      - tokens give %player% 2500
       messages:
-      - '<gold><bold>14-Tage-Serienbonus: <green>+ 125 Edelsteine!'
+      - '<gold><bold>14-Tage-Serienbonus zusätzlich: <green>+ 125 Edelsteine <gray>und <aqua>2.500 Token!'
       sound: UI_TOAST_CHALLENGE_COMPLETE
   30:
     rewards:
@@ -151,6 +245,31 @@ milestones:
       - tokens give %player% 10000
       messages:
       - '<gold><bold>30-Tage-Serienbonus: <green>+ 300 Edelsteine <gray>und <aqua>10.000 Token!'
+      sound: UI_TOAST_CHALLENGE_COMPLETE
+  45:
+    rewards:
+      commands:
+      - money give %player% 2500000
+      - gems give %player% 500
+      messages:
+      - '<gold><bold>45-Tage-Serienbonus: <green>+ $2,500,000 <gray>und <green>500 Edelsteine!'
+      sound: UI_TOAST_CHALLENGE_COMPLETE
+  60:
+    rewards:
+      commands:
+      - tokens give %player% 50000
+      - gems give %player% 750
+      messages:
+      - '<gold><bold>60-Tage-Serienbonus: <aqua>+ 50.000 Token <gray>und <green>750 Edelsteine!'
+      sound: UI_TOAST_CHALLENGE_COMPLETE
+  90:
+    rewards:
+      commands:
+      - money give %player% 10000000
+      - tokens give %player% 100000
+      - gems give %player% 1500
+      messages:
+      - '<gold><bold>90-Tage-Serienbonus: <green>+ $10,000,000 <gray>, <aqua>100.000 Token <gray>und <green>1.500 Edelsteine!'
       sound: UI_TOAST_CHALLENGE_COMPLETE
 gui:
   title: <dark_gray>Tagesbelohnungen</dark_gray>

@@ -1,7 +1,7 @@
 daily:
-  count: 3
+  count: 4
 weekly:
-  count: 2
+  count: 3
 rotation:
   timezone: ''
   daily-reset-hour: 0
@@ -11,13 +11,13 @@ auto-claim: false
 notifications:
   actionbar: true
 reroll:
-  enabled: false
+  enabled: true
   cost-currency: gems
-  cost: 50
-  cooldown-seconds: 3600
-  allow-weekly: false
+  cost: 25
+  cooldown-seconds: 1800
+  allow-weekly: true
 scaling:
-  enabled: false
+  enabled: true
   source: RANK
   permission-weights:
     xprison.quests.scale.1: 1
@@ -251,6 +251,54 @@ quests:
       - tokens give %player% 5000
       messages:
       - <aqua>+ 5,000 Tokens
+  weekly_sell_blocks:
+    type: SELL_BLOCKS
+    category: WEEKLY
+    display-name: Handelsmogul
+    target: 75000
+    weight: 7
+    pass-xp: 850
+    display:
+      material: GOLD_BLOCK
+      name: <gold>Handelsmogul
+      lore:
+      - <gray>Verkaufe diese Woche <white>%target%</white> <gray>Items.
+      - ''
+      - '<gray>Fortschritt: <white>%progress%</white><gray>/<white>%target%</white> <gray>(<white>%percent%</white><gray>)'
+      - '%bar%'
+      - ''
+      - '%status%'
+    rewards:
+      commands:
+      - money give %player% 750000
+      - tokens give %player% 7500
+      messages:
+      - <green>+ $750,000 <gray>und <aqua>7,500 Tokens
+      sound: UI_TOAST_CHALLENGE_COMPLETE
+  weekly_enchant_master:
+    type: TRIGGER_ENCHANT
+    category: WEEKLY
+    display-name: Verzauberungssturm
+    target: 2500
+    weight: 6
+    pass-xp: 900
+    display:
+      material: ENCHANTED_BOOK
+      name: <gold>Verzauberungssturm
+      lore:
+      - <gray>Löse diese Woche <white>%target%</white> <gray>Verzauberungen aus.
+      - ''
+      - '<gray>Fortschritt: <white>%progress%</white><gray>/<white>%target%</white> <gray>(<white>%percent%</white><gray>)'
+      - '%bar%'
+      - ''
+      - '%status%'
+    rewards:
+      commands:
+      - tokens give %player% 10000
+      - gems give %player% 50
+      messages:
+      - <aqua>+ 10,000 Tokens <gray>und <green>50 Edelsteine
+      sound: UI_TOAST_CHALLENGE_COMPLETE
   permanent_join_gang:
     type: JOIN_GANG
     category: PERMANENT
@@ -341,6 +389,52 @@ quests:
       - tokens give %player% 500
       messages:
       - <aqua>+ 500 Tokens
+  daily_money_printer:
+    type: EARN_CURRENCY
+    category: DAILY
+    display-name: Geldmaschine
+    target: 250000
+    weight: 8
+    filter: money
+    pass-xp: 175
+    display:
+      material: PAPER
+      name: <yellow>Geldmaschine
+      lore:
+      - <gray>Verdiene <white>%target%</white> <gray>Geld.
+      - ''
+      - '<gray>Fortschritt: <white>%progress%</white><gray>/<white>%target%</white> <gray>(<white>%percent%</white><gray>)'
+      - '%bar%'
+      - ''
+      - '%status%'
+    rewards:
+      commands:
+      - tokens give %player% 400
+      messages:
+      - <aqua>+ 400 Tokens
+  daily_long_shift:
+    type: PLAYTIME
+    category: DAILY
+    display-name: Lange Schicht
+    target: 45
+    weight: 6
+    pass-xp: 175
+    display:
+      material: CLOCK
+      name: <yellow>Lange Schicht
+      lore:
+      - <gray>Spiele heute <white>%target%</white> <gray>Minuten.
+      - ''
+      - '<gray>Fortschritt: <white>%progress%</white><gray>/<white>%target%</white> <gray>(<white>%percent%</white><gray>)'
+      - '%bar%'
+      - ''
+      - '%status%'
+    rewards:
+      commands:
+      - money give %player% 75000
+      - tokens give %player% 250
+      messages:
+      - <green>+ $75,000 <gray>und <aqua>250 Tokens
   permanent_playtime:
     type: PLAYTIME
     category: PERMANENT
