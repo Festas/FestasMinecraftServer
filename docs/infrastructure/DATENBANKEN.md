@@ -12,7 +12,7 @@
                     │   172.25.0.1:3306         │
                     │                           │
                     │  ┌─ s4_perms (LuckPerms)  │
-                    │  ├─ s4_stats (Plan)       │
+                    │  ├─ s4_plan (Plan)        │
                     │  ├─ s4_husk (HuskSync)    │
                     │  ├─ s4_party (PAF)        │
                     │  └─ s4_bazaar (Bazaar)    │
@@ -46,7 +46,7 @@
 | Datenbank     | Plugin          | Zweck                                        | Server                              |
 |---------------|-----------------|----------------------------------------------|-------------------------------------|
 | `s4_perms`    | LuckPerms       | Permissions, Gruppen, Tracks                 | Proxy, Lobby, Survival, Skyblock, Prison |
-| `s4_stats`    | Plan             | Spieler-Statistiken, Server-Analytics        | Proxy, Prison                       |
+| `s4_plan`     | Plan             | Spieler-Statistiken, Server-Analytics        | Proxy, Lobby, Survival, RPG         |
 | `s4_husk`     | HuskSync        | Ränge und Cosmetics                          | Lobby, Prison                       |
 | `s4_party`    | PartyAndFriends | Party- und Freundeslisten-Daten              | Proxy                               |
 | `s4_bazaar`   | DeluxeBazaar    | Bazaar-Angebote und Transaktionen            | Skyblock, Prison                    |
@@ -79,6 +79,22 @@ database: s4_<plugin>
 username: CHANGE_ME
 password: CHANGE_ME
 useSSL: true
+```
+
+### GitHub Actions Secret für Plan
+
+Die Plan-Zugangsdaten werden nicht mehr im Repository gespeichert. Stattdessen
+werden sie während des Deployments aus dem GitHub-Secret
+`PLAN_DB_ENV` in die Plan-Konfigurationen injiziert.
+
+Format des Secrets (für die neue Plan-Datenbank `s4_plan`):
+
+```bash
+PLAN_DB_HOST='172.25.0.1'
+PLAN_DB_PORT='3306'
+PLAN_DB_DATABASE='s4_plan'
+PLAN_DB_USER='CHANGE_ME'
+PLAN_DB_PASSWORD='CHANGE_ME'
 ```
 
 ### Redis
