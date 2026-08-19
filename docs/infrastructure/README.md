@@ -25,6 +25,7 @@ Technische Infrastruktur für das MinecraftMMO-Netzwerk.
 ## Siehe auch
 
 - [BlueMap-Setup](BLUEMAP.md)
+- [Plan-Setup (mc-stats.festas-builds.com)](PLAN.md)
 - [Datenbank-Schema](DATENBANKEN.md)
 - [Backup-Strategien](BACKUPS.md)
 - [Velocity Exporter](VELOCITY_EXPORTER.md)
