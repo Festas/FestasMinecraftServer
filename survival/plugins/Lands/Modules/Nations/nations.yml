@@ -49,14 +49,14 @@ nation:
       # Bypass-Berechtigung: lands.bypass.cooldown.rename_nation
       cooldown_rename_time: 1d
 
-  # Natioons-Tag-Optionen
+  # Nations-Tag-Optionen
   tag:
     # Tags aktivieren?
     # HINWEIS: Diese Einstellung erfordert einen Server-Neustart.
     enabled_2: false
-    # Mindestlänge des Natioons-Tags
+    # Mindestlänge des Nations-Tags
     min-length_2: 1
-    # Maximale Länge des Natioons-Tags
+    # Maximale Länge des Nations-Tags
     # Maximale Länge: 80 bei MySQL, 32 bei SQLite (inkl. Farbcodes).
     max-length_2: 4
     # Sollen Farben in Nationstags erlaubt sein?
@@ -92,7 +92,7 @@ taxes:
   # Soll ein Land aus der Nation entfernt werden, wenn es die Steuer nicht zahlen kann?
   remove-land: true
   # Separate Steuerlimits für Vasallenländer (unterworfene Mitglieder, die über das Vasallenkriegsziel hinzugefügt wurden). Der
-  # Oberherr setzt die Vasallensteuer mit dem Schalter im Natioons-Steuermenü; sie wird auf diese Werte begrenzt.
+  # Oberherr setzt die Vasallensteuer mit dem Schalter im Nations-Steuermenü; sie wird auf diese Werte begrenzt.
   vassal:
     min: 0
     max: 5.0
