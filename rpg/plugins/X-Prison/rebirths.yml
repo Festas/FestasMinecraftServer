@@ -48,6 +48,8 @@ rebirths:
     rewards:
       commands:
         - lp user %player% permission set xprison.rebirth0 true
+  # The current rank and prestige caps are both 10, so higher rebirths keep the
+  # same cap gate and scale difficulty through much steeper currency requirements.
   '1':
     prefix: <gradient:#FFFF00:#FFD700:#FFA500><bold>R1</bold></gradient>
     requirements:

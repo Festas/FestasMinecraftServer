@@ -212,7 +212,7 @@ cycle:
       material: NETHER_STAR
       name: <gold><bold>Tag 14</bold>
       lore:
-      - '<gray>Belohnung: <aqua>5,000 Tokens <gray>+ <green>75 Edelsteine'
+      - '<gray>Belohnung: <aqua>5.000 Tokens <gray>+ <green>75 Edelsteine'
       - ''
       - '%status%'
     rewards:
@@ -220,7 +220,7 @@ cycle:
       - tokens give %player% 5000
       - gems give %player% 75
       messages:
-      - <aqua><bold>+ 5,000 Tokens <gray>& <green>75 Edelsteine
+      - <aqua><bold>+ 5.000 Tokens <gray>& <green>75 Edelsteine
       sound: UI_TOAST_CHALLENGE_COMPLETE
 milestones:
   7:
@@ -236,7 +236,7 @@ milestones:
       - gems give %player% 125
       - tokens give %player% 2500
       messages:
-      - '<gold><bold>14-Tage-Serienbonus: <green>+ 125 Edelsteine <gray>und <aqua>2.500 Token!'
+      - '<gold><bold>14-Tage-Serienbonus zusätzlich: <green>+ 125 Edelsteine <gray>und <aqua>2.500 Token!'
       sound: UI_TOAST_CHALLENGE_COMPLETE
   30:
     rewards:
