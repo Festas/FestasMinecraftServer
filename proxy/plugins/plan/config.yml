@@ -48,9 +48,14 @@ Webserver:
         # %port% is replaced automatically with Webserver.Port
         Address: mc-stats.festas-builds.com
     # Internal IP usually does not need to be changed, only change it if you know what you're doing!
-    # 127.0.0.1 makes the webserver listen only on the loopback interface so that only the
-    # host nginx reverse-proxy can reach it. Port 8804 is therefore not reachable from outside.
-    Internal_IP: 127.0.0.1
+    # 0.0.0.0 makes the webserver listen on all interfaces INSIDE the container so that the host
+    # nginx reverse-proxy can reach it through the Docker/Pterodactyl port mapping
+    # (host 127.0.0.1:8804 -> container 8804). Binding to 127.0.0.1 here would make Plan listen on
+    # the container loopback only, leaving the published port with no listener -> nginx 502 Bad Gateway.
+    # Port 8804 stays private because it is only published to the host loopback and blocked in the
+    # host firewall (ufw deny 8804); it is never reachable from the public internet. See
+    # docs/infrastructure/PLAN.md and docs/PLAN-reverse-proxy.md.
+    Internal_IP: 0.0.0.0
     # Use absolute path ("C:\Example\Path", "/var/example/path") or relative ("public_html" -> {server}/plugins/Plan/public_html)
     # NOTE: All files in this directory can be read by anyone who can access the webserver.
     # This can be used to host certbot http challenge file, or for customizing Plan React-bundle

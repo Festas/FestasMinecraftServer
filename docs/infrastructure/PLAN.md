@@ -14,7 +14,8 @@ Plan kann zwar selbst HTTPS (via JKS-Zertifikat) betreiben, der einfachere Weg i
 **Nginx als SSL-Terminierer** vorschalten:
 
 - Nginx terminiert HTTPS (Let's Encrypt)
-- Plan lauscht nur auf `127.0.0.1:8804` (nicht direkt von außen erreichbar)
+- Plan lauscht im Container auf `0.0.0.0:8804`; der Port wird nur an den Host-Loopback
+  (`127.0.0.1:8804`) veröffentlicht und ist dadurch nicht direkt von außen erreichbar
 - Plan kennt die öffentliche HTTPS-Adresse über `External_Webserver_address`
 - `Use_X-Forwarded-For_Header: true` gibt die echte Client-IP an Plan weiter
 
@@ -24,7 +25,13 @@ Plan kann zwar selbst HTTPS (via JKS-Zertifikat) betreiben, der einfachere Weg i
 
 | Dienst | Port  | Erreichbarkeit |
 |--------|-------|----------------|
-| Plan   | 8804  | Nur lokal (127.0.0.1) |
+| Plan   | 8804  | Bind `0.0.0.0` im Container, nur an Host-Loopback `127.0.0.1:8804` veröffentlicht |
+
+> **Docker/Pterodactyl-Hinweis:** `Webserver.Internal_IP` in der Plan-Config ist die
+> **Bind-Adresse innerhalb des Containers** und muss `0.0.0.0` sein, damit die
+> Host-nginx den Dienst über das Port-Mapping erreicht. `127.0.0.1` bindet nur an das
+> Container-Loopback – der veröffentlichte Port hat dann keinen Listener und nginx liefert
+> **502 Bad Gateway**. Details: `docs/PLAN-reverse-proxy.md`.
 
 ---
 
@@ -64,11 +71,15 @@ server {
     ssl_dhparam         /etc/letsencrypt/ssl-dhparams.pem;
 
     location / {
+        # 127.0.0.1:8804 ist der Host-Loopback, auf den der Container-Port 8804
+        # veröffentlicht wird (Docker/Pterodactyl). Plan selbst bindet im Container an 0.0.0.0.
         proxy_pass         http://127.0.0.1:8804/;
         proxy_set_header   Host $host;
         proxy_set_header   X-Real-IP $remote_addr;
         proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header   X-Forwarded-Proto $scheme;
+        # Fest auf "https" setzen (nicht $scheme): die interne Upstream-Verbindung ist HTTP,
+        # $scheme wäre daher "http" und Plan würde Auth/Cookies falsch behandeln (weiße Seite).
+        proxy_set_header   X-Forwarded-Proto https;
         proxy_read_timeout 120s;
     }
 }
@@ -87,7 +98,7 @@ server {
 Nach dem Pushen dieser Config-Änderungen:
 
 1. **Plan-Config deployen** — `proxy/plugins/plan/config.yml` auf den Server kopieren und
-   Velocity (Proxy) neu starten, damit `Internal_IP: 127.0.0.1` und
+   Velocity (Proxy) neu starten, damit `Internal_IP: 0.0.0.0` und
    `Use_X-Forwarded-For_Header: true` wirksam werden.
 2. **Nginx-Konfiguration einrichten** — Nginx-Site-Datei wie oben in `Festas/Link-in-Bio`
    anlegen und `sudo nginx -t && sudo nginx -s reload` ausführen.
@@ -101,14 +112,14 @@ Nach dem Pushen dieser Config-Änderungen:
    ```bash
    sudo ufw deny 8804
    ```
-6. **Plan neu starten** — Falls der Proxy noch mit `0.0.0.0` gebunden war, Velocity
-   neu starten damit Plan nur noch auf `127.0.0.1:8804` lauscht.
+6. **Plan neu starten** — Velocity neu starten, damit Plan im Container auf `0.0.0.0:8804`
+   bindet und die Host-nginx den veröffentlichten Port erreichen kann.
 
 ---
 
 ## Verifikation
 
-1. `proxy/plugins/plan/config.yml` enthält `Internal_IP: 127.0.0.1` und
+1. `proxy/plugins/plan/config.yml` enthält `Internal_IP: 0.0.0.0` und
    `Use_X-Forwarded-For_Header: true`.
 2. `curl -I https://mc-stats.festas-builds.com` liefert HTTP 200 (oder Plan-Login-Redirect).
 3. `curl -I http://<SERVER-IP>:8804` von außen schlägt fehl (Verbindung abgelehnt).
@@ -120,7 +131,7 @@ Nach dem Pushen dieser Config-Änderungen:
 
 | Problem | Ursache | Lösung |
 |---------|---------|--------|
-| Weiße Seite im Browser | Plan läuft nur HTTP, Browser erwartet HTTPS | Nginx-Reverse-Proxy + Certbot einrichten (diese Doku) |
-| `502 Bad Gateway` von Nginx | Plan läuft nicht oder falscher Port | Velocity neu starten, Port 8804 prüfen |
-| Login schlägt fehl / kein Cookie | HTTPS fehlt (Plan benötigt HTTPS für Auth) | Certbot-Zertifikat ausstellen |
+| Weiße Seite im Browser | Plan läuft nur HTTP, Browser erwartet HTTPS | Nginx-Reverse-Proxy + Certbot einrichten (diese Doku); `X-Forwarded-Proto https` setzen |
+| `502 Bad Gateway` von Nginx | Plan bindet im Container auf `127.0.0.1` statt `0.0.0.0`, oder Plan läuft nicht / falscher Port | `Internal_IP: 0.0.0.0` in der Plan-Config setzen, Velocity neu starten, Port 8804 prüfen |
+| Login schlägt fehl / kein Cookie | HTTPS fehlt (Plan benötigt HTTPS für Auth) | Certbot-Zertifikat ausstellen; `X-Forwarded-Proto https` im nginx setzen |
 | Falsche IPs im Plan-Dashboard | `Use_X-Forwarded-For_Header: false` | Auf `true` setzen ✅ (bereits in dieser Config) |
