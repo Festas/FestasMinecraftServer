@@ -25,6 +25,42 @@ when switching the active proxy.
 
 ---
 
+## Critical setting – `KeyStore_path: proxy` (fixes the blank dashboard)
+
+```yaml
+Webserver:
+    Security:
+        SSL_certificate:
+            KeyStore_path: proxy   # REQUIRED: reverse-proxy HTTPS mode
+```
+
+**Why?**
+PLAN builds the base address for its React dashboard from `protocol + Alternative_IP`.
+With no internal certificate the protocol is `http`, so PLAN advertises
+`http://mc-stats.festas-builds.com` — this string is baked into the served JS bundle
+(`PLAN_BASE_ADDRESS`) and stored in the database (`plan_servers.web_address`; the
+sub-servers log exactly this address). But the page is delivered over **HTTPS** by nginx,
+so the browser blocks every `/v1/` API call to `http://…` as **mixed content**:
+
+```
+Mixed Content: The page at 'https://mc-stats.festas-builds.com/…' was loaded over HTTPS,
+but requested an insecure XMLHttpRequest endpoint 'http://…/v1/locale'. This request has
+been blocked because the content must be served over HTTPS.
+```
+
+Result: the layout (green sidebar) loads from the HTTPS bundle, but **no content** renders
+because every data request fails.
+
+`KeyStore_path: proxy` keeps PLAN serving plain **HTTP internally** (nginx stays
+`proxy_pass http://127.0.0.1:8804`) while advertising all links/requests as `https://`, so
+the `/v1/` calls run over HTTPS and the dashboard loads fully. This also flips PLAN into
+HTTPS mode, which **enables login** — register a web user with `/planproxy register`, or set
+`Disable_authentication: true` for an open dashboard (proxy mode still prevents mixed
+content). See the
+[PLAN wiki "If behind a Proxy"](https://github.com/plan-player-analytics/Plan/wiki/SSL-Certificate-%28HTTPS%29-Set-Up#if-behind-a-proxy).
+
+---
+
 ## Critical setting – `Webserver.Internal_IP`
 
 ```yaml
