@@ -63,7 +63,15 @@ nginx (on the host) proxies to the container via its Docker bridge IP:
 ```nginx
 # /etc/nginx/sites-available/mc-stats.festas-builds.com
 upstream plan_backend {
-    server 172.25.0.2:8804;   # adjust to actual container IP / hostname
+    # Prefer the Docker service/container name over a hard-coded IP –
+    # container IPs can change after restarts or network recreation.
+    # If nginx runs on the host (not in Docker), use the container's
+    # published IP or configure a static IP in docker-compose.yml:
+    #   networks:
+    #     default:
+    #       ipv4_address: 172.25.0.2
+    server proxy:8804;   # use Docker service name when nginx is in the same network
+    # server 172.25.0.2:8804;  # fallback: static IP from docker-compose ipv4_address
 }
 
 server {
