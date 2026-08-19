@@ -1,0 +1,18 @@
+{
+  "output": "/home/deploy/minecraft-website/data/players.json",
+  "show_names": false,
+  "live_threshold_seconds": 120,
+  "database": {
+    "host": "172.25.0.1",
+    "port": 3306,
+    "database": "s4_plan",
+    "ssl": true,
+    "connect_timeout_seconds": 5
+  },
+  "servers": [
+    { "key": "lobby",    "uuid": "82755ba5-91eb-4cca-a6a3-be06d891cb3d", "max": 40 },
+    { "key": "survival", "uuid": "679bd851-d131-4425-b88d-e2714a3ef0f2", "max": 40 },
+    { "key": "mining",   "uuid": null,                                   "max": 20 },
+    { "key": "skyblock", "uuid": null,                                   "max": 20 }
+  ]
+}

@@ -106,6 +106,32 @@ PLAN_DB_PASSWORD=geheimesPasswort
 
 ---
 
+### `PLAN_RO_DB_ENV`
+**Read-only** Datenbankverbindung für den Website-Exporter
+[`tools/plan-players-export`](tools/plan-players-export/README.md), der aus der
+Plan-Datenbank (`s4_plan`) die `players.json` mit Live-Spielerzahlen füllt.  
+Wird im Workflow `deploy-plan-players-export` verwendet.
+
+> **Least Privilege:** Ein **dedizierter Benutzer mit nur `SELECT`** auf `s4_plan`
+> (idealerweise nur `plan_servers` und `plan_tps`). **Nicht** den Plan-RW-User
+> (`PLAN_DB_ENV`) wiederverwenden.
+
+**Format:** Mehrzeilige `.env`-Datei  
+**Pflichtfelder:**
+```env
+PLAN_RO_DB_USER=plan_ro
+PLAN_RO_DB_PASSWORD=geheimesPasswort
+```
+**Optionale Felder** (Defaults kommen aus `tools/plan-players-export/config.json`):
+```env
+PLAN_RO_DB_HOST=172.25.0.1
+PLAN_RO_DB_PORT=3306
+PLAN_RO_DB_DATABASE=s4_plan
+PLAN_RO_DB_SSL=true
+```
+
+---
+
 ### `LUCKPERMS_DB_ENV`
 Datenbankverbindung für das [LuckPerms](https://luckperms.net/) Plugin.  
 Wird in den Servern RPG und Survival verwendet.
@@ -166,6 +192,7 @@ XPRIVATEMINES_DASHBOARD_JWT_SECRET=einLangerZufaelligerString
 | `SERVER_PATH_SKYBLOCK` | Absoluter Pfad (Plain Text) | deploy-skyblock, copy-puginsfolder, sync-latest-logs |
 | `SERVER_PATH_SURVIVAL` | Absoluter Pfad (Plain Text) | deploy-survival, copy-puginsfolder, sync-latest-logs |
 | `PLAN_DB_ENV` | `.env`-Format (mehrzeilig) | Alle Server-Deploy-Workflows |
+| `PLAN_RO_DB_ENV` | `.env`-Format (mehrzeilig) | deploy-plan-players-export |
 | `LUCKPERMS_DB_ENV` | `.env`-Format (mehrzeilig) | deploy-rpg, deploy-survival |
 | `XPRISON_DASHBOARD_ENV` | `.env`-Format (mehrzeilig) | deploy-rpg |
 | `XPRIVATEMINES_DASHBOARD_ENV` | `.env`-Format (mehrzeilig) | deploy-rpg |

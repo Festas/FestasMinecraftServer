@@ -85,6 +85,7 @@ Quelle: [Plan-Wiki „If behind a Proxy"](https://github.com/plan-player-analyti
 | Plan Proxy-Config | `proxy/plugins/plan/config.yml` |
 | Plan Infra-Doku | `docs/infrastructure/PLAN.md` |
 | Plugin-Übersicht | `docs/PLUGINS.md` |
+| Plan-DB → `players.json` Exporter | `tools/plan-players-export/` |
 
 ---
 
@@ -186,3 +187,35 @@ Nach dem Pushen dieser Config-Änderungen:
 | `502 Bad Gateway` von Nginx | Plan bindet im Container auf `127.0.0.1` statt `0.0.0.0`, oder Plan läuft nicht / falscher Port | `Internal_IP: 0.0.0.0` in der Plan-Config setzen, Velocity neu starten, Port 8804 prüfen |
 | Login schlägt fehl / kein Cookie | Plan sieht sich nicht als HTTPS | `KeyStore_path: proxy` setzen (aktiviert HTTPS-Modus ohne internes Zertifikat) |
 | Falsche IPs im Plan-Dashboard | `Use_X-Forwarded-For_Header: false` | Auf `true` setzen ✅ (bereits in dieser Config) |
+
+---
+
+## Plan-DB als `players.json`-Quelle der Website (nur Counts)
+
+Die Website (`https://mc.festas-builds.com`, Abschnitt „Wer ist online?") lädt
+`/api/players.json` und rendert je Server eine Karte. Diese Datei wird vom Exporter
+[`tools/plan-players-export/`](../../tools/plan-players-export/README.md) aus der
+**Plan-Datenbank** befüllt – als aufwandsarme Variante **ohne** zusätzliches Plugin.
+
+**Kernpunkte:**
+
+- **Quelle:** neueste `plan_tps`-Zeile je Game-Server (`players_online`), Proxy via
+  `is_proxy = 0` ausgeschlossen. Live-Flag = Zeile jünger als 2 Minuten – identisch
+  zu Plans eigener „aktuell online"-Logik.
+- **Warum nicht Sessions?** Plan hält aktive Sessions nur im RAM
+  (`SessionCache.ACTIVE_SESSIONS`); in `plan_sessions` landen nur **beendete**
+  Sessions. Aus der DB gibt es daher **keine Live-Namen und keine Live-Welten**.
+- **Mapping:** DB → Website-Key über die stabile Server-**UUID** aus
+  `*/plugins/Plan/ServerInfoFile.yml` (Lobby `82755ba5-…`, Survival `679bd851-…`;
+  Skyblock/Mining haben noch keinen Plan-Ordner → `online:false, count:0`).
+- **Sicherheit:** dedizierter **Read-only-User** (`SELECT` auf `s4_plan`), Secret
+  `PLAN_RO_DB_ENV` (siehe `SECRETS.md`), `useSSL: true`. Nicht Plans RW-User
+  wiederverwenden (Least Privilege, vgl. `DATENBANKEN.md`).
+- **Betrieb:** systemd-Timer (45 s) schreibt atomar nach
+  `/home/deploy/minecraft-website/data/players.json`; Rollout über
+  `.github/workflows/deploy-plan-players-export.yml`.
+
+**Grenzen:** `showNames:false`, keine Live-Welten, keine echte Uptime, Latenz
+≤ ~2 min („Maximum je Minute"). Für Namen/Welten/Echtzeit ist ein
+**Velocity-Proxy-Writer** die überlegene Quelle – dank identischem JSON-Vertrag
+ohne Frontend-Änderung nachrüst- oder kombinierbar.

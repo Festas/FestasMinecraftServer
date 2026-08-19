@@ -75,8 +75,9 @@ jobs:
 
             DEPLOY_DIR="/home/deploy/minecraft-website"
             mkdir -p "$DEPLOY_DIR"
-            # Shared directory the Velocity FestasPlayerList plugin writes players.json into.
-            # Mounted read-only into the web container and served at /api/players.json.
+            # Shared directory that holds players.json, served read-only at /api/players.json.
+            # Written by the Plan-DB exporter (tools/plan-players-export, deployed via
+            # deploy-plan-players-export.yml) and/or the Velocity FestasPlayerList plugin.
             mkdir -p "$DEPLOY_DIR/data"
             cd "$DEPLOY_DIR"
 

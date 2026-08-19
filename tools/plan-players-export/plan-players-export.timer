@@ -1,0 +1,15 @@
+[Unit]
+Description=Periodically export Plan player counts into players.json
+Documentation=https://github.com/Festas/FestasMinecraftServer/blob/main/tools/plan-players-export/README.md
+
+[Timer]
+# First run shortly after boot, then every 45s. Must stay < 90s so the frontend
+# (STALE_AFTER_S = 90) never marks the data as "possibly outdated".
+OnBootSec=30s
+OnUnitActiveSec=45s
+AccuracySec=5s
+# Catch up once if the machine was asleep/off when a run was due.
+Persistent=true
+
+[Install]
+WantedBy=timers.target

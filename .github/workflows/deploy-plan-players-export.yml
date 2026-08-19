@@ -1,0 +1,136 @@
+name: Deploy Plan Players Export
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/plan-players-export/**'
+      - '.github/workflows/deploy-plan-players-export.yml'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy plan-players-export to Hetzner
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Stage deployable files and DB credentials
+        env:
+          PLAN_RO_DB_ENV: ${{ secrets.PLAN_RO_DB_ENV }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "${PLAN_RO_DB_ENV:-}" ]; then
+            echo "::error::Missing secret PLAN_RO_DB_ENV (read-only s4_plan credentials)"
+            exit 1
+          fi
+
+          # Validate the required keys without printing their values.
+          set -a
+          # shellcheck disable=SC1090
+          . <(printf '%s\n' "$PLAN_RO_DB_ENV")
+          set +a
+          for required in PLAN_RO_DB_USER PLAN_RO_DB_PASSWORD; do
+            if [ -z "${!required:-}" ]; then
+              echo "::error::Missing $required in PLAN_RO_DB_ENV"
+              exit 1
+            fi
+          done
+
+          umask 077
+          mkdir -p staging
+          printf '%s\n' "$PLAN_RO_DB_ENV" > staging/plan-players-export.env
+
+          cd tools/plan-players-export
+          cp plan_players_export.py config.json requirements.txt \
+             plan-players-export.service plan-players-export.timer \
+             "$GITHUB_WORKSPACE/staging/"
+
+      - name: Copy files to server
+        uses: appleboy/scp-action@v1.0.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "staging/*"
+          target: "/tmp/ppe-deploy"
+          strip_components: 1
+
+      - name: Install exporter, credentials and systemd timer
+        uses: appleboy/ssh-action@v1.0.3
+        env:
+          DEPLOY_USER: ${{ secrets.SSH_USER }}
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          envs: DEPLOY_USER
+          script: |
+            set -euo pipefail
+            trap 'rc=$?; echo "✗ ERROR (exit=$rc) at line ${LINENO}: ${BASH_COMMAND}" >&2; exit "$rc"' ERR
+
+            # scp strip_components behaviour differs between versions; support both layouts.
+            SRC=/tmp/ppe-deploy
+            [ -d "$SRC/staging" ] && SRC="$SRC/staging"
+            APP=/opt/plan-players-export
+            DATA=/home/deploy/minecraft-website/data
+
+            echo "[1/5] Preparing directories..."
+            sudo mkdir -p "$APP" "$DATA"
+
+            echo "[2/5] Installing application files..."
+            sudo install -m 0644 "$SRC/plan_players_export.py" "$APP/plan_players_export.py"
+            sudo install -m 0644 "$SRC/config.json"            "$APP/config.json"
+            sudo install -m 0644 "$SRC/requirements.txt"       "$APP/requirements.txt"
+
+            echo "[3/5] Creating virtualenv and installing dependencies..."
+            if [ ! -x "$APP/venv/bin/python" ]; then
+              sudo python3 -m venv "$APP/venv"
+            fi
+            sudo "$APP/venv/bin/pip" install --quiet --upgrade pip
+            sudo "$APP/venv/bin/pip" install --quiet -r "$APP/requirements.txt"
+
+            echo "[4/5] Installing credentials (chmod 600) and fixing ownership..."
+            sudo install -m 600 "$SRC/plan-players-export.env" "$APP/plan-players-export.env"
+            sudo rm -f "$SRC/plan-players-export.env"
+            sudo chown -R "$DEPLOY_USER:$DEPLOY_USER" "$APP"
+            sudo chown "$DEPLOY_USER:$DEPLOY_USER" "$DATA" 2>/dev/null || true
+
+            echo "[5/5] Installing systemd units and enabling timer..."
+            sudo cp "$SRC/plan-players-export.service" /etc/systemd/system/plan-players-export.service
+            sudo cp "$SRC/plan-players-export.timer"   /etc/systemd/system/plan-players-export.timer
+            # Run as the deploy user so it can write into the data bind-mount directory.
+            sudo sed -i \
+              -e "s/^User=.*/User=$DEPLOY_USER/" \
+              -e "s/^Group=.*/Group=$DEPLOY_USER/" \
+              /etc/systemd/system/plan-players-export.service
+
+            sudo systemctl daemon-reload
+            sudo systemctl enable --now plan-players-export.timer
+
+            echo "Running one export now..."
+            sudo systemctl start plan-players-export.service || true
+            sleep 2
+            sudo systemctl status plan-players-export.service --no-pager || true
+            sudo journalctl -u plan-players-export.service -n 20 --no-pager || true
+
+            rm -rf /tmp/ppe-deploy
+            echo "✓ plan-players-export deployed"
+
+      - name: Show failure logs
+        if: failure()
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            echo "=== Timer status ==="
+            sudo systemctl status plan-players-export.timer --no-pager || true
+            echo "=== Service journal (latest 50) ==="
+            sudo journalctl -u plan-players-export.service --no-pager -n 50 || true
