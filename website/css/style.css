@@ -896,8 +896,8 @@ img { max-width: 100%; display: block; }
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    margin-bottom: 0.55rem;
 }
+.player-world.has-players .player-world-row { margin-bottom: 0.55rem; }
 .player-world-name {
     font-size: 0.9rem;
     font-weight: 700;

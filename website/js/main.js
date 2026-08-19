@@ -391,9 +391,11 @@ function initPlayerList() {
         const count = toPositiveNumberOrZero(world.count);
         const max = toPositiveNumberOrZero(world.max);
         const online = inferWorldOnline(world);
+        const hasNames = showNames && Array.isArray(world.players) && world.players.length > 0;
 
         const item = document.createElement('li');
         item.className = 'player-world';
+        if (hasNames) item.classList.add('has-players');
 
         const row = document.createElement('div');
         row.className = 'player-world-row';
@@ -415,7 +417,7 @@ function initPlayerList() {
 
         item.appendChild(row);
 
-        if (showNames && Array.isArray(world.players) && world.players.length) {
+        if (hasNames) {
             item.appendChild(buildPlayersChips(world.players));
         }
 
@@ -469,6 +471,8 @@ function initPlayerList() {
         body.appendChild(uptimeLine);
 
         if (worlds.length) {
+            const hasWorldNames = showNames && worlds.some((world) => Array.isArray(world.players) && world.players.length);
+
             const worldsTitle = document.createElement('p');
             worldsTitle.className = 'player-worlds-label';
             worldsTitle.textContent = 'Welten';
@@ -478,6 +482,10 @@ function initPlayerList() {
             worldsList.className = 'player-worlds';
             worlds.forEach((world) => worldsList.appendChild(buildWorldItem(world, showNames)));
             body.appendChild(worldsList);
+
+            if (!hasWorldNames && showNames && Array.isArray(server.players) && server.players.length) {
+                body.appendChild(buildPlayersChips(server.players));
+            }
         } else if (count === 0) {
             const empty = document.createElement('p');
             empty.className = 'player-empty';
