@@ -175,7 +175,7 @@ Nach Rang 25 kann man prestigen — alles wird zurückgesetzt, aber ein permanen
 
 ---
 
-### 2.3 Prison — *Neu*
+### 2.3 Mining — *Neu*
 
 > **🟡 Neu / Aufbauphase.** Einer der zwei neuen Server; **recycelt den `prison`-Slot** (Ordner `prison/`,
 > Server-Name `prison`). Konzept: [prison/README.md](prison/README.md) · [NEW_SERVERS.md](NEW_SERVERS.md).
