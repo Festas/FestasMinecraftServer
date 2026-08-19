@@ -182,12 +182,21 @@ jobs:
               if not path.exists():
                  continue
               lines = path.read_text().splitlines()
+              in_mysql_block = False
               for i, line in enumerate(lines):
                  stripped = line.strip()
+                 indent_len = len(line) - len(line.lstrip())
+                 if stripped == "MySQL:":
+                     in_mysql_block = True
+                     continue
+                 if in_mysql_block and indent_len <= 4 and stripped and not stripped.startswith("#"):
+                     in_mysql_block = False
+                 if not in_mysql_block:
+                     continue
                  for field, replacement in mappings.items():
                      prefix = f"{field}:"
                      if stripped.startswith(prefix):
-                         indent = line[: len(line) - len(line.lstrip())]
+                         indent = line[:indent_len]
                          lines[i] = f"{indent}{prefix} {replacement}"
                          break
               path.write_text("\n".join(lines) + "\n")
