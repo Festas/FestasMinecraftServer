@@ -2,7 +2,7 @@
 
 Dieser Fragenkatalog dient als Leitfaden für die weitere Entwicklung und Dokumentation des MinecraftMMO Server-Netzwerks. Die Fragen helfen dabei, strukturiert über Features, Balance und Implementierung nachzudenken.
 
-> **ℹ️ Stand 26.2:** Der Fokus liegt aktuell auf **Lobby** und **Survival**. Dazu kommen ein **überarbeiteter Skyblock** (ohne Gilden, mit Freunde-Koop) und ein neuer **Mining**-Server (Abbau-Zonen mit aufwertbaren Spitzhacken). Die Weichenstellung inkl. Bewertung und Plugin-Shortlist steht in [NEW_SERVERS.md](NEW_SERVERS.md); die Planungskapitel für die neuen Server sind Abschnitte 4 (Mining) und 5 (Skyblock). Der **RPG**-Server wird zeitnah eingestellt — Fragen dazu sind nur noch für den Rückbau relevant.
+> **ℹ️ Stand 26.2:** Der Fokus liegt aktuell auf **Lobby** und **Survival**. Dazu kommen ein **überarbeiteter Skyblock** (ohne Gilden, mit Freunde-Koop) und ein neuer **Mining**-Server (Abbau-Zonen mit aufwertbaren Spitzhacken). Die Weichenstellung inkl. Bewertung und Plugin-Shortlist steht in [NEW_SERVERS.md](NEW_SERVERS.md); die Planungskapitel für die neuen Server sind Abschnitte 2 (Mining) und 3 (Skyblock). Der **RPG**-Server wird zeitnah eingestellt.
 
 ---
 
@@ -31,116 +31,10 @@ Dieser Fragenkatalog dient als Leitfaden für die weitere Entwicklung und Dokume
 
 ---
 
-## 2. Klassen-System (MMOCore)
-
-### Aktuelle 6 Klassen
-1. **Krieger** (Warrior)
-2. **Magier** (Mage)
-3. **Assassine** (Assassin)
-4. **Bogenschütze** (Archer)
-5. **Schamane** (Shaman)
-6. **Beschwörer** (Summoner)
-
-### Klassen-Design
-- [ ] Was ist die Kernidentität jeder Klasse?
-- [ ] Welche Haupt-Stats hat jede Klasse? (Stärke, Int, Geschick, etc.)
-- [ ] Welche primären/sekundären Waffen kann jede Klasse nutzen?
-- [ ] Welche Rüstungstypen sind pro Klasse erlaubt? (Leder, Ketten, Platten)
-- [ ] Gibt es Klassen-exklusive Items oder Skills?
-
-### Krieger (Warrior)
-- [ ] Tank oder DPS Fokus? Oder beides möglich?
-- [ ] Welche Waffen? (Schwert, Axt, Streitkolben?)
-- [ ] Besondere Mechanik? (Wut-System, Rüstungs-Stacking?)
-- [ ] Ultimate Ability?
-
-### Magier (Mage)
-- [ ] Elemente? (Feuer, Eis, Blitz, Arkane Magie?)
-- [ ] Mana-Regeneration-System?
-- [ ] Glaskanone oder mit Defensiv-Optionen?
-- [ ] Beschwörungen oder nur direkte Zauber?
-
-### Assassine (Assassin)
-- [ ] Stealth-Mechanik vorhanden?
-- [ ] Kritische Treffer Fokus?
-- [ ] Beweglichkeits-Skills? (Dash, Teleport?)
-- [ ] Gift/DoT Mechaniken?
-
-### Bogenschütze (Archer)
-- [ ] Nur Bögen oder auch Armbrüste?
-- [ ] Spezial-Pfeile? (Explosive, Gift, Feuer?)
-- [ ] Pet/Begleiter-System?
-- [ ] Fallen-Mechaniken?
-
-### Schamane (Shaman)
-- [ ] Heiler, Support oder Hybrid?
-- [ ] Totem-System?
-- [ ] Elementare Thematik? (Natur, Geister?)
-- [ ] Gruppen-Buffs oder einzelne Heals?
-
-### Beschwörer (Summoner)
-- [ ] Welche Kreaturen können beschworen werden?
-- [ ] Permanente oder temporäre Beschwörungen?
-- [ ] Maximale Anzahl aktiver Beschwörungen?
-- [ ] Beschwörungs-Upgrade-System?
-
-### Klassen-Balance
-- [ ] Wie wird Balance zwischen Klassen gewährleistet?
-- [ ] Gibt es Klassen-Konter? (Rock-Paper-Scissors System?)
-- [ ] PvP vs PvE Balance unterschiedlich?
-- [ ] Wie oft werden Klassen neu balanciert?
-
-### Progression
-- [ ] Max Level pro Klasse?
-- [ ] Können Spieler mehrere Klassen haben? Klassenwechsel?
-- [ ] Prestige/Reborn System geplant?
-- [ ] Skill-Trees: Linear oder verzweigt?
-- [ ] Wie viele Skills pro Klasse?
-
----
-
-## 3. Progression & Tier-System
-
-### Level-System
-- [ ] Max Level? (100, 200, unbegrenzt?)
-- [ ] XP-Quellen? (Mobs, Quests, Dungeons, Mining, etc.)
-- [ ] XP-Kurve: Linear oder exponentiell?
-- [ ] Gibt es Level-Bereiche für verschiedene Zonen?
-
-### Tier-System (Items & Mobs)
-- [ ] Sind die aktuellen Tiers final? (Common, Uncommon, Rare, Epic, Legendary, Mythic)
-- [ ] Soll es noch höhere Tiers geben? (Divine, Celestial?)
-- [ ] Wie stark ist der Power-Gap zwischen Tiers?
-- [ ] Können Items aufgewertet werden? (Common → Uncommon?)
-
-### Stats-System
-- [ ] Welche Stats gibt es? (HP, Mana, Dmg, Def, Crit, Speed, etc.)
-- [ ] Gibt es Soft-Caps für Stats?
-- [ ] Wie skalieren Stats mit Level?
-- [ ] Sekundär-Stats? (Life Steal, Cooldown Reduction, etc.)
-
-### Währungen
-- [ ] Welche Währungen existieren?
-  - Coins (CoinsEngine)
-  - Premium-Währung?
-  - Quest-Tokens?
-  - Dungeon-Währung?
-- [ ] Können Währungen zwischen Servern geteilt werden?
-- [ ] Wie werden Währungen verdient?
-
-### Endgame-Content
-- [ ] Was ist das Endgame-Ziel?
-- [ ] Raid-System geplant?
-- [ ] PvP-Endgame? (Arena, Battlegrounds?)
-- [ ] Collection-Challenges?
-- [ ] Prestige-System?
-
----
-
-## 4. Mining-Server Planung (neu, geplant)
+## 2. Mining-Server Planung (neu, geplant)
 
 > Casual-Server mit **Abbau-Zonen** und aufwertbaren Spitzhacken. Konzept & Plugin-Shortlist:
-> [NEW_SERVERS.md](NEW_SERVERS.md) · [mining/README.md](mining/README.md).
+> [NEW_SERVERS.md](NEW_SERVERS.md) · [prison/README.md](prison/README.md).
 
 ### Spitzhacke & Progression
 - [ ] Wie viele Spitzhacken-Stufen zum Launch, und welches Abbau-Muster pro Stufe (1×1 → 3×3 → …)?
@@ -164,7 +58,7 @@ Dieser Fragenkatalog dient als Leitfaden für die weitere Entwicklung und Dokume
 
 ---
 
-## 5. Skyblock-Server Planung (überarbeitet, geplant)
+## 3. Skyblock-Server Planung (überarbeitet, geplant)
 
 > Skyblock **ohne Gilden**, aber mit **Freunde-Koop** (Insel-Mitglieder). Konzept & Plugin-Shortlist:
 > [NEW_SERVERS.md](NEW_SERVERS.md) · [skyblock/README.md](skyblock/README.md).
@@ -186,7 +80,7 @@ Dieser Fragenkatalog dient als Leitfaden für die weitere Entwicklung und Dokume
 
 ---
 
-## 6. Economy & Items
+## 4. Economy & Items
 
 ### CoinsEngine
 - [ ] Welche Währungen sind aktiv?
@@ -222,7 +116,7 @@ Dieser Fragenkatalog dient als Leitfaden für die weitere Entwicklung und Dokume
 
 ---
 
-## 7. Technische Infrastruktur
+## 5. Technische Infrastruktur
 
 ### Datenbanken
 - [ ] MySQL: Wofür genutzt? (Spielerdaten, Stats?)
@@ -256,7 +150,7 @@ Dieser Fragenkatalog dient als Leitfaden für die weitere Entwicklung und Dokume
 
 ---
 
-## 8. Content-Planung
+## 6. Content-Planung
 
 ### Phase 1 (MVP - Minimum Viable Product)
 - [ ] Welche Features müssen für Launch fertig sein?
@@ -275,7 +169,7 @@ Dieser Fragenkatalog dient als Leitfaden für die weitere Entwicklung und Dokume
 
 ---
 
-## 9. Player Experience
+## 7. Player Experience
 
 ### Onboarding
 - [ ] Wie werden neue Spieler eingeführt?
@@ -307,7 +201,7 @@ Dieser Fragenkatalog dient als Leitfaden für die weitere Entwicklung und Dokume
 
 ---
 
-## 10. Qualitätssicherung
+## 8. Qualitätssicherung
 
 ### Testing
 - [ ] Wie wird Content getestet?
@@ -326,7 +220,7 @@ Dieser Fragenkatalog dient als Leitfaden für die weitere Entwicklung und Dokume
 
 ---
 
-## 11. Dokumentation (Meta)
+## 9. Dokumentation (Meta)
 
 ### Für Entwickler (Projektinhaber)
 - [ ] Welche Docs werden regelmäßig aktualisiert?

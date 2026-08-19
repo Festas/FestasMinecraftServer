@@ -104,7 +104,7 @@ Die Spalte **Status** ordnet jedes Plugin ein:
 
 - [Netzwerk-Plugin-Referenz](../PLUGINS.md)
 - [Survival-Plugin-Stack](../survival/PLUGINS.md)
-- [Skyblock-Plugin-Stack](../skyblock/PLUGINS.md) · [Mining-Plugin-Stack](../mining/PLUGINS.md)
+- [Skyblock-Plugin-Stack](../skyblock/PLUGINS.md) · [Mining-Plugin-Stack](../prison/PLUGINS.md)
 
 ---
 

@@ -2,7 +2,7 @@
 
 Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
 
-> **⚠️ Stand: Umstellung auf 26.2** — Netzwerk läuft auf **Minecraft/Paper 26.2**. Aktiver Fokus: **Lobby** und **Survival** (Plugins frisch aufgeräumt). Dazu ein **überarbeiteter Skyblock** (ohne Gilden, mit Freunde-Koop) und ein neuer **Prison**-Server. 
+> **Stand: 26.2** — Netzwerk läuft auf **Minecraft/Paper 26.2**. Aktive Server: **Lobby** und **Survival**. Im Aufbau: überarbeiteter **Skyblock** (ohne Gilden, Freunde-Koop) und neuer **Mining**-Server (recycelter `rpg/`-Slot).
 
 ---
 
@@ -21,15 +21,14 @@ Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
           ┌────────────────────────────┼────────────────────────────┐
           |                            |                            |
     ┌─────▼─────┐              ┌──────▼──────┐            ┌────────▼────────┐
-    │   Lobby   │              │   Survival  │            │  Skyblock/Prison│
+    │   Lobby   │              │   Survival  │            │  Skyblock/Mining│
     │  Server   │              │   Server    │            │                 │
     │  (AKTIV)  │              │   (AKTIV)   │            │ (NEU / Umbau)   │
     └───────────┘              └─────────────┘            └─────────────────┘
     - Routing                  - Survival/Tycoon         - Skyblock (Koop, ohne Gilden)
-    - Welcome                  - Jobs, Plots             - Prison (Abbau-Zonen)
+    - Welcome                  - Jobs, Plots             - Mining (Abbau-Zonen, rpg/-Slot)
     - Navigation               - Economy, BlueMap       
       (DeluxeMenus) 
-    Neu: Skyblock (überarbeitet) & Prison (Konzept: NEW_SERVERS.md)
 ```
 
 ---
@@ -175,51 +174,29 @@ Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
 
 ---
 
-### 4. Skyblock Server — *Neu / Umbau (ohne Gilden, Freunde-Koop)*
+### 4. Skyblock Server — *Umbau (ohne Gilden, Freunde-Koop)*
 
-> **🟢 Wird überarbeitet und behalten.** Kernänderung: **keine Gilden**, stattdessen **Freunde-Koop** über
-> die Insel-Mitglieder von SuperiorSkyblock2 (Freunde einladen und gemeinsam die Insel bauen). Ob die
-> MMO-Integration (Klassen/MMOItems) erhalten bleibt, ist offen — siehe
-> [NEW_SERVERS.md](NEW_SERVERS.md#7-verbleibende-offene-fragen). Sync-Details unten gelten nur bis zur
+> **🟢 Wird überarbeitet und behalten.** Kernänderung: **keine Gilden**, stattdessen **Freunde-Koop** über die Insel-Mitglieder von SuperiorSkyblock2. Details und Plugin-Shortlist in [NEW_SERVERS.md](NEW_SERVERS.md).
 
-**Funktion:** Koop-Skyblock (Freunde einladen), optional mit MMO-/Prison-Elementen
+**Funktion:** Koop-Skyblock (Freunde auf Insel einladen), schlankerer Fokus als Alt-MMO
 
 **Version:** Paper 26.2
 
 **Hauptplugins:**
-- **SuperiorSkyblock2** - Skyblock Core-System
-- **MMOCore** - Klassen und Skills
-- **MMOItems** - Custom Items System
-- **MythicMobs** - Custom Mobs (Community Edition)
+- **SuperiorSkyblock2** - Skyblock Core (inkl. Insel-Mitglieder/Koop)
 - **JetsMinions** - Minion-System
 - **CoinsEngine** - Multi-Währungs-System
-- **Aurora** - Collections/Achievements
-- **AuroraCollections** - Collection-System
-- **LuckPerms** - Permissions
-- **PlaceholderAPI** - Platzhalter
-- **Oraxen** - Custom Items/Texturen
+- **Aurora** / **AuroraCollections** - Collections/Achievements
+- **LuckPerms**, **PlaceholderAPI**, **Oraxen** - Basis-Infrastruktur
 - **DeluxeBazaar** - Bazaar-System
-
-**Klassen (MMOCore):**
-1. Krieger
-2. Magier
-3. Assassine
-4. Bogenschütze
-5. Schamane
-6. Beschwörer
+- **MMOCore**, **MMOItems**, **MythicMobs** *(offene Frage: MMO-Integration behalten oder entfernen — siehe [NEW_SERVERS.md](NEW_SERVERS.md#7-verbleibende-offene-fragen))*
 
 **Datenbank:**
-  - Spielerprofile (Klassen, Level, Stats)
-  - Inventare (synchronisiert via HuskSync)
-  - Skyblock-Island-Daten
-  - Collection-Progress
-- **Redis** (Cache für HuskSync)
-  - Session-Daten
-  - Temp-Inventare
+- **MariaDB** — Spielerprofile, Skyblock-Island-Daten, Collection-Progress
+- **Redis** — HuskSync Session-Cache
 
 **Besonderheiten:**
-- Eigene Skyblock-Economy (CoinsEngine)
-- MMO-Progression parallel zu Skyblock-Progression
+- Server-eigene Economy (CoinsEngine), kein Cross-Server-Economy-Mix
 
 ---
 

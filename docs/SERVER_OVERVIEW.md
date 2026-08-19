@@ -1,6 +1,6 @@
 # MinecraftMMO Netzwerk — Vollständige Server-Übersicht
 
-> Dieses Dokument enthält alle wichtigen Informationen über das MinecraftMMO Server-Netzwerk und dient gleichzeitig als Grundlage für die Erstellung einer Website.
+> Dieses Dokument enthält alle wichtigen Informationen über das MinecraftMMO Server-Netzwerk.
 
 ---
 
@@ -10,15 +10,15 @@
 2. [Server-Details](#2-server-details)
    - [Lobby](#21-lobby)
    - [Survival / Tycoon](#22-survival--tycoon)
-   - [Prison — Neu](#23-mining--neu)
+   - [Mining — Neu](#23-mining--neu)
    - [Skyblock — Umbau](#24-skyblock--umbau-ohne-gilden-freunde-koop)
-4. [Item-System](#4-item-system)
-5. [Economy-System](#5-economy-system)
-6. [Technische Infrastruktur](#6-technische-infrastruktur)
-7. [Besonderheiten & Alleinstellungsmerkmale](#7-besonderheiten--alleinstellungsmerkmale)
-8. [Website-Prompt für AI Agenten](#8-website-prompt-für-ai-agenten)
+3. [Economy-System](#3-economy-system)
+4. [Technische Infrastruktur](#4-technische-infrastruktur)
+5. [Besonderheiten & USPs](#5-besonderheiten--alleinstellungsmerkmale)
+6. [Website](#6-website)
 
 ---
+
 
 ## 1. Netzwerk-Überblick
 
@@ -267,194 +267,7 @@ Jede Sammlung hat Milestones mit exklusiven Belohnungen.
 
 ---
 
-### 2.5 RPG (MMO) — *Archiv, wird eingestellt*
-
-> **⚠️ Dieser Server wird zeitnah abgeschaltet** und durch einen neuen Server ersetzt. Inhalte nur noch als Referenz.
-
-**Funktion:** Vollständiger MMO-RPG Server mit Open World, Quests, Dungeons, Klassen und Story  
-**Version:** Paper 26.2  
-**Kapazität:** 50–100 Spieler  
-**Synchronisation:** HuskSync ↔ Skyblock-Server
-
-#### Open World
-Die Welt ist in **5 Level-Zonen** eingeteilt:
-
-| Zone | Level-Bereich | Beschreibung |
-|------|--------------|-------------|
-| Hub-Stadt | — | Spawn-Point, Quest-Geber, Händler, Trainer |
-| Zone 1 | Level 1–15 | Tutorial, erste Quests, einfache Mobs |
-| Zone 2 | Level 15–30 | Story-Quests, mittlere Mobs, frühe Dungeons |
-| Zone 3 | Level 30–50 | Elite-Mobs, schwere Dungeons, komplexe Quest-Chains |
-| Zone 4 | Level 50–70 | Endgame-Vorbereitung, Welt-Bosse, Raid-Dungeons |
-| Zone 5 | Level 70–100 | Härtester Content, epische Bosse, Legendäre Items |
-| Nether | Endgame | Besondere Endgame-Zone |
-| End | Endgame | Raid-Zone |
-
-#### Quest-System (BetonQuest)
-- Hauptquest-Linie mit eigenem Storysystem
-- Hunderte Nebenquests
-- Tägliche und wöchentliche Quests
-- Quest-Chains mit Entscheidungen und Konsequenzen
-- Quest-Belohnungen: XP, Geld, Items, Quest-Punkte
-
-#### Dungeon-System (MythicDungeons)
-- **10–15 instanzierte Dungeons** (separate Welten pro Gruppe)
-- Level-Range: Level 15–100
-- 2–4 Schwierigkeitsgrade pro Dungeon
-- Boss-Kämpfe mit komplexen Mechaniken
-- Exklusive Loot-Belohnungen (Epische/Legendäre Items)
-- Party-System für Gruppen
-
-#### Mob-System (MythicMobs Premium)
-- Custom Mobs mit einzigartigen Fähigkeiten und Skills
-- **Elite-Mobs** mit verstärkten Stats und besonderem Loot
-- **Welt-Bosse** mit öffentlichen Boss-Bars und Server-weiten Ankündigungen
-- Level-skalierte Gegner je nach Zone
-- Umfangreiche custom Loot-Tables (RoseLoot)
-- 3D Custom Models via ModelEngine
-
-#### NPC-System (Citizens + BetonQuest)
-- Quest-Geber NPCs
-- Händler und Trainer
-- Story-NPCs mit Dialogen und Entscheidungen
-- Dynamische Interaktionen
-
-#### RPG-Besonderheiten
-- Nur auf dem RPG-Server verfügbar (nicht auf Skyblock):
-  - BetonQuest (Quests)
-  - Citizens (NPCs)
-  - MythicCrucible (Advanced Item Creation & Crafting)
-  - ModelEngine (3D-Modelle für Mobs/NPCs)
-  - Instanzierte Dungeons
-
----
-
-## 3. Klassen-System — *Archiv (MMO)*
-
-> **⚠️ Gehört zu den auslaufenden MMO-Servern Skyblock & RPG.** Wird mit deren Abschaltung ersetzt.
-
-Das Klassen-System war auf beiden MMO-Servern (RPG & Skyblock) identisch verfügbar. Fortschritt wurde via HuskSync synchronisiert.
-
-### Die 6 Klassen
-
-| Klasse | Archetyp | Primärwaffe | Ressource | Rüstung |
-|--------|----------|-------------|-----------|---------|
-| **Krieger** | Tank / Melee DPS | Schwert, Axt | Wut | Plattenrüstung |
-| **Magier** | Ranged Magic DPS | Stab | Mana | Stoffrüstung |
-| **Assassine** | Burst Melee DPS | Dolch (Dual Wield) | Energie | Lederrüstung |
-| **Bogenschütze** | Ranged Physical DPS | Bogen / Armbrust | Fokus | Leder-/Kettenrüstung |
-| **Schamane** | Support / Healer | Stab, Streitkolben | Mana | Kettenrüstung |
-| **Beschwörer** | Summoner / Pet-Class | Stab | Mana + Beschwörungs-Slots | Stoffrüstung |
-
-### Klassen-Details
-
-#### Krieger
-- **Stärken:** Hohe Verteidigung, starker Nahkampf-Schaden, Gruppenschutz
-- **Ressource:** Wut — baut sich durch erlittenen und verursachten Schaden auf
-- **Playstil:** Frontlinie im Kampf, zieht Feinde auf sich, nutzt Wut für mächtige Fähigkeiten
-- **PvP:** Schlägt Assassinen durch hohe Defense; unterliegt Magiern (Reichweite)
-
-#### Magier
-- **Stärken:** Höchster Fernkampf-Zauber-Schaden, AoE-Fähigkeiten
-- **Ressource:** Mana — klassisches System, regeneriert über Zeit
-- **Playstil:** Aus sicherer Distanz zaubern, hohe Burst-Potenz, niedrige Verteidigung
-- **PvP:** Dominiert Krieger durch Reichweite; verwundbar gegenüber Assassinen
-
-#### Assassine
-- **Stärken:** Höchster Burst-Schaden, hohe Mobilität, kritische Treffer
-- **Ressource:** Energie — schnell regenerierend für häufige Skill-Nutzung
-- **Playstil:** Schnelle Treffer-Serie, aus dem Schatten angreifen, hohe Krit-Rate
-- **PvP:** Konter zu Magiern (Mobilität); verliert gegen Krieger (Defense)
-
-#### Bogenschütze
-- **Stärken:** Konstanter Fernkampf-Schaden, kein Mana-Limit
-- **Ressource:** Fokus — aufbauen durch Treffer, nutzen für Spezialschüsse
-- **Playstil:** Mittlere Distanz, stetige DPS, gutes Solospiel
-- **PvP:** Schlägt Magier durch konstanten Schaden
-
-#### Schamane
-- **Stärken:** Heilung für Gruppe, Buffs, vielseitige Unterstützung
-- **Ressource:** Mana — fokussiert auf effiziente Heilung
-- **Playstil:** Hinter der Frontlinie, Gruppe am Leben halten, Buffs verteilen
-- **PvP:** Sehr stark in Gruppenszenarien; solo eher defensiv
-
-#### Beschwörer
-- **Stärken:** Crowd Control, vielseitige Beschwörungen, passive Schadensdelegation
-- **Ressource:** Mana + Beschwörungs-Slots (limitierte Anzahl aktiver Kreaturen)
-- **Playstil:** Armada von Minions steuern, Feinde verlangsamen, indirekter Kampf
-- **PvP:** Sehr vielseitig durch Crowd Control
-
-### Skill-System
-
-- **Max Level:** 100
-- **Skill-Punkte:** 1 Punkt pro Level (max. 100 Punkte)
-- **Skill-Kategorien:**
-  - **Passive Skills** — permanente Stat-Boni
-  - **Active Skills** — aktivierbare Fähigkeiten mit Cooldown
-  - **Ultimate Skill** — mächtige Fähigkeit, freischaltbar ab Level 50
-- **Klassenwechsel:** Möglich, Cooldown: 7 Tage; Level & XP bleiben erhalten
-
-### Primär-Stats
-
-| Stat | Abkürzung | Wirkung |
-|------|-----------|---------|
-| Stärke | STR | Erhöht physischen Schaden |
-| Intelligenz | INT | Erhöht magischen Schaden und Mana |
-| Geschicklichkeit | DEX | Erhöht krit. Trefferchance und Ausweichen |
-| Ausdauer | VIT | Erhöht max. Lebenspunkte |
-| Weisheit | WIS | Erhöht Heilung und Mana-Regeneration |
-
-### Level-Progression
-
-| Level-Bereich | Meilenstein |
-|---------------|------------|
-| 1–10 | Tutorial & Grundlagen, Basis-Skills |
-| 11–25 | Frühe Dungeons & Zonen, erste Spezialisierung |
-| 26–50 | Mittlere Dungeons & Raids, Ultimate freischaltbar (Lv. 50) |
-| 51–75 | Schwere Dungeons & Raids, erweiterte Spezialisierung |
-| 76–100 | Endgame Content, alle Skills maximal |
-
----
-
-## 4. Item-System
-
-### Item-Pipeline
-
-```
-Oraxen (Textur/Model) → MMOItems (Stats/Fähigkeiten) → MythicCrucible (Crafting-Rezept)
-```
-
-### 7 Item-Tiers
-
-| # | Name | Farbe | Seltenheit |
-|---|------|-------|------------|
-| 1 | Gewöhnlich (Common) | Weiß | Überall |
-| 2 | Ungewöhnlich (Uncommon) | Grün | Häufig |
-| 3 | Selten (Rare) | Blau | Gelegentlich |
-| 4 | Episch (Epic) | Lila | Selten |
-| 5 | Legendär (Legendary) | Gold | Sehr selten |
-| 6 | Mythisch (Mythic) | Pink | Extrem selten |
-| 7 | Göttlich (Divine) | Hellrot | _(geplant)_ |
-
-### Item-Kategorien
-
-- **Waffen:** Schwerter, Äxte, Bögen/Armbrüste, Stäbe, Dolche, Streitkolben
-- **Rüstung:** Helme, Brustplatten, Hosen, Stiefel
-- **Schmuck:** Ringe, Amulette
-- **Offhand:** Schilde, Orbs, Totems, Köcher
-- **Verbrauchsgüter:** Tränke, Essen, Scrolls, Buff-Items
-
-### Sekundär-Stats auf Items
-
-- Kritische Trefferchance & Kritischer Schaden-Multiplikator
-- Angriffsgeschwindigkeit & Bewegungsgeschwindigkeit
-- Cooldown-Reduktion
-- Lebensraub (Leech)
-- Mana-Regeneration
-
----
-
-## 5. Economy-System
+## 3. Economy-System
 
 ### Survival-Economy (separat, nicht verbunden mit MMO)
 
@@ -464,23 +277,7 @@ Oraxen (Textur/Model) → MMOItems (Stats/Fähigkeiten) → MythicCrucible (Craf
 - **GlobalMarketPlus** Auktionshaus für Spieler-Handel
 - **Dynamische Börse** (`/boerse`): Preise reagieren auf Angebot und Nachfrage
 
-### MMO-Economy (RPG & Skyblock — synchronisiert)
-
-Das MMO-Netzwerk nutzt **5 verschiedene Währungen**, alle serverübergreifend synchronisiert:
-
-| Währung | Symbol | Verwendung |
-|---------|--------|-----------|
-| **Geld ($)** | $ | Hauptwährung, allgemeiner Handel |
-| **Münzen** | ⛂ | Sekundärwährung, besondere Käufe |
-| **Tokens** | ✦ | Premium-Währung, exklusive Inhalte |
-| **Quest-Punkte** | ✎ | Quest-Belohnungen, Quest-Shop |
-| **Dungeon-Marken** | ⚔ | Dungeon-Belohnungen, Dungeon-Shop |
-
-Alle 5 Währungen sind beim Wechsel zwischen RPG und Skyblock vollständig erhalten.
-
----
-
-## 6. Technische Infrastruktur
+## 4. Technische Infrastruktur
 
 ### Proxy (Velocity)
 - **IP:** `mc.festas-builds.com`
@@ -500,14 +297,11 @@ Alle 5 Währungen sind beim Wechsel zwischen RPG und Skyblock vollständig erhal
 - Spieler auf Handy, Konsole und Windows 10 Edition können ohne Java-Account beitreten
 
 ### Daten-Synchronisation (HuskSync)
-Zwischen RPG ↔ Skyblock werden synchronisiert:
-- ✅ Haupt-Inventar, Rüstungs-Slots, Offhand, Ender-Chest
-- ✅ Health, Hunger, Sättigung, XP-Level
-- ✅ Klassen-Level, Skills und Skill-Trees (MMOCore)
-- ✅ Quest-Fortschritt (BetonQuest)
-- ✅ Alle 5 Währungen (CoinsEngine)
-- ❌ Skyblock-Islands (server-spezifisch)
-- ❌ Survival-Daten (komplett getrennt)
+
+Zwischen aktiven Servern werden via HuskSync synchronisiert:
+- ✅ **Cosmetics** (Trails, Partikel-Effekte, Skins)
+- ✅ **Ränge** (LuckPerms-Gruppen, für einheitliche Anzeige im Netzwerk)
+- ❌ Gameplay-Inventare — werden **nicht** synchronisiert (jeder Server hat eigene Inventare)
 
 ### Sicherheit
 - **LibertyBans** (Velocity): Netzwerk-weite Bans, IP-Bans, Mutes, Temp-Bans
@@ -523,312 +317,37 @@ Zwischen RPG ↔ Skyblock werden synchronisiert:
 
 ---
 
-## 7. Besonderheiten & Alleinstellungsmerkmale
+## 5. Besonderheiten & Alleinstellungsmerkmale
 
 ### Was uns von anderen Servern unterscheidet
 
-1. **Einzigartiger Crossover:** Hypixel-Skyblock-feeling + Wynncraft-Klassen auf demselben Netzwerk mit gemeinsamer Progression
-2. **Echte Daten-Synchronisation:** Inventar, Klasse, Skills und Währungen sind zwischen RPG und Skyblock vollständig synchron — kein "Neustart" beim Server-Wechsel
-3. **Bedrock-First:** Volle Unterstützung für Handy, Konsole und PC-Edition ohne Einschränkungen
-4. **Tycoon-Survival:** Einzigartiger Generator-Tycoon-Gamemode mit 25 Rängen und 10 Prestige-Stufen auf einem klassischen Survival-Server
-5. **6 vollwertige Klassen:** Jede Klasse mit eigener Ressource, eigenem Skill-Tree und eigener Spielweise
-6. **Custom Content:** Alle Items, Mobs, Sounds und Texturen sind custom (Oraxen + ModelEngine + MythicMobs Premium)
-7. **Anti-Inflation-Economy:** Dynamische Börse reagiert auf Angebot und Nachfrage
-8. **Community-Features:** Server-übergreifende Parties, Freundeslisten, globaler Chat
+1. **Tycoon-Survival:** Generator-Tycoon-Gamemode mit 25 Rängen und 10 Prestige-Stufen auf einem klassischen Survival-Server
+2. **Bedrock-First:** Volle Unterstützung für Handy, Konsole und PC-Edition via Geyser/Floodgate — kein Java-Account nötig
+3. **Anti-Inflation-Economy:** Dynamische Börse reagiert auf Angebot und Nachfrage (Survival)
+4. **Custom Content:** Custom Items und Texturen via Oraxen
+5. **Community-Features:** Server-übergreifende Parties, Freundeslisten, globaler Chat (PAF)
+6. **3D-Weltkarten:** BlueMap für Survival und Mining mit Live-Spieler-Markierung
+7. **Skyblock mit Freunde-Koop:** Inseln gemeinsam mit Freunden bauen — ohne Gilden-Overhead
+8. **Mining-Server:** Klarer Progressions-Loop mit aufwertbaren Spitzhacken und schrittweise freischaltbaren Abbau-Zonen
 
 ### Geplante Features (Roadmap)
-> **Stand 26.2:** RPG-/Skyblock-Punkte entfallen — Ersatz durch zwei neue Server.
-- [ ] Konzept & Aufbau der **2 neuen Server** (Ersatz für Skyblock & RPG)
-- [ ] Datensicherung & geordnete Abschaltung von Skyblock & RPG
+
 - [ ] Anti-Cheat (Vulcan Premium) auf Survival
 - [ ] Voting-System (NuVotifier + VotingPlugin)
-- [ ] Crate/Key-System (CrazyCrates)
 - [ ] Hologramme über CMI (Lobby, Spielerzahlen, News)
-- [ ] CDN für Resourcepacks
-- [ ] Parkour-Kurs in der Lobby mit Belohnungen
-- [ ] Mining-Post-Launch: Black Market, weitere Battlepass-/Quest-Saisons und Endgame-Enchant-/Prestige-Balance
-- [ ] Event-Server für spezielle Events
+- [ ] Crate/Key-System (CrazyCrates)
+- [ ] Mining Launch: Black Market, Battle-Pass-Saisons, Endgame-Prestige
+- [ ] Skyblock Launch: Plugin-Verifizierung 26.2, MVP-Scope, Collections
 
 ---
 
-## 8. Website-Prompt für AI Agenten
+## 6. Website
 
-> Dieser Abschnitt enthält einen fertigen Prompt, den du einem AI Agenten (z.B. GPT-4, Claude, Gemini, Cursor AI o.ä.) übergeben kannst, um eine vollständige Website für das MinecraftMMO Netzwerk zu erstellen oder eine bestehende Website zu überarbeiten.
+Die Website (`mc.festas-builds.com`) ist bereits live. Quellcode und Dokumentation unter `website/` im Repository:
 
-> **⚠️ Hinweis (26.2-Umstellung):** Der folgende Prompt beschreibt noch ein **älteres Server-Setup**. Aktueller Stand: Fokus auf **Lobby & Survival**, dazu ein **überarbeiteter Skyblock** (ohne Gilden, mit Freunde-Koop) und ein neuer **Prison**-Server (Abbau-Zonen). Der Prompt sollte vor Verwendung entsprechend angepasst werden (Server-Karten, Klassen-/MMO-Sektionen, Version **26.2**).
-
----
-
-### Vollständiger Prompt
-
-```
-Du bist ein erfahrener Webentwickler und UI/UX-Designer, spezialisiert auf Gaming-Websites für Minecraft-Server. Erstelle eine vollständige, moderne Website für das MinecraftMMO Netzwerk.
+- [`website/README.md`](../website/README.md) — Features, lokale Entwicklung, Anpassungsguide
+- [`website/DEPLOYMENT.md`](../website/DEPLOYMENT.md) — Docker-Deployment, CI/CD, Nginx
 
 ---
 
-## AUFGABE
-
-Erstelle eine vollständige, responsive Website für einen deutschen Minecraft-Server. Die Website soll bestehende Spieler informieren und neue Spieler anwerben. Nutze moderne Webentwicklungs-Standards.
-
----
-
-## SERVER-INFORMATIONEN
-
-**Server-Name:** MinecraftMMO
-**Server-IP:** mc.festas-builds.com
-**Minecraft-Version:** 26.2
-**Sprache:** Deutsch (primär)
-**Bedrock-Support:** Ja (Handy, Konsole, Windows 10 Edition — keine Java-Account-Pflicht)
-**Status:** Early Access / In Entwicklung
-
----
-
-## SERVER-STRUKTUR (4 Server)
-
-### 1. Lobby
-- Willkommens-Hub und Server-Navigation
-- Interaktive NPCs für Server-Auswahl
-- Doppelsprung-Feature (kosmetisch)
-- Willkommensnachrichten für neue Spieler
-- Kein Gameplay, reine Navigation
-
-### 2. Survival / Tycoon
-Einzigartiger Hybrid aus klassischem Survival und Generator-Tycoon-Gamemode.
-
-**Tycoon-Gamemode:**
-- Generatoren auf dem eigenen Plot platzieren → Ressourcen produzieren → Sell Wand nutzen → verkaufen
-- 25 Ränge von Erde bis Bedrock (Kosten: $5.000 bis $175 Milliarden)
-- 10 Prestige-Stufen (Bronze bis Legende) mit permanentem Sell-Bonus (+10% bis +200%)
-- Chunk Collector, Sell Wand, Dynamische Börse, Casino, Boss-Events
-- 23 Achievements, tägliche Login-Belohnungen mit Streak-System
-- 13 verschiedene Jobs für extra Einkommen
-- Multi-Plot-System (bis 5 Plots + Prestige-Boni)
-- Wöchentliche Events
-
-### 3. Skyblock (MMO)
-Hypixel-inspirierter Skyblock mit vollständiger MMO-Klassen-Integration.
-
-**Features:**
-- Persönliche und Coop-Islands (SuperiorSkyblock2)
-- 8 Minion-Typen: Miner, Farmer, Fisher, Lumberjack, Slayer, Collector, Feeder, Seller
-- 6 MMO-Klassen spielbar (identisch mit RPG, Daten synchronisiert)
-- 5 Collection-Kategorien: Farming (16), Prison (8), Combat (8), Foraging (8), Fishing (4)
-- Prestige-System (10 Stufen mit Titeln und passiven Buffs)
-- Pet-System (6 Typen, leveln durch Mob-Kills)
-- Bazaar-System (Instant-Buy/Sell wie Hypixel)
-- Multi-Währungs-System (Geld, Münzen, Tokens, Quest-Punkte, Dungeon-Marken)
-
-### 4. RPG (MMO)
-Vollständiger Wynncraft-inspirierter MMO-RPG Server mit Open World.
-
-**Features:**
-- Open World mit 5 Level-Zonen (Level 1-100) + Nether/End als Endgame
-- Quests: Hauptquest-Linie, Nebenquests, tägliche/wöchentliche Quests (BetonQuest)
-- 10-15 instanzierte Dungeons (Party-System, mehrere Schwierigkeitsgrade)
-- Custom Mobs mit einzigartigen Fähigkeiten, Elite-Mobs, Welt-Bosse
-- 3D Custom Models für Mobs und NPCs (ModelEngine)
-- NPC-System mit Story-Dialogen (Citizens + BetonQuest)
-- 6 MMO-Klassen spielbar (Daten mit Skyblock synchronisiert)
-
----
-
-## KLASSEN-SYSTEM (Gilt für RPG & Skyblock)
-
-**6 Klassen:**
-
-1. **Krieger** — Tank/Melee DPS
-   - Ressource: Wut (durch Schaden aufgebaut)
-   - Waffen: Schwert, Axt / Offhand: Schild
-   - Rüstung: Plattenrüstung
-   - Stärken: Hohe Verteidigung, Frontlinie, Gruppenschutz
-   - Schwächen: Geringe Mobilität, keine Reichweite
-
-2. **Magier** — Ranged Magic DPS
-   - Ressource: Mana
-   - Waffen: Stab / Offhand: Orb oder Totem
-   - Rüstung: Stoffrüstung
-   - Stärken: Höchster Zauberschaden, AoE
-   - Schwächen: Niedrige Verteidigung
-
-3. **Assassine** — Burst Melee DPS
-   - Ressource: Energie (schnell regenerierend)
-   - Waffen: Dual Dolche
-   - Rüstung: Lederrüstung
-   - Stärken: Höchster Burst-Schaden, hohe Mobilität, kritische Treffer
-   - Schwächen: Niedrige Verteidigung, kein Sustain
-
-4. **Bogenschütze** — Ranged Physical DPS
-   - Ressource: Fokus (durch Treffer aufgebaut)
-   - Waffen: Bogen / Armbrust
-   - Rüstung: Leder-/Kettenrüstung
-   - Stärken: Konstanter Fernkampf-Schaden, kein Mana-Limit
-   - Schwächen: Geringe Mobilität
-
-5. **Schamane** — Support/Healer
-   - Ressource: Mana
-   - Waffen: Stab, Streitkolben / Offhand: Totem oder Schild
-   - Rüstung: Kettenrüstung
-   - Stärken: Heilung und Buffs, unersetzlich in Gruppen
-   - Schwächen: Niedrigster Angriffschaden solo
-
-6. **Beschwörer** — Summoner/Pet-Class
-   - Ressource: Mana + Beschwörungs-Slots
-   - Waffen: Stab / Offhand: Orb oder Totem
-   - Rüstung: Stoffrüstung
-   - Stärken: Crowd Control, vielseitige Beschwörungen, passiver Schaden
-   - Schwächen: Komplex zu spielen, abhängig von Minions
-
-**Klassen-Mechaniken:**
-- Level 1-100, 1 Skill-Punkt pro Level
-- Passive Skills, Active Skills, Ultimate Skill (ab Level 50)
-- Klassenwechsel möglich (7 Tage Cooldown, Level bleibt)
-- Stats: Stärke, Intelligenz, Geschicklichkeit, Ausdauer, Weisheit
-
----
-
-## ITEM-SYSTEM
-
-**7 Item-Tiers:** Gewöhnlich (weiß), Ungewöhnlich (grün), Selten (blau), Episch (lila), Legendär (gold), Mythisch (pink), Göttlich (hellrot, geplant)
-
-**Item-Kategorien:** Waffen (Schwerter, Stäbe, Bögen, Dolche, Äxte, Streitkolben), Rüstung, Schmuck (Ringe, Amulette), Offhand, Verbrauchsgüter
-
----
-
-## ECONOMY
-
-**Survival (separat):**
-- Verdienen durch Jobs, Generatoren, Achievements, Boss-Events, Shop-Verkäufe
-- Dynamische Börse, Auktionshaus, Casino
-
-**MMO (RPG & Skyblock, synchronisiert):**
-- 5 Währungen: Geld ($), Münzen, Tokens, Quest-Punkte, Dungeon-Marken
-- Beim Server-Wechsel bleiben alle Währungen erhalten
-
----
-
-## NETZWERK-FEATURES
-
-- Bedrock-Support (Handy, Konsole, PC-Edition — kostenlos spielen ohne Java-Account)
-- Party & Freundesliste (server-übergreifend)
-- Custom Skins auch ohne Premium-Account (SkinsRestorer)
-- Server-weite TAB-Liste und Scoreboards
-- Resourcepack automatisch beim Join (Custom Items, Mobs, Sounds, Texturen)
-
----
-
-## DESIGN-ANFORDERUNGEN
-
-**Stil:** Modern, dunkel (Dark Theme), gaming-typisch mit Minecraft-Ästhetik
-**Farbpalette:**
-- Primär: Dunkelblau oder Dunkelgrau (#0d1117 oder #161b22)
-- Akzent 1: Minecraft-Grün (#55FF55 oder ähnlich, für Highlights)
-- Akzent 2: Gold/Orange (#FFD700, für seltene Items, CTAs)
-- Text: Weiß/Hellgrau
-
-**Typografie:** Moderne, gut lesbare Schriften. Optional: Minecraft-Font für Überschriften (Mojangles oder ähnlich).
-
-**Responsive:** Mobile-first, funktioniert auf Handy, Tablet, Desktop.
-
-**Animationen:** Dezente Einblend-Animationen (keine ablenkenden Endlos-Loops), Hover-Effekte auf Karten und Buttons.
-
----
-
-## SEITENSTRUKTUR
-
-### Navigation (sticky Header)
-- Logo / Server-Name
-- Links: Home, Server, Klassen, Items, Community, Wiki
-- Server-IP mit Kopier-Button
-- "Jetzt spielen" CTA-Button
-
-### Hero-Section
-- Großes Banner mit Server-Name und Tagline
-- Tagline-Vorschläge: "Erlebe ein einzigartiges Minecraft-Netzwerk auf Version 26.2" oder "Prison trifft Skyblock — Abbau & Koop"
-- Server-IP prominent mit Kopier-Button
-- Minecraft-Version Badge, Bedrock-Badge
-- "Jetzt spielen"-Button (klickt und zeigt IP zum Kopieren)
-- Hintergrund: Dunkler Minecraft-Screenshot oder Partikel-Animation
-
-### Server-Cards Section
-Vier Karten für die 4 Server:
-- Lobby (Icon: Kompass)
-- Survival/Tycoon (Icon: Generator oder Diamant)
-- Skyblock (Icon: Grassblock auf Wolke)
-- Prison (Icon: Spitzhacke)
-Jede Karte: kurze Beschreibung, wichtigste Features als Liste, kleines "Mehr erfahren"-Link
-
-### Features / Highlights Section
-Besondere Alleinstellungsmerkmale hervorheben:
-- "Bedrock-Support" — spielbar auf Handy, Konsole, PC-Edition
-- "6 einzigartige Klassen" — mit Tooltip/Hover für kurze Beschreibung
-- "Synchronisierte Progression" — Inventar und Klasse zwischen RPG und Skyblock
-- "25 Tycoon-Ränge" — Erde bis Bedrock
-- "Custom Content" — eigene Items, Mobs, Sounds
-
-### Klassen-Section
-Übersicht der 6 Klassen mit:
-- Icon/Bild pro Klasse
-- Name, Archetyp (DPS/Healer/Support/etc.)
-- Ressource
-- Stärken/Schwächen als kurze Liste
-- Hover-Effekt oder Flip-Card
-
-### Stats/Counter Section (optional, mit Platzhalter-Zahlen)
-- "100+ Spieler online" (Platzhalter)
-- "25 Ränge" auf Survival
-- "6 Klassen" im MMO
-- "10-15 Dungeons" auf RPG
-- "8 Minion-Typen" auf Skyblock
-
-### Server-IP / How to Join Section
-Schritt-für-Schritt Anleitung:
-1. Minecraft starten (Java oder Bedrock)
-2. Multiplayer → Server hinzufügen
-3. IP eingeben: mc.festas-builds.com
-4. Server beitreten und losspielen
-
-Bedrock-Hinweis: Für Handy/Konsole — Port und ggf. Anleitung.
-
-### Footer
-- Copyright
-- Server-IP
-- Links: Discord (Platzhalter), Twitter/X, GitHub
-- Impressum-Link (Platzhalter)
-
----
-
-## TECHNISCHE ANFORDERUNGEN
-
-**Framework/Stack:** Verwende modernes HTML5 + CSS3 + Vanilla JavaScript (oder React/Next.js wenn bevorzugt)
-**Kein CSS-Framework-Zwang:** Tailwind CSS ist erlaubt, aber nicht Pflicht.
-**Icons:** Heroicons, Feather Icons oder ähnlich (kein Font Awesome wegen Lizenzen).
-**Fonts:** Google Fonts (Inter, Outfit oder ähnliches für Texte).
-**Performance:** Lazy Loading für Bilder, keine unnötigen Abhängigkeiten.
-**SEO:** Korrekte Meta-Tags, Open Graph Tags (og:title, og:description, og:image).
-**Accessibility:** Kontraste einhalten (WCAG AA), Alt-Texte für Bilder.
-
----
-
-## PLATZHALTER & HINWEISE
-
-- Server-Logo: [Logo-Datei wird später bereitgestellt] — verwende einen Platzhalter mit den Initialen "MMO"
-- Screenshots: [Werden später bereitgestellt] — verwende dunkle Platzhalter-Boxen mit Beschriftung
-- Discord-Link: [Wird noch erstellt]
-- Spielerzahlen: [Live-Daten via API, vorerst statische Platzhalter nutzen]
-- Alle Texte auf Deutsch verfassen
-
----
-
-## AUSGABE
-
-Erstelle die komplette Website als einzelne HTML-Datei (index.html) mit eingebettetem CSS und JavaScript, ODER als Datei-Struktur mit separatem CSS und JS. Stelle sicher, dass die Website ohne Backend-Server lokal in einem Browser funktioniert. Alle Sektionen sollen vollständig ausgefüllt sein (keine leeren Platzhalter außer Bilder/Logo).
-```
-
----
-
-> **Hinweis:** Dieser Prompt kann direkt in ein Chat-Interface (ChatGPT, Claude, Gemini, Copilot, etc.) eingefügt werden. Passe ihn bei Bedarf an — z.B. wenn du ein bestimmtes Framework bevorzugst (React, Vue, Astro, etc.) oder das Design ändern möchtest.
-
----
-
-**Letzte Aktualisierung:** 2026-08-19  
-**Version:** 1.1 (26.2-Umstellung: Fokus Lobby & Survival; Skyblock & RPG → Archiv)
+**Letzte Aktualisierung:** 2026-08-19

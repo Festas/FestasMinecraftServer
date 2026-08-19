@@ -144,7 +144,7 @@ Das Herz des Servers: Inseln, Koop und Insel-Welten.
 
 - [Skyblock-Übersicht](README.md)
 - [Islands-System](ISLANDS.md) · [Minions-System](MINIONS.md) · [Progression](PROGRESSION.md)
-- [Mining-Plugin-Stack](../mining/PLUGINS.md)
+- [Mining-Plugin-Stack](../prison/PLUGINS.md)
 - [Netzwerk-Plugin-Referenz](../PLUGINS.md)
 - [Neuausrichtung: Skyblock & Mining](../NEW_SERVERS.md)
 
