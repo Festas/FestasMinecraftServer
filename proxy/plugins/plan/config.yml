@@ -49,7 +49,8 @@ Webserver:
         Address: mc-stats.festas-builds.com
     # Internal IP usually does not need to be changed, only change it if you know what you're doing!
     # 0.0.0.0 allocates Internal (local) IP automatically for the WebServer.
-    Internal_IP: 0.0.0.0
+    # Set to 127.0.0.1 so the webserver only listens locally; nginx reverse-proxies HTTPS.
+    Internal_IP: 127.0.0.1
     # Use absolute path ("C:\Example\Path", "/var/example/path") or relative ("public_html" -> {server}/plugins/Plan/public_html)
     # NOTE: All files in this directory can be read by anyone who can access the webserver.
     # This can be used to host certbot http challenge file, or for customizing Plan React-bundle
@@ -70,7 +71,7 @@ Webserver:
             Allow_origin: "*"
         # Allows using the whitelist & brute-force shield with a reverse-proxy.
         # ! Make sure non-proxy access is not possible, it would allow IP spoofing !
-        Use_X-Forwarded-For_Header: false
+        Use_X-Forwarded-For_Header: true
         Access_log:
             Print_to_console: false
             Remove_logs_after_days: 30
