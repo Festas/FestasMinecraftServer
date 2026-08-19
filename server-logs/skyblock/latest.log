@@ -1,0 +1,1064 @@
+[14:04:48] [ServerMain/INFO]: [bootstrap] Running Java 21 (OpenJDK 64-Bit Server VM 21.0.10+7-LTS; Eclipse Adoptium Temurin-21.0.10+7) on Linux 6.8.0-107-generic (amd64)
+[14:04:48] [ServerMain/INFO]: [bootstrap] Loading AdvancedSlimePaper 1.21.10-16927-main@6c03ab0 (1970-01-01T00:00:00Z) for Minecraft 1.21.10
+[14:04:48] [ServerMain/INFO]: [PluginInitializerManager] Initializing plugins...
+[14:04:49] [ServerMain/INFO]: [PluginInitializerManager] Initialized 23 plugins
+[14:04:49] [ServerMain/INFO]: [PluginInitializerManager] Paper plugins (5):
+ - ASPaperPlugin (6c03ab04a2d70bd8a2b9fc630e149bb354eef42d), CoinsEngine (2.6.0), HuskSync (3.8.8-0772f09), RoseStacker (1.5.37), nightcore (2.10.0)
+[14:04:49] [ServerMain/INFO]: [PluginInitializerManager] Bukkit plugins (18):
+ - Aurora (2.5.1), AuroraCollections (1.5.7), CMI (9.8.4.2), CMILib (1.5.8.2), CommandAPI (11.1.0), DeluxeBazaar (10.2), GlobalMarketPlus (1.3.6.4), JetsMinions (7.12.1), LuckPerms (5.5.0), MMOCore (1.13.1-SNAPSHOT), MMOItems (6.10.1-SNAPSHOT), Oraxen (1.203.1), PartyAndFriendsGUI (1.0.258-E), PlaceholderAPI (2.11.7), ProtocolLib (5.4.0), SuperiorSkyblock2 (2025.2.1), Vault (2.17.0), VoidGen (2.2.1)
+[14:04:53] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+[14:04:54] [ServerMain/INFO]: Loaded 1461 recipes
+[14:04:54] [ServerMain/INFO]: Loaded 1574 advancements
+[14:04:54] [ServerMain/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Initialising converters for DataConverter...
+[14:04:54] [ServerMain/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Finished initialising converters for DataConverter in 242.0ms
+[14:04:54] [Server thread/INFO]: Starting minecraft server version 1.21.10
+[14:04:54] [Server thread/INFO]: Loading properties
+[14:04:54] [Server thread/INFO]: This server is running AdvancedSlimePaper version 1.21.10-16927-main@6c03ab0 (1970-01-01T00:00:00Z) (Implementing API version 1.21.10-R0.1-SNAPSHOT)
+[14:04:54] [Server thread/INFO]: [spark] This server bundles the spark profiler. For more information please visit https://docs.papermc.io/paper/profiling
+[14:04:54] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[14:04:54] [Server thread/INFO]: Using 4 threads for Netty based IO
+[14:04:55] [Server thread/INFO]: [MoonriseCommon] Paper is using 2 worker threads, 1 I/O threads
+[14:04:55] [Server thread/INFO]: Default game type: SURVIVAL
+[14:04:55] [Server thread/INFO]: Generating keypair
+[14:04:55] [Server thread/INFO]: Starting Minecraft server on 0.0.0.0:25569
+[14:04:55] [Server thread/INFO]: Using epoll channel type
+[14:04:55] [Server thread/INFO]: Paper: Using libdeflate (Linux x86_64) compression from Velocity.
+[14:04:55] [Server thread/INFO]: Paper: Using OpenSSL 3.x.x (Linux x86_64) cipher from Velocity.
+[14:04:55] [Server thread/ERROR]: [ModernPluginLoadingStrategy] Could not load 'plugins/.paper-remapped/MMOItems-6.10.1-20251204.191333-43.jar' in 'plugins/.paper-remapped'
+org.bukkit.plugin.UnknownDependencyException: Unknown/missing dependency plugins: [MythicLib]. Please download and install these plugins to run 'MMOItems'.
+	at io.papermc.paper.plugin.entrypoint.strategy.modern.ModernPluginLoadingStrategy.loadProviders(ModernPluginLoadingStrategy.java:82) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at io.papermc.paper.plugin.storage.SimpleProviderStorage.enter(SimpleProviderStorage.java:47) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at io.papermc.paper.plugin.entrypoint.LaunchEntryPointHandler.enter(LaunchEntryPointHandler.java:39) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at org.bukkit.craftbukkit.CraftServer.loadPlugins(CraftServer.java:555) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at net.minecraft.server.dedicated.DedicatedServer.initServer(DedicatedServer.java:323) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1257) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:384) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[?:?]
+[14:04:55] [Server thread/ERROR]: [ModernPluginLoadingStrategy] Could not load 'plugins/.paper-remapped/MMOCore-1.13.1-20251220.010021-41.jar' in 'plugins/.paper-remapped'
+org.bukkit.plugin.UnknownDependencyException: Unknown/missing dependency plugins: [MythicLib]. Please download and install these plugins to run 'MMOCore'.
+	at io.papermc.paper.plugin.entrypoint.strategy.modern.ModernPluginLoadingStrategy.loadProviders(ModernPluginLoadingStrategy.java:82) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at io.papermc.paper.plugin.storage.SimpleProviderStorage.enter(SimpleProviderStorage.java:47) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at io.papermc.paper.plugin.entrypoint.LaunchEntryPointHandler.enter(LaunchEntryPointHandler.java:39) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at org.bukkit.craftbukkit.CraftServer.loadPlugins(CraftServer.java:555) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at net.minecraft.server.dedicated.DedicatedServer.initServer(DedicatedServer.java:323) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1257) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:384) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[?:?]
+[14:04:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loading 11 libraries... please wait
+[14:04:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/springframework/spring-expression/6.0.6/spring-expression-6.0.6.jar
+[14:04:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/springframework/spring-core/6.0.6/spring-core-6.0.6.jar
+[14:04:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/springframework/spring-jcl/6.0.6/spring-jcl-6.0.6.jar
+[14:04:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar
+[14:04:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar
+[14:04:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar
+[14:04:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/commons-logging/commons-logging/1.2/commons-logging-1.2.jar
+[14:04:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/commons-codec/commons-codec/1.11/commons-codec-1.11.jar
+[14:04:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/joml/joml/1.10.5/joml-1.10.5.jar
+[14:04:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-ansi/4.17.0/adventure-text-serializer-ansi-4.17.0.jar
+[14:04:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-api/4.17.0/adventure-api-4.17.0.jar
+[14:04:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/examination-api/1.3.0/examination-api-1.3.0.jar
+[14:04:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/examination-string/1.3.0/examination-string-1.3.0.jar
+[14:04:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/ansi/1.0.3/ansi-1.0.3.jar
+[14:04:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-minimessage/4.17.0/adventure-text-minimessage-4.17.0.jar
+[14:04:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-plain/4.17.0/adventure-text-serializer-plain-4.17.0.jar
+[14:04:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-platform-bukkit/4.3.4/adventure-platform-bukkit-4.3.4.jar
+[14:04:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-platform-api/4.3.4/adventure-platform-api-4.3.4.jar
+[14:04:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-bungeecord/4.3.4/adventure-text-serializer-bungeecord-4.3.4.jar
+[14:04:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-legacy/4.13.1/adventure-text-serializer-legacy-4.13.1.jar
+[14:04:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-nbt/4.13.1/adventure-nbt-4.13.1.jar
+[14:04:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-gson/4.13.1/adventure-text-serializer-gson-4.13.1.jar
+[14:04:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-gson-legacy-impl/4.13.1/adventure-text-serializer-gson-legacy-impl-4.13.1.jar
+[14:04:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-platform-facet/4.3.4/adventure-platform-facet-4.3.4.jar
+[14:04:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-platform-viaversion/4.3.4/adventure-platform-viaversion-4.3.4.jar
+[14:04:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar
+[14:04:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar
+[14:04:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/gs/mclo/java/2.2.1/java-2.2.1.jar
+[14:04:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/team/unnamed/creative-api/1.7.3/creative-api-1.7.3.jar
+[14:04:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-key/4.9.3/adventure-key-4.9.3.jar
+[14:04:55] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/jetbrains/annotations/23.1.0/annotations-23.1.0.jar
+[14:04:55] [Server thread/INFO]: [SpigotLibraryLoader] [SuperiorSkyblock2] Loading 1 libraries... please wait
+[14:04:55] [Server thread/INFO]: [SpigotLibraryLoader] [SuperiorSkyblock2] Loaded library /home/container/libraries/org/openjdk/nashorn/nashorn-core/15.4/nashorn-core-15.4.jar
+[14:04:55] [Server thread/INFO]: [SpigotLibraryLoader] [SuperiorSkyblock2] Loaded library /home/container/libraries/org/ow2/asm/asm/7.3.1/asm-7.3.1.jar
+[14:04:55] [Server thread/INFO]: [SpigotLibraryLoader] [SuperiorSkyblock2] Loaded library /home/container/libraries/org/ow2/asm/asm-commons/7.3.1/asm-commons-7.3.1.jar
+[14:04:55] [Server thread/INFO]: [SpigotLibraryLoader] [SuperiorSkyblock2] Loaded library /home/container/libraries/org/ow2/asm/asm-analysis/7.3.1/asm-analysis-7.3.1.jar
+[14:04:55] [Server thread/INFO]: [SpigotLibraryLoader] [SuperiorSkyblock2] Loaded library /home/container/libraries/org/ow2/asm/asm-tree/7.3.1/asm-tree-7.3.1.jar
+[14:04:55] [Server thread/INFO]: [SpigotLibraryLoader] [SuperiorSkyblock2] Loaded library /home/container/libraries/org/ow2/asm/asm-util/7.3.1/asm-util-7.3.1.jar
+[14:04:56] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.11.7
+[14:04:56] [Server thread/INFO]: [CMILib] Loading server plugin CMILib v1.5.8.2
+[14:04:56] [Server thread/INFO]: [nightcore] Loading server plugin nightcore v2.10.0
+[14:04:56] [Server thread/INFO]: [LuckPerms] Loading server plugin LuckPerms v5.5.0
+[14:04:56] [Server thread/INFO]: [ProtocolLib] Loading server plugin ProtocolLib v5.4.0
+[14:04:56] [Server thread/WARN]: [ProtocolLib] Version (MC: 1.21.10) has not yet been tested! Proceed with caution.
+[14:04:56] [Server thread/INFO]: [CommandAPI] Loading server plugin CommandAPI v11.1.0
+[14:04:56] [Server thread/INFO]: [CommandAPI] Loaded version PaperNMS_1_21_R6
+[14:04:56] [Server thread/INFO]: [CommandAPI] Hooked into Spigot successfully for Chat/ChatComponents
+[14:04:56] [Server thread/INFO]: [CommandAPI] Hooked into Adventure for AdventureChat/AdventureChatComponents
+[14:04:56] [Server thread/INFO]: [CommandAPI] Hooked into Paper for paper-specific API implementations
+[14:04:56] [Server thread/INFO]: [CommandAPI] Loaded platform CommandAPIPaper > CommandAPIBukkit
+[14:04:56] [Server thread/INFO]: [CMI] Loading server plugin CMI v9.8.4.2
+[14:04:56] [Server thread/INFO]: [CoinsEngine] Loading server plugin CoinsEngine v2.6.0
+[14:04:56] [Server thread/INFO]: [Vault] Loading server plugin Vault v2.17.0
+[14:04:56] [Server thread/INFO]: [Oraxen] Loading server plugin Oraxen v1.203.1
+[14:04:56] [Server thread/INFO]: [SuperiorSkyblock2] Loading server plugin SuperiorSkyblock2 v2025.2.1
+[14:04:56] [Server thread/WARN]: [SuperiorSkyblock2] Ignoring attempt to change parent of plugin logger
+[14:04:57] [Server thread/INFO]: [RoseStacker] Loading server plugin RoseStacker v1.5.37
+[14:04:57] [Server thread/INFO]: [Aurora] Loading server plugin Aurora v2.5.1
+[14:04:57] [Server thread/INFO]: [DeluxeBazaar] Loading server plugin DeluxeBazaar v10.2
+[14:04:57] [Server thread/INFO]: [JetsMinions] Loading server plugin JetsMinions v7.12.1
+[14:04:57] [Server thread/INFO]: [HuskSync] Loading server plugin HuskSync v3.8.8-0772f09
+[14:04:57] [Server thread/INFO]: [HuskSync] Initializing plugin config & locale files...
+[14:04:57] [Server thread/INFO]: [HuskSync] Successfully initialized plugin config & locale files
+[14:04:57] [Server thread/INFO]: [PartyAndFriendsGUI] Loading server plugin PartyAndFriendsGUI v1.0.258-E
+[14:04:57] [Server thread/INFO]: [GlobalMarketPlus] Loading server plugin GlobalMarketPlus v1.3.6.4
+[14:04:57] [Server thread/INFO]: [AuroraCollections] Loading server plugin AuroraCollections v1.5.7
+[14:04:57] [Server thread/INFO]: [VoidGen] Loading server plugin VoidGen v2.2.1
+[14:04:57] [Server thread/INFO]: [ASPaperPlugin] Loading server plugin ASPaperPlugin v6c03ab04a2d70bd8a2b9fc630e149bb354eef42d
+[14:04:57] [Server thread/INFO]: [com.infernalsuite.asp.AdvancedSlimePaper] World spawn read in 40ms.
+[14:04:57] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[14:04:57] [Server thread/INFO]: [nightcore] Enabling nightcore v2.10.0
+[14:04:57] [Server thread/INFO]: [nightcore] Server version detected as 1.21.10. Using paper-bridge.
+[14:04:57] [Server thread/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+[14:04:57] [Server thread/INFO]: [nightcore] Time zone set as Etc/UTC
+[14:04:57] [Server thread/INFO]: [nightcore] Loaded 2 color schemes.
+[14:04:57] [Server thread/INFO]: [nightcore] Using 'custom' color scheme.
+[14:04:57] [Server thread/INFO]: [nightcore] Registered permissions provider: LuckPerms
+[14:04:57] [Server thread/INFO]: [nightcore] Registered item provider: 'vanilla'.
+[14:04:57] [Server thread/INFO]: [nightcore] Registered item provider: 'oraxen'.
+[14:04:57] [Server thread/INFO]: [nightcore] Currency registered: 'xp_level'.
+[14:04:57] [Server thread/INFO]: [nightcore] Currency registered: 'gold'.
+[14:04:57] [Server thread/INFO]: [nightcore] Currency registered: 'emerald'.
+[14:04:57] [Server thread/INFO]: [nightcore] Currency registered: 'custom_diamond'.
+[14:04:57] [Server thread/INFO]: [nightcore] Plugin loaded in 172 ms!
+[14:04:57] [Server thread/INFO]: [LuckPerms] Enabling LuckPerms v5.5.0
+[14:04:57] [Server thread/INFO]:         __    
+[14:04:57] [Server thread/INFO]:   |    |__)   LuckPerms v5.5.0
+[14:04:57] [Server thread/INFO]:   |___ |      Running on Bukkit - AdvancedSlimePaper
+[14:04:57] [Server thread/INFO]: 
+[14:04:57] [Server thread/INFO]: [LuckPerms] Loading configuration...
+[14:04:58] [Server thread/INFO]: [LuckPerms] Loading storage provider... [MARIADB]
+[14:04:58] [Server thread/INFO]: [me.lucko.luckperms.lib.hikari.HikariDataSource] luckperms-hikari - Starting...
+[14:04:58] [Server thread/INFO]: [me.lucko.luckperms.lib.hikari.HikariDataSource] luckperms-hikari - Start completed.
+[14:04:58] [luckperms-hikari connection adder/WARN]: [me.lucko.luckperms.lib.mariadb.message.server.ErrorPacket] Error: 1045-28000: Access denied for user 'CHANGE_ME'@'172.25.0.3' (using password: YES)
+[14:04:58] [luckperms-hikari connection adder/WARN]: [me.lucko.luckperms.lib.mariadb.message.server.ErrorPacket] Error: 1045-28000: Access denied for user 'CHANGE_ME'@'172.25.0.3' (using password: YES)
+[14:04:58] [luckperms-hikari connection adder/WARN]: [me.lucko.luckperms.lib.mariadb.message.server.ErrorPacket] Error: 1045-28000: Access denied for user 'CHANGE_ME'@'172.25.0.3' (using password: YES)
+[14:04:59] [luckperms-hikari connection adder/WARN]: [me.lucko.luckperms.lib.mariadb.message.server.ErrorPacket] Error: 1045-28000: Access denied for user 'CHANGE_ME'@'172.25.0.3' (using password: YES)
+[14:05:00] [luckperms-hikari connection adder/WARN]: [me.lucko.luckperms.lib.mariadb.message.server.ErrorPacket] Error: 1045-28000: Access denied for user 'CHANGE_ME'@'172.25.0.3' (using password: YES)
+[14:05:01] [luckperms-hikari connection adder/WARN]: [me.lucko.luckperms.lib.mariadb.message.server.ErrorPacket] Error: 1045-28000: Access denied for user 'CHANGE_ME'@'172.25.0.3' (using password: YES)
+[14:05:03] [Server thread/ERROR]: [LuckPerms] Failed to init storage implementation
+java.sql.SQLTransientConnectionException: luckperms-hikari - Connection is not available, request timed out after 5000ms.
+	at me.lucko.luckperms.lib.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696) ~[?:?]
+	at me.lucko.luckperms.lib.hikari.pool.HikariPool.getConnection(HikariPool.java:197) ~[?:?]
+	at me.lucko.luckperms.lib.hikari.pool.HikariPool.getConnection(HikariPool.java:162) ~[?:?]
+	at me.lucko.luckperms.lib.hikari.HikariDataSource.getConnection(HikariDataSource.java:100) ~[?:?]
+	at me.lucko.luckperms.common.storage.implementation.sql.connection.hikari.HikariConnectionFactory.getConnection(HikariConnectionFactory.java:169) ~[?:?]
+	at me.lucko.luckperms.common.storage.implementation.sql.SqlStorage.init(SqlStorage.java:170) ~[?:?]
+	at me.lucko.luckperms.common.storage.Storage.init(Storage.java:90) ~[?:?]
+	at me.lucko.luckperms.common.storage.StorageFactory.getInstance(StorageFactory.java:88) ~[?:?]
+	at me.lucko.luckperms.common.plugin.AbstractLuckPermsPlugin.enable(AbstractLuckPermsPlugin.java:204) ~[?:?]
+	at me.lucko.luckperms.bukkit.LPBukkitBootstrap.onEnable(LPBukkitBootstrap.java:175) ~[?:?]
+	at LuckPerms-Bukkit-5.5.0.jar/me.lucko.luckperms.bukkit.loader.BukkitLoaderPlugin.onEnable(BukkitLoaderPlugin.java:50) ~[LuckPerms-Bukkit-5.5.0.jar:?]
+	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:279) ~[aspaper-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at io.papermc.paper.plugin.manager.PaperPluginInstanceManager.enablePlugin(PaperPluginInstanceManager.java:211) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.enablePlugin(PaperPluginManagerImpl.java:109) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:520) ~[aspaper-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.CraftServer.enablePlugin(CraftServer.java:639) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at org.bukkit.craftbukkit.CraftServer.enablePlugins(CraftServer.java:596) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at net.minecraft.server.dedicated.DedicatedServer.initServer(DedicatedServer.java:324) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1257) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:384) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[?:?]
+Caused by: java.sql.SQLInvalidAuthorizationSpecException: (conn=2408) Access denied for user 'CHANGE_ME'@'172.25.0.3' (using password: YES)
+	at me.lucko.luckperms.lib.mariadb.export.ExceptionFactory.createException(ExceptionFactory.java:286) ~[?:?]
+	at me.lucko.luckperms.lib.mariadb.export.ExceptionFactory.create(ExceptionFactory.java:370) ~[?:?]
+	at me.lucko.luckperms.lib.mariadb.client.impl.ConnectionHelper.authenticationHandler(ConnectionHelper.java:287) ~[?:?]
+	at me.lucko.luckperms.lib.mariadb.client.impl.StandardClient.<init>(StandardClient.java:185) ~[?:?]
+	at me.lucko.luckperms.lib.mariadb.Driver.connect(Driver.java:70) ~[?:?]
+	at me.lucko.luckperms.lib.mariadb.Driver.connect(Driver.java:101) ~[?:?]
+	at me.lucko.luckperms.lib.mariadb.Driver.connect(Driver.java:27) ~[?:?]
+	at me.lucko.luckperms.lib.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[?:?]
+	at me.lucko.luckperms.lib.hikari.pool.PoolBase.newConnection(PoolBase.java:364) ~[?:?]
+	at me.lucko.luckperms.lib.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[?:?]
+	at me.lucko.luckperms.lib.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476) ~[?:?]
+	at me.lucko.luckperms.lib.hikari.pool.HikariPool.access$100(HikariPool.java:71) ~[?:?]
+	at me.lucko.luckperms.lib.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:726) ~[?:?]
+	at me.lucko.luckperms.lib.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:712) ~[?:?]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	... 1 more
+[14:05:03] [Server thread/INFO]: [LuckPerms] Loading messaging service... [REDIS]
+[14:05:03] [luckperms-worker-1/WARN]: [LuckPerms] Redis pubsub connection dropped, trying to re-open the connection
+me.lucko.luckperms.lib.jedis.exceptions.JedisAccessControlException: WRONGPASS invalid username-password pair or user is disabled.
+	at me.lucko.luckperms.lib.jedis.Protocol.processError(Protocol.java:92) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Protocol.process(Protocol.java:137) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Protocol.read(Protocol.java:192) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:335) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Connection.getStatusCodeReply(Connection.java:262) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Connection.auth(Connection.java:446) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Connection.initializeFromClientConfig(Connection.java:380) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Connection.<init>(Connection.java:61) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.ConnectionFactory.makeObject(ConnectionFactory.java:68) ~[?:?]
+	at me.lucko.luckperms.lib.commonspool2.impl.GenericObjectPool.create(GenericObjectPool.java:918) ~[?:?]
+	at me.lucko.luckperms.lib.commonspool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:431) ~[?:?]
+	at me.lucko.luckperms.lib.commonspool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:356) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.util.Pool.getResource(Pool.java:38) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.ConnectionPool.getResource(ConnectionPool.java:29) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.ConnectionPool.getResource(ConnectionPool.java:7) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.providers.PooledConnectionProvider.getConnection(PooledConnectionProvider.java:63) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.UnifiedJedis.subscribe(UnifiedJedis.java:3538) ~[?:?]
+	at me.lucko.luckperms.common.messaging.redis.RedisMessenger$Subscription.run(RedisMessenger.java:125) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1423) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) ~[?:?]
+[14:05:03] [luckperms-hikari connection adder/WARN]: [me.lucko.luckperms.lib.mariadb.message.server.ErrorPacket] Error: 1045-28000: Access denied for user 'CHANGE_ME'@'172.25.0.3' (using password: YES)
+[14:05:03] [Server thread/INFO]: [LuckPerms] Loading internal permission managers...
+[14:05:03] [Server thread/INFO]: [LuckPerms] Performing initial data load...
+[14:05:06] [luckperms-hikari connection adder/WARN]: [me.lucko.luckperms.lib.mariadb.message.server.ErrorPacket] Error: 1045-28000: Access denied for user 'CHANGE_ME'@'172.25.0.3' (using password: YES)
+[14:05:08] [luckperms-worker-1/INFO]: [LuckPerms] Redis pubsub connection re-established
+[14:05:08] [luckperms-worker-1/WARN]: [LuckPerms] Redis pubsub connection dropped, trying to re-open the connection
+me.lucko.luckperms.lib.jedis.exceptions.JedisAccessControlException: WRONGPASS invalid username-password pair or user is disabled.
+	at me.lucko.luckperms.lib.jedis.Protocol.processError(Protocol.java:92) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Protocol.process(Protocol.java:137) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Protocol.read(Protocol.java:192) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:335) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Connection.getStatusCodeReply(Connection.java:262) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Connection.auth(Connection.java:446) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Connection.initializeFromClientConfig(Connection.java:380) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Connection.<init>(Connection.java:61) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.ConnectionFactory.makeObject(ConnectionFactory.java:68) ~[?:?]
+	at me.lucko.luckperms.lib.commonspool2.impl.GenericObjectPool.create(GenericObjectPool.java:918) ~[?:?]
+	at me.lucko.luckperms.lib.commonspool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:431) ~[?:?]
+	at me.lucko.luckperms.lib.commonspool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:356) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.util.Pool.getResource(Pool.java:38) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.ConnectionPool.getResource(ConnectionPool.java:29) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.ConnectionPool.getResource(ConnectionPool.java:7) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.providers.PooledConnectionProvider.getConnection(PooledConnectionProvider.java:63) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.UnifiedJedis.subscribe(UnifiedJedis.java:3538) ~[?:?]
+	at me.lucko.luckperms.common.messaging.redis.RedisMessenger$Subscription.run(RedisMessenger.java:125) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1423) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) ~[?:?]
+[14:05:08] [Server thread/WARN]: java.util.concurrent.CompletionException: java.sql.SQLTransientConnectionException: luckperms-hikari - Connection is not available, request timed out after 5000ms.
+[14:05:08] [Server thread/WARN]: 	at me.lucko.luckperms.common.util.AsyncInterface.lambda$future$1(AsyncInterface.java:66)
+[14:05:08] [Server thread/WARN]: 	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804)
+[14:05:08] [Server thread/WARN]: 	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796)
+[14:05:08] [Server thread/WARN]: 	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
+[14:05:08] [Server thread/WARN]: 	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312)
+[14:05:08] [Server thread/WARN]: 	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)
+[14:05:08] [Server thread/WARN]: 	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)
+[14:05:08] [Server thread/WARN]: 	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
+[14:05:08] [Server thread/WARN]: Caused by: java.sql.SQLTransientConnectionException: luckperms-hikari - Connection is not available, request timed out after 5000ms.
+[14:05:08] [Server thread/WARN]: 	at me.lucko.luckperms.lib.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+[14:05:08] [Server thread/WARN]: 	at me.lucko.luckperms.lib.hikari.pool.HikariPool.getConnection(HikariPool.java:197)
+[14:05:08] [Server thread/WARN]: 	at me.lucko.luckperms.lib.hikari.pool.HikariPool.getConnection(HikariPool.java:162)
+[14:05:08] [Server thread/WARN]: 	at me.lucko.luckperms.lib.hikari.HikariDataSource.getConnection(HikariDataSource.java:100)
+[14:05:08] [Server thread/WARN]: 	at me.lucko.luckperms.common.storage.implementation.sql.connection.hikari.HikariConnectionFactory.getConnection(HikariConnectionFactory.java:169)
+[14:05:08] [Server thread/WARN]: 	at me.lucko.luckperms.common.storage.implementation.sql.SqlStorage.loadAllGroups(SqlStorage.java:533)
+[14:05:08] [Server thread/WARN]: 	at me.lucko.luckperms.common.storage.Storage.lambda$loadAllGroups$10(Storage.java:178)
+[14:05:08] [Server thread/WARN]: 	at me.lucko.luckperms.common.util.AsyncInterface.lambda$future$1(AsyncInterface.java:61)
+[14:05:08] [Server thread/WARN]: 	... 7 more
+[14:05:08] [Server thread/WARN]: Caused by: java.sql.SQLInvalidAuthorizationSpecException: (conn=2412) Access denied for user 'CHANGE_ME'@'172.25.0.3' (using password: YES)
+[14:05:08] [Server thread/WARN]: 	at me.lucko.luckperms.lib.mariadb.export.ExceptionFactory.createException(ExceptionFactory.java:286)
+[14:05:08] [Server thread/WARN]: 	at me.lucko.luckperms.lib.mariadb.export.ExceptionFactory.create(ExceptionFactory.java:370)
+[14:05:08] [Server thread/WARN]: 	at me.lucko.luckperms.lib.mariadb.client.impl.ConnectionHelper.authenticationHandler(ConnectionHelper.java:287)
+[14:05:08] [Server thread/WARN]: 	at me.lucko.luckperms.lib.mariadb.client.impl.StandardClient.<init>(StandardClient.java:185)
+[14:05:08] [Server thread/WARN]: 	at me.lucko.luckperms.lib.mariadb.Driver.connect(Driver.java:70)
+[14:05:08] [Server thread/WARN]: 	at me.lucko.luckperms.lib.mariadb.Driver.connect(Driver.java:101)
+[14:05:08] [Server thread/WARN]: 	at me.lucko.luckperms.lib.mariadb.Driver.connect(Driver.java:27)
+[14:05:08] [Server thread/WARN]: 	at me.lucko.luckperms.lib.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+[14:05:08] [Server thread/WARN]: 	at me.lucko.luckperms.lib.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
+[14:05:08] [Server thread/WARN]: 	at me.lucko.luckperms.lib.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+[14:05:08] [Server thread/WARN]: 	at me.lucko.luckperms.lib.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+[14:05:08] [Server thread/WARN]: 	at me.lucko.luckperms.lib.hikari.pool.HikariPool.access$100(HikariPool.java:71)
+[14:05:08] [Server thread/WARN]: 	at me.lucko.luckperms.lib.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:726)
+[14:05:08] [Server thread/WARN]: 	at me.lucko.luckperms.lib.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:712)
+[14:05:08] [Server thread/WARN]: 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+[14:05:08] [Server thread/WARN]: 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+[14:05:08] [Server thread/WARN]: 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+[14:05:08] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:1583)
+[14:05:08] [Server thread/INFO]: [LuckPerms] Successfully enabled. (took 10876ms)
+[14:05:08] [Server thread/INFO]: [ProtocolLib] Enabling ProtocolLib v5.4.0
+[14:05:08] [Server thread/INFO]: [CoinsEngine] Enabling CoinsEngine v2.6.0
+[14:05:08] [Server thread/INFO]: [CoinsEngine] Powered by nightcore
+[14:05:08] [Server thread/INFO]: [com.zaxxer.hikari.HikariDataSource] CoinsEnginePool - Starting...
+[14:05:08] [Server thread/INFO]: [com.zaxxer.hikari.pool.HikariPool] CoinsEnginePool - Added connection org.sqlite.jdbc4.JDBC4Connection@48e5195
+[14:05:08] [Server thread/INFO]: [com.zaxxer.hikari.HikariDataSource] CoinsEnginePool - Start completed.
+[14:05:08] [Server thread/INFO]: [CoinsEngine] Currency registered: 'quest_points'.
+[14:05:08] [Server thread/INFO]: [CoinsEngine] Currency registered: 'dungeon_marks'.
+[14:05:08] [Server thread/INFO]: [CoinsEngine] Currency registered: 'tokens'.
+[14:05:08] [Server thread/INFO]: [CoinsEngine] Currency registered: 'coins'.
+[14:05:08] [Server thread/INFO]: [CoinsEngine] Currency registered: 'money'.
+[14:05:08] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: coinsengine [2.6.0]
+[14:05:08] [Server thread/INFO]: [CoinsEngine] Plugin loaded in 244 ms!
+[14:05:08] [Server thread/INFO]: [nightcore] CoinsEngine detected! Loading currency...
+[14:05:08] [Server thread/INFO]: [nightcore] Currency registered: 'coinsengine_tokens'.
+[14:05:08] [Server thread/INFO]: [nightcore] Currency registered: 'coinsengine_coins'.
+[14:05:08] [Server thread/INFO]: [nightcore] Currency registered: 'coinsengine_quest_points'.
+[14:05:08] [Server thread/INFO]: [nightcore] Currency registered: 'coinsengine_dungeon_marks'.
+[14:05:08] [Server thread/INFO]: [Vault] Enabling Vault v2.17.0
+[14:05:08] [Server thread/INFO]: [Vault] Enabled Version 2.17.0
+[14:05:08] [Server thread/INFO]: [LuckPerms] Registered Vault permission & chat hook.
+[14:05:08] [Server thread/INFO]: [nightcore] Vault detected! Loading currency...
+[14:05:08] [Server thread/INFO]: [nightcore] Currency registered: 'vault'.
+[14:05:08] [Server thread/INFO]: [VoidGen] Enabling VoidGen v2.2.1
+[14:05:08] [Server thread/INFO]: [VoidGen] Using VoidChunkGen: VERSION_UNKNOWN
+[14:05:08] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[14:05:08] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[14:05:08] [Server thread/WARN]: Whilst this makes it possible to use Velocity, unless access to your server is properly restricted, it also opens up the ability for hackers to connect with any username they choose.
+[14:05:08] [Server thread/WARN]: Please see https://docs.papermc.io/velocity/security for further information.
+[14:05:08] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[14:05:08] [Server thread/INFO]: Preparing level "world"
+[14:05:08] [Server thread/INFO]: [VoidGen] Generator settings have not been set. Using default values:
+[14:05:08] [Server thread/INFO]: [VoidGen] {"caves":false,"decoration":false,"mobs":false,"structures":false,"noise":false,"surface":false,"bedrock":false}
+[14:05:09] [Server thread/INFO]: Loading 0 persistent chunks for world 'minecraft:overworld'...
+[14:05:09] [Server thread/INFO]: Prepared spawn area in 0 ms
+[14:05:09] [Server thread/INFO]: Loading 0 persistent chunks for world 'minecraft:the_nether'...
+[14:05:09] [Server thread/INFO]: Prepared spawn area in 0 ms
+[14:05:09] [Server thread/INFO]: Done preparing level "world" (0.235s)
+[14:05:09] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.11.7
+[14:05:09] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
+[14:05:09] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: vaultunlocked [2.13.1]
+[14:05:09] [Server thread/INFO]: [CMILib] Enabling CMILib v1.5.8.2
+[14:05:09] [Server thread/INFO]: Server version: v1_21_R6 - 1.21.10 - paper  1.21.10-16927-6c03ab0 (MC: 1.21.10)
+[14:05:10] [Server thread/INFO]: CMI hooked.
+[14:05:10] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: cmil [1.5.8.2]
+[14:05:10] [Server thread/INFO]: PlaceholderAPI hooked.
+[14:05:10] [Server thread/INFO]: Updated (EN) language file. Took 27ms
+[14:05:10] [Server thread/INFO]: Updated (DE) language file. Took 11ms
+[14:05:10] [Server thread/INFO]: [CommandAPI] Enabling CommandAPI v11.1.0
+[14:05:10] [Server thread/INFO]: [CommandAPI] Hooked into Paper ServerResourcesReloadedEvent
+[14:05:10] [Server thread/INFO]: [CMI] Enabling CMI v9.8.4.2
+[14:05:10] [Server thread/INFO]: _______________________________________________________
+[14:05:10] [Server thread/INFO]:  
+[14:05:10] [Server thread/INFO]:  ██████╗███╗   ███╗██╗
+[14:05:10] [Server thread/INFO]: ██╔════╝████╗ ████║██║
+[14:05:10] [Server thread/INFO]: ██║     ██╔████╔██║██║
+[14:05:10] [Server thread/INFO]: ██║     ██║╚██╔╝██║██║
+[14:05:10] [Server thread/INFO]: ╚██████╗██║ ╚═╝ ██║██║
+[14:05:10] [Server thread/INFO]:  ╚═════╝╚═╝     ╚═╝╚═╝
+[14:05:10] [Server thread/INFO]: _______________________________________________________
+[14:05:10] [Server thread/INFO]: Integrating PaperSpigot async methods
+[14:05:10] [Server thread/INFO]: Vault found. (Loaded: true)
+[14:05:10] [CMI Thread-1/INFO]: Loaded (-) locale download into memory. Took 5ms
+[14:05:10] [Server thread/INFO]: Loaded (69) 67 Enabled and 2 Disabled modules into memory. Took 68ms
+[14:05:10] [Server thread/INFO]: Initialized Cipher256 AES
+[14:05:10] [luckperms-hikari connection adder/WARN]: [me.lucko.luckperms.lib.mariadb.message.server.ErrorPacket] Error: 1045-28000: Access denied for user 'CHANGE_ME'@'172.25.0.3' (using password: YES)
+[14:05:10] [Server thread/INFO]: Loaded (61) regular alias into memory. Took 32ms
+[14:05:10] [CMI Thread-2/INFO]: Loaded (1) custom text's into memory. Took 5ms
+[14:05:10] [Server thread/INFO]: (RandomTeleportation) Can't find world with (world_the_end) name
+[14:05:10] [Server thread/INFO]: (RandomTeleportation) Can't find world with (lobby) name
+[14:05:10] [Server thread/INFO]: (RandomTeleportation) Can't find world with (town) name
+[14:05:10] [Server thread/INFO]: (RandomTeleportation) Can't find world with (freebuild) name
+[14:05:10] [Server thread/INFO]: (RandomTeleportation) Can't find world with (tycoon) name
+[14:05:10] [Server thread/INFO]: (RandomTeleportation) Can't find world with (SuperiorWorld) name
+[14:05:10] [Server thread/INFO]: (RandomTeleportation) Can't find world with (Schematics) name
+[14:05:10] [Server thread/INFO]: (RandomTeleportation) Can't find world with (rpg) name
+[14:05:10] [Server thread/INFO]: (RandomTeleportation) Can't find world with (rpg_nether) name
+[14:05:10] [Server thread/INFO]: (RandomTeleportation) Can't find world with (rpg_the_end) name
+[14:05:10] [Server thread/INFO]: SQLite 3.49.1 data base type detected
+[14:05:10] [Server thread/INFO]: Loaded (-) SqLite into memory. Took 68ms
+[14:05:10] [Server thread/INFO]: Vault was found - Enabling capabilities. Economy: Geld
+[14:05:10] [Server thread/INFO]: Loaded (5) warning categories into memory. Took 1ms
+[14:05:10] [Server thread/INFO]: Loaded (3) warning commands into memory. Took 0ms
+[14:05:10] [Server thread/INFO]: Loaded (0) cooldowns into memory. Took 1ms
+[14:05:10] [Server thread/INFO]: Loaded (154) custom mob heads into memory. Took 8ms
+[14:05:11] [Server thread/INFO]: Loaded (5) kits into memory. Took 159ms
+[14:05:11] [Server thread/INFO]: Loaded (5) dialogs into memory. Took 9ms
+[14:05:11] [Server thread/INFO]: Loaded (7) ranks into memory. Took 9ms
+[14:05:11] [Server thread/INFO]: Loaded (8) playtime rewards into memory. Took 1ms
+[14:05:11] [Server thread/INFO]: Executed Player DB querry in 1ms
+[14:05:11] [Server thread/INFO]: Loaded (12) player data into memory. Took 11ms
+[14:05:11] [Server thread/INFO]: Loaded (0) playtime records into memory. Took 0ms
+[14:05:11] [Server thread/INFO]: Loaded (0) playtime reward records into memory. Took 0ms
+[14:05:11] [Server thread/INFO]: Loaded (0) custom alias into memory. Took 0ms
+[14:05:11] [Server thread/INFO]: Loaded (-) Registered events into memory. Took 97ms
+[14:05:11] [Server thread/INFO]: Loaded (0) event action commands into memory. Took 2ms
+[14:05:11] [Server thread/INFO]: Loaded (EN) language file into memory. Took 76ms
+[14:05:11] [Server thread/INFO]: Loaded (DE) language file into memory. Took 51ms
+[14:05:11] [Server thread/INFO]: Loaded (245) worth values into memory. Took 51ms
+[14:05:11] [Server thread/INFO]: VaultPermissions found. (Loaded: true)
+[14:05:11] [Server thread/INFO]: PlaceholderAPI found. (Loaded: true)
+[14:05:11] [Server thread/INFO]: Loaded (4) schedules into memory. Took 3ms
+[14:05:11] [Server thread/INFO]: Loaded (0) skin cache entries into memory. Took 0ms
+[14:05:11] [Server thread/INFO]: [CMI] Preloading playtimetop statistics
+[14:05:11] [Server thread/INFO]: Loaded (0) ArmorStand templates into memory. Took 0ms
+[14:05:11] [Server thread/INFO]: Version 9.8.4.2 has been enabled
+[14:05:11] [Server thread/INFO]: _______________________________________________________
+[14:05:11] [Server thread/INFO]: [Oraxen] Enabling Oraxen v1.203.1
+[14:05:11] [Server thread/INFO]: Oraxen | [ProtocolLibAdapter] registerTitleListener called
+[14:05:11] [Server thread/INFO]: Oraxen | [ProtocolLibAdapter] Title Listener registered successfully
+[14:05:12] [Server thread/INFO]: Oraxen | Loaded 4 text effects
+[14:05:12] [Server thread/INFO]: Oraxen | Loaded 16 glyphs, 0 reference glyphs, 1 animated glyphs
+[14:05:12] [Server thread/INFO]: Oraxen | No HUDs loaded, skipping task registration
+[14:05:12] [Server thread/INFO]: Oraxen | Successfully loaded on Ubuntu 24.04.4 LTS (noble)
+[14:05:12] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: oraxen [1.203.1]
+[14:05:12] [Server thread/INFO]: Oraxen | Plugin "PlaceholderAPI" detected, enabling hooks
+[14:05:12] [Server thread/INFO]: [SuperiorSkyblock2] Enabling SuperiorSkyblock2 v2025.2.1
+[14:05:12] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission miner_3
+[14:05:12] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission miner_5
+[14:05:12] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission miner_2
+[14:05:12] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission miner_4
+[14:05:12] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission miner_1
+[14:05:12] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission slayer_4
+[14:05:12] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission slayer_1
+[14:05:12] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission slayer_2
+[14:05:12] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission slayer_3
+[14:05:12] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission farmer_2
+[14:05:12] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission farmer_5
+[14:05:12] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission farmer_1
+[14:05:12] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission farmer_3
+[14:05:12] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission farmer_4
+[14:05:12] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission fisherman_3
+[14:05:12] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission fisherman_2
+[14:05:12] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission fisherman_1
+[14:05:13] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission explorer_1
+[14:05:13] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission explorer_2
+[14:05:13] [luckperms-worker-1/INFO]: [LuckPerms] Redis pubsub connection re-established
+[14:05:13] [luckperms-worker-1/WARN]: [LuckPerms] Redis pubsub connection dropped, trying to re-open the connection
+me.lucko.luckperms.lib.jedis.exceptions.JedisAccessControlException: WRONGPASS invalid username-password pair or user is disabled.
+	at me.lucko.luckperms.lib.jedis.Protocol.processError(Protocol.java:92) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Protocol.process(Protocol.java:137) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Protocol.read(Protocol.java:192) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:335) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Connection.getStatusCodeReply(Connection.java:262) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Connection.auth(Connection.java:446) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Connection.initializeFromClientConfig(Connection.java:380) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Connection.<init>(Connection.java:61) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.ConnectionFactory.makeObject(ConnectionFactory.java:68) ~[?:?]
+	at me.lucko.luckperms.lib.commonspool2.impl.GenericObjectPool.create(GenericObjectPool.java:918) ~[?:?]
+	at me.lucko.luckperms.lib.commonspool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:431) ~[?:?]
+	at me.lucko.luckperms.lib.commonspool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:356) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.util.Pool.getResource(Pool.java:38) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.ConnectionPool.getResource(ConnectionPool.java:29) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.ConnectionPool.getResource(ConnectionPool.java:7) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.providers.PooledConnectionProvider.getConnection(PooledConnectionProvider.java:63) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.UnifiedJedis.subscribe(UnifiedJedis.java:3538) ~[?:?]
+	at me.lucko.luckperms.common.messaging.redis.RedisMessenger$Subscription.run(RedisMessenger.java:125) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1423) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) ~[?:?]
+[14:05:13] [Server thread/INFO]: [SuperiorSkyblock2] Enabling the module SlimeWorldIslands...
+[14:05:13] [Server thread/INFO]: [com.infernalsuite.asp.libs.hikari.HikariDataSource] HikariPool-1 - Starting...
+[14:05:15] [luckperms-hikari connection adder/WARN]: [me.lucko.luckperms.lib.mariadb.message.server.ErrorPacket] Error: 1045-28000: Access denied for user 'CHANGE_ME'@'172.25.0.3' (using password: YES)
+[14:05:18] [luckperms-worker-1/INFO]: [LuckPerms] Redis pubsub connection re-established
+[14:05:18] [luckperms-worker-1/WARN]: [LuckPerms] Redis pubsub connection dropped, trying to re-open the connection
+me.lucko.luckperms.lib.jedis.exceptions.JedisAccessControlException: WRONGPASS invalid username-password pair or user is disabled.
+	at me.lucko.luckperms.lib.jedis.Protocol.processError(Protocol.java:92) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Protocol.process(Protocol.java:137) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Protocol.read(Protocol.java:192) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:335) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Connection.getStatusCodeReply(Connection.java:262) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Connection.auth(Connection.java:446) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Connection.initializeFromClientConfig(Connection.java:380) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Connection.<init>(Connection.java:61) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.ConnectionFactory.makeObject(ConnectionFactory.java:68) ~[?:?]
+	at me.lucko.luckperms.lib.commonspool2.impl.GenericObjectPool.create(GenericObjectPool.java:918) ~[?:?]
+	at me.lucko.luckperms.lib.commonspool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:431) ~[?:?]
+	at me.lucko.luckperms.lib.commonspool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:356) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.util.Pool.getResource(Pool.java:38) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.ConnectionPool.getResource(ConnectionPool.java:29) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.ConnectionPool.getResource(ConnectionPool.java:7) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.providers.PooledConnectionProvider.getConnection(PooledConnectionProvider.java:63) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.UnifiedJedis.subscribe(UnifiedJedis.java:3538) ~[?:?]
+	at me.lucko.luckperms.common.messaging.redis.RedisMessenger$Subscription.run(RedisMessenger.java:125) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1423) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) ~[?:?]
+[14:05:18] [Server thread/WARN]: java.lang.reflect.InvocationTargetException
+[14:05:18] [Server thread/WARN]: 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:74)
+[14:05:18] [Server thread/WARN]: 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+[14:05:18] [Server thread/WARN]: 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+[14:05:18] [Server thread/WARN]: 	at com.bgsoftware.ssbslimeworldmanager.SlimeWorldModule.createAdapterInstance(SlimeWorldModule.java:168)
+[14:05:18] [Server thread/WARN]: 	at com.bgsoftware.ssbslimeworldmanager.SlimeWorldModule.loadAdapter(SlimeWorldModule.java:138)
+[14:05:18] [Server thread/WARN]: 	at com.bgsoftware.ssbslimeworldmanager.SlimeWorldModule.onEnable(SlimeWorldModule.java:50)
+[14:05:18] [Server thread/WARN]: 	at SuperiorSkyblock2-2025.2.1.jar//com.bgsoftware.superiorskyblock.module.ModulesManagerImpl.enableModule(ModulesManagerImpl.java:142)
+[14:05:18] [Server thread/WARN]: 	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+[14:05:18] [Server thread/WARN]: 	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+[14:05:18] [Server thread/WARN]: 	at java.base/java.util.LinkedList$LLSpliterator.forEachRemaining(LinkedList.java:1249)
+[14:05:18] [Server thread/WARN]: 	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+[14:05:18] [Server thread/WARN]: 	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+[14:05:18] [Server thread/WARN]: 	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+[14:05:18] [Server thread/WARN]: 	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+[14:05:18] [Server thread/WARN]: 	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+[14:05:18] [Server thread/WARN]: 	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+[14:05:18] [Server thread/WARN]: 	at SuperiorSkyblock2-2025.2.1.jar//com.bgsoftware.superiorskyblock.module.ModulesManagerImpl.enableModulesInternal(ModulesManagerImpl.java:196)
+[14:05:18] [Server thread/WARN]: 	at SuperiorSkyblock2-2025.2.1.jar//com.bgsoftware.superiorskyblock.module.ModulesManagerImpl.runModuleLifecycle(ModulesManagerImpl.java:187)
+[14:05:18] [Server thread/WARN]: 	at SuperiorSkyblock2-2025.2.1.jar//com.bgsoftware.superiorskyblock.SuperiorSkyblockPlugin.onEnable(SuperiorSkyblockPlugin.java:246)
+[14:05:18] [Server thread/WARN]: 	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:279)
+[14:05:18] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperPluginInstanceManager.enablePlugin(PaperPluginInstanceManager.java:211)
+[14:05:18] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.enablePlugin(PaperPluginManagerImpl.java:109)
+[14:05:18] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:520)
+[14:05:18] [Server thread/WARN]: 	at org.bukkit.craftbukkit.CraftServer.enablePlugin(CraftServer.java:639)
+[14:05:18] [Server thread/WARN]: 	at org.bukkit.craftbukkit.CraftServer.enablePlugins(CraftServer.java:596)
+[14:05:18] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.initPostWorld(MinecraftServer.java:637)
+[14:05:18] [Server thread/WARN]: 	at net.minecraft.server.dedicated.DedicatedServer.initServer(DedicatedServer.java:368)
+[14:05:18] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1257)
+[14:05:18] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:384)
+[14:05:18] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:1583)
+[14:05:18] [Server thread/WARN]: Caused by: com.bgsoftware.ssbslimeworldmanager.api.SWMAdapterLoadException: Failed to connect to MySQL
+[14:05:18] [Server thread/WARN]: 	at com.bgsoftware.ssbslimeworldmanager.swm.impl.asp4.SWMAdapter.createSlimeLoader(SWMAdapter.java:60)
+[14:05:18] [Server thread/WARN]: 	at com.bgsoftware.ssbslimeworldmanager.swm.impl.asp4.SWMAdapter.<init>(SWMAdapter.java:48)
+[14:05:18] [Server thread/WARN]: 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+[14:05:18] [Server thread/WARN]: 	... 29 more
+[14:05:18] [Server thread/WARN]: Caused by: com.infernalsuite.asp.libs.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+[14:05:18] [Server thread/WARN]: 	at asp-plugin-4.2.0-SNAPSHOT.jar//com.infernalsuite.asp.libs.hikari.pool.HikariPool.throwPoolInitializationException(HikariPool.java:606)
+[14:05:18] [Server thread/WARN]: 	at asp-plugin-4.2.0-SNAPSHOT.jar//com.infernalsuite.asp.libs.hikari.pool.HikariPool.checkFailFast(HikariPool.java:593)
+[14:05:18] [Server thread/WARN]: 	at asp-plugin-4.2.0-SNAPSHOT.jar//com.infernalsuite.asp.libs.hikari.pool.HikariPool.<init>(HikariPool.java:101)
+[14:05:18] [Server thread/WARN]: 	at asp-plugin-4.2.0-SNAPSHOT.jar//com.infernalsuite.asp.libs.hikari.HikariDataSource.<init>(HikariDataSource.java:80)
+[14:05:18] [Server thread/WARN]: 	at asp-plugin-4.2.0-SNAPSHOT.jar//com.infernalsuite.asp.loaders.mysql.MysqlLoader.<init>(MysqlLoader.java:68)
+[14:05:18] [Server thread/WARN]: 	at com.bgsoftware.ssbslimeworldmanager.swm.impl.asp4.SWMAdapter.createSlimeLoader(SWMAdapter.java:57)
+[14:05:18] [Server thread/WARN]: 	... 31 more
+[14:05:18] [Server thread/WARN]: Caused by: java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+[14:05:18] [Server thread/WARN]: 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:102)
+[14:05:18] [Server thread/WARN]: 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+[14:05:18] [Server thread/WARN]: 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:81)
+[14:05:18] [Server thread/WARN]: 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:55)
+[14:05:18] [Server thread/WARN]: 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:65)
+[14:05:18] [Server thread/WARN]: 	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:911)
+[14:05:18] [Server thread/WARN]: 	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:830)
+[14:05:18] [Server thread/WARN]: 	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:420)
+[14:05:18] [Server thread/WARN]: 	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:238)
+[14:05:18] [Server thread/WARN]: 	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180)
+[14:05:18] [Server thread/WARN]: 	at asp-plugin-4.2.0-SNAPSHOT.jar//com.infernalsuite.asp.libs.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:139)
+[14:05:18] [Server thread/WARN]: 	at asp-plugin-4.2.0-SNAPSHOT.jar//com.infernalsuite.asp.libs.hikari.pool.PoolBase.newConnection(PoolBase.java:367)
+[14:05:18] [Server thread/WARN]: 	at asp-plugin-4.2.0-SNAPSHOT.jar//com.infernalsuite.asp.libs.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:205)
+[14:05:18] [Server thread/WARN]: 	at asp-plugin-4.2.0-SNAPSHOT.jar//com.infernalsuite.asp.libs.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:484)
+[14:05:18] [Server thread/WARN]: 	at asp-plugin-4.2.0-SNAPSHOT.jar//com.infernalsuite.asp.libs.hikari.pool.HikariPool.checkFailFast(HikariPool.java:572)
+[14:05:18] [Server thread/WARN]: 	... 35 more
+[14:05:18] [Server thread/WARN]: Caused by: com.mysql.cj.exceptions.CJException: Access denied for user 'CHANGE_ME'@'172.25.0.3' (using password: YES)
+[14:05:18] [Server thread/WARN]: 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+[14:05:18] [Server thread/WARN]: 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+[14:05:18] [Server thread/WARN]: 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+[14:05:18] [Server thread/WARN]: 	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:52)
+[14:05:18] [Server thread/WARN]: 	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:95)
+[14:05:18] [Server thread/WARN]: 	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:140)
+[14:05:18] [Server thread/WARN]: 	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:118)
+[14:05:18] [Server thread/WARN]: 	at com.mysql.cj.protocol.a.NativeProtocol.checkErrorMessage(NativeProtocol.java:855)
+[14:05:18] [Server thread/WARN]: 	at com.mysql.cj.protocol.a.NativeProtocol.checkErrorMessage(NativeProtocol.java:778)
+[14:05:18] [Server thread/WARN]: 	at com.mysql.cj.protocol.a.NativeProtocol.checkErrorMessage(NativeProtocol.java:747)
+[14:05:18] [Server thread/WARN]: 	at com.mysql.cj.protocol.a.NativeProtocol.checkErrorMessage(NativeProtocol.java:148)
+[14:05:18] [Server thread/WARN]: 	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.proceedHandshakeWithPluggableAuthentication(NativeAuthenticationProvider.java:461)
+[14:05:18] [Server thread/WARN]: 	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.connect(NativeAuthenticationProvider.java:206)
+[14:05:18] [Server thread/WARN]: 	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1333)
+[14:05:18] [Server thread/WARN]: 	at com.mysql.cj.NativeSession.connect(NativeSession.java:155)
+[14:05:18] [Server thread/WARN]: 	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:851)
+[14:05:18] [Server thread/WARN]: 	... 44 more
+[14:05:18] [Server thread/ERROR]: [SuperiorSkyblock2] An unexpected error occurred while enabling the module SlimeWorldIslands.
+[14:05:18] [Server thread/ERROR]: [SuperiorSkyblock2] Contact Ome_R regarding this, this has nothing to do with the plugin.
+[14:05:18] [Server thread/ERROR]: [SuperiorSkyblock2] java.lang.RuntimeException: Could not find SWM/ASWM adapter. Ensure that your data source is correct in the config.yml for SlimeWorldIslands.
+	at com.bgsoftware.ssbslimeworldmanager.SlimeWorldModule.onEnable(SlimeWorldModule.java:52)
+	at SuperiorSkyblock2-2025.2.1.jar//com.bgsoftware.superiorskyblock.module.ModulesManagerImpl.enableModule(ModulesManagerImpl.java:142)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.LinkedList$LLSpliterator.forEachRemaining(LinkedList.java:1249)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at SuperiorSkyblock2-2025.2.1.jar//com.bgsoftware.superiorskyblock.module.ModulesManagerImpl.enableModulesInternal(ModulesManagerImpl.java:196)
+	at SuperiorSkyblock2-2025.2.1.jar//com.bgsoftware.superiorskyblock.module.ModulesManagerImpl.runModuleLifecycle(ModulesManagerImpl.java:187)
+	at SuperiorSkyblock2-2025.2.1.jar//com.bgsoftware.superiorskyblock.SuperiorSkyblockPlugin.onEnable(SuperiorSkyblockPlugin.java:246)
+	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:279)
+	at io.papermc.paper.plugin.manager.PaperPluginInstanceManager.enablePlugin(PaperPluginInstanceManager.java:211)
+	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.enablePlugin(PaperPluginManagerImpl.java:109)
+	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:520)
+	at org.bukkit.craftbukkit.CraftServer.enablePlugin(CraftServer.java:639)
+	at org.bukkit.craftbukkit.CraftServer.enablePlugins(CraftServer.java:596)
+	at net.minecraft.server.MinecraftServer.initPostWorld(MinecraftServer.java:637)
+	at net.minecraft.server.dedicated.DedicatedServer.initServer(DedicatedServer.java:368)
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1257)
+	at net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:384)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[14:05:18] [Server thread/INFO]: [SuperiorSkyblock2] Disabling the module SlimeWorldIslands...
+[14:05:18] [Server thread/INFO]: Loading 0 persistent chunks for world 'minecraft:superiorworld'...
+[14:05:18] [Server thread/INFO]: Preparing spawn area: 100%
+[14:05:18] [Server thread/INFO]: Prepared spawn area in 1 ms
+[14:05:18] [Server thread/INFO]: [SuperiorSkyblock2] Enabling the module bank...
+[14:05:18] [Server thread/INFO]: [SuperiorSkyblock2] Finished enabling the module bank (Took 3ms)
+[14:05:18] [Server thread/INFO]: [SuperiorSkyblock2] Enabling the module missions...
+[14:05:18] [Server thread/INFO]: [SuperiorSkyblock2] Finished enabling the module missions (Took 1ms)
+[14:05:18] [Server thread/INFO]: [SuperiorSkyblock2] Enabling the module generators...
+[14:05:18] [Server thread/INFO]: [SuperiorSkyblock2] Finished enabling the module generators (Took 4ms)
+[14:05:18] [Server thread/INFO]: [SuperiorSkyblock2] Enabling the module upgrades...
+[14:05:18] [Server thread/INFO]: [SuperiorSkyblock2] Finished enabling the module upgrades (Took 13ms)
+[14:05:18] [Server thread/INFO]: [SuperiorSkyblock2] Loading messages started...
+[14:05:19] [Server thread/INFO]: [SuperiorSkyblock2]  - Found 741 messages in the language files.
+[14:05:19] [Server thread/INFO]: [SuperiorSkyblock2] Loading messages done (Took 152ms)
+[14:05:19] [Server thread/WARN]: [org.bukkit.craftbukkit.legacy.CraftLegacy] Initializing Legacy Material Support. Unless you have legacy plugins and/or data this is a bug!
+[14:05:20] [luckperms-hikari connection adder/WARN]: [me.lucko.luckperms.lib.mariadb.message.server.ErrorPacket] Error: 1045-28000: Access denied for user 'CHANGE_ME'@'172.25.0.3' (using password: YES)
+[14:05:23] [luckperms-worker-1/INFO]: [LuckPerms] Redis pubsub connection re-established
+[14:05:23] [luckperms-worker-1/WARN]: [LuckPerms] Redis pubsub connection dropped, trying to re-open the connection
+me.lucko.luckperms.lib.jedis.exceptions.JedisAccessControlException: WRONGPASS invalid username-password pair or user is disabled.
+	at me.lucko.luckperms.lib.jedis.Protocol.processError(Protocol.java:92) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Protocol.process(Protocol.java:137) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Protocol.read(Protocol.java:192) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:335) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Connection.getStatusCodeReply(Connection.java:262) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Connection.auth(Connection.java:446) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Connection.initializeFromClientConfig(Connection.java:380) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Connection.<init>(Connection.java:61) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.ConnectionFactory.makeObject(ConnectionFactory.java:68) ~[?:?]
+	at me.lucko.luckperms.lib.commonspool2.impl.GenericObjectPool.create(GenericObjectPool.java:918) ~[?:?]
+	at me.lucko.luckperms.lib.commonspool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:431) ~[?:?]
+	at me.lucko.luckperms.lib.commonspool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:356) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.util.Pool.getResource(Pool.java:38) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.ConnectionPool.getResource(ConnectionPool.java:29) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.ConnectionPool.getResource(ConnectionPool.java:7) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.providers.PooledConnectionProvider.getConnection(PooledConnectionProvider.java:63) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.UnifiedJedis.subscribe(UnifiedJedis.java:3538) ~[?:?]
+	at me.lucko.luckperms.common.messaging.redis.RedisMessenger$Subscription.run(RedisMessenger.java:125) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1423) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) ~[?:?]
+[14:05:25] [luckperms-hikari connection adder/WARN]: [me.lucko.luckperms.lib.mariadb.message.server.ErrorPacket] Error: 1045-28000: Access denied for user 'CHANGE_ME'@'172.25.0.3' (using password: YES)
+[14:05:26] [Server thread/INFO]: [SuperiorSkyblock2] Successfully loaded schematic mycel_the_end.schematic (DefaultSchematicParser)
+[14:05:26] [Server thread/INFO]: [SuperiorSkyblock2] Successfully loaded schematic desert.schematic (DefaultSchematicParser)
+[14:05:26] [Server thread/INFO]: [SuperiorSkyblock2] Successfully loaded schematic mycel.schematic (DefaultSchematicParser)
+[14:05:26] [Server thread/INFO]: [SuperiorSkyblock2] Successfully loaded schematic normal_nether.schematic (DefaultSchematicParser)
+[14:05:26] [Server thread/INFO]: [SuperiorSkyblock2] Successfully loaded schematic mycel_nether.schematic (DefaultSchematicParser)
+[14:05:26] [Server thread/INFO]: [SuperiorSkyblock2] Successfully loaded schematic normal_the_end.schematic (DefaultSchematicParser)
+[14:05:26] [Server thread/INFO]: [SuperiorSkyblock2] Successfully loaded schematic normal.schematic (DefaultSchematicParser)
+[14:05:26] [Server thread/INFO]: [SuperiorSkyblock2] Successfully loaded schematic desert_nether.schematic (DefaultSchematicParser)
+[14:05:26] [Server thread/INFO]: [SuperiorSkyblock2] Successfully loaded schematic desert_the_end.schematic (DefaultSchematicParser)
+[14:05:26] [Server thread/INFO]: [SuperiorSkyblock2] Trying to connect to remote database (MariaDB)...
+[14:05:26] [Server thread/INFO]: [com.zaxxer.hikari.HikariDataSource] Database Pool - Starting...
+[14:05:27] [Server thread/ERROR]: [com.zaxxer.hikari.pool.HikariPool] Database Pool - Exception during pool initialization.
+java.sql.SQLException: Access denied for user 'CHANGE_ME'@'172.25.0.3' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-9.2.0.jar:9.2.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.2.0.jar:9.2.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:837) ~[mysql-connector-j-9.2.0.jar:9.2.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:420) ~[mysql-connector-j-9.2.0.jar:9.2.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:238) ~[mysql-connector-j-9.2.0.jar:9.2.0]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180) ~[mysql-connector-j-9.2.0.jar:9.2.0]
+	at SuperiorSkyblock2-2025.2.1.jar/com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[SuperiorSkyblock2-2025.2.1.jar:?]
+	at SuperiorSkyblock2-2025.2.1.jar/com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364) ~[SuperiorSkyblock2-2025.2.1.jar:?]
+	at SuperiorSkyblock2-2025.2.1.jar/com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[SuperiorSkyblock2-2025.2.1.jar:?]
+	at SuperiorSkyblock2-2025.2.1.jar/com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476) ~[SuperiorSkyblock2-2025.2.1.jar:?]
+	at SuperiorSkyblock2-2025.2.1.jar/com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) ~[SuperiorSkyblock2-2025.2.1.jar:?]
+	at SuperiorSkyblock2-2025.2.1.jar/com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[SuperiorSkyblock2-2025.2.1.jar:?]
+	at SuperiorSkyblock2-2025.2.1.jar/com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81) ~[SuperiorSkyblock2-2025.2.1.jar:?]
+	at SuperiorSkyblock2-2025.2.1.jar/com.bgsoftware.superiorskyblock.libs.com.bgsoftware.common.databasebridge.sql.session.MariaDBDatabaseSession.connect(MariaDBDatabaseSession.java:49) ~[SuperiorSkyblock2-2025.2.1.jar:?]
+	at SuperiorSkyblock2-2025.2.1.jar/com.bgsoftware.superiorskyblock.core.database.sql.DBSession.createConnection(DBSession.java:69) ~[SuperiorSkyblock2-2025.2.1.jar:?]
+	at SuperiorSkyblock2-2025.2.1.jar/com.bgsoftware.superiorskyblock.core.database.loader.sql.SQLDatabaseLoader.handleInitialize(SQLDatabaseLoader.java:28) ~[SuperiorSkyblock2-2025.2.1.jar:?]
+	at SuperiorSkyblock2-2025.2.1.jar/com.bgsoftware.superiorskyblock.core.database.loader.MachineStateDatabaseLoader.setState(MachineStateDatabaseLoader.java:24) ~[SuperiorSkyblock2-2025.2.1.jar:?]
+	at SuperiorSkyblock2-2025.2.1.jar/com.bgsoftware.superiorskyblock.core.database.loader.sql.SQLDatabaseLoader.setState(SQLDatabaseLoader.java:23) ~[SuperiorSkyblock2-2025.2.1.jar:?]
+	at SuperiorSkyblock2-2025.2.1.jar/com.bgsoftware.superiorskyblock.core.database.DataManager.runState(DataManager.java:278) ~[SuperiorSkyblock2-2025.2.1.jar:?]
+	at SuperiorSkyblock2-2025.2.1.jar/com.bgsoftware.superiorskyblock.core.database.DataManager.loadData(DataManager.java:52) ~[SuperiorSkyblock2-2025.2.1.jar:?]
+	at SuperiorSkyblock2-2025.2.1.jar/com.bgsoftware.superiorskyblock.SuperiorSkyblockPlugin.reloadPlugin(SuperiorSkyblockPlugin.java:484) ~[SuperiorSkyblock2-2025.2.1.jar:?]
+	at SuperiorSkyblock2-2025.2.1.jar/com.bgsoftware.superiorskyblock.SuperiorSkyblockPlugin.onEnable(SuperiorSkyblockPlugin.java:262) ~[SuperiorSkyblock2-2025.2.1.jar:?]
+	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:279) ~[aspaper-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at io.papermc.paper.plugin.manager.PaperPluginInstanceManager.enablePlugin(PaperPluginInstanceManager.java:211) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.enablePlugin(PaperPluginManagerImpl.java:109) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:520) ~[aspaper-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.CraftServer.enablePlugin(CraftServer.java:639) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at org.bukkit.craftbukkit.CraftServer.enablePlugins(CraftServer.java:596) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at net.minecraft.server.MinecraftServer.initPostWorld(MinecraftServer.java:637) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at net.minecraft.server.dedicated.DedicatedServer.initServer(DedicatedServer.java:368) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1257) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:384) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[?:?]
+[14:05:27] [Server thread/ERROR]: [SuperiorSkyblock2] An unexpected error occurred while connecting to the MariaDB database:
+[14:05:27] [Server thread/ERROR]: [SuperiorSkyblock2] com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Access denied for user 'CHANGE_ME'@'172.25.0.3' (using password: YES)
+	at SuperiorSkyblock2-2025.2.1.jar//com.zaxxer.hikari.pool.HikariPool.throwPoolInitializationException(HikariPool.java:596)
+	at SuperiorSkyblock2-2025.2.1.jar//com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:582)
+	at SuperiorSkyblock2-2025.2.1.jar//com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at SuperiorSkyblock2-2025.2.1.jar//com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
+	at SuperiorSkyblock2-2025.2.1.jar//com.bgsoftware.superiorskyblock.libs.com.bgsoftware.common.databasebridge.sql.session.MariaDBDatabaseSession.connect(MariaDBDatabaseSession.java:49)
+	at SuperiorSkyblock2-2025.2.1.jar//com.bgsoftware.superiorskyblock.core.database.sql.DBSession.createConnection(DBSession.java:69)
+	at SuperiorSkyblock2-2025.2.1.jar//com.bgsoftware.superiorskyblock.core.database.loader.sql.SQLDatabaseLoader.handleInitialize(SQLDatabaseLoader.java:28)
+	at SuperiorSkyblock2-2025.2.1.jar//com.bgsoftware.superiorskyblock.core.database.loader.MachineStateDatabaseLoader.setState(MachineStateDatabaseLoader.java:24)
+	at SuperiorSkyblock2-2025.2.1.jar//com.bgsoftware.superiorskyblock.core.database.loader.sql.SQLDatabaseLoader.setState(SQLDatabaseLoader.java:23)
+	at SuperiorSkyblock2-2025.2.1.jar//com.bgsoftware.superiorskyblock.core.database.DataManager.runState(DataManager.java:278)
+	at SuperiorSkyblock2-2025.2.1.jar//com.bgsoftware.superiorskyblock.core.database.DataManager.loadData(DataManager.java:52)
+	at SuperiorSkyblock2-2025.2.1.jar//com.bgsoftware.superiorskyblock.SuperiorSkyblockPlugin.reloadPlugin(SuperiorSkyblockPlugin.java:484)
+	at SuperiorSkyblock2-2025.2.1.jar//com.bgsoftware.superiorskyblock.SuperiorSkyblockPlugin.onEnable(SuperiorSkyblockPlugin.java:262)
+	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:279)
+	at io.papermc.paper.plugin.manager.PaperPluginInstanceManager.enablePlugin(PaperPluginInstanceManager.java:211)
+	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.enablePlugin(PaperPluginManagerImpl.java:109)
+	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:520)
+	at org.bukkit.craftbukkit.CraftServer.enablePlugin(CraftServer.java:639)
+	at org.bukkit.craftbukkit.CraftServer.enablePlugins(CraftServer.java:596)
+	at net.minecraft.server.MinecraftServer.initPostWorld(MinecraftServer.java:637)
+	at net.minecraft.server.dedicated.DedicatedServer.initServer(DedicatedServer.java:368)
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1257)
+	at net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:384)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.sql.SQLException: Access denied for user 'CHANGE_ME'@'172.25.0.3' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:837)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:420)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:238)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180)
+	at SuperiorSkyblock2-2025.2.1.jar//com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at SuperiorSkyblock2-2025.2.1.jar//com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
+	at SuperiorSkyblock2-2025.2.1.jar//com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at SuperiorSkyblock2-2025.2.1.jar//com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at SuperiorSkyblock2-2025.2.1.jar//com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	... 22 more
+
+[14:05:27] [Server thread/ERROR]: [SuperiorSkyblock2] An unexpected error occurred while starting up the plugin:
+[14:05:27] [Server thread/ERROR]: [SuperiorSkyblock2] com.bgsoftware.superiorskyblock.core.errors.ManagerLoadException: Couldn't connect to the database.
+Make sure all information is correct.
+	at SuperiorSkyblock2-2025.2.1.jar//com.bgsoftware.superiorskyblock.core.database.loader.sql.SQLDatabaseLoader.handleInitialize(SQLDatabaseLoader.java:29)
+	at SuperiorSkyblock2-2025.2.1.jar//com.bgsoftware.superiorskyblock.core.database.loader.MachineStateDatabaseLoader.setState(MachineStateDatabaseLoader.java:24)
+	at SuperiorSkyblock2-2025.2.1.jar//com.bgsoftware.superiorskyblock.core.database.loader.sql.SQLDatabaseLoader.setState(SQLDatabaseLoader.java:23)
+	at SuperiorSkyblock2-2025.2.1.jar//com.bgsoftware.superiorskyblock.core.database.DataManager.runState(DataManager.java:278)
+	at SuperiorSkyblock2-2025.2.1.jar//com.bgsoftware.superiorskyblock.core.database.DataManager.loadData(DataManager.java:52)
+	at SuperiorSkyblock2-2025.2.1.jar//com.bgsoftware.superiorskyblock.SuperiorSkyblockPlugin.reloadPlugin(SuperiorSkyblockPlugin.java:484)
+	at SuperiorSkyblock2-2025.2.1.jar//com.bgsoftware.superiorskyblock.SuperiorSkyblockPlugin.onEnable(SuperiorSkyblockPlugin.java:262)
+	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:279)
+	at io.papermc.paper.plugin.manager.PaperPluginInstanceManager.enablePlugin(PaperPluginInstanceManager.java:211)
+	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.enablePlugin(PaperPluginManagerImpl.java:109)
+	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:520)
+	at org.bukkit.craftbukkit.CraftServer.enablePlugin(CraftServer.java:639)
+	at org.bukkit.craftbukkit.CraftServer.enablePlugins(CraftServer.java:596)
+	at net.minecraft.server.MinecraftServer.initPostWorld(MinecraftServer.java:637)
+	at net.minecraft.server.dedicated.DedicatedServer.initServer(DedicatedServer.java:368)
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1257)
+	at net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:384)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[14:05:27] [Server thread/ERROR]: [SuperiorSkyblock2] ################################################
+[14:05:27] [Server thread/ERROR]: [SuperiorSkyblock2] ##                                            ##
+[14:05:27] [Server thread/ERROR]: [SuperiorSkyblock2] ## An error occured while loading the plugin! ##
+[14:05:27] [Server thread/ERROR]: [SuperiorSkyblock2] ##                                            ##
+[14:05:27] [Server thread/ERROR]: [SuperiorSkyblock2] ################################################
+[14:05:27] [Server thread/ERROR]: [SuperiorSkyblock2]  
+[14:05:27] [Server thread/ERROR]: [SuperiorSkyblock2] Couldn't connect to the database.
+[14:05:27] [Server thread/ERROR]: [SuperiorSkyblock2] Make sure all information is correct.
+[14:05:27] [Server thread/ERROR]: [SuperiorSkyblock2]  
+[14:05:27] [Server thread/ERROR]: [SuperiorSkyblock2] Stack Trace:
+[14:05:27] [Server thread/ERROR]: [SuperiorSkyblock2] 	at SuperiorSkyblock2-2025.2.1.jar//com.bgsoftware.superiorskyblock.core.database.loader.MachineStateDatabaseLoader.setState(MachineStateDatabaseLoader.java:24)
+[14:05:27] [Server thread/ERROR]: [SuperiorSkyblock2] 	at SuperiorSkyblock2-2025.2.1.jar//com.bgsoftware.superiorskyblock.core.database.loader.sql.SQLDatabaseLoader.setState(SQLDatabaseLoader.java:23)
+[14:05:27] [Server thread/ERROR]: [SuperiorSkyblock2] 	at SuperiorSkyblock2-2025.2.1.jar//com.bgsoftware.superiorskyblock.core.database.DataManager.runState(DataManager.java:278)
+[14:05:27] [Server thread/ERROR]: [SuperiorSkyblock2] 	at SuperiorSkyblock2-2025.2.1.jar//com.bgsoftware.superiorskyblock.core.database.DataManager.loadData(DataManager.java:52)
+[14:05:27] [Server thread/ERROR]: [SuperiorSkyblock2] 	at SuperiorSkyblock2-2025.2.1.jar//com.bgsoftware.superiorskyblock.SuperiorSkyblockPlugin.reloadPlugin(SuperiorSkyblockPlugin.java:484)
+[14:05:27] [Server thread/ERROR]: [SuperiorSkyblock2] 	at SuperiorSkyblock2-2025.2.1.jar//com.bgsoftware.superiorskyblock.SuperiorSkyblockPlugin.onEnable(SuperiorSkyblockPlugin.java:262)
+[14:05:27] [Server thread/ERROR]: [SuperiorSkyblock2] 	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:279)
+[14:05:27] [Server thread/ERROR]: [SuperiorSkyblock2] 	at io.papermc.paper.plugin.manager.PaperPluginInstanceManager.enablePlugin(PaperPluginInstanceManager.java:211)
+[14:05:27] [Server thread/ERROR]: [SuperiorSkyblock2] 	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.enablePlugin(PaperPluginManagerImpl.java:109)
+[14:05:27] [Server thread/ERROR]: [SuperiorSkyblock2] 	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:520)
+[14:05:27] [Server thread/ERROR]: [SuperiorSkyblock2] 	at org.bukkit.craftbukkit.CraftServer.enablePlugin(CraftServer.java:639)
+[14:05:27] [Server thread/ERROR]: [SuperiorSkyblock2] 	at org.bukkit.craftbukkit.CraftServer.enablePlugins(CraftServer.java:596)
+[14:05:27] [Server thread/ERROR]: [SuperiorSkyblock2] 	at net.minecraft.server.MinecraftServer.initPostWorld(MinecraftServer.java:637)
+[14:05:27] [Server thread/ERROR]: [SuperiorSkyblock2] 	at net.minecraft.server.dedicated.DedicatedServer.initServer(DedicatedServer.java:368)
+[14:05:27] [Server thread/ERROR]: [SuperiorSkyblock2] 	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1257)
+[14:05:27] [Server thread/ERROR]: [SuperiorSkyblock2] 	at net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:384)
+[14:05:27] [Server thread/ERROR]: [SuperiorSkyblock2] 	at java.base/java.lang.Thread.run(Thread.java:1583)
+[14:05:27] [Server thread/ERROR]: [SuperiorSkyblock2]  
+[14:05:27] [Server thread/ERROR]: [SuperiorSkyblock2] ################################################
+[14:05:27] [Server thread/INFO]: [RoseStacker] Enabling RoseStacker v1.5.37
+[14:05:28] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: rosestacker [1.5.37]
+[14:05:28] [Server thread/INFO]: [Aurora] Enabling Aurora v2.5.1
+[14:05:28] [Server thread/INFO]: [Aurora] [ACF] Enabled Asynchronous Tab Completion Support!
+[14:05:28] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: aurora [1.0]
+[14:05:28] [luckperms-worker-1/INFO]: [LuckPerms] Redis pubsub connection re-established
+[14:05:28] [Server thread/INFO]: Aurora | Loaded 2 economy providers. Vault, CoinsEngine
+[14:05:28] [Server thread/INFO]: Aurora | Using Vault as the default economy provider.
+[14:05:28] [luckperms-worker-1/WARN]: [LuckPerms] Redis pubsub connection dropped, trying to re-open the connection
+me.lucko.luckperms.lib.jedis.exceptions.JedisAccessControlException: WRONGPASS invalid username-password pair or user is disabled.
+	at me.lucko.luckperms.lib.jedis.Protocol.processError(Protocol.java:92) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Protocol.process(Protocol.java:137) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Protocol.read(Protocol.java:192) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:335) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Connection.getStatusCodeReply(Connection.java:262) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Connection.auth(Connection.java:446) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Connection.initializeFromClientConfig(Connection.java:380) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Connection.<init>(Connection.java:61) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.ConnectionFactory.makeObject(ConnectionFactory.java:68) ~[?:?]
+	at me.lucko.luckperms.lib.commonspool2.impl.GenericObjectPool.create(GenericObjectPool.java:918) ~[?:?]
+	at me.lucko.luckperms.lib.commonspool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:431) ~[?:?]
+	at me.lucko.luckperms.lib.commonspool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:356) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.util.Pool.getResource(Pool.java:38) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.ConnectionPool.getResource(ConnectionPool.java:29) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.ConnectionPool.getResource(ConnectionPool.java:7) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.providers.PooledConnectionProvider.getConnection(PooledConnectionProvider.java:63) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.UnifiedJedis.subscribe(UnifiedJedis.java:3538) ~[?:?]
+	at me.lucko.luckperms.common.messaging.redis.RedisMessenger$Subscription.run(RedisMessenger.java:125) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1423) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) ~[?:?]
+[14:05:28] [Server thread/INFO]: Aurora | Registered item resolver oraxen with priority 120
+[14:05:28] [Server thread/INFO]: Aurora | Registered item resolver aurora with priority 80
+[14:05:28] [Server thread/INFO]: [gg.auroramc.aurora.libs.hikari.HikariDataSource] aurora-leaderboard-pool - Starting...
+[14:05:28] [Server thread/INFO]: [gg.auroramc.aurora.libs.hikari.pool.HikariPool] aurora-leaderboard-pool - Added connection org.sqlite.jdbc4.JDBC4Connection@d5061ee
+[14:05:28] [Server thread/INFO]: [gg.auroramc.aurora.libs.hikari.HikariDataSource] aurora-leaderboard-pool - Start completed.
+[14:05:28] [Server thread/INFO]: [DeluxeBazaar] Enabling DeluxeBazaar v10.2
+[14:05:28] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: bazaar [2.0]
+[14:05:28] [Server thread/INFO]: [DeluxeBazaar] (INFO) Enabled PlaceholderAPI support!
+[14:05:28] [Server thread/INFO]: [NBTAPI] [NBTAPI] Found Minecraft: 1.21.10! Trying to find NMS support
+[14:05:28] [Server thread/WARN]: [NBTAPI] [NBTAPI] This Server-Version(1.21.10-R0.1-SNAPSHOT) is not supported by this NBT-API Version(2.15.1) located in DeluxeBazaar. The NBT-API will try to work as good as it can! Some functions may not work!
+[14:05:28] [Server thread/INFO]: [NBTAPI] [NBTAPI] Using the plugin 'DeluxeBazaar' to create a bStats instance!
+[14:05:28] [Server thread/INFO]: [DeluxeBazaar] (INFO) Your server is running on 1.21.
+[14:05:28] [Server thread/INFO]: [DeluxeBazaar] (INFO) Database successfully loaded! Took 1ms to complete!
+[14:05:28] [Server thread/INFO]: [DeluxeBazaar] (INFO) Plugin is enabled! Plugin Version: v10.2
+[14:05:28] [Server thread/INFO]: [JetsMinions] Enabling JetsMinions v7.12.1
+[14:05:28] [Server thread/INFO]: [JetsMinions] Initialising Plugin v7.12.1...
+[14:05:28] [Server thread/INFO]: [JetsMinions] hooks.yml found, loading!
+[14:05:28] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: jetsminions [1.0.0]
+[14:05:28] [Server thread/INFO]: [JetsMinions] skins.yml found, loading!
+[14:05:28] [Server thread/INFO]: [JetsMinions] config.yml found, loading!
+[14:05:28] [Server thread/INFO]: [JetsMinions] Version is 1.21.10-16927-6c03ab0 (MC: 1.21.10)
+[14:05:28] [Server thread/INFO]: [JetsMinions] messages.yml found, loading!
+[14:05:28] [Server thread/INFO]: [JetsMinions] controlpanel.yml found, loading!
+[14:05:28] [Server thread/INFO]: [JetsMinions] players.yml found, loading!
+[14:05:28] [Server thread/INFO]: [JetsMinions] store.yml found, loading!
+[14:05:28] [Server thread/INFO]: [JetsMinions] Loaded Minion: Miner Made by Jet315
+[14:05:28] [Server thread/INFO]: [JetsMinions] Loaded Minion: Slayer Made by Jet315
+[14:05:28] [Server thread/INFO]: [JetsMinions] Loaded Minion: Collector Made by Jet315
+[14:05:28] [Server thread/INFO]: [JetsMinions] Loaded Minion: Feeder Made by Jet315
+[14:05:28] [Server thread/INFO]: [JetsMinions] Loaded Minion: Lumberjack Made by Jet315
+[14:05:28] [Server thread/INFO]: [JetsMinions] Loaded Minion: Farmer Made by Jet315
+[14:05:28] [Server thread/INFO]: [JetsMinions] Loaded Minion: Fisher Made by Jet315
+[14:05:28] [Server thread/INFO]: [JetsMinions] Loaded Minion: Seller Made by Jet315
+[14:05:28] [Server thread/INFO]: [JetsMinions] Initialising Complete in 151ms
+[14:05:28] [Server thread/INFO]: [HuskSync] Enabling HuskSync v3.8.8-0772f09
+[14:05:28] [Server thread/INFO]: [NBTAPI] [NBTAPI] Found Minecraft: 1.21.10! Trying to find NMS support
+[14:05:28] [Server thread/INFO]: [NBTAPI] [NBTAPI] NMS support 'MC1_21_R6' loaded!
+[14:05:28] [Server thread/INFO]: [NBTAPI] [NBTAPI] Using the plugin 'HuskSync' to create a bStats instance!
+[14:05:28] [Server thread/INFO]: [HuskSync] Initializing commands...
+[14:05:28] [Server thread/INFO]: [HuskSync] Successfully initialized commands
+[14:05:28] [Server thread/INFO]: [HuskSync] Initializing data adapter...
+[14:05:28] [Server thread/INFO]: [HuskSync] Successfully initialized data adapter
+[14:05:28] [Server thread/INFO]: [HuskSync] Initializing data serializers...
+[14:05:28] [Server thread/INFO]: [HuskSync] Successfully initialized data serializers
+[14:05:28] [Server thread/INFO]: [HuskSync] Initializing data migrators/converters...
+[14:05:28] [Server thread/INFO]: [HuskSync] Successfully initialized data migrators/converters
+[14:05:28] [Server thread/INFO]: [HuskSync] Initializing MariaDB database connection...
+[14:05:28] [Server thread/INFO]: [net.william278.husksync.libraries.hikari.HikariDataSource] HuskSyncHikariPool - Starting...
+[14:05:28] [Server thread/WARN]: [org.mariadb.jdbc.Configuration] `useSsl` option is deprecated, replaced by option `sslMode`
+[14:05:29] [Server thread/ERROR]: Error occurred while enabling HuskSync v3.8.8-0772f09 (Is it up to date?)
+net.william278.husksync.HuskSync$FailedToLoadException: HuskSync has failed to load! The plugin will not be enabled and no data will be synchronized.
+Please make sure the plugin has been setup correctly (https://william278.net/docs/husksync/setup):
+
+1) Make sure you've entered your MySQL, MariaDB or MongoDB database details correctly in config.yml
+2) Make sure your Redis server details are also correct in config.yml
+3) Make sure your config is up-to-date (https://william278.net/docs/husksync/config-file)
+4) Check the error below for more details
+
+Caused by: Failed to initialize MariaDB database connection
+	at HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar/net.william278.husksync.HuskSync.initialize(HuskSync.java:157) ~[HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar:?]
+	at HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar/net.william278.husksync.BukkitHuskSync.onEnable(BukkitHuskSync.java:196) ~[HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar:?]
+	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:279) ~[aspaper-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at io.papermc.paper.plugin.manager.PaperPluginInstanceManager.enablePlugin(PaperPluginInstanceManager.java:211) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.enablePlugin(PaperPluginManagerImpl.java:109) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:520) ~[aspaper-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.CraftServer.enablePlugin(CraftServer.java:639) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at org.bukkit.craftbukkit.CraftServer.enablePlugins(CraftServer.java:596) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at net.minecraft.server.MinecraftServer.initPostWorld(MinecraftServer.java:637) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at net.minecraft.server.dedicated.DedicatedServer.initServer(DedicatedServer.java:368) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1257) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:384) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[?:?]
+Caused by: java.lang.RuntimeException: java.lang.IllegalStateException: Failed to establish a connection to the MySQL database. Please check the supplied database credentials in the config file
+	at HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar/net.william278.husksync.libraries.desertwell.util.ThrowingConsumer.accept(ThrowingConsumer.java:45) ~[HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar:?]
+	at HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar/net.william278.husksync.HuskSync.initialize(HuskSync.java:155) ~[HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar:?]
+	... 12 more
+Caused by: java.lang.IllegalStateException: Failed to establish a connection to the MySQL database. Please check the supplied database credentials in the config file
+	at HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar/net.william278.husksync.database.MySqlDatabase.initialize(MySqlDatabase.java:134) ~[HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar:?]
+	at HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar/net.william278.husksync.BukkitHuskSync.lambda$onEnable$5(BukkitHuskSync.java:202) ~[HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar:?]
+	at HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar/net.william278.husksync.libraries.desertwell.util.ThrowingConsumer.accept(ThrowingConsumer.java:43) ~[HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar:?]
+	at HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar/net.william278.husksync.HuskSync.initialize(HuskSync.java:155) ~[HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar:?]
+	... 12 more
+Caused by: java.sql.SQLNonTransientConnectionException: (conn=2421) Trying to connect with ssl, but ssl not enabled in the server
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:300) ~[?:?]
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:354) ~[?:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.validateServerSslCapability(StandardClient.java:222) ~[?:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.handleSSLConnection(StandardClient.java:191) ~[?:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.setupConnection(StandardClient.java:149) ~[?:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.<init>(StandardClient.java:127) ~[?:?]
+	at org.mariadb.jdbc.Driver.connect(Driver.java:75) ~[?:?]
+	at org.mariadb.jdbc.Driver.connect(Driver.java:104) ~[?:?]
+	at org.mariadb.jdbc.Driver.connect(Driver.java:29) ~[?:?]
+	at HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar/net.william278.husksync.libraries.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar:?]
+	at HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar/net.william278.husksync.libraries.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar:?]
+	at HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar/net.william278.husksync.libraries.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar:?]
+	at HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar/net.william278.husksync.libraries.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar:?]
+	at HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar/net.william278.husksync.libraries.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576) ~[HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar:?]
+	at HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar/net.william278.husksync.libraries.hikari.pool.HikariPool.<init>(HikariPool.java:97) ~[HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar:?]
+	at HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar/net.william278.husksync.libraries.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar:?]
+	at HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar/net.william278.husksync.database.MySqlDatabase.initialize(MySqlDatabase.java:123) ~[HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar:?]
+	at HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar/net.william278.husksync.BukkitHuskSync.lambda$onEnable$5(BukkitHuskSync.java:202) ~[HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar:?]
+	at HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar/net.william278.husksync.libraries.desertwell.util.ThrowingConsumer.accept(ThrowingConsumer.java:43) ~[HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar:?]
+	at HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar/net.william278.husksync.HuskSync.initialize(HuskSync.java:155) ~[HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar:?]
+	... 12 more
+[14:05:29] [Server thread/INFO]: [HuskSync] Disabling HuskSync v3.8.8-0772f09
+[14:05:29] [Server thread/ERROR]: Error occurred while disabling HuskSync v3.8.8-0772f09
+java.lang.NullPointerException: Cannot invoke "net.william278.husksync.redis.RedisManager.terminate()" because the return value of "net.william278.husksync.HuskSync.getRedisManager()" is null
+	at HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar/net.william278.husksync.listener.EventListener.handlePluginDisable(EventListener.java:127) ~[HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar:?]
+	at HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar/net.william278.husksync.listener.BukkitEventListener.handlePluginDisable(BukkitEventListener.java:60) ~[HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar:?]
+	at HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar/net.william278.husksync.BukkitHuskSync.onDisable(BukkitHuskSync.java:245) ~[HuskSync-Bukkit-3.8.8-0772f09+mc.1.21.10.jar:?]
+	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:285) ~[aspaper-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at io.papermc.paper.plugin.manager.PaperPluginInstanceManager.disablePlugin(PaperPluginInstanceManager.java:246) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.disablePlugin(PaperPluginManagerImpl.java:114) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at org.bukkit.plugin.SimplePluginManager.disablePlugin(SimplePluginManager.java:550) ~[aspaper-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at io.papermc.paper.plugin.manager.PaperPluginInstanceManager.enablePlugin(PaperPluginInstanceManager.java:215) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.enablePlugin(PaperPluginManagerImpl.java:109) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:520) ~[aspaper-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.CraftServer.enablePlugin(CraftServer.java:639) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at org.bukkit.craftbukkit.CraftServer.enablePlugins(CraftServer.java:596) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at net.minecraft.server.MinecraftServer.initPostWorld(MinecraftServer.java:637) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at net.minecraft.server.dedicated.DedicatedServer.initServer(DedicatedServer.java:368) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1257) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:384) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[?:?]
+[14:05:29] [Server thread/INFO]: [PartyAndFriendsGUI] Enabling PartyAndFriendsGUI v1.0.258-E
+[14:05:30] [Server thread/INFO]: [GlobalMarketPlus] Enabling GlobalMarketPlus v1.3.6.4
+[14:05:30] [Server thread/INFO]: [GlobalMarketPlus] Properties has been loaded!
+[14:05:30] [Server thread/INFO]: [GlobalMarketPlus] Plugin loading...
+[14:05:30] [Server thread/INFO]: [GlobalMarketPlus] Enabled Event Listener .
+[14:05:30] [Server thread/INFO]: [GlobalMarketPlus] Enabled Command Listener .
+[14:05:30] [Server thread/INFO]:   _____  _         _            _    __  __               _           _      _____   _
+[14:05:30] [Server thread/INFO]:  / ____|| |       | |          | |  |  \/  |             | |         | |    |  __ \ | |
+[14:05:30] [Server thread/INFO]: | |  __ | |  ___  | |__   __ _ | |  | \  / |  __ _  _ __ | | __  ___ | |_   | |__) || | _   _  ___
+[14:05:30] [Server thread/INFO]: | | |_ || | / _ \ | '_ \ / _` || |  | |\/| | / _` || '__|| |/ / / _ \| __|  |  ___/ | || | | |/ __|
+[14:05:30] [Server thread/INFO]: | |__| || || (_) || |_) | (_| || |  | |  | || (_| || |   |   < |  __/| |_   | |     | || |_| |\__ \
+[14:05:30] [Server thread/INFO]:  \_____||_| \___/ |_.__/ \__,_||_|  |_|  |_| \__,_||_|   |_|\_\ \___| \__|  |_|     |_| \__,_||___/
+[14:05:30] [Server thread/INFO]: 
+[14:05:30] [Server thread/INFO]: [GlobalMarketPlus] Loading plugins/.paper-remapped/GlobalMarketPlus-1.3.6.4.jar L=1273309
+[14:05:30] [Server thread/INFO]: [AuroraCollections] Enabling AuroraCollections v1.5.7
+[14:05:30] [Server thread/INFO]: [AuroraCollections] [ACF] Enabled Asynchronous Tab Completion Support!
+[14:05:30] [Server thread/INFO]: AuroraCollections | Hooked into LuckPerms for permission rewards with reward type: 'permission'. Auto reward corrector for permissions is registered.
+[14:05:30] [Server thread/INFO]: [ASPaperPlugin] Enabling ASPaperPlugin v6c03ab04a2d70bd8a2b9fc630e149bb354eef42d
+[14:05:30] [Server thread/INFO]: [com.infernalsuite.asp.AdvancedSlimePaper] World spawn loaded in 26ms.
+[14:05:30] [Server thread/INFO]: [spark] Starting background profiler...
+[14:05:30] [luckperms-hikari connection adder/WARN]: [me.lucko.luckperms.lib.mariadb.message.server.ErrorPacket] Error: 1045-28000: Access denied for user 'CHANGE_ME'@'172.25.0.3' (using password: YES)
+[14:05:30] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
+[14:05:30] [Server thread/INFO]: Running delayed init tasks
+[14:05:30] [Server thread/INFO]: [CMI] Permission plugin: LuckPerms5.5.0
+[14:05:30] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: cmi [9.8.4.2]
+[14:05:30] [Server thread/INFO]: [CMI] PlaceholderAPI hooked.
+[14:05:30] [Server thread/INFO]: [SuperiorSkyblock2] Using RoseStacker as a spawners provider.
+[14:05:30] [Craft Scheduler Thread - 8 - CMILib/INFO]: New version of CMILib was detected. Please update it (1.5.8.2 -> 1.5.9.2)
+[14:05:30] [Server thread/INFO]: [SuperiorSkyblock2] Using RoseStacker as a stacked-blocks provider.
+[14:05:30] [Server thread/INFO]: [SuperiorSkyblock2] Using LuckPerms as a permissions provider.
+[14:05:30] [Server thread/INFO]: [SuperiorSkyblock2] Hooked into CMI for support of vanish status of players.
+[14:05:30] [Server thread/INFO]: [SuperiorSkyblock2] Hooked into CMI for support of afk status of players.
+[14:05:30] [Server thread/INFO]: [SuperiorSkyblock2] Using Vault as an economy provider.
+[14:05:30] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: superior [2025.2.1]
+[14:05:30] [Server thread/INFO]: [SuperiorSkyblock2] Using PlaceholderAPI for placeholders support.
+[14:05:30] [Server thread/INFO]: [SuperiorSkyblock2] Detected PaperSpigot - Using async chunk-loading support with PaperMC.
+[14:05:30] [Craft Scheduler Thread - 10 - RoseStacker/INFO]: [RoseStacker] An update for RoseStacker (v1.5.39) is available! You are running v1.5.37.
+[14:05:30] [Server thread/INFO]: Done (42.868s)! For help, type "help"
+[14:05:30] [Server thread/INFO]: Stopping server
+[14:05:30] [Server thread/INFO]: [ASPaperPlugin] Disabling ASPaperPlugin v6c03ab04a2d70bd8a2b9fc630e149bb354eef42d
+[14:05:30] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'spawn'
+[14:05:30] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'spawn'
+[14:05:30] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'spawn'
+[14:05:30] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'spawn'
+[14:05:30] [Server thread/INFO]: [VoidGen] Disabling VoidGen v2.2.1
+[14:05:30] [Server thread/INFO]: [AuroraCollections] Disabling AuroraCollections v1.5.7
+[14:05:30] [Server thread/INFO]: [GlobalMarketPlus] Disabling GlobalMarketPlus v1.3.6.4
+[14:05:30] [Server thread/INFO]: [PartyAndFriendsGUI] Disabling PartyAndFriendsGUI v1.0.258-E
+[14:05:30] [Server thread/INFO]: [JetsMinions] Disabling JetsMinions v7.12.1
+[14:05:30] [Server thread/INFO]: [DeluxeBazaar] Disabling DeluxeBazaar v10.2
+[14:05:30] [Server thread/INFO]: [DeluxeBazaar] (WARN) Saving all datas to database...
+[14:05:30] [Server thread/INFO]: [DeluxeBazaar] (WARN) Database successfully saved! Took 0ms to complete!
+[14:05:30] [Server thread/INFO]: [DeluxeBazaar] (WARN) Plugin is disabled! (sedattr was here...)
+[14:05:30] [Server thread/INFO]: [Aurora] Disabling Aurora v2.5.1
+[14:05:30] [Server thread/INFO]: [gg.auroramc.aurora.libs.hikari.HikariDataSource] aurora-leaderboard-pool - Shutdown initiated...
+[14:05:30] [Server thread/INFO]: [gg.auroramc.aurora.libs.hikari.HikariDataSource] aurora-leaderboard-pool - Shutdown completed.
+[14:05:30] [Server thread/INFO]: [RoseStacker] Disabling RoseStacker v1.5.37
+[14:05:30] [Server thread/INFO]: [SuperiorSkyblock2] Disabling SuperiorSkyblock2 v2025.2.1
+[14:05:30] [Server thread/INFO]: [SuperiorSkyblock2] Disabling the module bank...
+[14:05:30] [Server thread/INFO]: [SuperiorSkyblock2] Disabling the module missions...
+[14:05:30] [Server thread/INFO]: [SuperiorSkyblock2] Disabling the module generators...
+[14:05:30] [Server thread/INFO]: [SuperiorSkyblock2] Disabling the module upgrades...
+[14:05:30] [Server thread/INFO]: [SuperiorSkyblock2] Shutting down stats client...
+[14:05:30] [Server thread/INFO]: [SuperiorSkyblock2] Shutting down executor
+[14:05:30] [Server thread/INFO]: [SuperiorSkyblock2] This can take up to 20 seconds to complete
+[14:05:30] [Server thread/INFO]: [Oraxen] Disabling Oraxen v1.203.1
+[14:05:30] [Server thread/INFO]: Oraxen | Unhooking plugin "PlaceholderAPI"
+[14:05:30] [Server thread/INFO]: Oraxen | Successfully unloaded
+[14:05:30] [Server thread/INFO]: [Vault] Disabling Vault v2.17.0
+[14:05:30] [Server thread/INFO]: [CoinsEngine] Disabling CoinsEngine v2.6.0
+[14:05:30] [Server thread/INFO]: [com.zaxxer.hikari.HikariDataSource] CoinsEnginePool - Shutdown initiated...
+[14:05:30] [Server thread/INFO]: [com.zaxxer.hikari.HikariDataSource] CoinsEnginePool - Shutdown completed.
+[14:05:30] [Server thread/INFO]: [CoinsEngine] Currency unregistered: 'dungeon_marks'.
+[14:05:30] [Server thread/INFO]: [CoinsEngine] Currency unregistered: 'coins'.
+[14:05:30] [Server thread/INFO]: [CoinsEngine] Currency unregistered: 'tokens'.
+[14:05:30] [Server thread/INFO]: [CoinsEngine] Currency unregistered: 'quest_points'.
+[14:05:30] [Server thread/INFO]: [CoinsEngine] Currency unregistered: 'money'.
+[14:05:30] [Server thread/INFO]: [CMI] Disabling CMI v9.8.4.2
+[14:05:30] [Server thread/INFO]: [CMI] Closed db connections
+[14:05:30] [Server thread/INFO]: [CommandAPI] Disabling CommandAPI v11.1.0
+[14:05:30] [Server thread/INFO]: [ProtocolLib] Disabling ProtocolLib v5.4.0
+[14:05:30] [Server thread/INFO]: [LuckPerms] Disabling LuckPerms v5.5.0
+[14:05:30] [Server thread/INFO]: [LuckPerms] Starting shutdown process...
+[14:05:30] [Server thread/INFO]: [LuckPerms] Closing messaging service...
+[14:05:30] [Server thread/ERROR]: Error occurred while disabling LuckPerms v5.5.0
+me.lucko.luckperms.lib.jedis.exceptions.JedisConnectionException: JedisPubSub is not subscribed to a Jedis instance.
+	at me.lucko.luckperms.lib.jedis.JedisPubSub.unsubscribe(JedisPubSub.java:43) ~[?:?]
+	at me.lucko.luckperms.common.messaging.redis.RedisMessenger.close(RedisMessenger.java:103) ~[?:?]
+	at me.lucko.luckperms.common.messaging.LuckPermsMessagingService.close(LuckPermsMessagingService.java:99) ~[?:?]
+	at me.lucko.luckperms.common.plugin.AbstractLuckPermsPlugin.disable(AbstractLuckPermsPlugin.java:302) ~[?:?]
+	at me.lucko.luckperms.bukkit.LPBukkitBootstrap.onDisable(LPBukkitBootstrap.java:191) ~[?:?]
+	at LuckPerms-Bukkit-5.5.0.jar/me.lucko.luckperms.bukkit.loader.BukkitLoaderPlugin.onDisable(BukkitLoaderPlugin.java:55) ~[LuckPerms-Bukkit-5.5.0.jar:?]
+	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:285) ~[aspaper-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at io.papermc.paper.plugin.manager.PaperPluginInstanceManager.disablePlugin(PaperPluginInstanceManager.java:246) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at io.papermc.paper.plugin.manager.PaperPluginInstanceManager.disablePlugins(PaperPluginInstanceManager.java:170) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.disablePlugins(PaperPluginManagerImpl.java:97) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at org.bukkit.plugin.SimplePluginManager.disablePlugins(SimplePluginManager.java:541) ~[aspaper-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.CraftServer.disablePlugins(CraftServer.java:612) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at net.minecraft.server.MinecraftServer.stopServer(MinecraftServer.java:1019) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at net.minecraft.server.dedicated.DedicatedServer.stopServer(DedicatedServer.java:917) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1382) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:384) ~[aspaper-1.21.10.jar:1.21.10-16927-6c03ab0]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[?:?]
+[14:05:30] [Server thread/INFO]: [nightcore] Disabling nightcore v2.10.0
+[14:05:30] [Server thread/INFO]: [CMILib] Disabling CMILib v1.5.8.2
+[14:05:30] [Server thread/INFO]: [PlaceholderAPI] Disabling PlaceholderAPI v2.11.7
+[14:05:30] [Craft Scheduler Thread - 6 - RoseStacker/INFO]: [RoseStacker] Fetched 138 translation locales.
+[14:05:30] [Server thread/INFO]: Saving players
+[14:05:31] [Server thread/INFO]: Saving worlds
+[14:05:31] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[14:05:31] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world'
+[14:05:31] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world'
+[14:05:31] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world'
+[14:05:31] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'world' in 0.00s
+[14:05:31] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'world'
+[14:05:31] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'world'
+[14:05:31] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_nether]'/minecraft:the_nether
+[14:05:31] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_nether'
+[14:05:31] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_nether'
+[14:05:31] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_nether'
+[14:05:31] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'world_nether' in 0.00s
+[14:05:31] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'world_nether'
+[14:05:31] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'world_nether'
+[14:05:31] [Server thread/INFO]: Saving chunks for level 'ServerLevel[SuperiorWorld]'/minecraft:superiorworld
+[14:05:31] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'SuperiorWorld'
+[14:05:31] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'SuperiorWorld'
+[14:05:31] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'SuperiorWorld'
+[14:05:31] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'SuperiorWorld' in 0.00s
+[14:05:31] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'SuperiorWorld'
+[14:05:31] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'SuperiorWorld'
+[14:05:31] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[14:05:31] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[14:05:31] [Server thread/INFO]: ThreadedAnvilChunkStorage (SuperiorWorld): All chunks are saved
+[14:05:31] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[14:05:31] [Server thread/INFO]: Waiting for all RegionFile I/O tasks to complete...
+[14:05:31] [Server thread/INFO]: All RegionFile I/O tasks to complete
+[14:05:31] [Server thread/INFO]: [MoonriseCommon] Awaiting termination of worker pool for up to 60s...
+[14:05:31] [Server thread/INFO]: [MoonriseCommon] Awaiting termination of I/O pool for up to 60s...

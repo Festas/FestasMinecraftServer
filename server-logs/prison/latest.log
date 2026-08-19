@@ -1,0 +1,1123 @@
+[19:57:37] [ServerMain/INFO]: [bootstrap] Running Java 25 (OpenJDK 64-Bit Server VM 25.0.3+9-LTS; Eclipse Adoptium Temurin-25.0.3+9) on Linux 6.8.0-137-generic (amd64)
+[19:57:37] [ServerMain/INFO]: [bootstrap] Loading Paper 26.2-112-main@c9e894d (2026-08-11T05:18:39Z) for Minecraft 26.2
+[19:57:37] [ServerMain/INFO]: [PluginInitializerManager] Initializing plugins...
+[19:57:37] [ServerMain/INFO]: [PluginInitializerManager] Initialized 23 plugins
+[19:57:37] [ServerMain/INFO]: [PluginInitializerManager] Bukkit plugins (23):
+ - BlueMap (5.23), CMI (9.8.9.8), CMILib (1.5.9.9), CommandAPI (11.1.0), DeluxeMenus (1.14.1-Release), FastAsyncWorldEdit (2.15.4-SNAPSHOT-1370+dd6a724), GlobalMarketPlus (1.4.1.5), LibsDisguises (26.8.13), LuckPerms (5.5.71), NBTAPI (2.16.0), Oraxen (1.218.0), PlaceholderAPI (2.12.3), ProtocolLib (5.4.0), Skript (2.16.1), TAB-Bridge (6.2.2), Vault (2.20.2), WorldGuard (7.0.18+2392-fa605e6), X-Prison (2026.3.3.0), XPrisonArmors (1.0.4), XPrivateMines (2026.3.0.9), XRobots (1.2.1), helper (5.6.14), packetevents (2.13.0)
+[19:57:40] [DataConverter MCTypeRegistry init thread/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Initialising converters for DataConverter...
+[19:57:40] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+[19:57:40] [DataConverter MCTypeRegistry init thread/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Finished initialising converters for DataConverter in 376.1ms
+[19:57:41] [ServerMain/INFO]: Loaded 1585 recipes
+[19:57:41] [ServerMain/INFO]: Loaded 1696 advancements
+[19:57:42] [Server thread/INFO]: Starting minecraft server version 26.2
+[19:57:42] [Server thread/INFO]: Loading properties
+[19:57:42] [Server thread/INFO]: This server is running Paper version 26.2-112-main@c9e894d (2026-08-11T05:18:39Z) (Implementing API version 26.2.build.112-stable)
+[19:57:42] [Server thread/INFO]: [spark] This server bundles the spark profiler. For more information please visit https://docs.papermc.io/paper/profiling
+[19:57:42] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[19:57:42] [Server thread/INFO]: Using 4 threads for Netty based IO
+[19:57:42] [Server thread/INFO]: [MoonriseCommon] Paper is using 2 worker threads, 1 I/O threads
+[19:57:42] [Server thread/INFO]: Default game type: SURVIVAL
+[19:57:42] [Server thread/INFO]: Generating keypair
+[19:57:42] [Server thread/INFO]: Starting Minecraft server on 0.0.0.0:25567
+[19:57:42] [Server thread/INFO]: Paper: Using libdeflate (Linux x86_64) compression from Velocity.
+[19:57:42] [Server thread/INFO]: Paper: Using OpenSSL 3.x.x (Linux x86_64) cipher from Velocity.
+[19:57:42] [Server thread/INFO]: [helper] Initialized helper v5.6.14
+[19:57:42] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loading 11 libraries... please wait
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/springframework/spring-expression/6.0.6/spring-expression-6.0.6.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/springframework/spring-core/6.0.6/spring-core-6.0.6.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/springframework/spring-jcl/6.0.6/spring-jcl-6.0.6.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/commons-logging/commons-logging/1.2/commons-logging-1.2.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/commons-codec/commons-codec/1.11/commons-codec-1.11.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/joml/joml/1.10.5/joml-1.10.5.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-ansi/5.2.0/adventure-text-serializer-ansi-5.2.0.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-api/5.2.0/adventure-api-5.2.0.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/ansi/1.1.1/ansi-1.1.1.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-minimessage/5.2.0/adventure-text-minimessage-5.2.0.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-plain/5.2.0/adventure-text-serializer-plain-5.2.0.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-platform-bukkit/4.4.1/adventure-platform-bukkit-4.4.1.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-platform-api/4.4.1/adventure-platform-api-4.4.1.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-bungeecord/4.4.1/adventure-text-serializer-bungeecord-4.4.1.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-legacy/4.21.0/adventure-text-serializer-legacy-4.21.0.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-nbt/4.21.0/adventure-nbt-4.21.0.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/examination-api/1.3.0/examination-api-1.3.0.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/examination-string/1.3.0/examination-string-1.3.0.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-gson/4.21.0/adventure-text-serializer-gson-4.21.0.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-json/4.21.0/adventure-text-serializer-json-4.21.0.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/option/1.1.0/option-1.1.0.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/com/google/auto/service/auto-service-annotations/1.1.1/auto-service-annotations-1.1.1.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-commons/4.21.0/adventure-text-serializer-commons-4.21.0.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-gson-legacy-impl/4.21.0/adventure-text-serializer-gson-legacy-impl-4.21.0.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-json-legacy-impl/4.21.0/adventure-text-serializer-json-legacy-impl-4.21.0.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-platform-facet/4.4.1/adventure-platform-facet-4.4.1.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-platform-viaversion/4.4.1/adventure-platform-viaversion-4.4.1.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/gs/mclo/java/2.2.1/java-2.2.1.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/team/unnamed/creative-api/1.7.3/creative-api-1.7.3.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-key/4.9.3/adventure-key-4.9.3.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/jetbrains/annotations/23.1.0/annotations-23.1.0.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [X-Prison] Loading 4 libraries... please wait
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [X-Prison] Loaded library /home/container/libraries/com/h2database/h2/2.1.214/h2-2.1.214.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [X-Prison] Loaded library /home/container/libraries/org/xerial/sqlite-jdbc/3.47.1.0/sqlite-jdbc-3.47.1.0.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [X-Prison] Loaded library /home/container/libraries/com/zaxxer/HikariCP/4.0.3/HikariCP-4.0.3.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [X-Prison] Loaded library /home/container/libraries/org/slf4j/slf4j-api/2.0.0-alpha1/slf4j-api-2.0.0-alpha1.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [X-Prison] Loaded library /home/container/libraries/net/objecthunter/exp4j/0.4.8/exp4j-0.4.8.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [XRobots] Loading 3 libraries... please wait
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [XRobots] Loaded library /home/container/libraries/com/h2database/h2/2.1.214/h2-2.1.214.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [XRobots] Loaded library /home/container/libraries/com/zaxxer/HikariCP/4.0.3/HikariCP-4.0.3.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [XRobots] Loaded library /home/container/libraries/org/slf4j/slf4j-api/2.0.0-alpha1/slf4j-api-2.0.0-alpha1.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [XRobots] Loaded library /home/container/libraries/net/objecthunter/exp4j/0.4.8/exp4j-0.4.8.jar
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [BlueMap] Loading 1 libraries... please wait
+[19:57:43] [Server thread/INFO]: [SpigotLibraryLoader] [BlueMap] Loaded library /home/container/libraries/com/flowpowered/flow-math/1.0.3/flow-math-1.0.3.jar
+[19:57:43] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.12.3
+[19:57:43] [Server thread/INFO]: [LuckPerms] Loading server plugin LuckPerms v5.5.71
+[19:57:43] [Server thread/INFO]: [LuckPerms] Loading configuration...
+[19:57:43] [Server thread/INFO]: [Vault] Loading server plugin Vault v2.20.2
+[19:57:43] [Server thread/INFO]: [FastAsyncWorldEdit] Loading server plugin FastAsyncWorldEdit v2.15.4-SNAPSHOT-1370+dd6a724
+[19:57:44] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@13d0b3a8]
+[19:57:44] [Server thread/INFO]: [WorldGuard] Loading server plugin WorldGuard v7.0.18+2392-fa605e6
+[19:57:44] [Server thread/INFO]: [ProtocolLib] Loading server plugin ProtocolLib v5.4.0
+[19:57:44] [Server thread/WARN]: [ProtocolLib] Version (MC: 26.2.0) has not yet been tested! Proceed with caution.
+[19:57:44] [Server thread/INFO]: [NBTAPI] Loading server plugin NBTAPI v2.16.0
+[19:57:44] [Server thread/INFO]: [NBTAPI] [NBTAPI] Found Minecraft: 26.2.build.112! Trying to find NMS support
+[19:57:44] [Server thread/INFO]: [NBTAPI] [NBTAPI] NMS support 'MC26_2' loaded!
+[19:57:44] [Server thread/INFO]: [NBTAPI] [NBTAPI] Using the plugin 'NBTAPI' to create a bStats instance!
+[19:57:44] [Server thread/INFO]: [Skript] Loading server plugin Skript v2.16.1
+[19:57:44] [Server thread/INFO]: [packetevents] Loading server plugin packetevents v2.13.0
+[19:57:44] [Thread-5/INFO]: [NBTAPI] [NBTAPI] The NBT-API seems to be up-to-date!
+[19:57:44] [Server thread/INFO]: [packetevents] Loading packetevents...
+[19:57:45] [Server thread/INFO]: [packetevents] Loaded packetevents v2.13.0
+[19:57:45] [Server thread/INFO]: [helper] Loading server plugin helper v5.6.14
+[19:57:45] [Server thread/INFO]: [helper] helper (me.lucko.helper) bound to plugin helper - me.lucko.helper.internal.StandalonePlugin
+[19:57:45] [Server thread/INFO]: [Oraxen] Loading server plugin Oraxen v1.218.0
+[19:57:45] [Server thread/INFO]: [CMILib] Loading server plugin CMILib v1.5.9.9
+[19:57:45] [Server thread/INFO]: [X-Prison] Loading server plugin X-Prison v2026.3.3.0
+[19:57:45] [Server thread/INFO]: [X-Prison] Detected server platform: PAPER (Adventure/MiniMessage enabled)
+[19:57:45] [Server thread/INFO]: [CommandAPI] Loading server plugin CommandAPI v11.1.0
+[19:57:45] [Server thread/INFO]: [CommandAPI] Loaded version PaperNMS_1_21_R7
+[19:57:45] [Server thread/WARN]: [CommandAPI] Loading the CommandAPI with the latest and potentially incompatible NMS implementation.
+[19:57:45] [Server thread/WARN]: [CommandAPI] While you may find success with this, further updates might be necessary to fully support the version you are using.
+[19:57:45] [Server thread/INFO]: [CommandAPI] Hooked into Spigot successfully for Chat/ChatComponents
+[19:57:45] [Server thread/INFO]: [CommandAPI] Hooked into Adventure for AdventureChat/AdventureChatComponents
+[19:57:45] [Server thread/INFO]: [CommandAPI] Hooked into Paper for paper-specific API implementations
+[19:57:45] [Server thread/INFO]: [CommandAPI] Loaded platform CommandAPIPaper > CommandAPIBukkit
+[19:57:45] [Server thread/INFO]: [LibsDisguises] Loading server plugin LibsDisguises v26.8.13
+[19:57:45] [Server thread/INFO]: [GlobalMarketPlus] Loading server plugin GlobalMarketPlus v1.4.1.5
+[19:57:45] [Server thread/INFO]: [DeluxeMenus] Loading server plugin DeluxeMenus v1.14.1-Release
+[19:57:45] [Server thread/WARN]: [DeluxeMenus] Could not setup a NMS hook for your server version! The following Item options will not work: nbt_int, nbt_ints, nbt_string and nbt_strings.
+[19:57:45] [Server thread/INFO]: [CMI] Loading server plugin CMI v9.8.9.8
+[19:57:45] [Server thread/INFO]: [XPrivateMines] Loading server plugin XPrivateMines v2026.3.0.9
+[19:57:45] [Server thread/INFO]: [TAB-Bridge] Loading server plugin TAB-Bridge v6.2.2
+[19:57:45] [Server thread/INFO]: [XPrisonArmors] Loading server plugin XPrisonArmors v1.0.4
+[19:57:45] [Server thread/INFO]: [XRobots] Loading server plugin XRobots v1.2.1
+[19:57:45] [Server thread/INFO]: [BlueMap] Loading server plugin BlueMap v5.23
+[19:57:45] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[19:57:45] [Server thread/INFO]: [LuckPerms] Enabling LuckPerms v5.5.71
+[19:57:45] [Server thread/INFO]:         __    
+[19:57:45] [Server thread/INFO]:   |    |__)   LuckPerms v5.5.71
+[19:57:45] [Server thread/INFO]:   |___ |      Running on Bukkit - Paper
+[19:57:45] [Server thread/INFO]: 
+[19:57:45] [Server thread/INFO]: [LuckPerms] Loading storage provider... [H2]
+[19:57:46] [Server thread/INFO]: [LuckPerms] Loading internal permission managers...
+[19:57:46] [Server thread/INFO]: [LuckPerms] Performing initial data load...
+[19:57:46] [Server thread/INFO]: [LuckPerms] Successfully enabled. (took 553ms)
+[19:57:46] [Server thread/INFO]: [Vault] Enabling Vault v2.20.2
+[19:57:46] [Server thread/INFO]: [Vault] Enabled Version 2.20.2
+[19:57:46] [Server thread/INFO]: [LuckPerms] Registered Vault permission & chat hook.
+[19:57:46] [Server thread/INFO]: [FastAsyncWorldEdit] Enabling FastAsyncWorldEdit v2.15.4-SNAPSHOT-1370+dd6a724
+[19:57:46] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] LZ4 Compression Binding loaded successfully
+[19:57:46] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] ZSTD Compression Binding loaded successfully
+[19:57:46] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[19:57:46] [Server thread/INFO]: WEPIF: Vault detected! Using Vault for permissions
+[19:57:46] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.fawe.v26_2.PaperweightFaweAdapter as the Bukkit adapter
+[19:57:46] [Server thread/INFO]: [ProtocolLib] Enabling ProtocolLib v5.4.0
+[19:57:46] [Server thread/INFO]: [helper] Enabling helper v5.6.14
+[19:57:46] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[19:57:46] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[19:57:46] [Server thread/WARN]: Whilst this makes it possible to use Velocity, unless access to your server is properly restricted, it also opens up the ability for hackers to connect with any username they choose.
+[19:57:46] [Server thread/WARN]: Please see https://docs.papermc.io/velocity/security for further information.
+[19:57:46] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[19:57:46] [Server thread/INFO]: Preparing level "world"
+[19:57:46] [ForkJoinPool.commonPool-worker-2/WARN]: [com.fastasyncworldedit.core.util.UpdateNotification] An update for FastAsyncWorldEdit is available. You are 2 build(s) out of date.
+You are running build 1370, the latest version is build 1372.
+Update at https://ci.athion.net/job/FastAsyncWorldEdit
+[19:57:47] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:overworld'...
+[19:57:47] [Server thread/INFO]: Preparing spawn area: 100%
+[19:57:47] [Server thread/INFO]: Prepared spawn area in 1 ms
+[19:57:47] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:the_nether'...
+[19:57:47] [Server thread/INFO]: Prepared spawn area in 0 ms
+[19:57:47] [Server thread/INFO]: Done preparing level "world" (0.158s)
+[19:57:47] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.12.3
+[19:57:47] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
+[19:57:47] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: vaultunlocked [2.13.1]
+[19:57:47] [Server thread/INFO]: [WorldGuard] Enabling WorldGuard v7.0.18+2392-fa605e6
+[19:57:47] [Server thread/INFO]: [WorldGuard] (world) TNT ignition is blocked.
+[19:57:47] [Server thread/INFO]: [WorldGuard] (world) Lighters are PERMITTED.
+[19:57:47] [Server thread/INFO]: [WorldGuard] (world) Lava fire is blocked.
+[19:57:47] [Server thread/INFO]: [WorldGuard] (world) Fire spread is UNRESTRICTED.
+[19:57:47] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'world'
+[19:57:47] [Server thread/INFO]: [WorldGuard] (world_nether) TNT ignition is blocked.
+[19:57:47] [Server thread/INFO]: [WorldGuard] (world_nether) Lighters are PERMITTED.
+[19:57:47] [Server thread/INFO]: [WorldGuard] (world_nether) Lava fire is blocked.
+[19:57:47] [Server thread/INFO]: [WorldGuard] (world_nether) Fire spread is UNRESTRICTED.
+[19:57:47] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'world_nether'
+[19:57:47] [Server thread/INFO]: [WorldGuard] Loading region data...
+[19:57:47] [Server thread/INFO]: [NBTAPI] Enabling NBTAPI v2.16.0
+[19:57:47] [Server thread/INFO]: [NBTAPI] Checking bindings...
+[19:57:47] [Server thread/INFO]: [NBTAPI] All Classes were able to link!
+[19:57:47] [Server thread/INFO]: [NBTAPI] All Methods were able to link!
+[19:57:47] [Server thread/INFO]: [NBTAPI] Running NBT reflection test...
+[19:57:48] [Server thread/INFO]: [NBTAPI] Success! This version of NBT-API is compatible with your server.
+[19:57:48] [Server thread/INFO]: [Skript] Enabling Skript v2.16.1
+[19:57:48] [ForkJoinPool.commonPool-worker-2/INFO]: [Skript] You're currently running the latest stable version of Skript.
+[19:57:49] [Server thread/INFO]: [Skript]  ~ created by & © Peter Güttinger aka Njol ~
+[19:57:49] [Server thread/INFO]: [packetevents] Enabling packetevents v2.13.0
+[19:57:49] [packetevents-update-check-thread/INFO]: [packetevents] Checking for updates, please wait...
+[19:57:49] [Server thread/INFO]: [Oraxen] Enabling Oraxen v1.218.0
+[19:57:49] [packetevents-update-check-thread/INFO]: [packetevents] You are running the latest release: 2.13.0
+[19:57:49] [Server thread/INFO]: Oraxen | [ProtocolLibAdapter] registerTitleListener called
+[19:57:49] [Server thread/INFO]: Oraxen | [ProtocolLibAdapter] Title Listener registered successfully
+[19:57:49] [Server thread/INFO]: Oraxen | Custom paintings already hot reloaded (0 unchanged).
+[19:57:49] [Server thread/INFO]: Oraxen | TextEffects.shader.encoding 'alpha_lsb' is deprecated. Using 'effect_font'.
+[19:57:49] [Server thread/INFO]: Oraxen | Loaded 4 text effects
+[19:57:49] [Server thread/INFO]: Oraxen | Loaded 1 glyphs, 0 reference glyphs, 0 animated glyphs
+[19:57:49] [Server thread/INFO]: Oraxen | Hot reloaded 1 new custom jukebox song(s), 0 updated, 0 removed, 0 unchanged.
+[19:57:49] [Server thread/INFO]: Oraxen | Successfully loaded on Ubuntu 26.04 LTS (resolute)
+[19:57:49] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: oraxen [1.218.0]
+[19:57:49] [Server thread/INFO]: Oraxen | Plugin "PlaceholderAPI" detected, enabling hooks
+[19:57:49] [Server thread/INFO]: Oraxen | Skript compatibility enabled - Oraxen syntax registered
+[19:57:49] [Server thread/INFO]: Oraxen | Plugin "Skript" detected, enabling hooks
+[19:57:49] [Server thread/INFO]: [CMILib] Enabling CMILib v1.5.9.9
+[19:57:49] [Server thread/INFO]: Server version detection by new method: v26_2_0 Legacy: false Mojang Mappings: true
+[19:57:49] [Server thread/INFO]: Server version: v26_2_0 - 26.2.0 - paper  26.2-112-c9e894d (MC: 26.2)
+[19:57:50] [ForkJoinPool.commonPool-worker-2/INFO]: [Skript] Loaded 5750 aliases in 684ms
+[19:57:50] [Server thread/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+[19:57:50] [Server thread/INFO]: CMI hooked.
+[19:57:50] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: cmil [1.5.9.9]
+[19:57:50] [Server thread/INFO]: PlaceholderAPI hooked.
+[19:57:50] [Server thread/INFO]: Updated (EN) language file. Took 25ms
+[19:57:50] [Server thread/INFO]: Updated (DE) language file. Took 15ms
+[19:57:50] [Server thread/INFO]: [X-Prison] Enabling X-Prison v2026.3.3.0
+[19:57:50] [Server thread/INFO]: 
+[19:57:50] [Server thread/INFO]: ██╗  ██╗      ██████╗ ██████╗ ██╗███████╗ ██████╗ ███╗   ██╗
+[19:57:50] [Server thread/INFO]: ╚██╗██╔╝      ██╔══██╗██╔══██╗██║██╔════╝██╔═══██╗████╗  ██║
+[19:57:50] [Server thread/INFO]:  ╚███╔╝ ████╗ ██████╔╝██████╔╝██║███████╗██║   ██║██╔██╗ ██║
+[19:57:50] [Server thread/INFO]:  ██╔██╗ ╚═══╝ ██╔═══╝ ██╔══██╗██║╚════██║██║   ██║██║╚██╗██║
+[19:57:50] [Server thread/INFO]: ██╔╝ ██╗      ██║     ██║  ██║██║███████║╚██████╔╝██║ ╚████║
+[19:57:50] [Server thread/INFO]: ╚═╝  ╚═╝      ╚═╝     ╚═╝  ╚═╝╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═══╝
+[19:57:50] [Server thread/INFO]: Premium Prison Core  •  v2026.3.3.0  •  by Drawethree
+[19:57:50] [Server thread/INFO]: Website: www.drawethree.dev
+[19:57:50] [Server thread/INFO]: Discord: https://discord.gg/ZeSkmEC6mG
+[19:57:50] [Server thread/INFO]: 
+[19:57:50] [Server thread/INFO]: [com.zaxxer.hikari.HikariDataSource] xprison-0 - Starting...
+[19:57:50] [Server thread/INFO]: [com.zaxxer.hikari.HikariDataSource] xprison-0 - Start completed.
+[19:57:50] [Server thread/INFO]: [X-Prison] §aLoaded §e1 §aglobal sell prices.
+[19:57:50] [Server thread/INFO]: [X-Prison] Registered X-Prison Currency: money
+[19:57:50] [Server thread/INFO]: [X-Prison] Registered X-Prison Currency: tokens
+[19:57:50] [Server thread/INFO]: [X-Prison] Registered X-Prison Currency: gems
+[19:57:50] [Server thread/INFO]: [X-Prison] §aLoaded §e1 Block Rewards
+[19:57:50] [Server thread/INFO]: [X-Prison] §aLoaded Bomb: §etiny
+[19:57:50] [Server thread/INFO]: [X-Prison] §aLoaded Bomb: §esmall
+[19:57:50] [Server thread/INFO]: [X-Prison] §aLoaded Bomb: §enormal
+[19:57:50] [Server thread/INFO]: [X-Prison] §aLoaded Bomb: §elarge
+[19:57:50] [Server thread/INFO]: [X-Prison] §aLoaded Bomb: §emega
+[19:57:50] [Server thread/INFO]: [X-Prison] §fUsing §emoney §fcurrency for Ranks.
+[19:57:50] [Server thread/INFO]: [X-Prison] §aLoaded §e1 Ranks.
+[19:57:50] [Server thread/INFO]: [X-Prison] §fUsing §emoney §fcurrency for Prestiges.
+[19:57:50] [Server thread/INFO]: [X-Prison] §aLoaded §e1 Prestiges.
+[19:57:50] [Server thread/INFO]: [X-Prison] Loaded Rebirth 0
+[19:57:50] [helper-scheduler-0/INFO]: [X-Prison] Removed expired multipliers from DB.
+[19:57:50] [Server thread/INFO]: [X-Prison] §aLoaded §e0 §amines.
+[19:57:50] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant efficiency loaded successfully.
+[19:57:50] [Server thread/INFO]: [X-Prison] §aRegistered enchant Efficiency created by §eDrawethree
+[19:57:50] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant keyfinder loaded successfully.
+[19:57:50] [Server thread/INFO]: [X-Prison] §aRegistered enchant §9Key Finder§a created by §eDrawethree
+[19:57:50] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant laser loaded successfully.
+[19:57:50] [Server thread/INFO]: [X-Prison] §aRegistered enchant §cLaser§a created by §eDrawethree
+[19:57:50] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant charity loaded successfully.
+[19:57:50] [Server thread/INFO]: [X-Prison] §aRegistered enchant §cCharity§a created by §eDrawethree
+[19:57:50] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant haste loaded successfully.
+[19:57:50] [Server thread/INFO]: [X-Prison] §aRegistered enchant §dHaste§a created by §eDrawethree
+[19:57:50] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant explosive loaded successfully.
+[19:57:50] [Server thread/INFO]: [X-Prison] §aRegistered enchant Explosive created by §eDrawethree
+[19:57:50] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant autosell loaded successfully.
+[19:57:50] [Server thread/INFO]: [X-Prison] §aRegistered enchant §eAutosell§a created by §eDrawethree
+[19:57:50] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant gemfinder loaded successfully.
+[19:57:50] [Server thread/INFO]: [X-Prison] §aRegistered enchant Gem Finder created by §eDrawethree
+[19:57:50] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant nightvision loaded successfully.
+[19:57:50] [Server thread/INFO]: [X-Prison] §aRegistered enchant §cNight Vision§a created by §eDrawethree
+[19:57:50] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant keyalls loaded successfully.
+[19:57:50] [Server thread/INFO]: [X-Prison] §aRegistered enchant §cKeyalls§a created by §eDrawethree
+[19:57:50] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant tokenmerchant loaded successfully.
+[19:57:50] [Server thread/INFO]: [X-Prison] §aRegistered enchant §6Token Merchant§a created by §eDrawethree
+[19:57:50] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant fortune loaded successfully.
+[19:57:50] [Server thread/INFO]: [X-Prison] §aRegistered enchant §cFortune§a created by §eDrawethree
+[19:57:50] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant nuke loaded successfully.
+[19:57:50] [Server thread/INFO]: [X-Prison] §aRegistered enchant §cNuke§a created by §eDrawethree
+[19:57:50] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant blessing loaded successfully.
+[19:57:50] [Server thread/INFO]: [X-Prison] §aRegistered enchant §eBlessing§a created by §eDrawethree
+[19:57:50] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant blockbooster loaded successfully.
+[19:57:50] [Server thread/INFO]: [X-Prison] §aRegistered enchant §dBlock Booster§a created by §eDrawethree
+[19:57:50] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant tokenfinder loaded successfully.
+[19:57:50] [Server thread/INFO]: [X-Prison] §aRegistered enchant §eToken Finder§a created by §eDrawethree
+[19:57:50] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant jumpboost loaded successfully.
+[19:57:50] [Server thread/INFO]: [X-Prison] §aRegistered enchant §bJump Boost§a created by §eDrawethree
+[19:57:50] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant fly loaded successfully.
+[19:57:50] [Server thread/INFO]: [X-Prison] §aRegistered enchant §cFly§a created by §eDrawethree
+[19:57:50] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant unbreaking loaded successfully.
+[19:57:50] [Server thread/INFO]: [X-Prison] §aRegistered enchant §9Unbreaking§a created by §eDrawethree
+[19:57:50] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant layer loaded successfully.
+[19:57:50] [Server thread/INFO]: [X-Prison] §aRegistered enchant §9Layer§a created by §eDrawethree
+[19:57:50] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant speed loaded successfully.
+[19:57:50] [Server thread/INFO]: [X-Prison] §aRegistered enchant Speed created by §eDrawethree
+[19:57:50] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant gang-value-finder loaded successfully.
+[19:57:50] [Server thread/INFO]: [X-Prison] §aRegistered enchant §eGang Value Finder§a created by §eDrawethree
+[19:57:50] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant prestigefinder loaded successfully.
+[19:57:50] [Server thread/INFO]: [X-Prison] §aRegistered enchant Prestige Finder created by §eDrawethree
+[19:57:50] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant gemmerchant loaded successfully.
+[19:57:50] [Server thread/INFO]: [X-Prison] §aRegistered enchant §bGem Merchant§a created by §eDrawethree
+[19:57:50] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant custom-enchant-1 loaded successfully.
+[19:57:50] [Server thread/INFO]: [X-Prison] §aRegistered enchant §eYour Custom Enchant§a created by §eDrawethree
+[19:57:50] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant salary loaded successfully.
+[19:57:50] [Server thread/INFO]: [X-Prison] §aRegistered enchant §dSalary§a created by §eDrawethree
+[19:57:50] [Server thread/INFO]: [X-Prison] §aLoaded §e26 §aenchantments.
+[19:57:50] [Server thread/WARN]: [X-Prison] §cThere is no such region named automine in world world!
+[19:57:50] [Server thread/INFO]: [X-Prison] §aLoaded §e300 Pickaxe Levels.
+[19:57:50] [Server thread/INFO]: [X-Prison] Loaded pickaxe skin §x§0§0§f§f§f§f§lP§x§0§0§f§4§f§4§ll§x§0§0§e§a§e§a§la§x§0§0§d§f§d§f§ls§x§0§0§d§5§d§5§lm§x§0§0§c§a§c§a§la§x§0§0§c§0§c§0§l §x§0§0§b§5§b§5§lS§x§0§0§a§b§a§b§lu§x§0§0§a§0§a§0§lr§x§0§0§9§6§9§6§lg§x§0§0§8§b§8§b§le
+[19:57:50] [Server thread/INFO]: [X-Prison] §aLoaded §e10 §aPickaxe Quality tiers.
+[19:57:50] [helper-scheduler-1/INFO]: [X-Prison] History cleanup: removed entries older than 30 days.
+[19:57:50] [Server thread/INFO]: [X-Prison] §aLoaded Battle Pass season §eseason-1§a with §e10 §atiers.
+[19:57:50] [Server thread/INFO]: [X-Prison] §aLoaded §e14 §aquests (§e7 §adaily, §e3 §aweekly, §e4 §apermanent).
+[19:57:50] [Server thread/INFO]: [X-Prison] §aLoaded Daily Rewards: §e7 §acycle days, §e3 §amilestones.
+[19:57:50] [Server thread/INFO]: [X-Prison] §aEnabled §e20§a/§e20 §amodules: §fAuto Sell, Currencies, Blocks, Bombs, Ranks, Prestiges, Rebirths, Multipliers, Mines, Enchants, Auto Miner, Gangs, Pickaxe Levels, Pickaxe Skins, Pickaxe Quality, History, Mining Stats, BattlePass, Quests, DailyRewards
+[19:57:50] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: xprison [2026.3.3.0]
+[19:57:50] [Server thread/WARN]: [X-Prison] §cSkipping X-PrivateMines-Dashboard-1.0.4.jar: no X-Prison-Addon-Class attribute in manifest.
+[19:57:50] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§f§f§8§0§0§0M§x§f§f§8§7§0§0e§x§f§f§8§d§0§0t§x§f§f§9§4§0§0e§x§f§f§9§b§0§0o§x§f§f§a§1§0§0r§x§f§f§a§8§0§0 §x§f§f§a§f§0§0S§x§f§f§b§5§0§0t§x§f§f§b§c§0§0r§x§f§f§c§3§0§0i§x§f§f§c§9§0§0k§x§f§f§d§0§0§0e§a created by §eDrawethree
+[19:57:50] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§8§0§0§0§a§0B§x§8§7§0§b§a§bl§x§8§e§1§5§b§5a§x§9§5§2§0§c§0c§x§9§c§2§b§c§ak§x§a§4§3§5§d§5 §x§a§b§4§0§d§fH§x§b§2§4§b§e§ao§x§b§9§5§5§f§4l§x§c§0§6§0§f§fe§a created by §eDrawethree
+[19:57:50] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§7§8§c§8§f§fL§x§8§2§c§c§f§fi§x§8§b§d§0§f§fg§x§9§5§d§4§f§fh§x§9§f§d§8§f§ft§x§a§8§d§c§f§fn§x§b§2§e§0§f§fi§x§b§c§e§4§f§fn§x§c§5§e§7§f§fg§x§c§f§e§b§f§f §x§d§8§e§f§f§fS§x§e§2§f§3§f§ft§x§e§c§f§7§f§fo§x§f§5§f§b§f§fr§fm§a created by §eDrawethree
+[19:57:50] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§b§0§b§0§b§0T§x§b§d§b§d§b§do§x§c§a§c§a§c§ar§x§d§8§d§8§d§8n§x§e§5§e§5§e§5a§x§f§2§f§2§f§2d§fo§a created by §eDrawethree
+[19:57:50] [Server thread/INFO]: [X-Prison-Addon/AnimatedEnchants] Animated Enchants enabled — registered 4/4 enchants.
+[19:57:50] [Server thread/INFO]: [X-Prison] Loaded addon: AnimatedEnchants v1.4.0 by Drawethree
+[19:57:50] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§f§f§f§6§c§0D§x§f§f§f§2§b§4i§x§f§f§e§e§a§8v§x§f§f§e§a§9§ci§x§f§f§e§6§9§0n§x§f§f§e§2§8§4e§x§f§f§d§d§7§8 §x§f§f§d§9§6§cS§x§f§f§d§5§6§0m§x§f§f§d§1§5§4i§x§f§f§c§d§4§8t§x§f§f§c§9§3§ce§a created by §eDrawethree
+[19:57:50] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§7§b§e§8§d§cS§x§7§4§e§0§d§5o§x§6§d§d§7§c§du§x§6§6§c§f§c§6l§x§5§f§c§6§b§f §x§5§8§b§e§b§7H§x§5§1§b§5§b§0a§x§4§a§a§d§a§8r§x§4§3§a§4§a§1v§x§3§c§9§c§9§ae§x§3§5§9§3§9§2s§x§2§e§8§b§8§bt§a created by §eDrawethree
+[19:57:50] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§c§7§9§b§f§fA§x§b§f§9§0§f§fr§x§b§8§8§5§f§fc§x§b§0§7§a§f§fa§x§a§8§6§f§f§fn§x§a§1§6§5§f§fe§x§9§9§5§a§f§f §x§9§1§4§f§f§fN§x§8§9§4§4§f§fo§x§8§2§3§9§f§fv§x§7§a§2§e§f§fa§a created by §eDrawethree
+[19:57:50] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§f§f§f§1§b§8S§x§f§1§e§b§c§2t§x§e§3§e§5§c§ca§x§d§5§d§f§d§6r§x§c§6§d§a§e§1f§x§b§8§d§4§e§ba§x§a§a§c§e§f§5l§x§9§c§c§8§f§fl§a created by §eDrawethree
+[19:57:50] [Server thread/INFO]: [X-Prison-Addon/AnimatedEnchants2] Animated Enchants 2 enabled — registered 4/4 enchants.
+[19:57:50] [Server thread/INFO]: [X-Prison] Loaded addon: AnimatedEnchants2 v1.4.0 by Drawethree
+[19:57:50] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§a§6§e§3§f§fF§x§9§b§d§b§f§br§x§9§0§d§2§f§7o§x§8§4§c§a§f§3s§x§7§9§c§1§f§0t§x§6§e§b§9§e§cb§x§6§3§b§0§e§8i§x§5§7§a§8§e§4t§x§4§c§9§f§e§0e§a created by §eDrawethree
+[19:57:50] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§9§c§f§f§3§cV§x§9§2§f§3§3§9e§x§8§9§e§8§3§6n§x§7§f§d§c§3§3o§x§7§6§d§0§3§0m§x§6§c§c§5§2§d §x§6§2§b§9§2§aB§x§5§9§a§d§2§7l§x§4§f§a§1§2§4o§x§4§6§9§6§2§1o§x§3§c§8§a§1§em§a created by §eDrawethree
+[19:57:50] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§e§a§f§5§f§fG§x§e§1§f§0§f§ca§x§d§8§e§b§f§9l§x§c§f§e§5§f§6e§x§c§6§e§0§f§3 §x§b§d§d§b§f§0C§x§b§3§d§6§e§cu§x§a§a§d§1§e§9t§x§a§1§c§b§e§6t§x§9§8§c§6§e§3e§x§8§f§c§1§e§0r§a created by §eDrawethree
+[19:57:50] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§f§f§b§0§3§0M§x§f§f§a§3§2§ba§x§f§f§9§6§2§6g§x§f§f§8§a§2§2m§x§f§f§7§d§1§da§x§f§f§7§0§1§8 §x§f§f§6§3§1§3S§x§f§f§5§6§0§eu§x§f§f§4§a§0§ar§x§f§f§3§d§0§5g§x§f§f§3§0§0§0e§a created by §eDrawethree
+[19:57:50] [Server thread/INFO]: [X-Prison-Addon/AnimatedEnchants3] Animated Enchants 3 enabled — registered 4/4 enchants.
+[19:57:50] [Server thread/INFO]: [X-Prison] Loaded addon: AnimatedEnchants3 v1.3.0 by Drawethree
+[19:57:50] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant ascendant loaded successfully.
+[19:57:50] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§f§f§d§7§0§0A§x§f§f§c§8§1§cs§x§f§f§b§9§3§8c§x§f§f§a§a§5§4e§x§f§f§9§b§7§0n§x§f§f§8§b§8§cd§x§f§f§7§c§a§8a§x§f§f§6§d§c§4n§x§f§f§5§e§e§0t§a created by §eDrawethree
+[19:57:50] [Server thread/INFO]: [X-Prison-Addon/Ascendant] Ascendant enabled — registered 1/1 enchants.
+[19:57:50] [Server thread/INFO]: [X-Prison] Loaded addon: Ascendant v1.1.0 by Drawethree
+[19:57:50] [Server thread/INFO]: [X-Prison-Addon/BlackMarket] Enabling Black Market addon v1.1.0...
+[19:57:50] [Server thread/INFO]: [X-Prison-Addon/BlackMarket] [BlackMarket] Loaded 13 market item(s).
+[19:57:50] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: xprisonblackmarket [1.1.0]
+[19:57:50] [Server thread/INFO]: [X-Prison-Addon/BlackMarket] [BlackMarket] Hooked into PlaceholderAPI.
+[19:57:50] [Server thread/INFO]: [X-Prison-Addon/BlackMarket] Black Market addon enabled with 13 item(s) in the pool.
+[19:57:50] [Server thread/INFO]: [X-Prison] Loaded addon: BlackMarket v1.1.0 by Drawethree
+[19:57:51] [Server thread/INFO]: [X-Prison] §aRegistered enchant §cBomb Finder§a created by §eDrawethree
+[19:57:51] [Server thread/INFO]: [X-Prison] Loaded addon: BombFinderEnchant v1.1 by Drawethree
+[19:57:51] [Server thread/INFO]: [X-Prison] §aRegistered enchant §cCluster Bomb§a created by §eDrawethree
+[19:57:51] [Server thread/INFO]: [X-Prison] Loaded addon: ClusterBombEnchant v1.5 by Drawethree
+[19:57:51] [Server thread/INFO]: [io.javalin.Javalin] Starting Javalin ...
+[19:57:51] [Server thread/INFO]: [org.eclipse.jetty.server.Server] jetty-11.0.23; built: 2024-08-14T01:40:17.906Z; git: 6fcf5ccaebd7ca13a0cb96c96adca699a24080a0; jvm 25.0.3+9-LTS
+[19:57:52] [Server thread/INFO]: [org.eclipse.jetty.server.session.DefaultSessionIdManager] Session workerName=node0
+[19:57:52] [Server thread/INFO]: [org.eclipse.jetty.server.handler.ContextHandler] Started o.e.j.s.ServletContextHandler@40037b4d{/,null,AVAILABLE}
+[19:57:52] [Server thread/INFO]: [org.eclipse.jetty.server.AbstractConnector] Started ServerConnector@2dfad555{HTTP/1.1, (http/1.1)}{0.0.0.0:8085}
+[19:57:52] [Server thread/INFO]: [org.eclipse.jetty.server.Server] Started Server@7f06b622{STARTING}[11.0.23,sto=0] @16102ms
+[19:57:52] [Server thread/INFO]: [io.javalin.Javalin] Javalin started in 423ms \o/
+[19:57:52] [Server thread/INFO]: [io.javalin.Javalin] Listening on http://localhost:8085/
+[19:57:52] [Server thread/INFO]: [io.javalin.Javalin] You are running Javalin 6.3.0 (released August 22, 2024. Your Javalin version is 726 days old. Consider checking for a newer version.).
+[19:57:52] [Server thread/INFO]: [X-Prison-Addon/Dashboard] Dashboard started on port 8085 — navigate to http://<your-server-ip>:8085
+[19:57:52] [Server thread/INFO]: [X-Prison] Loaded addon: Dashboard v1.4.0 by Drawethree
+[19:57:52] [Server thread/INFO]: [X-Prison] §aRegistered enchant §bDrill§a created by §eDrawethree
+[19:57:52] [Server thread/INFO]: [X-Prison] Loaded addon: DrillEnchant v1.4 by Drawethree
+[19:57:52] [Server thread/INFO]: [X-Prison] §aRegistered enchant §dEcho Booster§a created by §eDrawethree
+[19:57:52] [Server thread/INFO]: [X-Prison] Loaded addon: EchoBoosterEnchant v1.2 by Drawethree
+[19:57:52] [Server thread/INFO]: [X-Prison-Addon/Events] Enabling Events addon v1.0.2...
+[19:57:52] [Server thread/INFO]: [X-Prison-Addon/Events] [Events] Loaded 6 event(s).
+[19:57:52] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: xprisonevents [1.0.2]
+[19:57:52] [Server thread/INFO]: [X-Prison-Addon/Events] Hooked into PlaceholderAPI.
+[19:57:52] [Server thread/INFO]: [X-Prison-Addon/Events] Events addon enabled with 6 event(s).
+[19:57:52] [Server thread/INFO]: [X-Prison] Loaded addon: Events v1.0.2 by Drawethree
+[19:57:52] [Server thread/INFO]: [X-Prison] §aRegistered enchant §eLucky Block§a created by §eDrawethree
+[19:57:52] [Server thread/INFO]: [X-Prison] Loaded addon: LuckyBlockEnchant v1.5 by Drawethree
+[19:57:52] [Server thread/INFO]: [X-Prison-Addon/Momentum] Enabling Momentum addon v1.0.2...
+[19:57:52] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: xprisonmomentum [1.0.2]
+[19:57:52] [Server thread/INFO]: [X-Prison-Addon/Momentum] [Momentum] Hooked into PlaceholderAPI.
+[19:57:52] [Server thread/INFO]: [X-Prison-Addon/Momentum] Momentum addon enabled with 5 tier(s).
+[19:57:52] [Server thread/INFO]: [X-Prison] Loaded addon: Momentum v1.0.2 by Drawethree
+[19:57:52] [Server thread/INFO]: [X-Prison] §aRegistered enchant §dPet Finder§a created by §eDrawethree
+[19:57:52] [Server thread/INFO]: [X-Prison] Loaded addon: PetFinderEnchant v1.0 by Drawethree
+[19:57:52] [Server thread/INFO]: [X-Prison-Addon/Pets] [Pets] Loaded 6 rarit(ies).
+[19:57:52] [Server thread/INFO]: [X-Prison-Addon/Pets] [Pets] Loaded 5 pet type(s).
+[19:57:52] [Server thread/INFO]: [X-Prison-Addon/Pets] [Pets] Loaded 3 egg type(s).
+[19:57:52] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: xprisonpets [1.3.0]
+[19:57:52] [Server thread/INFO]: [X-Prison-Addon/Pets] [Pets] Built 5 pet icon(s) in 0ms.
+[19:57:52] [Server thread/INFO]: [X-Prison-Addon/Pets] [Pets] Configuration validated — no problems found.
+[19:57:52] [Server thread/INFO]: [X-Prison-Addon/Pets] Pets addon enabled. Pet types: 5
+[19:57:52] [Server thread/INFO]: [X-Prison] Loaded addon: Pets v1.3.0 by Drawethree
+[19:57:52] [Server thread/INFO]: [X-Prison] §aRegistered enchant §eRobot Finder§a created by §eDrawethree
+[19:57:52] [Server thread/INFO]: [X-Prison] Loaded addon: RobotFinderEnchant v1.2 by Drawethree
+[19:57:52] [Server thread/INFO]: [X-Prison] Enchant configuration for enchant vanguard loaded successfully.
+[19:57:52] [Server thread/INFO]: [X-Prison] §aRegistered enchant §x§0§0§e§0§f§fV§x§1§2§c§7§f§fa§x§2§3§a§d§f§fn§x§3§5§9§4§f§fg§x§4§6§7§b§f§fu§x§5§8§6§2§f§fa§x§6§9§4§8§f§fr§x§7§b§2§f§f§fd§a created by §eDrawethree
+[19:57:52] [Server thread/INFO]: [X-Prison-Addon/Vanguard] Vanguard enabled — registered 1/1 enchants.
+[19:57:52] [Server thread/INFO]: [X-Prison] Loaded addon: Vanguard v1.1.0 by Drawethree
+[19:57:52] [Server thread/INFO]: [X-Prison] §aRegistered enchant §9Voucher Finder§a created by §eDrawethree
+[19:57:52] [Server thread/INFO]: [X-Prison] Loaded addon: VoucherFinderEnchant v1.2 by Drawethree
+[19:57:52] [Server thread/INFO]: [X-Prison] Loaded 18 addons.
+[19:57:52] [Server thread/INFO]: X-Prison v2026.3.3.0 enabled
+[19:57:52] [Server thread/INFO]: Platform : PAPER (adventure text)
+[19:57:52] [Server thread/INFO]: Database : H2
+[19:57:52] [Server thread/INFO]: Modules  : 20/20
+[19:57:52] [Server thread/INFO]: Addons   : 18
+[19:57:52] [Server thread/INFO]: Startup  : 2198ms
+[19:57:52] [Server thread/INFO]: 
+[19:57:52] [Server thread/INFO]: [CommandAPI] Enabling CommandAPI v11.1.0
+[19:57:52] [Server thread/INFO]: [CommandAPI] Hooked into Paper ServerResourcesReloadedEvent
+[19:57:52] [Server thread/INFO]: [LibsDisguises] Enabling LibsDisguises v26.8.13
+[19:57:52] [Server thread/INFO]: [LibsDisguises] File Name: LibsDisguises-26.8.13-Premium.jar
+[19:57:52] [Server thread/INFO]: [LibsDisguises] Discovered nms version (LD: v26_R2) (MC: 26.2)
+[19:57:52] [Server thread/INFO]: [LibsDisguises] Jenkins Build: #1813
+[19:57:52] [Server thread/INFO]: [LibsDisguises] Build Date: 12/08/2026 23:49
+[19:57:52] [Server thread/INFO]: [LibsDisguises] Build Hash: c77589e8~1
+[19:57:52] [Server thread/INFO]: [LibsDisguises] Registered to: 2433376 (28)
+[19:57:52] [Server thread/INFO]: [LibsDisguises] Premium enabled, thank you for supporting Lib's Disguises!
+[19:57:52] [Server thread/INFO]: [LibsDisguises] Config 'TallSelfDisguises' is set to 'SCALED', LD will scale down (when possible) oversized disguises from self disguise. https://www.spigotmc.org/wiki/lib-s-disguises-faq/#tall-disguises-self-disguises
+[19:57:52] [Server thread/INFO]: [packetevents] Loading block mappings for V_26_2/22...
+[19:57:53] [Server thread/INFO]: [packetevents] Finished loading block mappings for V_26_2/22 in 211.862275ms
+[19:57:53] [Server thread/INFO]: [LibsDisguises] Config is up to date!
+[19:57:53] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: libsdisguises [1.0.0]
+[19:57:53] [Server thread/INFO]: [LibsDisguises] PlaceholderAPI support enabled
+[19:57:53] [Server thread/INFO]: [GlobalMarketPlus] Enabling GlobalMarketPlus v1.4.1.5
+[19:57:53] [Server thread/INFO]: [GlobalMarketPlus] Properties has been loaded!
+[19:57:53] [Server thread/INFO]: [GlobalMarketPlus] Plugin loading...
+[19:57:53] [Server thread/INFO]: [GlobalMarketPlus] Enabled Event Listener .
+[19:57:53] [Server thread/INFO]: [GlobalMarketPlus] Enabled Command Listener .
+[19:57:53] [Server thread/INFO]:   _____  _         _            _    __  __               _           _      _____   _
+[19:57:53] [Server thread/INFO]:  / ____|| |       | |          | |  |  \/  |             | |         | |    |  __ \ | |
+[19:57:53] [Server thread/INFO]: | |  __ | |  ___  | |__   __ _ | |  | \  / |  __ _  _ __ | | __  ___ | |_   | |__) || | _   _  ___
+[19:57:53] [Server thread/INFO]: | | |_ || | / _ \ | '_ \ / _` || |  | |\/| | / _` || '__|| |/ / / _ \| __|  |  ___/ | || | | |/ __|
+[19:57:53] [Server thread/INFO]: | |__| || || (_) || |_) | (_| || |  | |  | || (_| || |   |   < |  __/| |_   | |     | || |_| |\__ \
+[19:57:53] [Server thread/INFO]:  \_____||_| \___/ |_.__/ \__,_||_|  |_|  |_| \__,_||_|   |_|\_\ \___| \__|  |_|     |_| \__,_||___/
+[19:57:53] [Server thread/INFO]: 
+[19:57:53] [Server thread/INFO]: [GlobalMarketPlus] Loading plugins/GlobalMarketPlus-1.4.1.5.jar L=1309622
+[19:57:53] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: gmpapi [1.0.0]
+[19:57:53] [Server thread/INFO]: GlobalMarketPlus >>> Found PlaceholderAPI , everything is OK.
+[19:57:53] [Server thread/INFO]: GlobalMarketPlus >>> Found Vault , but the Economy Engine plugin not found, this function has been disabled.
+[19:57:53] [Server thread/INFO]: [DeluxeMenus] Enabling DeluxeMenus v1.14.1-Release
+[19:57:53] [Server thread/INFO]: [DeluxeMenus] Successfully hooked into PlaceholderAPI!
+[19:57:53] [Server thread/WARN]: [DeluxeMenus] Could not hook into Vault!
+DeluxeMenus will continue to work but some features (such as the 'has money' requirement) may not be available.
+[19:57:53] [Server thread/WARN]: [DeluxeMenus] Found 'data' option for item: teststone in menu: basics_menu. This option is deprecated and will be removed soon. Please use 'damage' instead.
+[19:57:53] [Server thread/INFO]: [DeluxeMenus] 4 GUI menus loaded!
+[19:57:53] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: deluxemenus [1.14.1-Release]
+[19:57:53] [Server thread/INFO]: [DeluxeMenus] You are running the latest version of DeluxeMenus!
+[19:57:53] [Server thread/INFO]: [CMI] Enabling CMI v9.8.9.8
+[19:57:53] [Server thread/INFO]: _______________________________________________________
+[19:57:53] [Server thread/INFO]:  
+[19:57:53] [Server thread/INFO]:  ██████╗███╗   ███╗██╗
+[19:57:53] [Server thread/INFO]: ██╔════╝████╗ ████║██║
+[19:57:53] [Server thread/INFO]: ██║     ██╔████╔██║██║
+[19:57:53] [Server thread/INFO]: ██║     ██║╚██╔╝██║██║
+[19:57:53] [Server thread/INFO]: ╚██████╗██║ ╚═╝ ██║██║
+[19:57:53] [Server thread/INFO]:  ╚═════╝╚═╝     ╚═╝╚═╝
+[19:57:53] [Server thread/INFO]: _______________________________________________________
+[19:57:53] [Server thread/INFO]: Integrating PaperSpigot async methods
+[19:57:53] [Server thread/INFO]: Vault found. (Loaded: true)
+[19:57:53] [CMI-Thread-1/INFO]: Loaded (-) locale download into memory. Took 6ms
+[19:57:53] [Server thread/INFO]: Loaded (71) 69 Enabled and 2 Disabled modules into memory. Took 35ms
+[19:57:53] [Server thread/INFO]: BlueMap found. (Loaded: false)
+[19:57:54] [Server thread/INFO]: Initialized Cipher256 AES
+[19:57:54] [Server thread/INFO]: Loaded (61) regular alias into memory. Took 25ms
+[19:57:54] [CMI-Thread-2/INFO]: Loaded (1) custom text's into memory. Took 4ms
+[19:57:54] [Server thread/INFO]: (RandomTeleportation) Can't find world with (world_the_end) name
+[19:57:54] [Server thread/INFO]: (RandomTeleportation) Can't find world with (lobby) name
+[19:57:54] [Server thread/INFO]: (RandomTeleportation) Can't find world with (town) name
+[19:57:54] [Server thread/INFO]: (RandomTeleportation) Can't find world with (freebuild) name
+[19:57:54] [Server thread/INFO]: (RandomTeleportation) Can't find world with (tycoon) name
+[19:57:54] [Server thread/INFO]: (RandomTeleportation) Can't find world with (SuperiorWorld) name
+[19:57:54] [Server thread/INFO]: (RandomTeleportation) Can't find world with (Schematics) name
+[19:57:54] [Server thread/INFO]: (RandomTeleportation) Can't find world with (rpg) name
+[19:57:54] [Server thread/INFO]: (RandomTeleportation) Can't find world with (rpg_nether) name
+[19:57:54] [Server thread/INFO]: (RandomTeleportation) Can't find world with (rpg_the_end) name
+[19:57:54] [Server thread/INFO]: SQLite 3.49.1 data base type detected
+[19:57:54] [Server thread/INFO]: Loaded (-) SqLite into memory. Took 78ms
+[19:57:54] [Server thread/INFO]: [CMI] Vault was found but economy engine is missing. Use one from list provided in https://dev.bukkit.org/bukkit-plugins/vault/
+[19:57:54] [Server thread/INFO]: [CMI] Alternatively you can enable CMI economy in config.yml file
+[19:57:54] [Server thread/INFO]: Vault was found but not economy plugin, you will have limited economy support
+[19:57:54] [Server thread/INFO]: Will attempt secondary economy check after server starts.
+[19:57:54] [Server thread/INFO]: Loaded (5) warning categories into memory. Took 1ms
+[19:57:54] [Server thread/INFO]: Loaded (3) warning commands into memory. Took 0ms
+[19:57:54] [Server thread/INFO]: Loaded (0) cooldowns into memory. Took 0ms
+[19:57:54] [Server thread/INFO]: Loaded (160) custom mob heads into memory. Took 9ms
+[19:57:54] [Server thread/INFO]: Loaded (4) chat bubble groups into memory. Took 1ms
+[19:57:54] [Server thread/INFO]: Loaded (5) kits into memory. Took 7ms
+[19:57:54] [Server thread/INFO]: Loaded (5) dialogs into memory. Took 5ms
+[19:57:54] [Server thread/INFO]: Loaded (7) ranks into memory. Took 6ms
+[19:57:54] [Server thread/INFO]: Loaded (8) playtime rewards into memory. Took 0ms
+[19:57:54] [Server thread/INFO]: Executed Player DB querry in 1ms
+[19:57:54] [Server thread/INFO]: Loaded (13) player data into memory. Took 8ms
+[19:57:54] [Server thread/INFO]: Loaded (0) playtime records into memory. Took 0ms
+[19:57:54] [Server thread/INFO]: Loaded (0) playtime reward records into memory. Took 0ms
+[19:57:54] [Server thread/INFO]: Loaded (0) custom alias into memory. Took 0ms
+[19:57:54] [Server thread/INFO]: Loaded (-) Registered events into memory. Took 107ms
+[19:57:54] [Server thread/INFO]: Loaded (0) event action commands into memory. Took 2ms
+[19:57:54] [Server thread/INFO]: Loaded (EN) language file into memory. Took 63ms
+[19:57:54] [Server thread/INFO]: Loaded (DE) language file into memory. Took 59ms
+[19:57:54] [Server thread/INFO]: Loaded (245) worth values into memory. Took 18ms
+[19:57:54] [Server thread/INFO]: Loaded (12) warps into memory. Took 2ms
+[19:57:54] [Server thread/INFO]: VaultPermissions found. (Loaded: true)
+[19:57:54] [Server thread/INFO]: PlaceholderAPI found. (Loaded: true)
+[19:57:54] [Server thread/INFO]: Loaded (5) schedules into memory. Took 3ms
+[19:57:54] [Server thread/INFO]: Loaded (0) skin cache entries into memory. Took 0ms
+[19:57:54] [Server thread/INFO]: [CMI] Preloading playtimetop statistics
+[19:57:54] [Server thread/INFO]: Loaded (0) ArmorStand templates into memory. Took 0ms
+[19:57:54] [Server thread/INFO]: Version 9.8.9.8 has been enabled
+[19:57:54] [Server thread/INFO]: _______________________________________________________
+[19:57:54] [Server thread/INFO]: [XPrivateMines] Enabling XPrivateMines v2026.3.0.9
+[19:57:54] [Server thread/INFO]: [XPrivateMines] Creating flat world: private_mines
+[19:57:55] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:private_mines'...
+[19:57:55] [Server thread/INFO]: Prepared spawn area in 0 ms
+[19:57:55] [Server thread/INFO]: [WorldGuard] (private_mines) TNT ignition is blocked.
+[19:57:55] [Server thread/INFO]: [WorldGuard] (private_mines) Lighters are PERMITTED.
+[19:57:55] [Server thread/INFO]: [WorldGuard] (private_mines) Lava fire is blocked.
+[19:57:55] [Server thread/INFO]: [WorldGuard] (private_mines) Fire spread is UNRESTRICTED.
+[19:57:55] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'private_mines'
+[19:57:55] [Server thread/INFO]: [XPrivateMines] World created successfully!
+[19:57:55] [Server thread/INFO]: [XPrivateMines] 
+
+ __  __          ____  ____  _____     ___  _____ _____   __  __ ___ _   _ _____ ____  
+ \ \/ /         |  _ \|  _ \|_ _\ \   / / \|_   _| ____| |  \/  |_ _| \ | | ____/ ___| 
+  \  /   _____  | |_) | |_) || | \ \ / / _ \ | | |  _|   | |\/| || ||  \| |  _| \___ \ 
+  /  \  |_____| |  __/|  _ < | |  \ V / ___ \| | | |___  | |  | || || |\  | |___ ___) |
+ /_/\_\         |_|   |_| \_\___|  \_/_/   \_\_| |_____| |_|  |_|___|_| \_|_____|____/ 
+                                                                                       
+
+[19:57:55] [Server thread/INFO]: [XPrivateMines] 2026.3.0.9
+[19:57:55] [Server thread/INFO]: [XPrivateMines] <white>By: <yellow>[Drawethree]
+[19:57:55] [Server thread/INFO]: [XPrivateMines] <white>Website: <yellow>www.drawethree.dev
+[19:57:55] [Server thread/INFO]: [XPrivateMines] <white>Discord Support: <yellow>https://discord.gg/ZeSkmEC6mG
+[19:57:55] [Server thread/INFO]: [XPrivateMines] Registered main command.
+[19:57:55] [Server thread/INFO]: [XPrivateMines] Using X-Prison currency: money
+[19:57:55] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: xprivatemines [2026.3.0.9]
+[19:57:55] [Server thread/INFO]: [XPrivateMines] Loaded mine tier Tier 1
+[19:57:55] [Server thread/INFO]: [XPrivateMines] ✅ Loaded schematic: pmine.schem
+[19:57:55] [Server thread/INFO]: [XPrivateMines] Hooked into Oraxen.
+[19:57:55] [Server thread/WARN]: [XPrivateMines] <red>Skipping X-PrivateMines-2026.3.0.9.jar: no X-PrivateMines-Addon-Class attribute in manifest.
+[19:57:55] [GlobalMarketPlus-Loading/INFO]: GlobalMarketPlus >>> Successfully connected SQLite:Database.db server.
+[19:57:55] [GlobalMarketPlus-Loading/INFO]: GlobalMarketPlus >>> Successfully connected SQLite:Recorder.db server.
+[19:57:55] [GlobalMarketPlus-Loading/INFO]: GlobalMarketPlus >>> Initialized NMS :26.2.build.112-stable
+[19:57:55] [GlobalMarketPlus-Loading/INFO]: GlobalMarketPlus >>> Async threads started.
+[19:57:55] [GlobalMarketPlus-Loading/INFO]: GlobalMarketPlus >>> Plugin successfully enabled 1730ms .
+[19:57:55] [Server thread/INFO]: [io.javalin.Javalin] Starting Javalin ...
+[19:57:55] [Server thread/INFO]: [org.eclipse.jetty.server.Server] jetty-11.0.23; built: 2024-08-14T01:40:17.906Z; git: 6fcf5ccaebd7ca13a0cb96c96adca699a24080a0; jvm 25.0.3+9-LTS
+[19:57:55] [Server thread/INFO]: [org.eclipse.jetty.server.session.DefaultSessionIdManager] Session workerName=node0
+[19:57:55] [Server thread/INFO]: [org.eclipse.jetty.server.handler.ContextHandler] Started o.e.j.s.ServletContextHandler@1ecd56ac{/,null,AVAILABLE}
+[19:57:55] [Server thread/INFO]: [org.eclipse.jetty.server.AbstractConnector] Started ServerConnector@d7cf4ac{HTTP/1.1, (http/1.1)}{0.0.0.0:8090}
+[19:57:55] [Server thread/INFO]: [org.eclipse.jetty.server.Server] Started Server@30834424{STARTING}[11.0.23,sto=0] @19981ms
+[19:57:55] [Server thread/INFO]: [io.javalin.Javalin] Javalin started in 287ms \o/
+[19:57:55] [Server thread/INFO]: [io.javalin.Javalin] Listening on http://localhost:8090/
+[19:57:55] [Server thread/INFO]: [io.javalin.Javalin] You are running Javalin 6.3.0 (released August 22, 2024. Your Javalin version is 726 days old. Consider checking for a newer version.).
+[19:57:55] [Server thread/INFO]: [X-PrivateMines-Addon/Dashboard] Dashboard started on port 8090 — navigate to http://<your-server-ip>:8090
+[19:57:55] [Server thread/INFO]: [XPrivateMines] Loaded addon: Dashboard v1.0.4 by Drawethree
+[19:57:55] [Server thread/INFO]: [XPrivateMines] Loaded 1 addons.
+[19:57:55] [Server thread/INFO]: [TAB-Bridge] Enabling TAB-Bridge v6.2.2
+[19:57:55] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: tab [6.2.2]
+[19:57:55] [Server thread/INFO]: [XPrisonArmors] Enabling XPrisonArmors v1.0.4
+[19:57:55] [Server thread/INFO]: [XPrisonArmors] 
+
+ __  __          ____  ____  ___ ____   ___  _   _      _    ____  __  __  ___  ____  ____  
+ \ \/ /         |  _ \|  _ \|_ _/ ___| / _ \| \ | |    / \  |  _ \|  \/  |/ _ \|  _ \/ ___| 
+  \  /   _____  | |_) | |_) || |\___ \| | | |  \| |   / _ \ | |_) | |\/| | | | | |_) \___ \ 
+  /  \  |_____| |  __/|  _ < | | ___) | |_| | |\  |  / ___ \|  _ <| |  | | |_| |  _ < ___) |
+ /_/\_\         |_|   |_| \_\___|____/ \___/|_| \_| /_/   \_\_| \_\_|  |_|\___/|_| \_\____/ 
+                                                                                            
+
+[19:57:55] [Server thread/INFO]: [XPrisonArmors] 1.0.4
+[19:57:55] [Server thread/INFO]: [XPrisonArmors] §fBy: §e[TheRealDrawe]
+[19:57:55] [Server thread/INFO]: [XPrisonArmors] §fWebsite: §ewww.drawethree.dev
+[19:57:55] [Server thread/INFO]: [XPrisonArmors] §fDiscord Support: §ehttps://discord.gg/ZeSkmEC6mG
+[19:57:56] [Server thread/ERROR]: Error occurred while enabling XPrisonArmors v1.0.4 (Is it up to date?)
+java.lang.ExceptionInInitializerError
+	at XPrisonArmors-1.0.4.jar//dev.drawethree.xprisonarmors.utils.item.ItemStackBuilder.customModelData(ItemStackBuilder.java:143) ~[?:?]
+	at XPrisonArmors-1.0.4.jar//dev.drawethree.xprisonarmors.manager.ArmorsManager.loadPiece(ArmorsManager.java:131) ~[?:?]
+	at XPrisonArmors-1.0.4.jar//dev.drawethree.xprisonarmors.manager.ArmorsManager.loadAllTiers(ArmorsManager.java:83) ~[?:?]
+	at XPrisonArmors-1.0.4.jar//dev.drawethree.xprisonarmors.manager.ArmorsManager.load(ArmorsManager.java:46) ~[?:?]
+	at XPrisonArmors-1.0.4.jar//dev.drawethree.xprisonarmors.XPrisonArmors.enable(XPrisonArmors.java:80) ~[?:?]
+	at helper.jar//me.lucko.helper.plugin.ExtendedJavaPlugin.onEnable(ExtendedJavaPlugin.java:100) ~[?:?]
+	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:279) ~[paper-api-26.2.build.112-stable.jar:?]
+	at io.papermc.paper.plugin.manager.PaperPluginInstanceManager.enablePlugin(PaperPluginInstanceManager.java:201) ~[paper-26.2.jar:26.2-112-c9e894d]
+	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.enablePlugin(PaperPluginManagerImpl.java:109) ~[paper-26.2.jar:26.2-112-c9e894d]
+	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:519) ~[paper-api-26.2.build.112-stable.jar:?]
+	at org.bukkit.craftbukkit.CraftServer.enablePlugin(CraftServer.java:633) ~[paper-26.2.jar:26.2-112-c9e894d]
+	at org.bukkit.craftbukkit.CraftServer.enablePlugins(CraftServer.java:590) ~[paper-26.2.jar:26.2-112-c9e894d]
+	at net.minecraft.server.MinecraftServer.initPostWorld(MinecraftServer.java:648) ~[paper-26.2.jar:26.2-112-c9e894d]
+	at net.minecraft.server.dedicated.DedicatedServer.initServer(DedicatedServer.java:343) ~[paper-26.2.jar:26.2-112-c9e894d]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1266) ~[paper-26.2.jar:26.2-112-c9e894d]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:303) ~[paper-26.2.jar:26.2-112-c9e894d]
+	at java.base/java.lang.Thread.run(Thread.java:1474) ~[?:?]
+Caused by: java.lang.NumberFormatException: For input string: "build"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67) ~[?:?]
+	at java.base/java.lang.Integer.parseInt(Integer.java:565) ~[?:?]
+	at java.base/java.lang.Integer.parseInt(Integer.java:662) ~[?:?]
+	at XPrisonArmors-1.0.4.jar//dev.drawethree.xprisonarmors.utils.compat.MinecraftVersion.<clinit>(MinecraftVersion.java:204) ~[?:?]
+	... 17 more
+[19:57:56] [Server thread/INFO]: [XPrisonArmors] Disabling XPrisonArmors v1.0.4
+[19:57:56] [Server thread/INFO]: [XRobots] Enabling XRobots v1.2.1
+[19:57:56] [Server thread/INFO]: [XRobots] 
+
+ __  __          ____   ___  ____   ___ _____ ____  
+ \ \/ /         |  _ \ / _ \| __ ) / _ \_   _/ ___| 
+  \  /   _____  | |_) | | | |  _ \| | | || | \___ \ 
+  /  \  |_____| |  _ <| |_| | |_) | |_| || |  ___) |
+ /_/\_\         |_| \_\\___/|____/ \___/ |_| |____/ 
+                                                    
+
+[19:57:56] [Server thread/INFO]: [XRobots] 1.2.1
+[19:57:56] [Server thread/INFO]: [XRobots] §fBy: §e[Drawethree]
+[19:57:56] [Server thread/INFO]: [XRobots] §fWebsite: §ehttps://www.drawethree.dev
+[19:57:56] [Server thread/INFO]: [XRobots] §fDiscord Support: §ehttps://discord.gg/ZeSkmEC6mG
+[19:57:56] [Server thread/INFO]: [XRobots] §fUsing §aH2 DB.
+[19:57:56] [Server thread/INFO]: [com.zaxxer.hikari.HikariDataSource] xrobots-0 - Starting...
+[19:57:56] [Server thread/INFO]: [com.zaxxer.hikari.HikariDataSource] xrobots-0 - Start completed.
+[19:57:56] [Server thread/INFO]: [XRobots] Registered Currency: Money
+[19:57:56] [Server thread/INFO]: [XRobots] Registered Currency: Gems
+[19:57:56] [Server thread/INFO]: [XRobots] Registered Currency: Tokens
+[19:57:56] [Server thread/INFO]: [XRobots] Loaded robot type: coal
+[19:57:56] [Server thread/INFO]: [XRobots] Loaded robot type: iron
+[19:57:56] [Server thread/INFO]: [XRobots] Loaded robot type: gold
+[19:57:56] [Server thread/INFO]: [XRobots] Loaded robot type: emerald
+[19:57:56] [Server thread/INFO]: [XRobots] Loaded robot type: diamond
+[19:57:56] [Server thread/INFO]: [XRobots] Loaded robot type: coal_gems
+[19:57:56] [Server thread/INFO]: [XRobots] Loaded robot type: iron_gems
+[19:57:56] [Server thread/INFO]: [XRobots] Loaded robot type: gold_gems
+[19:57:56] [Server thread/INFO]: [XRobots] Loaded robot type: emerald_gems
+[19:57:56] [Server thread/INFO]: [XRobots] Loaded robot type: diamond_gems
+[19:57:56] [Server thread/INFO]: [BlueMap] Enabling BlueMap v5.23
+[19:57:56] [Server thread/INFO]: [BlueMap] Saving all worlds once, to make sure all required world-properties are present...
+[19:57:56] [Server thread/WARN]: A manual (plugin-induced) save has been detected while server is configured to auto-save. This may affect performance.
+[19:57:56] [BlueMap-Load/INFO]: [BlueMap] Loading...
+[19:57:56] [Server thread/INFO]: [spark] Starting background profiler...
+[19:57:56] [BlueMap-Load/INFO]: [BlueMap] Loading resources...
+[19:57:56] [Server thread/WARN]: Could not register alias sell because it contains commands that do not exist: shop sell hand
+[19:57:56] [Server thread/WARN]: Could not register alias sellall because it contains commands that do not exist: shop sell all
+[19:57:56] [Server thread/WARN]: Could not register alias hand because it contains commands that do not exist: shop sell hand
+[19:57:56] [Server thread/WARN]: Could not register alias all because it contains commands that do not exist: shop sell all
+[19:57:56] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
+[19:57:56] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[19:57:56] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[19:57:56] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:private_mines
+[19:57:56] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[19:57:56] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[19:57:56] [Server thread/INFO]: ThreadedAnvilChunkStorage (private_mines): All chunks are saved
+[19:57:56] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[19:57:56] [Server thread/INFO]: Running delayed init tasks
+[19:57:56] [Craft Scheduler Thread - 7 - XPrivateMines/INFO]: [XPrivateMines] YAML parse completed in 1ms
+[19:57:56] [Server thread/INFO]: [com.fastasyncworldedit.bukkit.regions.WorldGuardFeature] Plugin 'WorldGuard' found. Using it now.
+[19:57:56] [Server thread/INFO]: [com.fastasyncworldedit.bukkit.FaweBukkit] Attempting to use plugin 'WorldGuard'
+[19:57:56] [Craft Scheduler Thread - 1 - X-Prison/INFO]: [X-Prison-Addon/Dashboard] Player index backfilled: 3 / 3 players.
+[19:57:56] [Server thread/INFO]: [Skript]     Loaded regions hook for WorldGuard. Please note that Skript's region hooks are deprecated and will be removed in a future release. For WorldGuard support, we recommend using skript-worldguard: https://github.com/SkriptLang/skript-worldguard
+[19:57:56] [Craft Scheduler Thread - 7 - XPrivateMines/INFO]: [XPrivateMines] Loaded 1 mines in 58ms (parse 1ms, construct 57ms)
+[19:57:56] [Server thread/INFO]: [Skript] Loading variables...
+[19:57:56] [Server thread/INFO]: [Skript] Loaded 0 variables in 0.0 seconds
+[19:57:56] [Server thread/INFO]: [Skript] All scripts loaded without errors.
+[19:57:56] [Server thread/INFO]: [Skript] Loaded 2 scripts with a total of 6 structures in 0.14 seconds
+[19:57:56] [Server thread/INFO]: [Skript] Finished loading.
+[19:57:56] [Server thread/INFO]: [X-Prison] Custom-content reload detected. Reloading autosell global / region data.
+[19:57:56] [Server thread/INFO]: [X-Prison] §aLoaded §e1 §aglobal sell prices.
+[19:57:56] [Server thread/INFO]: [X-Prison] Custom-content reload detected. Reloading mines.
+[19:57:56] [Server thread/INFO]: [X-Prison] §aLoaded §e0 §amines.
+[19:57:56] [Server thread/INFO]: [XPrivateMines] Loaded mine tier Tier 1
+[19:57:56] [Server thread/INFO]: [XPrivateMines] Oraxen data loaded - refreshed mine tiers and selectable blocks.
+[19:57:56] [Server thread/INFO]: [CMI] Permission plugin: LuckPerms5.5.71
+[19:57:56] [Server thread/INFO]: [CMI] Vault was found but economy engine is missing. Use one from list provided in https://dev.bukkit.org/bukkit-plugins/vault/
+[19:57:56] [Server thread/INFO]: [CMI] Alternatively you can enable CMI economy in config.yml file
+[19:57:56] [Server thread/INFO]: [CMI] Vault was found but not economy plugin, you will have limited economy support
+[19:57:56] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: cmi [9.8.9.8]
+[19:57:56] [Server thread/INFO]: [CMI] PlaceholderAPI hooked.
+[19:57:56] [Server thread/INFO]: GlobalMarketPlus >>> Configuration settings loaded, language: English
+[19:57:56] [Server thread/INFO]: GlobalMarketPlus >>> Loaded 29 files, error 0 .
+[19:57:56] [Server thread/INFO]: GlobalMarketPlus >>> Loaded all of GUIs and 0 custom GUIs.
+[19:57:56] [Server thread/INFO]: GlobalMarketPlus >>> Enabled SQLite .
+[19:57:56] [Server thread/INFO]: GlobalMarketPlus >>> Loaded 0 JSON components
+[19:57:56] [Server thread/INFO]: GlobalMarketPlus >>> Loaded 3 groups
+[19:57:56] [Server thread/INFO]: GlobalMarketPlus >>> Loaded 10 categories
+[19:57:56] [Server thread/INFO]: GlobalMarketPlus >>> Initialization completed, version v1.4.1.5
+[19:57:56] [Server thread/INFO]: Done (20.440s)! For help, type "help"
+[19:57:56] [GlobalMarketPlus-TaskThread/INFO]: GlobalMarketPlus >>> Deleting outdated records in the recorder database...
+[19:57:56] [GlobalMarketPlus-TaskThread/INFO]: GlobalMarketPlus >>> Deleted 0 outdated records.
+[19:57:57] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: luckperms [5.4-R2]
+[19:57:57] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: player-j17 [1.0.3]
+[19:57:57] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: utils [1.0.14]
+[19:57:57] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: world [1.2.3]
+[19:57:57] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: vault [1.8.3]
+[19:57:57] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: player [2.0.9]
+[19:57:57] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: checkitem [2.7.9]
+[19:57:57] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: worldguard [1.4.2]
+[19:57:57] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: math [2.0.2]
+[19:57:57] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: parseother [2.0.0]
+[19:57:57] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: pinger [1.0.1]
+[19:57:57] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: statistic [2.0.2]
+[19:57:57] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: server [2.7.3]
+[19:57:57] [Server thread/INFO]: 13 placeholder hook(s) registered!
+[19:57:57] [Craft Scheduler Thread - 0 - Oraxen/INFO]: Oraxen | Automatic upload of the resource pack is enabled, uploading...
+[19:57:57] [Craft Scheduler Thread - 0 - Oraxen/INFO]: Oraxen | Self-hosted resource pack server started on 0.0.0.0:25600
+[19:57:57] [Craft Scheduler Thread - 0 - Oraxen/INFO]: Oraxen | Resourcepack uploaded to http://128.140.99.121:25600/pack.zip in 56ms.
+[19:57:57] [BlueMap-Load/INFO]: [BlueMap] Resources loaded.
+[19:57:57] [BlueMap-Load/INFO]: [BlueMap] Initializing Storage: 'file' (Type: 'bluemap:file')
+[19:57:57] [BlueMap-Load/INFO]: [BlueMap] Loading map 'world'...
+[19:57:57] [Server thread/INFO]: herobrine (/172.86.114.38:33392) lost connection: Disconnected
+[19:57:57] [BlueMap-Load/INFO]: [BlueMap] Loading map 'overworld'...
+[19:57:57] [BlueMap-Load/INFO]: [BlueMap] Loading map 'private_mines'...
+[19:57:57] [BlueMap-Load/INFO]: [BlueMap] WebServer bound to all network interfaces on port 8103
+[19:57:57] [BlueMap-Webserver/INFO]: [BlueMap] WebServer started.
+[19:57:57] [BlueMap-Load/INFO]: [BlueMap] Loaded!
+[19:57:58] [Craft Scheduler Thread - 1 - XPrivateMines/INFO]: [X-PrivateMines-Addon/Dashboard] Player index backfill complete (1 players seeded).
+[19:58:17] [WorldGuard Region I/O/INFO]: [WorldGuard] Region data changes made in 'private_mines' have been background saved
+[20:05:46] [JettyServerThreadPool-141/WARN]: [org.bukkit.craftbukkit.legacy.CraftLegacy] Initializing Legacy Material Support. Unless you have legacy plugins and/or data this is a bug!
+[20:07:56] [Server thread/INFO]: [Mining] Nicht sicher wie du anfängst? Tippe /help für eine Übersicht über Zonen, Rankup und mehr!
+[20:11:38] [Server thread/INFO]: herobrine (/172.86.114.38:38570) lost connection: Disconnected
+[20:17:56] [Server thread/INFO]: [Mining] Nicht sicher wie du anfängst? Tippe /help für eine Übersicht über Zonen, Rankup und mehr!
+[20:18:04] [User Authenticator #0/INFO]: UUID of player Festas is 6e874670-66e9-48dd-b16f-48029fc0c645
+[20:18:04] [Server thread/INFO]: [HorriblePlayerLoginEventHack] You have plugins listening to the PlayerLoginEvent, this will cause re-configuration APIs to be unavailable: [LuckPerms, CMI, DeluxeMenus, ProtocolLib, WorldGuard]
+[20:18:07] [helper-scheduler-1/INFO]: [XRobots] Loaded Festas's robots.
+[20:18:07] [Server thread/INFO]: Festas joined the game
+[20:18:07] [Server thread/INFO]: Festas[/213.244.61.228:41770] logged in with entity id 166 at ([minecraft:private_mines]-24.12953450499675, 102.0, 3.6936262075275184)
+[20:18:12] [Server thread/INFO]: herobrine (/172.86.114.38:55006) lost connection: Disconnected
+[20:20:29] [Server thread/INFO]: [NBTAPI] [NBTAPI] Found Minecraft: 26.2.build.112! Trying to find NMS support
+[20:20:29] [Server thread/WARN]: [NBTAPI] [NBTAPI] This Server-Version(26.2.build.112-stable) is not supported by this NBT-API Version(2.15.7) located in XRobots. The NBT-API will try to work as good as it can! Some functions may not work!
+[20:20:29] [Server thread/INFO]: [NBTAPI] [NBTAPI] Using the plugin 'XRobots' to create a bStats instance!
+[20:22:31] [Server thread/INFO]: CURRENCIES » Successfuly given ⛃10.0M Tokens to Festas.
+[20:22:31] [Server thread/INFO]: CURRENCIES » Successfuly given ⛃10.0M Tokens to Festas.
+[20:22:31] [AsyncNotifyKeyedQueue - 0/INFO]: Invalid value for [] (Does not match a valid block type: minecraft:msg), acceptable values are any mask
+[20:22:34] [helper-scheduler-1/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:22:34] [helper-scheduler-1/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:22:34] [helper-scheduler-1/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.fawe.v26_2.PaperweightStarlightRelighterFactory as relighter factory.
+[20:22:34] [helper-scheduler-1/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:23:20] [helper-scheduler-3/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:23:20] [helper-scheduler-3/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:23:20] [helper-scheduler-3/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:23:32] [helper-scheduler-3/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:23:32] [helper-scheduler-3/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:23:32] [helper-scheduler-3/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:23:54] [helper-scheduler-1/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:23:54] [helper-scheduler-1/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:23:54] [helper-scheduler-1/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:24:28] [Server thread/INFO]: herobrine (/172.86.114.38:57260) lost connection: Disconnected
+[20:25:42] [helper-scheduler-2/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:25:42] [helper-scheduler-2/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:25:42] [helper-scheduler-2/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:27:56] [Server thread/INFO]: [Mining] Nicht sicher wie du anfängst? Tippe /help für eine Übersicht über Zonen, Rankup und mehr!
+[20:31:15] [Server thread/INFO]: herobrine (/172.86.114.38:34386) lost connection: Disconnected
+[20:36:34] [helper-scheduler-1/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:36:34] [helper-scheduler-1/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:36:34] [helper-scheduler-1/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:36:36] [helper-scheduler-1/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:36:36] [helper-scheduler-1/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:36:36] [helper-scheduler-1/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:36:37] [helper-scheduler-1/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:36:37] [helper-scheduler-1/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:36:37] [helper-scheduler-1/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:36:39] [helper-scheduler-1/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:36:39] [helper-scheduler-1/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:36:39] [helper-scheduler-1/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:36:41] [helper-scheduler-1/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:36:41] [helper-scheduler-1/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:36:41] [helper-scheduler-1/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:36:41] [helper-scheduler-1/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:36:41] [helper-scheduler-1/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:36:41] [helper-scheduler-1/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:36:42] [helper-scheduler-1/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:36:42] [helper-scheduler-1/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:36:42] [helper-scheduler-1/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:36:44] [helper-scheduler-1/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:36:44] [helper-scheduler-1/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:36:44] [helper-scheduler-1/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:36:45] [helper-scheduler-1/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:36:45] [helper-scheduler-1/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:36:45] [helper-scheduler-1/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:36:46] [helper-scheduler-1/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:36:46] [helper-scheduler-1/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:36:46] [helper-scheduler-1/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:36:47] [WorldGuard Region I/O/INFO]: [WorldGuard] Region data changes made in 'private_mines' have been background saved
+[20:36:56] [Craft Scheduler Thread - 71 - XPrivateMines/INFO]: [XPrivateMines] ⏳ Auto-saving 1 modified private mine(s)...
+[20:36:56] [Craft Scheduler Thread - 71 - XPrivateMines/INFO]: [XPrivateMines] Saving PrivateMine 143dea84-67a0-4484-b067-999a908a7247 to config
+[20:36:56] [Craft Scheduler Thread - 71 - XPrivateMines/INFO]: [XPrivateMines] ✅ Done auto-saving modified private mines.
+[20:37:56] [Server thread/INFO]: [Mining] Nicht sicher wie du anfängst? Tippe /help für eine Übersicht über Zonen, Rankup und mehr!
+[20:39:40] [Server thread/INFO]: Festas lost connection: Disconnected
+[20:39:40] [Server thread/INFO]: Festas left the game
+[20:43:45] [Server thread/INFO]: herobrine (/172.86.114.38:33954) lost connection: Disconnected
+[20:47:56] [Server thread/INFO]: [Mining] Nicht sicher wie du anfängst? Tippe /help für eine Übersicht über Zonen, Rankup und mehr!
+[20:51:10] [Server thread/INFO]: herobrine (/172.86.114.38:38840) lost connection: Disconnected
+[20:56:32] [User Authenticator #1/INFO]: UUID of player Festas is 6e874670-66e9-48dd-b16f-48029fc0c645
+[20:56:35] [helper-scheduler-2/INFO]: [XRobots] Loaded Festas's robots.
+[20:56:35] [Server thread/INFO]: Festas joined the game
+[20:56:35] [Server thread/INFO]: Festas[/213.244.61.228:48190] logged in with entity id 178 at ([minecraft:private_mines]-18.255159555785802, 102.0, 18.9426672220315)
+[20:57:42] [Server thread/INFO]: herobrine (/172.86.114.38:34518) lost connection: Disconnected
+[20:57:50] [helper-scheduler-2/INFO]: [X-Prison] History cleanup: removed entries older than 30 days.
+[20:57:56] [Server thread/INFO]: [Mining] Nicht sicher wie du anfängst? Tippe /help für eine Übersicht über Zonen, Rankup und mehr!
+[20:58:36] [Server thread/INFO]: CURRENCIES » Successfuly given ⛃1.0M Tokens to Festas.
+[20:58:36] [Server thread/INFO]: CURRENCIES » Successfuly given ⛃110.0M Tokens to Festas.
+[20:58:50] [Server thread/INFO]: CURRENCIES » Successfuly given ⛃1.0M Tokens to Festas.
+[20:58:53] [Server thread/INFO]: [Pets] Gave 1x Rare basic to Festas.
+[20:58:54] [Server thread/INFO]: CURRENCIES » Successfuly given 💠11.0k Gems to Festas.
+[20:59:03] [Server thread/INFO]: CURRENCIES » Successfuly given ⛃11.0M Tokens to Festas.
+[20:59:04] [helper-scheduler-1/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:59:04] [helper-scheduler-1/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:59:04] [helper-scheduler-1/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[20:59:06] [Server thread/INFO]: CURRENCIES » Successfuly given ⛃1.0M Tokens to Festas.
+[20:59:42] [Server thread/INFO]: CURRENCIES » Successfuly given ⛃1.0M Tokens to Festas.
+[20:59:55] [Server thread/INFO]: CURRENCIES » Successfuly given ⛃1.0M Tokens to Festas.
+[20:59:59] [Server thread/INFO]: CURRENCIES » Successfuly given ⛃1.0M Tokens to Festas.
+[21:00:04] [Server thread/INFO]: CURRENCIES » Successfuly given ⛃1.0M Tokens to Festas.
+[21:00:08] [helper-scheduler-2/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[21:00:08] [helper-scheduler-2/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[21:00:08] [helper-scheduler-2/WARN]: Potentially unsafe extent blocked: io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+ - For area restrictions and block logging, it is recommended that third party plugins use the FAWE API
+ - Add the following classpath to the `allowed-plugins` list in the FAWE config.yml to let FAWE recognize the extent:
+io.th0rgal.oraxen.compatibilities.provided.worldedit.WorldEditHandlers$1
+[21:00:09] [Server thread/INFO]: CURRENCIES » Successfuly given ⛃1.0M Tokens to Festas.
+[21:00:24] [Server thread/INFO]: CURRENCIES » Successfuly given $10.0k Money to Festas.
+[21:00:25] [Server thread/INFO]: CURRENCIES » Successfuly given $5.0k Money to Festas.
+[21:03:39] [Server thread/INFO]: CURRENCIES » Successfuly given ⛃250 Tokens to Festas.
+[21:03:43] [Server thread/INFO]: CURRENCIES » Successfuly given ⛃200 Tokens to Festas.
+[21:03:47] [Server thread/INFO]: CURRENCIES » Successfuly given $250.0k Money to Festas.
+[21:03:49] [Server thread/INFO]: CURRENCIES » Successfuly given 💠25 Gems to Festas.
+[21:05:00] [Server thread/INFO]: CURRENCIES » Successfuly given ⛃1.0M Tokens to Festas.
+[21:05:47] [Server thread/INFO]: Festas lost connection: Disconnected
+[21:05:47] [Server thread/INFO]: Festas left the game
+[21:07:56] [Server thread/INFO]: [Mining] Nicht sicher wie du anfängst? Tippe /help für eine Übersicht über Zonen, Rankup und mehr!
+[21:10:41] [Paper Watchdog Thread/ERROR]: --- DO NOT REPORT THIS TO PAPER - THIS IS NOT A BUG OR A CRASH  - 26.2-112-c9e894d (MC: 26.2) ---
+[21:10:41] [Paper Watchdog Thread/ERROR]: The server has not responded for -45 seconds! Creating thread dump
+[21:10:41] [Paper Watchdog Thread/ERROR]: ------------------------------
+[21:10:41] [Paper Watchdog Thread/ERROR]: Server thread dump (Look for plugins here before reporting to Paper!):
+[21:10:41] [Paper Watchdog Thread/ERROR]: ------------------------------
+[21:10:41] [Paper Watchdog Thread/ERROR]: Current Thread: Server thread
+[21:10:41] [Paper Watchdog Thread/ERROR]: 	PID: 60 | Suspended: false | Native: false | State: TIMED_WAITING
+[21:10:41] [Paper Watchdog Thread/ERROR]: 	Stack:
+[21:10:41] [Paper Watchdog Thread/ERROR]: 		java.base@25.0.3/jdk.internal.misc.Unsafe.park(Native Method)
+[21:10:41] [Paper Watchdog Thread/ERROR]: 		java.base@25.0.3/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:271)
+[21:10:41] [Paper Watchdog Thread/ERROR]: 		net.minecraft.server.MinecraftServer.recordTaskExecutionTimeWhileWaiting(MinecraftServer.java:1248)
+[21:10:41] [Paper Watchdog Thread/ERROR]: 		net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1354)
+[21:10:41] [Paper Watchdog Thread/ERROR]: 		net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:303)
+[21:10:41] [Paper Watchdog Thread/ERROR]: 		net.minecraft.server.MinecraftServer$$Lambda/0x0000000041037818.run(Unknown Source)
+[21:10:41] [Paper Watchdog Thread/ERROR]: 		java.base@25.0.3/java.lang.Thread.runWith(Thread.java:1487)
+[21:10:41] [Paper Watchdog Thread/ERROR]: 		java.base@25.0.3/java.lang.Thread.run(Thread.java:1474)
+[21:10:41] [Paper Watchdog Thread/ERROR]: ------------------------------
+[21:10:41] [Paper Watchdog Thread/ERROR]: --- DO NOT REPORT THIS TO PAPER - THIS IS NOT A BUG OR A CRASH ---
+[21:10:41] [Paper Watchdog Thread/ERROR]: ------------------------------
+[21:11:38] [Server thread/INFO]: herobrine (/172.86.114.38:46522) lost connection: Disconnected
+[21:12:40] [User Authenticator #2/INFO]: UUID of player Festas is 6e874670-66e9-48dd-b16f-48029fc0c645
+[21:12:43] [helper-scheduler-12/INFO]: [XRobots] Loaded Festas's robots.
+[21:12:43] [Server thread/INFO]: Festas joined the game
+[21:12:43] [Server thread/INFO]: Festas[/213.244.61.228:49168] logged in with entity id 227 at ([minecraft:private_mines]-46.50114893359707, 102.0, 11.950181645304264)
+[21:12:54] [Server thread/INFO]: Festas lost connection: Disconnected
+[21:12:54] [Server thread/INFO]: Festas left the game
+[21:15:52] [Paper Watchdog Thread/ERROR]: --- DO NOT REPORT THIS TO PAPER - THIS IS NOT A BUG OR A CRASH  - 26.2-112-c9e894d (MC: 26.2) ---
+[21:15:52] [Paper Watchdog Thread/ERROR]: The server has not responded for 10 seconds! Creating thread dump
+[21:15:52] [Paper Watchdog Thread/ERROR]: ------------------------------
+[21:15:52] [Paper Watchdog Thread/ERROR]: Server thread dump (Look for plugins here before reporting to Paper!):
+[21:15:52] [Paper Watchdog Thread/ERROR]: ------------------------------
+[21:15:52] [Paper Watchdog Thread/ERROR]: Current Thread: Server thread
+[21:15:52] [Paper Watchdog Thread/ERROR]: 	PID: 60 | Suspended: false | Native: false | State: TIMED_WAITING
+[21:15:52] [Paper Watchdog Thread/ERROR]: 	Stack:
+[21:15:52] [Paper Watchdog Thread/ERROR]: 		java.base@25.0.3/jdk.internal.misc.Unsafe.park(Native Method)
+[21:15:52] [Paper Watchdog Thread/ERROR]: 		java.base@25.0.3/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:271)
+[21:15:52] [Paper Watchdog Thread/ERROR]: 		net.minecraft.server.MinecraftServer.recordTaskExecutionTimeWhileWaiting(MinecraftServer.java:1248)
+[21:15:52] [Paper Watchdog Thread/ERROR]: 		net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1354)
+[21:15:52] [Paper Watchdog Thread/ERROR]: 		net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:303)
+[21:15:52] [Paper Watchdog Thread/ERROR]: 		net.minecraft.server.MinecraftServer$$Lambda/0x0000000041037818.run(Unknown Source)
+[21:15:52] [Paper Watchdog Thread/ERROR]: 		java.base@25.0.3/java.lang.Thread.runWith(Thread.java:1487)
+[21:15:52] [Paper Watchdog Thread/ERROR]: 		java.base@25.0.3/java.lang.Thread.run(Thread.java:1474)
+[21:15:52] [Paper Watchdog Thread/ERROR]: ------------------------------
+[21:15:52] [Paper Watchdog Thread/ERROR]: --- DO NOT REPORT THIS TO PAPER - THIS IS NOT A BUG OR A CRASH ---
+[21:15:52] [Paper Watchdog Thread/ERROR]: ------------------------------
+[21:16:40] [Server thread/INFO]: herobrine (/172.86.114.38:54172) lost connection: Disconnected
+[21:18:08] [Server thread/INFO]: Stopping the server
+[21:18:08] [Server thread/INFO]: Stopping server
+[21:18:08] [Server thread/INFO]: [BlueMap] Disabling BlueMap v5.23
+[21:18:08] [Server thread/INFO]: [BlueMap] Stopping...
+[21:18:08] [Server thread/INFO]: [BlueMap] Saved and stopped!
+[21:18:08] [Server thread/INFO]: [XRobots] Disabling XRobots v1.2.1
+[21:18:08] [Server thread/INFO]: [com.zaxxer.hikari.HikariDataSource] xrobots-0 - Shutdown initiated...
+[21:18:08] [Server thread/INFO]: [com.zaxxer.hikari.HikariDataSource] xrobots-0 - Shutdown completed.
+[21:18:08] [Server thread/INFO]: [XRobots] §cDatabase Connection closed
+[21:18:08] [Server thread/INFO]: [TAB-Bridge] Disabling TAB-Bridge v6.2.2
+[21:18:08] [Server thread/INFO]: [XPrivateMines] Disabling XPrivateMines v2026.3.0.9
+[21:18:08] [Server thread/INFO]: [io.javalin.Javalin] Stopping Javalin ...
+[21:18:08] [Server thread/INFO]: [org.eclipse.jetty.server.Server] Stopped Server@30834424{STOPPING}[11.0.23,sto=0]
+[21:18:08] [Server thread/INFO]: [org.eclipse.jetty.server.AbstractConnector] Stopped ServerConnector@d7cf4ac{HTTP/1.1, (http/1.1)}{0.0.0.0:8090}
+[21:18:08] [Server thread/INFO]: [org.eclipse.jetty.server.handler.ContextHandler] Stopped o.e.j.s.ServletContextHandler@1ecd56ac{/,null,STOPPED}
+[21:18:08] [Server thread/INFO]: [io.javalin.Javalin] Javalin has stopped
+[21:18:08] [Server thread/INFO]: [X-PrivateMines-Addon/Dashboard] Dashboard stopped.
+[21:18:08] [Server thread/INFO]: [CMI] Disabling CMI v9.8.9.8
+[21:18:08] [Server thread/INFO]: [CMI] Closed db connections
+[21:18:08] [Server thread/INFO]: [DeluxeMenus] Disabling DeluxeMenus v1.14.1-Release
+[21:18:08] [Server thread/INFO]: [GlobalMarketPlus] Disabling GlobalMarketPlus v1.4.1.5
+[21:18:08] [Server thread/INFO]: [PlaceholderAPI] Unregistered placeholder expansion gmpapi
+[21:18:08] [Server thread/INFO]: [PlaceholderAPI] Reason: required plugin GlobalMarketPlus was disabled.
+[21:18:08] [Server thread/INFO]: GlobalMarketPlus >>> Async threads stopped.
+[21:18:08] [Server thread/INFO]: GlobalMarketPlus >>> Database SQLite:Database.db disconnected.
+[21:18:08] [Server thread/INFO]: GlobalMarketPlus >>> Database SQLite:Recorder.db disconnected.
+[21:18:08] [Server thread/INFO]: [LibsDisguises] Disabling LibsDisguises v26.8.13
+[21:18:08] [Server thread/INFO]: [CommandAPI] Disabling CommandAPI v11.1.0
+[21:18:08] [Server thread/INFO]: [X-Prison] Disabling X-Prison v2026.3.3.0
+[21:18:08] [Server thread/INFO]: [X-Prison] Saved all currencies data to DB
+[21:18:08] [Server thread/INFO]: [X-Prison] §aBlocks Broken saved.
+[21:18:08] [Server thread/INFO]: [X-Prison] §aRanks saved.
+[21:18:08] [Server thread/INFO]: [X-Prison] §aPrestiges saved.
+[21:18:08] [Server thread/INFO]: [X-Prison] §aRebirths saved.
+[21:18:08] [Server thread/INFO]: [X-Prison] Saved global multipliers to DB
+[21:18:08] [Server thread/INFO]: [X-Prison] Saved all player multipliers to DB
+[21:18:09] [Server thread/INFO]: [X-Prison] §fSaved online players auto miner data.
+[21:18:09] [Server thread/INFO]: [X-Prison] §aGangs saved.
+[21:18:09] [Server thread/INFO]: [com.zaxxer.hikari.HikariDataSource] xprison-0 - Shutdown initiated...
+[21:18:09] [Server thread/INFO]: [com.zaxxer.hikari.HikariDataSource] xprison-0 - Shutdown completed.
+[21:18:09] [Server thread/INFO]: [X-Prison] §cDatabase Connection closed
+[21:18:09] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §9Voucher Finder§a created by §eDrawethree
+[21:18:09] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §x§0§0§e§0§f§fV§x§1§2§c§7§f§fa§x§2§3§a§d§f§fn§x§3§5§9§4§f§fg§x§4§6§7§b§f§fu§x§5§8§6§2§f§fa§x§6§9§4§8§f§fr§x§7§b§2§f§f§fd§a created by §eDrawethree
+[21:18:09] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §eRobot Finder§a created by §eDrawethree
+[21:18:09] [Server thread/INFO]: [X-Prison-Addon/Pets] Pets addon disabled.
+[21:18:09] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §dPet Finder§a created by §eDrawethree
+[21:18:09] [Server thread/INFO]: [X-Prison-Addon/Momentum] Momentum addon disabled.
+[21:18:09] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §eLucky Block§a created by §eDrawethree
+[21:18:09] [Server thread/INFO]: [X-Prison-Addon/Events] Events addon disabled.
+[21:18:09] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §dEcho Booster§a created by §eDrawethree
+[21:18:09] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §bDrill§a created by §eDrawethree
+[21:18:09] [Server thread/INFO]: [io.javalin.Javalin] Stopping Javalin ...
+[21:18:09] [Server thread/INFO]: [org.eclipse.jetty.server.Server] Stopped Server@7f06b622{STOPPING}[11.0.23,sto=0]
+[21:18:09] [Server thread/INFO]: [org.eclipse.jetty.server.AbstractConnector] Stopped ServerConnector@2dfad555{HTTP/1.1, (http/1.1)}{0.0.0.0:8085}
+[21:18:09] [Server thread/INFO]: [org.eclipse.jetty.server.handler.ContextHandler] Stopped o.e.j.s.ServletContextHandler@40037b4d{/,null,STOPPED}
+[21:18:09] [Server thread/INFO]: [io.javalin.Javalin] Javalin has stopped
+[21:18:09] [Server thread/INFO]: [X-Prison-Addon/Dashboard] Dashboard stopped.
+[21:18:09] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §cCluster Bomb§a created by §eDrawethree
+[21:18:09] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §cBomb Finder§a created by §eDrawethree
+[21:18:09] [Server thread/INFO]: [X-Prison-Addon/BlackMarket] Black Market addon disabled.
+[21:18:09] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §x§f§f§d§7§0§0A§x§f§f§c§8§1§cs§x§f§f§b§9§3§8c§x§f§f§a§a§5§4e§x§f§f§9§b§7§0n§x§f§f§8§b§8§cd§x§f§f§7§c§a§8a§x§f§f§6§d§c§4n§x§f§f§5§e§e§0t§a created by §eDrawethree
+[21:18:09] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §x§a§6§e§3§f§fF§x§9§b§d§b§f§br§x§9§0§d§2§f§7o§x§8§4§c§a§f§3s§x§7§9§c§1§f§0t§x§6§e§b§9§e§cb§x§6§3§b§0§e§8i§x§5§7§a§8§e§4t§x§4§c§9§f§e§0e§a created by §eDrawethree
+[21:18:09] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §x§9§c§f§f§3§cV§x§9§2§f§3§3§9e§x§8§9§e§8§3§6n§x§7§f§d§c§3§3o§x§7§6§d§0§3§0m§x§6§c§c§5§2§d §x§6§2§b§9§2§aB§x§5§9§a§d§2§7l§x§4§f§a§1§2§4o§x§4§6§9§6§2§1o§x§3§c§8§a§1§em§a created by §eDrawethree
+[21:18:09] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §x§e§a§f§5§f§fG§x§e§1§f§0§f§ca§x§d§8§e§b§f§9l§x§c§f§e§5§f§6e§x§c§6§e§0§f§3 §x§b§d§d§b§f§0C§x§b§3§d§6§e§cu§x§a§a§d§1§e§9t§x§a§1§c§b§e§6t§x§9§8§c§6§e§3e§x§8§f§c§1§e§0r§a created by §eDrawethree
+[21:18:09] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §x§f§f§b§0§3§0M§x§f§f§a§3§2§ba§x§f§f§9§6§2§6g§x§f§f§8§a§2§2m§x§f§f§7§d§1§da§x§f§f§7§0§1§8 §x§f§f§6§3§1§3S§x§f§f§5§6§0§eu§x§f§f§4§a§0§ar§x§f§f§3§d§0§5g§x§f§f§3§0§0§0e§a created by §eDrawethree
+[21:18:09] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §x§f§f§f§6§c§0D§x§f§f§f§2§b§4i§x§f§f§e§e§a§8v§x§f§f§e§a§9§ci§x§f§f§e§6§9§0n§x§f§f§e§2§8§4e§x§f§f§d§d§7§8 §x§f§f§d§9§6§cS§x§f§f§d§5§6§0m§x§f§f§d§1§5§4i§x§f§f§c§d§4§8t§x§f§f§c§9§3§ce§a created by §eDrawethree
+[21:18:09] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §x§7§b§e§8§d§cS§x§7§4§e§0§d§5o§x§6§d§d§7§c§du§x§6§6§c§f§c§6l§x§5§f§c§6§b§f §x§5§8§b§e§b§7H§x§5§1§b§5§b§0a§x§4§a§a§d§a§8r§x§4§3§a§4§a§1v§x§3§c§9§c§9§ae§x§3§5§9§3§9§2s§x§2§e§8§b§8§bt§a created by §eDrawethree
+[21:18:09] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §x§c§7§9§b§f§fA§x§b§f§9§0§f§fr§x§b§8§8§5§f§fc§x§b§0§7§a§f§fa§x§a§8§6§f§f§fn§x§a§1§6§5§f§fe§x§9§9§5§a§f§f §x§9§1§4§f§f§fN§x§8§9§4§4§f§fo§x§8§2§3§9§f§fv§x§7§a§2§e§f§fa§a created by §eDrawethree
+[21:18:09] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §x§f§f§f§1§b§8S§x§f§1§e§b§c§2t§x§e§3§e§5§c§ca§x§d§5§d§f§d§6r§x§c§6§d§a§e§1f§x§b§8§d§4§e§ba§x§a§a§c§e§f§5l§x§9§c§c§8§f§fl§a created by §eDrawethree
+[21:18:09] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §x§f§f§8§0§0§0M§x§f§f§8§7§0§0e§x§f§f§8§d§0§0t§x§f§f§9§4§0§0e§x§f§f§9§b§0§0o§x§f§f§a§1§0§0r§x§f§f§a§8§0§0 §x§f§f§a§f§0§0S§x§f§f§b§5§0§0t§x§f§f§b§c§0§0r§x§f§f§c§3§0§0i§x§f§f§c§9§0§0k§x§f§f§d§0§0§0e§a created by §eDrawethree
+[21:18:09] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §x§8§0§0§0§a§0B§x§8§7§0§b§a§bl§x§8§e§1§5§b§5a§x§9§5§2§0§c§0c§x§9§c§2§b§c§ak§x§a§4§3§5§d§5 §x§a§b§4§0§d§fH§x§b§2§4§b§e§ao§x§b§9§5§5§f§4l§x§c§0§6§0§f§fe§a created by §eDrawethree
+[21:18:09] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §x§7§8§c§8§f§fL§x§8§2§c§c§f§fi§x§8§b§d§0§f§fg§x§9§5§d§4§f§fh§x§9§f§d§8§f§ft§x§a§8§d§c§f§fn§x§b§2§e§0§f§fi§x§b§c§e§4§f§fn§x§c§5§e§7§f§fg§x§c§f§e§b§f§f §x§d§8§e§f§f§fS§x§e§2§f§3§f§ft§x§e§c§f§7§f§fo§x§f§5§f§b§f§fr§fm§a created by §eDrawethree
+[21:18:09] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §x§b§0§b§0§b§0T§x§b§d§b§d§b§do§x§c§a§c§a§c§ar§x§d§8§d§8§d§8n§x§e§5§e§5§e§5a§x§f§2§f§2§f§2d§fo§a created by §eDrawethree
+[21:18:09] [Server thread/INFO]: [CMILib] Disabling CMILib v1.5.9.9
+[21:18:09] [Server thread/INFO]: [Oraxen] Disabling Oraxen v1.218.0
+[21:18:09] [Server thread/INFO]: Oraxen | Unhooking plugin "Skript"
+[21:18:09] [Server thread/INFO]: Oraxen | Unhooking plugin "PlaceholderAPI"
+[21:18:09] [Server thread/INFO]: Oraxen | Successfully unloaded
+[21:18:09] [Server thread/INFO]: [helper] Disabling helper v5.6.14
+[21:18:09] [Server thread/INFO]: [packetevents] Disabling packetevents v2.13.0
+[21:18:09] [Server thread/INFO]: [Skript] Disabling Skript v2.16.1
+[21:18:09] [Server thread/INFO]: [NBTAPI] Disabling NBTAPI v2.16.0
+[21:18:09] [Server thread/INFO]: [ProtocolLib] Disabling ProtocolLib v5.4.0
+[21:18:09] [Server thread/INFO]: [WorldGuard] Disabling WorldGuard v7.0.18+2392-fa605e6
+[21:18:09] [Server thread/INFO]: [WorldGuard] Shutting down executor and cancelling any pending tasks...
+[21:18:09] [Server thread/INFO]: [FastAsyncWorldEdit] Disabling FastAsyncWorldEdit v2.15.4-SNAPSHOT-1370+dd6a724
+[21:18:09] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[21:18:09] [Server thread/INFO]: [Vault] Disabling Vault v2.20.2
+[21:18:09] [Server thread/INFO]: [PlaceholderAPI] Unregistered placeholder expansion vault
+[21:18:09] [Server thread/INFO]: [PlaceholderAPI] Reason: required plugin Vault was disabled.
+[21:18:09] [Server thread/INFO]: [LuckPerms] Disabling LuckPerms v5.5.71
+[21:18:09] [Server thread/INFO]: [PlaceholderAPI] Unregistered placeholder expansion luckperms
+[21:18:09] [Server thread/INFO]: [PlaceholderAPI] Reason: required plugin LuckPerms was disabled.
+[21:18:09] [Server thread/INFO]: [LuckPerms] Starting shutdown process...
+[21:18:09] [Server thread/INFO]: [LuckPerms] Closing storage...
+[21:18:09] [Server thread/INFO]: [LuckPerms] Goodbye!
+[21:18:09] [Server thread/INFO]: [PlaceholderAPI] Disabling PlaceholderAPI v2.12.3
+[21:18:09] [Server thread/INFO]: Saving players
+[21:18:09] [Server thread/INFO]: Saving worlds
+[21:18:09] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[21:18:09] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'minecraft:overworld'
+[21:18:09] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'minecraft:overworld'
+[21:18:09] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'minecraft:overworld'
+[21:18:09] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'minecraft:overworld' in 0.00s
+[21:18:09] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'minecraft:overworld'
+[21:18:09] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'minecraft:overworld'
+[21:18:09] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[21:18:09] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'minecraft:the_nether'
+[21:18:09] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'minecraft:the_nether'
+[21:18:09] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'minecraft:the_nether'
+[21:18:09] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'minecraft:the_nether' in 0.00s
+[21:18:09] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'minecraft:the_nether'
+[21:18:09] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'minecraft:the_nether'
+[21:18:09] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:private_mines
+[21:18:09] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'minecraft:private_mines'
+[21:18:09] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'minecraft:private_mines'
+[21:18:09] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'minecraft:private_mines'
+[21:18:09] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'minecraft:private_mines' in 0.00s
+[21:18:09] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'minecraft:private_mines'
+[21:18:09] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'minecraft:private_mines'
+[21:18:09] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[21:18:09] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[21:18:09] [Server thread/INFO]: ThreadedAnvilChunkStorage (private_mines): All chunks are saved
+[21:18:09] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[21:18:09] [Server thread/INFO]: Waiting for all RegionFile I/O tasks to complete...
+[21:18:09] [Server thread/INFO]: All RegionFile I/O tasks to complete
+[21:18:09] [Server thread/INFO]: [MoonriseCommon] Awaiting termination of worker pool for up to 60s...
+[21:18:09] [Server thread/INFO]: [MoonriseCommon] Awaiting termination of I/O pool for up to 60s...
