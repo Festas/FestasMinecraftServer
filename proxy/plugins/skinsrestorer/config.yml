@@ -62,8 +62,9 @@ database:
     host: localhost
     port: 3306
     database: db
-    username: CHANGE_ME
-    password: CHANGE_ME
+    # Dormant unless database.type is MYSQL/POSTGRESQL. Inject via SKINSRESTORER_DB_ENV if enabled.
+    username: __SKINSRESTORER_DB_USER__
+    password: __SKINSRESTORER_DB_PASSWORD__
     maxPoolSize: 10
     tablePrefix: sr_
     connectionOptions: sslMode=trust&serverTimezone=UTC

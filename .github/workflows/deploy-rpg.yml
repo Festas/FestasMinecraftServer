@@ -65,6 +65,25 @@ jobs:
           path.write_text(text)
           PY
 
+      - name: Inject Redis credentials
+        env:
+          REDIS_PASSWORD: ${{ secrets.REDIS_PASSWORD }}
+        run: |
+          if [ -z "$REDIS_PASSWORD" ]; then
+            echo "::error::Missing secret REDIS_PASSWORD"
+            exit 1
+          fi
+
+          python3 - <<'PY'
+          from pathlib import Path
+          import os
+
+          path = Path("rpg/plugins/LuckPerms/config.yml")
+          text = path.read_text()
+          text = text.replace("__REDIS_PASSWORD__", os.environ["REDIS_PASSWORD"])
+          path.write_text(text)
+          PY
+
       - name: Inject XPrivateMines Dashboard credentials
         env:
           XPRIVATEMINES_DASHBOARD_ENV: ${{ secrets.XPRIVATEMINES_DASHBOARD_ENV }}

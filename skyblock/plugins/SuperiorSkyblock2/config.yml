@@ -21,8 +21,8 @@ database:
   address: '172.25.0.1'
   port: 3306
   db-name: 's4_skyblock'
-  user-name: 'CHANGE_ME'
-  password: 'CHANGE_ME'
+  user-name: '__SKYBLOCK_DB_USER__'
+  password: '__SKYBLOCK_DB_PASSWORD__'
   prefix: ''
   useSSL: true
   allowPublicKeyRetrieval: true
