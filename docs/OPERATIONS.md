@@ -69,6 +69,19 @@ Für das Einsammeln der aktuellen `latest.log`-Dateien gibt es zusätzlich den G
 oder einen einzelnen Server gestartet werden. Die Logs werden im Repository unter
 `server-logs/<server>/latest.log` aktualisiert. **Mining** verwendet den **`rpg`-Server-Slot** im Container-Setup.
 
+Für die Live-Spielerzahlen (`/api/players.json`) gibt es zwei weitere Workflows:
+
+- `sync-players-json.yml` zieht alle 6 Stunden (oder manuell) die vom
+  `plan-players-export` erzeugte `players.json` vom Host und legt sie – ohne
+  Spielernamen, nur Zahlen/Flags/Zeitstempel – unter `server-logs/players/players.json`
+  im Repository ab. So lässt sich der ausgelieferte Snapshot historisch nachvollziehen
+  (z. B. „Server offline obwohl online?").
+- `monitor-players-json.yml` prüft alle 30 Minuten (oder manuell) den öffentlichen
+  Endpunkt `https://mc.festas-builds.com/api/players.json` gegen den Vertrag der
+  Website (gültiges JSON, alle vier Server-Keys vorhanden, plausible Counts,
+  Aktualität von `updated`). Ein fehlgeschlagener Lauf meldet früh, dass der Exporter
+  oder die Auslieferung gestört ist.
+
 ---
 
 ## Notfall-Befehle

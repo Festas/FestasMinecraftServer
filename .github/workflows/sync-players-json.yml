@@ -1,0 +1,106 @@
+name: Sync players.json snapshot
+
+# Pulls the live players.json (produced on the host by plan-players-export) into
+# the repository so the served snapshot can be inspected historically – useful for
+# debugging cases like "server shows offline although it is online". Player names
+# are stripped before committing (GDPR: only counts/flags/timestamps are kept).
+
+on:
+  schedule:
+    - cron: '27 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-players-json
+  cancel-in-progress: false
+
+jobs:
+  sync-players-json:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          token: ${{ secrets.PERSONAL_TOKEN }}
+
+      - name: Setup SSH
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: Fetch live players.json
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          # Optional override; defaults to the plan-players-export output path.
+          PLAYERS_JSON_REMOTE_PATH: ${{ secrets.PLAYERS_JSON_REMOTE_PATH }}
+        run: |
+          set -euo pipefail
+
+          remote_path="${PLAYERS_JSON_REMOTE_PATH:-/home/deploy/minecraft-website/data/players.json}"
+          tmp_file="/tmp/players.raw.json"
+
+          echo "📥 Lade players.json: ${remote_path}"
+          if ! ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=yes "${SSH_USER}@${SSH_HOST}" "test -f '${remote_path}'"; then
+            echo "::error::players.json wurde unter ${remote_path} nicht gefunden."
+            exit 1
+          fi
+
+          scp -i ~/.ssh/id_rsa -o StrictHostKeyChecking=yes "${SSH_USER}@${SSH_HOST}:${remote_path}" "$tmp_file"
+
+      - name: Sanitize and stage snapshot
+        run: |
+          set -euo pipefail
+
+          tmp_file="/tmp/players.raw.json"
+          local_dir="server-logs/players"
+          local_file="${local_dir}/players.json"
+
+          if ! jq empty "$tmp_file" 2>/dev/null; then
+            echo "::error::Heruntergeladene players.json ist kein gültiges JSON."
+            exit 1
+          fi
+
+          # Strip personal data (player name lists) but keep all diagnostic fields
+          # (counts, online flags, timestamps, per-world breakdown).
+          jq '
+            .showNames = false
+            | (.players) |= (if type=="array" then [] else . end)
+            | (.servers) |= (if type=="array" then map(
+                  .players = []
+                  | (.worlds) |= (if type=="array" then map(.players = []) else . end)
+                ) else . end)
+          ' "$tmp_file" > "/tmp/players.sanitized.json"
+
+          mkdir -p "$local_dir"
+          # Pretty-print for readable diffs in git history.
+          jq . "/tmp/players.sanitized.json" > "$local_file"
+          echo "✅ Snapshot aktualisiert: ${local_file}"
+
+      - name: Commit and push snapshot
+        env:
+          PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+        run: |
+          set -euo pipefail
+          echo "::add-mask::$PERSONAL_TOKEN"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -f server-logs/players/players.json
+
+          if git diff --staged --quiet; then
+            echo "Keine Änderungen an players.json."
+            exit 0
+          fi
+
+          git commit -m "chore: sync players.json snapshot"
+          git remote set-url origin "https://x-access-token:${PERSONAL_TOKEN}@github.com/${{ github.repository }}"
+          git pull --rebase origin "${GITHUB_REF_NAME}" || { git rebase --abort; exit 1; }
+          git push origin "HEAD:${GITHUB_REF_NAME}"

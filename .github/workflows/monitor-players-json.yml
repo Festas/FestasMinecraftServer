@@ -1,0 +1,146 @@
+name: Monitor players.json health
+
+# Analytics / error-handling watchdog for the live "Wer ist online?" data source.
+# It fetches the public /api/players.json and validates the contract the website
+# depends on (valid JSON, all server keys present, sane counts, and freshness of
+# the `updated` timestamp). A failed scheduled run surfaces as a red workflow and
+# notifies the repository admins – an early warning that the plan-players-export
+# exporter or the web delivery is broken (e.g. a server wrongly shown offline).
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+    inputs:
+      max_age_seconds:
+        description: 'Maximaler Alterswert von players.json.updated in Sekunden'
+        required: false
+        default: '900'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: monitor-players-json
+  cancel-in-progress: true
+
+jobs:
+  monitor-players-json:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch public players.json
+        env:
+          # Override via repository variable if the public URL ever changes.
+          PLAYERS_JSON_URL: ${{ vars.PLAYERS_JSON_URL || 'https://mc.festas-builds.com/api/players.json' }}
+        run: |
+          set -euo pipefail
+          echo "🌐 GET ${PLAYERS_JSON_URL}"
+          http_code="$(curl -fsS --max-time 20 -o /tmp/players.public.json -w '%{http_code}' "$PLAYERS_JSON_URL" || true)"
+          if [ ! -s /tmp/players.public.json ]; then
+            echo "::error::Konnte players.json nicht laden (HTTP ${http_code:-none})."
+            exit 1
+          fi
+          echo "HTTP ${http_code}"
+
+      - name: Validate contract and freshness
+        env:
+          MAX_AGE_SECONDS: ${{ github.event.inputs.max_age_seconds || '900' }}
+        run: |
+          set -euo pipefail
+          cat > /tmp/validate_players.py <<'PY'
+          #!/usr/bin/env python3
+          """Validate a players.json snapshot for the monitoring workflow."""
+          import json
+          import os
+          import sys
+          import time
+
+          EXPECTED_SERVERS = {"lobby", "survival", "mining", "skyblock"}
+          try:
+              MAX_AGE_SECONDS = int(os.environ.get("MAX_AGE_SECONDS", "900"))
+          except ValueError:
+              MAX_AGE_SECONDS = 900
+
+
+          def err(msg: str) -> None:
+              print(f"::error::{msg}")
+
+
+          def warn(msg: str) -> None:
+              print(f"::warning::{msg}")
+
+
+          def main() -> int:
+              path = sys.argv[1]
+              try:
+                  with open(path, "r", encoding="utf-8") as fh:
+                      data = json.load(fh)
+              except (OSError, ValueError) as exc:
+                  err(f"players.json is not valid JSON: {exc}")
+                  return 1
+
+              if not isinstance(data, dict):
+                  err("players.json root must be a JSON object")
+                  return 1
+
+              failures = 0
+
+              servers = data.get("servers")
+              if not isinstance(servers, list) or not servers:
+                  err("players.json 'servers' must be a non-empty array")
+                  return 1
+
+              keys = set()
+              total_counts = 0
+              for entry in servers:
+                  if not isinstance(entry, dict):
+                      err("each server entry must be an object")
+                      failures += 1
+                      continue
+                  name = str(entry.get("name", "")).strip()
+                  keys.add(name)
+                  count = entry.get("count", 0)
+                  if not isinstance(count, int) or count < 0:
+                      err(f"server '{name}': count must be a non-negative integer (got {count!r})")
+                      failures += 1
+                  else:
+                      total_counts += count
+                  if not isinstance(entry.get("online", False), bool):
+                      err(f"server '{name}': 'online' must be a boolean")
+                      failures += 1
+
+              missing = EXPECTED_SERVERS - keys
+              if missing:
+                  err(f"players.json is missing expected server(s): {', '.join(sorted(missing))}")
+                  failures += 1
+
+              updated = data.get("updated")
+              if not isinstance(updated, int) or updated <= 0:
+                  err(f"top-level 'updated' must be a positive unix timestamp (got {updated!r})")
+                  failures += 1
+              else:
+                  age = int(time.time()) - updated
+                  if age > MAX_AGE_SECONDS:
+                      err(f"players.json is stale: updated {age}s ago (>{MAX_AGE_SECONDS}s). Exporter may be down.")
+                      failures += 1
+                  else:
+                      print(f"freshness OK: updated {age}s ago")
+
+              top_online = data.get("online")
+              if isinstance(top_online, int) and top_online != total_counts:
+                  warn(f"top-level online ({top_online}) != sum of server counts ({total_counts})")
+
+              online_servers = [str(e.get("name")) for e in servers if isinstance(e, dict) and e.get("online")]
+              print(f"servers online: {online_servers or 'none'}; total players: {total_counts}")
+
+              if failures:
+                  err(f"{failures} validation failure(s)")
+                  return 1
+              print("players.json validation passed")
+              return 0
+
+
+          if __name__ == "__main__":
+              sys.exit(main())
+          PY
+          python3 /tmp/validate_players.py /tmp/players.public.json
