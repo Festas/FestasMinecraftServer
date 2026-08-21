@@ -54,7 +54,7 @@ packs:
     hash: 01517226212d27586ea0c5d6aff1aa5492dd2484
 
 global:
-  pack: none
+  pack: empty
   secondary: []
   optional-packs: []
   # Die Verzögerung ist weiterhin sinnvoll, aber mit Nginx oft nicht mehr zwingend.
@@ -85,7 +85,7 @@ servers:
   
   # Lobby bekommt das leere Pack, um den Cache zu säubern
   lobby:
-    pack: oraxen_pack_survival
+    pack: empty
     
   survival:
     pack: oraxen_pack_survival
