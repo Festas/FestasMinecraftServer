@@ -35,7 +35,7 @@ firstJoinServer:
   - cmi msg [playerName] !&7  Nutze &b/navigator &7um einen Server zu wählen.
   - cmi msg [playerName] !&7  Oder klicke einen der &eNPCs &7an!
   - cmi msg [playerName] ! 
-  - cmi msg [playerName] !&7  &8» &aDiscord: &fdiscord.gg/festasbuilds
+  - 'cmi msg [playerName] !&7  &8» &aDiscord: &fdiscord.gg/festasbuilds'
   - cmi msg [playerName] !&8&m─────────────────────────────────────
   - delay! 0.5
   - actionbar! &e✦ &6Festas Builds &8| &7mc.festas-builds.com &e✦

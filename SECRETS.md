@@ -58,6 +58,34 @@ Wird zum Bauen und Pushen des Website-Docker-Images verwendet.
 
 ---
 
+## Netzwerk (Velocity Modern Forwarding)
+
+### `VELOCITY_FORWARDING_SECRET`
+Das Velocity **Modern-Forwarding-Secret**. Es muss auf dem Proxy
+(`proxy/forwarding.secret`, **nicht** im Repo) und auf allen Backends identisch
+sein. In den committeten Backend-Configs
+(`*/config/paper-global.yml`, Schlüssel `proxies.velocity.secret`) steht nur der
+Platzhalter `__VELOCITY_FORWARDING_SECRET__`; der echte Wert wird beim Deploy
+durch `sync-server-configs.yml` injiziert. Fehlt das Secret, **bricht der Deploy
+bewusst ab** (fail-closed), damit die Backends nicht mit leerem Secret laufen
+(sonst können sich keine Spieler mehr verbinden).
+
+> **Wichtig:** Dieser Wert wurde zuvor im Klartext im Repo committet und muss
+> daher als kompromittiert gelten. Er ist **zu rotieren** (neuen Wert auf Proxy
+> + in diesem Secret setzen) und die Git-Historie sollte bereinigt werden.
+
+**Format:** Plain Text (empfohlen: 32+ zufällige Zeichen)  
+**Beispiel:** `Xf9c2...` (langer Zufallsstring)
+
+> **Hinweis zu `management-server-secret`:** Der Paper-Management-Server ist
+> netzwerkweit deaktiviert (`management-server-enabled=false`). Der Wert in den
+> committeten `*/server.properties` ist daher **absichtlich leer** und wird beim
+> Pull automatisch geleert – es ist **kein** GitHub-Secret nötig. Wird das
+> Feature künftig aktiviert, sollte es analog zum Velocity-Secret externalisiert
+> werden.
+
+---
+
 ## Server-Pfade
 
 Alle Server-Pfad-Secrets enthalten den **absoluten Pfad zum `plugins`-Ordner** auf dem Deployment-Server.
@@ -238,6 +266,7 @@ XPRIVATEMINES_DASHBOARD_JWT_SECRET=einLangerZufaelligerString
 | `SSH_PRIVATE_KEY` | PEM-Schlüssel (mehrzeilig) | Alle Deploy-Workflows, sync-server-configs |
 | `PERSONAL_TOKEN` | GitHub PAT (Plain Text) | copy-puginsfolder, sync-latest-logs, sync-players-json, sync-server-configs |
 | `GHCR_TOKEN` | GitHub PAT (Plain Text) | deploy-website |
+| `VELOCITY_FORWARDING_SECRET` | Plain Text | sync-server-configs |
 | `SERVER_PATH_LOBBY` | Absoluter Pfad (Plain Text) | deploy-lobby, copy-puginsfolder, sync-latest-logs, sync-server-configs |
 | `SERVER_PATH_PROXY` | Absoluter Pfad (Plain Text) | deploy-proxy, copy-puginsfolder, sync-latest-logs, sync-server-configs |
 | `SERVER_PATH_RPG` | Absoluter Pfad (Plain Text) | deploy-rpg, copy-puginsfolder, sync-latest-logs, sync-server-configs |

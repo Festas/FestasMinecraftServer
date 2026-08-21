@@ -89,6 +89,37 @@ jobs:
           chmod 600 ~/.ssh/deploy_key
           ssh-keyscan -H "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts
 
+      - name: Inject Velocity forwarding secret
+        env:
+          VELOCITY_FORWARDING_SECRET: ${{ secrets.VELOCITY_FORWARDING_SECRET }}
+        run: |
+          set -euo pipefail
+          if [ -z "${VELOCITY_FORWARDING_SECRET:-}" ]; then
+            echo "::error::Fehlendes Repository-Secret VELOCITY_FORWARDING_SECRET. Ohne dieses Secret würden die Backends mit dem Platzhalter statt einem gültigen Velocity-Forwarding-Secret deployt und keine Spieler könnten sich mehr verbinden. Bitte in den Repository-Secrets hinterlegen."
+            exit 1
+          fi
+          echo "::add-mask::$VELOCITY_FORWARDING_SECRET"
+
+          python3 - <<'PY'
+          from pathlib import Path
+          import glob, os
+
+          secret = os.environ["VELOCITY_FORWARDING_SECRET"]
+          placeholder = "__VELOCITY_FORWARDING_SECRET__"
+          count = 0
+          for f in sorted(glob.glob("*/config/paper-global.yml")):
+              path = Path(f)
+              text = path.read_text(encoding="utf-8")
+              if placeholder in text:
+                  path.write_text(text.replace(placeholder, secret), encoding="utf-8")
+                  count += 1
+                  print(f"  injiziert: {f}")
+          if count == 0:
+              print("::warning::Kein Platzhalter __VELOCITY_FORWARDING_SECRET__ gefunden – nichts injiziert.")
+          else:
+              print(f"Velocity-Forwarding-Secret in {count} Datei(en) injiziert.")
+          PY
+
       - name: Deploy configs to server
         env:
           SSH_HOST: ${{ secrets.SSH_HOST }}
@@ -325,6 +356,27 @@ jobs:
               echo "::error::${remote_file} enthält ein Inline 'forwarding-secret'. Bitte auf 'forwarding-secret-file' umstellen. Datei wird NICHT committet."
               rm -f "$local_file"
               return 1
+            fi
+
+            # Secrets aus gepullten Configs neutralisieren, damit sie nie im Repo
+            # landen. Die echten Werte leben ausschließlich im GH-Secret bzw. auf
+            # dem Server – im Repo steht immer nur der Platzhalter.
+            if [ "$rel" = "config/paper-global.yml" ]; then
+              # Velocity-Forwarding-Secret auf den Platzhalter zurücksetzen. Es wird
+              # gezielt nur die 'secret:'-Zeile INNERHALB des 'velocity:'-Blocks
+              # angefasst (der sed-Range endet beim nächsten Schlüssel mit weniger als
+              # vier Leerzeichen Einrückung), damit evtl. künftige, gleichnamige Felder
+              # in anderen Abschnitten der Datei unberührt bleiben.
+              sed -i -E '/^  velocity:/,/^ {0,3}[^ ]/ s|^([[:space:]]*secret:[[:space:]]*).*$|\1__VELOCITY_FORWARDING_SECRET__|' "$local_file"
+              if ! grep -Eq '^[[:space:]]*secret:[[:space:]]*__VELOCITY_FORWARDING_SECRET__[[:space:]]*$' "$local_file"; then
+                echo "::error::Konnte das Velocity-Forwarding-Secret in ${remote_file} nicht neutralisieren. Datei wird NICHT committet."
+                rm -f "$local_file"
+                return 1
+              fi
+            fi
+            if [ "$rel" = "server.properties" ]; then
+              # management-server-secret nie im Repo speichern (Feature deaktiviert).
+              sed -i -E 's|^(management-server-secret=).*$|\1|' "$local_file"
             fi
 
             echo "⬇️  ${server_key}: ${rel}"
