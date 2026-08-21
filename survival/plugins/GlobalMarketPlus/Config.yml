@@ -180,7 +180,9 @@ MySQL-Storage:
   Hostname: localhost
   Port: 3306
   Username: root
-  Password: password
+  # Dormant: MySQL-Storage.Enabled=false (SQLite aktiv). Bei Aktivierung injizieren
+  # (siehe SECRETS.md), statt das schwache Default-Passwort zu committen.
+  Password: __GLOBALMARKETPLUS_DB_PASSWORD__
   # Database name
   Database: GlobalMarketPlus
   Wait-Timeout: 18000

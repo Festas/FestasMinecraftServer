@@ -42,6 +42,12 @@ test-server/
 **/ProtocolLib/lastupdate
 **/ProtocolLib/error/
 
+# Plugin config auto-backups (e.g. GlobalMarketPlus writes Config.yml.<epoch>)
+# These are stale snapshots that can carry outdated/weak credentials; keep them off VCS.
+**/*.yml.[0-9]*
+**/*.yaml.[0-9]*
+**/*.json.[0-9]*
+
 # ========================
 # Secrets & private keys (NEVER commit)
 # ========================

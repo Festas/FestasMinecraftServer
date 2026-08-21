@@ -69,8 +69,11 @@ auth-details:
   database: 'bans'
   host: 'localhost'
   port: 3306
-  password: 'defaultpass'
-  user: 'defaultuser'
+  # Dormant: rdms-vendor ist HSQLDB (lokal, siehe unten). Diese Remote-DB-Werte sind
+  # ungenutzt; bei Umstellung auf MariaDB/MySQL echte Werte injizieren (siehe SECRETS.md),
+  # statt schwache Default-Zugangsdaten zu committen.
+  password: '__LIBERTYBANS_DB_PASSWORD__'
+  user: '__LIBERTYBANS_DB_USER__'
 
  # The values in this section only apply when using a MariaDB or MySQL database
 mariadb:

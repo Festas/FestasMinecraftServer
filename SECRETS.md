@@ -310,6 +310,26 @@ XPRIVATEMINES_DASHBOARD_JWT_SECRET=einLangerZufaelligerString
 
 ---
 
+## Ruhende / nicht injizierte Platzhalter
+
+Einige Configs enthalten `__…__`-Platzhalter, die **absichtlich nicht** von einem
+Deploy-Workflow injiziert werden, weil das zugehörige Backend derzeit **inaktiv** ist
+(eingebettete DB oder Feature deaktiviert). Sie ersetzen lediglich zuvor eingecheckte
+schwache Default-Passwörter. Wird ein Backend später aktiviert, muss ein
+Injection-Schritt (analog zu `LUCKPERMS_DB_ENV`) **und** ein passendes Secret ergänzt
+werden – niemals einen echten Wert direkt committen.
+
+| Platzhalter | Datei | Inaktiv, weil |
+|---|---|---|
+| `__SKINSRESTORER_DB_*__` | `proxy/plugins/skinsrestorer/config.yml` | Storage = FILE |
+| `__TAB_DB_*__` | `proxy/plugins/tab/config.yml` | MySQL deaktiviert |
+| `__LIBERTYBANS_DB_USER__` / `__LIBERTYBANS_DB_PASSWORD__` | `proxy/plugins/libertybans/sql.yml`, `import.yml` | `rdms-vendor: HSQLDB` (lokal) |
+| `__PLOTSQUARED_DB_PASSWORD__` | `survival/plugins/PlotSquared/config/storage.yml` | `mysql.use: false` (SQLite) |
+| `__GLOBALMARKETPLUS_DB_PASSWORD__` | `survival/plugins/GlobalMarketPlus/Config.yml`, `rpg/plugins/GlobalMarketPlus/Config.yml` | `MySQL-Storage.Enabled: false` (SQLite) |
+| `__XROBOTS_DB_PASSWORD__` | `rpg/plugins/XRobots/config.yml` | `database_type: H2` (lokal) |
+
+---
+
 ## Zusammenfassung
 
 | Secret | Typ | Verwendet in |

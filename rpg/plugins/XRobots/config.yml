@@ -6,7 +6,9 @@ mysql:
   port: 3306 # MySQL server port (default is 3306).
   database: dbName # Name of the database to use.
   username: dbUser # Username for database authentication.
-  password: dbPass # Password for database authentication.
+  # Dormant: database_type=H2 (lokal). Bei Umstellung auf MySQL injizieren (siehe
+  # SECRETS.md), statt schwache Default-Zugangsdaten zu committen.
+  password: __XROBOTS_DB_PASSWORD__ # Password for database authentication.
 connection_properties:
   connection_timeout: 60000 # Maximum milliseconds to wait for a connection from the pool.
   idle_timeout: 600000 # Time in ms before an idle connection is removed from the pool.
