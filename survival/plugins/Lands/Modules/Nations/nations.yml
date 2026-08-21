@@ -2,7 +2,13 @@
 
 # Enable nations?
 # NOTE: This setting requires server reload / restart.
-enabled: true
+#
+# LINKED SUBSYSTEM: Nations reuse the Wars (`lands_wars*`) database tables.
+# Keep this in sync with Modules/Wars/wars.yml `enabled`. Leaving Nations enabled
+# while Wars is disabled makes Lands query the never-created
+# `lands_wars_declarations` table -> repeated `SQLITE_ERROR: no such table`.
+# Disabled here to match Wars; enable BOTH together to offer nation/war gameplay.
+enabled: false
 
 nation:
   # Customize the creation

@@ -245,7 +245,7 @@ watch-files: true
 #                configured below.
 #   => custom    Uses a messaging service provided using the LuckPerms API.
 #   => auto      Attempts to automatically setup a messaging service using redis or sql.
-messaging-service: auto
+messaging-service: redis
 
 # If LuckPerms should automatically push updates after a change has been made with a command.
 auto-push-updates: true
@@ -264,10 +264,10 @@ broadcast-received-log-entries: true
 # Port 6379 is used by default; set address to "host:port" if differs
 # Multiple Redis nodes can be specified in the same format as a string list under the name "addresses".
 redis:
-  enabled: false
-  address: localhost
+  enabled: true
+  address: 172.18.0.1:6379
   username: ''
-  password: ''
+  password: '__REDIS_PASSWORD__'
 
 # Settings for Nats.
 # Port 4222 is used by default; set address to "host:port" if differs

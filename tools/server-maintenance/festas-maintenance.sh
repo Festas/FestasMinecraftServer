@@ -90,9 +90,11 @@ bounded() {
   if have timeout; then timeout "${MAX_SCAN_SECONDS}s" "$@"; else "$@"; fi
 }
 
-# human: formatiert eine Byte-Zahl menschenlesbar.
+# human: formatiert eine Byte-Zahl menschenlesbar. Der Sentinel "NOPRIV" (siehe
+# du_bytes) wird als "keine Berechtigung" ausgegeben, statt fälschlich als 0B.
 human() {
   local bytes="${1:-0}"
+  [ "$bytes" = "NOPRIV" ] && { echo "keine Berechtigung"; return; }
   case "$bytes" in ''|*[!0-9]*) echo "n/a"; return;; esac
   if have numfmt; then
     numfmt --to=iec --suffix=B "$bytes" 2>/dev/null || echo "${bytes}B"
@@ -100,6 +102,15 @@ human() {
     awk -v b="$bytes" 'BEGIN{split("B KB MB GB TB PB",u," ");i=1;while(b>=1024&&i<6){b/=1024;i++}printf("%.1f%s",b,u[i])}'
   fi
 }
+
+# is_bytes: wahr, wenn der Wert eine reine Byte-Zahl ist (kein Sentinel/leer).
+is_bytes() { case "${1:-}" in ''|*[!0-9]*) return 1;; *) return 0;; esac; }
+
+# du_bytes / du_bytes_total: privilegierte Verzeichnisgröße in Bytes. Fehlt
+# root/sudo, wird der Sentinel "NOPRIV" ausgegeben (statt still 0), damit der
+# Bericht ehrlich "keine Berechtigung" anzeigt und nicht überall "0B" behauptet.
+du_bytes()       { can_priv || { printf 'NOPRIV\n'; return 0; }; bounded priv du -sB1 "$@" 2>/dev/null | awk 'END{print ($1+0)}'; }
+du_bytes_total() { can_priv || { printf 'NOPRIV\n'; return 0; }; bounded priv du -scB1 "$@" 2>/dev/null | awk 'END{print ($1+0)}'; }
 
 # humanize_col1: liest Zeilen "bytes ...rest" und formatiert Spalte 1 iec-lesbar.
 humanize_col1() {
@@ -158,13 +169,13 @@ EOF
 # =============================================================================
 # ANALYSE-HELFER (für codeblock)
 # =============================================================================
-h_du_root()    { bounded priv du -x -B1 --max-depth=1 / 2>/dev/null | sort -rn | head -n 25 | humanize_col1; }
-h_du_top()     { bounded priv du -x -B1 /var /home /opt /srv /root 2>/dev/null | sort -rn | head -n "$TOP_N" | humanize_col1; }
-h_big_files()  { bounded priv find /var /home /opt /srv /root -xdev -type f -printf '%s\t%p\n' 2>/dev/null | sort -rn | head -n "$TOP_N" | humanize_col1; }
-h_ptero_vol()  { bounded priv du -sB1 "$PTERO_VOLUMES"/*/ 2>/dev/null | sort -rn | head -n 15 | humanize_col1; }
+h_du_root()    { can_priv || { echo "(keine Berechtigung – benötigt root/sudo)"; return 0; }; bounded priv du -x -B1 --max-depth=1 / 2>/dev/null | sort -rn | head -n 25 | humanize_col1; }
+h_du_top()     { can_priv || { echo "(keine Berechtigung – benötigt root/sudo)"; return 0; }; bounded priv du -x -B1 /var /home /opt /srv /root 2>/dev/null | sort -rn | head -n "$TOP_N" | humanize_col1; }
+h_big_files()  { can_priv || { echo "(keine Berechtigung – benötigt root/sudo)"; return 0; }; bounded priv find /var /home /opt /srv /root -xdev -type f -printf '%s\t%p\n' 2>/dev/null | sort -rn | head -n "$TOP_N" | humanize_col1; }
+h_ptero_vol()  { can_priv || { echo "(keine Berechtigung – benötigt root/sudo)"; return 0; }; bounded priv du -sB1 "$PTERO_VOLUMES"/*/ 2>/dev/null | sort -rn | head -n 15 | humanize_col1; }
 h_top_rss()    { ps -eo pid,ppid,user,rss,pmem,pcpu,comm --sort=-rss 2>/dev/null | head -n 16; }
 h_top_cpu()    { ps -eo pid,user,pcpu,pmem,comm --sort=-pcpu 2>/dev/null | head -n 11; }
-h_listen()     { priv ss -tulnH 2>/dev/null | awk '{print $1, $5}' | sort -u | head -n 40; }
+h_listen()     { can_priv || { echo "(keine Berechtigung – benötigt root/sudo)"; return 0; }; priv ss -tulnH 2>/dev/null | awk '{print $1, $5}' | sort -u | head -n 40; }
 h_iface_err()  { ip -s link 2>/dev/null; }
 h_last_login() { last -n 5 -w 2>/dev/null | head -n 5; }
 h_sensors()    { sensors 2>/dev/null | grep -iE 'Core|temp|Composite' | head -n 12; }
@@ -260,7 +271,7 @@ section_disk_wellknown() {
   for entry in "${pairs[@]}"; do
     name="${entry%%:*}"; path="${entry#*:}"
     if [ -e "$path" ]; then
-      size="$(bounded priv du -sB1 "$path" 2>/dev/null | awk '{print $1}')"
+      size="$(du_bytes "$path")"
       md "| ${name} | \`${path}\` | $(human "${size:-0}") |"
     else
       md "| ${name} | \`${path}\` | _nicht vorhanden_ |"
@@ -356,13 +367,13 @@ section_minecraft() {
     root="$(dirname "$plugins")"
     if [ ! -d "$root" ]; then md "| ${name} | \`${root}\` | _nicht gefunden_ | | |"; continue; fi
     any=1
-    world_sz="$(bounded priv du -scB1 "$root"/world* 2>/dev/null | awk 'END{print $1}')"
-    log_sz="$(priv du -sB1 "$root/logs" 2>/dev/null | awk '{print $1}')"
-    plug_sz="$(bounded priv du -sB1 "$plugins" 2>/dev/null | awk '{print $1}')"
+    world_sz="$(du_bytes_total "$root"/world*)"
+    log_sz="$(du_bytes "$root/logs")"
+    plug_sz="$(du_bytes "$plugins")"
     md "| ${name} | \`${root}\` | $(human "${world_sz:-0}") | $(human "${log_sz:-0}") | $(human "${plug_sz:-0}") |"
-    [ "${world_sz:-0}" -gt $((20*1024*1024*1024)) ] \
+    is_bytes "$world_sz" && [ "$world_sz" -gt $((20*1024*1024*1024)) ] \
       && recommend "${name}: Welt >20 GB – Pre-Gen-Grenzen/World-Border prüfen, alte Chunks trimmen."
-    [ "${log_sz:-0}" -gt $((1024*1024*1024)) ] \
+    is_bytes "$log_sz" && [ "$log_sz" -gt $((1024*1024*1024)) ] \
       && recommend "${name}: Logs >1 GB – Log-Aufbewahrung reduzieren."
   done
   [ "$any" -eq 0 ] && blank && md "_Keine SERVER_PATH_* Variablen gesetzt – generische Volumes-Analyse siehe oben._"
@@ -604,9 +615,9 @@ section_backups() {
   for dir in /backup /backups /var/backups /opt/backups /home/*/backups /mnt/*/backup*; do
     [ -d "$dir" ] || continue
     found=1
-    sz="$(bounded priv du -sh "$dir" 2>/dev/null | awk '{print $1}')"
+    sz="$(du_bytes "$dir")"
     newest="$(priv find "$dir" -type f -printf '%T+ %p\n' 2>/dev/null | sort -r | head -1)"
-    md "- \`${dir}\` (${sz:-?}); neueste Datei: ${newest:-keine}"
+    md "- \`${dir}\` ($(human "${sz:-0}")); neueste Datei: ${newest:-keine}"
   done
   [ "$found" -eq 0 ] && md "_Kein Standard-Backup-Verzeichnis gefunden – Pfad ggf. in der Konfiguration ergänzen._"
   blank; md "> Aufbewahrung/Off-Site siehe [docs/infrastructure/BACKUPS.md](../../docs/infrastructure/BACKUPS.md)."
@@ -621,7 +632,7 @@ section_cleanup_candidates() {
   md "|---|---|---|"
 
   local apt_cache=0
-  [ -d /var/cache/apt/archives ] && apt_cache="$(priv du -sB1 /var/cache/apt/archives 2>/dev/null | awk '{print $1}')"
+  [ -d /var/cache/apt/archives ] && apt_cache="$(du_bytes /var/cache/apt/archives)"
   md "| APT-Paketcache | $(human "${apt_cache:-0}") | \`apt-get clean\` **(auto)** |"
 
   if have journalctl; then
@@ -634,7 +645,7 @@ section_cleanup_candidates() {
   fi
   have apt-get && md "| Verwaiste Pakete/Kernel | variabel | \`apt-get autoremove --purge\` **(auto)** |"
   local tmp_sz=""
-  [ -d /tmp ] && tmp_sz="$(bounded priv du -sB1 /tmp 2>/dev/null | awk '{print $1}')"
+  [ -d /tmp ] && tmp_sz="$(du_bytes /tmp)"
   md "| Temp-Dateien | \`/tmp\` (${tmp_sz:+$(human "$tmp_sz")}) | \`systemd-tmpfiles --clean\` **(auto)** |"
   have coredumpctl && md "| Core-Dumps | \`coredumpctl list\` | manuell prüfen |"
 

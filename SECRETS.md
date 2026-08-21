@@ -168,6 +168,10 @@ und haben sinnvolle Defaults. Details siehe
 
 Diese Secrets enthalten **mehrere Schlüssel-Wert-Paare** im Shell-`key=value`-Format (ein Eintrag pro Zeile, wie eine `.env`-Datei). Sie werden beim Deployment in die jeweiligen Plugin-Configs injiziert.
 
+> **Hinweis zu Sonderzeichen:** Injizierte Passwörter landen in YAML-Feldern mit
+> **einfachen Anführungszeichen**. Verwende daher **kein** `'` (Apostroph) im
+> Passwort, sonst wird die Config ungültig. Andere Sonderzeichen sind in Ordnung.
+
 ---
 
 ### `PLAN_DB_ENV`
@@ -214,7 +218,15 @@ PLAN_RO_DB_SSL=true
 
 ### `LUCKPERMS_DB_ENV`
 Datenbankverbindung für das [LuckPerms](https://luckperms.net/) Plugin.  
-Wird in den Servern RPG und Survival verwendet.
+Wird **netzwerkweit** in **Lobby, RPG, Survival und Skyblock** verwendet – alle
+vier Server teilen sich **dieselbe** LuckPerms-Datenbank, damit Ränge überall
+synchron sind (P1-5). Fehlt das Secret, **bricht der Deploy bewusst ab**
+(fail-closed).
+
+> **Migration:** Lobby und RPG nutzten zuvor lokales `h2`. Bestehende Rang-Daten
+> müssen einmalig aus den `h2`-Dateien in die zentrale MariaDB migriert werden
+> (z. B. `/lp export` auf einem Server → `/lp import` gegen die MariaDB), sonst
+> starten diese Server nach der Umstellung mit leeren Rängen.
 
 **Format:** Mehrzeilige `.env`-Datei  
 **Pflichtfelder:**
@@ -226,6 +238,47 @@ LUCKPERMS_DB_PASSWORD=geheimesPasswort
 ```
 
 > **Hinweis:** `LUCKPERMS_DB_ADDRESS` enthält Host und Port in einem Feld, z. B. `db.example.com:3306`.
+
+---
+
+### `REDIS_PASSWORD`
+Passwort (`requirepass`) des zentralen **Redis**-Servers. Redis wird für das
+**LuckPerms-Messaging** (Live-Push von Rang-Änderungen) auf allen vier Servern
+(Lobby, RPG, Survival, Skyblock) sowie – auf dem Host – für HuskSync genutzt.
+
+In den committeten LuckPerms-Configs (`*/plugins/LuckPerms/config.yml`, Schlüssel
+`redis.password`) steht nur der Platzhalter `__REDIS_PASSWORD__`; der echte Wert
+wird beim Deploy injiziert. Fehlt das Secret, **bricht der Deploy bewusst ab**
+(fail-closed). Die Redis-Adresse `172.18.0.1:6379` ist **kein** Secret und steht
+im Klartext in den Configs – bei geändertem Docker-Netzwerk dort anpassen.
+
+> **Wichtig (P0-3):** Redis darf **nicht** öffentlich erreichbar sein. `requirepass`
+> setzen, an die interne Bridge-Adresse binden und Port `6379` in der Firewall
+> schließen – siehe [`docs/infrastructure/HOST_HARDENING.md`](docs/infrastructure/HOST_HARDENING.md).
+
+**Format:** Plain Text (empfohlen: 32+ zufällige Zeichen, **ohne** `'`)  
+**Beispiel:** `Xf9c2...` (langer Zufallsstring)
+
+---
+
+### `SKYBLOCK_DB_ENV`
+Datenbank-Zugangsdaten für den **Skyblock**-Server: SuperiorSkyblock2
+(`s4_skyblock`), das SlimeWorldIslands-Modul (`s4_superior_islands`) und den
+SlimeWorldManager (`s4_slimeworldmanager`). Ein DB-Benutzer mit Zugriff auf diese
+`s4_*`-Schemata genügt.
+
+In den committeten Configs stehen nur die Platzhalter `__SKYBLOCK_DB_USER__` /
+`__SKYBLOCK_DB_PASSWORD__` (vorher der Literal-Platzhalter `CHANGE_ME`, der die
+Ursache des Skyblock-Ausfalls war – `Access denied for user 'CHANGE_ME'`). Der
+echte Wert wird von `deploy-skyblock.yml` injiziert; fehlt das Secret, **bricht
+der Deploy bewusst ab** (fail-closed).
+
+**Format:** Mehrzeilige `.env`-Datei  
+**Pflichtfelder:**
+```env
+SKYBLOCK_DB_USER=s4user
+SKYBLOCK_DB_PASSWORD=geheimesPasswort
+```
 
 ---
 
@@ -257,6 +310,26 @@ XPRIVATEMINES_DASHBOARD_JWT_SECRET=einLangerZufaelligerString
 
 ---
 
+## Ruhende / nicht injizierte Platzhalter
+
+Einige Configs enthalten `__…__`-Platzhalter, die **absichtlich nicht** von einem
+Deploy-Workflow injiziert werden, weil das zugehörige Backend derzeit **inaktiv** ist
+(eingebettete DB oder Feature deaktiviert). Sie ersetzen lediglich zuvor eingecheckte
+schwache Default-Passwörter. Wird ein Backend später aktiviert, muss ein
+Injection-Schritt (analog zu `LUCKPERMS_DB_ENV`) **und** ein passendes Secret ergänzt
+werden – niemals einen echten Wert direkt committen.
+
+| Platzhalter | Datei | Inaktiv, weil |
+|---|---|---|
+| `__SKINSRESTORER_DB_*__` | `proxy/plugins/skinsrestorer/config.yml` | Storage = FILE |
+| `__TAB_DB_*__` | `proxy/plugins/tab/config.yml` | MySQL deaktiviert |
+| `__LIBERTYBANS_DB_USER__` / `__LIBERTYBANS_DB_PASSWORD__` | `proxy/plugins/libertybans/sql.yml`, `import.yml` | `rdms-vendor: HSQLDB` (lokal) |
+| `__PLOTSQUARED_DB_PASSWORD__` | `survival/plugins/PlotSquared/config/storage.yml` | `mysql.use: false` (SQLite) |
+| `__GLOBALMARKETPLUS_DB_PASSWORD__` | `survival/plugins/GlobalMarketPlus/Config.yml`, `rpg/plugins/GlobalMarketPlus/Config.yml` | `MySQL-Storage.Enabled: false` (SQLite) |
+| `__XROBOTS_DB_PASSWORD__` | `rpg/plugins/XRobots/config.yml` | `database_type: H2` (lokal) |
+
+---
+
 ## Zusammenfassung
 
 | Secret | Typ | Verwendet in |
@@ -276,7 +349,9 @@ XPRIVATEMINES_DASHBOARD_JWT_SECRET=einLangerZufaelligerString
 | `PTERODACTYL_API_KEY` | Client-API-Key (`ptlc_…`) | server-maintenance (nur Reboot-Teil) |
 | `PLAN_DB_ENV` | `.env`-Format (mehrzeilig) | Alle Server-Deploy-Workflows |
 | `PLAN_RO_DB_ENV` | `.env`-Format (mehrzeilig) | deploy-plan-players-export |
-| `LUCKPERMS_DB_ENV` | `.env`-Format (mehrzeilig) | deploy-rpg, deploy-survival |
+| `LUCKPERMS_DB_ENV` | `.env`-Format (mehrzeilig) | deploy-lobby, deploy-rpg, deploy-survival, deploy-skyblock |
+| `REDIS_PASSWORD` | Plain Text | deploy-lobby, deploy-rpg, deploy-survival, deploy-skyblock |
+| `SKYBLOCK_DB_ENV` | `.env`-Format (mehrzeilig) | deploy-skyblock |
 | `XPRISON_DASHBOARD_ENV` | `.env`-Format (mehrzeilig) | deploy-rpg |
 | `XPRIVATEMINES_DASHBOARD_ENV` | `.env`-Format (mehrzeilig) | deploy-rpg |
 | `PLAYERS_JSON_REMOTE_PATH` (optional) | Absoluter Pfad (Plain Text) | sync-players-json |

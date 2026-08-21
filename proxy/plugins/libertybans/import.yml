@@ -147,8 +147,10 @@ self:
     database: 'bans'
     host: 'localhost'
     port: 3306
-    password: 'defaultpass'
-    user: 'defaultuser'
+    # Dormant: nur für einen einmaligen Import aus einer Remote-DB genutzt; bei Bedarf
+    # echte Werte injizieren (siehe SECRETS.md), statt schwache Defaults zu committen.
+    password: '__LIBERTYBANS_DB_PASSWORD__'
+    user: '__LIBERTYBANS_DB_USER__'
 
    # The values in this section only apply when using a MariaDB or MySQL database
   mariadb:

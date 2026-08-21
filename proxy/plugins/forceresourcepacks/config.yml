@@ -26,11 +26,18 @@ use-auth-plugin: false
 
 packs:
   oraxen_pack_rpg:
-    # NEU: Link über Nginx (Port 80).
-    # Durch Nginx heißt die Datei nun wirklich "rpg.zip" für den Client.
-    # Das verhindert Caching-Konflikte zu 100%.
-    url: http://128.140.99.121/rpg.zip
-    
+    # Auslieferung über HTTPS (gemeinsames festas-builds.com-Zertifikat), damit das
+    # Pack verschlüsselt und ohne Klartext-IP übertragen wird. Nginx serviert die
+    # Datei statisch unter /packs/ (siehe nginx/sites-available/mc.festas-builds.com.conf
+    # und docs/infrastructure/RESOURCE_PACKS.md).
+    # Der rpg-Slot ist öffentlich der "Mining"-Server – die Datei darf daher optional
+    # in mining.zip umbenannt werden (dann hier UND auf dem Host anpassen).
+    url: https://mc.festas-builds.com/packs/rpg.zip
+
+    # hash leer => ForceResourcepacks berechnet den SHA-1 nach dem ersten Download
+    # selbst (autogeneratehashes) und erzwingt ihn beim Client. Sobald das Pack stabil
+    # ist, den echten Hash hier PINNEN (`sha1sum rpg.zip`), um den Re-Download bei
+    # jedem Proxy-Neustart zu vermeiden.
     hash: ""
     uuid: 6251f286-9031-4328-b873-104449074092
     format: 34
@@ -38,10 +45,12 @@ packs:
     permission: forceresourcepacks.pack.global
 
   oraxen_pack_survival:
-    # NEU: Link über Nginx (Port 80).
-    # Heißt nun "survival.zip".
-    url: http://128.140.99.121/survival.zip
-    
+    # Auslieferung über HTTPS (gemeinsames festas-builds.com-Zertifikat). Nginx
+    # serviert die Datei statisch unter /packs/ (siehe docs/infrastructure/RESOURCE_PACKS.md).
+    url: https://mc.festas-builds.com/packs/survival.zip
+
+    # Siehe Hinweis oben: echten SHA-1 pinnen (`sha1sum survival.zip`), sobald das
+    # Pack stabil ist.
     hash: ""
     uuid: 6251f286-9031-4328-b873-104449074097
     format: 34

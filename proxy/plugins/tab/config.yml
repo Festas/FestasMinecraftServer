@@ -182,8 +182,9 @@ mysql:
   host: 127.0.0.1
   port: 3306
   database: tab
-  username: CHANGE_ME
-  password: CHANGE_ME
+  # Dormant unless mysql.enabled is true. Inject via TAB_DB_ENV if enabled.
+  username: __TAB_DB_USER__
+  password: __TAB_DB_PASSWORD__
   useSSL: true
 proxy-support:
   enabled: false

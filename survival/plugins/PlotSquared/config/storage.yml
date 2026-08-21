@@ -14,7 +14,9 @@ mysql:
   host: "localhost"
   port: "3306"
   user: "root"
-  password: "password"
+  # Dormant: mysql.use=false (SQLite aktiv). Bei Aktivierung echten Wert injizieren
+  # (siehe SECRETS.md), statt das schwache Default-Passwort zu committen.
+  password: "__PLOTSQUARED_DB_PASSWORD__"
   database: "plot_db"
   # Set additional properties: https://dev.mysql.com/doc/connector-j/en/connector-j-reference-configuration-properties.html
   properties: 

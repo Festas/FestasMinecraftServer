@@ -4,8 +4,8 @@ mysql:
     enabled: false
     host: 172.25.0.1
     port: 3306
-    username: CHANGE_ME
-    password: 'CHANGE_ME'
+    username: __SKYBLOCK_DB_USER__
+    password: '__SKYBLOCK_DB_PASSWORD__'
     database: s4_slimeworldmanager
     usessl: false
     sqlUrl: jdbc:mysql://{host}:{port}/{database}?autoReconnect=true&allowMultiQueries=true&useSSL={usessl}

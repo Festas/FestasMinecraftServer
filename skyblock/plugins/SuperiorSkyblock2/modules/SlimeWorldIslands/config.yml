@@ -18,8 +18,8 @@ data-source:
     url: 'jdbc:mysql://{host}:{port}/{database}?autoReconnect=true&allowMultiQueries=true&useSSL={usessl}'
     host: 172.25.0.1
     port: 3306
-    username: 'CHANGE_ME'
-    password: 'CHANGE_ME'
+    username: '__SKYBLOCK_DB_USER__'
+    password: '__SKYBLOCK_DB_PASSWORD__'
     database: 's4_superior_islands'
     useSSL: true
   # MongoDB related settings
