@@ -1,0 +1,73 @@
+# Config version. Do not change this
+config-version = "2.8"
+bind = "0.0.0.0:25565"
+motd = "<#09add3>Festas Builds"
+show-max-players = 1000
+online-mode = true
+force-key-authentication = true
+prevent-client-proxy-connections = false
+player-info-forwarding-mode = "modern"
+forwarding-secret-file = "forwarding.secret"
+announce-forge = false
+kick-existing-players = false
+ping-passthrough = "DISABLED"
+sample-players-in-ping = false
+enable-player-address-logging = true
+
+[servers]
+	# 🚀 KORRIGIERTE PORTS
+	# Pterodactyl startet die Server oft auf ihrem zugewiesenen "Allocation Port",
+	# auch wenn wir es intern anders wollen. Daher passen wir Velocity an die
+	# echten Ports an, auf denen die Server lauschen.
+	# Lobby (UUID: 39a0... Port: 25566)
+	lobby = "39a0762a-9e53-4b5b-8810-2bf63410800d:25566"
+	# RPG (UUID: 0af9... Port: 25567)
+	rpg = "0af91553-d5ef-42fc-9ed1-97daaf3c4d70:25567"
+	# Survival (UUID: cfb5... Port: 25568)
+	survival = "cfb531d8-3843-4bff-a8d5-b534aa58fc92:25568"
+	skyblock = "80c1457a-55b2-4671-82a8-60063041558b:25569"
+	try = ["lobby"]
+
+[forced-hosts]
+	"mc.festas-builds.com" = ["lobby"]
+
+[advanced]
+	compression-threshold = 256
+	compression-level = -1
+	login-ratelimit = 3000
+	connection-timeout = 5000
+	read-timeout = 30000
+	haproxy-protocol = false
+	tcp-fast-open = false
+	bungee-plugin-message-channel = true
+	show-ping-requests = false
+	failover-on-unexpected-server-disconnect = true
+	announce-proxy-commands = true
+	log-command-executions = false
+	log-player-connections = true
+	accepts-transfers = false
+	enable-reuse-port = false
+	command-rate-limit = 50
+	forward-commands-if-rate-limited = true
+	kick-after-rate-limited-commands = 0
+	tab-complete-rate-limit = 10
+	kick-after-rate-limited-tab-completes = 0
+
+[query]
+	enabled = false
+	port = 25565
+	map = "lobby"
+	show-plugins = false
+
+[packet-limiter]
+	#Size of the moving time window in seconds used to calculate average rates.
+	#A larger window tolerates short bursts while still enforcing the configured limits over time.
+	interval = 7
+	#Maximum average number of packets per second a client may send. -1 disables this check.
+	packets-per-second = -1
+	#Maximum average number of compressed (on-wire) bytes per second a client may send. -1 disables this check.
+	bytes-per-second = -1
+	#Maximum average number of decompressed bytes per second a client may send.
+	#Protects against compression bomb attacks where small packets expand to excessive sizes after decompression.
+	#-1 disables this check.
+	decompressed-bytes-per-second = 5242880
