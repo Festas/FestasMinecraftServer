@@ -184,9 +184,7 @@ Dieser Fragenkatalog dient als Leitfaden für die weitere Entwicklung und Dokume
 
 ### Social Features
 - [x] Gilden/Clans geplant? → **Nein.** Gilden werden nicht verwendet (CrossCraft-Guilds entfernt); Skyblock nutzt stattdessen **Freunde-Koop** über Insel-Mitglieder.
-- [ ] Party-System (PAF - PartyAndFriendsGUI)?
 - [ ] Chat-Kanäle?
-- [ ] Freundesliste?
 
 ### PvP
 - [ ] Wo ist PvP erlaubt? (Arena, Open World, Battlegrounds?)

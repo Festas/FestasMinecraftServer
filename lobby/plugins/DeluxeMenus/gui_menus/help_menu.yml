@@ -116,23 +116,6 @@ items:
       - '[openguimenu] rules'
 
   # ==============================================================
-  # FREUNDE & PARTY
-  # ==============================================================
-  'friends':
-    material: PLAYER_HEAD
-    slot: 28
-    priority: 1
-    display_name: '&d&l🤝 Freunde & Party'
-    lore:
-      - '&7Spiele gemeinsam mit Freunden!'
-      - ''
-      - '&8» &fFreundesliste &7server-übergreifend'
-      - '&8» &fParty &7für alle Server'
-      - ''
-      - '&e/friend &8– &7Freundesliste'
-      - '&e/party &8– &7Party verwalten'
-
-  # ==============================================================
   # WICHTIGE BEFEHLE
   # ==============================================================
   'commands':
@@ -145,8 +128,6 @@ items:
       - '&e/guide &8– &7Netzwerk Guide'
       - '&e/rules &8– &7Serverregeln'
       - '&e/msg <Spieler> &8– &7Private Nachricht'
-      - '&e/friend &8– &7Freundesliste'
-      - '&e/party &8– &7Party verwalten'
       - '&e/help &8– &7Dieses Menü'
 
   # ==============================================================

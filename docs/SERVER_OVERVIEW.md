@@ -282,7 +282,7 @@ Jede Sammlung hat Milestones mit exklusiven Belohnungen.
 ### Proxy (Velocity)
 - **IP:** `mc.festas-builds.com`
 - **Standard-Server:** Lobby
-- **Plugins:** CMIV, ForceResourcepacks, Geyser-Velocity, LibertyBans, MiniMOTD, PAF (PartyAndFriends), Plan, SkinsRestorer, TAB, VelocityScoreboardAPI
+- **Plugins:** CMIV, ForceResourcepacks, Geyser-Velocity, LibertyBans, MiniMOTD, Plan, SkinsRestorer, TAB, VelocityScoreboardAPI
 
 ### Datenbanken
 - **MariaDB** (`172.25.0.1:3306`): Spielerdaten, MMOCore, Economy, Quests, Achievements
@@ -310,7 +310,6 @@ Zwischen aktiven Servern werden via HuskSync synchronisiert:
 - **GrimAC**: Anti-Cheat (Skyblock, angepasst für Flight)
 
 ### Netzwerk-Features (Proxy)
-- **PartyAndFriends (PAF)**: Server-übergreifendes Party-System und Freundesliste
 - **TAB**: Custom TAB-Liste und Scoreboard auf allen Servern
 - **SkinsRestorer**: Custom Skins, auch im Offline-Mode
 - **Plan**: Web-Dashboard mit Spieler-Statistiken und Server-Performance
@@ -325,10 +324,9 @@ Zwischen aktiven Servern werden via HuskSync synchronisiert:
 2. **Bedrock-First:** Volle Unterstützung für Handy, Konsole und PC-Edition via Geyser/Floodgate — kein Java-Account nötig
 3. **Anti-Inflation-Economy:** Dynamische Börse reagiert auf Angebot und Nachfrage (Survival)
 4. **Custom Content:** Custom Items und Texturen via Oraxen
-5. **Community-Features:** Server-übergreifende Parties, Freundeslisten, globaler Chat (PAF)
-6. **3D-Weltkarten:** BlueMap für Survival und Mining mit Live-Spieler-Markierung
-7. **Skyblock mit Freunde-Koop:** Inseln gemeinsam mit Freunden bauen — ohne Gilden-Overhead
-8. **Mining-Server:** Klarer Progressions-Loop mit aufwertbaren Spitzhacken und schrittweise freischaltbaren Abbau-Zonen
+5. **3D-Weltkarten:** BlueMap für Survival und Mining mit Live-Spieler-Markierung
+6. **Skyblock mit Freunde-Koop:** Inseln gemeinsam mit Freunden bauen — ohne Gilden-Overhead
+7. **Mining-Server:** Klarer Progressions-Loop mit aufwertbaren Spitzhacken und schrittweise freischaltbaren Abbau-Zonen
 
 ### Geplante Features (Roadmap)
 

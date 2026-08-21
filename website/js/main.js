@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initServerStatus();
     initPlayerList();
     initNavigationAndScroll();
+    initWikiSidebar();
     initSmoothScroll();
     initClassTabs();
     initScrollReveal();
@@ -655,6 +656,69 @@ function initNavigationAndScroll() {
 
         sections.forEach(s => observer.observe(s));
     }
+}
+
+/* ── Wiki Sidebar (Mobile) ──────────────────── */
+function initWikiSidebar() {
+    const toggle = document.getElementById('sidebarToggle');
+    const sidebar = document.querySelector('.wiki-sidebar');
+    if (!toggle || !sidebar) return;
+
+    // Backdrop for closing the sidebar when tapping outside
+    let backdrop = document.querySelector('.wiki-sidebar-backdrop');
+    if (!backdrop) {
+        backdrop = document.createElement('div');
+        backdrop.className = 'wiki-sidebar-backdrop';
+        document.body.appendChild(backdrop);
+    }
+
+    function openSidebar() {
+        sidebar.classList.add('open');
+        toggle.classList.add('active');
+        backdrop.classList.add('active');
+        toggle.setAttribute('aria-expanded', 'true');
+        toggle.setAttribute('aria-label', 'Menü schließen');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeSidebar() {
+        sidebar.classList.remove('open');
+        toggle.classList.remove('active');
+        backdrop.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Menü öffnen');
+        document.body.style.overflow = '';
+    }
+
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.addEventListener('click', () => {
+        if (sidebar.classList.contains('open')) {
+            closeSidebar();
+        } else {
+            openSidebar();
+        }
+    });
+
+    backdrop.addEventListener('click', closeSidebar);
+
+    // Close after navigating via a sidebar link
+    sidebar.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeSidebar);
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && sidebar.classList.contains('open')) {
+            closeSidebar();
+        }
+    });
+
+    // Reset state when leaving mobile breakpoint
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 900 && sidebar.classList.contains('open')) {
+            closeSidebar();
+        }
+    }, { passive: true });
 }
 
 /* ── Smooth Scroll ──────────────────────────── */

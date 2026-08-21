@@ -48,7 +48,6 @@ Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
 - **LibertyBans** - Netzwerk-weites Ban-System
 - **MiniMOTD** - Custom MOTD (Message of the Day)
 - **MySQL-And-Configurate** - Datenbank-Integration
-- **PAF** (PartyAndFriends) - Party & Freundesliste über Server hinweg
 - **Plan** - Netzwerk-weite Analyse und Statistiken
 - **SkinsRestorer** - Custom Skins für Spieler
 - **TAB** - Custom TAB-Liste und Scoreboard
@@ -77,7 +76,6 @@ Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
 - **ProtocolLib** / **CommandAPI** - Backend-Bibliotheken für Custom-Features
 - **WorldGuard** - Weltschutz (Build/PvP/Damage/Hunger blockiert)
 - **FastAsyncWorldEdit** - Bau/Pflege der Lobby-Welt
-- **PartyAndFriendsGUI** - Party-/Freundeslisten-GUI (Backend zum Velocity-PAF)
 - **Vault**, **bStats**, **faststats**, **spark** - Economy-Bridge, Statistik & Profiling
 
 **Besonderheiten:**
@@ -130,7 +128,6 @@ Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
 - **LuckPerms** - Permissions
 - **Vault** - Economy API (Backend, an CMI angebunden)
 - **PlaceholderAPI**, **ProtocolLib**, **CommandAPI**, **NBTAPI** - Backend-Bibliotheken
-- **PartyAndFriendsGUI** - Party-/Freundeslisten-GUI (Backend zum Velocity-PAF)
 - **bStats**, **faststats**, **spark** - Statistik & Profiling
 
 **Tycoon-Gamemode:**
@@ -199,4 +196,3 @@ Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
 - Server-eigene Economy (CoinsEngine), kein Cross-Server-Economy-Mix
 
 ---
-

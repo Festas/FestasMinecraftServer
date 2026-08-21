@@ -852,6 +852,19 @@ h3 { font-size: 1.1rem; font-weight: 700; }
 .sidebar-toggle.active .hamburger-line:nth-child(2) { opacity: 0; }
 .sidebar-toggle.active .hamburger-line:nth-child(3) { transform: rotate(-45deg) translate(6.5px, -6.5px); }
 
+/* ── Sidebar Backdrop (Mobile) ── */
+.wiki-sidebar-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+    z-index: 90;
+    opacity: 0;
+    transition: opacity var(--transition);
+}
+.wiki-sidebar-backdrop.active { opacity: 1; }
+
 /* ── Mobile ── */
 @media (max-width: 900px) {
     .sidebar-toggle { display: block; }
@@ -864,6 +877,7 @@ h3 { font-size: 1.1rem; font-weight: 700; }
         box-shadow: 4px 0 40px rgba(0,0,0,0.6);
     }
 
+    .wiki-sidebar-backdrop.active { display: block; }
     .wiki-content {
         margin-left: 0;
         padding: var(--spacing-md) 1.25rem;

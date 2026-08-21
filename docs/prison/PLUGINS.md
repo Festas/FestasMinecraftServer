@@ -117,7 +117,6 @@ Plugin ab. Das minimiert Schnittstellen und Wartung — ideal für den Solo-Betr
 | **PlaceholderAPI** | Platzhalter (fast alle Plugins) | ♻️ Recycelt |
 | **ProtocolLib** | Packet-Basis (Backend) | ♻️ Recycelt |
 | **CommandAPI** | Command-Bibliothek (Backend) | ♻️ Recycelt |
-| **PartyAndFriendsGUI** | Party-/Freundeslisten-GUI (Backend zum Velocity-PAF) | ♻️ Recycelt |
 
 ---
 
