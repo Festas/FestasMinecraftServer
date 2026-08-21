@@ -3,7 +3,7 @@ name: Deploy proxy Server Configs
 on:
   push:
     branches: [main]
-    paths: ['proxy/**']
+    paths: ['proxy/plugins/**']
   workflow_dispatch:
     inputs:
       replace_folder:

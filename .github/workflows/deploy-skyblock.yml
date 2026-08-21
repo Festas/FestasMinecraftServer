@@ -3,7 +3,7 @@ name: Deploy skyblock Server Configs
 on:
   push:
     branches: [main]
-    paths: ['skyblock/**']
+    paths: ['skyblock/plugins/**']
   workflow_dispatch:
     inputs:
       replace_folder:

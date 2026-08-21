@@ -3,7 +3,7 @@ name: Deploy survival Server Configs
 on:
   push:
     branches: [main]
-    paths: ['survival/**']
+    paths: ['survival/plugins/**']
   workflow_dispatch:
     inputs:
       replace_folder:

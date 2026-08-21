@@ -41,6 +41,19 @@ lobby/plugins/Skript/scripts/
 skyblock/plugins/SuperiorSkyblock2/config.yml
 ```
 
+## Server-Configs (Root) synchronisieren
+
+Die zentralen Paper-/Velocity-Configs im Server-ROOT (`server.properties`, `bukkit.yml`,
+`spigot.yml`, `config/paper-global.yml`, `velocity.toml`, ...) werden über den Workflow
+`sync-server-configs.yml` verwaltet:
+
+- **Actions → „Sync server configs" → Run workflow**
+  - `from_server`: aktuelle Configs vom Server ins Repo ziehen
+  - `to_server`: Repo-Configs auf den Server deployen
+- Änderungen an diesen Dateien auf `main` werden **automatisch** deployed.
+
+Details & Datei-Liste: `docs/OPERATIONS.md`.
+
 ## In-Game Befehle (aktive Server)
 
 ### CMI (Lobby & Survival)

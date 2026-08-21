@@ -3,7 +3,7 @@ name: Deploy lobby Server Configs
 on:
   push:
     branches: [main]
-    paths: ['lobby/**']
+    paths: ['lobby/plugins/**']
   workflow_dispatch:
     inputs:
       replace_folder:

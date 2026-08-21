@@ -188,16 +188,16 @@ XPRIVATEMINES_DASHBOARD_JWT_SECRET=einLangerZufaelligerString
 
 | Secret | Typ | Verwendet in |
 |---|---|---|
-| `SSH_HOST` | Plain Text | Alle Deploy-Workflows |
-| `SSH_USER` | Plain Text | Alle Deploy-Workflows |
-| `SSH_PRIVATE_KEY` | PEM-Schlüssel (mehrzeilig) | Alle Deploy-Workflows |
-| `PERSONAL_TOKEN` | GitHub PAT (Plain Text) | copy-puginsfolder, sync-latest-logs, sync-players-json |
+| `SSH_HOST` | Plain Text | Alle Deploy-Workflows, sync-server-configs |
+| `SSH_USER` | Plain Text | Alle Deploy-Workflows, sync-server-configs |
+| `SSH_PRIVATE_KEY` | PEM-Schlüssel (mehrzeilig) | Alle Deploy-Workflows, sync-server-configs |
+| `PERSONAL_TOKEN` | GitHub PAT (Plain Text) | copy-puginsfolder, sync-latest-logs, sync-players-json, sync-server-configs |
 | `GHCR_TOKEN` | GitHub PAT (Plain Text) | deploy-website |
-| `SERVER_PATH_LOBBY` | Absoluter Pfad (Plain Text) | deploy-lobby, copy-puginsfolder, sync-latest-logs |
-| `SERVER_PATH_PROXY` | Absoluter Pfad (Plain Text) | deploy-proxy, copy-puginsfolder, sync-latest-logs |
-| `SERVER_PATH_RPG` | Absoluter Pfad (Plain Text) | deploy-rpg, copy-puginsfolder, sync-latest-logs |
-| `SERVER_PATH_SKYBLOCK` | Absoluter Pfad (Plain Text) | deploy-skyblock, copy-puginsfolder, sync-latest-logs |
-| `SERVER_PATH_SURVIVAL` | Absoluter Pfad (Plain Text) | deploy-survival, copy-puginsfolder, sync-latest-logs |
+| `SERVER_PATH_LOBBY` | Absoluter Pfad (Plain Text) | deploy-lobby, copy-puginsfolder, sync-latest-logs, sync-server-configs |
+| `SERVER_PATH_PROXY` | Absoluter Pfad (Plain Text) | deploy-proxy, copy-puginsfolder, sync-latest-logs, sync-server-configs |
+| `SERVER_PATH_RPG` | Absoluter Pfad (Plain Text) | deploy-rpg, copy-puginsfolder, sync-latest-logs, sync-server-configs |
+| `SERVER_PATH_SKYBLOCK` | Absoluter Pfad (Plain Text) | deploy-skyblock, copy-puginsfolder, sync-latest-logs, sync-server-configs |
+| `SERVER_PATH_SURVIVAL` | Absoluter Pfad (Plain Text) | deploy-survival, copy-puginsfolder, sync-latest-logs, sync-server-configs |
 | `PLAN_DB_ENV` | `.env`-Format (mehrzeilig) | Alle Server-Deploy-Workflows |
 | `PLAN_RO_DB_ENV` | `.env`-Format (mehrzeilig) | deploy-plan-players-export |
 | `LUCKPERMS_DB_ENV` | `.env`-Format (mehrzeilig) | deploy-rpg, deploy-survival |
