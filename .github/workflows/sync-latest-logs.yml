@@ -22,7 +22,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: sync-latest-logs
+  group: festas-server-logs-write
   cancel-in-progress: false
 
 jobs:

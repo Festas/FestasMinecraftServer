@@ -54,7 +54,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: server-maintenance
+  group: festas-server-logs-write
   cancel-in-progress: false
 
 jobs:

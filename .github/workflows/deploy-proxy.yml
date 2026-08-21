@@ -11,6 +11,10 @@ on:
         required: false
         default: ''
 
+concurrency:
+  group: deploy-proxy
+  cancel-in-progress: false
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -21,11 +25,14 @@ jobs:
           fetch-depth: 2
 
       - name: Setup SSH
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH_HOST: ${{ secrets.SSH_HOST }}
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
+          printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
-          ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+          ssh-keyscan -H "$SSH_HOST" >> ~/.ssh/known_hosts
 
       - name: Inject Plan DB credentials
         env:
@@ -86,6 +93,7 @@ jobs:
           EXCLUDE_ARGS=(
             --exclude='*.db' --exclude='*.sqlite' --exclude='*.log'
             --exclude='*.zip' --exclude='*.tar.gz'
+            --exclude='*.pem' --exclude='*.key' --exclude='*.secret'
             --exclude='playerdata/' --exclude='data/' --exclude='cache/'
             --exclude='.git*'
             --exclude='world/' --exclude='world_nether/' --exclude='world_the_end/'
@@ -102,7 +110,7 @@ jobs:
 
             ssh -n -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new "$SSH_USER@$SSH_HOST" "rm -rf '$SERVER_PATH/$REPLACE_FOLDER'"
 
-            rsync -avz -e 'ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new' "${EXCLUDE_ARGS[@]}" --delete "proxy/plugins/$REPLACE_FOLDER/" "$SSH_USER@$SSH_HOST:$SERVER_PATH/$REPLACE_FOLDER/"
+            rsync -avz -e 'ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new' "${EXCLUDE_ARGS[@]}" --backup --backup-dir="/tmp/festas-rsync-backup-$(date +%Y%m%d-%H%M%S)" --delete "proxy/plugins/$REPLACE_FOLDER/" "$SSH_USER@$SSH_HOST:$SERVER_PATH/$REPLACE_FOLDER/"
 
             echo "Folder $REPLACE_FOLDER replaced successfully"
           else
@@ -124,20 +132,20 @@ jobs:
                   fi
 
                   # Excludes prüfen (auf Basis des Dateinamens)
-                  if echo "$remote_relative_file" | grep -qE '\.(db|sqlite|log)$|^(playerdata|data|cache)/|^\.git'; then
+                  if echo "$remote_relative_file" | grep -qE '\.(db|sqlite|log|pem|key|secret)$|^(playerdata|data|cache)/|^\.git'; then
                     echo "Skipping excluded file: $remote_relative_file"
                     continue
                   fi
 
                   if [ "$status" = "D" ]; then
                     echo "Deleting: $remote_relative_file"
-                    ssh -n -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new $SSH_USER@$SSH_HOST "rm -f $SERVER_PATH/$remote_relative_file"
+                    ssh -n -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new "$SSH_USER@$SSH_HOST" "rm -f '$SERVER_PATH/$remote_relative_file'"
                   else
                     echo "Uploading: $remote_relative_file"
                     
                     dir_path=$(dirname "$remote_relative_file")
                     if [ "$dir_path" != "." ]; then
-                      ssh -n -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new $SSH_USER@$SSH_HOST "mkdir -p $SERVER_PATH/$dir_path"
+                      ssh -n -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new "$SSH_USER@$SSH_HOST" "mkdir -p '$SERVER_PATH/$dir_path'"
                     fi
                     
                     # Nutze $file (lokaler voller Pfad) -> $SERVER_PATH/$remote_relative_file (Server Pfad ohne doppeltes plugins/)
@@ -153,7 +161,7 @@ jobs:
               echo "Manual sync: uploading all files..."
               # WICHTIG: Hier auch proxy/plugins/ als Quelle nutzen, nicht proxy/
               # Sonst wird der Ordner 'plugins' in den Ordner 'plugins' kopiert -> plugins/plugins
-              rsync -avz -e 'ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new' "${EXCLUDE_ARGS[@]}" --delete "proxy/plugins/" "$SSH_USER@$SSH_HOST:$SERVER_PATH/"
+              rsync -avz -e 'ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new' "${EXCLUDE_ARGS[@]}" --backup --backup-dir="/tmp/festas-rsync-backup-$(date +%Y%m%d-%H%M%S)" --delete "proxy/plugins/" "$SSH_USER@$SSH_HOST:$SERVER_PATH/"
               echo "Full sync completed successfully"
             fi
           fi
@@ -166,7 +174,7 @@ jobs:
           SERVER_PATH: ${{ secrets.SERVER_PATH_PROXY }}
         run: |
           echo "🔍 Verifiziere Deployment..."
-          FILE_COUNT=$(ssh -n -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new $SSH_USER@$SSH_HOST "find $SERVER_PATH -name '*.yml' -type f | wc -l")
+          FILE_COUNT=$(ssh -n -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new "$SSH_USER@$SSH_HOST" "find '$SERVER_PATH' -name '*.yml' -type f | wc -l")
           echo "📊 $FILE_COUNT Konfigurationsdateien auf dem Server gefunden."
           if [ "$FILE_COUNT" -lt 1 ]; then
             echo "::error::Keine Konfigurationsdateien auf dem Server gefunden! Deployment möglicherweise fehlgeschlagen."

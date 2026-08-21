@@ -42,6 +42,18 @@ test-server/
 **/ProtocolLib/lastupdate
 **/ProtocolLib/error/
 
+# ========================
+# Secrets & private keys (NEVER commit)
+# ========================
+# Cryptographic keys / secret material used by plugins at runtime. These must
+# only ever live on the server (or in GitHub Actions secrets), never in the repo.
+*.pem
+*.key
+*.secret
+**/forwarding.secret
+**/floodgate/key.pem
+**/CMI/security.key
+
 # Database files (binary, not editable)
 **/punishments-database.*
 *.db

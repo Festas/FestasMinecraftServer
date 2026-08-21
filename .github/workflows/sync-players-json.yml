@@ -14,7 +14,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: sync-players-json
+  group: festas-server-logs-write
   cancel-in-progress: false
 
 jobs:
