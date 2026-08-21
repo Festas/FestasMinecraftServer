@@ -29,6 +29,7 @@ Technische Infrastruktur für das MinecraftMMO-Netzwerk.
 - [Datenbank-Schema](DATENBANKEN.md)
 - [Backup-Strategien](BACKUPS.md)
 - [Velocity Exporter](VELOCITY_EXPORTER.md)
+- [Resource-Packs (HTTPS)](RESOURCE_PACKS.md)
 - [Architektur-Dokumentation](../ARCHITECTURE.md)
 
 ---
