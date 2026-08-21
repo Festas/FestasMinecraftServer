@@ -112,6 +112,41 @@ Berücksichtigte Dateien (Allowlist):
 >   in `.gitignore`. Dieser Workflow versioniert sie bewusst (`git add -f`) – nur
 >   verwenden, wenn das Repository dafür geeignet (privat) ist.
 
+### Wöchentliche Host-Wartung & Health-Report (`server-maintenance.yml`)
+
+Umfassender, automatischer Wartungs- und Gesundheits-Workflow für den **Linux-Host**
+(nicht nur die Minecraft-Server). Läuft **wöchentlich** (Mittwoch **02:00 UTC**,
+~03:00/04:00 Uhr Berlin) und ist jederzeit **manuell** auslösbar. Details und
+Einrichtung: [`tools/server-maintenance/README.md`](../tools/server-maintenance/README.md).
+
+- **Analyse & Health-Checks (alle Bereiche):** Speicherplatz (größte
+  Verzeichnisse/Dateien, „Speicherfresser", Docker, Volumes, MC-Welten/Logs),
+  RAM & Top-Prozesse, Docker-/systemd-/Kern-Dienste, Netzwerk, Sicherheit
+  (Firewall, Logins), Paket-Updates, Log-Fehler, SMART/Sensoren, TLS-Zertifikate,
+  Backups.
+- **Bericht ins Repo:** committet einen Kurzbericht nach
+  [`server-logs/health/`](../server-logs/health/) (`latest.md`, `latest.json`,
+  `history/<ts>.json`) inkl. **Lösch- und Optimierungsvorschlägen** und einer
+  Status-Ampel (`OK`/`WARN`/`CRIT`). Der Festplatten-/RAM-Status nutzt dieselben
+  Schwellen wie unter [Monitoring-Empfehlungen](#monitoring-empfehlungen)
+  (Warnung > 80 %, kritisch > 90 %).
+- **Wartung (optional, Modus `maintain`/`full`):** installiert sinnvolle Updates
+  (`all`/nur `security`/`none`), entfernt verwaiste Pakete/alte Kernel, dampft
+  Journald ein und räumt Docker gefahrlos auf (**ohne** `-a`/`--volumes` – Welten,
+  Volumes, Datenbanken und Backups bleiben unangetastet). `--dry-run` zeigt alles
+  nur an.
+- **Reboot (nur wenn freigegeben):** Nur wenn Variable
+  `MAINTENANCE_ALLOW_REBOOT = true` **und** die Pterodactyl-Secrets gesetzt sind
+  **und** die Reboot-Politik greift (`auto` = nur wenn `reboot-required`, `force`,
+  `never`), führt der Workflow aus: **Spieler vorwarnen → alle Server sauber
+  stoppen → Host neustarten → Rückkehr abwarten → Server wieder starten**. Da
+  Wings nach dem Reboot automatisch startet und der Pterodactyl-Schedule die
+  Server ohnehin hochfährt, ist die Wiederherstellung doppelt abgesichert.
+
+> **Kollisions-Hinweis:** Die Cron-Zeit so wählen, dass sie **nicht** mit dem
+> Pterodactyl-Neustart-Schedule zusammenfällt. Der Workflow warnt und stoppt die
+> Server selbst sauber, bevor er den Host neustartet.
+
 ---
 
 ## Notfall-Befehle

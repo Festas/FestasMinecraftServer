@@ -91,6 +91,51 @@ Standardpfad `/home/deploy/minecraft-website/data/players.json` (die Ausgabe von
 
 ---
 
+## Pterodactyl-Panel (Wartungs-Workflow)
+
+Diese Secrets werden vom Workflow `server-maintenance.yml` benötigt, aber **nur**
+für den optionalen Reboot-Teil (Spieler vorwarnen → Server sauber stoppen → nach
+dem Neustart wieder starten). Fehlen sie, läuft die Analyse/Wartung trotzdem –
+es wird dann lediglich **kein Reboot** durchgeführt.
+
+### `PTERODACTYL_URL`
+Basis-URL des Pterodactyl-Panels (ohne abschließenden `/`).
+
+**Format:** Plain Text (URL)  
+**Beispiel:** `https://panel.festas-builds.com`
+
+### `PTERODACTYL_API_KEY`
+Ein **Client-API-Schlüssel** (Account → API Credentials), beginnt mit `ptlc_`.
+Er wird nur für die Client-Endpunkte (Power-Signale, Konsolenbefehle) der
+**eigenen** Server verwendet – **kein** Application-/Admin-Key nötig.
+
+**Format:** Plain Text  
+**Beispiel:** `ptlc_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`
+
+> **Least Privilege:** Der Client-Key sieht nur die Server, auf die das zugehörige
+> Konto Zugriff hat. Am besten ein dediziertes Konto mit Zugriff auf genau die
+> Minecraft-Server verwenden, die gestoppt/gestartet werden sollen.
+
+---
+
+## Repository-Variablen (optional, `server-maintenance.yml`)
+
+Diese Werte sind **keine Secrets**, sondern GitHub **Variables**
+(*Settings → Secrets and variables → Actions → Variables*). Alle sind optional
+und haben sinnvolle Defaults. Details siehe
+[`tools/server-maintenance/README.md`](tools/server-maintenance/README.md).
+
+| Variable | Default | Zweck |
+|---|---|---|
+| `MAINTENANCE_ALLOW_REBOOT` | `false` | **Sicherheitsschalter.** Nur bei `true` darf der Workflow den Host neustarten. |
+| `MAINTENANCE_SCHEDULED_MODE` | `full` | Modus des wöchentlichen Laufs (`analyze`/`maintain`/`full`). |
+| `MAINTENANCE_SCHEDULED_APT` | `all` | Update-Umfang des wöchentlichen Laufs (`all`/`security`/`none`). |
+| `MAINTENANCE_SCHEDULED_REBOOT` | `auto` | Reboot-Politik des wöchentlichen Laufs (`never`/`auto`/`force`). |
+| `MAINTENANCE_WARN_STEPS` | `10,5,1` | Vorwarn-Minuten vor dem Stopp (kommagetrennt). |
+| `MAINTENANCE_CHECK_DOMAINS` | `mc.festas-builds.com` | Domains für die TLS-Zertifikatsprüfung (leer = aus). |
+
+---
+
 ## Datenbank & Plugin-Konfigurationen (Multi-Variable Secrets)
 
 Diese Secrets enthalten **mehrere Schlüssel-Wert-Paare** im Shell-`key=value`-Format (ein Eintrag pro Zeile, wie eine `.env`-Datei). Sie werden beim Deployment in die jeweiligen Plugin-Configs injiziert.
@@ -198,6 +243,8 @@ XPRIVATEMINES_DASHBOARD_JWT_SECRET=einLangerZufaelligerString
 | `SERVER_PATH_RPG` | Absoluter Pfad (Plain Text) | deploy-rpg, copy-puginsfolder, sync-latest-logs, sync-server-configs |
 | `SERVER_PATH_SKYBLOCK` | Absoluter Pfad (Plain Text) | deploy-skyblock, copy-puginsfolder, sync-latest-logs, sync-server-configs |
 | `SERVER_PATH_SURVIVAL` | Absoluter Pfad (Plain Text) | deploy-survival, copy-puginsfolder, sync-latest-logs, sync-server-configs |
+| `PTERODACTYL_URL` | Plain Text (URL) | server-maintenance (nur Reboot-Teil) |
+| `PTERODACTYL_API_KEY` | Client-API-Key (`ptlc_…`) | server-maintenance (nur Reboot-Teil) |
 | `PLAN_DB_ENV` | `.env`-Format (mehrzeilig) | Alle Server-Deploy-Workflows |
 | `PLAN_RO_DB_ENV` | `.env`-Format (mehrzeilig) | deploy-plan-players-export |
 | `LUCKPERMS_DB_ENV` | `.env`-Format (mehrzeilig) | deploy-rpg, deploy-survival |

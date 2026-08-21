@@ -40,7 +40,7 @@ JOURNAL_VACUUM_TIME="${JOURNAL_VACUUM_TIME:-14d}"
 JOURNAL_VACUUM_SIZE="${JOURNAL_VACUUM_SIZE:-500M}"
 DISK_WARN_PCT="${DISK_WARN_PCT:-80}"
 DISK_CRIT_PCT="${DISK_CRIT_PCT:-90}"
-MEM_WARN_PCT="${MEM_WARN_PCT:-85}"
+MEM_WARN_PCT="${MEM_WARN_PCT:-80}"
 MEM_CRIT_PCT="${MEM_CRIT_PCT:-95}"
 
 # Optionale Minecraft-Server-Pfade (aus GitHub-Secrets durchgereicht). Jeder
@@ -673,9 +673,11 @@ maintenance_run() {
     if [ "$DRY_RUN" -eq 1 ]; then
       action "apt-get autoremove --purge + clean würden ausgeführt (Dry-Run)."
     else
-      DEBIAN_FRONTEND=noninteractive priv apt-get -y autoremove --purge >/dev/null 2>&1 \
-        && action "Verwaiste Pakete/Kernel entfernt (autoremove --purge)." \
-        || action "autoremove fehlgeschlagen (siehe Logs)."
+      if DEBIAN_FRONTEND=noninteractive priv apt-get -y autoremove --purge >/dev/null 2>&1; then
+        action "Verwaiste Pakete/Kernel entfernt (autoremove --purge)."
+      else
+        action "autoremove fehlgeschlagen (siehe Logs)."
+      fi
       priv apt-get -y autoclean >/dev/null 2>&1 || true
       priv apt-get -y clean >/dev/null 2>&1 && action "APT-Paketcache geleert (clean)."
     fi
@@ -697,9 +699,11 @@ maintenance_run() {
     if [ "$DRY_RUN" -eq 1 ]; then
       action "docker system prune -f (ohne Volumes) würde ausgeführt (Dry-Run)."
     else
-      priv docker system prune -f >/dev/null 2>&1 \
-        && action "Docker aufgeräumt (dangling Images, gestoppte Container, Build-Cache)." \
-        || action "docker prune fehlgeschlagen."
+      if priv docker system prune -f >/dev/null 2>&1; then
+        action "Docker aufgeräumt (dangling Images, gestoppte Container, Build-Cache)."
+      else
+        action "docker prune fehlgeschlagen."
+      fi
     fi
   fi
 
@@ -736,9 +740,11 @@ run_apt_upgrade() {
   priv apt-get update -qq >/dev/null 2>&1 || true
   if [ "$APT_MODE" = "security" ]; then
     if have unattended-upgrade; then
-      priv unattended-upgrade -v >/dev/null 2>&1 \
-        && action "Sicherheitsupdates via unattended-upgrade installiert." \
-        || action "unattended-upgrade meldete Fehler (Logs prüfen)."
+      if priv unattended-upgrade -v >/dev/null 2>&1; then
+        action "Sicherheitsupdates via unattended-upgrade installiert."
+      else
+        action "unattended-upgrade meldete Fehler (Logs prüfen)."
+      fi
       return
     fi
     action "Nur-Security angefordert, aber unattended-upgrades fehlt → normales Upgrade als Fallback."
