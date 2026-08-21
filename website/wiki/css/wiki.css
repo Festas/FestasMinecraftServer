@@ -440,6 +440,20 @@ h3 { font-size: 1.1rem; font-weight: 700; }
     padding: var(--spacing-md);
     margin: var(--spacing-lg) 0;
 }
+.wiki-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    background: linear-gradient(135deg, rgba(240,180,41,0.10) 0%, rgba(240,180,41,0.04) 100%);
+    border: 1px solid rgba(240,180,41,0.35);
+    border-left: 4px solid #f0b429;
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    margin: var(--spacing-md) 0 var(--spacing-lg);
+}
+.wiki-notice .wiki-notice-icon { font-size: 1.4rem; line-height: 1.4; }
+.wiki-notice .wiki-notice-text { color: rgba(240,240,246,0.9); line-height: 1.6; }
+.wiki-notice .wiki-notice-text strong { color: #f0b429; }
 .cmi-header {
     display: flex;
     align-items: center;
