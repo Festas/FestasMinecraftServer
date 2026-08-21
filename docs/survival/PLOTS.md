@@ -20,7 +20,10 @@ Jeder Spieler erhält beim Start (`/tycoon start`) einen kostenlosen Plot in der
 
 > **Hinweis:** Die `town`-Welt wird nicht mehr von PlotSquared verwaltet. Land-Claiming in der
 > Survival-Welt (`world`, `world_nether`, `world_the_end`, `town`) läuft jetzt über das Plugin
-> **Lands** (Chunk-basiert, Griefing-Schutz, Nationen). Konfiguration: [`survival/plugins/Lands/`](../../survival/plugins/Lands/).
+> **Lands** (Chunk-basiert, Griefing-Schutz). Das Wars/Nationen-Subsystem ist bewusst
+> **deaktiviert** (reiner Claiming-/Griefing-Schutz); beide Module (`Modules/Wars/wars.yml`,
+> `Modules/Nations/nations.yml`) sind zusammen abschaltbar und müssen gemeinsam aktiviert
+> werden, damit Lands die War-Tabellen initialisiert. Konfiguration: [`survival/plugins/Lands/`](../../survival/plugins/Lands/).
 
 ---
 
