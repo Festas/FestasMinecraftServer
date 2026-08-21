@@ -73,6 +73,7 @@ server {
         proxy_set_header   X-Real-IP $remote_addr;
         proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header   X-Forwarded-Proto $scheme;
+        proxy_hide_header  X-Frame-Options;   # erlaubt <iframe>-Einbettung auf der Website
         proxy_read_timeout 3600s;
         proxy_buffering    off;
     }
@@ -89,6 +90,7 @@ server {
         proxy_set_header   X-Real-IP $remote_addr;
         proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header   X-Forwarded-Proto $scheme;
+        proxy_hide_header  X-Frame-Options;   # erlaubt <iframe>-Einbettung auf der Website
         proxy_read_timeout 3600s;
         proxy_buffering    off;
     }
@@ -140,4 +142,5 @@ Nach dem Pushen dieser Config-Änderungen:
 | BlueMap startet nicht / keine Texturen | `accept-download: false` | In `core.conf` auf `true` setzen ✅ (bereits gefixt) |
 | Einer der Server zeigt keine Karte | Port-Konflikt / falsches Upstream-Routing | Survival muss auf `8102`, Mining auf `8103` zeigen |
 | Live-Player verschwinden sofort | SSE durch Proxy unterbrochen | `proxy_buffering off` + `proxy_read_timeout 3600s` setzen |
+| Karte lädt direkt, aber **nicht im `<iframe>`** der Website (`… hat die Verbindung abgelehnt`) | BlueMaps integrierter Webserver sendet `X-Frame-Options: SAMEORIGIN` (v.a. ältere Versionen wie 5.14); der Browser verweigert dadurch das Einbetten | Im Nginx-Vhost `proxy_hide_header X-Frame-Options;` setzen ✅ (bereits in beiden Vhosts gefixt). Danach mit `curl -sI https://survival.festas-builds.com \| grep -i x-frame` prüfen, dass der Header weg ist |
 | Karte lädt, aber keine Tiles | BlueMap hat noch nicht gerendert | `/bluemap render` im Server ausführen |
