@@ -102,5 +102,9 @@ jobs:
 
           git commit -m "chore: sync players.json snapshot"
           git remote set-url origin "https://x-access-token:${PERSONAL_TOKEN}@github.com/${{ github.repository }}"
-          git pull --rebase origin "${GITHUB_REF_NAME}" || { git rebase --abort; exit 1; }
+          if ! git pull --rebase origin "${GITHUB_REF_NAME}"; then
+            git rebase --abort || true
+            echo "::error::Rebase auf ${GITHUB_REF_NAME} fehlgeschlagen; Snapshot nicht gepusht."
+            exit 1
+          fi
           git push origin "HEAD:${GITHUB_REF_NAME}"

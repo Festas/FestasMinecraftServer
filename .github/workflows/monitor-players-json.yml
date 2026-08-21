@@ -35,12 +35,21 @@ jobs:
         run: |
           set -euo pipefail
           echo "🌐 GET ${PLAYERS_JSON_URL}"
-          http_code="$(curl -fsS --max-time 20 -o /tmp/players.public.json -w '%{http_code}' "$PLAYERS_JSON_URL" || true)"
+          # Do not use -f: we want to inspect the status code explicitly and give a
+          # clear error instead of an empty body on a non-2xx response.
+          http_code="$(curl -sS --max-time 20 -o /tmp/players.public.json -w '%{http_code}' "$PLAYERS_JSON_URL" || true)"
+          echo "HTTP ${http_code:-none}"
+          case "${http_code:-}" in
+            2??) : ;;
+            *)
+              echo "::error::players.json lieferte keinen 2xx-Status (HTTP ${http_code:-none})."
+              exit 1
+              ;;
+          esac
           if [ ! -s /tmp/players.public.json ]; then
-            echo "::error::Konnte players.json nicht laden (HTTP ${http_code:-none})."
+            echo "::error::players.json Antwort war leer."
             exit 1
           fi
-          echo "HTTP ${http_code}"
 
       - name: Validate contract and freshness
         env:
