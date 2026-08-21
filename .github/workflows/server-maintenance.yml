@@ -273,7 +273,7 @@ jobs:
         run: |
           set -uo pipefail
           SSH="ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=yes -o ConnectTimeout=10"
-          echo "Warte auf Reboot (bis zu ~2 min) ..."
+          echo "Warte auf Reboot (90 s Grundwartezeit + bis zu 40×15 s Polling, max. ~11 min) ..."
           sleep 90
           back="no"
           for i in $(seq 1 40); do

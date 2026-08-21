@@ -230,7 +230,11 @@ def cmd_countdown(client: PteroClient, args) -> int:
     """Mehrere Vorwarnungen senden, z. B. bei 15/10/5/1 Minuten vor dem Stopp."""
     servers = _filter_servers(client.list_servers(), args.only)
     proxy_match = [t.strip().lower() for t in args.proxy_match.split(",")]
-    steps = [int(x) for x in args.steps.split(",") if x.strip()]
+    try:
+        steps = [int(x) for x in args.steps.split(",") if x.strip()]
+    except ValueError:
+        err(f"Ungültiger --steps-Wert: {args.steps!r} (erwartet kommagetrennte Minuten, z. B. 10,5,1).")
+        return 2
     steps = sorted(set(steps), reverse=True)
     if not steps:
         steps = [0]
@@ -241,7 +245,8 @@ def cmd_countdown(client: PteroClient, args) -> int:
             if wait_s > 0 and not args.no_sleep:
                 time.sleep(wait_s)
         if minutes > 0:
-            msg = args.template.format(minutes=minutes)
+            minutes_text = f"{minutes} Minute" if minutes == 1 else f"{minutes} Minuten"
+            msg = args.template.format(minutes=minutes, minutes_text=minutes_text)
         else:
             msg = args.final_message
         log(f"Vorwarnung (T-{minutes} min): {msg}")
@@ -386,9 +391,10 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument("--steps", default="15,10,5,1",
                     help="Minuten-Marken, kommagetrennt (Default: 15,10,5,1).")
     sp.add_argument("--template",
-                    default="[Wartung] Server-Neustart in {minutes} Minuten. "
+                    default="[Wartung] Server-Neustart in {minutes_text}. "
                             "Bitte beende deine Aktivitäten rechtzeitig.",
-                    help="Vorlage mit {minutes}.")
+                    help="Vorlage mit {minutes} (Zahl) und/oder {minutes_text} "
+                         "(z. B. '1 Minute' / '10 Minuten').")
     sp.add_argument("--final-message",
                     default="[Wartung] Server wird jetzt heruntergefahren. Bis gleich!",
                     help="Nachricht beim T-0-Schritt.")
