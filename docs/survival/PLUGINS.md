@@ -80,7 +80,6 @@ Die Spalte **Status** ordnet jedes Plugin ein:
 | **PlaceholderAPI** | Platzhalter (fast alle Plugins) | ✅ Kern |
 | **ProtocolLib** | Packet-Basis (Backend) | ✅ Kern |
 | **CommandAPI** / **NBTAPI** | Command- bzw. NBT-Bibliotheken (Backend) | ✅ Kern |
-| **PartyAndFriendsGUI** | Party-/Freundeslisten-GUI (Backend zum Velocity-PAF) | 🟢 Vorhanden |
 | **bStats** / **faststats** / **spark** | Metriken, Performance-Profiling | 🟢 Vorhanden |
 
 ---

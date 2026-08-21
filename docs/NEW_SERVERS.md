@@ -52,7 +52,7 @@ von „viel/wenig", je nach Kriterium ist hoch nicht automatisch gut):
 | **A · Mining (Abbau-Zonen)** | ⬤⬤ | ⬤ | ⬤⬤ | ⬤⬤⬤ | ⬤⬤ | Casual, PvE, Solo | ⬤⬤⬤ | ⬤⬤ |
 | **B · Skyblock (überarbeitet, Koop)** | ⬤⬤ | ⬤⬤ | ⬤⬤ | ⬤⬤ | ⬤⬤⬤ | Casual/Mittel, PvE, Solo/Freunde | ⬤⬤ | ⬤⬤ |
 | **C · Factions/KitPvP** | ⬤⬤ | ⬤⬤⬤ | ⬤⬤ | ⬤⬤⬤ | ⬤⬤ | Hardcore, PvP, Gruppe | ⬤⬤⬤ | ⬤⬤ |
-| **D · Minigames/Party** | ⬤⬤ | ⬤ | ⬤⬤ | ⬤⬤⬤ | ⬤⬤ | Casual, PvE+PvP | ⬤⬤⬤ | ⬤⬤⬤ |
+| **D · Minigames** | ⬤⬤ | ⬤ | ⬤⬤ | ⬤⬤⬤ | ⬤⬤ | Casual, PvE+PvP | ⬤⬤⬤ | ⬤⬤⬤ |
 | **E · Prison** | ⬤⬤ | ⬤⬤ | ⬤⬤ | ⬤ (nah am Tycoon) | ⬤⬤⬤ | Casual/Grind, PvE+PvP | ⬤⬤ | ⬤⬤ |
 | **F · Event-/Seasonal** | ⬤ | ⬤ | ⬤⬤ | ⬤⬤ | ⬤⬤ | Casual, temporär | ⬤ | ⬤⬤⬤ |
 
@@ -105,7 +105,6 @@ Die Weichenstellung fällt auf einen **überarbeiteten Skyblock** plus einen neu
 | Oraxen | Custom Items/Texturen (Bedrock-fähig) | 🔶 prüfen | Kauf |
 | ProtocolLib | Protokoll-Basis | ✅ | Frei |
 | CMI (+CMILib) | Core-Management (optional) | 🔶 prüfen | Kauf |
-| PartyAndFriendsGUI | Party/Friends | 🔶 prüfen | Frei |
 | spark | Performance-Profiling | ✅ | Frei |
 
 ### 3.2 Mining-spezifisch

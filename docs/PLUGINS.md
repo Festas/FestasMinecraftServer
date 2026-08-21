@@ -65,18 +65,6 @@ Vollständige Übersicht aller verwendeten Plugins pro Server.
 - **Funktion:** MySQL-Datenbank-Integration für Velocity
 - **Verwendung:** Zentrale Datenbank-Verbindung für Plugins
 
-#### PAF (PartyAndFriendsGUI)
-- **Funktion:** Party & Freundesliste über Server hinweg
-- **Features:**
-  - Freundschaftsanfragen
-  - Party-System (Server-übergreifend)
-  - Chat-Nachrichten
-  - Online-Status
-- **Commands:**
-  - `/friend add <player>`
-  - `/party invite <player>`
-  - `/party chat <message>`
-
 #### Plan
 - **Funktion:** Netzwerk-weite Analyse und Statistiken
 - **Features:**
@@ -173,9 +161,6 @@ Vollständige Übersicht aller verwendeten Plugins pro Server.
 
 #### FastAsyncWorldEdit (FAWE)
 - **Funktion:** Async World-Editing für Lobby-Bau/-Pflege
-
-#### PartyAndFriendsGUI
-- **Funktion:** Party- & Freundeslisten-GUI (Backend zum Velocity-PAF)
 
 #### bStats / faststats / spark
 - **Funktion:** Statistik- und Performance-Werkzeuge (Metriken, Profiling)
@@ -291,9 +276,6 @@ Vollständige Übersicht aller verwendeten Plugins pro Server.
 
 #### CommandAPI / NBTAPI
 - **Funktion:** Command- bzw. NBT-Bibliotheken (Backend)
-
-#### PartyAndFriendsGUI
-- **Funktion:** Party-/Freundeslisten-GUI (Backend zum Velocity-PAF)
 
 #### bStats / faststats / spark
 - **Funktion:** Statistik- und Performance-Werkzeuge

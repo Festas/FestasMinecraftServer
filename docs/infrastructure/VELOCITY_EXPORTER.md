@@ -54,7 +54,6 @@ http://127.0.0.1:9108/metrics
 - Plan
 - MariaDB
 - LibertyBans
-- PartyAndFriends
 
 ---
 

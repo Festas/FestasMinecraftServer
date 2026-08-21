@@ -440,6 +440,20 @@ h3 { font-size: 1.1rem; font-weight: 700; }
     padding: var(--spacing-md);
     margin: var(--spacing-lg) 0;
 }
+.wiki-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    background: linear-gradient(135deg, rgba(240,180,41,0.10) 0%, rgba(240,180,41,0.04) 100%);
+    border: 1px solid rgba(240,180,41,0.35);
+    border-left: 4px solid #f0b429;
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    margin: var(--spacing-md) 0 var(--spacing-lg);
+}
+.wiki-notice .wiki-notice-icon { font-size: 1.4rem; line-height: 1.4; }
+.wiki-notice .wiki-notice-text { color: rgba(240,240,246,0.9); line-height: 1.6; }
+.wiki-notice .wiki-notice-text strong { color: #f0b429; }
 .cmi-header {
     display: flex;
     align-items: center;
@@ -851,6 +865,24 @@ h3 { font-size: 1.1rem; font-weight: 700; }
 .sidebar-toggle.active .hamburger-line:nth-child(1) { transform: rotate(45deg) translate(6.5px, 6.5px); }
 .sidebar-toggle.active .hamburger-line:nth-child(2) { opacity: 0; }
 .sidebar-toggle.active .hamburger-line:nth-child(3) { transform: rotate(-45deg) translate(6.5px, -6.5px); }
+
+/* ── Sidebar Backdrop (Mobile) ── */
+.wiki-sidebar-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+    z-index: 90;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity var(--transition), visibility var(--transition);
+}
+.wiki-sidebar-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
 
 /* ── Mobile ── */
 @media (max-width: 900px) {

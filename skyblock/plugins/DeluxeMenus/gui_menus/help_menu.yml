@@ -141,7 +141,6 @@ items:
       - '&e/is team &8– &7Team anzeigen'
       - '&e/minions &8– &7Minions verwalten'
       - '&e/bal &8– &7Kontostand'
-      - '&e/friend &8– &7Freundesliste'
       - '&e/lobby &8– &7Zurück zur Lobby'
 
   # ==============================================================

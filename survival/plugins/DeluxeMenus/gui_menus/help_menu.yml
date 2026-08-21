@@ -142,8 +142,6 @@ items:
       - '&e/rankup &8– &7Rang aufsteigen'
       - '&e/warp &8– &7Warps anzeigen'
       - '&e/bal &8– &7Kontostand'
-      - '&e/friend &8– &7Freundesliste'
-      - '&e/party &8– &7Party verwalten'
       - '&e/lobby &8– &7Zurück zur Lobby'
 
   # ==============================================================

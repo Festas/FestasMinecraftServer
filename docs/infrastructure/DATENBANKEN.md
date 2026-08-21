@@ -14,7 +14,6 @@
                     │  ┌─ s4_perms (LuckPerms)  │
                     │  ├─ s4_plan (Plan)        │
                     │  ├─ s4_husk (HuskSync)    │
-                    │  ├─ s4_party (PAF)        │
                     │  └─ s4_bazaar (Bazaar)    │
                     └────────────┬─────────────┘
                                  │
@@ -48,7 +47,6 @@
 | `s4_perms`    | LuckPerms       | Permissions, Gruppen, Tracks                 | Proxy, Lobby, Survival, Skyblock, Prison |
 | `s4_plan`     | Plan             | Spieler-Statistiken, Server-Analytics        | Proxy, Lobby, Survival, RPG         |
 | `s4_husk`     | HuskSync        | Ränge und Cosmetics                          | Lobby, Prison                       |
-| `s4_party`    | PartyAndFriends | Party- und Freundeslisten-Daten              | Proxy                               |
 | `s4_bazaar`   | DeluxeBazaar    | Bazaar-Angebote und Transaktionen            | Skyblock, Prison                    |
 
 ### Redis

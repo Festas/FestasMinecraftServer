@@ -102,7 +102,6 @@ Das Herz des Servers: Inseln, Koop und Insel-Welten.
 | **PlaceholderAPI** | Platzhalter (fast alle Plugins) | ✅ Kern |
 | **ProtocolLib** | Packet-Basis (Backend) | ✅ Kern |
 | **CommandAPI** | Command-Bibliothek (Backend) | ✅ Kern |
-| **PartyAndFriendsGUI** | Party-/Freundeslisten-GUI (Backend zum Velocity-PAF) | 🟢 Empfohlen |
 | **bStats** / **spark** / **nightcore** | Metriken, Performance-Profiling, Core-Library | 🟢 Empfohlen |
 
 ---

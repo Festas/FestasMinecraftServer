@@ -46,7 +46,6 @@ Die Spalte **Status** ordnet jedes Plugin ein:
 | **CommandAPI** | Command-Bibliothek (Backend) | 🟢 Vorhanden |
 | **FastAsyncWorldEdit (FAWE)** | Async World-Editing für Lobby-Bau/-Pflege | 🟢 Vorhanden |
 | **WorldGuard** | Regionen-Schutz (kein Griefing im Hub) | ✅ Kern |
-| **PartyAndFriendsGUI** | Party-/Freundeslisten-GUI (Backend zum Velocity-PAF) | 🟢 Vorhanden |
 | **bStats** / **faststats** / **spark** | Metriken, Performance-Profiling | 🟢 Vorhanden |
 
 > **Hinweis:** FancyNpcs und ein separates Hologramm-Plugin (DecentHolograms) sind **nicht mehr** Teil der Lobby —

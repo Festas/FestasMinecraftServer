@@ -119,8 +119,6 @@ items:
       - '&e/guide &8- &7Dieser Guide'
       - '&e/lobby &8- &7Zurück zur Lobby'
       - '&e/msg <Spieler> &8- &7Private Nachricht'
-      - '&e/friend &8- &7Freundesliste'
-      - '&e/party &8- &7Party-System'
 
   # --- FREUNDE & KOOP ---
   'coop':
@@ -131,11 +129,9 @@ items:
       - '&7Spiele zusammen mit deinen Freunden!'
       - '&7Auf Skyblock baust du gemeinsam an einer Insel.'
       - ''
-      - '&8» &fFreundesliste &7server-übergreifend'
-      - '&8» &fParty &7für gemeinsames Spielen'
       - '&8» &fSkyblock-Koop &7per Insel-Einladung'
       - ''
-      - '&eBefehle: &7/friend, /party, /is invite'
+      - '&eBefehl: &7/is invite'
 
   # --- SUPPORT ---
   'support':
