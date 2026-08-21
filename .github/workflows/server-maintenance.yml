@@ -1,0 +1,302 @@
+name: Server-Wartung & Health-Report
+
+# Umfassender Wartungs- und Health-Workflow für den Linux-Host (Docker + Pterodactyl).
+#
+# Ablauf:
+#   1. Analyse + optionale Wartung auf dem Server ausführen (festas-maintenance.sh).
+#   2. Kurzbericht (report.md/report.json) ins Repo committen (server-logs/health/).
+#   3. Nur wenn nötig/erlaubt: Minecraft-Server vorwarnen -> sauber stoppen ->
+#      Host neustarten -> zurückkommen abwarten -> Server wieder starten.
+#
+# Zeitplan: Mittwoch 02:00 UTC (~03:00/04:00 Uhr Berlin, tief in der Nacht).
+# GitHub-Cron ist immer UTC. Passe die Zeit an, damit sie NICHT mit dem
+# Pterodactyl-Neustart-Schedule kollidiert (siehe tools/server-maintenance/README.md).
+
+on:
+  schedule:
+    - cron: '0 2 * * 3'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Umfang: analyze (nur Bericht), maintain (Bericht + Updates/Cleanup), full'
+        required: true
+        default: analyze
+        type: choice
+        options:
+          - analyze
+          - maintain
+          - full
+      apt:
+        description: 'Paket-Updates installieren (nur bei maintain/full)'
+        required: true
+        default: security
+        type: choice
+        options:
+          - all
+          - security
+          - none
+      reboot:
+        description: 'Reboot-Politik (erfordert Freigabe via Variable MAINTENANCE_ALLOW_REBOOT=true)'
+        required: true
+        default: never
+        type: choice
+        options:
+          - never
+          - auto
+          - force
+      dry_run:
+        description: 'Trockenlauf: nichts verändern, nur berichten'
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+
+concurrency:
+  group: server-maintenance
+  cancel-in-progress: false
+
+jobs:
+  maintenance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      REMOTE_DIR: /tmp/festas-maintenance-${{ github.run_id }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          token: ${{ secrets.PERSONAL_TOKEN }}
+
+      - name: Resolve parameters
+        id: params
+        env:
+          EVENT: ${{ github.event_name }}
+          IN_MODE: ${{ inputs.mode }}
+          IN_APT: ${{ inputs.apt }}
+          IN_REBOOT: ${{ inputs.reboot }}
+          IN_DRY: ${{ inputs.dry_run }}
+          V_MODE: ${{ vars.MAINTENANCE_SCHEDULED_MODE }}
+          V_APT: ${{ vars.MAINTENANCE_SCHEDULED_APT }}
+          V_REBOOT: ${{ vars.MAINTENANCE_SCHEDULED_REBOOT }}
+          V_WARN: ${{ vars.MAINTENANCE_WARN_STEPS }}
+          ALLOW_REBOOT: ${{ vars.MAINTENANCE_ALLOW_REBOOT }}
+        run: |
+          set -euo pipefail
+          if [ "$EVENT" = "schedule" ]; then
+            mode="${V_MODE:-full}"
+            apt="${V_APT:-all}"
+            reboot="${V_REBOOT:-auto}"
+            dry="false"
+          else
+            mode="${IN_MODE:-analyze}"
+            apt="${IN_APT:-security}"
+            reboot="${IN_REBOOT:-never}"
+            dry="${IN_DRY:-false}"
+          fi
+          warn="${V_WARN:-10,5,1}"
+          allow="${ALLOW_REBOOT:-false}"
+          {
+            echo "mode=$mode"
+            echo "apt=$apt"
+            echo "reboot=$reboot"
+            echo "dry_run=$dry"
+            echo "warn_steps=$warn"
+            echo "allow_reboot=$allow"
+          } >> "$GITHUB_OUTPUT"
+          echo "Modus=$mode · APT=$apt · Reboot-Politik=$reboot · Dry-Run=$dry · Warn-Stufen=$warn · Reboot-Freigabe=$allow"
+
+      - name: Setup SSH
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          set -euo pipefail
+          mkdir -p ~/.ssh
+          printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: Run analysis & maintenance on server
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          SERVER_PATH_LOBBY: ${{ secrets.SERVER_PATH_LOBBY }}
+          SERVER_PATH_PROXY: ${{ secrets.SERVER_PATH_PROXY }}
+          SERVER_PATH_SURVIVAL: ${{ secrets.SERVER_PATH_SURVIVAL }}
+          SERVER_PATH_SKYBLOCK: ${{ secrets.SERVER_PATH_SKYBLOCK }}
+          SERVER_PATH_RPG: ${{ secrets.SERVER_PATH_RPG }}
+          CHECK_DOMAINS: ${{ vars.MAINTENANCE_CHECK_DOMAINS }}
+          MODE: ${{ steps.params.outputs.mode }}
+          APT: ${{ steps.params.outputs.apt }}
+          DRY: ${{ steps.params.outputs.dry_run }}
+        run: |
+          set -euo pipefail
+          SSH="ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=yes ${SSH_USER}@${SSH_HOST}"
+          SCP="scp -i ~/.ssh/id_rsa -o StrictHostKeyChecking=yes"
+          REMOTE_OUT="${REMOTE_DIR}/out"
+          REMOTE_SCRIPT="${REMOTE_DIR}/festas-maintenance.sh"
+
+          dry_flag=""
+          if [ "${DRY}" = "true" ]; then dry_flag="--dry-run"; fi
+          check_domains="${CHECK_DOMAINS:-mc.festas-builds.com}"
+
+          $SSH "mkdir -p '${REMOTE_OUT}'"
+          $SCP tools/server-maintenance/festas-maintenance.sh "${SSH_USER}@${SSH_HOST}:${REMOTE_SCRIPT}"
+
+          # Werte werden erst zur Laufzeit expandiert (nicht im Log sichtbar) und
+          # über die verschlüsselte SSH-Verbindung übertragen.
+          $SSH "chmod +x '${REMOTE_SCRIPT}' && \
+            OUTPUT_DIR='${REMOTE_OUT}' \
+            CHECK_DOMAINS='${check_domains}' \
+            SERVER_PATH_LOBBY='${SERVER_PATH_LOBBY:-}' \
+            SERVER_PATH_PROXY='${SERVER_PATH_PROXY:-}' \
+            SERVER_PATH_SURVIVAL='${SERVER_PATH_SURVIVAL:-}' \
+            SERVER_PATH_SKYBLOCK='${SERVER_PATH_SKYBLOCK:-}' \
+            SERVER_PATH_RPG='${SERVER_PATH_RPG:-}' \
+            bash '${REMOTE_SCRIPT}' run --mode '${MODE}' --apt '${APT}' ${dry_flag} --output-dir '${REMOTE_OUT}'"
+
+          mkdir -p report-artifacts
+          $SCP "${SSH_USER}@${SSH_HOST}:${REMOTE_OUT}/report.md" report-artifacts/report.md
+          $SCP "${SSH_USER}@${SSH_HOST}:${REMOTE_OUT}/report.json" report-artifacts/report.json
+          $SSH "rm -rf '${REMOTE_DIR}'" || true
+
+      - name: Write job summary
+        run: |
+          set -euo pipefail
+          python3 tools/server-maintenance/report_summary.py report-artifacts/report.json >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit report to repository
+        env:
+          PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+        run: |
+          set -euo pipefail
+          echo "::add-mask::$PERSONAL_TOKEN"
+
+          ts="$(date -u +%Y%m%dT%H%M%SZ)"
+          mkdir -p server-logs/health/history
+          cp report-artifacts/report.md server-logs/health/latest.md
+          cp report-artifacts/report.json server-logs/health/latest.json
+          cp report-artifacts/report.json "server-logs/health/history/${ts}.json"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add server-logs/health
+
+          if git diff --staged --quiet; then
+            echo "Keine Bericht-Änderungen."
+            exit 0
+          fi
+
+          git commit -m "chore: update server maintenance health report"
+          git remote set-url origin "https://x-access-token:${PERSONAL_TOKEN}@github.com/${{ github.repository }}"
+          git pull --rebase origin "${GITHUB_REF_NAME}" || { git rebase --abort; exit 1; }
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: Decide reboot
+        id: decide
+        env:
+          POLICY: ${{ steps.params.outputs.reboot }}
+          ALLOW: ${{ steps.params.outputs.allow_reboot }}
+          HAVE_PTERO: ${{ (secrets.PTERODACTYL_URL != '' && secrets.PTERODACTYL_API_KEY != '') && 'yes' || 'no' }}
+        run: |
+          set -euo pipefail
+          reboot_required="$(python3 -c "import json;print(int(json.load(open('report-artifacts/report.json')).get('reboot_required',0)))")"
+          status="$(python3 -c "import json;print(json.load(open('report-artifacts/report.json')).get('status',''))")"
+          do_reboot=false
+          reason=""
+          if [ "$ALLOW" != "true" ]; then
+            reason="Reboot nicht freigegeben (Variable MAINTENANCE_ALLOW_REBOOT != true)."
+          elif [ "$HAVE_PTERO" != "yes" ]; then
+            reason="Pterodactyl-Secrets fehlen – kein sauberer Stopp möglich, Reboot übersprungen."
+          else
+            case "$POLICY" in
+              force) do_reboot=true; reason="Politik 'force'." ;;
+              auto)
+                if [ "$reboot_required" = "1" ]; then do_reboot=true; reason="reboot-required nach Updates."; \
+                else reason="Kein Reboot nötig (auto)."; fi ;;
+              never) reason="Politik 'never'." ;;
+            esac
+          fi
+          echo "do_reboot=$do_reboot" >> "$GITHUB_OUTPUT"
+          echo "Reboot-Entscheidung: $do_reboot – $reason"
+          if [ "$do_reboot" != "true" ]; then
+            echo "::notice::Kein Reboot: $reason"
+          fi
+
+      - name: Warn players (countdown)
+        if: steps.decide.outputs.do_reboot == 'true'
+        env:
+          PTERODACTYL_URL: ${{ secrets.PTERODACTYL_URL }}
+          PTERODACTYL_API_KEY: ${{ secrets.PTERODACTYL_API_KEY }}
+          WARN_STEPS: ${{ steps.params.outputs.warn_steps }}
+          DRY: ${{ steps.params.outputs.dry_run }}
+        run: |
+          set -euo pipefail
+          nosleep=""
+          dry=""
+          if [ "${DRY}" = "true" ]; then nosleep="--no-sleep"; dry="--dry-run"; fi
+          python3 tools/server-maintenance/ptero_control.py ${dry} countdown \
+            --steps "${WARN_STEPS}" ${nosleep} \
+            --final-message "[Wartung] Server wird jetzt für Updates & Neustart heruntergefahren. Wir sind gleich zurück!"
+
+      - name: Graceful shutdown of Minecraft servers
+        if: steps.decide.outputs.do_reboot == 'true'
+        env:
+          PTERODACTYL_URL: ${{ secrets.PTERODACTYL_URL }}
+          PTERODACTYL_API_KEY: ${{ secrets.PTERODACTYL_API_KEY }}
+          DRY: ${{ steps.params.outputs.dry_run }}
+        run: |
+          set -euo pipefail
+          dry=""
+          if [ "${DRY}" = "true" ]; then dry="--dry-run"; fi
+          python3 tools/server-maintenance/ptero_control.py ${dry} graceful-stop \
+            --wait 240 --kill-wait 30 --poll 5 \
+            --save-state /tmp/ptero-state.json
+
+      - name: Reboot host
+        if: steps.decide.outputs.do_reboot == 'true' && steps.params.outputs.dry_run != 'true'
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+        run: |
+          set -euo pipefail
+          SSH="ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=yes ${SSH_USER}@${SSH_HOST}"
+          echo "Plane Reboot in 1 Minute ..."
+          $SSH "sudo -n shutdown -r +1 'Festas Wartung: geplanter Neustart' || sudo -n systemctl reboot" || true
+
+      - name: Wait for host to come back
+        if: steps.decide.outputs.do_reboot == 'true' && steps.params.outputs.dry_run != 'true'
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+        run: |
+          set -uo pipefail
+          SSH="ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=yes -o ConnectTimeout=10"
+          echo "Warte auf Reboot (bis zu ~2 min) ..."
+          sleep 90
+          back="no"
+          for i in $(seq 1 40); do
+            if $SSH "${SSH_USER}@${SSH_HOST}" "true" 2>/dev/null; then
+              echo "✅ Host ist wieder erreichbar."
+              back="yes"
+              break
+            fi
+            sleep 15
+          done
+          if [ "$back" != "yes" ]; then
+            echo "::warning::Host kam nicht rechtzeitig zurück. Pterodactyl-Schedule sollte die Server dennoch starten."
+          fi
+
+      - name: Restore Minecraft servers
+        if: steps.decide.outputs.do_reboot == 'true' && steps.params.outputs.dry_run != 'true'
+        continue-on-error: true
+        env:
+          PTERODACTYL_URL: ${{ secrets.PTERODACTYL_URL }}
+          PTERODACTYL_API_KEY: ${{ secrets.PTERODACTYL_API_KEY }}
+        run: |
+          set -uo pipefail
+          echo "Warte kurz, bis Panel/Wings nach dem Reboot bereit sind ..."
+          sleep 30
+          python3 tools/server-maintenance/ptero_control.py start \
+            --from-state /tmp/ptero-state.json --wait 240 --poll 10
