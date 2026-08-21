@@ -139,7 +139,7 @@ ohne neues Plugin.
 - **Keine** Live-Welten-Aufschlüsselung (`worlds[]` entfällt).
 - **Keine** echte Server-Uptime aus der DB (Karten zeigen `Uptime: —`).
 - Latenz **≤ ~2 min**, `players_online` ist das **Maximum je Minutenfenster**.
-- Server ohne Plan (aktuell Mining/Skyblock) erscheinen als `online:false, count:0`.
+- Server ohne Plan (aktuell Skyblock) erscheinen als `online:false, count:0`.
 
 ### 5b) Konkrete Quelle B: Velocity-Proxy-Writer (Namen/Welten, Echtzeit)
 
