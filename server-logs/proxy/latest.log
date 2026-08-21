@@ -1,8 +1,10 @@
-[01:11:43] [Netty epoll Worker #12/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:58792: read timed out
-[01:15:27] [Netty epoll Worker #14/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:50708: read timed out
-[01:24:47] [Netty epoll Worker #8/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:45538: read timed out
-[01:31:47] [Netty epoll Worker #15/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:48816: read timed out
-[01:32:15] [Netty epoll Worker #1/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /176.65.148.136:57640 has disconnected
-[02:07:05] [Netty epoll Worker #11/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:58350: read timed out
-[02:42:03] [Netty epoll Worker #5/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:57856: read timed out
-[03:17:30] [Netty epoll Worker #14/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:50482: read timed out
+[00:02:29] [Netty epoll Worker #4/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:60474: read timed out
+[00:46:54] [Netty epoll Worker #10/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /51.159.110.167:1001: read timed out
+[01:14:54] [Netty epoll Worker #15/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:43988: read timed out
+[01:19:24] [Netty epoll Worker #5/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:39542: read timed out
+[01:34:17] [Netty epoll Worker #3/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /176.65.148.136:55450 has disconnected
+[02:15:44] [Netty epoll Worker #8/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /137.131.232.50:25951: read timed out
+[02:19:05] [Netty epoll Worker #10/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:60914: read timed out
+[02:32:18] [Netty epoll Worker #12/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:44872: read timed out
+[02:38:57] [Netty epoll Worker #0/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:50252: read timed out
+[03:04:05] [Netty epoll Worker #4/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:33328: read timed out
