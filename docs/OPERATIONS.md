@@ -82,6 +82,36 @@ Für die Live-Spielerzahlen (`/api/players.json`) gibt es zwei weitere Workflows
   Aktualität von `updated`). Ein fehlgeschlagener Lauf meldet früh, dass der Exporter
   oder die Auslieferung gestört ist.
 
+### Server-Configs synchronisieren (`sync-server-configs.yml`)
+
+Für die zentralen Paper-/Velocity-Konfigurationsdateien im **Server-ROOT** (eine Ebene
+über `plugins/`) gibt es den Workflow `sync-server-configs.yml`. Er ergänzt die
+`deploy-*.yml`-Workflows, die ausschließlich den `plugins/`-Ordner behandeln.
+
+- **`from_server` (manuell):** zieht die aktuellen Configs vom Server ins Repository
+  (`<server>/<datei>`) und committet sie. Für einen einzelnen Server oder `ALL`.
+- **`to_server` (manuell):** deployed die im Repo liegenden Configs auf den gewählten
+  Server (bzw. `ALL`).
+- **push (automatisch):** Jede Änderung an einer dieser Dateien auf `main` wird
+  automatisch auf den betroffenen Server deployed. Gelöschte Dateien werden aus
+  Sicherheitsgründen **nicht** automatisch auf dem Server entfernt.
+
+Berücksichtigte Dateien (Allowlist):
+
+| Servertyp | Dateien |
+|---|---|
+| Paper (lobby, survival, skyblock, rpg) | `server.properties`, `bukkit.yml`, `spigot.yml`, `commands.yml`, `help.yml`, `permissions.yml`, `wepif.yml`, `eula.txt`, `config/paper-global.yml`, `config/paper-world-defaults.yml`, `banned-ips.json`, `banned-players.json`, `ops.json`, `whitelist.json` |
+| Velocity (proxy) | `velocity.toml` |
+
+> **Sicherheit / Datenschutz:**
+> - `forwarding.secret` (Velocity) wird **nie** synchronisiert. Beim Ziehen von
+>   `velocity.toml` bricht der Workflow ab, falls ein Inline-`forwarding-secret`
+>   mit Wert gefunden wird (Empfehlung: `forwarding-secret-file` nutzen).
+> - `banned-ips.json`, `banned-players.json`, `ops.json` und `whitelist.json`
+>   enthalten **personenbezogene Daten** (IPs, UUIDs, Namen) und sind normalerweise
+>   in `.gitignore`. Dieser Workflow versioniert sie bewusst (`git add -f`) – nur
+>   verwenden, wenn das Repository dafür geeignet (privat) ist.
+
 ---
 
 ## Notfall-Befehle

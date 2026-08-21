@@ -1,0 +1,379 @@
+name: Sync server configs
+
+# Synchronisiert die zentralen Paper-/Velocity-Konfigurationsdateien (server.properties,
+# bukkit.yml, spigot.yml, config/paper-*.yml, velocity.toml, ...) zwischen Repository und
+# Server – in BEIDE Richtungen:
+#
+#   * from_server (manuell): zieht die aktuellen Configs vom Server ins Repo (und committet sie).
+#   * to_server   (manuell): deployed die im Repo liegenden Configs auf den Server.
+#   * push        (automatisch): jede Änderung an einer dieser Dateien auf `main`
+#                                wird automatisch auf den betroffenen Server deployed.
+#
+# Ergänzt die bestehenden `deploy-*.yml`-Workflows, die ausschließlich den `plugins/`-Ordner
+# behandeln. Dieser Workflow kümmert sich um die Dateien im Server-ROOT (eine Ebene über
+# `plugins/`) sowie den `config/`-Unterordner.
+#
+# Sicherheit:
+#   * `forwarding.secret` (Velocity) wird NIEMALS synchronisiert (Allowlist-Prinzip).
+#   * Beim Ziehen von `velocity.toml` bricht der Workflow ab, falls ein Inline-
+#     `forwarding-secret` mit Wert gefunden wird, damit kein Secret ins Repo gelangt.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '*/server.properties'
+      - '*/bukkit.yml'
+      - '*/spigot.yml'
+      - '*/commands.yml'
+      - '*/help.yml'
+      - '*/permissions.yml'
+      - '*/wepif.yml'
+      - '*/eula.txt'
+      - '*/config/**'
+      - '*/banned-ips.json'
+      - '*/banned-players.json'
+      - '*/ops.json'
+      - '*/whitelist.json'
+      - 'proxy/velocity.toml'
+  workflow_dispatch:
+    inputs:
+      direction:
+        description: 'Richtung: from_server (Server → Repo ziehen) oder to_server (Repo → Server deployen)'
+        required: true
+        default: from_server
+        type: choice
+        options:
+          - from_server
+          - to_server
+      server:
+        description: 'Welchen Server synchronisieren?'
+        required: true
+        default: ALL
+        type: choice
+        options:
+          - ALL
+          - LOBBY
+          - PROXY
+          - SURVIVAL
+          - SKYBLOCK
+          - RPG
+
+concurrency:
+  group: sync-server-configs
+  cancel-in-progress: false
+
+jobs:
+  # --------------------------------------------------------------------------
+  # Repo → Server (automatisch bei push, manuell bei direction=to_server)
+  # --------------------------------------------------------------------------
+  deploy-to-server:
+    if: >-
+      github.event_name == 'push' ||
+      (github.event_name == 'workflow_dispatch' && inputs.direction == 'to_server')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          fetch-depth: 2
+
+      - name: Setup SSH
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -H "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: Deploy configs to server
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          EVENT_NAME: ${{ github.event_name }}
+          REQUESTED_SERVER: ${{ github.event.inputs.server }}
+          SERVER_PATH_LOBBY: ${{ secrets.SERVER_PATH_LOBBY }}
+          SERVER_PATH_PROXY: ${{ secrets.SERVER_PATH_PROXY }}
+          SERVER_PATH_SURVIVAL: ${{ secrets.SERVER_PATH_SURVIVAL }}
+          SERVER_PATH_SKYBLOCK: ${{ secrets.SERVER_PATH_SKYBLOCK }}
+          SERVER_PATH_RPG: ${{ secrets.SERVER_PATH_RPG }}
+        run: |
+          set -euo pipefail
+
+          # ---- Gemeinsame Definitionen -----------------------------------------
+          # Konfigurationsdateien pro Servertyp (Allowlist!). Relativ zum Server-ROOT.
+          PAPER_FILES=(
+            server.properties bukkit.yml spigot.yml commands.yml help.yml
+            permissions.yml wepif.yml eula.txt
+            config/paper-global.yml config/paper-world-defaults.yml
+            banned-ips.json banned-players.json ops.json whitelist.json
+          )
+          VELOCITY_FILES=( velocity.toml )
+
+          ssh_opts="-i $HOME/.ssh/deploy_key -o StrictHostKeyChecking=yes"
+
+          # Liefert das SERVER_PATH-Secret (Pfad zum plugins-Ordner) für einen Server-Key.
+          server_path_for() {
+            case "$1" in
+              LOBBY)    printf '%s' "$SERVER_PATH_LOBBY" ;;
+              PROXY)    printf '%s' "$SERVER_PATH_PROXY" ;;
+              SURVIVAL) printf '%s' "$SERVER_PATH_SURVIVAL" ;;
+              SKYBLOCK) printf '%s' "$SERVER_PATH_SKYBLOCK" ;;
+              RPG)      printf '%s' "$SERVER_PATH_RPG" ;;
+              *)        printf '' ;;
+            esac
+          }
+
+          # Verzeichnisname im Repo für einen Server-Key (lowercase).
+          repo_dir_for() { printf '%s' "$(echo "$1" | tr '[:upper:]' '[:lower:]')"; }
+
+          # Dateiliste (Allowlist) für einen Server-Key.
+          files_for() {
+            if [ "$1" = "PROXY" ]; then printf '%s\n' "${VELOCITY_FILES[@]}";
+            else printf '%s\n' "${PAPER_FILES[@]}"; fi
+          }
+
+          # Lädt eine einzelne Config-Datei ins Server-ROOT hoch (mkdir für Unterordner).
+          upload_file() {
+            local server_key="$1" rel="$2"
+            local repo_dir server_path server_root local_file
+            repo_dir="$(repo_dir_for "$server_key")"
+            server_path="$(server_path_for "$server_key")"
+            local_file="${repo_dir}/${rel}"
+
+            if [ -z "$server_path" ]; then
+              echo "::warning::Überspringe ${server_key}/${rel}: SERVER_PATH nicht konfiguriert."
+              return 0
+            fi
+            if [ ! -f "$local_file" ]; then
+              return 0
+            fi
+
+            server_root="$(dirname "$server_path")"
+            local remote_dir
+            remote_dir="$(dirname "${server_root}/${rel}")"
+            ssh -n $ssh_opts "${SSH_USER}@${SSH_HOST}" "mkdir -p '${remote_dir}'"
+            echo "⬆️  ${server_key}: ${rel}"
+            scp $ssh_opts "$local_file" "${SSH_USER}@${SSH_HOST}:${server_root}/${rel}" < /dev/null
+          }
+
+          # Prüft, ob "<segment>/<rel>" in der Allowlist des Servertyps liegt.
+          is_config_file() {
+            local seg="$1" rel="$2" c
+            case "$seg" in
+              lobby|survival|skyblock|rpg)
+                for c in "${PAPER_FILES[@]}"; do [ "$rel" = "$c" ] && return 0; done ;;
+              proxy)
+                for c in "${VELOCITY_FILES[@]}"; do [ "$rel" = "$c" ] && return 0; done ;;
+            esac
+            return 1
+          }
+
+          # Server-Key aus Repo-Verzeichnisnamen.
+          key_for_dir() {
+            case "$1" in
+              lobby) echo LOBBY ;; proxy) echo PROXY ;; survival) echo SURVIVAL ;;
+              skyblock) echo SKYBLOCK ;; rpg) echo RPG ;; *) echo '' ;;
+            esac
+          }
+
+          # ---- Modus 1: automatischer Deploy geänderter Dateien (push) ---------
+          if [ "$EVENT_NAME" = "push" ]; then
+            echo "🔎 Ermittle geänderte Config-Dateien..."
+            changed=0
+            git diff --name-status HEAD~1 HEAD > /tmp/diff.txt || true
+            while IFS=$'\t' read -r status file rest; do
+              [ -z "${file:-}" ] && continue
+              seg="${file%%/*}"
+              rel="${file#*/}"
+              is_config_file "$seg" "$rel" || continue
+              key="$(key_for_dir "$seg")"
+              [ -z "$key" ] && continue
+
+              if [ "$status" = "D" ]; then
+                # Aus Sicherheitsgründen werden Dateien auf dem Server NICHT automatisch
+                # gelöscht (z. B. versehentliches Entfernen von server.properties).
+                echo "::warning::${key}/${rel} wurde im Repo gelöscht – auf dem Server bleibt die Datei erhalten."
+                continue
+              fi
+              upload_file "$key" "$rel"
+              changed=1
+            done < /tmp/diff.txt
+            [ "$changed" = "0" ] && echo "Keine relevanten Config-Änderungen gefunden."
+            echo "✅ Auto-Deploy abgeschlossen."
+            exit 0
+          fi
+
+          # ---- Modus 2: manueller Voll-Deploy (to_server) ----------------------
+          if [ "${REQUESTED_SERVER:-ALL}" = "ALL" ]; then
+            servers=(LOBBY PROXY SURVIVAL SKYBLOCK RPG)
+          else
+            servers=("${REQUESTED_SERVER}")
+          fi
+
+          for key in "${servers[@]}"; do
+            echo "📦 Deploye Configs für ${key}..."
+            while IFS= read -r rel; do
+              [ -z "$rel" ] && continue
+              upload_file "$key" "$rel"
+            done < <(files_for "$key")
+          done
+          echo "✅ Manueller Deploy abgeschlossen."
+
+  # --------------------------------------------------------------------------
+  # Server → Repo (nur manuell, direction=from_server)
+  # --------------------------------------------------------------------------
+  pull-from-server:
+    if: >-
+      github.event_name == 'workflow_dispatch' && inputs.direction == 'from_server'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          token: ${{ secrets.PERSONAL_TOKEN }}
+
+      - name: Setup SSH
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -H "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: Pull configs from server
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          REQUESTED_SERVER: ${{ github.event.inputs.server }}
+          SERVER_PATH_LOBBY: ${{ secrets.SERVER_PATH_LOBBY }}
+          SERVER_PATH_PROXY: ${{ secrets.SERVER_PATH_PROXY }}
+          SERVER_PATH_SURVIVAL: ${{ secrets.SERVER_PATH_SURVIVAL }}
+          SERVER_PATH_SKYBLOCK: ${{ secrets.SERVER_PATH_SKYBLOCK }}
+          SERVER_PATH_RPG: ${{ secrets.SERVER_PATH_RPG }}
+        run: |
+          set -euo pipefail
+
+          PAPER_FILES=(
+            server.properties bukkit.yml spigot.yml commands.yml help.yml
+            permissions.yml wepif.yml eula.txt
+            config/paper-global.yml config/paper-world-defaults.yml
+            banned-ips.json banned-players.json ops.json whitelist.json
+          )
+          VELOCITY_FILES=( velocity.toml )
+
+          ssh_opts="-i $HOME/.ssh/deploy_key -o StrictHostKeyChecking=yes"
+
+          server_path_for() {
+            case "$1" in
+              LOBBY)    printf '%s' "$SERVER_PATH_LOBBY" ;;
+              PROXY)    printf '%s' "$SERVER_PATH_PROXY" ;;
+              SURVIVAL) printf '%s' "$SERVER_PATH_SURVIVAL" ;;
+              SKYBLOCK) printf '%s' "$SERVER_PATH_SKYBLOCK" ;;
+              RPG)      printf '%s' "$SERVER_PATH_RPG" ;;
+              *)        printf '' ;;
+            esac
+          }
+          repo_dir_for() { printf '%s' "$(echo "$1" | tr '[:upper:]' '[:lower:]')"; }
+          files_for() {
+            if [ "$1" = "PROXY" ]; then printf '%s\n' "${VELOCITY_FILES[@]}";
+            else printf '%s\n' "${PAPER_FILES[@]}"; fi
+          }
+
+          # Zieht eine einzelne Config-Datei vom Server ins Repo, falls sie existiert.
+          download_file() {
+            local server_key="$1" rel="$2"
+            local repo_dir server_path server_root local_file
+            repo_dir="$(repo_dir_for "$server_key")"
+            server_path="$(server_path_for "$server_key")"
+            local_file="${repo_dir}/${rel}"
+
+            if [ -z "$server_path" ]; then
+              echo "::warning::Überspringe ${server_key}/${rel}: SERVER_PATH nicht konfiguriert."
+              return 0
+            fi
+
+            server_root="$(dirname "$server_path")"
+            local remote_file="${server_root}/${rel}"
+
+            if ! ssh -n $ssh_opts "${SSH_USER}@${SSH_HOST}" "test -f '${remote_file}'"; then
+              return 0
+            fi
+
+            mkdir -p "$(dirname "$local_file")"
+            scp $ssh_opts "${SSH_USER}@${SSH_HOST}:${remote_file}" "$local_file" < /dev/null
+
+            # Sicherheits-Guard: kein Velocity-Inline-Secret ins Repo committen.
+            if [ "$rel" = "velocity.toml" ] && \
+               grep -Eq '^[[:space:]]*forwarding-secret[[:space:]]*=[[:space:]]*"[^"]+"' "$local_file"; then
+              echo "::error::${remote_file} enthält ein Inline 'forwarding-secret'. Bitte auf 'forwarding-secret-file' umstellen. Datei wird NICHT committet."
+              rm -f "$local_file"
+              return 1
+            fi
+
+            echo "⬇️  ${server_key}: ${rel}"
+          }
+
+          if [ "${REQUESTED_SERVER:-ALL}" = "ALL" ]; then
+            servers=(LOBBY PROXY SURVIVAL SKYBLOCK RPG)
+          else
+            servers=("${REQUESTED_SERVER}")
+          fi
+
+          rc=0
+          for key in "${servers[@]}"; do
+            echo "📥 Ziehe Configs von ${key}..."
+            while IFS= read -r rel; do
+              [ -z "$rel" ] && continue
+              download_file "$key" "$rel" || rc=1
+            done < <(files_for "$key")
+          done
+          echo "$rc" > /tmp/pull_rc
+
+      - name: Commit and push configs
+        env:
+          PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+        run: |
+          set -euo pipefail
+          echo "::add-mask::$PERSONAL_TOKEN"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Einige Dateien (banned-*.json, ops.json, whitelist.json) sind in .gitignore
+          # gelistet – hier bewusst erzwingen, damit sie versioniert werden.
+          # Pro Muster einzeln stagen: `git add` mit mehreren Pfadmustern bricht komplett
+          # ab, sobald EIN Muster nichts trifft.
+          for pattern in \
+            '*/server.properties' '*/bukkit.yml' '*/spigot.yml' '*/commands.yml' \
+            '*/help.yml' '*/permissions.yml' '*/wepif.yml' '*/eula.txt' \
+            '*/config/paper-global.yml' '*/config/paper-world-defaults.yml' \
+            '*/banned-ips.json' '*/banned-players.json' '*/ops.json' '*/whitelist.json' \
+            'proxy/velocity.toml'; do
+            git add -f "$pattern" 2>/dev/null || true
+          done
+
+          if git diff --staged --quiet; then
+            echo "Keine Config-Änderungen gefunden."
+          else
+            git commit -m "chore: sync server configs from server"
+            git remote set-url origin "https://x-access-token:${PERSONAL_TOKEN}@github.com/${{ github.repository }}"
+            if ! git pull --rebase origin "${GITHUB_REF_NAME}"; then
+              git rebase --abort || true
+              echo "::error::Rebase auf ${GITHUB_REF_NAME} fehlgeschlagen; Configs nicht gepusht."
+              exit 1
+            fi
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
+
+      - name: Fail if a config could not be pulled safely
+        run: |
+          rc="$(cat /tmp/pull_rc 2>/dev/null || echo 0)"
+          if [ "$rc" != "0" ]; then
+            echo "::error::Mindestens eine Config konnte nicht sicher übernommen werden (siehe Warnungen/Fehler oben)."
+            exit 1
+          fi
