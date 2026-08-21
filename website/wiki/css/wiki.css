@@ -868,16 +868,21 @@ h3 { font-size: 1.1rem; font-weight: 700; }
 
 /* ── Sidebar Backdrop (Mobile) ── */
 .wiki-sidebar-backdrop {
-    display: none;
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(3px);
     z-index: 90;
     opacity: 0;
-    transition: opacity var(--transition);
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity var(--transition), visibility var(--transition);
 }
-.wiki-sidebar-backdrop.active { opacity: 1; }
+.wiki-sidebar-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
 
 /* ── Mobile ── */
 @media (max-width: 900px) {
@@ -891,7 +896,6 @@ h3 { font-size: 1.1rem; font-weight: 700; }
         box-shadow: 4px 0 40px rgba(0,0,0,0.6);
     }
 
-    .wiki-sidebar-backdrop.active { display: block; }
     .wiki-content {
         margin-left: 0;
         padding: var(--spacing-md) 1.25rem;
