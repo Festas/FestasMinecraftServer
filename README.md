@@ -1,4 +1,4 @@
-# MinecraftMMO
+# Festas Minecraft Server
 
 Konfigurationen für mein Minecraft Server-Netzwerk (Paper + Velocity)
 
