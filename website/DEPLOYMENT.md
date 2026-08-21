@@ -152,16 +152,17 @@ docker-compose -f docker-compose.web.yml up -d --build
 
 ### Nginx Reverse Proxy Setup
 
-The nginx reverse proxy is centrally managed in the `Festas/Link-in-Bio`
-repository. The configuration file for this service is:
+The nginx reverse proxy for `mc.festas-builds.com` is managed in **this** repository
+and deployed automatically by `.github/workflows/deploy-nginx-configs.yml`:
 
 ```
-Festas/Link-in-Bio/nginx/sites-available/mc.festas-builds.com.conf
+nginx/sites-available/mc.festas-builds.com.conf
 ```
 
 The nginx config proxies `mc.festas-builds.com` to `http://127.0.0.1:8201`, where
-the `minecraft-web` container listens. No changes to nginx are needed unless the
-port or domain changes.
+the `minecraft-web` container listens. The container's own nginx handles caching,
+security headers, gzip and the `/api/players.json` fallback, so the host vhost is a
+clean pass-through. No changes to nginx are needed unless the port or domain changes.
 
 ### DNS Configuration
 
