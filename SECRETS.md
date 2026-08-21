@@ -82,6 +82,13 @@ Alle Server-Pfad-Secrets enthalten den **absoluten Pfad zum `plugins`-Ordner** a
 **Format:** Absoluter Pfad (Plain Text)  
 **Beispiel:** `/opt/minecraft/survival/plugins`
 
+### `PLAYERS_JSON_REMOTE_PATH` (optional)
+**Format:** Absoluter Pfad (Plain Text)  
+**Beispiel:** `/home/deploy/minecraft-website/data/players.json`  
+Optionaler Override für `sync-players-json.yml`. Ohne dieses Secret wird der
+Standardpfad `/home/deploy/minecraft-website/data/players.json` (die Ausgabe von
+`plan-players-export`) verwendet.
+
 ---
 
 ## Datenbank & Plugin-Konfigurationen (Multi-Variable Secrets)
@@ -184,7 +191,7 @@ XPRIVATEMINES_DASHBOARD_JWT_SECRET=einLangerZufaelligerString
 | `SSH_HOST` | Plain Text | Alle Deploy-Workflows |
 | `SSH_USER` | Plain Text | Alle Deploy-Workflows |
 | `SSH_PRIVATE_KEY` | PEM-Schlüssel (mehrzeilig) | Alle Deploy-Workflows |
-| `PERSONAL_TOKEN` | GitHub PAT (Plain Text) | copy-puginsfolder, sync-latest-logs |
+| `PERSONAL_TOKEN` | GitHub PAT (Plain Text) | copy-puginsfolder, sync-latest-logs, sync-players-json |
 | `GHCR_TOKEN` | GitHub PAT (Plain Text) | deploy-website |
 | `SERVER_PATH_LOBBY` | Absoluter Pfad (Plain Text) | deploy-lobby, copy-puginsfolder, sync-latest-logs |
 | `SERVER_PATH_PROXY` | Absoluter Pfad (Plain Text) | deploy-proxy, copy-puginsfolder, sync-latest-logs |
@@ -196,3 +203,4 @@ XPRIVATEMINES_DASHBOARD_JWT_SECRET=einLangerZufaelligerString
 | `LUCKPERMS_DB_ENV` | `.env`-Format (mehrzeilig) | deploy-rpg, deploy-survival |
 | `XPRISON_DASHBOARD_ENV` | `.env`-Format (mehrzeilig) | deploy-rpg |
 | `XPRIVATEMINES_DASHBOARD_ENV` | `.env`-Format (mehrzeilig) | deploy-rpg |
+| `PLAYERS_JSON_REMOTE_PATH` (optional) | Absoluter Pfad (Plain Text) | sync-players-json |

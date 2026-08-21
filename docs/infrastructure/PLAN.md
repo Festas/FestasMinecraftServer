@@ -206,8 +206,9 @@ Die Website (`https://mc.festas-builds.com`, Abschnitt „Wer ist online?") läd
   (`SessionCache.ACTIVE_SESSIONS`); in `plan_sessions` landen nur **beendete**
   Sessions. Aus der DB gibt es daher **keine Live-Namen und keine Live-Welten**.
 - **Mapping:** DB → Website-Key über die stabile Server-**UUID** aus
-  `*/plugins/Plan/ServerInfoFile.yml` (Lobby `82755ba5-…`, Survival `679bd851-…`;
-  Skyblock/Mining haben noch keinen Plan-Ordner → `online:false, count:0`).
+  `*/plugins/Plan/ServerInfoFile.yml` (Lobby `82755ba5-…`, Survival `679bd851-…`,
+  Mining `851efb50-…` aus dem `rpg/`-Ordner; Skyblock hat noch keinen Plan-Ordner
+  → `online:false, count:0`).
 - **Sicherheit:** dedizierter **Read-only-User** (`SELECT` auf `s4_plan`), Secret
   `PLAN_RO_DB_ENV` (siehe `SECRETS.md`), `useSSL: true`. Nicht Plans RW-User
   wiederverwenden (Least Privilege, vgl. `DATENBANKEN.md`).

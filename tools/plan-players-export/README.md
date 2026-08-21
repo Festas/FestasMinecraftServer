@@ -64,7 +64,7 @@ A snapshot matching the documented contract
 - `servers[].updated` = TPS timestamp in **seconds**; top-level `updated` = the
   script run time ("now"), which keeps the frontend's 90 s staleness check green
   even though individual TPS rows can be up to ~2 min old.
-- Servers without a Plan installation yet (Mining, Skyblock) are always emitted as
+- Servers without a Plan installation yet (Skyblock) are always emitted as
   `online:false, count:0` so the four cards stay stable.
 
 ---
@@ -115,11 +115,14 @@ Non-secret settings live in [`config.json`](config.json) (committed):
 |-------------|-----------|--------|
 | `lobby`     | `82755ba5-91eb-4cca-a6a3-be06d891cb3d` | `lobby/plugins/Plan/ServerInfoFile.yml` |
 | `survival`  | `679bd851-d131-4425-b88d-e2714a3ef0f2` | `survival/plugins/Plan/ServerInfoFile.yml` |
-| `mining`    | _pending_ (no Plan yet) | — |
+| `mining`    | `851efb50-b513-4c15-9393-0d5d43fc3814` | `rpg/plugins/Plan/ServerInfoFile.yml` (the Mining/Prison server) |
 | `skyblock`  | _pending_ (no Plan yet) | — |
 
-> The RPG archive server has a Plan UUID too, but it is not a website key, so it is
-> simply not mapped and therefore excluded from the output.
+> The Mining game mode is served by the `rpg/` server folder (X-Prison /
+> XPrivateMines); its Plan UUID is the `mining` website key above. Skyblock has no
+> Plan installation yet, so its `uuid` stays `null` and it renders as a stable
+> `online:false, count:0` card. To activate it later, install Plan on skyblock and
+> copy the UUID from `skyblock/plugins/Plan/ServerInfoFile.yml` into `config.json`.
 
 Secret DB credentials come from the environment (never committed) — see
 [`plan-players-export.env.example`](plan-players-export.env.example). Environment
