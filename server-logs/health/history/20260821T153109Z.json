@@ -1,0 +1,64 @@
+{
+  "apt_security": 3,
+  "apt_upgradable": 3,
+  "cpu_cores": 8,
+  "disk_root_total_bytes": 322302373888,
+  "disk_root_used_bytes": 260805726208,
+  "disk_root_used_pct": 85,
+  "docker_containers_running": 11,
+  "docker_containers_total": 14,
+  "docker_unhealthy": 1,
+  "dry_run": 0,
+  "established_conns": 70,
+  "failed_logins_7d": 13040,
+  "failed_services": 0,
+  "generated_at": 1787326105,
+  "host": "festas-builds",
+  "inode_root_used_pct": 15,
+  "issues": [
+    {
+      "level": "WARN",
+      "text": "Festplatte zu 85 % voll (Schwelle 80 %)."
+    },
+    {
+      "level": "WARN",
+      "text": "1 Container im Status 'unhealthy'."
+    },
+    {
+      "level": "WARN",
+      "text": "Container in Restart-/Fehler-Zustand – Logs prüfen."
+    },
+    {
+      "level": "CRIT",
+      "text": "In 7 Tagen 15798 OOM-Killer-Ereignisse – RAM/Limits prüfen."
+    },
+    {
+      "level": "WARN",
+      "text": "Viele fehlgeschlagene Logins (13040) – Brute-Force? fail2ban prüfen."
+    },
+    {
+      "level": "WARN",
+      "text": "3 sicherheitsrelevante Updates ausstehend."
+    }
+  ],
+  "issues_crit": 1,
+  "issues_warn": 5,
+  "journal_errors_7d": 7632,
+  "kernel": "Linux 6.8.0-137-generic",
+  "load1": 0.61,
+  "mem_used_pct": 62,
+  "mode": "analyze",
+  "oom_events_7d": 15798,
+  "os": "Ubuntu 24.04.4 LTS",
+  "ptero_volumes_bytes": 0,
+  "reboot_required": 1,
+  "recommendations": [
+    "Speicher freigeben (Docker-Prune, Journald, alte Backups/Logs).",
+    "Alte Kernel/Pakete entfernen (`apt-get -y autoremove --purge`).",
+    "Paket-Updates einspielen (Modus `maintain`/`full`).",
+    "Host-Reboot einplanen (Kernel/Bibliotheks-Updates aktivieren)."
+  ],
+  "status": "CRIT",
+  "swap_used_pct": 9,
+  "wings_active": 1
+}
