@@ -2,7 +2,7 @@
 FROM nginx:alpine
 
 # Build arguments for environment variables
-ARG MINECRAFT_VERSION=1.21.10
+ARG MINECRAFT_VERSION=26.2
 ARG SERVER_SOFTWARE=Paper
 
 # Copy custom nginx configuration
