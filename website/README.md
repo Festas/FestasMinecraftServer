@@ -34,7 +34,7 @@ python3 -m http.server 8000
 docker build -t minecraft-web .
 
 # Build with custom Minecraft version
-docker build --build-arg MINECRAFT_VERSION=1.21.10 --build-arg SERVER_SOFTWARE=Paper -t minecraft-web .
+docker build --build-arg MINECRAFT_VERSION=26.2 --build-arg SERVER_SOFTWARE=Paper -t minecraft-web .
 
 # Run locally
 docker run -p 8080:80 minecraft-web
@@ -69,7 +69,7 @@ To update the version, edit `.github/workflows/deploy-website.yml`:
 
 ```yaml
 build-args: |
-  MINECRAFT_VERSION=1.21.10
+  MINECRAFT_VERSION=26.2
   SERVER_SOFTWARE=Paper
 ```
 

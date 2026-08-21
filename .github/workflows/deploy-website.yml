@@ -44,7 +44,7 @@ jobs:
           push: true
           # Hier kannst du bei Bedarf Build-Args anpassen
           build-args: |
-            MINECRAFT_VERSION=1.21.10
+            MINECRAFT_VERSION=26.2
             SERVER_SOFTWARE=Paper
           tags: |
             ghcr.io/festas/minecraft-server-web:${{ steps.image_sha.outputs.sha }}
