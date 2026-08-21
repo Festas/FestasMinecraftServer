@@ -109,9 +109,9 @@ jobs:
           count = 0
           for f in sorted(glob.glob("*/config/paper-global.yml")):
               path = Path(f)
-              text = path.read_text()
+              text = path.read_text(encoding="utf-8")
               if placeholder in text:
-                  path.write_text(text.replace(placeholder, secret))
+                  path.write_text(text.replace(placeholder, secret), encoding="utf-8")
                   count += 1
                   print(f"  injiziert: {f}")
           if count == 0:
@@ -362,8 +362,12 @@ jobs:
             # landen. Die echten Werte leben ausschließlich im GH-Secret bzw. auf
             # dem Server – im Repo steht immer nur der Platzhalter.
             if [ "$rel" = "config/paper-global.yml" ]; then
-              # Velocity-Forwarding-Secret (einzige 'secret:'-Zeile) auf Platzhalter setzen.
-              sed -i -E 's|^([[:space:]]*secret:[[:space:]]*).*$|\1__VELOCITY_FORWARDING_SECRET__|' "$local_file"
+              # Velocity-Forwarding-Secret auf den Platzhalter zurücksetzen. Es wird
+              # gezielt nur die 'secret:'-Zeile INNERHALB des 'velocity:'-Blocks
+              # angefasst (der sed-Range endet beim nächsten Schlüssel mit weniger als
+              # vier Leerzeichen Einrückung), damit evtl. künftige, gleichnamige Felder
+              # in anderen Abschnitten der Datei unberührt bleiben.
+              sed -i -E '/^  velocity:/,/^ {0,3}[^ ]/ s|^([[:space:]]*secret:[[:space:]]*).*$|\1__VELOCITY_FORWARDING_SECRET__|' "$local_file"
               if ! grep -Eq '^[[:space:]]*secret:[[:space:]]*__VELOCITY_FORWARDING_SECRET__[[:space:]]*$' "$local_file"; then
                 echo "::error::Konnte das Velocity-Forwarding-Secret in ${remote_file} nicht neutralisieren. Datei wird NICHT committet."
                 rm -f "$local_file"
