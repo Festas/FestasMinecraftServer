@@ -2,25 +2,23 @@
 
 _Automatisch erzeugt von `tools/server-maintenance/festas-maintenance.sh`._
 
-**Gesamtstatus:** 🔴 **KRITISCH** · erstellt 2026-08-22 09:59:38 UTC · Host `festas-builds`
+**Gesamtstatus:** 🔴 **KRITISCH** · erstellt 2026-08-22 10:04:15 UTC · Host `festas-builds`
 
 | Kennzahl | Wert |
 |---|---|
 | Festplatte `/` | 87 % belegt |
-| RAM | 80 % belegt |
+| RAM | 78 % belegt |
 | Paket-Updates offen | 6 |
 | Fehlgeschlagene Dienste | 0 |
 | Modus dieses Laufs | `analyze` |
-| Trend | Seit letztem Lauf: +5.6GB auf `/`. |
+| Trend | Seit letztem Lauf: -352MB auf `/`. |
 
 **Wichtigste Befunde:**
 
 - 🔴 In 7 Tagen 21267 OOM-Killer-Ereignisse – RAM/Limits prüfen.
 - 🟡 Festplatte zu 87 % voll (Schwelle 80 %).
-- 🟡 1 Container im Status 'unhealthy'.
 - 🟡 Container in Restart-/Fehler-Zustand – Logs prüfen.
-- 🟡 RAM-Auslastung 80 % (Schwelle 80 %).
-- 🟡 Viele fehlgeschlagene Logins (13521) – Brute-Force? fail2ban prüfen.
+- 🟡 Viele fehlgeschlagene Logins (13516) – Brute-Force? fail2ban prüfen.
 - 🟡 6 sicherheitsrelevante Updates ausstehend.
 
 **Empfehlungen (Optimierungspotenzial):**
@@ -40,8 +38,8 @@ _Automatisch erzeugt von `tools/server-maintenance/festas-maintenance.sh`._
 | Kernel | Linux 6.8.0-137-generic |
 | Virtualisierung | kvm |
 | CPU-Kerne | 8 |
-| Load (1/5/15) | 0.63, 0.60, 0.72 |
-| Uptime | up 3 days, 15 hours, 57 minutes |
+| Load (1/5/15) | 0.65, 0.85, 0.81 |
+| Uptime | up 3 days, 16 hours, 1 minute |
 
 ## 💾 Speicherplatz
 
@@ -52,8 +50,6 @@ _Automatisch erzeugt von `tools/server-maintenance/festas-maintenance.sh`._
 Filesystem     Type     Size  Used Avail Use% Mounted on
 /dev/sda1      ext4     301G  249G   40G  87% /
 /dev/sda15     vfat     253M  146K  252M   1% /boot/efi
-overlay        overlay  301G  249G   40G  87% /var/lib/docker/rootfs/overlayfs/b7256c9d107eb199e052daf051b80b1c615242ebfe359cd266a342eaebbee615
-overlay        overlay  301G  249G   40G  87% /var/lib/docker/rootfs/overlayfs/b9efc8b20553cc5ac970b3502a24787fd9b87586d9b9cf678947e369aae0bac3
 overlay        overlay  301G  249G   40G  87% /var/lib/docker/rootfs/overlayfs/bd4c5f900620f5664bd7b7fa9b5d59aeae7d09b82112e1aff4962c07fe111733
 overlay        overlay  301G  249G   40G  87% /var/lib/docker/rootfs/overlayfs/c467aa55259504d6c883d3bf1c360f1cfd0d2d9f867b82c794260095c4bbb3a3
 overlay        overlay  301G  249G   40G  87% /var/lib/docker/rootfs/overlayfs/19ac78f012917d7a1d75cdb4f3d8339487926be65dc6ce6111b02e81d438f618
@@ -105,35 +101,33 @@ overlay        overlay  301G  249G   40G  87% /var/lib/docker/rootfs/overlayfs/4
 
 ```
 TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE
-Images          34        10        20.88GB   13.78GB (65%)
-Containers      14        12        82.07GB   8.954MB (0%)
-Local Volumes   6         5         2.863GB   0B (0%)
+Images          34        8         20.88GB   14.13GB (67%)
+Containers      12        10        82.07GB   8.954MB (0%)
+Local Volumes   6         3         2.863GB   7.511MB (0%)
 Build Cache     235       0         31.26GB   30.94GB
 ```
 
-Wiedergewinnbar laut Docker: **13.78GB (65%)**.
+Wiedergewinnbar laut Docker: **14.13GB (67%)**.
 
 ### Container-Status
 
 ```
 NAMES                                  STATUS                    SIZE
-cfb531d8-3843-4bff-a8d5-b534aa58fc92   Up 29 minutes             4.1kB (virtual 600MB)
-0af91553-d5ef-42fc-9ed1-97daaf3c4d70   Up 29 minutes             4.1kB (virtual 600MB)
-39a0762a-9e53-4b5b-8810-2bf63410800d   Up 29 minutes             4.1kB (virtual 600MB)
-b50e2f8c-440f-4910-8f00-29577afbc455   Up 29 minutes             4.1kB (virtual 600MB)
-80c1457a-55b2-4671-82a8-60063041558b   Up 29 minutes             4.1kB (virtual 600MB)
+cfb531d8-3843-4bff-a8d5-b534aa58fc92   Up 34 minutes             4.1kB (virtual 600MB)
+0af91553-d5ef-42fc-9ed1-97daaf3c4d70   Up 34 minutes             4.1kB (virtual 600MB)
+39a0762a-9e53-4b5b-8810-2bf63410800d   Up 34 minutes             4.1kB (virtual 600MB)
+b50e2f8c-440f-4910-8f00-29577afbc455   Up 34 minutes             4.1kB (virtual 600MB)
+80c1457a-55b2-4671-82a8-60063041558b   Up 34 minutes             4.1kB (virtual 600MB)
 minecraft-web                          Up 23 hours (healthy)     81.9kB (virtual 68.2MB)
 8f7bfcb0-17ec-465f-93c2-86a29695bfa6   Exited (130) 7 days ago   4.1kB (virtual 905MB)
 fire-simulator                         Up 2 days                 4.1kB (virtual 233MB)
-immocalc                               Up 4 minutes              82.1GB (virtual 84.1GB)
+immocalc                               Up 9 minutes              82.1GB (virtual 84.1GB)
 immocalc-db                            Up 2 days (healthy)       20.5kB (virtual 284MB)
 cosmic-survivor                        Up 2 days                 4.06MB (virtual 227MB)
-minecraft-console                      Up 2 days (unhealthy)     848kB (virtual 229MB)
-minecraft-console-redis                Up 2 days (healthy)       4.1kB (virtual 43.4MB)
 minecraft-server                       Exited (0) 8 months ago   8.95MB (virtual 861MB)
 ```
 
-Container: **12/14** laufend, **1** ungesund.
+Container: **10/12** laufend, **0** ungesund.
 
 **Auffällige Container (Restarting/Exited≠0):**
 ```
@@ -166,48 +160,48 @@ Wings-Dienst: **aktiv**.
 
 ```
                total        used        free      shared  buff/cache   available
-Mem:            15Gi        12Gi       1.0Gi        57Mi       2.7Gi       3.0Gi
-Swap:          2.0Gi       300Mi       1.7Gi
+Mem:            15Gi        11Gi       315Mi        54Mi       3.4Gi       3.3Gi
+Swap:          2.0Gi       404Mi       1.6Gi
 ```
 
-**RAM-Auslastung:** 80 % belegt.
-**Swap:** 14 % belegt.
+**RAM-Auslastung:** 78 % belegt.
+**Swap:** 19 % belegt.
 
 ### Top 15 Prozesse nach RAM (RSS)
 
 ```
     PID    PPID USER       RSS %MEM %CPU COMMAND
-4108046 4108020 pteroda+ 3402668 21.2 13.4 java
-4107433 4107375 pteroda+ 2914280 18.2 9.3 java
-4107162 4107070 pteroda+ 2912100 18.2 8.2 java
-4107171 4107098 pteroda+ 1748848 10.9 7.3 java
-4107170 4107111 pteroda+ 396064  2.4 4.2 java
-    400       1 root     83508  0.5  0.0 systemd-journal
-2226493 2226342 fire     81508  0.5  0.0 next-server (v
-2225899       1 root     75404  0.4  1.1 dockerd
-4120924 4120899 fire     70348  0.4  0.4 next-server (v
-   1195       1 mysql    59160  0.3  0.1 mariadbd
-2225033       1 root     54856  0.3  0.8 containerd
-1890539       1 www-data 51612  0.3  0.0 php
-2226470 2226306 root     51036  0.3  0.0 node
-2675547 1890542 www-data 49756  0.3  0.0 php-fpm8.3
-2650842 1890542 www-data 49432  0.3  0.0 php-fpm8.3
+4108046 4108020 pteroda+ 3375080 21.1 12.3 java
+4107162 4107070 pteroda+ 3002564 18.7 7.6 java
+4107433 4107375 pteroda+ 2848216 17.8 8.6 java
+4107171 4107098 pteroda+ 1737216 10.8 6.8 java
+4107170 4107111 pteroda+ 385772  2.4 4.1 java
+    400       1 root     83624  0.5  0.0 systemd-journal
+2226493 2226342 fire     80272  0.5  0.0 next-server (v
+2225899       1 root     73088  0.4  1.1 dockerd
+4120924 4120899 fire     69060  0.4  0.2 next-server (v
+   1195       1 mysql    58640  0.3  0.1 mariadbd
+1890539       1 www-data 49896  0.3  0.0 php
+2675547 1890542 www-data 48280  0.3  0.0 php-fpm8.3
+2226993 2226482 root     45796  0.2  0.0 node
+2225033       1 root     45128  0.2  0.8 containerd
+    935       1 root     38924  0.2  0.1 fail2ban-server
 ```
 
 ### Top 10 Prozesse nach CPU
 
 ```
     PID USER     %CPU %MEM COMMAND
-4123676 root      200  0.0 ps
-4108046 pteroda+ 13.4 21.2 java
-4107433 pteroda+  9.3 18.2 java
-4107162 pteroda+  8.2 18.2 java
-4107171 pteroda+  7.3 10.9 java
-4107170 pteroda+  4.2  2.4 java
+4108046 pteroda+ 12.3 21.1 java
+4107433 pteroda+  8.6 17.8 java
+4107162 pteroda+  7.6 18.7 java
+4107171 pteroda+  6.8 10.8 java
+4107170 pteroda+  4.1  2.4 java
 2226844 root      3.0  0.2 wings
-4123156 root      1.7  0.0 bash
-4122949 root      1.2  0.0 systemd
+4126894 root      2.5  0.0 bash
 2225899 root      1.1  0.4 dockerd
+4126695 root      1.1  0.0 systemd
+2225033 root      0.8  0.2 containerd
 ```
 
 **OOM-Ereignisse (7 Tage):** 21267.
@@ -252,7 +246,6 @@ tcp 0.0.0.0:25568
 tcp 0.0.0.0:25569
 tcp 0.0.0.0:25599
 tcp 0.0.0.0:25600
-tcp 0.0.0.0:3002
 tcp 0.0.0.0:3306
 tcp 0.0.0.0:443
 tcp 0.0.0.0:6379
@@ -274,7 +267,6 @@ tcp [::1]:5432
 tcp [::1]:6379
 tcp *:2022
 tcp [::]:22
-tcp [::]:3002
 tcp [::]:443
 tcp [::]:80
 tcp *:8080
@@ -283,6 +275,8 @@ udp 0.0.0.0:25565
 udp 0.0.0.0:25566
 udp 0.0.0.0:25567
 udp 0.0.0.0:25568
+udp 0.0.0.0:25569
+udp 0.0.0.0:25599
 ```
 
 **Etablierte Verbindungen:** 48.
@@ -379,12 +373,12 @@ Status
 
 ### Fehlgeschlagene Logins (7 Tage)
 
-Fehlgeschlagene Passwort-Logins: **13521**.
+Fehlgeschlagene Passwort-Logins: **13516**.
 
 ### Letzte Anmeldungen
 
 ```
-root     pts/0        194.182.200.101  Sat Aug 22 10:00   still logged in
+root     pts/0        194.182.200.101  Sat Aug 22 10:00 - 10:03  (00:03)
 root     pts/0        91.192.12.105    Fri Aug 21 12:01 - 12:13  (00:12)
 root     pts/0        91.192.12.105    Fri Aug 21 11:43 - 11:44  (00:01)
 root     pts/0        91.192.12.105    Fri Aug 21 10:44 - 11:43  (00:58)
@@ -414,14 +408,14 @@ Inst wget [1.21.4-1ubuntu4.4] (1.21.4-1ubuntu4.5 Ubuntu:24.04/noble-updates, Ubu
 
 ## 📜 Log-Analyse (7 Tage)
 
-Journald: **9145** Fehler, **338309** Warnungen (7 Tage).
+Journald: **9145** Fehler, **338341** Warnungen (7 Tage).
 
 ### Häufigste Fehlermeldungen
 
 ```
     445 kernel: Memory cgroup out of memory: Killed process # (next-server (v) total-vm:#kB, anon-rss:#kB, file-rss:#kB, shmem-rss:#kB, UID:# pgtables:#kB oom_score_adj:#
     390 kernel: Memory cgroup out of memory: Killed process # (app_#) total-vm:#kB, anon-rss:#kB, file-rss:#kB, shmem-rss:#kB, UID:# pgtables:#kB oom_score_adj:#
-    165 kernel: Memory cgroup out of memory: Killed process # (jbd#) total-vm:#kB, anon-rss:#kB, file-rss:#kB, shmem-rss:#kB, UID:# pgtables:#kB oom_score_adj:#
+    166 kernel: Memory cgroup out of memory: Killed process # (jbd#) total-vm:#kB, anon-rss:#kB, file-rss:#kB, shmem-rss:#kB, UID:# pgtables:#kB oom_score_adj:#
     160 kernel: Memory cgroup out of memory: Killed process # (atd#) total-vm:#kB, anon-rss:#kB, file-rss:#kB, shmem-rss:#kB, UID:# pgtables:#kB oom_score_adj:#
     145 kernel: Memory cgroup out of memory: Killed process # (postgres) total-vm:#kB, anon-rss:#kB, file-rss:#kB, shmem-rss:#kB, UID:# pgtables:#kB oom_score_adj:#
     141 kernel: Memory cgroup out of memory: Killed process # (NetworkManager#) total-vm:#kB, anon-rss:#kB, file-rss:#kB, shmem-rss:#kB, UID:# pgtables:#kB oom_score_adj:#
@@ -456,7 +450,7 @@ Diese Posten lassen sich typischerweise gefahrlos freigeben. Im Modus
 |---|---|---|
 | APT-Paketcache | 0B | `apt-get clean` **(auto)** |
 | Journald-Logs | aktuell ? | `journalctl --vacuum-time=14d` **(auto)** |
-| Docker (dangling/build-cache) | 13.78GB (65%) | `docker system prune -f` **(auto)** |
+| Docker (dangling/build-cache) | 14.13GB (67%) | `docker system prune -f` **(auto)** |
 | Verwaiste Pakete/Kernel | variabel | `apt-get autoremove --purge` **(auto)** |
 | Temp-Dateien | `/tmp` (0B) | `systemd-tmpfiles --clean` **(auto)** |
 
@@ -469,5 +463,5 @@ _Modus `analyze`: keine verändernden Aktionen._
 
 ---
 
-<sub>Erzeugt am 2026-08-22 09:59:38 UTC · Modus `analyze` ·
+<sub>Erzeugt am 2026-08-22 10:04:15 UTC · Modus `analyze` ·
 Details/Anpassung: [tools/server-maintenance/README.md](../../tools/server-maintenance/README.md)</sub>
