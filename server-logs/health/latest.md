@@ -2,7 +2,7 @@
 
 _Automatisch erzeugt von `tools/server-maintenance/festas-maintenance.sh`._
 
-**Gesamtstatus:** 🟡 **WARNUNG** · erstellt 2026-08-22 12:36:04 UTC · Host `festas-builds`
+**Gesamtstatus:** 🟡 **WARNUNG** · erstellt 2026-08-22 12:39:14 UTC · Host `festas-builds`
 
 | Kennzahl | Wert |
 |---|---|
@@ -11,11 +11,11 @@ _Automatisch erzeugt von `tools/server-maintenance/festas-maintenance.sh`._
 | Paket-Updates offen | 0 |
 | Fehlgeschlagene Dienste | 0 |
 | Modus dieses Laufs | `analyze` |
-| Trend | Seit letztem Lauf: -107GB auf `/`. |
+| Trend | Seit letztem Lauf: -4.0MB auf `/`. |
 
 **Wichtigste Befunde:**
 
-- 🟡 Viele fehlgeschlagene Logins (13267) – Brute-Force? fail2ban prüfen.
+- 🟡 Viele fehlgeschlagene Logins (13265) – Brute-Force? fail2ban prüfen.
 
 **Empfehlungen (Optimierungspotenzial):**
 
@@ -31,8 +31,8 @@ _Automatisch erzeugt von `tools/server-maintenance/festas-maintenance.sh`._
 | Kernel | Linux 6.8.0-138-generic |
 | Virtualisierung | kvm |
 | CPU-Kerne | 8 |
-| Load (1/5/15) | 0.90, 0.64, 0.54 |
-| Uptime | up 24 minutes |
+| Load (1/5/15) | 0.45, 0.74, 0.61 |
+| Uptime | up 28 minutes |
 
 ## 💾 Speicherplatz
 
@@ -44,7 +44,6 @@ Filesystem     Type     Size  Used Avail Use% Mounted on
 /dev/sda1      ext4     301G  142G  146G  50% /
 /dev/sda15     vfat     253M  146K  252M   1% /boot/efi
 overlay        overlay  301G  142G  146G  50% /var/lib/docker/rootfs/overlayfs/c467aa55259504d6c883d3bf1c360f1cfd0d2d9f867b82c794260095c4bbb3a3
-overlay        overlay  301G  142G  146G  50% /var/lib/docker/rootfs/overlayfs/bd4c5f900620f5664bd7b7fa9b5d59aeae7d09b82112e1aff4962c07fe111733
 overlay        overlay  301G  142G  146G  50% /var/lib/docker/rootfs/overlayfs/c20be6488472b3c9f2df239fc0a20135de292e55b378c05477eafbf67d6d0cf9
 overlay        overlay  301G  142G  146G  50% /var/lib/docker/rootfs/overlayfs/c8c2dbab71cac742e25513e2f0a785ccd764015d2bca7a11c9b52d7d00d035f0
 overlay        overlay  301G  142G  146G  50% /var/lib/docker/rootfs/overlayfs/88a638899369dd792330a78913354c9585b5e05c02ef9f866257ae4aa60901fd
@@ -92,29 +91,28 @@ overlay        overlay  301G  142G  146G  50% /var/lib/docker/rootfs/overlayfs/e
 
 ```
 TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE
-Images          33        4         19.99GB   18.28GB (91%)
-Containers      8         8         4.174MB   0B (0%)
-Local Volumes   6         1         2.863GB   2.862GB (99%)
+Images          33        3         19.99GB   18.38GB (91%)
+Containers      7         7         106.5kB   0B (0%)
+Local Volumes   6         0         2.863GB   2.863GB (100%)
 Build Cache     9         0         310.6MB   0B
 ```
 
-Wiedergewinnbar laut Docker: **18.28GB (91%)**.
+Wiedergewinnbar laut Docker: **18.38GB (91%)**.
 
 ### Container-Status
 
 ```
 NAMES                                  STATUS                    SIZE
-80c1457a-55b2-4671-82a8-60063041558b   Up About a minute         4.1kB (virtual 600MB)
-cfb531d8-3843-4bff-a8d5-b534aa58fc92   Up 24 minutes             4.1kB (virtual 600MB)
-0af91553-d5ef-42fc-9ed1-97daaf3c4d70   Up 24 minutes             4.1kB (virtual 600MB)
-39a0762a-9e53-4b5b-8810-2bf63410800d   Up 24 minutes             4.1kB (virtual 600MB)
-b50e2f8c-440f-4910-8f00-29577afbc455   Up 24 minutes             4.1kB (virtual 600MB)
-minecraft-web                          Up 24 minutes (healthy)   81.9kB (virtual 68.2MB)
-fire-simulator                         Up 24 minutes             4.1kB (virtual 233MB)
-cosmic-survivor                        Up 24 minutes             4.07MB (virtual 227MB)
+80c1457a-55b2-4671-82a8-60063041558b   Up 4 minutes              4.1kB (virtual 600MB)
+cfb531d8-3843-4bff-a8d5-b534aa58fc92   Up 27 minutes             4.1kB (virtual 600MB)
+0af91553-d5ef-42fc-9ed1-97daaf3c4d70   Up 27 minutes             4.1kB (virtual 600MB)
+39a0762a-9e53-4b5b-8810-2bf63410800d   Up 27 minutes             4.1kB (virtual 600MB)
+b50e2f8c-440f-4910-8f00-29577afbc455   Up 27 minutes             4.1kB (virtual 600MB)
+minecraft-web                          Up 27 minutes (healthy)   81.9kB (virtual 68.2MB)
+fire-simulator                         Up 27 minutes             4.1kB (virtual 233MB)
 ```
 
-Container: **8/8** laufend, **0** ungesund.
+Container: **7/7** laufend, **0** ungesund.
 
 ## 🪶 Pterodactyl / Wings
 
@@ -142,8 +140,8 @@ Wings-Dienst: **aktiv**.
 
 ```
                total        used        free      shared  buff/cache   available
-Mem:            15Gi        11Gi       189Mi        58Mi       3.8Gi       3.6Gi
-Swap:          2.0Gi          0B       2.0Gi
+Mem:            15Gi        11Gi       235Mi        57Mi       3.8Gi       3.6Gi
+Swap:          2.0Gi       768Ki       2.0Gi
 ```
 
 **RAM-Auslastung:** 76 % belegt.
@@ -153,37 +151,37 @@ Swap:          2.0Gi          0B       2.0Gi
 
 ```
     PID    PPID USER       RSS %MEM %CPU COMMAND
-   3287    3260 pteroda+ 3032672 18.9 15.2 java
-   2333    2308 pteroda+ 2937060 18.3 10.2 java
-   6539    6514 pteroda+ 2650856 16.5 105 java
-   2045    1992 pteroda+ 2113696 13.2 8.2 java
-   2038    1988 pteroda+ 393932  2.4 4.3 java
-   1154       1 mysql    133052  0.8 0.2 mariadbd
-   1221       1 root     119904  0.7 1.2 dockerd
+   3287    3260 pteroda+ 3033432 18.9 14.1 java
+   2333    2308 pteroda+ 2937960 18.3 9.5 java
+   6539    6514 pteroda+ 2662052 16.6 35.5 java
+   2045    1992 pteroda+ 2119532 13.2 7.7 java
+   2038    1988 pteroda+ 399484  2.4 4.2 java
+   1154       1 mysql    133632  0.8 0.2 mariadbd
+   1221       1 root     118688  0.7 1.4 dockerd
    1709    1624 fire     83052  0.5  0.0 next-server (v
-    995       1 root     73120  0.4  0.8 containerd
-    926       1 root     72672  0.4  0.1 fail2ban-server
+    926       1 root     72752  0.4  0.1 fail2ban-server
+    995       1 root     72288  0.4  1.0 containerd
    1188       1 www-data 70952  0.4  0.1 php
-   1944    1696 root     54872  0.3  0.0 node
    1165     934 www-data 54732  0.3  0.0 php-fpm8.3
    1166     934 www-data 53488  0.3  0.0 php-fpm8.3
-   5410     934 www-data 53188  0.3  0.1 php-fpm8.3
+   5410     934 www-data 53188  0.3  0.0 php-fpm8.3
+   1890       1 root     42280  0.2  4.1 wings
 ```
 
 ### Top 10 Prozesse nach CPU
 
 ```
     PID USER     %CPU %MEM COMMAND
-   6539 pteroda+  105 16.5 java
-   3287 pteroda+ 15.2 18.9 java
-   2333 pteroda+ 10.2 18.3 java
-   2045 pteroda+  8.2 13.2 java
-   2038 pteroda+  4.3  2.4 java
-   1890 root      4.2  0.2 wings
-   7627 root      1.6  0.0 bash
-   1221 root      1.2  0.7 dockerd
-   7446 root      1.1  0.0 systemd
-    995 root      0.8  0.4 containerd
+   6539 pteroda+ 35.5 16.6 java
+   3287 pteroda+ 14.1 18.9 java
+   2333 pteroda+  9.5 18.3 java
+   2045 pteroda+  7.7 13.2 java
+   2038 pteroda+  4.2  2.4 java
+   1890 root      4.1  0.2 wings
+   9631 root      1.8  0.0 bash
+   1221 root      1.4  0.7 dockerd
+    995 root      1.0  0.4 containerd
+   9586 root      0.5  0.0 sshd
 ```
 
 **OOM-Ereignisse (7 Tage):** 0.
@@ -240,7 +238,6 @@ tcp 0.0.0.0:8103
 tcp 0.0.0.0:8804
 tcp 127.0.0.1:3200
 tcp 127.0.0.1:5432
-tcp 127.0.0.1:8200
 tcp 127.0.0.1:8201
 tcp 127.0.0.53%lo:53
 tcp 127.0.0.54:53
@@ -259,9 +256,10 @@ udp 0.0.0.0:25568
 udp 0.0.0.0:25569
 udp 0.0.0.0:25599
 udp 0.0.0.0:25600
+udp 0.0.0.0:8085
 ```
 
-**Etablierte Verbindungen:** 52.
+**Etablierte Verbindungen:** 48.
 
 ### Konnektivität & DNS
 
@@ -355,16 +353,16 @@ Status
 
 ### Fehlgeschlagene Logins (7 Tage)
 
-Fehlgeschlagene Passwort-Logins: **13267**.
+Fehlgeschlagene Passwort-Logins: **13265**.
 
 ### Letzte Anmeldungen
 
 ```
+root     pts/0        194.182.200.101  Sat Aug 22 12:38   still logged in
+root     pts/0        194.182.200.101  Sat Aug 22 12:37 - 12:38  (00:01)
 root     pts/0        194.182.200.101  Sat Aug 22 12:30 - 12:33  (00:03)
 reboot   system boot  6.8.0-138-generic Sat Aug 22 12:11   still running
 root     pts/1        109.42.49.137    Sat Aug 22 12:07 - down   (00:03)
-root     pts/1        109.42.49.137    Sat Aug 22 12:06 - 12:07  (00:01)
-root     pts/0        194.182.200.101  Sat Aug 22 10:52 - down   (01:18)
 ```
 
 ## 📦 Paket-Updates
@@ -373,7 +371,7 @@ Verfügbare Updates: **0** (davon sicherheitsrelevant: **0**).
 
 ## 📜 Log-Analyse (7 Tage)
 
-Journald: **9226** Fehler, **341130** Warnungen (7 Tage).
+Journald: **9226** Fehler, **341135** Warnungen (7 Tage).
 
 ### Häufigste Fehlermeldungen
 
@@ -415,7 +413,7 @@ Diese Posten lassen sich typischerweise gefahrlos freigeben. Im Modus
 |---|---|---|
 | APT-Paketcache | 0B | `apt-get clean` **(auto)** |
 | Journald-Logs | aktuell ? | `journalctl --vacuum-time=14d` **(auto)** |
-| Docker (dangling/build-cache) | 18.28GB (91%) | `docker system prune -f` **(auto)** |
+| Docker (dangling/build-cache) | 18.38GB (91%) | `docker system prune -f` **(auto)** |
 | Verwaiste Pakete/Kernel | variabel | `apt-get autoremove --purge` **(auto)** |
 | Temp-Dateien | `/tmp` (0B) | `systemd-tmpfiles --clean` **(auto)** |
 
@@ -428,5 +426,5 @@ _Modus `analyze`: keine verändernden Aktionen._
 
 ---
 
-<sub>Erzeugt am 2026-08-22 12:36:04 UTC · Modus `analyze` ·
+<sub>Erzeugt am 2026-08-22 12:39:14 UTC · Modus `analyze` ·
 Details/Anpassung: [tools/server-maintenance/README.md](../../tools/server-maintenance/README.md)</sub>
