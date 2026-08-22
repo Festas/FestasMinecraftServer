@@ -1791,52 +1791,54 @@ Enchantment:
   vanishing_curse: Curse of Vanishing
   wind_burst: Wind Burst
 DamageType:
-  dragon_breath: Dragon Breath
-  player_explosion: Player Explosion
-  thorns: Thorns
-  fireball: Fireball
-  falling_block: Falling Block
   dry_out: Dry Out
-  explosion: Explosion
-  mob_attack_no_aggro: Mob Attack No Aggro
-  drown: Drown
-  bad_respawn_point: Bad Respawn Point
-  indirect_magic: Indirect Magic
-  wind_charge: Wind Charge
-  sting: Sting
-  outside_border: Outside Border
-  in_fire: In Fire
+  thorns: Thorns
+  unattributed_fireball: Unattributed Fireball
+  falling_block: Falling Block
   fly_into_wall: Fly Into Wall
+  out_of_world: Out Of World
+  wither_skull: Wither Skull
+  dragon_breath: Dragon Breath
+  indirect_magic: Indirect Magic
+  stalagmite: Stalagmite
+  starve: Starve
   cactus: Cactus
   freeze: Freeze
-  lava: Lava
-  wither_skull: Wither Skull
-  generic_kill: Generic Kill
+  drown: Drown
+  sting: Sting
   on_fire: On Fire
-  out_of_world: Out Of World
-  hot_floor: Hot Floor
-  mob_attack: Mob Attack
-  trident: Trident
-  player_attack: Player Attack
-  arrow: Arrow
-  generic: Generic
-  falling_stalactite: Falling Stalactite
-  wither: Wither
-  lightning_bolt: Lightning Bolt
-  ender_pearl: Ender Pearl
-  fall: Fall
-  magic: Magic
-  unattributed_fireball: Unattributed Fireball
-  stalagmite: Stalagmite
-  in_wall: In Wall
-  cramming: Cramming
-  sonic_boom: Sonic Boom
-  sweet_berry_bush: Sweet Berry Bush
-  mace_smash: Mace Smash
   thrown: Thrown
-  mob_projectile: Mob Projectile
-  spit: Spit
-  falling_anvil: Falling Anvil
-  fireworks: Fireworks
-  starve: Starve
+  lava: Lava
+  player_explosion: Player Explosion
+  magic: Magic
+  trident: Trident
+  outside_border: Outside Border
+  sulfur_cube_hot: Sulfur Cube Hot
+  mob_attack_no_aggro: Mob Attack No Aggro
+  explosion: Explosion
   campfire: Campfire
+  bad_respawn_point: Bad Respawn Point
+  mob_projectile: Mob Projectile
+  wind_charge: Wind Charge
+  fall: Fall
+  spear: Spear
+  cramming: Cramming
+  fireworks: Fireworks
+  in_wall: In Wall
+  lightning_bolt: Lightning Bolt
+  wither: Wither
+  fireball: Fireball
+  mob_attack: Mob Attack
+  falling_stalactite: Falling Stalactite
+  sonic_boom: Sonic Boom
+  mace_smash: Mace Smash
+  falling_anvil: Falling Anvil
+  arrow: Arrow
+  in_fire: In Fire
+  ender_pearl: Ender Pearl
+  spit: Spit
+  sweet_berry_bush: Sweet Berry Bush
+  player_attack: Player Attack
+  generic: Generic
+  hot_floor: Hot Floor
+  generic_kill: Generic Kill

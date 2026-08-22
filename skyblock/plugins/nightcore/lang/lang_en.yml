@@ -11,9 +11,9 @@ Command:
     BlockType: blockType
     Enchantment: enchantment
   Usage:
-    RequiredArgument: <soft_red><%name%></soft_red>
-    OptionalArgument: <soft_yellow>[%name%]</soft_yellow>
-    OptionalFlag: <gray>[%name%]</gray>
+    RequiredArgument: <c:#FF6B6B><shadow:#9C172B:1.0><%name%></shadow></c>
+    OptionalArgument: <c:#4ADE80><shadow:#15803D:1.0>[%name%]</shadow></c>
+    OptionalFlag: <c:#60A5FA><shadow:#1D4ED8:1.0>[%name%]</shadow></c>
   Help:
     Desc: List all sub-commands.
   Reload:
@@ -43,20 +43,20 @@ Command:
     MissingArguments:
     - '[prefix="false"]'
     - ' '
-    - '<red>Error: </red><gray>Missing required arguments!</gray>'
-    - '<red>Usage: </red><soft_yellow>/%command%</soft_yellow>'
+    - '<red>Error: </red><c:#D9D9D9><shadow:#5D5D5D:1.0>Missing required arguments!</shadow></c>'
+    - '<red>Usage: </red><c:#FCC549><shadow:#B45115:1.0>/%command%</shadow></c>'
     - ' '
 HelpPage:
   General:
   - '[prefix="false"]'
+  - <c:#FCE491><shadow:#C5741A:1.0><st>                                                            </st></shadow></c>
+  - <c:#FCC549><shadow:#B45115:1.0>  <b>%name% Commands</b></shadow></c>
   - ' '
-  - <gray>  <yellow><b>%name%</b></yellow> - <yellow><b>Commands:</b></yellow></gray>
-  - ' '
-  - <gray>  <red><b><></b></red> - Required, <green><b>[]</b></green> - Optional.</gray>
+  - '  <sprite:"gui":"icon/info"><c:#D9D9D9><shadow:#5D5D5D:1.0>Hover over a command to see description.</shadow></c>'
   - ' '
   - '%entry%'
-  - ' '
-  Entry: '  <soft_yellow>/%command%</soft_yellow><gray> - %description%</gray>'
+  - <c:#FCE491><shadow:#C5741A:1.0><st>                                                            </st></shadow></c>
+  Entry: <hover:show_text:"<c:#D9D9D9><shadow:#5D5D5D:1.0>%description%</shadow></c>"><c:#FCC549><shadow:#B45115:1.0>  • /%command%</shadow></c></hover>
 Plugin:
   Reloaded: <gray>Plugin <green>reloaded</green>!</gray>
 EconomyBridge:
@@ -114,6 +114,15 @@ Dialog:
       Width: 150
     Cancel:
       Label: <red>✘</red> Cancel
+      Width: 150
+    Apply:
+      Label: <green>✔</green> Apply
+      Width: 150
+    Confirm:
+      Label: <green>✔</green> Confirm
+      Width: 150
+    Reset:
+      Label: <red>✘</red> Reset
       Width: 150
     Back:
       Label: <soft_yellow>←</soft_yellow> Back

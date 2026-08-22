@@ -199,6 +199,11 @@ Mob:
     Item:
     - '&2[playerDisplayName] &7succumbed to &2[mobName] &7and their desert encounter,
       armed with &2[item]'
+  Camel_husk:
+    General:
+    - '&2[playerDisplayName] &7killed by &2[mobName]'
+    Item:
+    - '&2[playerDisplayName] &7killed by &2[mobName] &7with &2[item]'
   Cat:
     General:
     - '&2[playerDisplayName] &7was outmatched by the purring fury of a &2[mobName]'
@@ -402,6 +407,11 @@ Mob:
     Item:
     - '&2[playerDisplayName] &7fell to &2[mobName] &7riding a mighty mule, wielding
       &2[item]'
+  Nautilus:
+    General:
+    - '&2[playerDisplayName] &7killed by &2[mobName]'
+    Item:
+    - '&2[playerDisplayName] &7killed by &2[mobName] &7with &2[item]'
   Ocelot:
     General:
     - '&2[playerDisplayName] &7could not tame the wild spirit of a &2[mobName]'
@@ -414,6 +424,11 @@ Mob:
     Item:
     - '&2[playerDisplayName] &7fell to &2[mobName] &7and their bamboo justice, armed
       with &2[item]'
+  Parched:
+    General:
+    - '&2[playerDisplayName] &7killed by &2[mobName]'
+    Item:
+    - '&2[playerDisplayName] &7killed by &2[mobName] &7with &2[item]'
   Parrot:
     General:
     - '&2[playerDisplayName] &7fell silent after encountering the colorful menace
@@ -555,6 +570,11 @@ Mob:
     Item:
     - '&2[playerDisplayName] &7succumbed to &2[mobName] &7and their burning path,
       armed with &2[item]'
+  Sulfur_cube:
+    General:
+    - '&2[playerDisplayName] &7killed by &2[mobName]'
+    Item:
+    - '&2[playerDisplayName] &7killed by &2[mobName] &7with &2[item]'
   Tadpole:
     General:
     - '&2[playerDisplayName] &7met a watery end in the tadpole frenzy led by a &2[mobName]'
@@ -655,6 +675,11 @@ Mob:
     Item:
     - '&2[playerDisplayName] &7was taken down by &2[mobName] &7riding an undead horse,
       wielding &2[item]'
+  Zombie_nautilus:
+    General:
+    - '&2[playerDisplayName] &7killed by &2[mobName]'
+    Item:
+    - '&2[playerDisplayName] &7killed by &2[mobName] &7with &2[item]'
   Zombie_villager:
     General:
     - '&2[playerDisplayName] &7succumbed to the cursed transformation of a &2[mobName]'

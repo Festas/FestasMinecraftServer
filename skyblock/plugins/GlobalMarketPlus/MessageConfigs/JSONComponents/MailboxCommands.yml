@@ -1,0 +1,143 @@
+English:
+    'Mailbox Help':
+        Placeholder: '%gmp_command_mailbox_help%'
+        Text: '&2help'
+        ClickEvent:
+            Action: RUN_COMMAND
+            Value: '/gmp mailbox help'
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bAbout &c/gmp &6mailbox&b''s subcommands help'
+    'Mailbox Select':
+        Placeholder: '%gmp_command_mailbox_select%'
+        Text: '&2select [Player]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp mailbox select '
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bSelect a player'
+            - '&bUsage: &c/gmp &6mailbox select [Player]'
+    'Mailbox Send':
+        Placeholder: '%gmp_command_mailbox_send%'
+        Text: '&2send [Player/all] &7[Amount]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp mailbox send '
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bSend an item mail'
+            - '&bUsage: &c/gmp &6mailbox send [Player/all] &7[Amount]'
+    'Mailbox GUI':
+        Placeholder: '%gmp_command_mailbox_gui%'
+        Text: '&2gui &7[Page] &8[Player]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp mailbox gui '
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bOpen mailbox GUI'
+            - '&bUsage: &c/gmp &6mailbox gui &7[Page] &8[Player]'
+    'Mailbox PickUp':
+        Placeholder: '%gmp_command_mailbox_pickup%'
+        Text: '&2pickup &7[UID]/all &8[Player]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp mailbox pickup '
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bPick up mails'
+            - '&bUsage: &c/gmp &6mailbox pickup &7[UID]/all &8[Player]'
+    'Mailbox PickUp By Deleting':
+        Placeholder: '%gmp_command_mailbox_pickup_by_deleting%'
+        Text: '&a&l[Pickup]'
+        ClickEvent:
+            Action: RUN_COMMAND
+            Value: '/gmp mailbox pickup {uid} {player}'
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&5Click to pick up player &e{player}&5''s mail &eUID:{uid} &5'
+    'Mailbox Delete':
+        Placeholder: '%gmp_command_mailbox_delete%'
+        Text: '&2delete &7[UID]/all &8[Player]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp mailbox delete '
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bDelete a mail or all mails'
+            - '&bUsage: &c/gmp &6mailbox delete &7[UID]/all &8[Player]'
+    'Mailbox Delete Confirm':
+        Placeholder: '%gmp_command_mailbox_delete_confirm%'
+        Text: '&c&l[Delete]'
+        ClickEvent:
+            Action: RUN_COMMAND
+            Value: '/gmp mailbox delete {uid} {player} confirm'
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&5Click to delete player &e{player}&5''s mail &eUID:{uid} &5.'
+            - '&5This action will &c&lnot return&5 mails that have not been picked up!'
+    'Mailbox List':
+        Placeholder: '%gmp_command_mailbox_list%'
+        Text: '&2list &7[Page] &8[Player]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp mailbox list '
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bList all of mails'
+            - '&bUsage: &c/gmp &6mailbox list &7[Page] &8[Player]'
+    'Mailbox List pickup':
+        Placeholder: '%gmp_command_mailbox_list_pickup%'
+        Text: '&a&l[Pickup]'
+        ClickEvent:
+            Action: RUN_COMMAND
+            Value: '/gmp mailbox pickup {uid} {player}'
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&5Click to pick up player &e{player}&5''s mail &eUID:{uid} &5'
+    'Mailbox List delete':
+        Placeholder: '%gmp_command_mailbox_list_delete%'
+        Text: '&c&l[Delete]'
+        ClickEvent:
+            Action: RUN_COMMAND
+            Value: '/gmp mailbox delete {uid} {player}'
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&5Click to delete player &e{player}&5''s mail &eUID:{uid} &5.'
+            - '&5This action will &c&lnot return&5 mails that have not been picked up!'
+    'Mailbox List nextPage':
+        Placeholder: '%gmp_command_mailbox_list_next%'
+        Text: '&b&lNext Page'
+        ClickEvent:
+            Action: RUN_COMMAND
+            Value: '/gmp mailbox list {nextPage} {player}'
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&5Click to go to next page'
+            - '&7Now page: &e{page}'
+            - '&7Next page: &e{nextPage}'
+    'Mailbox List previousPage':
+        Placeholder: '%gmp_command_mailbox_list_previous%'
+        Text: '&b&lPrevious Page'
+        ClickEvent:
+            Action: RUN_COMMAND
+            Value: '/gmp mailbox list {previousPage} {player}'
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&5Click to go to previous page'
+            - '&7Now page: &e{page}'
+            - '&7Previous page: &e{previousPage}'

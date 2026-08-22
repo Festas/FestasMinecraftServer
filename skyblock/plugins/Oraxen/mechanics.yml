@@ -34,63 +34,29 @@ misc:
 
 # GAMEPLAY
 
-# Specify if custom block sounds should be enabled for the below mechanics
-# If both mechanics are disabled, this will force the sound system for those off
+# Specify if custom block sounds should be enabled.
 custom_block_sounds:
-  noteblock_and_block: true
-  stringblock_and_furniture: true
-  chorusblock: true
+  block: true
+  furniture: true
 
-# legacy blocks using mushroom stems, prefer to use noteblock
 block:
-  tool_types:
+  tool-types:
     - WOODEN
     - STONE
     - IRON
     - GOLDEN
     - DIAMOND
     - NETHERITE
-  enabled: false
-
-noteblock:
-  tool_types:
-    - WOODEN
-    - STONE
-    - IRON
-    - GOLDEN
-    - DIAMOND
-    - NETHERITE
-    - # ticks between each check for dryout
-  farmblock_check_delay: 1000
-  # Removes the mineable/axe tag from noteblocks for player
-  # This is to prevent axes from breaking custom-blocks in normal speed
-  remove_mineable_tag: false
+  farmblock-check-delay: 1000
+  sapling-growth-check-delay: 4000
+  disable-vanilla-strings: false
+  remove-mineable-tag: false
+  convert-vanilla-waxed: true
+  handle-world-generation: true
   enabled: true
 
-stringblock:
-    tool_types:
-      - WOODEN
-      - STONE
-      - IRON
-      - GOLDEN
-      - DIAMOND
-      - NETHERITE
-    sapling_growth_check_delay: 4000
-    disable_vanilla_strings: false
-    enabled: true
-
-chorusblock:
-    tool_types:
-      - WOODEN
-      - STONE
-      - IRON
-      - GOLDEN
-      - DIAMOND
-      - NETHERITE
-    enabled: true
-
 furniture:
-  default_furniture_type: DISPLAY_ENTITY # DISPLAY_ENTITY, ITEM_FRAME, GLOW_ITEM_FRAME
+  default_furniture_type: DISPLAY_ENTITY # DISPLAY_ENTITY, ITEM_FRAME, GLOW_ITEM_FRAME, ARMOR_STAND
   tool_types:
     - WOODEN
     - STONE
@@ -125,6 +91,10 @@ toggle_light:
 aura:
   enabled: true
 
+# Cosmetic backpacks displayed on player's back using packet-based armor stands
+backpack_cosmetic:
+  enabled: true
+
 hat:
   enabled: true
 
@@ -153,6 +123,9 @@ witherskull:
   enabled: true
 
 bleeding:
+  enabled: true
+  
+knockback_strike:
   enabled: true
 
 spear_lunge:

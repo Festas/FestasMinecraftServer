@@ -1,0 +1,86 @@
+English:
+    'Auction Help':
+        Placeholder: '%gmp_command_auction_help%'
+        Text: '&2help'
+        ClickEvent:
+            Action: RUN_COMMAND
+            Value: '/gmp auction help '
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bAbout &c/gmp &6auction&b''s subcommands help'
+    'Auction Start':
+        Placeholder: '%gmp_command_auction_start%'
+        Text: '&2start [Price] &7[Amount]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp auction start '
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bStart a new auction'
+            - '&bUsage: &c/gmp &6auction &2start [Price] &7[Amount]'
+    'Auction Bid':
+        Placeholder: '%gmp_command_auction_bid%'
+        Text: '&2bid [UID] [Bidding Price]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp auction bid '
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bBid on an item'
+            - '&bUsage: &c/gmp &6auction &2bid [UID] [Bidding Price]'
+    'Auction GUI':
+        Placeholder: '%gmp_command_auction_gui%'
+        Text: '&2gui [UID]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp auction gui '
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bOpen auction GUI'
+            - '&bUsage: &c/gmp &6auction &2gui [UID]'
+    'Auction Overtime':
+        Placeholder: '%gmp_command_auction_overtime%'
+        Text: '&2overtime [UID] [Time]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp auction overtime '
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bAdd time to an auction'
+            - '&bUsage: &c/gmp &6auction &2overtime [UID] [Time]'
+    'Auction Confirm':
+        Placeholder: '%gmp_command_auction_confirm%'
+        Text: '&2confirm [UID]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp auction confirm '
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bHammer/Confirm an auction.'
+            - '&bUsage: &c/gmp &6auction &2confirm [UID]'
+    'Auction Bidding':
+        Placeholder: '%gmp_auction_bidding%'
+        Text: '&8&l[&c&l&nClick to bid&8&l]'
+        ClickEvent:
+            Action: RUN_COMMAND
+            Value: '/gmp auction gui {uid}'
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&5Click to open the auction GUI with the auction number &e{uid} &5.'
+    'Auction GUI Bidding':
+        Placeholder: '%gmp_auction_gui_bidding%'
+        Text: '&8&l[&c&l&nClick Here&8&l]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp auction bid {uid} '
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bUsage: &c/gmp &6auction bid {uid} [Price]'

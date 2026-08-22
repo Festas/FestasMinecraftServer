@@ -1,18 +1,1 @@
-worlds:
-    spawn:
-        source: file
-        spawn: 0, 64, 0
-        difficulty: peaceful
-        allowMonsters: true
-        allowAnimals: true
-        dragonBattle: false
-        pvp: true
-        environment: NORMAL
-        worldType: DEFAULT
-        defaultBiome: minecraft:plains
-        loadOnStartup: true
-        readOnly: false
-        saveBlockTicks: false
-        saveFluidTicks: false
-        savePoi: false
-        seaLevel: -63
+worlds: {}

@@ -1,0 +1,189 @@
+English:
+    'Market Help':
+        Placeholder: '%gmp_command_market_help%'
+        Text: '&2help'
+        ClickEvent:
+            Action: RUN_COMMAND
+            Value: '/gmp market help '
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bAbout &c/gmp &6market&b''s subcommands help'
+    'Market GUI':
+        Placeholder: '%gmp_command_market_gui%'
+        Text: '&2gui &7[Merchandise Type] [Page]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp market gui '
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bOpen global market GUI'
+            - '&bUsage: &c/gmp &6market gui &7[Merchandise Type] [Page]'
+    'Market Sell':
+        Placeholder: '%gmp_command_market_sell%'
+        Text: '&2sell [Price] &7[Amount]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp market sell '
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bSell item in your hand'
+            - '&bUsage: &c/gmp &6market sell [Price] &7[Amount]'
+    'Market Buy':
+        Placeholder: '%gmp_command_market_buy%'
+        Text: '&2buy [Deposit] &7[Amount]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp market buy '
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bPurchase item &7(Same as the one on hand)'
+            - '&bUsage: &c/gmp &6market buy hand [Deposit] &7[Amount]'
+    'Market Search':
+        Placeholder: '%gmp_command_market_search%'
+        Text: '&2search [Parameters]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp market search '
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bSearch merchandises'
+            - '&bUsage: &c/gmp &6market search [Parameters]'
+    'Market Search Player':
+        Placeholder: '%gmp_command_market_search_player%'
+        Text: '&2player:[Player]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp market search player:'
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bMerchant name'
+    'Market Search Item':
+        Placeholder: '%gmp_command_market_search_item%'
+        Text: '&2item:[Item]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp market search item:'
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bItem''s ID'
+    'Market Search Name':
+        Placeholder: '%gmp_command_market_search_name%'
+        Text: '&2name:[Name]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp market search name:'
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bItem''s name'
+    'Market Search Description':
+        Placeholder: '%gmp_command_market_search_description%'
+        Text: '&2description:[Description]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp market search description:'
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bItem''s description'
+    'Market Search Price':
+        Placeholder: '%gmp_command_market_search_price%'
+        Text: '&2price:[Min]:[Max]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp market search price:'
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bPrice range'
+            - '&bIf only one price is entered, '
+            - '&bit is considered a fixed price rather than a price range'
+    'Market Search Category':
+        Placeholder: '%gmp_command_market_search_category%'
+        Text: '&2category:[Category]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp market search category:'
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bMerchandise''s category'
+    'Market Search Currency':
+        Placeholder: '%gmp_command_market_search_currency%'
+        Text: '&2currency:[Currency Unit]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp market search currency:'
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bMerchandise''s currency unit'
+    'Market Search Type':
+        Placeholder: '%gmp_command_market_search_type%'
+        Text: '&2type:[Merchandise Type]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp market search type:'
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bMerchandise type(Selling, Purchasing, etc)'
+    'Market Search Result':
+        Placeholder: '%gmp_command_market_search_result%'
+        Text: '&2result [Page]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp market search result '
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bOpen result''s GUI'
+    'Market SellInventory':
+        Placeholder: '%gmp_command_market_sellinventory%'
+        Text: '&2sellInventory [Price]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp market sellInventory '
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bOpen sell inventory &7(Sell items in bulk)'
+            - '&bUsage: &c/gmp &6market sellInventory [Price]'
+    'Market BuyInventory':
+        Placeholder: '%gmp_command_market_buyinventory%'
+        Text: '&2buyInventory [Deposit]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp market buyInventory '
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bOpen buy inventory &7(Purchase items in bulk)'
+            - '&bUsage: &c/gmp &6market buyInventory [Deposit]'
+    'Market Edit':
+        Placeholder: '%gmp_command_market_edit%'
+        Text: '&6&l[Edit Merchandise]'
+        ClickEvent:
+            Action: RUN_COMMAND
+            Value: '/gmp merchandise gui {uid}'
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&5Click to edit merchandise &eUID:{uid} &5.'
+    'Market Transaction':
+        Placeholder: '%gmp_command_market_transaction%'
+        Text: '&8&l[&6&lTransaction&8&l]'
+        ClickEvent:
+            Action: RUN_COMMAND
+            Value: '/gmp transaction gui {uid}'
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&5Click to open transaction GUI.'

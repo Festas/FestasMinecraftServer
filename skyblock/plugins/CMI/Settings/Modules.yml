@@ -103,7 +103,7 @@ chatBubble: true
 #  
 # Handling of tablist
 # Applies for servers from 1.7.x and up
-tablist: false
+tablist: true
 #  
 # Handling of painting editing with shift+right click
 # Applies for servers from 1.7.x and up
@@ -155,7 +155,7 @@ noTarget: true
 #  
 # Handles rankup system
 # Applies for servers from 1.7.x and up
-ranks: false
+ranks: true
 #  
 # Handles votifier system
 # Applies for servers from 1.7.x and up

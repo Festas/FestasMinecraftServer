@@ -1,68 +1,109 @@
-# 全彩代码支持和一些变量
-# 请记住,对于某些行,变量不起作用,而对于其他行,则会起作用 :)
-# 只需将它们保留在现在的位置,一切都会没问题 :)
-# 有些行可以设置全局变量.例如,对于将受到影响的玩家.例如 /heal Zrips,那么将使用 Zrips 的数据
-# [serverName] 显示服务器名称
-# [playerName] 显示目标玩家名称
-# [playerDisplayName] 显示目标玩家显示名称
-# [lvl] 显示目标玩家等级
-# [exp] 显示目标玩家总经验
-# [hp] 显示目标玩家生命值
-# [maxHp] 显示目标玩家最大生命值
-# [hunger] 显示目标玩家饥饿值
-# [gameMode] 显示目标玩家游戏模式
-# [prefix] 显示目标玩家前缀(如果可能)
-# [suffix] 显示目标玩家后缀(如果可能)
-#
-# 发送者是执行命令的控制台或玩家.例如,Zrips 执行 /heal Zhax,那么将使用 Zrips 的数据
-# [senderName] 显示发送者玩家名称
-# [senderDisplayName] 显示发送者玩家显示名称
-# [senderLvl] 显示发送者玩家等级
-# [senderExp] 显示发送者玩家总经验
-# [senderHp] 显示发送者玩家生命值
-# [senderMaxHp] 显示发送者玩家最大生命值
-# [senderHunger] 显示发送者玩家饥饿值
-# [senderGameMode] 显示发送者玩家游戏模式
-# [senderPrefix] 显示发送者玩家前缀(如果可能)
-# [senderSuffix] 显示发送者玩家后缀(如果可能)
-#
-# 源是被用作额外信息的玩家.例如,Zrips 执行 /tp Zhax Zrips,那么将使用 Zhax 的数据,因为其位置将用于新玩家的位置
-# [sourceName] 显示源玩家名称
-# [sourceDisplayName] 显示源玩家显示名称
-# [sourceLvl] 显示源玩家等级
-# [sourceExp] 显示源玩家总经验
-# [sourceHp] 显示源玩家生命值
-# [sourceMaxHp] 显示源玩家最大生命值
-# [sourceHunger] 显示源玩家饥饿值
-# [sourceGameMode] 显示源玩家游戏模式
-# [sourcePrefix] 显示源玩家前缀(如果可能)
-# [sourceSuffix] 显示源玩家后缀(如果可能)
-#
-# 有些行支持将它们发送到自定义位置的选项,比如操作栏、标题、副标题,甚至创建JSON/可点击消息
-# 如果行以!toast!开头,玩家将收到提示消息(进度弹出窗口,仅限1.12及以上版本).一些额外的变量可以用来定义类型和图标.例如:!toast! -t:goal -icon:paper 你好世界!
-# 如果行以!actionbar!开头,玩家将收到此变量后定义的操作栏消息
-# 如果行以!actionbar:[秒数]!开头,玩家将在定义的时间内收到操作栏消息
-# 如果行以!broadcast!开头,则每个人都将收到消息.您可以添加额外的!toast! !actionbar!或!title!来将消息发送给每个人的特定位置,例如:!broadcast!!title!
-# 如果行以!customtext:[cTextName]!开头,则将按提供的名称获取自定义文本,并显示给玩家.如果在!broadcast!之后使用,则在线的每个人都将获得此自定义文本消息
-# 如果行以!title!开头,则玩家将在此变量后定义的标题消息,此外它可以包含!subtitle!,这将添加副标题消息.可以使用!title:4.5!定义可选时间,这将保持标题消息4.5秒
-# 如果行以!bossbar:[名称]-[计时器]!开头,则玩家将在此变量后定义的bossbar消息,此外您可以定义此消息将可见的时间.您需要定义bossbar名称,它可以是任何您想要的,但具有相同名称的行将互相覆盖,以防止堆叠
-#
-# 要包含可点击消息:<T>文本</T><H>悬停文本</H><C>命令</C><SC>建议文本</SC>
-# <T>和</T>是必需的,其他是可选的
-# 使用/n来换行
-# 要有多个JSON消息,请使用<Next>
-# <C>作为点击的玩家执行命令
-# <CC>一次从控制台执行命令
-# <CCI>每次玩家点击文本时从控制台执行命令
-# <URL>包括URL
-#
-# 注意!从9.0.0.0 CMI版本开始,一些区域设置行已移至CMILib文件.这是为了集中一些跨多个插件中最常用的区域设置.
-# 在您更新CMILib文件中的区域设置后,执行/CMIL RELOAD命令以使更改生效
+
+# Full color code support and some variables
+
+# Keep in mind that variables wont work for some lines, when it will for anothers :)
+
+# Just keep them where there are now and everything will be ok :)
+
+# Some lines can have global variables set. For player who will be effected. In example /heal Zrips then Zrips data will be used
+
+# [serverName] to show server name
+
+# [playerName] to show target player name
+
+# [playerDisplayName] to show target player display name
+
+# [lvl] to show target player level
+
+# [exp] to show target player total exp
+
+# [hp] to show target player health
+
+# [maxHp] to show target player max health
+
+# [hunger] to show target player hunger level
+
+# [gameMode] to show target player gamemode
+
+# [prefix] to show target player prefix if possible
+
+# [suffix] to show target player suffix if possible
+
+# Sender is console or player who performs command. In example Zrips performs /heal Zhax then Zrips data will be used
+
+# [senderName] to show Sender player name
+
+# [senderDisplayName] to show Sender player display name
+
+# [senderLvl] to show Sender player level
+
+# [senderExp] to show Sender player total exp
+
+# [senderHp] to show Sender player health
+
+# [senderMaxHp] to show Sender player max health
+
+# [senderHunger] to show Sender player hunger level
+
+# [senderGameMode] to show Sender player gamemode
+
+# [senderPrefix] to show Sender player prefix if possible
+
+# [senderSuffix] to show Sender player suffix if possible
+
+# Source is player which is being used for extra info. In example Zrips performs /tp Zhax Zrips then Zhax data will be used as its location is being taken for new player location
+
+# [sourceName] to show source player name
+
+# [sourceDisplayName] to show source player display name
+
+# [sourceLvl] to show source player level
+
+# [sourceExp] to show source player total exp
+
+# [sourceHp] to show source player health
+
+# [sourceMaxHp] to show source player max health
+
+# [sourceHunger] to show source player hunger level
+
+# [sourceGameMode] to show source player gamemode
+
+# [sourcePrefix] to show source player prefix if possible
+
+# [sourceSuffix] to show source player suffix if possible
+
+# ***********************************************
+
+# Some lines supports option to send them to custom places, like action bar, title, sub title or even create JSON/clickable messages
+
+# If line starts with !toast! then player will get toast message (advancement popup, only 1.12 and up). Some extra variables can be used to define type and icon. example: !toast! -t:goal -icon:paper Hello world!
+
+# If line starts with !actionbar! then player will get action bar message defined after this variable
+
+# If line starts with !actionbar:[seconds]! then player will get action bar message for defined amount of time
+
+# If line starts with !broadcast! then everyone will receive message. You can add extra !toast! !actionbar! or !title! to send message for everyone to specific place, in example !broadcast!!title!
+
+# If line starts with !customtext:[cTextName]! then custom text will be taken by name provided and shown for player. In case its used after !broadcast! then everyone who is online will get this custom text message
+
+# If line starts with !title! then player will get title message defined after this variable, in addition it can contain !subtitle! which will add subtitle message. Optional time can be defined with !title:4.5! which will keep title message for 4.5 seconds
+
+# If line starts with !bossbar:[name]-[timer]! then player will get bossbar message defined after this variable, in addition you can define how long this message will be visible. You need to define bossbar name which can be anything you want, but lines with same name will override each other to prevent stacking
+
+# 
+
+# 
+
+# 
+
+# ATTENTION! As of 9.0.0.0 CMI version some of the locale lines got moved to CMILib file. This is to centralize some of most used ones across multiple plugins.
+
+# After you update locale in CMILib file perform `/cmil reload` command for changes to take effect
 
 info:
   Same: '&c无法打开您自己的背包进行编辑!'
   cantLoginWithDifCap: '&c无法使用不同的名称大小写登录!旧名称:&e[oldName]&c.当前名称:&e[currentName]'
-  Searching: '&e正在搜索玩家数据,请稍候,这可能需要一些时间来完成!'
   NoCommandWhileSleeping: '&c无法在睡眠时执行命令!'
   PurgeNotEnabled: '&c清除功能在配置文件中未启用!'
   TeamManagementDisabled: '&7在 DisableTeamManagement 设置为 true 时,此功能将具有受限的功能性!'
@@ -111,9 +152,11 @@ info:
   noSpam: '!title!&c请勿刷屏!'
   noCmdSpam: '!title!&c请勿刷屏命令!'
   spamConsoleInform: '&c玩家 (&7[playerName]&c) 触发了 (&7[rules]&c) 聊天过滤器:&r [message]'
-  # 该行可以有额外的变量: [totalUsers] [onlinePlayers]
+  # This line can have extra variables: [totalUsers] [onlinePlayers]
   FirstJoin: '&e欢迎 &6[playerDisplayName] &e加入我们的服务器!'
+  # Don't forget to enable custom logout messages in config!
   LogoutCustom: ' &6[playerDisplayName] &e离开游戏'
+  # Don't forget to enable custom login messages in config!
   LoginCustom: ' &6[playerDisplayName] &e加入游戏'
   deathlocation: '&e您死亡位置为 x:&6[x]&e, y:&6[y]&e, z:&6[z]&e,所在世界为 &6[world]'
   book:
@@ -171,13 +214,16 @@ info:
     subinv: '&e您的副背包应为空!'
     subinvslots: '&e您的副背包至少应有 &6[count] &e个空槽!'
   Relog: '&e重新登录可能需要以使更改生效'
-  outsideWorldBorder: '&c位置在世界边界之外'
-  noWorldAccess: '&c没有世界权限'
-  IncorrectColor: '&4颜色定义错误!'
+  Any: 通用
+  Reset: '{gcp}按下 {gcs}Q {gcp}进行重置'
+  outsideWorldBorder: '&c当前位置超出世界边界'
+  noWorldAccess: '&c你没有进入该世界的权限'
+  IncorrectColor: '&4颜色格式定义错误！'
+  IncorrectFile: '{gcw}文件名配置有误！'
   time:
-    # 主要用于播放时间占位符输出
-    # 在行首使用+号来强制包含它,即使特定和先前的时间值为0
-    # 在行首使用-号,如果你只想在其值不为0时包含它.如果整个输出为空行,则输出秒值
+    # Mainly for placeholder playtime output
+    # Use + sign at the start of line to force include it even if specific and previous time values are 0
+    # Use - sign at the start of line if you want to include it only if its value isn't 0. If entire output results into empty line, then we will output seconds value
     days: '&2[d]&7天:'
     hours: '&2[h]&7小时 '
     minutes: '&2[m]&7分钟 '
@@ -185,6 +231,12 @@ info:
   CommandFormat: '&c错误的命令格式'
   ServerSwitchOut: ' &6[playerDisplayName] &e切换到了 &6[serverName] &e服务器'
   ServerSwitchIn: ' &6[playerDisplayName] &e来自 &6[serverName] &e服务器'
+dialog:
+  signEditor: 告示牌编辑
+  update: 更新
+  save: 保存
+  close: 关闭
+  line: 第[line]行
 warp:
   list: '&e[pos]. &6[warpName] &f- &7[worldName] ([x]:[y]:[z])'
 afk:
@@ -242,7 +294,7 @@ Chat:
   shoutPrefix: '&c[S]&r'
   LocalNoOne: '!actionbar!&c没有人听到你的声音,请在消息前加上!以使用全局聊天'
   shoutDeduction: '!actionbar!&c扣除&e[amount]&c金币作为大喊的代价'
-  # 使用\n添加新行
+  # Use \n to add new line
   publicHover: '&e发送时间: &6%server_time_hh:mm:ss%'
   privateHover: '&e发送时间: &6%server_time_hh:mm:ss%'
   staffHover: '&e发送时间: &6%server_time_hh:mm:ss%'
@@ -410,6 +462,7 @@ command:
       nameEdit: '&7Q键点击以编辑名称'
       interactable: '&7可交互'
       scale: '&7比例: &f[amount]'
+      scaleLimits: '{gcs}[min] {gcp}- {gcs}[max]'
       explanation: '&8左键或右键调整数值'
       explanation2: '&8按住Shift键使其变快10倍'
       disableGravity: '&e如果要更改此值,请禁用重力'
@@ -499,7 +552,7 @@ command:
       topLineHover: '&6服务器总额: &c[total]'
       list: '&e[place]. &6[playerDisplayName]: &e[balance]'
       ownLine: '&2[place]. &2[playerDisplayName]: &2[balance]'
-      # 如果不希望显示悬停信息,请将其设置为空
+      # Set to empty field if you want to not show hover over message
       hover: '&2[playerName]'
       recalculating: '&2正在重新计算财富榜,请耐心等待几秒钟后重试'
   ban:
@@ -509,7 +562,7 @@ command:
       explanation:
       - cmi.command.ban.bypass 权限可以绕过封禁
     info:
-      # 确保在配置文件中启用OverrideLoginMessage
+      # Make sure that OverrideLoginMessage is enabled in config file
       message: '&c你已被封禁!'
       reason: '&6封禁原因: &e[reason]'
       defaultReason: '&e违反服务器规定'
@@ -698,6 +751,7 @@ command:
       args: (playerName)
     info:
       list: '&6[place]&e. &e[playerDisplayName] &6[time]'
+      name: '{gcp}Name: {gcs}[playerName]'
       permanent: '&3永久封禁'
       bannedUntil: '&e封禁时间: &6[time]'
       reason: '&e封禁原因: &6[reason]'
@@ -928,6 +982,15 @@ command:
       exact: '&2需要准确的配方成分:[state]'
       exists: '&4似乎已经存在类似的配方'
       mainTitle: '&8自定义配方(&7[current]&8/&7[total]&8)'
+  database:
+    help:
+      info: 管理备份数据
+      args: '[操作] (玩家名) (数据类型) (文件名)'
+    info:
+      backupSuccess: '{gcp}已创建备份：{gcs}[name] {gcp}数据表：{gcs}[types]'
+      backupFailed: '{gcp}备份失败'
+      userDataRestored: '{gcp}已恢复 {gcs}[playerName] {gcp}的数据。数据表：{gcs}[types]'
+      userDataFailed: '{gcw}{gcs}[playerName] {gcp}数据恢复失败'
   dback:
     help:
       info: '&e回到死亡位置'
@@ -935,13 +998,19 @@ command:
     info:
       noinfo: '&4没有保存的位置可以返回!'
       feedback: '&6回到上次保存的位置([world],[x],[y],[z])!'
+  dialogs:
+    help:
+      info: 打开指定界面
+      args: '[界面名称] (玩家名) ([变量名]:数值) (-s)'
+    info:
+      notFound: '{gcw}未找到该名称的界面'
   disableenchant:
     help:
-      info: '&e禁用附魔'
-      args: (enchant/id) (disable/enable)
+      info: '&e禁用/启用附魔'
+      args: (附魔/ID) (禁用/启用)
     info:
-      title: Enchant disabler
-      feedback: '&6[enchantName] &e已被[state]禁用'
+      title: 附魔管理
+      feedback: '&6[enchantName] &e已[state]'
   dispose:
     help:
       info: '&e处理不需要的物品'
@@ -1093,6 +1162,13 @@ command:
       feedback: '&e将药水效果 &6[effect] &e添加给 &3[playerDisplayName]&e,持续 &6[sec] 秒,等级为
         &6[power] &e(&3[offon]&e).'
       cleared: '&e已清除 &3[playerDisplayName] &e的药水效果 (&3[offon]&e).'
+  emojipicker:
+    help:
+      info: Pick emoji
+      args: ''
+    info:
+      hovers:
+      - '{gcs}Shift+Click'
   enchant:
     help:
       info: '&e为物品附魔'
@@ -1101,7 +1177,8 @@ command:
       explanation:
       - -o 从副手获取物品
     info:
-      feedback: '&e你将物品附魔为 &3[enchant]:[level]&e,目标为 &3[playerDisplayName]'
+      enchanted: '{gcp}Enchanted with {gcs}[enchant] {gcp}lvl {gcs}[level]{gcp} for
+        {gcs}[playerDisplayName]'
       removed: '&e你已从物品中移除了被附魔的 &3[enchant] &e,目标为 &3[playerDisplayName]'
       clear: '&e已清除物品中的附魔,目标为 &3[playerDisplayName]'
       clearOne: '&e已从物品中移除了被附魔的 &3[enchant] &e,目标为 &3[playerDisplayName]'
@@ -1298,7 +1375,7 @@ command:
       info: '&e管理游戏规则'
       args: ''
     info:
-      updated: '世界 &6[world] &e的游戏规则(&6[rule]&e)&e已设置为 &6[value]'
+      updated: 世界 &6[world] &e的游戏规则(&6[rule]&e)&e已设置为 &6[value]
   generateworth:
     help:
       info: '&e自动生成可能的物品价值数值'
@@ -1539,6 +1616,11 @@ command:
       shadow: '&7文本阴影: &6[state]'
       fadeIn: '&7渐入动画: &6[state]'
       textAlpha: '&7文本透明度: &6[alpha]'
+      textWidth: '{gcd}Text width: {gcs}[width]'
+      textFiller: '{gcd}Text filler: {gcs}[width]'
+      textFillerExplanation: '{gcd}Add %filler% to auto fill text'
+      # Should be single symbol/letter without color codes
+      filler: ' '
       bgAlpha: '&7背景透明度: &6[alpha]'
       bgColor: '&7背景颜色: &6[color]'
       scaleWidth: '&7缩放宽度: &6[scale]'
@@ -1571,6 +1653,91 @@ command:
       listFormat: '&6[name]&7: &r[extra]'
       addInfo: '&e输入新的文本行.输入 &6cancel &e取消.可用变量:&6ICON:&7[Value] &6SICON:&7[Value]&e
         其中 &7Value&e- &7[MaterialName-amount]%enchanted%&e, &7%itemInHand%&e, &7Head:[headOwner]'
+  hologram2:
+    help:
+      info: 管理悬浮文字
+      args: ''
+    info:
+      base: '{gcp}基座'
+      board: '{gcp}文字板'
+      icon: '{gcp}图标'
+      particle: '{gcp}粒子'
+      interaction: '{gcp}交互'
+      state: '{gcp}[状态]'
+      offset: '{gcs}偏移'
+      scale: '{gcs}缩放'
+      direction: '{gcs}方向'
+      material: '{gcp}材质：{gcs}[material]'
+      light: '{gcp}光照 天空亮度：{gcs}[sky] {gcp}方块亮度：{gcs}[block]'
+      reset: '{gcp}按下 {gcs}Q {gcp}进行重置'
+      basicDirection: '{gcp}俯仰角：{gcs}[x] {gcp}偏航角：{gcs}[y]'
+      fullDirection: '{gcp}俯仰角：{gcs}[x] {gcp}偏航角：{gcs}[y] {gcp}翻滚角：{gcs}[z]'
+      basicScale: '{gcp}宽度：{gcs}[x] {gcp}高度：{gcs}[y]'
+      fullScale: '{gcp}宽度：{gcs}[x] {gcp}高度：{gcs}[y] {gcp}深度：{gcs}[z]'
+      basicVector: '{gcp}X：{gcs}[x] {gcp}Y：{gcs}[y]'
+      fullVector: '{gcp}X：{gcs}[x] {gcp}Y：{gcs}[y] {gcp}Z：{gcs}[z]'
+      howTo: '&c创建新悬浮文字请执行 &e/cmi hologram new {gcs}[名称]'
+      gui: '{gcs}---- {gcp}<打开设置界面> {gcs}----'
+      guiHover: '{gcp}打开悬浮文字设置面板'
+      groupRelocate: '&7移动整个 &f[分组] &7群组'
+      groupCount: '&7该分组内共有 &f[数量] &7个悬浮文字'
+      pageInterval: '{gcp}自动翻页间隔：{gcs}[second] {gcp}秒'
+      pageIntervalLore:
+      - '{gcp}单位为秒，设置悬浮文字自动切换页面的频率'
+      pageIntervalNoPages: '{gcd}该悬浮文字暂未设置多页面'
+      reqPermission: '{gcp}查看所需权限：{gcs}[状态]'
+      teleport: '{gcp}传送到悬浮文字所在位置'
+      range: '{gcp}显示范围：{gcs}[blocks] 格'
+      rangeLore:
+      - '{gcp}设定玩家多大范围内能看到该悬浮文字'
+      updateRange: '{gcp}刷新范围：{gcs}[blocks] 格'
+      updateRangeLore:
+      - '{gcp}设定玩家多大范围内触发内容刷新'
+      relocate: '{gcp}移动位置'
+      relocateLore:
+      - '{gcp}将悬浮文字移至你当前所在位置'
+      holoYaw: '{gcp}旋转角度：{gcs}[angle]'
+      los: '{gcp}开启视线检测：{gcs}[状态]'
+      interact: '{gcp}允许交互：{gcs}[状态]'
+      particles: '{gcp}显示粒子：{gcs}[状态]'
+      seeThrough: '{gcp}透视可见：{gcs}[状态]'
+      seeThroughExtra: '{gcp}开启文字板时，文字可能出现显示异常'
+      commands: '{gcp}绑定指令：'
+      hoverParticles: '{gcp}悬停显示粒子：{gcs}[状态]'
+      particleCount: '{gcp}粒子数量：{gcs}[count]'
+      particleType: '{gcp}粒子类型：{gcs}[type]'
+      particleSpacing: '{gcp}粒子间距：{gcs}[amount]'
+      basePrefix: '{gcp}基座前缀：&r[前缀]X'
+      hoverPrefix: '{gcp}悬停前缀：&r[前缀]X'
+      locationRange: '{gcp}修改位置与显示范围'
+      interactions: '{gcp}修改交互设置'
+      animations: '{gcp}修改动画效果'
+      newDisplayMethod: '{gcp}使用新版渲染模式：{gcs}[状态]'
+      enabled: '{gcp}功能启用：{gcs}[状态]'
+      followType: '{gcp}跟随模式：{gcs}[type]'
+      doubleSided: '{gcp}双面显示：{gcs}[状态]'
+      autoRotate: '{gcp}自动旋转：{gcs}[angle]'
+      alignment: '{gcp}文字对齐方式：{gcs}[type]'
+      shadow: '{gcp}文字阴影：{gcs}[状态]'
+      textAlpha: '{gcp}文字透明度：{gcs}[alpha]'
+      textWidth: '{gcp}文字自动换行宽度：{gcs}[width]'
+      order: '{gcp}向下排列：{gcs}[状态]'
+      fadeIn: '{gcp}淡入效果：{gcs}[状态]'
+      fadeOut: '{gcp}淡出效果：{gcs}[状态]'
+      bgColor: '{gcp}背景颜色：{gcs}[color]'
+      bgAlpha: '{gcp}背景透明度：{gcs}[alpha]'
+      textFiller: '{gcp}文字填充宽度：{gcs}[width]'
+      textFillerExplanation: '{gcp}添加 %filler% 可自动填充占位内容'
+      interval: '{gcp}内容刷新间隔：{gcs}[second] {gcp}秒'
+      intervalLore:
+      - '{gcp}单位为秒，设置悬浮文字内容的刷新频率'
+      - '{gcp}若内容无变化，建议设为 0'
+      embeddedAutoButton: '{gcp}分页按钮已启用：[状态]'
+      autoPage: <T><<<<  </T><C>[上一页]</C><T>  >>>></T><C>[下一页]</C>
+      moveX: '{gcp}X轴偏移：{gcs}[x]'
+      moveY: '{gcp}Y轴偏移：{gcs}[y]'
+      moveZ: '{gcp}Z轴偏移：{gcs}[z]'
+      listFormat: '{gcp}[名称]{gcp}：&r[附加内容]'
   hologrampages:
     help:
       info: '&e更改全息图页面'
@@ -1587,6 +1754,8 @@ command:
       teleported: '&e传送到家: &6[home]'
       noHomes: '&c没有保存的家'
       private: '&c这个家的位置是私密的!'
+      blacklisted: '{gce}You have black listed items in your inventory.'
+      limitReached: '{gce}You have too many homes, please remove some'
       remove: '&c按下Shift+鼠标右键以移除家'
       missingBed: '&c家的位置没有床'
       notAccessible: '&c家的位置的世界(&7[worldName]&c)不存在!'
@@ -1890,18 +2059,6 @@ command:
     help:
       info: '&e将物品给予自己'
       args: '[itemname] (amount)'
-      explanation:
-      - 物品名称和描述支持占位符
-      - 示例:/give stone
-      - /give stone 5 n Stonehenge
-      - /give stick e knockback:1
-      - /give sponge l Got_item_on:_%date/YY/MM/dd-HH:mm:ss%
-      - /cmi give sponge 1 e Knockback:%rand/1-5%
-      - /cmi give sponge %rand/1-10%
-      - /give sponge a maxhealth:5:mainhand
-      - /give diamond_sword unbreakable
-      - /give mob_spawner:creeper
-      - /give minecraft:diamond_helmet 1 0 {ench:[{id:0,lvl:100},{id:2,lvl:100},{id:34,lvl:100}]}
   itemcmdata:
     help:
       info: '&e检查或修改物品的自定义模型数据'
@@ -1916,8 +2073,6 @@ command:
       info: '&e管理物品展示框'
       args: (invisible/fixed/invulnerable/all)
     info:
-      enabled: 已启用
-      disabled: 已禁用
       feedback: '&e你周围有 &6[count] &e个隐形物品展示框'
   iteminfo:
     help:
@@ -1977,6 +2132,7 @@ command:
       reason: ' &e原因:&c[reason]'
       leftTime: '!title!&7禁闭剩余时间:!subtitle![time]'
       jailedTarget: '&e你已被关进监狱![time]'
+      jailedTimeChange: '{gcp}Jail time changed to [time]'
       cantTalk: '&c在被禁闭期间你无法发言.'
       cantTalkRange: '!actionbar!&f你的聊天范围限制为&c[range]&f格内.'
       failed: '&c无法禁闭玩家.请检查目标监狱名称、牢房ID或时间格式.'
@@ -2059,6 +2215,9 @@ command:
       ambient: 环境
       vehicles: 交通工具
       named: 自定义名称
+      withitems: 连带物品
+      force: 强制执行
+      custom: 按类型选择
   kit:
     help:
       info: '&e提供预定义的套装.'
@@ -2368,6 +2527,7 @@ command:
       - '&6cmi.fullserver.bypass &e- 加入满服务器'
     info:
       changed: '&e将最大允许的玩家数量从 &6[old] &e更改为 &6[new]&e.在线玩家数: &6[current]'
+      label: '{gcp}Max Players. Currently: {gcs}[online]{gcp}/{gcs}[max]'
   me:
     help:
       info: '&e给所有玩家发送特殊消息'
@@ -2396,6 +2556,7 @@ command:
         cartographer: 制图师
         armorer: 盔甲匠
         butcher: 屠夫
+        none: None
         fisherman: 渔夫
   migratedatabase:
     help:
@@ -2409,40 +2570,83 @@ command:
       started: '&e开始镜像'
       stopped: '&6镜像停止'
       tooFar: '&c您离镜像中心太远 (最多 &6[blocks] &c个方块).该功能已暂停!'
-      title: 镜像
-      notSet: '&c未设置中心'
-      set: '&2中心已设置'
       noBlocks: '&c方块不足'
       used: '&7已用: &7[blocks]'
+      title: 镜像
+      location: '{gcp}位置'
+      offset: '{gcp}偏移'
+      offsetPos: '{gcp}X:{gcs}[x] {gcp}Y:{gcs}[y] {gcp}Z:{gcs}[z] {gcp}- {gcs}[id]'
+      sections: '{gcp}区块数：{gcs}[sections]'
+      flipType: '{gcp}翻转类型：{gcs}[type]'
+      sectionsAdjust: '{gcp}按住Shift并点击鼠标进行调整'
+      blocksToPlace: '{gcp}待放置方块：{gcs}[blocks]{gcp}/{gcs}[total]'
       Action:
-        Name:
-          X: X
-          Y: Y
-          Z: Z
-          XY: XY
-          ZY: ZY
-          XZ: XZ
-          ZX: ZX
-          Rotate90V: Rotate90V
-          Rotate90H: Rotate90H
-          Rotate90HC: Rotate90HC
-          Rotate180H: Rotate180H
-          Pause: Pause
-          Location: Location
-        Desc:
-          X: '&e以 &6X &e轴为镜像'
-          Y: '&e以 &6Y &e轴为镜像'
-          Z: '&e以 &6Z &e轴为镜像'
-          XY: '&e以 &6X &e和 &6Y &e轴为镜像'
-          ZY: '&e以 &6Z &e和 &6Y &e轴为镜像'
-          XZ: '&e以 &6X &e和 &6Z &e轴为镜像'
-          ZX: '&e以 &6Z &e和 &6Y &e轴为镜像'
-          Rotate90V: '&e向上旋转'
-          Rotate90H: '&e顺时针旋转 &690 &e度'
-          Rotate90HC: '&e逆时针旋转 &690 &e度'
-          Rotate180H: '&e旋转 &6180 &e度'
-          Pause: '&e暂停镜像'
-          Location: '&e设置镜像中心位置'
+        XR:
+          Name: XR
+          Desc: '{gcp}沿 {gcs}X {gcp}轴镜像'
+        YR:
+          Name: YR
+          Desc: '{gcp}沿 {gcs}Y {gcp}轴镜像'
+        ZR:
+          Name: ZR
+          Desc: '{gcp}沿 {gcs}Z {gcp}轴镜像'
+        X90:
+          Name: X90
+          Desc: '{gcp}沿 {gcs}X {gcp}轴旋转90°'
+        Y90:
+          Name: Y90
+          Desc: '{gcp}沿 {gcs}Y {gcp}轴旋转90°'
+        Z90:
+          Name: Z90
+          Desc: '{gcp}沿 {gcs}Z {gcp}轴旋转90°'
+        X90R:
+          Name: X90R
+          Desc: '{gcp}沿 {gcs}X {gcp}轴旋转-90°'
+        Y90R:
+          Name: Y90R
+          Desc: '{gcp}沿 {gcs}Y {gcp}轴旋转-90°'
+        Z90R:
+          Name: Z90R
+          Desc: '{gcp}沿 {gcs}Z {gcp}轴旋转-90°'
+        XY180:
+          Name: XY180
+          Desc: '{gcp}沿 {gcs}Z {gcp}轴旋转180°'
+        YZ180:
+          Name: YZ180
+          Desc: '{gcp}沿 {gcs}X {gcp}轴旋转180°'
+        ZX180:
+          Name: ZX180
+          Desc: '{gcp}沿 {gcs}Y {gcp}轴旋转180°'
+        XYZ180:
+          Name: XYZ180
+          Desc: '{gcp}沿所有坐标轴旋转180°'
+        XS:
+          Name: XS
+          Desc: '{gcp}沿 {gcs}X {gcp}轴延展'
+        YS:
+          Name: YS
+          Desc: '{gcp}沿 {gcs}Y {gcp}轴延展'
+        ZS:
+          Name: ZS
+          Desc: '{gcp}沿 {gcs}Z {gcp}轴延展'
+        XYM:
+          Name: XYM
+          Desc: '{gcp}沿 {gcs}X-Y {gcp}平面镜像'
+        YZM:
+          Name: YZM
+          Desc: '{gcp}沿 {gcs}Y-Z {gcp}平面镜像'
+        ZXM:
+          Name: ZXM
+          Desc: '{gcp}沿 {gcs}Z-X {gcp}平面镜像'
+        XYMR:
+          Name: XYMR
+          Desc: '{gcp}沿 {gcs}X-Y {gcp}平面反向镜像'
+        YZMR:
+          Name: YZMR
+          Desc: '{gcp}沿 {gcs}Y-Z {gcp}平面反向镜像'
+        ZXMR:
+          Name: ZXMR
+          Desc: '{gcp}沿 {gcs}Z-X {gcp}平面反向镜像'
   mobhead:
     help:
       info: '&e获取生物头颅'
@@ -2471,6 +2675,7 @@ command:
       notAccepting: '&e该用户不接受其他玩家的付款'
       giveAll: '&e向 &6[playerCount] &e名玩家发放总计 &6[totalAmount]'
       takeAll: '&e从 &6[playerCount] &e名玩家处扣除总计 &6[totalAmount]'
+      taxes: '{gcp}Taxes: {gcs}[taxes]'
       overLimit: '&e[playerDisplayName] &e因为能一次存储的货币数量受限制,无法接收您的货币'
   more:
     help:
@@ -2614,12 +2819,18 @@ command:
         pvpDamageNumbers: '&e显示PvP伤害数字'
         InformDurability: '&e物品耐久度减少时提醒'
         receivePets: '&e是否希望收到宠物作为礼物'
+        deathMessages: '{gcp}是否开启死亡提示'
+        notarget: '{gcp}是否让生物无视你'
   panimation:
     help:
       info: '&e播放自定义粒子动画'
       args: (variable/playerName/stopAll) (stop)
       explanation:
       - 使用说明请参阅https://www.zrips.net/cmi/extra/particles/
+  particlepicker:
+    help:
+      info: Pick particle
+      args: (particleName)
   patrol:
     help:
       info: '&e巡逻'
@@ -2695,8 +2906,6 @@ command:
       redefine: '&e重新定义当前选择区域'
       particles: '&e粒子效果:&6[state]'
       particleType: '&e粒子类型:&6[type]'
-      particleColor: '&e粒子颜色:&6[color]'
-      particleSize: '&e粒子大小:&6[size]'
       particleAmount: '&e粒子数量:&6[amount]'
       particlePercent: '&e粒子在边缘缩小的比例:&6[amount]%'
       activationRange: '&e激活范围:&6[amount]'
@@ -2705,6 +2914,7 @@ command:
       requiresPermission: '&e需要 &7[perm] &e权限使用:&6[state]'
       kickBack: '&e未经权限禁止进入:&6[state]'
       informPermission: '&e在没有权限的情况下告知:&6[state]'
+      cancelWarmup: '{gcp}Cancel command warmup on leave: [state]'
       teleportToLocation: '&e传送到传送门位置'
       teleportToTarget: '&e传送到传送门目标位置'
       performCommandsWithoutTp: '&e在没有有效传送位置的情况下执行命令'
@@ -3016,6 +3226,7 @@ command:
       cantRide: '&c你不能骑乘(&6[entityName]&c)实体'
       someOneElse: '&c有人已经在骑乘该实体'
       ridingYou: '&6[playerDisplayName]&e正在骑乘你,请执行&6/shakeitoff&e来踢出他们'
+      canRide: '{gcp}Can ride: {gcs}[list]'
   rt:
     help:
       info: '&e随机传送到某个位置'
@@ -3026,7 +3237,7 @@ command:
       cantDo: '&e你不能从不同的世界随机传送!'
       IncorrectLocation: '&6无法找到正确的传送位置,请等待 &e[time] &6后再试'
       teleported: '!actionbar!&6嗖!!!'
-      searching: '!actionbar!&7搜索中'
+      ongoingSearch: '!actionbar!{gcn}[dots]Searching ({gcs}[current]{gcn}/{gcs}[max]{gcn})[dots]'
   sameip:
     help:
       info: '&e列出与该IP地址相同的登录玩家'
@@ -3111,35 +3322,16 @@ command:
       - /scan id 52 r 30
       - scan id diamond_block r g q 32
     info:
-      loadingChunkInfo: '&e正在加载区块信息!'
-      startScanning: '&e发现 &6[amount] &e个待检查的区块.开始扫描!'
-      paused: '&e扫描已暂停,要继续,请使用 &6/cmi scan continue.'
-      continuing: '&e扫描继续中'
-      stoped: '&e扫描已停止.您可以使用 /cmi scan info 查看结果'
-      speedChange: '&e扫描速度已更改为 [amount]'
-      autospeedChange: '&e自动速度已更改为 [state]'
-      messagesChange: '&e消息状态已更改为 [state]'
-      NoInfo: '&e没有信息'
-      infoShow: '&6TPS: &3[tps] &6剩余 &e[left] &6(&e[time]&6) &6速度: &e[speed] &6已找到:
-        &e[found]'
-      Teleport: '&e点击传送'
-      scanList: '&2[number]. &e[place] &6[amount] &8(&7X:&f[x] &7Y:&f[y] &7Z:&f[z]&8)'
-      scanListChecked: '&7[number]. [place] [amount] (X:[x] Y:[y] Z:[z])'
-      edit: ' &e(编辑)'
-      total: '&e正在检查 [current]/[until] ,总计 [total] 个'
-      Stats:
-      - '&e************************************************************'
-      - '&e* &6区块: &e[checked]/[total]'
-      - '&e* &6扫描范围: &e[range]'
-      - '&e* &6扫描速度: &e[scanspeed] &6(&e[autospeed]&6)'
-      - '&e* &6世界: &e[world]'
-      - '&e* &6找到: &e[found]'
-      - '&e* &6耗时: &e[time]'
-      - '&e* &6ID: &e[id]'
-      - '&e* &6数量: &e[qty] 及以上'
-      - '&e* &6名称: &e[name]'
-      - '&e* &6描述: &e[lore]'
-      - '&e************************************************************'
+      ListEntity: '{gcs}[序号]{gcp}. [位置] {gcs}[状态][类型] {gcs}[数量]'
+      ListBlock: '{gcs}[序号]{gcp}. [位置] {gcp}[状态][类型] {gcs}[数量]'
+      pause: '{gcp}扫描已暂停，使用 {gcs}/cmi scan resume 继续'
+      resume: '{gcp}扫描已恢复'
+      noInformation: '{gcp}暂无相关数据'
+      nothing: '{gcw}扫描条件设置错误'
+      progress: '{gcp}已找到：{gcs}[totalFound] {gcp}待检测区块：{gcs}[checked]{gcp}/{gcs}[from]
+        {gcp}已跳过：{gcs}[skipped] {gcp}扫描速度：{gcs}[speed]'
+      loading: '{gcn}正在加载数据...'
+      teleport: '{gcp}点击传送'
   scavenge:
     help:
       info: '&e回收物品及其附魔'
@@ -3195,22 +3387,24 @@ command:
       - /search id 52
       - /search lore Uber_lore
     info:
-      started: '&e正在搜索'
-      current: '&e当前共找到 &3[amount] &e个匹配项,已检查 &3[files] &e个文件'
-      nothingfound: '&e根据您的条件未找到任何物品'
-      totalfound: '&e共找到 &3[amount] &e个匹配项,可能有 &3[files] &e个用户已检查'
+      baseList: '{gcs}[序号]{gcp}. [位置] {gcs}[玩家名][数量]'
+      regularList: '{gcs}[序号]{gcp}. {gcs}[玩家名][数量]'
+      amount: ' {gcp}({gcs}[总数]{gcp})'
+      found: '{gcp}在 {gcs}[files] {gcp}名已检测玩家中，共找到 {gcs}[amount] 项'
+      noresults: '{gcp}未找到符合条件的内容'
+      nothing: '{gcw}搜索条件有误'
+      noactive: '{gcp}暂无进行中或已完成的搜索结果'
+      active: '{gcp}搜索正在进行，请等待完成或取消任务'
+      searching: '{gcp}正在搜索，该过程可能需要一段时间'
+      progress: '{gcp}已检索 {gcs}[checked]/{gcs}[from] 条数据，找到 {gcs}[totalFound] 项 {gcp}速度：{gcs}[speed]'
       location:
         ender: '&3末影箱'
+        enderS: '{gcs}末影箱->潜影盒'
+        enderB: '{gcs}末影箱->收纳袋'
         inv: '&e背包'
         invS: '&e潜影盒'
+        invB: '{gcp}背包->收纳袋'
         PlayerVault: '&e玩家保险箱'
-      localsearch: '&e (本地搜索)'
-      localsearchhover: |-
-        &e将会打开本地文件中的背包
-        &e这可能需要更长的时间
-      reglist: '&e[number]. &e[name]'
-      list: '&2[number]. [location] &6[name]'
-      listhover: '&e点击以打开背包'
   seen:
     help:
       info: '&e检查玩家最后一次在线时间'
@@ -3377,8 +3571,7 @@ command:
       explanation:
       - cmi.command.silence.bypass - 绕过屏蔽
     info:
-      enabled: '&e屏蔽模式 &2已启用'
-      disabled: '&e屏蔽模式 &c已禁用'
+      change: '{gcp}Silence mode {gcs}[state]'
       inMode: '&e玩家处于屏蔽模式'
   silentchest:
     help:
@@ -3563,7 +3756,7 @@ command:
         TIME_SINCE_DEATH: 自上次死亡
         TIME_SINCE_REST: 自上次休息
         SNEAK_TIME: 潜行时间
-        ACOUNT_AGE: 账号年龄
+        ACCOUNT_AGE: Account age
         TRAVEL: 行驶
         WALK_ONE_CM: 步行
         CROUCH_ONE_CM: 潜行
@@ -3580,6 +3773,7 @@ command:
         PIG_ONE_CM: 猪行驶
         HORSE_ONE_CM: 马行驶
         AVIATE_ONE_CM: 鞘翅行驶
+        HAPPY_GHAST_ONE_CM: Ghast travel
         JUMP: 跳跃
         DAMAGE_DEALT: 造成伤害
         DAMAGE_TAKEN: 承受伤害
@@ -3677,6 +3871,7 @@ command:
         图块 &6[players] 玩家'
       MostTiles: '&7多数图块 (&f[tiles]&7) 在 &f[coord] &7区块'
       MostEntities: '&7多数实体 (&f[entities]&7) 在 &f[coord] &7区块'
+      Pending: '{gcp}Pending Tasks: {gcs}[taskCount]'
   stonecutter:
     help:
       info: '&e打开切石机'
@@ -3974,6 +4169,12 @@ command:
     info:
       feedback: '&6[tree]&e已生成.'
       cantSpawn: '&c无法在该方块上生成(&e[tree]&c).'
+  trim:
+    help:
+      info: Modify trim on armor
+      args: (playerName) (-s) (clear)
+    info:
+      title: '{gcp}Modify trim on armor'
   unban:
     help:
       info: '&e取消封禁玩家或IP'
@@ -4087,7 +4288,9 @@ command:
       joinVanished: '&e始终以隐身模式加入游戏'
       deathMessages: '&e显示死亡信息'
       hookPlayers: '&e连接实体'
+      level: '&e隐身等级'
       bossbarTitle: '&f隐身'
+      modified: '{gcp}已将 {gcs}[类型] {gcp}设置为 {gcs}[状态]'
   version:
     help:
       info: '&e显示插件版本'
@@ -4105,14 +4308,12 @@ command:
       Network: ' &e[type]'
       CMILib: '&eCMILib版本:&6[version]'
       cmilVersionNew: '&e-> [newVersion]'
-  viewrange:
+  viewdistance:
     help:
-      info: '&e更改视野范围'
-      args: '[range] (playerName)'
+      info: 更改视距
+      args: '[范围] (玩家名/世界名/重置) (视距/模拟距离)'
     info:
-      changed: '&e视野范围已更改为&6[range]'
-      NoProtocolLib: '&c此功能需要ProtocolLib!'
-      NoMore: '&e范围不能大于32个方块.已更改为32个方块'
+      output: '{gcp}视距：{gcs}[view] {gcp}模拟距离：{gcs}[simulation] {gcn}[类型]'
   voteedit:
     help:
       info: '&e管理玩家投票'

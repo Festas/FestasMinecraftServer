@@ -1,0 +1,305 @@
+English:
+    'GUI SetStoreName':
+        Placeholder: '%gmp_gui_profile_storename%'
+        Text: '&b&l&n[Click here to set store name]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp profile set storeName '
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bUsage: &c/gmp &6profile set storeName [Name]'
+    'GUI SetStoreDescription':
+        Placeholder: '%gmp_gui_profile_storedescription%'
+        Text: '&b&l&n[Click here to set store description]'
+        ClickEvent:
+            Action: RUN_COMMAND
+            Value: '/gmp profile set storeDescription help'
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bUsage: &c/gmp &6profile set storeDescription'
+    'Profile Help':
+        Placeholder: '%gmp_command_profile_help%'
+        Text: '&2help'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp profile help'
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bAbout &c/gmp &6profile&b''s subcommands help'
+    'Profile Set':
+        Placeholder: '%gmp_command_profile_set%'
+        Text: '&2set'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp profile set'
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bEdit profile'
+            - '&bUsage: &c/gmp &6profile set '
+    'Profile Set hideMerchandises':
+        Placeholder: '%gmp_command_profile_set_hidemerchandises%'
+        Text: '&2hideMerchandises [true/false/switch]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp profile set hideMerchandises '
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bSet whether the merchandise is displayed in the global market'
+            - '&bUsage: &c/gmp &6profile set hideMerchandises [true/false/switch]'
+    'Profile Set hideMerchantName':
+        Placeholder: '%gmp_command_profile_set_hidemerchantname%'
+        Text: '&2hideMerchantName [true/false/switch]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp profile set hideMerchantName '
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bSet whether to hide the merchant''s name'
+            - '&bUsage: &c/gmp &6profile set hideMerchantName [true/false/switch]'
+    'Profile Set StoreClosed':
+        Placeholder: '%gmp_command_profile_set_storeclosed%'
+        Text: '&2storeClosed [true/false/switch]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp profile set storeClosed '
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bSet whether the store is closed'
+            - '&bUsage: &c/gmp &6profile set storeClosed [true/false/switch]'
+    'Profile Set MailboxLocked':
+        Placeholder: '%gmp_command_profile_set_mailboxlocked%'
+        Text: '&2mailboxLocked [true/false/switch]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp profile set mailboxLocked '
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bSet whether the mailbox is locked'
+            - '&bUsage: &c/gmp &6profile set mailboxLocked [true/false/switch]'
+    'Profile Set storeName':
+        Placeholder: '%gmp_command_profile_set_storename%'
+        Text: '&2storeName [Name]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp profile set storeName '
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bSet the merchant''s store name'
+            - '&bIf not filled, it will be reset'
+            - '&bUsage: &c/gmp &6profile set storeName [Name]'
+    'Profile Set storeDescription':
+        Placeholder: '%gmp_command_profile_set_storedescription%'
+        Text: '&2storeDescription'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp profile set storeDescription '
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bSet up the merchant''s store description'
+            - '&bUsage: &c/gmp &6profile set storeDescription'
+    'Profile Set storedescription add':
+        Placeholder: '%gmp_command_profile_set_storedescription_add%'
+        Text: '&2add [Text]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp profile set storedescription add '
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bAdd a new text description'
+            - '&bUsage: &c/gmp &6profile set storedescription add [Text]'
+    'Profile Set storedescription set':
+        Placeholder: '%gmp_command_profile_set_storedescription_set%'
+        Text: '&2set [Line] [Text]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp profile set storedescription set '
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bSet the description of a row'
+            - '&bUsage: &c/gmp &6profile set storedescription set [Line] [Text]'
+    'Profile Set storedescription remove':
+        Placeholder: '%gmp_command_profile_set_storedescription_remove%'
+        Text: '&2remove [Line]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp profile set storedescription remove '
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bRemove a line'
+            - '&bUsage: &c/gmp &6profile set storedescription remove [line]'
+    'Profile Set merchandiseSort':
+        Placeholder: '%gmp_command_profile_set_merchandisesort%'
+        Text: '&2merchandiseSort'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp profile set merchandiseSort '
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bSet the sorting method by the merchant'
+            - '&bUsage: &c/gmp &6profile set merchandiseSort'
+    'Profile Set merchandiseSort set':
+        Placeholder: '%gmp_command_profile_set_merchandisesort_set%'
+        Text: '&2set [Sort Method]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp profile set merchandiseSort set '
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bSet the merchandise sorting method by the merchant'
+            - '&bUsage: &c/gmp &6profile set merchandiseSort set [Sort Method]'
+    'Profile Set merchandiseSort reset':
+        Placeholder: '%gmp_command_profile_set_merchandisesort_reset%'
+        Text: '&2reset'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp profile set merchandiseSort reset'
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bReset the merchandise sorting method by the merchant'
+            - '&bUsage: &c/gmp &6profile set merchandiseSort reset'
+    'Profile Set merchandiseSort list':
+        Placeholder: '%gmp_command_profile_set_merchandisesort_list%'
+        Text: '&2list'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp profile set merchandiseSort list'
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bList all of merchandise sort methods'
+            - '&bUsage: &c/gmp &6profile set merchandiseSort list'
+    'Profile Set merchandiseSort list type':
+        Placeholder: '%gmp_command_profile_set_merchandisesort_list_type%'
+        Text: '&b&l{sort}&f: &e{description}'
+        ClickEvent:
+            Action: RUN_COMMAND
+            Value: '/gmp profile set merchandiseSort set {sort}'
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&5Click to set to &e{sort} &5sort method'
+    'Profile Set itemMailSort':
+        Placeholder: '%gmp_command_profile_set_itemmailsort%'
+        Text: '&2itemMailSort'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp profile set itemMailSort '
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bSet the mail sorting method by the merchant'
+            - '&bUsage: &c/gmp &6profile set itemMailSort'
+    'Profile Set itemMailSort set':
+        Placeholder: '%gmp_command_profile_set_itemmailsort_set%'
+        Text: '&2set [Sort Method]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp profile set itemMailSort set '
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bSet the mail sorting method by the merchant'
+            - '&bUsage: &c/gmp &6profile set itemMailSort set [Sort Method]'
+    'Profile Set itemMailSort reset':
+        Placeholder: '%gmp_command_profile_set_itemmailsort_reset%'
+        Text: '&2reset'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp profile set itemMailSort reset'
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bReset the mail sorting method by the merchant'
+            - '&bUsage: &c/gmp &6profile set itemMailSort reset'
+    'Profile Set itemMailSort list':
+        Placeholder: '%gmp_command_profile_set_itemmailsort_list%'
+        Text: '&2list'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp profile set itemMailSort list'
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bList all of mail sort methods'
+            - '&bUsage: &c/gmp &6profile set itemMailSort list'
+    'Profile Set itemMailSort list type':
+        Placeholder: '%gmp_command_profile_set_itemmailsort_list_type%'
+        Text: '&b&l{sort}&f: &e{description}'
+        ClickEvent:
+            Action: RUN_COMMAND
+            Value: '/gmp profile set itemMailSort set {sort}'
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&5Click to set to &e{sort} &5sort method'
+    'Profile Select':
+        Placeholder: '%gmp_command_profile_select%'
+        Text: '&2select [Player]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp profile select '
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bSelect a player to operate on that player''s profile'
+            - '&bUsage: &c/gmp &6profile select'
+    'Profile GUI':
+        Placeholder: '%gmp_command_profile_gui%'
+        Text: '&2gui'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp profile gui'
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bOpen profile GUI'
+            - '&bUsage: &c/gmp &6profile gui'
+    'Profile Tasks':
+        Placeholder: '%gmp_command_profile_tasks%'
+        Text: '&2tasks'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp profile tasks'
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bProcessing unprocessed tasks in the profile'
+            - '&bUsage: &c/gmp &6profile tasks'
+    'Profile Info':
+        Placeholder: '%gmp_command_profile_info%'
+        Text: '&2info'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp profile info'
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bView merchant profile information'
+            - '&bUsage: &c/gmp &6profile info'
+    'Profile Refresh':
+        Placeholder: '%gmp_command_profile_refresh%'
+        Text: '&2refresh [Player]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp profile refresh '
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&bRefresh merchant''s profile'
+            - '&bUsage: &c/gmp &6profile refresh [Player]'

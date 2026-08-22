@@ -2,11 +2,11 @@ file:
     path: slime_worlds
 mysql:
     enabled: false
-    host: 172.25.0.1
+    host: 127.0.0.1
     port: 3306
-    username: __SKYBLOCK_DB_USER__
-    password: '__SKYBLOCK_DB_PASSWORD__'
-    database: s4_slimeworldmanager
+    username: slimeworldmanager
+    password: ''
+    database: slimeworldmanager
     usessl: false
     sqlUrl: jdbc:mysql://{host}:{port}/{database}?autoReconnect=true&allowMultiQueries=true&useSSL={usessl}
 mongodb:
@@ -21,7 +21,7 @@ mongodb:
     uri: ''
 redis:
     enabled: false
-    uri: redis://172.18.0.1:6379
+    uri: redis://127.0.0.1/
 api:
     enabled: false
     ignoreSslCertificate: false

@@ -102,7 +102,7 @@ info:
   sleepersRequired: '!actionbar!{gcs}[sleeping] {gcp}of {gcs}[required] {gcp}sleeping
     from required for night time speedup'
   sunSpeedingTitle: '{gcs}[hour]'
-  skippingNight: '!title!{gcsp}Skipping entire night'
+  skippingNight: '!title!{gcp}Skipping entire night'
   sunSpeedingSubTitle: '{gcs}[count]{gcp}/{gcs}[total] {gcp}({gcs}[speed]X{gcp})'
   repairConfirm: '{gcp}Click to confirm {gcs}[items] {gcp}item repair for {gcs}[cost]'
   bookDate: '{gcp}Written at {gcs}[date]'
@@ -143,7 +143,7 @@ info:
     warmup: '{gcp}Totem effect: [time]'
     cantConsume: '{gcp}Totem usage was denied due to its cooldown time'
   InventorySave:
-    info: '{gcp}Info: {gcs}[playerDisplayName]'
+    info: '{gcp}Info: {gcn}[playerDisplayName]'
     saved: '{gcs}[time] {gcp}Inventory saved with id: {gcs}[id]'
     NoSavedInv: '{gcp}This player doesn''t have any saved inventories'
     NoEntries: '{gce}File exists, but no inventories were found!'
@@ -546,10 +546,10 @@ command:
       info: Check top money list
       args: (playerName)
     info:
-      topLine: '{gcp}&m-----{gcp} Balancetop {gcp}&m-----'
-      topLineHover: '{gcp}Server Total: {gcu}[total]'
-      list: '{gcp}[place]{gcp}. {gcs}[playerDisplayName]: {gcs}[balance]'
-      ownLine: '{gcu}[place]{gcp}. {gcs}[playerDisplayName]: {gcs}[balance]'
+      topLine: '{gcp}&m-----{gcs} Balancetop {gcp}&m-----'
+      topLineHover: '{gcp}Server Total: {gcn}[total]'
+      list: '{gcp}[place]{gcp}. {gcs}[playerDisplayName]: {gcn}[balance]'
+      ownLine: '{gcu}[place]{gcp}. {gcs}[playerDisplayName]: {gcn}[balance]'
       # Set to empty field if you want to not show hover over message
       hover: '{gcs}[playerName]'
       recalculating: '{gcs}Baltop is being recalculated, please wait couple seconds
@@ -756,7 +756,7 @@ command:
       - 'Extra permission: cmi.command.checkaccount.showip'
     info:
       place: '{gcs}[place]{gcp}. {gcs}'
-      ip: '{gcs}[ip]&e: '
+      ip: '{gcp}[ip]{gcs}: '
       name: '{gcs}[name]{gcp}({gcs}[times]{gcp})'
       nonIpList: '{gcp}Accounts: {gcs}'
       nonIpName: '{gcs}[name]'
@@ -971,7 +971,7 @@ command:
   ctext:
     help:
       info: Shows custom text
-      args: '[cText] (playerName/all) (sourcePlayer)'
+      args: '[cText] (playerName/all) (sourcePlayer) (pageNumber)'
     info:
       list: '{gcp}Custom Text''s: {gcs}'
       check: '{gcp}Check: {gcs}[text]'
@@ -1622,76 +1622,76 @@ command:
       direction: '{gcs}Direction'
       material: '{gcp}Material: {gcs}[material]'
       light: '{gcp}Light levels Sky: {gcs}[sky] {gcp}Block: {gcs}[block]'
-      reset: '{gcd}Press {gcs}Q {gcd}to reset'
+      reset: '{gcp}Press {gcs}Q {gcp}to reset'
       basicDirection: '{gcp}Pitch: {gcs}[x] {gcp}Yaw: {gcs}[y]'
       fullDirection: '{gcp}Pitch: {gcs}[x] {gcp}Yaw: {gcs}[y] {gcp}Roll: {gcs}[z]'
       basicScale: '{gcp}Width: {gcs}[x] {gcp}Height: {gcs}[y]'
       fullScale: '{gcp}Width: {gcs}[x] {gcp}Height: {gcs}[y] {gcp}Depth: {gcs}[z]'
       basicVector: '{gcp}X: {gcs}[x] {gcp}Y: {gcs}[y]'
       fullVector: '{gcp}X: {gcs}[x] {gcp}Y: {gcs}[y] {gcp}Z: {gcs}[z]'
-      howTo: '{gcd}To create new hologram perform {gcs}/cmi hologram new {gcs}[name]'
-      gui: '{gcd}---- {gcu}<Open settings gui> {gcd}----'
-      guiHover: '{gcd}Open hologram settings GUI'
+      howTo: '&cTo create new hologram perform &e/cmi hologram new {gcs}[name]'
+      gui: '{gcs}---- {gcp}<Open settings gui> {gcs}----'
+      guiHover: '{gcp}Open hologram settings GUI'
       groupRelocate: '&7Relocate entire &f[group] &7group'
       groupCount: '&7Group contains &f[count] &7holograms'
-      pageInterval: '{gcd}Change page every {gcs}[second] {gcd}seconds'
+      pageInterval: '{gcp}Change page every {gcs}[second] {gcp}seconds'
       pageIntervalLore:
-      - '{gcd}How often, in seconds, hologram page is changed automatically'
+      - '{gcp}How often, in seconds, hologram page is changed automatically'
       pageIntervalNoPages: '{gcd}This hologram doesn''t have any pages yet'
-      reqPermission: '{gcd}Requires permission to see: {gcs}[state]'
-      teleport: '{gcd}Teleport to hologram location'
-      range: '{gcd}Show range: {gcs}[blocks]'
+      reqPermission: '{gcp}Requires permission to see: {gcs}[state]'
+      teleport: '{gcp}Teleport to hologram location'
+      range: '{gcp}Show range: {gcs}[blocks]'
       rangeLore:
-      - '{gcd}Defines area around hologram to show or hide it'
-      updateRange: '{gcd}Update range: {gcs}[blocks]'
+      - '{gcp}Defines area around hologram to show or hide it'
+      updateRange: '{gcp}Update range: {gcs}[blocks]'
       updateRangeLore:
-      - '{gcd}Defines area around hologram to trigger update'
-      relocate: '{gcd}Relocate'
+      - '{gcp}Defines area around hologram to trigger update'
+      relocate: '{gcp}Relocate'
       relocateLore:
-      - '{gcd}Relocates hologram to your current location'
-      holoYaw: '{gcd}Yaw: {gcs}[angle]'
-      los: '{gcd}Consider line of sight: {gcs}[state]'
-      interact: '{gcd}Interactable: {gcs}[state]'
-      particles: '{gcd}Show particles: {gcs}[state]'
+      - '{gcp}Relocates hologram to your current location'
+      holoYaw: '{gcp}Yaw: {gcs}[angle]'
+      los: '{gcp}Consider line of sight: {gcs}[state]'
+      interact: '{gcp}Interactable: {gcs}[state]'
+      particles: '{gcp}Show particles: {gcs}[state]'
       seeThrough: '{gcp}See through: {gcs}[state]'
       seeThroughExtra: '{gcp}Text might not be visible while Board is enabled'
-      commands: '{gcd}Commands:'
-      hoverParticles: '{gcd}Show hover particles: {gcs}[state]'
-      particleCount: '{gcd}Particles: {gcs}[count]'
-      particleType: '{gcd}Particle type: {gcs}[type]'
-      particleSpacing: '{gcd}Particle spacing: {gcs}[amount]'
+      commands: '{gcp}Commands:'
+      hoverParticles: '{gcp}Show hover particles: {gcs}[state]'
+      particleCount: '{gcp}Particles: {gcs}[count]'
+      particleType: '{gcp}Particle type: {gcs}[type]'
+      particleSpacing: '{gcp}Particle spacing: {gcs}[amount]'
       basePrefix: '{gcp}Base prefix: &r[prefix]X'
       hoverPrefix: '{gcp}Hover prefix: &r[prefix]X'
-      locationRange: '{gcd}Modify location and range'
-      interactions: '{gcd}Modify interactions'
+      locationRange: '{gcp}Modify location and range'
+      interactions: '{gcp}Modify interactions'
       animations: '{gcp}Modify animations'
       displayMethod: '{gcp}Type: {gcs}[state]'
-      enabled: '{gcd}Activated: {gcs}[state]'
-      followType: '{gcd}Follow type: {gcs}[type]'
-      doubleSided: '{gcd}Double sided: {gcs}[state]'
+      enabled: '{gcp}Activated: {gcs}[state]'
+      followType: '{gcp}Follow type: {gcs}[type]'
+      doubleSided: '{gcp}Double sided: {gcs}[state]'
       autoRotate: '{gcp}Auto rotate: {gcs}[angle]'
-      alignment: '{gcd}Text alignment: {gcs}[type]'
-      shadow: '{gcd}Text shadow: {gcs}[state]'
-      textAlpha: '{gcd}Text transparency: {gcs}[alpha]'
-      textWidth: '{gcd}Text width: {gcs}[width]'
-      order: '{gcd}Downwards placement: {gcs}[state]'
+      alignment: '{gcp}Text alignment: {gcs}[type]'
+      shadow: '{gcp}Text shadow: {gcs}[state]'
+      textAlpha: '{gcp}Text transparency: {gcs}[alpha]'
+      textWidth: '{gcp}Text auto wrap width: {gcs}[width]'
+      order: '{gcp}Downwards placement: {gcs}[state]'
       animationFadeIn: '{gcp}Fade In: {gcs}[value]'
       animationFadeOut: '{gcp}Fade Out: {gcs}[value]'
-      bgColor: '{gcd}Background color: {gcs}[color]'
-      bgAlpha: '{gcd}Background transparency: {gcs}[alpha]'
-      textFiller: '{gcd}Text filler: {gcs}[width]'
+      bgColor: '{gcp}Background color: {gcs}[color]'
+      bgAlpha: '{gcp}Background transparency: {gcs}[alpha]'
+      textFiller: '{gcp}Text filler: {gcs}[width]'
       filler: ' '
-      textFillerExplanation: '{gcd}Add %filler% to auto fill text'
-      interval: '{gcd}Update every {gcs}[second] {gcd}seconds'
+      textFillerExplanation: '{gcp}Add %filler% to auto fill text'
+      interval: '{gcp}Update every {gcs}[second] {gcp}seconds'
       intervalLore:
-      - '{gcd}How often, in seconds, information on the hologram is updated'
-      - '{gcd}If text is not changing, set it to 0'
-      embeddedAutoButton: '{gcd}Enabled pagination buttons: [state]'
+      - '{gcp}How often, in seconds, information on the hologram is updated'
+      - '{gcp}If text is not changing, set it to 0'
+      embeddedAutoButton: '{gcp}Enabled pagination buttons: [state]'
       autoPage: <T><<<<  </T><C>[prevPage]</C><T>  >>>></T><C>[nextPage]</C>
-      moveX: '{gcd}X:{gcs}[x]'
-      moveY: '{gcd}Y:{gcs}[y]'
-      moveZ: '{gcd}Z:{gcs}[z]'
-      listFormat: '{gcs}[name]{gcd}: &r[extra]'
+      moveX: '{gcp}X: {gcs}[x]'
+      moveY: '{gcp}Y: {gcs}[y]'
+      moveZ: '{gcp}Z: {gcs}[z]'
+      listFormat: '{gcp}[name]{gcp}: &r[extra]'
   hologrampages:
     help:
       info: Change hologram page
@@ -1958,7 +1958,7 @@ command:
   inv:
     help:
       info: Opens players inventory
-      args: '[playerName]'
+      args: '[playerName] (playerName)'
       explanation:
       - cmi.command.inv.preventmodify - prevents inventory editing
       - cmi.invedit - allows to edit inventory
@@ -2022,7 +2022,7 @@ command:
   itemcmdata:
     help:
       info: Check or modify items custom model data
-      args: '[set/delete/list] (playerName) (integerId) (-s)'
+      args: '[set/delete/list/add] (playerName) (float,true,false,string) (-s)'
     info:
       nothing: '{gcp}Doesn''t contain any model data'
       set: '{gcp}Set new model data to: {gcs}[value]'
@@ -2184,7 +2184,7 @@ command:
   kit:
     help:
       info: Gives predefined kit.
-      args: '[kitName] (playerName) (-s) (-open) (-preview) (-c)'
+      args: '[kitName] (playerName) (-s) (-open) (-preview) (-c) (-skipusage)'
       explanation:
       - 'Permissions:'
       - cmi.kit.[kitName] - allows to use particular kit
@@ -3121,8 +3121,8 @@ command:
       args: ''
     info:
       feedback: '{gcp}CMI Configs and locale files reloaded! Took {gcs}[ms]ms'
-      failedConfig: '{gcw}Failed to load config file! Check spelling!'
-      failedLocale: '{gcw}Failed to load locale file! Check spelling!'
+      failedConfig: '{gcw}Failed to load {gcs}config {gcw}file! Check spelling!'
+      failedLocale: '{gcw}Failed to load {gcs}locale {gcw}file! Check spelling!'
   removehome:
     help:
       info: Remove home
@@ -3168,7 +3168,7 @@ command:
   repaircost:
     help:
       info: Check items repair cost
-      args: (hand/armor/all) (playerName)
+      args: (hand/offhand/armor/all) (playerName)
     info:
       feedback: '{gcp}Repair cost: {gcs}[amount]'
       noNeed: '{gcp}No need to repair'
@@ -3951,7 +3951,7 @@ command:
       explanation:
       - 'Examples:'
       - tfly Zrips 30 - fly mode for the next 30 sec
-      - tfly Zrips +30 - adds fly mode for an additional 30 sec
+      - tfly Zrips +30m - adds fly mode for an additional 30 sec
       - tfly Zrips 0 - fly mode until relog
       - tfly Zrips - check if player have tfly mode enabled and until when
     info:
@@ -3990,7 +3990,7 @@ command:
         for the next [time].'
       targetUntilRelogEnabled: '{gcp}You got temporary god mode enabled by {gcs}[senderDisplayName]{gcp}
         until you relog'
-      setFor: '{gcp}Temporary god mode enabled for the ext [time]'
+      setFor: '{gcp}Temporary god mode enabled for the next [time]'
       setForRelog: '{gcp}Temporary god mode enabled until relog'
       notSet: '{gcp}Temporary god mode is not enabled for player'
       willBeDisabled: '{gcp}God mode will be disabled in [time]'
@@ -4338,7 +4338,7 @@ command:
   viewdistance:
     help:
       info: Change view distance
-      args: '[range] (playerName/worldName) (view/simulation)'
+      args: '[range] (playerName/worldName/reset) (view/simulation)'
     info:
       output: '{gcp}View: {gcs}[view] {gcp}Simulation: {gcs}[simulation] {gcn}[type]'
   voteedit:

@@ -1,0 +1,91 @@
+English:
+    'Open Mailbox':
+        Placeholder: '%gmp_mailbox_gui%'
+        Text: '&b&l[Open Mailbox]'
+        ClickEvent:
+            Action: RUN_COMMAND
+            Value: '/gmp mailbox gui'
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&5Click to open your mailbox'
+    'PickUp Mail':
+        Placeholder: '%gmp_mailbox_pickup%'
+        Text: '&a&l[Pickup]'
+        ClickEvent:
+            Action: RUN_COMMAND
+            Value: '/gmp mailbox pickup {uid}'
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&5Click to pickup mail &eUID:{uid} &5.'
+    'Delete Mail':
+        Placeholder: '%gmp_mailbox_delete%'
+        Text: '&c&l[Delete]'
+        ClickEvent:
+            Action: RUN_COMMAND
+            Value: '/gmp mailbox delete {uid}'
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&5Click to delete mail &eUID:{uid} &5.'
+    'Merchandise Matched':
+        Placeholder: '%gmp_merchandise_matched%'
+        Text: '&b&l[Transaction]'
+        ClickEvent:
+            Action: RUN_COMMAND
+            Value: '/gmp transaction gui {uid}'
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&5Click to open &e{uid}&5''s transaction GUI'
+    'Upload Confirm':
+        Placeholder: '%gmp_merchandise_confirm%'
+        Text: '&c&l[Upload Confirm]'
+        ClickEvent:
+            Action: RUN_COMMAND
+            Value: '/gmp market {uploadType} {price} {amount} confirm'
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&5Click to continue upload your item'
+    'Merchandise Upload Help-Selling':
+        Placeholder: '%gmp_market_gui_selling%'
+        Text: '&c/market &6sell &8[&2Price&8] &8[&eAmount&8]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp market sell '
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&5Click to fill commands'
+    'Merchandise Upload Help-Purchasing':
+        Placeholder: '%gmp_market_gui_purchasing%'
+        Text: '&c/market &6buy &8[&2Deposit&8] &8[&eAmount&8]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp market buy '
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&5Click to fill commands'
+    'Merchandise Upload Help-Bidding':
+        Placeholder: '%gmp_market_gui_bidding%'
+        Text: '&c/market &6bid &8[&2Price&8] &8[&eAmount&8]'
+        ClickEvent:
+            Action: SUGGEST_COMMAND
+            Value: '/gmp market bid '
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&5Click to fill commands'
+    'Unprocessed Tasks':
+        Placeholder: '%gmp_unprocessed_tasks%'
+        Text: '&b&l[Click Here]'
+        ClickEvent:
+            Action: RUN_COMMAND
+            Value: '/gmp profile tasks'
+        HoverEvent:
+            Action: SHOW_TEXT
+            Hover-Values: 
+            - '&5Click to process'

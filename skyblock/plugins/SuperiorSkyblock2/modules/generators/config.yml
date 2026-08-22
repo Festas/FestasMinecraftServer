@@ -5,105 +5,11 @@
 ##                                                  ##
 ######################################################
 
+# Whether the module should be enabled.
+# When disabled, all module commands and features will also be disabled.
 enabled: true
 
 # Whether generators should match their intended world instead of the world they actually generate in.
 # Right now, toggling this to true will make the basalt generator to always generate nether rates, no matter
 # in which world it's generating blocks.
 match-generator-world: true
-
-# Generator-Stufen basierend auf Insellevel
-# Höheres Level = bessere Erze
-
-default-generator:
-  COBBLESTONE: 100
-
-generators:
-  "5":
-    COBBLESTONE: 95
-    COAL_ORE: 5
-  "10":
-    COBBLESTONE: 87
-    COAL_ORE: 10
-    IRON_ORE: 3
-  "15":
-    COBBLESTONE: 82
-    COAL_ORE: 10
-    IRON_ORE: 5
-    GOLD_ORE: 2
-    LAPIS_ORE: 1
-  "20":
-    COBBLESTONE: 76
-    COAL_ORE: 10
-    IRON_ORE: 6
-    GOLD_ORE: 3
-    LAPIS_ORE: 2
-    REDSTONE_ORE: 2
-    COPPER_ORE: 1
-  "25":
-    COBBLESTONE: 68
-    COAL_ORE: 10
-    IRON_ORE: 8
-    GOLD_ORE: 4
-    LAPIS_ORE: 2
-    REDSTONE_ORE: 3
-    COPPER_ORE: 2
-    DIAMOND_ORE: 1
-    NETHER_QUARTZ_ORE: 2
-  "30":
-    COBBLESTONE: 60
-    COAL_ORE: 10
-    IRON_ORE: 9
-    GOLD_ORE: 5
-    LAPIS_ORE: 3
-    REDSTONE_ORE: 3
-    COPPER_ORE: 2
-    DIAMOND_ORE: 2
-    NETHER_QUARTZ_ORE: 3
-    EMERALD_ORE: 1
-    NETHER_GOLD_ORE: 2
-  "35":
-    COBBLESTONE: 50
-    COAL_ORE: 8
-    IRON_ORE: 10
-    GOLD_ORE: 6
-    LAPIS_ORE: 3
-    REDSTONE_ORE: 4
-    COPPER_ORE: 3
-    DIAMOND_ORE: 3
-    NETHER_QUARTZ_ORE: 4
-    EMERALD_ORE: 2
-    NETHER_GOLD_ORE: 3
-    OBSIDIAN: 2
-    ANCIENT_DEBRIS: 1
-    AMETHYST_BLOCK: 1
-  "40":
-    COBBLESTONE: 40
-    COAL_ORE: 7
-    IRON_ORE: 11
-    GOLD_ORE: 7
-    LAPIS_ORE: 4
-    REDSTONE_ORE: 5
-    COPPER_ORE: 3
-    DIAMOND_ORE: 5
-    NETHER_QUARTZ_ORE: 5
-    EMERALD_ORE: 3
-    NETHER_GOLD_ORE: 3
-    OBSIDIAN: 3
-    ANCIENT_DEBRIS: 2
-    AMETHYST_BLOCK: 2
-  "50":
-    COBBLESTONE: 30
-    COAL_ORE: 5
-    IRON_ORE: 12
-    GOLD_ORE: 8
-    LAPIS_ORE: 4
-    REDSTONE_ORE: 5
-    COPPER_ORE: 3
-    DIAMOND_ORE: 7
-    NETHER_QUARTZ_ORE: 5
-    EMERALD_ORE: 5
-    NETHER_GOLD_ORE: 4
-    OBSIDIAN: 4
-    ANCIENT_DEBRIS: 4
-    AMETHYST_BLOCK: 4
