@@ -123,6 +123,7 @@ items:
       - '&eBefehle:'
       - '&e/bazaar &8– &7Bazaar öffnen'
       - '&e/market &8– &7Marktplatz öffnen'
+      - '&e/auction &8– &7Auktionshaus öffnen'
       - '&e/money &8– &7Kontostand anzeigen'
 
   # ==============================================================
@@ -143,6 +144,7 @@ items:
       - '&e/is upgrade &8– &7Insel aufwerten'
       - '&e/bazaar &8– &7Bazaar'
       - '&e/market &8– &7Marktplatz'
+      - '&e/auction &8– &7Auktionshaus'
       - '&e/money &8– &7Kontostand'
 
   # ==============================================================
