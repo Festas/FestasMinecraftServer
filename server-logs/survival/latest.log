@@ -1,146 +1,146 @@
-[04:00:18] [ServerMain/INFO]: [bootstrap] Running Java 25 (OpenJDK 64-Bit Server VM 25.0.3+9-LTS; Eclipse Adoptium Temurin-25.0.3+9) on Linux 6.8.0-137-generic (amd64)
-[04:00:18] [ServerMain/INFO]: [bootstrap] Loading Paper 26.2-112-main@c9e894d (2026-08-11T05:18:39Z) for Minecraft 26.2
-[04:00:18] [ServerMain/INFO]: [PluginInitializerManager] Initializing plugins...
-[04:00:18] [ServerMain/INFO]: [PluginInitializerManager] Initialized 33 plugins
-[04:00:18] [ServerMain/INFO]: [PluginInitializerManager] Paper plugins (1):
+[09:30:15] [ServerMain/INFO]: [bootstrap] Running Java 25 (OpenJDK 64-Bit Server VM 25.0.3+9-LTS; Eclipse Adoptium Temurin-25.0.3+9) on Linux 6.8.0-137-generic (amd64)
+[09:30:15] [ServerMain/INFO]: [bootstrap] Loading Paper 26.2-112-main@c9e894d (2026-08-11T05:18:39Z) for Minecraft 26.2
+[09:30:15] [ServerMain/INFO]: [PluginInitializerManager] Initializing plugins...
+[09:30:16] [ServerMain/INFO]: [PluginInitializerManager] Initialized 33 plugins
+[09:30:16] [ServerMain/INFO]: [PluginInitializerManager] Paper plugins (1):
  - CommandAPI (12.0.0)
-[04:00:18] [ServerMain/INFO]: [PluginInitializerManager] Bukkit plugins (32):
+[09:30:16] [ServerMain/INFO]: [PluginInitializerManager] Bukkit plugins (32):
  - Autorank (5.2.4), AxiomPaper (5.0.4+26.2), BlueMap (5.23), CMI (9.8.9.8), CMIEInjector (1.0.2.4), CMILib (1.5.9.9), ChestShop (1.5.1), Chunky (1.5.3), DeluxeMenus (1.14.1-Release), FastAsyncWorldEdit (2.15.4-SNAPSHOT-1370+dd6a724), GlobalMarketPlus (1.4.1.5), HeadDatabase (4.24.0), Jobs (5.2.6.6), Lands (8.1.0), LibsDisguises (26.8.13), LuckPerms (5.5.71), Multiverse-Core (5.8.0), Multiverse-Inventories (5.3.5), NBTAPI (2.16.0), Oraxen (1.218.0), PlaceholderAPI (2.12.3), Plan (5.8 build 3605), PlotSquared (7.6.0-Premium), ProtocolLib (5.4.0), Rankup (3.15.3), ShopGUIPlus (1.113.0), Skript (2.16.1), TAB-Bridge (6.2.2), Vault (2.20.2), VoidGen (2.3.8), WorldGuard (7.0.18+2392-fa605e6), packetevents (2.13.0)
-[04:00:19] [ServerMain/INFO]: [CommandAPI] Loaded version PaperNMS_26_2
-[04:00:19] [ServerMain/INFO]: [CommandAPI] Hooked into Spigot successfully for Chat/ChatComponents
-[04:00:19] [ServerMain/INFO]: [CommandAPI] Hooked into Adventure for AdventureChat/AdventureChatComponents
-[04:00:19] [ServerMain/INFO]: [CommandAPI] Hooked into Paper for paper-specific API implementations
-[04:00:19] [ServerMain/INFO]: [CommandAPI] Loaded platform CommandAPIPaper > CommandAPIBukkit
-[04:00:22] [DataConverter MCTypeRegistry init thread/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Initialising converters for DataConverter...
-[04:00:22] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
-[04:00:22] [DataConverter MCTypeRegistry init thread/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Finished initialising converters for DataConverter in 334.4ms
-[04:00:23] [ServerMain/INFO]: Loaded 1585 recipes
-[04:00:23] [ServerMain/INFO]: Loaded 1696 advancements
-[04:00:23] [Server thread/INFO]: Starting minecraft server version 26.2
-[04:00:23] [Server thread/INFO]: Loading properties
-[04:00:23] [Server thread/INFO]: This server is running Paper version 26.2-112-main@c9e894d (2026-08-11T05:18:39Z) (Implementing API version 26.2.build.112-stable)
-[04:00:24] [Server thread/INFO]: [spark] This server bundles the spark profiler. For more information please visit https://docs.papermc.io/paper/profiling
-[04:00:24] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[04:00:24] [Server thread/INFO]: Using 4 threads for Netty based IO
-[04:00:24] [Server thread/INFO]: [MoonriseCommon] Paper is using 2 worker threads, 1 I/O threads
-[04:00:24] [Server thread/INFO]: Default game type: SURVIVAL
-[04:00:24] [Server thread/INFO]: Generating keypair
-[04:00:24] [Server thread/INFO]: Starting Minecraft server on 0.0.0.0:25568
-[04:00:24] [Server thread/INFO]: Paper: Using libdeflate (Linux x86_64) compression from Velocity.
-[04:00:24] [Server thread/INFO]: Paper: Using OpenSSL 3.x.x (Linux x86_64) cipher from Velocity.
-[04:00:24] [Server thread/INFO]: [SpigotLibraryLoader] [BlueMap] Loading 1 libraries... please wait
-[04:00:24] [Server thread/INFO]: [SpigotLibraryLoader] [BlueMap] Loaded library /home/container/libraries/com/flowpowered/flow-math/1.0.3/flow-math-1.0.3.jar
-[04:00:24] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loading 10 libraries... please wait
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/org/redisson/redisson/3.48.0/redisson-3.48.0.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/io/netty/netty-common/4.1.121.Final/netty-common-4.1.121.Final.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/io/netty/netty-codec/4.1.121.Final/netty-codec-4.1.121.Final.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/io/netty/netty-buffer/4.1.121.Final/netty-buffer-4.1.121.Final.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/io/netty/netty-transport/4.1.121.Final/netty-transport-4.1.121.Final.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/io/netty/netty-resolver/4.1.121.Final/netty-resolver-4.1.121.Final.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/io/netty/netty-resolver-dns/4.1.121.Final/netty-resolver-dns-4.1.121.Final.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/io/netty/netty-codec-dns/4.1.121.Final/netty-codec-dns-4.1.121.Final.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/io/netty/netty-handler/4.1.121.Final/netty-handler-4.1.121.Final.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/io/netty/netty-transport-native-unix-common/4.1.121.Final/netty-transport-native-unix-common-4.1.121.Final.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/javax/cache/cache-api/1.1.1/cache-api-1.1.1.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/io/projectreactor/reactor-core/3.6.2/reactor-core-3.6.2.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/org/reactivestreams/reactive-streams/1.0.4/reactive-streams-1.0.4.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/io/reactivex/rxjava3/rxjava/3.1.8/rxjava-3.1.8.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/com/esotericsoftware/kryo/5.6.2/kryo-5.6.2.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/com/esotericsoftware/reflectasm/1.11.9/reflectasm-1.11.9.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/org/objenesis/objenesis/3.4/objenesis-3.4.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/com/esotericsoftware/minlog/1.3.1/minlog-1.3.1.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/com/fasterxml/jackson/core/jackson-annotations/2.18.2/jackson-annotations-2.18.2.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.18.2/jackson-dataformat-yaml-2.18.2.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/org/yaml/snakeyaml/2.3/snakeyaml-2.3.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/com/fasterxml/jackson/core/jackson-core/2.18.2/jackson-core-2.18.2.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/com/fasterxml/jackson/core/jackson-databind/2.18.2/jackson-databind-2.18.2.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.18.2/jackson-datatype-jsr310-2.18.2.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/net/bytebuddy/byte-buddy/1.15.3/byte-buddy-1.15.3.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/org/jodd/jodd-util/6.3.0/jodd-util-6.3.0.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/com/zaxxer/HikariCP/4.0.3/HikariCP-4.0.3.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/org/slf4j/slf4j-jdk14/1.7.32/slf4j-jdk14-1.7.32.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/net/kyori/adventure-api/4.26.1/adventure-api-4.26.1.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/net/kyori/adventure-key/4.26.1/adventure-key-4.26.1.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/net/kyori/examination-api/1.3.0/examination-api-1.3.0.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/net/kyori/examination-string/1.3.0/examination-string-1.3.0.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/org/jetbrains/annotations/26.0.2-1/annotations-26.0.2-1.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/net/kyori/adventure-text-minimessage/4.26.1/adventure-text-minimessage-4.26.1.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-legacy/4.26.1/adventure-text-serializer-legacy-4.26.1.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-plain/4.26.1/adventure-text-serializer-plain-4.26.1.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-gson/4.26.1/adventure-text-serializer-gson-4.26.1.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-json/4.26.1/adventure-text-serializer-json-4.26.1.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/net/kyori/option/1.1.0/option-1.1.0.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/com/google/code/gson/gson/2.8.0/gson-2.8.0.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/com/google/auto/service/auto-service-annotations/1.1.1/auto-service-annotations-1.1.1.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-commons/4.26.1/adventure-text-serializer-commons-4.26.1.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loading 11 libraries... please wait
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/springframework/spring-expression/6.0.6/spring-expression-6.0.6.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/springframework/spring-core/6.0.6/spring-core-6.0.6.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/springframework/spring-jcl/6.0.6/spring-jcl-6.0.6.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/commons-logging/commons-logging/1.2/commons-logging-1.2.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/commons-codec/commons-codec/1.11/commons-codec-1.11.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/joml/joml/1.10.5/joml-1.10.5.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-ansi/5.2.0/adventure-text-serializer-ansi-5.2.0.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-api/5.2.0/adventure-api-5.2.0.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/ansi/1.1.1/ansi-1.1.1.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-minimessage/5.2.0/adventure-text-minimessage-5.2.0.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-plain/5.2.0/adventure-text-serializer-plain-5.2.0.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-platform-bukkit/4.4.1/adventure-platform-bukkit-4.4.1.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-platform-api/4.4.1/adventure-platform-api-4.4.1.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-bungeecord/4.4.1/adventure-text-serializer-bungeecord-4.4.1.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-legacy/4.21.0/adventure-text-serializer-legacy-4.21.0.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-nbt/4.21.0/adventure-nbt-4.21.0.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/examination-api/1.3.0/examination-api-1.3.0.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/examination-string/1.3.0/examination-string-1.3.0.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-gson/4.21.0/adventure-text-serializer-gson-4.21.0.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-json/4.21.0/adventure-text-serializer-json-4.21.0.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/option/1.1.0/option-1.1.0.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/com/google/auto/service/auto-service-annotations/1.1.1/auto-service-annotations-1.1.1.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-commons/4.21.0/adventure-text-serializer-commons-4.21.0.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-gson-legacy-impl/4.21.0/adventure-text-serializer-gson-legacy-impl-4.21.0.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-json-legacy-impl/4.21.0/adventure-text-serializer-json-legacy-impl-4.21.0.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-platform-facet/4.4.1/adventure-platform-facet-4.4.1.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-platform-viaversion/4.4.1/adventure-platform-viaversion-4.4.1.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/gs/mclo/java/2.2.1/java-2.2.1.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/team/unnamed/creative-api/1.7.3/creative-api-1.7.3.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-key/4.9.3/adventure-key-4.9.3.jar
-[04:00:25] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/jetbrains/annotations/23.1.0/annotations-23.1.0.jar
-[04:00:25] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.12.3
-[04:00:25] [Server thread/INFO]: [LuckPerms] Loading server plugin LuckPerms v5.5.71
-[04:00:25] [Server thread/INFO]: [LuckPerms] Loading configuration...
-[04:00:25] [Server thread/INFO]: [Vault] Loading server plugin Vault v2.20.2
-[04:00:25] [Server thread/INFO]: [FastAsyncWorldEdit] Loading server plugin FastAsyncWorldEdit v2.15.4-SNAPSHOT-1370+dd6a724
-[04:00:26] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@4b901b1c]
-[04:00:26] [Server thread/INFO]: [WorldGuard] Loading server plugin WorldGuard v7.0.18+2392-fa605e6
-[04:00:26] [Server thread/INFO]: [BlueMap] Loading server plugin BlueMap v5.23
-[04:00:26] [Server thread/INFO]: [ProtocolLib] Loading server plugin ProtocolLib v5.4.0
-[04:00:26] [Server thread/WARN]: [ProtocolLib] Version (MC: 26.2.0) has not yet been tested! Proceed with caution.
-[04:00:26] [Server thread/INFO]: [CMILib] Loading server plugin CMILib v1.5.9.9
-[04:00:26] [Server thread/INFO]: [VoidGen] Loading server plugin VoidGen v2.3.8
-[04:00:26] [Server thread/INFO]: [PlotSquared] Loading server plugin PlotSquared v7.6.0-Premium
-[04:00:26] [Server thread/INFO]: [NBTAPI] Loading server plugin NBTAPI v2.16.0
-[04:00:26] [Server thread/INFO]: [NBTAPI] [NBTAPI] Found Minecraft: 26.2.build.112! Trying to find NMS support
-[04:00:26] [Server thread/INFO]: [NBTAPI] [NBTAPI] NMS support 'MC26_2' loaded!
-[04:00:26] [Server thread/INFO]: [NBTAPI] [NBTAPI] Using the plugin 'NBTAPI' to create a bStats instance!
-[04:00:26] [Server thread/INFO]: [Skript] Loading server plugin Skript v2.16.1
-[04:00:26] [Server thread/INFO]: [Lands] Loading server plugin Lands v8.1.0
-[04:00:26] [Thread-5/INFO]: [NBTAPI] [NBTAPI] The NBT-API seems to be up-to-date!
-[04:00:27] [Server thread/INFO]: [Lands] theme Loaded 27 theme token(s), 1 GUI, 1 dialog and 7 Bedrock override(s).
-[04:00:27] [Server thread/INFO]: [Lands] Using default item currency for economy. You can edit the currency item for each locale in the corresponding GUI language files. Strict mode: false
-[04:00:27] [Server thread/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
-[04:00:27] [Server thread/INFO]: [Lands] Using SQLite: /home/container/plugins/Lands/Data
-[04:00:27] [Server thread/INFO]: [Lands] Successfully connected to SQL database.
-[04:00:27] [Server thread/INFO]: [Lands] Setting up tables...
-[04:00:27] [Server thread/ERROR]: [Lands] Failed to add column to table
+[09:30:16] [ServerMain/INFO]: [CommandAPI] Loaded version PaperNMS_26_2
+[09:30:16] [ServerMain/INFO]: [CommandAPI] Hooked into Spigot successfully for Chat/ChatComponents
+[09:30:16] [ServerMain/INFO]: [CommandAPI] Hooked into Adventure for AdventureChat/AdventureChatComponents
+[09:30:16] [ServerMain/INFO]: [CommandAPI] Hooked into Paper for paper-specific API implementations
+[09:30:16] [ServerMain/INFO]: [CommandAPI] Loaded platform CommandAPIPaper > CommandAPIBukkit
+[09:30:21] [DataConverter MCTypeRegistry init thread/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Initialising converters for DataConverter...
+[09:30:21] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+[09:30:22] [DataConverter MCTypeRegistry init thread/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Finished initialising converters for DataConverter in 1,105.9ms
+[09:30:24] [ServerMain/INFO]: Loaded 1585 recipes
+[09:30:24] [ServerMain/INFO]: Loaded 1696 advancements
+[09:30:25] [Server thread/INFO]: Starting minecraft server version 26.2
+[09:30:25] [Server thread/INFO]: Loading properties
+[09:30:25] [Server thread/INFO]: This server is running Paper version 26.2-112-main@c9e894d (2026-08-11T05:18:39Z) (Implementing API version 26.2.build.112-stable)
+[09:30:25] [Server thread/INFO]: [spark] This server bundles the spark profiler. For more information please visit https://docs.papermc.io/paper/profiling
+[09:30:25] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[09:30:25] [Server thread/INFO]: Using 4 threads for Netty based IO
+[09:30:25] [Server thread/INFO]: [MoonriseCommon] Paper is using 2 worker threads, 1 I/O threads
+[09:30:26] [Server thread/INFO]: Default game type: SURVIVAL
+[09:30:26] [Server thread/INFO]: Generating keypair
+[09:30:26] [Server thread/INFO]: Starting Minecraft server on 0.0.0.0:25568
+[09:30:26] [Server thread/INFO]: Paper: Using libdeflate (Linux x86_64) compression from Velocity.
+[09:30:26] [Server thread/INFO]: Paper: Using OpenSSL 3.x.x (Linux x86_64) cipher from Velocity.
+[09:30:26] [Server thread/INFO]: [SpigotLibraryLoader] [BlueMap] Loading 1 libraries... please wait
+[09:30:26] [Server thread/INFO]: [SpigotLibraryLoader] [BlueMap] Loaded library /home/container/libraries/com/flowpowered/flow-math/1.0.3/flow-math-1.0.3.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loading 10 libraries... please wait
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/org/redisson/redisson/3.48.0/redisson-3.48.0.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/io/netty/netty-common/4.1.121.Final/netty-common-4.1.121.Final.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/io/netty/netty-codec/4.1.121.Final/netty-codec-4.1.121.Final.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/io/netty/netty-buffer/4.1.121.Final/netty-buffer-4.1.121.Final.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/io/netty/netty-transport/4.1.121.Final/netty-transport-4.1.121.Final.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/io/netty/netty-resolver/4.1.121.Final/netty-resolver-4.1.121.Final.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/io/netty/netty-resolver-dns/4.1.121.Final/netty-resolver-dns-4.1.121.Final.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/io/netty/netty-codec-dns/4.1.121.Final/netty-codec-dns-4.1.121.Final.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/io/netty/netty-handler/4.1.121.Final/netty-handler-4.1.121.Final.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/io/netty/netty-transport-native-unix-common/4.1.121.Final/netty-transport-native-unix-common-4.1.121.Final.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/javax/cache/cache-api/1.1.1/cache-api-1.1.1.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/io/projectreactor/reactor-core/3.6.2/reactor-core-3.6.2.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/org/reactivestreams/reactive-streams/1.0.4/reactive-streams-1.0.4.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/io/reactivex/rxjava3/rxjava/3.1.8/rxjava-3.1.8.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/com/esotericsoftware/kryo/5.6.2/kryo-5.6.2.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/com/esotericsoftware/reflectasm/1.11.9/reflectasm-1.11.9.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/org/objenesis/objenesis/3.4/objenesis-3.4.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/com/esotericsoftware/minlog/1.3.1/minlog-1.3.1.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/com/fasterxml/jackson/core/jackson-annotations/2.18.2/jackson-annotations-2.18.2.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.18.2/jackson-dataformat-yaml-2.18.2.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/org/yaml/snakeyaml/2.3/snakeyaml-2.3.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/com/fasterxml/jackson/core/jackson-core/2.18.2/jackson-core-2.18.2.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/com/fasterxml/jackson/core/jackson-databind/2.18.2/jackson-databind-2.18.2.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.18.2/jackson-datatype-jsr310-2.18.2.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/net/bytebuddy/byte-buddy/1.15.3/byte-buddy-1.15.3.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/org/jodd/jodd-util/6.3.0/jodd-util-6.3.0.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/com/zaxxer/HikariCP/4.0.3/HikariCP-4.0.3.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/org/slf4j/slf4j-jdk14/1.7.32/slf4j-jdk14-1.7.32.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/net/kyori/adventure-api/4.26.1/adventure-api-4.26.1.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/net/kyori/adventure-key/4.26.1/adventure-key-4.26.1.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/net/kyori/examination-api/1.3.0/examination-api-1.3.0.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/net/kyori/examination-string/1.3.0/examination-string-1.3.0.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/org/jetbrains/annotations/26.0.2-1/annotations-26.0.2-1.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/net/kyori/adventure-text-minimessage/4.26.1/adventure-text-minimessage-4.26.1.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-legacy/4.26.1/adventure-text-serializer-legacy-4.26.1.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-plain/4.26.1/adventure-text-serializer-plain-4.26.1.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-gson/4.26.1/adventure-text-serializer-gson-4.26.1.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-json/4.26.1/adventure-text-serializer-json-4.26.1.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/net/kyori/option/1.1.0/option-1.1.0.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/com/google/code/gson/gson/2.8.0/gson-2.8.0.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/com/google/auto/service/auto-service-annotations/1.1.1/auto-service-annotations-1.1.1.jar
+[09:30:27] [Server thread/INFO]: [SpigotLibraryLoader] [Lands] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-commons/4.26.1/adventure-text-serializer-commons-4.26.1.jar
+[09:30:28] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loading 11 libraries... please wait
+[09:30:28] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/springframework/spring-expression/6.0.6/spring-expression-6.0.6.jar
+[09:30:28] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/springframework/spring-core/6.0.6/spring-core-6.0.6.jar
+[09:30:28] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/springframework/spring-jcl/6.0.6/spring-jcl-6.0.6.jar
+[09:30:28] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar
+[09:30:28] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar
+[09:30:28] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar
+[09:30:28] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/commons-logging/commons-logging/1.2/commons-logging-1.2.jar
+[09:30:28] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/commons-codec/commons-codec/1.11/commons-codec-1.11.jar
+[09:30:28] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/joml/joml/1.10.5/joml-1.10.5.jar
+[09:30:28] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-ansi/5.2.0/adventure-text-serializer-ansi-5.2.0.jar
+[09:30:28] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-api/5.2.0/adventure-api-5.2.0.jar
+[09:30:28] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/ansi/1.1.1/ansi-1.1.1.jar
+[09:30:28] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-minimessage/5.2.0/adventure-text-minimessage-5.2.0.jar
+[09:30:28] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-plain/5.2.0/adventure-text-serializer-plain-5.2.0.jar
+[09:30:28] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-platform-bukkit/4.4.1/adventure-platform-bukkit-4.4.1.jar
+[09:30:28] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-platform-api/4.4.1/adventure-platform-api-4.4.1.jar
+[09:30:28] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-bungeecord/4.4.1/adventure-text-serializer-bungeecord-4.4.1.jar
+[09:30:28] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-legacy/4.21.0/adventure-text-serializer-legacy-4.21.0.jar
+[09:30:28] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-nbt/4.21.0/adventure-nbt-4.21.0.jar
+[09:30:28] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/examination-api/1.3.0/examination-api-1.3.0.jar
+[09:30:28] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/examination-string/1.3.0/examination-string-1.3.0.jar
+[09:30:28] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-gson/4.21.0/adventure-text-serializer-gson-4.21.0.jar
+[09:30:28] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-json/4.21.0/adventure-text-serializer-json-4.21.0.jar
+[09:30:28] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/option/1.1.0/option-1.1.0.jar
+[09:30:28] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar
+[09:30:28] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/com/google/auto/service/auto-service-annotations/1.1.1/auto-service-annotations-1.1.1.jar
+[09:30:28] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-commons/4.21.0/adventure-text-serializer-commons-4.21.0.jar
+[09:30:28] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-gson-legacy-impl/4.21.0/adventure-text-serializer-gson-legacy-impl-4.21.0.jar
+[09:30:28] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-json-legacy-impl/4.21.0/adventure-text-serializer-json-legacy-impl-4.21.0.jar
+[09:30:28] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-platform-facet/4.4.1/adventure-platform-facet-4.4.1.jar
+[09:30:28] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-platform-viaversion/4.4.1/adventure-platform-viaversion-4.4.1.jar
+[09:30:28] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar
+[09:30:28] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar
+[09:30:28] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/gs/mclo/java/2.2.1/java-2.2.1.jar
+[09:30:28] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/team/unnamed/creative-api/1.7.3/creative-api-1.7.3.jar
+[09:30:28] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-key/4.9.3/adventure-key-4.9.3.jar
+[09:30:28] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/jetbrains/annotations/23.1.0/annotations-23.1.0.jar
+[09:30:28] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.12.3
+[09:30:28] [Server thread/INFO]: [LuckPerms] Loading server plugin LuckPerms v5.5.71
+[09:30:29] [Server thread/INFO]: [LuckPerms] Loading configuration...
+[09:30:29] [Server thread/INFO]: [Vault] Loading server plugin Vault v2.20.2
+[09:30:29] [Server thread/INFO]: [FastAsyncWorldEdit] Loading server plugin FastAsyncWorldEdit v2.15.4-SNAPSHOT-1370+dd6a724
+[09:30:30] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@4128748d]
+[09:30:30] [Server thread/INFO]: [WorldGuard] Loading server plugin WorldGuard v7.0.18+2392-fa605e6
+[09:30:30] [Server thread/INFO]: [BlueMap] Loading server plugin BlueMap v5.23
+[09:30:30] [Server thread/INFO]: [ProtocolLib] Loading server plugin ProtocolLib v5.4.0
+[09:30:30] [Server thread/WARN]: [ProtocolLib] Version (MC: 26.2.0) has not yet been tested! Proceed with caution.
+[09:30:30] [Server thread/INFO]: [CMILib] Loading server plugin CMILib v1.5.9.9
+[09:30:30] [Server thread/INFO]: [VoidGen] Loading server plugin VoidGen v2.3.8
+[09:30:30] [Server thread/INFO]: [PlotSquared] Loading server plugin PlotSquared v7.6.0-Premium
+[09:30:30] [Server thread/INFO]: [NBTAPI] Loading server plugin NBTAPI v2.16.0
+[09:30:30] [Server thread/INFO]: [NBTAPI] [NBTAPI] Found Minecraft: 26.2.build.112! Trying to find NMS support
+[09:30:30] [Server thread/INFO]: [NBTAPI] [NBTAPI] NMS support 'MC26_2' loaded!
+[09:30:30] [Server thread/INFO]: [NBTAPI] [NBTAPI] Using the plugin 'NBTAPI' to create a bStats instance!
+[09:30:30] [Server thread/INFO]: [Skript] Loading server plugin Skript v2.16.1
+[09:30:30] [Server thread/INFO]: [Lands] Loading server plugin Lands v8.1.0
+[09:30:30] [Thread-5/INFO]: [NBTAPI] [NBTAPI] The NBT-API seems to be up-to-date!
+[09:30:31] [Server thread/INFO]: [Lands] theme Loaded 27 theme token(s), 1 GUI, 1 dialog and 7 Bedrock override(s).
+[09:30:31] [Server thread/INFO]: [Lands] Using default item currency for economy. You can edit the currency item for each locale in the corresponding GUI language files. Strict mode: false
+[09:30:31] [Server thread/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+[09:30:32] [Server thread/INFO]: [Lands] Using SQLite: /home/container/plugins/Lands/Data
+[09:30:32] [Server thread/INFO]: [Lands] Successfully connected to SQL database.
+[09:30:32] [Server thread/INFO]: [Lands] Setting up tables...
+[09:30:32] [Server thread/ERROR]: [Lands] Failed to add column to table
 org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such table: lands_wars)
 	at org.sqlite.core.DB.newSQLException(DB.java:1179) ~[sqlite-jdbc-3.49.1.0.jar:?]
 	at org.sqlite.core.DB.newSQLException(DB.java:1190) ~[sqlite-jdbc-3.49.1.0.jar:?]
@@ -166,7 +166,7 @@ org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no suc
 	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1266) ~[paper-26.2.jar:26.2-112-c9e894d]
 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:303) ~[paper-26.2.jar:26.2-112-c9e894d]
 	at java.base/java.lang.Thread.run(Thread.java:1474) ~[?:?]
-[04:00:27] [Server thread/ERROR]: [Lands] Failed to add column to table
+[09:30:32] [Server thread/ERROR]: [Lands] Failed to add column to table
 org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such table: lands_wars)
 	at org.sqlite.core.DB.newSQLException(DB.java:1179) ~[sqlite-jdbc-3.49.1.0.jar:?]
 	at org.sqlite.core.DB.newSQLException(DB.java:1190) ~[sqlite-jdbc-3.49.1.0.jar:?]
@@ -192,7 +192,7 @@ org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no suc
 	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1266) ~[paper-26.2.jar:26.2-112-c9e894d]
 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:303) ~[paper-26.2.jar:26.2-112-c9e894d]
 	at java.base/java.lang.Thread.run(Thread.java:1474) ~[?:?]
-[04:00:27] [Server thread/ERROR]: [Lands] Failed to add column to table
+[09:30:32] [Server thread/ERROR]: [Lands] Failed to add column to table
 org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such table: lands_wars_declarations)
 	at org.sqlite.core.DB.newSQLException(DB.java:1179) ~[sqlite-jdbc-3.49.1.0.jar:?]
 	at org.sqlite.core.DB.newSQLException(DB.java:1190) ~[sqlite-jdbc-3.49.1.0.jar:?]
@@ -218,7 +218,7 @@ org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no suc
 	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1266) ~[paper-26.2.jar:26.2-112-c9e894d]
 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:303) ~[paper-26.2.jar:26.2-112-c9e894d]
 	at java.base/java.lang.Thread.run(Thread.java:1474) ~[?:?]
-[04:00:27] [Server thread/ERROR]: [Lands] Failed to add column to table
+[09:30:32] [Server thread/ERROR]: [Lands] Failed to add column to table
 org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such table: lands_wars_declarations)
 	at org.sqlite.core.DB.newSQLException(DB.java:1179) ~[sqlite-jdbc-3.49.1.0.jar:?]
 	at org.sqlite.core.DB.newSQLException(DB.java:1190) ~[sqlite-jdbc-3.49.1.0.jar:?]
@@ -244,7 +244,7 @@ org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no suc
 	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1266) ~[paper-26.2.jar:26.2-112-c9e894d]
 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:303) ~[paper-26.2.jar:26.2-112-c9e894d]
 	at java.base/java.lang.Thread.run(Thread.java:1474) ~[?:?]
-[04:00:27] [Server thread/ERROR]: [Lands] Failed to add column to table
+[09:30:32] [Server thread/ERROR]: [Lands] Failed to add column to table
 org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such table: lands_wars)
 	at org.sqlite.core.DB.newSQLException(DB.java:1179) ~[sqlite-jdbc-3.49.1.0.jar:?]
 	at org.sqlite.core.DB.newSQLException(DB.java:1190) ~[sqlite-jdbc-3.49.1.0.jar:?]
@@ -270,699 +270,676 @@ org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no suc
 	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1266) ~[paper-26.2.jar:26.2-112-c9e894d]
 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:303) ~[paper-26.2.jar:26.2-112-c9e894d]
 	at java.base/java.lang.Thread.run(Thread.java:1474) ~[?:?]
-[04:00:27] [Server thread/INFO]: [Lands] Your SQL DBMS version: 3.49.1 (SQLite) Wiki: https://wiki.incredibleplugins.com/lands/configuration/database
-[04:00:27] [Server thread/INFO]: [Lands] Successfully connected to SQL database.
-[04:00:27] [Server thread/INFO]: [Lands] Added flag 'lands-claim' to the plugin WorldGuard.
-[04:00:27] [Server thread/INFO]: [packetevents] Loading server plugin packetevents v2.13.0
-[04:00:28] [Server thread/INFO]: [packetevents] Loading packetevents...
-[04:00:29] [Server thread/INFO]: [packetevents] Loaded packetevents v2.13.0
-[04:00:29] [Server thread/INFO]: [CMI] Loading server plugin CMI v9.8.9.8
-[04:00:29] [Server thread/INFO]: [Jobs] Loading server plugin Jobs v5.2.6.6
-[04:00:29] [Server thread/INFO]: [CoreLogging] Loading server plugin Multiverse-Core v5.8.0
-[04:00:29] [Server thread/INFO]: [Oraxen] Loading server plugin Oraxen v1.218.0
-[04:00:29] [Server thread/INFO]: [HeadDatabase] Loading server plugin HeadDatabase v4.24.0
-[04:00:29] [Server thread/INFO]: [CommandAPI] Loading server plugin CommandAPI v12.0.0
-[04:00:29] [Server thread/INFO]: [LibsDisguises] Loading server plugin LibsDisguises v26.8.13
-[04:00:29] [Server thread/INFO]: [Autorank] Loading server plugin Autorank v5.2.4
-[04:00:29] [Server thread/INFO]: [InvLogging] Loading server plugin Multiverse-Inventories v5.3.5
-[04:00:29] [Server thread/INFO]: [GlobalMarketPlus] Loading server plugin GlobalMarketPlus v1.4.1.5
-[04:00:29] [Server thread/INFO]: [Rankup] Loading server plugin Rankup v3.15.3
-[04:00:29] [Server thread/INFO]: [DeluxeMenus] Loading server plugin DeluxeMenus v1.14.1-Release
-[04:00:29] [Server thread/WARN]: [DeluxeMenus] Could not setup a NMS hook for your server version! The following Item options will not work: nbt_int, nbt_ints, nbt_string and nbt_strings.
-[04:00:29] [Server thread/INFO]: [CMIEInjector] Loading server plugin CMIEInjector v1.0.2.4
-[04:00:29] [Server thread/INFO]: [ShopGUIPlus] Loading server plugin ShopGUIPlus v1.113.0
-[04:00:29] [Server thread/INFO]: [TAB-Bridge] Loading server plugin TAB-Bridge v6.2.2
-[04:00:29] [Server thread/INFO]: [ChestShop] Loading server plugin ChestShop v1.5.1
-[04:00:29] [Server thread/INFO]: [Plan] Loading server plugin Plan v5.8 build 3605
-[04:00:29] [Server thread/INFO]: [Chunky] Loading server plugin Chunky v1.5.3
-[04:00:29] [Server thread/INFO]: [AxiomPaper] Loading server plugin AxiomPaper v5.0.4+26.2
-[04:00:29] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[04:00:29] [Server thread/INFO]: [LuckPerms] Enabling LuckPerms v5.5.71
-[04:00:29] [Server thread/INFO]:         __    
-[04:00:29] [Server thread/INFO]:   |    |__)   LuckPerms v5.5.71
-[04:00:29] [Server thread/INFO]:   |___ |      Running on Bukkit - Paper
-[04:00:29] [Server thread/INFO]: 
-[04:00:29] [Server thread/INFO]: [LuckPerms] Loading storage provider... [MARIADB]
-[04:00:29] [Server thread/INFO]: [me.lucko.luckperms.lib.hikari.HikariDataSource] luckperms-hikari - Starting...
-[04:00:29] [Server thread/INFO]: [me.lucko.luckperms.lib.hikari.HikariDataSource] luckperms-hikari - Start completed.
-[04:00:29] [Server thread/INFO]: [LuckPerms] Loading messaging service... [SQL]
-[04:00:29] [Server thread/INFO]: [LuckPerms] Loading internal permission managers...
-[04:00:30] [Server thread/INFO]: [LuckPerms] Performing initial data load...
-[04:00:30] [Server thread/INFO]: [LuckPerms] Successfully enabled. (took 916ms)
-[04:00:30] [Server thread/INFO]: [Vault] Enabling Vault v2.20.2
-[04:00:30] [Server thread/INFO]: [Vault] Enabled Version 2.20.2
-[04:00:30] [Server thread/INFO]: [LuckPerms] Registered Vault permission & chat hook.
-[04:00:30] [Server thread/INFO]: [FastAsyncWorldEdit] Enabling FastAsyncWorldEdit v2.15.4-SNAPSHOT-1370+dd6a724
-[04:00:30] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] LZ4 Compression Binding loaded successfully
-[04:00:30] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] ZSTD Compression Binding loaded successfully
-[04:00:30] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
-[04:00:30] [Server thread/INFO]: WEPIF: Vault detected! Using Vault for permissions
-[04:00:30] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.fawe.v26_2.PaperweightFaweAdapter as the Bukkit adapter
-[04:00:30] [Server thread/INFO]: [ProtocolLib] Enabling ProtocolLib v5.4.0
-[04:00:30] [Server thread/INFO]: [VoidGen] Enabling VoidGen v2.3.8
-[04:00:30] [Server thread/INFO]: [VoidGen] Using an unknown version of VoidGen! It will switch to latest version build for.
-[04:00:30] [Server thread/INFO]: [PlotSquared] Enabling PlotSquared v7.6.0-Premium
-[04:00:31] [ForkJoinPool.commonPool-worker-3/WARN]: [com.fastasyncworldedit.core.util.UpdateNotification] An update for FastAsyncWorldEdit is available. You are 2 build(s) out of date.
+[09:30:32] [Server thread/INFO]: [Lands] Your SQL DBMS version: 3.49.1 (SQLite) Wiki: https://wiki.incredibleplugins.com/lands/configuration/database
+[09:30:32] [Server thread/INFO]: [Lands] Successfully connected to SQL database.
+[09:30:32] [Server thread/INFO]: [Lands] Added flag 'lands-claim' to the plugin WorldGuard.
+[09:30:32] [Server thread/INFO]: [packetevents] Loading server plugin packetevents v2.13.0
+[09:30:32] [Server thread/INFO]: [packetevents] Loading packetevents...
+[09:30:34] [Server thread/INFO]: [packetevents] Loaded packetevents v2.13.0
+[09:30:34] [Server thread/INFO]: [CMI] Loading server plugin CMI v9.8.9.8
+[09:30:34] [Server thread/INFO]: [Jobs] Loading server plugin Jobs v5.2.6.6
+[09:30:34] [Server thread/INFO]: [CoreLogging] Loading server plugin Multiverse-Core v5.8.0
+[09:30:34] [Server thread/INFO]: [Oraxen] Loading server plugin Oraxen v1.218.0
+[09:30:34] [Server thread/INFO]: [HeadDatabase] Loading server plugin HeadDatabase v4.24.0
+[09:30:34] [Server thread/INFO]: [CommandAPI] Loading server plugin CommandAPI v12.0.0
+[09:30:34] [Server thread/INFO]: [LibsDisguises] Loading server plugin LibsDisguises v26.8.13
+[09:30:34] [Server thread/INFO]: [Autorank] Loading server plugin Autorank v5.2.4
+[09:30:34] [Server thread/INFO]: [InvLogging] Loading server plugin Multiverse-Inventories v5.3.5
+[09:30:34] [Server thread/INFO]: [GlobalMarketPlus] Loading server plugin GlobalMarketPlus v1.4.1.5
+[09:30:34] [Server thread/INFO]: [Rankup] Loading server plugin Rankup v3.15.3
+[09:30:34] [Server thread/INFO]: [DeluxeMenus] Loading server plugin DeluxeMenus v1.14.1-Release
+[09:30:34] [Server thread/WARN]: [DeluxeMenus] Could not setup a NMS hook for your server version! The following Item options will not work: nbt_int, nbt_ints, nbt_string and nbt_strings.
+[09:30:34] [Server thread/INFO]: [CMIEInjector] Loading server plugin CMIEInjector v1.0.2.4
+[09:30:34] [Server thread/INFO]: [ShopGUIPlus] Loading server plugin ShopGUIPlus v1.113.0
+[09:30:34] [Server thread/INFO]: [TAB-Bridge] Loading server plugin TAB-Bridge v6.2.2
+[09:30:34] [Server thread/INFO]: [ChestShop] Loading server plugin ChestShop v1.5.1
+[09:30:34] [Server thread/INFO]: [Plan] Loading server plugin Plan v5.8 build 3605
+[09:30:34] [Server thread/INFO]: [Chunky] Loading server plugin Chunky v1.5.3
+[09:30:34] [Server thread/INFO]: [AxiomPaper] Loading server plugin AxiomPaper v5.0.4+26.2
+[09:30:34] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[09:30:34] [Server thread/INFO]: [LuckPerms] Enabling LuckPerms v5.5.71
+[09:30:34] [Server thread/INFO]:         __    
+[09:30:34] [Server thread/INFO]:   |    |__)   LuckPerms v5.5.71
+[09:30:34] [Server thread/INFO]:   |___ |      Running on Bukkit - Paper
+[09:30:34] [Server thread/INFO]: 
+[09:30:34] [Server thread/INFO]: [LuckPerms] Loading storage provider... [MARIADB]
+[09:30:35] [Server thread/INFO]: [me.lucko.luckperms.lib.hikari.HikariDataSource] luckperms-hikari - Starting...
+[09:30:35] [Server thread/INFO]: [me.lucko.luckperms.lib.hikari.HikariDataSource] luckperms-hikari - Start completed.
+[09:30:35] [Server thread/INFO]: [LuckPerms] Loading messaging service... [SQL]
+[09:30:35] [Server thread/INFO]: [LuckPerms] Loading internal permission managers...
+[09:30:35] [Server thread/INFO]: [LuckPerms] Performing initial data load...
+[09:30:35] [Server thread/INFO]: [LuckPerms] Successfully enabled. (took 1190ms)
+[09:30:35] [Server thread/INFO]: [Vault] Enabling Vault v2.20.2
+[09:30:35] [Server thread/INFO]: [Vault] Enabled Version 2.20.2
+[09:30:35] [Server thread/INFO]: [LuckPerms] Registered Vault permission & chat hook.
+[09:30:35] [Server thread/INFO]: [FastAsyncWorldEdit] Enabling FastAsyncWorldEdit v2.15.4-SNAPSHOT-1370+dd6a724
+[09:30:36] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] LZ4 Compression Binding loaded successfully
+[09:30:36] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] ZSTD Compression Binding loaded successfully
+[09:30:36] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[09:30:36] [Server thread/INFO]: WEPIF: Vault detected! Using Vault for permissions
+[09:30:36] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.fawe.v26_2.PaperweightFaweAdapter as the Bukkit adapter
+[09:30:36] [Server thread/INFO]: [ProtocolLib] Enabling ProtocolLib v5.4.0
+[09:30:36] [Server thread/INFO]: [VoidGen] Enabling VoidGen v2.3.8
+[09:30:36] [Server thread/INFO]: [VoidGen] Using an unknown version of VoidGen! It will switch to latest version build for.
+[09:30:36] [Server thread/INFO]: [PlotSquared] Enabling PlotSquared v7.6.0-Premium
+[09:30:36] [ForkJoinPool.commonPool-worker-2/WARN]: [com.fastasyncworldedit.core.util.UpdateNotification] An update for FastAsyncWorldEdit is available. You are 2 build(s) out of date.
 You are running build 1370, the latest version is build 1372.
 Update at https://ci.athion.net/job/FastAsyncWorldEdit
-[04:00:31] [Server thread/INFO]: [PlotSquared/PlotSquared] Loaded caption map for namespace 'plotsquared': com.plotsquared.core.configuration.caption.LocalizedCaptionMap
-[04:00:31] [Server thread/INFO]: [PlotSquared/BukkitPlatform] PlotSquared version licensed to Spigot user 2433376
-[04:00:31] [Server thread/INFO]: [PlotSquared/BukkitPlatform] https://www.spigotmc.org/resources/77506
-[04:00:31] [Server thread/INFO]: [PlotSquared/BukkitPlatform] Download ID: -237941990
-[04:00:31] [Server thread/INFO]: [PlotSquared/BukkitPlatform] Thanks for supporting us :)
-[04:00:31] [Server thread/INFO]: [PlotSquared/PlotSquared] Connection to database established. Type: SQLite
-[04:00:31] [Server thread/INFO]: [PlotSquared/BukkitPlatform] PlotSquared hooked into WorldEdit
-[04:00:32] [Server thread/INFO]: [PlotSquared/BukkitPlatform] (UUID) Using LuckPerms as a complementary UUID service
-[04:00:32] [Server thread/INFO]: [PlotSquared/BukkitPlatform] (UUID) 6 UUIDs will be cached
-[04:00:32] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: plotsquared [3]
-[04:00:32] [Server thread/INFO]: [PlotSquared/BukkitPlatform] PlotSquared hooked into PlaceholderAPI
-[04:00:32] [Server thread/INFO]: [CMIEInjector] Enabling CMIEInjector v1.0.2.4
-[04:00:32] [Server thread/INFO]: [CMIEInjector] Injecting CMI Economy
-[04:00:32] [Server thread/INFO]: [CMIEInjector] [Economy] CMI Economy found: Waiting
-[04:00:32] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
-[04:00:32] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
-[04:00:32] [Server thread/WARN]: Whilst this makes it possible to use Velocity, unless access to your server is properly restricted, it also opens up the ability for hackers to connect with any username they choose.
-[04:00:32] [Server thread/WARN]: Please see https://docs.papermc.io/velocity/security for further information.
-[04:00:32] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
-[04:00:32] [Server thread/INFO]: Preparing level "world"
-[04:00:32] [Server thread/INFO]: Loading 53 persistent chunks for level 'minecraft:overworld'...
-[04:00:32] [Server thread/INFO]: Preparing spawn area: 15%
-[04:00:33] [Server thread/INFO]: Prepared spawn area in 520 ms
-[04:00:33] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:the_nether'...
-[04:00:33] [Server thread/INFO]: Prepared spawn area in 0 ms
-[04:00:33] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:the_end'...
-[04:00:33] [Server thread/INFO]: Prepared spawn area in 0 ms
-[04:00:33] [Server thread/INFO]: Done preparing level "world" (0.824s)
-[04:00:33] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.12.3
-[04:00:33] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
-[04:00:33] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: vaultunlocked [2.13.1]
-[04:00:33] [Server thread/INFO]: [WorldGuard] Enabling WorldGuard v7.0.18+2392-fa605e6
-[04:00:33] [Server thread/INFO]: [WorldGuard] (world) TNT ignition is PERMITTED.
-[04:00:33] [Server thread/INFO]: [WorldGuard] (world) Lighters are PERMITTED.
-[04:00:33] [Server thread/INFO]: [WorldGuard] (world) Lava fire is PERMITTED.
-[04:00:33] [Server thread/INFO]: [WorldGuard] (world) Fire spread is UNRESTRICTED.
-[04:00:33] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'world'
-[04:00:33] [Server thread/INFO]: [WorldGuard] (world_nether) TNT ignition is PERMITTED.
-[04:00:33] [Server thread/INFO]: [WorldGuard] (world_nether) Lighters are PERMITTED.
-[04:00:33] [Server thread/INFO]: [WorldGuard] (world_nether) Lava fire is PERMITTED.
-[04:00:33] [Server thread/INFO]: [WorldGuard] (world_nether) Fire spread is UNRESTRICTED.
-[04:00:33] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'world_nether'
-[04:00:33] [Server thread/INFO]: [WorldGuard] (world_the_end) TNT ignition is PERMITTED.
-[04:00:33] [Server thread/INFO]: [WorldGuard] (world_the_end) Lighters are PERMITTED.
-[04:00:33] [Server thread/INFO]: [WorldGuard] (world_the_end) Lava fire is PERMITTED.
-[04:00:33] [Server thread/INFO]: [WorldGuard] (world_the_end) Fire spread is UNRESTRICTED.
-[04:00:33] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'world_the_end'
-[04:00:33] [Server thread/INFO]: [WorldGuard] Loading region data...
-[04:00:33] [Server thread/INFO]: [BlueMap] Enabling BlueMap v5.23
-[04:00:33] [Server thread/INFO]: [BlueMap] Saving all worlds once, to make sure all required world-properties are present...
-[04:00:33] [Server thread/WARN]: A manual (plugin-induced) save has been detected while server is configured to auto-save. This may affect performance.
-[04:00:33] [BlueMap-Load/INFO]: [BlueMap] Loading...
-[04:00:33] [Server thread/INFO]: [CMILib] Enabling CMILib v1.5.9.9
-[04:00:33] [Server thread/INFO]: Server version detection by new method: v26_2_0 Legacy: false Mojang Mappings: true
-[04:00:33] [Server thread/INFO]: Server version: v26_2_0 - 26.2.0 - paper  26.2-112-c9e894d (MC: 26.2)
-[04:00:33] [Server thread/INFO]: CMI hooked.
-[04:00:33] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: cmil [1.5.9.9]
-[04:00:33] [Server thread/INFO]: PlaceholderAPI hooked.
-[04:00:33] [Server thread/INFO]: Updated (EN) language file. Took 33ms
-[04:00:33] [Server thread/INFO]: Updated (DE) language file. Took 12ms
-[04:00:33] [Server thread/INFO]: [NBTAPI] Enabling NBTAPI v2.16.0
-[04:00:33] [Server thread/INFO]: [NBTAPI] Checking bindings...
-[04:00:33] [BlueMap-Load/INFO]: [BlueMap] Loading resources...
-[04:00:33] [Server thread/INFO]: [NBTAPI] All Classes were able to link!
-[04:00:33] [Server thread/INFO]: [NBTAPI] All Methods were able to link!
-[04:00:33] [Server thread/INFO]: [NBTAPI] Running NBT reflection test...
-[04:00:35] [Server thread/INFO]: [NBTAPI] Success! This version of NBT-API is compatible with your server.
-[04:00:35] [Server thread/INFO]: [Skript] Enabling Skript v2.16.1
-[04:00:35] [BlueMap-Load/INFO]: [BlueMap] Resources loaded.
-[04:00:35] [BlueMap-Load/WARN]: [BlueMap] 
+[09:30:37] [Server thread/INFO]: [PlotSquared/PlotSquared] Loaded caption map for namespace 'plotsquared': com.plotsquared.core.configuration.caption.LocalizedCaptionMap
+[09:30:37] [Server thread/INFO]: [PlotSquared/BukkitPlatform] PlotSquared version licensed to Spigot user 2433376
+[09:30:37] [Server thread/INFO]: [PlotSquared/BukkitPlatform] https://www.spigotmc.org/resources/77506
+[09:30:37] [Server thread/INFO]: [PlotSquared/BukkitPlatform] Download ID: -237941990
+[09:30:37] [Server thread/INFO]: [PlotSquared/BukkitPlatform] Thanks for supporting us :)
+[09:30:37] [Server thread/INFO]: [PlotSquared/PlotSquared] Connection to database established. Type: SQLite
+[09:30:37] [Server thread/INFO]: [PlotSquared/BukkitPlatform] PlotSquared hooked into WorldEdit
+[09:30:38] [Server thread/INFO]: [PlotSquared/BukkitPlatform] (UUID) Using LuckPerms as a complementary UUID service
+[09:30:38] [Server thread/INFO]: [PlotSquared/BukkitPlatform] (UUID) 6 UUIDs will be cached
+[09:30:38] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: plotsquared [3]
+[09:30:38] [Server thread/INFO]: [PlotSquared/BukkitPlatform] PlotSquared hooked into PlaceholderAPI
+[09:30:38] [Server thread/INFO]: [CMIEInjector] Enabling CMIEInjector v1.0.2.4
+[09:30:38] [Server thread/INFO]: [CMIEInjector] Injecting CMI Economy
+[09:30:38] [Server thread/INFO]: [CMIEInjector] [Economy] CMI Economy found: Waiting
+[09:30:38] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[09:30:38] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[09:30:38] [Server thread/WARN]: Whilst this makes it possible to use Velocity, unless access to your server is properly restricted, it also opens up the ability for hackers to connect with any username they choose.
+[09:30:38] [Server thread/WARN]: Please see https://docs.papermc.io/velocity/security for further information.
+[09:30:38] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[09:30:38] [Server thread/INFO]: Preparing level "world"
+[09:30:38] [Server thread/INFO]: Loading 53 persistent chunks for level 'minecraft:overworld'...
+[09:30:38] [Server thread/INFO]: Preparing spawn area: 15%
+[09:30:39] [Server thread/INFO]: Prepared spawn area in 689 ms
+[09:30:39] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:the_nether'...
+[09:30:39] [Server thread/INFO]: Prepared spawn area in 0 ms
+[09:30:39] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:the_end'...
+[09:30:39] [Server thread/INFO]: Prepared spawn area in 0 ms
+[09:30:39] [Server thread/INFO]: Done preparing level "world" (1.025s)
+[09:30:39] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.12.3
+[09:30:39] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
+[09:30:39] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: vaultunlocked [2.13.1]
+[09:30:39] [Server thread/INFO]: [WorldGuard] Enabling WorldGuard v7.0.18+2392-fa605e6
+[09:30:39] [Server thread/INFO]: [WorldGuard] (world) TNT ignition is PERMITTED.
+[09:30:39] [Server thread/INFO]: [WorldGuard] (world) Lighters are PERMITTED.
+[09:30:39] [Server thread/INFO]: [WorldGuard] (world) Lava fire is PERMITTED.
+[09:30:39] [Server thread/INFO]: [WorldGuard] (world) Fire spread is UNRESTRICTED.
+[09:30:39] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'world'
+[09:30:39] [Server thread/INFO]: [WorldGuard] (world_nether) TNT ignition is PERMITTED.
+[09:30:39] [Server thread/INFO]: [WorldGuard] (world_nether) Lighters are PERMITTED.
+[09:30:39] [Server thread/INFO]: [WorldGuard] (world_nether) Lava fire is PERMITTED.
+[09:30:39] [Server thread/INFO]: [WorldGuard] (world_nether) Fire spread is UNRESTRICTED.
+[09:30:39] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'world_nether'
+[09:30:39] [Server thread/INFO]: [WorldGuard] (world_the_end) TNT ignition is PERMITTED.
+[09:30:39] [Server thread/INFO]: [WorldGuard] (world_the_end) Lighters are PERMITTED.
+[09:30:39] [Server thread/INFO]: [WorldGuard] (world_the_end) Lava fire is PERMITTED.
+[09:30:39] [Server thread/INFO]: [WorldGuard] (world_the_end) Fire spread is UNRESTRICTED.
+[09:30:39] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'world_the_end'
+[09:30:39] [Server thread/INFO]: [WorldGuard] Loading region data...
+[09:30:39] [Server thread/INFO]: [BlueMap] Enabling BlueMap v5.23
+[09:30:39] [Server thread/INFO]: [BlueMap] Saving all worlds once, to make sure all required world-properties are present...
+[09:30:39] [Server thread/WARN]: A manual (plugin-induced) save has been detected while server is configured to auto-save. This may affect performance.
+[09:30:39] [BlueMap-Load/INFO]: [BlueMap] Loading...
+[09:30:39] [Server thread/INFO]: [CMILib] Enabling CMILib v1.5.9.9
+[09:30:39] [Server thread/INFO]: Server version detection by new method: v26_2_0 Legacy: false Mojang Mappings: true
+[09:30:39] [Server thread/INFO]: Server version: v26_2_0 - 26.2.0 - paper  26.2-112-c9e894d (MC: 26.2)
+[09:30:40] [BlueMap-Load/INFO]: [BlueMap] Loading resources...
+[09:30:40] [Server thread/INFO]: CMI hooked.
+[09:30:40] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: cmil [1.5.9.9]
+[09:30:40] [Server thread/INFO]: PlaceholderAPI hooked.
+[09:30:40] [Server thread/INFO]: Updated (EN) language file. Took 49ms
+[09:30:40] [Server thread/INFO]: Updated (DE) language file. Took 36ms
+[09:30:40] [Server thread/INFO]: [NBTAPI] Enabling NBTAPI v2.16.0
+[09:30:40] [Server thread/INFO]: [NBTAPI] Checking bindings...
+[09:30:40] [Server thread/INFO]: [NBTAPI] All Classes were able to link!
+[09:30:40] [Server thread/INFO]: [NBTAPI] All Methods were able to link!
+[09:30:40] [Server thread/INFO]: [NBTAPI] Running NBT reflection test...
+[09:30:41] [BlueMap-Load/INFO]: [BlueMap] Resources loaded.
+[09:30:41] [BlueMap-Load/WARN]: [BlueMap] 
 ################################
  There is a problem with your BlueMap setup!
 
  '/home/container/world_the_end' does not exist or is no directory!
  Check if the 'world' setting in the config-file for that map is correct, or remove the entire config-file if you don't want that map.
 ################################
-[04:00:35] [BlueMap-Load/INFO]: [BlueMap] Initializing Storage: 'file' (Type: 'bluemap:file')
-[04:00:35] [BlueMap-Load/INFO]: [BlueMap] Loading map 'world'...
-[04:00:35] [BlueMap-Load/WARN]: [BlueMap] 
+[09:30:41] [Server thread/INFO]: [NBTAPI] Success! This version of NBT-API is compatible with your server.
+[09:30:41] [Server thread/INFO]: [Skript] Enabling Skript v2.16.1
+[09:30:42] [BlueMap-Load/INFO]: [BlueMap] Initializing Storage: 'file' (Type: 'bluemap:file')
+[09:30:42] [BlueMap-Load/INFO]: [BlueMap] Loading map 'world'...
+[09:30:42] [BlueMap-Load/WARN]: [BlueMap] 
 ################################
  There is a problem with your BlueMap setup!
 
  '/home/container/town' does not exist or is no directory!
  Check if the 'world' setting in the config-file for that map is correct, or remove the entire config-file if you don't want that map.
 ################################
-[04:00:35] [BlueMap-Load/WARN]: [BlueMap] 
+[09:30:42] [BlueMap-Load/WARN]: [BlueMap] 
 ################################
  There is a problem with your BlueMap setup!
 
  '/home/container/world_nether' does not exist or is no directory!
  Check if the 'world' setting in the config-file for that map is correct, or remove the entire config-file if you don't want that map.
 ################################
-[04:00:35] [BlueMap-Load/WARN]: [BlueMap] 
+[09:30:42] [BlueMap-Load/WARN]: [BlueMap] 
 ################################
  There is a problem with your BlueMap setup!
 
  '/home/container/freebuild' does not exist or is no directory!
  Check if the 'world' setting in the config-file for that map is correct, or remove the entire config-file if you don't want that map.
 ################################
-[04:00:35] [BlueMap-Load/INFO]: [BlueMap] WebServer bound to all network interfaces on port 8102
-[04:00:35] [BlueMap-Webserver/INFO]: [BlueMap] WebServer started.
-[04:00:35] [BlueMap-Load/INFO]: [BlueMap] Loaded!
-[04:00:35] [ForkJoinPool.commonPool-worker-7/INFO]: [Skript] You're currently running the latest stable version of Skript.
-[04:00:36] [Server thread/INFO]: [Skript]  ~ created by & © Peter Güttinger aka Njol ~
-[04:00:36] [Server thread/INFO]: [Lands] Enabling Lands v8.1.0
-[04:00:36] [Server thread/INFO]: [Lands]  _                        _      
-[04:00:36] [Server thread/INFO]: [Lands] | |                      | |     
-[04:00:36] [Server thread/INFO]: [Lands] | |      __ _  _ __    __| | ___ 
-[04:00:36] [Server thread/INFO]: [Lands] | |     / _` || '_ \  / _` |/ __|
-[04:00:36] [Server thread/INFO]: [Lands] | |____| (_| || | | || (_| |\__ \
-[04:00:36] [Server thread/INFO]: [Lands] \_____/ \__,_||_| |_| \__,_||___/
-[04:00:36] [Server thread/INFO]: [Lands] Version: 8.1.0 Previous: 8.1.0
-[04:00:36] [Server thread/INFO]: [Lands] Server: 26.2.0 running Paper
-[04:00:36] [Server thread/INFO]: [Lands] Licensed to: 2433376
-[04:00:36] [Server thread/INFO]: [Lands] Experiencing issues or having questions? Join our Discord!
-[04:00:36] [Server thread/INFO]: [Lands] Discord: https://discord.incredibleplugins.com
-[04:00:36] [Server thread/INFO]: [Lands] Wiki: https://wiki.incredibleplugins.com/lands
-[04:00:36] [Server thread/INFO]: [Lands]  
-[04:00:36] [Server thread/INFO]: [Lands] Performing initial data load.
-[04:00:36] [Server thread/INFO]: [Lands] There are currently 1 created land(s).
-[04:00:36] [Server thread/INFO]: [Lands] Initial data load took 56 ms.
-[04:00:36] [Server thread/INFO]: [packetevents] Enabling packetevents v2.13.0
-[04:00:36] [packetevents-update-check-thread/INFO]: [packetevents] Checking for updates, please wait...
-[04:00:36] [Server thread/INFO]: [CMI] Enabling CMI v9.8.9.8
-[04:00:36] [packetevents-update-check-thread/INFO]: [packetevents] You are running the latest release: 2.13.0
-[04:00:36] [ForkJoinPool.commonPool-worker-7/INFO]: [Skript] Loaded 5750 aliases in 685ms
-[04:00:36] [Server thread/INFO]: _______________________________________________________
-[04:00:36] [Server thread/INFO]:  
-[04:00:36] [Server thread/INFO]:  ██████╗███╗   ███╗██╗
-[04:00:36] [Server thread/INFO]: ██╔════╝████╗ ████║██║
-[04:00:36] [Server thread/INFO]: ██║     ██╔████╔██║██║
-[04:00:36] [Server thread/INFO]: ██║     ██║╚██╔╝██║██║
-[04:00:36] [Server thread/INFO]: ╚██████╗██║ ╚═╝ ██║██║
-[04:00:36] [Server thread/INFO]:  ╚═════╝╚═╝     ╚═╝╚═╝
-[04:00:36] [Server thread/INFO]: _______________________________________________________
-[04:00:36] [Server thread/INFO]: Integrating PaperSpigot async methods
-[04:00:36] [Server thread/INFO]: Vault found. (Loaded: true)
-[04:00:36] [CMI-Thread-1/INFO]: Loaded (-) locale download into memory. Took 8ms
-[04:00:37] [Server thread/INFO]: Loaded (71) 70 Enabled and 1 Disabled modules into memory. Took 71ms
-[04:00:37] [Server thread/INFO]: BlueMap found. (Loaded: true)
-[04:00:37] [Server thread/INFO]: Initialized Cipher256 AES
-[04:00:37] [Server thread/INFO]: Loaded (61) regular alias into memory. Took 25ms
-[04:00:37] [CMI-Thread-2/INFO]: Loaded (1) custom text's into memory. Took 7ms
-[04:00:37] [Server thread/INFO]: (RandomTeleportation) Can't find world with (lobby) name
-[04:00:37] [Server thread/INFO]: (RandomTeleportation) Can't find world with (town) name
-[04:00:37] [Server thread/INFO]: (RandomTeleportation) Can't find world with (freebuild) name
-[04:00:37] [Server thread/INFO]: (RandomTeleportation) Can't find world with (tycoon) name
-[04:00:37] [Server thread/INFO]: (RandomTeleportation) Can't find world with (SuperiorWorld) name
-[04:00:37] [Server thread/INFO]: (RandomTeleportation) Can't find world with (Schematics) name
-[04:00:37] [Server thread/INFO]: SQLite 3.49.1 data base type detected
-[04:00:37] [Server thread/INFO]: Loaded (-) SqLite into memory. Took 73ms
-[04:00:37] [Server thread/INFO]: Vault was found - Enabling capabilities. Economy: CMIEconomy
-[04:00:37] [Server thread/INFO]: Loaded (5) warning categories into memory. Took 0ms
-[04:00:37] [Server thread/INFO]: Loaded (3) warning commands into memory. Took 0ms
-[04:00:37] [Server thread/INFO]: Loaded (0) cooldowns into memory. Took 0ms
-[04:00:37] [Server thread/INFO]: Loaded (160) custom mob heads into memory. Took 11ms
-[04:00:37] [Server thread/INFO]: Loaded (4) chat bubble groups into memory. Took 0ms
-[04:00:37] [Server thread/INFO]: Loaded (5) kits into memory. Took 8ms
-[04:00:37] [Server thread/INFO]: Loaded (5) dialogs into memory. Took 8ms
-[04:00:37] [Server thread/INFO]: Loaded (15) ranks into memory. Took 7ms
-[04:00:37] [Server thread/INFO]: Loaded (8) playtime rewards into memory. Took 2ms
-[04:00:37] [Server thread/INFO]: Executed Player DB querry in 0ms
-[04:00:37] [Server thread/INFO]: Loaded (12) player data into memory. Took 20ms
-[04:00:37] [Server thread/INFO]: Loaded (0) playtime records into memory. Took 0ms
-[04:00:37] [Server thread/INFO]: Loaded (0) playtime reward records into memory. Took 0ms
-[04:00:37] [Server thread/INFO]: Loaded (0) custom alias into memory. Took 1ms
-[04:00:37] [Server thread/INFO]: Loaded (-) Registered events into memory. Took 116ms
-[04:00:37] [Server thread/INFO]: Loaded (27) event action commands into memory. Took 5ms
-[04:00:37] [Server thread/INFO]: Loaded (EN) language file into memory. Took 72ms
-[04:00:37] [Server thread/INFO]: Loaded (DE) language file into memory. Took 41ms
-[04:00:37] [Server thread/INFO]: Loaded (245) worth values into memory. Took 13ms
-[04:00:37] [Server thread/INFO]: Loaded (13) warps into memory. Took 2ms
-[04:00:37] [Server thread/INFO]: VaultPermissions found. (Loaded: true)
-[04:00:37] [Server thread/INFO]: PlaceholderAPI found. (Loaded: true)
-[04:00:37] [Server thread/INFO]: Jobs found. (Loaded: false)
-[04:00:37] [Server thread/INFO]: Loaded (5) schedules into memory. Took 4ms
-[04:00:37] [Server thread/INFO]: Loaded (0) skin cache entries into memory. Took 0ms
-[04:00:38] [Server thread/INFO]: [CMI] Preloading playtimetop statistics
-[04:00:38] [Server thread/INFO]: Loaded (0) ArmorStand templates into memory. Took 1ms
-[04:00:38] [Server thread/INFO]: Version 9.8.9.8 has been enabled
-[04:00:38] [Server thread/INFO]: _______________________________________________________
-[04:00:38] [Server thread/INFO]: [CMIEInjector][Economy] CMI Economy hooked.
-[04:00:38] [Server thread/INFO]: [Jobs] Enabling Jobs v5.2.6.6
-[04:00:38] [Server thread/INFO]: ------------- Jobs -------------
-[04:00:38] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: jobsr [5.2.6.6]
-[04:00:38] [Server thread/INFO]: PlaceholderAPI hooked.
-[04:00:38] [Server thread/INFO]: Connected to database (SqLite)
-[04:00:38] [Server thread/INFO]: Loaded 8 titles
-[04:00:38] [Server thread/INFO]: Loaded 2 restricted areas!
-[04:00:38] [Server thread/INFO]: Loaded 53 protected blocks timers
-[04:00:38] [Server thread/INFO]: Loaded 1692 custom item names
-[04:00:38] [Server thread/INFO]: Loaded 93 custom entity names
-[04:00:38] [Server thread/INFO]: Loaded 2 custom MythicMobs names
-[04:00:38] [Server thread/INFO]: Loaded 43 custom enchant names
-[04:00:38] [Server thread/INFO]: Loaded 46 custom enchant names
-[04:00:38] [Server thread/INFO]: Loaded 16 custom color names
-[04:00:38] [Server thread/INFO]: Update shops items icon section and use 'ItemStack' instead
-[04:00:38] [Server thread/INFO]: Loaded 4 shop items
-[04:00:38] [Server thread/INFO]: Loaded 1 quests for Enchanter
-[04:00:38] [Server thread/INFO]: Loaded 1 quests for Builder
-[04:00:38] [Server thread/INFO]: Loaded 1 quests for Miner
-[04:00:38] [Server thread/INFO]: Loaded 1 quests for Weaponsmith
-[04:00:38] [Server thread/INFO]: Loaded 1 quests for Fisherman
-[04:00:38] [Server thread/INFO]: Loaded 1 quests for Farmer
-[04:00:38] [Server thread/INFO]: Loaded 1 quests for Explorer
-[04:00:38] [Server thread/INFO]: Loaded 1 quests for Crafter
-[04:00:38] [Server thread/INFO]: Loaded 1 quests for Woodcutter
-[04:00:38] [Server thread/INFO]: Loaded 1 quests for Digger
-[04:00:38] [Server thread/INFO]: Loaded 1 quests for Hunter
-[04:00:38] [Server thread/INFO]: Loaded 1 quests for Brewer
-[04:00:38] [Server thread/INFO]: Loaded 12 jobs
-[04:00:38] [Server thread/INFO]: Loaded 0 boosted items
-[04:00:38] [Server thread/INFO]: Loaded 66 furnace for reassigning.
-[04:00:38] [Server thread/INFO]: Loaded 1 brewing for reassigning.
-[04:00:38] [Server thread/INFO]: Loaded 3 blastfurnace for reassigning.
-[04:00:38] [Jobs-DatabaseSaveTask/INFO]: Started database save task.
-[04:00:38] [Jobs-BufferedPaymentThread/INFO]: Started buffered payment thread.
-[04:00:38] [Server thread/INFO]: Preloaded 12 players data in 0.01
-[04:00:38] [Server thread/INFO]: WorldGuard detected.
-[04:00:38] [Server thread/INFO]: Registering listeners...
-[04:00:38] [Server thread/INFO]: Listeners registered successfully
-[04:00:38] [Server thread/INFO]: Plugin has been enabled successfully.
-[04:00:38] [Server thread/INFO]: ------------------------------------
-[04:00:38] [Server thread/INFO]: [Multiverse-Core] Enabling Multiverse-Core v5.8.0
-[04:00:38] [Server thread/INFO]: [VoidGen] 
-[04:00:38] [Server thread/INFO]: [VoidGen] > ——————————————————————[ world ]——————————————————————
-[04:00:38] [Server thread/INFO]: [VoidGen] > 
-[04:00:38] [Server thread/INFO]: [VoidGen] > Generator settings have not been set, we will use the default settings:
-[04:00:38] [Server thread/INFO]: [VoidGen] > {"biome":"the_void"}
-[04:00:38] [Server thread/INFO]: [VoidGen] > 
-[04:00:38] [Server thread/INFO]: [VoidGen] > ——————————————————————[ world ]——————————————————————
-[04:00:38] [Server thread/INFO]: [VoidGen] 
-[04:00:38] [Server thread/INFO]: [PlotSquared/PlotSquared] Detected world load for 'freebuild'
-[04:00:38] [Server thread/INFO]: [PlotSquared/PlotSquared] - generator: PlotSquared>PlotSquared
-[04:00:38] [Server thread/INFO]: [PlotSquared/PlotSquared] - plot world: com.plotsquared.core.generator.HybridPlotWorld
-[04:00:38] [Server thread/INFO]: [PlotSquared/PlotSquared] - plot area manager: com.plotsquared.core.generator.HybridPlotManager
-[04:00:39] [Server thread/INFO]: [P2] Loading flags for area: freebuild
-[04:00:39] [Server thread/INFO]: [P2] Area flags: []
-[04:00:39] [Server thread/INFO]: [P2] Road flags: []
-[04:00:39] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:freebuild'...
-[04:00:39] [Server thread/INFO]: Prepared spawn area in 0 ms
-[04:00:39] [Server thread/INFO]: [WorldGuard] (freebuild) TNT ignition is PERMITTED.
-[04:00:39] [Server thread/INFO]: [WorldGuard] (freebuild) Lighters are PERMITTED.
-[04:00:39] [Server thread/INFO]: [WorldGuard] (freebuild) Lava fire is PERMITTED.
-[04:00:39] [Server thread/INFO]: [WorldGuard] (freebuild) Fire spread is UNRESTRICTED.
-[04:00:39] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'freebuild'
-[04:00:39] [Server thread/INFO]: [VoidGen] 
-[04:00:39] [Server thread/INFO]: [VoidGen] > ——————————————————————[ Schematics ]——————————————————————
-[04:00:39] [Server thread/INFO]: [VoidGen] > 
-[04:00:39] [Server thread/INFO]: [VoidGen] > Generator settings have not been set, we will use the default settings:
-[04:00:39] [Server thread/INFO]: [VoidGen] > {"biome":"the_void"}
-[04:00:39] [Server thread/INFO]: [VoidGen] > 
-[04:00:39] [Server thread/INFO]: [VoidGen] > ——————————————————————[ Schematics ]——————————————————————
-[04:00:39] [Server thread/INFO]: [VoidGen] 
-[04:00:39] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:schematics'...
-[04:00:39] [Server thread/INFO]: Prepared spawn area in 0 ms
-[04:00:39] [Server thread/INFO]: [WorldGuard] (Schematics) TNT ignition is PERMITTED.
-[04:00:39] [Server thread/INFO]: [WorldGuard] (Schematics) Lighters are PERMITTED.
-[04:00:39] [Server thread/INFO]: [WorldGuard] (Schematics) Lava fire is PERMITTED.
-[04:00:39] [Server thread/INFO]: [WorldGuard] (Schematics) Fire spread is UNRESTRICTED.
-[04:00:39] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'Schematics'
-[04:00:39] [Server thread/INFO]: [PlotSquared/PlotSquared] Detected world load for 'town'
-[04:00:39] [Server thread/INFO]: [PlotSquared/PlotSquared] - generator: PlotSquared>PlotSquared
-[04:00:39] [Server thread/INFO]: [PlotSquared/PlotSquared] - plot world: com.plotsquared.core.generator.HybridPlotWorld
-[04:00:39] [Server thread/INFO]: [PlotSquared/PlotSquared] - plot area manager: com.plotsquared.core.generator.HybridPlotManager
-[04:00:39] [Server thread/INFO]: [P2] Loading flags for area: town
-[04:00:39] [Server thread/INFO]: [P2] Area flags: []
-[04:00:39] [Server thread/INFO]: [P2] Road flags: []
-[04:00:39] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:town'...
-[04:00:39] [Server thread/INFO]: Prepared spawn area in 0 ms
-[04:00:39] [Server thread/INFO]: [WorldGuard] (town) TNT ignition is PERMITTED.
-[04:00:39] [Server thread/INFO]: [WorldGuard] (town) Lighters are PERMITTED.
-[04:00:39] [Server thread/INFO]: [WorldGuard] (town) Lava fire is PERMITTED.
-[04:00:39] [Server thread/INFO]: [WorldGuard] (town) Fire spread is UNRESTRICTED.
-[04:00:39] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'town'
-[04:00:39] [Server thread/INFO]: [PlotSquared/PlotSquared] Detected world load for 'tycoon'
-[04:00:39] [Server thread/INFO]: [PlotSquared/PlotSquared] - generator: PlotSquared>PlotSquared
-[04:00:39] [Server thread/INFO]: [PlotSquared/PlotSquared] - plot world: com.plotsquared.core.generator.HybridPlotWorld
-[04:00:39] [Server thread/INFO]: [PlotSquared/PlotSquared] - plot area manager: com.plotsquared.core.generator.HybridPlotManager
-[04:00:39] [Server thread/INFO]: [P2] Loading flags for area: tycoon
-[04:00:39] [Server thread/INFO]: [P2] Area flags: []
-[04:00:39] [Server thread/INFO]: [P2] Road flags: []
-[04:00:39] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:tycoon'...
-[04:00:39] [Server thread/INFO]: Prepared spawn area in 0 ms
-[04:00:39] [Server thread/INFO]: [WorldGuard] (tycoon) TNT ignition is PERMITTED.
-[04:00:39] [Server thread/INFO]: [WorldGuard] (tycoon) Lighters are PERMITTED.
-[04:00:39] [Server thread/INFO]: [WorldGuard] (tycoon) Lava fire is PERMITTED.
-[04:00:39] [Server thread/INFO]: [WorldGuard] (tycoon) Fire spread is UNRESTRICTED.
-[04:00:39] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'tycoon'
-[04:00:39] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: multiverse-core [5.8.0]
-[04:00:39] [Server thread/INFO]: [Multiverse-Core] API service loaded!
-[04:00:39] [Server thread/INFO]: [Multiverse-Core] Version 5.8.0 (API v5.8) Enabled - By dumptruckman, Rigby, fernferret, lithium3141, main--, benwoo1110 and Zax71
-[04:00:39] [Server thread/INFO]: [Multiverse-Core] Loving Multiverse-Core? Please consider supporting the project with a small donation: https://github.com/sponsors/Multiverse
-[04:00:39] [Server thread/INFO]: [VoidGen] VoidGen hooked into Multiverse!
-[04:00:39] [Server thread/INFO]: [Oraxen] Enabling Oraxen v1.218.0
-[04:00:39] [Server thread/INFO]: [Lands] [Integrations] 3rd party plugin hooking into Lands: Oraxen
-[04:00:39] [Server thread/INFO]: Oraxen | [ProtocolLibAdapter] registerTitleListener called
-[04:00:39] [Server thread/INFO]: Oraxen | [ProtocolLibAdapter] Title Listener registered successfully
-[04:00:39] [Server thread/INFO]: Oraxen | Custom paintings already hot reloaded (0 unchanged).
-[04:00:40] [Server thread/INFO]: Oraxen | TextEffects.shader.encoding 'alpha_lsb' is deprecated. Using 'effect_font'.
-[04:00:40] [Server thread/INFO]: Oraxen | Loaded 4 text effects
-[04:00:40] [Server thread/INFO]: Oraxen | Loaded 16 glyphs, 0 reference glyphs, 1 animated glyphs
-[04:00:40] [Server thread/INFO]: Oraxen | Hot reloaded 1 new custom jukebox song(s), 0 updated, 0 removed, 0 unchanged.
-[04:00:40] [Server thread/INFO]: Oraxen | Block mechanic caveblock uses legacy 'hardness'/'drop' keys; please migrate them to a 'breaking' rule.
-[04:00:40] [Server thread/INFO]: Oraxen | Block mechanic amethyst_ore uses legacy 'hardness'/'drop' keys; please migrate them to a 'breaking' rule.
-[04:00:40] [Server thread/INFO]: Oraxen | Block mechanic ruby_ore uses legacy 'hardness'/'drop' keys; please migrate them to a 'breaking' rule.
-[04:00:40] [Server thread/INFO]: Oraxen | Block mechanic onyx_ore uses legacy 'hardness'/'drop' keys; please migrate them to a 'breaking' rule.
-[04:00:40] [Server thread/INFO]: Oraxen | Block mechanic orax_ore uses legacy 'hardness'/'drop' keys; please migrate them to a 'breaking' rule.
-[04:00:40] [Server thread/INFO]: Oraxen | Block mechanic brunnera uses legacy 'hardness'/'drop' keys; please migrate them to a 'breaking' rule.
-[04:00:40] [Server thread/INFO]: Oraxen | Block mechanic daffodil uses legacy 'hardness'/'drop' keys; please migrate them to a 'breaking' rule.
-[04:00:40] [Server thread/INFO]: Oraxen | Block mechanic dailily uses legacy 'hardness'/'drop' keys; please migrate them to a 'breaking' rule.
-[04:00:40] [Server thread/INFO]: Oraxen | Successfully loaded on Ubuntu 26.04 LTS (resolute)
-[04:00:40] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: oraxen [1.218.0]
-[04:00:40] [Server thread/INFO]: Oraxen | Plugin "PlaceholderAPI" detected, enabling hooks
-[04:00:40] [Server thread/INFO]: Oraxen | Skript compatibility enabled - Oraxen syntax registered
-[04:00:40] [Server thread/INFO]: Oraxen | Plugin "Skript" detected, enabling hooks
-[04:00:40] [Server thread/INFO]: [HeadDatabase] Enabling HeadDatabase v4.24.0
-[04:00:40] [Server thread/INFO]: [HeadDatabase] §bUsing default §3"en_US.lang" §bcreated by §6Arcaniax
-[04:00:40] [Server thread/WARN]: [HeadDatabase] Economy was not loaded, some features will be disabled!
-[04:00:40] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: hdb [4.24.0]
-[04:00:40] [Server thread/INFO]: [CommandAPI] Enabling CommandAPI v12.0.0
-[04:00:40] [Server thread/INFO]: [CommandAPI] Hooked into Paper ServerResourcesReloadedEvent
-[04:00:40] [Server thread/INFO]: [LibsDisguises] Enabling LibsDisguises v26.8.13
-[04:00:41] [Server thread/INFO]: [LibsDisguises] File Name: LibsDisguises-26.8.13-Premium.jar
-[04:00:41] [Server thread/INFO]: [LibsDisguises] Discovered nms version (LD: v26_R2) (MC: 26.2)
-[04:00:41] [Server thread/INFO]: [LibsDisguises] Jenkins Build: #1813
-[04:00:41] [Server thread/INFO]: [LibsDisguises] Build Date: 12/08/2026 23:49
-[04:00:41] [Server thread/INFO]: [LibsDisguises] Build Hash: c77589e8~1
-[04:00:41] [Server thread/INFO]: [LibsDisguises] Registered to: 2433376 (28)
-[04:00:41] [Server thread/INFO]: [LibsDisguises] Premium enabled, thank you for supporting Lib's Disguises!
-[04:00:41] [Server thread/INFO]: [LibsDisguises] Config 'TallSelfDisguises' is set to 'SCALED', LD will scale down (when possible) oversized disguises from self disguise. https://www.spigotmc.org/wiki/lib-s-disguises-faq/#tall-disguises-self-disguises
-[04:00:41] [Server thread/INFO]: [packetevents] Loading block mappings for V_26_2/22...
-[04:00:41] [Server thread/INFO]: [packetevents] Finished loading block mappings for V_26_2/22 in 214.495325ms
-[04:00:41] [Folia Async Scheduler Thread #1/INFO]: [HeadDatabase] Successfully loaded 93121 heads!
-[04:00:41] [Folia Async Scheduler Thread #1/INFO]: [HeadDatabase] Successfully loaded 18 featured tags!
-[04:00:42] [pool-21-thread-1/INFO]: [PlotSquared/BukkitPlatform] (UUID) PlotSquared will fetch UUIDs in groups of 200
-[04:00:42] [pool-21-thread-1/INFO]: [PlotSquared/BukkitPlatform] (UUID) PlotSquared has cached all UUIDs
-[04:00:42] [Server thread/INFO]: [LibsDisguises] Config is up to date!
-[04:00:42] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: libsdisguises [1.0.0]
-[04:00:42] [Server thread/INFO]: [LibsDisguises] PlaceholderAPI support enabled
-[04:00:42] [Server thread/INFO]: [Autorank] Enabling Autorank v5.2.4
-[04:00:42] [Server thread/INFO]: [Autorank] mainclass getHumanPluginName = Autorank v5.2.4
-[04:00:42] [Server thread/INFO]: [Autorank] mainclass getInternalPluginName = Autorank v5.2.4
-[04:00:42] [Server thread/INFO]: [Autorank] mainclass isPluginAvailable = true
-[04:00:42] [Server thread/INFO]: [Autorank] Generated new log file: log-2026-08-22.txt
-[04:00:42] [Server thread/INFO]: [Autorank] The settings.yml is up-to-date
-[04:00:42] [Server thread/INFO]: [Autorank] Generating new PluginLibrary instance
-[04:00:42] [Server thread/INFO]: [PluginLibrary] ***== Loading libraries ==***
-[04:00:42] [Server thread/INFO]: [PluginLibrary] ***== Loaded 6 libraries! ==***
-[04:00:42] [Server thread/INFO]: [PluginLibrary] Loaded libraries: Autorank (by Staartvin), CMI (by Zrips), Jobs (by Zrips), PlaceholderAPI (by HelpChat), Vault (by Kainzo) and WorldGuard (by sk89q)
-[04:00:42] [Server thread/INFO]: [PluginLibrary] *** Ready for plugins to send/retrieve data. ***
-[04:00:42] [Server thread/INFO]: [Autorank] Interval check every 5 minutes.
-[04:00:42] [Server thread/INFO]: [Autorank] Registered requirement service for adding custom requirements!
-[04:00:42] [Server thread/INFO]: [Autorank] Registered result service for adding custom results!
-[04:00:42] [Server thread/INFO]: [Autorank] Autorank 5.2.4 has been enabled!
-[04:00:42] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: autorank [5.2.4]
-[04:00:42] [Server thread/INFO]: [Autorank] Registered placeholders, so you can use them!
-[04:00:42] [Server thread/INFO]: [Multiverse-Inventories] Enabling Multiverse-Inventories v5.3.5
-[04:00:42] [Server thread/WARN]: [Multiverse-Inventories] The following worlds for group 'lobby_group' does not exist: lobby
-[04:00:42] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: multiverse-inventories [5.3.5]
-[04:00:42] [Server thread/INFO]: [Multiverse-Inventories] Loading player names map...
-[04:00:42] [Server thread/INFO]: [Multiverse-Inventories] Version 5.3.5 (API v5.3) Enabled - By dumptruckman and benwoo1110
-[04:00:42] [Server thread/INFO]: [GlobalMarketPlus] Enabling GlobalMarketPlus v1.4.1.5
-[04:00:42] [Server thread/INFO]: [GlobalMarketPlus] Properties has been loaded!
-[04:00:42] [Server thread/INFO]: [GlobalMarketPlus] Plugin loading...
-[04:00:42] [Server thread/INFO]: [GlobalMarketPlus] Enabled Event Listener .
-[04:00:42] [Server thread/INFO]: [GlobalMarketPlus] Enabled Command Listener .
-[04:00:42] [Server thread/INFO]:   _____  _         _            _    __  __               _           _      _____   _
-[04:00:42] [Server thread/INFO]:  / ____|| |       | |          | |  |  \/  |             | |         | |    |  __ \ | |
-[04:00:42] [Server thread/INFO]: | |  __ | |  ___  | |__   __ _ | |  | \  / |  __ _  _ __ | | __  ___ | |_   | |__) || | _   _  ___
-[04:00:42] [Server thread/INFO]: | | |_ || | / _ \ | '_ \ / _` || |  | |\/| | / _` || '__|| |/ / / _ \| __|  |  ___/ | || | | |/ __|
-[04:00:42] [Server thread/INFO]: | |__| || || (_) || |_) | (_| || |  | |  | || (_| || |   |   < |  __/| |_   | |     | || |_| |\__ \
-[04:00:42] [Server thread/INFO]:  \_____||_| \___/ |_.__/ \__,_||_|  |_|  |_| \__,_||_|   |_|\_\ \___| \__|  |_|     |_| \__,_||___/
-[04:00:42] [Server thread/INFO]: 
-[04:00:42] [Server thread/INFO]: [GlobalMarketPlus] Loading plugins/GlobalMarketPlus-1.4.1.5.jar L=1309622
-[04:00:42] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: gmpapi [1.0.0]
-[04:00:42] [Server thread/INFO]: GlobalMarketPlus >>> Found PlaceholderAPI , everything is OK.
-[04:00:42] [Server thread/INFO]: GlobalMarketPlus >>> Found Vault , everything is OK.
-[04:00:42] [Server thread/INFO]: [Rankup] Enabling Rankup v3.15.3
-[04:00:43] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: rankup [3.15.3]
-[04:00:43] [Server thread/INFO]: [DeluxeMenus] Enabling DeluxeMenus v1.14.1-Release
-[04:00:43] [Server thread/INFO]: [DeluxeMenus] Successfully hooked into PlaceholderAPI!
-[04:00:43] [Server thread/INFO]: [DeluxeMenus] Successfully hooked into Vault!
-[04:00:43] [Server thread/INFO]: [DeluxeMenus] 7 GUI menus loaded!
-[04:00:43] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: deluxemenus [1.14.1-Release]
-[04:00:43] [Server thread/INFO]: [DeluxeMenus] You are running the latest version of DeluxeMenus!
-[04:00:43] [Server thread/INFO]: [ShopGUIPlus] Enabling ShopGUIPlus v1.113.0
-[04:00:43] [Server thread/INFO]: [TAB-Bridge] Enabling TAB-Bridge v6.2.2
-[04:00:43] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: tab [6.2.2]
-[04:00:43] [Server thread/INFO]: [ChestShop] Enabling ChestShop v1.5.1
-[04:00:43] [Server thread/INFO]: [Plan] Enabling Plan v5.8 build 3605
-[04:00:43] [Server thread/INFO]: [Plan] 
-[04:00:43] [Server thread/INFO]: [Plan]            ██▌
-[04:00:43] [Server thread/INFO]: [Plan]      ██▌   ██▌
-[04:00:43] [Server thread/INFO]: [Plan]   ██▌██▌██▌██▌  Player Analytics
-[04:00:43] [Server thread/INFO]: [Plan]   ██▌██▌██▌██▌  v5.8 build 3605
-[04:00:43] [Server thread/INFO]: [Plan] 
-[04:00:44] [Server thread/INFO]: [Plan] Locale: 'English' by AuroraLS3
-[04:00:44] [Server thread/INFO]: [Plan] Downloading MySQL Driver, this may take a while...
-[04:00:44] [Plan MySQLDB-transaction-thread-1/INFO]: [Plan] Database: Making sure schema is up to date..
-[04:00:44] [Server thread/INFO]: [Plan] MySQL-database connection established.
-[04:00:44] [Server thread/INFO]: [Plan] WebServer was not initialized. (WebServer.DisableWebServer: true)
-[04:00:44] [Server thread/INFO]: [Plan] Loading server identifying information
-[04:00:44] [Server thread/INFO]: [Plan] Server identifier loaded: 679bd851-d131-4425-b88d-e2714a3ef0f2
-[04:00:44] [Plan Non critical-pool-5/INFO]: [Plan] Proxy server detected in the database - Proxy Webserver address is 'https://mc-stats.festas-builds.com'.
-[04:00:44] [Server thread/INFO]: [Plan] Registered extension: CMI
-[04:00:44] [Server thread/INFO]: [Plan] Registered extension: Jobs
-[04:00:44] [Server thread/INFO]: [Lands] [Integrations] 3rd party plugin hooking into Lands: Plan
-[04:00:44] [Server thread/INFO]: [Plan] Registered extension: Lands
-[04:00:44] [Server thread/INFO]: [Plan] Registered extension: LuckPerms
-[04:00:44] [Server thread/INFO]: [Plan] Registered extension: PlaceholderAPI
-[04:00:44] [Server thread/INFO]: [Plan] Registered extension: PlotSquared
-[04:00:44] [Server thread/INFO]: [Plan] Registered extension: Economy (Vault)
-[04:00:44] [Server thread/INFO]: [Plan] Registered extension: Permission Groups (Vault)
-[04:00:44] [Server thread/INFO]: [Plan] Player Analytics Enabled.
-[04:00:44] [Server thread/INFO]: [Chunky] Enabling Chunky v1.5.3
-[04:00:44] [Plan MySQLDB-transaction-thread-1/INFO]: [Plan] All database patches applied successfully.
-[04:00:44] [Server thread/INFO]: [AxiomPaper] Enabling AxiomPaper v5.0.4+26.2
-[04:00:44] [Server thread/INFO]: [AxiomPaper] LuckPerms integration enabled
-[04:00:44] [Server thread/INFO]: [spark] Starting background profiler...
-[04:00:44] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
-[04:00:44] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
-[04:00:44] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
-[04:00:44] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
-[04:00:44] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:freebuild
-[04:00:44] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:schematics
-[04:00:44] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:town
-[04:00:45] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:tycoon
-[04:00:45] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
-[04:00:45] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[04:00:45] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[04:00:45] [Server thread/INFO]: ThreadedAnvilChunkStorage (freebuild): All chunks are saved
-[04:00:45] [Server thread/INFO]: ThreadedAnvilChunkStorage (schematics): All chunks are saved
-[04:00:45] [Server thread/INFO]: ThreadedAnvilChunkStorage (town): All chunks are saved
-[04:00:45] [Server thread/INFO]: ThreadedAnvilChunkStorage (tycoon): All chunks are saved
-[04:00:45] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
-[04:00:45] [Server thread/INFO]: Running delayed init tasks
-[04:00:45] [Server thread/INFO]: [Chunky] No tasks to continue.
-[04:00:45] [Craft Scheduler Thread - 8 - Autorank/INFO]: [Autorank] Loading UUID storage files...
-[04:00:45] [Craft Scheduler Thread - 8 - Autorank/ERROR]: [Autorank] Can't find UUID storage file for s
-[04:00:45] [Craft Scheduler Thread - 10 - Autorank/INFO]: [Autorank] Primary storage provider of Autorank: FlatFileStorageProvider
-[04:00:45] [Craft Scheduler Thread - 8 - Autorank/INFO]: [Autorank] Loaded UUID storage in 0 seconds.
-[04:00:45] [Server thread/INFO]: [com.fastasyncworldedit.bukkit.regions.WorldGuardFeature] Plugin 'WorldGuard' found. Using it now.
-[04:00:45] [Server thread/INFO]: [com.fastasyncworldedit.bukkit.FaweBukkit] Attempting to use plugin 'WorldGuard'
-[04:00:45] [Craft Scheduler Thread - 11 - Autorank/INFO]: [Autorank] Removed 0 old storage entries from database!
-[04:00:45] [Server thread/INFO]: [com.fastasyncworldedit.bukkit.regions.plotsquared.PlotSquaredFeature] Optimizing PlotSquared
-[04:00:45] [Craft Scheduler Thread - 2 - PlotSquared/INFO]: [PlotSquared/UpdateUtility] Congratulations! You are running the latest PlotSquared version
-[04:00:45] [Server thread/INFO]: [com.fastasyncworldedit.bukkit.FaweBukkit] Plugin 'PlotSquared' v7 found. Using it now.
-[04:00:45] [GlobalMarketPlus-Loading/INFO]: GlobalMarketPlus >>> Successfully connected SQLite:Database.db server.
-[04:00:45] [GlobalMarketPlus-Loading/INFO]: GlobalMarketPlus >>> Successfully connected SQLite:Recorder.db server.
-[04:00:45] [Server thread/INFO]: [Skript]     Loaded regions hook for WorldGuard. Please note that Skript's region hooks are deprecated and will be removed in a future release. For WorldGuard support, we recommend using skript-worldguard: https://github.com/SkriptLang/skript-worldguard
-[04:00:45] [Craft Scheduler Thread - 10 - Plan/INFO]: [Plan] You're using the latest version.
-[04:00:45] [GlobalMarketPlus-Loading/INFO]: GlobalMarketPlus >>> Initialized NMS :26.2.build.112-stable
-[04:00:45] [GlobalMarketPlus-Loading/INFO]: GlobalMarketPlus >>> Async threads started.
-[04:00:45] [GlobalMarketPlus-Loading/INFO]: GlobalMarketPlus >>> Plugin successfully enabled 2241ms .
-[04:00:45] [Server thread/INFO]: [Skript] Loading variables...
-[04:00:45] [Server thread/INFO]: [Skript] Loaded 265 variables in 0.0 seconds
-[04:00:45] [Server thread/INFO]: [Skript] Line 70: (boss_events.sk)
-[04:00:45] [Server thread/INFO]:     A command with the name /bossevent is already defined in boss_events.sk
-[04:00:45] [Server thread/INFO]:     Line: command /bossevent stop:
-[04:00:45] [Server thread/INFO]:  
-[04:00:45] [Server thread/INFO]: [Skript] Line 128: (boss_events.sk)
-[04:00:45] [Server thread/INFO]:     A command with the name /boss is already defined in boss_events.sk
-[04:00:45] [Server thread/INFO]:     Line: command /boss hit:
-[04:00:45] [Server thread/INFO]:  
-[04:00:45] [Server thread/INFO]: [Skript] Line 180: (dynamic_market.sk)
-[04:00:45] [Server thread/INFO]:     Invalid amount or placement of brackets. Please make sure that each opening bracket has a corresponding closing bracket.
-[04:00:45] [Server thread/INFO]:     Line: send "&8  %{_name}%: &e%{_price}%€ &8(&7%{_multi}%\%&8) %{_trend}%"
-[04:00:45] [Server thread/INFO]:  
-[04:00:45] [Server thread/INFO]: [Skript] Line 190: (dynamic_market.sk)
-[04:00:45] [Server thread/INFO]:     A command with the name /boerse is already defined in dynamic_market.sk
-[04:00:45] [Server thread/INFO]:     Line: command /boerse detail <text>:
-[04:00:45] [Server thread/INFO]:  
-[04:00:45] [Server thread/INFO]: [Skript] Line 221: (dynamic_market.sk)
-[04:00:45] [Server thread/INFO]:     A command with the name /boerse is already defined in dynamic_market.sk
-[04:00:45] [Server thread/INFO]:     Line: command /boerse event <text>:
-[04:00:45] [Server thread/INFO]:  
-[04:00:45] [Server thread/INFO]: [Skript] Line 122: (economy_monitor.sk)
-[04:00:45] [Server thread/INFO]:     A command with the name /economy is already defined in economy_monitor.sk
-[04:00:45] [Server thread/INFO]:     Line: command /economy yesterday:
-[04:00:45] [Server thread/INFO]:  
-[04:00:45] [Server thread/INFO]: [Skript] Line 157: (prestige.sk)
-[04:00:45] [Server thread/INFO]:     A command with the name /prestige is already defined in prestige.sk
-[04:00:45] [Server thread/INFO]:     Line: command /prestige confirm:
-[04:00:45] [Server thread/INFO]:  
-[04:00:45] [Server thread/INFO]: [Skript] Line 236: (prestige.sk)
-[04:00:45] [Server thread/INFO]:     A command with the name /prestige is already defined in prestige.sk
-[04:00:45] [Server thread/INFO]:     Line: command /prestige info:
-[04:00:45] [Server thread/INFO]:  
-[04:00:45] [Server thread/INFO]: [Skript] Line 267: (prestige.sk)
-[04:00:45] [Server thread/INFO]:     A command with the name /prestige is already defined in prestige.sk
-[04:00:45] [Server thread/INFO]:     Line: command /prestige top:
-[04:00:45] [Server thread/INFO]:  
-[04:00:45] [Server thread/INFO]: [Skript] Line 59: (weekly_events.sk)
-[04:00:45] [Server thread/INFO]:     A command with the name /event is already defined in weekly_events.sk
-[04:00:45] [Server thread/INFO]:     Line: command /event start <number>:
-[04:00:45] [Server thread/INFO]:  
-[04:00:45] [Server thread/INFO]: [Skript] Line 86: (weekly_events.sk)
-[04:00:45] [Server thread/INFO]:     A command with the name /event is already defined in weekly_events.sk
-[04:00:45] [Server thread/INFO]:     Line: command /event stop:
-[04:00:45] [Server thread/INFO]:  
-[04:00:46] [Server thread/INFO]: [Skript] Line 121: (tycoon_logic.sk)
-[04:00:46] [Server thread/INFO]:     [Deprecated] Skript's region syntaxes are deprecated and will be removed in a future release. For WorldGuard support, we recommend using skript-worldguard: https://github.com/SkriptLang/skript-worldguard
-[04:00:46] [Server thread/INFO]:     Line: if player cannot build at event-block:
-[04:00:46] [Server thread/INFO]:  
-[04:00:46] [Server thread/INFO]: [🏆 Achievement] Achievement-System geladen (23 Achievements)!
-[04:00:46] [Server thread/INFO]: [⚔ Boss] Boss-Event System geladen (5 Bosse)!
-[04:00:46] [Server thread/INFO]: [📈 Börse] Dynamisches Marktsystem geladen!
-[04:00:46] [Server thread/INFO]: [📊 Economy] Wirtschafts-Monitor geladen!
-[04:00:46] [Server thread/INFO]: [Prestige] Prestige-System geladen (10 Stufen)!
-[04:00:46] [Server thread/INFO]: [Tycoon] Preise geladen (V5)!
-[04:00:46] [Server thread/INFO]: [🎉 Event] Event-System geladen (5 Event-Typen)!
-[04:00:46] [Server thread/INFO]: [Skript] Loaded 17 scripts with a total of 89 structures in 1.07 seconds
-[04:00:46] [Server thread/INFO]: [Skript] Finished loading.
-[04:00:46] [Server thread/INFO]: [CMI] Permission plugin: LuckPerms5.5.71
-[04:00:46] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: cmi [9.8.9.8]
-[04:00:46] [Server thread/INFO]: [CMI] PlaceholderAPI hooked.
-[04:00:46] [Server thread/INFO]: [Jobs] Successfully linked with Vault. (CMIEInjector)
-[04:00:46] [Server thread/INFO]: [Jobs] Successfully linked with Vault. (LuckPerms)
-[04:00:46] [Server thread/WARN]: [Rankup] Having a final rank (for example: "Z: rank: 'Z'") from 3.4.2 or earlier should no longer be used.
-[04:00:46] [Server thread/WARN]: [Rankup] It is safe to just delete the final rank tycoon_bedrock
-[04:00:46] [Server thread/WARN]: [Rankup] Rankup section 'tycoon_bedrock' has a blank 'next' field, will be ignored.
-[04:00:46] [Server thread/WARN]: [Rankup] Ignoring rank: null
-[04:00:46] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: plan [5.8 build 3605]
-[04:00:46] [Server thread/INFO]: [VoidGen] 
-[04:00:46] [Server thread/INFO]: [VoidGen] > ——————————————————————[ CheckingPlotSquaredGenerator ]——————————————————————
-[04:00:46] [Server thread/INFO]: [VoidGen] > 
-[04:00:46] [Server thread/INFO]: [VoidGen] > Generator settings have not been set, we will use the default settings:
-[04:00:46] [Server thread/INFO]: [VoidGen] > {"biome":"the_void"}
-[04:00:46] [Server thread/INFO]: [VoidGen] > 
-[04:00:46] [Server thread/INFO]: [VoidGen] > ——————————————————————[ CheckingPlotSquaredGenerator ]——————————————————————
-[04:00:46] [Server thread/INFO]: [VoidGen] 
-[04:00:46] [Server thread/INFO]: [Lands] [Integrations] Successfully integrated CMI as hologram manager.
-[04:00:46] [Server thread/INFO]: [Lands] [Integrations] Added support for the vanish feature of the plugin CMI.
-[04:00:46] [Server thread/INFO]: [Lands] [Integrations] Successfully integrated PlaceholderAPI for parsing placeholders from 3rd party plugins in chat messages and GUI menus
-[04:00:46] [Server thread/INFO]: [Lands] [Integrations] Successfully integrated LuckPerms for offline permission lookups.
-[04:00:46] [Server thread/INFO]: [Lands] Added region provider: PlotSquared Type: CLAIMING
-[04:00:46] [Server thread/INFO]: [Lands] Added region provider: WorldGuard Type: SERVER
-[04:00:46] [Server thread/INFO]: [Lands] [Integrations] Successfully integrated Vault economy into economy system. Name: CMIEconomy
-[04:00:46] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: lands [8.1.0]
-[04:00:46] [Server thread/INFO]: [Lands] [Integrations] Successfully registered placeholders at PlaceholderAPI. More info: https://wiki.incredibleplugins.com/lands/configuration/placeholderapi-placeholders
-[04:00:46] [Server thread/INFO]: [Lands] BlueMap is ready now.
-[04:00:46] [Server thread/INFO]: [Lands] [Integrations] Successfully integrated BlueMap into web-map system.
-[04:00:46] [Server thread/INFO]: [Lands] [Integrations] Successfully integrated FastAsyncWorldEdit. 
-[04:00:46] [Server thread/INFO]: [Lands] [Integrations] Successfully loaded LuckPerms contexts. More information: https://wiki.incredibleplugins.com/lands/permissions/luckperms-context
-[04:00:46] [Server thread/INFO]: [Lands] [Economy] Next economic tasks (taxes, upkeep, nations upkeep) execution is in 3 Tag(e), 23 Stunde(n), 59 Minute(n), 13 Sekunde(n). Interval: 7 Tag(e)
-[04:00:46] [Server thread/INFO]: [Autorank] Registering statistics of vanilla Minecraft!
-[04:00:46] [Server thread/INFO]: [Autorank] Loaded libraries and dependencies
-[04:00:46] [Server thread/INFO]: GlobalMarketPlus >>> Configuration settings loaded, language: English
-[04:00:46] [Server thread/INFO]: GlobalMarketPlus >>> Loaded 29 files, error 0 .
-[04:00:46] [Server thread/INFO]: GlobalMarketPlus >>> Loaded all of GUIs and 0 custom GUIs.
-[04:00:46] [Server thread/INFO]: GlobalMarketPlus >>> Enabled SQLite .
-[04:00:46] [Server thread/INFO]: GlobalMarketPlus >>> Loaded 277 JSON components
-[04:00:46] [Server thread/INFO]: GlobalMarketPlus >>> Loaded 3 groups
-[04:00:46] [Server thread/INFO]: GlobalMarketPlus >>> Loaded 10 categories
-[04:00:46] [Server thread/INFO]: GlobalMarketPlus >>> Initialization completed, version v1.4.1.5
-[04:00:46] [GlobalMarketPlus-TaskThread/INFO]: GlobalMarketPlus >>> Deleting outdated records in the recorder database...
-[04:00:46] [GlobalMarketPlus-TaskThread/INFO]: GlobalMarketPlus >>> Deleted 0 outdated records.
-[04:00:46] [Server thread/INFO]: Done (28.715s)! For help, type "help"
-[04:00:46] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: luckperms [5.4-R2]
-[04:00:46] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: player-j17 [1.0.3]
-[04:00:46] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: world [1.2.3]
-[04:00:46] [Server thread/WARN]: [PlaceholderAPI] Cannot load expansion floodgate due to a missing plugin: floodgate
-[04:00:46] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: vault [1.8.3]
-[04:00:46] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: player [2.0.9]
-[04:00:46] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: checkitem [2.7.9]
-[04:00:46] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: worldguard [1.4.2]
-[04:00:46] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: math [2.0.2]
-[04:00:46] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: parseother [2.0.0]
-[04:00:46] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: pinger [1.0.1]
-[04:00:46] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: statistic [2.0.2]
-[04:00:46] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: server [2.7.3]
-[04:00:46] [Server thread/INFO]: 12 placeholder hook(s) registered!
-[04:00:46] [Oraxen-PackWorker/INFO]: Oraxen | No broken models or textures were found in the resourcepack
-[04:00:46] [Oraxen-PackWorker/INFO]: Oraxen | Attempting to merge imported font files...
-[04:00:46] [Oraxen-PackWorker/INFO]: Oraxen | Merged 2 duplicate font files into a final assets/minecraft/font/default.json
-[04:00:46] [Oraxen-PackWorker/INFO]: Oraxen | The imported font files have not been deleted.
-[04:00:46] [Oraxen-PackWorker/INFO]: Oraxen | If anything seems wrong, there might be conflicting unicodes assigned.
-[04:00:47] [Craft Scheduler Thread - 8 - Oraxen/INFO]: Oraxen | Automatic upload of the resource pack is enabled, uploading...
-[04:00:47] [Craft Scheduler Thread - 8 - Oraxen/INFO]: Oraxen | Self-hosted resource pack server started on 0.0.0.0:25600
-[04:00:47] [Craft Scheduler Thread - 8 - Oraxen/INFO]: Oraxen | Resourcepack uploaded to http://128.140.99.121:25600/pack.zip in 53 ms
-[04:00:47] [Server thread/INFO]: [ShopGUIPlus] ================================[ ShopGUI+ 1.113.0 ]================================
-[04:00:47] [Server thread/INFO]: [ShopGUIPlus]  
-[04:00:47] [Server thread/INFO]: [ShopGUIPlus] Need help using ShopGUI+? Check out our Wiki or Join our Discord Support server!
-[04:00:47] [Server thread/INFO]: [ShopGUIPlus] https://docs.brcdev.net/ & https://discord.brcdev.net/
-[04:00:47] [Server thread/INFO]: [ShopGUIPlus]  
-[04:00:47] [Server thread/INFO]: [ShopGUIPlus] Vault economy registered.
-[04:00:47] [Server thread/INFO]: [ShopGUIPlus] Vault economy enabled.
-[04:00:47] [Server thread/INFO]: [ShopGUIPlus] Using Vault as default economy provider.
-[04:00:47] [Server thread/INFO]: [ShopGUIPlus] Permissions support enabled.
-[04:00:47] [Server thread/INFO]: [ShopGUIPlus] Enabled item provider for HeadDatabase.
-[04:00:47] [Server thread/INFO]: [ShopGUIPlus] Enabled item provider for Oraxen.
-[04:00:47] [Server thread/INFO]: [ShopGUIPlus] No external spawner plugins registered, using built-in spawners support.
-[04:00:47] [Server thread/INFO]: [ShopGUIPlus] New feature alert! We've recently added a 'Buy Full Inventory' button to the Amount Selection GUI however we're unable to automatically update your config safely.
-[04:00:47] [Server thread/INFO]: [ShopGUIPlus] Please copy-paste a couple lines of YAML configuration as shown here: https://docs.brcdev.net/#/shopgui/config-updates?id=buy-full-inventory (Set slot to '-1' if you don't want it)
-[04:00:47] [Server thread/INFO]: [ShopGUIPlus] Loaded 10 main menu items.
-[04:00:47] [Server thread/INFO]: [ShopGUIPlus] Loaded shop 'farming' with 60 items.
-[04:00:47] [Server thread/INFO]: [ShopGUIPlus] Loaded shop 'minerals' with 44 items.
-[04:00:47] [Server thread/INFO]: [ShopGUIPlus] Loaded shop 'decoration' with 60 items.
-[04:00:47] [Server thread/INFO]: [ShopGUIPlus] Loaded shop 'Coloredblocks' with 142 items.
-[04:00:47] [Server thread/INFO]: [ShopGUIPlus] Loaded shop 'blocks' with 138 items.
-[04:00:47] [Server thread/INFO]: [ShopGUIPlus] Loaded shop 'foods' with 28 items.
-[04:00:47] [Server thread/INFO]: [ShopGUIPlus] Loaded shop 'mobdrops' with 46 items.
-[04:00:47] [Server thread/INFO]: [ShopGUIPlus] Loaded shop 'redstone' with 29 items.
-[04:00:47] [Server thread/INFO]: [ShopGUIPlus] Loaded shop 'wood' with 56 items.
-[04:00:47] [Server thread/INFO]: [ShopGUIPlus] Loaded shop 'tools' with 53 items.
-[04:00:47] [Server thread/INFO]: [ShopGUIPlus] Loaded shop 'weapons' with 54 items.
-[04:00:47] [Server thread/INFO]: [ShopGUIPlus] Loaded 11 shops with total of 710 items.
-[04:00:47] [Server thread/INFO]: [ShopGUIPlus] Loaded 0 permission-based price modifiers.
-[04:00:47] [Server thread/INFO]: [ShopGUIPlus] Loaded 7 sounds.
-[04:00:47] [Server thread/INFO]: [ShopGUIPlus]  
-[04:00:47] [Server thread/INFO]: [ShopGUIPlus] ====================================================================================
-[04:00:51] [ForkJoinPool.commonPool-worker-1/INFO]: [Lands] There is a new version available: 8.2.1
-[04:01:04] [Server thread/INFO]: herobrine (/172.86.114.38:57470) lost connection: Disconnected
-[04:07:09] [Server thread/INFO]: herobrine (/172.86.114.38:42500) lost connection: Disconnected
-[04:10:46] [Server thread/INFO]: [Survival] Neu hier? Tippe /help und erfahre alles über Jobs, Shops und Plots!
-[04:12:54] [Server thread/INFO]: herobrine (/172.86.114.38:35514) lost connection: Disconnected
-[04:20:46] [Server thread/INFO]: [Survival] Neu hier? Tippe /help und erfahre alles über Jobs, Shops und Plots!
-[04:25:47] [Server thread/INFO]: herobrine (/172.86.114.38:48614) lost connection: Disconnected
-[04:30:46] [Server thread/INFO]: [Survival] Neu hier? Tippe /help und erfahre alles über Jobs, Shops und Plots!
-[04:32:28] [Server thread/INFO]: herobrine (/172.86.114.38:41390) lost connection: Disconnected
-[04:38:15] [Server thread/INFO]: herobrine (/172.86.114.38:53566) lost connection: Disconnected
-[04:40:46] [Server thread/INFO]: [Survival] Neu hier? Tippe /help und erfahre alles über Jobs, Shops und Plots!
-[04:50:46] [Server thread/INFO]: [Survival] Neu hier? Tippe /help und erfahre alles über Jobs, Shops und Plots!
-[04:51:32] [Server thread/INFO]: herobrine (/172.86.114.38:39194) lost connection: Disconnected
-[04:58:12] [Server thread/INFO]: herobrine (/172.86.114.38:38286) lost connection: Disconnected
-[05:00:46] [Server thread/INFO]: [Survival] Neu hier? Tippe /help und erfahre alles über Jobs, Shops und Plots!
-[05:04:29] [Server thread/INFO]: herobrine (/172.86.114.38:54038) lost connection: Disconnected
-[05:10:16] [Server thread/INFO]: herobrine (/172.86.114.38:33312) lost connection: Disconnected
-[05:10:46] [Server thread/INFO]: [Survival] Neu hier? Tippe /help und erfahre alles über Jobs, Shops und Plots!
-[05:20:46] [Server thread/INFO]: [Survival] Neu hier? Tippe /help und erfahre alles über Jobs, Shops und Plots!
-[05:24:24] [Server thread/INFO]: herobrine (/172.86.114.38:47070) lost connection: Disconnected
-[05:30:43] [Server thread/INFO]: herobrine (/172.86.114.38:33786) lost connection: Disconnected
-[05:30:46] [Server thread/INFO]: [Survival] Neu hier? Tippe /help und erfahre alles über Jobs, Shops und Plots!
-[05:36:37] [Server thread/INFO]: herobrine (/172.86.114.38:51826) lost connection: Disconnected
-[05:40:46] [Server thread/INFO]: [Survival] Neu hier? Tippe /help und erfahre alles über Jobs, Shops und Plots!
-[05:48:52] [Server thread/INFO]: herobrine (/172.86.114.38:37750) lost connection: Disconnected
-[05:50:46] [Server thread/INFO]: [Survival] Neu hier? Tippe /help und erfahre alles über Jobs, Shops und Plots!
-[05:55:03] [Server thread/INFO]: herobrine (/172.86.114.38:40218) lost connection: Disconnected
-[06:00:46] [Server thread/INFO]: [Survival] Neu hier? Tippe /help und erfahre alles über Jobs, Shops und Plots!
-[06:01:16] [Server thread/INFO]: herobrine (/172.86.114.38:53400) lost connection: Disconnected
+[09:30:42] [BlueMap-Load/INFO]: [BlueMap] WebServer bound to all network interfaces on port 8102
+[09:30:42] [BlueMap-Webserver/INFO]: [BlueMap] WebServer started.
+[09:30:42] [BlueMap-Load/INFO]: [BlueMap] Loaded!
+[09:30:42] [ForkJoinPool.commonPool-worker-7/INFO]: [Skript] You're currently running the latest stable version of Skript.
+[09:30:43] [Server thread/INFO]: [Skript]  ~ created by & © Peter Güttinger aka Njol ~
+[09:30:43] [Server thread/INFO]: [Lands] Enabling Lands v8.1.0
+[09:30:44] [Server thread/INFO]: [Lands]  _                        _      
+[09:30:44] [Server thread/INFO]: [Lands] | |                      | |     
+[09:30:44] [Server thread/INFO]: [Lands] | |      __ _  _ __    __| | ___ 
+[09:30:44] [Server thread/INFO]: [Lands] | |     / _` || '_ \  / _` |/ __|
+[09:30:44] [Server thread/INFO]: [Lands] | |____| (_| || | | || (_| |\__ \
+[09:30:44] [Server thread/INFO]: [Lands] \_____/ \__,_||_| |_| \__,_||___/
+[09:30:44] [Server thread/INFO]: [Lands] Version: 8.1.0 Previous: 8.1.0
+[09:30:44] [Server thread/INFO]: [Lands] Server: 26.2.0 running Paper
+[09:30:44] [Server thread/INFO]: [Lands] Licensed to: 2433376
+[09:30:44] [Server thread/INFO]: [Lands] Experiencing issues or having questions? Join our Discord!
+[09:30:44] [Server thread/INFO]: [Lands] Discord: https://discord.incredibleplugins.com
+[09:30:44] [Server thread/INFO]: [Lands] Wiki: https://wiki.incredibleplugins.com/lands
+[09:30:44] [Server thread/INFO]: [Lands]  
+[09:30:44] [Server thread/INFO]: [Lands] Performing initial data load.
+[09:30:44] [Server thread/INFO]: [Lands] There are currently 1 created land(s).
+[09:30:44] [Server thread/INFO]: [Lands] Initial data load took 58 ms.
+[09:30:44] [Server thread/INFO]: [packetevents] Enabling packetevents v2.13.0
+[09:30:44] [packetevents-update-check-thread/INFO]: [packetevents] Checking for updates, please wait...
+[09:30:44] [Server thread/INFO]: [CMI] Enabling CMI v9.8.9.8
+[09:30:44] [packetevents-update-check-thread/INFO]: [packetevents] You are running the latest release: 2.13.0
+[09:30:44] [Server thread/INFO]: _______________________________________________________
+[09:30:44] [Server thread/INFO]:  
+[09:30:44] [Server thread/INFO]:  ██████╗███╗   ███╗██╗
+[09:30:44] [Server thread/INFO]: ██╔════╝████╗ ████║██║
+[09:30:44] [Server thread/INFO]: ██║     ██╔████╔██║██║
+[09:30:44] [Server thread/INFO]: ██║     ██║╚██╔╝██║██║
+[09:30:44] [Server thread/INFO]: ╚██████╗██║ ╚═╝ ██║██║
+[09:30:44] [Server thread/INFO]:  ╚═════╝╚═╝     ╚═╝╚═╝
+[09:30:44] [Server thread/INFO]: _______________________________________________________
+[09:30:44] [Server thread/INFO]: Integrating PaperSpigot async methods
+[09:30:44] [Server thread/INFO]: Vault found. (Loaded: true)
+[09:30:44] [CMI-Thread-1/INFO]: Loaded (-) locale download into memory. Took 15ms
+[09:30:44] [Server thread/INFO]: Loaded (71) 70 Enabled and 1 Disabled modules into memory. Took 85ms
+[09:30:44] [Server thread/INFO]: BlueMap found. (Loaded: true)
+[09:30:44] [Server thread/INFO]: Initialized Cipher256 AES
+[09:30:44] [ForkJoinPool.commonPool-worker-7/INFO]: [Skript] Loaded 5750 aliases in 943ms
+[09:30:44] [Server thread/INFO]: Loaded (61) regular alias into memory. Took 44ms
+[09:30:44] [CMI-Thread-2/INFO]: Loaded (1) custom text's into memory. Took 3ms
+[09:30:45] [Server thread/INFO]: (RandomTeleportation) Can't find world with (lobby) name
+[09:30:45] [Server thread/INFO]: (RandomTeleportation) Can't find world with (town) name
+[09:30:45] [Server thread/INFO]: (RandomTeleportation) Can't find world with (freebuild) name
+[09:30:45] [Server thread/INFO]: (RandomTeleportation) Can't find world with (tycoon) name
+[09:30:45] [Server thread/INFO]: (RandomTeleportation) Can't find world with (SuperiorWorld) name
+[09:30:45] [Server thread/INFO]: (RandomTeleportation) Can't find world with (Schematics) name
+[09:30:45] [Server thread/INFO]: SQLite 3.49.1 data base type detected
+[09:30:45] [Server thread/INFO]: Loaded (-) SqLite into memory. Took 76ms
+[09:30:45] [Server thread/INFO]: Vault was found - Enabling capabilities. Economy: CMIEconomy
+[09:30:45] [Server thread/INFO]: Loaded (5) warning categories into memory. Took 1ms
+[09:30:45] [Server thread/INFO]: Loaded (3) warning commands into memory. Took 0ms
+[09:30:45] [Server thread/INFO]: Loaded (0) cooldowns into memory. Took 0ms
+[09:30:45] [Server thread/INFO]: Loaded (160) custom mob heads into memory. Took 15ms
+[09:30:45] [Server thread/INFO]: Loaded (4) chat bubble groups into memory. Took 1ms
+[09:30:45] [Server thread/INFO]: Loaded (5) kits into memory. Took 8ms
+[09:30:45] [Server thread/INFO]: Loaded (5) dialogs into memory. Took 8ms
+[09:30:45] [Server thread/INFO]: Loaded (15) ranks into memory. Took 7ms
+[09:30:45] [Server thread/INFO]: Loaded (8) playtime rewards into memory. Took 2ms
+[09:30:45] [Server thread/INFO]: Executed Player DB querry in 0ms
+[09:30:45] [Server thread/INFO]: Loaded (12) player data into memory. Took 7ms
+[09:30:45] [Server thread/INFO]: Loaded (0) playtime records into memory. Took 0ms
+[09:30:45] [Server thread/INFO]: Loaded (0) playtime reward records into memory. Took 0ms
+[09:30:45] [Server thread/INFO]: Loaded (0) custom alias into memory. Took 1ms
+[09:30:45] [Server thread/INFO]: Loaded (-) Registered events into memory. Took 131ms
+[09:30:45] [Server thread/INFO]: Loaded (27) event action commands into memory. Took 5ms
+[09:30:45] [Server thread/INFO]: Loaded (EN) language file into memory. Took 67ms
+[09:30:45] [Server thread/INFO]: Loaded (DE) language file into memory. Took 50ms
+[09:30:45] [Server thread/INFO]: Loaded (245) worth values into memory. Took 15ms
+[09:30:45] [Server thread/INFO]: Loaded (13) warps into memory. Took 2ms
+[09:30:45] [Server thread/INFO]: VaultPermissions found. (Loaded: true)
+[09:30:45] [Server thread/INFO]: PlaceholderAPI found. (Loaded: true)
+[09:30:45] [Server thread/INFO]: Jobs found. (Loaded: false)
+[09:30:45] [Server thread/INFO]: Loaded (5) schedules into memory. Took 3ms
+[09:30:45] [Server thread/INFO]: Loaded (0) skin cache entries into memory. Took 0ms
+[09:30:45] [Server thread/INFO]: [CMI] Preloading playtimetop statistics
+[09:30:45] [Server thread/INFO]: Loaded (0) ArmorStand templates into memory. Took 1ms
+[09:30:45] [Server thread/INFO]: Version 9.8.9.8 has been enabled
+[09:30:45] [Server thread/INFO]: _______________________________________________________
+[09:30:45] [Server thread/INFO]: [CMIEInjector][Economy] CMI Economy hooked.
+[09:30:45] [Server thread/INFO]: [Jobs] Enabling Jobs v5.2.6.6
+[09:30:45] [Server thread/INFO]: ------------- Jobs -------------
+[09:30:45] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: jobsr [5.2.6.6]
+[09:30:45] [Server thread/INFO]: PlaceholderAPI hooked.
+[09:30:45] [Server thread/INFO]: Connected to database (SqLite)
+[09:30:45] [Server thread/INFO]: Loaded 8 titles
+[09:30:45] [Server thread/INFO]: Loaded 2 restricted areas!
+[09:30:45] [Server thread/INFO]: Loaded 53 protected blocks timers
+[09:30:46] [Server thread/INFO]: Loaded 1692 custom item names
+[09:30:46] [Server thread/INFO]: Loaded 93 custom entity names
+[09:30:46] [Server thread/INFO]: Loaded 2 custom MythicMobs names
+[09:30:46] [Server thread/INFO]: Loaded 43 custom enchant names
+[09:30:46] [Server thread/INFO]: Loaded 46 custom enchant names
+[09:30:46] [Server thread/INFO]: Loaded 16 custom color names
+[09:30:46] [Server thread/INFO]: Update shops items icon section and use 'ItemStack' instead
+[09:30:46] [Server thread/INFO]: Loaded 4 shop items
+[09:30:46] [Server thread/INFO]: Loaded 1 quests for Brewer
+[09:30:46] [Server thread/INFO]: Loaded 1 quests for Explorer
+[09:30:46] [Server thread/INFO]: Loaded 1 quests for Hunter
+[09:30:46] [Server thread/INFO]: Loaded 1 quests for Weaponsmith
+[09:30:46] [Server thread/INFO]: Loaded 1 quests for Crafter
+[09:30:46] [Server thread/INFO]: Loaded 1 quests for Woodcutter
+[09:30:46] [Server thread/INFO]: Loaded 1 quests for Fisherman
+[09:30:46] [Server thread/INFO]: Loaded 1 quests for Enchanter
+[09:30:46] [Server thread/INFO]: Loaded 1 quests for Digger
+[09:30:46] [Server thread/INFO]: Loaded 1 quests for Farmer
+[09:30:46] [Server thread/INFO]: Loaded 1 quests for Builder
+[09:30:46] [Server thread/INFO]: Loaded 1 quests for Miner
+[09:30:46] [Server thread/INFO]: Loaded 12 jobs
+[09:30:46] [Server thread/INFO]: Loaded 0 boosted items
+[09:30:46] [Server thread/INFO]: Loaded 66 furnace for reassigning.
+[09:30:46] [Server thread/INFO]: Loaded 1 brewing for reassigning.
+[09:30:46] [Server thread/INFO]: Loaded 3 blastfurnace for reassigning.
+[09:30:46] [Jobs-DatabaseSaveTask/INFO]: Started database save task.
+[09:30:46] [Jobs-BufferedPaymentThread/INFO]: Started buffered payment thread.
+[09:30:46] [Server thread/INFO]: Preloaded 12 players data in 0.01
+[09:30:46] [Server thread/INFO]: WorldGuard detected.
+[09:30:46] [Server thread/INFO]: Registering listeners...
+[09:30:46] [Server thread/INFO]: Listeners registered successfully
+[09:30:46] [Server thread/INFO]: Plugin has been enabled successfully.
+[09:30:46] [Server thread/INFO]: ------------------------------------
+[09:30:46] [Server thread/INFO]: [Multiverse-Core] Enabling Multiverse-Core v5.8.0
+[09:30:46] [Server thread/INFO]: [VoidGen] 
+[09:30:46] [Server thread/INFO]: [VoidGen] > ——————————————————————[ world ]——————————————————————
+[09:30:46] [Server thread/INFO]: [VoidGen] > 
+[09:30:46] [Server thread/INFO]: [VoidGen] > Generator settings have not been set, we will use the default settings:
+[09:30:46] [Server thread/INFO]: [VoidGen] > {"biome":"the_void"}
+[09:30:46] [Server thread/INFO]: [VoidGen] > 
+[09:30:46] [Server thread/INFO]: [VoidGen] > ——————————————————————[ world ]——————————————————————
+[09:30:46] [Server thread/INFO]: [VoidGen] 
+[09:30:46] [Worker-Main-1/INFO]: [PlotSquared/PlotSquared] Detected world load for 'freebuild'
+[09:30:46] [Worker-Main-1/INFO]: [PlotSquared/PlotSquared] - generator: PlotSquared>PlotSquared
+[09:30:46] [Worker-Main-1/INFO]: [PlotSquared/PlotSquared] - plot world: com.plotsquared.core.generator.HybridPlotWorld
+[09:30:46] [Worker-Main-1/INFO]: [PlotSquared/PlotSquared] - plot area manager: com.plotsquared.core.generator.HybridPlotManager
+[09:30:46] [Worker-Main-1/INFO]: [P2] Loading flags for area: freebuild
+[09:30:46] [Worker-Main-1/INFO]: [P2] Area flags: []
+[09:30:46] [Worker-Main-1/INFO]: [P2] Road flags: []
+[09:30:46] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:freebuild'...
+[09:30:46] [Server thread/INFO]: Prepared spawn area in 2 ms
+[09:30:46] [Server thread/INFO]: [WorldGuard] (freebuild) TNT ignition is PERMITTED.
+[09:30:46] [Server thread/INFO]: [WorldGuard] (freebuild) Lighters are PERMITTED.
+[09:30:46] [Server thread/INFO]: [WorldGuard] (freebuild) Lava fire is PERMITTED.
+[09:30:46] [Server thread/INFO]: [WorldGuard] (freebuild) Fire spread is UNRESTRICTED.
+[09:30:46] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'freebuild'
+[09:30:46] [Server thread/INFO]: [VoidGen] 
+[09:30:46] [Server thread/INFO]: [VoidGen] > ——————————————————————[ Schematics ]——————————————————————
+[09:30:46] [Server thread/INFO]: [VoidGen] > 
+[09:30:46] [Server thread/INFO]: [VoidGen] > Generator settings have not been set, we will use the default settings:
+[09:30:46] [Server thread/INFO]: [VoidGen] > {"biome":"the_void"}
+[09:30:46] [Server thread/INFO]: [VoidGen] > 
+[09:30:46] [Server thread/INFO]: [VoidGen] > ——————————————————————[ Schematics ]——————————————————————
+[09:30:46] [Server thread/INFO]: [VoidGen] 
+[09:30:46] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:schematics'...
+[09:30:46] [Server thread/INFO]: Preparing spawn area: 100%
+[09:30:46] [Server thread/INFO]: Prepared spawn area in 1 ms
+[09:30:46] [Server thread/INFO]: [WorldGuard] (Schematics) TNT ignition is PERMITTED.
+[09:30:46] [Server thread/INFO]: [WorldGuard] (Schematics) Lighters are PERMITTED.
+[09:30:46] [Server thread/INFO]: [WorldGuard] (Schematics) Lava fire is PERMITTED.
+[09:30:46] [Server thread/INFO]: [WorldGuard] (Schematics) Fire spread is UNRESTRICTED.
+[09:30:46] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'Schematics'
+[09:30:46] [Server thread/INFO]: [PlotSquared/PlotSquared] Detected world load for 'town'
+[09:30:46] [Server thread/INFO]: [PlotSquared/PlotSquared] - generator: PlotSquared>PlotSquared
+[09:30:46] [Server thread/INFO]: [PlotSquared/PlotSquared] - plot world: com.plotsquared.core.generator.HybridPlotWorld
+[09:30:46] [Server thread/INFO]: [PlotSquared/PlotSquared] - plot area manager: com.plotsquared.core.generator.HybridPlotManager
+[09:30:46] [Server thread/INFO]: [P2] Loading flags for area: town
+[09:30:46] [Server thread/INFO]: [P2] Area flags: []
+[09:30:46] [Server thread/INFO]: [P2] Road flags: []
+[09:30:46] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:town'...
+[09:30:46] [Server thread/INFO]: Prepared spawn area in 0 ms
+[09:30:46] [Server thread/INFO]: [WorldGuard] (town) TNT ignition is PERMITTED.
+[09:30:46] [Server thread/INFO]: [WorldGuard] (town) Lighters are PERMITTED.
+[09:30:46] [Server thread/INFO]: [WorldGuard] (town) Lava fire is PERMITTED.
+[09:30:46] [Server thread/INFO]: [WorldGuard] (town) Fire spread is UNRESTRICTED.
+[09:30:46] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'town'
+[09:30:46] [Server thread/INFO]: [PlotSquared/PlotSquared] Detected world load for 'tycoon'
+[09:30:46] [Server thread/INFO]: [PlotSquared/PlotSquared] - generator: PlotSquared>PlotSquared
+[09:30:46] [Server thread/INFO]: [PlotSquared/PlotSquared] - plot world: com.plotsquared.core.generator.HybridPlotWorld
+[09:30:46] [Server thread/INFO]: [PlotSquared/PlotSquared] - plot area manager: com.plotsquared.core.generator.HybridPlotManager
+[09:30:46] [Server thread/INFO]: [P2] Loading flags for area: tycoon
+[09:30:46] [Server thread/INFO]: [P2] Area flags: []
+[09:30:46] [Server thread/INFO]: [P2] Road flags: []
+[09:30:46] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:tycoon'...
+[09:30:46] [Server thread/INFO]: Prepared spawn area in 0 ms
+[09:30:46] [Server thread/INFO]: [WorldGuard] (tycoon) TNT ignition is PERMITTED.
+[09:30:46] [Server thread/INFO]: [WorldGuard] (tycoon) Lighters are PERMITTED.
+[09:30:46] [Server thread/INFO]: [WorldGuard] (tycoon) Lava fire is PERMITTED.
+[09:30:46] [Server thread/INFO]: [WorldGuard] (tycoon) Fire spread is UNRESTRICTED.
+[09:30:46] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'tycoon'
+[09:30:47] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: multiverse-core [5.8.0]
+[09:30:47] [Server thread/INFO]: [Multiverse-Core] API service loaded!
+[09:30:47] [Server thread/INFO]: [Multiverse-Core] Version 5.8.0 (API v5.8) Enabled - By dumptruckman, Rigby, fernferret, lithium3141, main--, benwoo1110 and Zax71
+[09:30:47] [Server thread/INFO]: [Multiverse-Core] Loving Multiverse-Core? Please consider supporting the project with a small donation: https://github.com/sponsors/Multiverse
+[09:30:47] [Server thread/INFO]: [VoidGen] VoidGen hooked into Multiverse!
+[09:30:47] [Server thread/INFO]: [Oraxen] Enabling Oraxen v1.218.0
+[09:30:47] [Server thread/INFO]: [Lands] [Integrations] 3rd party plugin hooking into Lands: Oraxen
+[09:30:47] [Server thread/INFO]: Oraxen | [ProtocolLibAdapter] registerTitleListener called
+[09:30:47] [Server thread/INFO]: Oraxen | [ProtocolLibAdapter] Title Listener registered successfully
+[09:30:47] [Server thread/INFO]: Oraxen | Custom paintings already hot reloaded (0 unchanged).
+[09:30:47] [Server thread/INFO]: Oraxen | TextEffects.shader.encoding 'alpha_lsb' is deprecated. Using 'effect_font'.
+[09:30:47] [Server thread/INFO]: Oraxen | Loaded 4 text effects
+[09:30:47] [Server thread/INFO]: Oraxen | Loaded 16 glyphs, 0 reference glyphs, 1 animated glyphs
+[09:30:47] [Server thread/INFO]: Oraxen | Hot reloaded 1 new custom jukebox song(s), 0 updated, 0 removed, 0 unchanged.
+[09:30:47] [Server thread/INFO]: Oraxen | Block mechanic caveblock uses legacy 'hardness'/'drop' keys; please migrate them to a 'breaking' rule.
+[09:30:47] [Server thread/INFO]: Oraxen | Block mechanic amethyst_ore uses legacy 'hardness'/'drop' keys; please migrate them to a 'breaking' rule.
+[09:30:47] [Server thread/INFO]: Oraxen | Block mechanic ruby_ore uses legacy 'hardness'/'drop' keys; please migrate them to a 'breaking' rule.
+[09:30:47] [Server thread/INFO]: Oraxen | Block mechanic onyx_ore uses legacy 'hardness'/'drop' keys; please migrate them to a 'breaking' rule.
+[09:30:47] [Server thread/INFO]: Oraxen | Block mechanic orax_ore uses legacy 'hardness'/'drop' keys; please migrate them to a 'breaking' rule.
+[09:30:47] [Server thread/INFO]: Oraxen | Block mechanic brunnera uses legacy 'hardness'/'drop' keys; please migrate them to a 'breaking' rule.
+[09:30:47] [Server thread/INFO]: Oraxen | Block mechanic daffodil uses legacy 'hardness'/'drop' keys; please migrate them to a 'breaking' rule.
+[09:30:47] [Server thread/INFO]: Oraxen | Block mechanic dailily uses legacy 'hardness'/'drop' keys; please migrate them to a 'breaking' rule.
+[09:30:47] [Server thread/INFO]: Oraxen | Successfully loaded on Ubuntu 26.04 LTS (resolute)
+[09:30:47] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: oraxen [1.218.0]
+[09:30:47] [Server thread/INFO]: Oraxen | Plugin "PlaceholderAPI" detected, enabling hooks
+[09:30:47] [Server thread/INFO]: Oraxen | Skript compatibility enabled - Oraxen syntax registered
+[09:30:47] [Server thread/INFO]: Oraxen | Plugin "Skript" detected, enabling hooks
+[09:30:47] [Server thread/INFO]: [HeadDatabase] Enabling HeadDatabase v4.24.0
+[09:30:48] [pool-21-thread-1/INFO]: [PlotSquared/BukkitPlatform] (UUID) PlotSquared will fetch UUIDs in groups of 200
+[09:30:48] [pool-21-thread-1/INFO]: [PlotSquared/BukkitPlatform] (UUID) PlotSquared has cached all UUIDs
+[09:30:48] [Server thread/INFO]: [HeadDatabase] §bUsing default §3"en_US.lang" §bcreated by §6Arcaniax
+[09:30:48] [Server thread/WARN]: [HeadDatabase] Economy was not loaded, some features will be disabled!
+[09:30:48] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: hdb [4.24.0]
+[09:30:48] [Server thread/INFO]: [CommandAPI] Enabling CommandAPI v12.0.0
+[09:30:48] [Server thread/INFO]: [CommandAPI] Hooked into Paper ServerResourcesReloadedEvent
+[09:30:48] [Server thread/INFO]: [LibsDisguises] Enabling LibsDisguises v26.8.13
+[09:30:48] [Server thread/INFO]: [LibsDisguises] File Name: LibsDisguises-26.8.13-Premium.jar
+[09:30:48] [Server thread/INFO]: [LibsDisguises] Discovered nms version (LD: v26_R2) (MC: 26.2)
+[09:30:48] [Server thread/INFO]: [LibsDisguises] Jenkins Build: #1813
+[09:30:48] [Server thread/INFO]: [LibsDisguises] Build Date: 12/08/2026 23:49
+[09:30:48] [Server thread/INFO]: [LibsDisguises] Build Hash: c77589e8~1
+[09:30:48] [Server thread/INFO]: [LibsDisguises] Registered to: 2433376 (28)
+[09:30:48] [Server thread/INFO]: [LibsDisguises] Premium enabled, thank you for supporting Lib's Disguises!
+[09:30:48] [Server thread/INFO]: [LibsDisguises] Config 'TallSelfDisguises' is set to 'SCALED', LD will scale down (when possible) oversized disguises from self disguise. https://www.spigotmc.org/wiki/lib-s-disguises-faq/#tall-disguises-self-disguises
+[09:30:48] [Server thread/INFO]: [packetevents] Loading block mappings for V_26_2/22...
+[09:30:48] [Server thread/INFO]: [packetevents] Finished loading block mappings for V_26_2/22 in 220.755779ms
+[09:30:48] [Folia Async Scheduler Thread #1/INFO]: [HeadDatabase] Successfully loaded 93121 heads!
+[09:30:49] [Folia Async Scheduler Thread #1/INFO]: [HeadDatabase] Successfully loaded 18 featured tags!
+[09:30:49] [Server thread/INFO]: [LibsDisguises] Config is up to date!
+[09:30:49] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: libsdisguises [1.0.0]
+[09:30:49] [Server thread/INFO]: [LibsDisguises] PlaceholderAPI support enabled
+[09:30:49] [Server thread/INFO]: [Autorank] Enabling Autorank v5.2.4
+[09:30:49] [Server thread/INFO]: [Autorank] mainclass getHumanPluginName = Autorank v5.2.4
+[09:30:49] [Server thread/INFO]: [Autorank] mainclass getInternalPluginName = Autorank v5.2.4
+[09:30:49] [Server thread/INFO]: [Autorank] mainclass isPluginAvailable = true
+[09:30:49] [Server thread/INFO]: [Autorank] Generated new log file: log-2026-08-22.txt
+[09:30:49] [Server thread/INFO]: [Autorank] The settings.yml is up-to-date
+[09:30:49] [Server thread/INFO]: [Autorank] Generating new PluginLibrary instance
+[09:30:49] [Server thread/INFO]: [PluginLibrary] ***== Loading libraries ==***
+[09:30:49] [Server thread/INFO]: [PluginLibrary] ***== Loaded 6 libraries! ==***
+[09:30:49] [Server thread/INFO]: [PluginLibrary] Loaded libraries: Autorank (by Staartvin), CMI (by Zrips), Jobs (by Zrips), PlaceholderAPI (by HelpChat), Vault (by Kainzo) and WorldGuard (by sk89q)
+[09:30:49] [Server thread/INFO]: [PluginLibrary] *** Ready for plugins to send/retrieve data. ***
+[09:30:49] [Server thread/INFO]: [Autorank] Interval check every 5 minutes.
+[09:30:49] [Server thread/INFO]: [Autorank] Registered requirement service for adding custom requirements!
+[09:30:49] [Server thread/INFO]: [Autorank] Registered result service for adding custom results!
+[09:30:49] [Server thread/INFO]: [Autorank] Autorank 5.2.4 has been enabled!
+[09:30:49] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: autorank [5.2.4]
+[09:30:49] [Server thread/INFO]: [Autorank] Registered placeholders, so you can use them!
+[09:30:49] [Server thread/INFO]: [Multiverse-Inventories] Enabling Multiverse-Inventories v5.3.5
+[09:30:49] [Server thread/WARN]: [Multiverse-Inventories] The following worlds for group 'lobby_group' does not exist: lobby
+[09:30:49] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: multiverse-inventories [5.3.5]
+[09:30:49] [Server thread/INFO]: [Multiverse-Inventories] Loading player names map...
+[09:30:49] [Server thread/INFO]: [Multiverse-Inventories] Version 5.3.5 (API v5.3) Enabled - By dumptruckman and benwoo1110
+[09:30:49] [Server thread/INFO]: [GlobalMarketPlus] Enabling GlobalMarketPlus v1.4.1.5
+[09:30:49] [Server thread/INFO]: [GlobalMarketPlus] Properties has been loaded!
+[09:30:49] [Server thread/INFO]: [GlobalMarketPlus] Plugin loading...
+[09:30:49] [Server thread/INFO]: [GlobalMarketPlus] Enabled Event Listener .
+[09:30:49] [Server thread/INFO]: [GlobalMarketPlus] Enabled Command Listener .
+[09:30:49] [Server thread/INFO]:   _____  _         _            _    __  __               _           _      _____   _
+[09:30:49] [Server thread/INFO]:  / ____|| |       | |          | |  |  \/  |             | |         | |    |  __ \ | |
+[09:30:49] [Server thread/INFO]: | |  __ | |  ___  | |__   __ _ | |  | \  / |  __ _  _ __ | | __  ___ | |_   | |__) || | _   _  ___
+[09:30:49] [Server thread/INFO]: | | |_ || | / _ \ | '_ \ / _` || |  | |\/| | / _` || '__|| |/ / / _ \| __|  |  ___/ | || | | |/ __|
+[09:30:49] [Server thread/INFO]: | |__| || || (_) || |_) | (_| || |  | |  | || (_| || |   |   < |  __/| |_   | |     | || |_| |\__ \
+[09:30:49] [Server thread/INFO]:  \_____||_| \___/ |_.__/ \__,_||_|  |_|  |_| \__,_||_|   |_|\_\ \___| \__|  |_|     |_| \__,_||___/
+[09:30:49] [Server thread/INFO]: 
+[09:30:49] [Server thread/INFO]: [GlobalMarketPlus] Loading plugins/GlobalMarketPlus-1.4.1.5.jar L=1309622
+[09:30:49] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: gmpapi [1.0.0]
+[09:30:49] [Server thread/INFO]: GlobalMarketPlus >>> Found PlaceholderAPI , everything is OK.
+[09:30:49] [Server thread/INFO]: GlobalMarketPlus >>> Found Vault , everything is OK.
+[09:30:49] [Server thread/INFO]: [Rankup] Enabling Rankup v3.15.3
+[09:30:50] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: rankup [3.15.3]
+[09:30:50] [Server thread/INFO]: [DeluxeMenus] Enabling DeluxeMenus v1.14.1-Release
+[09:30:50] [Server thread/INFO]: [DeluxeMenus] Successfully hooked into PlaceholderAPI!
+[09:30:50] [Server thread/INFO]: [DeluxeMenus] Successfully hooked into Vault!
+[09:30:50] [Server thread/INFO]: [DeluxeMenus] 7 GUI menus loaded!
+[09:30:50] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: deluxemenus [1.14.1-Release]
+[09:30:50] [Server thread/INFO]: [DeluxeMenus] You are running the latest version of DeluxeMenus!
+[09:30:50] [Server thread/INFO]: [ShopGUIPlus] Enabling ShopGUIPlus v1.113.0
+[09:30:50] [Server thread/INFO]: [TAB-Bridge] Enabling TAB-Bridge v6.2.2
+[09:30:50] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: tab [6.2.2]
+[09:30:50] [Server thread/INFO]: [ChestShop] Enabling ChestShop v1.5.1
+[09:30:50] [Server thread/INFO]: [Plan] Enabling Plan v5.8 build 3605
+[09:30:50] [Server thread/INFO]: [Plan] 
+[09:30:50] [Server thread/INFO]: [Plan]            ██▌
+[09:30:50] [Server thread/INFO]: [Plan]      ██▌   ██▌
+[09:30:50] [Server thread/INFO]: [Plan]   ██▌██▌██▌██▌  Player Analytics
+[09:30:50] [Server thread/INFO]: [Plan]   ██▌██▌██▌██▌  v5.8 build 3605
+[09:30:50] [Server thread/INFO]: [Plan] 
+[09:30:50] [Server thread/INFO]: [Plan] Locale: 'English' by AuroraLS3
+[09:30:50] [Server thread/INFO]: [Plan] Downloading MySQL Driver, this may take a while...
+[09:30:51] [Plan MySQLDB-transaction-thread-1/INFO]: [Plan] Database: Making sure schema is up to date..
+[09:30:51] [Server thread/INFO]: [Plan] MySQL-database connection established.
+[09:30:51] [Server thread/INFO]: [Plan] WebServer was not initialized. (WebServer.DisableWebServer: true)
+[09:30:51] [Server thread/INFO]: [Plan] Loading server identifying information
+[09:30:51] [Server thread/INFO]: [Plan] Server identifier loaded: 679bd851-d131-4425-b88d-e2714a3ef0f2
+[09:30:51] [Plan Non critical-pool-5/INFO]: [Plan] Proxy server detected in the database - Proxy Webserver address is 'https://mc-stats.festas-builds.com'.
+[09:30:51] [Server thread/INFO]: [Plan] Registered extension: CMI
+[09:30:51] [Server thread/INFO]: [Plan] Registered extension: Jobs
+[09:30:51] [Server thread/INFO]: [Lands] [Integrations] 3rd party plugin hooking into Lands: Plan
+[09:30:51] [Server thread/INFO]: [Plan] Registered extension: Lands
+[09:30:51] [Server thread/INFO]: [Plan] Registered extension: LuckPerms
+[09:30:51] [Server thread/INFO]: [Plan] Registered extension: PlaceholderAPI
+[09:30:51] [Server thread/INFO]: [Plan] Registered extension: PlotSquared
+[09:30:51] [Server thread/INFO]: [Plan] Registered extension: Economy (Vault)
+[09:30:51] [Server thread/INFO]: [Plan] Registered extension: Permission Groups (Vault)
+[09:30:51] [Plan MySQLDB-transaction-thread-1/INFO]: [Plan] All database patches applied successfully.
+[09:30:51] [Server thread/INFO]: [Plan] Player Analytics Enabled.
+[09:30:51] [Server thread/INFO]: [Chunky] Enabling Chunky v1.5.3
+[09:30:51] [Server thread/INFO]: [AxiomPaper] Enabling AxiomPaper v5.0.4+26.2
+[09:30:51] [Server thread/INFO]: [AxiomPaper] LuckPerms integration enabled
+[09:30:51] [Server thread/INFO]: [spark] Starting background profiler...
+[09:30:51] [GlobalMarketPlus-Loading/INFO]: GlobalMarketPlus >>> Successfully connected SQLite:Database.db server.
+[09:30:51] [GlobalMarketPlus-Loading/INFO]: GlobalMarketPlus >>> Successfully connected SQLite:Recorder.db server.
+[09:30:51] [GlobalMarketPlus-Loading/INFO]: GlobalMarketPlus >>> Initialized NMS :26.2.build.112-stable
+[09:30:51] [GlobalMarketPlus-Loading/INFO]: GlobalMarketPlus >>> Async threads started.
+[09:30:51] [GlobalMarketPlus-Loading/INFO]: GlobalMarketPlus >>> Plugin successfully enabled 1944ms .
+[09:30:51] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
+[09:30:51] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[09:30:51] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[09:30:51] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[09:30:51] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:freebuild
+[09:30:52] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:schematics
+[09:30:52] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:town
+[09:30:52] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:tycoon
+[09:30:52] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[09:30:52] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[09:30:52] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[09:30:52] [Server thread/INFO]: ThreadedAnvilChunkStorage (freebuild): All chunks are saved
+[09:30:52] [Server thread/INFO]: ThreadedAnvilChunkStorage (schematics): All chunks are saved
+[09:30:52] [Server thread/INFO]: ThreadedAnvilChunkStorage (town): All chunks are saved
+[09:30:52] [Server thread/INFO]: ThreadedAnvilChunkStorage (tycoon): All chunks are saved
+[09:30:52] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[09:30:52] [Server thread/INFO]: Running delayed init tasks
+[09:30:52] [Server thread/INFO]: [Chunky] No tasks to continue.
+[09:30:52] [Server thread/INFO]: [com.fastasyncworldedit.bukkit.regions.WorldGuardFeature] Plugin 'WorldGuard' found. Using it now.
+[09:30:52] [Server thread/INFO]: [com.fastasyncworldedit.bukkit.FaweBukkit] Attempting to use plugin 'WorldGuard'
+[09:30:52] [Server thread/INFO]: [com.fastasyncworldedit.bukkit.regions.plotsquared.PlotSquaredFeature] Optimizing PlotSquared
+[09:30:52] [Server thread/INFO]: [com.fastasyncworldedit.bukkit.FaweBukkit] Plugin 'PlotSquared' v7 found. Using it now.
+[09:30:52] [Craft Scheduler Thread - 0 - Autorank/INFO]: [Autorank] Primary storage provider of Autorank: FlatFileStorageProvider
+[09:30:52] [Craft Scheduler Thread - 7 - Autorank/INFO]: [Autorank] Loading UUID storage files...
+[09:30:52] [Craft Scheduler Thread - 7 - Autorank/INFO]: [Autorank] Loaded UUID storage in 0 seconds.
+[09:30:52] [Server thread/INFO]: [Skript]     Loaded regions hook for WorldGuard. Please note that Skript's region hooks are deprecated and will be removed in a future release. For WorldGuard support, we recommend using skript-worldguard: https://github.com/SkriptLang/skript-worldguard
+[09:30:52] [Craft Scheduler Thread - 6 - Autorank/INFO]: [Autorank] Removed 0 old storage entries from database!
+[09:30:52] [Server thread/INFO]: [Skript] Loading variables...
+[09:30:52] [Craft Scheduler Thread - 11 - Plan/INFO]: [Plan] You're using the latest version.
+[09:30:52] [Craft Scheduler Thread - 2 - PlotSquared/INFO]: [PlotSquared/UpdateUtility] Congratulations! You are running the latest PlotSquared version
+[09:30:52] [Server thread/INFO]: [Skript] Loaded 265 variables in 0.0 seconds
+[09:30:52] [Server thread/INFO]: [Skript] Line 70: (boss_events.sk)
+[09:30:52] [Server thread/INFO]:     A command with the name /bossevent is already defined in boss_events.sk
+[09:30:52] [Server thread/INFO]:     Line: command /bossevent stop:
+[09:30:52] [Server thread/INFO]:  
+[09:30:52] [Server thread/INFO]: [Skript] Line 128: (boss_events.sk)
+[09:30:52] [Server thread/INFO]:     A command with the name /boss is already defined in boss_events.sk
+[09:30:52] [Server thread/INFO]:     Line: command /boss hit:
+[09:30:52] [Server thread/INFO]:  
+[09:30:52] [Server thread/INFO]: [Skript] Line 180: (dynamic_market.sk)
+[09:30:52] [Server thread/INFO]:     Invalid amount or placement of brackets. Please make sure that each opening bracket has a corresponding closing bracket.
+[09:30:52] [Server thread/INFO]:     Line: send "&8  %{_name}%: &e%{_price}%€ &8(&7%{_multi}%\%&8) %{_trend}%"
+[09:30:52] [Server thread/INFO]:  
+[09:30:52] [Server thread/INFO]: [Skript] Line 190: (dynamic_market.sk)
+[09:30:52] [Server thread/INFO]:     A command with the name /boerse is already defined in dynamic_market.sk
+[09:30:52] [Server thread/INFO]:     Line: command /boerse detail <text>:
+[09:30:52] [Server thread/INFO]:  
+[09:30:52] [Server thread/INFO]: [Skript] Line 221: (dynamic_market.sk)
+[09:30:52] [Server thread/INFO]:     A command with the name /boerse is already defined in dynamic_market.sk
+[09:30:52] [Server thread/INFO]:     Line: command /boerse event <text>:
+[09:30:52] [Server thread/INFO]:  
+[09:30:52] [Server thread/INFO]: [Skript] Line 122: (economy_monitor.sk)
+[09:30:52] [Server thread/INFO]:     A command with the name /economy is already defined in economy_monitor.sk
+[09:30:52] [Server thread/INFO]:     Line: command /economy yesterday:
+[09:30:52] [Server thread/INFO]:  
+[09:30:52] [Server thread/INFO]: [Skript] Line 157: (prestige.sk)
+[09:30:52] [Server thread/INFO]:     A command with the name /prestige is already defined in prestige.sk
+[09:30:52] [Server thread/INFO]:     Line: command /prestige confirm:
+[09:30:52] [Server thread/INFO]:  
+[09:30:52] [Server thread/INFO]: [Skript] Line 236: (prestige.sk)
+[09:30:52] [Server thread/INFO]:     A command with the name /prestige is already defined in prestige.sk
+[09:30:52] [Server thread/INFO]:     Line: command /prestige info:
+[09:30:52] [Server thread/INFO]:  
+[09:30:52] [Server thread/INFO]: [Skript] Line 267: (prestige.sk)
+[09:30:52] [Server thread/INFO]:     A command with the name /prestige is already defined in prestige.sk
+[09:30:52] [Server thread/INFO]:     Line: command /prestige top:
+[09:30:52] [Server thread/INFO]:  
+[09:30:52] [Server thread/INFO]: [Skript] Line 59: (weekly_events.sk)
+[09:30:52] [Server thread/INFO]:     A command with the name /event is already defined in weekly_events.sk
+[09:30:52] [Server thread/INFO]:     Line: command /event start <number>:
+[09:30:52] [Server thread/INFO]:  
+[09:30:52] [Server thread/INFO]: [Skript] Line 86: (weekly_events.sk)
+[09:30:52] [Server thread/INFO]:     A command with the name /event is already defined in weekly_events.sk
+[09:30:52] [Server thread/INFO]:     Line: command /event stop:
+[09:30:52] [Server thread/INFO]:  
+[09:30:53] [Server thread/INFO]: [Skript] Line 121: (tycoon_logic.sk)
+[09:30:53] [Server thread/INFO]:     [Deprecated] Skript's region syntaxes are deprecated and will be removed in a future release. For WorldGuard support, we recommend using skript-worldguard: https://github.com/SkriptLang/skript-worldguard
+[09:30:53] [Server thread/INFO]:     Line: if player cannot build at event-block:
+[09:30:53] [Server thread/INFO]:  
+[09:30:53] [Server thread/INFO]: [🏆 Achievement] Achievement-System geladen (23 Achievements)!
+[09:30:53] [Server thread/INFO]: [⚔ Boss] Boss-Event System geladen (5 Bosse)!
+[09:30:53] [Server thread/INFO]: [📈 Börse] Dynamisches Marktsystem geladen!
+[09:30:53] [Server thread/INFO]: [📊 Economy] Wirtschafts-Monitor geladen!
+[09:30:53] [Server thread/INFO]: [Prestige] Prestige-System geladen (10 Stufen)!
+[09:30:53] [Server thread/INFO]: [Tycoon] Preise geladen (V5)!
+[09:30:53] [Server thread/INFO]: [🎉 Event] Event-System geladen (5 Event-Typen)!
+[09:30:53] [Server thread/INFO]: [Skript] Loaded 17 scripts with a total of 89 structures in 1.04 seconds
+[09:30:53] [Server thread/INFO]: [Skript] Finished loading.
+[09:30:53] [Server thread/INFO]: [CMI] Permission plugin: LuckPerms5.5.71
+[09:30:53] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: cmi [9.8.9.8]
+[09:30:53] [Server thread/INFO]: [CMI] PlaceholderAPI hooked.
+[09:30:53] [Server thread/INFO]: [Jobs] Successfully linked with Vault. (CMIEInjector)
+[09:30:53] [Server thread/INFO]: [Jobs] Successfully linked with Vault. (LuckPerms)
+[09:30:53] [Server thread/WARN]: [Rankup] Having a final rank (for example: "Z: rank: 'Z'") from 3.4.2 or earlier should no longer be used.
+[09:30:53] [Server thread/WARN]: [Rankup] It is safe to just delete the final rank tycoon_bedrock
+[09:30:53] [Server thread/WARN]: [Rankup] Rankup section 'tycoon_bedrock' has a blank 'next' field, will be ignored.
+[09:30:53] [Server thread/WARN]: [Rankup] Ignoring rank: null
+[09:30:53] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: plan [5.8 build 3605]
+[09:30:53] [Server thread/INFO]: GlobalMarketPlus >>> Configuration settings loaded, language: English
+[09:30:53] [Server thread/INFO]: GlobalMarketPlus >>> Loaded 29 files, error 0 .
+[09:30:53] [Server thread/INFO]: GlobalMarketPlus >>> Loaded all of GUIs and 0 custom GUIs.
+[09:30:53] [Server thread/INFO]: GlobalMarketPlus >>> Enabled SQLite .
+[09:30:53] [Server thread/INFO]: GlobalMarketPlus >>> Loaded 277 JSON components
+[09:30:53] [Server thread/INFO]: GlobalMarketPlus >>> Loaded 3 groups
+[09:30:53] [Server thread/INFO]: GlobalMarketPlus >>> Loaded 10 categories
+[09:30:53] [Server thread/INFO]: GlobalMarketPlus >>> Initialization completed, version v1.4.1.5
+[09:30:53] [Server thread/INFO]: [VoidGen] 
+[09:30:53] [Server thread/INFO]: [VoidGen] > ——————————————————————[ CheckingPlotSquaredGenerator ]——————————————————————
+[09:30:53] [Server thread/INFO]: [VoidGen] > 
+[09:30:53] [Server thread/INFO]: [VoidGen] > Generator settings have not been set, we will use the default settings:
+[09:30:53] [Server thread/INFO]: [VoidGen] > {"biome":"the_void"}
+[09:30:53] [Server thread/INFO]: [VoidGen] > 
+[09:30:53] [Server thread/INFO]: [VoidGen] > ——————————————————————[ CheckingPlotSquaredGenerator ]——————————————————————
+[09:30:53] [Server thread/INFO]: [VoidGen] 
+[09:30:53] [Server thread/INFO]: [Lands] [Integrations] Successfully integrated CMI as hologram manager.
+[09:30:53] [GlobalMarketPlus-TaskThread/INFO]: GlobalMarketPlus >>> Deleting outdated records in the recorder database...
+[09:30:53] [Server thread/INFO]: [Lands] [Integrations] Added support for the vanish feature of the plugin CMI.
+[09:30:53] [Server thread/INFO]: [Lands] [Integrations] Successfully integrated PlaceholderAPI for parsing placeholders from 3rd party plugins in chat messages and GUI menus
+[09:30:53] [Server thread/INFO]: [Lands] [Integrations] Successfully integrated LuckPerms for offline permission lookups.
+[09:30:53] [Server thread/INFO]: [Lands] Added region provider: PlotSquared Type: CLAIMING
+[09:30:53] [GlobalMarketPlus-TaskThread/INFO]: GlobalMarketPlus >>> Deleted 0 outdated records.
+[09:30:53] [Server thread/INFO]: [Lands] Added region provider: WorldGuard Type: SERVER
+[09:30:53] [Server thread/INFO]: [Lands] [Integrations] Successfully integrated Vault economy into economy system. Name: CMIEconomy
+[09:30:53] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: lands [8.1.0]
+[09:30:53] [Server thread/INFO]: [Lands] [Integrations] Successfully registered placeholders at PlaceholderAPI. More info: https://wiki.incredibleplugins.com/lands/configuration/placeholderapi-placeholders
+[09:30:53] [Server thread/INFO]: [Lands] BlueMap is ready now.
+[09:30:53] [Server thread/INFO]: [Lands] [Integrations] Successfully integrated BlueMap into web-map system.
+[09:30:53] [Server thread/INFO]: [Lands] [Integrations] Successfully integrated FastAsyncWorldEdit. 
+[09:30:53] [Server thread/INFO]: [Lands] [Integrations] Successfully loaded LuckPerms contexts. More information: https://wiki.incredibleplugins.com/lands/permissions/luckperms-context
+[09:30:53] [Server thread/INFO]: [Lands] [Economy] Next economic tasks (taxes, upkeep, nations upkeep) execution is in 3 Tag(e), 18 Stunde(n), 29 Minute(n), 6 Sekunde(n). Interval: 7 Tag(e)
+[09:30:53] [Server thread/INFO]: [Autorank] Registering statistics of vanilla Minecraft!
+[09:30:53] [Server thread/INFO]: [Autorank] Loaded libraries and dependencies
+[09:30:53] [Server thread/INFO]: Done (38.724s)! For help, type "help"
+[09:30:53] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: luckperms [5.4-R2]
+[09:30:53] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: player-j17 [1.0.3]
+[09:30:53] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: world [1.2.3]
+[09:30:53] [Server thread/WARN]: [PlaceholderAPI] Cannot load expansion floodgate due to a missing plugin: floodgate
+[09:30:53] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: vault [1.8.3]
+[09:30:53] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: player [2.0.9]
+[09:30:53] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: checkitem [2.7.9]
+[09:30:53] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: worldguard [1.4.2]
+[09:30:53] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: math [2.0.2]
+[09:30:53] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: parseother [2.0.0]
+[09:30:53] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: pinger [1.0.1]
+[09:30:53] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: statistic [2.0.2]
+[09:30:53] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: server [2.7.3]
+[09:30:53] [Server thread/INFO]: 12 placeholder hook(s) registered!
+[09:30:53] [Oraxen-PackWorker/INFO]: Oraxen | No broken models or textures were found in the resourcepack
+[09:30:53] [Oraxen-PackWorker/INFO]: Oraxen | Attempting to merge imported font files...
+[09:30:53] [Oraxen-PackWorker/INFO]: Oraxen | Merged 2 duplicate font files into a final assets/minecraft/font/default.json
+[09:30:53] [Oraxen-PackWorker/INFO]: Oraxen | The imported font files have not been deleted.
+[09:30:53] [Oraxen-PackWorker/INFO]: Oraxen | If anything seems wrong, there might be conflicting unicodes assigned.
+[09:30:53] [Craft Scheduler Thread - 2 - Oraxen/INFO]: Oraxen | Automatic upload of the resource pack is enabled, uploading...
+[09:30:54] [Craft Scheduler Thread - 2 - Oraxen/INFO]: Oraxen | Self-hosted resource pack server started on 0.0.0.0:25600
+[09:30:54] [Craft Scheduler Thread - 2 - Oraxen/INFO]: Oraxen | Resourcepack uploaded to http://128.140.99.121:25600/pack.zip in 58 ms
+[09:30:54] [Server thread/INFO]: [ShopGUIPlus] ================================[ ShopGUI+ 1.113.0 ]================================
+[09:30:54] [Server thread/INFO]: [ShopGUIPlus]  
+[09:30:54] [Server thread/INFO]: [ShopGUIPlus] Need help using ShopGUI+? Check out our Wiki or Join our Discord Support server!
+[09:30:54] [Server thread/INFO]: [ShopGUIPlus] https://docs.brcdev.net/ & https://discord.brcdev.net/
+[09:30:54] [Server thread/INFO]: [ShopGUIPlus]  
+[09:30:54] [Server thread/INFO]: [ShopGUIPlus] Vault economy registered.
+[09:30:54] [Server thread/INFO]: [ShopGUIPlus] Vault economy enabled.
+[09:30:54] [Server thread/INFO]: [ShopGUIPlus] Using Vault as default economy provider.
+[09:30:54] [Server thread/INFO]: [ShopGUIPlus] Permissions support enabled.
+[09:30:54] [Server thread/INFO]: [ShopGUIPlus] Enabled item provider for HeadDatabase.
+[09:30:54] [Server thread/INFO]: [ShopGUIPlus] Enabled item provider for Oraxen.
+[09:30:54] [Server thread/INFO]: [ShopGUIPlus] No external spawner plugins registered, using built-in spawners support.
+[09:30:54] [Server thread/INFO]: [ShopGUIPlus] New feature alert! We've recently added a 'Buy Full Inventory' button to the Amount Selection GUI however we're unable to automatically update your config safely.
+[09:30:54] [Server thread/INFO]: [ShopGUIPlus] Please copy-paste a couple lines of YAML configuration as shown here: https://docs.brcdev.net/#/shopgui/config-updates?id=buy-full-inventory (Set slot to '-1' if you don't want it)
+[09:30:54] [Server thread/INFO]: [ShopGUIPlus] Loaded 10 main menu items.
+[09:30:54] [Server thread/INFO]: [ShopGUIPlus] Loaded shop 'farming' with 60 items.
+[09:30:54] [Server thread/INFO]: [ShopGUIPlus] Loaded shop 'minerals' with 44 items.
+[09:30:54] [Server thread/INFO]: [ShopGUIPlus] Loaded shop 'decoration' with 60 items.
+[09:30:54] [Server thread/INFO]: [ShopGUIPlus] Loaded shop 'Coloredblocks' with 142 items.
+[09:30:54] [Server thread/INFO]: [ShopGUIPlus] Loaded shop 'blocks' with 138 items.
+[09:30:54] [Server thread/INFO]: [ShopGUIPlus] Loaded shop 'foods' with 28 items.
+[09:30:54] [Server thread/INFO]: [ShopGUIPlus] Loaded shop 'mobdrops' with 46 items.
+[09:30:54] [Server thread/INFO]: [ShopGUIPlus] Loaded shop 'redstone' with 29 items.
+[09:30:54] [Server thread/INFO]: [ShopGUIPlus] Loaded shop 'wood' with 56 items.
+[09:30:54] [Server thread/INFO]: [ShopGUIPlus] Loaded shop 'tools' with 53 items.
+[09:30:54] [Server thread/INFO]: [ShopGUIPlus] Loaded shop 'weapons' with 54 items.
+[09:30:54] [Server thread/INFO]: [ShopGUIPlus] Loaded 11 shops with total of 710 items.
+[09:30:54] [Server thread/INFO]: [ShopGUIPlus] Loaded 0 permission-based price modifiers.
+[09:30:54] [Server thread/INFO]: [ShopGUIPlus] Loaded 7 sounds.
+[09:30:54] [Server thread/INFO]: [ShopGUIPlus]  
+[09:30:54] [Server thread/INFO]: [ShopGUIPlus] ====================================================================================
+[09:30:58] [ForkJoinPool.commonPool-worker-2/INFO]: [Lands] There is a new version available: 8.2.1
+[09:33:25] [Server thread/INFO]: herobrine (/172.86.114.38:47250) lost connection: Disconnected
+[09:40:53] [Server thread/INFO]: [Survival] Neu hier? Tippe /help und erfahre alles über Jobs, Shops und Plots!
+[09:50:53] [Server thread/INFO]: [Survival] Neu hier? Tippe /help und erfahre alles über Jobs, Shops und Plots!
+[10:00:53] [Server thread/INFO]: [Survival] Neu hier? Tippe /help und erfahre alles über Jobs, Shops und Plots!
+[10:10:53] [Server thread/INFO]: [Survival] Neu hier? Tippe /help und erfahre alles über Jobs, Shops und Plots!

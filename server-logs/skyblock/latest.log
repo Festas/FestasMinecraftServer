@@ -1,283 +1,289 @@
-[05:54:26] [ServerMain/INFO]: [bootstrap] Running Java 25 (OpenJDK 64-Bit Server VM 25.0.3+9-LTS; Eclipse Adoptium Temurin-25.0.3+9) on Linux 6.8.0-137-generic (amd64)
-[05:54:26] [ServerMain/INFO]: [bootstrap] Loading AdvancedSlimePaper 26.2-17406-paper_upstream@6bc38be (1970-01-01T00:00:00Z) for Minecraft 26.2
-[05:54:26] [ServerMain/INFO]: [PluginInitializerManager] Initializing plugins...
-[05:54:27] [ServerMain/INFO]: [PluginInitializerManager] Initialized 15 plugins
-[05:54:27] [ServerMain/INFO]: [PluginInitializerManager] Paper plugins (2):
+[09:30:05] [ServerMain/INFO]: [bootstrap] Running Java 25 (OpenJDK 64-Bit Server VM 25.0.3+9-LTS; Eclipse Adoptium Temurin-25.0.3+9) on Linux 6.8.0-137-generic (amd64)
+[09:30:05] [ServerMain/INFO]: [bootstrap] Loading AdvancedSlimePaper 26.2-17406-paper_upstream@6bc38be (1970-01-01T00:00:00Z) for Minecraft 26.2
+[09:30:05] [ServerMain/INFO]: [PluginInitializerManager] Initializing plugins...
+[09:30:06] [ServerMain/INFO]: [PluginInitializerManager] Initialized 15 plugins
+[09:30:06] [ServerMain/INFO]: [PluginInitializerManager] Paper plugins (2):
  - ASPaperPlugin (6bc38bef65921cf480446de8e46161803e68d750), nightcore (2.16.4)
-[05:54:27] [ServerMain/INFO]: [PluginInitializerManager] Bukkit plugins (13):
+[09:30:06] [ServerMain/INFO]: [PluginInitializerManager] Bukkit plugins (13):
  - CMI (9.8.9.8), CMILib (1.5.9.9), DeluxeBazaar (10.5), DeluxeMenus (1.14.1-Release), GlobalMarketPlus (1.4.1.5), LuckPerms (5.5.71), Oraxen (1.218.0), PlaceholderAPI (2.12.3), Plan (5.8 build 3605), ProtocolLib (5.4.0), Skript (2.16.1), SuperiorSkyblock2 (2026.2-b927), Vault (2.20.2)
-[05:54:30] [DataConverter MCTypeRegistry init thread/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Initialising converters for DataConverter...
-[05:54:30] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
-[05:54:30] [DataConverter MCTypeRegistry init thread/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Finished initialising converters for DataConverter in 343.1ms
-[05:54:31] [ServerMain/INFO]: Loaded 1585 recipes
-[05:54:31] [ServerMain/INFO]: Loaded 1688 advancements
-[05:54:32] [Server thread/INFO]: Starting minecraft server version 26.2
-[05:54:32] [Server thread/INFO]: Loading properties
-[05:54:32] [Server thread/INFO]: This server is running AdvancedSlimePaper version 26.2-17406-paper_upstream@6bc38be (1970-01-01T00:00:00Z) (Implementing API version 26.2.build.112-stable)
-[05:54:32] [Server thread/INFO]: [spark] This server bundles the spark profiler. For more information please visit https://docs.papermc.io/paper/profiling
-[05:54:32] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[05:54:32] [Server thread/INFO]: Using 4 threads for Netty based IO
-[05:54:32] [Server thread/INFO]: [MoonriseCommon] Paper is using 2 worker threads, 1 I/O threads
-[05:54:32] [Server thread/INFO]: Default game type: SURVIVAL
-[05:54:32] [Server thread/INFO]: Generating keypair
-[05:54:32] [Server thread/INFO]: Starting Minecraft server on 0.0.0.0:25569
-[05:54:32] [Server thread/INFO]: Paper: Using libdeflate (Linux x86_64) compression from Velocity.
-[05:54:32] [Server thread/INFO]: Paper: Using OpenSSL 3.x.x (Linux x86_64) cipher from Velocity.
-[05:54:32] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loading 11 libraries... please wait
-[05:54:32] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/springframework/spring-expression/6.0.6/spring-expression-6.0.6.jar
-[05:54:32] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/springframework/spring-core/6.0.6/spring-core-6.0.6.jar
-[05:54:32] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/springframework/spring-jcl/6.0.6/spring-jcl-6.0.6.jar
-[05:54:32] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar
-[05:54:32] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar
-[05:54:32] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar
-[05:54:32] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/commons-logging/commons-logging/1.2/commons-logging-1.2.jar
-[05:54:32] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/commons-codec/commons-codec/1.11/commons-codec-1.11.jar
-[05:54:32] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/joml/joml/1.10.5/joml-1.10.5.jar
-[05:54:32] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-ansi/5.2.0/adventure-text-serializer-ansi-5.2.0.jar
-[05:54:32] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-api/5.2.0/adventure-api-5.2.0.jar
-[05:54:32] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/ansi/1.1.1/ansi-1.1.1.jar
-[05:54:32] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-minimessage/5.2.0/adventure-text-minimessage-5.2.0.jar
-[05:54:32] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-plain/5.2.0/adventure-text-serializer-plain-5.2.0.jar
-[05:54:32] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-platform-bukkit/4.4.1/adventure-platform-bukkit-4.4.1.jar
-[05:54:32] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-platform-api/4.4.1/adventure-platform-api-4.4.1.jar
-[05:54:32] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-bungeecord/4.4.1/adventure-text-serializer-bungeecord-4.4.1.jar
-[05:54:32] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-legacy/4.21.0/adventure-text-serializer-legacy-4.21.0.jar
-[05:54:32] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-nbt/4.21.0/adventure-nbt-4.21.0.jar
-[05:54:32] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/examination-api/1.3.0/examination-api-1.3.0.jar
-[05:54:32] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/examination-string/1.3.0/examination-string-1.3.0.jar
-[05:54:32] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-gson/4.21.0/adventure-text-serializer-gson-4.21.0.jar
-[05:54:32] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-json/4.21.0/adventure-text-serializer-json-4.21.0.jar
-[05:54:32] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/option/1.1.0/option-1.1.0.jar
-[05:54:32] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar
-[05:54:32] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/com/google/auto/service/auto-service-annotations/1.1.1/auto-service-annotations-1.1.1.jar
-[05:54:32] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-commons/4.21.0/adventure-text-serializer-commons-4.21.0.jar
-[05:54:32] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-gson-legacy-impl/4.21.0/adventure-text-serializer-gson-legacy-impl-4.21.0.jar
-[05:54:32] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-json-legacy-impl/4.21.0/adventure-text-serializer-json-legacy-impl-4.21.0.jar
-[05:54:32] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-platform-facet/4.4.1/adventure-platform-facet-4.4.1.jar
-[05:54:32] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-platform-viaversion/4.4.1/adventure-platform-viaversion-4.4.1.jar
-[05:54:32] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar
-[05:54:32] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar
-[05:54:32] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/gs/mclo/java/2.2.1/java-2.2.1.jar
-[05:54:32] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/team/unnamed/creative-api/1.7.3/creative-api-1.7.3.jar
-[05:54:32] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-key/4.9.3/adventure-key-4.9.3.jar
-[05:54:32] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/jetbrains/annotations/23.1.0/annotations-23.1.0.jar
-[05:54:33] [Server thread/INFO]: [SpigotLibraryLoader] [SuperiorSkyblock2] Loading 1 libraries... please wait
-[05:54:33] [Server thread/INFO]: [SpigotLibraryLoader] [SuperiorSkyblock2] Loaded library /home/container/libraries/org/openjdk/nashorn/nashorn-core/15.4/nashorn-core-15.4.jar
-[05:54:33] [Server thread/INFO]: [SpigotLibraryLoader] [SuperiorSkyblock2] Loaded library /home/container/libraries/org/ow2/asm/asm/7.3.1/asm-7.3.1.jar
-[05:54:33] [Server thread/INFO]: [SpigotLibraryLoader] [SuperiorSkyblock2] Loaded library /home/container/libraries/org/ow2/asm/asm-commons/7.3.1/asm-commons-7.3.1.jar
-[05:54:33] [Server thread/INFO]: [SpigotLibraryLoader] [SuperiorSkyblock2] Loaded library /home/container/libraries/org/ow2/asm/asm-analysis/7.3.1/asm-analysis-7.3.1.jar
-[05:54:33] [Server thread/INFO]: [SpigotLibraryLoader] [SuperiorSkyblock2] Loaded library /home/container/libraries/org/ow2/asm/asm-tree/7.3.1/asm-tree-7.3.1.jar
-[05:54:33] [Server thread/INFO]: [SpigotLibraryLoader] [SuperiorSkyblock2] Loaded library /home/container/libraries/org/ow2/asm/asm-util/7.3.1/asm-util-7.3.1.jar
-[05:54:33] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.12.3
-[05:54:33] [Server thread/INFO]: [LuckPerms] Loading server plugin LuckPerms v5.5.71
-[05:54:33] [Server thread/INFO]: [LuckPerms] Loading configuration...
-[05:54:33] [Server thread/INFO]: [Vault] Loading server plugin Vault v2.20.2
-[05:54:33] [Server thread/INFO]: [ProtocolLib] Loading server plugin ProtocolLib v5.4.0
-[05:54:34] [Server thread/WARN]: [ProtocolLib] Version (MC: 26.2.0) has not yet been tested! Proceed with caution.
-[05:54:34] [Server thread/INFO]: [nightcore] Loading server plugin nightcore v2.16.4
-[05:54:34] [Server thread/INFO]: [Skript] Loading server plugin Skript v2.16.1
-[05:54:34] [Server thread/INFO]: [CMILib] Loading server plugin CMILib v1.5.9.9
-[05:54:34] [Server thread/INFO]: [Oraxen] Loading server plugin Oraxen v1.218.0
-[05:54:34] [Server thread/INFO]: [CMI] Loading server plugin CMI v9.8.9.8
-[05:54:34] [Server thread/INFO]: [GlobalMarketPlus] Loading server plugin GlobalMarketPlus v1.4.1.5
-[05:54:34] [Server thread/INFO]: [DeluxeMenus] Loading server plugin DeluxeMenus v1.14.1-Release
-[05:54:34] [Server thread/WARN]: [DeluxeMenus] Could not setup a NMS hook for your server version! The following Item options will not work: nbt_int, nbt_ints, nbt_string and nbt_strings.
-[05:54:34] [Server thread/INFO]: [Plan] Loading server plugin Plan v5.8 build 3605
-[05:54:34] [Server thread/INFO]: [SuperiorSkyblock2] Loading server plugin SuperiorSkyblock2 v2026.2-b927
-[05:54:34] [Server thread/WARN]: [SuperiorSkyblock2] Ignoring attempt to change parent of plugin logger
-[05:54:34] [Server thread/INFO]: [DeluxeBazaar] Loading server plugin DeluxeBazaar v10.5
-[05:54:34] [Server thread/INFO]: [ASPaperPlugin] Loading server plugin ASPaperPlugin v6bc38bef65921cf480446de8e46161803e68d750
-[05:54:34] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[05:54:34] [Server thread/INFO]: [LuckPerms] Enabling LuckPerms v5.5.71
-[05:54:34] [Server thread/INFO]:         __    
-[05:54:34] [Server thread/INFO]:   |    |__)   LuckPerms v5.5.71
-[05:54:34] [Server thread/INFO]:   |___ |      Running on Bukkit - AdvancedSlimePaper
-[05:54:34] [Server thread/INFO]: 
-[05:54:34] [Server thread/INFO]: [LuckPerms] Loading storage provider... [H2]
-[05:54:35] [Server thread/INFO]: [LuckPerms] Loading internal permission managers...
-[05:54:35] [Server thread/INFO]: [LuckPerms] Performing initial data load...
-[05:54:35] [Server thread/INFO]: [LuckPerms] Successfully enabled. (took 673ms)
-[05:54:35] [Server thread/INFO]: [Vault] Enabling Vault v2.20.2
-[05:54:35] [Server thread/INFO]: [Vault] Enabled Version 2.20.2
-[05:54:35] [Server thread/INFO]: [LuckPerms] Registered Vault permission & chat hook.
-[05:54:35] [Server thread/INFO]: [ProtocolLib] Enabling ProtocolLib v5.4.0
-[05:54:35] [Server thread/INFO]: [nightcore] Enabling nightcore v2.16.4
-[05:54:35] [Server thread/INFO]: [nightcore] Server version detected as 26.2. Using paper-bridge.
-[05:54:35] [Server thread/INFO]: [nightcore] Vault detected! Loading currency...
-[05:54:35] [Server thread/INFO]: [nightcore] Currency registered: 'vault'.
-[05:54:35] [Server thread/INFO]: [nightcore] Currency registered: 'xp_level'.
-[05:54:35] [Server thread/INFO]: [nightcore] Currency registered: 'gold'.
-[05:54:35] [Server thread/INFO]: [nightcore] Currency registered: 'emerald'.
-[05:54:35] [Server thread/INFO]: [nightcore] Currency registered: 'custom_diamond'.
-[05:54:35] [Server thread/INFO]: [nightcore] Time zone set as Etc/UTC
-[05:54:35] [Server thread/INFO]: [com.zaxxer.hikari.HikariDataSource] nightcorePool - Starting...
-[05:54:35] [Server thread/INFO]: [com.zaxxer.hikari.pool.HikariPool] nightcorePool - Added connection org.sqlite.jdbc4.JDBC4Connection@61a5d852
-[05:54:35] [Server thread/INFO]: [com.zaxxer.hikari.HikariDataSource] nightcorePool - Start completed.
-[05:54:35] [Server thread/INFO]: [nightcore] Loaded 2 color schemes.
-[05:54:35] [Server thread/INFO]: [nightcore] Using 'custom' color scheme.
-[05:54:35] [Server thread/INFO]: [nightcore] Registered permissions provider: LuckPerms
-[05:54:35] [Server thread/INFO]: [nightcore] Registered item provider: 'vanilla'.
-[05:54:35] [Server thread/INFO]: [nightcore] Registered item provider: 'oraxen'.
-[05:54:35] [Server thread/INFO]: [nightcore] Plugin loaded in 237 ms!
-[05:54:35] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
-[05:54:35] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
-[05:54:35] [Server thread/WARN]: Whilst this makes it possible to use Velocity, unless access to your server is properly restricted, it also opens up the ability for hackers to connect with any username they choose.
-[05:54:35] [Server thread/WARN]: Please see https://docs.papermc.io/velocity/security for further information.
-[05:54:35] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
-[05:54:35] [Server thread/INFO]: Preparing level "world"
-[05:54:35] [Server thread/ERROR]: Could not set generator for default world 'world': Plugin 'VoidGen' does not exist
-[05:54:35] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:overworld'...
-[05:54:35] [Server thread/INFO]: Preparing spawn area: 100%
-[05:54:35] [Server thread/INFO]: Prepared spawn area in 1 ms
-[05:54:35] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:the_nether'...
-[05:54:35] [Server thread/INFO]: Prepared spawn area in 0 ms
-[05:54:35] [Server thread/INFO]: Done preparing level "world" (0.209s)
-[05:54:35] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.12.3
-[05:54:35] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
-[05:54:35] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: vaultunlocked [2.13.1]
-[05:54:35] [Server thread/INFO]: [Skript] Enabling Skript v2.16.1
-[05:54:36] [ForkJoinPool.commonPool-worker-6/INFO]: [Skript] You're currently running the latest stable version of Skript.
-[05:54:37] [Server thread/INFO]: [Skript]  ~ created by & © Peter Güttinger aka Njol ~
-[05:54:37] [Server thread/INFO]: [CMILib] Enabling CMILib v1.5.9.9
-[05:54:37] [Server thread/INFO]: Server version detection by new method: v26_2_0 Legacy: false Mojang Mappings: true
-[05:54:37] [Server thread/INFO]: Server version: v26_2_0 - 26.2.0 - paper  26.2-17406-6bc38be (MC: 26.2)
-[05:54:37] [Server thread/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
-[05:54:37] [Server thread/INFO]: CMI hooked.
-[05:54:37] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: cmil [1.5.9.9]
-[05:54:37] [Server thread/INFO]: PlaceholderAPI hooked.
-[05:54:37] [Server thread/INFO]: Updated (EN) language file. Took 23ms
-[05:54:37] [Server thread/INFO]: [Oraxen] Enabling Oraxen v1.218.0
-[05:54:37] [Server thread/INFO]: Oraxen | [ProtocolLibAdapter] registerTitleListener called
-[05:54:37] [Server thread/INFO]: Oraxen | [ProtocolLibAdapter] Title Listener registered successfully
-[05:54:37] [Server thread/INFO]: Oraxen | Custom paintings already hot reloaded (0 unchanged).
-[05:54:37] [Server thread/INFO]: Oraxen | Loaded 4 text effects
-[05:54:37] [Server thread/INFO]: Oraxen | Loaded 16 glyphs, 0 reference glyphs, 1 animated glyphs
-[05:54:37] [Server thread/INFO]: Oraxen | Hot reloaded 1 new custom jukebox song(s), 0 updated, 0 removed, 0 unchanged.
-[05:54:38] [ForkJoinPool.commonPool-worker-6/INFO]: [Skript] Loaded 5750 aliases in 980ms
-[05:54:38] [Server thread/INFO]: Oraxen | Successfully loaded on Ubuntu 26.04 LTS (resolute)
-[05:54:38] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: oraxen [1.218.0]
-[05:54:38] [Server thread/INFO]: Oraxen | Plugin "PlaceholderAPI" detected, enabling hooks
-[05:54:38] [Server thread/INFO]: Oraxen | Skript compatibility enabled - Oraxen syntax registered
-[05:54:38] [Server thread/INFO]: Oraxen | Plugin "Skript" detected, enabling hooks
-[05:54:38] [Server thread/INFO]: [CMI] Enabling CMI v9.8.9.8
-[05:54:38] [Server thread/INFO]: _______________________________________________________
-[05:54:38] [Server thread/INFO]:  
-[05:54:38] [Server thread/INFO]:  ██████╗███╗   ███╗██╗
-[05:54:38] [Server thread/INFO]: ██╔════╝████╗ ████║██║
-[05:54:38] [Server thread/INFO]: ██║     ██╔████╔██║██║
-[05:54:38] [Server thread/INFO]: ██║     ██║╚██╔╝██║██║
-[05:54:38] [Server thread/INFO]: ╚██████╗██║ ╚═╝ ██║██║
-[05:54:38] [Server thread/INFO]:  ╚═════╝╚═╝     ╚═╝╚═╝
-[05:54:38] [Server thread/INFO]: _______________________________________________________
-[05:54:38] [Server thread/INFO]: Integrating PaperSpigot async methods
-[05:54:38] [Server thread/INFO]: Vault found. (Loaded: true)
-[05:54:38] [CMI-Thread-1/INFO]: Loaded (-) locale download into memory. Took 21ms
-[05:54:38] [Server thread/INFO]: Loaded (71) 71 Enabled and 0 Disabled modules into memory. Took 42ms
-[05:54:38] [Server thread/INFO]: Initialized Cipher256 AES
-[05:54:38] [Server thread/INFO]: Loaded (61) regular alias into memory. Took 28ms
-[05:54:38] [CMI-Thread-2/INFO]: Loaded (1) custom text's into memory. Took 4ms
-[05:54:38] [Server thread/INFO]: SQLite 3.49.1 data base type detected
-[05:54:38] [Server thread/INFO]: Loaded (-) SqLite into memory. Took 71ms
-[05:54:38] [Server thread/INFO]: [CMI] Vault was found but economy engine is missing. Use one from list provided in https://dev.bukkit.org/bukkit-plugins/vault/
-[05:54:38] [Server thread/INFO]: [CMI] Alternatively you can enable CMI economy in config.yml file
-[05:54:38] [Server thread/INFO]: Vault was found but not economy plugin, you will have limited economy support
-[05:54:38] [Server thread/INFO]: Will attempt secondary economy check after server starts.
-[05:54:39] [Server thread/INFO]: Loaded (5) warning categories into memory. Took 1ms
-[05:54:39] [Server thread/INFO]: Loaded (3) warning commands into memory. Took 0ms
-[05:54:39] [Server thread/INFO]: Loaded (0) cooldowns into memory. Took 0ms
-[05:54:39] [Server thread/INFO]: Loaded (160) custom mob heads into memory. Took 10ms
-[05:54:39] [Server thread/INFO]: Loaded (4) chat bubble groups into memory. Took 1ms
-[05:54:39] [Server thread/INFO]: Loaded (5) kits into memory. Took 136ms
-[05:54:39] [Server thread/INFO]: Loaded (5) dialogs into memory. Took 7ms
-[05:54:39] [Server thread/INFO]: Loaded (7) ranks into memory. Took 6ms
-[05:54:39] [Server thread/INFO]: Loaded (8) playtime rewards into memory. Took 1ms
-[05:54:39] [Server thread/INFO]: Executed Player DB querry in 1ms
-[05:54:39] [Server thread/INFO]: Loaded (0) player data into memory. Took 1ms
-[05:54:39] [Server thread/INFO]: Loaded (0) playtime records into memory. Took 0ms
-[05:54:39] [Server thread/INFO]: Loaded (0) playtime reward records into memory. Took 0ms
-[05:54:39] [Server thread/INFO]: Loaded (0) custom alias into memory. Took 1ms
-[05:54:39] [Server thread/INFO]: Loaded (-) Registered events into memory. Took 130ms
-[05:54:39] [Server thread/INFO]: Loaded (0) event action commands into memory. Took 3ms
-[05:54:39] [Server thread/INFO]: Loaded (EN) language file into memory. Took 76ms
-[05:54:39] [Server thread/INFO]: Loaded (245) worth values into memory. Took 20ms
-[05:54:39] [Server thread/INFO]: VaultPermissions found. (Loaded: true)
-[05:54:39] [Server thread/INFO]: PlaceholderAPI found. (Loaded: true)
-[05:54:39] [Server thread/INFO]: Loaded (4) schedules into memory. Took 4ms
-[05:54:39] [Server thread/INFO]: Loaded (0) skin cache entries into memory. Took 0ms
-[05:54:39] [Server thread/INFO]: [CMI] Preloading playtimetop statistics
-[05:54:39] [Server thread/INFO]: Loaded (0) ArmorStand templates into memory. Took 0ms
-[05:54:39] [Server thread/INFO]: Version 9.8.9.8 has been enabled
-[05:54:39] [Server thread/INFO]: _______________________________________________________
-[05:54:39] [Server thread/INFO]: [GlobalMarketPlus] Enabling GlobalMarketPlus v1.4.1.5
-[05:54:39] [Server thread/INFO]: [GlobalMarketPlus] Properties has been loaded!
-[05:54:39] [Server thread/INFO]: [GlobalMarketPlus] Plugin loading...
-[05:54:39] [Server thread/INFO]: [GlobalMarketPlus] Enabled Event Listener .
-[05:54:39] [Server thread/INFO]: [GlobalMarketPlus] Enabled Command Listener .
-[05:54:39] [Server thread/INFO]:   _____  _         _            _    __  __               _           _      _____   _
-[05:54:39] [Server thread/INFO]:  / ____|| |       | |          | |  |  \/  |             | |         | |    |  __ \ | |
-[05:54:39] [Server thread/INFO]: | |  __ | |  ___  | |__   __ _ | |  | \  / |  __ _  _ __ | | __  ___ | |_   | |__) || | _   _  ___
-[05:54:39] [Server thread/INFO]: | | |_ || | / _ \ | '_ \ / _` || |  | |\/| | / _` || '__|| |/ / / _ \| __|  |  ___/ | || | | |/ __|
-[05:54:39] [Server thread/INFO]: | |__| || || (_) || |_) | (_| || |  | |  | || (_| || |   |   < |  __/| |_   | |     | || |_| |\__ \
-[05:54:39] [Server thread/INFO]:  \_____||_| \___/ |_.__/ \__,_||_|  |_|  |_| \__,_||_|   |_|\_\ \___| \__|  |_|     |_| \__,_||___/
-[05:54:39] [Server thread/INFO]: 
-[05:54:39] [Server thread/INFO]: [GlobalMarketPlus] Loading plugins/GlobalMarketPlus-1.4.1.5.jar L=1309630
-[05:54:39] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: gmpapi [1.0.0]
-[05:54:39] [Server thread/INFO]: GlobalMarketPlus >>> Found PlaceholderAPI , everything is OK.
-[05:54:39] [Server thread/INFO]: GlobalMarketPlus >>> Found Vault , but the Economy Engine plugin not found, this function has been disabled.
-[05:54:39] [Server thread/INFO]: [DeluxeMenus] Enabling DeluxeMenus v1.14.1-Release
-[05:54:39] [Server thread/INFO]: [DeluxeMenus] Successfully hooked into PlaceholderAPI!
-[05:54:39] [Server thread/WARN]: [DeluxeMenus] Could not hook into Vault!
+[09:30:11] [DataConverter MCTypeRegistry init thread/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Initialising converters for DataConverter...
+[09:30:11] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+[09:30:11] [DataConverter MCTypeRegistry init thread/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Finished initialising converters for DataConverter in 795.8ms
+[09:30:14] [ServerMain/INFO]: Loaded 1585 recipes
+[09:30:14] [ServerMain/INFO]: Loaded 1688 advancements
+[09:30:14] [Server thread/INFO]: Starting minecraft server version 26.2
+[09:30:14] [Server thread/INFO]: Loading properties
+[09:30:14] [Server thread/INFO]: This server is running AdvancedSlimePaper version 26.2-17406-paper_upstream@6bc38be (1970-01-01T00:00:00Z) (Implementing API version 26.2.build.112-stable)
+[09:30:14] [Server thread/INFO]: [spark] This server bundles the spark profiler. For more information please visit https://docs.papermc.io/paper/profiling
+[09:30:14] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[09:30:14] [Server thread/INFO]: Using 4 threads for Netty based IO
+[09:30:14] [Server thread/INFO]: [MoonriseCommon] Paper is using 2 worker threads, 1 I/O threads
+[09:30:15] [Server thread/INFO]: Default game type: SURVIVAL
+[09:30:15] [Server thread/INFO]: Generating keypair
+[09:30:15] [Server thread/INFO]: Starting Minecraft server on 0.0.0.0:25569
+[09:30:15] [Server thread/INFO]: Paper: Using libdeflate (Linux x86_64) compression from Velocity.
+[09:30:15] [Server thread/INFO]: Paper: Using OpenSSL 3.x.x (Linux x86_64) cipher from Velocity.
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loading 11 libraries... please wait
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/springframework/spring-expression/6.0.6/spring-expression-6.0.6.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/springframework/spring-core/6.0.6/spring-core-6.0.6.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/springframework/spring-jcl/6.0.6/spring-jcl-6.0.6.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/commons-logging/commons-logging/1.2/commons-logging-1.2.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/commons-codec/commons-codec/1.11/commons-codec-1.11.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/joml/joml/1.10.5/joml-1.10.5.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-ansi/5.2.0/adventure-text-serializer-ansi-5.2.0.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-api/5.2.0/adventure-api-5.2.0.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/ansi/1.1.1/ansi-1.1.1.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-minimessage/5.2.0/adventure-text-minimessage-5.2.0.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-plain/5.2.0/adventure-text-serializer-plain-5.2.0.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-platform-bukkit/4.4.1/adventure-platform-bukkit-4.4.1.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-platform-api/4.4.1/adventure-platform-api-4.4.1.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-bungeecord/4.4.1/adventure-text-serializer-bungeecord-4.4.1.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-legacy/4.21.0/adventure-text-serializer-legacy-4.21.0.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-nbt/4.21.0/adventure-nbt-4.21.0.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/examination-api/1.3.0/examination-api-1.3.0.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/examination-string/1.3.0/examination-string-1.3.0.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-gson/4.21.0/adventure-text-serializer-gson-4.21.0.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-json/4.21.0/adventure-text-serializer-json-4.21.0.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/option/1.1.0/option-1.1.0.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/com/google/auto/service/auto-service-annotations/1.1.1/auto-service-annotations-1.1.1.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-commons/4.21.0/adventure-text-serializer-commons-4.21.0.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-gson-legacy-impl/4.21.0/adventure-text-serializer-gson-legacy-impl-4.21.0.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-text-serializer-json-legacy-impl/4.21.0/adventure-text-serializer-json-legacy-impl-4.21.0.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-platform-facet/4.4.1/adventure-platform-facet-4.4.1.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-platform-viaversion/4.4.1/adventure-platform-viaversion-4.4.1.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/gs/mclo/java/2.2.1/java-2.2.1.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/team/unnamed/creative-api/1.7.3/creative-api-1.7.3.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/net/kyori/adventure-key/4.9.3/adventure-key-4.9.3.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/jetbrains/annotations/23.1.0/annotations-23.1.0.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [SuperiorSkyblock2] Loading 1 libraries... please wait
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [SuperiorSkyblock2] Loaded library /home/container/libraries/org/openjdk/nashorn/nashorn-core/15.4/nashorn-core-15.4.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [SuperiorSkyblock2] Loaded library /home/container/libraries/org/ow2/asm/asm/7.3.1/asm-7.3.1.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [SuperiorSkyblock2] Loaded library /home/container/libraries/org/ow2/asm/asm-commons/7.3.1/asm-commons-7.3.1.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [SuperiorSkyblock2] Loaded library /home/container/libraries/org/ow2/asm/asm-analysis/7.3.1/asm-analysis-7.3.1.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [SuperiorSkyblock2] Loaded library /home/container/libraries/org/ow2/asm/asm-tree/7.3.1/asm-tree-7.3.1.jar
+[09:30:15] [Server thread/INFO]: [SpigotLibraryLoader] [SuperiorSkyblock2] Loaded library /home/container/libraries/org/ow2/asm/asm-util/7.3.1/asm-util-7.3.1.jar
+[09:30:16] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.12.3
+[09:30:16] [Server thread/INFO]: [LuckPerms] Loading server plugin LuckPerms v5.5.71
+[09:30:17] [Server thread/INFO]: [LuckPerms] Loading configuration...
+[09:30:17] [Server thread/INFO]: [Vault] Loading server plugin Vault v2.20.2
+[09:30:17] [Server thread/INFO]: [ProtocolLib] Loading server plugin ProtocolLib v5.4.0
+[09:30:17] [Server thread/WARN]: [ProtocolLib] Version (MC: 26.2.0) has not yet been tested! Proceed with caution.
+[09:30:17] [Server thread/INFO]: [nightcore] Loading server plugin nightcore v2.16.4
+[09:30:17] [Server thread/INFO]: [Skript] Loading server plugin Skript v2.16.1
+[09:30:17] [Server thread/INFO]: [CMILib] Loading server plugin CMILib v1.5.9.9
+[09:30:17] [Server thread/INFO]: [Oraxen] Loading server plugin Oraxen v1.218.0
+[09:30:17] [Server thread/INFO]: [CMI] Loading server plugin CMI v9.8.9.8
+[09:30:17] [Server thread/INFO]: [GlobalMarketPlus] Loading server plugin GlobalMarketPlus v1.4.1.5
+[09:30:17] [Server thread/INFO]: [DeluxeMenus] Loading server plugin DeluxeMenus v1.14.1-Release
+[09:30:17] [Server thread/WARN]: [DeluxeMenus] Could not setup a NMS hook for your server version! The following Item options will not work: nbt_int, nbt_ints, nbt_string and nbt_strings.
+[09:30:17] [Server thread/INFO]: [Plan] Loading server plugin Plan v5.8 build 3605
+[09:30:17] [Server thread/INFO]: [SuperiorSkyblock2] Loading server plugin SuperiorSkyblock2 v2026.2-b927
+[09:30:18] [Server thread/WARN]: [SuperiorSkyblock2] Ignoring attempt to change parent of plugin logger
+[09:30:18] [Server thread/INFO]: [DeluxeBazaar] Loading server plugin DeluxeBazaar v10.5
+[09:30:18] [Server thread/INFO]: [ASPaperPlugin] Loading server plugin ASPaperPlugin v6bc38bef65921cf480446de8e46161803e68d750
+[09:30:18] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[09:30:18] [Server thread/INFO]: [LuckPerms] Enabling LuckPerms v5.5.71
+[09:30:18] [Server thread/INFO]:         __    
+[09:30:18] [Server thread/INFO]:   |    |__)   LuckPerms v5.5.71
+[09:30:18] [Server thread/INFO]:   |___ |      Running on Bukkit - AdvancedSlimePaper
+[09:30:18] [Server thread/INFO]: 
+[09:30:18] [Server thread/INFO]: [LuckPerms] Loading storage provider... [H2]
+[09:30:19] [Server thread/INFO]: [LuckPerms] Loading internal permission managers...
+[09:30:19] [Server thread/INFO]: [LuckPerms] Performing initial data load...
+[09:30:19] [Server thread/INFO]: [LuckPerms] Successfully enabled. (took 990ms)
+[09:30:19] [Server thread/INFO]: [Vault] Enabling Vault v2.20.2
+[09:30:19] [Server thread/INFO]: [Vault] Enabled Version 2.20.2
+[09:30:19] [Server thread/INFO]: [LuckPerms] Registered Vault permission & chat hook.
+[09:30:19] [Server thread/INFO]: [ProtocolLib] Enabling ProtocolLib v5.4.0
+[09:30:19] [Server thread/INFO]: [nightcore] Enabling nightcore v2.16.4
+[09:30:19] [Server thread/INFO]: [nightcore] Server version detected as 26.2. Using paper-bridge.
+[09:30:19] [Server thread/INFO]: [nightcore] Vault detected! Loading currency...
+[09:30:19] [Server thread/INFO]: [nightcore] Currency registered: 'vault'.
+[09:30:19] [Server thread/INFO]: [nightcore] Currency registered: 'xp_level'.
+[09:30:19] [Server thread/INFO]: [nightcore] Currency registered: 'gold'.
+[09:30:19] [Server thread/INFO]: [nightcore] Currency registered: 'emerald'.
+[09:30:19] [Server thread/INFO]: [nightcore] Currency registered: 'custom_diamond'.
+[09:30:19] [Server thread/INFO]: [nightcore] Time zone set as Etc/UTC
+[09:30:19] [Server thread/INFO]: [com.zaxxer.hikari.HikariDataSource] nightcorePool - Starting...
+[09:30:20] [Server thread/INFO]: [com.zaxxer.hikari.pool.HikariPool] nightcorePool - Added connection org.sqlite.jdbc4.JDBC4Connection@20be5abe
+[09:30:20] [Server thread/INFO]: [com.zaxxer.hikari.HikariDataSource] nightcorePool - Start completed.
+[09:30:20] [Server thread/INFO]: [nightcore] Loaded 2 color schemes.
+[09:30:20] [Server thread/INFO]: [nightcore] Using 'custom' color scheme.
+[09:30:20] [Server thread/INFO]: [nightcore] Registered permissions provider: LuckPerms
+[09:30:20] [Server thread/INFO]: [nightcore] Registered item provider: 'vanilla'.
+[09:30:20] [Server thread/INFO]: [nightcore] Registered item provider: 'oraxen'.
+[09:30:20] [Server thread/INFO]: [nightcore] Plugin loaded in 627 ms!
+[09:30:20] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[09:30:20] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[09:30:20] [Server thread/WARN]: Whilst this makes it possible to use Velocity, unless access to your server is properly restricted, it also opens up the ability for hackers to connect with any username they choose.
+[09:30:20] [Server thread/WARN]: Please see https://docs.papermc.io/velocity/security for further information.
+[09:30:20] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[09:30:20] [Server thread/INFO]: Preparing level "world"
+[09:30:20] [Server thread/ERROR]: Could not set generator for default world 'world': Plugin 'VoidGen' does not exist
+[09:30:20] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:overworld'...
+[09:30:20] [Server thread/INFO]: Preparing spawn area: 100%
+[09:30:20] [Server thread/INFO]: Prepared spawn area in 2 ms
+[09:30:20] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:the_nether'...
+[09:30:20] [Server thread/INFO]: Prepared spawn area in 1 ms
+[09:30:20] [Server thread/INFO]: Done preparing level "world" (0.438s)
+[09:30:20] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.12.3
+[09:30:21] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
+[09:30:21] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: vaultunlocked [2.13.1]
+[09:30:21] [Server thread/INFO]: [Skript] Enabling Skript v2.16.1
+[09:30:22] [ForkJoinPool.commonPool-worker-5/INFO]: [Skript] You're currently running the latest stable version of Skript.
+[09:30:24] [Server thread/INFO]: [Skript]  ~ created by & © Peter Güttinger aka Njol ~
+[09:30:24] [Server thread/INFO]: [CMILib] Enabling CMILib v1.5.9.9
+[09:30:24] [Server thread/INFO]: Server version detection by new method: v26_2_0 Legacy: false Mojang Mappings: true
+[09:30:24] [Server thread/INFO]: Server version: v26_2_0 - 26.2.0 - paper  26.2-17406-6bc38be (MC: 26.2)
+[09:30:25] [Server thread/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+[09:30:25] [Server thread/INFO]: CMI hooked.
+[09:30:25] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: cmil [1.5.9.9]
+[09:30:25] [Server thread/INFO]: PlaceholderAPI hooked.
+[09:30:26] [Server thread/INFO]: Updated (EN) language file. Took 93ms
+[09:30:26] [Server thread/INFO]: [Oraxen] Enabling Oraxen v1.218.0
+[09:30:26] [Server thread/INFO]: Oraxen | [ProtocolLibAdapter] registerTitleListener called
+[09:30:26] [Server thread/INFO]: Oraxen | [ProtocolLibAdapter] Title Listener registered successfully
+[09:30:26] [Server thread/INFO]: Oraxen | Custom paintings already hot reloaded (0 unchanged).
+[09:30:26] [ForkJoinPool.commonPool-worker-5/INFO]: [Skript] Loaded 5750 aliases in 2171ms
+[09:30:26] [Server thread/INFO]: Oraxen | Loaded 4 text effects
+[09:30:26] [Server thread/INFO]: Oraxen | Loaded 16 glyphs, 0 reference glyphs, 1 animated glyphs
+[09:30:26] [Server thread/INFO]: Oraxen | Hot reloaded 1 new custom jukebox song(s), 0 updated, 0 removed, 0 unchanged.
+[09:30:27] [Server thread/INFO]: Oraxen | Successfully loaded on Ubuntu 26.04 LTS (resolute)
+[09:30:27] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: oraxen [1.218.0]
+[09:30:27] [Server thread/INFO]: Oraxen | Plugin "PlaceholderAPI" detected, enabling hooks
+[09:30:27] [Server thread/INFO]: Oraxen | Skript compatibility enabled - Oraxen syntax registered
+[09:30:27] [Server thread/INFO]: Oraxen | Plugin "Skript" detected, enabling hooks
+[09:30:27] [Server thread/INFO]: [CMI] Enabling CMI v9.8.9.8
+[09:30:27] [Server thread/INFO]: _______________________________________________________
+[09:30:27] [Server thread/INFO]:  
+[09:30:27] [Server thread/INFO]:  ██████╗███╗   ███╗██╗
+[09:30:27] [Server thread/INFO]: ██╔════╝████╗ ████║██║
+[09:30:27] [Server thread/INFO]: ██║     ██╔████╔██║██║
+[09:30:27] [Server thread/INFO]: ██║     ██║╚██╔╝██║██║
+[09:30:27] [Server thread/INFO]: ╚██████╗██║ ╚═╝ ██║██║
+[09:30:27] [Server thread/INFO]:  ╚═════╝╚═╝     ╚═╝╚═╝
+[09:30:27] [Server thread/INFO]: _______________________________________________________
+[09:30:27] [Server thread/INFO]: Integrating PaperSpigot async methods
+[09:30:27] [Server thread/INFO]: Vault found. (Loaded: true)
+[09:30:27] [CMI-Thread-1/INFO]: Loaded (-) locale download into memory. Took 9ms
+[09:30:28] [Server thread/INFO]: Loaded (71) 71 Enabled and 0 Disabled modules into memory. Took 73ms
+[09:30:28] [Server thread/INFO]: Initialized Cipher256 AES
+[09:30:28] [Server thread/INFO]: Loaded (61) regular alias into memory. Took 33ms
+[09:30:28] [CMI-Thread-2/INFO]: Loaded (1) custom text's into memory. Took 3ms
+[09:30:28] [Server thread/INFO]: SQLite 3.49.1 data base type detected
+[09:30:28] [Server thread/INFO]: Loaded (-) SqLite into memory. Took 141ms
+[09:30:28] [Server thread/INFO]: [CMI] Vault was found but economy engine is missing. Use one from list provided in https://dev.bukkit.org/bukkit-plugins/vault/
+[09:30:28] [Server thread/INFO]: [CMI] Alternatively you can enable CMI economy in config.yml file
+[09:30:28] [Server thread/INFO]: Vault was found but not economy plugin, you will have limited economy support
+[09:30:28] [Server thread/INFO]: Will attempt secondary economy check after server starts.
+[09:30:28] [Server thread/INFO]: Loaded (5) warning categories into memory. Took 0ms
+[09:30:28] [Server thread/INFO]: Loaded (3) warning commands into memory. Took 0ms
+[09:30:28] [Server thread/INFO]: Loaded (0) cooldowns into memory. Took 0ms
+[09:30:28] [Server thread/INFO]: Loaded (160) custom mob heads into memory. Took 23ms
+[09:30:28] [Server thread/INFO]: Loaded (4) chat bubble groups into memory. Took 2ms
+[09:30:29] [Server thread/INFO]: Loaded (5) kits into memory. Took 402ms
+[09:30:29] [Server thread/INFO]: Loaded (5) dialogs into memory. Took 7ms
+[09:30:29] [Server thread/INFO]: Loaded (7) ranks into memory. Took 11ms
+[09:30:29] [Server thread/INFO]: Loaded (8) playtime rewards into memory. Took 4ms
+[09:30:29] [Server thread/INFO]: Executed Player DB querry in 0ms
+[09:30:29] [Server thread/INFO]: Loaded (0) player data into memory. Took 1ms
+[09:30:29] [Server thread/INFO]: Loaded (0) playtime records into memory. Took 1ms
+[09:30:29] [Server thread/INFO]: Loaded (0) playtime reward records into memory. Took 0ms
+[09:30:29] [Server thread/INFO]: Loaded (0) custom alias into memory. Took 1ms
+[09:30:29] [Server thread/INFO]: Loaded (-) Registered events into memory. Took 143ms
+[09:30:29] [Server thread/INFO]: Loaded (0) event action commands into memory. Took 3ms
+[09:30:29] [Server thread/INFO]: Loaded (EN) language file into memory. Took 89ms
+[09:30:29] [Server thread/INFO]: Loaded (245) worth values into memory. Took 25ms
+[09:30:29] [Server thread/INFO]: VaultPermissions found. (Loaded: true)
+[09:30:29] [Server thread/INFO]: PlaceholderAPI found. (Loaded: true)
+[09:30:29] [Server thread/INFO]: Loaded (4) schedules into memory. Took 5ms
+[09:30:29] [Server thread/INFO]: Loaded (0) skin cache entries into memory. Took 0ms
+[09:30:29] [Server thread/INFO]: [CMI] Preloading playtimetop statistics
+[09:30:29] [Server thread/INFO]: Loaded (0) ArmorStand templates into memory. Took 0ms
+[09:30:29] [Server thread/INFO]: Version 9.8.9.8 has been enabled
+[09:30:29] [Server thread/INFO]: _______________________________________________________
+[09:30:29] [Server thread/INFO]: [GlobalMarketPlus] Enabling GlobalMarketPlus v1.4.1.5
+[09:30:29] [Server thread/INFO]: [GlobalMarketPlus] Properties has been loaded!
+[09:30:29] [Server thread/INFO]: [GlobalMarketPlus] Plugin loading...
+[09:30:29] [Server thread/INFO]: [GlobalMarketPlus] Enabled Event Listener .
+[09:30:30] [Server thread/INFO]: [GlobalMarketPlus] Enabled Command Listener .
+[09:30:30] [Server thread/INFO]:   _____  _         _            _    __  __               _           _      _____   _
+[09:30:30] [Server thread/INFO]:  / ____|| |       | |          | |  |  \/  |             | |         | |    |  __ \ | |
+[09:30:30] [Server thread/INFO]: | |  __ | |  ___  | |__   __ _ | |  | \  / |  __ _  _ __ | | __  ___ | |_   | |__) || | _   _  ___
+[09:30:30] [Server thread/INFO]: | | |_ || | / _ \ | '_ \ / _` || |  | |\/| | / _` || '__|| |/ / / _ \| __|  |  ___/ | || | | |/ __|
+[09:30:30] [Server thread/INFO]: | |__| || || (_) || |_) | (_| || |  | |  | || (_| || |   |   < |  __/| |_   | |     | || |_| |\__ \
+[09:30:30] [Server thread/INFO]:  \_____||_| \___/ |_.__/ \__,_||_|  |_|  |_| \__,_||_|   |_|\_\ \___| \__|  |_|     |_| \__,_||___/
+[09:30:30] [Server thread/INFO]: 
+[09:30:30] [Server thread/INFO]: [GlobalMarketPlus] Loading plugins/GlobalMarketPlus-1.4.1.5.jar L=1309630
+[09:30:30] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: gmpapi [1.0.0]
+[09:30:30] [Server thread/INFO]: GlobalMarketPlus >>> Found PlaceholderAPI , everything is OK.
+[09:30:30] [Server thread/INFO]: GlobalMarketPlus >>> Found Vault , but the Economy Engine plugin not found, this function has been disabled.
+[09:30:30] [Server thread/INFO]: [DeluxeMenus] Enabling DeluxeMenus v1.14.1-Release
+[09:30:30] [Server thread/INFO]: [DeluxeMenus] Successfully hooked into PlaceholderAPI!
+[09:30:30] [Server thread/WARN]: [DeluxeMenus] Could not hook into Vault!
 DeluxeMenus will continue to work but some features (such as the 'has money' requirement) may not be available.
-[05:54:39] [Server thread/WARN]: [DeluxeMenus] Found 'data' option for item: teststone in menu: basics_menu. This option is deprecated and will be removed soon. Please use 'damage' instead.
-[05:54:39] [Server thread/INFO]: [DeluxeMenus] 3 GUI menus loaded!
-[05:54:39] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: deluxemenus [1.14.1-Release]
-[05:54:39] [Server thread/INFO]: [Plan] Enabling Plan v5.8 build 3605
-[05:54:40] [Server thread/INFO]: [Plan] 
-[05:54:40] [Server thread/INFO]: [Plan]            ██▌
-[05:54:40] [Server thread/INFO]: [Plan]      ██▌   ██▌
-[05:54:40] [Server thread/INFO]: [Plan]   ██▌██▌██▌██▌  Player Analytics
-[05:54:40] [Server thread/INFO]: [Plan]   ██▌██▌██▌██▌  v5.8 build 3605
-[05:54:40] [Server thread/INFO]: [Plan] 
-[05:54:40] [Server thread/INFO]: [Plan] Locale: 'English' by AuroraLS3
-[05:54:40] [Server thread/INFO]: [Plan] Downloading SQLite Driver, this may take a while...
-[05:54:40] [Plan SQLiteDB-transaction-thread-1/INFO]: [Plan] Database: Making sure schema is up to date..
-[05:54:40] [Server thread/INFO]: [Plan] SQLite-database connection established.
-[05:54:40] [Server thread/INFO]: [Plan] WebServer: Certificate KeyStore File not Found: plugins/Plan/Cert.jks
-[05:54:40] [Server thread/INFO]: [Plan] WebServer: No Certificate -> Using HTTP-server for Visualization.
-[05:54:40] [Server thread/INFO]: [Plan] WebServer: User Authorization Disabled! (Not secure over HTTP)
-[05:54:40] [Plan SQLiteDB-transaction-thread-1/INFO]: [Plan] All database patches applied successfully.
-[05:54:40] [Server thread/INFO]: [Plan] Webserver running on PORT 8804 ( http://localhost:8804 )
-[05:54:40] [Server thread/INFO]: [Plan] Loading server identifying information
-[05:54:40] [Server thread/INFO]: [Plan] Server identifier loaded: d8a82d02-e78b-4723-9245-9a902d6cf0ac
-[05:54:40] [Plan Non critical-pool-3/WARN]: [Plan] Downloading GeoLite2 requires accepting GeoLite2 EULA - see 'Data_gathering.Accept_GeoLite2_EULA' in the config.
-[05:54:40] [Plan Non critical-pool-3/ERROR]: [Plan] Failed to enable geolocation.
-[05:54:40] [Server thread/INFO]: [Plan] Registered extension: CMI
-[05:54:40] [Server thread/INFO]: [Plan] Registered extension: LuckPerms
-[05:54:40] [Server thread/INFO]: [Plan] Registered extension: PlaceholderAPI
-[05:54:40] [Server thread/INFO]: [Plan] Registered extension: Permission Groups (Vault)
-[05:54:40] [Server thread/INFO]: [Plan] Player Analytics Enabled.
-[05:54:40] [Server thread/INFO]: [SuperiorSkyblock2] Enabling SuperiorSkyblock2 v2026.2-b927
-[05:54:40] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission miner_3
-[05:54:40] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission miner_5
-[05:54:40] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission miner_2
-[05:54:40] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission miner_4
-[05:54:40] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission miner_1
-[05:54:40] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission slayer_4
-[05:54:40] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission slayer_1
-[05:54:40] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission slayer_2
-[05:54:40] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission slayer_3
-[05:54:40] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission farmer_2
-[05:54:40] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission farmer_5
-[05:54:40] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission farmer_1
-[05:54:40] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission farmer_3
-[05:54:40] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission farmer_4
-[05:54:40] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission fisherman_3
-[05:54:40] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission fisherman_2
-[05:54:40] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission fisherman_1
-[05:54:40] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission explorer_1
-[05:54:40] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission explorer_2
-[05:54:41] [Server thread/ERROR]: [SuperiorSkyblock2] An unexpected error occurred while registering module asp-plugin-4.2.0-SNAPSHOT.jar:
-[05:54:41] [Server thread/ERROR]: [SuperiorSkyblock2] java.lang.RuntimeException: An error occurred while reading asp-plugin-4.2.0-SNAPSHOT.jar
+[09:30:30] [Server thread/WARN]: [DeluxeMenus] Found 'data' option for item: teststone in menu: basics_menu. This option is deprecated and will be removed soon. Please use 'damage' instead.
+[09:30:30] [Server thread/INFO]: [DeluxeMenus] 3 GUI menus loaded!
+[09:30:30] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: deluxemenus [1.14.1-Release]
+[09:30:30] [Server thread/INFO]: [DeluxeMenus] You are running the latest version of DeluxeMenus!
+[09:30:30] [Server thread/INFO]: [Plan] Enabling Plan v5.8 build 3605
+[09:30:30] [Server thread/INFO]: [Plan] 
+[09:30:30] [Server thread/INFO]: [Plan]            ██▌
+[09:30:30] [Server thread/INFO]: [Plan]      ██▌   ██▌
+[09:30:30] [Server thread/INFO]: [Plan]   ██▌██▌██▌██▌  Player Analytics
+[09:30:30] [Server thread/INFO]: [Plan]   ██▌██▌██▌██▌  v5.8 build 3605
+[09:30:30] [Server thread/INFO]: [Plan] 
+[09:30:30] [Server thread/INFO]: [Plan] Locale: 'English' by AuroraLS3
+[09:30:30] [Server thread/INFO]: [Plan] Downloading SQLite Driver, this may take a while...
+[09:30:30] [Plan SQLiteDB-transaction-thread-1/INFO]: [Plan] Database: Making sure schema is up to date..
+[09:30:31] [Server thread/INFO]: [Plan] SQLite-database connection established.
+[09:30:31] [Plan SQLiteDB-transaction-thread-1/INFO]: [Plan] All database patches applied successfully.
+[09:30:31] [Server thread/INFO]: [Plan] WebServer: Certificate KeyStore File not Found: plugins/Plan/Cert.jks
+[09:30:31] [Server thread/INFO]: [Plan] WebServer: No Certificate -> Using HTTP-server for Visualization.
+[09:30:31] [Server thread/INFO]: [Plan] WebServer: User Authorization Disabled! (Not secure over HTTP)
+[09:30:31] [Server thread/INFO]: [Plan] Webserver running on PORT 8804 ( http://localhost:8804 )
+[09:30:31] [Server thread/INFO]: [Plan] Loading server identifying information
+[09:30:31] [Server thread/INFO]: [Plan] Server identifier loaded: d8a82d02-e78b-4723-9245-9a902d6cf0ac
+[09:30:31] [Plan Non critical-pool-3/WARN]: [Plan] Downloading GeoLite2 requires accepting GeoLite2 EULA - see 'Data_gathering.Accept_GeoLite2_EULA' in the config.
+[09:30:31] [Plan Non critical-pool-3/ERROR]: [Plan] Failed to enable geolocation.
+[09:30:31] [Server thread/INFO]: [Plan] Registered extension: CMI
+[09:30:31] [Server thread/INFO]: [Plan] Registered extension: LuckPerms
+[09:30:31] [Server thread/INFO]: [Plan] Registered extension: PlaceholderAPI
+[09:30:31] [Server thread/INFO]: [Plan] Registered extension: Permission Groups (Vault)
+[09:30:31] [Server thread/INFO]: [Plan] Player Analytics Enabled.
+[09:30:31] [Server thread/INFO]: [SuperiorSkyblock2] Enabling SuperiorSkyblock2 v2026.2-b927
+[09:30:31] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission miner_3
+[09:30:31] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission miner_5
+[09:30:31] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission miner_2
+[09:30:31] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission miner_4
+[09:30:31] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission miner_1
+[09:30:31] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission slayer_4
+[09:30:31] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission slayer_1
+[09:30:31] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission slayer_2
+[09:30:31] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission slayer_3
+[09:30:31] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission farmer_2
+[09:30:31] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission farmer_5
+[09:30:31] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission farmer_1
+[09:30:31] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission farmer_3
+[09:30:31] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission farmer_4
+[09:30:31] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission fisherman_3
+[09:30:31] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission fisherman_2
+[09:30:31] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission fisherman_1
+[09:30:31] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission explorer_1
+[09:30:31] [Server thread/INFO]: [SuperiorSkyblock2] Registered mission explorer_2
+[09:30:32] [GlobalMarketPlus-Loading/INFO]: GlobalMarketPlus >>> Successfully connected SQLite:Database.db server.
+[09:30:32] [GlobalMarketPlus-Loading/INFO]: GlobalMarketPlus >>> Successfully connected SQLite:Recorder.db server.
+[09:30:32] [GlobalMarketPlus-Loading/INFO]: GlobalMarketPlus >>> Initialized NMS :26.2.build.112-stable
+[09:30:32] [GlobalMarketPlus-Loading/INFO]: GlobalMarketPlus >>> Async threads started.
+[09:30:32] [GlobalMarketPlus-Loading/INFO]: GlobalMarketPlus >>> Plugin successfully enabled 2205ms .
+[09:30:32] [Server thread/ERROR]: [SuperiorSkyblock2] An unexpected error occurred while registering module asp-plugin-4.2.0-SNAPSHOT.jar:
+[09:30:32] [Server thread/ERROR]: [SuperiorSkyblock2] java.lang.RuntimeException: An error occurred while reading asp-plugin-4.2.0-SNAPSHOT.jar
 	at SuperiorSkyblock2-2026.2-b927.jar//com.bgsoftware.superiorskyblock.module.ModulesManagerImpl.registerModule(ModulesManagerImpl.java:73)
 	at SuperiorSkyblock2-2026.2-b927.jar//com.bgsoftware.superiorskyblock.module.ModulesManagerImpl.registerExternalModules(ModulesManagerImpl.java:243)
 	at SuperiorSkyblock2-2026.2-b927.jar//com.bgsoftware.superiorskyblock.module.ModulesManagerImpl.loadData(ModulesManagerImpl.java:53)
@@ -293,7 +299,7 @@ DeluxeMenus will continue to work but some features (such as the 'has money' req
 	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1266)
 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:303)
 	at java.base/java.lang.Thread.run(Thread.java:1474)
-Caused by: java.lang.IllegalAccessError: class org.yaml.snakeyaml.parser.ParserImpl$ParseBlockSequenceEntry cannot access its superinterface org.yaml.snakeyaml.parser.Production (org.yaml.snakeyaml.parser.ParserImpl$ParseBlockSequenceEntry is in unnamed module of loader 'asp-plugin-4.2.0-SNAPSHOT.jar' @2a3436f1; org.yaml.snakeyaml.parser.Production is in unnamed module of loader java.net.URLClassLoader @179d3b25)
+Caused by: java.lang.IllegalAccessError: class org.yaml.snakeyaml.parser.ParserImpl$ParseBlockSequenceEntry cannot access its superinterface org.yaml.snakeyaml.parser.Production (org.yaml.snakeyaml.parser.ParserImpl$ParseBlockSequenceEntry is in unnamed module of loader 'asp-plugin-4.2.0-SNAPSHOT.jar' @475748e; org.yaml.snakeyaml.parser.Production is in unnamed module of loader java.net.URLClassLoader @179d3b25)
 	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
 	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:962)
 	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:144)
@@ -312,182 +318,92 @@ Caused by: java.lang.IllegalAccessError: class org.yaml.snakeyaml.parser.ParserI
 	at SuperiorSkyblock2-2026.2-b927.jar//com.bgsoftware.superiorskyblock.module.ModulesManagerImpl.registerModule(ModulesManagerImpl.java:70)
 	... 14 more
 
-[05:54:41] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:superiorworld'...
-[05:54:41] [Server thread/INFO]: Prepared spawn area in 0 ms
-[05:54:41] [Server thread/INFO]: [SuperiorSkyblock2] Enabling the module bank...
-[05:54:41] [Server thread/INFO]: [SuperiorSkyblock2] Finished enabling the module bank (Took 3ms)
-[05:54:41] [Server thread/INFO]: [SuperiorSkyblock2] Enabling the module missions...
-[05:54:41] [Server thread/INFO]: [SuperiorSkyblock2] Finished enabling the module missions (Took 1ms)
-[05:54:41] [Server thread/INFO]: [SuperiorSkyblock2] Enabling the module generators...
-[05:54:41] [Server thread/INFO]: [SuperiorSkyblock2] Finished enabling the module generators (Took 2ms)
-[05:54:41] [Server thread/INFO]: [SuperiorSkyblock2] Enabling the module upgrades...
-[05:54:41] [Server thread/INFO]: [SuperiorSkyblock2] Finished enabling the module upgrades (Took 13ms)
-[05:54:41] [Server thread/INFO]: [SuperiorSkyblock2] Using MiniMessage as a ui provider.
-[05:54:41] [Server thread/INFO]: [SuperiorSkyblock2] Loading messages started...
-[05:54:41] [GlobalMarketPlus-Loading/INFO]: GlobalMarketPlus >>> Successfully connected SQLite:Database.db server.
-[05:54:41] [GlobalMarketPlus-Loading/INFO]: GlobalMarketPlus >>> Successfully connected SQLite:Recorder.db server.
-[05:54:41] [Server thread/INFO]: [SuperiorSkyblock2]  - Found 753 messages in the language files.
-[05:54:41] [Server thread/INFO]: [SuperiorSkyblock2] Loading messages done (Took 146ms)
-[05:54:41] [Server thread/INFO]: [SuperiorSkyblock2] Loading 9 schematics using 9 threads...
-[05:54:41] [GlobalMarketPlus-Loading/INFO]: GlobalMarketPlus >>> Initialized NMS :26.2.build.112-stable
-[05:54:41] [GlobalMarketPlus-Loading/INFO]: GlobalMarketPlus >>> Async threads started.
-[05:54:41] [GlobalMarketPlus-Loading/INFO]: GlobalMarketPlus >>> Plugin successfully enabled 1727ms .
-[05:54:41] [SuperiorSkyblock Load Schematic Worker #2/WARN]: [org.bukkit.craftbukkit.legacy.CraftLegacy] Initializing Legacy Material Support. Unless you have legacy plugins and/or data this is a bug!
-[05:54:48] [SuperiorSkyblock Load Schematic Worker #1/INFO]: [SuperiorSkyblock2] Successfully loaded schematic desert.schematic (DefaultSchematicParser)
-[05:54:48] [SuperiorSkyblock Load Schematic Worker #6/INFO]: [SuperiorSkyblock2] Successfully loaded schematic normal.schematic (DefaultSchematicParser)
-[05:54:48] [SuperiorSkyblock Load Schematic Worker #2/INFO]: [SuperiorSkyblock2] Successfully loaded schematic mycel.schematic (DefaultSchematicParser)
-[05:54:48] [SuperiorSkyblock Load Schematic Worker #7/INFO]: [SuperiorSkyblock2] Successfully loaded schematic desert_nether.schematic (DefaultSchematicParser)
-[05:54:48] [SuperiorSkyblock Load Schematic Worker #4/INFO]: [SuperiorSkyblock2] Successfully loaded schematic mycel_nether.schematic (DefaultSchematicParser)
-[05:54:48] [SuperiorSkyblock Load Schematic Worker #3/INFO]: [SuperiorSkyblock2] Successfully loaded schematic normal_nether.schematic (DefaultSchematicParser)
-[05:54:48] [SuperiorSkyblock Load Schematic Worker #5/INFO]: [SuperiorSkyblock2] Successfully loaded schematic normal_the_end.schematic (DefaultSchematicParser)
-[05:54:48] [SuperiorSkyblock Load Schematic Worker #0/INFO]: [SuperiorSkyblock2] Successfully loaded schematic mycel_the_end.schematic (DefaultSchematicParser)
-[05:54:48] [SuperiorSkyblock Load Schematic Worker #8/INFO]: [SuperiorSkyblock2] Successfully loaded schematic desert_the_end.schematic (DefaultSchematicParser)
-[05:54:48] [Server thread/INFO]: [SuperiorSkyblock2] Successfully loaded 9 schematics.
-[05:54:48] [Server thread/INFO]: [SuperiorSkyblock2] Trying to connect to local database (SQLite)...
-[05:54:48] [Server thread/INFO]: [SuperiorSkyblock2] Successfully established connection with local database!
-[05:54:48] [Server thread/INFO]: [SuperiorSkyblock2] Creating a backup file...
-[05:54:48] [Server thread/INFO]: [SuperiorSkyblock2] Backup done!
-[05:54:48] [Server thread/INFO]: [SuperiorSkyblock2] Starting to load players...
-[05:54:48] [Server thread/INFO]: [SuperiorSkyblock2] Finished loading 0 players (Took 1ms)
-[05:54:48] [Server thread/INFO]: [SuperiorSkyblock2] Starting to load islands...
-[05:54:48] [Server thread/INFO]: [SuperiorSkyblock2] Finished loading 0 islands (Took 5ms)
-[05:54:48] [Server thread/INFO]: [SuperiorSkyblock2] Starting to load grid...
-[05:54:48] [Server thread/INFO]: [SuperiorSkyblock2] Finished grid!
-[05:54:48] [Server thread/INFO]: [SuperiorSkyblock2] Starting to load stacked blocks...
-[05:54:48] [Server thread/INFO]: [SuperiorSkyblock2] Finished stacked blocks!
-[05:54:48] [Server thread/INFO]: [DeluxeBazaar] Enabling DeluxeBazaar v10.5
-[05:54:48] [Server thread/INFO]: [DeluxeBazaar] (ERROR) There is a problem in economy setup! Plugin is disabling...
-[05:54:48] [Server thread/INFO]: [ASPaperPlugin] Enabling ASPaperPlugin v6bc38bef65921cf480446de8e46161803e68d750
-[05:54:48] [Server thread/INFO]: [spark] Starting background profiler...
-[05:54:49] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
-[05:54:49] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
-[05:54:49] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
-[05:54:49] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:superiorworld
-[05:54:49] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
-[05:54:49] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[05:54:49] [Server thread/INFO]: ThreadedAnvilChunkStorage (superiorworld): All chunks are saved
-[05:54:49] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
-[05:54:49] [Server thread/INFO]: Running delayed init tasks
-[05:54:49] [Server thread/INFO]: [Skript] Loading variables...
-[05:54:49] [Server thread/INFO]: [Skript] Loaded 0 variables in 0.0 seconds
-[05:54:49] [Server thread/INFO]: [Skript] All scripts loaded without errors.
-[05:54:49] [Server thread/INFO]: [Skript]     No scripts were found, maybe you should write some ;)
-[05:54:49] [Server thread/INFO]: [Skript] Finished loading.
-[05:54:49] [Craft Scheduler Thread - 0 - Plan/INFO]: [Plan] You're using the latest version.
-[05:54:49] [Server thread/INFO]: [CMI] Permission plugin: LuckPerms5.5.71
-[05:54:49] [Server thread/INFO]: [CMI] Vault was found but economy engine is missing. Use one from list provided in https://dev.bukkit.org/bukkit-plugins/vault/
-[05:54:49] [Server thread/INFO]: [CMI] Alternatively you can enable CMI economy in config.yml file
-[05:54:49] [Server thread/INFO]: [CMI] Vault was found but not economy plugin, you will have limited economy support
-[05:54:49] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: cmi [9.8.9.8]
-[05:54:49] [Server thread/INFO]: [CMI] PlaceholderAPI hooked.
-[05:54:49] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: plan [5.8 build 3605]
-[05:54:49] [Server thread/INFO]: [SuperiorSkyblock2] Plan detected - attempting to register SuperiorSkyblock DataExtension.
-[05:54:49] [Server thread/INFO]: [Plan] Registered extension: SuperiorSkyblock
-[05:54:49] [Server thread/INFO]: [SuperiorSkyblock2] Registered SuperiorSkyblock Plan DataExtension.
-[05:54:49] [Server thread/INFO]: [SuperiorSkyblock2] Using LuckPerms as a permissions provider.
-[05:54:49] [Server thread/INFO]: [SuperiorSkyblock2] Using CMI as a prices provider.
-[05:54:49] [Server thread/INFO]: [SuperiorSkyblock2] Hooked into CMI for support of vanish status of players.
-[05:54:49] [Server thread/INFO]: [SuperiorSkyblock2] Hooked into CMI for support of afk status of players.
-[05:54:49] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: superior [2026.2-b927]
-[05:54:49] [Server thread/INFO]: [SuperiorSkyblock2] Using PlaceholderAPI for placeholders support.
-[05:54:49] [Server thread/INFO]: [SuperiorSkyblock2] Detected PaperSpigot - Using async chunk-loading support with PaperMC.
-[05:54:49] [Server thread/INFO]: GlobalMarketPlus >>> Configuration settings loaded, language: English
-[05:54:49] [Server thread/INFO]: GlobalMarketPlus >>> Loaded 29 files, error 0 .
-[05:54:49] [Server thread/INFO]: GlobalMarketPlus >>> Loaded all of GUIs and 0 custom GUIs.
-[05:54:49] [Server thread/INFO]: GlobalMarketPlus >>> Enabled SQLite .
-[05:54:49] [Server thread/INFO]: GlobalMarketPlus >>> Loaded 278 JSON components
-[05:54:49] [Server thread/INFO]: GlobalMarketPlus >>> Loaded 3 groups
-[05:54:49] [Server thread/INFO]: GlobalMarketPlus >>> Loaded 10 categories
-[05:54:49] [Server thread/INFO]: GlobalMarketPlus >>> Initialization completed, version v1.4.1.5
-[05:54:49] [GlobalMarketPlus-TaskThread/INFO]: GlobalMarketPlus >>> Deleting outdated records in the recorder database...
-[05:54:49] [GlobalMarketPlus-TaskThread/INFO]: GlobalMarketPlus >>> Deleted 0 outdated records.
-[05:54:49] [Server thread/INFO]: Done (23.052s)! For help, type "help"
-[05:54:49] [Server thread/INFO]: 0 placeholder hook(s) registered!
-[05:54:49] [Oraxen-PackWorker/INFO]: Oraxen | No broken models or textures were found in the resourcepack
-[05:54:49] [Craft Scheduler Thread - 0 - Oraxen/INFO]: Oraxen | Automatic upload of the resource pack is enabled, uploading...
-[05:54:50] [Craft Scheduler Thread - 0 - Oraxen/INFO]: Oraxen | Resourcepack uploaded to http://atlas.oraxen.com:8080/pack.zip?id=eec6ae86a3764c4f6d0a5e8a3623a7f3464db077 in 979ms.
-[05:55:54] [CMI-Thread-4/INFO]: [CMI] SQLite 3.49.1 data base type detected
-[05:55:54] [CMI-Thread-5/INFO]: [CMI] Start Back up
-[05:55:54] [CMI-Thread-5/INFO]: [CMI] Copied users data
-[05:55:54] [CMI-Thread-5/INFO]: [CMI] Copied playtimereward data
-[05:55:54] [CMI-Thread-5/INFO]: [CMI] Finish Back up copy process
-[05:55:54] [CMI-Thread-6/INFO]: [CMI] Backup compacted: 2026-08-22_05-55-54_cmi.sqlite.db.zip
-[05:55:54] [CMI-Thread-6/INFO]: [CMI] Removed temporary file
-[06:04:05] [Server thread/INFO]: Stopping the server
-[06:04:05] [Server thread/INFO]: Stopping server
-[06:04:05] [Server thread/INFO]: [ASPaperPlugin] Disabling ASPaperPlugin v6bc38bef65921cf480446de8e46161803e68d750
-[06:04:05] [Server thread/INFO]: [DeluxeBazaar] Disabling DeluxeBazaar v10.5
-[06:04:05] [Server thread/INFO]: [DeluxeBazaar] (WARN) Plugin is disabled! (sedattr was here...)
-[06:04:05] [Server thread/INFO]: [SuperiorSkyblock2] Disabling SuperiorSkyblock2 v2026.2-b927
-[06:04:05] [Server thread/INFO]: [SuperiorSkyblock2] Disabling the module bank...
-[06:04:05] [Server thread/INFO]: [SuperiorSkyblock2] Disabling the module missions...
-[06:04:05] [Server thread/INFO]: [SuperiorSkyblock2] Disabling the module generators...
-[06:04:05] [Server thread/INFO]: [SuperiorSkyblock2] Disabling the module upgrades...
-[06:04:05] [Server thread/INFO]: [SuperiorSkyblock2] Shutting down stats client...
-[06:04:05] [Server thread/INFO]: [SuperiorSkyblock2] Shutting down calculation task...
-[06:04:05] [Server thread/INFO]: [SuperiorSkyblock2] Shutting down executor
-[06:04:05] [Server thread/INFO]: [SuperiorSkyblock2] This can take up to 20 seconds to complete
-[06:04:05] [Server thread/INFO]: [SuperiorSkyblock2] Closing database. This may hang the server. Do not shut it down, or data may get lost.
-[06:04:06] [Server thread/INFO]: [Plan] Disabling Plan v5.8 build 3605
-[06:04:06] [Server thread/INFO]: [Plan] Processing complete.
-[06:04:06] [Server thread/INFO]: [Plan] Waiting for unfinished transactions to avoid data loss..
-[06:04:06] [Server thread/INFO]: [Plan] Transaction queue closed.
-[06:04:06] [Server thread/INFO]: [Plan] Waiting queries to finish to avoid SQLite crashing JVM..
-[06:04:06] [Server thread/INFO]: [Plan] Closed SQLite connection.
-[06:04:06] [Server thread/INFO]: [Plan] Player Analytics Disabled.
-[06:04:06] [Server thread/INFO]: [DeluxeMenus] Disabling DeluxeMenus v1.14.1-Release
-[06:04:06] [Server thread/INFO]: [GlobalMarketPlus] Disabling GlobalMarketPlus v1.4.1.5
-[06:04:06] [Server thread/INFO]: [PlaceholderAPI] Unregistered placeholder expansion gmpapi
-[06:04:06] [Server thread/INFO]: [PlaceholderAPI] Reason: required plugin GlobalMarketPlus was disabled.
-[06:04:06] [Server thread/INFO]: GlobalMarketPlus >>> Async threads stopped.
-[06:04:06] [Server thread/INFO]: GlobalMarketPlus >>> Database SQLite:Database.db disconnected.
-[06:04:06] [Server thread/INFO]: GlobalMarketPlus >>> Database SQLite:Recorder.db disconnected.
-[06:04:06] [Server thread/INFO]: [CMI] Disabling CMI v9.8.9.8
-[06:04:06] [Server thread/INFO]: [CMI] Closed db connections
-[06:04:06] [Server thread/INFO]: [Oraxen] Disabling Oraxen v1.218.0
-[06:04:06] [Server thread/INFO]: Oraxen | Unhooking plugin "Skript"
-[06:04:06] [Server thread/INFO]: Oraxen | Unhooking plugin "PlaceholderAPI"
-[06:04:06] [Server thread/INFO]: Oraxen | Successfully unloaded
-[06:04:06] [Server thread/INFO]: [CMILib] Disabling CMILib v1.5.9.9
-[06:04:06] [Server thread/INFO]: [Skript] Disabling Skript v2.16.1
-[06:04:06] [Server thread/INFO]: [nightcore] Disabling nightcore v2.16.4
-[06:04:06] [Server thread/INFO]: [com.zaxxer.hikari.HikariDataSource] nightcorePool - Shutdown initiated...
-[06:04:06] [Server thread/INFO]: [com.zaxxer.hikari.HikariDataSource] nightcorePool - Shutdown completed.
-[06:04:06] [Server thread/INFO]: [ProtocolLib] Disabling ProtocolLib v5.4.0
-[06:04:06] [Server thread/INFO]: [Vault] Disabling Vault v2.20.2
-[06:04:06] [Server thread/INFO]: [LuckPerms] Disabling LuckPerms v5.5.71
-[06:04:06] [Server thread/INFO]: [LuckPerms] Starting shutdown process...
-[06:04:06] [Server thread/INFO]: [LuckPerms] Closing storage...
-[06:04:06] [Server thread/INFO]: [LuckPerms] Goodbye!
-[06:04:06] [Server thread/INFO]: [PlaceholderAPI] Disabling PlaceholderAPI v2.12.3
-[06:04:06] [Server thread/INFO]: Saving players
-[06:04:06] [Server thread/INFO]: Saving worlds
-[06:04:06] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
-[06:04:06] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'minecraft:overworld'
-[06:04:06] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'minecraft:overworld'
-[06:04:06] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'minecraft:overworld'
-[06:04:06] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'minecraft:overworld' in 0.00s
-[06:04:06] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'minecraft:overworld'
-[06:04:06] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'minecraft:overworld'
-[06:04:06] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
-[06:04:06] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'minecraft:the_nether'
-[06:04:06] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'minecraft:the_nether'
-[06:04:06] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'minecraft:the_nether'
-[06:04:06] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'minecraft:the_nether' in 0.00s
-[06:04:06] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'minecraft:the_nether'
-[06:04:06] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'minecraft:the_nether'
-[06:04:06] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:superiorworld
-[06:04:06] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'minecraft:superiorworld'
-[06:04:06] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'minecraft:superiorworld'
-[06:04:06] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'minecraft:superiorworld'
-[06:04:06] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'minecraft:superiorworld' in 0.00s
-[06:04:06] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'minecraft:superiorworld'
-[06:04:06] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'minecraft:superiorworld'
-[06:04:06] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
-[06:04:06] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[06:04:06] [Server thread/INFO]: ThreadedAnvilChunkStorage (superiorworld): All chunks are saved
-[06:04:06] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
-[06:04:06] [Server thread/INFO]: Waiting for all RegionFile I/O tasks to complete...
-[06:04:06] [Server thread/INFO]: All RegionFile I/O tasks to complete
-[06:04:06] [Server thread/INFO]: [MoonriseCommon] Awaiting termination of worker pool for up to 60s...
-[06:04:06] [Server thread/INFO]: [MoonriseCommon] Awaiting termination of I/O pool for up to 60s...
+[09:30:32] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:superiorworld'...
+[09:30:32] [Server thread/INFO]: Prepared spawn area in 0 ms
+[09:30:32] [Server thread/INFO]: [SuperiorSkyblock2] Enabling the module bank...
+[09:30:32] [Server thread/INFO]: [SuperiorSkyblock2] Finished enabling the module bank (Took 4ms)
+[09:30:32] [Server thread/INFO]: [SuperiorSkyblock2] Enabling the module missions...
+[09:30:32] [Server thread/INFO]: [SuperiorSkyblock2] Finished enabling the module missions (Took 9ms)
+[09:30:32] [Server thread/INFO]: [SuperiorSkyblock2] Enabling the module generators...
+[09:30:32] [Server thread/INFO]: [SuperiorSkyblock2] Finished enabling the module generators (Took 2ms)
+[09:30:32] [Server thread/INFO]: [SuperiorSkyblock2] Enabling the module upgrades...
+[09:30:32] [Server thread/INFO]: [SuperiorSkyblock2] Finished enabling the module upgrades (Took 18ms)
+[09:30:32] [Server thread/INFO]: [SuperiorSkyblock2] Using MiniMessage as a ui provider.
+[09:30:32] [Server thread/INFO]: [SuperiorSkyblock2] Loading messages started...
+[09:30:32] [Server thread/INFO]: [SuperiorSkyblock2]  - Found 753 messages in the language files.
+[09:30:32] [Server thread/INFO]: [SuperiorSkyblock2] Loading messages done (Took 240ms)
+[09:30:32] [Server thread/INFO]: [SuperiorSkyblock2] Loading 9 schematics using 9 threads...
+[09:30:32] [SuperiorSkyblock Load Schematic Worker #2/WARN]: [org.bukkit.craftbukkit.legacy.CraftLegacy] Initializing Legacy Material Support. Unless you have legacy plugins and/or data this is a bug!
+[09:30:40] [SuperiorSkyblock Load Schematic Worker #3/INFO]: [SuperiorSkyblock2] Successfully loaded schematic normal_nether.schematic (DefaultSchematicParser)
+[09:30:40] [SuperiorSkyblock Load Schematic Worker #6/INFO]: [SuperiorSkyblock2] Successfully loaded schematic normal.schematic (DefaultSchematicParser)
+[09:30:40] [SuperiorSkyblock Load Schematic Worker #2/INFO]: [SuperiorSkyblock2] Successfully loaded schematic mycel.schematic (DefaultSchematicParser)
+[09:30:40] [SuperiorSkyblock Load Schematic Worker #4/INFO]: [SuperiorSkyblock2] Successfully loaded schematic mycel_nether.schematic (DefaultSchematicParser)
+[09:30:40] [SuperiorSkyblock Load Schematic Worker #7/INFO]: [SuperiorSkyblock2] Successfully loaded schematic desert_nether.schematic (DefaultSchematicParser)
+[09:30:40] [SuperiorSkyblock Load Schematic Worker #1/INFO]: [SuperiorSkyblock2] Successfully loaded schematic desert.schematic (DefaultSchematicParser)
+[09:30:40] [SuperiorSkyblock Load Schematic Worker #8/INFO]: [SuperiorSkyblock2] Successfully loaded schematic desert_the_end.schematic (DefaultSchematicParser)
+[09:30:40] [SuperiorSkyblock Load Schematic Worker #0/INFO]: [SuperiorSkyblock2] Successfully loaded schematic mycel_the_end.schematic (DefaultSchematicParser)
+[09:30:40] [SuperiorSkyblock Load Schematic Worker #5/INFO]: [SuperiorSkyblock2] Successfully loaded schematic normal_the_end.schematic (DefaultSchematicParser)
+[09:30:40] [Server thread/INFO]: [SuperiorSkyblock2] Successfully loaded 9 schematics.
+[09:30:41] [Server thread/INFO]: [SuperiorSkyblock2] Trying to connect to local database (SQLite)...
+[09:30:41] [Server thread/INFO]: [SuperiorSkyblock2] Successfully established connection with local database!
+[09:30:41] [Server thread/INFO]: [SuperiorSkyblock2] Creating a backup file...
+[09:30:41] [Server thread/INFO]: [SuperiorSkyblock2] Backup done!
+[09:30:41] [Server thread/INFO]: [SuperiorSkyblock2] Starting to load players...
+[09:30:41] [Server thread/INFO]: [SuperiorSkyblock2] Finished loading 0 players (Took 2ms)
+[09:30:41] [Server thread/INFO]: [SuperiorSkyblock2] Starting to load islands...
+[09:30:41] [Server thread/INFO]: [SuperiorSkyblock2] Finished loading 0 islands (Took 6ms)
+[09:30:41] [Server thread/INFO]: [SuperiorSkyblock2] Starting to load grid...
+[09:30:41] [Server thread/INFO]: [SuperiorSkyblock2] Finished grid!
+[09:30:41] [Server thread/INFO]: [SuperiorSkyblock2] Starting to load stacked blocks...
+[09:30:41] [Server thread/INFO]: [SuperiorSkyblock2] Finished stacked blocks!
+[09:30:41] [Server thread/INFO]: [DeluxeBazaar] Enabling DeluxeBazaar v10.5
+[09:30:41] [Server thread/INFO]: [DeluxeBazaar] (ERROR) There is a problem in economy setup! Plugin is disabling...
+[09:30:41] [Server thread/INFO]: [ASPaperPlugin] Enabling ASPaperPlugin v6bc38bef65921cf480446de8e46161803e68d750
+[09:30:41] [Server thread/INFO]: [spark] Starting background profiler...
+[09:30:41] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
+[09:30:41] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[09:30:41] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[09:30:41] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:superiorworld
+[09:30:41] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[09:30:41] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[09:30:41] [Server thread/INFO]: ThreadedAnvilChunkStorage (superiorworld): All chunks are saved
+[09:30:41] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[09:30:41] [Server thread/INFO]: Running delayed init tasks
+[09:30:41] [Server thread/INFO]: [Skript] Loading variables...
+[09:30:41] [Server thread/INFO]: [Skript] Loaded 0 variables in 0.0 seconds
+[09:30:41] [Server thread/INFO]: [Skript] All scripts loaded without errors.
+[09:30:41] [Server thread/INFO]: [Skript]     No scripts were found, maybe you should write some ;)
+[09:30:41] [Server thread/INFO]: [Skript] Finished loading.
+[09:30:41] [Craft Scheduler Thread - 2 - Plan/INFO]: [Plan] You're using the latest version.
+[09:30:42] [Server thread/INFO]: [CMI] Permission plugin: LuckPerms5.5.71
+[09:30:42] [Server thread/INFO]: [CMI] Vault was found but economy engine is missing. Use one from list provided in https://dev.bukkit.org/bukkit-plugins/vault/
+[09:30:42] [Server thread/INFO]: [CMI] Alternatively you can enable CMI economy in config.yml file
+[09:30:42] [Server thread/INFO]: [CMI] Vault was found but not economy plugin, you will have limited economy support
+[09:30:42] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: cmi [9.8.9.8]
+[09:30:42] [Server thread/INFO]: [CMI] PlaceholderAPI hooked.
+[09:30:42] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: plan [5.8 build 3605]
+[09:30:42] [Server thread/INFO]: GlobalMarketPlus >>> Configuration settings loaded, language: English
+[09:30:42] [Server thread/INFO]: GlobalMarketPlus >>> Loaded 29 files, error 0 .
+[09:30:42] [Server thread/INFO]: GlobalMarketPlus >>> Loaded all of GUIs and 0 custom GUIs.
+[09:30:42] [Server thread/INFO]: GlobalMarketPlus >>> Enabled SQLite .
+[09:30:42] [Server thread/INFO]: GlobalMarketPlus >>> Loaded 278 JSON components
+[09:30:42] [Server thread/INFO]: GlobalMarketPlus >>> Loaded 3 groups
+[09:30:42] [Server thread/INFO]: GlobalMarketPlus >>> Loaded 10 categories
+[09:30:42] [Server thread/INFO]: GlobalMarketPlus >>> Initialization completed, version v1.4.1.5
+[09:30:42] [GlobalMarketPlus-TaskThread/INFO]: GlobalMarketPlus >>> Deleting outdated records in the recorder database...
+[09:30:42] [GlobalMarketPlus-TaskThread/INFO]: GlobalMarketPlus >>> Deleted 0 outdated records.
+[09:30:42] [Server thread/INFO]: [SuperiorSkyblock2] Plan detected - attempting to register SuperiorSkyblock DataExtension.
+[09:30:42] [Server thread/INFO]: [Plan] Registered extension: SuperiorSkyblock
+[09:30:42] [Server thread/INFO]: [SuperiorSkyblock2] Registered SuperiorSkyblock Plan DataExtension.
+[09:30:42] [Server thread/INFO]: [SuperiorSkyblock2] Using LuckPerms as a permissions provider.
+[09:30:42] [Server thread/INFO]: [SuperiorSkyblock2] Using CMI as a prices provider.
+[09:30:42] [Server thread/INFO]: [SuperiorSkyblock2] Hooked into CMI for support of vanish status of players.
+[09:30:42] [Server thread/INFO]: [SuperiorSkyblock2] Hooked into CMI for support of afk status of players.
+[09:30:42] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: superior [2026.2-b927]
+[09:30:42] [Server thread/INFO]: [SuperiorSkyblock2] Using PlaceholderAPI for placeholders support.
+[09:30:42] [Server thread/INFO]: [SuperiorSkyblock2] Detected PaperSpigot - Using async chunk-loading support with PaperMC.
+[09:30:42] [Server thread/INFO]: Done (37.164s)! For help, type "help"
+[09:30:42] [Server thread/INFO]: 0 placeholder hook(s) registered!
+[09:30:42] [Oraxen-PackWorker/INFO]: Oraxen | No broken models or textures were found in the resourcepack
+[09:30:42] [Craft Scheduler Thread - 7 - Oraxen/INFO]: Oraxen | Automatic upload of the resource pack is enabled, uploading...
+[09:30:43] [Craft Scheduler Thread - 7 - Oraxen/INFO]: Oraxen | Resourcepack uploaded to http://atlas.oraxen.com:8080/pack.zip?id=eec6ae86a3764c4f6d0a5e8a3623a7f3464db077 in 1030ms.
