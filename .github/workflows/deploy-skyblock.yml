@@ -156,9 +156,14 @@ jobs:
 
           path = Path("skyblock/plugins/Plan/config.yml")
           text = path.read_text()
+          original = text
           for key in ("HOST", "PORT", "DATABASE", "USER", "PASSWORD"):
               text = text.replace(f"__PLAN_DB_{key}__", os.environ[f"PLAN_DB_{key}"])
-          path.write_text(text)
+          if text != original:
+              path.write_text(text)
+              print("Injected Plan DB credentials into: skyblock/plugins/Plan/config.yml")
+          else:
+              print("No Plan DB placeholders in: skyblock/plugins/Plan/config.yml")
           PY
 
       - name: Get Changed Files
