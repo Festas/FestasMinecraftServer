@@ -95,7 +95,8 @@ FurnitureUpdater:
 
 Pack:
   generation:
-    generate: true # Unlike Plugin.generation.default_assets, this will enable/disable all pack generation
+    # WICHTIG: Skyblock bekommt das Survival-Pack vom Proxy (ForceResourcepacks) – kein eigenes Pack noetig (spart CPU)
+    generate: false # Unlike Plugin.generation.default_assets, this will enable/disable all pack generation
     # If true, Oraxen will not create or modify pack.mcmeta.
     # The file at plugins/Oraxen/pack/pack.mcmeta will be included in the final pack exactly as provided.
     # This also disables automatic overlay entries, so you must manage overlays in pack.mcmeta yourself.
@@ -199,7 +200,8 @@ Pack:
     merge_item_base_models: false
   
   upload:
-    enabled: true
+    # WICHTIG: Upload aus – Skyblock nutzt das vom Proxy verteilte Survival-Pack
+    enabled: false
     type: polymath # lobfile, polymath, self-host, or external
     polymath:
       server: atlas.oraxen.com # you can also host your own polymath instance
@@ -213,7 +215,8 @@ Pack:
       domain: localhost:8080 # The domain/IP:port that players will use to download the pack (e.g., "my-server.com:8080" or "192.168.1.100:8080")
   
   dispatch:
-    send: true # Should the pack be sent to the player.
+    # WICHTIG: Proxy (ForceResourcepacks) sendet das Pack – Skyblock darf nicht selbst senden (sonst doppelter Pack-Prompt)
+    send: false # Should the pack be sent to the player.
     mode: JOIN # PRE-JOIN, JOIN; Mode to use when sending the pack.
     timeout: 30s # Time to wait for a response when using PRE-JOIN mode before continuing login.
     exclude: []
