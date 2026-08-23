@@ -96,7 +96,7 @@ Webserver:
         Cookies_expire_after:
             Time: 2
             Unit: HOURS
-    Disable_Webserver: false
+    Disable_Webserver: true
     External_Webserver_address: https://mc-stats.festas-builds.com
     Cache:
         Reduced_refresh_barrier:
@@ -250,6 +250,7 @@ World_aliases:
     # Automatically generated, if regex matches world will not be added here.
     List:
         world: world
+        lobby: "lobby"
     # List of - "alias:regex" rules, Set alias of multiple worlds that match regex to group them
     Regex:
       - "Alias for world:^abc$"

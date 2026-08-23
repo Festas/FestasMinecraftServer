@@ -427,49 +427,49 @@ info:
     zombified_piglin: Zombified piglin
   # Avoid adding color codes to the enchant name
   EnchantNames:
-    breach: Breach
-    piercing: Piercing
-    protection: Protection
-    loyalty: Loyalty
-    smite: Smite
-    multishot: Multishot
-    vanishing_curse: Vanishing_Curse
-    flame: Flame
-    impaling: Impaling
-    projectile_protection: Projectile_Protection
-    knockback: Knockback
-    channeling: Channeling
-    efficiency: Efficiency
-    power: Power
-    density: Density
-    riptide: Riptide
-    feather_falling: Feather_Falling
-    thorns: Thorns
-    bane_of_arthropods: Bane_Of_Arthropods
-    respiration: Respiration
-    lure: Lure
-    depth_strider: Depth_Strider
-    frost_walker: Frost_Walker
-    lunge: Lunge
-    unbreaking: Unbreaking
-    binding_curse: Binding_Curse
-    luck_of_the_sea: Luck_Of_The_Sea
-    looting: Looting
-    blast_protection: Blast_Protection
-    infinity: Infinity
     silk_touch: Silk_Touch
-    wind_burst: Wind_Burst
-    quick_charge: Quick_Charge
-    aqua_affinity: Aqua_Affinity
-    swift_sneak: Swift_Sneak
-    sharpness: Sharpness
     fire_protection: Fire_Protection
-    mending: Mending
+    sharpness: Sharpness
+    bane_of_arthropods: Bane_Of_Arthropods
     sweeping_edge: Sweeping_Edge
+    channeling: Channeling
+    thorns: Thorns
+    respiration: Respiration
     fire_aspect: Fire_Aspect
-    punch: Punch
-    fortune: Fortune
+    protection: Protection
+    multishot: Multishot
     soul_speed: Soul_Speed
+    binding_curse: Binding_Curse
+    infinity: Infinity
+    knockback: Knockback
+    smite: Smite
+    lunge: Lunge
+    riptide: Riptide
+    unbreaking: Unbreaking
+    quick_charge: Quick_Charge
+    frost_walker: Frost_Walker
+    piercing: Piercing
+    efficiency: Efficiency
+    looting: Looting
+    luck_of_the_sea: Luck_Of_The_Sea
+    power: Power
+    impaling: Impaling
+    blast_protection: Blast_Protection
+    flame: Flame
+    mending: Mending
+    wind_burst: Wind_Burst
+    density: Density
+    feather_falling: Feather_Falling
+    swift_sneak: Swift_Sneak
+    vanishing_curse: Vanishing_Curse
+    lure: Lure
+    breach: Breach
+    depth_strider: Depth_Strider
+    punch: Punch
+    aqua_affinity: Aqua_Affinity
+    projectile_protection: Projectile_Protection
+    fortune: Fortune
+    loyalty: Loyalty
   PotionEffectAliases:
     windcharged:
     - Wind charged

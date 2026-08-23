@@ -31,11 +31,11 @@ firstJoinServer:
   - cmi msg [playerName] !&8&m─────────────────────────────────────
   - cmi msg [playerName] !&6&l  ✦ Willkommen bei Festas Builds! ✦
   - cmi msg [playerName] !&8&m─────────────────────────────────────
-  - cmi msg [playerName] !
+  - cmi msg [playerName] ! 
   - cmi msg [playerName] !&7  Nutze &b/navigator &7um einen Server zu wählen.
   - cmi msg [playerName] !&7  Oder klicke einen der &eNPCs &7an!
-  - cmi msg [playerName] !
-  - 'cmi msg [playerName] !&7  &8» &aDiscord: &fdiscord.gg/festasbuilds'
+  - cmi msg [playerName] ! 
+  - cmi msg [playerName] !&7  &8» &aDiscord: &fdiscord.gg/festasbuilds
   - cmi msg [playerName] !&8&m─────────────────────────────────────
   - delay! 0.5
   - actionbar! &e✦ &6Festas Builds &8| &7mc.festas-builds.com &e✦
@@ -127,16 +127,15 @@ voidFall:
   Enabled: true
   Commands:
   - cmi spawn [playerName]
-  - cmi msg [playerName] !&c&l✦ &7Du bist ins Leere gefallen und wurdest zum Spawn
-    teleportiert.
+  - cmi msg [playerName] !&c&l✦ &7Du bist ins Leere gefallen und wurdest zum Spawn teleportiert.
 elytraStartGlide:
   Enabled: false
   Commands:
   - cmi msg [playerName] !This is event command example!
   - cmi msg [playerName] !Originates from sneakingSwapHandItems event!
 advancementDone:
-  # use [value] variable to insert advancements identificator like husbandry/balanced_diet
-  # use [value2] variable to insert advancements name like 'A Balanced Diet'
+  # use [value] variable to insert advancements identificator
+  # This returns path to advancement like recipes/building_blocks/emerald_block which can be used in commands in case you want to filter out specific ones
   Enabled: false
   Commands:
   - cmi msg [playerName] !This is event command example!
