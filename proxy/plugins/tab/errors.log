@@ -610,3 +610,143 @@
 18.08.2026 - 21:12:36 - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
 18.08.2026 - 21:12:36 - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
 18.08.2026 - 21:12:36 - 	at java.base/java.lang.Thread.run(Thread.java:1474)
+19.08.2026 - 17:22:19 - [TAB v5.4.0] An error was thrown when executing task
+19.08.2026 - 17:22:19 - java.lang.NoSuchMethodError: 'com.velocitypowered.api.scoreboard.Objective com.velocitypowered.api.event.scoreboard.ObjectiveEvent$Display.getObjective()'
+19.08.2026 - 17:22:19 - 	at me.neznamy.tab.platforms.velocity.VelocityPlatform.lambda$new$0(VelocityPlatform.java:83)
+19.08.2026 - 17:22:19 - 	at me.neznamy.tab.shared.cpu.CaughtTask.run(CaughtTask.java:18)
+19.08.2026 - 17:22:19 - 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+19.08.2026 - 17:22:19 - 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+19.08.2026 - 17:22:19 - 	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:309)
+19.08.2026 - 17:22:19 - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+19.08.2026 - 17:22:19 - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+19.08.2026 - 17:22:19 - 	at java.base/java.lang.Thread.run(Thread.java:1474)
+19.08.2026 - 17:22:19 - [TAB v5.4.0] An error was thrown when executing task
+19.08.2026 - 17:22:19 - java.lang.NoSuchMethodError: 'com.velocitypowered.api.scoreboard.Objective com.velocitypowered.api.event.scoreboard.ObjectiveEvent$Display.getObjective()'
+19.08.2026 - 17:22:19 - 	at me.neznamy.tab.platforms.velocity.VelocityPlatform.lambda$new$0(VelocityPlatform.java:83)
+19.08.2026 - 17:22:19 - 	at me.neznamy.tab.shared.cpu.CaughtTask.run(CaughtTask.java:18)
+19.08.2026 - 17:22:19 - 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+19.08.2026 - 17:22:19 - 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+19.08.2026 - 17:22:19 - 	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:309)
+19.08.2026 - 17:22:19 - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+19.08.2026 - 17:22:19 - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+19.08.2026 - 17:22:19 - 	at java.base/java.lang.Thread.run(Thread.java:1474)
+19.08.2026 - 19:02:50 - [TAB v5.4.0] An error was thrown when executing task
+19.08.2026 - 19:02:50 - java.lang.NoSuchMethodError: 'com.velocitypowered.api.scoreboard.Objective com.velocitypowered.api.event.scoreboard.ObjectiveEvent$Display.getObjective()'
+19.08.2026 - 19:02:50 - 	at me.neznamy.tab.platforms.velocity.VelocityPlatform.lambda$new$0(VelocityPlatform.java:83)
+19.08.2026 - 19:02:50 - 	at me.neznamy.tab.shared.cpu.CaughtTask.run(CaughtTask.java:18)
+19.08.2026 - 19:02:50 - 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+19.08.2026 - 19:02:50 - 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+19.08.2026 - 19:02:50 - 	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:309)
+19.08.2026 - 19:02:50 - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+19.08.2026 - 19:02:50 - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+19.08.2026 - 19:02:50 - 	at java.base/java.lang.Thread.run(Thread.java:1474)
+19.08.2026 - 19:02:50 - [TAB v5.4.0] An error was thrown when executing task
+19.08.2026 - 19:02:50 - java.lang.NoSuchMethodError: 'com.velocitypowered.api.scoreboard.Objective com.velocitypowered.api.event.scoreboard.ObjectiveEvent$Display.getObjective()'
+19.08.2026 - 19:02:50 - 	at me.neznamy.tab.platforms.velocity.VelocityPlatform.lambda$new$0(VelocityPlatform.java:83)
+19.08.2026 - 19:02:50 - 	at me.neznamy.tab.shared.cpu.CaughtTask.run(CaughtTask.java:18)
+19.08.2026 - 19:02:50 - 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+19.08.2026 - 19:02:50 - 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+19.08.2026 - 19:02:50 - 	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:309)
+19.08.2026 - 19:02:50 - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+19.08.2026 - 19:02:50 - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+19.08.2026 - 19:02:50 - 	at java.base/java.lang.Thread.run(Thread.java:1474)
+19.08.2026 - 19:13:10 - [TAB v5.4.0] An error was thrown when executing task
+19.08.2026 - 19:13:10 - java.lang.NoSuchMethodError: 'com.velocitypowered.api.scoreboard.Objective com.velocitypowered.api.event.scoreboard.ObjectiveEvent$Display.getObjective()'
+19.08.2026 - 19:13:10 - 	at me.neznamy.tab.platforms.velocity.VelocityPlatform.lambda$new$0(VelocityPlatform.java:83)
+19.08.2026 - 19:13:10 - 	at me.neznamy.tab.shared.cpu.CaughtTask.run(CaughtTask.java:18)
+19.08.2026 - 19:13:10 - 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+19.08.2026 - 19:13:10 - 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+19.08.2026 - 19:13:10 - 	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:309)
+19.08.2026 - 19:13:10 - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+19.08.2026 - 19:13:10 - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+19.08.2026 - 19:13:10 - 	at java.base/java.lang.Thread.run(Thread.java:1474)
+19.08.2026 - 19:13:10 - [TAB v5.4.0] An error was thrown when executing task
+19.08.2026 - 19:13:10 - java.lang.NoSuchMethodError: 'com.velocitypowered.api.scoreboard.Objective com.velocitypowered.api.event.scoreboard.ObjectiveEvent$Display.getObjective()'
+19.08.2026 - 19:13:10 - 	at me.neznamy.tab.platforms.velocity.VelocityPlatform.lambda$new$0(VelocityPlatform.java:83)
+19.08.2026 - 19:13:10 - 	at me.neznamy.tab.shared.cpu.CaughtTask.run(CaughtTask.java:18)
+19.08.2026 - 19:13:10 - 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+19.08.2026 - 19:13:10 - 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+19.08.2026 - 19:13:10 - 	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:309)
+19.08.2026 - 19:13:10 - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+19.08.2026 - 19:13:10 - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+19.08.2026 - 19:13:10 - 	at java.base/java.lang.Thread.run(Thread.java:1474)
+19.08.2026 - 20:19:22 - [TAB v5.4.0] An error was thrown when executing task
+19.08.2026 - 20:19:22 - java.lang.NoSuchMethodError: 'com.velocitypowered.api.scoreboard.Objective com.velocitypowered.api.event.scoreboard.ObjectiveEvent$Display.getObjective()'
+19.08.2026 - 20:19:22 - 	at me.neznamy.tab.platforms.velocity.VelocityPlatform.lambda$new$0(VelocityPlatform.java:83)
+19.08.2026 - 20:19:22 - 	at me.neznamy.tab.shared.cpu.CaughtTask.run(CaughtTask.java:18)
+19.08.2026 - 20:19:22 - 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+19.08.2026 - 20:19:22 - 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+19.08.2026 - 20:19:22 - 	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:309)
+19.08.2026 - 20:19:22 - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+19.08.2026 - 20:19:22 - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+19.08.2026 - 20:19:22 - 	at java.base/java.lang.Thread.run(Thread.java:1474)
+19.08.2026 - 20:19:22 - [TAB v5.4.0] An error was thrown when executing task
+19.08.2026 - 20:19:22 - java.lang.NoSuchMethodError: 'com.velocitypowered.api.scoreboard.Objective com.velocitypowered.api.event.scoreboard.ObjectiveEvent$Display.getObjective()'
+19.08.2026 - 20:19:22 - 	at me.neznamy.tab.platforms.velocity.VelocityPlatform.lambda$new$0(VelocityPlatform.java:83)
+19.08.2026 - 20:19:22 - 	at me.neznamy.tab.shared.cpu.CaughtTask.run(CaughtTask.java:18)
+19.08.2026 - 20:19:22 - 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+19.08.2026 - 20:19:22 - 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+19.08.2026 - 20:19:22 - 	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:309)
+19.08.2026 - 20:19:22 - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+19.08.2026 - 20:19:22 - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+19.08.2026 - 20:19:22 - 	at java.base/java.lang.Thread.run(Thread.java:1474)
+22.08.2026 - 14:19:15 - [TAB v5.4.0] An error was thrown when executing task
+22.08.2026 - 14:19:15 - java.lang.NoSuchMethodError: 'com.velocitypowered.api.scoreboard.Objective com.velocitypowered.api.event.scoreboard.ObjectiveEvent$Display.getObjective()'
+22.08.2026 - 14:19:15 - 	at me.neznamy.tab.platforms.velocity.VelocityPlatform.lambda$new$0(VelocityPlatform.java:83)
+22.08.2026 - 14:19:15 - 	at me.neznamy.tab.shared.cpu.CaughtTask.run(CaughtTask.java:18)
+22.08.2026 - 14:19:15 - 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+22.08.2026 - 14:19:15 - 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+22.08.2026 - 14:19:15 - 	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:309)
+22.08.2026 - 14:19:15 - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+22.08.2026 - 14:19:15 - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+22.08.2026 - 14:19:15 - 	at java.base/java.lang.Thread.run(Thread.java:1474)
+22.08.2026 - 14:19:15 - [TAB v5.4.0] An error was thrown when executing task
+22.08.2026 - 14:19:15 - java.lang.NoSuchMethodError: 'com.velocitypowered.api.scoreboard.Objective com.velocitypowered.api.event.scoreboard.ObjectiveEvent$Display.getObjective()'
+22.08.2026 - 14:19:15 - 	at me.neznamy.tab.platforms.velocity.VelocityPlatform.lambda$new$0(VelocityPlatform.java:83)
+22.08.2026 - 14:19:15 - 	at me.neznamy.tab.shared.cpu.CaughtTask.run(CaughtTask.java:18)
+22.08.2026 - 14:19:15 - 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+22.08.2026 - 14:19:15 - 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+22.08.2026 - 14:19:15 - 	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:309)
+22.08.2026 - 14:19:15 - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+22.08.2026 - 14:19:15 - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+22.08.2026 - 14:19:15 - 	at java.base/java.lang.Thread.run(Thread.java:1474)
+23.08.2026 - 07:36:40 - [TAB v5.4.0] An error was thrown when executing task
+23.08.2026 - 07:36:40 - java.lang.NoSuchMethodError: 'com.velocitypowered.api.scoreboard.Objective com.velocitypowered.api.event.scoreboard.ObjectiveEvent$Display.getObjective()'
+23.08.2026 - 07:36:40 - 	at me.neznamy.tab.platforms.velocity.VelocityPlatform.lambda$new$0(VelocityPlatform.java:83)
+23.08.2026 - 07:36:40 - 	at me.neznamy.tab.shared.cpu.CaughtTask.run(CaughtTask.java:18)
+23.08.2026 - 07:36:40 - 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+23.08.2026 - 07:36:40 - 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+23.08.2026 - 07:36:40 - 	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:309)
+23.08.2026 - 07:36:40 - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+23.08.2026 - 07:36:40 - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+23.08.2026 - 07:36:40 - 	at java.base/java.lang.Thread.run(Thread.java:1474)
+23.08.2026 - 07:36:40 - [TAB v5.4.0] An error was thrown when executing task
+23.08.2026 - 07:36:40 - java.lang.NoSuchMethodError: 'com.velocitypowered.api.scoreboard.Objective com.velocitypowered.api.event.scoreboard.ObjectiveEvent$Display.getObjective()'
+23.08.2026 - 07:36:40 - 	at me.neznamy.tab.platforms.velocity.VelocityPlatform.lambda$new$0(VelocityPlatform.java:83)
+23.08.2026 - 07:36:40 - 	at me.neznamy.tab.shared.cpu.CaughtTask.run(CaughtTask.java:18)
+23.08.2026 - 07:36:40 - 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+23.08.2026 - 07:36:40 - 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+23.08.2026 - 07:36:40 - 	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:309)
+23.08.2026 - 07:36:40 - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+23.08.2026 - 07:36:40 - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+23.08.2026 - 07:36:40 - 	at java.base/java.lang.Thread.run(Thread.java:1474)
+23.08.2026 - 07:55:01 - [TAB v5.4.0] An error was thrown when executing task
+23.08.2026 - 07:55:01 - java.lang.NoSuchMethodError: 'com.velocitypowered.api.scoreboard.Objective com.velocitypowered.api.event.scoreboard.ObjectiveEvent$Display.getObjective()'
+23.08.2026 - 07:55:01 - 	at me.neznamy.tab.platforms.velocity.VelocityPlatform.lambda$new$0(VelocityPlatform.java:83)
+23.08.2026 - 07:55:01 - 	at me.neznamy.tab.shared.cpu.CaughtTask.run(CaughtTask.java:18)
+23.08.2026 - 07:55:01 - 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+23.08.2026 - 07:55:01 - 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+23.08.2026 - 07:55:01 - 	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:309)
+23.08.2026 - 07:55:01 - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+23.08.2026 - 07:55:01 - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+23.08.2026 - 07:55:01 - 	at java.base/java.lang.Thread.run(Thread.java:1474)
+23.08.2026 - 07:55:01 - [TAB v5.4.0] An error was thrown when executing task
+23.08.2026 - 07:55:01 - java.lang.NoSuchMethodError: 'com.velocitypowered.api.scoreboard.Objective com.velocitypowered.api.event.scoreboard.ObjectiveEvent$Display.getObjective()'
+23.08.2026 - 07:55:01 - 	at me.neznamy.tab.platforms.velocity.VelocityPlatform.lambda$new$0(VelocityPlatform.java:83)
+23.08.2026 - 07:55:01 - 	at me.neznamy.tab.shared.cpu.CaughtTask.run(CaughtTask.java:18)
+23.08.2026 - 07:55:01 - 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+23.08.2026 - 07:55:01 - 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+23.08.2026 - 07:55:01 - 	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:309)
+23.08.2026 - 07:55:01 - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+23.08.2026 - 07:55:01 - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+23.08.2026 - 07:55:01 - 	at java.base/java.lang.Thread.run(Thread.java:1474)

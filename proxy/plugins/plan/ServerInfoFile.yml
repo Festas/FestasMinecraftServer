@@ -1,0 +1,6 @@
+# Changing the UUID in this file will make Plan regard your server as a completely new server
+# Tread with caution.
+Server:
+    ID: 1
+    UUID: "2a20d405-0a79-4d92-af8c-0ea1fa168867"
+    Web_address: "https://mc-stats.festas-builds.com"
