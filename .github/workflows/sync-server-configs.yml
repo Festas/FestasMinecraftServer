@@ -148,7 +148,7 @@ jobs:
           ssh_opts="-i $HOME/.ssh/deploy_key -o StrictHostKeyChecking=yes"
 
           # Liefert das SERVER_PATH-Secret für einen Server-Key. Der Wert zeigt auf den
-          # plugins-Ordner; das Server-ROOT wird von den Aufrufern per dirname abgeleitet.
+          # plugins-Ordner.
           server_path_for() {
             case "$1" in
               LOBBY)    printf '%s' "$SERVER_PATH_LOBBY" ;;
@@ -158,6 +158,20 @@ jobs:
               RPG)      printf '%s' "$SERVER_PATH_RPG" ;;
               *)        printf '' ;;
             esac
+          }
+
+          # Leitet robust das Server-ROOT aus SERVER_PATH ab.
+          # Falls SERVER_PATH versehentlich auf .../plugins/plugins endet,
+          # werden alle trailing /plugins-Segmente entfernt.
+          server_root_for() {
+            local path
+            path="$(server_path_for "$1")"
+            [ -z "$path" ] && { printf ''; return; }
+            path="${path%/}"
+            while [[ "$path" == */plugins ]]; do
+              path="${path%/plugins}"
+            done
+            printf '%s' "$path"
           }
 
           # Verzeichnisname im Repo für einen Server-Key (lowercase).
@@ -175,17 +189,21 @@ jobs:
             local repo_dir server_path server_root local_file
             repo_dir="$(repo_dir_for "$server_key")"
             server_path="$(server_path_for "$server_key")"
+            server_root="$(server_root_for "$server_key")"
             local_file="${repo_dir}/${rel}"
 
             if [ -z "$server_path" ]; then
               echo "::warning::Überspringe ${server_key}/${rel}: SERVER_PATH nicht konfiguriert."
               return 0
             fi
+            if [ -z "$server_root" ]; then
+              echo "::warning::Überspringe ${server_key}/${rel}: Server-ROOT konnte nicht ermittelt werden."
+              return 0
+            fi
             if [ ! -f "$local_file" ]; then
               return 0
             fi
 
-            server_root="$(dirname "$server_path")"
             local remote_dir
             remote_dir="$(dirname "${server_root}/${rel}")"
             ssh -n $ssh_opts "${SSH_USER}@${SSH_HOST}" "mkdir -p '${remote_dir}'"
@@ -321,6 +339,17 @@ jobs:
               *)        printf '' ;;
             esac
           }
+          # Duplikat von deploy-to-server: jeder `run`-Block läuft in eigener Shell.
+          server_root_for() {
+            local path
+            path="$(server_path_for "$1")"
+            [ -z "$path" ] && { printf ''; return; }
+            path="${path%/}"
+            while [[ "$path" == */plugins ]]; do
+              path="${path%/plugins}"
+            done
+            printf '%s' "$path"
+          }
           repo_dir_for() { printf '%s' "$(echo "$1" | tr '[:upper:]' '[:lower:]')"; }
           files_for() {
             if [ "$1" = "PROXY" ]; then printf '%s\n' "${VELOCITY_FILES[@]}";
@@ -333,14 +362,18 @@ jobs:
             local repo_dir server_path server_root local_file
             repo_dir="$(repo_dir_for "$server_key")"
             server_path="$(server_path_for "$server_key")"
+            server_root="$(server_root_for "$server_key")"
             local_file="${repo_dir}/${rel}"
 
             if [ -z "$server_path" ]; then
               echo "::warning::Überspringe ${server_key}/${rel}: SERVER_PATH nicht konfiguriert."
               return 0
             fi
+            if [ -z "$server_root" ]; then
+              echo "::warning::Überspringe ${server_key}/${rel}: Server-ROOT konnte nicht ermittelt werden."
+              return 0
+            fi
 
-            server_root="$(dirname "$server_path")"
             local remote_file="${server_root}/${rel}"
 
             if ! ssh -n $ssh_opts "${SSH_USER}@${SSH_HOST}" "test -f '${remote_file}'"; then
