@@ -1,0 +1,149 @@
+name: Deploy Redis
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'infra/redis/**'
+      - '.github/workflows/deploy-redis.yml'
+  workflow_dispatch:
+    inputs:
+      bind_ip:
+        description: 'Host IP to publish Redis on (internal bridge, default 172.18.0.1)'
+        required: false
+        default: '172.18.0.1'
+
+concurrency:
+  group: deploy-redis
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Deploy Redis to Hetzner
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Stage config and inject Redis password
+        env:
+          REDIS_PASSWORD: ${{ secrets.REDIS_PASSWORD }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "${REDIS_PASSWORD:-}" ]; then
+            echo "::error::Missing secret REDIS_PASSWORD"
+            exit 1
+          fi
+
+          # Reject values that would break the redis.conf single-line directive.
+          case "$REDIS_PASSWORD" in
+            *[[:space:]]*|*"'"*)
+              echo "::error::REDIS_PASSWORD must not contain whitespace or single quotes"
+              exit 1
+              ;;
+          esac
+
+          umask 077
+          mkdir -p staging
+          cp infra/redis/docker-compose.redis.yml staging/
+          cp infra/redis/redis.conf staging/
+
+          python3 - <<'PY'
+          from pathlib import Path
+          import os
+
+          path = Path("staging/redis.conf")
+          text = path.read_text()
+          if "__REDIS_PASSWORD__" not in text:
+              raise SystemExit("::error::Placeholder __REDIS_PASSWORD__ not found in redis.conf")
+          text = text.replace("__REDIS_PASSWORD__", os.environ["REDIS_PASSWORD"])
+          path.write_text(text)
+          PY
+
+      - name: Copy config to server
+        uses: appleboy/scp-action@v1.0.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "staging/*"
+          target: "/tmp/redis-deploy"
+          strip_components: 1
+
+      - name: Start Redis with docker compose
+        uses: appleboy/ssh-action@v1.0.3
+        env:
+          BIND_IP: ${{ github.event.inputs.bind_ip }}
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          envs: BIND_IP
+          script: |
+            set -euo pipefail
+            trap 'rc=$?; echo "✗ ERROR (exit=$rc) at line ${LINENO}: ${BASH_COMMAND}" >&2; exit "$rc"' ERR
+
+            # scp strip_components behaviour differs between versions; support both layouts.
+            SRC=/tmp/redis-deploy
+            [ -d "$SRC/staging" ] && SRC="$SRC/staging"
+            APP="$HOME/festas-redis"
+
+            echo "[1/5] Preparing directories..."
+            mkdir -p "$APP/redis-data"
+            # Lock the directory down so the password in redis.conf is not
+            # readable by other host users. The config file itself stays
+            # world-readable (644) so the in-container redis user (uid 999) can
+            # read it; the 700 directory is what prevents host-side exposure.
+            chmod 700 "$APP"
+
+            echo "[2/5] Installing config..."
+            install -m 644 "$SRC/redis.conf" "$APP/redis.conf"
+            install -m 644 "$SRC/docker-compose.redis.yml" "$APP/docker-compose.redis.yml"
+            printf 'REDIS_BIND_IP=%s\n' "${BIND_IP:-172.18.0.1}" > "$APP/.env"
+            rm -rf /tmp/redis-deploy
+
+            echo "[3/5] Pulling image..."
+            cd "$APP"
+            docker compose -f docker-compose.redis.yml pull
+
+            echo "[4/5] Starting Redis..."
+            docker compose -f docker-compose.redis.yml up -d
+            # The bind-mounted redis.conf is only re-read on (re)start, so reload
+            # it explicitly to make config changes take effect on an already
+            # running container. Harmless (brief reconnect) on a fresh start.
+            docker compose -f docker-compose.redis.yml restart
+
+            echo "[5/5] Waiting for healthy status..."
+            for i in $(seq 1 30); do
+              HEALTH=$(docker inspect --format='{{.State.Health.Status}}' festas-redis 2>/dev/null || echo "starting")
+              if [ "$HEALTH" = "healthy" ]; then
+                echo "✓ Redis is healthy (authenticated PING succeeded)."
+                break
+              fi
+              if [ "$i" -eq 30 ]; then
+                echo "::error::Timeout waiting for Redis to become healthy (status: $HEALTH)"
+                docker compose -f docker-compose.redis.yml logs --tail=50 || true
+                exit 1
+              fi
+              sleep 2
+            done
+
+            docker compose -f docker-compose.redis.yml ps
+
+      - name: Show failure logs
+        if: failure()
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            APP="$HOME/festas-redis"
+            echo "=== docker compose ps ==="
+            (cd "$APP" && docker compose -f docker-compose.redis.yml ps) || true
+            echo "=== Redis logs (latest 80) ==="
+            (cd "$APP" && docker compose -f docker-compose.redis.yml logs --tail=80) || true

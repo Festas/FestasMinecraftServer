@@ -1,0 +1,42 @@
+# Redis for the Festas Minecraft network (LuckPerms messaging + HuskSync cache).
+# Deployed by .github/workflows/deploy-redis.yml.
+#
+# Security model (see docs/infrastructure/DATENBANKEN.md and SECRETS.md):
+#   * The port is published ONLY on the internal bridge IP (REDIS_BIND_IP,
+#     default 172.18.0.1 = the Pterodactyl/Wings bridge gateway). That keeps
+#     Redis reachable for the Minecraft containers at 172.18.0.1:6379 while it
+#     stays off the public internet. Also close port 6379 in the host firewall.
+#   * Authentication is enforced via requirepass in redis.conf, which is
+#     injected from the REDIS_PASSWORD secret at deploy time.
+#
+# Manual usage on the server (from this file's directory):
+#   docker compose -f docker-compose.redis.yml up -d
+#   docker compose -f docker-compose.redis.yml ps
+#   docker compose -f docker-compose.redis.yml logs -f
+
+services:
+  redis:
+    image: redis:7.4-alpine
+    container_name: festas-redis
+    restart: unless-stopped
+    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+    ports:
+      # Bind only to the internal bridge IP, never 0.0.0.0.
+      - "${REDIS_BIND_IP:-172.18.0.1}:6379:6379"
+    volumes:
+      - ./redis.conf:/usr/local/etc/redis/redis.conf:ro
+      - ./redis-data:/data
+    healthcheck:
+      # Reads the password straight from the mounted config so it never appears
+      # in the process list or container environment.
+      test: ["CMD-SHELL", "redis-cli -a \"$$(sed -n 's/^requirepass //p' /usr/local/etc/redis/redis.conf)\" --no-auth-warning ping | grep -q PONG"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 64M
