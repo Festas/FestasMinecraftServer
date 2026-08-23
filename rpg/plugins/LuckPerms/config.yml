@@ -265,7 +265,7 @@ broadcast-received-log-entries: true
 # Multiple Redis nodes can be specified in the same format as a string list under the name "addresses".
 redis:
   enabled: true
-  address: 172.18.0.1:6379
+  address: 172.18.0.1:6380
   username: ''
   password: '__REDIS_PASSWORD__'
 

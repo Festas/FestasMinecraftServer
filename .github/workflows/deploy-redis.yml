@@ -12,6 +12,10 @@ on:
         description: 'Host IP to publish Redis on (internal bridge, default 172.18.0.1)'
         required: false
         default: '172.18.0.1'
+      host_port:
+        description: 'Host port to publish Redis on (default 6380; keep off 6379 = native Panel Redis)'
+        required: false
+        default: '6380'
 
 concurrency:
   group: deploy-redis
@@ -78,11 +82,12 @@ jobs:
         uses: appleboy/ssh-action@v1.0.3
         env:
           BIND_IP: ${{ github.event.inputs.bind_ip }}
+          HOST_PORT: ${{ github.event.inputs.host_port }}
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          envs: BIND_IP
+          envs: BIND_IP,HOST_PORT
           script: |
             set -euo pipefail
             trap 'rc=$?; echo "✗ ERROR (exit=$rc) at line ${LINENO}: ${BASH_COMMAND}" >&2; exit "$rc"' ERR
@@ -103,7 +108,11 @@ jobs:
             echo "[2/5] Installing config..."
             install -m 644 "$SRC/redis.conf" "$APP/redis.conf"
             install -m 644 "$SRC/docker-compose.redis.yml" "$APP/docker-compose.redis.yml"
-            printf 'REDIS_BIND_IP=%s\n' "${BIND_IP:-172.18.0.1}" > "$APP/.env"
+            # Host port 6380 keeps this instance off 6379 (native Panel Redis).
+            {
+              printf 'REDIS_BIND_IP=%s\n' "${BIND_IP:-172.18.0.1}"
+              printf 'REDIS_HOST_PORT=%s\n' "${HOST_PORT:-6380}"
+            } > "$APP/.env"
             rm -rf /tmp/redis-deploy
 
             echo "[3/5] Pulling image..."
