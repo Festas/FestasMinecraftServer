@@ -77,16 +77,17 @@ mariadb-dump --all-databases \
   | gzip > /path/to/backup/mariadb_full_$(date +%Y-%m-%d).sql.gz
 ```
 
-### Redis (172.18.0.1:6379)
+### Redis (172.18.0.1:6380)
 
 **Tägliche Snapshots:** Redis RDB-Snapshot (`BGSAVE`)
 
 ```bash
-# RDB-Snapshot erstellen
-redis-cli -h 172.18.0.1 BGSAVE
+# RDB-Snapshot im Container erzeugen (Passwort aus der gemounteten redis.conf)
+docker exec festas-redis sh -c \
+  'redis-cli -a "$(sed -n "s/^requirepass //p" /usr/local/etc/redis/redis.conf)" --no-auth-warning BGSAVE'
 
-# Snapshot-Datei sichern
-cp /var/lib/redis/dump.rdb /path/to/backup/redis_$(date +%Y-%m-%d).rdb
+# Snapshot-Datei sichern (Docker-Volume neben der Compose-Datei)
+cp ~/festas-redis/redis-data/dump.rdb /path/to/backup/redis_$(date +%Y-%m-%d).rdb
 ```
 
 ### Wiederherstellung – MariaDB
@@ -109,12 +110,14 @@ mariadb-backup --prepare --target-dir=/path/to/full-backup \
 ### Wiederherstellung – Redis
 
 ```bash
-# 1. Redis stoppen
-# 2. RDB-Datei ersetzen
-cp /path/to/backup/redis_YYYY-MM-DD.rdb /var/lib/redis/dump.rdb
-chown redis:redis /var/lib/redis/dump.rdb
+# 1. Redis-Container stoppen
+docker compose -f ~/festas-redis/docker-compose.redis.yml down
 
-# 3. Redis starten
+# 2. RDB-Datei ersetzen (Docker-Volume)
+cp /path/to/backup/redis_YYYY-MM-DD.rdb ~/festas-redis/redis-data/dump.rdb
+
+# 3. Redis-Container starten
+docker compose -f ~/festas-redis/docker-compose.redis.yml up -d
 ```
 
 ---

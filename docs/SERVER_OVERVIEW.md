@@ -286,7 +286,7 @@ Jede Sammlung hat Milestones mit exklusiven Belohnungen.
 
 ### Datenbanken
 - **MariaDB** (`172.25.0.1:3306`): Spielerdaten, MMOCore, Economy, Quests, Achievements
-- **Redis** (`172.18.0.1:6379`): HuskSync Session-Cache, temporäre Inventar-Daten
+- **Redis** (`172.18.0.1:6380`): HuskSync Session-Cache, temporäre Inventar-Daten
 
 ### Resourcepacks
 - Custom Items (Oraxen), Custom Mobs (MythicMobs + ModelEngine), Custom Sounds und Texturen

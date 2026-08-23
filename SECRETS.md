@@ -255,12 +255,14 @@ In den committeten LuckPerms-Configs (`*/plugins/LuckPerms/config.yml`, Schlüss
 `redis.password`) sowie in `infra/redis/redis.conf` steht nur der Platzhalter
 `__REDIS_PASSWORD__`; der echte Wert wird beim Deploy injiziert. Fehlt das Secret,
 **bricht der Deploy bewusst ab** (fail-closed). Die Redis-Adresse
-`172.18.0.1:6379` ist **kein** Secret und steht im Klartext in den Configs – bei
-geändertem Docker-Netzwerk dort anpassen.
+`172.18.0.1:6380` ist **kein** Secret und steht im Klartext in den Configs – bei
+geändertem Docker-Netzwerk oder Host-Port dort anpassen.
 
 > **Wichtig (P0-3):** Redis darf **nicht** öffentlich erreichbar sein. `requirepass`
-> setzen, an die interne Bridge-Adresse binden und Port `6379` in der Firewall
-> schließen – siehe [`docs/infrastructure/HOST_HARDENING.md`](docs/infrastructure/HOST_HARDENING.md).
+> setzen, an die interne Bridge-Adresse binden und Port `6380` (Game-Redis) in der
+> Firewall schließen. Der **native Panel-Redis** auf `127.0.0.1:6379` muss ebenfalls
+> lokal gebunden bleiben und darf nicht öffentlich freigegeben werden – siehe
+> [`docs/infrastructure/HOST_HARDENING.md`](docs/infrastructure/HOST_HARDENING.md).
 
 **Format:** Plain Text (empfohlen: 32+ zufällige Zeichen, **ohne** `'`)  
 **Beispiel:** `Xf9c2...` (langer Zufallsstring)

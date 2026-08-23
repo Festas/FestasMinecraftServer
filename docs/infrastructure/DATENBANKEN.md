@@ -25,7 +25,7 @@
 
                     ┌──────────────────────────┐
                     │       Redis (Docker)      │
-                    │   172.18.0.1:6379         │
+                    │   172.18.0.1:6380         │
                     │                           │
                     │  HuskSync Session-Cache   │
                     └────────────┬─────────────┘
@@ -64,8 +64,14 @@
 [`deploy-redis`](../../.github/workflows/deploy-redis.yml) aus
 [`infra/redis/`](../../infra/redis/README.md) gestartet
 (`docker compose` + `redis.conf` mit injiziertem `REDIS_PASSWORD`). Der Port wird
-nur auf der internen Bridge-Adresse `172.18.0.1:6379` veröffentlicht, nicht
+nur auf der internen Bridge-Adresse `172.18.0.1:6380` veröffentlicht, nicht
 öffentlich. Details siehe [`infra/redis/README.md`](../../infra/redis/README.md).
+
+> **Getrennt vom Panel-Redis:** Auf dem Host läuft zusätzlich eine **native**
+> Redis-Instanz (apt + systemd) für das Pterodactyl-Panel auf `127.0.0.1:6379`.
+> Der Game-Redis-Container veröffentlicht bewusst auf **Host-Port `6380`** (der
+> Container-Port bleibt `6379`), damit sich beide nicht blockieren. Der
+> Panel-Redis bleibt unverändert.
 
 ### SQLite-Fallback
 
@@ -114,7 +120,7 @@ PLAN_DB_PASSWORD='CHANGE_ME'
 
 ```yaml
 host: 172.18.0.1
-port: 6379
+port: 6380
 password: CHANGE_ME
 useSSL: false
 ```

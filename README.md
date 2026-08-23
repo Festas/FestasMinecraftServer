@@ -114,6 +114,6 @@ Dies ist ein persönliches Projekt für meinen Minecraft Server.
 - **Server Software:** Paper
 - **Proxy:** Velocity
 - **Bedrock-Support:** Geyser-Velocity + Floodgate
-- **Datenbanken:** MariaDB (172.25.0.1:3306), Redis (172.18.0.1:6379)
+- **Datenbanken:** MariaDB (172.25.0.1:3306), Redis (172.18.0.1:6380)
 - **Server-IP:** mc.festas-builds.com
 - **Aktive Server:** Lobby & Survival — Im Aufbau: Skyblock (Umbau) + Mining (neuer `rpg/`-Slot)
