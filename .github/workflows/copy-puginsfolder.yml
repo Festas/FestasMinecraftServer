@@ -37,50 +37,123 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
-      - name: Inject Plan DB credentials for repo-to-server sync
+      - name: Inject secrets for repo-to-server sync
         if: github.event.inputs.direction == 'Repo → Server'
         env:
+          SERVER_NAME: ${{ github.event.inputs.server }}
           PLAN_DB_ENV: ${{ secrets.PLAN_DB_ENV }}
+          LUCKPERMS_DB_ENV: ${{ secrets.LUCKPERMS_DB_ENV }}
+          REDIS_PASSWORD: ${{ secrets.REDIS_PASSWORD }}
+          XPRISON_DASHBOARD_ENV: ${{ secrets.XPRISON_DASHBOARD_ENV }}
+          XPRIVATEMINES_DASHBOARD_ENV: ${{ secrets.XPRIVATEMINES_DASHBOARD_ENV }}
         run: |
-          if [ -z "$PLAN_DB_ENV" ]; then
-            echo "::error::Missing secret PLAN_DB_ENV"
-            exit 1
-          fi
-
-          set -a
-          . <(printf '%s\n' "$PLAN_DB_ENV")
-          set +a
-
-          for required in PLAN_DB_HOST PLAN_DB_PORT PLAN_DB_DATABASE PLAN_DB_USER PLAN_DB_PASSWORD; do
-            if [ -z "${!required:-}" ]; then
-              echo "::error::Missing $required in PLAN_DB_ENV"
-              exit 1
-            fi
-          done
-
+          # Replace the __PLACEHOLDER__ tokens in the selected server's plugin
+          # configs with the real secret values before pushing to the server.
+          # Only the secrets required by the selected server are validated, and a
+          # missing secret fails the job (fail-closed) so no broken config is pushed.
           python3 - <<'PY'
-          from pathlib import Path
           import os
+          import sys
+          from pathlib import Path
 
-          replacements = {
-              "__PLAN_DB_HOST__": os.environ["PLAN_DB_HOST"],
-              "__PLAN_DB_PORT__": os.environ["PLAN_DB_PORT"],
-              "__PLAN_DB_DATABASE__": os.environ["PLAN_DB_DATABASE"],
-              "__PLAN_DB_USER__": os.environ["PLAN_DB_USER"],
-              "__PLAN_DB_PASSWORD__": os.environ["PLAN_DB_PASSWORD"],
+          server = os.environ.get("SERVER_NAME", "").lower()
+
+          PLAN_PATHS = {
+              "lobby": "lobby/plugins/Plan/config.yml",
+              "proxy": "proxy/plugins/plan/config.yml",
+              "rpg": "rpg/plugins/Plan/config.yml",
+              "survival": "survival/plugins/Plan/config.yml",
           }
-          for path in (
-              Path("proxy/plugins/plan/config.yml"),
-              Path("lobby/plugins/Plan/config.yml"),
-              Path("rpg/plugins/Plan/config.yml"),
-              Path("survival/plugins/Plan/config.yml"),
-          ):
-              if not path.exists():
-                  continue
-              text = path.read_text()
+          LUCKPERMS_PATHS = {
+              "lobby": "lobby/plugins/LuckPerms/config.yml",
+              "rpg": "rpg/plugins/LuckPerms/config.yml",
+              "skyblock": "skyblock/plugins/LuckPerms/config.yml",
+              "survival": "survival/plugins/LuckPerms/config.yml",
+          }
+          XPRISON_PATH = "rpg/plugins/X-Prison/addons/Dashboard/config.yml"
+          XPRIVATEMINES_PATH = "rpg/plugins/XPrivateMines/addons/Dashboard/config.yml"
+
+          # Which secret components apply to each server (mirrors the deploy workflows).
+          SERVERS = {
+              "lobby": ["plan", "luckperms"],
+              "proxy": ["plan"],
+              "rpg": ["plan", "luckperms", "xprison", "xprivatemines"],
+              "skyblock": ["luckperms"],
+              "survival": ["plan", "luckperms"],
+          }
+
+          components = SERVERS.get(server)
+          if components is None:
+              print(f"::error::Unknown server '{server}'")
+              sys.exit(1)
+
+          errors = []
+
+          def parse_env(name):
+              result = {}
+              for line in os.environ.get(name, "").splitlines():
+                  line = line.strip()
+                  if not line or line.startswith("#") or "=" not in line:
+                      continue
+                  key, _, value = line.partition("=")
+                  result[key.strip()] = value
+              return result
+
+          def require_env(secret_name, keys):
+              if not os.environ.get(secret_name):
+                  errors.append(f"Missing secret {secret_name}")
+                  return None
+              data = parse_env(secret_name)
+              missing = [k for k in keys if not data.get(k)]
+              if missing:
+                  errors.append(f"Missing {', '.join(missing)} in {secret_name}")
+                  return None
+              return data
+
+          def inject(path, replacements):
+              target = Path(path)
+              if not target.exists():
+                  print(f"::warning::{path} not found, skipping")
+                  return
+              text = target.read_text()
               for old, new in replacements.items():
                   text = text.replace(old, new)
-              path.write_text(text)
+              target.write_text(text)
+              print(f"Injected secrets into {path}")
+
+          if "plan" in components:
+              keys = ["PLAN_DB_HOST", "PLAN_DB_PORT", "PLAN_DB_DATABASE", "PLAN_DB_USER", "PLAN_DB_PASSWORD"]
+              data = require_env("PLAN_DB_ENV", keys)
+              if data:
+                  inject(PLAN_PATHS[server], {f"__{k}__": data[k] for k in keys})
+
+          if "luckperms" in components:
+              keys = ["LUCKPERMS_DB_ADDRESS", "LUCKPERMS_DB_DATABASE", "LUCKPERMS_DB_USER", "LUCKPERMS_DB_PASSWORD"]
+              data = require_env("LUCKPERMS_DB_ENV", keys)
+              redis_password = os.environ.get("REDIS_PASSWORD")
+              if not redis_password:
+                  errors.append("Missing secret REDIS_PASSWORD")
+              if data and redis_password:
+                  replacements = {f"__{k}__": data[k] for k in keys}
+                  replacements["__REDIS_PASSWORD__"] = redis_password
+                  inject(LUCKPERMS_PATHS[server], replacements)
+
+          if "xprison" in components:
+              keys = ["XPRISON_DASHBOARD_USER", "XPRISON_DASHBOARD_PASSWORD", "XPRISON_DASHBOARD_JWT_SECRET"]
+              data = require_env("XPRISON_DASHBOARD_ENV", keys)
+              if data:
+                  inject(XPRISON_PATH, {f"__{k}__": data[k] for k in keys})
+
+          if "xprivatemines" in components:
+              keys = ["XPRIVATEMINES_DASHBOARD_USER", "XPRIVATEMINES_DASHBOARD_PASSWORD", "XPRIVATEMINES_DASHBOARD_JWT_SECRET"]
+              data = require_env("XPRIVATEMINES_DASHBOARD_ENV", keys)
+              if data:
+                  inject(XPRIVATEMINES_PATH, {f"__{k}__": data[k] for k in keys})
+
+          if errors:
+              for error in errors:
+                  print(f"::error::{error}")
+              sys.exit(1)
           PY
 
       - name: Sync Plugins
@@ -121,6 +194,20 @@ jobs:
             rsync -avz --delete \
               --exclude='*.jar' \
               --exclude='*.jar.disabled' \
+              --exclude='/server.properties' \
+              --exclude='/bukkit.yml' \
+              --exclude='/spigot.yml' \
+              --exclude='/commands.yml' \
+              --exclude='/help.yml' \
+              --exclude='/permissions.yml' \
+              --exclude='/wepif.yml' \
+              --exclude='/eula.txt' \
+              --exclude='/paper-global.yml' \
+              --exclude='/paper-world-defaults.yml' \
+              --exclude='/config/paper-global.yml' \
+              --exclude='/config/paper-world-defaults.yml' \
+              --exclude='/velocity.toml' \
+              --exclude='/forwarding.secret' \
               --exclude='*.db' \
               --exclude='*.mv.db' \
               --exclude='*.sqlite' \
@@ -152,60 +239,175 @@ jobs:
             rsync -avz --delete \
               --exclude='*.jar' \
               --exclude='*.jar.disabled' \
+              --exclude='/server.properties' \
+              --exclude='/bukkit.yml' \
+              --exclude='/spigot.yml' \
+              --exclude='/commands.yml' \
+              --exclude='/help.yml' \
+              --exclude='/permissions.yml' \
+              --exclude='/wepif.yml' \
+              --exclude='/eula.txt' \
+              --exclude='/paper-global.yml' \
+              --exclude='/paper-world-defaults.yml' \
+              --exclude='/config/paper-global.yml' \
+              --exclude='/config/paper-world-defaults.yml' \
+              --exclude='/velocity.toml' \
+              --exclude='/forwarding.secret' \
               -e "ssh -o StrictHostKeyChecking=accept-new" \
               "$LOCAL_DIR/" \
               "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${SERVER_PATH}/"
           fi
 
-      - name: Sanitize Plan config after server sync
+      - name: Sanitize configs after server sync
         if: github.event.inputs.direction == 'Server → Repo'
+        env:
+          SERVER_NAME: ${{ github.event.inputs.server }}
         run: |
+          # Reset every secret-bearing field back to its __PLACEHOLDER__ before the
+          # pulled configs are committed, so real credentials never land in the repo.
+          # Block-aware so unrelated fields (nats/rabbitmq/demo passwords) are left
+          # untouched. Fails the job if an expected secret field cannot be found.
           python3 - <<'PY'
+          import os
+          import sys
           from pathlib import Path
 
-          mappings = {
-              "Host": "__PLAN_DB_HOST__",
-              "Port": "__PLAN_DB_PORT__",
-              "User": "__PLAN_DB_USER__",
-              "Password": "__PLAN_DB_PASSWORD__",
-              "Database": "__PLAN_DB_DATABASE__",
+          server = os.environ.get("SERVER_NAME", "").lower()
+
+          PLAN_PATHS = {
+              "lobby": "lobby/plugins/Plan/config.yml",
+              "proxy": "proxy/plugins/plan/config.yml",
+              "rpg": "rpg/plugins/Plan/config.yml",
+              "survival": "survival/plugins/Plan/config.yml",
           }
-          for path in (
-              Path("proxy/plugins/plan/config.yml"),
-              Path("lobby/plugins/Plan/config.yml"),
-              Path("rpg/plugins/Plan/config.yml"),
-              Path("survival/plugins/Plan/config.yml"),
-          ):
-              if not path.exists():
-                  continue
-              lines = path.read_text().splitlines(keepends=True)
-              in_mysql_block = False
-              mysql_indent = None
+          LUCKPERMS_PATHS = {
+              "lobby": "lobby/plugins/LuckPerms/config.yml",
+              "rpg": "rpg/plugins/LuckPerms/config.yml",
+              "skyblock": "skyblock/plugins/LuckPerms/config.yml",
+              "survival": "survival/plugins/LuckPerms/config.yml",
+          }
+          XPRISON_PATH = "rpg/plugins/X-Prison/addons/Dashboard/config.yml"
+          XPRIVATEMINES_PATH = "rpg/plugins/XPrivateMines/addons/Dashboard/config.yml"
+
+          SERVERS = {
+              "lobby": ["plan", "luckperms"],
+              "proxy": ["plan"],
+              "rpg": ["plan", "luckperms", "xprison", "xprivatemines"],
+              "skyblock": ["luckperms"],
+              "survival": ["plan", "luckperms"],
+          }
+
+          components = SERVERS.get(server)
+          if components is None:
+              print(f"::error::Unknown server '{server}'")
+              sys.exit(1)
+
+          errors = []
+
+          def sanitize_block(path, block_name, field_map, required, header_indent=None):
+              target = Path(path)
+              if not target.exists():
+                  return
+              lines = target.read_text().splitlines(keepends=True)
+              in_block = False
+              block_indent = None
+              found = set()
               for i, line in enumerate(lines):
                   raw = line.rstrip("\r\n")
-                  line_ending = line[len(raw):]
+                  ending = line[len(raw):]
                   stripped = raw.strip()
                   indent_len = len(raw) - len(raw.lstrip())
-                  if stripped == "MySQL:":
-                      in_mysql_block = True
-                      mysql_indent = indent_len
+                  is_header = stripped == f"{block_name}:" and (header_indent is None or indent_len == header_indent)
+                  if is_header:
+                      in_block = True
+                      block_indent = indent_len
                       continue
-                  if in_mysql_block and mysql_indent is not None and indent_len <= mysql_indent and stripped and not stripped.startswith("#"):
-                      in_mysql_block = False
-                  if not in_mysql_block:
+                  if in_block and block_indent is not None and indent_len <= block_indent and stripped and not stripped.startswith("#"):
+                      in_block = False
+                  if not in_block:
                       continue
-                  for field, replacement in mappings.items():
-                      prefix = f"{field}:"
-                      if stripped.startswith(prefix):
+                  for field, replacement in field_map.items():
+                      if stripped.startswith(f"{field}:"):
                           indent = raw[:indent_len]
-                          value = f'"{replacement}"' if field == "Password" else replacement
-                          lines[i] = f"{indent}{prefix} {value}{line_ending}"
+                          lines[i] = f"{indent}{field}: {replacement}{ending}"
+                          found.add(field)
                           break
-              path.write_text("".join(lines))
+              target.write_text("".join(lines))
+              missing = [f for f in required if f not in found]
+              if missing:
+                  errors.append(f"{path}: could not neutralize {missing} in block '{block_name}:'")
+
+          def sanitize_plan(path):
+              sanitize_block(
+                  path,
+                  "MySQL",
+                  {
+                      "Host": "__PLAN_DB_HOST__",
+                      "Port": "__PLAN_DB_PORT__",
+                      "User": "__PLAN_DB_USER__",
+                      "Password": '"__PLAN_DB_PASSWORD__"',
+                      "Database": "__PLAN_DB_DATABASE__",
+                  },
+                  ["Host", "Port", "User", "Password", "Database"],
+              )
+
+          def sanitize_luckperms(path):
+              sanitize_block(
+                  path,
+                  "data",
+                  {
+                      "address": '"__LUCKPERMS_DB_ADDRESS__"',
+                      "database": '"__LUCKPERMS_DB_DATABASE__"',
+                      "username": "__LUCKPERMS_DB_USER__",
+                      "password": "'__LUCKPERMS_DB_PASSWORD__'",
+                  },
+                  ["address", "database", "username", "password"],
+                  header_indent=0,
+              )
+              sanitize_block(
+                  path,
+                  "redis",
+                  {"password": "'__REDIS_PASSWORD__'"},
+                  ["password"],
+                  header_indent=0,
+              )
+
+          def sanitize_dashboard(path, prefix):
+              sanitize_block(
+                  path,
+                  "superuser",
+                  {
+                      "username": f"__{prefix}_DASHBOARD_USER__",
+                      "password": f"__{prefix}_DASHBOARD_PASSWORD__",
+                  },
+                  ["username", "password"],
+                  header_indent=0,
+              )
+              sanitize_block(
+                  path,
+                  "jwt",
+                  {"secret": f"__{prefix}_DASHBOARD_JWT_SECRET__"},
+                  ["secret"],
+                  header_indent=0,
+              )
+
+          if "plan" in components:
+              sanitize_plan(PLAN_PATHS[server])
+          if "luckperms" in components:
+              sanitize_luckperms(LUCKPERMS_PATHS[server])
+          if "xprison" in components:
+              sanitize_dashboard(XPRISON_PATH, "XPRISON")
+          if "xprivatemines" in components:
+              sanitize_dashboard(XPRIVATEMINES_PATH, "XPRIVATEMINES")
+
+          if errors:
+              for error in errors:
+                  print(f"::error::{error}")
+              sys.exit(1)
           PY
 
       - name: Commit and Push Changes
-        if: github.event.inputs.direction == 'Server → Repo'
+        if: success() && github.event.inputs.direction == 'Server → Repo'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
