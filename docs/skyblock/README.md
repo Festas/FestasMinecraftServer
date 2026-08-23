@@ -125,7 +125,7 @@ Dokumentation für den überarbeiteten Skyblock-Server — **ohne Gilden**, mit 
   - `s4_cmi` - CMI-Daten
   - `s4_mmocore` - MMOCore/RPG-Daten (geteilt mit RPG)
   - `s4_superior_islands` - SlimeWorld Island-Daten
-- **Redis:** `172.18.0.1:6379` (Cache für HuskSync)
+- **Redis:** `172.18.0.1:6380` (Cache für HuskSync)
 
 ---
 

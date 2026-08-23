@@ -54,20 +54,40 @@ instance to enable live messaging:
 messaging-service: redis
 redis:
   enabled: true
-  address: 172.18.0.1:6379
+  address: 172.18.0.1:6380
   username: ''
   password: '__REDIS_PASSWORD__'   # injected by the server deploy workflows
 ```
 
+## Koexistenz mit dem Pterodactyl-Panel-Redis
+
+Auf dem Host läuft zusätzlich eine **native** Redis-Instanz (apt + systemd), die das
+**Pterodactyl-Panel** für Cache/Session/Queue nutzt. Sie hört auf
+`127.0.0.1:6379`. Beide Instanzen sind bewusst getrennt:
+
+| Instanz | Art | Erreichbar unter | Passwort | Genutzt von |
+|---------|-----|------------------|----------|-------------|
+| Panel-Redis | nativ (systemd) | `127.0.0.1:6379` | Panel-`.env` | Pterodactyl |
+| Game-Redis (dieses Verzeichnis) | Docker `festas-redis` | `172.18.0.1:6380` | `REDIS_PASSWORD`-Secret | LuckPerms, HuskSync |
+
+Weil der Container den Port nur auf **Host-Port `6380`** (der interne Container-Port
+bleibt `6379`) und nur auf der Bridge-IP veröffentlicht, kollidiert er nicht mit
+der nativen Redis auf `6379`. Der Host-Port ist über die Variable
+`REDIS_HOST_PORT` (Default `6380`) bzw. den `host_port`-Input des Workflows
+überschreibbar. Der Panel-Redis bleibt dabei **unangetastet**.
+
 ## Security notes
 
 - The port is published only on the internal bridge IP
-  (`REDIS_BIND_IP`, default `172.18.0.1`), never `0.0.0.0`. Additionally close
-  port `6379` in the host firewall so Redis is not reachable from the internet.
+  (`REDIS_BIND_IP`, default `172.18.0.1`) and on host port `REDIS_HOST_PORT`
+  (default `6380`), never `0.0.0.0`. Additionally close port `6380` in the host
+  firewall so Redis is not reachable from the internet.
 - Authentication is mandatory (`requirepass`). The real password is **never**
   committed; only the `__REDIS_PASSWORD__` placeholder is stored in git.
 - If the host does not expose `172.18.0.1`, override the bind IP via the
   workflow's `bind_ip` input (or a `REDIS_BIND_IP` entry in `~/festas-redis/.env`).
+  Likewise the host port can be changed via the `host_port` input (or a
+  `REDIS_HOST_PORT` entry in `~/festas-redis/.env`) if `6380` is already taken.
 
 ## Persistence & backups
 
