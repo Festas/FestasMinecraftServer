@@ -332,10 +332,11 @@ jobs:
                           lines[i] = f"{indent}{field}: {replacement}{ending}"
                           found.add(field)
                           break
-              target.write_text("".join(lines))
               missing = [f for f in required if f not in found]
               if missing:
                   errors.append(f"{path}: could not neutralize {missing} in block '{block_name}:'")
+                  return
+              target.write_text("".join(lines))
 
           def sanitize_plan(path):
               sanitize_block(
