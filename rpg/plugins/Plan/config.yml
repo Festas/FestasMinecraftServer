@@ -96,7 +96,7 @@ Webserver:
         Cookies_expire_after:
             Time: 2
             Unit: HOURS
-    Disable_Webserver: false
+    Disable_Webserver: true
     External_Webserver_address: https://mc-stats.festas-builds.com
     Cache:
         Reduced_refresh_barrier:

@@ -1,18 +1,21 @@
-last-rotation-id: 5
+last-rotation-id: 21
 rotation:
-  id: 5
-  started-at: 1787127727439
-  ends-at: 1787149327439
+  id: 21
+  started-at: 1787473331911
+  ends-at: 1787494931911
   entries:
-  - item: mega-bomb
-    discount: 0
-    initial-stock: 3
-    remaining-stock: 3
-  - item: gem-pouch
+  - item: money-multiplier
     discount: 10
-    initial-stock: 5
-    remaining-stock: 5
-  - item: enchant-voucher
+    initial-stock: 8
+    remaining-stock: 8
+  - item: battlepass-xp
     discount: 0
-    initial-stock: 4
-    remaining-stock: 4
+    initial-stock: 8
+    remaining-stock: 8
+  - item: autominer-cache
+    discount: 25
+    initial-stock: 10
+    remaining-stock: 10
+lifetime:
+  6e874670-66e9-48dd-b16f-48029fc0c645:
+    mega-bomb: 1
