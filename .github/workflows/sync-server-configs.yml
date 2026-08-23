@@ -339,6 +339,7 @@ jobs:
               *)        printf '' ;;
             esac
           }
+          # Duplikat von deploy-to-server: jeder `run`-Block läuft in eigener Shell.
           server_root_for() {
             local path
             path="$(server_path_for "$1")"
