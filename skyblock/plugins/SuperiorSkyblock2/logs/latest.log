@@ -1,99 +1,35 @@
-[05:07:16 INFO]: Enabling SuperiorSkyblock2 v2026.2-b927
-[05:07:16 WARNING]: [safe_blocks.yml] There are no valid safe blocks! Generating default ones...
-[05:07:16 INFO]: Registered mission miner_3
-[05:07:16 INFO]: Registered mission miner_5
-[05:07:16 INFO]: Registered mission miner_2
-[05:07:16 INFO]: Registered mission miner_4
-[05:07:16 INFO]: Registered mission miner_1
-[05:07:16 INFO]: Registered mission slayer_4
-[05:07:16 INFO]: Registered mission slayer_1
-[05:07:16 INFO]: Registered mission slayer_2
-[05:07:16 INFO]: Registered mission slayer_3
-[05:07:16 INFO]: Registered mission farmer_2
-[05:07:16 INFO]: Registered mission farmer_5
-[05:07:16 INFO]: Registered mission farmer_1
-[05:07:16 INFO]: Registered mission farmer_3
-[05:07:16 INFO]: Registered mission farmer_4
-[05:07:16 INFO]: Registered mission fisherman_3
-[05:07:16 INFO]: Registered mission fisherman_2
-[05:07:16 INFO]: Registered mission fisherman_1
-[05:07:16 INFO]: Registered mission explorer_1
-[05:07:16 INFO]: Registered mission explorer_2
-[05:07:16 INFO]: Enabling the module bank...
-[05:07:16 INFO]: Finished enabling the module bank (Took 2ms)
-[05:07:16 INFO]: Enabling the module missions...
-[05:07:16 INFO]: Finished enabling the module missions (Took 1ms)
-[05:07:16 INFO]: Enabling the module generators...
-[05:07:16 INFO]: Finished enabling the module generators (Took 2ms)
-[05:07:16 INFO]: Enabling the module upgrades...
-[05:07:16 INFO]: Finished enabling the module upgrades (Took 15ms)
-[05:07:16 INFO]: Using MiniMessage as a ui provider.
-[05:07:16 INFO]: Loading messages started...
-[05:07:17 INFO]:  - Found 753 messages in the language files.
-[05:07:17 INFO]: Loading messages done (Took 149ms)
-[05:07:17 INFO]: Loading 9 schematics using 9 threads...
-[05:07:23 INFO]: Successfully loaded schematic mycel.schematic (DefaultSchematicParser)
-[05:07:23 INFO]: Successfully loaded schematic normal_nether.schematic (DefaultSchematicParser)
-[05:07:23 INFO]: Successfully loaded schematic desert_nether.schematic (DefaultSchematicParser)
-[05:07:23 INFO]: Successfully loaded schematic normal.schematic (DefaultSchematicParser)
-[05:07:23 INFO]: Successfully loaded schematic desert.schematic (DefaultSchematicParser)
-[05:07:23 INFO]: Successfully loaded schematic mycel_nether.schematic (DefaultSchematicParser)
-[05:07:23 INFO]: Successfully loaded schematic mycel_the_end.schematic (DefaultSchematicParser)
-[05:07:23 INFO]: Successfully loaded schematic desert_the_end.schematic (DefaultSchematicParser)
-[05:07:23 INFO]: Successfully loaded schematic normal_the_end.schematic (DefaultSchematicParser)
-[05:07:23 INFO]: Successfully loaded 9 schematics.
-[05:07:23 INFO]: Trying to connect to local database (SQLite)...
-[05:07:23 INFO]: Successfully established connection with local database!
-[05:07:24 INFO]: Creating a backup file...
-[05:07:24 INFO]: Backup done!
-[05:07:24 INFO]: Starting to load players...
-[05:07:24 INFO]: Finished loading 0 players (Took 3ms)
-[05:07:24 INFO]: Starting to load islands...
-[05:07:24 INFO]: Finished loading 0 islands (Took 14ms)
-[05:07:24 INFO]: Starting to load grid...
-[05:07:24 INFO]: Finished grid!
-[05:07:24 INFO]: Starting to load stacked blocks...
-[05:07:24 INFO]: Finished stacked blocks!
-[05:07:24 INFO]: Plan detected - attempting to register SuperiorSkyblock DataExtension.
-[05:07:24 INFO]: Registered SuperiorSkyblock Plan DataExtension.
-[05:07:24 INFO]: Using LuckPerms as a permissions provider.
-[05:07:24 INFO]: Using CMI as a prices provider.
-[05:07:24 INFO]: Hooked into CMI for support of vanish status of players.
-[05:07:24 INFO]: Hooked into CMI for support of afk status of players.
-[05:07:24 INFO]: Using PlaceholderAPI for placeholders support.
-[05:07:24 INFO]: Detected PaperSpigot - Using async chunk-loading support with PaperMC.
-[05:07:54 INFO]: Disabling SuperiorSkyblock2 v2026.2-b927
-[05:07:54 INFO]: Disabling the module bank...
-[05:07:54 INFO]: Disabling the module missions...
-[05:07:54 INFO]: Disabling the module generators...
-[05:07:54 INFO]: Disabling the module upgrades...
-[05:07:54 INFO]: Shutting down stats client...
-[05:07:54 INFO]: Shutting down calculation task...
-[05:07:54 INFO]: Shutting down executor
-[05:07:54 INFO]: This can take up to 20 seconds to complete
-[05:07:54 INFO]: Closing database. This may hang the server. Do not shut it down, or data may get lost.
-[05:09:03 INFO]: Enabling SuperiorSkyblock2 v2026.2-b927
-[05:09:03 INFO]: Registered mission miner_3
-[05:09:03 INFO]: Registered mission miner_5
-[05:09:03 INFO]: Registered mission miner_2
-[05:09:03 INFO]: Registered mission miner_4
-[05:09:03 INFO]: Registered mission miner_1
-[05:09:03 INFO]: Registered mission slayer_4
-[05:09:03 INFO]: Registered mission slayer_1
-[05:09:03 INFO]: Registered mission slayer_2
-[05:09:03 INFO]: Registered mission slayer_3
-[05:09:03 INFO]: Registered mission farmer_2
-[05:09:03 INFO]: Registered mission farmer_5
-[05:09:03 INFO]: Registered mission farmer_1
-[05:09:03 INFO]: Registered mission farmer_3
-[05:09:03 INFO]: Registered mission farmer_4
-[05:09:03 INFO]: Registered mission fisherman_3
-[05:09:03 INFO]: Registered mission fisherman_2
-[05:09:03 INFO]: Registered mission fisherman_1
-[05:09:03 INFO]: Registered mission explorer_1
-[05:09:03 INFO]: Registered mission explorer_2
-[05:09:03 SEVERE]: An unexpected error occurred while registering module asp-plugin-4.2.0-SNAPSHOT.jar:
-[05:09:03 SEVERE]: java.lang.RuntimeException: An error occurred while reading asp-plugin-4.2.0-SNAPSHOT.jar
+[07:51:54 INFO]: Disabling SuperiorSkyblock2 v2026.2-b927
+[07:51:54 INFO]: Disabling the module bank...
+[07:51:54 INFO]: Disabling the module missions...
+[07:51:54 INFO]: Disabling the module generators...
+[07:51:54 INFO]: Disabling the module upgrades...
+[07:51:54 INFO]: Shutting down stats client...
+[07:51:54 INFO]: Shutting down calculation task...
+[07:51:54 INFO]: Shutting down executor
+[07:51:54 INFO]: This can take up to 20 seconds to complete
+[07:51:54 INFO]: Closing database. This may hang the server. Do not shut it down, or data may get lost.
+[07:52:29 INFO]: Enabling SuperiorSkyblock2 v2026.2-b927
+[07:52:30 INFO]: Registered mission miner_3
+[07:52:30 INFO]: Registered mission miner_5
+[07:52:30 INFO]: Registered mission miner_2
+[07:52:30 INFO]: Registered mission miner_4
+[07:52:30 INFO]: Registered mission miner_1
+[07:52:30 INFO]: Registered mission slayer_4
+[07:52:30 INFO]: Registered mission slayer_1
+[07:52:30 INFO]: Registered mission slayer_2
+[07:52:30 INFO]: Registered mission slayer_3
+[07:52:30 INFO]: Registered mission farmer_2
+[07:52:30 INFO]: Registered mission farmer_5
+[07:52:30 INFO]: Registered mission farmer_1
+[07:52:30 INFO]: Registered mission farmer_3
+[07:52:30 INFO]: Registered mission farmer_4
+[07:52:30 INFO]: Registered mission fisherman_3
+[07:52:30 INFO]: Registered mission fisherman_2
+[07:52:30 INFO]: Registered mission fisherman_1
+[07:52:30 INFO]: Registered mission explorer_1
+[07:52:30 INFO]: Registered mission explorer_2
+[07:52:30 SEVERE]: An unexpected error occurred while registering module asp-plugin-4.2.0-SNAPSHOT.jar:
+[07:52:30 SEVERE]: java.lang.RuntimeException: An error occurred while reading asp-plugin-4.2.0-SNAPSHOT.jar
 	at SuperiorSkyblock2-2026.2-b927.jar//com.bgsoftware.superiorskyblock.module.ModulesManagerImpl.registerModule(ModulesManagerImpl.java:73)
 	at SuperiorSkyblock2-2026.2-b927.jar//com.bgsoftware.superiorskyblock.module.ModulesManagerImpl.registerExternalModules(ModulesManagerImpl.java:243)
 	at SuperiorSkyblock2-2026.2-b927.jar//com.bgsoftware.superiorskyblock.module.ModulesManagerImpl.loadData(ModulesManagerImpl.java:53)
@@ -109,184 +45,69 @@
 	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1266)
 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:303)
 	at java.base/java.lang.Thread.run(Thread.java:1474)
-Caused by: java.lang.IllegalAccessError: class org.yaml.snakeyaml.parser.ParserImpl$ParseBlockSequenceEntry cannot access its superinterface org.yaml.snakeyaml.parser.Production (org.yaml.snakeyaml.parser.ParserImpl$ParseBlockSequenceEntry is in unnamed module of loader 'asp-plugin-4.2.0-SNAPSHOT.jar' @64ddb4f5; org.yaml.snakeyaml.parser.Production is in unnamed module of loader java.net.URLClassLoader @179d3b25)
+Caused by: java.lang.IllegalAccessError: class org.yaml.snakeyaml.parser.ParserImpl$ParseBlockSequenceEntry cannot access its superinterface org.yaml.snakeyaml.parser.Production (org.yaml.snakeyaml.parser.ParserImpl$ParseBlockSequenceEntry is in unnamed module of loader com.bgsoftware.superiorskyblock.core.io.FileClassLoader @64829eb2; org.yaml.snakeyaml.parser.Production is in unnamed module of loader java.net.URLClassLoader @179d3b25)
 	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
 	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:962)
 	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:144)
-	at io.papermc.paper.plugin.entrypoint.classloader.PaperSimplePluginClassLoader.findClass(PaperSimplePluginClassLoader.java:110)
+	at SuperiorSkyblock2-2026.2-b927.jar//com.bgsoftware.superiorskyblock.core.io.FileClassLoader.findClass(FileClassLoader.java:97)
 	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:557)
-	at io.papermc.paper.plugin.entrypoint.classloader.PaperPluginClassLoader.loadClass(PaperPluginClassLoader.java:118)
-	at io.papermc.paper.plugin.entrypoint.classloader.group.SpigotPluginClassLoaderGroup.lookupClass(SpigotPluginClassLoaderGroup.java:43)
-	at io.papermc.paper.plugin.entrypoint.classloader.group.SimpleListPluginClassLoaderGroup.getClassByName(SimpleListPluginClassLoaderGroup.java:37)
-	at io.papermc.paper.plugin.entrypoint.classloader.group.LockingClassLoaderGroup.getClassByName(LockingClassLoaderGroup.java:34)
-	at org.bukkit.plugin.java.PluginClassLoader.loadClass0(PluginClassLoader.java:198)
-	at org.bukkit.plugin.java.PluginClassLoader.loadClass(PluginClassLoader.java:175)
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:544)
 	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:544)
 	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490)
 	at SuperiorSkyblock2-2026.2-b927.jar//com.bgsoftware.superiorskyblock.core.io.JarFiles.getClass(JarFiles.java:30)
 	at SuperiorSkyblock2-2026.2-b927.jar//com.bgsoftware.superiorskyblock.module.ModulesManagerImpl.registerModule(ModulesManagerImpl.java:70)
 	... 14 more
 
-[05:09:03 INFO]: Enabling the module bank...
-[05:09:03 INFO]: Finished enabling the module bank (Took 2ms)
-[05:09:03 INFO]: Enabling the module missions...
-[05:09:03 INFO]: Finished enabling the module missions (Took 1ms)
-[05:09:03 INFO]: Enabling the module generators...
-[05:09:03 INFO]: Finished enabling the module generators (Took 2ms)
-[05:09:03 INFO]: Enabling the module upgrades...
-[05:09:03 INFO]: Finished enabling the module upgrades (Took 14ms)
-[05:09:03 INFO]: Using MiniMessage as a ui provider.
-[05:09:03 INFO]: Loading messages started...
-[05:09:03 INFO]:  - Found 753 messages in the language files.
-[05:09:03 INFO]: Loading messages done (Took 168ms)
-[05:09:03 INFO]: Loading 9 schematics using 9 threads...
-[05:09:10 INFO]: Successfully loaded schematic mycel.schematic (DefaultSchematicParser)
-[05:09:10 INFO]: Successfully loaded schematic normal.schematic (DefaultSchematicParser)
-[05:09:10 INFO]: Successfully loaded schematic desert.schematic (DefaultSchematicParser)
-[05:09:10 INFO]: Successfully loaded schematic desert_nether.schematic (DefaultSchematicParser)
-[05:09:10 INFO]: Successfully loaded schematic normal_nether.schematic (DefaultSchematicParser)
-[05:09:10 INFO]: Successfully loaded schematic mycel_nether.schematic (DefaultSchematicParser)
-[05:09:10 INFO]: Successfully loaded schematic mycel_the_end.schematic (DefaultSchematicParser)
-[05:09:10 INFO]: Successfully loaded schematic normal_the_end.schematic (DefaultSchematicParser)
-[05:09:10 INFO]: Successfully loaded schematic desert_the_end.schematic (DefaultSchematicParser)
-[05:09:10 INFO]: Successfully loaded 9 schematics.
-[05:09:10 INFO]: Trying to connect to local database (SQLite)...
-[05:09:10 INFO]: Successfully established connection with local database!
-[05:09:10 INFO]: Creating a backup file...
-[05:09:10 INFO]: Backup done!
-[05:09:10 INFO]: Starting to load players...
-[05:09:10 INFO]: Finished loading 0 players (Took 1ms)
-[05:09:10 INFO]: Starting to load islands...
-[05:09:10 INFO]: Finished loading 0 islands (Took 6ms)
-[05:09:10 INFO]: Starting to load grid...
-[05:09:10 INFO]: Finished grid!
-[05:09:10 INFO]: Starting to load stacked blocks...
-[05:09:10 INFO]: Finished stacked blocks!
-[05:09:11 INFO]: Plan detected - attempting to register SuperiorSkyblock DataExtension.
-[05:09:11 INFO]: Registered SuperiorSkyblock Plan DataExtension.
-[05:09:11 INFO]: Using LuckPerms as a permissions provider.
-[05:09:11 INFO]: Using CMI as a prices provider.
-[05:09:11 INFO]: Hooked into CMI for support of vanish status of players.
-[05:09:11 INFO]: Hooked into CMI for support of afk status of players.
-[05:09:11 INFO]: Using PlaceholderAPI for placeholders support.
-[05:09:11 INFO]: Detected PaperSpigot - Using async chunk-loading support with PaperMC.
-[05:09:45 INFO]: Disabling SuperiorSkyblock2 v2026.2-b927
-[05:09:45 INFO]: Disabling the module bank...
-[05:09:45 INFO]: Disabling the module missions...
-[05:09:45 INFO]: Disabling the module generators...
-[05:09:45 INFO]: Disabling the module upgrades...
-[05:09:45 INFO]: Shutting down stats client...
-[05:09:45 INFO]: Shutting down calculation task...
-[05:09:45 INFO]: Shutting down executor
-[05:09:45 INFO]: This can take up to 20 seconds to complete
-[05:09:45 INFO]: Closing database. This may hang the server. Do not shut it down, or data may get lost.
-[05:54:40 INFO]: Enabling SuperiorSkyblock2 v2026.2-b927
-[05:54:40 INFO]: Registered mission miner_3
-[05:54:40 INFO]: Registered mission miner_5
-[05:54:40 INFO]: Registered mission miner_2
-[05:54:40 INFO]: Registered mission miner_4
-[05:54:40 INFO]: Registered mission miner_1
-[05:54:40 INFO]: Registered mission slayer_4
-[05:54:40 INFO]: Registered mission slayer_1
-[05:54:40 INFO]: Registered mission slayer_2
-[05:54:40 INFO]: Registered mission slayer_3
-[05:54:40 INFO]: Registered mission farmer_2
-[05:54:40 INFO]: Registered mission farmer_5
-[05:54:40 INFO]: Registered mission farmer_1
-[05:54:40 INFO]: Registered mission farmer_3
-[05:54:40 INFO]: Registered mission farmer_4
-[05:54:40 INFO]: Registered mission fisherman_3
-[05:54:40 INFO]: Registered mission fisherman_2
-[05:54:40 INFO]: Registered mission fisherman_1
-[05:54:40 INFO]: Registered mission explorer_1
-[05:54:40 INFO]: Registered mission explorer_2
-[05:54:41 SEVERE]: An unexpected error occurred while registering module asp-plugin-4.2.0-SNAPSHOT.jar:
-[05:54:41 SEVERE]: java.lang.RuntimeException: An error occurred while reading asp-plugin-4.2.0-SNAPSHOT.jar
-	at SuperiorSkyblock2-2026.2-b927.jar//com.bgsoftware.superiorskyblock.module.ModulesManagerImpl.registerModule(ModulesManagerImpl.java:73)
-	at SuperiorSkyblock2-2026.2-b927.jar//com.bgsoftware.superiorskyblock.module.ModulesManagerImpl.registerExternalModules(ModulesManagerImpl.java:243)
-	at SuperiorSkyblock2-2026.2-b927.jar//com.bgsoftware.superiorskyblock.module.ModulesManagerImpl.loadData(ModulesManagerImpl.java:53)
-	at SuperiorSkyblock2-2026.2-b927.jar//com.bgsoftware.superiorskyblock.SuperiorSkyblockPlugin.onEnable(SuperiorSkyblockPlugin.java:233)
-	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:279)
-	at io.papermc.paper.plugin.manager.PaperPluginInstanceManager.enablePlugin(PaperPluginInstanceManager.java:210)
-	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.enablePlugin(PaperPluginManagerImpl.java:109)
-	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:519)
-	at org.bukkit.craftbukkit.CraftServer.enablePlugin(CraftServer.java:633)
-	at org.bukkit.craftbukkit.CraftServer.enablePlugins(CraftServer.java:590)
-	at net.minecraft.server.MinecraftServer.initPostWorld(MinecraftServer.java:648)
-	at net.minecraft.server.dedicated.DedicatedServer.initServer(DedicatedServer.java:343)
-	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1266)
-	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:303)
-	at java.base/java.lang.Thread.run(Thread.java:1474)
-Caused by: java.lang.IllegalAccessError: class org.yaml.snakeyaml.parser.ParserImpl$ParseBlockSequenceEntry cannot access its superinterface org.yaml.snakeyaml.parser.Production (org.yaml.snakeyaml.parser.ParserImpl$ParseBlockSequenceEntry is in unnamed module of loader 'asp-plugin-4.2.0-SNAPSHOT.jar' @2a3436f1; org.yaml.snakeyaml.parser.Production is in unnamed module of loader java.net.URLClassLoader @179d3b25)
-	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
-	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:962)
-	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:144)
-	at io.papermc.paper.plugin.entrypoint.classloader.PaperSimplePluginClassLoader.findClass(PaperSimplePluginClassLoader.java:110)
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:557)
-	at io.papermc.paper.plugin.entrypoint.classloader.PaperPluginClassLoader.loadClass(PaperPluginClassLoader.java:118)
-	at io.papermc.paper.plugin.entrypoint.classloader.group.SpigotPluginClassLoaderGroup.lookupClass(SpigotPluginClassLoaderGroup.java:43)
-	at io.papermc.paper.plugin.entrypoint.classloader.group.SimpleListPluginClassLoaderGroup.getClassByName(SimpleListPluginClassLoaderGroup.java:37)
-	at io.papermc.paper.plugin.entrypoint.classloader.group.LockingClassLoaderGroup.getClassByName(LockingClassLoaderGroup.java:34)
-	at org.bukkit.plugin.java.PluginClassLoader.loadClass0(PluginClassLoader.java:198)
-	at org.bukkit.plugin.java.PluginClassLoader.loadClass(PluginClassLoader.java:175)
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:544)
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:544)
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490)
-	at SuperiorSkyblock2-2026.2-b927.jar//com.bgsoftware.superiorskyblock.core.io.JarFiles.getClass(JarFiles.java:30)
-	at SuperiorSkyblock2-2026.2-b927.jar//com.bgsoftware.superiorskyblock.module.ModulesManagerImpl.registerModule(ModulesManagerImpl.java:70)
-	... 14 more
-
-[05:54:41 INFO]: Enabling the module bank...
-[05:54:41 INFO]: Finished enabling the module bank (Took 3ms)
-[05:54:41 INFO]: Enabling the module missions...
-[05:54:41 INFO]: Finished enabling the module missions (Took 1ms)
-[05:54:41 INFO]: Enabling the module generators...
-[05:54:41 INFO]: Finished enabling the module generators (Took 2ms)
-[05:54:41 INFO]: Enabling the module upgrades...
-[05:54:41 INFO]: Finished enabling the module upgrades (Took 13ms)
-[05:54:41 INFO]: Using MiniMessage as a ui provider.
-[05:54:41 INFO]: Loading messages started...
-[05:54:41 INFO]:  - Found 753 messages in the language files.
-[05:54:41 INFO]: Loading messages done (Took 146ms)
-[05:54:41 INFO]: Loading 9 schematics using 9 threads...
-[05:54:48 INFO]: Successfully loaded schematic mycel.schematic (DefaultSchematicParser)
-[05:54:48 INFO]: Successfully loaded schematic desert.schematic (DefaultSchematicParser)
-[05:54:48 INFO]: Successfully loaded schematic normal.schematic (DefaultSchematicParser)
-[05:54:48 INFO]: Successfully loaded schematic desert_nether.schematic (DefaultSchematicParser)
-[05:54:48 INFO]: Successfully loaded schematic mycel_nether.schematic (DefaultSchematicParser)
-[05:54:48 INFO]: Successfully loaded schematic normal_nether.schematic (DefaultSchematicParser)
-[05:54:48 INFO]: Successfully loaded schematic normal_the_end.schematic (DefaultSchematicParser)
-[05:54:48 INFO]: Successfully loaded schematic mycel_the_end.schematic (DefaultSchematicParser)
-[05:54:48 INFO]: Successfully loaded schematic desert_the_end.schematic (DefaultSchematicParser)
-[05:54:48 INFO]: Successfully loaded 9 schematics.
-[05:54:48 INFO]: Trying to connect to local database (SQLite)...
-[05:54:48 INFO]: Successfully established connection with local database!
-[05:54:48 INFO]: Creating a backup file...
-[05:54:48 INFO]: Backup done!
-[05:54:48 INFO]: Starting to load players...
-[05:54:48 INFO]: Finished loading 0 players (Took 1ms)
-[05:54:48 INFO]: Starting to load islands...
-[05:54:48 INFO]: Finished loading 0 islands (Took 5ms)
-[05:54:48 INFO]: Starting to load grid...
-[05:54:48 INFO]: Finished grid!
-[05:54:48 INFO]: Starting to load stacked blocks...
-[05:54:48 INFO]: Finished stacked blocks!
-[05:54:49 INFO]: Plan detected - attempting to register SuperiorSkyblock DataExtension.
-[05:54:49 INFO]: Registered SuperiorSkyblock Plan DataExtension.
-[05:54:49 INFO]: Using LuckPerms as a permissions provider.
-[05:54:49 INFO]: Using CMI as a prices provider.
-[05:54:49 INFO]: Hooked into CMI for support of vanish status of players.
-[05:54:49 INFO]: Hooked into CMI for support of afk status of players.
-[05:54:49 INFO]: Using PlaceholderAPI for placeholders support.
-[05:54:49 INFO]: Detected PaperSpigot - Using async chunk-loading support with PaperMC.
-[06:04:05 INFO]: Disabling SuperiorSkyblock2 v2026.2-b927
-[06:04:05 INFO]: Disabling the module bank...
-[06:04:05 INFO]: Disabling the module missions...
-[06:04:05 INFO]: Disabling the module generators...
-[06:04:05 INFO]: Disabling the module upgrades...
-[06:04:05 INFO]: Shutting down stats client...
-[06:04:05 INFO]: Shutting down calculation task...
-[06:04:05 INFO]: Shutting down executor
-[06:04:05 INFO]: This can take up to 20 seconds to complete
-[06:04:05 INFO]: Closing database. This may hang the server. Do not shut it down, or data may get lost.
+[07:52:30 INFO]: Enabling the module bank...
+[07:52:31 INFO]: Finished enabling the module bank (Took 17ms)
+[07:52:31 INFO]: Enabling the module missions...
+[07:52:31 INFO]: Finished enabling the module missions (Took 1ms)
+[07:52:31 INFO]: Enabling the module generators...
+[07:52:31 INFO]: Finished enabling the module generators (Took 11ms)
+[07:52:31 INFO]: Enabling the module upgrades...
+[07:52:31 INFO]: Finished enabling the module upgrades (Took 28ms)
+[07:52:31 INFO]: Using MiniMessage as a ui provider.
+[07:52:31 INFO]: Loading messages started...
+[07:52:31 INFO]:  - Found 753 messages in the language files.
+[07:52:31 INFO]: Loading messages done (Took 316ms)
+[07:52:31 INFO]: Loading 9 schematics using 9 threads...
+[07:52:41 INFO]: Successfully loaded schematic mycel.schematic (DefaultSchematicParser)
+[07:52:41 INFO]: Successfully loaded schematic desert.schematic (DefaultSchematicParser)
+[07:52:41 INFO]: Successfully loaded schematic normal.schematic (DefaultSchematicParser)
+[07:52:41 INFO]: Successfully loaded schematic mycel_nether.schematic (DefaultSchematicParser)
+[07:52:41 INFO]: Successfully loaded schematic desert_nether.schematic (DefaultSchematicParser)
+[07:52:41 INFO]: Successfully loaded schematic normal_nether.schematic (DefaultSchematicParser)
+[07:52:41 INFO]: Successfully loaded schematic mycel_the_end.schematic (DefaultSchematicParser)
+[07:52:41 INFO]: Successfully loaded schematic desert_the_end.schematic (DefaultSchematicParser)
+[07:52:41 INFO]: Successfully loaded schematic normal_the_end.schematic (DefaultSchematicParser)
+[07:52:41 INFO]: Successfully loaded 9 schematics.
+[07:52:42 INFO]: Trying to connect to local database (SQLite)...
+[07:52:42 INFO]: Successfully established connection with local database!
+[07:52:42 INFO]: Creating a backup file...
+[07:52:42 INFO]: Backup done!
+[07:52:42 INFO]: Starting to load players...
+[07:52:42 INFO]: Finished loading 1 players (Took 11ms)
+[07:52:42 INFO]: Starting to load islands...
+[07:52:42 INFO]: Finished loading 0 islands (Took 6ms)
+[07:52:42 INFO]: Starting to load grid...
+[07:52:42 INFO]: Finished grid!
+[07:52:42 INFO]: Starting to load stacked blocks...
+[07:52:42 INFO]: Finished stacked blocks!
+[07:52:53 INFO]: Plan detected - attempting to register SuperiorSkyblock DataExtension.
+[07:52:53 INFO]: Registered SuperiorSkyblock Plan DataExtension.
+[07:52:53 INFO]: Using LuckPerms as a permissions provider.
+[07:52:54 INFO]: Using CMI as a prices provider.
+[07:52:54 INFO]: Hooked into CMI for support of vanish status of players.
+[07:52:54 INFO]: Hooked into CMI for support of afk status of players.
+[07:52:54 INFO]: Using Vault as an economy provider.
+[07:52:54 INFO]: Using PlaceholderAPI for placeholders support.
+[07:52:54 INFO]: Detected PaperSpigot - Using async chunk-loading support with PaperMC.
+[10:02:22 INFO]: Disabling SuperiorSkyblock2 v2026.2-b927
+[10:02:22 INFO]: Disabling the module bank...
+[10:02:22 INFO]: Disabling the module missions...
+[10:02:22 INFO]: Disabling the module generators...
+[10:02:22 INFO]: Disabling the module upgrades...
+[10:02:22 INFO]: Shutting down stats client...
+[10:02:22 INFO]: Shutting down calculation task...
+[10:02:22 INFO]: Shutting down executor
+[10:02:22 INFO]: This can take up to 20 seconds to complete
+[10:02:22 INFO]: Closing database. This may hang the server. Do not shut it down, or data may get lost.
