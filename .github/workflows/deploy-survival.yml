@@ -149,8 +149,6 @@ jobs:
             --exclude='world/' --exclude='world_nether/' --exclude='world_the_end/'
           )
 
-          DEPLOY_BASE_PATH="$(dirname "$SERVER_PATH")"
-
           if [ -n "$REPLACE_FOLDER" ]; then
             # --- Modus: Ganzen Ordner ersetzen ---
             echo "Replacing folder: $REPLACE_FOLDER"
@@ -160,9 +158,9 @@ jobs:
               exit 1
             fi
 
-            ssh -n -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new "$SSH_USER@$SSH_HOST" "rm -rf '$DEPLOY_BASE_PATH/plugins/$REPLACE_FOLDER'"
+            ssh -n -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new "$SSH_USER@$SSH_HOST" "rm -rf '$SERVER_PATH/$REPLACE_FOLDER'"
 
-            rsync -avz -e 'ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new' "${EXCLUDE_ARGS[@]}" --backup --backup-dir="/tmp/festas-rsync-backup-$(date +%Y%m%d-%H%M%S)" --delete "survival/plugins/$REPLACE_FOLDER/" "$SSH_USER@$SSH_HOST:$DEPLOY_BASE_PATH/plugins/$REPLACE_FOLDER/"
+            rsync -avz -e 'ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new' "${EXCLUDE_ARGS[@]}" --backup --backup-dir="/tmp/festas-rsync-backup-$(date +%Y%m%d-%H%M%S)" --delete "survival/plugins/$REPLACE_FOLDER/" "$SSH_USER@$SSH_HOST:$SERVER_PATH/$REPLACE_FOLDER/"
 
             echo "Folder $REPLACE_FOLDER replaced successfully"
           else
@@ -174,11 +172,13 @@ jobs:
                 while IFS=$'\t' read -r status file; do
                   # file ist z.B. "survival/plugins/Ordner/Config.yml"
 
-                  # Berechne den Pfad relativ zum Server-Root (entferne 'survival/')
-                  if [[ "$file" == survival/* ]]; then
-                    remote_relative_file="${file#survival/}"
+                  # Berechne den Pfad für den Server (entferne 'survival/plugins/')
+                  # Da SERVER_PATH schon im plugins-Ordner ist, brauchen wir nur "Ordner/Config.yml"
+                  if [[ "$file" == survival/plugins/* ]]; then
+                    remote_relative_file="${file#survival/plugins/}"
                   else
-                    remote_relative_file="$file"
+                    # Fallback falls Datei direkt in survival/ liegt (z.B. survival/readme.txt)
+                    remote_relative_file="${file#survival/}"
                   fi
 
                   # Excludes prüfen (auf Basis des Dateinamens)
@@ -189,17 +189,17 @@ jobs:
 
                   if [ "$status" = "D" ]; then
                     echo "Deleting: $remote_relative_file"
-                    ssh -n -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new "$SSH_USER@$SSH_HOST" "rm -f '$DEPLOY_BASE_PATH/$remote_relative_file'"
+                    ssh -n -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new "$SSH_USER@$SSH_HOST" "rm -f '$SERVER_PATH/$remote_relative_file'"
                   else
                     echo "Uploading: $remote_relative_file"
                     
                     dir_path=$(dirname "$remote_relative_file")
                     if [ "$dir_path" != "." ]; then
-                      ssh -n -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new "$SSH_USER@$SSH_HOST" "mkdir -p '$DEPLOY_BASE_PATH/$dir_path'"
+                      ssh -n -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new "$SSH_USER@$SSH_HOST" "mkdir -p '$SERVER_PATH/$dir_path'"
                     fi
                     
-                    # Nutze $file (lokaler voller Pfad) -> $DEPLOY_BASE_PATH/$remote_relative_file (relativ zum Server-Root)
-                    scp -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new "$file" "$SSH_USER@$SSH_HOST:$DEPLOY_BASE_PATH/$remote_relative_file" < /dev/null
+                    # Nutze $file (lokaler voller Pfad) -> $SERVER_PATH/$remote_relative_file (Server Pfad ohne doppeltes plugins/)
+                    scp -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new "$file" "$SSH_USER@$SSH_HOST:$SERVER_PATH/$remote_relative_file" < /dev/null
                   fi
                 done < /tmp/changed_files.txt
                 echo "Sync completed successfully"
@@ -209,8 +209,9 @@ jobs:
             else
               # --- Manueller Full Sync ---
               echo "Manual sync: uploading all files..."
-              # Vollständiger Server-Ordner-Sync (inkl. plugins/ auf Root-Ebene, ohne Root-Delete)
-              rsync -avz -e 'ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new' "${EXCLUDE_ARGS[@]}" --backup --backup-dir="/tmp/festas-rsync-backup-$(date +%Y%m%d-%H%M%S)" "survival/" "$SSH_USER@$SSH_HOST:$DEPLOY_BASE_PATH/"
+              # WICHTIG: Hier auch survival/plugins/ als Quelle nutzen, nicht survival/
+              # Sonst wird der Ordner 'plugins' in den Ordner 'plugins' kopiert -> plugins/plugins
+              rsync -avz -e 'ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new' "${EXCLUDE_ARGS[@]}" --backup --backup-dir="/tmp/festas-rsync-backup-$(date +%Y%m%d-%H%M%S)" --delete "survival/plugins/" "$SSH_USER@$SSH_HOST:$SERVER_PATH/"
               echo "Full sync completed successfully"
             fi
           fi
@@ -223,8 +224,7 @@ jobs:
           SERVER_PATH: ${{ secrets.SERVER_PATH_SURVIVAL }}
         run: |
           echo "🔍 Verifiziere Deployment..."
-          DEPLOY_BASE_PATH="$(dirname "$SERVER_PATH")"
-          FILE_COUNT=$(ssh -n -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new "$SSH_USER@$SSH_HOST" "find '$DEPLOY_BASE_PATH' -name '*.yml' -type f | wc -l")
+          FILE_COUNT=$(ssh -n -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new "$SSH_USER@$SSH_HOST" "find '$SERVER_PATH' -name '*.yml' -type f | wc -l")
           echo "📊 $FILE_COUNT Konfigurationsdateien auf dem Server gefunden."
           if [ "$FILE_COUNT" -lt 1 ]; then
             echo "::error::Keine Konfigurationsdateien auf dem Server gefunden! Deployment möglicherweise fehlgeschlagen."
