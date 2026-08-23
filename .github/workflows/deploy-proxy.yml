@@ -159,8 +159,8 @@ jobs:
             else
               # --- Manueller Full Sync ---
               echo "Manual sync: uploading all files..."
-              # Vollständiger Server-Ordner-Sync (inkl. plugins/ auf Root-Ebene)
-              rsync -avz -e 'ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new' "${EXCLUDE_ARGS[@]}" --backup --backup-dir="/tmp/festas-rsync-backup-$(date +%Y%m%d-%H%M%S)" --delete "proxy/" "$SSH_USER@$SSH_HOST:$DEPLOY_BASE_PATH/"
+              # Vollständiger Server-Ordner-Sync (inkl. plugins/ auf Root-Ebene, ohne Root-Delete)
+              rsync -avz -e 'ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new' "${EXCLUDE_ARGS[@]}" --backup --backup-dir="/tmp/festas-rsync-backup-$(date +%Y%m%d-%H%M%S)" "proxy/" "$SSH_USER@$SSH_HOST:$DEPLOY_BASE_PATH/"
               echo "Full sync completed successfully"
             fi
           fi
