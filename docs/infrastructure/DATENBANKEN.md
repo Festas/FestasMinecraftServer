@@ -54,10 +54,18 @@
 | Verwendung                | Zweck                                           | Server         |
 |---------------------------|-------------------------------------------------|----------------|
 | HuskSync Session-Cache    | Temporäre Daten beim Server-Wechsel             | Alle           |
+| LuckPerms-Messaging       | Live-Push von Rang-/Permission-Änderungen (Pub/Sub) | Alle       |
 
 **TTL (Time To Live):**
 - Session-Daten: 30 Minuten
 - Inventar-Cache: 5 Minuten
+
+**Deployment:** Der Redis-Container wird über den Workflow
+[`deploy-redis`](../../.github/workflows/deploy-redis.yml) aus
+[`infra/redis/`](../../infra/redis/README.md) gestartet
+(`docker compose` + `redis.conf` mit injiziertem `REDIS_PASSWORD`). Der Port wird
+nur auf der internen Bridge-Adresse `172.18.0.1:6379` veröffentlicht, nicht
+öffentlich. Details siehe [`infra/redis/README.md`](../../infra/redis/README.md).
 
 ### SQLite-Fallback
 

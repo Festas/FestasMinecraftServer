@@ -246,11 +246,17 @@ Passwort (`requirepass`) des zentralen **Redis**-Servers. Redis wird für das
 **LuckPerms-Messaging** (Live-Push von Rang-Änderungen) auf allen vier Servern
 (Lobby, RPG, Survival, Skyblock) sowie – auf dem Host – für HuskSync genutzt.
 
+Dasselbe Secret konfiguriert auch den **Redis-Server selbst**: Der Workflow
+[`deploy-redis`](.github/workflows/deploy-redis.yml) injiziert es als
+`requirepass` in `infra/redis/redis.conf` und startet Redis per
+`docker compose` (siehe [`infra/redis/`](infra/redis/README.md)).
+
 In den committeten LuckPerms-Configs (`*/plugins/LuckPerms/config.yml`, Schlüssel
-`redis.password`) steht nur der Platzhalter `__REDIS_PASSWORD__`; der echte Wert
-wird beim Deploy injiziert. Fehlt das Secret, **bricht der Deploy bewusst ab**
-(fail-closed). Die Redis-Adresse `172.18.0.1:6379` ist **kein** Secret und steht
-im Klartext in den Configs – bei geändertem Docker-Netzwerk dort anpassen.
+`redis.password`) sowie in `infra/redis/redis.conf` steht nur der Platzhalter
+`__REDIS_PASSWORD__`; der echte Wert wird beim Deploy injiziert. Fehlt das Secret,
+**bricht der Deploy bewusst ab** (fail-closed). Die Redis-Adresse
+`172.18.0.1:6379` ist **kein** Secret und steht im Klartext in den Configs – bei
+geändertem Docker-Netzwerk dort anpassen.
 
 > **Wichtig (P0-3):** Redis darf **nicht** öffentlich erreichbar sein. `requirepass`
 > setzen, an die interne Bridge-Adresse binden und Port `6379` in der Firewall
@@ -350,7 +356,7 @@ werden – niemals einen echten Wert direkt committen.
 | `PLAN_DB_ENV` | `.env`-Format (mehrzeilig) | Alle Server-Deploy-Workflows |
 | `PLAN_RO_DB_ENV` | `.env`-Format (mehrzeilig) | deploy-plan-players-export |
 | `LUCKPERMS_DB_ENV` | `.env`-Format (mehrzeilig) | deploy-lobby, deploy-rpg, deploy-survival, deploy-skyblock |
-| `REDIS_PASSWORD` | Plain Text | deploy-lobby, deploy-rpg, deploy-survival, deploy-skyblock |
+| `REDIS_PASSWORD` | Plain Text | deploy-lobby, deploy-rpg, deploy-survival, deploy-skyblock, deploy-redis |
 | `SKYBLOCK_DB_ENV` | `.env`-Format (mehrzeilig) | deploy-skyblock |
 | `XPRISON_DASHBOARD_ENV` | `.env`-Format (mehrzeilig) | deploy-rpg |
 | `XPRIVATEMINES_DASHBOARD_ENV` | `.env`-Format (mehrzeilig) | deploy-rpg |
