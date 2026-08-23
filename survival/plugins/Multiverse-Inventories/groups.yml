@@ -21,6 +21,11 @@ groups:
     - tycoon
     shares:
     - all
+  schematics_group:
+    worlds:
+    - Schematics
+    shares:
+    - all
   lobby_group:
     worlds:
     - lobby

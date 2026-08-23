@@ -2,11 +2,11 @@ port: 8090
 host: ''
 
 superuser:
-  username: admin
-  password: Esuusmyq@19063
+  username: __XPRIVATEMINES_DASHBOARD_USER__
+  password: __XPRIVATEMINES_DASHBOARD_PASSWORD__
 
 jwt:
-  secret: wglIETy7+RQJ/9fbL0jfHuh6zUvWxPwZtGBk89Urv24=
+  secret: __XPRIVATEMINES_DASHBOARD_JWT_SECRET__
   expiry-hours: 24
 
 cors:

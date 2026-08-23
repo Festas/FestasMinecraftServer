@@ -7,5 +7,6 @@ groups:
     worlds:
     - world
     - world_nether
+    - SuperiorWorld
     shares:
     - all
