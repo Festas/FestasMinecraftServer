@@ -97,7 +97,7 @@ jobs:
             [ -d "$SRC/staging" ] && SRC="$SRC/staging"
             APP="$HOME/festas-redis"
 
-            echo "[1/5] Preparing directories..."
+            echo "[1/6] Preparing directories..."
             mkdir -p "$APP/redis-data"
             # Lock the directory down so the password in redis.conf is not
             # readable by other host users. The config file itself stays
@@ -105,7 +105,7 @@ jobs:
             # read it; the 700 directory is what prevents host-side exposure.
             chmod 700 "$APP"
 
-            echo "[2/5] Installing config..."
+            echo "[2/6] Installing config..."
             install -m 644 "$SRC/redis.conf" "$APP/redis.conf"
             install -m 644 "$SRC/docker-compose.redis.yml" "$APP/docker-compose.redis.yml"
             # Host port 6380 keeps this instance off 6379 (native Panel Redis).
@@ -115,18 +115,31 @@ jobs:
             } > "$APP/.env"
             rm -rf /tmp/redis-deploy
 
-            echo "[3/5] Pulling image..."
+            echo "[3/6] Pulling image..."
             cd "$APP"
             docker compose -f docker-compose.redis.yml pull
 
-            echo "[4/5] Starting Redis..."
-            docker compose -f docker-compose.redis.yml up -d
-            # The bind-mounted redis.conf is only re-read on (re)start, so reload
-            # it explicitly to make config changes take effect on an already
-            # running container. Harmless (brief reconnect) on a fresh start.
-            docker compose -f docker-compose.redis.yml restart
+            echo "[4/6] Cleaning up any previous stack/container..."
+            # Bring the current compose stack down so a changed port/config is
+            # applied cleanly. No -v is passed, so the ./redis-data bind mount
+            # (RDB snapshots) is left untouched and the data survives.
+            docker compose -f docker-compose.redis.yml down --remove-orphans || true
+            # Belt and braces: a container may linger under the fixed name if it
+            # was created by an older compose project/config (e.g. the previous
+            # 6379 layout). `down` would not recognise it as part of this project
+            # and would leave it in place, so the next `up` fails with a name
+            # conflict. Force-remove it by name; this only removes the container,
+            # never the data directory/volume.
+            docker rm -f festas-redis || true
 
-            echo "[5/5] Waiting for healthy status..."
+            echo "[5/6] Starting Redis..."
+            # --force-recreate makes the new container pick up the current
+            # redis.conf and any port/config change; --remove-orphans keeps the
+            # project clean. A freshly created container reads the bind-mounted
+            # redis.conf on startup, so no extra restart/reload is needed.
+            docker compose -f docker-compose.redis.yml up -d --force-recreate --remove-orphans
+
+            echo "[6/6] Waiting for healthy status..."
             for i in $(seq 1 30); do
               HEALTH=$(docker inspect --format='{{.State.Health.Status}}' festas-redis 2>/dev/null || echo "starting")
               if [ "$HEALTH" = "healthy" ]; then
