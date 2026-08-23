@@ -1,8 +1,3 @@
 Please read the changelog carefully:
 - Feature: Major war rework - wars now have selectable goals (raid, skirmish, annexation, vassalage) and modes, each with configurable win/surrender/draw commands and war shields. Raid is the new default goal.
 - Change: Wars and Nations now live under the module system (Modules/Wars, Modules/Nations) and are therefore enabled by default. If you had them disabled or customized before, re-check and reconfigure these files after updating - your old settings will not carry over automatically.
-
-
---> GUI file (de_DE.yml): 
-+ Item: gui.war_info.items.default
-+ Item: gui.war_info.items.default.war_points

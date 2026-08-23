@@ -3,34 +3,36 @@
 # Autorank uses these to keep track of certain aspects of the plugin.
 
 leaderboard last updated: 0
-tracked day: 3
+tracked day: 7
 has converted uuids: true
 leaderboards:
   daily_time:
     cached leaderboard:
     - '-------- Leaderboard (Daily time) --------'
     - '------------------------------------'
-    last updated: 1787130460712
+    last updated: 1787471584897
   weekly_time:
     cached leaderboard:
     - '-------- Leaderboard (Weekly time) --------'
-    - §61 | §bElexian - §70 days, 3 hours and 59 minutes.
     - '------------------------------------'
-    last updated: 1787130460719
+    last updated: 1787471584898
   monthly_time:
     cached leaderboard:
     - '-------- Leaderboard (Monthly time) --------'
     - §61 | §bElexian - §70 days, 3 hours and 59 minutes.
+    - §62 | §bYuukiiiFy - §70 days, 0 hours and 3 minutes.
+    - §63 | §b_YoshisWorld_ - §70 days, 0 hours and 2 minutes.
     - '------------------------------------'
-    last updated: 1787130460721
+    last updated: 1787471584923
   total_time:
     cached leaderboard:
     - '-------- Leaderboard (All time) --------'
     - §61 | §bElexian - §72 days, 4 hours and 12 minutes.
-    - §62 | §b_YoshisWorld_ - §70 days, 0 hours and 33 minutes.
+    - §62 | §b_YoshisWorld_ - §70 days, 0 hours and 35 minutes.
     - §63 | §bShanaFNS - §70 days, 0 hours and 30 minutes.
+    - §64 | §bYuukiiiFy - §70 days, 0 hours and 3 minutes.
     - '------------------------------------'
-    last updated: 1787130460724
+    last updated: 1787471584933
 is converted to new format: true
-tracked week: 34
+tracked week: 35
 tracked month: 8

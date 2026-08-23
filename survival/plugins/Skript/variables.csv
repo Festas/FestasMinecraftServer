@@ -157,7 +157,7 @@ casino_loss::e316e06a-8b70-4d7e-9636-f2085ddade33, long, 0000000000001388
 "collector::tycoon:-19.5,-11.5,59.5", offlineplayer, 810475756964800455554944820B6D6F73747369676269747304C0B032948D244B2E0C6C6561737473696762697473048C58BA64C0C93204
 daily.lastclaim.25f22b83-f8f4-4bf5-b8d7-9fdb2c53e1ab, date, 810974696D657374616D7004000001A01126F43E
 daily.lastclaim.6e874670-66e9-48dd-b16f-48029fc0c645, date, 810974696D657374616D7004000001A011631DE9
-daily.lastclaim.8546f1ab-5805-4633-800c-7030c555b563, date, 810974696D657374616D7004000001A007054790
+daily.lastclaim.8546f1ab-5805-4633-800c-7030c555b563, date, 810974696D657374616D7004000001A01B0BD8B8
 daily.streak.25f22b83-f8f4-4bf5-b8d7-9fdb2c53e1ab, long, 0000000000000002
 daily.streak.6e874670-66e9-48dd-b16f-48029fc0c645, long, 0000000000000001
 daily.streak.8546f1ab-5805-4633-800c-7030c555b563, long, 0000000000000001
@@ -224,32 +224,32 @@ tycoon_prices::beacon, long, 0000000000B71B00
 tycoon_prices::bedrock, long, 00000000005B8D80
 tycoon_prices::blackstone, long, 00000000000186A0
 tycoon_prices::calcite, long, 0000000000002EE0
-tycoon_prices::coal, long, 0000000000000014
-"tycoon_prices::coal block", long, 00000000000000B4
-"tycoon_prices::coarse dirt", long, 000000000000000A
-"tycoon_prices::copper block", long, 00000000000002D0
-"tycoon_prices::copper ingot", long, 0000000000000050
-"tycoon_prices::crying obsidian", long, 0000000000001388
-tycoon_prices::diamond, long, 00000000000005DC
-"tycoon_prices::diamond block", long, 00000000000034BC
+tycoon_prices::coal, double, 4044000000000000
+"tycoon_prices::coal block", double, 4076800000000000
+"tycoon_prices::coarse dirt", double, 4034000000000000
+"tycoon_prices::copper block", double, 4096800000000000
+"tycoon_prices::copper ingot", double, 4064000000000000
+"tycoon_prices::crying obsidian", double, 40C3880000000000
+tycoon_prices::diamond, double, 40A7700000000000
+"tycoon_prices::diamond block", double, 40DA5E0000000000
 tycoon_prices::diorite, long, 0000000000004650
-tycoon_prices::dirt, long, 0000000000000005
-tycoon_prices::emerald, long, 0000000000000320
-"tycoon_prices::emerald block", long, 0000000000001C20
+tycoon_prices::dirt, double, 4024000000000000
+tycoon_prices::emerald, double, 4099000000000000
+"tycoon_prices::emerald block", double, 40CC200000000000
 "tycoon_prices::end stone", long, 0000000000061A80
 "tycoon_prices::end stone bricks", long, 00000000000C3500
-"tycoon_prices::gold block", long, 0000000000000438
-"tycoon_prices::gold ingot", long, 0000000000000078
+"tycoon_prices::gold block", double, 40A0E00000000000
+"tycoon_prices::gold ingot", double, 406E000000000000
 tycoon_prices::granite, long, 0000000000009C40
-"tycoon_prices::iron block", long, 00000000000001C2
-"tycoon_prices::iron ingot", long, 0000000000000032
-"tycoon_prices::lapis block", long, 0000000000000FD2
-"tycoon_prices::lapis lazuli", long, 00000000000001C2
+"tycoon_prices::iron block", double, 408C200000000000
+"tycoon_prices::iron ingot", double, 4059000000000000
+"tycoon_prices::lapis block", double, 40BFA40000000000
+"tycoon_prices::lapis lazuli", double, 408C200000000000
 "tycoon_prices::magma block", long, 00000000005B8D80
 "tycoon_prices::magma cream", long, 00000000002DC6C0
-"tycoon_prices::netherite ingot", long, 0000000000004E20
-"tycoon_prices::netherite scrap", long, 0000000000001388
-tycoon_prices::obsidian, long, 00000000000009C4
+"tycoon_prices::netherite ingot", double, 40E3880000000000
+"tycoon_prices::netherite scrap", double, 40C3880000000000
+tycoon_prices::obsidian, double, 40B3880000000000
 "tycoon_prices::polished andesite", long, 000000000000C350
 "tycoon_prices::polished basalt", long, 000000000001D4C0
 "tycoon_prices::polished blackstone", long, 0000000000030D40
@@ -260,12 +260,12 @@ tycoon_prices::obsidian, long, 00000000000009C4
 "tycoon_prices::prismarine shard", long, 00000000000C3500
 "tycoon_prices::purpur block", long, 0000000000030D40
 "tycoon_prices::purpur pillar", long, 0000000000061A80
-tycoon_prices::redstone, long, 00000000000000C8
-"tycoon_prices::redstone block", long, 0000000000000708
+tycoon_prices::redstone, double, 4079000000000000
+"tycoon_prices::redstone block", double, 40AC200000000000
 "tycoon_prices::soul lantern", long, 00000000002DC6C0
 "tycoon_prices::soul soil", long, 000000000016E360
-tycoon_prices::stone, long, 000000000000000A
-"tycoon_prices::stone bricks", long, 0000000000000014
+tycoon_prices::stone, double, 4034000000000000
+"tycoon_prices::stone bricks", double, 4044000000000000
 tycoon_prices::tuff, long, 0000000000001F40
 weekly_event, long, 0000000000000004
 

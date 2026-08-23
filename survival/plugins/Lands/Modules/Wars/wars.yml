@@ -3,14 +3,6 @@
 
 # Enable wars?
 # NOTE: This setting requires server reload / restart.
-#
-# LINKED SUBSYSTEM: Wars and Nations (Modules/Nations/nations.yml) share the
-# `lands_wars*` database tables. Enable/disable them TOGETHER. A split state
-# (Nations enabled while Wars disabled) makes Nations query the never-created
-# `lands_wars_declarations` table -> repeated `SQLITE_ERROR: no such table`.
-# Currently both are disabled: Lands runs in pure claiming/griefing-protection
-# mode for the survival `town` world. To offer nation/war gameplay, set BOTH to
-# `true` (a restart then initializes the missing war tables).
 enabled: false
 
 # Should wars only be possible between nations and not single lands?

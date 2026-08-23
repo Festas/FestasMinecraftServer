@@ -31,13 +31,14 @@ firstJoinServer:
   - cmi msg [playerName] !&8&m─────────────────────────────────────
   - cmi msg [playerName] !&6&l  ✦ Willkommen auf Survival/Tycoon! ✦
   - cmi msg [playerName] !&8&m─────────────────────────────────────
-  - cmi msg [playerName] ! 
+  - cmi msg [playerName] !
   - 'cmi msg [playerName] !&7  So funktioniert der Tycoon-Modus:'
   - cmi msg [playerName] !&e  1. &7Nutze &f/tycoon &7um das Hauptmenü zu öffnen
   - cmi msg [playerName] !&e  2. &7Generatoren produzieren Items automatisch
-  - cmi msg [playerName] !&e  3. &7Verkaufe Items mit dem &fMarkt-Zepter &7(Goldene Hacke)
+  - cmi msg [playerName] !&e  3. &7Verkaufe Items mit dem &fMarkt-Zepter &7(Goldene
+    Hacke)
   - cmi msg [playerName] !&e  4. &7Verdiene Geld und steige im Rang auf mit &f/rankup
-  - cmi msg [playerName] ! 
+  - cmi msg [playerName] !
   - 'cmi msg [playerName] !&7  Nützliche Befehle:'
   - cmi msg [playerName] !&e  /shop &8- &7Items kaufen/verkaufen
   - cmi msg [playerName] !&e  /jobs &8- &7Berufe wählen
@@ -53,7 +54,8 @@ joinServer:
   - delay! 0.2
   - subtitle! &7Willkommen zurück, &f[playerDisplayName]&7!
   - delay! 0.5
-  - 'actionbar! &e✦ &6Rang: &f%vault_prefix% &8| &6Geld: &f%vault_eco_balance_formatted%€ &e✦'
+  - 'actionbar! &e✦ &6Rang: &f%vault_prefix% &8| &6Geld: &f%vault_eco_balance_formatted%€
+    &e✦'
 quitServer:
   Enabled: false
   Commands:
@@ -141,8 +143,8 @@ elytraStartGlide:
   - cmi msg [playerName] !This is event command example!
   - cmi msg [playerName] !Originates from sneakingSwapHandItems event!
 advancementDone:
-  # use [value] variable to insert advancements identificator
-  # This returns path to advancement like recipes/building_blocks/emerald_block which can be used in commands in case you want to filter out specific ones
+  # use [value] variable to insert advancements identificator like husbandry/balanced_diet
+  # use [value2] variable to insert advancements name like 'A Balanced Diet'
   Enabled: false
   Commands:
   - cmi msg [playerName] !This is event command example!
