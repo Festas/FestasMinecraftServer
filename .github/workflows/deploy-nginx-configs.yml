@@ -99,15 +99,13 @@ jobs:
                     continue
                   fi
 
-                  domain_args=()
-                  while IFS= read -r n; do
-                    [[ -n "$n" ]] || continue
-                    domain_args+=( -d "$n" )
-                  done <<< "$names"
-
-                  echo "  → Obtaining certificate '$lineage' for: $(echo $names) ..."
+                  # Request exactly the dedicated hostname (== lineage == cert-name). By
+                  # convention each BlueMap subdomain has its own single-host vhost/cert,
+                  # so we deliberately do NOT pull in the vhost's other server_names (e.g.
+                  # a port-80 redirect alias) as additional SANs.
+                  echo "  → Obtaining certificate '$lineage' via webroot..."
                   if sudo certbot certonly --webroot -w /var/www/certbot \
-                       --cert-name "$lineage" "${domain_args[@]}" \
+                       --cert-name "$lineage" -d "$lineage" \
                        --non-interactive --agree-tos --keep-until-expiring \
                        --deploy-hook "systemctl reload nginx"; then
                     echo "  ✓ Certificate '$lineage' obtained"
