@@ -44,8 +44,86 @@ jobs:
             echo "Deploying Nginx configurations"
             echo "=========================================="
 
-            # -- 1. Deploy configs --
-            echo "[1/2] Deploying Nginx configurations..."
+            # -- 1. Ensure dedicated per-subdomain TLS certificates exist --
+            # Some vhosts (e.g. survival./mining.festas-builds.com) use their OWN
+            # Let's Encrypt certificate whose lineage name equals the hostname, so the
+            # served certificate always matches the domain. Without a matching cert the
+            # browser reports NET::ERR_CERT_COMMON_NAME_INVALID and iframe embeds of the
+            # BlueMap live maps fail with "Verbindung abgelehnt". This provisions any such
+            # certificate that is still missing, via the HTTP-01 webroot challenge (served
+            # from /var/www/certbot by the acme-challenge snippet). It never touches the
+            # shared festas-builds.com certificate used by mc./mc-stats. and is fully
+            # non-fatal: a failure here must not block the Nginx reload below (the vhost is
+            # then skipped by the cert-presence check in step 2 and retried next deploy).
+            echo "[1/3] Ensuring dedicated per-subdomain TLS certificates..."
+
+            provision_dedicated_certs() {
+              if ! command -v certbot >/dev/null 2>&1; then
+                echo "  ⚠ certbot not found — skipping automatic certificate provisioning"
+                return 0
+              fi
+              if [[ ! -d "/tmp/nginx-deploy/nginx/sites-available" ]]; then
+                echo "  ⚠ No deployed vhosts found — skipping"
+                return 0
+              fi
+
+              shopt -s nullglob
+              for conf in /tmp/nginx-deploy/nginx/sites-available/*.festas-builds.com.conf; do
+                [[ -e "$conf" ]] || continue
+
+                # server_name hostnames declared in this vhost
+                names=$(grep -E '^[[:space:]]*server_name[[:space:]]+' "$conf" \
+                  | sed -E 's/^[[:space:]]*server_name[[:space:]]+//; s/;[[:space:]]*$//' \
+                  | tr ' ' '\n' | sed '/^[[:space:]]*$/d' | sort -u || true)
+                [[ -n "$names" ]] || continue
+
+                # Certbot lineage(s) referenced via ssl_certificate .../live/<lineage>/...
+                lineages=$(grep -E '^[[:space:]]*ssl_certificate[[:space:]]+' "$conf" \
+                  | awk '{print $2}' | tr -d ';' \
+                  | sed -nE 's#.*/live/([^/]+)/.*#\1#p' | sort -u || true)
+                [[ -n "$lineages" ]] || continue
+
+                while IFS= read -r lineage; do
+                  [[ -n "$lineage" ]] || continue
+
+                  # Only manage DEDICATED certificates: the lineage name must itself be
+                  # one of this vhost's server_names. This deliberately skips vhosts that
+                  # share the umbrella festas-builds.com certificate (mc./mc-stats.),
+                  # which is provisioned elsewhere and must never be modified here.
+                  if ! grep -qxF "$lineage" <<< "$names"; then
+                    continue
+                  fi
+
+                  if sudo test -f "/etc/letsencrypt/live/$lineage/fullchain.pem"; then
+                    echo "  ✓ Certificate '$lineage' already present — skipping"
+                    continue
+                  fi
+
+                  # Request exactly the dedicated hostname (== lineage == cert-name). By
+                  # convention each BlueMap subdomain has its own single-host vhost/cert,
+                  # so we deliberately do NOT pull in the vhost's other server_names (e.g.
+                  # a port-80 redirect alias) as additional SANs.
+                  echo "  → Obtaining certificate '$lineage' via webroot..."
+                  if sudo certbot certonly --webroot -w /var/www/certbot \
+                       --cert-name "$lineage" -d "$lineage" \
+                       --non-interactive --agree-tos --keep-until-expiring \
+                       --deploy-hook "systemctl reload nginx"; then
+                    echo "  ✓ Certificate '$lineage' obtained"
+                  else
+                    echo "  ⚠ Could not obtain certificate '$lineage' — the vhost will be"
+                    echo "    skipped below and retried on the next deploy"
+                  fi
+                done <<< "$lineages"
+              done
+              return 0
+            }
+
+            # Never let certificate provisioning abort the deploy (set -e is intentionally
+            # suppressed for the function body by the "|| true" context).
+            provision_dedicated_certs || true
+
+            # -- 2. Deploy configs --
+            echo "[2/3] Deploying Nginx configurations..."
 
             if [[ -d "/tmp/nginx-deploy/nginx/sites-available" ]]; then
               echo "  → Copying sites-available configs..."
@@ -98,8 +176,8 @@ jobs:
 
             rm -rf /tmp/nginx-deploy
 
-            # -- 2. Test and reload Nginx --
-            echo "[2/2] Reloading Nginx..."
+            # -- 3. Test and reload Nginx --
+            echo "[3/3] Reloading Nginx..."
 
             if sudo nginx -t 2>&1; then
               if sudo systemctl reload nginx; then
