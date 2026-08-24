@@ -9,7 +9,7 @@ name: Monitor players.json health
 
 on:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '0 12 * * *'
   workflow_dispatch:
     inputs:
       max_age_seconds:
