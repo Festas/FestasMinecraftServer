@@ -149,7 +149,9 @@ scoreboard:
       - ' &7Nächster &8» &e%rankup_next_rank%'
       - ' &7Fehlt &8» &c%rankup_money_left_formatted%$'
       - ''
-      - ' &7Online &8» &a%online%    &c☠ %statistic_deaths%'
+      - '&6&lSTATS'
+      - ' &7Online &8» &a%online%'
+      - ' &7Tode &8» &c%statistic_deaths%'
       - '&8&m                     '
       - '&e&nmc.festas-builds.com'
     skyblock:
