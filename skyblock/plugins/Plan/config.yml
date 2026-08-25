@@ -25,13 +25,13 @@ Plugin:
 # Supported databases: SQLite, MySQL
 # -----------------------------------------------------
 Database:
-    Type: SQLite
+    Type: MySQL
     MySQL:
-        Host: localhost
-        Port: 3306
-        User: root
-        Password: minecraft
-        Database: Plan
+        Host: __PLAN_DB_HOST__
+        Port: __PLAN_DB_PORT__
+        User: __PLAN_DB_USER__
+        Password: "__PLAN_DB_PASSWORD__"
+        Database: __PLAN_DB_DATABASE__
         # Launch options to append after mysql driver address
         Launch_options: "?rewriteBatchedStatements=true&serverTimezone=UTC"
         Max_connections: 8
