@@ -118,7 +118,9 @@ Non-secret settings live in [`config.json`](config.json) (committed):
 - `group_display_overrides` — map a raw group name to a custom label, e.g.
   `{ "default": "Spieler" }`.
 - `plan_database` / `luckperms_database` — non-secret host/port/database/ssl/timeout
-  defaults for the two connections.
+  defaults for the two connections. `connect_timeout_seconds` (default `5`) bounds the
+  handshake; `read_timeout_seconds` (default `30`) bounds each query and is larger so
+  the playtime aggregation over a big `plan_sessions` history is not killed early.
 - `output` — target `leaderboard.json` path.
 
 Secret DB credentials come from the environment (never committed) — see

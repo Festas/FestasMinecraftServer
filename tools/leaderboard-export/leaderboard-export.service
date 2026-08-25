@@ -22,7 +22,9 @@ ExecStart=/opt/leaderboard-export/venv/bin/python \
 # Do not thrash on a transient database blip; the last-good file keeps serving
 # until it ages past the frontend staleness threshold.
 Nice=10
-TimeoutStartSec=30
+# Comfortably above the DB read_timeout (default 30 s) so systemd does not kill a
+# slow-but-progressing playtime aggregation before the query's own timeout applies.
+TimeoutStartSec=90
 
 # Light sandboxing. /opt (script + env) and /home (output) stay writable/readable;
 # ProtectSystem=full keeps /usr, /boot and /etc read-only.

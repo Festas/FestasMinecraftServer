@@ -11,13 +11,15 @@
     "port": 3306,
     "database": "s4_plan",
     "ssl": true,
-    "connect_timeout_seconds": 5
+    "connect_timeout_seconds": 5,
+    "read_timeout_seconds": 30
   },
   "luckperms_database": {
     "host": "172.25.0.1",
     "port": 3306,
     "database": "s4_perms",
     "ssl": true,
-    "connect_timeout_seconds": 5
+    "connect_timeout_seconds": 5,
+    "read_timeout_seconds": 30
   }
 }

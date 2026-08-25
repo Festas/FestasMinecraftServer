@@ -57,6 +57,10 @@ DEFAULT_DB_PORT = 3306
 DEFAULT_PLAN_DB_NAME = "s4_plan"
 DEFAULT_LUCKPERMS_DB_NAME = "s4_perms"
 DEFAULT_CONNECT_TIMEOUT_S = 5
+# The playtime query aggregates (SUM/GROUP BY) over the whole plan_sessions table,
+# which can take noticeably longer than the connect handshake on a large history.
+# Give reads their own, more generous budget so a big history is not killed early.
+DEFAULT_READ_TIMEOUT_S = 30
 DEFAULT_TOP_N = 10
 DEFAULT_QUERY_LIMIT = 200
 
@@ -364,7 +368,7 @@ def connect(db_settings: Dict[str, Any]):
         "password": db_settings["password"],
         "database": db_settings["database"],
         "connect_timeout": db_settings["connect_timeout"],
-        "read_timeout": db_settings["connect_timeout"],
+        "read_timeout": db_settings["read_timeout"],
         "charset": "utf8mb4",
         "cursorclass": pymysql.cursors.DictCursor,
         "autocommit": True,
@@ -548,6 +552,9 @@ def resolve_db_settings(db_config: Any, prefix: str, default_db: str) -> Dict[st
         ),
         "connect_timeout": env_int(
             f"{prefix}_CONNECT_TIMEOUT", int(db_config.get("connect_timeout_seconds", DEFAULT_CONNECT_TIMEOUT_S))
+        ),
+        "read_timeout": env_int(
+            f"{prefix}_READ_TIMEOUT", int(db_config.get("read_timeout_seconds", DEFAULT_READ_TIMEOUT_S))
         ),
     }
 

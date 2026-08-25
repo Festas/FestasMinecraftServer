@@ -9,6 +9,7 @@ small helpers, which is where all the ranking/merging logic lives.
 import os
 import sys
 import unittest
+from unittest import mock
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
@@ -236,6 +237,33 @@ class ResolveOptionsTests(unittest.TestCase):
     def test_display_overrides_are_normalised(self):
         opts = lbe.resolve_options({"group_display_overrides": {"Admin": "&cChef"}})
         self.assertEqual(opts["display_overrides"], {"admin": "Chef"})
+
+
+class ResolveDbSettingsTests(unittest.TestCase):
+    CREDS = {"PLAN_RO_DB_USER": "plan_ro", "PLAN_RO_DB_PASSWORD": "secret"}
+
+    def test_read_timeout_defaults_and_is_independent_of_connect(self):
+        with mock.patch.dict(os.environ, self.CREDS, clear=True):
+            settings = lbe.resolve_db_settings({}, "PLAN_RO_DB", "s4_plan")
+        self.assertEqual(settings["connect_timeout"], lbe.DEFAULT_CONNECT_TIMEOUT_S)
+        self.assertEqual(settings["read_timeout"], lbe.DEFAULT_READ_TIMEOUT_S)
+        self.assertGreater(settings["read_timeout"], settings["connect_timeout"])
+
+    def test_read_timeout_from_config(self):
+        with mock.patch.dict(os.environ, self.CREDS, clear=True):
+            settings = lbe.resolve_db_settings({"read_timeout_seconds": 45}, "PLAN_RO_DB", "s4_plan")
+        self.assertEqual(settings["read_timeout"], 45)
+
+    def test_read_timeout_env_overrides_config(self):
+        env = dict(self.CREDS, PLAN_RO_DB_READ_TIMEOUT="60")
+        with mock.patch.dict(os.environ, env, clear=True):
+            settings = lbe.resolve_db_settings({"read_timeout_seconds": 45}, "PLAN_RO_DB", "s4_plan")
+        self.assertEqual(settings["read_timeout"], 60)
+
+    def test_missing_credentials_raise(self):
+        with mock.patch.dict(os.environ, {}, clear=True):
+            with self.assertRaises(RuntimeError):
+                lbe.resolve_db_settings({}, "PLAN_RO_DB", "s4_plan")
 
 
 if __name__ == "__main__":
