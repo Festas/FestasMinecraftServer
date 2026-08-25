@@ -77,6 +77,7 @@
                     <li><a href="#servers" class="nav-link">Server</a></li>
                     <li><a href="#maps" class="nav-link">Karte</a></li>
                     <li><a href="#players" class="nav-link">Online</a></li>
+                    <li><a href="#leaderboard" class="nav-link">Bestenliste</a></li>
                     <li><a href="#join" class="nav-link">Beitreten</a></li>
                     <li><a href="wiki/index.html" class="nav-link">Wiki</a></li>
                 </ul>
@@ -317,6 +318,27 @@
                     <div class="players-grid" id="playersGrid" aria-live="polite"></div>
 
                     <p class="players-updated" id="playersUpdated" hidden></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PLAYER LEADERBOARD -->
+        <section class="section" id="leaderboard">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2 class="section-title">Bestenliste</h2>
+                    <p class="section-subtitle">Die aktivsten Spieler nach Spielzeit &ndash; mit ihrem höchsten Rang</p>
+                </div>
+
+                <div class="leaderboard-panel reveal">
+                    <div class="leaderboard-summary">
+                        <span class="status-indicator" id="leaderboardStatusDot" aria-hidden="true"></span>
+                        <span class="leaderboard-summary-text" id="leaderboardSummary">Lade Bestenliste &hellip;</span>
+                    </div>
+
+                    <ol class="leaderboard-list" id="leaderboardList" aria-live="polite"></ol>
+
+                    <p class="leaderboard-updated" id="leaderboardUpdated" hidden></p>
                 </div>
             </div>
         </section>

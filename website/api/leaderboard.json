@@ -1,0 +1,47 @@
+{
+    "updated": 1723980000,
+    "generator": "leaderboard-export",
+    "count": 5,
+    "players": [
+        {
+            "rank": 1,
+            "name": "Festas",
+            "playtimeSeconds": 1425600,
+            "group": "owner",
+            "groupDisplay": "Owner",
+            "groupWeight": 1000
+        },
+        {
+            "rank": 2,
+            "name": "BuilderBen",
+            "playtimeSeconds": 950400,
+            "group": "admin",
+            "groupDisplay": "Admin",
+            "groupWeight": 900
+        },
+        {
+            "rank": 3,
+            "name": "RedstoneRicky",
+            "playtimeSeconds": 432000,
+            "group": "moderator",
+            "groupDisplay": "Moderator",
+            "groupWeight": 500
+        },
+        {
+            "rank": 4,
+            "name": "MiningMia",
+            "playtimeSeconds": 219600,
+            "group": "vip",
+            "groupDisplay": "VIP",
+            "groupWeight": 100
+        },
+        {
+            "rank": 5,
+            "name": "NewbieNico",
+            "playtimeSeconds": 86400,
+            "group": null,
+            "groupDisplay": null,
+            "groupWeight": 0
+        }
+    ]
+}
