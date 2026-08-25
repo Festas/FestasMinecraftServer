@@ -148,7 +148,7 @@ jobs:
           # '..' from escaping the plugins directory in the paths used below.
           if [ -n "$REPLACE_FOLDER" ]; then
             case "$REPLACE_FOLDER" in
-              */*|*..*|.|..)
+              */*|.|..)
                 echo "::error::Invalid folder name: $REPLACE_FOLDER (path traversal is not allowed)"
                 exit 1
                 ;;
