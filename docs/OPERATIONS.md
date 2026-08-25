@@ -26,6 +26,7 @@ docker compose exec redis redis-cli ping
 docker compose up -d velocity
 docker compose up -d lobby
 docker compose up -d skyblock survival
+```
 
 ---
 
@@ -48,6 +49,69 @@ docker compose stop lobby
 docker compose stop velocity
 docker compose stop mariadb redis
 ```
+
+---
+
+## Zeitzone & geplante Neustarts
+
+Alle Server **und der Proxy** sollen mit **deutscher Zeit** laufen – inklusive
+automatischer Umstellung zwischen **Winterzeit (CET, UTC+1)** und **Sommerzeit
+(CEST, UTC+2)**. Dazu wird für **jeden** Container die Zeitzone `Europe/Berlin`
+gesetzt. Die IANA-Zeitzonendatenbank übernimmt die Sommer-/Winterzeit-Umstellung
+dann automatisch. Ein **fester** Offset (`UTC+1`/`UTC+2` bzw. `GMT+1`) darf
+**nicht** verwendet werden, da er die Umstellung nicht mitmacht.
+
+### Zeitzone setzen
+
+Auf **allen** Servern – Proxy, Lobby, Survival, Skyblock und Mining
+(`rpg`-Slot) – die Umgebungsvariable setzen:
+
+```env
+TZ=Europe/Berlin
+```
+
+- **Pterodactyl:** Server → **Startup** → Variable `TZ` auf `Europe/Berlin`
+  setzen (bzw. in der Egg-Konfiguration ergänzen) und den Server einmal **neu
+  starten**, damit die JVM die Zeitzone übernimmt.
+- **Docker Compose:** im jeweiligen Service `environment: ["TZ=Europe/Berlin"]`
+  ergänzen.
+- **JVM-Fallback:** Falls sich `TZ` nicht setzen lässt, wirkt das Startflag
+  `-Duser.timezone=Europe/Berlin`.
+
+> Java/Paper, CMI und die Log-Zeitstempel folgen der Container-Zeitzone. Plan
+> ist bereits auf `TimeZone: 'server'` konfiguriert und übernimmt sie damit
+> automatisch.
+
+### Prüfen
+
+```bash
+# Container-Uhr prüfen – erwartet CET (Winter) bzw. CEST (Sommer)
+docker exec <container> date
+```
+
+Im Spiel muss `/cmi time` (bzw. `/time`) die aktuelle **deutsche** Uhrzeit
+anzeigen.
+
+### Neustart-Zeiten (deutsche Ortszeit)
+
+Die täglichen Neustarts laufen über die **CMI-Scheduler**
+(`plugins/CMI/Settings/Schedules.yml`) und richten sich nach der oben gesetzten
+Zeitzone. Die Zeiten sind **gestaffelt**, damit nie alle Server gleichzeitig
+offline sind:
+
+| Server   | Uhrzeit (Europe/Berlin) | Scheduler        |
+| -------- | :---------------------: | ---------------- |
+| Survival | 03:55                   | `RestartWarning` |
+| Lobby    | 04:00                   | `DailyRestart`   |
+| RPG¹     | 04:05                   | `DailyRestart`   |
+| Skyblock | 04:10                   | `DailyRestart`   |
+
+Jeder Neustart warnt die Spieler 5 Minuten vorher, sichert die Daten
+(`save-all`) und stoppt den Server anschließend (`stop`). Der Pterodactyl-Auto-
+Restart bzw. der Pterodactyl-Neustart-Schedule fährt ihn danach wieder hoch.
+
+> ¹ RPG wird eingestellt und nur noch als Archiv geführt (`rpg`-Slot = künftig
+> Mining).
 
 ---
 
