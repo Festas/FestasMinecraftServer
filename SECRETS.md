@@ -269,27 +269,6 @@ geändertem Docker-Netzwerk oder Host-Port dort anpassen.
 
 ---
 
-### `SKYBLOCK_DB_ENV`
-Datenbank-Zugangsdaten für den **Skyblock**-Server: SuperiorSkyblock2
-(`s4_skyblock`), das SlimeWorldIslands-Modul (`s4_superior_islands`) und den
-SlimeWorldManager (`s4_slimeworldmanager`). Ein DB-Benutzer mit Zugriff auf diese
-`s4_*`-Schemata genügt.
-
-In den committeten Configs stehen nur die Platzhalter `__SKYBLOCK_DB_USER__` /
-`__SKYBLOCK_DB_PASSWORD__` (vorher der Literal-Platzhalter `CHANGE_ME`, der die
-Ursache des Skyblock-Ausfalls war – `Access denied for user 'CHANGE_ME'`). Der
-echte Wert wird von `deploy-skyblock.yml` injiziert; fehlt das Secret, **bricht
-der Deploy bewusst ab** (fail-closed).
-
-**Format:** Mehrzeilige `.env`-Datei  
-**Pflichtfelder:**
-```env
-SKYBLOCK_DB_USER=s4user
-SKYBLOCK_DB_PASSWORD=geheimesPasswort
-```
-
----
-
 ### `XPRISON_DASHBOARD_ENV`
 Anmeldedaten für das xPrison-Dashboard-Plugin.  
 Wird im RPG-Server verwendet.
@@ -336,6 +315,12 @@ werden – niemals einen echten Wert direkt committen.
 | `__GLOBALMARKETPLUS_DB_PASSWORD__` | `survival/plugins/GlobalMarketPlus/Config.yml`, `rpg/plugins/GlobalMarketPlus/Config.yml` | `MySQL-Storage.Enabled: false` (SQLite) |
 | `__XROBOTS_DB_PASSWORD__` | `rpg/plugins/XRobots/config.yml` | `database_type: H2` (lokal) |
 
+> **Skyblock speichert lokal:** Der Skyblock-Server läuft nur auf **einer** Instanz.
+> SuperiorSkyblock2 (`database.type: SQLite`), SlimeWorldManager (`sources.yml` →
+> `file`) und Plan (`Database.Type: SQLite`) legen ihre Daten daher lokal ab. Es
+> gibt **keine** `__SKYBLOCK_DB_*__`-Platzhalter und **kein** `SKYBLOCK_DB_ENV`-Secret.
+> LuckPerms bleibt hiervon unberührt und nutzt weiterhin netzwerkweit `LUCKPERMS_DB_ENV`.
+
 ---
 
 ## Zusammenfassung
@@ -359,7 +344,6 @@ werden – niemals einen echten Wert direkt committen.
 | `PLAN_RO_DB_ENV` | `.env`-Format (mehrzeilig) | deploy-plan-players-export |
 | `LUCKPERMS_DB_ENV` | `.env`-Format (mehrzeilig) | deploy-lobby, deploy-rpg, deploy-survival, deploy-skyblock |
 | `REDIS_PASSWORD` | Plain Text | deploy-lobby, deploy-rpg, deploy-survival, deploy-skyblock, deploy-redis |
-| `SKYBLOCK_DB_ENV` | `.env`-Format (mehrzeilig) | deploy-skyblock |
 | `XPRISON_DASHBOARD_ENV` | `.env`-Format (mehrzeilig) | deploy-rpg |
 | `XPRIVATEMINES_DASHBOARD_ENV` | `.env`-Format (mehrzeilig) | deploy-rpg |
 | `PLAYERS_JSON_REMOTE_PATH` (optional) | Absoluter Pfad (Plain Text) | sync-players-json |
