@@ -8,6 +8,14 @@
 # ┗╸ GitHub: https://github.com/NEZNAMY/VelocityScoreboardAPI/
 
 # Whether scoreboard API events should be fired
-call_scoreboard_events: true
+# NOTE: Set to false on purpose. The installed TAB build (v5.4.0) listens to the
+# ObjectiveEvent.Display event, but VelocityScoreboardAPI 2.x reworked that event
+# API (ObjectiveEvent$Display.getObjective() no longer exists). With events enabled
+# this throws a recurring "NoSuchMethodError" (see plugins/tab/errors.log) every time
+# a scoreboard objective display packet is processed. Disabling event firing skips
+# only that (already broken) listener path; TAB still sends its own tablist,
+# objectives and sidebar scoreboard normally. Re-enable once TAB and
+# VelocityScoreboardAPI versions are aligned again.
+call_scoreboard_events: false
 # Whether to log invalid packets received from downstream servers
 print_invalid_downstream_packet_warnings: true

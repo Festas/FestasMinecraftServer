@@ -1,3 +1,14 @@
+# Animierter Marken-Titel (sanfter Farbverlauf-Shimmer) fuer Header & Scoreboard-Titel.
+# Nutzt TABs natives Gradient-Format <#start>Text</#end> (funktioniert mit &-Codes zusammen).
+brand:
+  change-interval: 300
+  texts:
+    - '<#22D3EE>✦ Festas Builds ✦</#A78BFA>'
+    - '<#38BDF8>✦ Festas Builds ✦</#C084FC>'
+    - '<#60A5FA>✦ Festas Builds ✦</#E879F9>'
+    - '<#818CF8>✦ Festas Builds ✦</#F0ABFC>'
+    - '<#60A5FA>✦ Festas Builds ✦</#E879F9>'
+    - '<#38BDF8>✦ Festas Builds ✦</#C084FC>'
 MyAnimation1:
   change-interval: 100
   texts:
