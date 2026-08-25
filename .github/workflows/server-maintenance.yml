@@ -169,6 +169,7 @@ jobs:
       - name: Commit report to repository
         env:
           PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+          MAX_HEALTH_SNAPSHOTS: '7'
         run: |
           set -euo pipefail
           echo "::add-mask::$PERSONAL_TOKEN"
@@ -178,8 +179,10 @@ jobs:
           cp report-artifacts/report.json server-logs/health/latest.json
 
           # Nur geplante Läufe legen einen Zeitstempel-Snapshot in der History an
-          # und begrenzen den Bestand auf max. 7 (analog zu den Server-Logs).
+          # und begrenzen den Bestand auf max. MAX_HEALTH_SNAPSHOTS (analog zu den
+          # Server-Logs). Namen sortieren lexikografisch = chronologisch (UTC-TS).
           if [ "${GITHUB_EVENT_NAME}" = "schedule" ]; then
+            max="${MAX_HEALTH_SNAPSHOTS:-7}"
             ts="$(date -u +%Y%m%dT%H%M%SZ)"
             mkdir -p server-logs/health/history
             cp report-artifacts/report.json "server-logs/health/history/${ts}.json"
@@ -189,8 +192,8 @@ jobs:
               snapshots+=("$name")
             done < <(find server-logs/health/history -maxdepth 1 -type f -name '*T*Z.json' -printf '%f\n' | sort)
             count=${#snapshots[@]}
-            if [ "$count" -gt 7 ]; then
-              remove=$(( count - 7 ))
+            if [ "$count" -gt "$max" ]; then
+              remove=$(( count - max ))
               for (( i=0; i<remove; i++ )); do
                 rm -f "server-logs/health/history/${snapshots[$i]}"
                 echo "🧹 Alter Health-Snapshot entfernt: ${snapshots[$i]}"
