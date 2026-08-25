@@ -234,9 +234,15 @@ jobs:
               "$LOCAL_DIR/"
           else
             echo "📤 Kopiere vom Repository zum Server..."
-            
+
             # Rsync: Repo → Server
-            rsync -avz --delete \
+            # WICHTIG: KEIN --delete! Es werden ausschließlich die Dateien
+            # hochgeladen/überschrieben, die im Repo existieren. Dateien, die nur
+            # auf dem Server liegen (z.B. Runtime-Daten oder nicht getrackte
+            # Plugin-Configs), bleiben unangetastet – der Plugin-Ordner wird
+            # niemals komplett ersetzt. Das Repo enthält nur Config-Dateien
+            # (JARs, Welten, DBs, playerdata etc. sind per .gitignore ausgeschlossen).
+            rsync -avz \
               --exclude='*.jar' \
               --exclude='*.jar.disabled' \
               --exclude='/server.properties' \

@@ -34,51 +34,10 @@ jobs:
           chmod 600 ~/.ssh/deploy_key
           ssh-keyscan -H "$SSH_HOST" >> ~/.ssh/known_hosts
 
-      - name: Inject Skyblock DB credentials
-        env:
-          SKYBLOCK_DB_ENV: ${{ secrets.SKYBLOCK_DB_ENV }}
-        run: |
-          if [ -z "$SKYBLOCK_DB_ENV" ]; then
-            echo "::error::Missing secret SKYBLOCK_DB_ENV"
-            exit 1
-          fi
-
-          set -a
-          . <(printf '%s\n' "$SKYBLOCK_DB_ENV")
-          set +a
-
-          for required in SKYBLOCK_DB_USER SKYBLOCK_DB_PASSWORD; do
-            if [ -z "${!required:-}" ]; then
-              echo "::error::Missing $required in SKYBLOCK_DB_ENV"
-              exit 1
-            fi
-          done
-
-          python3 - <<'PY'
-          from pathlib import Path
-          import os
-
-          targets = [
-              "skyblock/plugins/SuperiorSkyblock2/config.yml",
-              "skyblock/plugins/SuperiorSkyblock2/database-migration.yml",
-              "skyblock/plugins/SuperiorSkyblock2/modules/SlimeWorldIslands/config.yml",
-              "skyblock/plugins/SlimeWorldManager/sources.yml",
-          ]
-          for t in targets:
-              path = Path(t)
-              if not path.exists():
-                  print(f"Skipping missing file: {t}")
-                  continue
-              text = path.read_text()
-              original = text
-              for key in ("USER", "PASSWORD"):
-                  text = text.replace(f"__SKYBLOCK_DB_{key}__", os.environ[f"SKYBLOCK_DB_{key}"])
-              if text != original:
-                  path.write_text(text)
-                  print(f"Injected Skyblock DB credentials into: {t}")
-              else:
-                  print(f"No Skyblock DB placeholders in: {t}")
-          PY
+      # Skyblock läuft nur auf einem Server, daher werden alle skyblock-spezifischen
+      # Daten lokal gespeichert (SuperiorSkyblock2: SQLite, SlimeWorldManager: file).
+      # Es gibt keine __SKYBLOCK_DB_*__-Platzhalter und kein SKYBLOCK_DB_ENV-Secret.
+      # LuckPerms bleibt netzwerkweit und nutzt weiterhin eine gemeinsame DB (unten).
 
       - name: Inject LuckPerms DB credentials
         env:

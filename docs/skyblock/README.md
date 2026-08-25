@@ -120,12 +120,19 @@ Dokumentation für den überarbeiteten Skyblock-Server — **ohne Gilden**, mit 
 
 ## Datenbank-Konfiguration
 
-- **MySQL/MariaDB:** `172.25.0.1:3306`
-  - `s4_skyblock` - SuperiorSkyblock2-Daten
-  - `s4_cmi` - CMI-Daten
-  - `s4_mmocore` - MMOCore/RPG-Daten (geteilt mit RPG)
-  - `s4_superior_islands` - SlimeWorld Island-Daten
-- **Redis:** `172.18.0.1:6380` (Cache für HuskSync)
+Skyblock läuft nur auf **einem** Server. Alle skyblock-spezifischen Daten werden
+daher **lokal** gespeichert – ein externer MySQL/MariaDB-Zugang (bzw. ein
+`SKYBLOCK_DB_ENV`-Secret) ist dafür nicht nötig:
+
+- **SuperiorSkyblock2:** SQLite (`config.yml` → `database.type: SQLite`) – Insel- & Spielerdaten
+- **SlimeWorldManager:** Datei-Storage (`sources.yml` → `file`) – Insel-Welten
+- **Plan:** SQLite (`config.yml` → `Database.Type: SQLite`) – Analytics
+- **CMI:** lokaler Storage
+
+Netzwerkweite Dienste bleiben zentral (serverübergreifend geteilt):
+
+- **LuckPerms:** gemeinsame MySQL/MariaDB (`LUCKPERMS_DB_ENV`) + Redis-Messaging
+- **Redis:** `172.18.0.1:6380` (Cache/Sync für HuskSync & LuckPerms)
 
 ---
 
@@ -140,6 +147,6 @@ Dokumentation für den überarbeiteten Skyblock-Server — **ohne Gilden**, mit 
 
 ---
 
-**Letzte Aktualisierung:** 2026-08-16
+**Letzte Aktualisierung:** 2026-08-25
 
 **Status:** 🟢 Umbau — ohne Gilden, mit Freunde-Koop
