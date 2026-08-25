@@ -118,37 +118,39 @@ jobs:
                   data[key] = value
               return data
 
+          def yaml_dq(value):
+              # Escape for the double-quoted YAML scalar: Password: "__...__".
+              return value.replace("\\", "\\\\").replace('"', '\\"')
+
+          # Skyblock's Plan uses SQLite, so its config.yml carries no
+          # __PLAN_DB_*__ placeholders and needs no MySQL credentials. Skip
+          # without requiring the PLAN_DB_ENV secret unless placeholders are
+          # ever added to the config; only then validate and inject them.
+          keys = ("HOST", "PORT", "DATABASE", "USER", "PASSWORD")
+          path = Path("skyblock/plugins/Plan/config.yml")
+          text = path.read_text()
+          if not any(f"__PLAN_DB_{key}__" in text for key in keys):
+              print("No Plan DB placeholders in: skyblock/plugins/Plan/config.yml")
+              sys.exit(0)
+
           raw = os.environ.get("PLAN_DB_ENV", "")
           if not raw.strip():
               print("::error::Missing secret PLAN_DB_ENV")
               sys.exit(1)
 
           data = parse_env(raw)
-          keys = ("HOST", "PORT", "DATABASE", "USER", "PASSWORD")
           missing = [f"PLAN_DB_{key}" for key in keys if not data.get(f"PLAN_DB_{key}")]
           if missing:
               print(f"::error::Missing {', '.join(missing)} in PLAN_DB_ENV")
               sys.exit(1)
 
-          def yaml_dq(value):
-              # Escape for the double-quoted YAML scalar: Password: "__...__".
-              return value.replace("\\", "\\\\").replace('"', '\\"')
-
-          # Skyblock's Plan uses SQLite and has no __PLAN_DB_*__ placeholders, so
-          # this stays a no-op unless placeholders are ever added.
-          path = Path("skyblock/plugins/Plan/config.yml")
-          text = path.read_text()
-          original = text
           for key in keys:
               value = data[f"PLAN_DB_{key}"]
               if key == "PASSWORD":
                   value = yaml_dq(value)
               text = text.replace(f"__PLAN_DB_{key}__", value)
-          if text != original:
-              path.write_text(text)
-              print("Injected Plan DB credentials into: skyblock/plugins/Plan/config.yml")
-          else:
-              print("No Plan DB placeholders in: skyblock/plugins/Plan/config.yml")
+          path.write_text(text)
+          print("Injected Plan DB credentials into: skyblock/plugins/Plan/config.yml")
           PY
 
       - name: Get Changed Files

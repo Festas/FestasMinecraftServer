@@ -25,11 +25,6 @@ jobs:
         run: |
           set -euo pipefail
 
-          if [ -z "${PLAN_RO_DB_ENV:-}" ]; then
-            echo "::error::Missing secret PLAN_RO_DB_ENV (read-only s4_plan credentials)"
-            exit 1
-          fi
-
           # Validate the required keys without printing their values. Parse in
           # Python (not via shell sourcing) so values containing $, backticks, \,
           # quotes or spaces are not misread as empty/invalid. The credential is
@@ -53,7 +48,12 @@ jobs:
                   data[key] = value
               return data
 
-          data = parse_env(os.environ.get("PLAN_RO_DB_ENV", ""))
+          raw = os.environ.get("PLAN_RO_DB_ENV", "")
+          if not raw.strip():
+              print("::error::Missing secret PLAN_RO_DB_ENV (read-only s4_plan credentials)")
+              sys.exit(1)
+
+          data = parse_env(raw)
           missing = [k for k in ("PLAN_RO_DB_USER", "PLAN_RO_DB_PASSWORD") if not data.get(k)]
           if missing:
               print(f"::error::Missing {', '.join(missing)} in PLAN_RO_DB_ENV")
