@@ -166,11 +166,15 @@ und haben sinnvolle Defaults. Details siehe
 
 ## Datenbank & Plugin-Konfigurationen (Multi-Variable Secrets)
 
-Diese Secrets enthalten **mehrere Schlüssel-Wert-Paare** im Shell-`key=value`-Format (ein Eintrag pro Zeile, wie eine `.env`-Datei). Sie werden beim Deployment in die jeweiligen Plugin-Configs injiziert.
+Diese Secrets enthalten **mehrere Schlüssel-Wert-Paare** im `.env`-Format (ein `KEY=VALUE` pro Zeile). Sie werden beim Deployment in die jeweiligen Plugin-Configs injiziert. Umschließende `'` oder `"` um einen Wert sind optional und werden entfernt.
 
-> **Hinweis zu Sonderzeichen:** Injizierte Passwörter landen in YAML-Feldern mit
-> **einfachen Anführungszeichen**. Verwende daher **kein** `'` (Apostroph) im
-> Passwort, sonst wird die Config ungültig. Andere Sonderzeichen sind in Ordnung.
+> **Hinweis zu Sonderzeichen:**
+> - **`PLAN_DB_ENV` / `PLAN_RO_DB_ENV`:** Die Werte werden beim Deployment
+>   **wörtlich** übernommen (kein Shell-Parsing). Beliebige Sonderzeichen im
+>   Passwort sind erlaubt – auch `$`, `` ` ``, `\`, `"` und `'`.
+> - **Übrige Secrets** (LuckPerms, Redis, Dashboards): Vermeide im Passwort
+>   `'` (Apostroph) sowie `$`, `` ` `` und `\`, da diese Werte weiterhin über die
+>   Shell eingelesen bzw. in einfache YAML-Anführungszeichen gesetzt werden.
 
 ---
 

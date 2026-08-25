@@ -99,15 +99,20 @@ Die Plan-Zugangsdaten werden nicht mehr im Repository gespeichert. Stattdessen
 werden sie während des Deployments aus dem GitHub-Secret
 `PLAN_DB_ENV` in die Plan-Konfigurationen injiziert.
 
-Format des Secrets (für die neue Plan-Datenbank `s4_plan`):
+Format des Secrets (`.env`, ein `KEY=VALUE` pro Zeile; für die neue
+Plan-Datenbank `s4_plan`):
 
-```bash
-PLAN_DB_HOST='172.25.0.1'
-PLAN_DB_PORT='3306'
-PLAN_DB_DATABASE='s4_plan'
-PLAN_DB_USER='CHANGE_ME'
-PLAN_DB_PASSWORD='CHANGE_ME'
+```env
+PLAN_DB_HOST=172.25.0.1
+PLAN_DB_PORT=3306
+PLAN_DB_DATABASE=s4_plan
+PLAN_DB_USER=CHANGE_ME
+PLAN_DB_PASSWORD=CHANGE_ME
 ```
+
+Die Werte werden beim Deployment **wörtlich** injiziert; umschließende `'`/`"`
+sind optional und werden entfernt. Sonderzeichen im Passwort (z. B. `$`,
+`` ` ``, `\`, `"`) sind erlaubt und müssen **nicht** escaped werden.
 
 > **Read-only-Zugang für die Website:** Der Exporter
 > [`tools/plan-players-export`](../../tools/plan-players-export/README.md) liest die

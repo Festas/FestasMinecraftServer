@@ -25,22 +25,40 @@ jobs:
         run: |
           set -euo pipefail
 
-          if [ -z "${PLAN_RO_DB_ENV:-}" ]; then
-            echo "::error::Missing secret PLAN_RO_DB_ENV (read-only s4_plan credentials)"
-            exit 1
-          fi
+          # Validate the required keys without printing their values. Parse in
+          # Python (not via shell sourcing) so values containing $, backticks, \,
+          # quotes or spaces are not misread as empty/invalid. The credential is
+          # delivered verbatim to the env file below and consumed at runtime via
+          # systemd EnvironmentFile, which does not perform shell expansion.
+          python3 - <<'PY'
+          import os
+          import sys
 
-          # Validate the required keys without printing their values.
-          set -a
-          # shellcheck disable=SC1090
-          . <(printf '%s\n' "$PLAN_RO_DB_ENV")
-          set +a
-          for required in PLAN_RO_DB_USER PLAN_RO_DB_PASSWORD; do
-            if [ -z "${!required:-}" ]; then
-              echo "::error::Missing $required in PLAN_RO_DB_ENV"
-              exit 1
-            fi
-          done
+          def parse_env(raw):
+              data = {}
+              for line in raw.splitlines():
+                  line = line.strip()
+                  if not line or line.startswith("#") or "=" not in line:
+                      continue
+                  key, _, value = line.partition("=")
+                  key = key.strip()
+                  value = value.strip()
+                  if len(value) >= 2 and value[0] == value[-1] and value[0] in "\"'":
+                      value = value[1:-1]
+                  data[key] = value
+              return data
+
+          raw = os.environ.get("PLAN_RO_DB_ENV", "")
+          if not raw.strip():
+              print("::error::Missing secret PLAN_RO_DB_ENV (read-only s4_plan credentials)")
+              sys.exit(1)
+
+          data = parse_env(raw)
+          missing = [k for k in ("PLAN_RO_DB_USER", "PLAN_RO_DB_PASSWORD") if not data.get(k)]
+          if missing:
+              print(f"::error::Missing {', '.join(missing)} in PLAN_RO_DB_ENV")
+              sys.exit(1)
+          PY
 
           umask 077
           mkdir -p staging

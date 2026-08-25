@@ -93,36 +93,64 @@ jobs:
         env:
           PLAN_DB_ENV: ${{ secrets.PLAN_DB_ENV }}
         run: |
-          if [ -z "$PLAN_DB_ENV" ]; then
-            echo "::error::Missing secret PLAN_DB_ENV"
-            exit 1
-          fi
-
-          set -a
-          . <(printf '%s\n' "$PLAN_DB_ENV")
-          set +a
-
-          for required in PLAN_DB_HOST PLAN_DB_PORT PLAN_DB_DATABASE PLAN_DB_USER PLAN_DB_PASSWORD; do
-            if [ -z "${!required:-}" ]; then
-              echo "::error::Missing $required in PLAN_DB_ENV"
-              exit 1
-            fi
-          done
-
           python3 - <<'PY'
-          from pathlib import Path
           import os
+          import sys
+          from pathlib import Path
 
+          # Parse the .env-style secret in Python instead of sourcing it in the
+          # shell. "set -a; . <(...)" makes bash interpret $, backticks, \, quotes
+          # and spaces in the values, which silently corrupts any password that
+          # contains them and breaks the Plan MySQL login ("Access denied"). Here
+          # the values are read verbatim; a single layer of surrounding single or
+          # double quotes is stripped so both documented secret formats work.
+          def parse_env(raw):
+              data = {}
+              for line in raw.splitlines():
+                  line = line.strip()
+                  if not line or line.startswith("#") or "=" not in line:
+                      continue
+                  key, _, value = line.partition("=")
+                  key = key.strip()
+                  value = value.strip()
+                  if len(value) >= 2 and value[0] == value[-1] and value[0] in "\"'":
+                      value = value[1:-1]
+                  data[key] = value
+              return data
+
+          def yaml_dq(value):
+              # Escape for the double-quoted YAML scalar: Password: "__...__".
+              return value.replace("\\", "\\\\").replace('"', '\\"')
+
+          # Skyblock's Plan uses SQLite, so its config.yml carries no
+          # __PLAN_DB_*__ placeholders and needs no MySQL credentials. Skip
+          # without requiring the PLAN_DB_ENV secret unless placeholders are
+          # ever added to the config; only then validate and inject them.
+          keys = ("HOST", "PORT", "DATABASE", "USER", "PASSWORD")
           path = Path("skyblock/plugins/Plan/config.yml")
           text = path.read_text()
-          original = text
-          for key in ("HOST", "PORT", "DATABASE", "USER", "PASSWORD"):
-              text = text.replace(f"__PLAN_DB_{key}__", os.environ[f"PLAN_DB_{key}"])
-          if text != original:
-              path.write_text(text)
-              print("Injected Plan DB credentials into: skyblock/plugins/Plan/config.yml")
-          else:
+          if not any(f"__PLAN_DB_{key}__" in text for key in keys):
               print("No Plan DB placeholders in: skyblock/plugins/Plan/config.yml")
+              sys.exit(0)
+
+          raw = os.environ.get("PLAN_DB_ENV", "")
+          if not raw.strip():
+              print("::error::Missing secret PLAN_DB_ENV")
+              sys.exit(1)
+
+          data = parse_env(raw)
+          missing = [f"PLAN_DB_{key}" for key in keys if not data.get(f"PLAN_DB_{key}")]
+          if missing:
+              print(f"::error::Missing {', '.join(missing)} in PLAN_DB_ENV")
+              sys.exit(1)
+
+          for key in keys:
+              value = data[f"PLAN_DB_{key}"]
+              if key == "PASSWORD":
+                  value = yaml_dq(value)
+              text = text.replace(f"__PLAN_DB_{key}__", value)
+          path.write_text(text)
+          print("Injected Plan DB credentials into: skyblock/plugins/Plan/config.yml")
           PY
 
       - name: Get Changed Files
