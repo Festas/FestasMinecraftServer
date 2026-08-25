@@ -173,15 +173,35 @@ jobs:
           set -euo pipefail
           echo "::add-mask::$PERSONAL_TOKEN"
 
-          ts="$(date -u +%Y%m%dT%H%M%SZ)"
-          mkdir -p server-logs/health/history
+          # latest.md/latest.json behalten ihren Namen und werden immer ersetzt.
           cp report-artifacts/report.md server-logs/health/latest.md
           cp report-artifacts/report.json server-logs/health/latest.json
-          cp report-artifacts/report.json "server-logs/health/history/${ts}.json"
+
+          # Nur geplante Läufe legen einen Zeitstempel-Snapshot in der History an
+          # und begrenzen den Bestand auf max. 7 (analog zu den Server-Logs).
+          if [ "${GITHUB_EVENT_NAME}" = "schedule" ]; then
+            ts="$(date -u +%Y%m%dT%H%M%SZ)"
+            mkdir -p server-logs/health/history
+            cp report-artifacts/report.json "server-logs/health/history/${ts}.json"
+
+            snapshots=()
+            while IFS= read -r name; do
+              snapshots+=("$name")
+            done < <(find server-logs/health/history -maxdepth 1 -type f -name '*T*Z.json' -printf '%f\n' | sort)
+            count=${#snapshots[@]}
+            if [ "$count" -gt 7 ]; then
+              remove=$(( count - 7 ))
+              for (( i=0; i<remove; i++ )); do
+                rm -f "server-logs/health/history/${snapshots[$i]}"
+                echo "🧹 Alter Health-Snapshot entfernt: ${snapshots[$i]}"
+              done
+            fi
+          fi
 
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add server-logs/health
+          # -A erfasst auch entfernte (rotierte) History-Snapshots.
+          git add -A server-logs/health
 
           if git diff --staged --quiet; then
             echo "Keine Bericht-Änderungen."
