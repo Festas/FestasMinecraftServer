@@ -1,0 +1,16 @@
+[Unit]
+Description=Periodically export the player leaderboard into leaderboard.json
+Documentation=https://github.com/Festas/FestasMinecraftServer/blob/main/tools/leaderboard-export/README.md
+
+[Timer]
+# First run shortly after boot, then every 5 minutes. A leaderboard changes slowly
+# (cumulative playtime + ranks), so it does not need the 45s freshness of the live
+# player counter. The frontend marks data as "possibly outdated" only after 30 min.
+OnBootSec=45s
+OnUnitActiveSec=5min
+AccuracySec=30s
+# Catch up once if the machine was asleep/off when a run was due.
+Persistent=true
+
+[Install]
+WantedBy=timers.target

@@ -198,11 +198,14 @@ PLAN_DB_PASSWORD=geheimesPasswort
 **Read-only** Datenbankverbindung für den Website-Exporter
 [`tools/plan-players-export`](tools/plan-players-export/README.md), der aus der
 Plan-Datenbank (`s4_plan`) die `players.json` mit Live-Spielerzahlen füllt.  
-Wird im Workflow `deploy-plan-players-export` verwendet.
+Wird in den Workflows `deploy-plan-players-export` **und**
+`deploy-leaderboard-export` verwendet (Letzterer liest daraus die Spielzeiten für
+die [Bestenliste](tools/leaderboard-export/README.md)).
 
-> **Least Privilege:** Ein **dedizierter Benutzer mit nur `SELECT`** auf `s4_plan`
-> (idealerweise nur `plan_servers` und `plan_tps`). **Nicht** den Plan-RW-User
-> (`PLAN_DB_ENV`) wiederverwenden.
+> **Least Privilege:** Ein **dedizierter Benutzer mit nur `SELECT`** auf `s4_plan`.
+> Für den Player-Counter genügen `plan_servers` und `plan_tps`; die Bestenliste
+> braucht **zusätzlich** `SELECT` auf `plan_sessions` und `plan_users`. **Nicht**
+> den Plan-RW-User (`PLAN_DB_ENV`) wiederverwenden.
 
 **Format:** Mehrzeilige `.env`-Datei  
 **Pflichtfelder:**
@@ -216,6 +219,35 @@ PLAN_RO_DB_HOST=172.25.0.1
 PLAN_RO_DB_PORT=3306
 PLAN_RO_DB_DATABASE=s4_plan
 PLAN_RO_DB_SSL=true
+```
+
+---
+
+### `LUCKPERMS_RO_DB_ENV`
+**Read-only** Datenbankverbindung für den Bestenlisten-Exporter
+[`tools/leaderboard-export`](tools/leaderboard-export/README.md), der aus der
+LuckPerms-Datenbank (`s4_perms`) den **höchsten Rang** je Spieler ermittelt (per
+Gruppen-`weight`) und zusammen mit der Spielzeit aus `PLAN_RO_DB_ENV` die
+`leaderboard.json` schreibt.  
+Wird im Workflow `deploy-leaderboard-export` verwendet.
+
+> **Least Privilege:** Ein **eigener, dedizierter Benutzer mit nur `SELECT`** auf
+> `s4_perms` (die Tabellen `luckperms_user_permissions`,
+> `luckperms_group_permissions`, `luckperms_players`). **Nicht** den
+> LuckPerms-RW-User (`LUCKPERMS_DB_ENV`) wiederverwenden.
+
+**Format:** Mehrzeilige `.env`-Datei  
+**Pflichtfelder:**
+```env
+LUCKPERMS_RO_DB_USER=luckperms_ro
+LUCKPERMS_RO_DB_PASSWORD=geheimesPasswort
+```
+**Optionale Felder** (Defaults kommen aus `tools/leaderboard-export/config.json`):
+```env
+LUCKPERMS_RO_DB_HOST=172.25.0.1
+LUCKPERMS_RO_DB_PORT=3306
+LUCKPERMS_RO_DB_DATABASE=s4_perms
+LUCKPERMS_RO_DB_SSL=true
 ```
 
 ---
@@ -345,7 +377,8 @@ werden – niemals einen echten Wert direkt committen.
 | `PTERODACTYL_URL` | Plain Text (URL) | server-maintenance (nur Reboot-Teil) |
 | `PTERODACTYL_API_KEY` | Client-API-Key (`ptlc_…`) | server-maintenance (nur Reboot-Teil) |
 | `PLAN_DB_ENV` | `.env`-Format (mehrzeilig) | Alle Server-Deploy-Workflows |
-| `PLAN_RO_DB_ENV` | `.env`-Format (mehrzeilig) | deploy-plan-players-export |
+| `PLAN_RO_DB_ENV` | `.env`-Format (mehrzeilig) | deploy-plan-players-export, deploy-leaderboard-export |
+| `LUCKPERMS_RO_DB_ENV` | `.env`-Format (mehrzeilig) | deploy-leaderboard-export |
 | `LUCKPERMS_DB_ENV` | `.env`-Format (mehrzeilig) | deploy-lobby, deploy-rpg, deploy-survival, deploy-skyblock |
 | `REDIS_PASSWORD` | Plain Text | deploy-lobby, deploy-rpg, deploy-survival, deploy-skyblock, deploy-redis |
 | `XPRISON_DASHBOARD_ENV` | `.env`-Format (mehrzeilig) | deploy-rpg |

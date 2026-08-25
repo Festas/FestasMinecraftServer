@@ -1,0 +1,9 @@
+# leaderboard-export runtime dependency.
+# PyMySQL is a pure-Python MySQL/MariaDB driver (no compiler / system libs needed).
+#
+# Floor is 1.2.0 on purpose: from 1.2.0 PyMySQL negotiates TLS in "PREFERRED" mode
+# when no explicit ssl_* options are given (encrypt if the server offers it). In
+# 1.0.x / 1.1.x that same call sends plaintext, which would silently defeat the
+# useSSL:true intent when no CA file is configured. See connect() in
+# leaderboard_export.py.
+PyMySQL>=1.2.0,<2.0

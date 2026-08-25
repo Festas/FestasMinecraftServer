@@ -1021,6 +1021,106 @@ img { max-width: 100%; display: block; }
     margin-top: 1.25rem;
 }
 
+/* ── Player Leaderboard ── */
+.leaderboard-panel {
+    max-width: 760px;
+    margin: 0 auto;
+}
+.leaderboard-summary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 1.75rem;
+}
+.leaderboard-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.7rem;
+    counter-reset: leaderboard;
+}
+.leaderboard-row {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.85rem 1.1rem;
+    transition: all var(--transition);
+}
+.leaderboard-row:hover {
+    border-color: var(--border-accent);
+    box-shadow: var(--shadow-sm);
+}
+.leaderboard-row-top { border-color: var(--border-accent); }
+.leaderboard-row-1 {
+    border-color: var(--gold);
+    background: linear-gradient(90deg, rgba(255, 170, 0, 0.12), var(--bg-card) 60%);
+}
+.leaderboard-rank {
+    flex: 0 0 auto;
+    min-width: 2.6rem;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--text-secondary);
+    letter-spacing: -0.01em;
+}
+.leaderboard-row-top .leaderboard-rank { font-size: 1.35rem; }
+.leaderboard-name {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+    word-break: break-word;
+}
+.leaderboard-rank-badge {
+    flex: 0 0 auto;
+    padding: 0.18rem 0.7rem;
+    background: var(--accent-dim);
+    border: 1px solid var(--border-accent);
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--accent);
+    white-space: nowrap;
+}
+.leaderboard-playtime {
+    flex: 0 0 auto;
+    min-width: 5.5rem;
+    text-align: right;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    font-variant-numeric: tabular-nums;
+}
+.leaderboard-empty {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin: 0;
+    text-align: center;
+}
+.leaderboard-updated {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 1.25rem;
+}
+@media (max-width: 520px) {
+    .leaderboard-row { flex-wrap: wrap; gap: 0.5rem 0.75rem; }
+    .leaderboard-name { flex: 1 1 60%; }
+    .leaderboard-playtime { min-width: 0; margin-left: auto; }
+    .leaderboard-rank-badge { order: 3; }
+}
+
 /* ── Footer ── */
 .site-footer {
     background: var(--bg-section-alt);

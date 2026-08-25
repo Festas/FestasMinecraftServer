@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initCopyButton();
     initServerStatus();
     initPlayerList();
+    initLeaderboard();
     initNavigationAndScroll();
     initWikiSidebar();
     initSmoothScroll();
@@ -559,6 +560,138 @@ function initPlayerList() {
         note.className = 'player-empty';
         note.textContent = 'Spielerdaten konnten nicht geladen werden. Bitte später erneut versuchen.';
         grid.appendChild(note);
+        if (updated) updated.hidden = true;
+    }
+
+    async function refresh() {
+        try {
+            const res = await fetch(API, { cache: 'no-store' });
+            if (!res.ok) throw new Error('HTTP ' + res.status);
+            const data = await res.json();
+            render(data);
+        } catch {
+            renderUnavailable();
+        }
+    }
+
+    refresh();
+    setInterval(refresh, REFRESH_MS);
+}
+
+/* ── Player Leaderboard ─────────────────────── */
+function initLeaderboard() {
+    const list = document.getElementById('leaderboardList');
+    const summary = document.getElementById('leaderboardSummary');
+    const dot = document.getElementById('leaderboardStatusDot');
+    const updated = document.getElementById('leaderboardUpdated');
+    if (!list || !summary) return;
+
+    const cfg = window.MC_CONFIG || {};
+    const API = cfg.leaderboardAPI || '/api/leaderboard.json';
+    const REFRESH_MS = 300000;   // 5 min – matches the leaderboard-export timer cadence
+    const STALE_AFTER_S = 1800;  // 30 min – flag clearly outdated data
+    const MEDALS = { 1: '🥇', 2: '🥈', 3: '🥉' };
+
+    function clear(el) {
+        while (el.firstChild) el.removeChild(el.firstChild);
+    }
+
+    function setState(state) {
+        if (dot) dot.className = 'status-indicator' + (state ? ' ' + state : '');
+    }
+
+    function normalizePlayers(value) {
+        return Array.isArray(value) ? value.filter((entry) => entry && typeof entry === 'object') : [];
+    }
+
+    function groupLabel(player) {
+        const display = typeof player.groupDisplay === 'string' ? player.groupDisplay.trim() : '';
+        if (display) return display;
+        const group = typeof player.group === 'string' ? player.group.trim() : '';
+        return group;
+    }
+
+    function buildRow(player, position) {
+        const rankNumber = Number(player.rank);
+        const rank = Number.isFinite(rankNumber) && rankNumber > 0 ? Math.floor(rankNumber) : position;
+        const label = groupLabel(player);
+
+        const item = document.createElement('li');
+        item.className = 'leaderboard-row';
+        if (rank <= 3) item.classList.add('leaderboard-row-top', 'leaderboard-row-' + rank);
+
+        const rankEl = document.createElement('span');
+        rankEl.className = 'leaderboard-rank';
+        rankEl.textContent = MEDALS[rank] || ('#' + rank);
+        item.appendChild(rankEl);
+
+        const nameEl = document.createElement('span');
+        nameEl.className = 'leaderboard-name';
+        // textContent keeps user-controlled player names inert (no HTML injection).
+        nameEl.textContent = String(player.name || 'Unbekannt');
+        item.appendChild(nameEl);
+
+        if (label) {
+            const groupEl = document.createElement('span');
+            groupEl.className = 'leaderboard-rank-badge';
+            // textContent keeps user-controlled rank names inert (no HTML injection).
+            groupEl.textContent = label;
+            item.appendChild(groupEl);
+        }
+
+        const timeEl = document.createElement('span');
+        timeEl.className = 'leaderboard-playtime';
+        timeEl.textContent = formatDuration(player.playtimeSeconds);
+        item.appendChild(timeEl);
+
+        return item;
+    }
+
+    function render(data) {
+        const snapshot = data && typeof data === 'object' ? data : {};
+        const players = normalizePlayers(snapshot.players);
+
+        clear(list);
+
+        if (!players.length) {
+            setState('offline');
+            summary.textContent = 'Noch keine Spielzeiten erfasst';
+            const note = document.createElement('li');
+            note.className = 'leaderboard-empty';
+            note.textContent = 'Sobald Spielzeiten vorliegen, erscheinen hier die aktivsten Spieler.';
+            list.appendChild(note);
+            if (updated) updated.hidden = true;
+            return;
+        }
+
+        setState('online');
+        summary.textContent = players.length === 1
+            ? 'Top 1 nach Spielzeit'
+            : 'Top ' + players.length + ' nach Spielzeit';
+
+        players.forEach((player, index) => list.appendChild(buildRow(player, index + 1)));
+
+        if (updated) {
+            const ts = toPositiveNumberOrZero(snapshot.updated);
+            const ageS = ts > 0 ? Math.floor(Date.now() / 1000) - ts : 0;
+            if (ts > 0 && ageS > STALE_AFTER_S) {
+                updated.hidden = false;
+                updated.textContent = 'Daten möglicherweise veraltet';
+                setState('');
+            } else {
+                updated.hidden = true;
+            }
+        }
+    }
+
+    function renderUnavailable() {
+        clear(list);
+        setState('offline');
+        summary.textContent = 'Bestenliste momentan nicht verfügbar';
+        const note = document.createElement('li');
+        note.className = 'leaderboard-empty';
+        note.textContent = 'Bestenliste konnte nicht geladen werden. Bitte später erneut versuchen.';
+        list.appendChild(note);
         if (updated) updated.hidden = true;
     }
 

@@ -86,6 +86,7 @@ Quelle: [Plan-Wiki „If behind a Proxy"](https://github.com/plan-player-analyti
 | Plan Infra-Doku | `docs/infrastructure/PLAN.md` |
 | Plugin-Übersicht | `docs/PLUGINS.md` |
 | Plan-DB → `players.json` Exporter | `tools/plan-players-export/` |
+| DB → `leaderboard.json` Exporter | `tools/leaderboard-export/` |
 
 ---
 
@@ -220,3 +221,40 @@ Die Website (`https://mc.festas-builds.com`, Abschnitt „Wer ist online?") läd
 ≤ ~2 min („Maximum je Minute"). Für Namen/Welten/Echtzeit ist ein
 **Velocity-Proxy-Writer** die überlegene Quelle – dank identischem JSON-Vertrag
 ohne Frontend-Änderung nachrüst- oder kombinierbar.
+
+---
+
+## Plan- + LuckPerms-DB als `leaderboard.json`-Quelle (Bestenliste)
+
+Die Website (Abschnitt „Bestenliste") lädt `/api/leaderboard.json` und zeigt die
+**Top-N Spieler nach Spielzeit** mit ihrem **höchsten LuckPerms-Rang**. Die Datei
+wird vom Exporter
+[`tools/leaderboard-export/`](../../tools/leaderboard-export/README.md) aus **zwei**
+Datenbanken befüllt – wieder **ohne** zusätzliches Plugin, nach demselben Muster wie
+`plan-players-export`.
+
+**Kernpunkte:**
+
+- **Spielzeit:** Summe der **beendeten** Sessions je Spieler aus `s4_plan`
+  (`SUM(plan_sessions.session_end − session_start)`, gejoint auf `plan_users` für den
+  Namen). Netzwerkweit über alle Server.
+- **Höchster Rang:** aus `s4_perms` – aus den Gruppen des Spielers
+  (`luckperms_user_permissions`, `permission = 'group.<name>'`) die Gruppe mit dem
+  höchsten **`weight`** (Gewichte/Anzeigenamen aus `luckperms_group_permissions`);
+  `luckperms_players.primary_group` als Fallback.
+- **Join-Schlüssel:** die Spieler-**UUID** (in beiden DBs vorhanden), robust gegen
+  Bindestrich-/Groß-/Kleinschreibung normalisiert.
+- **Sicherheit:** derselbe Read-only-User wie oben (`PLAN_RO_DB_ENV`, braucht
+  **zusätzlich** `SELECT` auf `plan_sessions` + `plan_users`) **plus** ein
+  **eigener** Read-only-User für `s4_perms` (`SELECT` auf `luckperms_*`), Secret
+  `LUCKPERMS_RO_DB_ENV` (siehe `SECRETS.md`). Beide fail-closed: DB-Fehler ⇒ **kein**
+  Schreiben.
+- **Betrieb:** systemd-Timer (alle 5 min) schreibt atomar nach
+  `/home/deploy/minecraft-website/data/leaderboard.json`; Rollout über
+  `.github/workflows/deploy-leaderboard-export.yml`. Nginx liefert die Datei
+  same-origin unter `/api/leaderboard.json` (Fallback: leeres `{"players":[]}`).
+
+**Grenzen:** Wie beim Player-Counter zählt die **laufende** Session erst nach ihrem
+Ende (Plan hält aktive Sessions nur im RAM). Namen werden hier **bewusst** gezeigt
+(Kern des Features); optionale Ausschlussliste + `min_weight`-Filter in
+`config.json`. Skyblock nutzt lokales SQLite und ist in `s4_plan` **nicht** enthalten.

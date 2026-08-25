@@ -26,6 +26,10 @@ window.MC_CONFIG = {
 
     // Live player list written by the proxy/plugin and served same-origin
     playersAPI: '/api/players.json',
+
+    // Player leaderboard (playtime + highest LuckPerms rank), written by the
+    // leaderboard-export timer and served same-origin
+    leaderboardAPI: '/api/leaderboard.json',
     
     // External links
     bluemapURL: 'https://survival.festas-builds.com',

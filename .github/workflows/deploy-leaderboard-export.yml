@@ -1,0 +1,168 @@
+name: Deploy Leaderboard Export
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/leaderboard-export/**'
+      - '.github/workflows/deploy-leaderboard-export.yml'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy leaderboard-export to Hetzner
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Stage deployable files and DB credentials
+        env:
+          PLAN_RO_DB_ENV: ${{ secrets.PLAN_RO_DB_ENV }}
+          LUCKPERMS_RO_DB_ENV: ${{ secrets.LUCKPERMS_RO_DB_ENV }}
+        run: |
+          set -euo pipefail
+
+          # Validate the required keys without printing their values. Parse in
+          # Python (not via shell sourcing) so values containing $, backticks, \,
+          # quotes or spaces are not misread as empty/invalid. The credentials are
+          # delivered verbatim to the env file below and consumed at runtime via
+          # systemd EnvironmentFile, which does not perform shell expansion.
+          python3 - <<'PY'
+          import os
+          import sys
+
+          def parse_env(raw):
+              data = {}
+              for line in raw.splitlines():
+                  line = line.strip()
+                  if not line or line.startswith("#") or "=" not in line:
+                      continue
+                  key, _, value = line.partition("=")
+                  key = key.strip()
+                  value = value.strip()
+                  if len(value) >= 2 and value[0] == value[-1] and value[0] in "\"'":
+                      value = value[1:-1]
+                  data[key] = value
+              return data
+
+          ok = True
+          for secret, required in (
+              ("PLAN_RO_DB_ENV", ("PLAN_RO_DB_USER", "PLAN_RO_DB_PASSWORD")),
+              ("LUCKPERMS_RO_DB_ENV", ("LUCKPERMS_RO_DB_USER", "LUCKPERMS_RO_DB_PASSWORD")),
+          ):
+              raw = os.environ.get(secret, "")
+              if not raw.strip():
+                  print(f"::error::Missing secret {secret}")
+                  ok = False
+                  continue
+              data = parse_env(raw)
+              missing = [k for k in required if not data.get(k)]
+              if missing:
+                  print(f"::error::Missing {', '.join(missing)} in {secret}")
+                  ok = False
+          if not ok:
+              sys.exit(1)
+          PY
+
+          umask 077
+          mkdir -p staging
+          # Both read-only credentials share one env file (distinct key prefixes).
+          printf '%s\n%s\n' "$PLAN_RO_DB_ENV" "$LUCKPERMS_RO_DB_ENV" > staging/leaderboard-export.env
+
+          cd tools/leaderboard-export
+          cp leaderboard_export.py config.json requirements.txt \
+             leaderboard-export.service leaderboard-export.timer \
+             "$GITHUB_WORKSPACE/staging/"
+
+      - name: Copy files to server
+        uses: appleboy/scp-action@v1.0.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "staging/*"
+          target: "/tmp/lbe-deploy"
+          strip_components: 1
+
+      - name: Install exporter, credentials and systemd timer
+        uses: appleboy/ssh-action@v1.0.3
+        env:
+          DEPLOY_USER: ${{ secrets.SSH_USER }}
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          envs: DEPLOY_USER
+          script: |
+            set -euo pipefail
+            trap 'rc=$?; echo "✗ ERROR (exit=$rc) at line ${LINENO}: ${BASH_COMMAND}" >&2; exit "$rc"' ERR
+
+            # scp strip_components behaviour differs between versions; support both layouts.
+            SRC=/tmp/lbe-deploy
+            [ -d "$SRC/staging" ] && SRC="$SRC/staging"
+            APP=/opt/leaderboard-export
+            DATA=/home/deploy/minecraft-website/data
+
+            echo "[1/5] Preparing directories..."
+            sudo mkdir -p "$APP" "$DATA"
+
+            echo "[2/5] Installing application files..."
+            sudo install -m 0644 "$SRC/leaderboard_export.py" "$APP/leaderboard_export.py"
+            sudo install -m 0644 "$SRC/config.json"           "$APP/config.json"
+            sudo install -m 0644 "$SRC/requirements.txt"      "$APP/requirements.txt"
+
+            echo "[3/5] Creating virtualenv and installing dependencies..."
+            if [ ! -x "$APP/venv/bin/python" ]; then
+              sudo python3 -m venv "$APP/venv"
+            fi
+
+            if [ ! -x "$APP/venv/bin/pip" ]; then
+              sudo "$APP/venv/bin/python" -m ensurepip --upgrade || true
+            fi
+
+            sudo "$APP/venv/bin/python" -m pip install --quiet --upgrade pip
+            sudo "$APP/venv/bin/python" -m pip install --quiet -r "$APP/requirements.txt"
+
+            echo "[4/5] Installing credentials (chmod 600) and fixing ownership..."
+            sudo install -m 600 "$SRC/leaderboard-export.env" "$APP/leaderboard-export.env"
+            sudo rm -f "$SRC/leaderboard-export.env"
+            sudo chown -R "$DEPLOY_USER:$DEPLOY_USER" "$APP"
+            sudo chown "$DEPLOY_USER:$DEPLOY_USER" "$DATA" 2>/dev/null || true
+
+            echo "[5/5] Installing systemd units and enabling timer..."
+            sudo cp "$SRC/leaderboard-export.service" /etc/systemd/system/leaderboard-export.service
+            sudo cp "$SRC/leaderboard-export.timer"   /etc/systemd/system/leaderboard-export.timer
+            # Run as the deploy user so it can write into the data bind-mount directory.
+            sudo sed -i \
+              -e "s/^User=.*/User=$DEPLOY_USER/" \
+              -e "s/^Group=.*/Group=$DEPLOY_USER/" \
+              /etc/systemd/system/leaderboard-export.service
+
+            sudo systemctl daemon-reload
+            sudo systemctl enable --now leaderboard-export.timer
+
+            echo "Running one export now..."
+            sudo systemctl start leaderboard-export.service || true
+            sleep 2
+            sudo systemctl status leaderboard-export.service --no-pager || true
+            sudo journalctl -u leaderboard-export.service -n 20 --no-pager || true
+
+            rm -rf /tmp/lbe-deploy
+            echo "✓ leaderboard-export deployed"
+
+      - name: Show failure logs
+        if: failure()
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            echo "=== Timer status ==="
+            sudo systemctl status leaderboard-export.timer --no-pager || true
+            echo "=== Service journal (latest 50) ==="
+            sudo journalctl -u leaderboard-export.service --no-pager -n 50 || true
