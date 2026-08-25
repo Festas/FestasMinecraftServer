@@ -1,0 +1,23 @@
+{
+  "output": "/home/deploy/minecraft-website/data/leaderboard.json",
+  "top_n": 10,
+  "query_limit": 200,
+  "min_weight": null,
+  "exclude_uuids": [],
+  "exclude_names": [],
+  "group_display_overrides": {},
+  "plan_database": {
+    "host": "172.25.0.1",
+    "port": 3306,
+    "database": "s4_plan",
+    "ssl": true,
+    "connect_timeout_seconds": 5
+  },
+  "luckperms_database": {
+    "host": "172.25.0.1",
+    "port": 3306,
+    "database": "s4_perms",
+    "ssl": true,
+    "connect_timeout_seconds": 5
+  }
+}

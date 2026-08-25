@@ -1,0 +1,38 @@
+[Unit]
+Description=Export the player leaderboard (playtime + LuckPerms rank) into leaderboard.json
+Documentation=https://github.com/Festas/FestasMinecraftServer/blob/main/tools/leaderboard-export/README.md
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+
+# Run as the user that owns /home/deploy/minecraft-website/data (adjust to match
+# your deploy user if it is not "deploy"). The deploy workflow patches this for you.
+User=deploy
+Group=deploy
+
+# Read-only database credentials (SELECT-only users on s4_plan + s4_perms). chmod 600.
+EnvironmentFile=/opt/leaderboard-export/leaderboard-export.env
+
+ExecStart=/opt/leaderboard-export/venv/bin/python \
+    /opt/leaderboard-export/leaderboard_export.py \
+    --config /opt/leaderboard-export/config.json
+
+# Do not thrash on a transient database blip; the last-good file keeps serving
+# until it ages past the frontend staleness threshold.
+Nice=10
+TimeoutStartSec=30
+
+# Light sandboxing. /opt (script + env) and /home (output) stay writable/readable;
+# ProtectSystem=full keeps /usr, /boot and /etc read-only.
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=full
+ProtectControlGroups=yes
+ProtectKernelTunables=yes
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+ReadWritePaths=/home/deploy/minecraft-website/data
+
+[Install]
+WantedBy=multi-user.target
