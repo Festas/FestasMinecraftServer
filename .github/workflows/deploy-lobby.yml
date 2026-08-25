@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       replace_folder:
-        description: 'Plugin-Ordner komplett ersetzen (z.B. MMOCore) - leer lassen für normalen Deploy'
+        description: 'Einzelnen Plugin-Ordner gezielt hochladen/überschreiben (z.B. MMOCore) - leer lassen für normalen Deploy. Es werden NIE Dateien auf dem Server gelöscht.'
         required: false
         default: ''
 
@@ -132,15 +132,25 @@ jobs:
           SERVER_PATH: ${{ secrets.SERVER_PATH_LOBBY }} # Endet auf .../plugins
           REPLACE_FOLDER: ${{ github.event.inputs.replace_folder }}
         run: |
-          # Input validation: only allow alphanumeric, hyphens, underscores, and dots
+          # Input validation: reject path traversal and only allow a single safe
+          # folder name (must start with an alphanumeric/underscore; no '/', no '..',
+          # no leading '.' or '-'). This prevents REPLACE_FOLDER values like '.' or
+          # '..' from escaping the plugins directory in the paths used below.
           if [ -n "$REPLACE_FOLDER" ]; then
-            if ! echo "$REPLACE_FOLDER" | grep -qE '^[A-Za-z0-9._-]+$'; then
-              echo "::error::Invalid folder name: $REPLACE_FOLDER (only alphanumeric, dots, hyphens, underscores allowed)"
+            case "$REPLACE_FOLDER" in
+              */*|.|..)
+                echo "::error::Invalid folder name: $REPLACE_FOLDER (path traversal is not allowed)"
+                exit 1
+                ;;
+            esac
+            if ! printf '%s' "$REPLACE_FOLDER" | grep -qE '^[A-Za-z0-9_][A-Za-z0-9._-]*$'; then
+              echo "::error::Invalid folder name: $REPLACE_FOLDER (only alphanumeric, dots, hyphens, underscores allowed; must not start with '.' or '-')"
               exit 1
             fi
           fi
 
           EXCLUDE_ARGS=(
+            --exclude='*.jar' --exclude='*.jar.disabled'
             --exclude='*.db' --exclude='*.sqlite' --exclude='*.log'
             --exclude='*.zip' --exclude='*.tar.gz'
             --exclude='*.pem' --exclude='*.key' --exclude='*.secret'
@@ -150,19 +160,21 @@ jobs:
           )
 
           if [ -n "$REPLACE_FOLDER" ]; then
-            # --- Modus: Ganzen Ordner ersetzen ---
-            echo "Replacing folder: $REPLACE_FOLDER"
+            # --- Modus: Einzelnen Ordner gezielt hochladen/überschreiben ---
+            # WICHTIG: Es werden ausschließlich die im Repo vorhandenen Dateien
+            # hochgeladen/überschrieben. KEIN 'rm -rf' und KEIN '--delete', damit auf
+            # dem Server liegende (nicht im Repo vorhandene) Dateien/Ordner sowie
+            # Plugin-JARs niemals gelöscht werden.
+            echo "Uploading folder: $REPLACE_FOLDER"
 
             if [ ! -d "lobby/plugins/$REPLACE_FOLDER" ]; then
               echo "Error: Folder lobby/plugins/$REPLACE_FOLDER does not exist in repository"
               exit 1
             fi
 
-            ssh -n -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new "$SSH_USER@$SSH_HOST" "rm -rf '$SERVER_PATH/$REPLACE_FOLDER'"
+            rsync -avz -e 'ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new' "${EXCLUDE_ARGS[@]}" --backup --backup-dir="/tmp/festas-rsync-backup-$(date +%Y%m%d-%H%M%S)" "lobby/plugins/$REPLACE_FOLDER/" "$SSH_USER@$SSH_HOST:$SERVER_PATH/$REPLACE_FOLDER/"
 
-            rsync -avz -e 'ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new' "${EXCLUDE_ARGS[@]}" --backup --backup-dir="/tmp/festas-rsync-backup-$(date +%Y%m%d-%H%M%S)" --delete "lobby/plugins/$REPLACE_FOLDER/" "$SSH_USER@$SSH_HOST:$SERVER_PATH/$REPLACE_FOLDER/"
-
-            echo "Folder $REPLACE_FOLDER replaced successfully"
+            echo "Folder $REPLACE_FOLDER uploaded successfully (no server files deleted)"
           else
             # --- Modus: Sync Changed Files ---
             echo "Syncing changed files..."
@@ -182,14 +194,19 @@ jobs:
                   fi
 
                   # Excludes prüfen (auf Basis des Dateinamens)
-                  if echo "$remote_relative_file" | grep -qE '\.(db|sqlite|log|pem|key|secret)$|^(playerdata|data|cache)/|^\.git'; then
+                  if echo "$remote_relative_file" | grep -qE '\.(db|sqlite|log|pem|key|secret|jar)$|\.jar\.disabled$|^(playerdata|data|cache)/|^\.git'; then
                     echo "Skipping excluded file: $remote_relative_file"
                     continue
                   fi
 
                   if [ "$status" = "D" ]; then
-                    echo "Deleting: $remote_relative_file"
-                    ssh -n -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new "$SSH_USER@$SSH_HOST" "rm -f '$SERVER_PATH/$remote_relative_file'"
+                    # Aus Sicherheitsgründen werden Dateien auf dem Server NICHT
+                    # automatisch gelöscht. Die Richtung repo -> server ist rein
+                    # additiv (nur Hochladen/Überschreiben). Im Repo entfernte
+                    # Dateien müssen bei Bedarf manuell auf dem Server entfernt
+                    # werden - so kann ein versehentliches Entfernen im Repo keine
+                    # Server-Dateien (z.B. Plugin-Daten) zerstören.
+                    echo "::warning::$remote_relative_file wurde im Repo gelöscht - auf dem Server bleibt die Datei erhalten (keine automatische Löschung)."
                   else
                     echo "Uploading: $remote_relative_file"
                     
@@ -211,8 +228,12 @@ jobs:
               echo "Manual sync: uploading all files..."
               # WICHTIG: Hier auch lobby/plugins/ als Quelle nutzen, nicht lobby/
               # Sonst wird der Ordner 'plugins' in den Ordner 'plugins' kopiert -> plugins/plugins
-              rsync -avz -e 'ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new' "${EXCLUDE_ARGS[@]}" --backup --backup-dir="/tmp/festas-rsync-backup-$(date +%Y%m%d-%H%M%S)" --delete "lobby/plugins/" "$SSH_USER@$SSH_HOST:$SERVER_PATH/"
-              echo "Full sync completed successfully"
+              # WICHTIG: KEIN '--delete'! Es werden ausschließlich die im Repo
+              # vorhandenen Dateien hochgeladen/überschrieben. Auf dem Server
+              # liegende (nicht im Repo vorhandene) Dateien/Ordner - insbesondere
+              # Plugin-JARs - bleiben unangetastet.
+              rsync -avz -e 'ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new' "${EXCLUDE_ARGS[@]}" --backup --backup-dir="/tmp/festas-rsync-backup-$(date +%Y%m%d-%H%M%S)" "lobby/plugins/" "$SSH_USER@$SSH_HOST:$SERVER_PATH/"
+              echo "Full sync completed successfully (no server files deleted)"
             fi
           fi
 
