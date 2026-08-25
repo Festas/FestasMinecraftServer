@@ -1,33 +1,33 @@
 {
   "online": 0,
   "max": 120,
-  "updated": 1787653034,
+  "updated": 1787661702,
   "showNames": false,
   "generator": "plan-players-export",
   "servers": [
     {
       "name": "lobby",
-      "online": false,
+      "online": true,
       "count": 0,
-      "updated": 1787650218,
+      "updated": 1787661591,
       "players": [],
       "max": 40,
       "worlds": null
     },
     {
       "name": "survival",
-      "online": false,
+      "online": true,
       "count": 0,
-      "updated": 1787650237,
+      "updated": 1787661611,
       "players": [],
       "max": 40,
       "worlds": null
     },
     {
       "name": "mining",
-      "online": false,
+      "online": true,
       "count": 0,
-      "updated": 1787650293,
+      "updated": 1787661604,
       "players": [],
       "max": 20,
       "worlds": null
@@ -36,7 +36,7 @@
       "name": "skyblock",
       "online": false,
       "count": 0,
-      "updated": 1787653034,
+      "updated": 1787661702,
       "players": [],
       "max": 20,
       "worlds": null
