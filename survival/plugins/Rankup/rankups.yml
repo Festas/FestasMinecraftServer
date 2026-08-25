@@ -216,9 +216,7 @@
     commands:
       - 'tycoon_perform_rankup {{player}} bedrock tier25_1'
 
-  # 25. BEDROCK (Ende)
-  tycoon_bedrock:
-    rank: 'tycoon_bedrock'
-    # Kein 'next', da Ende der Leiter
-    requirements:
-      - 'money 0'
+  # 25. BEDROCK = Endrang: ab Rankup 3.x KEINE eigene Sektion mehr. tycoon_magma
+  #     befoerdert per 'next'/Command dorthin. Eine eigene 'tycoon_bedrock'-Sektion
+  #     (mit leerem 'next') loest nur die Warnung "blank 'next' field, will be
+  #     ignored" bzw. "Ignoring rank: null" aus und wird daher weggelassen.

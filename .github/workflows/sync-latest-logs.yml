@@ -2,7 +2,16 @@ name: Sync latest server logs
 
 on:
   schedule:
-    - cron: '17 3 * * *'
+    # Ziel: täglich 03:25 Europe/Berlin = 30 Minuten vor dem frühesten geplanten
+    # Neustart (Survival 03:55, siehe docs/OPERATIONS.md). So wird die volle
+    # latest.log eines Tages gesichert, BEVOR der Neustart sie rotiert.
+    # GitHub-Cron läuft immer in UTC und kennt keine Sommer-/Winterzeit, daher
+    # beide Offsets abdecken; der Guard-Step unten lässt nur den Lauf durch, der
+    # in Berlin auf 03:xx fällt (genau ein Lauf pro Tag um ~03:25 Ortszeit):
+    #   '25 1 * * *' = 03:25 CEST (Sommer, UTC+2)
+    #   '25 2 * * *' = 03:25 CET  (Winter, UTC+1)
+    - cron: '25 1 * * *'
+    - cron: '25 2 * * *'
   workflow_dispatch:
     inputs:
       server:
@@ -29,12 +38,42 @@ jobs:
   sync-latest-logs:
     runs-on: ubuntu-latest
     steps:
+      - name: Zeitfenster prüfen (DST-Schutz)
+        id: guard
+        run: |
+          set -euo pipefail
+          # Manuelle Läufe immer ausführen.
+          if [ "${GITHUB_EVENT_NAME}" != "schedule" ]; then
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          # Nur der DST-Cron durchlaufen lassen, der in Berlin auf 03:xx trifft.
+          # Fenster 03:00–03:49 (Ziel 03:25): toleriert übliche GitHub-Cron-
+          # Verzögerungen, stoppt aber sicher VOR dem frühesten Neustart (Survival
+          # 03:55), damit nie eine frisch rotierte, fast leere latest.log gesichert
+          # wird. Der jeweils andere DST-Cron sowie stark verspätete Läufe (>=03:50
+          # oder >=04:00) werden verworfen.
+          berlin_time="$(TZ=Europe/Berlin date '+%H:%M')"
+          berlin_hour="${berlin_time%%:*}"
+          berlin_min="${berlin_time##*:}"
+          # Führende Null entfernen (Basis-10-Arithmetik erzwingen).
+          berlin_min=$(( 10#$berlin_min ))
+          if [ "$berlin_hour" = "03" ] && [ "$berlin_min" -lt 50 ]; then
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+            echo "Berliner Zeit ${berlin_time}: Lauf wird ausgeführt (Ziel 03:25, 30 Min vor Neustart)."
+          else
+            echo "should_run=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Überspringe Lauf – Berliner Zeit ${berlin_time} liegt außerhalb 03:00–03:49 (zweiter DST-Cron oder verspäteter Lauf)."
+          fi
+
       - name: Checkout repository
+        if: steps.guard.outputs.should_run == 'true'
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
         with:
           token: ${{ secrets.PERSONAL_TOKEN }}
 
       - name: Setup SSH
+        if: steps.guard.outputs.should_run == 'true'
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         run: |
@@ -44,10 +83,13 @@ jobs:
           ssh-keyscan -H "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts
 
       - name: Fetch latest logs
+        if: steps.guard.outputs.should_run == 'true'
         env:
           SSH_HOST: ${{ secrets.SSH_HOST }}
           SSH_USER: ${{ secrets.SSH_USER }}
           REQUESTED_SERVER: ${{ github.event.inputs.server }}
+          IS_SCHEDULED: ${{ github.event_name == 'schedule' }}
+          MAX_LOGS_PER_SERVER: '7'
           SERVER_PATH_LOBBY: ${{ secrets.SERVER_PATH_LOBBY }}
           SERVER_PATH_PROXY: ${{ secrets.SERVER_PATH_PROXY }}
           SERVER_PATH_SURVIVAL: ${{ secrets.SERVER_PATH_SURVIVAL }}
@@ -55,6 +97,28 @@ jobs:
           SERVER_PATH_RPG: ${{ secrets.SERVER_PATH_RPG }}
         run: |
           set -euo pipefail
+
+          # Behält nur die neuesten MAX_LOGS_PER_SERVER Zeitstempel-Snapshots
+          # (Dateien der Form <YYYYMMDDTHHMMSSZ>.log); latest.log bleibt unberührt.
+          prune_old_logs() {
+            local dir="$1"
+            local max="${MAX_LOGS_PER_SERVER:-7}"
+            local snapshots=()
+            # Namen sortieren lexikografisch = chronologisch (fester UTC-Zeitstempel).
+            while IFS= read -r name; do
+              snapshots+=("$name")
+            done < <(find "$dir" -maxdepth 1 -type f -name '*T*Z.log' -printf '%f\n' | sort)
+            local count=${#snapshots[@]}
+            if [ "$count" -le "$max" ]; then
+              return 0
+            fi
+            local remove=$(( count - max ))
+            local i
+            for (( i=0; i<remove; i++ )); do
+              rm -f "${dir}/${snapshots[$i]}"
+              echo "🧹 ${dir}: alter Snapshot entfernt (${snapshots[$i]})."
+            done
+          }
 
           sync_server() {
             local server_name="$1"
@@ -88,14 +152,25 @@ jobs:
             mkdir -p "$local_dir"
             scp -i ~/.ssh/id_rsa -o StrictHostKeyChecking=yes "${SSH_USER}@${SSH_HOST}:${remote_log_path}" "$tmp_file"
 
+            # latest.log behält seinen Namen und wird immer ersetzt (manuell wie geplant).
             if [ -f "$local_file" ] && cmp -s "$tmp_file" "$local_file"; then
-              echo "ℹ️ ${server_name}: Keine Änderungen."
-              rm -f "$tmp_file"
-              return 0
+              echo "ℹ️ ${server_name}: latest.log unverändert."
+            else
+              cp "$tmp_file" "$local_file"
+              echo "✅ ${server_name}: latest.log aktualisiert."
             fi
 
-            mv "$tmp_file" "$local_file"
-            echo "✅ ${server_name}: latest.log aktualisiert."
+            # Geplante Läufe legen zusätzlich einen Zeitstempel-Snapshot an und
+            # begrenzen den Bestand auf max. MAX_LOGS_PER_SERVER (7 = eine Woche).
+            if [ "${IS_SCHEDULED}" = "true" ]; then
+              local ts
+              ts="$(date -u +%Y%m%dT%H%M%SZ)"
+              cp "$tmp_file" "${local_dir}/${ts}.log"
+              echo "🗄️ ${server_name}: Snapshot ${ts}.log gespeichert."
+              prune_old_logs "$local_dir"
+            fi
+
+            rm -f "$tmp_file"
           }
 
           if [ "${GITHUB_EVENT_NAME}" = "workflow_dispatch" ] && [ -n "${REQUESTED_SERVER:-}" ] && [ "${REQUESTED_SERVER}" != "ALL" ]; then
@@ -132,6 +207,7 @@ jobs:
           fi
 
       - name: Commit and push updated logs
+        if: steps.guard.outputs.should_run == 'true'
         env:
           PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
         run: |
@@ -140,7 +216,9 @@ jobs:
 
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -f server-logs
+          # -A erfasst auch gelöschte (rotierte) Snapshots, -f überschreibt die
+          # *.log-Regel aus .gitignore für die Zeitstempel-Dateien.
+          git add -A -f server-logs
 
           if git diff --staged --quiet; then
             echo "Keine Log-Änderungen gefunden."
@@ -153,6 +231,7 @@ jobs:
           git push origin "HEAD:${GITHUB_REF_NAME}"
 
       - name: Fail if a server log could not be fetched
+        if: steps.guard.outputs.should_run == 'true'
         run: |
           if [ ! -f /tmp/failed_servers.txt ]; then
             exit 0
