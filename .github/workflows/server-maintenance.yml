@@ -144,9 +144,17 @@ jobs:
           $SSH "mkdir -p '${REMOTE_OUT}'"
           $SCP tools/server-maintenance/festas-maintenance.sh "${SSH_USER}@${SSH_HOST}:${REMOTE_SCRIPT}"
 
-          # Werte werden erst zur Laufzeit expandiert (nicht im Log sichtbar) und
-          # über die verschlüsselte SSH-Verbindung übertragen.
+          # Die Größen-Scans (du/find) im Bericht brauchen root-Rechte – sonst
+          # zeigen die "Speicherfresser"/Volume-Tabellen 0B bzw. "keine
+          # Berechtigung". Das Skript wird daher, wenn passwortloses sudo verfügbar
+          # ist (der SSH-Nutzer braucht es ohnehin für Wartung/Reboot), als root
+          # ausgeführt. Fehlt sudo, fällt es sauber auf den normalen Lauf zurück.
+          # Die Werte werden erst zur Laufzeit auf dem Server expandiert (nicht im
+          # Log sichtbar) und über die verschlüsselte SSH-Verbindung übertragen.
+          # env übergibt die Variablen über die Privilegien-Grenze hinweg.
           $SSH "chmod +x '${REMOTE_SCRIPT}' && \
+            if sudo -n true 2>/dev/null; then PRIV='sudo -n'; else PRIV=''; fi && \
+            \$PRIV env \
             OUTPUT_DIR='${REMOTE_OUT}' \
             CHECK_DOMAINS='${check_domains}' \
             SERVER_PATH_LOBBY='${SERVER_PATH_LOBBY:-}' \
