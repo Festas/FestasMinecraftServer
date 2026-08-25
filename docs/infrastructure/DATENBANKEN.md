@@ -120,6 +120,14 @@ sind optional und werden entfernt. Sonderzeichen im Passwort (z. B. `$`,
 > Benutzer mit nur `SELECT`** (idealerweise nur auf `plan_servers` und `plan_tps`)
 > angelegt und über das Secret `PLAN_RO_DB_ENV` bereitgestellt – **nicht** der
 > RW-User oben (Prinzip der minimalen Berechtigung).
+>
+> **Bestenliste:** Der Exporter
+> [`tools/leaderboard-export`](../../tools/leaderboard-export/README.md) füllt
+> `leaderboard.json` (Top-N nach Spielzeit + höchster LuckPerms-Rang). Er liest die
+> Spielzeiten aus `s4_plan` (`plan_sessions`, `plan_users`) – derselbe
+> `PLAN_RO_DB_ENV`-User braucht dafür **zusätzlich** `SELECT` auf diese beiden
+> Tabellen – und den Rang aus `s4_perms` über einen **eigenen** Read-only-User
+> (`SELECT` auf `luckperms_*`), Secret `LUCKPERMS_RO_DB_ENV`.
 
 ### Redis
 
