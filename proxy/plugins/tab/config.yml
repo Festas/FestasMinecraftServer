@@ -1,42 +1,77 @@
 header-footer:
   enabled: true
   designs:
-    tycoon:
-      display-condition: '%world%=tycoon'
+    lobby:
+      display-condition: '%server%=lobby'
       header:
       - ''
-      - '&6&l✦ &e&lTYCOON &6&l✦'
-      - '&7Baue dein Imperium auf!'
+      - '   %animation:brand%'
+      - '&b&lHUB &8» &7Willkommen, &f%player%&7!'
       - ''
       footer:
       - ''
-      - '&8&m-------------------------'
-      - '&7Dein Status:'
-      - ' &8» &7Rang: %luckperms_prefix%'
-      - ' &8» &7Geld: &a$%vault_eco_balance_formatted%'
+      - '&8&m                                            '
+      - ' &7Online &8» &a%online%    &8|    &7Ping &8» %condition:ping_c1%'
+      - ' &7%date% &8| &7%time% Uhr'
+      - ' %animation:web%'
       - ''
-      - '&7Nächstes Ziel:'
-      - ' &8» &e%rankup_next_rank%'
-      - ' &8» &7Fehlend: &c$%rankup_money_left_formatted%'
-      - '&8&m-------------------------'
+    survival:
+      display-condition: '%server%=survival'
+      header:
       - ''
-      - '&7Ping: &e%ping%ms &8| &7Online: &a%online%'
+      - '   %animation:brand%'
+      - '&6&lSURVIVAL &8» &7Willkommen, &f%player%&7!'
       - ''
-      - '&bmc.festas-builds.com'
+      footer:
+      - ''
+      - '&8&m                                            '
+      - ' &7Rang &8» %luckperms_prefix%    &8|    &7Guthaben &8» &a%vault_eco_balance_formatted%$'
+      - ' &7Nächster Rang &8» &e%rankup_next_rank% &8(&c%rankup_money_left_formatted%$&8)'
+      - ' &7Ping &8» %condition:ping_c1%    &8|    &7Online &8» &a%online%'
+      - ' %animation:web%'
+      - ''
+    skyblock:
+      display-condition: '%server%=skyblock'
+      header:
+      - ''
+      - '   %animation:brand%'
+      - '&b&lSKYBLOCK &8» &7Willkommen, &f%player%&7!'
+      - ''
+      footer:
+      - ''
+      - '&8&m                                            '
+      - ' &7Rang &8» %luckperms_prefix%    &8|    &7Guthaben &8» &a%vault_eco_balance_formatted%$'
+      - ' &7Insel-Level &8» &b%superior_island_level%    &8|    &7Wert &8» &a%superior_island_worth%'
+      - ' &7Ping &8» %condition:ping_c1%    &8|    &7Online &8» &a%online%'
+      - ' %animation:web%'
+      - ''
+    rpg:
+      display-condition: '%server%=rpg'
+      header:
+      - ''
+      - '   %animation:brand%'
+      - '&5&lRPG &8» &7Willkommen, &f%player%&7!'
+      - ''
+      footer:
+      - ''
+      - '&8&m                                            '
+      - ' &7Rang &8» %luckperms_prefix%    &8|    &7Guthaben &8» &a%vault_eco_balance_formatted%$'
+      - ' &7Ping &8» %condition:ping_c1%    &8|    &7Online &8» &a%online%'
+      - ' %animation:web%'
+      - ''
     default:
       header:
       - ''
-      - '&6&l✦ &b&lFestas Builds &6&l✦'
+      - '   %animation:brand%'
       - '&7Willkommen, &f%player%&7!'
-      - ''
-      - '&7Online: &a%online%&8/&7%server_max_players%'
       - ''
       footer:
       - ''
-      - '&7Rang: %luckperms_prefix% &8| &7Geld: &a%vault_eco_balance_formatted%'
-      - '&7Ping: &e%ping%ms &8| &7Zeit: &e%time%'
+      - '&8&m                                            '
+      - ' &7Rang &8» %luckperms_prefix%    &8|    &7Guthaben &8» &a%vault_eco_balance_formatted%$'
+      - ' &7Ping &8» %condition:ping_c1%    &8|    &7Online &8» &a%online%'
+      - ' %animation:web%'
       - ''
-      - '&bmc.festas-builds.com'
 tablist-name-formatting:
   enabled: true
   disable-condition: '%world%=disabledworld'
@@ -78,18 +113,88 @@ bossbar:
       progress: '100'
       text: '&fWebsite: &bwww.domain.com'
 scoreboard:
-  enabled: false
+  enabled: true
   toggle-command: /sb
-  remember-toggle-choice: false
+  remember-toggle-choice: true
   hidden-by-default: false
-  use-numbers: true
+  use-numbers: false
   static-number: 0
   delay-on-join-milliseconds: 0
   scoreboards:
-    scoreboard:
-      title: <#E0B11E>MyServer</#FF0000>
+    lobby:
+      display-condition: '%server%=lobby'
+      title: '%animation:brand%'
       lines:
-      - '&7%date%'
+      - '&8&m                     '
+      - '&b&lPROFIL'
+      - ' &7Spieler &8» %luckperms_prefix%&f%player%'
+      - ''
+      - '&b&lNETZWERK'
+      - ' &7Online &8» &a%online%'
+      - ' &7Ping &8» %condition:ping_c1%'
+      - ''
+      - ' &7Standort &8» &bLobby'
+      - '&8&m                     '
+      - '&e&nmc.festas-builds.com'
+    survival:
+      display-condition: '%server%=survival'
+      title: '%animation:brand%'
+      lines:
+      - '&8&m                     '
+      - '&6&lPROFIL'
+      - ' &7Rang &8» %luckperms_prefix%'
+      - ' &7Guthaben &8» &a%vault_eco_balance_formatted%$'
+      - ''
+      - '&6&lRANKUP'
+      - ' &7Nächster &8» &e%rankup_next_rank%'
+      - ' &7Fehlt &8» &c%rankup_money_left_formatted%$'
+      - ''
+      - '&6&lSTATS'
+      - ' &7Online &8» &a%online%'
+      - ' &7Tode &8» &c%statistic_deaths%'
+      - '&8&m                     '
+      - '&e&nmc.festas-builds.com'
+    skyblock:
+      display-condition: '%server%=skyblock'
+      title: '%animation:brand%'
+      lines:
+      - '&8&m                     '
+      - '&b&lPROFIL'
+      - ' &7Rang &8» %luckperms_prefix%'
+      - ' &7Guthaben &8» &a%vault_eco_balance_formatted%$'
+      - ''
+      - '&b&lINSEL'
+      - ' &7Level &8» &b%superior_island_level%'
+      - ' &7Wert &8» &a%superior_island_worth%'
+      - ''
+      - ' &7Online &8» &a%online%'
+      - '&8&m                     '
+      - '&e&nmc.festas-builds.com'
+    rpg:
+      display-condition: '%server%=rpg'
+      title: '%animation:brand%'
+      lines:
+      - '&8&m                     '
+      - '&5&lPROFIL'
+      - ' &7Rang &8» %luckperms_prefix%'
+      - ' &7Guthaben &8» &a%vault_eco_balance_formatted%$'
+      - ''
+      - ' &7Online &8» &a%online%'
+      - ' &7Ping &8» %condition:ping_c1%'
+      - '&8&m                     '
+      - '&e&nmc.festas-builds.com'
+    default:
+      title: '%animation:brand%'
+      lines:
+      - '&8&m                     '
+      - '&b&lPROFIL'
+      - ' &7Rang &8» %luckperms_prefix%'
+      - ' &7Guthaben &8» &a%vault_eco_balance_formatted%$'
+      - ''
+      - ' &7Online &8» &a%online%'
+      - ' &7Ping &8» %condition:ping_c1%'
+      - '&8&m                     '
+      - '&e&nmc.festas-builds.com'
 layout:
   enabled: false
 ping-spoof:
@@ -111,7 +216,7 @@ global-playerlist:
     - rpg
 placeholders:
   date-format: dd.MM.yyyy
-  time-format: '[HH:mm:ss / h:mm a]'
+  time-format: 'HH:mm'
   time-offset: 1
   register-tab-expansion: true
 placeholder-output-replacements:
@@ -124,12 +229,38 @@ placeholder-output-replacements:
   '%statistic_deaths%':
     ? ''
     : '0'
+  '%superior_island_level%':
+    ? ''
+    : '0'
+  '%superior_island_worth%':
+    ? ''
+    : '0'
+  '%rankup_next_rank%':
+    ? ''
+    : '&aMax-Rang'
 conditions:
   nick:
     conditions:
     - '%player%=%essentials_nickname%'
     true: '%player%'
     false: ~%essentials_nickname%
+  # Faerbt den Ping in 3 Stufen: <80 gruen, <160 gelb, sonst rot.
+  ping_c1:
+    conditions:
+    - '%ping%<80'
+    true: '&a%ping%&8ms'
+    false: '%condition:ping_c2%'
+  ping_c2:
+    conditions:
+    - '%ping%<160'
+    true: '&e%ping%&8ms'
+    false: '&c%ping%&8ms'
+  # Zeigt den Tode-Zaehler im Tab-Suffix nur auf dem Survival-Server.
+  deaths_suffix:
+    conditions:
+    - '%server%=survival'
+    true: ' &8| &c☠ %statistic_deaths%'
+    false: ''
 placeholder-refresh-intervals:
   default-refresh-interval: 500
   '%server_uptime%': 1000
@@ -141,6 +272,10 @@ placeholder-refresh-intervals:
   '%rel_factionsuuid_relation_color%': 1000
   '%luckperms_prefix%': 1000
   '%vault_eco_balance_formatted%': 1000
+  '%rankup_next_rank%': 2000
+  '%rankup_money_left_formatted%': 2000
+  '%superior_island_level%': 5000
+  '%superior_island_worth%': 5000
   '%statistic_deaths%': 2000
 assign-groups-by-permissions: false
 primary-group-finding-list:

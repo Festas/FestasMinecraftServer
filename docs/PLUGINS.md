@@ -86,19 +86,25 @@ Vollständige Übersicht aller verwendeten Plugins pro Server.
   - `/skin clear`
 
 #### TAB
-- **Funktion:** Custom TAB-Liste und Scoreboard
+- **Funktion:** Custom TAB-Liste und Scoreboard (läuft auf dem Proxy, gilt für alle Server)
 - **Features:**
-  - Server-übergreifende TAB-Liste
-  - Custom Scoreboard
-  - Nametags
-  - Header/Footer
-  - RGB-Farben
-  - PlaceholderAPI-Support
-- **Config:** `config.yml`, `scoreboard.yml`
+  - Server-übergreifende TAB-Liste (global-playerlist)
+  - Pro-Server Header/Footer-Designs (lobby/survival/skyblock/rpg + default) via `%server%`-Bedingung
+  - Pro-Server Sidebar-Scoreboard (Toggle `/sb`, ohne Seiten-Zahlen)
+  - Animierter Marken-Titel „Festas Builds" (Gradient-Shimmer) in `animations.yml`
+  - Ping-Anzeige in 3 Farbstufen (`conditions`: `ping_c1`/`ping_c2`)
+  - Tode-Zähler im Tab-Suffix nur auf Survival (`conditions`: `deaths_suffix`)
+  - Nametags, RGB-Gradients, PlaceholderAPI-Support (via Bridge auf den Backends)
+- **Config:** `config.yml` (Header/Footer, Scoreboard, Conditions), `groups.yml`, `animations.yml`
 
 #### VelocityScoreboardAPI
 - **Funktion:** API für Scoreboard-Management
 - **Verwendung:** Backend für TAB und andere Scoreboard-Plugins
+- **Hinweis:** `call_scoreboard_events: false` gesetzt, um einen wiederkehrenden `NoSuchMethodError`
+  zu vermeiden (TAB v5.4.0 ↔ VelocityScoreboardAPI 2.x haben eine inkompatible Event-API, siehe
+  `proxy/plugins/tab/errors.log`). TAB sendet Tabliste/Scoreboard weiterhin normal; nur der defekte
+  Event-Listener-Pfad wird übersprungen. Nach Angleichen der Plugin-Versionen kann der Wert zurück
+  auf `true`.
 
 ---
 

@@ -1,241 +1,243 @@
 # --- TAB GRUPPEN LISTE ---
 # Wir definieren JEDE Gruppe explizit, damit TAB sie garantiert erkennt.
 # Der Prefix kommt dynamisch von LuckPerms (%luckperms_prefix%).
+# Der Tabsuffix (Tode-Zaehler) wird ueber die Bedingung "deaths_suffix"
+# (siehe config.yml) nur auf dem Survival-Server angezeigt.
 
 # === STAFF ===
 inhaber:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 vorstand:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 manager:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 security:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 
 # === GELD RÄNGE (Flex) ===
 adminvater:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 endgegner:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 koenig:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 systemdribbler:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 oligarch:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 scheich:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 pate:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 rolex:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 gucci:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 goennjamin:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 richkid:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 flexer:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 
 # === ZEIT RÄNGE (Strasse) ===
 maincharacter:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 baba:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 maschine:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 loewe:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 ehrenmann:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 bre:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 bratan:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 tuersteher:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 macher:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 hustler:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 ticker:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 chiller:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 knecht:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 lauch:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 default: # NPC
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 
 # === TYCOON RÄNGE ===
 tycoon_bedrock:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 tycoon_magma:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 tycoon_seelenerde:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 tycoon_prismarin:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 tycoon_endstein:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 tycoon_purpur:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 tycoon_schwarzstein:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 tycoon_basalt:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 tycoon_granit:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 tycoon_andesit:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 tycoon_diorit:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 tycoon_calcit:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 tycoon_tuff:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 tycoon_netherite:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 tycoon_obsidian:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 tycoon_diamant:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 tycoon_smaragd:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 tycoon_lapis:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 tycoon_redstone:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 tycoon_gold:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 tycoon_kupfer:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 tycoon_eisen:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 tycoon_kohle:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 tycoon_stein:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 tycoon_erde:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
 
 # === FALLBACK ===
 _OTHER_:
   tabprefix: "%luckperms_prefix%"
   tagprefix: "%luckperms_prefix%"
-  tabsuffix: " &8| &c☠ %statistic_deaths%"
+  tabsuffix: "%condition:deaths_suffix%"
