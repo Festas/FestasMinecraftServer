@@ -817,6 +817,7 @@ function initEconomyLeaderboard() {
             button.className = 'economy-tab' + (id === activeId ? ' active' : '');
             button.setAttribute('role', 'tab');
             button.setAttribute('aria-selected', id === activeId ? 'true' : 'false');
+            button.setAttribute('aria-controls', 'economyList');
             // textContent keeps the (config-controlled) server label inert.
             button.textContent = String(server.label || server.id || 'Server');
             button.addEventListener('click', () => {
