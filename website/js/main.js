@@ -1460,6 +1460,7 @@ function initWikiSearch() {
     function close() {
         box.hidden = true;
         input.setAttribute('aria-expanded', 'false');
+        input.removeAttribute('aria-activedescendant');
         active = -1;
     }
 
