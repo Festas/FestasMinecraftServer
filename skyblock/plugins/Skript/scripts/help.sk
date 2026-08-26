@@ -1,28 +1,37 @@
 # Pfad: plugins/Skript/scripts/help.sk
 # /help Befehl + regelmäßiger Broadcast – Skyblock
+#
+# Skyblock hat (noch) kein DeluxeMenus-Hilfemenü, daher zeigt /help direkt
+# klickbare Links zu Website, Wiki und Befehlen. Skript unterstützt
+# <link:>/<tooltip:> nativ – kein Zusatz-Addon nötig.
 
 # --- /help BEFEHL ---
 command /help:
-    description: Öffnet das Hilfe-Menü
+    description: Zeigt Hilfe-Links (Website, Wiki, Befehle)
     aliases: /hilfe
     trigger:
-        make player execute command "/dm open help_menu"
+        send "&8&m--------------------------------" to player
+        send "&3&lFestas Builds &8• &7Hilfe" to player
+        send "&7Erste Schritte: &e[<link:https://mc.festas-builds.com/wiki/erste-schritte/><tooltip:Erste Schritte im Wiki öffnen>Anleitung öffnen<reset>&e]" to player
+        send "&7Befehle: &e[<link:https://mc.festas-builds.com/wiki/befehle/><tooltip:Befehls-Übersicht öffnen>Befehls-Übersicht<reset>&e]" to player
+        send "&7Wiki: &e[<link:https://mc.festas-builds.com/wiki/><tooltip:Zum Wiki>Wiki öffnen<reset>&e]" to player
+        send "&8&m--------------------------------" to player
 
-# --- AUTO-BROADCAST (rotierend, alle 10 Minuten) ---
+# --- AUTO-BROADCAST (rotierend, alle 10 Minuten, klickbare Links) ---
+# Damit die Links wirklich anklickbar sind, wird pro Spieler mit "send" verschickt.
 on script load:
-    delete {sky_bc::*}
-    set {sky_bc::1} to "&8[&3&lSkyblock&8] &7Neu hier? Tippe &e/help &7und erfahre alles über deine Insel!"
-    set {sky_bc::2} to "&8[&3&lSkyblock&8] &7Starte deine Insel mit &e/is create &7und lade Freunde ein!"
-    set {sky_bc::3} to "&8[&3&lSkyblock&8] &7Steigere dein Insel-Level mit &e/is level &7und klettere in der &e/is top&7!"
-    set {sky_bc::4} to "&8[&3&lSkyblock&8] &7Handel clever im &e/bazaar &7und werde reich!"
-    set {sky_bc::5} to "&8[&3&lSkyblock&8] &7Tipp gefällig? Nutze &e/tips &7oder den &bNetzwerk-Kompass&7!"
-    set {sky_bc::6} to "&8[&6&lDaily&8] &7Hol dir jeden Tag deine Belohnung mit &e/daily &7– die Streak lohnt sich!"
-    set {sky_bc_index} to 1
+    set {skyblock_bc_i} to 0
 
 every 10 minutes:
-    set {_msg} to {sky_bc::%{sky_bc_index}%}
-    if {_msg} is set:
-        broadcast "%{_msg}%"
-    add 1 to {sky_bc_index}
-    if {sky_bc_index} > 6:
-        set {sky_bc_index} to 1
+    add 1 to {skyblock_bc_i}
+    if {skyblock_bc_i} is greater than 4:
+        set {skyblock_bc_i} to 1
+    loop all players:
+        if {skyblock_bc_i} is 1:
+            send "&8[&3&lSkyblock&8] &7Neu hier? Starte mit den &e[<link:https://mc.festas-builds.com/wiki/erste-schritte/><tooltip:Erste Schritte im Wiki öffnen>Ersten Schritten<reset>&e]&7 oder tippe &e/help&7." to loop-player
+        else if {skyblock_bc_i} is 2:
+            send "&8[&3&lSkyblock&8] &7Alle Befehle findest du in der &e[<link:https://mc.festas-builds.com/wiki/befehle/><tooltip:Befehls-Übersicht öffnen>Befehls-Übersicht<reset>&e]&7." to loop-player
+        else if {skyblock_bc_i} is 3:
+            send "&8[&3&lSkyblock&8] &7Lade Freunde mit &e/is invite&7 ein und baut gemeinsam - mehr im &e[<link:https://mc.festas-builds.com/wiki/><tooltip:Zum Wiki>Wiki<reset>&e]&7." to loop-player
+        else:
+            send "&8[&3&lSkyblock&8] &7Alle Infos zum Netzwerk auf unserer &e[<link:https://mc.festas-builds.com><tooltip:Website öffnen>Website<reset>&e]&7." to loop-player

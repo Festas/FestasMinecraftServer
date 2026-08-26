@@ -8,21 +8,22 @@ command /help:
     trigger:
         execute player command "dm open help_menu"
 
-# --- AUTO-BROADCAST (rotierend, alle 10 Minuten) ---
+# --- AUTO-BROADCAST (rotierend, alle 10 Minuten, klickbare Links) ---
+# Hinweis: Skript unterstützt <link:>/<tooltip:> nativ. Damit die Links wirklich
+# anklickbar sind, wird pro Spieler mit "send" verschickt (nicht via broadcast).
 on script load:
-    delete {mining_bc::*}
-    set {mining_bc::1} to "&8[&b&lMining&8] &7Nicht sicher wie du anfängst? Tippe &e/help &7für Zonen, Rankup und mehr!"
-    set {mining_bc::2} to "&8[&b&lMining&8] &7Baue ab, verdiene Geld und steige mit &e/rankup &7im Rang auf!"
-    set {mining_bc::3} to "&8[&b&lMining&8] &7Am höchsten Rang? Steig mit &e/prestige &7auf für Multiplikatoren!"
-    set {mining_bc::4} to "&8[&b&lMining&8] &7Werte deine Spitzhacke auf und schalte deine &d/pmine &7frei!"
-    set {mining_bc::5} to "&8[&b&lMining&8] &7Tipp gefällig? Nutze &e/tips &7oder den &bNetzwerk-Kompass&7!"
-    set {mining_bc::6} to "&8[&6&lDaily&8] &7Hol dir jeden Tag deine Belohnung mit &e/daily &7– die Streak lohnt sich!"
-    set {mining_bc_index} to 1
+    set {mining_bc_i} to 0
 
 every 10 minutes:
-    set {_msg} to {mining_bc::%{mining_bc_index}%}
-    if {_msg} is set:
-        broadcast "%{_msg}%"
-    add 1 to {mining_bc_index}
-    if {mining_bc_index} > 6:
-        set {mining_bc_index} to 1
+    add 1 to {mining_bc_i}
+    if {mining_bc_i} is greater than 4:
+        set {mining_bc_i} to 1
+    loop all players:
+        if {mining_bc_i} is 1:
+            send "&8[&b&lMining&8] &7Nicht sicher wie du anfängst? Lies die &e[<link:https://mc.festas-builds.com/wiki/erste-schritte/><tooltip:Erste Schritte im Wiki öffnen>Ersten Schritte<reset>&e]&7 oder tippe &e/help&7." to loop-player
+        else if {mining_bc_i} is 2:
+            send "&8[&b&lMining&8] &7Alle Befehle findest du in der &e[<link:https://mc.festas-builds.com/wiki/befehle/><tooltip:Befehls-Übersicht öffnen>Befehls-Übersicht<reset>&e]&7." to loop-player
+        else if {mining_bc_i} is 3:
+            send "&8[&b&lMining&8] &7Sieh dir die Minen-Welt live auf der &e[<link:https://mining.festas-builds.com><tooltip:Mining Live-Karte öffnen>Live-Karte<reset>&e]&7 an." to loop-player
+        else:
+            send "&8[&b&lMining&8] &7Infos zu Zonen, Rankup & Prestige gibt es im &e[<link:https://mc.festas-builds.com/wiki/><tooltip:Zum Wiki>Wiki<reset>&e]&7." to loop-player

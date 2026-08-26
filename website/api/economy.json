@@ -1,0 +1,118 @@
+{
+    "updated": 1723980000,
+    "generator": "economy-export",
+    "servers": [
+        {
+            "id": "survival",
+            "label": "Survival",
+            "currency": "€",
+            "count": 5,
+            "players": [
+                {
+                    "rank": 1,
+                    "name": "Festas",
+                    "balance": 2450300.75,
+                    "group": "owner",
+                    "groupDisplay": "Owner",
+                    "groupWeight": 1000
+                },
+                {
+                    "rank": 2,
+                    "name": "BuilderBen",
+                    "balance": 1320000.0,
+                    "group": "admin",
+                    "groupDisplay": "Admin",
+                    "groupWeight": 900
+                },
+                {
+                    "rank": 3,
+                    "name": "FarmerFritz",
+                    "balance": 845200.5,
+                    "group": "vip",
+                    "groupDisplay": "VIP",
+                    "groupWeight": 100
+                },
+                {
+                    "rank": 4,
+                    "name": "HandelsHans",
+                    "balance": 432100.0,
+                    "group": null,
+                    "groupDisplay": null,
+                    "groupWeight": 0
+                },
+                {
+                    "rank": 5,
+                    "name": "NeuNina",
+                    "balance": 98750.25,
+                    "group": null,
+                    "groupDisplay": null,
+                    "groupWeight": 0
+                }
+            ]
+        },
+        {
+            "id": "mining",
+            "label": "Mining",
+            "currency": "€",
+            "count": 3,
+            "players": [
+                {
+                    "rank": 1,
+                    "name": "MinenMax",
+                    "balance": 1875000.0,
+                    "group": "vip",
+                    "groupDisplay": "VIP",
+                    "groupWeight": 100
+                },
+                {
+                    "rank": 2,
+                    "name": "TunnelTom",
+                    "balance": 940500.0,
+                    "group": null,
+                    "groupDisplay": null,
+                    "groupWeight": 0
+                },
+                {
+                    "rank": 3,
+                    "name": "ErzEmma",
+                    "balance": 512300.5,
+                    "group": null,
+                    "groupDisplay": null,
+                    "groupWeight": 0
+                }
+            ]
+        },
+        {
+            "id": "skyblock",
+            "label": "Skyblock",
+            "currency": "€",
+            "count": 3,
+            "players": [
+                {
+                    "rank": 1,
+                    "name": "InselIda",
+                    "balance": 1650000.0,
+                    "group": "vip",
+                    "groupDisplay": "VIP",
+                    "groupWeight": 100
+                },
+                {
+                    "rank": 2,
+                    "name": "KoopKarl",
+                    "balance": 780000.0,
+                    "group": null,
+                    "groupDisplay": null,
+                    "groupWeight": 0
+                },
+                {
+                    "rank": 3,
+                    "name": "SkyStefan",
+                    "balance": 245000.0,
+                    "group": null,
+                    "groupDisplay": null,
+                    "groupWeight": 0
+                }
+            ]
+        }
+    ]
+}

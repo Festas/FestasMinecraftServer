@@ -30,6 +30,10 @@ window.MC_CONFIG = {
     // Player leaderboard (playtime + highest LuckPerms rank), written by the
     // leaderboard-export timer and served same-origin
     leaderboardAPI: '/api/leaderboard.json',
+
+    // Per-server "richest players" board (CMI balance + highest LuckPerms rank),
+    // written by the economy-export timer and served same-origin
+    economyAPI: '/api/economy.json',
     
     // External links
     bluemapURL: 'https://survival.festas-builds.com',

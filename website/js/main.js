@@ -7,10 +7,12 @@ document.addEventListener('DOMContentLoaded', function () {
     initServerStatus();
     initPlayerList();
     initLeaderboard();
+    initEconomyLeaderboard();
+    initCommandReference();
     initNavigationAndScroll();
     initWikiSidebar();
+    initWikiSearch();
     initSmoothScroll();
-    initClassTabs();
     initScrollReveal();
 });
 
@@ -710,6 +712,213 @@ function initLeaderboard() {
     setInterval(refresh, REFRESH_MS);
 }
 
+/* ── Economy Leaderboard (richest players per server) ── */
+function initEconomyLeaderboard() {
+    const tabs = document.getElementById('economyTabs');
+    const list = document.getElementById('economyList');
+    const summary = document.getElementById('economySummary');
+    const dot = document.getElementById('economyStatusDot');
+    const updated = document.getElementById('economyUpdated');
+    if (!tabs || !list || !summary) return;
+
+    const cfg = window.MC_CONFIG || {};
+    const API = cfg.economyAPI || '/api/economy.json';
+    const REFRESH_MS = 300000;   // 5 min – matches the economy-export timer cadence
+    const STALE_AFTER_S = 1800;  // 30 min – flag clearly outdated data
+    const MEDALS = { 1: '🥇', 2: '🥈', 3: '🥉' };
+
+    // Remember which server tab the visitor picked so a background refresh keeps it.
+    let activeId = null;
+    let servers = [];
+
+    function clear(el) {
+        while (el.firstChild) el.removeChild(el.firstChild);
+    }
+
+    function setState(state) {
+        if (dot) dot.className = 'status-indicator' + (state ? ' ' + state : '');
+    }
+
+    function normalizeServers(value) {
+        return Array.isArray(value)
+            ? value.filter((entry) => entry && typeof entry === 'object')
+            : [];
+    }
+
+    function normalizePlayers(value) {
+        return Array.isArray(value) ? value.filter((entry) => entry && typeof entry === 'object') : [];
+    }
+
+    function groupLabel(player) {
+        const display = typeof player.groupDisplay === 'string' ? player.groupDisplay.trim() : '';
+        if (display) return display;
+        const group = typeof player.group === 'string' ? player.group.trim() : '';
+        return group;
+    }
+
+    function formatBalance(value, currency) {
+        const number = toPositiveNumberOrZero(value);
+        let text;
+        try {
+            text = number.toLocaleString('de-DE', { maximumFractionDigits: 0 });
+        } catch {
+            text = String(Math.round(number));
+        }
+        const suffix = typeof currency === 'string' ? currency.trim() : '';
+        return suffix ? text + ' ' + suffix : text;
+    }
+
+    function serverById(id) {
+        return servers.find((entry) => String(entry.id) === String(id)) || null;
+    }
+
+    function buildRow(player, position, currency) {
+        const rankNumber = Number(player.rank);
+        const rank = Number.isFinite(rankNumber) && rankNumber > 0 ? Math.floor(rankNumber) : position;
+        const label = groupLabel(player);
+
+        const item = document.createElement('li');
+        item.className = 'leaderboard-row';
+        if (rank <= 3) item.classList.add('leaderboard-row-top', 'leaderboard-row-' + rank);
+
+        const rankEl = document.createElement('span');
+        rankEl.className = 'leaderboard-rank';
+        rankEl.textContent = MEDALS[rank] || ('#' + rank);
+        item.appendChild(rankEl);
+
+        const nameEl = document.createElement('span');
+        nameEl.className = 'leaderboard-name';
+        // textContent keeps user-controlled player names inert (no HTML injection).
+        nameEl.textContent = String(player.name || 'Unbekannt');
+        item.appendChild(nameEl);
+
+        if (label) {
+            const groupEl = document.createElement('span');
+            groupEl.className = 'leaderboard-rank-badge';
+            // textContent keeps user-controlled rank names inert (no HTML injection).
+            groupEl.textContent = label;
+            item.appendChild(groupEl);
+        }
+
+        const balanceEl = document.createElement('span');
+        balanceEl.className = 'leaderboard-playtime economy-balance';
+        balanceEl.textContent = formatBalance(player.balance, currency);
+        item.appendChild(balanceEl);
+
+        return item;
+    }
+
+    function renderTabs() {
+        clear(tabs);
+        servers.forEach((server) => {
+            const id = String(server.id);
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.className = 'economy-tab' + (id === activeId ? ' active' : '');
+            button.setAttribute('role', 'tab');
+            button.setAttribute('aria-selected', id === activeId ? 'true' : 'false');
+            button.setAttribute('aria-controls', 'economyList');
+            // textContent keeps the (config-controlled) server label inert.
+            button.textContent = String(server.label || server.id || 'Server');
+            button.addEventListener('click', () => {
+                if (activeId === id) return;
+                activeId = id;
+                renderTabs();
+                renderActive();
+            });
+            tabs.appendChild(button);
+        });
+    }
+
+    function renderActive() {
+        clear(list);
+        const server = serverById(activeId);
+        const players = server ? normalizePlayers(server.players) : [];
+
+        if (!server || !players.length) {
+            setState('offline');
+            summary.textContent = 'Noch keine Guthaben erfasst';
+            const note = document.createElement('li');
+            note.className = 'leaderboard-empty';
+            note.textContent = 'Sobald Guthaben vorliegen, erscheinen hier die reichsten Spieler.';
+            list.appendChild(note);
+            return;
+        }
+
+        setState('online');
+        const label = String(server.label || server.id);
+        summary.textContent = players.length === 1
+            ? 'Top 1 nach Guthaben · ' + label
+            : 'Top ' + players.length + ' nach Guthaben · ' + label;
+
+        players.forEach((player, index) => list.appendChild(buildRow(player, index + 1, server.currency)));
+    }
+
+    function render(data) {
+        const snapshot = data && typeof data === 'object' ? data : {};
+        servers = normalizeServers(snapshot.servers);
+
+        if (!servers.length) {
+            activeId = null;
+            clear(tabs);
+            renderActive();
+            if (updated) updated.hidden = true;
+            return;
+        }
+
+        // Keep the visitor's current tab if it still exists; otherwise prefer the
+        // first server that actually has players, falling back to the first server.
+        const stillValid = activeId && servers.some((server) => String(server.id) === activeId);
+        if (!stillValid) {
+            const withPlayers = servers.find((server) => normalizePlayers(server.players).length);
+            activeId = String((withPlayers || servers[0]).id);
+        }
+
+        renderTabs();
+        renderActive();
+
+        if (updated) {
+            const ts = toPositiveNumberOrZero(snapshot.updated);
+            const ageS = ts > 0 ? Math.floor(Date.now() / 1000) - ts : 0;
+            if (ts > 0 && ageS > STALE_AFTER_S) {
+                updated.hidden = false;
+                updated.textContent = 'Daten möglicherweise veraltet';
+                setState('');
+            } else {
+                updated.hidden = true;
+            }
+        }
+    }
+
+    function renderUnavailable() {
+        clear(tabs);
+        clear(list);
+        servers = [];
+        activeId = null;
+        setState('offline');
+        summary.textContent = 'Bestenliste momentan nicht verfügbar';
+        const note = document.createElement('li');
+        note.className = 'leaderboard-empty';
+        note.textContent = 'Bestenliste konnte nicht geladen werden. Bitte später erneut versuchen.';
+        list.appendChild(note);
+        if (updated) updated.hidden = true;
+    }
+
+    async function refresh() {
+        try {
+            const res = await fetch(API, { cache: 'no-store' });
+            if (!res.ok) throw new Error('HTTP ' + res.status);
+            const data = await res.json();
+            render(data);
+        } catch {
+            renderUnavailable();
+        }
+    }
+
+    refresh();
+    setInterval(refresh, REFRESH_MS);
+}
+
 /* ── Navigation & Scroll ────────────────────── */
 function initNavigationAndScroll() {
     const header = document.getElementById('siteHeader');
@@ -878,32 +1087,6 @@ function initSmoothScroll() {
     });
 }
 
-/* ── Class Tabs ─────────────────────────────── */
-function initClassTabs() {
-    const tabs = document.querySelectorAll('.class-tab');
-    const panels = document.querySelectorAll('.class-panel');
-
-    if (!tabs.length || !panels.length) return;
-
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            const cls = tab.dataset.class;
-
-            tabs.forEach(t => {
-                t.classList.remove('active');
-                t.setAttribute('aria-selected', 'false');
-            });
-            panels.forEach(p => p.classList.remove('active'));
-
-            tab.classList.add('active');
-            tab.setAttribute('aria-selected', 'true');
-
-            const panel = document.querySelector(`.class-panel[data-class="${cls}"]`);
-            if (panel) panel.classList.add('active');
-        });
-    });
-}
-
 /* ── Scroll Reveal ──────────────────────────── */
 function initScrollReveal() {
     const elements = document.querySelectorAll('.reveal');
@@ -919,4 +1102,467 @@ function initScrollReveal() {
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
     elements.forEach(el => observer.observe(el));
+}
+
+/* ── Command Reference (data-driven) ────────── */
+function initCommandReference() {
+    const results = document.getElementById('cmdResults');
+    const searchInput = document.getElementById('cmdSearch');
+    const serverFilters = document.getElementById('cmdServerFilters');
+    const countEl = document.getElementById('cmdCount');
+    const groupSeg = document.querySelector('.cmd-seg');
+    if (!results) return;
+
+    // Resolve commands.json relative to the current page (befehle/index.html).
+    const DATA_URL = 'commands.json';
+
+    const state = { groupBy: 'category', server: 'all', query: '' };
+    let dataset = null;
+
+    function clear(el) {
+        while (el.firstChild) el.removeChild(el.firstChild);
+    }
+
+    function asArray(value) {
+        return Array.isArray(value) ? value : [];
+    }
+
+    // Base command without argument placeholders, e.g. "/cmi home [Name]" -> "/cmi home".
+    function baseCommand(command) {
+        const text = String(command || '');
+        const cut = text.indexOf('[');
+        return (cut >= 0 ? text.slice(0, cut) : text).trim();
+    }
+
+    function labelFor(list, id) {
+        const entry = asArray(list).find((item) => item && item.id === id);
+        return entry && typeof entry.label === 'string' ? entry.label : String(id || '');
+    }
+
+    function iconFor(list, id) {
+        const entry = asArray(list).find((item) => item && item.id === id);
+        return entry && typeof entry.icon === 'string' ? entry.icon : '';
+    }
+
+    function matchesServer(command) {
+        if (state.server === 'all') return true;
+        const servers = asArray(command.servers);
+        // Network-wide commands are available on every gameplay server.
+        return servers.indexOf(state.server) !== -1 || servers.indexOf('netzwerk') !== -1;
+    }
+
+    function matchesQuery(command) {
+        const q = state.query;
+        if (!q) return true;
+        const haystack = [
+            command.command,
+            command.description,
+            command.rank,
+            labelFor(dataset.plugins, command.plugin),
+            labelFor(dataset.categories, command.category)
+        ].map((v) => String(v || '').toLowerCase()).join(' ');
+        return haystack.indexOf(q) !== -1;
+    }
+
+    function filtered() {
+        return asArray(dataset.commands)
+            .filter((c) => c && typeof c === 'object')
+            .filter(matchesServer)
+            .filter(matchesQuery);
+    }
+
+    function buildCommandItem(command) {
+        const item = document.createElement('div');
+        item.className = 'command-item';
+
+        const main = document.createElement('div');
+        main.className = 'command-main';
+
+        const nameRow = document.createElement('div');
+        nameRow.className = 'command-name-row';
+
+        const nameEl = document.createElement('span');
+        nameEl.className = 'command-name';
+        // textContent keeps command strings inert (no HTML injection).
+        nameEl.textContent = String(command.command || '');
+        nameRow.appendChild(nameEl);
+
+        const rank = typeof command.rank === 'string' ? command.rank.trim() : '';
+        if (rank) {
+            const rankEl = document.createElement('span');
+            rankEl.className = 'command-rank-badge';
+            rankEl.textContent = rank;
+            nameRow.appendChild(rankEl);
+        }
+
+        main.appendChild(nameRow);
+
+        const descEl = document.createElement('p');
+        descEl.className = 'command-description';
+        descEl.textContent = String(command.description || '');
+        main.appendChild(descEl);
+
+        // Secondary meta line: plugin + servers, for cross-reference.
+        const metaEl = document.createElement('div');
+        metaEl.className = 'command-meta';
+
+        const pluginTag = document.createElement('span');
+        pluginTag.className = 'command-tag command-tag--plugin';
+        pluginTag.textContent = labelFor(dataset.plugins, command.plugin);
+        metaEl.appendChild(pluginTag);
+
+        asArray(command.servers).forEach((sid) => {
+            const tag = document.createElement('span');
+            tag.className = 'command-tag command-tag--server';
+            tag.textContent = labelFor(dataset.servers, sid);
+            metaEl.appendChild(tag);
+        });
+
+        main.appendChild(metaEl);
+        item.appendChild(main);
+
+        const copyBtn = document.createElement('button');
+        copyBtn.type = 'button';
+        copyBtn.className = 'command-copy';
+        copyBtn.setAttribute('aria-label', 'Befehl kopieren');
+        copyBtn.title = 'Befehl kopieren';
+        copyBtn.textContent = '⧉';
+        copyBtn.addEventListener('click', async () => {
+            const text = baseCommand(command.command);
+            try {
+                await navigator.clipboard.writeText(text);
+            } catch {
+                _fallbackCopy(text);
+            }
+            const original = copyBtn.textContent;
+            copyBtn.textContent = '✓';
+            copyBtn.classList.add('is-copied');
+            setTimeout(() => {
+                copyBtn.textContent = original;
+                copyBtn.classList.remove('is-copied');
+            }, 1500);
+        });
+        item.appendChild(copyBtn);
+
+        return item;
+    }
+
+    function groupsFor(commands) {
+        const key = state.groupBy;
+        const order = key === 'plugin' ? asArray(dataset.plugins) : asArray(dataset.categories);
+        const buckets = new Map();
+        commands.forEach((command) => {
+            const id = String(command[key] || 'sonstiges');
+            if (!buckets.has(id)) buckets.set(id, []);
+            buckets.get(id).push(command);
+        });
+
+        // Preserve the declared order of categories/plugins; append any extras.
+        const orderedIds = order.map((entry) => entry && entry.id).filter(Boolean);
+        const seen = new Set(orderedIds);
+        buckets.forEach((_, id) => { if (!seen.has(id)) orderedIds.push(id); });
+
+        return orderedIds
+            .filter((id) => buckets.has(id))
+            .map((id) => ({ id, commands: buckets.get(id) }));
+    }
+
+    function render() {
+        if (!dataset) return;
+        const commands = filtered();
+        clear(results);
+
+        if (countEl) {
+            const total = asArray(dataset.commands).length;
+            countEl.textContent = commands.length === total
+                ? commands.length + ' Befehle'
+                : commands.length + ' von ' + total + ' Befehlen';
+        }
+
+        if (!commands.length) {
+            const empty = document.createElement('p');
+            empty.className = 'cmd-empty';
+            empty.textContent = 'Keine Befehle gefunden. Passe Suche oder Filter an.';
+            results.appendChild(empty);
+            return;
+        }
+
+        const isPlugin = state.groupBy === 'plugin';
+        groupsFor(commands).forEach((group) => {
+            const section = document.createElement('section');
+            section.className = 'command-group';
+
+            const heading = document.createElement('h2');
+            heading.className = 'command-group-title';
+            const icon = isPlugin ? '' : iconFor(dataset.categories, group.id);
+            if (icon) {
+                const iconEl = document.createElement('span');
+                iconEl.className = 'command-group-icon';
+                iconEl.textContent = icon;
+                heading.appendChild(iconEl);
+            }
+            const titleEl = document.createElement('span');
+            titleEl.textContent = isPlugin
+                ? labelFor(dataset.plugins, group.id)
+                : labelFor(dataset.categories, group.id);
+            heading.appendChild(titleEl);
+
+            const countBadge = document.createElement('span');
+            countBadge.className = 'command-group-count';
+            countBadge.textContent = String(group.commands.length);
+            heading.appendChild(countBadge);
+
+            section.appendChild(heading);
+
+            const listEl = document.createElement('div');
+            listEl.className = 'command-list';
+            group.commands
+                .slice()
+                .sort((a, b) => String(a.command).localeCompare(String(b.command), 'de'))
+                .forEach((command) => listEl.appendChild(buildCommandItem(command)));
+            section.appendChild(listEl);
+
+            results.appendChild(section);
+        });
+    }
+
+    function buildServerFilters() {
+        if (!serverFilters) return;
+        clear(serverFilters);
+        const options = [{ id: 'all', label: 'Alle' }].concat(asArray(dataset.servers));
+        options.forEach((opt) => {
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'cmd-filter-chip' + (opt.id === state.server ? ' active' : '');
+            btn.textContent = opt.label;
+            btn.setAttribute('aria-pressed', opt.id === state.server ? 'true' : 'false');
+            btn.addEventListener('click', () => {
+                state.server = opt.id;
+                serverFilters.querySelectorAll('.cmd-filter-chip').forEach((chip) => {
+                    const active = chip === btn;
+                    chip.classList.toggle('active', active);
+                    chip.setAttribute('aria-pressed', active ? 'true' : 'false');
+                });
+                render();
+            });
+            serverFilters.appendChild(btn);
+        });
+    }
+
+    if (groupSeg) {
+        groupSeg.addEventListener('click', (e) => {
+            const btn = e.target.closest('.cmd-seg-btn');
+            if (!btn) return;
+            const group = btn.getAttribute('data-group');
+            if (!group || group === state.groupBy) return;
+            state.groupBy = group;
+            groupSeg.querySelectorAll('.cmd-seg-btn').forEach((b) => {
+                b.classList.toggle('active', b === btn);
+            });
+            render();
+        });
+    }
+
+    if (searchInput) {
+        searchInput.addEventListener('input', () => {
+            state.query = searchInput.value.trim().toLowerCase();
+            render();
+        });
+    }
+
+    function renderUnavailable() {
+        clear(results);
+        const note = document.createElement('p');
+        note.className = 'cmd-empty';
+        note.textContent = 'Befehlsliste konnte nicht geladen werden. Bitte später erneut versuchen.';
+        results.appendChild(note);
+    }
+
+    fetch(DATA_URL, { cache: 'no-store' })
+        .then((res) => {
+            if (!res.ok) throw new Error('HTTP ' + res.status);
+            return res.json();
+        })
+        .then((data) => {
+            dataset = data && typeof data === 'object' ? data : {};
+            dataset.categories = asArray(dataset.categories);
+            dataset.plugins = asArray(dataset.plugins);
+            dataset.servers = asArray(dataset.servers);
+            dataset.commands = asArray(dataset.commands);
+            buildServerFilters();
+            render();
+        })
+        .catch(renderUnavailable);
+}
+
+/* ── Wiki Search (client-side) ──────────────── */
+function initWikiSearch() {
+    const input = document.getElementById('wikiSearch');
+    const box = document.getElementById('wikiSearchResults');
+    if (!input || !box) return;
+
+    const base = input.getAttribute('data-base') || '';
+    const INDEX_URL = base + 'search-index.json';
+    const MAX_RESULTS = 8;
+
+    // Resolve a wiki page link against the current document and only accept
+    // http(s) targets. This keeps the (author-controlled) data-base + indexed
+    // url from ever producing a javascript:/data: href (defence in depth).
+    function safeHref(candidate) {
+        try {
+            const resolved = new URL(String(candidate), window.location.href);
+            if (resolved.protocol === 'http:' || resolved.protocol === 'https:') {
+                return resolved.href;
+            }
+        } catch {
+            /* fall through to a harmless default */
+        }
+        return '#';
+    }
+
+    let pages = [];
+    let active = -1;      // index of keyboard-highlighted result
+    let current = [];     // currently rendered result entries
+
+    function clear(el) {
+        while (el.firstChild) el.removeChild(el.firstChild);
+    }
+
+    function asArray(value) {
+        return Array.isArray(value) ? value : [];
+    }
+
+    function snippetFor(page) {
+        const excerpt = typeof page.excerpt === 'string' ? page.excerpt.trim() : '';
+        if (excerpt) return excerpt;
+        const headings = asArray(page.headings).filter((h) => typeof h === 'string');
+        return headings.slice(0, 3).join(' · ');
+    }
+
+    function score(page, query) {
+        const title = String(page.title || '').toLowerCase();
+        const keywords = String(page.keywords || '').toLowerCase();
+        if (title.indexOf(query) !== -1) return 3;
+        if (asArray(page.headings).some((h) => String(h).toLowerCase().indexOf(query) !== -1)) return 2;
+        if (keywords.indexOf(query) !== -1) return 1;
+        return 0;
+    }
+
+    function search(query) {
+        return pages
+            .map((page) => ({ page, s: score(page, query) }))
+            .filter((r) => r.s > 0)
+            .sort((a, b) => b.s - a.s)
+            .slice(0, MAX_RESULTS)
+            .map((r) => r.page);
+    }
+
+    function close() {
+        box.hidden = true;
+        input.setAttribute('aria-expanded', 'false');
+        input.removeAttribute('aria-activedescendant');
+        active = -1;
+    }
+
+    function open() {
+        box.hidden = false;
+        input.setAttribute('aria-expanded', 'true');
+    }
+
+    function highlight(next) {
+        const items = box.querySelectorAll('.wiki-search-item');
+        if (!items.length) return;
+        active = (next + items.length) % items.length;
+        items.forEach((el, i) => {
+            const on = i === active;
+            el.classList.toggle('active', on);
+            if (on) el.scrollIntoView({ block: 'nearest' });
+        });
+    }
+
+    function render(query) {
+        current = query ? search(query) : [];
+        clear(box);
+
+        if (!query) { close(); return; }
+
+        if (!current.length) {
+            const empty = document.createElement('p');
+            empty.className = 'wiki-search-empty';
+            empty.textContent = 'Keine Treffer für „' + query + '“.';
+            box.appendChild(empty);
+            open();
+            return;
+        }
+
+        current.forEach((page) => {
+            const link = document.createElement('a');
+            link.className = 'wiki-search-item';
+            link.href = safeHref(base + String(page.url || ''));
+            link.setAttribute('role', 'option');
+
+            const title = document.createElement('span');
+            title.className = 'wiki-search-title';
+            // textContent keeps indexed page text inert (no HTML injection).
+            title.textContent = String(page.title || '');
+            link.appendChild(title);
+
+            const snippet = snippetFor(page);
+            if (snippet) {
+                const snip = document.createElement('span');
+                snip.className = 'wiki-search-snippet';
+                snip.textContent = snippet;
+                link.appendChild(snip);
+            }
+
+            box.appendChild(link);
+        });
+        open();
+        active = -1;
+    }
+
+    input.addEventListener('input', () => {
+        render(input.value.trim().toLowerCase());
+    });
+
+    input.addEventListener('keydown', (e) => {
+        if (box.hidden) return;
+        if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            highlight(active + 1);
+        } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            highlight(active - 1);
+        } else if (e.key === 'Enter') {
+            const items = box.querySelectorAll('.wiki-search-item');
+            if (active >= 0 && items[active]) {
+                e.preventDefault();
+                window.location.href = items[active].href;
+            }
+        } else if (e.key === 'Escape') {
+            close();
+            input.blur();
+        }
+    });
+
+    input.addEventListener('focus', () => {
+        if (input.value.trim()) render(input.value.trim().toLowerCase());
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!box.contains(e.target) && e.target !== input) close();
+    });
+
+    fetch(INDEX_URL, { cache: 'no-store' })
+        .then((res) => {
+            if (!res.ok) throw new Error('HTTP ' + res.status);
+            return res.json();
+        })
+        .then((data) => {
+            pages = asArray(data && data.pages).filter((p) => p && typeof p === 'object');
+        })
+        .catch(() => {
+            input.placeholder = 'Suche nicht verfügbar';
+            input.disabled = true;
+        });
 }

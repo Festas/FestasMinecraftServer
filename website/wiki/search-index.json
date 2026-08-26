@@ -1,0 +1,177 @@
+{
+  "generator": "wiki-search-index",
+  "count": 13,
+  "pages": [
+    {
+      "title": "Befehle",
+      "url": "befehle/index.html",
+      "headings": [
+        "⌨️ Befehls-Übersicht",
+        "💡 Hinweise"
+      ],
+      "excerpt": "Alle wichtigen Spieler-Befehle des Netzwerks – durchsuchbar und filterbar nach Server, Kategorie und Plugin. Viele Befehle sind erst ab bestimmten Rängen verfügbar (siehe Zeit-Räng",
+      "keywords": "befehle ⌨️ befehls-übersicht 💡 hinweise alle wichtigen spieler-befehle des netzwerks – durchsuchbar und filterbar nach server, kategorie und plugin. viele befehle sind erst ab bestimmten rängen verfügbar (siehe zeit-ränge und geld-ränge)."
+    },
+    {
+      "title": "Erste Schritte",
+      "url": "erste-schritte/index.html",
+      "headings": [
+        "🚀 Erste Schritte",
+        "⚡ Schnellinfo",
+        "Spielmodi",
+        "Befehle",
+        "Ränge",
+        "Regeln"
+      ],
+      "excerpt": "Neu auf Festas Builds? In wenigen Minuten bist du dabei: verbinden, in der Lobby den Server wählen und loslegen. Unser Hauptmodus ist Survival (eigene Stadt mit Lands) – Mining und",
+      "keywords": "erste schritte 🚀 erste schritte ⚡ schnellinfo spielmodi befehle ränge regeln neu auf festas builds? in wenigen minuten bist du dabei: verbinden, in der lobby den server wählen und loslegen. unser hauptmodus ist survival (eigene stadt mit lands) – mining und skyblock sind aktuell im aufbau."
+    },
+    {
+      "title": "Wiki",
+      "url": "index.html",
+      "headings": [
+        "📚 Festas Builds Wiki",
+        "🗺️ Live-Karten",
+        "Spielmodi",
+        "Ränge",
+        "Befehle",
+        "Regeln",
+        "⚡ Schnellinfo"
+      ],
+      "excerpt": "Willkommen im offiziellen Wiki von Festas Builds! Unser Herzstück ist der Survival-Modus, in dem du mit Lands deine eigene Stadt claimst und aufbaust. Dazu kommen Mining (ein Tycoo",
+      "keywords": "wiki 📚 festas builds wiki 🗺️ live-karten spielmodi ränge befehle regeln ⚡ schnellinfo willkommen im offiziellen wiki von festas builds! unser herzstück ist der survival-modus, in dem du mit lands deine eigene stadt claimst und aufbaust. dazu kommen mining (ein tycoon-minigame mit eigener währung) und skyblock (aktuell im aufbau). hier findest du alles zu spielmodi, rängen, befehlen und regeln."
+    },
+    {
+      "title": "Geld-Ränge",
+      "url": "raenge/geld-raenge.html",
+      "headings": [
+        "💎 Geld-Ränge (Der Flex)",
+        "💡 Hinweise"
+      ],
+      "excerpt": "Die Geld-Ränge können mit deinem verdienten In-Game Geld gekauft werden. Sie bieten exklusive Vorteile wie Fly, Partikel-Effekte und massive Shop-Boni!",
+      "keywords": "geld-ränge 💎 geld-ränge (der flex) 💡 hinweise die geld-ränge können mit deinem verdienten in-game geld gekauft werden. sie bieten exklusive vorteile wie fly, partikel-effekte und massive shop-boni!"
+    },
+    {
+      "title": "Ränge Übersicht",
+      "url": "raenge/index.html",
+      "headings": [
+        "🏆 Rang-System Übersicht",
+        "Die Straße",
+        "Der Flex",
+        "Die Leitung",
+        "💡 Gut zu wissen"
+      ],
+      "excerpt": "Unser Rang-System bietet jedem Spielstil die passenden Belohnungen. Egal ob du Zeit investierst, Geld verdienst oder zum Team gehörst – es gibt für jeden den richtigen Weg nach obe",
+      "keywords": "ränge übersicht 🏆 rang-system übersicht die straße der flex die leitung 💡 gut zu wissen unser rang-system bietet jedem spielstil die passenden belohnungen. egal ob du zeit investierst, geld verdienst oder zum team gehörst – es gibt für jeden den richtigen weg nach oben!"
+    },
+    {
+      "title": "Team-Ränge",
+      "url": "raenge/team-raenge.html",
+      "headings": [
+        "👮 Team-Ränge (Die Leitung)",
+        "💼 Team werden",
+        "📋 Team-Regeln"
+      ],
+      "excerpt": "Unsere Team-Ränge sind für Spieler, die aktiv beim Moderieren und Verwalten des Servers helfen möchten. Jeder Rang hat spezifische Berechtigungen und Verantwortlichkeiten.",
+      "keywords": "team-ränge 👮 team-ränge (die leitung) 💼 team werden 📋 team-regeln unsere team-ränge sind für spieler, die aktiv beim moderieren und verwalten des servers helfen möchten. jeder rang hat spezifische berechtigungen und verantwortlichkeiten."
+    },
+    {
+      "title": "Zeit-Ränge",
+      "url": "raenge/zeit-raenge.html",
+      "headings": [
+        "⏳ Zeit-Ränge (Die Straße)",
+        "💡 Hinweise"
+      ],
+      "excerpt": "Die Zeit-Ränge werden automatisch durch deine Spielzeit freigeschaltet. Je mehr Zeit du auf dem Server verbringst, desto mehr Vorteile erhältst du!",
+      "keywords": "zeit-ränge ⏳ zeit-ränge (die straße) 💡 hinweise die zeit-ränge werden automatisch durch deine spielzeit freigeschaltet. je mehr zeit du auf dem server verbringst, desto mehr vorteile erhältst du!"
+    },
+    {
+      "title": "Regeln",
+      "url": "regeln/index.html",
+      "headings": [
+        "📋 Server-Regeln",
+        "⚖️ Strafen bei Regelverstößen",
+        "🆘 Regelverstoß melden",
+        "❓ Bann-Appeal (Entbannungsantrag)"
+      ],
+      "excerpt": "Um ein angenehmes Spielerlebnis für alle zu gewährleisten, gelten auf dem Festas Builds Server folgende Regeln. Bei Verstößen drohen Verwarnungen, Mutes, Kicks oder Bans.",
+      "keywords": "regeln 📋 server-regeln ⚖️ strafen bei regelverstößen 🆘 regelverstoß melden ❓ bann-appeal (entbannungsantrag) um ein angenehmes spielerlebnis für alle zu gewährleisten, gelten auf dem festas builds server folgende regeln. bei verstößen drohen verwarnungen, mutes, kicks oder bans."
+    },
+    {
+      "title": "Freebuild",
+      "url": "spielmodi/freebuild.html",
+      "headings": [
+        "✨ Features",
+        "🎯 Spielziel",
+        "🛠️ Wichtige Befehle",
+        "📏 Plot-Größen nach Rang",
+        "💡 Bau-Tipps",
+        "🏆 Plot-Rating System",
+        "🚀 Schnellstart"
+      ],
+      "excerpt": "Kombiniere Freebuild mit anderen Modi! Farme Ressourcen im Survival, verdiene Geld und kaufe höhere Ränge für mehr Plots und bessere Build-Tools.",
+      "keywords": "freebuild ✨ features 🎯 spielziel 🛠️ wichtige befehle 📏 plot-größen nach rang 💡 bau-tipps 🏆 plot-rating system 🚀 schnellstart kombiniere freebuild mit anderen modi! farme ressourcen im survival, verdiene geld und kaufe höhere ränge für mehr plots und bessere build-tools."
+    },
+    {
+      "title": "Spielmodi",
+      "url": "spielmodi/index.html",
+      "headings": [
+        "🎮 Spielmodi Übersicht",
+        "Survival · Hauptmodus",
+        "Mining",
+        "Skyblock · Im Aufbau",
+        "Freebuild",
+        "🌍 Netzwerk-Übersicht",
+        "🗺️ Navigation"
+      ],
+      "excerpt": "Unser Hauptmodus ist Survival: Dort claimst du dir mit dem Lands-System deine eigene Stadt und baust sie gemeinsam mit Freunden aus. Dazu kommen das Tycoon-Minigame Mining mit eige",
+      "keywords": "spielmodi 🎮 spielmodi übersicht survival · hauptmodus mining skyblock · im aufbau freebuild 🌍 netzwerk-übersicht 🗺️ navigation unser hauptmodus ist survival: dort claimst du dir mit dem lands-system deine eigene stadt und baust sie gemeinsam mit freunden aus. dazu kommen das tycoon-minigame mining mit eigener währung und skyblock, das sich gerade im aufbau befindet."
+    },
+    {
+      "title": "Mining – Tycoon-Minigame",
+      "url": "spielmodi/mining.html",
+      "headings": [
+        "Mining — Tycoon-Minigame",
+        "💰 Eigene Währung",
+        "✨ Features",
+        "🎯 Spielziel",
+        "⛏️ Spitzhacken-Upgrades",
+        "🗺️ Abbau-Zonen",
+        "🛠️ Wichtige Befehle",
+        "💡 Tipps für Anfänger"
+      ],
+      "excerpt": "",
+      "keywords": "mining – tycoon-minigame mining — tycoon-minigame 💰 eigene währung ✨ features 🎯 spielziel ⛏️ spitzhacken-upgrades 🗺️ abbau-zonen 🛠️ wichtige befehle 💡 tipps für anfänger 🚀 schnellstart"
+    },
+    {
+      "title": "Skyblock",
+      "url": "spielmodi/sky-survival.html",
+      "headings": [
+        "✨ Features",
+        "🎯 Spielziel",
+        "🤝 Freunde-Koop",
+        "🛠️ Wichtige Befehle",
+        "💡 Tipps für Anfänger",
+        "🚀 Schnellstart"
+      ],
+      "excerpt": "",
+      "keywords": "skyblock ✨ features 🎯 spielziel 🤝 freunde-koop 🛠️ wichtige befehle 💡 tipps für anfänger 🚀 schnellstart"
+    },
+    {
+      "title": "Survival – Deine eigene Stadt mit Lands",
+      "url": "spielmodi/survival.html",
+      "headings": [
+        "Survival — Deine eigene Stadt mit Lands",
+        "✨ Features",
+        "🔑 Claim-Blöcke — so funktioniert das System",
+        "🎯 Spielziel",
+        "👥 Rollen im Land",
+        "🛠️ Wichtige Befehle",
+        "🌍 Nationen",
+        "🛡️ Schutz-Einstellungen (Flags)"
+      ],
+      "excerpt": "",
+      "keywords": "survival – deine eigene stadt mit lands survival — deine eigene stadt mit lands ✨ features 🔑 claim-blöcke — so funktioniert das system 🎯 spielziel 👥 rollen im land 🛠️ wichtige befehle 🌍 nationen 🛡️ schutz-einstellungen (flags) 🎨 und wenn ich einfach nur bauen will? 💡 tipps 🚀 schnellstart — stadt gründen 🚀 schnellstart — stadt beitreten 💰 kosten-übersicht"
+    }
+  ]
+}

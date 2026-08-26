@@ -148,6 +148,17 @@ img { max-width: 100%; display: block; }
     background: var(--accent-dim);
 }
 
+.btn-ghost {
+    background: transparent;
+    color: var(--text-secondary);
+    border: 1px solid transparent;
+}
+.btn-ghost:hover {
+    color: var(--accent);
+    transform: translateY(-2px);
+    background: var(--accent-dim);
+}
+
 /* ── Header / Nav ── */
 .site-header {
     position: sticky;
@@ -516,6 +527,45 @@ img { max-width: 100%; display: block; }
     50% { transform: translateX(-50%) translateY(6px); }
 }
 
+/* ── Quick Access ── */
+.quick-access-section {
+    padding: 2.5rem 0 1rem;
+    margin-top: -3rem;
+    position: relative;
+    z-index: 2;
+}
+.quick-access {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+}
+@media (min-width: 600px) { .quick-access { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 900px) { .quick-access { grid-template-columns: repeat(6, 1fr); } }
+
+.quick-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.15rem;
+    padding: 1.1rem 0.75rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text-primary);
+    transition: all var(--transition);
+}
+.quick-tile:hover {
+    border-color: var(--border-accent);
+    background: var(--bg-card-hover);
+    color: var(--text-primary);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-sm);
+}
+.quick-tile-icon { font-size: 1.55rem; margin-bottom: 0.3rem; }
+.quick-tile-title { font-size: 0.92rem; font-weight: 700; letter-spacing: -0.01em; }
+.quick-tile-sub { font-size: 0.68rem; color: var(--text-muted); line-height: 1.3; }
+
 /* ── Highlights Strip ── */
 .highlights {
     display: grid;
@@ -709,6 +759,39 @@ img { max-width: 100%; display: block; }
 }
 .server-detail-title { font-size: 1.2rem; font-weight: 800; margin-bottom: 0.1rem; letter-spacing: -0.02em; }
 .server-detail-sub { font-size: 0.78rem; color: var(--text-muted); }
+
+.server-status-badge {
+    margin-left: auto;
+    align-self: flex-start;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border: 1px solid var(--border);
+}
+.server-status-badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+}
+.server-status-badge.is-live {
+    color: var(--accent);
+    background: var(--accent-dim);
+    border-color: var(--border-accent);
+}
+.server-status-badge.is-wip {
+    color: var(--gold);
+    background: rgba(255, 170, 0, 0.1);
+    border-color: rgba(255, 170, 0, 0.28);
+}
 .server-detail-desc {
     font-size: 0.9rem;
     color: var(--text-secondary);
@@ -1121,6 +1204,44 @@ img { max-width: 100%; display: block; }
     .leaderboard-rank-badge { order: 3; }
 }
 
+/* ── Economy leaderboard (richest players per server) ── */
+.economy-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+.economy-tab {
+    padding: 0.5rem 1.15rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    cursor: pointer;
+    transition: all var(--transition);
+}
+.economy-tab:hover {
+    border-color: var(--border-accent);
+    color: var(--text-primary);
+}
+.economy-tab.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+    box-shadow: 0 4px 18px rgba(124, 189, 84, 0.32);
+}
+.economy-balance {
+    color: var(--accent);
+    min-width: 7rem;
+}
+@media (max-width: 520px) {
+    .economy-balance { min-width: 0; }
+}
+
 /* ── Footer ── */
 .site-footer {
     background: var(--bg-section-alt);
@@ -1138,6 +1259,31 @@ img { max-width: 100%; display: block; }
 .footer-logo { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.5rem; letter-spacing: -0.02em; }
 .footer-tagline { color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.4rem; line-height: 1.55; }
 .footer-ip { font-family: var(--font-mono); font-size: 0.82rem; color: var(--accent); font-weight: 600; }
+
+.footer-social {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: var(--radius-sm);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    transition: all var(--transition);
+}
+.social-link:hover {
+    color: var(--accent);
+    border-color: var(--border-accent);
+    background: var(--accent-dim);
+    transform: translateY(-2px);
+}
 
 .footer-col h4 {
     font-size: 0.72rem;
@@ -1169,33 +1315,6 @@ img { max-width: 100%; display: block; }
     opacity: 1;
     transform: translateY(0);
 }
-
-/* ── Class System (legacy, kept for compatibility) ── */
-.class-tabs { display: flex; gap: 0.4rem; flex-wrap: wrap; justify-content: center; margin-bottom: 1.25rem; }
-.class-tab {
-    padding: 0.45rem 0.9rem;
-    border-radius: var(--radius-xs);
-    border: 1px solid var(--border);
-    background: transparent;
-    color: var(--text-secondary);
-    font-size: 0.85rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all var(--transition);
-    white-space: nowrap;
-    font-family: var(--font);
-}
-.class-tab:hover { border-color: var(--border-accent); color: var(--text-primary); }
-.class-tab.active { background: var(--accent); border-color: var(--accent); color: #fff; }
-.class-panels { position: relative; }
-.class-panel {
-    display: none;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 1.75rem;
-}
-.class-panel.active { display: block; }
 
 /* ── Utilities ── */
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }

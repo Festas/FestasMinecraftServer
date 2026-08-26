@@ -8,41 +8,22 @@ command /help:
     trigger:
         execute player command "dm open help_menu"
 
-# --- AUTO-BROADCAST (rotierend, alle 10 Minuten) ---
+# --- AUTO-BROADCAST (rotierend, alle 10 Minuten, klickbare Links) ---
+# Hinweis: Skript unterstützt <link:>/<tooltip:> nativ. Damit die Links wirklich
+# anklickbar sind, wird pro Spieler mit "send" verschickt (nicht via broadcast).
 on script load:
-    delete {survival_bc::*}
-    set {survival_bc::1} to "&8[&a&lSurvival&8] &7Neu hier? Tippe &e/help &7und erfahre alles über Jobs, Shops und Plots!"
-    set {survival_bc::2} to "&8[&a&lSurvival&8] &7Verdiene Geld mit &e/jobs &7und steige mit &e/rankup &7im Rang auf!"
-    set {survival_bc::3} to "&8[&a&lSurvival&8] &7Sichere dir dein eigenes Grundstück mit &e/plot auto&7!"
-    set {survival_bc::4} to "&8[&a&lSurvival&8] &7Handel mit anderen Spielern auf dem &e/market&7!"
-    set {survival_bc::5} to "&8[&d&lCasino&8] &7Fühlst du dich heute glücklich, Bruder? &e/gamble <Betrag> &7– das Haus wartet schon! &c(Zock mit Verstand!)"
-    set {survival_bc::6} to "&8[&d&lCasino&8] &7Wallah, gestern hat jemand den &dx10 Jackpot &7geknackt! Bist du der nächste Talahun? &e/gamble"
-    set {survival_bc_index} to 1
+    set {survival_bc_i} to 0
 
 every 10 minutes:
-    set {_msg} to {survival_bc::%{survival_bc_index}%}
-    if {_msg} is set:
-        broadcast "%{_msg}%"
-    add 1 to {survival_bc_index}
-    if {survival_bc_index} > 6:
-        set {survival_bc_index} to 1
-
-# --- /tips BEFEHL (zufälliger Survival-Tipp) ---
-command /tips:
-    description: Zeigt einen zufälligen Survival-Tipp
-    aliases: /tipp, /tip
-    trigger:
-        survivalTip(player)
-
-function survivalTip(p: player):
-    delete {_tips::*}
-    add "&7Verdiene Geld mit Berufen: Öffne &e/jobs &7und tritt einem Job bei!" to {_tips::*}
-    add "&7Kaufe & verkaufe im &e/shop &7oder handel mit Spielern auf dem &e/market&7." to {_tips::*}
-    add "&7Sichere dir dein eigenes Grundstück mit &e/plot auto &7und baue ungestört." to {_tips::*}
-    add "&7Steige mit &e/rankup &7im Rang auf und schalte mehr Rechte frei." to {_tips::*}
-    add "&7Hole dir jeden Tag deine &6/daily &7Belohnung – die Streak lohnt sich!" to {_tips::*}
-    add "&7Fühlst du dich glücklich? Versuch dein Glück im Casino mit &e/gamble <Betrag>&7." to {_tips::*}
-    add "&7Teleportiere dich schnell mit &e/warp &7zu wichtigen Orten." to {_tips::*}
-    add "&7Prüfe deinen Kontostand jederzeit mit &e/bal&7." to {_tips::*}
-    set {_tip} to random element out of {_tips::*}
-    send "&8[&a&lSurvival&8] &7Tipp: %{_tip}%" to {_p}
+    add 1 to {survival_bc_i}
+    if {survival_bc_i} is greater than 4:
+        set {survival_bc_i} to 1
+    loop all players:
+        if {survival_bc_i} is 1:
+            send "&8[&a&lSurvival&8] &7Neu hier? Starte mit den &e[<link:https://mc.festas-builds.com/wiki/erste-schritte/><tooltip:Erste Schritte im Wiki öffnen>Ersten Schritten<reset>&e]&7 oder tippe &e/help&7." to loop-player
+        else if {survival_bc_i} is 2:
+            send "&8[&a&lSurvival&8] &7Alle Befehle findest du in der &e[<link:https://mc.festas-builds.com/wiki/befehle/><tooltip:Befehls-Übersicht öffnen>Befehls-Übersicht<reset>&e]&7." to loop-player
+        else if {survival_bc_i} is 3:
+            send "&8[&a&lSurvival&8] &7Erkunde die Welt live in 3D auf der &e[<link:https://survival.festas-builds.com><tooltip:Survival Live-Karte öffnen>Live-Karte<reset>&e]&7." to loop-player
+        else:
+            send "&8[&a&lSurvival&8] &7Guides zu Lands, Rängen & Jobs gibt es im &e[<link:https://mc.festas-builds.com/wiki/><tooltip:Zum Wiki>Wiki<reset>&e]&7." to loop-player
