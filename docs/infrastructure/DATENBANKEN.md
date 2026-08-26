@@ -14,7 +14,8 @@
                     │  ┌─ s4_perms (LuckPerms)  │
                     │  ├─ s4_plan (Plan)        │
                     │  ├─ s4_husk (HuskSync)    │
-                    │  └─ s4_bazaar (Bazaar)    │
+                    │  ├─ s4_bazaar (Bazaar)    │
+                    │  └─ s5_cmi_* (CMI Economy)│
                     └────────────┬─────────────┘
                                  │
         ┌────────────┬───────────┼───────────┬────────────┐
@@ -48,6 +49,17 @@
 | `s4_plan`     | Plan             | Spieler-Statistiken, Server-Analytics        | Proxy, Lobby, Survival, RPG         |
 | `s4_husk`     | HuskSync        | Ränge und Cosmetics                          | Lobby, Prison                       |
 | `s4_bazaar`   | DeluxeBazaar    | Bazaar-Angebote und Transaktionen            | Skyblock, Prison                    |
+| `s5_cmi_survival` | CMI         | Economy-Guthaben (Survival)                  | Survival                            |
+| `s5_cmi_mining`   | CMI         | Economy-Guthaben (RPG/Prison = „Mining")     | RPG                                 |
+| `s5_cmi_skyblock` | CMI         | Economy-Guthaben (Skyblock)                  | Skyblock                            |
+
+> **CMI-Economy pro Server getrennt:** CMI ist der Economy-Anbieter, hält die
+> Guthaben aber **pro Server** in einer **eigenen** Datenbank. CMI warnt
+> ausdrücklich, dass zwei Server **niemals** dieselbe Tabelle teilen dürfen
+> (`DON'T USE SAME DATABASE TABLES FOR MORE THEN ONE SERVER`), daher bekommt jeder
+> Gameplay-Server sein eigenes `s5_cmi_<server>`. Die Lobby hat keine Economy und
+> bleibt auf SQLite. Details zur read-only Auswertung für die Website siehe den
+> Exporter [`tools/economy-export`](../../tools/economy-export/README.md).
 
 ### Redis
 
@@ -129,6 +141,45 @@ sind optional und werden entfernt. Sonderzeichen im Passwort (z. B. `$`,
 > Tabellen – und den Rang aus `s4_perms` über einen **eigenen** Read-only-User
 > (`SELECT` auf `luckperms_*`), Secret `LUCKPERMS_RO_DB_ENV`.
 
+### GitHub Actions Secret für CMI (Economy)
+
+Die CMI-Guthaben werden pro Server in einer eigenen MySQL-Datenbank gehalten
+(`s5_cmi_survival`, `s5_cmi_mining`, `s5_cmi_skyblock`). Die Deploy-Workflows
+(`deploy-survival`, `deploy-rpg`, `deploy-skyblock`) injizieren dafür einen
+dedizierten **Read/Write**-Benutzer pro Server aus je einem eigenen Secret in
+`<server>/plugins/CMI/Settings/DataBaseInfo.yml`:
+
+| Secret                   | Ziel-Server | Datenbank         |
+|--------------------------|-------------|-------------------|
+| `CMI_SURVIVAL_RW_DB_ENV` | Survival    | `s5_cmi_survival` |
+| `CMI_MINING_RW_DB_ENV`   | RPG         | `s5_cmi_mining`   |
+| `CMI_SKYBLOCK_RW_DB_ENV` | Skyblock    | `s5_cmi_skyblock` |
+
+Format des Secrets (`.env`, ein `KEY=VALUE` pro Zeile, Beispiel Survival):
+
+```env
+CMI_SURVIVAL_RW_DB_USER=cmi_survival
+CMI_SURVIVAL_RW_DB_PASSWORD=CHANGE_ME
+```
+
+Die Werte werden – wie bei Plan – in Python geparst und **wörtlich** injiziert;
+umschließende `'`/`"` sind optional. Sonderzeichen im Passwort (`$`, `` ` ``,
+`\`, `"`, `'`) sind erlaubt und müssen **nicht** escaped werden.
+
+> **Einmalige Umstellung:** CMI legt seine Tabellen (`CMI_users`, …) beim ersten
+> Start selbst an und migriert die bestehenden SQLite-Guthaben. Jeder Server muss
+> seine **eigene** Datenbank bekommen – niemals eine gemeinsame Tabelle. Setze die
+> drei Secrets, bevor dieser Branch nach `main` gemergt wird, sonst schlägt der
+> Deploy fehl (fail-closed, keine kaputte Config landet auf dem Server).
+>
+> **Read-only-Zugang für die Website:** Der Exporter
+> [`tools/economy-export`](../../tools/economy-export/README.md) liest die
+> reichsten Spieler für `economy.json` aus denselben `s5_cmi_*`-Datenbanken. Dafür
+> wird pro Server ein **separater Benutzer mit nur `SELECT`** auf `CMI_users`
+> angelegt und über die Secrets `CMI_SURVIVAL_DB_ENV` / `CMI_MINING_DB_ENV` /
+> `CMI_SKYBLOCK_DB_ENV` bereitgestellt – **nicht** die RW-User oben (Prinzip der
+> minimalen Berechtigung).
+
 ### Redis
 
 ```yaml
@@ -180,4 +231,4 @@ Detaillierte Informationen zur Backup-Strategie, Aufbewahrungsfristen und Wieder
 
 ---
 
-**Letzte Aktualisierung:** 2026-08-18
+**Letzte Aktualisierung:** 2026-08-26

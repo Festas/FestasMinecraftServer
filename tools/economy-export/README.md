@@ -26,29 +26,44 @@ servers must **never** share the same table (`DON'T USE SAME DATABASE TABLES FOR
 THEN ONE SERVER`), so each server gets a distinct database (e.g. `s5_cmi_survival`,
 `s5_cmi_mining`, `s5_cmi_skyblock`).
 
-### Enabling CMI MySQL storage per server (one-time)
+### Enabling CMI MySQL storage per server (already wired in this repo)
 
-For **each** gameplay server, edit `<server>/plugins/CMI/Settings/DataBaseInfo.yml`:
+Each gameplay server's `<server>/plugins/CMI/Settings/DataBaseInfo.yml` is committed
+with `method: MySQL` pointing at its **own** database, and the read/write credentials
+are injected at deploy (never committed):
+
+| Server (folder) | Website id | CMI database      | RW secret (deploy)       | Placeholders injected |
+|-----------------|------------|-------------------|--------------------------|-----------------------|
+| `survival`      | `survival` | `s5_cmi_survival` | `CMI_SURVIVAL_RW_DB_ENV` | `__CMI_SURVIVAL_RW_DB_USER__` / `__CMI_SURVIVAL_RW_DB_PASSWORD__` |
+| `rpg`           | `mining`   | `s5_cmi_mining`   | `CMI_MINING_RW_DB_ENV`   | `__CMI_MINING_RW_DB_USER__` / `__CMI_MINING_RW_DB_PASSWORD__` |
+| `skyblock`      | `skyblock` | `s5_cmi_skyblock` | `CMI_SKYBLOCK_RW_DB_ENV` | `__CMI_SKYBLOCK_RW_DB_USER__` / `__CMI_SKYBLOCK_RW_DB_PASSWORD__` |
+
+The committed `DataBaseInfo.yml` therefore looks like this (survival shown):
 
 ```yaml
 storage:
   method: MySQL          # was: sqlite
 mysql:
-  username: cmi_survival            # a read/write CMI user (NOT the exporter's RO user)
-  password: '...'                   # injected at deploy; never commit real creds
+  username: '__CMI_SURVIVAL_RW_DB_USER__'      # injected at deploy (NOT the exporter's RO user)
+  password: '__CMI_SURVIVAL_RW_DB_PASSWORD__'  # injected at deploy; never commit real creds
   hostname: 172.25.0.1:3306
-  database: s5_cmi_survival         # a DEDICATED database for THIS server only
-  tablePrefix: CMI_                 # → users table becomes CMI_users
+  database: s5_cmi_survival                     # a DEDICATED database for THIS server only
+  tablePrefix: CMI_                             # → users table becomes CMI_users
+  useSSL: true
 ```
 
+The `deploy-survival` / `deploy-rpg` / `deploy-skyblock` workflows parse the matching
+`CMI_*_RW_DB_ENV` secret in Python and substitute the placeholders verbatim (special
+characters in the password are safe). The lobby has no economy and stays on SQLite.
 Give each server its **own** `database:` (never a shared one). CMI creates its tables
 (`CMI_users`, …) on first start and performs the one-time migration of existing
 SQLite balances. The users table default is `CMI_users` with columns `player_uuid`
 (UUID), `username` (name) and `Balance` (DOUBLE) — all configurable per server in
 `config.json` because CMI's exact schema varies by version.
 
-> Keep CMI's own read/write user separate from this exporter's read-only user
-> (least privilege). This exporter only ever runs `SELECT`.
+> Keep CMI's own read/write user (`CMI_*_RW_DB_ENV`) separate from this exporter's
+> read-only user (`CMI_*_DB_ENV`) — least privilege. This exporter only ever runs
+> `SELECT`. See [`docs/infrastructure/DATENBANKEN.md`](../../docs/infrastructure/DATENBANKEN.md).
 
 ---
 
