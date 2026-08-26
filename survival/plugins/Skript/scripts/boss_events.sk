@@ -46,41 +46,113 @@ on script load:
 # {boss_max_hp} = max HP
 # {boss_participants::*} = list of participant UUIDs
 
-# --- 1. BOSS-EVENT STARTEN (Admin) ---
-command /bossevent start [<number>]:
-    permission: tycoon.admin
-    description: Starte ein Boss-Event
-    trigger:
-        if {boss_active} is true:
-            send "{@prefix}&cEs läuft bereits ein Boss-Event!"
-            stop
-
-        set {_bossID} to arg-1
-        if {_bossID} is not set:
-            set {_bossID} to random integer between 1 and 5
-
-        if {_bossID} < 1:
-            set {_bossID} to 1
-        if {_bossID} > 5:
-            set {_bossID} to 5
-
-        startBossEvent({_bossID})
-
-# --- 2. BOSS-EVENT STOPPEN (Admin) ---
-command /bossevent stop:
-    permission: tycoon.admin
-    description: Stoppe das aktive Boss-Event
-    trigger:
-        if {boss_active} is not true:
-            send "{@prefix}&cKein Boss-Event aktiv!"
-            stop
-        endBossEvent(false)
-
-# --- 3. BOSS-EVENT INFO ---
-command /boss:
-    description: Zeige Boss-Event Status
+# --- BOSS-EVENT BEFEHL (Status / Angriff / Admin) ---
+# Ein einziger Command mit Unterbefehlen, damit Skript keine doppelten
+# Command-Registrierungen bekommt (Konflikt-Fix).
+command /boss [<text>] [<number>]:
+    description: Boss-Event Status, Angriff und Admin-Steuerung
     aliases: /bossevent, /weltbedrohung
     trigger:
+        set {_sub} to ""
+        if arg-1 is set:
+            set {_sub} to arg-1 in lower case
+
+        # --- ADMIN: START ---
+        if {_sub} is "start":
+            if player has permission "tycoon.admin":
+                if {boss_active} is true:
+                    send "{@prefix}&cEs läuft bereits ein Boss-Event!"
+                    stop
+                set {_bossID} to arg-2
+                if {_bossID} is not set:
+                    set {_bossID} to random integer between 1 and 5
+                if {_bossID} < 1:
+                    set {_bossID} to 1
+                if {_bossID} > 5:
+                    set {_bossID} to 5
+                startBossEvent({_bossID})
+            else:
+                send "{@prefix}&cDazu hast du keine Berechtigung!"
+            stop
+
+        # --- ADMIN: STOP ---
+        if {_sub} is "stop":
+            if player has permission "tycoon.admin":
+                if {boss_active} is not true:
+                    send "{@prefix}&cKein Boss-Event aktiv!"
+                    stop
+                endBossEvent(false)
+            else:
+                send "{@prefix}&cDazu hast du keine Berechtigung!"
+            stop
+
+        # --- ANGRIFF ---
+        if {_sub} is "hit" or {_sub} is "attack":
+            if {boss_active} is not true:
+                send "{@prefix}&cKein Boss-Event aktiv!"
+                stop
+
+            if name of player's world is not "{@boss_world}":
+                send "{@prefix}&cDu musst in der Tycoon-Welt sein!"
+                stop
+
+            # Manueller Cooldown (3 Sekunden), damit der Status-Befehl frei bleibt
+            if {boss_hit_cd::%player's uuid%} is set:
+                set {_since} to difference between {boss_hit_cd::%player's uuid%} and now
+                if {_since} is less than 3 seconds:
+                    send "{@prefix}&7Dein Angriff wird geladen..."
+                    stop
+            set {boss_hit_cd::%player's uuid%} to now
+
+            # Teilnehmer registrieren
+            set {boss_participants::%player's uuid%} to name of player
+
+            # Schaden berechnen (Basis: 50-150, skaliert mit Prestige)
+            set {_baseDmg} to random integer between 50 and 150
+            set {_prestige} to {prestige.level.%player's uuid%}
+            if {_prestige} is not set:
+                set {_prestige} to 0
+            set {_bonus} to {_prestige} * 10
+            set {_totalDmg} to {_baseDmg} + {_bonus}
+
+            # Boss HP reduzieren
+            subtract {_totalDmg} from {boss_hp}
+
+            # Kritischer Treffer (10% Chance)
+            set {_critChance} to random integer between 1 and 100
+            if {_critChance} <= 10:
+                set {_totalDmg} to {_totalDmg} * 3
+                subtract {_totalDmg} * 2 from {boss_hp}
+                send title "" with subtitle "&c&l⚔ KRITISCHER TREFFER! &7-%{_totalDmg}% HP" to player for 2 seconds
+                play sound "entity.player.attack.crit" with volume 1 and pitch 0.8 to player
+            else:
+                send title "" with subtitle "&c⚔ &7-%{_totalDmg}% HP" to player for 1 second
+                play sound "entity.player.attack.strong" with volume 0.8 and pitch 1 to player
+
+            # HP-Check
+            if {boss_hp} <= 0:
+                set {boss_hp} to 0
+                endBossEvent(true)
+                stop
+
+            # Gelegentliche Boss-Angriffe (30% Chance)
+            set {_attackBack} to random integer between 1 and 100
+            if {_attackBack} <= 30:
+                wait 10 ticks
+                set {_bossName} to {boss_names::%{boss_id}%}
+
+                delete {_attacks::*}
+                add "&7schlägt mit dunkler Energie zurück!" to {_attacks::*}
+                add "&7entfesselt einen Feuerball!" to {_attacks::*}
+                add "&7stampft auf den Boden!" to {_attacks::*}
+                add "&7brüllt ohrenbetäubend!" to {_attacks::*}
+
+                set {_attack} to random element out of {_attacks::*}
+                send "{@prefix}%{_bossName}% %{_attack}%" to player
+                play sound "entity.wither.shoot" with volume 0.5 and pitch 0.8 to player
+            stop
+
+        # --- STATUS (Standard, wenn kein bekannter Unterbefehl) ---
         if {boss_active} is not true:
             send ""
             send "&8&m─────────────────────────────────────"
@@ -124,67 +196,12 @@ command /boss:
         send ""
         send "&8&m─────────────────────────────────────"
 
-# --- 4. BOSS ANGREIFEN ---
-command /boss hit:
+# --- BOSS ANGREIFEN (Kurzbefehle, leiten an /boss hit weiter) ---
+command /bosshit:
     description: Greife den Boss an
-    aliases: /bosshit, /attack
-    cooldown: 3 seconds
-    cooldown message: {@prefix}&7Dein Angriff wird geladen... (%remaining time%)
+    aliases: /attack
     trigger:
-        if {boss_active} is not true:
-            send "{@prefix}&cKein Boss-Event aktiv!"
-            stop
-
-        if name of player's world is not "{@boss_world}":
-            send "{@prefix}&cDu musst in der Tycoon-Welt sein!"
-            stop
-
-        # Teilnehmer registrieren
-        set {boss_participants::%player's uuid%} to name of player
-
-        # Schaden berechnen (Basis: 50-150, skaliert mit Prestige)
-        set {_baseDmg} to random integer between 50 and 150
-        set {_prestige} to {prestige.level.%player's uuid%}
-        if {_prestige} is not set:
-            set {_prestige} to 0
-        set {_bonus} to {_prestige} * 10
-        set {_totalDmg} to {_baseDmg} + {_bonus}
-
-        # Boss HP reduzieren
-        subtract {_totalDmg} from {boss_hp}
-
-        # Kritischer Treffer (10% Chance)
-        set {_critChance} to random integer between 1 and 100
-        if {_critChance} <= 10:
-            set {_totalDmg} to {_totalDmg} * 3
-            subtract {_totalDmg} * 2 from {boss_hp}
-            send title "" with subtitle "&c&l⚔ KRITISCHER TREFFER! &7-%{_totalDmg}% HP" to player for 2 seconds
-            play sound "entity.player.attack.crit" with volume 1 and pitch 0.8 to player
-        else:
-            send title "" with subtitle "&c⚔ &7-%{_totalDmg}% HP" to player for 1 second
-            play sound "entity.player.attack.strong" with volume 0.8 and pitch 1 to player
-
-        # HP-Check
-        if {boss_hp} <= 0:
-            set {boss_hp} to 0
-            endBossEvent(true)
-            stop
-
-        # Gelegentliche Boss-Angriffe (30% Chance)
-        set {_attackBack} to random integer between 1 and 100
-        if {_attackBack} <= 30:
-            wait 10 ticks
-            set {_bossName} to {boss_names::%{boss_id}%}
-
-            delete {_attacks::*}
-            add "&7schlägt mit dunkler Energie zurück!" to {_attacks::*}
-            add "&7entfesselt einen Feuerball!" to {_attacks::*}
-            add "&7stampft auf den Boden!" to {_attacks::*}
-            add "&7brüllt ohrenbetäubend!" to {_attacks::*}
-
-            set {_attack} to random element out of {_attacks::*}
-            send "{@prefix}%{_bossName}% %{_attack}%" to player
-            play sound "entity.wither.shoot" with volume 0.5 and pitch 0.8 to player
+        execute player command "boss hit"
 
 # --- 5. BOSS-EVENT STARTEN (Funktion) ---
 function startBossEvent(bossID: number):

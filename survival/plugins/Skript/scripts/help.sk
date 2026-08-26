@@ -8,6 +8,41 @@ command /help:
     trigger:
         execute player command "dm open help_menu"
 
-# --- AUTO-BROADCAST (alle 10 Minuten) ---
+# --- AUTO-BROADCAST (rotierend, alle 10 Minuten) ---
+on script load:
+    delete {survival_bc::*}
+    set {survival_bc::1} to "&8[&a&lSurvival&8] &7Neu hier? Tippe &e/help &7und erfahre alles über Jobs, Shops und Plots!"
+    set {survival_bc::2} to "&8[&a&lSurvival&8] &7Verdiene Geld mit &e/jobs &7und steige mit &e/rankup &7im Rang auf!"
+    set {survival_bc::3} to "&8[&a&lSurvival&8] &7Sichere dir dein eigenes Grundstück mit &e/plot auto&7!"
+    set {survival_bc::4} to "&8[&a&lSurvival&8] &7Handel mit anderen Spielern auf dem &e/market&7!"
+    set {survival_bc::5} to "&8[&d&lCasino&8] &7Fühlst du dich heute glücklich, Bruder? &e/gamble <Betrag> &7– das Haus wartet schon! &c(Zock mit Verstand!)"
+    set {survival_bc::6} to "&8[&d&lCasino&8] &7Wallah, gestern hat jemand den &dx10 Jackpot &7geknackt! Bist du der nächste Talahun? &e/gamble"
+    set {survival_bc_index} to 1
+
 every 10 minutes:
-    broadcast "&8[&a&lSurvival&8] &7Neu hier? Tippe &e/help &7und erfahre alles über Jobs, Shops und Plots!"
+    set {_msg} to {survival_bc::%{survival_bc_index}%}
+    if {_msg} is set:
+        broadcast "%{_msg}%"
+    add 1 to {survival_bc_index}
+    if {survival_bc_index} > 6:
+        set {survival_bc_index} to 1
+
+# --- /tips BEFEHL (zufälliger Survival-Tipp) ---
+command /tips:
+    description: Zeigt einen zufälligen Survival-Tipp
+    aliases: /tipp, /tip
+    trigger:
+        survivalTip(player)
+
+function survivalTip(p: player):
+    delete {_tips::*}
+    add "&7Verdiene Geld mit Berufen: Öffne &e/jobs &7und tritt einem Job bei!" to {_tips::*}
+    add "&7Kaufe & verkaufe im &e/shop &7oder handel mit Spielern auf dem &e/market&7." to {_tips::*}
+    add "&7Sichere dir dein eigenes Grundstück mit &e/plot auto &7und baue ungestört." to {_tips::*}
+    add "&7Steige mit &e/rankup &7im Rang auf und schalte mehr Rechte frei." to {_tips::*}
+    add "&7Hole dir jeden Tag deine &6/daily &7Belohnung – die Streak lohnt sich!" to {_tips::*}
+    add "&7Fühlst du dich glücklich? Versuch dein Glück im Casino mit &e/gamble <Betrag>&7." to {_tips::*}
+    add "&7Teleportiere dich schnell mit &e/warp &7zu wichtigen Orten." to {_tips::*}
+    add "&7Prüfe deinen Kontostand jederzeit mit &e/bal&7." to {_tips::*}
+    set {_tip} to random element out of {_tips::*}
+    send "&8[&a&lSurvival&8] &7Tipp: %{_tip}%" to {_p}

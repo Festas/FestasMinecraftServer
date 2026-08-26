@@ -1,0 +1,28 @@
+# Pfad: plugins/Skript/scripts/help.sk
+# /help Befehl + regelmäßiger Broadcast – Skyblock
+
+# --- /help BEFEHL ---
+command /help:
+    description: Öffnet das Hilfe-Menü
+    aliases: /hilfe
+    trigger:
+        make player execute command "/dm open help_menu"
+
+# --- AUTO-BROADCAST (rotierend, alle 10 Minuten) ---
+on script load:
+    delete {sky_bc::*}
+    set {sky_bc::1} to "&8[&3&lSkyblock&8] &7Neu hier? Tippe &e/help &7und erfahre alles über deine Insel!"
+    set {sky_bc::2} to "&8[&3&lSkyblock&8] &7Starte deine Insel mit &e/is create &7und lade Freunde ein!"
+    set {sky_bc::3} to "&8[&3&lSkyblock&8] &7Steigere dein Insel-Level mit &e/is level &7und klettere in der &e/is top&7!"
+    set {sky_bc::4} to "&8[&3&lSkyblock&8] &7Handel clever im &e/bazaar &7und werde reich!"
+    set {sky_bc::5} to "&8[&3&lSkyblock&8] &7Tipp gefällig? Nutze &e/tips &7oder den &bNetzwerk-Kompass&7!"
+    set {sky_bc::6} to "&8[&6&lDaily&8] &7Hol dir jeden Tag deine Belohnung mit &e/daily &7– die Streak lohnt sich!"
+    set {sky_bc_index} to 1
+
+every 10 minutes:
+    set {_msg} to {sky_bc::%{sky_bc_index}%}
+    if {_msg} is set:
+        broadcast "%{_msg}%"
+    add 1 to {sky_bc_index}
+    if {sky_bc_index} > 6:
+        set {sky_bc_index} to 1

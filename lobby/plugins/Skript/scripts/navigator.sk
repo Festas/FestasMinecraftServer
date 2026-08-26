@@ -47,18 +47,12 @@ command /skyblock:
 function updateNavigator(p: player):
     wait 5 ticks
     if world of {_p} is "{@lobby_world}":
-        # Inventar leeren (nur Lobby-Items behalten)
-        loop all items in {_p}'s inventory:
-            if loop-item is not compass and loop-item is not book:
-                remove loop-item from {_p}'s inventory
-            else if name of loop-item does not contain "Navigator" and name of loop-item does not contain "Guide":
-                remove loop-item from {_p}'s inventory
+        # Inventar leeren und die festen Lobby-Items setzen
+        clear {_p}'s inventory
         # Navigator-Kompass in Slot 4 setzen
-        if slot 4 of {_p}'s inventory is not compass:
-            set slot 4 of {_p}'s inventory to compass named "&b&lNavigator &7(Rechtsklick)" with lore "&7Wähle deinen Server"
+        set slot 4 of {_p}'s inventory to compass named "&b&lNavigator &7(Rechtsklick)" with lore "&7Wähle deinen Server"
         # Guide-Buch in Slot 8 setzen
-        if slot 8 of {_p}'s inventory is not book:
-            set slot 8 of {_p}'s inventory to book named "&a&l📖 Netzwerk Guide &7(Rechtsklick)" with lore "&7Lies alles über unser Netzwerk"
+        set slot 8 of {_p}'s inventory to book named "&a&l📖 Netzwerk Guide &7(Rechtsklick)" with lore "&7Lies alles über unser Netzwerk"
         # Spielmodus und Zustand setzen
         set {_p}'s gamemode to adventure
         set {_p}'s hunger to 20
@@ -68,10 +62,15 @@ function updateNavigator(p: player):
         clear {_p}'s potion effects
 
     else:
-        loop all items in {_p}'s inventory:
-            if loop-item is compass or loop-item is book:
-                if name of loop-item contains "Navigator" or "Guide":
-                    remove loop-item from {_p}'s inventory
+        # Beim Verlassen der Lobby die Netzwerk-Items entfernen
+        set {_i4} to slot 4 of {_p}'s inventory
+        if {_i4} is compass:
+            if name of {_i4} contains "Navigator":
+                set slot 4 of {_p}'s inventory to air
+        set {_i8} to slot 8 of {_p}'s inventory
+        if {_i8} is book:
+            if name of {_i8} contains "Guide":
+                set slot 8 of {_p}'s inventory to air
 
 # --- EVENTS ---
 on join:
@@ -79,7 +78,7 @@ on join:
     # Wetter und Zeit für den Spieler ständig schön halten
     if world of player is "{@lobby_world}":
         set weather in world of player to clear
-        set time in world of player to 6000
+        set time in world of player to 12:00
 
 on world change:
     updateNavigator(player)
@@ -89,8 +88,8 @@ on respawn:
 
 on death of player:
     loop drops:
-        if loop-value is compass or book:
-            if name of loop-value contains "Navigator" or "Guide":
+        if loop-value is compass or loop-value is book:
+            if name of loop-value contains "Navigator" or name of loop-value contains "Guide":
                 remove loop-value from drops
 
 # --- 4. SCHUTZ & INTERAKTION ---
@@ -99,8 +98,8 @@ on inventory click:
     if world of player is "{@lobby_world}":
         if index of event-slot is 4 or 8:
             cancel event
-        if event-item is compass or event-item is book:
-            if name of event-item contains "Navigator" or "Guide":
+        if clicked item is compass or clicked item is book:
+            if name of clicked item contains "Navigator" or name of clicked item contains "Guide":
                 cancel event
 
 on drop:
@@ -133,18 +132,14 @@ on toggle flight:
             set player's velocity to {_v}
             play sound "entity.firework_rocket.launch" with volume 0.5 and pitch 1.5 at player for player
             set player's flight mode to false
-            wait 5 ticks
-            set player's flight mode to true
+            wait 40 ticks
+            if world of player is "{@lobby_world}":
+                if player's gamemode is adventure:
+                    set player's flight mode to true
 
 on join:
     if world of player is "{@lobby_world}":
         set player's flight mode to true
-
-on move:
-    if world of player is "{@lobby_world}":
-        if player is on ground:
-            if player's flight mode is false:
-                set player's flight mode to true
 
 # --- 6. HUNGER & SCHADEN SCHUTZ ---
 
@@ -153,5 +148,5 @@ on hunger meter change:
         cancel event
 
 on damage of player:
-    if world of player is "{@lobby_world}":
+    if world of victim is "{@lobby_world}":
         cancel event

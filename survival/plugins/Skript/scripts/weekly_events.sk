@@ -29,11 +29,63 @@ function isEventActive(eventID: number) :: boolean:
         return true
     return false
 
-# --- EVENT STATUS ---
-command /event:
+# --- EVENT BEFEHL (Status / Admin start & stop) ---
+# Ein einziger Command mit Unterbefehlen (Konflikt-Fix gegen doppelte Registrierung).
+command /event [<text>] [<number>]:
     description: Zeige aktuelle Events
     aliases: /events, /wochendevent
     trigger:
+        set {_sub} to ""
+        if arg-1 is set:
+            set {_sub} to arg-1 in lower case
+
+        # --- ADMIN: START ---
+        if {_sub} is "start":
+            if player does not have permission "tycoon.admin":
+                send "{@prefix}&cDazu hast du keine Berechtigung!"
+                stop
+            if arg-2 is not set:
+                send "{@prefix}&7Nutze &e/event start <1-5>&7."
+                stop
+            set {_id} to arg-2
+            if {_id} < 1:
+                set {_id} to 1
+            if {_id} > 5:
+                set {_id} to 5
+
+            set {weekly_event} to {_id}
+
+            broadcast ""
+            broadcast "&8&m─────────────────────────────────────"
+            broadcast "&a&l  🎉 EVENT GESTARTET! 🎉"
+            broadcast "&8&m─────────────────────────────────────"
+            broadcast ""
+            broadcast "{@prefix}%{event_names::%{_id}%}%"
+            broadcast "{@prefix}%{event_desc::%{_id}%}%"
+            broadcast ""
+            broadcast "&8&m─────────────────────────────────────"
+
+            loop all players:
+                play sound "entity.player.levelup" with volume 0.8 and pitch 1.5 to loop-player
+                send title "&a&l🎉 EVENT!" with subtitle "%{event_names::%{_id}%}%" to loop-player for 5 seconds
+            stop
+
+        # --- ADMIN: STOP ---
+        if {_sub} is "stop":
+            if player does not have permission "tycoon.admin":
+                send "{@prefix}&cDazu hast du keine Berechtigung!"
+                stop
+            if {weekly_event} is not set:
+                send "{@prefix}&cKein Event aktiv!"
+                stop
+
+            set {_name} to {event_names::%{weekly_event}%}
+            delete {weekly_event}
+
+            broadcast "{@prefix}%{_name}% &7ist beendet!"
+            stop
+
+        # --- STATUS (Standard) ---
         send ""
         send "&8&m─────────────────────────────────────"
         send "&a&l  🎉 AKTUELLE EVENTS 🎉"
@@ -54,47 +106,6 @@ command /event:
 
         send ""
         send "&8&m─────────────────────────────────────"
-
-# --- EVENT STARTEN (Admin) ---
-command /event start <number>:
-    permission: tycoon.admin
-    description: Starte ein Event manuell
-    trigger:
-        set {_id} to arg-1
-        if {_id} < 1:
-            set {_id} to 1
-        if {_id} > 5:
-            set {_id} to 5
-
-        set {weekly_event} to {_id}
-
-        broadcast ""
-        broadcast "&8&m─────────────────────────────────────"
-        broadcast "&a&l  🎉 EVENT GESTARTET! 🎉"
-        broadcast "&8&m─────────────────────────────────────"
-        broadcast ""
-        broadcast "{@prefix}%{event_names::%{_id}%}%"
-        broadcast "{@prefix}%{event_desc::%{_id}%}%"
-        broadcast ""
-        broadcast "&8&m─────────────────────────────────────"
-
-        loop all players:
-            play sound "entity.player.levelup" with volume 0.8 and pitch 1.5 to loop-player
-            send title "&a&l🎉 EVENT!" with subtitle "%{event_names::%{_id}%}%" to loop-player for 5 seconds
-
-# --- EVENT STOPPEN (Admin) ---
-command /event stop:
-    permission: tycoon.admin
-    description: Stoppe das aktive Event
-    trigger:
-        if {weekly_event} is not set:
-            send "{@prefix}&cKein Event aktiv!"
-            stop
-
-        set {_name} to {event_names::%{weekly_event}%}
-        delete {weekly_event}
-
-        broadcast "{@prefix}%{_name}% &7ist beendet!"
 
 # --- AUTOMATISCHE WOCHENEND-EVENTS ---
 # Freitag 18:00 bis Sonntag 23:59 automatisches Event

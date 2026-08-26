@@ -14,11 +14,30 @@ on script load:
     send "&8[&3📊 Economy&8] &aWirtschafts-Monitor geladen!" to console
 
 # --- WIRTSCHAFTS-ÜBERSICHT ---
-command /economy:
+command /economy [<text>]:
     permission: tycoon.admin
     description: Zeige Wirtschaftsübersicht
     aliases: /eco_stats, /wirtschaft
     trigger:
+        set {_sub} to ""
+        if arg-1 is set:
+            set {_sub} to arg-1 in lower case
+
+        # --- GESTRIGE STATISTIKEN ---
+        if {_sub} is "yesterday":
+            send ""
+            send "&8&m─────────────────────────────────────"
+            send "&3&l  📊 GESTRIGE STATISTIKEN"
+            send "&8&m─────────────────────────────────────"
+            send ""
+            send "{@prefix}&7Umsatz: &a%{eco.yesterday_revenue}%€"
+            send "{@prefix}&7Verkäufe: &e%{eco.yesterday_sales}%"
+            send "{@prefix}&7Gamble-Verluste: &c%{eco.yesterday_gamble_loss}%€"
+            send "{@prefix}&7Gamble-Gewinne: &a%{eco.yesterday_gamble_win}%€"
+            send ""
+            send "&8&m─────────────────────────────────────"
+            stop
+
         set {_playerCount} to number of all players
         set {_totalMoney} to 0
         loop all players:
@@ -117,20 +136,3 @@ every 1 hour:
                 if loop-player has permission "tycoon.admin":
                     send "{@prefix}&c⚠ INFLATIONSWARNUNG! Durchschnittliches Geld: %{_avg}%€" to loop-player
                     send "{@prefix}&7Erwäge einen Markt-Crash oder neue Money-Sinks." to loop-player
-
-# --- GESTERN STATS ---
-command /economy yesterday:
-    permission: tycoon.admin
-    description: Zeige gestrige Statistiken
-    trigger:
-        send ""
-        send "&8&m─────────────────────────────────────"
-        send "&3&l  📊 GESTRIGE STATISTIKEN"
-        send "&8&m─────────────────────────────────────"
-        send ""
-        send "{@prefix}&7Umsatz: &a%{eco.yesterday_revenue}%€"
-        send "{@prefix}&7Verkäufe: &e%{eco.yesterday_sales}%"
-        send "{@prefix}&7Gamble-Verluste: &c%{eco.yesterday_gamble_loss}%€"
-        send "{@prefix}&7Gamble-Gewinne: &a%{eco.yesterday_gamble_win}%€"
-        send ""
-        send "&8&m─────────────────────────────────────"

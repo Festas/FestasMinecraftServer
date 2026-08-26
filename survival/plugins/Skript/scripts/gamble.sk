@@ -3,20 +3,41 @@
 # Mit Trostpreisen und extra vielen Sprüchen.
 # Sicherheit: Cooldown, tägliches Verlustlimit, moderater Max-Einsatz.
 
-command /gamble <text>:
+command /gamble [<text>]:
     aliases: /cf, /coinflip, /casino
-    cooldown: 10 seconds
-    cooldown message: &8[&dCasino&8] &7Warte kurz, Bruder. Cooldown: %remaining time%
     trigger:
         # --- KONFIGURATION ---
         set {_prefix} to "&8[&dCasino&8] &7"
         set {_min_bet} to 100
         set {_max_bet} to 10000000
         set {_daily_loss_cap} to 50000000
-        # Cooldown: 10 Sekunden (oben definiert bei "cooldown: 10 seconds")
-        
-        set {_input} to arg-1
         set {_p} to player
+
+        set {_input} to ""
+        if arg-1 is set:
+            set {_input} to arg-1 in lower case
+
+        # --- HILFE / INFO (kein Einsatz nötig) ---
+        if {_input} is "":
+            gambleHelp({_p})
+            stop
+        if {_input} is "help" or {_input} is "hilfe" or {_input} is "info":
+            gambleHelp({_p})
+            stop
+
+        # --- STATISTIK ---
+        if {_input} is "stats" or {_input} is "statistik":
+            gambleStats({_p})
+            stop
+
+        # --- MANUELLER COOLDOWN (nur für echte Wetten, 10 Sekunden) ---
+        if {casino_cd::%uuid of {_p}%} is set:
+            set {_since} to difference between {casino_cd::%uuid of {_p}%} and now
+            if {_since} is less than 10 seconds:
+                send "%{_prefix}%&7Warte kurz, Bruder. Der Automat lädt nach." to {_p}
+                play sound "entity.villager.no" to {_p}
+                stop
+
         set {_balance} to {_p}'s balance
         
         # --- 1. EINSATZ ---
@@ -58,6 +79,11 @@ command /gamble <text>:
             
         # --- 3. START ---
         remove {_bet} from {_p}'s balance
+
+        # Cooldown setzen & Statistik zählen
+        set {casino_cd::%uuid of {_p}%} to now
+        add 1 to {casino_games::%uuid of {_p}%}
+        add {_bet} to {casino_wagered::%uuid of {_p}%}
         
         send "%{_prefix}%&eEinsatz: &6$%{_bet}%" to {_p}
         send "%{_prefix}%&7Wallah, Würfel rollen..." to {_p}
@@ -108,9 +134,15 @@ command /gamble <text>:
             send "%{_prefix}%&c%{_msg}%" to {_p}
             play sound "block.anvil.land" with pitch 0.5 to {_p}
             
-            # --- TROSTPREIS SYSTEM (25% Chance) ---
+            # --- TROSTPREIS SYSTEM (25% Chance, mehr bei Pechsträhne) ---
+            set {_trashChance} to 25
+            set {_ls} to {casino_lossstreak::%uuid of {_p}%}
+            if {_ls} is not set:
+                set {_ls} to 0
+            if {_ls} >= 5:
+                set {_trashChance} to 60
             set {_trashLuck} to random integer between 1 and 100
-            if {_trashLuck} <= 25:
+            if {_trashLuck} <= {_trashChance}:
                 wait 20 ticks
                 send "%{_prefix}%&7Aber warte... der Talahun hat Mitleid." to {_p}
                 play sound "entity.chicken.egg" to {_p}
@@ -237,4 +269,115 @@ command /gamble <text>:
             send title "" with subtitle "&d&lJACKPOT (x10) &8| &d+$%{_win}% &8| &7%{_msg}%" to {_p} for 6 seconds
             play sound "ui.toast.challenge_complete" to {_p}
             play sound "entity.ender_dragon.death" to {_p}
+
+        # --- 6. STATISTIK, SERIEN & REKORDE ---
+        if {_luck} <= 620:
+            # Verlust
+            add 1 to {casino_losses::%uuid of {_p}%}
+            subtract {_bet} from {casino_profit::%uuid of {_p}%}
+            set {casino_streak::%uuid of {_p}%} to 0
+            add 1 to {casino_lossstreak::%uuid of {_p}%}
+        else:
+            # Gewinn
+            set {_net} to {_win} - {_bet}
+            add 1 to {casino_wins::%uuid of {_p}%}
+            add {_net} to {casino_profit::%uuid of {_p}%}
+            set {casino_lossstreak::%uuid of {_p}%} to 0
+            add 1 to {casino_streak::%uuid of {_p}%}
+
+            # Größter eigener Gewinn
+            set {_biggest} to {casino_biggest::%uuid of {_p}%}
+            if {_biggest} is not set:
+                set {_biggest} to 0
+            if {_win} > {_biggest}:
+                set {casino_biggest::%uuid of {_p}%} to {_win}
+
+            # Server-Rekord (größter Netto-Gewinn)
+            set {_rec} to {casino_record_profit}
+            if {_rec} is not set:
+                set {_rec} to 0
+            if {_net} > {_rec}:
+                set {casino_record_profit} to {_net}
+                set {casino_record_name} to name of {_p}
+
+            # Hot-Streak Ansagen
+            set {_streak} to {casino_streak::%uuid of {_p}%}
+            if {_streak} is 3:
+                send "%{_prefix}%&6🔥 3 Siege in Folge! Du bist am Glühen, Habibi!" to {_p}
+            if {_streak} is 5:
+                broadcast "%{_prefix}%&6🔥 &f%name of {_p}% &7hat &e5 Casino-Siege in Folge&7! Wer stoppt diesen Talahun?"
+            if {_streak} is 10:
+                broadcast "%{_prefix}%&c&l☄ &f%name of {_p}% &7ist mit &e10 Siegen in Folge &7NICHT ZU STOPPEN!"
+
+# ============================================================
+# HILFE-PANEL
+# ============================================================
+function gambleHelp(p: player):
+    send "" to {_p}
+    send "&8&m─────────────────────────────────────" to {_p}
+    send "  &d&l🎰 FESTAS CASINO &8– &7So funktioniert's" to {_p}
+    send "&8&m─────────────────────────────────────" to {_p}
+    send "" to {_p}
+    send "&7Setze Geld und lass das Glück entscheiden!" to {_p}
+    send "" to {_p}
+    send "&e/gamble <Betrag> &8– &7Wette diesen Betrag" to {_p}
+    send "&e/gamble all &8– &7Setze ALLES (mutig, Bruder)" to {_p}
+    send "&e/gamble stats &8– &7Deine Casino-Statistik" to {_p}
+    send "" to {_p}
+    send "&7Einsatz: &emin $100 &7bis &emax $10.000.000" to {_p}
+    send "&7Chancen: &c62% Niete&7, &e18% x1.5&7, &a12% x2&7, &612% x4&7, &d2% x10" to {_p}
+    send "" to {_p}
+    send "&8» &7Bei einer Pechsträhne hat der Talahun Mitleid ..." to {_p}
+    send "&8» &7Knackst du den &d2% Jackpot&7, jubelt der ganze Server!" to {_p}
+    send "&8&m─────────────────────────────────────" to {_p}
+
+# ============================================================
+# STATISTIK-PANEL
+# ============================================================
+function gambleStats(p: player):
+    set {_games} to {casino_games::%uuid of {_p}%}
+    if {_games} is not set:
+        set {_games} to 0
+    set {_wins} to {casino_wins::%uuid of {_p}%}
+    if {_wins} is not set:
+        set {_wins} to 0
+    set {_losses} to {casino_losses::%uuid of {_p}%}
+    if {_losses} is not set:
+        set {_losses} to 0
+    set {_wagered} to {casino_wagered::%uuid of {_p}%}
+    if {_wagered} is not set:
+        set {_wagered} to 0
+    set {_profit} to {casino_profit::%uuid of {_p}%}
+    if {_profit} is not set:
+        set {_profit} to 0
+    set {_biggest} to {casino_biggest::%uuid of {_p}%}
+    if {_biggest} is not set:
+        set {_biggest} to 0
+    set {_streak} to {casino_streak::%uuid of {_p}%}
+    if {_streak} is not set:
+        set {_streak} to 0
+
+    set {_wr} to 0
+    if {_games} > 0:
+        set {_wr} to round({_wins} / {_games} * 100)
+
+    send "" to {_p}
+    send "&8&m─────────────────────────────────────" to {_p}
+    send "  &d&l🎰 CASINO-STATISTIK &8– &f%name of {_p}%" to {_p}
+    send "&8&m─────────────────────────────────────" to {_p}
+    send "" to {_p}
+    send "&7Spiele gesamt: &e%{_games}%" to {_p}
+    send "&7Siege: &a%{_wins}% &8| &7Niederlagen: &c%{_losses}%" to {_p}
+    send "&7Gewinnrate: &e%{_wr}%%%" to {_p}
+    send "&7Gesamt gesetzt: &6$%{_wagered}%" to {_p}
+    if {_profit} < 0:
+        send "&7Netto-Bilanz: &c$%{_profit}%" to {_p}
+    else:
+        send "&7Netto-Bilanz: &a$%{_profit}%" to {_p}
+    send "&7Größter Gewinn: &d$%{_biggest}%" to {_p}
+    send "&7Aktuelle Siegesserie: &6%{_streak}%" to {_p}
+    if {casino_record_name} is set:
+        send "" to {_p}
+        send "&7Server-Rekord: &d$%{casino_record_profit}% &7von &f%{casino_record_name}%" to {_p}
+    send "&8&m─────────────────────────────────────" to {_p}
             

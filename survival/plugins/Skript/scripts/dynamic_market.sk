@@ -134,13 +134,100 @@ every 30 minutes:
         set {_newPrice} to getMarketPrice({_item})
         set {tycoon_prices::%{_item}%} to {_newPrice}
 
-# --- 6. BÖRSE ANZEIGEN ---
-command /boerse:
+# --- 6. BÖRSE ANZEIGEN / DETAIL / EVENTS ---
+# Ein einziger Command mit Unterbefehlen (Konflikt-Fix gegen doppelte Registrierung).
+command /boerse [<text>] [<text>]:
     description: Zeige aktuelle Marktpreise
     aliases: /börse, /market, /stockmarket, /exchange
     cooldown: 5 seconds
     cooldown message: {@prefix}&7Bitte warte kurz...
     trigger:
+        set {_sub} to ""
+        if arg-1 is set:
+            set {_sub} to arg-1 in lower case
+
+        # --- DETAIL-ANSICHT ---
+        if {_sub} is "detail":
+            if arg-2 is not set:
+                send "{@prefix}&7Nutze &e/boerse detail <item>&7."
+                stop
+            set {_item} to arg-2 in lower case
+            if {boerse_base::%{_item}%} is not set:
+                send "{@prefix}&cUnbekanntes Item: &f%{_item}%"
+                send "{@prefix}&7Verfügbare Items: dirt, stone, coal, iron ingot, gold ingot, diamond, emerald, netherite ingot, ..."
+                stop
+
+            set {_base} to {boerse_base::%{_item}%}
+            set {_current} to getMarketPrice({_item})
+            set {_multi} to {boerse_multi::%{_item}%}
+            set {_trend} to getTrend({_item})
+            set {_sold} to {boerse_sold::%{_item}%}
+
+            send ""
+            send "&8&m─────────────────────────────────────"
+            send "&e&l  📊 Marktdetail: &f%{_item}%"
+            send "&8&m─────────────────────────────────────"
+            send ""
+            send "{@prefix}&7Basispreis: &f%{_base}%€"
+            send "{@prefix}&7Aktueller Preis: &e%{_current}%€"
+            send "{@prefix}&7Multiplikator: &f%{_multi}%%%"
+            send "{@prefix}&7Trend: %{_trend}%"
+            send "{@prefix}&7Verkäufe (aktuell): &f%{_sold}%"
+            send "{@prefix}&7Min. Preis: &c%{_base} * 50 / 100%€ &7(50%%)"
+            send "{@prefix}&7Max. Preis: &a%{_base} * 200 / 100%€ &7(200%%)"
+            send ""
+            send "&8&m─────────────────────────────────────"
+            stop
+
+        # --- MARKT-EVENTS (Admin) ---
+        if {_sub} is "event":
+            if player does not have permission "tycoon.admin":
+                send "{@prefix}&cDazu hast du keine Berechtigung!"
+                stop
+            set {_type} to ""
+            if arg-2 is set:
+                set {_type} to arg-2 in lower case
+
+            if {_type} is "crash":
+                # MARKT-CRASH: Alle Preise fallen auf 60%
+                loop {boerse_multi::*}:
+                    set {boerse_multi::%loop-index%} to 60
+                broadcast ""
+                broadcast "{@prefix}&c&l⚠ MARKT-CRASH! &7Alle Preise sind auf &c60%% &7gefallen!"
+                broadcast "{@prefix}&7Jetzt ist die beste Zeit zum &aKaufen&7!"
+                broadcast ""
+
+            else if {_type} is "boom":
+                # MARKT-BOOM: Alle Preise steigen auf 180%
+                loop {boerse_multi::*}:
+                    set {boerse_multi::%loop-index%} to 180
+                broadcast ""
+                broadcast "{@prefix}&a&l📈 MARKT-BOOM! &7Alle Preise sind auf &a180%% &7gestiegen!"
+                broadcast "{@prefix}&7Jetzt ist die beste Zeit zum &eVerkaufen&7!"
+                broadcast ""
+
+            else if {_type} is "goldrush":
+                # GOLDRAUSCH: Gold & Diamant Preise explodieren
+                set {boerse_multi::gold ingot} to 200
+                set {boerse_multi::gold block} to 200
+                set {boerse_multi::diamond} to 200
+                set {boerse_multi::diamond block} to 200
+                broadcast ""
+                broadcast "{@prefix}&6&l⛏ GOLDRAUSCH! &7Gold & Diamant Preise auf &6200%%&7!"
+                broadcast "{@prefix}&7Verkaufe jetzt deine Edelsteine!"
+                broadcast ""
+
+            else if {_type} is "reset":
+                # RESET: Alle Preise auf 100%
+                loop {boerse_multi::*}:
+                    set {boerse_multi::%loop-index%} to 100
+                broadcast "{@prefix}&7Marktpreise wurden zurückgesetzt."
+
+            else:
+                send "{@prefix}&cVerfügbare Events: crash, boom, goldrush, reset"
+            stop
+
+        # --- ÜBERSICHT (Standard) ---
         send ""
         send "&8&m─────────────────────────────────────"
         send "&e&l  📈 TYCOON BÖRSE 📉"
@@ -177,7 +264,7 @@ command /boerse:
             set {_price} to getMarketPrice({_item})
             set {_trend} to getTrend({_item})
             set {_multi} to {boerse_multi::%{_item}%}
-            send "&8  %{_name}%: &e%{_price}%€ &8(&7%{_multi}%\%&8) %{_trend}%"
+            send "&8  %{_name}%: &e%{_price}%€ &8(&7%{_multi}%%%&8) %{_trend}%"
 
         send ""
         send "&8  &m──────────────────────────────────"
@@ -185,80 +272,6 @@ command /boerse:
         send "{@prefix}&7Nutze &e/boerse detail <item> &7für mehr Info."
         send ""
         send "&8&m─────────────────────────────────────"
-
-# --- 7. DETAIL-ANSICHT ---
-command /boerse detail <text>:
-    description: Zeige Details zu einem Item
-    trigger:
-        set {_item} to arg-1 in lower case
-        if {boerse_base::%{_item}%} is not set:
-            send "{@prefix}&cUnbekanntes Item: &f%{_item}%"
-            send "{@prefix}&7Verfügbare Items: dirt, stone, coal, iron ingot, gold ingot, diamond, emerald, netherite ingot, ..."
-            stop
-
-        set {_base} to {boerse_base::%{_item}%}
-        set {_current} to getMarketPrice({_item})
-        set {_multi} to {boerse_multi::%{_item}%}
-        set {_trend} to getTrend({_item})
-        set {_sold} to {boerse_sold::%{_item}%}
-
-        send ""
-        send "&8&m─────────────────────────────────────"
-        send "&e&l  📊 Marktdetail: &f%{_item}%"
-        send "&8&m─────────────────────────────────────"
-        send ""
-        send "{@prefix}&7Basispreis: &f%{_base}%€"
-        send "{@prefix}&7Aktueller Preis: &e%{_current}%€"
-        send "{@prefix}&7Multiplikator: &f%{_multi}%\%"
-        send "{@prefix}&7Trend: %{_trend}%"
-        send "{@prefix}&7Verkäufe (aktuell): &f%{_sold}%"
-        send "{@prefix}&7Min. Preis: &c%{_base} * 50 / 100%€ &7(50\%)"
-        send "{@prefix}&7Max. Preis: &a%{_base} * 200 / 100%€ &7(200\%)"
-        send ""
-        send "&8&m─────────────────────────────────────"
-
-# --- 8. MARKT-EVENTS (Admin) ---
-command /boerse event <text>:
-    permission: tycoon.admin
-    description: Löse ein Markt-Event aus
-    trigger:
-        if arg-1 is "crash":
-            # MARKT-CRASH: Alle Preise fallen auf 60%
-            loop {boerse_multi::*}:
-                set {boerse_multi::%loop-index%} to 60
-            broadcast ""
-            broadcast "{@prefix}&c&l⚠ MARKT-CRASH! &7Alle Preise sind auf &c60%% &7gefallen!"
-            broadcast "{@prefix}&7Jetzt ist die beste Zeit zum &aKaufen&7!"
-            broadcast ""
-
-        else if arg-1 is "boom":
-            # MARKT-BOOM: Alle Preise steigen auf 180%
-            loop {boerse_multi::*}:
-                set {boerse_multi::%loop-index%} to 180
-            broadcast ""
-            broadcast "{@prefix}&a&l📈 MARKT-BOOM! &7Alle Preise sind auf &a180%% &7gestiegen!"
-            broadcast "{@prefix}&7Jetzt ist die beste Zeit zum &eVerkaufen&7!"
-            broadcast ""
-
-        else if arg-1 is "goldrush":
-            # GOLDRAUSCH: Gold & Diamant Preise explodieren
-            set {boerse_multi::gold ingot} to 200
-            set {boerse_multi::gold block} to 200
-            set {boerse_multi::diamond} to 200
-            set {boerse_multi::diamond block} to 200
-            broadcast ""
-            broadcast "{@prefix}&6&l⛏ GOLDRAUSCH! &7Gold & Diamant Preise auf &6200%%&7!"
-            broadcast "{@prefix}&7Verkaufe jetzt deine Edelsteine!"
-            broadcast ""
-
-        else if arg-1 is "reset":
-            # RESET: Alle Preise auf 100%
-            loop {boerse_multi::*}:
-                set {boerse_multi::%loop-index%} to 100
-            broadcast "{@prefix}&7Marktpreise wurden zurückgesetzt."
-
-        else:
-            send "{@prefix}&cVerfügbare Events: crash, boom, goldrush, reset"
 
 # --- 9. ZUFÄLLIGE MARKT-EVENTS ---
 every 4 hours:
