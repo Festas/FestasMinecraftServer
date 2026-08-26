@@ -1405,6 +1405,21 @@ function initWikiSearch() {
     const INDEX_URL = base + 'search-index.json';
     const MAX_RESULTS = 8;
 
+    // Resolve a wiki page link against the current document and only accept
+    // http(s) targets. This keeps the (author-controlled) data-base + indexed
+    // url from ever producing a javascript:/data: href (defence in depth).
+    function safeHref(candidate) {
+        try {
+            const resolved = new URL(String(candidate), window.location.href);
+            if (resolved.protocol === 'http:' || resolved.protocol === 'https:') {
+                return resolved.href;
+            }
+        } catch {
+            /* fall through to a harmless default */
+        }
+        return '#';
+    }
+
     let pages = [];
     let active = -1;      // index of keyboard-highlighted result
     let current = [];     // currently rendered result entries
@@ -1482,7 +1497,7 @@ function initWikiSearch() {
         current.forEach((page) => {
             const link = document.createElement('a');
             link.className = 'wiki-search-item';
-            link.href = base + String(page.url || '');
+            link.href = safeHref(base + String(page.url || ''));
             link.setAttribute('role', 'option');
 
             const title = document.createElement('span');
