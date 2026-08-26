@@ -140,6 +140,59 @@ jobs:
           print("Injected Plan DB credentials into survival/plugins/Plan/config.yml")
           PY
 
+      - name: Inject CMI DB credentials
+        env:
+          CMI_SURVIVAL_RW_DB_ENV: ${{ secrets.CMI_SURVIVAL_RW_DB_ENV }}
+        run: |
+          python3 - <<'PY'
+          import os
+          import sys
+          from pathlib import Path
+
+          # Parse the .env-style secret in Python instead of sourcing it in the
+          # shell. "set -a; . <(...)" makes bash interpret $, backticks, \, quotes
+          # and spaces in the values, which silently corrupts any password that
+          # contains them and breaks the CMI MySQL login. Here the values are read
+          # verbatim; a single layer of surrounding single or double quotes is
+          # stripped so both documented secret formats work.
+          def parse_env(raw):
+              data = {}
+              for line in raw.splitlines():
+                  line = line.strip()
+                  if not line or line.startswith("#") or "=" not in line:
+                      continue
+                  key, _, value = line.partition("=")
+                  key = key.strip()
+                  value = value.strip()
+                  if len(value) >= 2 and value[0] == value[-1] and value[0] in "\"'":
+                      value = value[1:-1]
+                  data[key] = value
+              return data
+
+          raw = os.environ.get("CMI_SURVIVAL_RW_DB_ENV", "")
+          if not raw.strip():
+              print("::error::Missing secret CMI_SURVIVAL_RW_DB_ENV")
+              sys.exit(1)
+
+          data = parse_env(raw)
+          keys = ("USER", "PASSWORD")
+          missing = [f"CMI_SURVIVAL_RW_DB_{key}" for key in keys if not data.get(f"CMI_SURVIVAL_RW_DB_{key}")]
+          if missing:
+              print(f"::error::Missing {', '.join(missing)} in CMI_SURVIVAL_RW_DB_ENV")
+              sys.exit(1)
+
+          def yaml_sq(value):
+              # Escape for the single-quoted YAML scalar: username: '__...__'.
+              return value.replace("'", "''")
+
+          path = Path("survival/plugins/CMI/Settings/DataBaseInfo.yml")
+          text = path.read_text()
+          for key in keys:
+              text = text.replace(f"__CMI_SURVIVAL_RW_DB_{key}__", yaml_sq(data[f"CMI_SURVIVAL_RW_DB_{key}"]))
+          path.write_text(text)
+          print("Injected CMI DB credentials into survival/plugins/CMI/Settings/DataBaseInfo.yml")
+          PY
+
       - name: Get Changed Files
         id: changed_files
         run: |
