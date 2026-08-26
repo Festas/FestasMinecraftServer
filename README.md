@@ -14,9 +14,6 @@ Dieses Repository enthält alle Konfigurationen für ein Minecraft Paper Server 
 - **Lobby**: Haupt-Hub für Spieler-Routing und Server-Navigation
 - **Survival**: Survival-Server mit Town und Freebuild (Tycoon-Gamemode aktuell deaktiviert – kommt auf eigenem Server)
 
-### Wird eingestellt (Archiv, in Ablösung)
-- **RPG**: Vollständiger MMO-RPG Server
-
 ### Neu / in Aufbau
 - **Skyblock**: Überarbeiteter Skyblock **ohne Gilden**, aber mit **Freunde-Koop** (Freunde einladen und gemeinsam die Insel bauen)
 - **Mining**: Casual-Server mit **Abbau-Zonen** — immer stärkere Spitzhacken bauen mehr Blöcke auf einmal ab, neue Zonen werden nach und nach freigeschaltet
@@ -54,13 +51,10 @@ MinecraftMMO/
 - **LuckPerms**, **PlaceholderAPI**, **Vault**, **ProtocolLib**: Basis-Infrastruktur
 - **BlueMap**: 3D-Web-Karten (Survival & Mining)
 
-### Skyblock (Umbau) & auslaufender RPG-Server
+### Skyblock (Umbau) 
 
 - **SuperiorSkyblock2**: Insel-Kern inkl. **Koop/Insel-Mitglieder** (Freunde einladen) — ersetzt das frühere Gilden-Konzept
 - **JetsMinions**: Minion-/Automations-System (Skyblock)
-- **HuskSync**: selektive Synchronisation (Cosmetics/Ränge) zwischen Servern
-- **CoinsEngine**: Multi-Währungs-System
-- **MythicMobs**, **MMOCore & MMOItems**, **BetonQuest**, **MythicDungeons**, **Citizens** *(RPG-Archiv)*
 
 Vollständige Plugin-Liste siehe [docs/PLUGINS.md](docs/PLUGINS.md)
 
@@ -113,7 +107,6 @@ Dies ist ein persönliches Projekt für meinen Minecraft Server.
 - **Minecraft Version:** 26.2
 - **Server Software:** Paper
 - **Proxy:** Velocity
-- **Bedrock-Support:** Geyser-Velocity + Floodgate
 - **Datenbanken:** MariaDB (172.25.0.1:3306), Redis (172.18.0.1:6380)
 - **Server-IP:** mc.festas-builds.com
 - **Aktive Server:** Lobby & Survival — Im Aufbau: Skyblock (Umbau) + Mining (neuer `rpg/`-Slot)
