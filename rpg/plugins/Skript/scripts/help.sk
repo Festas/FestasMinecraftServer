@@ -8,6 +8,20 @@ command /help:
     trigger:
         execute player command "dm open help_menu"
 
-# --- AUTO-BROADCAST (alle 10 Minuten) ---
+# --- AUTO-BROADCAST (rotierend, alle 10 Minuten) ---
+on script load:
+    delete {mining_bc::*}
+    set {mining_bc::1} to "&8[&b&lMining&8] &7Nicht sicher wie du anfängst? Tippe &e/help &7für Zonen, Rankup und mehr!"
+    set {mining_bc::2} to "&8[&b&lMining&8] &7Baue ab, verdiene Geld und steige mit &e/rankup &7im Rang auf!"
+    set {mining_bc::3} to "&8[&b&lMining&8] &7Am höchsten Rang? Steig mit &e/prestige &7auf für Multiplikatoren!"
+    set {mining_bc::4} to "&8[&b&lMining&8] &7Werte deine Spitzhacke auf und schalte deine &d/pmine &7frei!"
+    set {mining_bc::5} to "&8[&b&lMining&8] &7Tipp gefällig? Nutze &e/tips &7oder den &bNetzwerk-Kompass&7!"
+    set {mining_bc_index} to 1
+
 every 10 minutes:
-    broadcast "&8[&b&lMining&8] &7Nicht sicher wie du anfängst? Tippe &e/help &7für eine Übersicht über Zonen, Rankup und mehr!"
+    set {_msg} to {mining_bc::%{mining_bc_index}%}
+    if {_msg} is set:
+        broadcast "%{_msg}%"
+    add 1 to {mining_bc_index}
+    if {mining_bc_index} > 5:
+        set {mining_bc_index} to 1
