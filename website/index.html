@@ -142,11 +142,50 @@
 
                 <div class="hero-ctas">
                     <a href="#join" class="btn btn-primary">⚔️ Jetzt spielen</a>
-                    <a href="#players" class="btn btn-secondary">👥 Online-Spieler</a>
+                    <a href="wiki/index.html" class="btn btn-secondary">📖 Wiki</a>
+                    <a href="#maps" class="btn btn-ghost">🗺️ Live-Karte</a>
                 </div>
             </div>
             <div class="hero-scroll-hint" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+        </section>
+
+        <!-- QUICK ACCESS -->
+        <section class="section quick-access-section" id="quickaccess" aria-label="Schnellzugriff">
+            <div class="container">
+                <div class="quick-access reveal">
+                    <a href="wiki/index.html" class="quick-tile">
+                        <span class="quick-tile-icon" aria-hidden="true">📖</span>
+                        <span class="quick-tile-title">Wiki</span>
+                        <span class="quick-tile-sub">Guides &amp; Erste Schritte</span>
+                    </a>
+                    <a href="wiki/befehle/index.html" class="quick-tile">
+                        <span class="quick-tile-icon" aria-hidden="true">⌨️</span>
+                        <span class="quick-tile-title">Befehle</span>
+                        <span class="quick-tile-sub">Alle Commands durchsuchen</span>
+                    </a>
+                    <a href="#maps" class="quick-tile">
+                        <span class="quick-tile-icon" aria-hidden="true">🗺️</span>
+                        <span class="quick-tile-title">Live-Karten</span>
+                        <span class="quick-tile-sub">Welten in Echtzeit</span>
+                    </a>
+                    <a href="#leaderboard" class="quick-tile">
+                        <span class="quick-tile-icon" aria-hidden="true">🏆</span>
+                        <span class="quick-tile-title">Bestenlisten</span>
+                        <span class="quick-tile-sub">Spielzeit &amp; Reichtum</span>
+                    </a>
+                    <a href="#players" class="quick-tile">
+                        <span class="quick-tile-icon" aria-hidden="true">👥</span>
+                        <span class="quick-tile-title">Online</span>
+                        <span class="quick-tile-sub">Wer spielt gerade?</span>
+                    </a>
+                    <a href="wiki/regeln/index.html" class="quick-tile">
+                        <span class="quick-tile-icon" aria-hidden="true">📋</span>
+                        <span class="quick-tile-title">Regeln</span>
+                        <span class="quick-tile-sub">Faires Miteinander</span>
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -222,6 +261,7 @@
                                 <h3 class="server-detail-title">Survival</h3>
                                 <p class="server-detail-sub">Hauptmodus &middot; Lands &amp; Städte</p>
                             </div>
+                            <span class="server-status-badge is-live">Aktiv</span>
                         </div>
                         <p class="server-detail-desc">Unser Herzstück: Claime mit dem <strong>Lands</strong>-System Chunks, gründe deine eigene <strong>Stadt</strong>, lade Freunde ein und baut sie gemeinsam aus &ndash; geschützt vor Griefing. Dazu die Kreativ-Welt <strong>Freebuild</strong>.</p>
                         <a class="server-detail-link" href="wiki/spielmodi/survival.html">Mehr im Wiki →</a>
@@ -233,6 +273,7 @@
                                 <h3 class="server-detail-title">Mining</h3>
                                 <p class="server-detail-sub">Tycoon-Minigame &middot; eigene Währung</p>
                             </div>
+                            <span class="server-status-badge is-live">Aktiv</span>
                         </div>
                         <p class="server-detail-desc">Ein Tycoon-artiges Minigame mit <strong>eigener Währung</strong>: Baue in freischaltbaren Zonen ab, verkaufe deine Beute und werte deine Spitzhacke Stück für Stück auf.</p>
                         <a class="server-detail-link" href="wiki/spielmodi/mining.html">Mehr im Wiki →</a>
@@ -244,6 +285,7 @@
                                 <h3 class="server-detail-title">Skyblock</h3>
                                 <p class="server-detail-sub">Im Aufbau</p>
                             </div>
+                            <span class="server-status-badge is-wip">Im Aufbau</span>
                         </div>
                         <p class="server-detail-desc">Der Skyblock-Modus befindet sich derzeit im <strong>Aufbau</strong> und entwickelt sich noch. Schau vorbei, um zu sehen, was als Nächstes entsteht.</p>
                         <a class="server-detail-link" href="wiki/spielmodi/sky-survival.html">Mehr im Wiki →</a>
@@ -255,6 +297,7 @@
                                 <h3 class="server-detail-title">Lobby</h3>
                                 <p class="server-detail-sub">Hub &amp; Server-Navigation</p>
                             </div>
+                            <span class="server-status-badge is-live">Aktiv</span>
                         </div>
                         <p class="server-detail-desc">Dein Willkommens-Hub mit NPC-Server-Selector &ndash; von hier startest du in jede Welt.</p>
                         <a class="server-detail-link" href="wiki/spielmodi/index.html">Mehr im Wiki →</a>
@@ -380,6 +423,23 @@
                     <div class="footer-logo">🏗️ festas_builds</div>
                     <p class="footer-tagline">Lobby · Survival · Mining · Skyblock – ein Netzwerk.</p>
                     <p class="footer-ip">mc.festas-builds.com</p>
+                    <div class="footer-social" aria-label="Social Media">
+                        <a href="https://discord.gg/festasbuilds" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Discord" title="Discord">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.32 4.37A19.8 19.8 0 0 0 15.45 3a13.6 13.6 0 0 0-.62 1.28 18.3 18.3 0 0 0-5.66 0A13.6 13.6 0 0 0 8.55 3a19.8 19.8 0 0 0-4.88 1.37C.55 9.06-.3 13.63.12 18.14a19.9 19.9 0 0 0 6 3.05 14.6 14.6 0 0 0 1.28-2.09 12.9 12.9 0 0 1-2.02-.97l.5-.37a14.2 14.2 0 0 0 12.24 0l.5.37a12.9 12.9 0 0 1-2.03.97 14.6 14.6 0 0 0 1.28 2.09 19.9 19.9 0 0 0 6-3.05c.5-5.23-.85-9.76-3.55-13.77ZM8.02 15.33c-1.18 0-2.15-1.09-2.15-2.42s.95-2.42 2.15-2.42 2.17 1.09 2.15 2.42c0 1.33-.95 2.42-2.15 2.42Zm7.96 0c-1.18 0-2.15-1.09-2.15-2.42s.95-2.42 2.15-2.42 2.17 1.09 2.15 2.42c0 1.33-.95 2.42-2.15 2.42Z"/></svg>
+                        </a>
+                        <a href="https://www.tiktok.com/@festas_builds" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="TikTok" title="TikTok">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.05-2.82h-3.3v12.5a2.5 2.5 0 1 1-2.5-2.5c.28 0 .55.04.8.12v-3.4a5.9 5.9 0 0 0-.8-.05 5.85 5.85 0 1 0 5.85 5.85V8.9a7.53 7.53 0 0 0 4.4 1.4V7a4.28 4.28 0 0 1-3.4-1.18Z"/></svg>
+                        </a>
+                        <a href="https://www.instagram.com/festas_builds" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram" title="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        </a>
+                        <a href="https://www.youtube.com/@festas" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube" title="YouTube">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.2-.4-4.73a2.5 2.5 0 0 0-1.76-1.77C19.31 5.1 12 5.1 12 5.1s-7.31 0-8.84.4A2.5 2.5 0 0 0 1.4 7.27C1 8.8 1 12 1 12s0 3.2.4 4.73a2.5 2.5 0 0 0 1.76 1.77c1.53.4 8.84.4 8.84.4s7.31 0 8.84-.4a2.5 2.5 0 0 0 1.76-1.77C23 15.2 23 12 23 12Zm-13 3.02V8.98L15.2 12Z"/></svg>
+                        </a>
+                        <a href="https://www.twitch.tv/festas" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Twitch" title="Twitch">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 2 3 6v13h4v3h3l3-3h4l5-5V2Zm16 10-3 3h-4l-3 3v-3H7V4h13Z"/><path d="M15 7h2v5h-2zm-5 0h2v5h-2z"/></svg>
+                        </a>
+                    </div>
                 </div>
                 <div class="footer-col">
                     <h4>Navigation</h4>
@@ -387,6 +447,7 @@
                         <li><a href="#servers">Server</a></li>
                         <li><a href="#join">Beitreten</a></li>
                         <li><a href="wiki/index.html">Wiki</a></li>
+                        <li><a href="wiki/befehle/index.html">Befehle</a></li>
                         <li><a href="wiki/spielmodi/index.html">Spielmodi</a></li>
                         <li><a href="wiki/raenge/index.html">Ränge</a></li>
                         <li><a href="wiki/regeln/index.html">Regeln</a></li>
@@ -395,6 +456,7 @@
                 <div class="footer-col">
                     <h4>Links</h4>
                     <ul>
+                        <li><a href="https://discord.gg/festasbuilds" target="_blank" rel="noopener noreferrer">💬 Discord</a></li>
                         <li><a href="https://survival.festas-builds.com" target="_blank" rel="noopener noreferrer">🗺️ BlueMap Survival</a></li>
                         <li><a href="https://mining.festas-builds.com" target="_blank" rel="noopener noreferrer">⛏️ BlueMap Mining</a></li>
                         <li><a href="mailto:eric@festas-builds.com">📧 Kontakt</a></li>
