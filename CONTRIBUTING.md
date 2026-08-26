@@ -11,7 +11,7 @@ proxy/plugins/          # Velocity-Plugins (TAB, MiniMOTD, LibertyBans, Geyser, 
 lobby/plugins/          # Lobby-Plugins (CMI, DeluxeMenus, Skript, Oraxen, …)
 survival/plugins/       # Survival-Plugins (NextGens, Jobs, Rankup, PlotSquared, …)
 skyblock/plugins/       # Skyblock-Plugins (SuperiorSkyblock2, JetsMinions, …) — Umbau
-rpg/plugins/         # Mining/Prison-Plugins (Zonen-Kern, WorldGuard, …) — Aufbau
+rpg/plugins/            # Mining/Prison-Plugins (Zonen-Kern, WorldGuard, …) — Aufbau
 docs/                   # Dokumentation
 ```
 
