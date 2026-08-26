@@ -166,9 +166,12 @@ CMI_SURVIVAL_DB_PASSWORD=CHANGE_ME
 
 Der Deploy injiziert nur `USER` und `PASSWORD` in die `DataBaseInfo.yml`; Host,
 Port und Datenbankname stehen (nicht geheim) fest in der Config. Die Werte werden –
-wie bei Plan – in Python geparst und **wörtlich** injiziert; umschließende `'`/`"`
-sind optional. Sonderzeichen im Passwort (`$`, `` ` ``, `\`, `"`, `'`, `+`, `=`,
-`!`) sind erlaubt und müssen **nicht** escaped werden.
+wie bei Plan – in Python geparst und **wörtlich** injiziert. Trage jeden Wert
+**roh/literal** ein, ohne zusätzliche Anführungszeichen oder Escaping. Sonderzeichen
+im Passwort (`$`, `` ` ``, `\`, `"`, `'`, `+`, `=`, `!`) sind erlaubt und müssen
+**nicht** escaped werden. Umschließende `'`/`"` sind optional – genau **eine** solche
+äußere Quote-Ebene wird beim Parsen entfernt, daher ein Passwort nicht selbst in
+Quotes setzen.
 
 > **Einmalige Umstellung:** CMI legt seine Tabellen (`CMI_users`, …) beim ersten
 > Start selbst an und migriert die bestehenden SQLite-Guthaben. Jeder Server muss
