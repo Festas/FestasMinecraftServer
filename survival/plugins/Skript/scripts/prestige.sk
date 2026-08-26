@@ -66,10 +66,25 @@ function getPrestigeMultiplier(p: player) :: number:
     return 1.0 + ({_bonus} / 100)
 
 # --- PRESTIGE BEFEHL ---
-command /prestige:
+command /prestige [<text>]:
     description: Prestige aufsteigen (nach Bedrock-Rang)
     aliases: /rebirth, /prestige_menu
     trigger:
+        set {_sub} to ""
+        if arg-1 is set:
+            set {_sub} to arg-1 in lower case
+
+        # Unterbefehle an eigene Commands weiterleiten (verhindert doppelte Registrierung)
+        if {_sub} is "confirm":
+            execute player command "prestigeconfirm"
+            stop
+        if {_sub} is "info":
+            execute player command "prestigeinfo"
+            stop
+        if {_sub} is "top":
+            execute player command "prestigetop"
+            stop
+
         set {_world} to "tycoon"
         if name of player's world is not {_world}:
             send "{@prefix}&cDieser Befehl ist nur in der Tycoon Welt verfügbar!"
@@ -154,7 +169,7 @@ command /prestige:
         set {prestige.confirm.%player's uuid%} to now
 
 # --- PRESTIGE BESTÄTIGEN ---
-command /prestige confirm:
+command /prestigeconfirm:
     trigger:
         set {_world} to "tycoon"
         if name of player's world is not {_world}:
@@ -233,8 +248,8 @@ command /prestige confirm:
         send ""
 
 # --- PRESTIGE-STATUS ANZEIGEN ---
-command /prestige info:
-    aliases: /prestigeinfo, /pinfo
+command /prestigeinfo:
+    aliases: /pinfo
     trigger:
         set {_level} to getPrestige(player)
         set {_multiplier} to getPrestigeMultiplier(player)
@@ -264,7 +279,7 @@ command /prestige info:
         send "&8&m─────────────────────────────────────"
 
 # --- PRESTIGE RANGLISTE ---
-command /prestige top:
+command /prestigetop:
     aliases: /ptop
     trigger:
         send ""
