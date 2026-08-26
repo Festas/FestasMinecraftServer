@@ -1,6 +1,6 @@
 # Pfad: plugins/DeluxeMenus/gui_menus/help_menu.yml
-# RPG/Mining Help-Menü – geöffnet über /help
-menu_title: '&8» &b❓ Mining Hilfe'
+# Skyblock Help-Menü – geöffnet über /help oder den Netzwerk-Kompass
+menu_title: '&8» &3❓ Skyblock Hilfe'
 open_command: help_menu
 size: 45
 
@@ -10,7 +10,7 @@ items:
   # FILLER
   # ==============================================================
   'filler':
-    material: BLUE_STAINED_GLASS_PANE
+    material: CYAN_STAINED_GLASS_PANE
     slots:
       - '0-8'
       - '36-44'
@@ -33,111 +33,107 @@ items:
   # HEADER
   # ==============================================================
   'header':
-    material: NETHERITE_PICKAXE
+    material: GRASS_BLOCK
     slot: 4
     priority: 1
-    display_name: '&b&l❓ Mining Server Hilfe'
+    display_name: '&3&l❓ Skyblock Hilfe'
     lore:
-      - '&7Willkommen auf dem Mining Server!'
-      - '&7Hier erfährst du alles über das Abbauen.'
+      - '&7Willkommen auf dem Skyblock Server!'
+      - '&7Baue deine eigene Insel im Himmel auf.'
 
   # ==============================================================
-  # ABBAU-ZONEN
+  # INSEL
   # ==============================================================
-  'zones':
-    material: STONE
+  'island':
+    material: OAK_SAPLING
     slot: 10
     priority: 1
-    display_name: '&7&l⛏ Abbau-Zonen'
+    display_name: '&a&l🌴 Deine Insel'
     lore:
-      - '&7Baue in Zonen ab und schalte'
-      - '&7nach und nach neue frei!'
+      - '&7Alles beginnt mit deiner eigenen Insel!'
       - ''
-      - '&8» &fJede Zone enthält andere Blöcke'
-      - '&8» &fZonen &7reset sich automatisch'
-      - '&8» &fAutosell &7verkauft Blöcke direkt'
-      - '&8» &fHöhere Zonen = &fwertvollere Blöcke'
+      - '&8» &fErstelle deine Insel mit &e/is create'
+      - '&8» &fSetze deinen Spawn mit &e/is sethome'
+      - '&8» &fErweitere die Grenze mit &e/is border'
       - ''
       - '&eBefehle:'
-      - '&e/mine &8– &7Zur Mine teleportieren'
-      - '&e/mines &8– &7Alle Minen anzeigen'
+      - '&e/is &8– &7Insel-Menü öffnen'
+      - '&e/is create &8– &7Neue Insel erstellen'
+      - '&e/is home &8– &7Zur Insel teleportieren'
+    left_click_commands:
+      - '[close]'
+      - '[player] /is'
+    right_click_commands:
+      - '[close]'
+      - '[player] /is'
 
   # ==============================================================
-  # RANKUP
+  # TEAM / COOP
   # ==============================================================
-  'rankup':
-    material: EXPERIENCE_BOTTLE
+  'coop':
+    material: PLAYER_HEAD
     slot: 12
     priority: 1
-    display_name: '&a&l⬆ Rankup'
+    display_name: '&b&l🤝 Team & Coop'
     lore:
-      - '&7Verdiene Geld beim Abbauen'
-      - '&7und steige im Rang auf!'
+      - '&7Spiele gemeinsam mit Freunden auf'
+      - '&7einer Insel – kein Gilden-System nötig!'
       - ''
-      - '&8» &fBlöcke abbauen = Geld'
-      - '&8» &fGeld ausgeben = Rang aufsteigen'
-      - '&8» &fHöhere Ränge &7schalten neue Zonen frei'
+      - '&8» &fLade Freunde mit &e/is invite <Spieler> &7ein'
+      - '&8» &fSieh dein Team mit &e/is members'
+      - '&8» &fRollen & Rechte mit &e/is permissions'
       - ''
       - '&eBefehle:'
-      - '&e/rankup &8– &7Nächsten Rang kaufen'
-      - '&e/ranks &8– &7Alle Ränge anzeigen'
-      - '&e/bal &8– &7Kontostand anzeigen'
+      - '&e/is invite <Spieler> &8– &7Freund einladen'
+      - '&e/is members &8– &7Team anzeigen'
+      - '&e/is kick <Spieler> &8– &7Mitglied entfernen'
 
   # ==============================================================
-  # PRESTIGE
+  # INSEL-LEVEL & MISSIONEN
   # ==============================================================
-  'prestige':
-    material: NETHER_STAR
+  'level':
+    material: EXPERIENCE_BOTTLE
     slot: 14
     priority: 1
-    display_name: '&6&l✦ Prestige'
+    display_name: '&e&l⭐ Level & Missionen'
     lore:
-      - '&7Nach dem höchsten Rang kannst du'
-      - '&7Prestige aufsteigen!'
+      - '&7Steigere dein Insel-Level und'
+      - '&7schließe Missionen für Belohnungen ab!'
       - ''
-      - '&8» &fPrestige &7setzt deinen Rang zurück'
-      - '&8» &fDafür erhältst du &fMultiplikatoren'
-      - '&8» &fMehr Prestige = &fmehr Geld pro Block'
+      - '&8» &fWertvolle Blöcke &7erhöhen dein Level'
+      - '&8» &fMissionen &7geben Geld & Boni'
+      - '&8» &fKlettere in der &e/is top &7Rangliste'
       - ''
       - '&eBefehle:'
-      - '&e/prestige &8– &7Prestige aufsteigen'
+      - '&e/is level &8– &7Insel-Level anzeigen'
+      - '&e/is missions &8– &7Missionen anzeigen'
+      - '&e/is top &8– &7Beste Inseln anzeigen'
 
   # ==============================================================
-  # SPITZHACKEN
+  # WIRTSCHAFT / BAZAAR
   # ==============================================================
-  'pickaxes':
-    material: DIAMOND_PICKAXE
+  'economy':
+    material: GOLD_INGOT
     slot: 16
     priority: 1
-    display_name: '&b&l⛏ Spitzhacken'
+    display_name: '&6&l💰 Wirtschaft & Bazaar'
     lore:
-      - '&7Deine Spitzhacke ist dein wichtigstes Tool!'
+      - '&7Verkaufe deine Ressourcen und'
+      - '&7werde reich!'
       - ''
-      - '&8» &fAufwerten &7für mehr Blöcke pro Schlag'
-      - '&8» &fEnchants &7für Speed, Bonus und Extras'
-      - '&8» &fSeltene Enchants &7aus Kisten und Events'
-      - ''
-      - '&7Je besser die Spitzhacke,'
-      - '&7desto schneller wirst du reich!'
-
-  # ==============================================================
-  # PRIVATE MINES
-  # ==============================================================
-  'private_mine':
-    material: DIAMOND_ORE
-    slot: 28
-    priority: 1
-    display_name: '&d&l💎 Private Mine'
-    lore:
-      - '&7Schalte deine eigene private Mine frei!'
-      - ''
-      - '&8» &fNur du &7kannst darin abbauen'
-      - '&8» &fUpgraden &7für bessere Blöcke'
-      - '&8» &fReset &7füllt sie wieder auf'
+      - '&8» &fBazaar &7– Sofort kaufen & verkaufen'
+      - '&8» &fMarktplatz &7– Handel mit Spielern'
       - ''
       - '&eBefehle:'
-      - '&e/pmine &8– &7Private Mine öffnen'
-      - '&e/pmine tp &8– &7Zur Mine teleportieren'
+      - '&e/bazaar &8– &7Bazaar öffnen'
+      - '&e/market &8– &7Spieler-Marktplatz'
+      - '&e/bal &8– &7Kontostand anzeigen'
+    left_click_commands:
+      - '[close]'
+      - '[player] /bazaar'
+    right_click_commands:
+      - '[close]'
+      - '[player] /bazaar'
 
   # ==============================================================
   # TIPPS
@@ -146,7 +142,7 @@ items:
     material: BOOK
     slot: 22
     priority: 1
-    display_name: '&d&l💡 Mining-Tipps'
+    display_name: '&d&l💡 Skyblock-Tipps'
     lore:
       - '&7Brauchst du einen guten Rat?'
       - ''
@@ -165,21 +161,40 @@ items:
   # ==============================================================
   'commands':
     material: COMMAND_BLOCK
-    slot: 30
+    slot: 28
     priority: 1
     display_name: '&e&l⌨ Alle Befehle'
     lore:
       - '&7Die wichtigsten Befehle:'
       - ''
-      - '&e/mine &8– &7Zur Mine teleportieren'
-      - '&e/mines &8– &7Alle Minen anzeigen'
-      - '&e/rankup &8– &7Rang aufsteigen'
-      - '&e/ranks &8– &7Ränge anzeigen'
-      - '&e/prestige &8– &7Prestige aufsteigen'
-      - '&e/pmine &8– &7Private Mine'
+      - '&e/is &8– &7Insel-Menü'
+      - '&e/is create &8– &7Insel erstellen'
+      - '&e/is invite &8– &7Freund einladen'
+      - '&e/is level &8– &7Insel-Level'
+      - '&e/bazaar &8– &7Bazaar öffnen'
+      - '&e/market &8– &7Spieler-Marktplatz'
       - '&e/daily &8– &7Tägliche Belohnung'
       - '&e/tips &8– &7Zufälliger Tipp'
       - '&e/lobby &8– &7Zurück zur Lobby'
+
+  # ==============================================================
+  # BESUCHEN / WARPS
+  # ==============================================================
+  'visit':
+    material: ENDER_PEARL
+    slot: 30
+    priority: 1
+    display_name: '&5&l🌀 Inseln besuchen'
+    lore:
+      - '&7Besuche die Inseln anderer Spieler!'
+      - ''
+      - '&8» &fÖffentliche Warps &7mit &e/is warps'
+      - '&8» &fBesuche direkt mit &e/is visit <Spieler>'
+      - ''
+      - '&eBefehle:'
+      - '&e/is warps &8– &7Öffentliche Warps'
+      - '&e/is visit <Spieler> &8– &7Insel besuchen'
+      - '&e/is setwarp &8– &7Eigenen Warp setzen'
 
   # ==============================================================
   # SUPPORT

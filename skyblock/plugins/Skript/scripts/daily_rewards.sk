@@ -1,0 +1,129 @@
+# Pfad: plugins/Skript/scripts/daily_rewards.sk
+# Daily Login Reward System – Skyblock
+# Spieler erhalten für tägliches Einloggen Belohnungen.
+# Aufeinanderfolgende Logins geben bessere Belohnungen (Streak-System).
+
+# --- KONFIGURATION ---
+options:
+    prefix: &8[&6Daily&8] &7
+
+# --- DAILY REWARD BEFEHL ---
+command /daily:
+    description: Tägliche Belohnung abholen
+    aliases: /dailyreward, /täglichebelohnung
+    trigger:
+        claimDailyReward(player)
+
+# --- LOGIN CHECK ---
+on join:
+    wait 2 seconds
+    set {_today} to now
+    set {_lastClaim} to {daily.lastclaim.%player's uuid%}
+    if {_lastClaim} is not set:
+        send "{@prefix}&aDu hast eine &6tägliche Belohnung&a! Nutze &e/daily &aum sie abzuholen!" to player
+        play sound "entity.experience_orb.pickup" with volume 0.5 and pitch 1.5 at player for player
+    else:
+        set {_diff} to difference between {_lastClaim} and {_today}
+        if {_diff} is greater than 23 hours:
+            send "{@prefix}&aDu hast eine &6tägliche Belohnung&a! Nutze &e/daily &aum sie abzuholen!" to player
+            play sound "entity.experience_orb.pickup" with volume 0.5 and pitch 1.5 at player for player
+
+# --- DAILY REWARD FUNKTION ---
+function claimDailyReward(p: player):
+    set {_today} to now
+    set {_lastClaim} to {daily.lastclaim.%{_p}'s uuid%}
+
+    # Prüfe ob bereits heute abgeholt
+    if {_lastClaim} is set:
+        set {_diff} to difference between {_lastClaim} and {_today}
+        if {_diff} is less than 23 hours:
+            send "{@prefix}&cDu hast deine tägliche Belohnung bereits abgeholt!" to {_p}
+            send "{@prefix}&7Komme morgen wieder!" to {_p}
+            play sound "entity.villager.no" with volume 0.5 and pitch 1 at {_p} for {_p}
+            stop
+
+    # Streak-System
+    if {_lastClaim} is set:
+        set {_diff} to difference between {_lastClaim} and {_today}
+        if {_diff} is greater than 48 hours:
+            set {daily.streak.%{_p}'s uuid%} to 0
+            send "{@prefix}&cDeine Login-Streak wurde zurückgesetzt!" to {_p}
+
+    # Streak erhöhen
+    add 1 to {daily.streak.%{_p}'s uuid%}
+    set {_streak} to {daily.streak.%{_p}'s uuid%}
+    if {_streak} is not set:
+        set {_streak} to 1
+        set {daily.streak.%{_p}'s uuid%} to 1
+
+    # Claim-Zeit speichern
+    set {daily.lastclaim.%{_p}'s uuid%} to {_today}
+
+    # Belohnungen basierend auf Streak
+    set {_reward} to 0
+    if {_streak} is 1:
+        set {_reward} to 200
+    else if {_streak} is 2:
+        set {_reward} to 400
+    else if {_streak} is 3:
+        set {_reward} to 600
+    else if {_streak} is 4:
+        set {_reward} to 1000
+    else if {_streak} is 5:
+        set {_reward} to 1500
+    else if {_streak} is 6:
+        set {_reward} to 2000
+    else if {_streak} is 7:
+        set {_reward} to 5000
+    else if {_streak} is greater than 7:
+        set {_reward} to 2000 + ({_streak} - 7) * 500
+        if {_reward} is greater than 10000:
+            set {_reward} to 10000
+
+    # Geld geben
+    execute console command "cmi money give %{_p}% %{_reward}%"
+
+    # Nachricht
+    send "" to {_p}
+    send "&8&m─────────────────────────────────────" to {_p}
+    send "&6&l  ✦ Tägliche Belohnung! ✦" to {_p}
+    send "&8&m─────────────────────────────────────" to {_p}
+    send "" to {_p}
+    send "{@prefix}&7Belohnung: &a%{_reward}%€" to {_p}
+    send "{@prefix}&7Login-Streak: &e%{_streak}% Tag(e)" to {_p}
+    send "{@prefix}&7Tipp: Investiere dein Geld clever im &e/bazaar&7!" to {_p}
+
+    # Streak-Bonus-Info
+    if {_streak} is less than 7:
+        set {_nextStreak} to {_streak} + 1
+        send "{@prefix}&7Nächster Bonus bei &e%{_nextStreak}% Tagen&7!" to {_p}
+    else if {_streak} is 7:
+        send "{@prefix}&6&lWOCHENBONUS! &7Mega-Belohnung erhalten!" to {_p}
+    else:
+        send "{@prefix}&6Streak-Bonus aktiv! &7Komme morgen wieder!" to {_p}
+
+    send "" to {_p}
+    send "&8&m─────────────────────────────────────" to {_p}
+
+    # Sound & Effekte
+    play sound "entity.player.levelup" with volume 1 and pitch 1.2 at {_p} for {_p}
+    if {_streak} is 7:
+        play sound "ui.toast.challenge_complete" with volume 1 and pitch 1 at {_p} for {_p}
+
+    # Bei hohen Streaks: Broadcast
+    if {_streak} >= 14:
+        broadcast "{@prefix}&6%{_p}% &7hat eine Login-Streak von &e%{_streak}% Tagen&7! 🔥"
+
+# --- STREAK ANZEIGE ---
+command /streak:
+    description: Zeigt deine Login-Streak
+    trigger:
+        set {_streak} to {daily.streak.%player's uuid%}
+        if {_streak} is not set:
+            set {_streak} to 0
+        send "{@prefix}&7Deine Login-Streak: &e%{_streak}% Tag(e)" to player
+        if {_streak} >= 7:
+            send "{@prefix}&6Wochenbonus bereits erreicht! Weiter so! 🔥" to player
+        else:
+            set {_remaining} to 7 - {_streak}
+            send "{@prefix}&7Noch &e%{_remaining}% Tag(e) &7bis zum Wochenbonus!" to player

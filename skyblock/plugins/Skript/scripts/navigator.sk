@@ -1,31 +1,17 @@
-# --- KONFIGURATION ---
-# WICHTIG: Hier KEINE Anführungszeichen nutzen!
+# Pfad: plugins/Skript/scripts/navigator.sk
+# Skyblock Navigator: /lobby, Netzwerk-Kompass (feste Navigation) + Server-Tipps
+# WICHTIG: Bei den Optionen KEINE Anführungszeichen nutzen!
+
 options:
     lobby_server: lobby
 
-# --- BEFEHL ---
+# --- LOBBY BEFEHL (wie Survival/Mining) ---
 command /lobby:
     description: Teleportiert dich zur Lobby
     aliases: /l, /hub, /lob
     trigger:
         message "&7Du wirst zur &bLobby &7gesendet..."
-        
-        # Methode 1: BungeeCord Command (benötigt SkQuery/SkBee)
-        # Da wir die Anführungszeichen oben entfernt haben, wird hier jetzt "lobby" draus.
         connect player to server "{@lobby_server}"
-
-# --- FALLBACK ---
-# Falls der "connect"-Befehl oben nicht geht (weil Addon fehlt), 
-# kann man diesen Command nutzen, den Velocity abfängt.
-
-command /server <text>:
-    trigger:
-        stop
-        
-command /warpmenu:
-    aliases: /wm, /warpm
-    trigger:
-        make player execute command "/dm open warps"
 
 # --- NAVIGATIONS- / HILFE-MENÜ ---
 command /nav:
@@ -36,30 +22,31 @@ command /nav:
 
 # --- SERVER-TIPPS ---
 command /tips:
-    description: Zeigt einen zufälligen Mining-Tipp
+    description: Zeigt einen zufälligen Skyblock-Tipp
     aliases: /tipp, /tip
     trigger:
-        miningTip(player)
+        skyblockTip(player)
 
-function miningTip(p: player):
+function skyblockTip(p: player):
     delete {_tips::*}
-    add "&7Baue Blöcke in den &e/mine &7Zonen ab – &autosell &7verkauft sie direkt!" to {_tips::*}
-    add "&7Gib dein Geld für &e/rankup &7aus und schalte bessere Zonen frei." to {_tips::*}
-    add "&7Am höchsten Rang angekommen? Steig mit &e/prestige &7auf für Multiplikatoren!" to {_tips::*}
-    add "&7Werte deine &bSpitzhacke &7auf für mehr Blöcke pro Schlag & starke Enchants." to {_tips::*}
-    add "&7Schalte deine eigene &d/pmine &7(Private Mine) frei und baue ungestört ab." to {_tips::*}
-    add "&7Prüfe deinen Fortschritt mit &e/ranks &7und dein Guthaben mit &e/bal&7." to {_tips::*}
-    add "&7Seltene Enchants findest du in Kisten und bei Events – halte die Augen offen!" to {_tips::*}
+    add "&7Starte mit &e/is create &7und lade Freunde per &e/is invite <Spieler> &7auf deine Insel ein!" to {_tips::*}
+    add "&7Platziere wertvolle Blöcke, um dein &bInsel-Level &7zu steigern: &e/is level" to {_tips::*}
+    add "&7Handel clever im &e/bazaar &7– kaufe günstig und verkaufe teuer!" to {_tips::*}
+    add "&7Setze deinen Insel-Spawn mit &e/is sethome&7, damit du schnell zurückfindest." to {_tips::*}
+    add "&7Erweitere deine Insel-Grenze über das &e/is &7Menü mit Upgrades." to {_tips::*}
+    add "&7Schließe &e/is missions &7ab und kassiere fette Belohnungen!" to {_tips::*}
+    add "&7Besuche andere Inseln mit &e/is warps &7und setze eigene Warps für Besucher." to {_tips::*}
+    add "&7Vergleiche dich mit anderen in der &e/is top &7Rangliste." to {_tips::*}
     add "&7Der &bNetzwerk-Kompass &7in deinem Inventar öffnet jederzeit das Hilfe-Menü." to {_tips::*}
     set {_tip} to random element out of {_tips::*}
-    send "&8[&b&lMining&8] &7Tipp: %{_tip}%" to {_p}
+    send "&8[&3&lSkyblock&8] &7Tipp: %{_tip}%" to {_p}
 
 # --- NETZWERK-KOMPASS GEBEN (nicht-destruktiv) ---
 on join:
     wait 15 ticks
     ensureCompass(player)
     wait 3 seconds
-    miningTip(player)
+    skyblockTip(player)
 
 on respawn:
     wait 10 ticks
@@ -91,4 +78,4 @@ on right click:
 on drop:
     if name of event-item contains "Netzwerk-Kompass":
         cancel event
-        send "&8[&b&lMining&8] &7Deinen &bNetzwerk-Kompass &7kannst du nicht wegwerfen." to player
+        send "&8[&3&lSkyblock&8] &7Deinen &bNetzwerk-Kompass &7kannst du nicht wegwerfen." to player
