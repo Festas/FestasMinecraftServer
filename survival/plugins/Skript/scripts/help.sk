@@ -8,6 +8,22 @@ command /help:
     trigger:
         execute player command "dm open help_menu"
 
-# --- AUTO-BROADCAST (alle 10 Minuten) ---
+# --- AUTO-BROADCAST (rotierend, alle 10 Minuten, klickbare Links) ---
+# Hinweis: Skript unterstützt <link:>/<tooltip:> nativ. Damit die Links wirklich
+# anklickbar sind, wird pro Spieler mit "send" verschickt (nicht via broadcast).
+on script load:
+    set {survival_bc_i} to 0
+
 every 10 minutes:
-    broadcast "&8[&a&lSurvival&8] &7Neu hier? Tippe &e/help &7und erfahre alles über Jobs, Shops und Plots!"
+    add 1 to {survival_bc_i}
+    if {survival_bc_i} is greater than 4:
+        set {survival_bc_i} to 1
+    loop all players:
+        if {survival_bc_i} is 1:
+            send "&8[&a&lSurvival&8] &7Neu hier? Starte mit den &e[<link:https://mc.festas-builds.com/wiki/erste-schritte/><tooltip:Erste Schritte im Wiki öffnen>Ersten Schritten<reset>&e]&7 oder tippe &e/help&7." to loop-player
+        else if {survival_bc_i} is 2:
+            send "&8[&a&lSurvival&8] &7Alle Befehle findest du in der &e[<link:https://mc.festas-builds.com/wiki/befehle/><tooltip:Befehls-Übersicht öffnen>Befehls-Übersicht<reset>&e]&7." to loop-player
+        else if {survival_bc_i} is 3:
+            send "&8[&a&lSurvival&8] &7Erkunde die Welt live in 3D auf der &e[<link:https://survival.festas-builds.com><tooltip:Survival Live-Karte öffnen>Live-Karte<reset>&e]&7." to loop-player
+        else:
+            send "&8[&a&lSurvival&8] &7Guides zu Lands, Rängen & Jobs gibt es im &e[<link:https://mc.festas-builds.com/wiki/><tooltip:Zum Wiki>Wiki<reset>&e]&7." to loop-player
