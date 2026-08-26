@@ -1,12 +1,71 @@
-[00:03:08] [Netty epoll Worker #14/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:33182: read timed out
-[02:51:54] [Netty epoll Worker #5/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:50136: read timed out
-[03:12:41] [Netty epoll Worker #0/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:55854: read timed out
-[03:28:58] [Netty epoll Worker #14/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:41330: read timed out
-[04:10:31] [Netty epoll Worker #4/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:37194: read timed out
-[04:32:47] [Netty epoll Worker #15/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:50400: read timed out
-[04:48:37] [Netty epoll Worker #5/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:36388: read timed out
-[05:40:15] [Netty epoll Worker #12/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:58532: read timed out
-[06:20:45] [Netty epoll Worker #0/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:40526: read timed out
-[07:25:03] [Netty epoll Worker #5/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:40076: read timed out
-[07:46:58] [Netty epoll Worker #4/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:52890: read timed out
-[09:19:20] [Netty epoll Worker #7/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:60358: read timed out
+[16:17:20] [main/INFO] [com.velocitypowered.proxy.VelocityServer]: Booting up Velocity 4.1.0-SNAPSHOT (git-4772ca30-b21)...
+[16:17:21] [main/INFO] [com.velocitypowered.proxy.network.ConnectionManager]: Connections will use epoll channels, libdeflate (Linux x86_64) compression, OpenSSL 3.x.x (Linux x86_64) ciphers
+[16:17:21] [main/INFO] [com.velocitypowered.proxy.VelocityServer]: Loading localizations...
+[16:17:21] [main/INFO] [com.velocitypowered.proxy.VelocityServer]: Loading plugins...
+[16:17:21] [main/INFO] [com.velocitypowered.proxy.plugin.VelocityPluginManager]: Loaded plugin cmiv 1.0.1.2 by Zrips
+[16:17:21] [main/INFO] [com.velocitypowered.proxy.plugin.VelocityPluginManager]: Loaded plugin forceresourcepacks 1.12.33 (build 813) by Phoenix616
+[16:17:22] [main/INFO] [com.velocitypowered.proxy.plugin.VelocityPluginManager]: Loaded plugin minimotd-velocity 2.2.2 by jmp
+[16:17:22] [main/INFO] [com.velocitypowered.proxy.plugin.VelocityPluginManager]: Loaded plugin mysqlandconfigurateforvelocity 3.0.0-RELEASE by Simonsator
+[16:17:22] [main/INFO] [com.velocitypowered.proxy.plugin.VelocityPluginManager]: Loaded plugin plan 5.8 build 3605 by AuroraLS3
+[16:17:22] [main/INFO] [com.velocitypowered.proxy.plugin.VelocityPluginManager]: Loaded plugin skinsrestorer 15.12.5 by knat, AlexProgrammerDE, Blackfire62, McLive
+[16:17:22] [main/INFO] [com.velocitypowered.proxy.plugin.VelocityPluginManager]: Loaded plugin velocity-scoreboard-api 2.1.0 by William278, NEZNAMY
+[16:17:22] [main/INFO] [com.velocitypowered.proxy.plugin.VelocityPluginManager]: Loaded plugin tab 5.4.0 by NEZNAMY
+[16:17:22] [main/INFO] [com.velocitypowered.proxy.VelocityServer]: Loaded 9 plugins
+[16:17:22] [CMIV - Task Executor #0/INFO] [cmiv]: Registering event listeners
+[16:17:22] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Loading config!
+[16:17:22] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Loaded config.yml
+[16:17:22] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Loaded players.conf
+[16:17:22] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Debug level: FINE
+[16:17:22] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Loaded key.yml
+[16:17:22] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Found locales pt-br, zh_cn, en
+[16:17:22] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Loading packs:
+[16:17:22] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: oraxen_pack_rpg - https://mc.festas-builds.com/packs/rpg.zip - 
+[16:17:22] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: oraxen_pack_survival - https://mc.festas-builds.com/packs/survival.zip - 
+[16:17:22] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: empty - http://cdn.moep.tv/files/Empty.zip - 01517226212d27586ea0c5d6aff1aa5492dd2484
+[16:17:22] [CMIV - Task Executor #0/WARN] [forceresourcepacks]: No empty pack defined!
+[16:17:22] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Loading global assignment...
+[16:17:22] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Loading server assignments...
+[16:17:22] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Loading assignment for server skyblock...
+[16:17:22] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Loading assignment for server rpg...
+[16:17:22] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Loading assignment for server lobby...
+[16:17:22] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Loading assignment for server survival...
+[16:17:22] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Loaded joined.yml
+[16:17:22] [CMIV - Task Executor #0/INFO] [forceresourcepacks]: Update notifications are enabled!
+[16:17:23] [CMIV - Task Executor #0/INFO] [plan]: §2
+[16:17:23] [CMIV - Task Executor #0/INFO] [plan]: §2           ██▌
+[16:17:23] [CMIV - Task Executor #0/INFO] [plan]: §2     ██▌   ██▌
+[16:17:23] [CMIV - Task Executor #0/INFO] [plan]: §2  ██▌██▌██▌██▌  §2Player Analytics
+[16:17:23] [CMIV - Task Executor #0/INFO] [plan]: §2  ██▌██▌██▌██▌  §fv5.8 build 3605
+[16:17:23] [CMIV - Task Executor #0/INFO] [plan]: §2
+[16:17:23] [CMIV - Task Executor #0/INFO] [plan]: Locale: 'English' by AuroraLS3
+[16:17:23] [CMIV - Task Executor #0/INFO] [plan]: Downloading MySQL Driver, this may take a while...
+[16:17:23] [MiniMOTD - Task Executor #0/INFO] [minimotd-velocity]: There is an update available for MiniMOTD!
+[16:17:23] [MiniMOTD - Task Executor #0/INFO] [minimotd-velocity]: This server is running version v2.2.2, which is 2 versions outdated.
+[16:17:23] [MiniMOTD - Task Executor #0/INFO] [minimotd-velocity]: Download the latest version, v2.2.4 from Modrinth at the link below:
+[16:17:23] [MiniMOTD - Task Executor #0/INFO] [minimotd-velocity]: https://modrinth.com/plugin/minimotd
+[16:17:23] [Plan - Task Executor #0/INFO] [plan]: You're using the latest version.
+[16:17:23] [CMIV - Task Executor #0/INFO] [plan]: MySQL-database connection established.
+[16:17:23] [Plan MySQLDB-transaction-thread-1/INFO] [plan]: Database: Making sure schema is up to date..
+[16:17:24] [CMIV - Task Executor #0/INFO] [plan]: WebServer: Proxy-mode HTTPS enabled, make sure that your reverse-proxy is routing using HTTPS and Plan Alternative_IP.Address points to the Proxy
+[16:17:24] [CMIV - Task Executor #0/INFO] [plan]: Webserver running on PORT 8804 ( https://mc-stats.festas-builds.com )
+[16:17:24] [CMIV - Task Executor #0/INFO] [plan]: Loading server identifying information
+[16:17:24] [CMIV - Task Executor #0/INFO] [plan]: Player Analytics Enabled.
+[16:17:24] [Plan MySQLDB-transaction-thread-1/INFO] [plan]: All database patches applied successfully.
+[16:17:25] [SkinsRestorer - Task Executor #0/INFO] [skinsrestorer]: ----------------------------------------------
+[16:17:25] [SkinsRestorer - Task Executor #0/INFO] [skinsrestorer]:     +===================+
+[16:17:25] [SkinsRestorer - Task Executor #0/INFO] [skinsrestorer]:     |   SkinsRestorer   |
+[16:17:25] [SkinsRestorer - Task Executor #0/INFO] [skinsrestorer]:     |-------------------|
+[16:17:25] [SkinsRestorer - Task Executor #0/INFO] [skinsrestorer]:     +===================+
+[16:17:25] [SkinsRestorer - Task Executor #0/INFO] [skinsrestorer]: ----------------------------------------------
+[16:17:25] [SkinsRestorer - Task Executor #0/INFO] [skinsrestorer]:     Version: 15.12.5
+[16:17:25] [SkinsRestorer - Task Executor #0/INFO] [skinsrestorer]:     Commit: 98b9488
+[16:17:25] [SkinsRestorer - Task Executor #0/INFO] [skinsrestorer]:     This is the latest version!
+[16:17:25] [SkinsRestorer - Task Executor #0/INFO] [skinsrestorer]: ----------------------------------------------
+[16:17:25] [SkinsRestorer - Task Executor #0/INFO] [skinsrestorer]: Do you have issues? Read our troubleshooting guide: https://skinsrestorer.net/docs/troubleshooting
+[16:17:25] [SkinsRestorer - Task Executor #0/INFO] [skinsrestorer]: Want to support SkinsRestorer or receive priority support? Become a supporter: https://skinsrestorer.net/pricing
+[16:17:25] [CMIV - Task Executor #0/INFO] [VelocityScoreboardAPI]: Successfully injected Scoreboard API.
+[16:17:26] [CMIV - Task Executor #0/INFO] [TAB]: Enabled in 251ms
+[16:17:26] [Netty epoll Boss #0/INFO] [com.velocitypowered.proxy.network.ConnectionManager]: Listening on /[0:0:0:0:0:0:0:0]:25565
+[16:17:26] [main/INFO] [com.velocitypowered.proxy.Velocity]: Done (5.66s)!
+[16:20:47] [Netty epoll Worker #5/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:35330: read timed out
+[17:04:43] [Netty epoll Worker #12/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:35350: read timed out
