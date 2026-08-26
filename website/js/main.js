@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initServerStatus();
     initPlayerList();
     initLeaderboard();
+    initCommandReference();
     initNavigationAndScroll();
     initWikiSidebar();
     initSmoothScroll();
@@ -892,4 +893,295 @@ function initScrollReveal() {
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
     elements.forEach(el => observer.observe(el));
+}
+
+/* ── Command Reference (data-driven) ────────── */
+function initCommandReference() {
+    const results = document.getElementById('cmdResults');
+    const searchInput = document.getElementById('cmdSearch');
+    const serverFilters = document.getElementById('cmdServerFilters');
+    const countEl = document.getElementById('cmdCount');
+    const groupSeg = document.querySelector('.cmd-seg');
+    if (!results) return;
+
+    // Resolve commands.json relative to the current page (befehle/index.html).
+    const DATA_URL = 'commands.json';
+
+    const state = { groupBy: 'category', server: 'all', query: '' };
+    let dataset = null;
+
+    function clear(el) {
+        while (el.firstChild) el.removeChild(el.firstChild);
+    }
+
+    function asArray(value) {
+        return Array.isArray(value) ? value : [];
+    }
+
+    // Base command without argument placeholders, e.g. "/cmi home [Name]" -> "/cmi home".
+    function baseCommand(command) {
+        const text = String(command || '');
+        const cut = text.indexOf('[');
+        return (cut >= 0 ? text.slice(0, cut) : text).trim();
+    }
+
+    function labelFor(list, id) {
+        const entry = asArray(list).find((item) => item && item.id === id);
+        return entry && typeof entry.label === 'string' ? entry.label : String(id || '');
+    }
+
+    function iconFor(list, id) {
+        const entry = asArray(list).find((item) => item && item.id === id);
+        return entry && typeof entry.icon === 'string' ? entry.icon : '';
+    }
+
+    function matchesServer(command) {
+        if (state.server === 'all') return true;
+        const servers = asArray(command.servers);
+        // Network-wide commands are available on every gameplay server.
+        return servers.indexOf(state.server) !== -1 || servers.indexOf('netzwerk') !== -1;
+    }
+
+    function matchesQuery(command) {
+        const q = state.query;
+        if (!q) return true;
+        const haystack = [
+            command.command,
+            command.description,
+            command.rank,
+            labelFor(dataset.plugins, command.plugin),
+            labelFor(dataset.categories, command.category)
+        ].map((v) => String(v || '').toLowerCase()).join(' ');
+        return haystack.indexOf(q) !== -1;
+    }
+
+    function filtered() {
+        return asArray(dataset.commands)
+            .filter((c) => c && typeof c === 'object')
+            .filter(matchesServer)
+            .filter(matchesQuery);
+    }
+
+    function buildCommandItem(command) {
+        const item = document.createElement('div');
+        item.className = 'command-item';
+
+        const main = document.createElement('div');
+        main.className = 'command-main';
+
+        const nameRow = document.createElement('div');
+        nameRow.className = 'command-name-row';
+
+        const nameEl = document.createElement('span');
+        nameEl.className = 'command-name';
+        // textContent keeps command strings inert (no HTML injection).
+        nameEl.textContent = String(command.command || '');
+        nameRow.appendChild(nameEl);
+
+        const rank = typeof command.rank === 'string' ? command.rank.trim() : '';
+        if (rank) {
+            const rankEl = document.createElement('span');
+            rankEl.className = 'command-rank-badge';
+            rankEl.textContent = rank;
+            nameRow.appendChild(rankEl);
+        }
+
+        main.appendChild(nameRow);
+
+        const descEl = document.createElement('p');
+        descEl.className = 'command-description';
+        descEl.textContent = String(command.description || '');
+        main.appendChild(descEl);
+
+        // Secondary meta line: plugin + servers, for cross-reference.
+        const metaEl = document.createElement('div');
+        metaEl.className = 'command-meta';
+
+        const pluginTag = document.createElement('span');
+        pluginTag.className = 'command-tag command-tag--plugin';
+        pluginTag.textContent = labelFor(dataset.plugins, command.plugin);
+        metaEl.appendChild(pluginTag);
+
+        asArray(command.servers).forEach((sid) => {
+            const tag = document.createElement('span');
+            tag.className = 'command-tag command-tag--server';
+            tag.textContent = labelFor(dataset.servers, sid);
+            metaEl.appendChild(tag);
+        });
+
+        main.appendChild(metaEl);
+        item.appendChild(main);
+
+        const copyBtn = document.createElement('button');
+        copyBtn.type = 'button';
+        copyBtn.className = 'command-copy';
+        copyBtn.setAttribute('aria-label', 'Befehl kopieren');
+        copyBtn.title = 'Befehl kopieren';
+        copyBtn.textContent = '⧉';
+        copyBtn.addEventListener('click', async () => {
+            const text = baseCommand(command.command);
+            try {
+                await navigator.clipboard.writeText(text);
+            } catch {
+                _fallbackCopy(text);
+            }
+            const original = copyBtn.textContent;
+            copyBtn.textContent = '✓';
+            copyBtn.classList.add('is-copied');
+            setTimeout(() => {
+                copyBtn.textContent = original;
+                copyBtn.classList.remove('is-copied');
+            }, 1500);
+        });
+        item.appendChild(copyBtn);
+
+        return item;
+    }
+
+    function groupsFor(commands) {
+        const key = state.groupBy;
+        const order = key === 'plugin' ? asArray(dataset.plugins) : asArray(dataset.categories);
+        const buckets = new Map();
+        commands.forEach((command) => {
+            const id = String(command[key] || 'sonstiges');
+            if (!buckets.has(id)) buckets.set(id, []);
+            buckets.get(id).push(command);
+        });
+
+        // Preserve the declared order of categories/plugins; append any extras.
+        const orderedIds = order.map((entry) => entry && entry.id).filter(Boolean);
+        const seen = new Set(orderedIds);
+        buckets.forEach((_, id) => { if (!seen.has(id)) orderedIds.push(id); });
+
+        return orderedIds
+            .filter((id) => buckets.has(id))
+            .map((id) => ({ id, commands: buckets.get(id) }));
+    }
+
+    function render() {
+        if (!dataset) return;
+        const commands = filtered();
+        clear(results);
+
+        if (countEl) {
+            const total = asArray(dataset.commands).length;
+            countEl.textContent = commands.length === total
+                ? commands.length + ' Befehle'
+                : commands.length + ' von ' + total + ' Befehlen';
+        }
+
+        if (!commands.length) {
+            const empty = document.createElement('p');
+            empty.className = 'cmd-empty';
+            empty.textContent = 'Keine Befehle gefunden. Passe Suche oder Filter an.';
+            results.appendChild(empty);
+            return;
+        }
+
+        const isPlugin = state.groupBy === 'plugin';
+        groupsFor(commands).forEach((group) => {
+            const section = document.createElement('section');
+            section.className = 'command-group';
+
+            const heading = document.createElement('h2');
+            heading.className = 'command-group-title';
+            const icon = isPlugin ? '' : iconFor(dataset.categories, group.id);
+            if (icon) {
+                const iconEl = document.createElement('span');
+                iconEl.className = 'command-group-icon';
+                iconEl.textContent = icon;
+                heading.appendChild(iconEl);
+            }
+            const titleEl = document.createElement('span');
+            titleEl.textContent = isPlugin
+                ? labelFor(dataset.plugins, group.id)
+                : labelFor(dataset.categories, group.id);
+            heading.appendChild(titleEl);
+
+            const countBadge = document.createElement('span');
+            countBadge.className = 'command-group-count';
+            countBadge.textContent = String(group.commands.length);
+            heading.appendChild(countBadge);
+
+            section.appendChild(heading);
+
+            const listEl = document.createElement('div');
+            listEl.className = 'command-list';
+            group.commands
+                .slice()
+                .sort((a, b) => String(a.command).localeCompare(String(b.command), 'de'))
+                .forEach((command) => listEl.appendChild(buildCommandItem(command)));
+            section.appendChild(listEl);
+
+            results.appendChild(section);
+        });
+    }
+
+    function buildServerFilters() {
+        if (!serverFilters) return;
+        clear(serverFilters);
+        const options = [{ id: 'all', label: 'Alle' }].concat(asArray(dataset.servers));
+        options.forEach((opt) => {
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'cmd-filter-chip' + (opt.id === state.server ? ' active' : '');
+            btn.textContent = opt.label;
+            btn.setAttribute('aria-pressed', opt.id === state.server ? 'true' : 'false');
+            btn.addEventListener('click', () => {
+                state.server = opt.id;
+                serverFilters.querySelectorAll('.cmd-filter-chip').forEach((chip) => {
+                    const active = chip === btn;
+                    chip.classList.toggle('active', active);
+                    chip.setAttribute('aria-pressed', active ? 'true' : 'false');
+                });
+                render();
+            });
+            serverFilters.appendChild(btn);
+        });
+    }
+
+    if (groupSeg) {
+        groupSeg.addEventListener('click', (e) => {
+            const btn = e.target.closest('.cmd-seg-btn');
+            if (!btn) return;
+            const group = btn.getAttribute('data-group');
+            if (!group || group === state.groupBy) return;
+            state.groupBy = group;
+            groupSeg.querySelectorAll('.cmd-seg-btn').forEach((b) => {
+                b.classList.toggle('active', b === btn);
+            });
+            render();
+        });
+    }
+
+    if (searchInput) {
+        searchInput.addEventListener('input', () => {
+            state.query = searchInput.value.trim().toLowerCase();
+            render();
+        });
+    }
+
+    function renderUnavailable() {
+        clear(results);
+        const note = document.createElement('p');
+        note.className = 'cmd-empty';
+        note.textContent = 'Befehlsliste konnte nicht geladen werden. Bitte später erneut versuchen.';
+        results.appendChild(note);
+    }
+
+    fetch(DATA_URL, { cache: 'no-store' })
+        .then((res) => {
+            if (!res.ok) throw new Error('HTTP ' + res.status);
+            return res.json();
+        })
+        .then((data) => {
+            dataset = data && typeof data === 'object' ? data : {};
+            dataset.categories = asArray(dataset.categories);
+            dataset.plugins = asArray(dataset.plugins);
+            dataset.servers = asArray(dataset.servers);
+            dataset.commands = asArray(dataset.commands);
+            buildServerFilters();
+            render();
+        })
+        .catch(renderUnavailable);
 }
