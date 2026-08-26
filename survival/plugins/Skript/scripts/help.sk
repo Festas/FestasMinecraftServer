@@ -26,3 +26,23 @@ every 10 minutes:
     add 1 to {survival_bc_index}
     if {survival_bc_index} > 6:
         set {survival_bc_index} to 1
+
+# --- /tips BEFEHL (zufälliger Survival-Tipp) ---
+command /tips:
+    description: Zeigt einen zufälligen Survival-Tipp
+    aliases: /tipp, /tip
+    trigger:
+        survivalTip(player)
+
+function survivalTip(p: player):
+    delete {_tips::*}
+    add "&7Verdiene Geld mit Berufen: Öffne &e/jobs &7und tritt einem Job bei!" to {_tips::*}
+    add "&7Kaufe & verkaufe im &e/shop &7oder handel mit Spielern auf dem &e/market&7." to {_tips::*}
+    add "&7Sichere dir dein eigenes Grundstück mit &e/plot auto &7und baue ungestört." to {_tips::*}
+    add "&7Steige mit &e/rankup &7im Rang auf und schalte mehr Rechte frei." to {_tips::*}
+    add "&7Hole dir jeden Tag deine &6/daily &7Belohnung – die Streak lohnt sich!" to {_tips::*}
+    add "&7Fühlst du dich glücklich? Versuch dein Glück im Casino mit &e/gamble <Betrag>&7." to {_tips::*}
+    add "&7Teleportiere dich schnell mit &e/warp &7zu wichtigen Orten." to {_tips::*}
+    add "&7Prüfe deinen Kontostand jederzeit mit &e/bal&7." to {_tips::*}
+    set {_tip} to random element out of {_tips::*}
+    send "&8[&a&lSurvival&8] &7Tipp: %{_tip}%" to {_p}

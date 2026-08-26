@@ -154,6 +154,32 @@ items:
       - '[player] /gamble help'
 
   # ==============================================================
+  # TÄGLICHE BELOHNUNG & TIPPS
+  # ==============================================================
+  'daily_tips':
+    material: SUNFLOWER
+    slot: 24
+    priority: 1
+    display_name: '&6&l☀ Belohnung & Tipps'
+    lore:
+      - '&7Hole dir jeden Tag eine Belohnung ab'
+      - '&7und steigere deine Login-Streak!'
+      - ''
+      - '&8» &fJeder Tag &7= mehr Geld'
+      - '&8» &f7 Tage &7= Mega-Wochenbonus'
+      - ''
+      - '&eBefehle:'
+      - '&e/daily &8– &7Belohnung abholen'
+      - '&e/streak &8– &7Deine Streak ansehen'
+      - '&e/tips &8– &7Zufälliger Tipp'
+    left_click_commands:
+      - '[close]'
+      - '[player] /daily'
+    right_click_commands:
+      - '[close]'
+      - '[player] /daily'
+
+  # ==============================================================
   # ALLE BEFEHLE
   # ==============================================================
   'commands':
@@ -169,7 +195,9 @@ items:
       - '&e/market &8– &7Spieler-Marktplatz'
       - '&e/plot auto &8– &7Plot holen'
       - '&e/rankup &8– &7Rang aufsteigen'
+      - '&e/daily &8– &7Tägliche Belohnung'
       - '&e/gamble &8– &7Casino & Glücksspiel'
+      - '&e/tips &8– &7Zufälliger Tipp'
       - '&e/warp &8– &7Warps anzeigen'
       - '&e/bal &8– &7Kontostand'
       - '&e/lobby &8– &7Zurück zur Lobby'

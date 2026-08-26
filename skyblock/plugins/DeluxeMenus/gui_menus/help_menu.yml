@@ -173,6 +173,7 @@ items:
       - '&e/is level &8– &7Insel-Level'
       - '&e/bazaar &8– &7Bazaar öffnen'
       - '&e/market &8– &7Spieler-Marktplatz'
+      - '&e/daily &8– &7Tägliche Belohnung'
       - '&e/tips &8– &7Zufälliger Tipp'
       - '&e/lobby &8– &7Zurück zur Lobby'
 

@@ -16,6 +16,7 @@ on script load:
     set {mining_bc::3} to "&8[&b&lMining&8] &7Am höchsten Rang? Steig mit &e/prestige &7auf für Multiplikatoren!"
     set {mining_bc::4} to "&8[&b&lMining&8] &7Werte deine Spitzhacke auf und schalte deine &d/pmine &7frei!"
     set {mining_bc::5} to "&8[&b&lMining&8] &7Tipp gefällig? Nutze &e/tips &7oder den &bNetzwerk-Kompass&7!"
+    set {mining_bc::6} to "&8[&6&lDaily&8] &7Hol dir jeden Tag deine Belohnung mit &e/daily &7– die Streak lohnt sich!"
     set {mining_bc_index} to 1
 
 every 10 minutes:
@@ -23,5 +24,5 @@ every 10 minutes:
     if {_msg} is set:
         broadcast "%{_msg}%"
     add 1 to {mining_bc_index}
-    if {mining_bc_index} > 5:
+    if {mining_bc_index} > 6:
         set {mining_bc_index} to 1
