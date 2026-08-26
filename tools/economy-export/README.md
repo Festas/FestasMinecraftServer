@@ -23,20 +23,22 @@ approach does not work out of the box.
 is switched to **MySQL storage writing to its OWN database** on the shared MariaDB, and
 this exporter reads one CMI users table **per server**. CMI explicitly warns that two
 servers must **never** share the same table (`DON'T USE SAME DATABASE TABLES FOR MORE
-THEN ONE SERVER`), so each server gets a distinct database (e.g. `s5_cmi_survival`,
-`s5_cmi_mining`, `s5_cmi_skyblock`).
+THEN ONE SERVER`), so each server gets a distinct database (`S1_CMI` for Survival,
+`S3_CMI` for Mining/rpg, `S5_CMI` for Skyblock).
 
 ### Enabling CMI MySQL storage per server (already wired in this repo)
 
 Each gameplay server's `<server>/plugins/CMI/Settings/DataBaseInfo.yml` is committed
-with `method: MySQL` pointing at its **own** database, and the read/write credentials
-are injected at deploy (never committed):
+with `method: MySQL` pointing at its **own** database, and the credentials are injected
+at deploy (never committed). The **same `CMI_<SERVER>_DB_ENV` secret** is consumed both
+by the deploy workflow (to configure the CMI plugin's MySQL login) and by this exporter
+(to read balances):
 
-| Server (folder) | Website id | CMI database      | RW secret (deploy)       | Placeholders injected |
-|-----------------|------------|-------------------|--------------------------|-----------------------|
-| `survival`      | `survival` | `s5_cmi_survival` | `CMI_SURVIVAL_RW_DB_ENV` | `__CMI_SURVIVAL_RW_DB_USER__` / `__CMI_SURVIVAL_RW_DB_PASSWORD__` |
-| `rpg`           | `mining`   | `s5_cmi_mining`   | `CMI_MINING_RW_DB_ENV`   | `__CMI_MINING_RW_DB_USER__` / `__CMI_MINING_RW_DB_PASSWORD__` |
-| `skyblock`      | `skyblock` | `s5_cmi_skyblock` | `CMI_SKYBLOCK_RW_DB_ENV` | `__CMI_SKYBLOCK_RW_DB_USER__` / `__CMI_SKYBLOCK_RW_DB_PASSWORD__` |
+| Server (folder) | Website id | CMI database | Secret            | Placeholders injected |
+|-----------------|------------|--------------|-------------------|-----------------------|
+| `survival`      | `survival` | `S1_CMI`     | `CMI_SURVIVAL_DB_ENV` | `__CMI_SURVIVAL_DB_USER__` / `__CMI_SURVIVAL_DB_PASSWORD__` |
+| `rpg`           | `mining`   | `S3_CMI`     | `CMI_MINING_DB_ENV`   | `__CMI_MINING_DB_USER__` / `__CMI_MINING_DB_PASSWORD__` |
+| `skyblock`      | `skyblock` | `S5_CMI`     | `CMI_SKYBLOCK_DB_ENV` | `__CMI_SKYBLOCK_DB_USER__` / `__CMI_SKYBLOCK_DB_PASSWORD__` |
 
 The committed `DataBaseInfo.yml` therefore looks like this (survival shown):
 
@@ -44,16 +46,16 @@ The committed `DataBaseInfo.yml` therefore looks like this (survival shown):
 storage:
   method: MySQL          # was: sqlite
 mysql:
-  username: '__CMI_SURVIVAL_RW_DB_USER__'      # injected at deploy (NOT the exporter's RO user)
-  password: '__CMI_SURVIVAL_RW_DB_PASSWORD__'  # injected at deploy; never commit real creds
+  username: '__CMI_SURVIVAL_DB_USER__'      # injected at deploy; never commit real creds
+  password: '__CMI_SURVIVAL_DB_PASSWORD__'  # injected at deploy; never commit real creds
   hostname: 172.25.0.1:3306
-  database: s5_cmi_survival                     # a DEDICATED database for THIS server only
-  tablePrefix: CMI_                             # → users table becomes CMI_users
+  database: S1_CMI                           # a DEDICATED database for THIS server only
+  tablePrefix: CMI_                          # → users table becomes CMI_users
   useSSL: true
 ```
 
 The `deploy-survival` / `deploy-rpg` / `deploy-skyblock` workflows parse the matching
-`CMI_*_RW_DB_ENV` secret in Python and substitute the placeholders verbatim (special
+`CMI_<SERVER>_DB_ENV` secret in Python and substitute the placeholders verbatim (special
 characters in the password are safe). The lobby has no economy and stays on SQLite.
 Give each server its **own** `database:` (never a shared one). CMI creates its tables
 (`CMI_users`, …) on first start and performs the one-time migration of existing
@@ -61,9 +63,10 @@ SQLite balances. The users table default is `CMI_users` with columns `player_uui
 (UUID), `username` (name) and `Balance` (DOUBLE) — all configurable per server in
 `config.json` because CMI's exact schema varies by version.
 
-> Keep CMI's own read/write user (`CMI_*_RW_DB_ENV`) separate from this exporter's
-> read-only user (`CMI_*_DB_ENV`) — least privilege. This exporter only ever runs
-> `SELECT`. See [`docs/infrastructure/DATENBANKEN.md`](../../docs/infrastructure/DATENBANKEN.md).
+> One MySQL user per server (`CMI_<SERVER>_DB_ENV`) is used for both the CMI plugin
+> (read/write) and this exporter (read-only `SELECT`). If you prefer strict least
+> privilege, point the exporter at a separate `SELECT`-only user instead. See
+> [`docs/infrastructure/DATENBANKEN.md`](../../docs/infrastructure/DATENBANKEN.md).
 
 ---
 
@@ -165,19 +168,21 @@ Per-server balance credentials use the prefix `CMI_<ID>_DB_*` (e.g.
 
 ---
 
-## Read-only database users (least privilege)
+## Read-only database users (optional least privilege)
 
-One **dedicated read-only** MariaDB user per CMI database plus the shared LuckPerms RO
-user. Do **not** reuse CMI's read/write users (see `docs/infrastructure/DATENBANKEN.md`).
+The panel-provisioned per-server user in `CMI_<SERVER>_DB_ENV` already has access to
+its own CMI database and is used for both the plugin and this exporter. If you prefer
+strict least privilege, create a **dedicated read-only** MariaDB user per CMI database
+and point the exporter at it (see `docs/infrastructure/DATENBANKEN.md`).
 
 ```sql
 -- One SELECT-only user per server's CMI database:
 CREATE USER 'cmi_survival_ro'@'%' IDENTIFIED BY 'CHANGE_ME';
-GRANT SELECT ON s5_cmi_survival.CMI_users TO 'cmi_survival_ro'@'%';
+GRANT SELECT ON S1_CMI.CMI_users TO 'cmi_survival_ro'@'%';
 CREATE USER 'cmi_mining_ro'@'%'   IDENTIFIED BY 'CHANGE_ME';
-GRANT SELECT ON s5_cmi_mining.CMI_users   TO 'cmi_mining_ro'@'%';
+GRANT SELECT ON S3_CMI.CMI_users TO 'cmi_mining_ro'@'%';
 CREATE USER 'cmi_skyblock_ro'@'%' IDENTIFIED BY 'CHANGE_ME';
-GRANT SELECT ON s5_cmi_skyblock.CMI_users TO 'cmi_skyblock_ro'@'%';
+GRANT SELECT ON S5_CMI.CMI_users TO 'cmi_skyblock_ro'@'%';
 
 -- Rank source (reuses the existing LUCKPERMS_RO_DB_ENV credential from leaderboard-export):
 GRANT SELECT ON s4_perms.luckperms_players           TO 'luckperms_ro'@'%';

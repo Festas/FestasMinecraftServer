@@ -4,12 +4,12 @@ storage:
   method: MySQL
 mysql:
   # Requires Mysql. Credentials are injected at deploy from the
-  # CMI_SURVIVAL_RW_DB_ENV secret; never commit real credentials.
-  username: '__CMI_SURVIVAL_RW_DB_USER__'
-  password: '__CMI_SURVIVAL_RW_DB_PASSWORD__'
+  # CMI_SURVIVAL_DB_ENV secret; never commit real credentials.
+  username: '__CMI_SURVIVAL_DB_USER__'
+  password: '__CMI_SURVIVAL_DB_PASSWORD__'
   hostname: 172.25.0.1:3306
   # DEDICATED database for THIS server only (never shared between servers).
-  database: s5_cmi_survival
+  database: S1_CMI
   # Valid characters are a-z 0-9 and _
   tablePrefix: CMI_
   # If you have no clue what these values do, then keep it at default values

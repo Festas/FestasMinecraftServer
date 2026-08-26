@@ -142,7 +142,7 @@ jobs:
 
       - name: Inject CMI DB credentials
         env:
-          CMI_SURVIVAL_RW_DB_ENV: ${{ secrets.CMI_SURVIVAL_RW_DB_ENV }}
+          CMI_SURVIVAL_DB_ENV: ${{ secrets.CMI_SURVIVAL_DB_ENV }}
         run: |
           python3 - <<'PY'
           import os
@@ -169,16 +169,16 @@ jobs:
                   data[key] = value
               return data
 
-          raw = os.environ.get("CMI_SURVIVAL_RW_DB_ENV", "")
+          raw = os.environ.get("CMI_SURVIVAL_DB_ENV", "")
           if not raw.strip():
-              print("::error::Missing secret CMI_SURVIVAL_RW_DB_ENV")
+              print("::error::Missing secret CMI_SURVIVAL_DB_ENV")
               sys.exit(1)
 
           data = parse_env(raw)
           keys = ("USER", "PASSWORD")
-          missing = [f"CMI_SURVIVAL_RW_DB_{key}" for key in keys if not data.get(f"CMI_SURVIVAL_RW_DB_{key}")]
+          missing = [f"CMI_SURVIVAL_DB_{key}" for key in keys if not data.get(f"CMI_SURVIVAL_DB_{key}")]
           if missing:
-              print(f"::error::Missing {', '.join(missing)} in CMI_SURVIVAL_RW_DB_ENV")
+              print(f"::error::Missing {', '.join(missing)} in CMI_SURVIVAL_DB_ENV")
               sys.exit(1)
 
           def yaml_sq(value):
@@ -188,7 +188,7 @@ jobs:
           path = Path("survival/plugins/CMI/Settings/DataBaseInfo.yml")
           text = path.read_text()
           for key in keys:
-              text = text.replace(f"__CMI_SURVIVAL_RW_DB_{key}__", yaml_sq(data[f"CMI_SURVIVAL_RW_DB_{key}"]))
+              text = text.replace(f"__CMI_SURVIVAL_DB_{key}__", yaml_sq(data[f"CMI_SURVIVAL_DB_{key}"]))
           path.write_text(text)
           print("Injected CMI DB credentials into survival/plugins/CMI/Settings/DataBaseInfo.yml")
           PY
