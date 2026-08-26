@@ -74,6 +74,8 @@ class WikiPageParser(HTMLParser):
                 self._begin("excerpt")
 
     def handle_endtag(self, tag):
+        if tag == "main":
+            self._in_content = False
         if tag in SKIP_CONTAINERS and self._skip_depth:
             self._skip_depth -= 1
             return
