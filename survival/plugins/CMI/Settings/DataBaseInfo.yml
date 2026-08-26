@@ -9,7 +9,7 @@ mysql:
   password: '__CMI_SURVIVAL_DB_PASSWORD__'
   hostname: 172.25.0.1:3306
   # DEDICATED database for THIS server only (never shared between servers).
-  database: S1_CMI
+  database: s1_CMI
   # Valid characters are a-z 0-9 and _
   tablePrefix: CMI_
   # If you have no clue what these values do, then keep it at default values
