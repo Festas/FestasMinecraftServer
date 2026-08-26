@@ -1,19 +1,21 @@
 storage:
   # storage method, can be MySQL or sqlite
   # ATTENTION! DON'T USE SAME DATABASE TABLES FOR MORE THEN ONE SERVER, YOU WILL HAVE UNEXPECTED ISSUES. EACH SERVER SHOULD HAVE ITS OWN DATABASE TABLE SETUP
-  method: sqlite
+  method: MySQL
 mysql:
-  # Requires Mysql.
-  username: root
-  password: ''
-  hostname: localhost:3306
-  database: minecraft
+  # Requires Mysql. Credentials are injected at deploy from the
+  # CMI_MINING_DB_ENV secret; never commit real credentials.
+  username: '__CMI_MINING_DB_USER__'
+  password: '__CMI_MINING_DB_PASSWORD__'
+  hostname: 172.25.0.1:3306
+  # DEDICATED database for THIS server only (never shared between servers).
+  database: S3_CMI
   # Valid characters are a-z 0-9 and _
   tablePrefix: CMI_
   # If you have no clue what these values do, then keep it at default values
   autoReconnect: true
   useSSL: true
-  verifyServerCertificate: true
+  verifyServerCertificate: false
 # Auto save interval in seconds
 # This will define how often to write down data into data base
 # Save operation will not be performed if there is no changes to save

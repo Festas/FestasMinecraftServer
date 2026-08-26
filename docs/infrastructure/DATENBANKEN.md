@@ -14,7 +14,8 @@
                     │  ┌─ s4_perms (LuckPerms)  │
                     │  ├─ s4_plan (Plan)        │
                     │  ├─ s4_husk (HuskSync)    │
-                    │  └─ s4_bazaar (Bazaar)    │
+                    │  ├─ s4_bazaar (Bazaar)    │
+                    │  └─ S{1,3,5}_CMI (CMI Eco)│
                     └────────────┬─────────────┘
                                  │
         ┌────────────┬───────────┼───────────┬────────────┐
@@ -48,6 +49,17 @@
 | `s4_plan`     | Plan             | Spieler-Statistiken, Server-Analytics        | Proxy, Lobby, Survival, RPG         |
 | `s4_husk`     | HuskSync        | Ränge und Cosmetics                          | Lobby, Prison                       |
 | `s4_bazaar`   | DeluxeBazaar    | Bazaar-Angebote und Transaktionen            | Skyblock, Prison                    |
+| `S1_CMI`      | CMI         | Economy-Guthaben (Survival)                  | Survival                            |
+| `S3_CMI`      | CMI         | Economy-Guthaben (RPG/Prison = „Mining")     | RPG                                 |
+| `S5_CMI`      | CMI         | Economy-Guthaben (Skyblock)                  | Skyblock                            |
+
+> **CMI-Economy pro Server getrennt:** CMI ist der Economy-Anbieter, hält die
+> Guthaben aber **pro Server** in einer **eigenen** Datenbank. CMI warnt
+> ausdrücklich, dass zwei Server **niemals** dieselbe Tabelle teilen dürfen
+> (`DON'T USE SAME DATABASE TABLES FOR MORE THEN ONE SERVER`), daher bekommt jeder
+> Gameplay-Server seine eigene Datenbank (`S1_CMI`, `S3_CMI`, `S5_CMI`). Die Lobby
+> hat keine Economy und bleibt auf SQLite. Details zur read-only Auswertung für die
+> Website siehe den Exporter [`tools/economy-export`](../../tools/economy-export/README.md).
 
 ### Redis
 
@@ -129,6 +141,53 @@ sind optional und werden entfernt. Sonderzeichen im Passwort (z. B. `$`,
 > Tabellen – und den Rang aus `s4_perms` über einen **eigenen** Read-only-User
 > (`SELECT` auf `luckperms_*`), Secret `LUCKPERMS_RO_DB_ENV`.
 
+### GitHub Actions Secret für CMI (Economy)
+
+Die CMI-Guthaben werden pro Server in einer eigenen MySQL-Datenbank gehalten
+(`S1_CMI`, `S3_CMI`, `S5_CMI`). Die Deploy-Workflows (`deploy-survival`,
+`deploy-rpg`, `deploy-skyblock`) injizieren dafür pro Server einen Benutzer aus je
+einem eigenen Secret in `<server>/plugins/CMI/Settings/DataBaseInfo.yml`:
+
+| Secret                | Ziel-Server | Datenbank |
+|-----------------------|-------------|-----------|
+| `CMI_SURVIVAL_DB_ENV` | Survival    | `S1_CMI`  |
+| `CMI_MINING_DB_ENV`   | RPG         | `S3_CMI`  |
+| `CMI_SKYBLOCK_DB_ENV` | Skyblock    | `S5_CMI`  |
+
+Format des Secrets (`.env`, ein `KEY=VALUE` pro Zeile, Beispiel Survival):
+
+```env
+CMI_SURVIVAL_DB_HOST=172.25.0.1
+CMI_SURVIVAL_DB_PORT=3306
+CMI_SURVIVAL_DB_DATABASE=S1_CMI
+CMI_SURVIVAL_DB_USER=u1_xxxxxxxxxx
+CMI_SURVIVAL_DB_PASSWORD=CHANGE_ME
+```
+
+Der Deploy injiziert nur `USER` und `PASSWORD` in die `DataBaseInfo.yml`; Host,
+Port und Datenbankname stehen (nicht geheim) fest in der Config. Die Werte werden –
+wie bei Plan – in Python geparst und **wörtlich** injiziert. Trage jeden Wert
+**roh/literal** ein, ohne zusätzliche Anführungszeichen oder Escaping. Sonderzeichen
+im Passwort (`$`, `` ` ``, `\`, `"`, `'`, `+`, `=`, `!`) sind erlaubt und müssen
+**nicht** escaped werden. Umschließende `'`/`"` sind optional – genau **eine** solche
+äußere Quote-Ebene wird beim Parsen entfernt, daher ein Passwort nicht selbst in
+Quotes setzen.
+
+> **Einmalige Umstellung:** CMI legt seine Tabellen (`CMI_users`, …) beim ersten
+> Start selbst an und migriert die bestehenden SQLite-Guthaben. Jeder Server muss
+> seine **eigene** Datenbank bekommen – niemals eine gemeinsame Tabelle. Setze die
+> drei Secrets, bevor dieser Branch nach `main` gemergt wird, sonst schlägt der
+> Deploy fehl (fail-closed, keine kaputte Config landet auf dem Server).
+>
+> **Read-only-Zugang für die Website:** Der Exporter
+> [`tools/economy-export`](../../tools/economy-export/README.md) liest die
+> reichsten Spieler für `economy.json` aus denselben Datenbanken (`S1_CMI`,
+> `S3_CMI`, `S5_CMI`) und verwendet dafür **dasselbe** Secret pro Server
+> (`CMI_SURVIVAL_DB_ENV` / `CMI_MINING_DB_ENV` / `CMI_SKYBLOCK_DB_ENV`). Wer strikt
+> nach dem Prinzip der minimalen Berechtigung arbeiten möchte, kann den Exporter
+> stattdessen auf einen separaten Benutzer mit nur `SELECT` auf `CMI_users`
+> zeigen lassen.
+
 ### Redis
 
 ```yaml
@@ -180,4 +239,4 @@ Detaillierte Informationen zur Backup-Strategie, Aufbewahrungsfristen und Wieder
 
 ---
 
-**Letzte Aktualisierung:** 2026-08-18
+**Letzte Aktualisierung:** 2026-08-26

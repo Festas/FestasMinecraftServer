@@ -22,7 +22,7 @@
       "database": {
         "host": "172.25.0.1",
         "port": 3306,
-        "database": "s5_cmi_survival",
+        "database": "S1_CMI",
         "ssl": true
       },
       "table": "CMI_users",
@@ -37,7 +37,7 @@
       "database": {
         "host": "172.25.0.1",
         "port": 3306,
-        "database": "s5_cmi_mining",
+        "database": "S3_CMI",
         "ssl": true
       },
       "table": "CMI_users",
@@ -52,7 +52,7 @@
       "database": {
         "host": "172.25.0.1",
         "port": 3306,
-        "database": "s5_cmi_skyblock",
+        "database": "S5_CMI",
         "ssl": true
       },
       "table": "CMI_users",

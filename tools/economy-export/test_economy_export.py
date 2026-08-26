@@ -252,7 +252,7 @@ class ResolveServersTests(unittest.TestCase):
     def _base(self):
         return {
             "servers": [
-                {"id": "survival", "label": "Survival", "database": {"database": "s5_cmi_survival"}},
+                {"id": "survival", "label": "Survival", "database": {"database": "S1_CMI"}},
             ]
         }
 
@@ -316,15 +316,15 @@ class ResolveDbSettingsTests(unittest.TestCase):
     def test_config_database_used_as_default(self):
         with mock.patch.dict(os.environ, self.CREDS, clear=True):
             settings = eco.resolve_db_settings(
-                {"database": "s5_cmi_survival"}, "CMI_SURVIVAL_DB", "survival"
+                {"database": "S1_CMI"}, "CMI_SURVIVAL_DB", "survival"
             )
-        self.assertEqual(settings["database"], "s5_cmi_survival")
+        self.assertEqual(settings["database"], "S1_CMI")
 
     def test_env_overrides_config(self):
         env = dict(self.CREDS, CMI_SURVIVAL_DB_DATABASE="override_db", CMI_SURVIVAL_DB_READ_TIMEOUT="60")
         with mock.patch.dict(os.environ, env, clear=True):
             settings = eco.resolve_db_settings(
-                {"database": "s5_cmi_survival", "read_timeout_seconds": 45},
+                {"database": "S1_CMI", "read_timeout_seconds": 45},
                 "CMI_SURVIVAL_DB",
                 "survival",
             )
