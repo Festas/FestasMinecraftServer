@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initCommandReference();
     initNavigationAndScroll();
     initWikiSidebar();
+    initWikiSearch();
     initSmoothScroll();
     initScrollReveal();
 });
@@ -1184,4 +1185,160 @@ function initCommandReference() {
             render();
         })
         .catch(renderUnavailable);
+}
+
+/* ── Wiki Search (client-side) ──────────────── */
+function initWikiSearch() {
+    const input = document.getElementById('wikiSearch');
+    const box = document.getElementById('wikiSearchResults');
+    if (!input || !box) return;
+
+    const base = input.getAttribute('data-base') || '';
+    const INDEX_URL = base + 'search-index.json';
+    const MAX_RESULTS = 8;
+
+    let pages = [];
+    let active = -1;      // index of keyboard-highlighted result
+    let current = [];     // currently rendered result entries
+
+    function clear(el) {
+        while (el.firstChild) el.removeChild(el.firstChild);
+    }
+
+    function asArray(value) {
+        return Array.isArray(value) ? value : [];
+    }
+
+    function snippetFor(page) {
+        const excerpt = typeof page.excerpt === 'string' ? page.excerpt.trim() : '';
+        if (excerpt) return excerpt;
+        const headings = asArray(page.headings).filter((h) => typeof h === 'string');
+        return headings.slice(0, 3).join(' · ');
+    }
+
+    function score(page, query) {
+        const title = String(page.title || '').toLowerCase();
+        const keywords = String(page.keywords || '').toLowerCase();
+        if (title.indexOf(query) !== -1) return 3;
+        if (asArray(page.headings).some((h) => String(h).toLowerCase().indexOf(query) !== -1)) return 2;
+        if (keywords.indexOf(query) !== -1) return 1;
+        return 0;
+    }
+
+    function search(query) {
+        return pages
+            .map((page) => ({ page, s: score(page, query) }))
+            .filter((r) => r.s > 0)
+            .sort((a, b) => b.s - a.s)
+            .slice(0, MAX_RESULTS)
+            .map((r) => r.page);
+    }
+
+    function close() {
+        box.hidden = true;
+        input.setAttribute('aria-expanded', 'false');
+        active = -1;
+    }
+
+    function open() {
+        box.hidden = false;
+        input.setAttribute('aria-expanded', 'true');
+    }
+
+    function highlight(next) {
+        const items = box.querySelectorAll('.wiki-search-item');
+        if (!items.length) return;
+        active = (next + items.length) % items.length;
+        items.forEach((el, i) => {
+            const on = i === active;
+            el.classList.toggle('active', on);
+            if (on) el.scrollIntoView({ block: 'nearest' });
+        });
+    }
+
+    function render(query) {
+        current = query ? search(query) : [];
+        clear(box);
+
+        if (!query) { close(); return; }
+
+        if (!current.length) {
+            const empty = document.createElement('p');
+            empty.className = 'wiki-search-empty';
+            empty.textContent = 'Keine Treffer für „' + query + '“.';
+            box.appendChild(empty);
+            open();
+            return;
+        }
+
+        current.forEach((page) => {
+            const link = document.createElement('a');
+            link.className = 'wiki-search-item';
+            link.href = base + String(page.url || '');
+            link.setAttribute('role', 'option');
+
+            const title = document.createElement('span');
+            title.className = 'wiki-search-title';
+            // textContent keeps indexed page text inert (no HTML injection).
+            title.textContent = String(page.title || '');
+            link.appendChild(title);
+
+            const snippet = snippetFor(page);
+            if (snippet) {
+                const snip = document.createElement('span');
+                snip.className = 'wiki-search-snippet';
+                snip.textContent = snippet;
+                link.appendChild(snip);
+            }
+
+            box.appendChild(link);
+        });
+        open();
+        active = -1;
+    }
+
+    input.addEventListener('input', () => {
+        render(input.value.trim().toLowerCase());
+    });
+
+    input.addEventListener('keydown', (e) => {
+        if (box.hidden) return;
+        if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            highlight(active + 1);
+        } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            highlight(active - 1);
+        } else if (e.key === 'Enter') {
+            const items = box.querySelectorAll('.wiki-search-item');
+            if (active >= 0 && items[active]) {
+                e.preventDefault();
+                window.location.href = items[active].href;
+            }
+        } else if (e.key === 'Escape') {
+            close();
+            input.blur();
+        }
+    });
+
+    input.addEventListener('focus', () => {
+        if (input.value.trim()) render(input.value.trim().toLowerCase());
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!box.contains(e.target) && e.target !== input) close();
+    });
+
+    fetch(INDEX_URL, { cache: 'no-store' })
+        .then((res) => {
+            if (!res.ok) throw new Error('HTTP ' + res.status);
+            return res.json();
+        })
+        .then((data) => {
+            pages = asArray(data && data.pages).filter((p) => p && typeof p === 'object');
+        })
+        .catch(() => {
+            input.placeholder = 'Suche nicht verfügbar';
+            input.disabled = true;
+        });
 }

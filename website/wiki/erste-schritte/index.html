@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erste Schritte | Festas Builds Wiki</title>
+    <link rel="icon" type="image/svg+xml" href="../../images/favicon.svg">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet" href="../css/wiki.css">
+</head>
+<body>
+    <div class="wiki-layout">
+        <!-- Sidebar -->
+        <aside class="wiki-sidebar">
+            <div class="sidebar-header">
+                <a href="../../index.html" class="sidebar-logo">
+                    <span>🏗️</span> Festas Builds
+                </a>
+            </div>
+            <div class="wiki-search">
+                <input type="search" id="wikiSearch" class="wiki-search-input"
+                       placeholder="Wiki durchsuchen …" aria-label="Wiki durchsuchen"
+                       autocomplete="off" role="combobox" aria-expanded="false"
+                       aria-controls="wikiSearchResults" data-base="../">
+                <div id="wikiSearchResults" class="wiki-search-results" role="listbox" hidden></div>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3>📖 Wiki</h3>
+                    <ul>
+                        <li><a href="../index.html">Startseite</a></li>
+                        <li><a href="../erste-schritte/index.html" class="active">🚀 Erste Schritte</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h3>🏆 Ränge</h3>
+                    <ul>
+                        <li><a href="../raenge/index.html">Übersicht</a></li>
+                        <li><a href="../raenge/zeit-raenge.html">⏳ Zeit-Ränge</a></li>
+                        <li><a href="../raenge/geld-raenge.html">💎 Geld-Ränge</a></li>
+                        <li><a href="../raenge/team-raenge.html">👮 Team-Ränge</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h3>🎮 Spielmodi</h3>
+                    <ul>
+                        <li><a href="../spielmodi/index.html">Übersicht</a></li>
+                        <li><a href="../spielmodi/survival.html">🏰 Survival</a></li>
+                        <li><a href="../spielmodi/mining.html">⛏️ Mining</a></li>
+                        <li><a href="../spielmodi/sky-survival.html">🏝️ Skyblock</a></li>
+                        <li><a href="../spielmodi/freebuild.html">🎨 Freebuild</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h3>📜 Sonstiges</h3>
+                    <ul>
+                        <li><a href="../befehle/index.html">⌨️ Befehle</a></li>
+                        <li><a href="../regeln/index.html">📋 Regeln</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Sidebar Toggle for Mobile -->
+        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Menü öffnen">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+        <!-- Main Content -->
+        <main class="wiki-content">
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a> / 
+                <a href="../index.html">Wiki</a> / 
+                <span>Erste Schritte</span>
+            </div>
+
+            <h1>🚀 Erste Schritte</h1>
+            <p class="wiki-intro">
+                Neu auf <strong>Festas Builds</strong>? In wenigen Minuten bist du dabei:
+                verbinden, in der Lobby den Server wählen und loslegen. Unser Hauptmodus ist
+                <strong>Survival</strong> (eigene Stadt mit <strong>Lands</strong>) &ndash;
+                <strong>Mining</strong> und <strong>Skyblock</strong> sind aktuell im Aufbau.
+            </p>
+
+            <div class="warning-box">
+                <strong>ℹ️ Voraussetzung:</strong>
+                <p>
+                    Du brauchst <strong>Minecraft: Java Edition</strong> in Version
+                    <strong>26.2</strong>. Bedrock/Konsole wird derzeit nicht unterstützt.
+                </p>
+            </div>
+
+            <ol class="rules-list">
+                <li>
+                    <div class="rule-title">Mit dem Netzwerk verbinden</div>
+                    <div class="rule-description">
+                        Starte Minecraft (Java Edition), gehe auf <em>Mehrspieler → Server
+                        hinzufügen</em> und trage als Adresse
+                        <code>mc.festas-builds.com</code> ein (Standard-Port 25565).
+                        Danach verbindest du dich mit einem Doppelklick.
+                    </div>
+                </li>
+                <li>
+                    <div class="rule-title">In der Lobby ankommen</div>
+                    <div class="rule-description">
+                        Du landest zuerst in der <strong>Lobby</strong> (dem Hub). Von hier aus
+                        wechselst du auf die Spiel-Server &ndash; entweder über den
+                        <strong>Navigator-Kompass</strong> in deiner Hotbar oder das
+                        <strong>Server-Auswahl-Menü</strong>. Bewegungen in der Lobby sind
+                        geschützt, du kannst nichts kaputt machen.
+                    </div>
+                </li>
+                <li>
+                    <div class="rule-title">Server auswählen</div>
+                    <div class="rule-description">
+                        Wähle deinen Modus:
+                        <ul>
+                            <li><a href="../spielmodi/survival.html">🏰 Survival</a> &ndash;
+                                unser Hauptmodus: claime Chunks, gründe deine
+                                <strong>Stadt</strong> mit Lands und baue mit Freunden.</li>
+                            <li><a href="../spielmodi/mining.html">⛏️ Mining</a> &ndash;
+                                Prison-/Tycoon-Minigame mit eigener Währung <em>(im Aufbau)</em>.</li>
+                            <li><a href="../spielmodi/sky-survival.html">🏝️ Skyblock</a> &ndash;
+                                Koop-Inseln mit Freunden <em>(im Aufbau)</em>.</li>
+                            <li><a href="../spielmodi/freebuild.html">🎨 Freebuild</a> &ndash;
+                                Kreativ-Plots auf dem Survival-Server.</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="rule-title">Grundbefehle lernen</div>
+                    <div class="rule-description">
+                        Die wichtigsten Befehle zum Start:
+                        <ul>
+                            <li><code>/cmi spawn</code> &ndash; zurück zum Server-Spawn.</li>
+                            <li><code>/cmi warp</code> &ndash; öffnet die Warp-Liste.</li>
+                            <li><code>/msg [Spieler] [Text]</code> &ndash; private Nachricht.</li>
+                            <li><code>/cmi tpa [Spieler]</code> &ndash; Teleport-Anfrage.</li>
+                        </ul>
+                        Die vollständige, durchsuchbare Liste findest du in der
+                        <a href="../befehle/index.html">Befehls-Übersicht</a>.
+                    </div>
+                </li>
+                <li>
+                    <div class="rule-title">Ränge & Wirtschaft verstehen</div>
+                    <div class="rule-description">
+                        Auf Survival steigst du über Spielzeit in
+                        <a href="../raenge/zeit-raenge.html">Zeit-Rängen</a> auf und schaltest
+                        mit Geld <a href="../raenge/geld-raenge.html">Geld-Ränge</a> frei.
+                        Geld verdienst du über Jobs, Shops und Handel. Jeder Modus hat seine
+                        <strong>eigene</strong> Wirtschaft &ndash; nur Ränge/Rechte gelten
+                        netzwerkweit.
+                    </div>
+                </li>
+                <li>
+                    <div class="rule-title">Regeln lesen & Community beitreten</div>
+                    <div class="rule-description">
+                        Wirf einen Blick in die <a href="../regeln/index.html">Server-Regeln</a>,
+                        damit alle fair miteinander spielen. Fragen? Komm auf unseren
+                        <a href="https://discord.gg/festasbuilds" target="_blank" rel="noopener noreferrer">Discord</a>.
+                    </div>
+                </li>
+            </ol>
+
+            <section class="quick-info">
+                <h2>⚡ Schnellinfo</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <strong>Server IP:</strong>
+                        <code>mc.festas-builds.com</code>
+                    </div>
+                    <div class="info-item">
+                        <strong>Version:</strong>
+                        <span>26.2 (Java Edition)</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Live-Map:</strong>
+                        <a href="https://survival.festas-builds.com" target="_blank" rel="noopener noreferrer">Survival</a>
+                        <span> · </span>
+                        <a href="https://mining.festas-builds.com" target="_blank" rel="noopener noreferrer">Mining</a>
+                    </div>
+                    <div class="info-item">
+                        <strong>Community:</strong>
+                        <a href="https://discord.gg/festasbuilds" target="_blank" rel="noopener noreferrer">Discord beitreten</a>
+                    </div>
+                </div>
+            </section>
+
+            <div class="wiki-cards">
+                <a href="../spielmodi/index.html" class="wiki-card">
+                    <span class="card-icon">🎮</span>
+                    <h3>Spielmodi</h3>
+                    <p>Survival mit Lands, Mining (Tycoon), Skyblock &amp; Freebuild erklärt.</p>
+                </a>
+                <a href="../befehle/index.html" class="wiki-card">
+                    <span class="card-icon">⌨️</span>
+                    <h3>Befehle</h3>
+                    <p>Alle wichtigen Commands &ndash; durchsuchbar und filterbar.</p>
+                </a>
+                <a href="../raenge/index.html" class="wiki-card">
+                    <span class="card-icon">🏆</span>
+                    <h3>Ränge</h3>
+                    <p>Zeit-, Geld- &amp; Team-Ränge mit allen Vorteilen.</p>
+                </a>
+                <a href="../regeln/index.html" class="wiki-card">
+                    <span class="card-icon">📋</span>
+                    <h3>Regeln</h3>
+                    <p>Unsere Server-Regeln für ein faires Miteinander.</p>
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <script src="../../js/config.js"></script>
+    <script src="../../js/main.js"></script>
+</body>
+</html>
