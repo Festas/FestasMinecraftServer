@@ -70,7 +70,7 @@ function updateNavigator(p: player):
     else:
         loop all items in {_p}'s inventory:
             if loop-item is compass or loop-item is book:
-                if name of loop-item contains "Navigator" or "Guide":
+                if name of loop-item contains "Navigator" or name of loop-item contains "Guide":
                     remove loop-item from {_p}'s inventory
 
 # --- EVENTS ---
@@ -90,7 +90,7 @@ on respawn:
 on death of player:
     loop drops:
         if loop-value is compass or book:
-            if name of loop-value contains "Navigator" or "Guide":
+            if name of loop-value contains "Navigator" or name of loop-value contains "Guide":
                 remove loop-value from drops
 
 # --- 4. SCHUTZ & INTERAKTION ---
@@ -100,7 +100,7 @@ on inventory click:
         if index of event-slot is 4 or 8:
             cancel event
         if event-item is compass or event-item is book:
-            if name of event-item contains "Navigator" or "Guide":
+            if name of event-item contains "Navigator" or name of event-item contains "Guide":
                 cancel event
 
 on drop:
