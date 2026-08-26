@@ -125,6 +125,35 @@ items:
       - '&e/ranks &8– &7Alle Ränge anzeigen'
 
   # ==============================================================
+  # CASINO / GLÜCKSSPIEL
+  # ==============================================================
+  'casino':
+    material: DIAMOND
+    slot: 22
+    priority: 1
+    display_name: '&d&l🎰 Casino & Glücksspiel'
+    lore:
+      - '&7Fühlst du dich heute glücklich, Bruder?'
+      - '&7Setze dein Geld und lass die Würfel rollen!'
+      - ''
+      - '&8» &fBis zu &ex10 &7Auszahlung beim Jackpot'
+      - '&8» &fTrostpreise &7bei einer Pechsträhne'
+      - '&8» &fEigene &eCasino-Statistik &7& Siegesserien'
+      - ''
+      - '&eBefehle:'
+      - '&e/gamble <Betrag> &8– &7Wette einen Betrag'
+      - '&e/gamble all &8– &7Setze alles auf eine Karte'
+      - '&e/gamble stats &8– &7Deine Statistik ansehen'
+      - ''
+      - '&c⚠ Zock mit Verstand – das Haus gewinnt oft!'
+    left_click_commands:
+      - '[close]'
+      - '[player] /gamble help'
+    right_click_commands:
+      - '[close]'
+      - '[player] /gamble help'
+
+  # ==============================================================
   # ALLE BEFEHLE
   # ==============================================================
   'commands':
@@ -140,6 +169,7 @@ items:
       - '&e/market &8– &7Spieler-Marktplatz'
       - '&e/plot auto &8– &7Plot holen'
       - '&e/rankup &8– &7Rang aufsteigen'
+      - '&e/gamble &8– &7Casino & Glücksspiel'
       - '&e/warp &8– &7Warps anzeigen'
       - '&e/bal &8– &7Kontostand'
       - '&e/lobby &8– &7Zurück zur Lobby'

@@ -8,6 +8,21 @@ command /help:
     trigger:
         execute player command "dm open help_menu"
 
-# --- AUTO-BROADCAST (alle 10 Minuten) ---
+# --- AUTO-BROADCAST (rotierend, alle 10 Minuten) ---
+on script load:
+    delete {survival_bc::*}
+    set {survival_bc::1} to "&8[&a&lSurvival&8] &7Neu hier? Tippe &e/help &7und erfahre alles über Jobs, Shops und Plots!"
+    set {survival_bc::2} to "&8[&a&lSurvival&8] &7Verdiene Geld mit &e/jobs &7und steige mit &e/rankup &7im Rang auf!"
+    set {survival_bc::3} to "&8[&a&lSurvival&8] &7Sichere dir dein eigenes Grundstück mit &e/plot auto&7!"
+    set {survival_bc::4} to "&8[&a&lSurvival&8] &7Handel mit anderen Spielern auf dem &e/market&7!"
+    set {survival_bc::5} to "&8[&d&lCasino&8] &7Fühlst du dich heute glücklich, Bruder? &e/gamble <Betrag> &7– das Haus wartet schon! &c(Zock mit Verstand!)"
+    set {survival_bc::6} to "&8[&d&lCasino&8] &7Wallah, gestern hat jemand den &dx10 Jackpot &7geknackt! Bist du der nächste Talahun? &e/gamble"
+    set {survival_bc_index} to 1
+
 every 10 minutes:
-    broadcast "&8[&a&lSurvival&8] &7Neu hier? Tippe &e/help &7und erfahre alles über Jobs, Shops und Plots!"
+    set {_msg} to {survival_bc::%{survival_bc_index}%}
+    if {_msg} is set:
+        broadcast "%{_msg}%"
+    add 1 to {survival_bc_index}
+    if {survival_bc_index} > 6:
+        set {survival_bc_index} to 1
