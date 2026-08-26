@@ -386,6 +386,29 @@
             </div>
         </section>
 
+        <!-- ECONOMY LEADERBOARD (richest players per server) -->
+        <section class="section section-alt" id="economy">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2 class="section-title">Reichste Spieler</h2>
+                    <p class="section-subtitle">Die wohlhabendsten Spieler je Server &ndash; nach Kontostand</p>
+                </div>
+
+                <div class="leaderboard-panel reveal">
+                    <div class="economy-tabs" id="economyTabs" role="tablist" aria-label="Server auswählen"></div>
+
+                    <div class="leaderboard-summary">
+                        <span class="status-indicator" id="economyStatusDot" aria-hidden="true"></span>
+                        <span class="leaderboard-summary-text" id="economySummary">Lade Bestenliste &hellip;</span>
+                    </div>
+
+                    <ol class="leaderboard-list" id="economyList" aria-live="polite"></ol>
+
+                    <p class="leaderboard-updated" id="economyUpdated" hidden></p>
+                </div>
+            </div>
+        </section>
+
         <!-- HOW TO JOIN -->
         <section class="section" id="join">
             <div class="container">

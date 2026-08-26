@@ -1,0 +1,64 @@
+{
+  "output": "/home/deploy/minecraft-website/data/economy.json",
+  "top_n": 10,
+  "query_limit": 200,
+  "min_balance": null,
+  "exclude_uuids": [],
+  "exclude_names": [],
+  "group_display_overrides": {},
+  "luckperms_database": {
+    "host": "172.25.0.1",
+    "port": 3306,
+    "database": "s4_perms",
+    "ssl": true,
+    "connect_timeout_seconds": 5,
+    "read_timeout_seconds": 30
+  },
+  "servers": [
+    {
+      "id": "survival",
+      "label": "Survival",
+      "currency": "€",
+      "database": {
+        "host": "172.25.0.1",
+        "port": 3306,
+        "database": "s5_cmi_survival",
+        "ssl": true
+      },
+      "table": "CMI_users",
+      "uuid_column": "player_uuid",
+      "name_column": "username",
+      "balance_column": "Balance"
+    },
+    {
+      "id": "mining",
+      "label": "Mining",
+      "currency": "€",
+      "database": {
+        "host": "172.25.0.1",
+        "port": 3306,
+        "database": "s5_cmi_mining",
+        "ssl": true
+      },
+      "table": "CMI_users",
+      "uuid_column": "player_uuid",
+      "name_column": "username",
+      "balance_column": "Balance"
+    },
+    {
+      "id": "skyblock",
+      "label": "Skyblock",
+      "currency": "€",
+      "database": {
+        "host": "172.25.0.1",
+        "port": 3306,
+        "database": "s5_cmi_skyblock",
+        "ssl": true
+      },
+      "table": "CMI_users",
+      "uuid_column": "player_uuid",
+      "name_column": "username",
+      "balance_column": "Balance"
+    }
+  ]
+}

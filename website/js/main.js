@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initServerStatus();
     initPlayerList();
     initLeaderboard();
+    initEconomyLeaderboard();
     initCommandReference();
     initNavigationAndScroll();
     initWikiSidebar();
@@ -687,6 +688,212 @@ function initLeaderboard() {
 
     function renderUnavailable() {
         clear(list);
+        setState('offline');
+        summary.textContent = 'Bestenliste momentan nicht verfügbar';
+        const note = document.createElement('li');
+        note.className = 'leaderboard-empty';
+        note.textContent = 'Bestenliste konnte nicht geladen werden. Bitte später erneut versuchen.';
+        list.appendChild(note);
+        if (updated) updated.hidden = true;
+    }
+
+    async function refresh() {
+        try {
+            const res = await fetch(API, { cache: 'no-store' });
+            if (!res.ok) throw new Error('HTTP ' + res.status);
+            const data = await res.json();
+            render(data);
+        } catch {
+            renderUnavailable();
+        }
+    }
+
+    refresh();
+    setInterval(refresh, REFRESH_MS);
+}
+
+/* ── Economy Leaderboard (richest players per server) ── */
+function initEconomyLeaderboard() {
+    const tabs = document.getElementById('economyTabs');
+    const list = document.getElementById('economyList');
+    const summary = document.getElementById('economySummary');
+    const dot = document.getElementById('economyStatusDot');
+    const updated = document.getElementById('economyUpdated');
+    if (!tabs || !list || !summary) return;
+
+    const cfg = window.MC_CONFIG || {};
+    const API = cfg.economyAPI || '/api/economy.json';
+    const REFRESH_MS = 300000;   // 5 min – matches the economy-export timer cadence
+    const STALE_AFTER_S = 1800;  // 30 min – flag clearly outdated data
+    const MEDALS = { 1: '🥇', 2: '🥈', 3: '🥉' };
+
+    // Remember which server tab the visitor picked so a background refresh keeps it.
+    let activeId = null;
+    let servers = [];
+
+    function clear(el) {
+        while (el.firstChild) el.removeChild(el.firstChild);
+    }
+
+    function setState(state) {
+        if (dot) dot.className = 'status-indicator' + (state ? ' ' + state : '');
+    }
+
+    function normalizeServers(value) {
+        return Array.isArray(value)
+            ? value.filter((entry) => entry && typeof entry === 'object')
+            : [];
+    }
+
+    function normalizePlayers(value) {
+        return Array.isArray(value) ? value.filter((entry) => entry && typeof entry === 'object') : [];
+    }
+
+    function groupLabel(player) {
+        const display = typeof player.groupDisplay === 'string' ? player.groupDisplay.trim() : '';
+        if (display) return display;
+        const group = typeof player.group === 'string' ? player.group.trim() : '';
+        return group;
+    }
+
+    function formatBalance(value, currency) {
+        const number = toPositiveNumberOrZero(value);
+        let text;
+        try {
+            text = number.toLocaleString('de-DE', { maximumFractionDigits: 0 });
+        } catch {
+            text = String(Math.round(number));
+        }
+        const suffix = typeof currency === 'string' ? currency.trim() : '';
+        return suffix ? text + ' ' + suffix : text;
+    }
+
+    function serverById(id) {
+        return servers.find((entry) => String(entry.id) === String(id)) || null;
+    }
+
+    function buildRow(player, position, currency) {
+        const rankNumber = Number(player.rank);
+        const rank = Number.isFinite(rankNumber) && rankNumber > 0 ? Math.floor(rankNumber) : position;
+        const label = groupLabel(player);
+
+        const item = document.createElement('li');
+        item.className = 'leaderboard-row';
+        if (rank <= 3) item.classList.add('leaderboard-row-top', 'leaderboard-row-' + rank);
+
+        const rankEl = document.createElement('span');
+        rankEl.className = 'leaderboard-rank';
+        rankEl.textContent = MEDALS[rank] || ('#' + rank);
+        item.appendChild(rankEl);
+
+        const nameEl = document.createElement('span');
+        nameEl.className = 'leaderboard-name';
+        // textContent keeps user-controlled player names inert (no HTML injection).
+        nameEl.textContent = String(player.name || 'Unbekannt');
+        item.appendChild(nameEl);
+
+        if (label) {
+            const groupEl = document.createElement('span');
+            groupEl.className = 'leaderboard-rank-badge';
+            // textContent keeps user-controlled rank names inert (no HTML injection).
+            groupEl.textContent = label;
+            item.appendChild(groupEl);
+        }
+
+        const balanceEl = document.createElement('span');
+        balanceEl.className = 'leaderboard-playtime economy-balance';
+        balanceEl.textContent = formatBalance(player.balance, currency);
+        item.appendChild(balanceEl);
+
+        return item;
+    }
+
+    function renderTabs() {
+        clear(tabs);
+        servers.forEach((server) => {
+            const id = String(server.id);
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.className = 'economy-tab' + (id === activeId ? ' active' : '');
+            button.setAttribute('role', 'tab');
+            button.setAttribute('aria-selected', id === activeId ? 'true' : 'false');
+            // textContent keeps the (config-controlled) server label inert.
+            button.textContent = String(server.label || server.id || 'Server');
+            button.addEventListener('click', () => {
+                if (activeId === id) return;
+                activeId = id;
+                renderTabs();
+                renderActive();
+            });
+            tabs.appendChild(button);
+        });
+    }
+
+    function renderActive() {
+        clear(list);
+        const server = serverById(activeId);
+        const players = server ? normalizePlayers(server.players) : [];
+
+        if (!server || !players.length) {
+            setState('offline');
+            summary.textContent = 'Noch keine Guthaben erfasst';
+            const note = document.createElement('li');
+            note.className = 'leaderboard-empty';
+            note.textContent = 'Sobald Guthaben vorliegen, erscheinen hier die reichsten Spieler.';
+            list.appendChild(note);
+            return;
+        }
+
+        setState('online');
+        const label = String(server.label || server.id);
+        summary.textContent = players.length === 1
+            ? 'Top 1 nach Guthaben · ' + label
+            : 'Top ' + players.length + ' nach Guthaben · ' + label;
+
+        players.forEach((player, index) => list.appendChild(buildRow(player, index + 1, server.currency)));
+    }
+
+    function render(data) {
+        const snapshot = data && typeof data === 'object' ? data : {};
+        servers = normalizeServers(snapshot.servers);
+
+        if (!servers.length) {
+            activeId = null;
+            clear(tabs);
+            renderActive();
+            if (updated) updated.hidden = true;
+            return;
+        }
+
+        // Keep the visitor's current tab if it still exists; otherwise prefer the
+        // first server that actually has players, falling back to the first server.
+        const stillValid = activeId && servers.some((server) => String(server.id) === activeId);
+        if (!stillValid) {
+            const withPlayers = servers.find((server) => normalizePlayers(server.players).length);
+            activeId = String((withPlayers || servers[0]).id);
+        }
+
+        renderTabs();
+        renderActive();
+
+        if (updated) {
+            const ts = toPositiveNumberOrZero(snapshot.updated);
+            const ageS = ts > 0 ? Math.floor(Date.now() / 1000) - ts : 0;
+            if (ts > 0 && ageS > STALE_AFTER_S) {
+                updated.hidden = false;
+                updated.textContent = 'Daten möglicherweise veraltet';
+                setState('');
+            } else {
+                updated.hidden = true;
+            }
+        }
+    }
+
+    function renderUnavailable() {
+        clear(tabs);
+        clear(list);
+        servers = [];
+        activeId = null;
         setState('offline');
         summary.textContent = 'Bestenliste momentan nicht verfügbar';
         const note = document.createElement('li');
