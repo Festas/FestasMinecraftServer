@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function () {
     initNavigationAndScroll();
     initWikiSidebar();
     initSmoothScroll();
-    initClassTabs();
     initScrollReveal();
 });
 
@@ -874,32 +873,6 @@ function initSmoothScroll() {
             e.preventDefault();
             const top = target.getBoundingClientRect().top + window.scrollY - headerH;
             window.scrollTo({ top, behavior: 'smooth' });
-        });
-    });
-}
-
-/* ── Class Tabs ─────────────────────────────── */
-function initClassTabs() {
-    const tabs = document.querySelectorAll('.class-tab');
-    const panels = document.querySelectorAll('.class-panel');
-
-    if (!tabs.length || !panels.length) return;
-
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            const cls = tab.dataset.class;
-
-            tabs.forEach(t => {
-                t.classList.remove('active');
-                t.setAttribute('aria-selected', 'false');
-            });
-            panels.forEach(p => p.classList.remove('active'));
-
-            tab.classList.add('active');
-            tab.setAttribute('aria-selected', 'true');
-
-            const panel = document.querySelector(`.class-panel[data-class="${cls}"]`);
-            if (panel) panel.classList.add('active');
         });
     });
 }

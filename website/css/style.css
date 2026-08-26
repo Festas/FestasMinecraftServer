@@ -1170,32 +1170,5 @@ img { max-width: 100%; display: block; }
     transform: translateY(0);
 }
 
-/* ── Class System (legacy, kept for compatibility) ── */
-.class-tabs { display: flex; gap: 0.4rem; flex-wrap: wrap; justify-content: center; margin-bottom: 1.25rem; }
-.class-tab {
-    padding: 0.45rem 0.9rem;
-    border-radius: var(--radius-xs);
-    border: 1px solid var(--border);
-    background: transparent;
-    color: var(--text-secondary);
-    font-size: 0.85rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all var(--transition);
-    white-space: nowrap;
-    font-family: var(--font);
-}
-.class-tab:hover { border-color: var(--border-accent); color: var(--text-primary); }
-.class-tab.active { background: var(--accent); border-color: var(--accent); color: #fff; }
-.class-panels { position: relative; }
-.class-panel {
-    display: none;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 1.75rem;
-}
-.class-panel.active { display: block; }
-
 /* ── Utilities ── */
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
