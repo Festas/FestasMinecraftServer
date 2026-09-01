@@ -25,15 +25,15 @@ Dieses Repository enthält alle Konfigurationen für ein Minecraft Paper Server 
 ```
 MinecraftMMO/
 ├── proxy/              # Velocity Proxy Konfigurationen
-│   └── plugins/        # Proxy-Plugins (TAB, MiniMOTD, LibertyBans, Geyser, etc.)
+│   └── plugins/        # Proxy-Plugins (TAB, MiniMOTD, LibertyBans, Plan, etc.)
 ├── lobby/              # Lobby Server Konfigurationen  (AKTIV)
 │   └── plugins/        # Lobby-Plugins (CMI, DeluxeMenus, Skript, Oraxen, etc.)
 ├── survival/           # Survival Server Konfigurationen  (AKTIV)
 │   └── plugins/        # Survival-Plugins (NextGens, Jobs, Rankup, PlotSquared, etc.)
 ├── skyblock/           # Skyblock Server Konfigurationen  (NEU/UMBAU — ohne Gilden, Freunde-Koop)
-│   └── plugins/        # Skyblock-Plugins (SuperiorSkyblock2, JetsMinions, etc.)
-├── prison/                # Mining Server Konfigurationen  (recycelt aus altem RPG — Aufbau/Gerüst)
-│   └── plugins/        # Mining-/Zonen-Kern, WorldGuard, Shop/Auto-Sell, Cosmetics (+ Alt-RPG-Archiv)
+│   └── plugins/        # Skyblock-Plugins (SuperiorSkyblock2, SlimeWorldManager, DeluxeBazaar, etc.)
+├── rpg/               # Mining Server Konfigurationen  (recycelter RPG-Slot / Velocity-Backend `rpg`)
+│   └── plugins/        # Mining-/Zonen-Kern (X-Prison), private Minen, Economy/Schutz, Cosmetics
 └── docs/               # Dokumentation
 ```
 
@@ -51,10 +51,11 @@ MinecraftMMO/
 - **LuckPerms**, **PlaceholderAPI**, **Vault**, **ProtocolLib**: Basis-Infrastruktur
 - **BlueMap**: 3D-Web-Karten (Survival & Mining)
 
-### Skyblock (Umbau) 
+### Skyblock (Umbau)
 
 - **SuperiorSkyblock2**: Insel-Kern inkl. **Koop/Insel-Mitglieder** (Freunde einladen) — ersetzt das frühere Gilden-Konzept
-- **JetsMinions**: Minion-/Automations-System (Skyblock)
+- **SlimeWorldManager**: Verwaltung der Insel-Welten (Datei-Storage)
+- **DeluxeBazaar** & **GlobalMarketPlus**: Handelssysteme für Skyblock
 
 Vollständige Plugin-Liste siehe [docs/PLUGINS.md](docs/PLUGINS.md)
 
@@ -90,7 +91,7 @@ Umfassende Dokumentation findest du im [`/docs`](docs/) Verzeichnis:
 
 ## Verwendung
 
-Jeder Server-Ordner (`lobby/`, `survival/`, `proxy/` — aktiv; `skyblock/` — Umbau; `prison/` — recycelt zum Prison-Server) enthält seine eigenen Plugin-Konfigurationen unter `plugins/`.
+Jeder Server-Ordner (`lobby/`, `survival/`, `proxy/` — aktiv; `skyblock/` — Umbau; `rpg/` — recycelt zum Mining-Server) enthält seine eigenen Plugin-Konfigurationen unter `plugins/`.
 
 Die Konfigurationsdateien können direkt in die entsprechenden Plugin-Ordner auf dem Server kopiert werden:
 ```bash

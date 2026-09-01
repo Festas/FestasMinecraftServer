@@ -2,137 +2,66 @@
 
 Dokumentation für den überarbeiteten Skyblock-Server — **ohne Gilden**, mit **Freunde-Koop**.
 
-> **🟢 Umbau (Stand 26.2):** Dieser Server wird **überarbeitet und behalten**. Kernänderung: **keine Gilden**, stattdessen **Freunde-Koop** über die Insel-Mitglieder von SuperiorSkyblock2 (Freunde einladen und gemeinsam die Insel bauen). Ob die MMO-Integration (Klassen/MMOItems) erhalten bleibt, ist offen — siehe [NEW_SERVERS.md](../NEW_SERVERS.md#7-verbleibende-offene-fragen). Details unten, die auf die RPG-Synchronisation verweisen, gelten nur bis zur RPG-Abschaltung.
+> **🟢 Umbau (Stand 26.2):** Aktueller Kern ist ein schlanker Skyblock-Stack mit
+> SuperiorSkyblock2 und SlimeWorldManager; Gameplay-Daten bleiben lokal, zentrale Dienste laufen netzwerkweit.
 
 ---
 
 ## Server-Informationen
 
 **Server-Typ:** Paper 26.2  
-**Hauptfokus:** Koop-Skyblock (Freunde einladen), optional mit MMO-Progression  
-**Spieler-Kapazität:** 50-100 Spieler  
+**Hauptfokus:** Koop-Skyblock (Freunde einladen)  
 **Sozialmodell:** Insel-Mitglieder/Koop **statt Gilden**  
 **Basis-Plugin:** SuperiorSkyblock2  
 **Sprache:** Deutsch (DE)
 
 ---
 
-## Kern-Features
+## Kern-Features (Ist-Stand)
 
-### 1. Island-System (SuperiorSkyblock2)
-- Persönliche oder **Koop-Inseln** — Freunde per `/is invite` einladen und gemeinsam bauen (ersetzt Gilden)
-- Island-Levels und Upgrades
-- Custom Island-Schematics
-- Island-Warps und Besucher
-- SlimeWorldManager für Island-Welten
+### 1. Insel-System (SuperiorSkyblock2)
+- Persönliche oder **Koop-Inseln** via `/is invite`
+- Insel-Level, Upgrades, Warps und Besucherfunktionen
+- Gilden-System nicht im Einsatz
 
-### 2. Minion-System (JetsMinions)
-- 8 Minion-Typen: Miner, Farmer, Fisher, Lumberjack, Slayer, Collector, Feeder, Seller
-- Health-System (Minions müssen gefüttert/geheilt werden)
-- Verknüpfte Kisten für automatische Lagerung
-- Permission-basierte Placement-Limits
+### 2. Insel-Welten (SlimeWorldManager)
+- Dateibasierte Welten für Skyblock-Inseln
+- Keine externe Skyblock-Datenbank erforderlich
 
-### 3. MMO-Integration
-- Klassen-System (6 Klassen via MMOCore)
-- Custom Items mit Stats (MMOItems)
-- Progression durch Skyblock + MMO
-- Skills und Fähigkeiten
-- MythicMobs für Custom-Mobs
+### 3. Economy & Handel
+- **CMI/Vault** als Economy-Basis auf dem Server
+- **DeluxeBazaar** und **GlobalMarketPlus** für Handel/Auktionen
 
-### 4. Collection-System (AuroraCollections)
-- 5 Kategorien: Farming, Mining, Combat, Foraging, Fishing
-- Ressourcen sammeln für Belohnungen
-- Kategorie-Milestones mit Rewards
-
-### 5. Prestige-System
-- 10 Prestige-Stufen mit Titeln
-- Passive Buffs ab Prestige 2+
-- Leaderboard und Server-Broadcasts
-
-### 6. Pet-System
-- 6 Haustier-Typen mit passiven Boni
-- Pet-Leveling durch Mob-Kills
-- Spawn-Entitäten die dem Spieler folgen
+### 4. Netzwerk-Integration
+- Ränge/Rechte netzwerkweit via **LuckPerms**
+- Keine aktive Gameplay-Synchronisation mit dem Mining-Server
 
 ---
 
-## Plugin-Stack
+## Plugin-Stack (Ist-Bestand `skyblock/plugins/`)
 
-### Core Skyblock
-- **SuperiorSkyblock2** - Haupt-Skyblock-Plugin
-- **JetsMinions** - Minion-System
-- **VoidGen** - Void-World-Generator
-- **SlimeWorldManager** - Island-Welten-Verwaltung
+- **Core:** SuperiorSkyblock2, SlimeWorldManager, CMI, CMILib, LuckPerms, Vault
+- **Handel/UI:** DeluxeBazaar, GlobalMarketPlus, DeluxeMenus, PlaceholderAPI
+- **Gameplay/Infra:** Skript, Oraxen, ProtocolLib, Plan, Multiverse-Core, Multiverse-Inventories, VoidGen
+- **Tools:** faststats, spark, bStats, nightcore
 
-### MMO-Integration
-- **MMOCore** - Klassen-System
-- **MMOItems** - Custom Items
-- **MythicMobs** (Community) - Custom Mobs
-- **MythicLib** - Library für MMO-Plugins
-- **MythicDungeons** - Instanzierte Dungeons
-- **MythicAchievements** - Achievement-System
-- **MythicHUD** - Custom HUD
-
-### Progression
-- **Aurora** - Collections & Achievements
-- **AuroraCollections** - Collection-System
-- **Skript** - Prestige- und Pet-System (Custom Scripts)
-
-### Economy
-- **CoinsEngine** - Multi-Währungs-System
-- **DeluxeBazaar** - Bazaar-System
-- **GlobalMarketPlus** - Auktionshaus
-- **Vault** - Economy-API
-
-### Sonstiges
-- **GrimAC** - Anticheat (angepasst für Skyblock-Flight)
-- **ExcellentEnchants** - Erweiterte Verzauberungen
-- **RoseLoot** - Custom Loot-Tables
-- **RoseStacker** - Entity-Stacking
-- **Oraxen** - Custom Items/Texturen
-- **DeluxeMenus** - GUI-Menüs (Cosmetics)
-
----
-
-## Unterschiede zum RPG-Server
-
-### Skyblock-spezifisch:
-- Island-System (SuperiorSkyblock2)
-- Minions (JetsMinions)
-- Skyblock-spezifische Collections
-- Keine Open-World-Zonen
-- Prestige-System
-- Pet-System
-
-### Synchronisiert mit RPG:
-- ✅ Klassen und Level
-- ✅ Skills
-- ✅ Inventar (HuskSync)
-- ✅ Währungen
-
-### Nicht auf Skyblock (nur RPG):
-- ❌ BetonQuest (Quests)
-- ❌ Citizens (NPCs)
-- ❌ ModelEngine (3D-Modelle)
-- ❌ MythicCrucible (Advanced Items)
+> Nicht im aktuellen Stack enthalten: JetsMinions, MMOCore, MMOItems, MythicMobs,
+> CoinsEngine, HuskSync, Geyser/Floodgate.
 
 ---
 
 ## Datenbank-Konfiguration
 
-Skyblock läuft nur auf **einem** Server. Alle skyblock-spezifischen Daten werden
-daher **lokal** gespeichert – ein externer MySQL/MariaDB-Zugang (bzw. ein
-`SKYBLOCK_DB_ENV`-Secret) ist dafür nicht nötig:
+Skyblock-spezifische Kerndaten bleiben lokal:
 
-- **SuperiorSkyblock2:** SQLite (`config.yml` → `database.type: SQLite`) – Insel- & Spielerdaten
-- **SlimeWorldManager:** Datei-Storage (`sources.yml` → `file`) – Insel-Welten
-- **Plan:** SQLite (`config.yml` → `Database.Type: SQLite`) – Analytics
-- **CMI:** lokaler Storage
+- **SuperiorSkyblock2:** SQLite
+- **SlimeWorldManager:** Datei-Storage (`file`)
+- **Plan:** MySQL (`PLAN_DB_ENV`, Webserver auf Skyblock selbst deaktiviert)
+- **CMI:** MySQL (`CMI_SKYBLOCK_DB_ENV`, eigene DB `S5_CMI`)
 
-Netzwerkweite Dienste bleiben zentral (serverübergreifend geteilt):
+Zentrale, geteilte Netzwerkdienste:
 
-- **LuckPerms:** gemeinsame MySQL/MariaDB (`LUCKPERMS_DB_ENV`) + Redis-Messaging
-- **Redis:** `172.18.0.1:6380` (Cache/Sync für HuskSync & LuckPerms)
+- **LuckPerms:** gemeinsame MySQL/MariaDB + Redis-Messaging
 
 ---
 
@@ -147,6 +76,6 @@ Netzwerkweite Dienste bleiben zentral (serverübergreifend geteilt):
 
 ---
 
-**Letzte Aktualisierung:** 2026-08-25
+**Letzte Aktualisierung:** 2026-09-01
 
 **Status:** 🟢 Umbau — ohne Gilden, mit Freunde-Koop

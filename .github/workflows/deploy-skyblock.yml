@@ -34,10 +34,9 @@ jobs:
           chmod 600 ~/.ssh/deploy_key
           ssh-keyscan -H "$SSH_HOST" >> ~/.ssh/known_hosts
 
-      # Skyblock läuft nur auf einem Server, daher werden alle skyblock-spezifischen
-      # Daten lokal gespeichert (SuperiorSkyblock2: SQLite, SlimeWorldManager: file).
-      # Es gibt keine __SKYBLOCK_DB_*__-Platzhalter und kein SKYBLOCK_DB_ENV-Secret.
-      # LuckPerms bleibt netzwerkweit und nutzt weiterhin eine gemeinsame DB (unten).
+      # Skyblock-spezifische Kerndaten bleiben lokal (SuperiorSkyblock2: SQLite,
+      # SlimeWorldManager: file). Netzwerkdienste (LuckPerms/Plan/CMI) nutzen
+      # weiterhin zentrale DB-Secrets und werden unten injiziert.
 
       - name: Inject LuckPerms DB credentials
         env:
@@ -122,10 +121,8 @@ jobs:
               # Escape for the double-quoted YAML scalar: Password: "__...__".
               return value.replace("\\", "\\\\").replace('"', '\\"')
 
-          # Skyblock's Plan uses SQLite, so its config.yml carries no
-          # __PLAN_DB_*__ placeholders and needs no MySQL credentials. Skip
-          # without requiring the PLAN_DB_ENV secret unless placeholders are
-          # ever added to the config; only then validate and inject them.
+          # Inject Plan credentials only when placeholders are present.
+          # This keeps the step robust if the Plan storage mode changes again.
           keys = ("HOST", "PORT", "DATABASE", "USER", "PASSWORD")
           path = Path("skyblock/plugins/Plan/config.yml")
           text = path.read_text()
@@ -343,4 +340,3 @@ jobs:
             exit 1
           fi
           echo "✅ Deployment verifiziert."
-

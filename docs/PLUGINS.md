@@ -14,11 +14,6 @@ Vollständige Übersicht aller verwendeten Plugins pro Server.
 
 ### Core Plugins
 
-#### CMIV
-- **Funktion:** CMI Integration für Velocity
-- **Verwendung:** Erlaubt CMI-Befehle über Server hinweg
-- **Abhängigkeiten:** CMI auf Backend-Servern
-
 #### ForceResourcepacks
 - **Funktion:** Erzwingt Resourcepacks auf Clients
 - **Verwendung:** 
@@ -26,16 +21,6 @@ Vollständige Übersicht aller verwendeten Plugins pro Server.
   - Custom Models (ModelEngine)
   - Custom Textures
 - **Config:** Resourcepack-URL in `config.yml`
-
-#### Geyser-Velocity
-- **Funktion:** Bedrock-Spieler-Support über Java-Server
-- **Features:**
-  - Erlaubt Bedrock-Edition-Spielern (Handy, Konsole, Windows 10) den Beitritt
-  - Floodgate-Authentifizierung (kein Java-Account nötig)
-  - Resourcepack-Erzwingung auch für Bedrock
-  - MOTD-Konfiguration für Bedrock-Clients
-- **Config:** `config.yml` (auth-type: floodgate)
-- **Abhängigkeit:** Floodgate (für Account-Verknüpfung)
 
 #### LibertyBans
 - **Funktion:** Netzwerk-weites Ban-System
@@ -60,10 +45,6 @@ Vollständige Übersicht aller verwendeten Plugins pro Server.
   - Hover-Text
   - RGB-Farben
 - **Config:** `main.conf`
-
-#### MySQL-And-Configurate
-- **Funktion:** MySQL-Datenbank-Integration für Velocity
-- **Verwendung:** Zentrale Datenbank-Verbindung für Plugins
 
 #### Plan
 - **Funktion:** Netzwerk-weite Analyse und Statistiken
