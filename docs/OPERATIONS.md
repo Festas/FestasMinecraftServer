@@ -103,15 +103,14 @@ offline sind:
 | -------- | :---------------------: | ---------------- |
 | Survival | 03:55                   | `RestartWarning` |
 | Lobby    | 04:00                   | `DailyRestart`   |
-| RPG¹     | 04:05                   | `DailyRestart`   |
+| RPG/Mining¹ | 04:05                | `DailyRestart`   |
 | Skyblock | 04:10                   | `DailyRestart`   |
 
 Jeder Neustart warnt die Spieler 5 Minuten vorher, sichert die Daten
 (`save-all`) und stoppt den Server anschließend (`stop`). Der Pterodactyl-Auto-
 Restart bzw. der Pterodactyl-Neustart-Schedule fährt ihn danach wieder hoch.
 
-> ¹ RPG wird eingestellt und nur noch als Archiv geführt (`rpg`-Slot = künftig
-> Mining).
+> ¹ Technischer Slotname bleibt `rpg`; spielerseitig ist dies der Mining-Server.
 
 ---
 
@@ -132,6 +131,15 @@ Für das Einsammeln der aktuellen `latest.log`-Dateien gibt es zusätzlich den G
 `sync-latest-logs.yml`. Er läuft täglich automatisch und kann bei Bedarf manuell für **alle**
 oder einen einzelnen Server gestartet werden. Die Logs werden im Repository unter
 `server-logs/<server>/latest.log` aktualisiert. **Mining** verwendet den **`rpg`-Server-Slot** im Container-Setup.
+
+### Sofort-Befunde aus aktuellen Logs (P0)
+
+- **Mining (`rpg`)**: `XPrisonArmors` startet auf 26.2 nicht sauber (`NumberFormatException: "build"`).
+  - Maßnahme: Addon bis zu einem kompatiblen Build deaktiviert lassen bzw. auf 26.2-kompatible Version aktualisieren.
+- **Survival**: `Lands` meldet beim Start wiederholt SQL-Migrationsfehler zu fehlenden War-Tabellen (`lands_wars*`).
+  - Maßnahme: beim nächsten Wartungsfenster Lands-Datenbank/Version-Migrationspfad prüfen und mit aktuellem Plugin-Build bereinigen.
+- **Survival**: PlaceholderAPI meldet fehlende `floodgate`-Expansion.
+  - Maßnahme: Expansion auf dem Zielserver entfernen, wenn kein Bedrock/Floodgate genutzt wird.
 
 Für die Live-Spielerzahlen (`/api/players.json`) gibt es zwei weitere Workflows:
 

@@ -38,30 +38,51 @@ jobs:
         env:
           LUCKPERMS_DB_ENV: ${{ secrets.LUCKPERMS_DB_ENV }}
         run: |
-          if [ -z "$LUCKPERMS_DB_ENV" ]; then
-            echo "::error::Missing secret LUCKPERMS_DB_ENV"
-            exit 1
-          fi
-
-          set -a
-          . <(printf '%s\n' "$LUCKPERMS_DB_ENV")
-          set +a
-
-          for required in LUCKPERMS_DB_ADDRESS LUCKPERMS_DB_DATABASE LUCKPERMS_DB_USER LUCKPERMS_DB_PASSWORD; do
-            if [ -z "${!required:-}" ]; then
-              echo "::error::Missing $required in LUCKPERMS_DB_ENV"
-              exit 1
-            fi
-          done
-
           python3 - <<'PY'
-          from pathlib import Path
           import os
+          import sys
+          from pathlib import Path
+
+          def parse_env(raw):
+              data = {}
+              for line in raw.splitlines():
+                  line = line.strip()
+                  if not line or line.startswith("#") or "=" not in line:
+                      continue
+                  key, _, value = line.partition("=")
+                  key = key.strip()
+                  value = value.strip()
+                  if len(value) >= 2 and value[0] == value[-1] and value[0] in "\"'":
+                      value = value[1:-1]
+                  data[key] = value
+              return data
+
+          raw = os.environ.get("LUCKPERMS_DB_ENV", "")
+          if not raw.strip():
+              print("::error::Missing secret LUCKPERMS_DB_ENV")
+              sys.exit(1)
+
+          data = parse_env(raw)
+          keys = ("ADDRESS", "DATABASE", "USER", "PASSWORD")
+          missing = [f"LUCKPERMS_DB_{key}" for key in keys if not data.get(f"LUCKPERMS_DB_{key}")]
+          if missing:
+              print(f"::error::Missing {', '.join(missing)} in LUCKPERMS_DB_ENV")
+              sys.exit(1)
+
+          def yaml_dq(value):
+              return (
+                  value.replace("\\", "\\\\")
+                  .replace("\n", "\\n")
+                  .replace("\r", "\\r")
+                  .replace("\t", "\\t")
+                  .replace('"', '\\"')
+              )
 
           path = Path("survival/plugins/LuckPerms/config.yml")
           text = path.read_text()
-          for key in ("ADDRESS", "DATABASE", "USER", "PASSWORD"):
-              text = text.replace(f"__LUCKPERMS_DB_{key}__", os.environ[f"LUCKPERMS_DB_{key}"])
+          for key in keys:
+              value = yaml_dq(data[f"LUCKPERMS_DB_{key}"])
+              text = text.replace(f"__LUCKPERMS_DB_{key}__", value)
           path.write_text(text)
           PY
 
@@ -127,7 +148,13 @@ jobs:
 
           def yaml_dq(value):
               # Escape for the double-quoted YAML scalar: Password: "__...__".
-              return value.replace("\\", "\\\\").replace('"', '\\"')
+              return (
+                  value.replace("\\", "\\\\")
+                  .replace("\n", "\\n")
+                  .replace("\r", "\\r")
+                  .replace("\t", "\\t")
+                  .replace('"', '\\"')
+              )
 
           path = Path("survival/plugins/Plan/config.yml")
           text = path.read_text()

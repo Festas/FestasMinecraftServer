@@ -13,7 +13,7 @@
                     │                           │
                     │  ┌─ s4_perms (LuckPerms)  │
                     │  ├─ s4_plan (Plan)        │
-                    │  ├─ s4_husk (HuskSync)    │
+                    │  ├─ s4_husk (reserve)      │
                     │  ├─ s4_bazaar (Bazaar)    │
                     │  └─ S{1,3,5}_CMI (CMI Eco)│
                     └────────────┬─────────────┘
@@ -21,19 +21,19 @@
         ┌────────────┬───────────┼───────────┬────────────┐
         │            │           │           │            │
    ┌────▼───┐  ┌────▼───┐ ┌────▼────┐ ┌────▼───┐  ┌────▼───┐
-   │ Proxy  │  │ Lobby  │ │Survival │ │Skyblock│  │ Prison │
+   │ Proxy  │  │ Lobby  │ │Survival │ │Skyblock│  │RPG/Mining│
    └────────┘  └────────┘ └─────────┘ └────────┘  └────────┘
 
                     ┌──────────────────────────┐
                     │       Redis (Docker)      │
                     │   172.18.0.1:6380         │
                     │                           │
-                    │  HuskSync Session-Cache   │
+                    │ LuckPerms Messaging/Cache │
                     └────────────┬─────────────┘
                                  │
                         ┌────────┴────────┐
                    ┌────▼───┐       ┌────▼───┐
-                   │  Lobby │       │ Prison │
+                   │  Lobby │       │RPG/Mining│
                    └────────┘       └────────┘
 ```
 
@@ -45,10 +45,10 @@
 
 | Datenbank     | Plugin          | Zweck                                        | Server                              |
 |---------------|-----------------|----------------------------------------------|-------------------------------------|
-| `s4_perms`    | LuckPerms       | Permissions, Gruppen, Tracks                 | Proxy, Lobby, Survival, Skyblock, Prison |
-| `s4_plan`     | Plan             | Spieler-Statistiken, Server-Analytics        | Proxy, Lobby, Survival, RPG         |
-| `s4_husk`     | HuskSync        | Ränge und Cosmetics                          | Lobby, Prison                       |
-| `s4_bazaar`   | DeluxeBazaar    | Bazaar-Angebote und Transaktionen            | Skyblock, Prison                    |
+| `s4_perms`    | LuckPerms       | Permissions, Gruppen, Tracks                 | Proxy, Lobby, Survival, Skyblock, RPG/Mining |
+| `s4_plan`     | Plan            | Spieler-Statistiken, Server-Analytics        | Proxy, Lobby, Survival, Skyblock, RPG/Mining |
+| `s4_husk`     | HuskSync        | Frühere Gameplay-Sync-Daten (derzeit nicht aktiv genutzt) | Bestand/Reserve |
+| `s4_bazaar`   | DeluxeBazaar    | Bazaar-Angebote und Transaktionen            | Skyblock |
 | `S1_CMI`      | CMI         | Economy-Guthaben (Survival)                  | Survival                            |
 | `S3_CMI`      | CMI         | Economy-Guthaben (RPG/Prison = „Mining")     | RPG                                 |
 | `S5_CMI`      | CMI         | Economy-Guthaben (Skyblock)                  | Skyblock                            |
@@ -65,12 +65,12 @@
 
 | Verwendung                | Zweck                                           | Server         |
 |---------------------------|-------------------------------------------------|----------------|
-| HuskSync Session-Cache    | Temporäre Daten beim Server-Wechsel             | Alle           |
+| HuskSync Session-Cache    | Frühere Session-Daten (nur falls HuskSync wieder aktiviert wird) | Bestand/Reserve |
 | LuckPerms-Messaging       | Live-Push von Rang-/Permission-Änderungen (Pub/Sub) | Alle       |
 
 **TTL (Time To Live):**
-- Session-Daten: 30 Minuten
-- Inventar-Cache: 5 Minuten
+- LuckPerms/PubSub: pluginverwaltet
+- HuskSync-Werte: nur relevant bei reaktiviertem HuskSync
 
 **Deployment:** Der Redis-Container wird über den Workflow
 [`deploy-redis`](../../.github/workflows/deploy-redis.yml) aus
@@ -239,4 +239,4 @@ Detaillierte Informationen zur Backup-Strategie, Aufbewahrungsfristen und Wieder
 
 ---
 
-**Letzte Aktualisierung:** 2026-08-26
+**Letzte Aktualisierung:** 2026-09-01

@@ -257,4 +257,4 @@ Datenbanken befüllt – wieder **ohne** zusätzliches Plugin, nach demselben Mu
 **Grenzen:** Wie beim Player-Counter zählt die **laufende** Session erst nach ihrem
 Ende (Plan hält aktive Sessions nur im RAM). Namen werden hier **bewusst** gezeigt
 (Kern des Features); optionale Ausschlussliste + `min_weight`-Filter in
-`config.json`. Skyblock nutzt lokales SQLite und ist in `s4_plan` **nicht** enthalten.
+`config.json`. Skyblock ist in `s4_plan` enthalten (Plan läuft dort mit MySQL).

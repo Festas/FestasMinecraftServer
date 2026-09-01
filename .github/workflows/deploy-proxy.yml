@@ -77,7 +77,13 @@ jobs:
 
           def yaml_dq(value):
               # Escape for the double-quoted YAML scalar: Password: "__...__".
-              return value.replace("\\", "\\\\").replace('"', '\\"')
+              return (
+                  value.replace("\\", "\\\\")
+                  .replace("\n", "\\n")
+                  .replace("\r", "\\r")
+                  .replace("\t", "\\t")
+                  .replace('"', '\\"')
+              )
 
           path = Path("proxy/plugins/plan/config.yml")
           text = path.read_text()

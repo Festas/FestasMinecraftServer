@@ -56,38 +56,6 @@ expansions:
       high: '&a'
       medium: '&e'
       low: '&c'
-  floodgate:
-    device:
-      osx: OSX
-      ps4: PS4
-      uwp: UWP
-      ios: IOS
-      win32: WIN32
-      unknown: UNKNOWN
-      gearvr: GEARVR
-      nx: NX
-      google: GOOGLE
-      dedicated: DEDICATED
-      generic: Bedrock
-      java: Java
-      amazon: AMAZON
-      xbox: XBOX
-      hololens: HOLOLENS
-    is-bedrock:
-      none: 'false'
-      found: 'true'
-    xbox-xuid:
-      none: N/A
-      found: '%xuid%'
-    xbox-username:
-      found: '%username%'
-      none: N/A
-    locale:
-      none: N/A
-      found: '%locale%'
-    version:
-      none: N/A
-      found: '%version%'
   checkitem:
     give_enabled: false
     remove_enabled: false

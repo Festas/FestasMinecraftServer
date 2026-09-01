@@ -2,11 +2,11 @@ port: 8090
 host: ''
 
 superuser:
-  username: __XPRIVATEMINES_DASHBOARD_USER__
-  password: __XPRIVATEMINES_DASHBOARD_PASSWORD__
+  username: "__XPRIVATEMINES_DASHBOARD_USER__"
+  password: "__XPRIVATEMINES_DASHBOARD_PASSWORD__"
 
 jwt:
-  secret: __XPRIVATEMINES_DASHBOARD_JWT_SECRET__
+  secret: "__XPRIVATEMINES_DASHBOARD_JWT_SECRET__"
   expiry-hours: 24
 
 cors:
