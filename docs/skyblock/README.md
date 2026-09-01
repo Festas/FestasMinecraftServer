@@ -3,7 +3,7 @@
 Dokumentation für den überarbeiteten Skyblock-Server — **ohne Gilden**, mit **Freunde-Koop**.
 
 > **🟢 Umbau (Stand 26.2):** Aktueller Kern ist ein schlanker Skyblock-Stack mit
-> SuperiorSkyblock2, SlimeWorldManager und lokalen Datenbanken (SQLite/Datei-Storage).
+> SuperiorSkyblock2 und SlimeWorldManager; Gameplay-Daten bleiben lokal, zentrale Dienste laufen netzwerkweit.
 
 ---
 
@@ -52,12 +52,12 @@ Dokumentation für den überarbeiteten Skyblock-Server — **ohne Gilden**, mit 
 
 ## Datenbank-Konfiguration
 
-Skyblock-spezifische Daten werden lokal gehalten:
+Skyblock-spezifische Kerndaten bleiben lokal:
 
 - **SuperiorSkyblock2:** SQLite
 - **SlimeWorldManager:** Datei-Storage (`file`)
-- **Plan:** SQLite
-- **CMI:** lokaler Storage (standardmäßig SQLite)
+- **Plan:** MySQL (`PLAN_DB_ENV`, Webserver auf Skyblock selbst deaktiviert)
+- **CMI:** MySQL (`CMI_SKYBLOCK_DB_ENV`, eigene DB `S5_CMI`)
 
 Zentrale, geteilte Netzwerkdienste:
 
