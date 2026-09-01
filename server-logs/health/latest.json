@@ -1,19 +1,18 @@
 {
-  "apt_security": 3,
-  "apt_upgradable": 8,
+  "apt_security": 0,
+  "apt_upgradable": 10,
   "cpu_cores": 8,
   "disk_root_total_bytes": 322302373888,
-  "disk_root_used_bytes": 134117720064,
-  "disk_root_used_pct": 44,
+  "disk_root_used_bytes": 131267002368,
+  "disk_root_used_pct": 43,
   "docker_containers_running": 8,
   "docker_containers_total": 8,
   "docker_unhealthy": 0,
   "dry_run": 0,
-  "established_conns": 84,
-  "failed_logins_7d": 14391,
+  "established_conns": 81,
+  "failed_logins_7d": 15246,
   "failed_services": 1,
-  "freed_bytes": 3180888064,
-  "generated_at": 1787711328,
+  "generated_at": 1788248563,
   "host": "festas-builds",
   "inode_root_used_pct": 8,
   "issues": [
@@ -23,20 +22,16 @@
     },
     {
       "level": "WARN",
-      "text": "Viele fehlgeschlagene Logins (14391) – Brute-Force? fail2ban prüfen."
-    },
-    {
-      "level": "WARN",
-      "text": "3 sicherheitsrelevante Updates ausstehend."
+      "text": "Viele fehlgeschlagene Logins (15246) – Brute-Force? fail2ban prüfen."
     }
   ],
   "issues_crit": 0,
-  "issues_warn": 3,
-  "journal_errors_7d": 6944,
+  "issues_warn": 2,
+  "journal_errors_7d": 145,
   "kernel": "Linux 6.8.0-138-generic",
-  "load1": 0.44,
-  "mem_used_pct": 79,
-  "mode": "full",
+  "load1": 0.27,
+  "mem_used_pct": 73,
+  "mode": "analyze",
   "oom_events_7d": 0,
   "os": "Ubuntu 24.04.4 LTS",
   "ptero_volumes_bytes": 0,
@@ -47,6 +42,6 @@
     "Paket-Updates einspielen (Modus `maintain`/`full`)."
   ],
   "status": "WARN",
-  "swap_used_pct": 13,
+  "swap_used_pct": 3,
   "wings_active": 1
 }
