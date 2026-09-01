@@ -1,15 +1,15 @@
 # Mining-Server — Optimaler Plugin-Stack
 
 > **🟡 Geplant / Aufbau (Stand 26.2).** Empfohlener Plugin-Stack für den neuen **Mining**-Server (Abbau-Zonen
-> mit **aufwertbaren Spitzhacken**). Der Server **recycelt den `prison`-Slot** — der Ordner
-> [`prison/`](../../prison/) enthält aktuell noch den **Alt-Prison-Stack**, der schrittweise durch die hier gelisteten
+> mit **aufwertbaren Spitzhacken**). Der Server läuft technisch im **`rpg`-Slot** — der Ordner
+> [`rpg/`](../../rpg/) enthält den aktuellen Bestand, der schrittweise durch die hier gelisteten
 > Mining-Plugins ersetzt wird. Übergeordnete Referenz: [../PLUGINS.md](../PLUGINS.md) ·
 > Weichenstellung: [../NEW_SERVERS.md](../NEW_SERVERS.md).
 
 Die Spalte **Status** ordnet jedes Plugin für den Umbau ein:
 
 - ✅ **Kern** — für den Abbau-Loop erforderlich.
-- ♻️ **Recycelt** — bereits in [`prison/plugins/`](../../prison/plugins/) vorhanden und für Mining weiterverwendbar.
+- ♻️ **Recycelt** — bereits in [`rpg/plugins/`](../../rpg/plugins/) vorhanden und für Mining weiterverwendbar.
 - 🔶 **Auswählen/Prüfen** — Plugin bzw. 26.2-Build muss noch festgelegt/verifiziert werden (**Blocker**).
 - 🧹 **Entfernen** — gehört zum Alt-Prison-Spielmodus und wird beim Umbau abgebaut.
 
@@ -93,7 +93,7 @@ Plugin ab. Das minimiert Schnittstellen und Wartung — ideal für den Solo-Betr
 | Plugin | Zweck | Status |
 |--------|-------|:------:|
 | **BattlePass** (premium) *oder* **Skript**-basierter Pass | Missionen, Tier-Belohnungen, Cosmetic-Unlocks — Langzeit-Bindung | 🔶 26.2 prüfen |
-| **PlayerParticles** *(recyceln statt entfernen)* | Trails/Partikel-Cosmetics — kostenlos, bereits im `prison/`-Bestand | ♻️ Recycelt |
+| **PlayerParticles** *(recyceln statt entfernen)* | Trails/Partikel-Cosmetics — kostenlos, bereits im `rpg/`-Bestand | ♻️ Recycelt |
 | **Ränge / Prestige** | Progression nach den Zonen: **LuckPerms + Skript** (bereits im Stack) — oder direkt aus dem Core (Weg 1A) | 🔶 Prüfen |
 
 ---
@@ -120,14 +120,13 @@ Plugin ab. Das minimiert Schnittstellen und Wartung — ideal für den Solo-Betr
 
 ---
 
-## 7. Betrieb, Bedrock & Performance
+## 7. Betrieb & Performance
 
 | Plugin | Zweck | Status |
 |--------|-------|:------:|
-| **Floodgate** | Bedrock-Auth (Geyser/Floodgate) — GUIs müssen Bedrock-tauglich sein | ♻️ Recycelt |
 | **GrimAC** | Anticheat | ♻️ Recycelt |
 | **SimpleAutoRestart** | Geplante Server-Neustarts | ♻️ Recycelt |
-| **spark** / **bStats** / **nightcore** | Performance-Profiling, Metriken, Core-Library | ♻️ Recycelt |
+| **spark** / **faststats** / **nightcore** | Performance-Profiling, Statistiken, Core-Library | ♻️ Recycelt |
 
 ---
 
@@ -144,7 +143,7 @@ Plugin ab. Das minimiert Schnittstellen und Wartung — ideal für den Solo-Betr
 
 ## 9. Beim Umbau zu entfernen (Alt-Prison-Spielmodus)
 
-Diese Plugins gehören zum eingestellten Prison-Spielmodus und werden beim Umbau des `prison/`-Slots **abgebaut**
+Diese Plugins gehören zum eingestellten Prison-Spielmodus und werden beim Umbau des `rpg`-Slots **abgebaut**
 (vorher Spielerdaten sichern, siehe [../NEW_SERVERS.md → Abschnitt 5](../NEW_SERVERS.md#5-rückbau-des-prison-spielmodus-slot-recycling)):
 
 | Plugin | Alt-Funktion | Status |
@@ -189,4 +188,4 @@ Diese Plugins gehören zum eingestellten Prison-Spielmodus und werden beim Umbau
 
 **Letzte Aktualisierung:** 2026-08-16
 
-**Status:** 🟡 Geplant / Aufbau — recycelt den `prison`-Slot
+**Status:** 🟡 Geplant / Aufbau — recycelt den `rpg`-Slot

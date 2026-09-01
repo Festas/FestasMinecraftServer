@@ -6,7 +6,7 @@
 
 Casual-Server rund um **Abbau-Zonen**: Spieler bauen mit einer **besonderen Spitzhacke** Blöcke ab,
 verkaufen sie und schalten damit **stärkere Spitzhacken** und **neue Zonen** frei. Der Kern-Loop ist bewusst
-einfach, schnell verständlich und Bedrock-freundlich.
+einfach und schnell verständlich.
 
 ---
 
@@ -15,13 +15,13 @@ einfach, schnell verständlich und Bedrock-freundlich.
 | Eigenschaft | Wert |
 |-------------|------|
 | **Slot** | Casual |
-| **Server-Name (Velocity/Proxy)** | `prison` *(recycelt — der alte Prison-Slot wird wiederverwendet)* |
+| **Server-Name (Velocity/Proxy)** | `rpg` *(technischer Backend-Name; spielerseitig „Mining", in Logs oft „prison")* |
 | **Version** | Paper 26.2 (geplant) |
-| **Ordner** | [`prison/`](../../prison/) *(recycelt aus dem alten Prison-Server)* |
+| **Ordner** | [`rpg/`](../../rpg/) *(recycelter RPG-Slot für den Mining-Server)* |
 | **Economy** | Server-isoliert; optionale netzwerkweite Cosmetic-Währung |
-| **Datenbank** | Eigenes MariaDB-Schema (isoliert) |
-| **Bedrock-Support** | Ja (Geyser/Floodgate) — GUIs müssen Bedrock-tauglich sein |
-| **Sync (HuskSync)** | Nur Cosmetics/Ränge, **keine** Gameplay-Inventare |
+| **Datenbank** | X-Prison lokal (H2) + zentrale Dienste (LuckPerms/Plan via MariaDB) |
+| **Bedrock-Support** | Aktuell Java-only (kein Geyser/Floodgate im Proxy-Stack) |
+| **Sync (HuskSync)** | Nicht aktiv im aktuellen Ist-Stand |
 
 ---
 
