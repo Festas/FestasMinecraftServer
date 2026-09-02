@@ -7,7 +7,7 @@ Dieses Dokument beschreibt die Secret- und Deploy-Konventionen für dieses Repos
 - Keine echten Daten in `*.yml`, `*.yaml`, `*.toml`, `*.properties` oder `*.env`-Dateien committen
 - Für Platzhalter gelten Muster wie `__SECRET_NAME__` oder `CHANGE_ME`
 - Die Deploy-Workflows injizieren die Werte zur Laufzeit in die Server-Konfigurationen
-- Wenn ein Secret ändert, auch die betroffenen Deploy- und Doku-Schritte prüfen
+- Wenn ein Secret sich ändert, auch die betroffenen Deploy- und Doku-Schritte prüfen
 
 ## Wichtige Secret-Typen
 

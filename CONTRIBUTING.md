@@ -1,6 +1,6 @@
 # Beitragsrichtlinien
 
-Diese Richtlinien gelten für die Konfigurations- und Deployment-Repo des Festa Minecraft Networks. Das Ziel ist eine saubere, dokumentierte und sichere Konfigurationsbasis ohne veraltete Projektartefakte.
+Diese Richtlinien gelten für die Konfigurations- und Deployment-Repo des Festas Minecraft Networks. Das Ziel ist eine saubere, dokumentierte und sichere Konfigurationsbasis ohne veraltete Projektartefakte.
 
 ## Grundprinzipien
 

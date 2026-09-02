@@ -20,7 +20,7 @@ Kurzreferenz für die wichtigsten Ordner, Workflows und Befehle in diesem Reposi
 ├── server-logs/           # aktuelle Logs + Historie
 ├── README.md              # Projekt-Übersicht
 ├── QUICKREF.md            # diese Kurzreferenz
-├── CONTRIBUTING.md         # Beitragsrichtlinien
+├── CONTRIBUTING.md        # Beitragsrichtlinien
 ├── SECRETS.md             # Secrets und Deployment-Handling
 ├── README-website.md      # Website-Guide
 └── docker-compose.web.yml # Website-Container
