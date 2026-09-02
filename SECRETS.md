@@ -78,5 +78,6 @@ Vor einem Deployment oder einer Push-Änderung prüfen:
 - `README.md`
 - `QUICKREF.md`
 - `CONTRIBUTING.md`
+- `SECRETS.md`
 - `docs/OPERATIONS.md`
 - `.github/workflows/`

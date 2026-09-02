@@ -1,101 +1,129 @@
 # Festas Minecraft Server
 
-Repository für das Minecraft-Servernetzwerk von Festas Builds. Es enthält die Konfigurationen für den Proxy, die Spielerserver, die Website, die Infrastruktur und die Automationen für Deployments und Wartung.
+Dieses Repository enthält das komplette Projekt für das Minecraft-Servernetzwerk von Festas Builds: Proxy, Spielerserver, Website, Infrastruktur, Dokumentation und Deployment-Automationen.
 
-> Status: Minecraft/Paper 26.2. Aktive Server: Lobby und Survival. Skyblock wird weiterentwickelt. Der Backend-Ordner `rpg/` dient als Mining-/Prison-Server und wird im Frontend als `mining` adressiert.
+> Status: Minecraft/Paper 26.2. Aktiv: Lobby und Survival. Skyblock wird weiterentwickelt. Der Ordner `rpg/` ist das Mining-/Prison-Backend und wird im Frontend als `mining` geführt.
 
 ## Überblick
 
-Das Projekt verbindet vier Bereiche:
+Das Projekt vereint zwei zentrale Bereiche:
 
-- `proxy/`: Velocity-Proxy, Forwarding, Plugin-Konfigurationen und Netzwerk-Setup
-- `lobby/`: Hub/Lobby-Server
-- `survival/`: Survival-Server
-- `skyblock/`: Skyblock-Entwicklung und Insel-Setup
-- `rpg/`: Mining-/Prison-Backend (`rpg`-Ordner, öffentlich als `mining` geführt)
-- `website/`: statische Landingpage auf `mc.festas-builds.com`
-- `nginx/`, `infra/`: Nginx- und Infrastruktur-Config
-- `tools/`: Exporter, Wartungs-Skripte und Hilfswerkzeuge
-- `docs/`: Betrieb, Architektur und Referenzdokumentation
-- `.github/workflows/`: Deployment-, Sync- und Wartungs-Workflows
+- Server- und Netzwerk-Konfigurationen für das Minecraft-Netzwerk
+- die öffentliche Website auf `mc.festas-builds.com`
 
-## Server-Status
+Damit bildet dieses Repository die komplette Projektbasis für Betrieb, Deployment und Web-Auftritt.
 
-- `mc.festas-builds.com`: Haupt-IP des Netzes
-- `lobby`: Lobby/Hub
+## Server- und Netzwerkstatus
+
+- `mc.festas-builds.com`: öffentliche IP / Hauptdomain
+- `lobby`: Hub/Lobby-Server
 - `survival`: aktiver Survival-Server
-- `skyblock`: in Arbeit / Weiterentwicklung
-- `rpg` / `mining`: Mining-/Prison-Backend, nicht als veralteter MMO-Server zu behandeln
-
-## Repository-Struktur
-
-```text
-.
-├── .github/workflows/     # CI/CD, Deployments, Syncs, Wartung
-├── proxy/                 # Velocity + Proxy-Plugins
-├── lobby/                 # Lobby-Serverkonfigurationen
-├── survival/              # Survival-Serverkonfigurationen
-├── skyblock/              # Skyblock-Konfigurationen
-├── rpg/                   # Mining-/Prison-Backend
-├── website/               # Landingpage / web frontend
-├── nginx/                 # Nginx vhosts und Konfigurationen
-├── infra/                 # Infrastruktur-Beispiele / Services
-├── tools/                 # Exporter und Wartungs-Hilfen
-├── docs/                  # Projekt-Dokumentation
-├── server-logs/           # aktuelle und historisierte Server-Logs
-├── CONTRIBUTING.md        # Beitrags- und Workflow-Richtlinien
-├── QUICKREF.md            # kurze Referenz
-├── README.md              # Projekt-Übersicht
-├── README-website.md      # Website-Component Guide
-├── SECRETS.md             # Secrets- und Deployment-Referenz
-├── LICENSE-website        # Website-Lizenz
-└── docker-compose.web.yml # Website-Container-Definition
-```
+- `skyblock`: in Weiterentwicklung
+- `rpg` / `mining`: Mining-/Prison-Backend
 
 ## Technische Grundlage
 
 - **Proxy:** Velocity
 - **Backends:** Paper
-- **Versionsziel:** Minecraft 26.2
-- **Datenbanken:** MariaDB / MySQL, Redis, SQLite je nach Server und Plugin
-- **Website:** statische HTML/CSS/JS Seite mit nginx + Docker
+- **Minecraft-Version:** 26.2
+- **Datenbanken:** MariaDB/MySQL, Redis, SQLite je nach Server und Plugin
+- **Website:** statische HTML/CSS/JS-Seite, ausgeliefert via nginx und Docker
+
+## Repository-Struktur
+
+```text
+.
+├── .github/workflows/     # Deployments, Syncs, Wartung, CI
+├── proxy/                 # Velocity + Proxy-Plugins
+├── lobby/                 # Lobby-Serverkonfigurationen
+├── survival/              # Survival-Serverkonfigurationen
+├── skyblock/              # Skyblock-Konfigurationen
+├── rpg/                   # Mining-/Prison-Backend
+├── website/               # Öffentliche Landingpage + Web-Assets
+├── nginx/                 # Nginx-Konfigurationen
+├── infra/                 # Infrastruktur / Services
+├── tools/                 # Exporter, Wartungs-Helfer, Hilfstools
+├── docs/                  # Architektur, Betrieb, Workflows, Referenzen
+├── server-logs/           # aktuelle und historisierte Logs
+├── .gitignore             # Ignorierte Dateien / Log-Artefakte
+├── CONTRIBUTING.md        # Beitrags- und Workflow-Richtlinien
+├── QUICKREF.md            # Kurzreferenz
+├── README.md              # Dieses Projekt-README
+├── README-website.md      # Legacy-Redirect zur zentralen Doku
+├── SECRETS.md             # Secret- und Deployment-Referenz
+├── LICENSE-website        # Website-Lizenz
+├── docker-compose.web.yml # Website-Container-Definition
+└── ...
+```
+
+## Website
+
+Die Website liegt unter `website/` und ist die öffentliche Präsentation von Festas Builds. Sie enthält die Landingpage, die Wiki-Abschnitte, Serverstatus-Komponenten und die dafür nötigen Ressourcen.
+
+Wichtige Dateien:
+
+- `website/index.html`: Landingpage
+- `website/css/`: Styling
+- `website/js/`: Interaktivität und Konfigurationslogik
+- `website/api/`: Server-/Spielerstatusdaten
+- `website/Dockerfile`: Containerdefinition
+- `website/DEPLOYMENT.md`: Deployment- und Betriebsdoku
+- `website/README.md`: Website-spezifische Details
+
+## Server- und Plugin-Stack
+
+Das Netzwerk besteht aus einem Velocity-Proxy und mehreren Paper-Backends. Die wichtigsten Teile sind:
+
+- `proxy/`: Routing, Forwarding, Netzwerk-Plugins, TAB-Setup, Plan, etc.
+- `lobby/`: Hub- und Navigationsbereich
+- `survival/`: aktiver Survival-Server mit Gateway-Funktionen und Spielsystemen
+- `skyblock/`: Inselprojekt und weiterentwickeltes Skyblock-Setup
+- `rpg/`: Mining-/Prison-Backend, im Frontend als `mining` sichtbar
 
 ## Dokumentation
 
-Die aktuelle Projekt-Dokumentation liegt hauptsächlich in `docs/` und wird je nach Thema über die folgenden Referenzen ergänzt:
+Die aktuelle Projekt-Dokumentation liegt hauptsächlich in `docs/` und wird durch folgende zentrale Referenzen ergänzt:
 
 - `docs/ARCHITECTURE.md`: Netz- und Server-Architektur
-- `docs/OPERATIONS.md`: Betrieb, Start/Stopp, Wartung, Monitoring
+- `docs/OPERATIONS.md`: Betrieb, Start/Stopp, Wartung und Monitoring
 - `docs/PLUGINS.md`: Plugin-Übersicht je Server
 - `docs/WORKFLOWS.md`: häufige Aufgaben und Deployment-Workflows
 - `docs/CHECKLISTS.md`: Checklisten und Standards
 - `docs/NEW_SERVERS.md`: Skyblock-/Mining-Planung und Entscheidungen
 
-Zusätzliche Schnell-Referenzen:
+Zusätzliche Referenzen:
 
 - `QUICKREF.md`
 - `SECRETS.md`
-- `README-website.md`
+- `CONTRIBUTING.md`
+- `README-website.md` (Redirect / Legacy-Stub)
 
-## Beiträge
+## Deployment und Betrieb
+
+Deployments laufen primär über GitHub Actions. Dabei werden Konfigurationen und Website-Materialien automatisch synchronisiert und auf den Zielserver deployed.
+
+Zentrale Regeln:
+
+- keine echten Secrets im Repository
+- keine echten Passwörter oder Tokens in konfigurierten Dateien
+- Doku muss mit Struktur- und Deployment-Änderungen mitlaufen
+- Log-Artefakte werden als erzeugte Ausgaben behandelt und nicht als dauerhafte Konfigurationsquelle verwendet
+
+## Beitragen
 
 Beiträge sind willkommen, sofern sie:
 
 - zur aktuellen Server-Architektur passen,
 - keine echten Secrets oder Passwörter enthalten,
 - die vorhandenen Workflows und Konventionen respektieren,
-- die Dokumentation entsprechend aktualisieren, wenn sich Repo-Struktur oder Deployment ändern.
+- die betroffene Doku aktualisieren, wenn sich Struktur oder Deployment ändern.
 
-Bitte vor dem Commit die Konventionen in `CONTRIBUTING.md` und die Secrets-Referenz in `SECRETS.md` beachten.
-
-## Deployment und Betrieb
-
-Deployments erfolgen primär über GitHub Actions. Die Repositories sind auf Wiederholbarkeit ausgelegt:
-
-- Server-Configs werden sauber synchronisiert
-- Secrets werden nicht im Repository gespeichert
-- Log-Dateien werden nur als erzeugte Artefakte verwaltet und nicht als dauerhafte Konfigurationsquelle verwendet
+Bitte vor dem Commit die Konventionen in `CONTRIBUTING.md` und die Secret-Regeln in `SECRETS.md` beachten.
 
 ## Lizenz
 
-Für die Website gilt die Lizenz in `LICENSE-website`. Für andere Projektteile gelten die jeweiligen, im Repository enthaltenen Regeln. Wenn eine Datei keine gesonderte Lizenz trägt, ist sie Teil der allgemeinen Projektkonfiguration und nicht als freies, eigenes Produkt zu behandeln.
+Für die Website gilt die Lizenz in `LICENSE-website`. Für andere Projektteile gelten die jeweiligen, im Repository enthaltenen Regeln.
+
+## Hinweis zu den README-Dateien
+
+Dieses Repository hatte bisher eine separate Website-README. Die Projekt-Dokumentation ist jetzt in diesem zentralen `README.md` zusammengeführt, damit es für das komplette Projekt nur noch eine Haupt-Doku gibt.

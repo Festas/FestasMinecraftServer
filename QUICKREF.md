@@ -22,7 +22,7 @@ Kurzreferenz für die wichtigsten Ordner, Workflows und Befehle in diesem Reposi
 ├── QUICKREF.md            # diese Kurzreferenz
 ├── CONTRIBUTING.md        # Beitragsrichtlinien
 ├── SECRETS.md             # Secrets und Deployment-Handling
-├── README-website.md      # Website-Guide
+├── README-website.md      # Legacy-Redirect / Stub
 └── docker-compose.web.yml # Website-Container
 ```
 
