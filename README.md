@@ -1,113 +1,101 @@
 # Festas Minecraft Server
 
-Konfigurationen für mein Minecraft Server-Netzwerk (Paper + Velocity)
+Repository für das Minecraft-Servernetzwerk von Festas Builds. Es enthält die Konfigurationen für den Proxy, die Spielerserver, die Website, die Infrastruktur und die Automationen für Deployments und Wartung.
 
-> **Projekt-Status:** Netzwerk läuft auf **Minecraft 26.2**. Aktiv gepflegt: **Lobby** und **Survival**. Im Aufbau: **Skyblock** (überarbeitet, ohne Gilden, Freunde-Koop) und **Mining** (Abbau-Zonen mit aufwertbaren Spitzhacken) — Details in [docs/NEW_SERVERS.md](docs/NEW_SERVERS.md). Der RPG-Server wird eingestellt und bis zur Abschaltung als **Archiv** geführt.
+> Status: Minecraft/Paper 26.2. Aktive Server: Lobby und Survival. Skyblock wird weiterentwickelt. Der Backend-Ordner `rpg/` dient als Mining-/Prison-Server und wird im Frontend als `mining` adressiert.
 
-## Über das Projekt
+## Überblick
 
-Dieses Repository enthält alle Konfigurationen für ein Minecraft Paper Server Netzwerk (Version 26.2) mit Velocity Proxy.
+Das Projekt verbindet vier Bereiche:
 
-**Server-IP:** `mc.festas-builds.com`
+- `proxy/`: Velocity-Proxy, Forwarding, Plugin-Konfigurationen und Netzwerk-Setup
+- `lobby/`: Hub/Lobby-Server
+- `survival/`: Survival-Server
+- `skyblock/`: Skyblock-Entwicklung und Insel-Setup
+- `rpg/`: Mining-/Prison-Backend (`rpg`-Ordner, öffentlich als `mining` geführt)
+- `website/`: statische Landingpage auf `mc.festas-builds.com`
+- `nginx/`, `infra/`: Nginx- und Infrastruktur-Config
+- `tools/`: Exporter, Wartungs-Skripte und Hilfswerkzeuge
+- `docs/`: Betrieb, Architektur und Referenzdokumentation
+- `.github/workflows/`: Deployment-, Sync- und Wartungs-Workflows
 
-### Aktiver Fokus
-- **Lobby**: Haupt-Hub für Spieler-Routing und Server-Navigation
-- **Survival**: Survival-Server mit Town und Freebuild (Tycoon-Gamemode aktuell deaktiviert – kommt auf eigenem Server)
+## Server-Status
 
-### Neu / in Aufbau
-- **Skyblock**: Überarbeiteter Skyblock **ohne Gilden**, aber mit **Freunde-Koop** (Freunde einladen und gemeinsam die Insel bauen)
-- **Mining**: Casual-Server mit **Abbau-Zonen** — immer stärkere Spitzhacken bauen mehr Blöcke auf einmal ab, neue Zonen werden nach und nach freigeschaltet
-
-> Auswahl, Bewertung und Plugin-Shortlist siehe [docs/NEW_SERVERS.md](docs/NEW_SERVERS.md).
+- `mc.festas-builds.com`: Haupt-IP des Netzes
+- `lobby`: Lobby/Hub
+- `survival`: aktiver Survival-Server
+- `skyblock`: in Arbeit / Weiterentwicklung
+- `rpg` / `mining`: Mining-/Prison-Backend, nicht als veralteter MMO-Server zu behandeln
 
 ## Repository-Struktur
 
+```text
+.
+├── .github/workflows/     # CI/CD, Deployments, Syncs, Wartung
+├── proxy/                 # Velocity + Proxy-Plugins
+├── lobby/                 # Lobby-Serverkonfigurationen
+├── survival/              # Survival-Serverkonfigurationen
+├── skyblock/              # Skyblock-Konfigurationen
+├── rpg/                   # Mining-/Prison-Backend
+├── website/               # Landingpage / web frontend
+├── nginx/                 # Nginx vhosts und Konfigurationen
+├── infra/                 # Infrastruktur-Beispiele / Services
+├── tools/                 # Exporter und Wartungs-Hilfen
+├── docs/                  # Projekt-Dokumentation
+├── server-logs/           # aktuelle und historisierte Server-Logs
+├── CONTRIBUTING.md        # Beitrags- und Workflow-Richtlinien
+├── QUICKREF.md            # kurze Referenz
+├── README.md              # Projekt-Übersicht
+├── README-website.md      # Website-Component Guide
+├── SECRETS.md             # Secrets- und Deployment-Referenz
+├── LICENSE-website        # Website-Lizenz
+└── docker-compose.web.yml # Website-Container-Definition
 ```
-MinecraftMMO/
-├── proxy/              # Velocity Proxy Konfigurationen
-│   └── plugins/        # Proxy-Plugins (TAB, MiniMOTD, LibertyBans, Plan, etc.)
-├── lobby/              # Lobby Server Konfigurationen  (AKTIV)
-│   └── plugins/        # Lobby-Plugins (CMI, DeluxeMenus, Skript, Oraxen, etc.)
-├── survival/           # Survival Server Konfigurationen  (AKTIV)
-│   └── plugins/        # Survival-Plugins (NextGens, Jobs, Rankup, PlotSquared, etc.)
-├── skyblock/           # Skyblock Server Konfigurationen  (NEU/UMBAU — ohne Gilden, Freunde-Koop)
-│   └── plugins/        # Skyblock-Plugins (SuperiorSkyblock2, SlimeWorldManager, DeluxeBazaar, etc.)
-├── rpg/               # Mining Server Konfigurationen  (recycelter RPG-Slot / Velocity-Backend `rpg`)
-│   └── plugins/        # Mining-/Zonen-Kern (X-Prison), private Minen, Economy/Schutz, Cosmetics
-└── docs/               # Dokumentation
-```
 
-## Verwendete Plugins
+## Technische Grundlage
 
-### Aktive Server (Lobby & Survival)
-
-- **CMI** (+CMILib): Core-Management, Chat, Teleport, Kits, Economy-Backend
-- **NextGens**: Generator-System (Tycoon-Kern, aktuell deaktiviert – kommt auf eigenem Server)
-- **Jobs** & **Rankup**: Economy-Jobs und Rang-Progression (Survival)
-- **PlotSquared**: Plot-Claiming (Survival)
-- **ShopGUIPlus** & **GlobalMarketPlus**: Shop & Marktplatz (Survival)
-- **DeluxeMenus** & **Skript**: GUIs und Custom-Logik (Lobby & Survival)
-- **Oraxen**: Custom Items und Texturen
-- **LuckPerms**, **PlaceholderAPI**, **Vault**, **ProtocolLib**: Basis-Infrastruktur
-- **BlueMap**: 3D-Web-Karten (Survival & Mining)
-
-### Skyblock (Umbau)
-
-- **SuperiorSkyblock2**: Insel-Kern inkl. **Koop/Insel-Mitglieder** (Freunde einladen) — ersetzt das frühere Gilden-Konzept
-- **SlimeWorldManager**: Verwaltung der Insel-Welten (Datei-Storage)
-- **DeluxeBazaar** & **GlobalMarketPlus**: Handelssysteme für Skyblock
-
-Vollständige Plugin-Liste siehe [docs/PLUGINS.md](docs/PLUGINS.md)
+- **Proxy:** Velocity
+- **Backends:** Paper
+- **Versionsziel:** Minecraft 26.2
+- **Datenbanken:** MariaDB / MySQL, Redis, SQLite je nach Server und Plugin
+- **Website:** statische HTML/CSS/JS Seite mit nginx + Docker
 
 ## Dokumentation
 
-Umfassende Dokumentation findest du im [`/docs`](docs/) Verzeichnis:
+Die aktuelle Projekt-Dokumentation liegt hauptsächlich in `docs/` und wird je nach Thema über die folgenden Referenzen ergänzt:
 
-### Allgemeine Dokumentation
-- **[NEW_SERVERS.md](docs/NEW_SERVERS.md)** - Neue Server (Skyblock überarbeitet & Mining): Auswahl, Kriterien, Plugin-Shortlist, Roadmap
-- **[PLANNING.md](docs/PLANNING.md)** - Fragenkatalog für Planung und Entwicklung
-- **[ARCHITECTURE.md](docs/ARCHITECTURE.md)** - Netzwerk-Architektur und technische Details
-- **[PLUGINS.md](docs/PLUGINS.md)** - Vollständige Plugin-Referenz pro Server
-- **[WORKFLOWS.md](docs/WORKFLOWS.md)** - Workflow-Templates für häufige Aufgaben
-- **[CHECKLISTS.md](docs/CHECKLISTS.md)** - Checklisten für Content-Erstellung und Testing
+- `docs/ARCHITECTURE.md`: Netz- und Server-Architektur
+- `docs/OPERATIONS.md`: Betrieb, Start/Stopp, Wartung, Monitoring
+- `docs/PLUGINS.md`: Plugin-Übersicht je Server
+- `docs/WORKFLOWS.md`: häufige Aufgaben und Deployment-Workflows
+- `docs/CHECKLISTS.md`: Checklisten und Standards
+- `docs/NEW_SERVERS.md`: Skyblock-/Mining-Planung und Entscheidungen
 
-### Gameplay-Systeme (Archiv — RPG)
-> Diese Systeme gehören zum auslaufenden MMO-Server RPG und werden nicht weiter gepflegt.
-- Klassen-System (6 Klassen), Item-System, Economy-System des RPG-Servers
+Zusätzliche Schnell-Referenzen:
 
-### Server-spezifische Dokumentation
-- **[Survival-Server](docs/survival/README.md)** — Survival, Town, Freebuild *(aktiv; Tycoon deaktiviert — kommt auf eigenem Server)*
-- **[Skyblock-Server](docs/skyblock/README.md)** — Inseln, Freunde-Koop, Progression *(Umbau — ohne Gilden)*
-- **[Prison-Server / Mining](docs/prison/README.md)** — Abbau-Zonen, aufwertbare Spitzhacken *(neu; recycelt den `rpg/`-Slot)*
+- `QUICKREF.md`
+- `SECRETS.md`
+- `README-website.md`
 
-### Technische Infrastruktur
-- **[Infrastruktur](docs/infrastructure/README.md)** - Datenbanken, Synchronisation, Backups
-- **[Velocity Exporter](docs/infrastructure/VELOCITY_EXPORTER.md)** - Prometheus-Metriken, Scrape-Setup und Alerts für den Proxy
-- **[OPERATIONS.md](docs/OPERATIONS.md)** - Betriebshandbuch (Start/Stopp, Wartung, Monitoring)
-- **[DISASTER_RECOVERY.md](docs/DISASTER_RECOVERY.md)** - Notfall-Wiederherstellung
+## Beiträge
 
-### Zusätzliche Referenzen
-- **[QUICKREF.md](QUICKREF.md)** - Schnellreferenz für häufige Befehle und Konzepte
+Beiträge sind willkommen, sofern sie:
 
-## Verwendung
+- zur aktuellen Server-Architektur passen,
+- keine echten Secrets oder Passwörter enthalten,
+- die vorhandenen Workflows und Konventionen respektieren,
+- die Dokumentation entsprechend aktualisieren, wenn sich Repo-Struktur oder Deployment ändern.
 
-Jeder Server-Ordner (`lobby/`, `survival/`, `proxy/` — aktiv; `skyblock/` — Umbau; `rpg/` — recycelt zum Mining-Server) enthält seine eigenen Plugin-Konfigurationen unter `plugins/`.
+Bitte vor dem Commit die Konventionen in `CONTRIBUTING.md` und die Secrets-Referenz in `SECRETS.md` beachten.
 
-Die Konfigurationsdateien können direkt in die entsprechenden Plugin-Ordner auf dem Server kopiert werden:
-```bash
-# Beispiel für Survival (aktiv)
-plugins/NextGens/ <- survival/plugins/NextGens/
-```
+## Deployment und Betrieb
 
-## Beitragen
+Deployments erfolgen primär über GitHub Actions. Die Repositories sind auf Wiederholbarkeit ausgelegt:
 
-Dies ist ein persönliches Projekt für meinen Minecraft Server.
+- Server-Configs werden sauber synchronisiert
+- Secrets werden nicht im Repository gespeichert
+- Log-Dateien werden nur als erzeugte Artefakte verwaltet und nicht als dauerhafte Konfigurationsquelle verwendet
 
-## Technische Details
+## Lizenz
 
-- **Minecraft Version:** 26.2
-- **Server Software:** Paper
-- **Proxy:** Velocity
-- **Datenbanken:** MariaDB (172.25.0.1:3306), Redis (172.18.0.1:6380)
-- **Server-IP:** mc.festas-builds.com
-- **Aktive Server:** Lobby & Survival — Im Aufbau: Skyblock (Umbau) + Mining (neuer `rpg/`-Slot)
+Für die Website gilt die Lizenz in `LICENSE-website`. Für andere Projektteile gelten die jeweiligen, im Repository enthaltenen Regeln. Wenn eine Datei keine gesonderte Lizenz trägt, ist sie Teil der allgemeinen Projektkonfiguration und nicht als freies, eigenes Produkt zu behandeln.

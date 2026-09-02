@@ -1,72 +1,50 @@
-# 🌐 festas_builds Website
+# Website-Komponente
 
-[![Docker](https://img.shields.io/badge/Docker-Enabled-2496ED?logo=docker&logoColor=white)](https://www.docker.com/)
-[![nginx](https://img.shields.io/badge/Server-nginx-009639?logo=nginx&logoColor=white)](https://nginx.org/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+Diese Repository-Instanz enthält neben den Server-Konfigurationen auch die öffentliche Website für `mc.festas-builds.com`.
 
-> The public website for the **festas_builds** Minecraft community, served at
-> [`mc.festas-builds.com`](https://mc.festas-builds.com).
+Die Website ist bewusst klein, statisch und schnell: HTML, CSS und JavaScript ohne großes Frontend-Framework. Sie wird als Docker-Container über nginx ausgeliefert und per GitHub Actions deployed.
 
-This repository contains **only the website**. It is a static, responsive landing
-page (plus a small wiki) built with HTML, CSS and vanilla JavaScript, packaged as
-a lightweight `nginx:alpine` Docker image and deployed automatically via GitHub
-Actions.
+## Inhalt der Website
 
----
-
-## 🗂️ Repository Structure
-
-```
-.
-├── website/                # The static website (source of the Docker image)
-│   ├── index.html          # Landing page
-│   ├── impressum.html      # Legal notice
-│   ├── datenschutz.html    # Privacy policy
-│   ├── css/                # Stylesheets
-│   ├── js/                 # Interactive features + build-time config template
-│   ├── images/             # Images and favicons
-│   ├── api/                # Live player-list snapshot (players.json)
-│   ├── wiki/               # Wiki pages (ranks, classes, game modes, commands, rules)
-│   ├── Dockerfile          # Container build instructions
-│   ├── nginx.conf          # Web server configuration
-│   ├── README.md           # Website details & customization
-│   └── DEPLOYMENT.md       # Deployment & operations guide
-├── docker-compose.web.yml  # Website container definition
-└── .github/workflows/      # CI/CD (build, deploy, lint, security)
+```text
+website/
+├── index.html               # Landingpage
+├── css/                     # Stylesheets
+├── js/                     # Frontend-Logik und Konfigurations-Template
+├── images/                 # Favicons und Assets
+├── api/                    # Spieler-Statusdaten / Snapshots
+├── wiki/                   # Wiki-Inhalte / Infos
+├── Dockerfile              # Container-Definition
+├── nginx.conf              # Webserver-Konfiguration
+├── DEPLOYMENT.md           # Deploy- und Betriebsdoku
+├── SERVERSTATUS-ONLINE-SPIELER-GUIDE.md
+├── README.md               # Website-Detaildoku
+└── ...
 ```
 
----
-
-## 🚀 Quick Start (Local Development)
+## Lokales Testen
 
 ```bash
-cd website/
-
-# Option 1: Simple static server
-python3 -m http.server 8000        # then open http://localhost:8000
-
-# Option 2: Build & run the Docker image
-docker build -t minecraft-web .
-docker run -p 8080:80 minecraft-web  # then open http://localhost:8080
+cd website
+python3 -m http.server 8000
 ```
 
-See [`website/README.md`](website/README.md) for customization details.
+Danach die Seite unter `http://localhost:8000` öffnen.
 
----
+## Docker-Builder
 
-## 📦 Deployment
+```bash
+docker build -t festas-website .
+docker run -p 8080:80 festas-website
+```
 
-Deployment is automated with GitHub Actions. Pushing changes under `website/` to
-the `main` branch builds a Docker image, pushes it to the GitHub Container
-Registry, and deploys it to the server behind the host nginx reverse proxy.
+## Deployment
 
-Full instructions (architecture, DNS, monitoring, troubleshooting) are in
-[`website/DEPLOYMENT.md`](website/DEPLOYMENT.md).
+Die Veröffentlichung erfolgt über GitHub Actions. Änderungen am Website-Code werden nach dem Merge in den relevanten Branch über den Workflow in die Zielumgebung deployed.
 
----
+## Wichtige Hinweise
 
-## 📜 License
-
-Released under the MIT License. See [LICENSE](LICENSE) for details.
-
-*Built with ❤️ for the festas_builds community*
+- Die Website ist nicht das gesamte Repository; sie ist nur ein Teil des Gesamtsystems.
+- `mc.festas-builds.com` dient als öffentliche Adresse; der eigentliche Server-Stack lebt im restlichen Repo.
+- Wann immer der Website-Status, Player-Export oder die sichtbaren Servernamen geändert werden, auch die betroffenen Root-Dokumente und Deploy-Workflows prüfen.
+- Die Lizenz für die Website liegt in `LICENSE-website`.

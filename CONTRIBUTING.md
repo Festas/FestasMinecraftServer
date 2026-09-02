@@ -1,92 +1,96 @@
 # Beitragsrichtlinien
 
-Kurze Richtlinien für Beiträge zu diesem Minecraft-Netzwerk-Konfigurations-Repository.
+Diese Richtlinien gelten für die Konfigurations- und Deployment-Repo des Festa Minecraft Networks. Das Ziel ist eine saubere, dokumentierte und sichere Konfigurationsbasis ohne veraltete Projektartefakte.
 
----
+## Grundprinzipien
+
+- Relevante Änderungen immer mit der aktuellen Server-Architektur abgleichen
+- Keine echten Tokens, Passwörter, SSH-Schlüssel oder Secrets in das Repository committen
+- Veraltete Bezeichnungen, alte Servernamen oder „Historie-Notizen“ nur dann behalten, wenn sie echte Betriebskontext liefern
+- Wenn ein Pfad, ein Server oder ein Workflow geändert wird, auch die passende Doku anpassen
 
 ## Repository-Struktur
 
+```text
+.
+├── .github/workflows/   # Deploys, Syncs, Maintenance
+├── proxy/               # Velocity + Proxy-Plugins
+├── lobby/               # Lobby
+├── survival/            # Survival
+├── skyblock/            # Skyblock
+├── rpg/                 # Mining-/Prison-Backend
+├── website/             # Landingpage
+├── docs/                # Betrieb und Architektur
+├── tools/               # Exporter und Wartung
+├── nginx/               # Nginx-Konfigurationen
+├── infra/               # Infrastruktur / Services
+├── server-logs/         # Log-Artefakte
+└── ...
 ```
-proxy/plugins/          # Velocity-Plugins (TAB, MiniMOTD, LibertyBans, Geyser, …)
-lobby/plugins/          # Lobby-Plugins (CMI, DeluxeMenus, Skript, Oraxen, …)
-survival/plugins/       # Survival-Plugins (NextGens, Jobs, Rankup, PlotSquared, …)
-skyblock/plugins/       # Skyblock-Plugins (SuperiorSkyblock2, JetsMinions, …) — Umbau
-rpg/plugins/            # Mining/Prison-Plugins (Zonen-Kern, WorldGuard, …) — Aufbau
-docs/                   # Dokumentation
-```
 
-Die Plugin-Configs liegen jeweils direkt unter `<server>/plugins/<PluginName>/`.
+## Konventionen für Configs
 
----
+- Einrückung: 2 Leerzeichen, keine Tabs
+- YAML-Strings mit Sonderzeichen in einfache Anführungszeichen setzen, wenn nötig
+- Arrays immer mit `-` definieren
+- Placeholder statt echte Werte verwenden, wenn ein Secret beim Deploy injiziert wird
+- Dateien mit `__...__`-Platzhaltern nur als Deployment-Templates behandeln
 
-## YAML-Syntax
-
-- **2 Leerzeichen** für Einrückungen — keine Tabs!
-- Strings mit Sonderzeichen (insbesondere `&`) in **einfache Anführungszeichen** setzen.
-- Listen immer mit `-` kennzeichnen.
+Beispiel:
 
 ```yaml
-# ✅ Korrekt
 some_key:
-  display: '&6Text mit Farbe'
+  display: '&6Farbiger Text'
   items:
     - 'DIAMOND'
     - 'GOLD_INGOT'
-
-# ❌ Falsch (Tabs, fehlende Quotes)
-some_key:
-	display: &6Text mit Farbe
 ```
 
----
+## Secrets und Sicherheit
 
-## Commit Messages
+Vor dem Commit prüfen:
 
-Format: `Typ: Kurzbeschreibung`
+- Keine Benutzer- oder Admin-Passwörter
+- Keine SSH-Keys oder API-Keys
+- Keine echten MySQL-, Redis- oder Velocity-Secrets
+- Keine lokal erzeugten Log- oder Dump-Dateien mit committen
 
-| Typ | Verwendung |
-|-----|-----------|
-| `Add:` | Neue Datei / neues Feature |
-| `Update:` | Änderung an bestehender Datei |
-| `Fix:` | Fehlerbehebung |
-| `Remove:` | Datei/Eintrag entfernt |
-| `Docs:` | Nur Doku-Änderungen |
-| `Config:` | Plugin-Config-Anpassung |
+Die sichere Vorgehensweise ist: Secrets über GitHub Actions Secrets bzw. injizierte Platzhalter verwalten. Details stehen in `SECRETS.md`.
 
-Beispiele:
-```
-Add: Survival shop config für Iron-Tier
-Update: Lobby DeluxeMenus server_selector — Mining-Eintrag ergänzt
-Fix: CMI autorank track Stufenfolge korrigiert
-Config: NextGens Generator-Tier 10 Sell-Price angepasst
-```
-
----
-
-## Git-Workflow
+## Workflow für Änderungen
 
 ```bash
 git checkout -b feature/kurze-beschreibung
-# … Änderungen vornehmen …
+# Änderungen vornehmen
+# falls relevant: README / QUICKREF / SECRETS / docs aktualisieren
+
 git add .
-git commit -m "Add: Neue Survival-Config"
+git commit -m "Update: Beschreibung der Änderung"
 git push origin feature/kurze-beschreibung
-# → Pull Request erstellen
 ```
 
----
+## Validierung vor dem Merge
 
-## Testing
+Vor dem Commit mindestens prüfen:
 
-Vor dem Commit:
-1. YAML-Syntax prüfen (z. B. mit `python3 -c "import yaml; yaml.safe_load(open('datei.yml'))"`)
-2. Auf dem Testserver laden und kurz überprüfen
-3. Keine Credentials / Passwörter committen (stets `CHANGE_ME`-Platzhalter verwenden)
+1. YAML-Syntax und Dateiformat prüfen
+2. Betroffene deploybare Configs mit dem aktuellen Serverbau abgleichen
+3. Referenzen auf veraltete Serverbezeichnungen bereinigen
+4. Doku aktualisieren, wenn Struktur oder Deployment sich geändert haben
 
----
+## Doku-Standards
 
-## Fragen?
+Wenn eine Änderung die Repo-Struktur, Servernamen, Deploy-Prozesse oder Secret-Handling betrifft, müssen auch die betroffenen Root-Dokumente aktualisiert werden:
 
-- Plugin-Docs konsultieren
-- Beispiel-Configs im jeweiligen `plugins/`-Ordner vergleichen
-- Repository-Owner fragen
+- `README.md`
+- `QUICKREF.md`
+- `README-website.md`
+- `SECRETS.md`
+
+## Fragen
+
+Wenn die genaue Auswirkung einer Änderung unklar ist:
+
+- aktuelle Datei im passenden `plugins/`-Ordner oder Root-Config vergleichen
+- relevante Doku in `docs/` nachsehen
+- bei Unsicherheit im Projektkontext Rücksprache mit dem Repository-Owner suchen
