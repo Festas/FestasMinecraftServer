@@ -9,6 +9,34 @@ brand:
     - '<#818CF8>✦ Festas Builds ✦</#F0ABFC>'
     - '<#60A5FA>✦ Festas Builds ✦</#E879F9>'
     - '<#38BDF8>✦ Festas Builds ✦</#C084FC>'
+lobby_title:
+  change-interval: 300
+  texts:
+    - '<#22D3EE>✦ Lobby ✦</#A78BFA>'
+    - '<#38BDF8>✦ Lobby ✦</#C084FC>'
+    - '<#60A5FA>✦ Lobby ✦</#E879F9>'
+    - '<#38BDF8>✦ Lobby ✦</#C084FC>'
+survival_title:
+  change-interval: 300
+  texts:
+    - '<#F59E0B>✦ Survival ✦</#F97316>'
+    - '<#FBBF24>✦ Survival ✦</#FB7185>'
+    - '<#F59E0B>✦ Survival ✦</#EF4444>'
+    - '<#FBBF24>✦ Survival ✦</#FB7185>'
+mining_title:
+  change-interval: 300
+  texts:
+    - '<#C084FC>✦ Mining ✦</#F472B6>'
+    - '<#A855F7>✦ Mining ✦</#FB7185>'
+    - '<#D946EF>✦ Mining ✦</#F97316>'
+    - '<#A855F7>✦ Mining ✦</#FB7185>'
+skyblock_title:
+  change-interval: 300
+  texts:
+    - '<#38BDF8>✦ Skyblock ✦</#22D3EE>'
+    - '<#0EA5E9>✦ Skyblock ✦</#60A5FA>'
+    - '<#06B6D4>✦ Skyblock ✦</#3B82F6>'
+    - '<#0EA5E9>✦ Skyblock ✦</#60A5FA>'
 MyAnimation1:
   change-interval: 100
   texts:

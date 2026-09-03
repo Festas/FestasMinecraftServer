@@ -6,36 +6,36 @@ header-footer:
       header:
       - ''
       - '   %animation:brand%'
-      - '&b&lHUB &8» &7Willkommen, &f%player%&7!'
+      - '&8› &bLobby &8• &7Hub, Auswahl & Netzwerkstart'
       - ''
       footer:
       - ''
       - '&8&m                                            '
-      - ' &7Online &8» &a%online%    &8|    &7Ping &8» %condition:ping_c1%'
-      - ' &7%date% &8| &7%time% Uhr'
-      - ' %animation:web%'
+      - ' &7Server &8» &bLobby    &8|    &7Online &8» &a%online%'
+      - ' &7Ping &8» %condition:ping_c1%    &8|    &7Zeit &8» &f%time% Uhr'
+      - ' &7Web &8» %animation:web%'
       - ''
     survival:
       display-condition: '%server%=survival'
       header:
       - ''
       - '   %animation:brand%'
-      - '&6&lSURVIVAL &8» &7Willkommen, &f%player%&7!'
+      - '&8› &6Survival &8• &7Städte, Freebuild & Rankup'
       - ''
       footer:
       - ''
       - '&8&m                                            '
       - ' &7Rang &8» %luckperms_prefix%    &8|    &7Guthaben &8» &a%vault_eco_balance_formatted%$'
-      - ' &7Nächster Rang &8» &e%rankup_next_rank% &8(&c%rankup_money_left_formatted%$&8)'
+      - ' &7Nächstes Ziel &8» &e%rankup_next_rank%    &8|    &7Fehlt &8» &c%rankup_money_left_formatted%$'
       - ' &7Ping &8» %condition:ping_c1%    &8|    &7Online &8» &a%online%'
-      - ' %animation:web%'
+      - ' &7Web &8» %animation:web%'
       - ''
     skyblock:
       display-condition: '%server%=skyblock'
       header:
       - ''
       - '   %animation:brand%'
-      - '&b&lSKYBLOCK &8» &7Willkommen, &f%player%&7!'
+      - '&8› &bSkyblock &8• &7Koop-Inseln mit eigener Economy'
       - ''
       footer:
       - ''
@@ -43,34 +43,36 @@ header-footer:
       - ' &7Rang &8» %luckperms_prefix%    &8|    &7Guthaben &8» &a%vault_eco_balance_formatted%$'
       - ' &7Insel-Level &8» &b%superior_island_level%    &8|    &7Wert &8» &a%superior_island_worth%'
       - ' &7Ping &8» %condition:ping_c1%    &8|    &7Online &8» &a%online%'
-      - ' %animation:web%'
+      - ' &7Web &8» %animation:web%'
       - ''
-    rpg:
+    mining:
+      # Der öffentliche Mining-Server läuft technisch weiter im historischen rpg-Slot.
       display-condition: '%server%=rpg'
       header:
       - ''
       - '   %animation:brand%'
-      - '&5&lRPG &8» &7Willkommen, &f%player%&7!'
+      - '&8› &dMining &8• &7Prison-Loop mit Pickaxe-Upgrades'
       - ''
       footer:
       - ''
       - '&8&m                                            '
-      - ' &7Rang &8» %luckperms_prefix%    &8|    &7Guthaben &8» &a%vault_eco_balance_formatted%$'
+      - ' &7Prestige &8» &dP%xprison_prestige_id%    &8|    &7Guthaben &8» &a%vault_eco_balance_formatted%$'
+      - ' &7Modus &8» &dPrison    &8|    &7Status &8» &eAufbau'
       - ' &7Ping &8» %condition:ping_c1%    &8|    &7Online &8» &a%online%'
-      - ' %animation:web%'
+      - ' &7Web &8» %animation:web%'
       - ''
     default:
       header:
       - ''
       - '   %animation:brand%'
-      - '&7Willkommen, &f%player%&7!'
+      - '&8› %condition:server_label% &8• &7Festas Netzwerk'
       - ''
       footer:
       - ''
       - '&8&m                                            '
-      - ' &7Rang &8» %luckperms_prefix%    &8|    &7Guthaben &8» &a%vault_eco_balance_formatted%$'
-      - ' &7Ping &8» %condition:ping_c1%    &8|    &7Online &8» &a%online%'
-      - ' %animation:web%'
+      - ' &7Server &8» %condition:server_label%    &8|    &7Online &8» &a%online%'
+      - ' &7Ping &8» %condition:ping_c1%    &8|    &7Zeit &8» &f%time% Uhr'
+      - ' &7Web &8» %animation:web%'
       - ''
 tablist-name-formatting:
   enabled: true
@@ -89,14 +91,14 @@ playerlist-objective:
   enabled: true
   value: '%ping%'
   fancy-value: '&7Ping: %ping%'
-  title: TAB
+  title: '&bPing'
   render-type: INTEGER
   disable-condition: '%world%=disabledworld'
 belowname-objective:
   enabled: true
   value: '%vault_eco_balance_fixed%'
-  title: ' &a€'
-  fancy-value: '%vault_eco_balance_formatted% &a€'
+  title: ' &a$'
+  fancy-value: '&a%vault_eco_balance_formatted%$'
   fancy-value-default: NPC
   disable-condition: '%world%=disabledworld'
 prevent-spectator-effect:
@@ -123,76 +125,94 @@ scoreboard:
   scoreboards:
     lobby:
       display-condition: '%server%=lobby'
-      title: '%animation:brand%'
+      title: '%animation:lobby_title%'
       lines:
       - '&8&m                     '
-      - '&b&lPROFIL'
-      - ' &7Spieler &8» %luckperms_prefix%&f%player%'
-      - ''
       - '&b&lNETZWERK'
-      - ' &7Online &8» &a%online%'
-      - ' &7Ping &8» %condition:ping_c1%'
+      - '&fServer||&bLobby'
+      - '&fStatus||&aLive'
       - ''
-      - ' &7Standort &8» &bLobby'
+      - '&b&lMODI'
+      - '&fSurvival||&aAktiv'
+      - '&fMining||&eAufbau'
+      - '&fSkyblock||&eAufbau'
+      - ''
+      - '&b&lVERBINDUNG'
+      - '&fPing||%condition:ping_c1%'
+      - '&fOnline||&a%online%'
       - '&8&m                     '
       - '&e&nmc.festas-builds.com'
     survival:
       display-condition: '%server%=survival'
-      title: '%animation:brand%'
+      title: '%animation:survival_title%'
       lines:
       - '&8&m                     '
-      - '&6&lPROFIL'
-      - ' &7Rang &8» %luckperms_prefix%'
-      - ' &7Guthaben &8» &a%vault_eco_balance_formatted%$'
+      - '&6&lFORTSCHRITT'
+      - '&fRang||%luckperms_prefix%'
+      - '&fGuthaben||&a%vault_eco_balance_formatted%$'
       - ''
       - '&6&lRANKUP'
-      - ' &7Nächster &8» &e%rankup_next_rank%'
-      - ' &7Fehlt &8» &c%rankup_money_left_formatted%$'
+      - '&fNächster||%rankup_next_rank%'
+      - '&fFehlt||&c%rankup_money_left_formatted%$'
       - ''
-      - '&6&lSTATS'
-      - ' &7Online &8» &a%online%'
-      - ' &7Tode &8» &c%statistic_deaths%'
+      - '&6&lVERBINDUNG'
+      - '&fTode||&c%statistic_deaths%'
+      - '&fPing||%condition:ping_c1%'
+      - '&fOnline||&a%online%'
       - '&8&m                     '
       - '&e&nmc.festas-builds.com'
     skyblock:
       display-condition: '%server%=skyblock'
-      title: '%animation:brand%'
+      title: '%animation:skyblock_title%'
       lines:
       - '&8&m                     '
-      - '&b&lPROFIL'
-      - ' &7Rang &8» %luckperms_prefix%'
-      - ' &7Guthaben &8» &a%vault_eco_balance_formatted%$'
-      - ''
       - '&b&lINSEL'
-      - ' &7Level &8» &b%superior_island_level%'
-      - ' &7Wert &8» &a%superior_island_worth%'
+      - '&fRang||%luckperms_prefix%'
+      - '&fGuthaben||&a%vault_eco_balance_formatted%$'
       - ''
-      - ' &7Online &8» &a%online%'
+      - '&b&lFORTSCHRITT'
+      - '&fLevel||&b%superior_island_level%'
+      - '&fWert||&a%superior_island_worth%'
+      - '&fTeam||&f%superior_island_team_size%'
+      - ''
+      - '&b&lVERBINDUNG'
+      - '&fPing||%condition:ping_c1%'
+      - '&fOnline||&a%online%'
       - '&8&m                     '
       - '&e&nmc.festas-builds.com'
-    rpg:
+    mining:
+      # Der öffentliche Mining-Server läuft technisch weiter im historischen rpg-Slot.
       display-condition: '%server%=rpg'
-      title: '%animation:brand%'
+      title: '%animation:mining_title%'
       lines:
       - '&8&m                     '
-      - '&5&lPROFIL'
-      - ' &7Rang &8» %luckperms_prefix%'
-      - ' &7Guthaben &8» &a%vault_eco_balance_formatted%$'
+      - '&d&lFORTSCHRITT'
+      - '&fPrestige||&dP%xprison_prestige_id%'
+      - '&fGuthaben||&a%vault_eco_balance_formatted%$'
       - ''
-      - ' &7Online &8» &a%online%'
-      - ' &7Ping &8» %condition:ping_c1%'
+      - '&d&lINFO'
+      - '&fServer||&dMining'
+      - '&fModus||&dPrison'
+      - '&fStatus||&eAufbau'
+      - ''
+      - '&d&lVERBINDUNG'
+      - '&fPing||%condition:ping_c1%'
+      - '&fOnline||&a%online%'
       - '&8&m                     '
       - '&e&nmc.festas-builds.com'
     default:
       title: '%animation:brand%'
       lines:
       - '&8&m                     '
-      - '&b&lPROFIL'
-      - ' &7Rang &8» %luckperms_prefix%'
-      - ' &7Guthaben &8» &a%vault_eco_balance_formatted%$'
+      - '&b&lNETZWERK'
+      - '&fServer||%condition:server_label%'
+      - '&fRang||%luckperms_prefix%'
       - ''
-      - ' &7Online &8» &a%online%'
-      - ' &7Ping &8» %condition:ping_c1%'
+      - '&b&lVERBINDUNG'
+      - '&fGuthaben||&a%vault_eco_balance_formatted%$'
+      - '&fPing||%condition:ping_c1%'
+      - '&fOnline||&a%online%'
+      - '&fZeit||&f%time%'
       - '&8&m                     '
       - '&e&nmc.festas-builds.com'
 layout:
@@ -225,7 +245,7 @@ placeholder-output-replacements:
     'no': ''
   '%luckperms_prefix%':
     ? ''
-    : '&7User'
+    : '&7Spieler'
   '%statistic_deaths%':
     ? ''
     : '0'
@@ -235,15 +255,44 @@ placeholder-output-replacements:
   '%superior_island_worth%':
     ? ''
     : '0'
+  '%superior_island_team_size%':
+    ? ''
+    : '0'
   '%rankup_next_rank%':
     ? ''
     : '&aMax-Rang'
+  '%rankup_money_left_formatted%':
+    ? ''
+    : '0'
+  '%xprison_prestige_id%':
+    ? ''
+    : '0'
 conditions:
   nick:
     conditions:
     - '%player%=%essentials_nickname%'
     true: '%player%'
     false: ~%essentials_nickname%
+  server_label:
+    conditions:
+    - '%server%=lobby'
+    true: '&bLobby'
+    false: '%condition:server_label_survival%'
+  server_label_survival:
+    conditions:
+    - '%server%=survival'
+    true: '&6Survival'
+    false: '%condition:server_label_mining%'
+  server_label_mining:
+    conditions:
+    - '%server%=rpg'
+    true: '&dMining'
+    false: '%condition:server_label_skyblock%'
+  server_label_skyblock:
+    conditions:
+    - '%server%=skyblock'
+    true: '&bSkyblock'
+    false: '&7%server%'
   # Faerbt den Ping in 3 Stufen: <80 gruen, <160 gelb, sonst rot.
   ping_c1:
     conditions:
@@ -274,8 +323,10 @@ placeholder-refresh-intervals:
   '%vault_eco_balance_formatted%': 1000
   '%rankup_next_rank%': 2000
   '%rankup_money_left_formatted%': 2000
+  '%xprison_prestige_id%': 2000
   '%superior_island_level%': 5000
   '%superior_island_worth%': 5000
+  '%superior_island_team_size%': 5000
   '%statistic_deaths%': 2000
 assign-groups-by-permissions: false
 primary-group-finding-list:

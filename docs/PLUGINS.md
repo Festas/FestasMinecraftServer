@@ -70,13 +70,15 @@ Vollständige Übersicht aller verwendeten Plugins pro Server.
 - **Funktion:** Custom TAB-Liste und Scoreboard (läuft auf dem Proxy, gilt für alle Server)
 - **Features:**
   - Server-übergreifende TAB-Liste (global-playerlist)
-  - Pro-Server Header/Footer-Designs (lobby/survival/skyblock/rpg + default) via `%server%`-Bedingung
-  - Pro-Server Sidebar-Scoreboard (Toggle `/sb`, ohne Seiten-Zahlen)
-  - Animierter Marken-Titel „Festas Builds" (Gradient-Shimmer) in `animations.yml`
+  - Pro-Server Header/Footer-Designs für Lobby, Survival, Skyblock und **Mining** (technisch `%server%=rpg`) plus Fallback-Design
+  - Pro-Server Sidebar-Scoreboards (Toggle `/sb`) mit zweispaltigem `Label||Wert`-Layout für klarere Progressions-Infos
+  - Lobby zeigt Netzwerkstatus, Survival Rankup-Fortschritt, Mining Prestige-Status, Skyblock Insel-Fortschritt
+  - Animierte Scoreboard-Titel pro Server + animierter Marken-Titel „Festas Builds" in `animations.yml`
   - Ping-Anzeige in 3 Farbstufen (`conditions`: `ping_c1`/`ping_c2`)
+  - Fallbacks für bridged PlaceholderAPI-Werte (Rankup, Skyblock, Mining)
   - Tode-Zähler im Tab-Suffix nur auf Survival (`conditions`: `deaths_suffix`)
   - Nametags, RGB-Gradients, PlaceholderAPI-Support (via Bridge auf den Backends)
-- **Config:** `config.yml` (Header/Footer, Scoreboard, Conditions), `groups.yml`, `animations.yml`
+- **Config:** `config.yml` (Header/Footer, Scoreboard, Objectives, Conditions, Placeholder-Fallbacks), `groups.yml`, `animations.yml`
 
 #### VelocityScoreboardAPI
 - **Funktion:** API für Scoreboard-Management
