@@ -59,7 +59,7 @@ Legende: ✅ = Ordner vorhanden unter `<server>/plugins/<Plugin>`. Detail-Doku p
 | Plan (Proxy) | ✅ | [Plan.md](Plan.md) |
 | SkinsRestorer | ✅ | [SkinsRestorer.md](SkinsRestorer.md) |
 | TAB | ✅ | [TAB.md](TAB.md) |
-| VelocityScoreboardAPI | ✅ | [libraries.md](libraries.md#velocityscoreboardapi) |
+| VelocityScoreboardAPI | ✅ | [libraries.md](libraries.md) |
 
 ### Backends (Paper) – Core & übergreifend
 
@@ -69,11 +69,11 @@ Legende: ✅ = Ordner vorhanden unter `<server>/plugins/<Plugin>`. Detail-Doku p
 | LuckPerms | ✅ | ✅ | ✅ | ✅ | [LuckPerms.md](LuckPerms.md) |
 | PlaceholderAPI | ✅ | ✅ | ✅ | ✅ | [PlaceholderAPI.md](PlaceholderAPI.md) |
 | Plan | ✅ | ✅ | ✅ | ✅ | [Plan.md](Plan.md) |
-| Vault | ✅ | ✅ | ✅ | ✅ | [libraries.md](libraries.md#vault) |
+| Vault | ✅ | ✅ | ✅ | ✅ | [libraries.md](libraries.md) |
 | Skript | ✅ | ✅ | ✅ | ✅ | [Skript.md](Skript.md) |
 | DeluxeMenus | ✅ | ✅ | ✅ | ✅ | [DeluxeMenus.md](DeluxeMenus.md) |
 | Oraxen | ✅ | ✅ | ✅ | ✅ | [Oraxen.md](Oraxen.md) |
-| ProtocolLib | ✅ | ✅ | ✅ | ✅ | [libraries.md](libraries.md#protocollib) |
+| ProtocolLib | ✅ | ✅ | ✅ | ✅ | [libraries.md](libraries.md) |
 
 ### Backends – Welten, Schutz, Building
 
@@ -82,10 +82,10 @@ Legende: ✅ = Ordner vorhanden unter `<server>/plugins/<Plugin>`. Detail-Doku p
 | WorldGuard | ✅ | ✅ | – | ✅ | [WorldGuard.md](WorldGuard.md) |
 | Multiverse-Core | – | ✅ | ✅ | ✅ | [Multiverse.md](Multiverse.md) |
 | Multiverse-Inventories | – | ✅ | ✅ | ✅ | [Multiverse.md](Multiverse.md) |
-| VoidGen | – | ✅ | ✅ | – | [libraries.md](libraries.md#voidgen) |
-| Chunky | – | ✅ | – | – | [libraries.md](libraries.md#chunky) |
-| FastAsyncWorldEdit | ✅ | ✅ | – | ✅ | [libraries.md](libraries.md#fastasyncworldedit-fawe) |
-| AxiomPaper | – | ✅ | – | – | [libraries.md](libraries.md#axiompaper) |
+| VoidGen | – | ✅ | ✅ | – | [libraries.md](libraries.md) |
+| Chunky | – | ✅ | – | – | [libraries.md](libraries.md) |
+| FastAsyncWorldEdit | ✅ | ✅ | – | ✅ | [libraries.md](libraries.md) |
+| AxiomPaper | – | ✅ | – | – | [libraries.md](libraries.md) |
 | BlueMap | – | ✅ | – | ✅ | [BlueMap.md](BlueMap.md) |
 
 ### Backends – Economy, Shops, Progression
@@ -165,9 +165,9 @@ zur Laufzeit. Details: [`SECRETS.md`](../../SECRETS.md).
 | `__VELOCITY_FORWARDING_SECRET__` | `VELOCITY_FORWARDING_SECRET` | `<server>/config/paper-global.yml` (`velocity.secret`) | `sync-server-configs.yml` |
 | `__XPRISON_DASHBOARD_USER/PASSWORD/JWT_SECRET__` | `XPRISON_DASHBOARD_ENV` | `rpg/plugins/X-Prison/addons/Dashboard/config.yml` | `deploy-rpg.yml` |
 | `__XPRIVATEMINES_DASHBOARD_USER/PASSWORD/JWT_SECRET__` | `XPRIVATEMINES_DASHBOARD_ENV` | `rpg/plugins/XPrivateMines/addons/Dashboard/config.yml` | `deploy-rpg.yml` |
-| `__LIBERTYBANS_DB_USER/PASSWORD__` | `LIBERTYBANS_DB_ENV` (dormant) | `proxy/plugins/libertybans/sql.yml`, `import.yml` | `deploy-proxy.yml` |
-| `__SKINSRESTORER_DB_USER/PASSWORD__` | (dormant, File-Storage aktiv) | `proxy/plugins/skinsrestorer/config.yml` | `deploy-proxy.yml` |
-| `__TAB_DB_USER/PASSWORD__` | (dormant) | `proxy/plugins/tab/config.yml` | `deploy-proxy.yml` |
+| `__LIBERTYBANS_DB_USER/PASSWORD__` | – (dormant; HSQLDB aktiv) | `proxy/plugins/libertybans/sql.yml`, `import.yml` | **kein Inject** (Token bleibt wörtlich) |
+| `__SKINSRESTORER_DB_USER/PASSWORD__` | – (dormant; File-Storage aktiv) | `proxy/plugins/skinsrestorer/config.yml` | **kein Inject** (Token bleibt wörtlich) |
+| `__TAB_DB_USER/PASSWORD__` | – (dormant; MySQL aus) | `proxy/plugins/tab/config.yml` | **kein Inject** (Token bleibt wörtlich) |
 
 - Der Velocity-Proxy selbst liest ein lokales `forwarding.secret`-File (**gitignored, wird nie
   synchronisiert**); der geteilte Wert landet über den Platzhalter oben in den **Backends**.

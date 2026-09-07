@@ -44,6 +44,11 @@ Jeder Agent stützt sich auf die Wissensbasis unter [`../../docs/plugins/`](../.
 Support-/Bibliotheks-Plugins (Vault, ProtocolLib, CommandAPI, FAWE, spark …) haben bewusst **keinen**
 eigenen Agent – siehe [`../../docs/plugins/libraries.md`](../../docs/plugins/libraries.md).
 
+**Utility-Plugins ohne eigenen Agent** (bewusst, geringe/seltene Config): **HeadDatabase** (survival) und
+**LibsDisguises** (survival/rpg). Sie werden über den konsumierenden Kontext bearbeitet – Köpfe via
+`deluxemenus`/`survival-shops`, Disguises via `progression`/`prison` bzw. Rechte via `luckperms` – gemäß
+[`HeadDatabase.md`](../../docs/plugins/HeadDatabase.md) und [`LibsDisguises.md`](../../docs/plugins/LibsDisguises.md).
+
 ## Konventionen für alle Agents
 - **Secrets/Platzhalter `__…__` wörtlich erhalten**; niemals echte Credentials committen.
 - **Minimal & chirurgisch** ändern; YAML 2-Space, keine Tabs; Struktur/Kommentare bewahren.
