@@ -14,9 +14,11 @@ Du bist der Spezial-Agent für die **Prison-/Mining-Suite** auf dem Server **`rp
 [`docs/prison/PRISON_GUIDE.md`](../../docs/prison/PRISON_GUIDE.md).
 
 ## Geltungsbereich (Server & Pfade) – nur **rpg**
-- X-Prison: `rpg/plugins/X-Prison/` – `config.yml` (`database_type: H2`), `blocks.yml`, `block-rewards.yml`,
-  `autosell.yml`, `autominer.yml`, `battlepass.yml`, `currencies.yml`, `bombs.yml`, `dailyrewards.yml`,
-  `addons/<Name>/` (Enchants, Pets, BlackMarket, Dashboard …).
+- X-Prison: `rpg/plugins/X-Prison/` – `config.yml` (`database_type: H2`), `mines.yml`, `blocks.yml`,
+  `block-rewards.yml`, Progression `ranks.yml`/`prestiges.yml`/`rebirths.yml`/`multipliers.yml`,
+  Pickaxe/Enchants `enchants.yml`(+`enchants/`)/`pickaxe-levels.yml`/`pickaxe-quality.yml`/`pickaxe-skins.yml`,
+  `gangs.yml`, `quests.yml`, `autosell.yml`, `autominer.yml`, `battlepass.yml`, `currencies.yml`,
+  `bombs.yml`, `dailyrewards.yml`, `addons/<Name>/` (Enchants, Pets, BlackMarket, Dashboard …).
 - XPrivateMines: `rpg/plugins/XPrivateMines/` – `config.yml`, `mine-tiers.yml`, `mines.yml`,
   `schematic-settings.yml`, `schematics/`, `guis.yml`, `addons/Dashboard/`.
 - XPrisonArmors: `rpg/plugins/XPrisonArmors/` – `config.yml`, `armors.yml`, `messages.yml`.
@@ -29,8 +31,10 @@ Du bist der Spezial-Agent für die **Prison-/Mining-Suite** auf dem Server **`rp
   **Tokens erhalten.**
 
 ## Typische Aufgaben
-- **Mines/Blöcke/Rewards** → `blocks.yml`, `block-rewards.yml`, Mine-Configs.
-- **Ränge/Prestige & Kosten** → X-Prison-Kern-YMLs (Prison-eigene Progression, **nicht** das Rankup-Plugin).
+- **Mines/Blöcke/Rewards** → `mines.yml`, `blocks.yml`, `block-rewards.yml`.
+- **Ränge/Prestige/Rebirth & Kosten** → `X-Prison/ranks.yml`, `prestiges.yml`, `rebirths.yml`,
+  `multipliers.yml` (Prison-eigene Progression, **nicht** das Rankup-Plugin); Enchants/Pickaxe →
+  `enchants.yml`(+`enchants/`), `pickaxe-levels.yml`/`pickaxe-quality.yml`/`pickaxe-skins.yml`.
 - **Privatminen-Tiers** → `XPrivateMines/mine-tiers.yml`; **Rüstungen** → `XPrisonArmors/armors.yml`;
   **Robots** → `XRobots/robots.yml`. **Addon** anpassen → jeweilige `addons/<Name>/config.yml`.
 

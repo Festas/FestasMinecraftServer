@@ -10,6 +10,7 @@ der Preisanker der Survival-Economy.
 Nur **survival**: `survival/plugins/ShopGUIPlus/`
 - `config.yml` – globale Optionen, Economy-Provider, Storage
 - Shop-Kategorien/Preise in den `shops/`-YMLs
+- `pricemodifiers.yml` – rang-/permissionabhängige Preis-Modifikatoren · `lang.yml` – Nachrichten
 
 ## Storage & Secrets
 Lokal **SQLite**; Economy über **CMI/Vault**. DB-Passwörter in `config.yml` sind **dormante
@@ -17,6 +18,8 @@ Vendor-Defaults** – nicht ändern, externer DB-Store ist aus.
 
 ## Wichtige Einstellungen / typische Aufgaben
 - **Preise/Items** je Kategorie → `shops/`-YMLs (Kauf-/Verkaufspreis).
+- **Rang-/Permission-Rabatte** (z. B. VIP kauft/verkauft zu anderem Preis) → `pricemodifiers.yml`;
+  Nachrichten → `lang.yml`.
 - **Verkaufspreise** wirken als Senke/Quelle der Economy – mit NextGens-Drops, Jobs-Einkommen und
   Rankup-Kosten abstimmen.
 - Ein Skript (`survival/plugins/Skript/scripts/shopguiplus.sk`) hängt an ShopGUIPlus – bei Struktur-

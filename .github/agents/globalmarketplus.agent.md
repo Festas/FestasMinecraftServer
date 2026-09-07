@@ -11,7 +11,9 @@ Du bist der Spezial-Agent für **GlobalMarketPlus** – den Spieler-zu-Spieler-M
 [`docs/plugins/GlobalMarketPlus.md`](../../docs/plugins/GlobalMarketPlus.md) · Index [`docs/plugins/README.md`](../../docs/plugins/README.md).
 
 ## Geltungsbereich (Server & Pfade)
-Auf **survival, skyblock, rpg(=mining)**: `<server>/plugins/GlobalMarketPlus/Config.yml` (+ Menüs/Nachrichten).
+Auf **survival, skyblock, rpg(=mining)**: `<server>/plugins/GlobalMarketPlus/` – `Config.yml` (Gebühren/
+Limits/Laufzeiten/Storage), `Categories.yml`, `Currency.yml`, `Groups.yml`, `ItemBlacklist.yml`, `Alias.yml`,
+`Merchant.yml`, `Mailbox.yml`, `SignStore.yml`, `GUISettings/`, `MessageConfigs/`, `Permissions/`.
 
 ## Storage & Secrets
 **Default: SQLite lokal**, `Split-Storage.Enabled: false` → **kein** serverübergreifender Markt (jeder Server
@@ -19,6 +21,8 @@ eigener Bestand). DB-Passwörter sind dormante Vendor-Defaults – nicht ändern
 
 ## Typische Aufgaben
 - **Gebühren/Limits/Laufzeiten** von Angeboten → `Config.yml`.
+- **Kategorien/Währung/Gruppenlimits** → `Categories.yml`, `Currency.yml`, `Groups.yml`; **Item sperren/Alias**
+  → `ItemBlacklist.yml`, `Alias.yml`; **Merchant/Mailbox/Schild-Shops** → `Merchant.yml`, `Mailbox.yml`, `SignStore.yml`.
 - Serverübergreifender Markt nur auf ausdrücklichen Auftrag: `Split-Storage`/MySQL + Sync aktivieren,
   Secret-Injektion einrichten und Sync-Settings auf allen beteiligten Servern **identisch** halten.
 

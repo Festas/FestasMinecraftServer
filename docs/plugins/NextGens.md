@@ -8,15 +8,18 @@ der Survival-Economy (Passiv-Einkommen, Tycoon-Loop).
 
 ## Wo (Server & Config-Pfade)
 Nur **survival**: `survival/plugins/NextGens/`
-- `config.yml` – globale Optionen, Storage
-- Generator-Definitionen (Typen, Drops, Preise) in den plugin-eigenen YMLs
+- `config.yml` – globale Optionen, Storage · `generators.yml` + `generators/` – Generator-Definitionen
+  (Typen, Drops, Preise, Upgrades)
+- `shop.yml` – Verkaufs-/Kaufmenü · `worth.yml` – Verkaufswerte der Drops · `events.yml` – Events/Boni
+- `gui/` – Menüs (`data.yml` = Laufzeitdaten)
 
 ## Storage & Secrets
 Lokal **SQLite** (MySQL-Optionen vorhanden, aber deaktiviert). Etwaige DB-Passwörter in der Config sind
 **dormante Vendor-Defaults** (root/leer) – nicht ändern, MySQL ist aus.
 
 ## Wichtige Einstellungen / typische Aufgaben
-- **Neuer Generator / Tier** → Generator-Definition anlegen (Drop, Intervall, Upgrade-Kosten, Verkaufswert).
+- **Neuer Generator / Tier** → `generators.yml` bzw. `generators/` (Drop, Intervall, Upgrade-Kosten);
+  Verkaufswerte → `worth.yml`, Shop-Menü → `shop.yml`, Events/Boni → `events.yml`.
 - Verkauf/Ertrag über CMI-Economy (`cmi money give` bzw. Vault) abgestimmt halten.
 - In Survival greifen Skript (`generators`-Menü via `DeluxeMenus/gui_menus/generators.yml`) und ShopGUIPlus
   ineinander – Preise/Drops konsistent halten.

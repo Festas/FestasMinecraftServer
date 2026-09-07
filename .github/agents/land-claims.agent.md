@@ -13,7 +13,7 @@ Du bist der Spezial-Agent für die **Survival-Claiming-Layer**: **Lands** + **Pl
 
 ## Geltungsbereich (Server & Pfade) – nur **survival**
 - Lands: `survival/plugins/Lands/` – `config.yml`, `levels.yml`, `player-limits.yml`, `categories.yml`,
-  `events.yml`, `Modules/`. (`Data/`, `Logs/` = Laufzeit.)
+  `events.yml`, `roles.yml` (Rollen/Flags), `web.yml`, `server-name.yml`, `Modules/`. (`Data/`, `Logs/` = Laufzeit.)
 - PlotSquared: `survival/plugins/PlotSquared/` – `config/settings.yml`, `config/storage.yml`,
   `config/worlds.yml`, `schematics/`, `templates/`. (`backups/` = Laufzeit.)
 
@@ -22,7 +22,7 @@ Du bist der Spezial-Agent für die **Survival-Claiming-Layer**: **Lands** + **Pl
 - PlotSquared: **SQLite** (`storage.yml`: `mysql.use: false`); dormante DB-Defaults – nicht ändern.
 
 ## Typische Aufgaben
-- **Lands**: Claim-Limits/Level/Kosten (`levels.yml`, `player-limits.yml`, `config.yml`); Welten für Claiming (`config.yml`).
+- **Lands**: Claim-Limits/Level/Kosten (`levels.yml`, `player-limits.yml`, `config.yml`); Rollen/Flags im Land (`roles.yml`); Welten für Claiming (`config.yml`).
 - **PlotSquared**: Plot-Welt anlegen/anpassen (`config/worlds.yml` – Plot-/Straßengröße, Generator); globale Flags (`config/settings.yml`).
 
 ## Leitplanken

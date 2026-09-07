@@ -10,6 +10,7 @@ SlimeWorldManager lädt/speichert Welten im kompakten Slime-Format – Grundlage
 Nur **skyblock**: `skyblock/plugins/SlimeWorldManager/`
 - `config.yml` – allgemeine Optionen
 - `sources.yml` – **Storage-Quellen** (file/mysql/mongodb/redis)
+- `worlds.yml` – registrierte Slime-Welten (Quelle, Lade-Optionen)
 
 ## Storage & Secrets
 **Filestorage aktiv** (`sources.yml`: file). `mysql`/`mongodb`/`redis` sind **deaktiviert** – keine
@@ -17,6 +18,7 @@ Deploy-Secrets. Welt-Dateien selbst sind Serverdaten (nicht im Repo).
 
 ## Wichtige Einstellungen / typische Aufgaben
 - **Storage-Quelle** → `sources.yml` (aktuell `file`; Umstieg auf DB nur bewusst + mit Secret-Injektion).
+- **Welt registrieren / Lade-Optionen** → `worlds.yml` (Quellname muss zu `sources.yml` passen).
 - Zusammenspiel mit SuperiorSkyblock2 (SSB2 erzeugt/verwaltet die SlimeWorlds) – Quellname konsistent halten.
 
 ## Cross-Server / Gotchas

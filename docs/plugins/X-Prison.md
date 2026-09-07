@@ -10,8 +10,13 @@ zahlreiche **Addons** (Enchants, Pets, BlackMarket, Robot-/Pet-Finder u. v. m.).
 ## Wo (Server & Config-Pfade)
 Nur **rpg**: `rpg/plugins/X-Prison/`
 - `config.yml` – zentrale Optionen (u. a. `database_type: H2`)
-- Feature-YMLs: `blocks.yml`, `block-rewards.yml`, `autosell.yml`, `autominer.yml`, `battlepass.yml`,
-  `currencies.yml`, `bombs.yml`, `dailyrewards.yml` u. a.
+- **Mines/Blöcke/Rewards**: `mines.yml`, `blocks.yml`, `block-rewards.yml`
+- **Progression**: `ranks.yml` (Ränge), `prestiges.yml` (Prestige), `rebirths.yml` (Rebirth),
+  `multipliers.yml` (Sell-/Token-Multiplier), `gangs.yml` (Gangs), `quests.yml` (Quests)
+- **Pickaxe/Enchants**: `enchants.yml` + `enchants/` (Enchant-Definitionen), `pickaxe-levels.yml`,
+  `pickaxe-quality.yml`, `pickaxe-skins.yml`
+- **Weitere Feature-YMLs**: `autosell.yml`, `autominer.yml`, `battlepass.yml`, `currencies.yml`,
+  `bombs.yml`, `dailyrewards.yml`, `mining-stats.yml`, `logging.yml` (`history.yml` = Laufzeitdaten)
 - `addons/` – **jede** Erweiterung mit eigener Config (z. B. `addons/Dashboard/config.yml`,
   `addons/Pets/…`, `addons/AnimatedEnchants*/…`, `addons/BlackMarket/…`)
 
@@ -23,8 +28,12 @@ Nur **rpg**: `rpg/plugins/X-Prison/`
   Beim Bearbeiten die `__…__`-Tokens **erhalten**.
 
 ## Wichtige Einstellungen / typische Aufgaben
-- **Mines/Blöcke/Rewards** → `blocks.yml`, `block-rewards.yml`, `mines`-Konfiguration.
-- **Ränge/Prestige & Kosten** → entsprechende Kern-YMLs (Prison-eigene Progression, **nicht** Rankup-Plugin).
+- **Mines/Blöcke/Rewards** → `mines.yml`, `blocks.yml`, `block-rewards.yml`.
+- **Ränge/Prestige/Rebirth & Kosten** → `ranks.yml`, `prestiges.yml`, `rebirths.yml` (Prison-eigene
+  Progression, **nicht** Rankup-Plugin); Sell-/Token-Multiplier → `multipliers.yml`.
+- **Pickaxe/Enchants** → `enchants.yml` (+ `enchants/`), `pickaxe-levels.yml`, `pickaxe-quality.yml`,
+  `pickaxe-skins.yml`.
+- **Gangs/Quests/Battlepass** → `gangs.yml`, `quests.yml`, `battlepass.yml`.
 - **Addon aktivieren/anpassen** → jeweilige `addons/<Name>/config.yml`.
 - Economy des Prison-Servers = CMI (`S3_CMI`) + Prison-Currencies (Tokens/Gems).
 

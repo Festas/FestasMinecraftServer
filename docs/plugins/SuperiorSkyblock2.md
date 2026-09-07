@@ -10,7 +10,7 @@ Insel-Level, Missionen, Rollen/Rechte, Warps, Upgrades, Bewertung.
 Nur **skyblock**: `skyblock/plugins/SuperiorSkyblock2/`
 - `config.yml` – zentrale Konfiguration (Storage, Welt, Limits)
 - `menus/` – Insel-GUIs · `modules/` – aktivierte Module · `block-values.yml`, `heads.yml`,
-  `interactables.yml`, `entity-categories.yml`
+  `interactables.yml`, `entity-categories.yml`, `safe_blocks.yml`
 - `backup/`, `logs/` = Laufzeitdaten
 
 ## Storage & Secrets

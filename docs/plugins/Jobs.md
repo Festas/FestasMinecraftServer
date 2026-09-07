@@ -9,15 +9,19 @@ verdienen – eine der Einkommensquellen der Survival-Economy.
 ## Wo (Server & Config-Pfade)
 Nur **survival**: `survival/plugins/Jobs/`
 - `generalConfig.yml` – globale Optionen, Storage
-- `jobConfig.yml` – Job-Definitionen (Aktionen → Auszahlung)
-- weitere YMLs (Titel, Shop, Restrictions)
+- `jobConfig.yml` – Job-Definitionen (Aktionen → Auszahlung/EXP)
+- `titleConfig.yml` – Titel/Level-Bezeichnungen · `shopItems.yml` – Jobs-Shop · `boostedItems.yml` – Boost-Items
+- `restrictedAreas.yml`, `restrictedBlocks.yml` – Einkommens-Restriktionen · `schedule.yml` – zeitliche Boosts
+  (`Signs.yml`, `activeBoosts.yml`, `blockOwnerShips.yml` = Laufzeitdaten)
 
 ## Storage & Secrets
 Lokal **SQLite**; Economy über **CMI/Vault** (`S1_CMI`). Keine Deploy-Secrets.
 
 ## Wichtige Einstellungen / typische Aufgaben
 - **Auszahlungen/EXP je Aktion** → `jobConfig.yml` (Balancing der Einkommensquelle).
-- **Globale Limits/Boosts** → `generalConfig.yml`.
+- **Globale Limits/Boosts** → `generalConfig.yml`; **zeitliche Boosts** → `schedule.yml`.
+- **Titel/Level** → `titleConfig.yml`; **Jobs-Shop** → `shopItems.yml`; **Restriktionen** →
+  `restrictedAreas.yml`/`restrictedBlocks.yml`.
 - Mit ShopGUIPlus-Verkaufspreisen, NextGens-Drops und Rankup-Kosten abstimmen (Geldkreislauf).
 
 ## Cross-Server / Gotchas

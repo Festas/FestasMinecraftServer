@@ -9,6 +9,8 @@ Rechten, Level und Steuern – der Claiming-Layer der Survival-Welt (Overworld/N
 ## Wo (Server & Config-Pfade)
 Nur **survival**: `survival/plugins/Lands/`
 - `config.yml` – globale Optionen · `categories.yml`, `levels.yml`, `player-limits.yml`, `events.yml`
+- `roles.yml` – Rollen/Flags im Land (Owner/Trusted/Visitor …) · `web.yml` – Web-Karte/UI ·
+  `server-name.yml` – Server-Identität
 - `Modules/`, `Locale/`; `Data/`, `Logs/` = **Laufzeitdaten**
 
 ## Storage & Secrets
@@ -16,6 +18,7 @@ Lokal (Flatfile in `Data/`). DB-Optionen sind **dormante Vendor-Defaults** (MySQ
 
 ## Wichtige Einstellungen / typische Aufgaben
 - **Claim-Limits/Level/Kosten** → `levels.yml`, `player-limits.yml`, `config.yml`.
+- **Rollen/Rechte im Land** (Owner/Trusted/Visitor, Standard-Flags) → `roles.yml`.
 - **Welten**, in denen Claiming gilt → `config.yml`.
 - Abgrenzung zu PlotSquared: **Lands = frei beanspruchte Gebiete** in der Hauptwelt; **PlotSquared =
   rasterbasierte Plot-Welten**. Beide koexistieren auf Survival.

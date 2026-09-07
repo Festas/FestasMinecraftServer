@@ -9,7 +9,7 @@ Spieler-Handel) – Ergänzung zum Admin-Shop (ShopGUIPlus) und Markt (GlobalMar
 ## Wo (Server & Config-Pfade)
 Nur **survival**: `survival/plugins/ChestShop/`
 - `config.yml` – Optionen (Steuern, Schild-Format, Schutz)
-- Sprach-/Nachrichtendateien im Plugin-Ordner
+- `items.yml` – Item-Aliase (Kurznamen auf Schildern) · Sprach-/Nachrichtendateien im Plugin-Ordner
 
 ## Storage & Secrets
 Lokal; Economy über **CMI/Vault**. Keine geteilte DB, keine Secrets.

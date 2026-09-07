@@ -7,8 +7,13 @@ GlobalMarketPlus ist der Spieler-zu-Spieler-Markt (Angebote einstellen/kaufen, A
 den drei Gameplay-Servern.
 
 ## Wo (Server & Config-Pfade)
-`<server>/plugins/GlobalMarketPlus/Config.yml` (+ Nachrichten/Menüs im Plugin-Ordner) auf **survival,
-skyblock, rpg(mining)**.
+`<server>/plugins/GlobalMarketPlus/` auf **survival, skyblock, rpg(mining)**:
+- `Config.yml` – Kernoptionen (Gebühren, Limits, Laufzeiten, Storage/Split-Storage)
+- `Categories.yml` – Markt-Kategorien · `Currency.yml` – Währung(en) · `Groups.yml` – Rang-/Gruppenlimits
+- `ItemBlacklist.yml` – nicht handelbare Items · `Alias.yml` – Item-Aliase/Suche
+- `Merchant.yml` – NPC-/Merchant-Angebote · `Mailbox.yml` – Zustellung · `SignStore.yml` – Schild-Shops
+- `GlobalMarket.yml`, `GUISettings/`, `MessageConfigs/`, `Permissions/` – Menüs/Nachrichten/Rechte
+  (`SerializedItems.yml` = Laufzeitdaten)
 
 ## Storage & Secrets
 - **Default: SQLite-Storage** (lokal). `Split-Storage.Enabled: false` → kein MySQL, **kein**
@@ -17,6 +22,9 @@ skyblock, rpg(mining)**.
 
 ## Wichtige Einstellungen / typische Aufgaben
 - **Gebühren/Limits/Laufzeiten** von Angeboten → `Config.yml`.
+- **Kategorien/Währung/Gruppenlimits** → `Categories.yml`, `Currency.yml`, `Groups.yml`.
+- **Item sperren / Alias** → `ItemBlacklist.yml`, `Alias.yml`; **Merchant-/Mailbox-/Schild-Shops** →
+  `Merchant.yml`, `Mailbox.yml`, `SignStore.yml`. Menüs/Nachrichten → `GUISettings/`, `MessageConfigs/`.
 - Wenn ein serverübergreifender Markt gewünscht ist: `Split-Storage`/MySQL + Sync-Optionen aktivieren und
   Secret-Injektion einrichten (aktuell nicht der Fall) – dann die in der Config genannten Sync-Settings auf
   allen beteiligten Servern **identisch** halten.

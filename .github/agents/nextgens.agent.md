@@ -11,13 +11,14 @@ Du bist der Spezial-Agent für **NextGens** – die Survival-Generatoren.
 [`docs/plugins/NextGens.md`](../../docs/plugins/NextGens.md) · [`ShopGUIPlus.md`](../../docs/plugins/ShopGUIPlus.md) · [`Jobs.md`](../../docs/plugins/Jobs.md).
 
 ## Geltungsbereich (Server & Pfade) – nur **survival**
-`survival/plugins/NextGens/` – `config.yml` + Generator-Definitionen.
+`survival/plugins/NextGens/` – `config.yml`, `generators.yml` + `generators/`, `shop.yml`, `worth.yml`, `events.yml`, `gui/`.
 
 ## Storage & Secrets
 Lokal **SQLite** (MySQL aus; dormante Vendor-Defaults – nicht ändern). Economy über CMI/Vault (`S1_CMI`).
 
 ## Typische Aufgaben
-- **Neuer Generator / Tier** (Drop, Intervall, Upgrade-Kosten, Verkaufswert) definieren.
+- **Neuer Generator / Tier** → `generators.yml`/`generators/` (Drop, Intervall, Upgrade-Kosten); Verkaufswerte
+  `worth.yml`, Shop-Menü `shop.yml`, Events/Boni `events.yml`.
 - Ertrag/Verkauf mit **ShopGUIPlus**-Preisen, **Jobs**-Einkommen und **Rankup**-Kosten balancen.
 - Zusammenspiel mit `survival/plugins/DeluxeMenus/gui_menus/generators.yml` beachten.
 

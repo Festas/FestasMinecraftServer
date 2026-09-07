@@ -11,7 +11,8 @@ Jedes Backend: `<server>/plugins/Oraxen/`
 - `settings.yml` – globale Optionen, Pack-Auslieferung
 - `mechanics.yml` – aktivierte Mechaniken
 - `items/` – Item-Definitionen · `glyphs/` – Glyphs/Emojis · `recipes/` – Rezepte
-- `pack/` – Resourcepack-Quellen (Texturen/Modelle) · `font.yml`, `hud.yml`, `sounds.yml`
+- `pack/` – Resourcepack-Quellen (Texturen/Modelle) · `font.yml`, `hud.yml`, `sounds.yml`,
+  `paintings.yml` (Custom-Gemälde), `text_effects.yml` (Text-/Chat-Effekte)
 
 ## Storage & Secrets
 Lokal, keine DB, keine Secrets. Die Pack-Auslieferung kann über einen Host/Hash laufen (siehe
