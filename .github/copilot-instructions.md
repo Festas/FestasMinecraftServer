@@ -8,6 +8,7 @@ Java-Build – geändert werden fast ausschließlich **YAML/Config/Skript-Dateie
 Für **jede** Aufgabe an einem Plugin **zuerst** die Wissensbasis konsultieren:
 - **Index:** [`docs/plugins/README.md`](../docs/plugins/README.md) – Matrix (Plugin→Server), Storage-/Secret-/Deploy-Modell, Konventionen.
 - **Pro Plugin:** `docs/plugins/<Plugin>.md` – Zweck, exakte Config-Pfade je Server, Storage/Secrets, typische Aufgaben, Gotchas.
+- **Feature über mehrere Plugins:** [`docs/plugins/CROSS-PLUGIN.md`](../docs/plugins/CROSS-PLUGIN.md) – Integrations-Backbone (Ränge/Economy/Platzhalter/Items/Routing), Feature-Playbooks (Rang, Item, Generator, Menü, Welt, Server) und welche Agents in welcher Reihenfolge zu beauftragen sind.
 - **Custom Agents:** [`.github/agents/`](agents/) – pro Plugin/Subsystem ein Agent, der es **gezielt auf allen Servern** bearbeitet.
 
 Wenn ein passender `docs/plugins/<Plugin>.md` existiert, ist er die maßgebliche Quelle. Weitere Detaildocs

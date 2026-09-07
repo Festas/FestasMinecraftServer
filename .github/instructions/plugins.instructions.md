@@ -11,6 +11,9 @@ Du bearbeitest gerade eine **Plugin-Konfiguration**. Bevor du Änderungen machst
    Server**, Storage/Secrets, typische Aufgaben und Gotchas.
 2. **Passenden Custom Agent prüfen:** In [`.github/agents/`](../agents/) gibt es pro Plugin/Subsystem einen
    Agent, der es **gezielt auf allen Servern** bearbeitet. Nutze ihn bzw. seine Vorgehensweise.
+3. **Berührt das Feature mehrere Plugins?** (Rang, Item, Generator, Menü, Welt, Server, Währung, Broadcast)
+   → [`docs/plugins/CROSS-PLUGIN.md`](../../docs/plugins/CROSS-PLUGIN.md) enthält das Integrations-Backbone,
+   Schritt-für-Schritt-Playbooks und die Cross-Plugin-Validierungs-Checkliste.
 
 ## Harte Regeln
 - **Secrets/Platzhalter `__…__` wörtlich erhalten** – nie mit echten Werten auffüllen, nie entfernen.

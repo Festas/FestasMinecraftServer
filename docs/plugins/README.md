@@ -10,6 +10,10 @@ nutzen** können, bevor sie eine Plugin-Konfiguration ändern.
 - **Spezialisierte Agents:** Für die wichtigsten Plugins/Subsysteme gibt es Custom Agents unter
   [`.github/agents/`](../../.github/agents/README.md), die ein Plugin **gezielt auf allen Servern**
   bearbeiten.
+- **Feature über mehrere Plugins?** Für Ketten, die **mehrere Plugins/Agents gleichzeitig** berühren
+  (neuer Rang, Item, Generator, Menü, Welt, Server), ist [`CROSS-PLUGIN.md`](CROSS-PLUGIN.md) die
+  zentrale Orchestrierungs-/Abhängigkeits-Referenz (Integrations-Backbone, Feature-Playbooks,
+  Validierungs-Checkliste).
 
 > **Wichtig – Ist-Stand statt Alt-Doku:** Diese Dateien beschreiben den **tatsächlichen Ordner-Inhalt**
 > (`<server>/plugins/`). Die älteren Übersichten [`docs/PLUGINS.md`](../PLUGINS.md) und die
@@ -25,8 +29,11 @@ nutzen** können, bevor sie eine Plugin-Konfiguration ändern.
 2. Das passende **`docs/plugins/<Plugin>.md`** lesen (Zweck, Server, Config-Pfade, Storage, Secrets,
    typische Aufgaben, Guardrails).
 3. Prüfen, ob es einen **Custom Agent** für das Plugin/Subsystem gibt und ggf. diesen verwenden.
-4. Änderungen **auf allen betroffenen Servern konsistent** vornehmen (siehe Server-Matrix unten).
-5. **Secrets-/Deploy-Regeln** einhalten (siehe unten) und vor dem Commit validieren.
+4. **Bei Features über mehrere Plugins:** [`CROSS-PLUGIN.md`](CROSS-PLUGIN.md) konsultieren – dort stehen
+   das Integrations-Backbone (Ränge/Economy/Platzhalter/Items/Routing), Schritt-für-Schritt-Playbooks und
+   welche Agents in welcher Reihenfolge zu beauftragen sind.
+5. Änderungen **auf allen betroffenen Servern konsistent** vornehmen (siehe Server-Matrix unten).
+6. **Secrets-/Deploy-Regeln** einhalten (siehe unten) und vor dem Commit validieren.
 
 ---
 
@@ -219,6 +226,8 @@ wird deployt. Datenbank-/`data/`-Inhalte gehören **nicht** ins Repo und werden 
 
 ## Verwandte Referenzen
 
+- **[`CROSS-PLUGIN.md`](CROSS-PLUGIN.md)** – Cross-Plugin-Features, Integrations-Backbone & Feature-Playbooks
+  (Orchestrierung über mehrere Plugins/Agents)
 - [`docs/ARCHITECTURE.md`](../ARCHITECTURE.md) · [`docs/OPERATIONS.md`](../OPERATIONS.md) ·
   [`docs/WORKFLOWS.md`](../WORKFLOWS.md) · [`docs/PLUGINS.md`](../PLUGINS.md)
 - [`docs/infrastructure/`](../infrastructure/README.md) (DB, Plan, BlueMap, Backups, Ressourcen-Packs)
