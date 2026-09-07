@@ -2,6 +2,12 @@
 
 Vollständige Übersicht aller verwendeten Plugins pro Server.
 
+> **🤖 Für KI-Agents & maßgebliche Referenz:** Die aktuell gepflegte, verifizierte **Plugin-Wissensbasis**
+> liegt unter [`plugins/README.md`](plugins/README.md) (ein Referenzdokument je Plugin, inkl. exakter
+> Config-Pfade, Storage-/Secret-Modell und Gotchas). Dazu gibt es passende **Custom AI Agents** in
+> [`.github/agents/`](../.github/agents/). Dieses Dokument hier bleibt als grobe Gesamtübersicht bestehen.
+
+
 > **📌 Server-spezifische Plugin-Stacks:** Fokussierte Stack-Dokumente mit Ist-Bestand und Empfehlungen:
 > [lobby/PLUGINS.md](lobby/PLUGINS.md) · [survival/PLUGINS.md](survival/PLUGINS.md) ·
 > [skyblock/PLUGINS.md](skyblock/PLUGINS.md) · [prison/PLUGINS.md](prison/PLUGINS.md).
