@@ -13,8 +13,8 @@ Du bist der Spezial-Agent für den **Skyblock-Kern**: **SuperiorSkyblock2 (SSB2)
 
 ## Geltungsbereich (Server & Pfade) – nur **skyblock**
 - SSB2: `skyblock/plugins/SuperiorSkyblock2/` – `config.yml`, `menus/`, `modules/`, `block-values.yml`,
-  `heads.yml`, `interactables.yml`, `entity-categories.yml`. (`backup/`, `logs/` = Laufzeit.)
-- SWM: `skyblock/plugins/SlimeWorldManager/` – `config.yml`, `sources.yml`.
+  `heads.yml`, `interactables.yml`, `entity-categories.yml`, `safe_blocks.yml`. (`backup/`, `logs/` = Laufzeit.)
+- SWM: `skyblock/plugins/SlimeWorldManager/` – `config.yml`, `sources.yml`, `worlds.yml`.
 
 ## Storage & Secrets
 - SSB2: **SQLite** (`config.yml`; MySQL-`root`-Felder sind dormante Defaults). **Kein** `SKYBLOCK_DB_ENV`.
@@ -24,6 +24,7 @@ Du bist der Spezial-Agent für den **Skyblock-Kern**: **SuperiorSkyblock2 (SSB2)
 - **Insel-Level/Block-Werte** → `block-values.yml`; **Missionen/Upgrades/Limits** → `config.yml`/`modules/`.
 - **Insel-GUIs** → `menus/`. **Rechte-Rollen** auf der Insel (statt WorldGuard – Skyblock nutzt kein WorldGuard).
 - Platzhalter `%superior_island_level%` für TAB/Scoreboard → PAPI-Expansion `SuperiorSkyblock` sicherstellen.
+- **SWM-Storage/Welten** → `sources.yml` (Quelle, aktuell `file`), `worlds.yml` (Welt registrieren; Quellname konsistent).
 
 ## Leitplanken
 - Insel-Welten liegen als **SlimeWorlds** – **nicht** in geteilte Multiverse-Inventory-Gruppen legen.

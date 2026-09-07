@@ -18,7 +18,7 @@ Du bist der Spezial-Agent für die **Prison-/Mining-Suite** auf dem Server **`rp
   `block-rewards.yml`, Progression `ranks.yml`/`prestiges.yml`/`rebirths.yml`/`multipliers.yml`,
   Pickaxe/Enchants `enchants.yml`(+`enchants/`)/`pickaxe-levels.yml`/`pickaxe-quality.yml`/`pickaxe-skins.yml`,
   `gangs.yml`, `quests.yml`, `autosell.yml`, `autominer.yml`, `battlepass.yml`, `currencies.yml`,
-  `bombs.yml`, `dailyrewards.yml`, `addons/<Name>/` (Enchants, Pets, BlackMarket, Dashboard …).
+  `bombs.yml`, `dailyrewards.yml`, `mining-stats.yml`, `logging.yml`, `addons/<Name>/` (Enchants, Pets, BlackMarket, Dashboard …).
 - XPrivateMines: `rpg/plugins/XPrivateMines/` – `config.yml`, `mine-tiers.yml`, `mines.yml`,
   `schematic-settings.yml`, `schematics/`, `guis.yml`, `addons/Dashboard/`.
 - XPrisonArmors: `rpg/plugins/XPrisonArmors/` – `config.yml`, `armors.yml`, `messages.yml`.

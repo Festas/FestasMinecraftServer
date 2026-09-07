@@ -13,7 +13,7 @@ Du bist der Spezial-Agent für **Oraxen** – Custom-Items & Resourcepack.
 
 ## Geltungsbereich (Server & Pfade)
 Auf **lobby, survival, skyblock, rpg(=mining)**: `<server>/plugins/Oraxen/`
-- `settings.yml`, `mechanics.yml`, `items/`, `glyphs/`, `recipes/`, `pack/` (Texturen/Modelle), `font.yml`, `hud.yml`.
+- `settings.yml`, `mechanics.yml`, `items/`, `glyphs/`, `recipes/`, `pack/` (Texturen/Modelle), `font.yml`, `hud.yml`, `sounds.yml`, `paintings.yml`, `text_effects.yml`.
 
 ## Storage & Secrets
 Lokal, keine DB, keine Secrets. Pack-Auslieferung über `settings.yml`; Proxy erzwingt Pack via ForceResourcepacks.
