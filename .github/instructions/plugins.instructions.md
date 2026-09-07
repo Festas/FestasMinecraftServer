@@ -13,7 +13,9 @@ Du bearbeitest gerade eine **Plugin-Konfiguration**. Bevor du Änderungen machst
    Agent, der es **gezielt auf allen Servern** bearbeitet. Nutze ihn bzw. seine Vorgehensweise.
 3. **Berührt das Feature mehrere Plugins?** (Rang, Item, Generator, Menü, Welt, Server, Währung, Broadcast)
    → [`docs/plugins/CROSS-PLUGIN.md`](../../docs/plugins/CROSS-PLUGIN.md) enthält das Integrations-Backbone,
-   Schritt-für-Schritt-Playbooks und die Cross-Plugin-Validierungs-Checkliste.
+   Schritt-für-Schritt-Playbooks und die Cross-Plugin-Validierungs-Checkliste. Zum **Dirigieren** solcher
+   Ketten (Delegation an die Plugin-Agents in der richtigen Reihenfolge) gibt es den Orchestrator-Agent:
+   [`docs/plugins/ORCHESTRATOR.md`](../../docs/plugins/ORCHESTRATOR.md).
 
 ## Harte Regeln
 - **Secrets/Platzhalter `__…__` wörtlich erhalten** – nie mit echten Werten auffüllen, nie entfernen.

@@ -13,7 +13,9 @@ nutzen** können, bevor sie eine Plugin-Konfiguration ändern.
 - **Feature über mehrere Plugins?** Für Ketten, die **mehrere Plugins/Agents gleichzeitig** berühren
   (neuer Rang, Item, Generator, Menü, Welt, Server), ist [`CROSS-PLUGIN.md`](CROSS-PLUGIN.md) die
   zentrale Orchestrierungs-/Abhängigkeits-Referenz (Integrations-Backbone, Feature-Playbooks,
-  Validierungs-Checkliste).
+  Validierungs-Checkliste). Ein **dedizierter Orchestrator-/Main-Agent**, der diese Ketten ausführt
+  (Delegation an die Plugin-Agents), ist in [`ORCHESTRATOR.md`](ORCHESTRATOR.md) beschrieben (inkl.
+  fertiger Agent-Vorlage).
 
 > **Wichtig – Ist-Stand statt Alt-Doku:** Diese Dateien beschreiben den **tatsächlichen Ordner-Inhalt**
 > (`<server>/plugins/`). Die älteren Übersichten [`docs/PLUGINS.md`](../PLUGINS.md) und die
@@ -228,6 +230,8 @@ wird deployt. Datenbank-/`data/`-Inhalte gehören **nicht** ins Repo und werden 
 
 - **[`CROSS-PLUGIN.md`](CROSS-PLUGIN.md)** – Cross-Plugin-Features, Integrations-Backbone & Feature-Playbooks
   (Orchestrierung über mehrere Plugins/Agents)
+- **[`ORCHESTRATOR.md`](ORCHESTRATOR.md)** – Main-/Orchestrator-Agent, der die Feature-Playbooks ausführt
+  und die Ein-Plugin-/Bündel-Agents nachrangig beauftragt (Bauanleitung + fertige Agent-Vorlage)
 - [`docs/ARCHITECTURE.md`](../ARCHITECTURE.md) · [`docs/OPERATIONS.md`](../OPERATIONS.md) ·
   [`docs/WORKFLOWS.md`](../WORKFLOWS.md) · [`docs/PLUGINS.md`](../PLUGINS.md)
 - [`docs/infrastructure/`](../infrastructure/README.md) (DB, Plan, BlueMap, Backups, Ressourcen-Packs)

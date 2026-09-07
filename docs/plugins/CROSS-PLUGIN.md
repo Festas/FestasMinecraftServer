@@ -28,9 +28,11 @@ Orchestrierungs- und Abhängigkeits-Referenz**: Es sagt, **welche Plugins/Agents
 5. **Am Ende validieren:** Die [Cross-Plugin-Validierungs-Checkliste](#5-cross-plugin-validierungs-checkliste)
    durchgehen und typische [Anti-Patterns](#6-anti-patterns--typische-bruchstellen) ausschließen.
 
-> **Für den orchestrierenden (Eltern-)Agent:** Es gibt **keinen** automatischen Feature-Orchestrator.
-> Der übergeordnete Agent identifiziert anhand der Playbooks die beteiligten Plugins und ruft die
-> jeweiligen **Ein-Plugin-Agents nacheinander** auf. Die Bündel-Agents (`progression`, `prison`,
+> **Für den orchestrierenden (Eltern-)Agent:** Zwei Wege führen zum Ziel. **(A)** Der übergeordnete
+> Agent orchestriert selbst: Er identifiziert anhand der Playbooks die beteiligten Plugins und ruft die
+> jeweiligen **Ein-Plugin-Agents nacheinander** auf. **(B)** Ein **dedizierter Orchestrator-Agent**
+> übernimmt das Dirigieren (delegiert via `agent`-Tool, ändert selbst keine Config) – Bauanleitung +
+> fertige Vorlage in [`ORCHESTRATOR.md`](ORCHESTRATOR.md). Die Bündel-Agents (`progression`, `prison`,
 > `proxy-network`, `superiorskyblock2`, `multiverse`, `survival-shops`, `land-claims`) decken bereits
 > mehrere zusammengehörige Plugins ab – ihre Grenzen stehen in [Abschnitt 2](#2-agent--plugin-zuständigkeit).
 
@@ -277,6 +279,8 @@ Nach jeder Feature-Kette durchgehen (ergänzt die generischen Listen in [`docs/C
 
 ## 7. Referenzen
 
+- **[`ORCHESTRATOR.md`](ORCHESTRATOR.md)** – Main-/Orchestrator-Agent, der diese Playbooks ausführt
+  (Delegation an die Ein-Plugin-/Bündel-Agents) – Bauanleitung + fertige Agent-Vorlage
 - [README (Wissensbasis-Index)](README.md) · [`docs/CHECKLISTS.md`](../CHECKLISTS.md) ·
   [`docs/NEW_SERVERS.md`](../NEW_SERVERS.md) · [`docs/ARCHITECTURE.md`](../ARCHITECTURE.md)
 - Backbone-Docs: [LuckPerms.md](LuckPerms.md) · [CMI.md](CMI.md) · [PlaceholderAPI.md](PlaceholderAPI.md) ·
