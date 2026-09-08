@@ -38,148 +38,137 @@ items:
     priority: 1
     display_name: '&b&l❓ Mining Server Hilfe'
     lore:
-      - '&7Willkommen auf dem Mining Server!'
-      - '&7Hier erfährst du alles über das Abbauen.'
+      - '&7Finde deinen Start, Fortschritt'
+      - '&7und die wichtigsten Mining-Wege.'
 
   # ==============================================================
-  # ABBAU-ZONEN
+  # SCHNELLSTART
   # ==============================================================
-  'zones':
+  'quickstart':
     material: STONE
     slot: 10
     priority: 1
-    display_name: '&7&l⛏ Abbau-Zonen'
+    display_name: '&7&l⛏ Schnellstart'
     lore:
-      - '&7Baue in Zonen ab und schalte'
-      - '&7nach und nach neue frei!'
+      - '&7Starte mit Mining, Spitzhacke,'
+      - '&7Rankup und den ersten Routinen.'
       - ''
-      - '&8» &fJede Zone enthält andere Blöcke'
-      - '&8» &fZonen &7reset sich automatisch'
-      - '&8» &fAutosell &7verkauft Blöcke direkt'
-      - '&8» &fHöhere Zonen = &fwertvollere Blöcke'
+      - '&e► Klicke zum Öffnen'
+    left_click_commands:
+      - '[openguimenu] advanced_menu'
+    right_click_commands:
+      - '[openguimenu] advanced_menu'
+
+  # ==============================================================
+  # FORTSCHRITT
+  # ==============================================================
+  'progress':
+    material: PAPER
+    slot: 12
+    priority: 1
+    display_name: '&e&l📋 Fortschritt'
+    lore:
+      - '&7Checkliste für Rankup, Prestige,'
+      - '&7Private Mine und Pickaxe-Fortschritt.'
       - ''
-      - '&eBefehle:'
-      - '&e/mine &8– &7Zur Mine teleportieren'
-      - '&e/mines &8– &7Alle Minen anzeigen'
+      - '&e► Klicke zum Öffnen'
+    left_click_commands:
+      - '[openguimenu] requirements_menu'
+    right_click_commands:
+      - '[openguimenu] requirements_menu'
+
+  # ==============================================================
+  # MINE
+  # ==============================================================
+  'mine':
+    material: DIAMOND_PICKAXE
+    slot: 14
+    priority: 1
+    display_name: '&b&l⛏ Mine-Überblick'
+    lore:
+      - '&7Öffne sichere Mining-Wege mit'
+      - '&7Schnellstart, Fortschritt und Hilfe.'
+      - ''
+      - '&e► Klicke zum Öffnen'
+    left_click_commands:
+      - '[openguimenu] warps'
+    right_click_commands:
+      - '[openguimenu] warps'
 
   # ==============================================================
   # RANKUP
   # ==============================================================
   'rankup':
     material: EXPERIENCE_BOTTLE
-    slot: 12
+    slot: 16
     priority: 1
     display_name: '&a&l⬆ Rankup'
     lore:
-      - '&7Verdiene Geld beim Abbauen'
-      - '&7und steige im Rang auf!'
+      - '&7Verdiene Geld beim Abbauen und'
+      - '&7kaufe deinen nächsten Rang.'
       - ''
-      - '&8» &fBlöcke abbauen = Geld'
-      - '&8» &fGeld ausgeben = Rang aufsteigen'
-      - '&8» &fHöhere Ränge &7schalten neue Zonen frei'
+      - '&e► Linksklick: &7/rankup'
+      - '&e► Rechtsklick: &7Fortschritt öffnen'
+    left_click_commands:
+      - '[close]'
+      - '[player] rankup'
+    right_click_commands:
+      - '[openguimenu] requirements_menu'
+
+  # ==============================================================
+  # DAILY & TIPPS
+  # ==============================================================
+  'daily_tips':
+    material: SUNFLOWER
+    slot: 22
+    priority: 1
+    display_name: '&e&l☀ Daily & Tipps'
+    lore:
+      - '&7Hol dir tägliche Extras ab'
+      - '&7oder nimm dir einen Tipp mit.'
       - ''
-      - '&eBefehle:'
-      - '&e/rankup &8– &7Nächsten Rang kaufen'
-      - '&e/ranks &8– &7Alle Ränge anzeigen'
-      - '&e/bal &8– &7Kontostand anzeigen'
+      - '&e► Linksklick: &7/daily'
+      - '&e► Rechtsklick: &7/tips'
+    left_click_commands:
+      - '[close]'
+      - '[player] daily'
+    right_click_commands:
+      - '[close]'
+      - '[player] tips'
 
   # ==============================================================
   # PRESTIGE
   # ==============================================================
   'prestige':
     material: NETHER_STAR
-    slot: 14
+    slot: 28
     priority: 1
     display_name: '&6&l✦ Prestige'
     lore:
-      - '&7Nach dem höchsten Rang kannst du'
-      - '&7Prestige aufsteigen!'
+      - '&7Prestige wird dein nächster großer'
+      - '&7Schritt nach den normalen Rängen.'
       - ''
-      - '&8» &fPrestige &7setzt deinen Rang zurück'
-      - '&8» &fDafür erhältst du &fMultiplikatoren'
-      - '&8» &fMehr Prestige = &fmehr Geld pro Block'
-      - ''
-      - '&eBefehle:'
-      - '&e/prestige &8– &7Prestige aufsteigen'
+      - '&8» &f/prestige'
+    left_click_commands:
+      - '[close]'
+      - '[player] prestige'
 
   # ==============================================================
-  # SPITZHACKEN
-  # ==============================================================
-  'pickaxes':
-    material: DIAMOND_PICKAXE
-    slot: 16
-    priority: 1
-    display_name: '&b&l⛏ Spitzhacken'
-    lore:
-      - '&7Deine Spitzhacke ist dein wichtigstes Tool!'
-      - ''
-      - '&8» &fAufwerten &7für mehr Blöcke pro Schlag'
-      - '&8» &fEnchants &7für Speed, Bonus und Extras'
-      - '&8» &fSeltene Enchants &7aus Kisten und Events'
-      - ''
-      - '&7Je besser die Spitzhacke,'
-      - '&7desto schneller wirst du reich!'
-
-  # ==============================================================
-  # PRIVATE MINES
+  # PRIVATE MINE
   # ==============================================================
   'private_mine':
     material: DIAMOND_ORE
-    slot: 28
+    slot: 30
     priority: 1
     display_name: '&d&l💎 Private Mine'
     lore:
-      - '&7Schalte deine eigene private Mine frei!'
+      - '&7Öffne deine eigene Mine und'
+      - '&7baue in Ruhe an deinem Fortschritt.'
       - ''
-      - '&8» &fNur du &7kannst darin abbauen'
-      - '&8» &fUpgraden &7für bessere Blöcke'
-      - '&8» &fReset &7füllt sie wieder auf'
-      - ''
-      - '&eBefehle:'
-      - '&e/pmine &8– &7Private Mine öffnen'
-      - '&e/pmine tp &8– &7Zur Mine teleportieren'
-
-  # ==============================================================
-  # TIPPS
-  # ==============================================================
-  'tips':
-    material: BOOK
-    slot: 22
-    priority: 1
-    display_name: '&d&l💡 Mining-Tipps'
-    lore:
-      - '&7Brauchst du einen guten Rat?'
-      - ''
-      - '&8» &fKlicke für einen zufälligen Tipp!'
-      - '&8» &fOder nutze jederzeit &e/tips'
-      - ''
-      - '&7Der &bNetzwerk-Kompass &7in deinem'
-      - '&7Inventar öffnet dieses Menü.'
+      - '&8» &f/pmine'
     left_click_commands:
-      - '[player] /tips'
-    right_click_commands:
-      - '[player] /tips'
-
-  # ==============================================================
-  # ALLE BEFEHLE
-  # ==============================================================
-  'commands':
-    material: COMMAND_BLOCK
-    slot: 30
-    priority: 1
-    display_name: '&e&l⌨ Alle Befehle'
-    lore:
-      - '&7Die wichtigsten Befehle:'
-      - ''
-      - '&e/mine &8– &7Zur Mine teleportieren'
-      - '&e/mines &8– &7Alle Minen anzeigen'
-      - '&e/rankup &8– &7Rang aufsteigen'
-      - '&e/ranks &8– &7Ränge anzeigen'
-      - '&e/prestige &8– &7Prestige aufsteigen'
-      - '&e/pmine &8– &7Private Mine'
-      - '&e/daily &8– &7Tägliche Belohnung'
-      - '&e/tips &8– &7Zufälliger Tipp'
-      - '&e/lobby &8– &7Zurück zur Lobby'
+      - '[close]'
+      - '[player] pmine'
 
   # ==============================================================
   # SUPPORT
@@ -210,7 +199,7 @@ items:
       - '&7Verbinde dich zur Lobby'
     left_click_commands:
       - '[close]'
-      - '[player] /lobby'
+      - '[player] lobby'
     right_click_commands:
       - '[close]'
-      - '[player] /lobby'
+      - '[player] lobby'

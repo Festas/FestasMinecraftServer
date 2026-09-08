@@ -43,14 +43,14 @@ command /tips:
 
 function miningTip(p: player):
     delete {_tips::*}
-    add "&7Baue Blöcke in den &e/mine &7Zonen ab – &autosell &7verkauft sie direkt!" to {_tips::*}
+    add "&7Starte in den &e/mine &7Zonen und hole dir davor deine Belohnung mit &e/daily&7." to {_tips::*}
     add "&7Gib dein Geld für &e/rankup &7aus und schalte bessere Zonen frei." to {_tips::*}
     add "&7Am höchsten Rang angekommen? Steig mit &e/prestige &7auf für Multiplikatoren!" to {_tips::*}
     add "&7Werte deine &bSpitzhacke &7auf für mehr Blöcke pro Schlag & starke Enchants." to {_tips::*}
     add "&7Schalte deine eigene &d/pmine &7(Private Mine) frei und baue ungestört ab." to {_tips::*}
     add "&7Prüfe deinen Fortschritt mit &e/ranks &7und dein Guthaben mit &e/bal&7." to {_tips::*}
     add "&7Seltene Enchants findest du in Kisten und bei Events – halte die Augen offen!" to {_tips::*}
-    add "&7Der &bNetzwerk-Kompass &7in deinem Inventar öffnet jederzeit das Hilfe-Menü." to {_tips::*}
+    add "&7Nutze &e/nav &7oder den &bNetzwerk-Kompass&7, um das Hilfe-Menü jederzeit zu öffnen." to {_tips::*}
     set {_tip} to random element out of {_tips::*}
     send "&8[&b&lMining&8] &7Tipp: %{_tip}%" to {_p}
 

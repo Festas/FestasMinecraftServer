@@ -1,0 +1,115 @@
+# Pfad: plugins/DeluxeMenus/gui_menus/warps.yml
+# Mining Schnellreise – sichere Kurzwege und Menü-Einstiege
+menu_title: '&8» &5Mining Schnellreise'
+open_command: miningwarps
+size: 27
+
+items:
+  'filler':
+    material: BLACK_STAINED_GLASS_PANE
+    slots:
+      - '0-26'
+    display_name: '&f'
+    priority: 2
+
+  'header':
+    material: ENDER_PEARL
+    slot: 4
+    priority: 1
+    display_name: '&5&l🌀 Mining Schnellreise'
+    lore:
+      - '&7Öffne sichere Wege rund ums Mining,'
+      - '&7deine Private Mine und die Hilfemenüs.'
+
+  'mine':
+    material: DIAMOND_PICKAXE
+    slot: 10
+    priority: 1
+    display_name: '&b&l⛏ Mine-Überblick'
+    lore:
+      - '&7Öffne den Mining-Überblick mit'
+      - '&7Schnellstart, Fortschritt und Hilfe.'
+      - ''
+      - '&e► Klicke zum Öffnen'
+    left_click_commands:
+      - '[openguimenu] advanced_menu'
+    right_click_commands:
+      - '[openguimenu] advanced_menu'
+
+  'private_mine':
+    material: DIAMOND_ORE
+    slot: 12
+    priority: 1
+    display_name: '&d&l💎 Zur Private Mine'
+    lore:
+      - '&7Öffne deine Private Mine für'
+      - '&7ruhigen Fortschritt und gezielte Clears.'
+      - ''
+      - '&e► Klicke: &7/pmine'
+    left_click_commands:
+      - '[close]'
+      - '[player] pmine'
+    right_click_commands:
+      - '[close]'
+      - '[player] pmine'
+
+  'quickstart':
+    material: NETHERITE_PICKAXE
+    slot: 14
+    priority: 1
+    display_name: '&7&l🚀 Schnellstart'
+    lore:
+      - '&7Zurück zum Mining-Schnellstart'
+      - '&7mit Überblick, Rankup und Daily.'
+      - ''
+      - '&e► Klicke zum Öffnen'
+    left_click_commands:
+      - '[openguimenu] advanced_menu'
+    right_click_commands:
+      - '[openguimenu] advanced_menu'
+
+  'progress':
+    material: PAPER
+    slot: 16
+    priority: 1
+    display_name: '&e&l📋 Fortschritt'
+    lore:
+      - '&7Öffne die Mining-Checkliste mit'
+      - '&7Rankup, Prestige und Private Mine.'
+      - ''
+      - '&e► Klicke zum Öffnen'
+    left_click_commands:
+      - '[openguimenu] requirements_menu'
+    right_click_commands:
+      - '[openguimenu] requirements_menu'
+
+  'help':
+    material: BOOK
+    slot: 21
+    priority: 1
+    display_name: '&3&l❓ Hilfe'
+    lore:
+      - '&7Zurück zum Mining-Hilfemenü'
+      - '&7mit allen wichtigen Erklärungen.'
+      - ''
+      - '&e► Klicke zum Öffnen'
+    left_click_commands:
+      - '[openguimenu] help_menu'
+    right_click_commands:
+      - '[openguimenu] help_menu'
+
+  'lobby':
+    material: ARROW
+    slot: 23
+    priority: 1
+    display_name: '&7&l← Zur Lobby'
+    lore:
+      - '&7Verbinde dich zurück zur Lobby.'
+      - ''
+      - '&e► Klicke: &7/lobby'
+    left_click_commands:
+      - '[close]'
+      - '[player] lobby'
+    right_click_commands:
+      - '[close]'
+      - '[player] lobby'

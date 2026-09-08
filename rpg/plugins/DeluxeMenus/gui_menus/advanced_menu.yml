@@ -1,121 +1,147 @@
-#  A DeluxeMenus advanced configuration guide
-#=========================================================
-menu_title: '&8> &6&lD&eM &bAdvanced Example'
-open_command:
-  - advancedmenu
-  - advancedexamplemenu
-  - themostadvancedmenuintheworld
-open_commands:
-  - '[sound] BLOCK_BEACON_ACTIVATE'
-  - '[message] &7Opening Advanced example menu, Plugin created by &bextended_clip&7!'
+# Pfad: plugins/DeluxeMenus/gui_menus/advanced_menu.yml
+# Mining Schnellstart – konkrete erste Schritte
+menu_title: '&8» &bMining Schnellstart'
+open_command: advancedmenu
 size: 27
-# as always, only cool people can open this menu :)
-open_requirement:
-  requirements:
-    permission:
-      type: has permission
-      permission: deluxemenus.admin
-      deny_commands:
-        - "[message] &8[&bDeluxe&eMenus&8] &cYou don't have perms for this!"
+
 items:
-  'example':
-    material: LIME_DYE
-    slot: 11
-    priority: 1
-    update: true
-    item_flags:
-      - HIDE_ATTRIBUTES
-    display_name: '&bExample Kit'
-    lore:
-      - ''
-      - '&7Cooldown : &f3 Days'
-      - '&7Left Click to Redeem'
-    view_requirement:
-      requirements:
-        kit_requirement:
-          type: string equals
-          input: '%essentials_kit_is_available_example%'
-          output: 'yes'
-        kit_perm:
-          type: has permission
-          permission: essentials.kits.example
-    left_click_commands:
-      - '[player] kit example'
-      - '[close]'
-  'examplecd':
-    material: GRAY_DYE
-    slot: 11
-    priority: 2
-    update: true
-    item_flags:
-      - HIDE_ATTRIBUTES
-    display_name: '&cExample Kit Unavailable'
-    lore:
-      - '&7This kit is on cooldown!'
-      - '&7You must wait : &f%essentials_kit_time_until_available_example%'
-      - '&7Before using this kit again.'
-    view_requirement:
-      requirements:
-        kit_perm:
-          type: has permission
-          permission: essentials.kits.example
-  'examplenoperm':
-    material: GRAY_DYE
-    slot: 11
-    priority: 3
-    update: true
-    item_flags:
-      - HIDE_ATTRIBUTES
-    display_name: '&7Example Kit'
-    lore:
-      - '&7You do not have permission for this kit!'
-  'shopexample':
-    material: head-extended_clip
-    slot: 12
-    display_name: '&r'
-    lore:
-      - '&7Shop example using'
-      - '&7view requirements!'
-      - '&fLeft click to purchase.'
-    priority: 1
-    view_requirement:
-      requirements:
-        shop_perm:
-          type: has permission
-          permission: deluxemenus.shopexample
-    left_click_commands:
-      - '[sound] ENTITY_FIREWORK_ROCKET_BLAST'
-      - '[console] give %player_name% skull 1 player:extended_clip name:&bExtended_Clip lore:&8<lore>|&7Example_Shop_Item|&8<lore>'
-      - '[message] &8[&6&lDeluxeShop&8] &fYou have succesfully purchased &7extended_clips &fhead!'
-      - '[console] eco take %player_name% 666'
-      - '[close]'
-    left_click_requirement:
-      requirements:
-        balance_check:
-          type: has money
-          amount: 666
-  'shopnoperm':
-    material: head-extended_clip
-    slot: 12
-    display_name: '&7No permission'
-    lore:
-      - '&8You are missing the &bdeluxemenus.shopexample'
-      - '&8permission which is required to view the item!'
-      - '&fLeft click to close the menu.'
-    left_click_commands:
-      - '[sound] ENTITY_SNOW_GOLEM_DEATH'
-      - '[close]'
-      - '[message] &8[&6&lDeluxeShop&8] &fYou have closed the menu! &7(1 Second message delay!) <delay=20>'
-  'filler_item':
-    material: GRAY_STAINED_GLASS_PANE
+  'filler':
+    material: BLACK_STAINED_GLASS_PANE
     slots:
-      - 0
-      - 1
-      - 2
-      - 3
-      - 4
-      - 5
-      - 6
-      - 7
-      - 8
-    display_name: ' '
+      - '0-26'
+    display_name: '&f'
+    priority: 2
+
+  'header':
+    material: NETHERITE_PICKAXE
+    slot: 4
+    priority: 1
+    display_name: '&b&l⛏ Mining Schnellstart'
+    lore:
+      - '&7Starte im Mining und arbeite dich'
+      - '&7über Rankup bis zur Private Mine hoch.'
+
+  'mine':
+    material: STONE
+    slot: 10
+    priority: 1
+    display_name: '&7&l1. Mining-Überblick'
+    lore:
+      - '&7Öffne sichere Wege rund ums Mining'
+      - '&7und starte über die Menüs weiter.'
+      - ''
+      - '&e► Klicke zum Öffnen'
+    left_click_commands:
+      - '[openguimenu] warps'
+
+  'pickaxe':
+    material: DIAMOND_PICKAXE
+    slot: 12
+    priority: 1
+    display_name: '&b&l2. Spitzhacke pushen'
+    lore:
+      - '&7Je stärker deine Spitzhacke, desto'
+      - '&7schneller kommst du durch die Progression.'
+      - ''
+      - '&8» &fMehr Blöcke = mehr Geld'
+      - '&8» &fMehr Geld = schnelleres Rankup'
+      - ''
+      - '&e► Linksklick: &7Fortschritt öffnen'
+      - '&e► Rechtsklick: &7/tips'
+    left_click_commands:
+      - '[openguimenu] requirements_menu'
+    right_click_commands:
+      - '[close]'
+      - '[player] tips'
+
+  'rankup':
+    material: EXPERIENCE_BOTTLE
+    slot: 14
+    priority: 1
+    display_name: '&a&l3. Rankup'
+    lore:
+      - '&7Verdiene Geld in der Mine und'
+      - '&7kaufe deinen nächsten Rang.'
+      - ''
+      - '&e► Linksklick: &7/rankup'
+      - '&e► Rechtsklick: &7Fortschritt öffnen'
+    left_click_commands:
+      - '[close]'
+      - '[player] rankup'
+    right_click_commands:
+      - '[openguimenu] requirements_menu'
+
+  'prestige':
+    material: NETHER_STAR
+    slot: 16
+    priority: 1
+    display_name: '&6&l4. Prestige'
+    lore:
+      - '&7Prestige wird nach den Rängen'
+      - '&7dein nächster großer Multiplikator.'
+      - ''
+      - '&8» &f/prestige'
+    left_click_commands:
+      - '[close]'
+      - '[player] prestige'
+
+  'private_mine':
+    material: DIAMOND_ORE
+    slot: 20
+    priority: 1
+    display_name: '&d&l5. Private Mine'
+    lore:
+      - '&7Öffne deine Private Mine und'
+      - '&7baue dort gezielt weiter aus.'
+      - ''
+      - '&8» &f/pmine'
+    left_click_commands:
+      - '[close]'
+      - '[player] pmine'
+
+  'daily_tips':
+    material: SUNFLOWER
+    slot: 22
+    priority: 1
+    display_name: '&e&l6. Daily & Tipps'
+    lore:
+      - '&7Hol dir tägliche Extras ab und'
+      - '&7nimm dir einen schnellen Tipp mit.'
+      - ''
+      - '&e► Linksklick: &7/daily'
+      - '&e► Rechtsklick: &7/tips'
+    left_click_commands:
+      - '[close]'
+      - '[player] daily'
+    right_click_commands:
+      - '[close]'
+      - '[player] tips'
+
+  'progress':
+    material: PAPER
+    slot: 24
+    priority: 1
+    display_name: '&f&lFortschritt & Ziele'
+    lore:
+      - '&7Öffne die kurze Mining-Checkliste'
+      - '&7mit Rankup, Prestige und Extras.'
+      - ''
+      - '&e► Klicke zum Öffnen'
+    left_click_commands:
+      - '[openguimenu] requirements_menu'
+    right_click_commands:
+      - '[openguimenu] requirements_menu'
+
+  'back':
+    material: ARROW
+    slot: 26
+    priority: 1
+    display_name: '&7&l← Hilfe oder Lobby'
+    lore:
+      - '&e► Linksklick: &7Zurück zur Mining-Hilfe'
+      - '&e► Rechtsklick: &7/lobby'
+    left_click_commands:
+      - '[openguimenu] help_menu'
+    right_click_commands:
+      - '[close]'
+      - '[player] lobby'

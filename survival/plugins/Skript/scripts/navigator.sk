@@ -1,3 +1,6 @@
+# Pfad: plugins/Skript/scripts/navigator.sk
+# Survival Navigator: /lobby, /warpmenu, Netzwerk-Kompass + Server-Tipps
+
 # --- KONFIGURATION ---
 # WICHTIG: Hier KEINE Anführungszeichen nutzen!
 options:
@@ -26,3 +29,69 @@ command /warpmenu:
     aliases: /wm, /warpm
     trigger:
         make player execute command "/dm open warps"
+
+# --- NAVIGATIONS- / HILFE-MENÜ ---
+command /nav:
+    description: Öffnet das Navigations- & Hilfe-Menü
+    aliases: /navigator
+    trigger:
+        make player execute command "/dm open help_menu"
+
+# --- SERVER-TIPPS ---
+command /tips:
+    description: Zeigt einen zufälligen Survival-Tipp
+    aliases: /tipp, /tip
+    trigger:
+        survivalTip(player)
+
+function survivalTip(p: player):
+    delete {_tips::*}
+    add "&7Hol dir mit &e/daily &7deine Belohnung und starte dann mit &e/jobs &7für sicheres Einkommen." to {_tips::*}
+    add "&7Im &e/shop &7kaufst und verkaufst du wichtige Blöcke, um schneller Geld für &e/rankup &7zu sammeln." to {_tips::*}
+    add "&7Im Tycoon bringen dir &bGeneratoren &7passives Einkommen – sichere dir dein Plot mit &e/plot auto&7." to {_tips::*}
+    add "&7Nutze &e/warpmenu&7, um schnell zu wichtigen Orten, Farmen und Menüs zu reisen." to {_tips::*}
+    add "&7Schau mit &e/event &7nach aktiven Bonus-Events wie doppelten Generatoren oder Daily-Boni." to {_tips::*}
+    add "&7Ob Plot oder Freebuild: Plane deinen Platz gut und erweitere dein Setup Schritt für Schritt." to {_tips::*}
+    add "&7Wenn du genug Geld hast, bringt dich &e/rankup &7im Tycoon auf die nächste Stufe." to {_tips::*}
+    add "&7Mit &e/lobby &7kommst du zurück zur Server-Auswahl, der &bNetzwerk-Kompass &7öffnet jederzeit das Hilfe-Menü." to {_tips::*}
+    set {_tip} to random element out of {_tips::*}
+    send "&8[&a&lSurvival&8] &7Tipp: %{_tip}%" to {_p}
+
+# --- NETZWERK-KOMPASS GEBEN (nicht-destruktiv) ---
+on join:
+    wait 15 ticks
+    ensureCompass(player)
+    wait 3 seconds
+    survivalTip(player)
+
+on respawn:
+    wait 10 ticks
+    ensureCompass(player)
+
+function ensureCompass(p: player):
+    # Prüfen, ob der Spieler bereits einen Netzwerk-Kompass besitzt
+    set {_has} to false
+    loop 36 times:
+        set {_idx} to loop-number - 1
+        set {_it} to slot {_idx} of {_p}'s inventory
+        if {_it} is compass:
+            if name of {_it} contains "Netzwerk-Kompass":
+                set {_has} to true
+    if {_has} is false:
+        set {_kompass} to compass named "&b&l🧭 Netzwerk-Kompass &7(Rechtsklick)" with lore "&7Öffnet Navigation, Warps & Tipps" and "&7Rechtsklick zum Öffnen"
+        if slot 8 of {_p}'s inventory is air:
+            set slot 8 of {_p}'s inventory to {_kompass}
+        else:
+            give {_kompass} to {_p}
+
+# --- INTERAKTION MIT DEM KOMPASS ---
+on right click:
+    if player's tool is compass:
+        if name of player's tool contains "Netzwerk-Kompass":
+            cancel event
+            make player execute command "/dm open help_menu"
+
+on drop:
+    if name of event-item contains "Netzwerk-Kompass":
+        cancel event
+        send "&8[&a&lSurvival&8] &7Deinen &bNetzwerk-Kompass &7kannst du nicht wegwerfen." to player

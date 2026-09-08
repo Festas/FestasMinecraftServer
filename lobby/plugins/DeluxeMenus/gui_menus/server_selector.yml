@@ -1,65 +1,33 @@
 # Pfad: plugins/DeluxeMenus/gui_menus/server_selector.yml
-menu_title: '&8» &bNetzwerk Navigator'
+menu_title: '&8» &bWelcher Server passt zu dir?'
 open_command: server_selector
-size: 27
+size: 36
 
 items:
   'filler':
     material: BLACK_STAINED_GLASS_PANE
     slots:
-      - 0-9
-      - 17-26
+      - '0-35'
     display_name: '&f'
     priority: 2
 
-  # --- MINING SERVER (recycelter rpg-Slot) ---
-  'rpg':
-    material: NETHERITE_PICKAXE
-    slot: 11
+  'header':
+    material: COMPASS
+    slot: 4
     priority: 1
-    display_name: '&b&l⛏ Mining Server'
+    display_name: '&b&l🧭 Wähle deinen Server'
     lore:
-      - '&7Baue mit einer besonderen Spitzhacke'
-      - '&7ganze Zonen ab und werde stärker!'
-      - ''
-      - '&7Spitzhacken &8| &fImmer mehr Blöcke pro Schlag'
-      - '&7Zonen &8| &fNeue Bereiche freischalten'
-      - '&7Economy &8| &fVerkaufen → Aufwerten'
-      - ''
-      - '&7Status: &eIm Aufbau'
-      - ''
-      - '&e► Klicke zum Verbinden'
-    left_click_commands:
-      - '[close]'
-      - '[connect] rpg'
-    right_click_commands:
-      - '[close]'
-      - '[connect] rpg'
+      - '&7Direkt verbinden oder erst den'
+      - '&7passenden Spielstil herausfinden.'
 
-  # --- INFO MITTE ---
-  'info':
-    material: NETHER_STAR
-    slot: 13
-    priority: 1
-    display_name: '&6&lFestas Builds'
-    lore:
-      - '&7Wähle deinen Spielmodus!'
-      - ''
-      - '&8» &7Website: &fmc.festas-builds.com'
-    left_click_commands:
-      - '[refresh]'
-
-  # --- SURVIVAL SERVER ---
   'survival':
     material: GRASS_BLOCK
-    slot: 12
+    slot: 10
     priority: 1
     display_name: '&a&l🌳 Survival'
     lore:
-      - '&7Jobs &8| &f13 Berufe'
-      - '&7Plots &8| &fBaue & Handle'
-      - ''
-      - '&7Status: &aOnline'
+      - '&7Passt zu dir, wenn du Jobs, Shop,'
+      - '&7Warps, Rankup und Bauen magst.'
       - ''
       - '&e► Klicke zum Verbinden'
     left_click_commands:
@@ -69,21 +37,14 @@ items:
       - '[close]'
       - '[connect] survival'
 
-  # --- SKYBLOCK SERVER ---
   'skyblock':
     material: OAK_SAPLING
-    slot: 14
+    slot: 13
     priority: 1
     display_name: '&b&l🏝 Skyblock'
     lore:
-      - '&7Koop-Skyblock: baue gemeinsam'
-      - '&7mit Freunden an deiner Insel!'
-      - ''
-      - '&7Koop &8| &fFreunde per /is invite einladen'
-      - '&7Minions &8| &fAutomatische Farmen'
-      - '&7Inseln &8| &fBaue im Himmel'
-      - ''
-      - '&7Status: &eIm Aufbau'
+      - '&7Passt zu dir, wenn du Inseln,'
+      - '&7Coop, Missionen und Bazaar magst.'
       - ''
       - '&e► Klicke zum Verbinden'
     left_click_commands:
@@ -93,18 +54,79 @@ items:
       - '[close]'
       - '[connect] skyblock'
 
-  # --- GUIDE LINK ---
+  'rpg':
+    material: NETHERITE_PICKAXE
+    slot: 16
+    priority: 1
+    display_name: '&b&l⛏ Mining'
+    lore:
+      - '&7Passt zu dir, wenn du /mine,'
+      - '&7Rankup, Prestige und /pmine magst.'
+      - ''
+      - '&e► Klicke zum Verbinden'
+    left_click_commands:
+      - '[close]'
+      - '[connect] rpg'
+    right_click_commands:
+      - '[close]'
+      - '[connect] rpg'
+
+  'finder':
+    material: NETHER_STAR
+    slot: 21
+    priority: 1
+    display_name: '&6&lSpielstil-Finder'
+    lore:
+      - '&7Unsicher? Wir zeigen dir,'
+      - '&7welcher Server zu dir passt.'
+      - ''
+      - '&e► Klicke zum Öffnen'
+    left_click_commands:
+      - '[openguimenu] advanced_menu'
+    right_click_commands:
+      - '[openguimenu] advanced_menu'
+
+  'next_step':
+    material: PAPER
+    slot: 23
+    priority: 1
+    display_name: '&e&lEmpfohlener Start'
+    lore:
+      - '&7Hol dir pro Server den'
+      - '&7besten ersten Schritt ab.'
+      - ''
+      - '&e► Klicke zum Öffnen'
+    left_click_commands:
+      - '[openguimenu] requirements_menu'
+    right_click_commands:
+      - '[openguimenu] requirements_menu'
+
   'guide':
     material: KNOWLEDGE_BOOK
-    slot: 22
+    slot: 25
     priority: 1
     display_name: '&a&l📖 Netzwerk Guide'
     lore:
-      - '&7Alles über unsere Spielmodi'
-      - '&7und das Netzwerk.'
+      - '&7Vergleiche alle Modi noch einmal'
+      - '&7mit ihren wichtigsten Schwerpunkten.'
       - ''
       - '&e► Klicke zum Öffnen'
     left_click_commands:
       - '[openguimenu] network_guide'
     right_click_commands:
       - '[openguimenu] network_guide'
+
+  'help':
+    material: ENDER_EYE
+    slot: 31
+    priority: 1
+    display_name: '&b&l❓ Lobby Hilfe'
+    lore:
+      - '&7Zurück zum Lobby-Hilfe-Menü'
+      - '&7mit Navigator, Guide und Regeln.'
+      - ''
+      - '&e► Klicke zum Öffnen'
+    left_click_commands:
+      - '[openguimenu] help_menu'
+    right_click_commands:
+      - '[openguimenu] help_menu'
