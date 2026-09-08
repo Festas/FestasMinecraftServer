@@ -25,6 +25,9 @@ Lokal (Flatfile in `Data/`). DB-Optionen sind **dormante Vendor-Defaults** (MySQ
 
 ## Cross-Server / Gotchas
 - **Survival-only**. Nicht mit WorldGuard-Regionen kollidieren lassen (unterschiedliche Schutz-Layer).
+- Aktueller Survival-Stand: reiner Claiming-/Griefing-Schutz; **Wars/Nationen sind bewusst deaktiviert**.
+  `Modules/Wars/wars.yml` und `Modules/Nations/nations.yml` nur gemeinsam schalten, sonst driftet die
+  Initialisierung der War-Tabellen (SQLite-Startup-Fehler).
 - `Data/` ist Serverstand (nicht deployen).
 
 ## Custom Agent
