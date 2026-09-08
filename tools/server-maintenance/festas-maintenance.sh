@@ -66,6 +66,8 @@ RECOMMENDATIONS=""     # je Zeile: "- Text"
 NOW_EPOCH="$(date +%s)"
 NOW_HUMAN="$(date -u '+%Y-%m-%d %H:%M:%S UTC')"
 HOSTNAME_S="$(hostname 2>/dev/null || echo unknown)"
+LISTEN_SNAPSHOT=""
+UFW_STATUS_SNAPSHOT=""
 
 # ----------------------------------------------------------------------------
 # Basis-Helfer
@@ -184,6 +186,62 @@ h_journal_top(){
   priv journalctl -p err --since '7 days ago' --no-pager 2>/dev/null \
     | sed -E 's/^[A-Za-z]{3} [0-9 :]+ [^ ]+ //; s/[0-9]+/#/g' \
     | sort | uniq -c | sort -rn | head -n 10
+}
+
+cache_listen_snapshot() {
+  [ -n "$LISTEN_SNAPSHOT" ] && return 0
+  if ! have ss; then return 0; fi
+  if can_priv; then
+    LISTEN_SNAPSHOT="$(priv ss -tulnH 2>/dev/null | awk '{print $1, $5}' | sort -u || true)"
+  else
+    LISTEN_SNAPSHOT="$(ss -tulnH 2>/dev/null | awk '{print $1, $5}' | sort -u || true)"
+  fi
+}
+
+cache_ufw_status() {
+  [ -n "$UFW_STATUS_SNAPSHOT" ] && return 0
+  if ! have ufw; then return 0; fi
+  if can_priv; then
+    UFW_STATUS_SNAPSHOT="$(priv ufw status 2>/dev/null || true)"
+  else
+    UFW_STATUS_SNAPSHOT="$(ufw status 2>/dev/null || true)"
+  fi
+}
+
+listen_targets_for_port() {
+  local port="$1"
+  have ss || return 0
+  cache_listen_snapshot
+  [ -n "$LISTEN_SNAPSHOT" ] || return 0
+  printf '%s\n' "$LISTEN_SNAPSHOT" | awk -v p=":${port}$" '$2 ~ p {print $2}'
+}
+
+listen_scope_for_port() {
+  local port="$1" binds has_v4=0 has_v6=0
+  have ss || { echo "unknown"; return 0; }
+  binds="$(listen_targets_for_port "$port")"
+  [ -z "${binds:-}" ] && { echo "absent"; return 0; }
+  printf '%s\n' "$binds" | grep -Eq '^(0\.0\.0\.0:|\[::\]:|\*:)' && { echo "wildcard"; return 0; }
+  printf '%s\n' "$binds" | grep -Eqv '^(127\.0\.0\.1:|\[::1\]:)' && { echo "other"; return 0; }
+  printf '%s\n' "$binds" | grep -Eq '^127\.0\.0\.1:' && has_v4=1
+  printf '%s\n' "$binds" | grep -Eq '^\[::1\]:' && has_v6=1
+  [ "$has_v4" -eq 1 ] && { echo "loopback"; return 0; }
+  [ "$has_v6" -eq 1 ] && { echo "loopback_v6_only"; return 0; }
+  echo "unknown"
+}
+
+summarize_listen_targets() {
+  local port="$1" binds
+  binds="$(listen_targets_for_port "$port" | paste -sd ',' - 2>/dev/null | sed 's/,/, /g')"
+  [ -n "${binds:-}" ] && printf '%s' "$binds"
+}
+
+ufw_allows_anywhere_port() {
+  local port="$1"
+  cache_ufw_status
+  printf '%s\n' "$UFW_STATUS_SNAPSHOT" | grep -q '^Status: active' || return 1
+  printf '%s\n' "$UFW_STATUS_SNAPSHOT" \
+    | grep -Eq "^[[:space:]]*${port}(/(tcp|udp))?( \\(v6\\))?[[:space:]]+ALLOW([[:space:]]+IN)?[[:space:]]+Anywhere( \\(v6\\))?([[:space:]]|$)"
 }
 
 # =============================================================================
@@ -496,6 +554,69 @@ section_security() {
   else
     md "_Keine bekannte Firewall gefunden._"; issue WARN "Keine Firewall (ufw/nft/iptables) erkennbar."
   fi
+
+  sub "Interne Reverse-Proxy-Dienste"
+  md "Heuristik auf Basis von \`docs/infrastructure/PLAN.md\` und"
+  md "\`docs/infrastructure/BLUEMAP.md\`: diese Ports sind dokumentiert als"
+  md "**intern-only** und sollen hostseitig nur via Loopback erreichbar sein."
+  md "Gewarnt wird bei Bind-Mismatches – also Nicht-Loopback-Binds oder nur \`[::1]\` trotz nginx-Upstream \`127.0.0.1\`."
+  md "Bestätigte UFW-\`ALLOW Anywhere\`-Freigaben werden zusätzlich explizit als öffentlich markiert."
+  blank
+  md "| Dienst | Port | Soll | Beobachtung |"
+  md "|---|---:|---|---|"
+  local defs=(
+    "Plan Analytics:8804:nur via nginx / Host-Loopback"
+    "BlueMap Survival:8102:nur via nginx / Host-Loopback"
+    "BlueMap Mining:8103:nur via nginx / Host-Loopback"
+  )
+  local def name port expected scope binds note public_exposed=0 bind_mismatch=0 non_loopback_bound=0
+  for def in "${defs[@]}"; do
+    IFS=: read -r name port expected <<< "$def"
+    scope="$(listen_scope_for_port "$port")"
+    binds="$(summarize_listen_targets "$port")"
+    case "$scope" in
+      loopback)
+        note="✅ Loopback inkl. IPv4 (${binds})"
+        ;;
+      loopback_v6_only)
+        bind_mismatch=$((bind_mismatch + 1))
+        note="⚠️ nur IPv6-Loopback (${binds}); nginx-Upstream nutzt \`127.0.0.1\` → Bind-Mismatch"
+        issue WARN "Interner Dienst '${name}' (Port ${port}) bindet nur auf [::1], aber der dokumentierte nginx-Upstream nutzt 127.0.0.1 – Reverse-Proxy-Bind-Mismatch."
+        recommend "Port ${port} (${name}) auf \`127.0.0.1\` binden (ggf. zusätzlich zu \`[::1]\`) oder die nginx-Upstreams bewusst auf IPv6-Loopback umstellen."
+        ;;
+      absent)
+        note="_kein Listener erkannt_"
+        ;;
+      wildcard)
+        bind_mismatch=$((bind_mismatch + 1))
+        non_loopback_bound=$((non_loopback_bound + 1))
+        if ufw_allows_anywhere_port "$port"; then
+          note="⚠️ öffentlich freigegeben (${binds}; UFW \`ALLOW Anywhere\`)"
+          issue WARN "Interner Dienst '${name}' (Port ${port}) ist laut Host-Status öffentlich freigegeben – dokumentiert ist nur Reverse-Proxy/Loopback."
+          recommend "Port ${port} (${name}) in UFW schließen oder nur nach \`127.0.0.1\` veröffentlichen."
+          public_exposed=$((public_exposed + 1))
+        else
+          note="⚠️ bindet auf allen Interfaces (${binds}); intern-only-Vorgabe verletzt, öffentliche Freigabe per UFW nicht bestätigt"
+          issue WARN "Interner Dienst '${name}' (Port ${port}) bindet auf allen Interfaces – dokumentiert ist nur Reverse-Proxy/Loopback."
+          recommend "Port ${port} (${name}) nur nach \`127.0.0.1\` veröffentlichen; falls bewusst breiter gebunden, Host-Firewall/UFW explizit prüfen."
+        fi
+        ;;
+      other)
+        bind_mismatch=$((bind_mismatch + 1))
+        non_loopback_bound=$((non_loopback_bound + 1))
+        note="⚠️ nicht auf Loopback begrenzt (${binds}); intern-only-Vorgabe verletzt, öffentliche Freigabe nicht bestätigt"
+        issue WARN "Interner Dienst '${name}' (Port ${port}) ist nicht nur auf Loopback gebunden – dokumentiert ist nur Reverse-Proxy/Loopback."
+        recommend "Port ${port} (${name}) nur nach \`127.0.0.1\` veröffentlichen; falls bewusst breiter gebunden, Host-Firewall/UFW explizit prüfen."
+        ;;
+      *)
+        note="_Prüfung nicht möglich (ss fehlt)_"
+        ;;
+    esac
+    md "| ${name} | \`${port}\` | ${expected} | ${note} |"
+  done
+  metric internal_only_bind_mismatch "$bind_mismatch"
+  metric internal_only_non_loopback_bound "$non_loopback_bound"
+  metric internal_only_public_exposed "$public_exposed"
 
   if have fail2ban-client; then
     sub "fail2ban"

@@ -36,6 +36,12 @@ Plan kann zwar selbst HTTPS (via JKS-Zertifikat) betreiben, der einfachere Weg i
 > Host-nginx den Dienst über das Port-Mapping erreicht. `127.0.0.1` bindet nur an das
 > Container-Loopback – der veröffentlichte Port hat dann keinen Listener und nginx liefert
 > **502 Bad Gateway**. Details: `docs/PLAN-reverse-proxy.md`.
+>
+> Der wöchentliche Health-Report (`tools/server-maintenance/festas-maintenance.sh`)
+> prüft heuristisch, ob Port **8804** trotz dieses Sollzustands hostseitig
+> einen Bind-Mismatch hat (nicht auf Loopback begrenzt oder nur `[::1]` trotz
+> nginx-Upstream `127.0.0.1`); bestätigte `UFW ALLOW Anywhere`-Freigaben
+> werden dabei explizit als öffentlich markiert (`LISTEN` + `ufw status`).
 
 ---
 
@@ -157,6 +163,10 @@ Nach dem Pushen dieser Config-Änderungen:
    ```bash
    sudo ufw deny 8804
    ```
+   Ein späterer Mittwochs-Health-Report sollte den Port dann nicht mehr als
+   „öffentlich freigegeben“ markieren; eine Warnung bleibt nur bestehen, falls
+   der Host-Bind weiterhin nicht zum nginx-Upstream passt (z. B. nur `[::1]`
+   statt `127.0.0.1`) oder nicht auf Loopback begrenzt ist.
 6. **Plan neu starten** — Velocity neu starten, damit Plan im Container auf `0.0.0.0:8804`
    bindet und die Host-nginx den veröffentlichten Port erreichen kann.
 7. **Web-User registrieren** — Da der Proxy-Modus die Anmeldung aktiviert:

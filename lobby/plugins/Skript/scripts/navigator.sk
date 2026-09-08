@@ -88,7 +88,10 @@ on respawn:
 
 on death of player:
     loop drops:
-        if loop-value is compass or loop-value is book:
+        if loop-value is compass:
+            if name of loop-value contains "Navigator" or name of loop-value contains "Guide":
+                remove loop-value from drops
+        else if loop-value is book:
             if name of loop-value contains "Navigator" or name of loop-value contains "Guide":
                 remove loop-value from drops
 
@@ -98,7 +101,10 @@ on inventory click:
     if world of player is "{@lobby_world}":
         if index of event-slot is 4 or 8:
             cancel event
-        if clicked item is compass or clicked item is book:
+        if clicked item is compass:
+            if name of clicked item contains "Navigator" or name of clicked item contains "Guide":
+                cancel event
+        else if clicked item is book:
             if name of clicked item contains "Navigator" or name of clicked item contains "Guide":
                 cancel event
 

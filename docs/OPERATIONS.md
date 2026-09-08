@@ -13,7 +13,9 @@ Die Server müssen in der folgenden Reihenfolge gestartet werden, um Abhängigke
 1. **MariaDB & Redis** – Datenbank und Cache müssen zuerst verfügbar sein.
 2. **Velocity Proxy** – Der Proxy muss laufen, bevor Spieler sich verbinden können.
 3. **Lobby** – Der Lobby-Server ist der Standard-Spawn für alle Spieler.
-4. **Spielserver** – RPG, Skyblock und Survival können parallel gestartet werden.
+4. **Spielserver** – **Survival** ist der aktive Gameplay-Server; **Skyblock**
+   und **Mining (`rpg`-Slot)** können je nach Ausbaustand parallel gestartet
+   werden.
 
 ```bash
 # Beispiel mit Docker Compose
@@ -25,7 +27,7 @@ docker compose exec redis redis-cli ping
 
 docker compose up -d velocity
 docker compose up -d lobby
-docker compose up -d skyblock survival
+docker compose up -d survival skyblock rpg
 ```
 
 ---
@@ -35,7 +37,8 @@ docker compose up -d skyblock survival
 Das Herunterfahren erfolgt in **umgekehrter Reihenfolge**. Spieler müssen vorher benachrichtigt werden.
 
 1. **Spieler benachrichtigen** – Mindestens 5 Minuten vorher eine Warnung an alle Spieler senden.
-2. **Spielserver stoppen** – RPG, Skyblock und Survival herunterfahren.
+2. **Spielserver stoppen** – zuerst **Survival**, danach ggf. **Skyblock** und
+   **Mining (`rpg`-Slot)** herunterfahren.
 3. **Lobby stoppen** – Lobby-Server herunterfahren.
 4. **Velocity Proxy stoppen** – Proxy herunterfahren, damit keine neuen Verbindungen möglich sind.
 5. **MariaDB & Redis stoppen** – Datenbank und Cache zuletzt stoppen.
@@ -44,7 +47,7 @@ Das Herunterfahren erfolgt in **umgekehrter Reihenfolge**. Spieler müssen vorhe
 # Warnung an Spieler senden (über Velocity-Konsole)
 # /alert Der Server wird in 5 Minuten heruntergefahren!
 
-docker compose stop skyblock survival
+docker compose stop survival skyblock rpg
 docker compose stop lobby
 docker compose stop velocity
 docker compose stop mariadb redis
@@ -103,15 +106,15 @@ offline sind:
 | -------- | :---------------------: | ---------------- |
 | Survival | 03:55                   | `RestartWarning` |
 | Lobby    | 04:00                   | `DailyRestart`   |
-| RPG¹     | 04:05                   | `DailyRestart`   |
+| Mining¹  | 04:05                   | `DailyRestart`   |
 | Skyblock | 04:10                   | `DailyRestart`   |
 
 Jeder Neustart warnt die Spieler 5 Minuten vorher, sichert die Daten
 (`save-all`) und stoppt den Server anschließend (`stop`). Der Pterodactyl-Auto-
 Restart bzw. der Pterodactyl-Neustart-Schedule fährt ihn danach wieder hoch.
 
-> ¹ RPG wird eingestellt und nur noch als Archiv geführt (`rpg`-Slot = künftig
-> Mining).
+> ¹ Technischer Slot/CMI-Scheduler bleibt `rpg`; öffentlich heißt der Server
+> **Mining**.
 
 ---
 
@@ -194,6 +197,11 @@ Einrichtung: [`tools/server-maintenance/README.md`](../tools/server-maintenance/
   Status-Ampel (`OK`/`WARN`/`CRIT`). Der Festplatten-/RAM-Status nutzt dieselben
   Schwellen wie unter [Monitoring-Empfehlungen](#monitoring-empfehlungen)
   (Warnung > 80 %, kritisch > 90 %).
+- **Exposure-Check für interne Webdienste:** gleicht dokumentierte
+  Reverse-Proxy-Only-Ports (aktuell Plan `8804`, BlueMap `8102/8103`) gegen
+  `LISTEN` + `ufw status` ab, warnt bei **Bind-Mismatches** (Nicht-Loopback
+  oder nur `[::1]` trotz nginx-Upstream `127.0.0.1`) und markiert bestätigte
+  **öffentliche UFW-Freigaben** separat im Bericht.
 - **Wartung (optional, Modus `maintain`/`full`):** installiert sinnvolle Updates
   (`all`/nur `security`/`none`), entfernt verwaiste Pakete/alte Kernel, dampft
   Journald ein und räumt Docker gefahrlos auf (**ohne** `-a`/`--volumes` – Welten,
@@ -211,6 +219,14 @@ Einrichtung: [`tools/server-maintenance/README.md`](../tools/server-maintenance/
 > Pterodactyl-Neustart-Schedule zusammenfällt. Der Workflow warnt und stoppt die
 > Server selbst sauber, bevor er den Host neustartet.
 
+#### Wöchentlicher Review-Rhythmus (empfohlen)
+
+1. **Mittwoch morgens** `server-logs/health/latest.md` lesen.
+2. **WARN/CRIT** noch am selben Tag triagieren – zuerst offene interne Webports,
+   fehlgeschlagene Dienste, Sicherheitsupdates und Backup-/Trenddrift.
+3. Maßnahmen umsetzen oder als Wochenaufgabe erfassen; beim nächsten Lauf den
+   Trend gegenprüfen.
+
 ---
 
 ## Notfall-Befehle
@@ -220,7 +236,7 @@ Einrichtung: [`tools/server-maintenance/README.md`](../tools/server-maintenance/
 ```bash
 docker compose stop <servername>
 # Beispiel:
-docker compose stop mining
+docker compose stop rpg
 ```
 
 ### Proxy neu starten
@@ -252,6 +268,11 @@ Für das Netzwerk werden zwei Ebenen unterschieden:
 
 - **Plan** für Web-Analytics und Langzeitstatistiken
 - **Velocity Proxy Exporter** für technisches Live-Monitoring über Prometheus
+
+> Plan (`8804`) und BlueMap (`8102`/`8103`) gelten infra-seitig als
+> **interne Webdienste hinter nginx**. Der wöchentliche Health-Report warnt bei
+> Bind-Mismatches (inkl. nur `[::1]` bei `127.0.0.1`-Upstream) und markiert
+> bestätigte öffentliche Freigaben separat.
 
 Die konkrete Metrik-Definition und die Prometheus-Beispielkonfiguration liegen unter:
 

@@ -45,7 +45,7 @@ nutzen** können, bevor sie eine Plugin-Konfiguration ändern.
 |-------------|-----------------------------|-------------------|-----------------|-------------------|
 | `proxy/`    | Velocity-Proxy              | –                 | –               | aktiv             |
 | `lobby/`    | Hub / Lobby (Paper)         | `lobby`           | `lobby`         | aktiv             |
-| `survival/` | Survival / Tycoon (Paper)   | `survival`        | `survival`      | aktiv             |
+| `survival/` | Survival / Town + Freebuild (Paper) | `survival` | `survival` | aktiv |
 | `skyblock/` | Skyblock (Paper)            | `skyblock`        | `skyblock`      | Umbau             |
 | `rpg/`      | Prison / Mining (Paper)     | **`mining`**      | `rpg`           | Aufbau (Prison)   |
 
