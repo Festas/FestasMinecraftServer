@@ -554,7 +554,8 @@ section_security() {
   sub "Interne Reverse-Proxy-Dienste"
   md "Heuristik auf Basis von \`docs/infrastructure/PLAN.md\` und"
   md "\`docs/infrastructure/BLUEMAP.md\`: diese Ports sind dokumentiert als"
-  md "**intern-only** und dürfen nicht direkt öffentlich freigegeben sein."
+  md "**intern-only** und sollen hostseitig nur via Loopback erreichbar sein."
+  md "Nicht-Loopback-Binds werden gewarnt; bestätigte UFW-\`ALLOW Anywhere\`-Freigaben explizit als öffentlich markiert."
   blank
   md "| Dienst | Port | Soll | Beobachtung |"
   md "|---|---:|---|---|"
@@ -563,7 +564,7 @@ section_security() {
     "BlueMap Survival:8102:nur via nginx / Host-Loopback"
     "BlueMap Mining:8103:nur via nginx / Host-Loopback"
   )
-  local def name port expected scope binds note public_exposed=0
+  local def name port expected scope binds note public_exposed=0 non_loopback_bound=0
   for def in "${defs[@]}"; do
     IFS=: read -r name port expected <<< "$def"
     scope="$(listen_scope_for_port "$port")"
@@ -576,17 +577,23 @@ section_security() {
         note="_kein Listener erkannt_"
         ;;
       wildcard)
+        non_loopback_bound=$((non_loopback_bound + 1))
         if ufw_allows_anywhere_port "$port"; then
           note="⚠️ öffentlich freigegeben (${binds}; UFW \`ALLOW Anywhere\`)"
           issue WARN "Interner Dienst '${name}' (Port ${port}) ist laut Host-Status öffentlich freigegeben – dokumentiert ist nur Reverse-Proxy/Loopback."
           recommend "Port ${port} (${name}) in UFW schließen oder nur nach \`127.0.0.1\` veröffentlichen."
           public_exposed=$((public_exposed + 1))
         else
-          note="⚠️ bindet auf allen Interfaces (${binds}); öffentliche Freigabe per UFW nicht bestätigt"
+          note="⚠️ bindet auf allen Interfaces (${binds}); intern-only-Vorgabe verletzt, öffentliche Freigabe per UFW nicht bestätigt"
+          issue WARN "Interner Dienst '${name}' (Port ${port}) bindet auf allen Interfaces – dokumentiert ist nur Reverse-Proxy/Loopback."
+          recommend "Port ${port} (${name}) nur nach \`127.0.0.1\` veröffentlichen; falls bewusst breiter gebunden, Host-Firewall/UFW explizit prüfen."
         fi
         ;;
       other)
-        note="⚠️ nicht auf Loopback gebunden (${binds}); öffentliche Freigabe nicht bestätigt"
+        non_loopback_bound=$((non_loopback_bound + 1))
+        note="⚠️ nicht auf Loopback begrenzt (${binds}); intern-only-Vorgabe verletzt, öffentliche Freigabe nicht bestätigt"
+        issue WARN "Interner Dienst '${name}' (Port ${port}) ist nicht nur auf Loopback gebunden – dokumentiert ist nur Reverse-Proxy/Loopback."
+        recommend "Port ${port} (${name}) nur nach \`127.0.0.1\` veröffentlichen; falls bewusst breiter gebunden, Host-Firewall/UFW explizit prüfen."
         ;;
       *)
         note="_Prüfung nicht möglich (ss fehlt)_"
@@ -594,6 +601,7 @@ section_security() {
     esac
     md "| ${name} | \`${port}\` | ${expected} | ${note} |"
   done
+  metric internal_only_non_loopback_bound "$non_loopback_bound"
   metric internal_only_public_exposed "$public_exposed"
 
   if have fail2ban-client; then

@@ -47,8 +47,8 @@ Der Bericht (`report.md`) enthält u. a.:
 - **Sicherheit:** Firewall, fehlgeschlagene Logins, letzte Anmeldungen.
 - **Exposure-Drift:** dokumentierte Reverse-Proxy-Only-Ports werden gegen
   `LISTEN` + `ufw status` abgeglichen; derzeit Plan `8804` sowie BlueMap
-  `8102/8103`. `0.0.0.0`/`[::]` **plus** `ALLOW Anywhere` wird als öffentlich
-  freigegeben markiert.
+  `8102/8103`. Nicht-Loopback-Binds werden gewarnt; `0.0.0.0`/`[::]`
+  **plus** `ALLOW Anywhere` wird explizit als öffentlich freigegeben markiert.
 - **Updates:** aktualisierbare Pakete, Sicherheitsupdates, Reboot-Bedarf.
 - **Logs:** häufigste Fehler/Warnungen (7 Tage), Kernel-I/O-Fehler.
 - **Datenträger-Gesundheit:** SMART-Status, Temperatursensoren (falls verfügbar).
@@ -134,8 +134,9 @@ Empfohlen nach jedem automatischen Mittwoch-Lauf:
 
 1. Morgens `server-logs/health/latest.md` prüfen; `latest.json` nur für
    Detailauswertung/Automationen hinzuziehen.
-2. **WARN/CRIT** am selben Tag triagieren – zuerst öffentlich freigegebene
-   Internal-Only-Ports (Plan/BlueMap), fehlgeschlagene Dienste,
+2. **WARN/CRIT** am selben Tag triagieren – zuerst bestätigte Public-Exposures
+   und sonstige Nicht-Loopback-Binds auf Internal-Only-Ports (Plan/BlueMap),
+   fehlgeschlagene Dienste,
    sicherheitsrelevante Updates und Backup-/Trenddrift.
 3. Sofortmaßnahmen direkt umsetzen; größere Themen als Issue/Todo für die Woche
    festhalten.

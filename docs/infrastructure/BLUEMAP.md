@@ -156,7 +156,8 @@ Nach dem Pushen dieser Config-Änderungen:
 5. **Firewall** — Ports 8102 und 8103 dürfen **nicht** direkt von außen erreichbar sein
    (`ufw deny 8102` / `ufw deny 8103` oder einfach nicht öffnen).
    Nach der Härtung sollte der nächste Mittwochs-Health-Report diese Ports nicht
-   mehr als öffentlich freigegeben aufführen.
+   mehr als öffentlich freigegeben aufführen; eine Warnung bleibt nur bestehen,
+   falls der Host-Bind weiterhin nicht auf Loopback begrenzt ist.
 6. **Website-Links prüfen** — BlueMap-Links sollen auf die neuen Subdomains zeigen.
 
 ---

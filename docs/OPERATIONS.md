@@ -199,8 +199,8 @@ Einrichtung: [`tools/server-maintenance/README.md`](../tools/server-maintenance/
   (Warnung > 80 %, kritisch > 90 %).
 - **Exposure-Check für interne Webdienste:** gleicht dokumentierte
   Reverse-Proxy-Only-Ports (aktuell Plan `8804`, BlueMap `8102/8103`) gegen
-  `LISTEN` + `ufw status` ab und markiert **öffentliche Freigaben** explizit im
-  Bericht.
+  `LISTEN` + `ufw status` ab, warnt bei **Nicht-Loopback-Binds** und markiert
+  bestätigte **öffentliche UFW-Freigaben** separat im Bericht.
 - **Wartung (optional, Modus `maintain`/`full`):** installiert sinnvolle Updates
   (`all`/nur `security`/`none`), entfernt verwaiste Pakete/alte Kernel, dampft
   Journald ein und räumt Docker gefahrlos auf (**ohne** `-a`/`--volumes` – Welten,
@@ -269,8 +269,8 @@ Für das Netzwerk werden zwei Ebenen unterschieden:
 - **Velocity Proxy Exporter** für technisches Live-Monitoring über Prometheus
 
 > Plan (`8804`) und BlueMap (`8102`/`8103`) gelten infra-seitig als
-> **interne Webdienste hinter nginx**. Der wöchentliche Health-Report markiert
-> sie explizit, wenn sie per Host-State als öffentlich freigegeben erkennbar sind.
+> **interne Webdienste hinter nginx**. Der wöchentliche Health-Report warnt bei
+> Nicht-Loopback-Binds und markiert bestätigte öffentliche Freigaben separat.
 
 Die konkrete Metrik-Definition und die Prometheus-Beispielkonfiguration liegen unter:
 

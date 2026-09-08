@@ -38,8 +38,9 @@ Plan kann zwar selbst HTTPS (via JKS-Zertifikat) betreiben, der einfachere Weg i
 > **502 Bad Gateway**. Details: `docs/PLAN-reverse-proxy.md`.
 >
 > Der wöchentliche Health-Report (`tools/server-maintenance/festas-maintenance.sh`)
-> prüft heuristisch, ob Port **8804** trotz dieses Sollzustands per Host-Status
-> als öffentlich freigegeben erkennbar ist (`LISTEN` + `ufw status`).
+> prüft heuristisch, ob Port **8804** trotz dieses Sollzustands hostseitig
+> nicht auf Loopback begrenzt ist; bestätigte `UFW ALLOW Anywhere`-Freigaben
+> werden dabei explizit als öffentlich markiert (`LISTEN` + `ufw status`).
 
 ---
 
@@ -161,8 +162,9 @@ Nach dem Pushen dieser Config-Änderungen:
    ```bash
    sudo ufw deny 8804
    ```
-   Ein späterer Mittwochs-Health-Report sollte diesen Port dann nicht mehr als
-   „öffentlich freigegeben“ markieren.
+   Ein späterer Mittwochs-Health-Report sollte den Port dann nicht mehr als
+   „öffentlich freigegeben“ markieren; eine Warnung bleibt nur bestehen, falls
+   der Host-Bind weiterhin nicht auf Loopback begrenzt ist.
 6. **Plan neu starten** — Velocity neu starten, damit Plan im Container auf `0.0.0.0:8804`
    bindet und die Host-nginx den veröffentlichten Port erreichen kann.
 7. **Web-User registrieren** — Da der Proxy-Modus die Anmeldung aktiviert:
