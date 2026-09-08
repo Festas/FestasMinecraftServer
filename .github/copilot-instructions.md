@@ -8,10 +8,26 @@ Java-Build – geändert werden fast ausschließlich **YAML/Config/Skript-Dateie
 Für **jede** Aufgabe an einem Plugin **zuerst** die Wissensbasis konsultieren:
 - **Index:** [`docs/plugins/README.md`](../docs/plugins/README.md) – Matrix (Plugin→Server), Storage-/Secret-/Deploy-Modell, Konventionen.
 - **Pro Plugin:** `docs/plugins/<Plugin>.md` – Zweck, exakte Config-Pfade je Server, Storage/Secrets, typische Aufgaben, Gotchas.
+- **Feature über mehrere Plugins:** [`docs/plugins/CROSS-PLUGIN.md`](../docs/plugins/CROSS-PLUGIN.md) – Integrations-Backbone (Ränge/Economy/Platzhalter/Items/Routing), Feature-Playbooks (Rang, Item, Generator, Menü, Welt, Server) und welche Agents in welcher Reihenfolge zu beauftragen sind.
 - **Custom Agents:** [`.github/agents/`](agents/) – pro Plugin/Subsystem ein Agent, der es **gezielt auf allen Servern** bearbeitet.
 
 Wenn ein passender `docs/plugins/<Plugin>.md` existiert, ist er die maßgebliche Quelle. Weitere Detaildocs
 liegen unter `docs/` (u. a. `docs/infrastructure/DATENBANKEN.md`, `docs/prison/`, `docs/skyblock/`, `docs/survival/`).
+
+## Orchestrierung: Multi-Plugin-Features
+Berührt eine Aufgabe **mehr als ein Plugin** (Rang, Item, Generator, Menü, Warp, Welt, Server, Währung,
+Broadcast), orchestriere statt einzeln zu raten – **Reihenfolge-Faustregel: Fundament zuerst
+(Rechte/Welt/Item), Anzeige zuletzt (Menü/TAB):**
+1. Passendes **Feature-Playbook** in [`CROSS-PLUGIN.md` §4](../docs/plugins/CROSS-PLUGIN.md#4-feature-playbooks) wählen.
+2. Beteiligte **Agents** über die [Zuständigkeitstabelle §2](../docs/plugins/CROSS-PLUGIN.md#2-agent--plugin-zuständigkeit)
+   bestimmen (Bündel-Agents wie `progression`/`prison`/`proxy-network` als Einheit).
+3. Die Ein-Plugin-/Bündel-Agents **nacheinander, je Plugin einzeln** beauftragen und dabei die
+   **geteilten Namen/Werte** (Gruppenname, Item-ID, Preis, Weltname, Servername) konsistent durchreichen.
+4. Am Ende die [Cross-Plugin-Validierungs-Checkliste §5](../docs/plugins/CROSS-PLUGIN.md#5-cross-plugin-validierungs-checkliste)
+   durchgehen und Server-Konsistenz sicherstellen.
+
+Optional gibt es dafür einen **dedizierten Orchestrator-Agent** (delegiert via `agent`-Tool, ändert selbst
+keine Config): Bauanleitung + fertige Vorlage in [`docs/plugins/ORCHESTRATOR.md`](../docs/plugins/ORCHESTRATOR.md).
 
 ## Netzwerk-Topologie & Server-Mapping
 - Backends als Top-Level-Ordner: `lobby/`, `survival/`, `skyblock/`, `rpg/`; Proxy: `proxy/`.
