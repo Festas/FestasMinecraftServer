@@ -222,8 +222,8 @@ listen_scope_for_port() {
   binds="$(listen_targets_for_port "$port")"
   [ -z "${binds:-}" ] && { echo "absent"; return 0; }
   printf '%s\n' "$binds" | grep -Eq '^(0\.0\.0\.0:|\[::\]:|\*:)' && { echo "wildcard"; return 0; }
-  printf '%s\n' "$binds" | grep -Eq '^(127\.0\.0\.1:|\[::1\]:)' && { echo "loopback"; return 0; }
-  echo "other"
+  printf '%s\n' "$binds" | grep -Eqv '^(127\.0\.0\.1:|\[::1\]:)' && { echo "other"; return 0; }
+  echo "loopback"
 }
 
 summarize_listen_targets() {
