@@ -2,7 +2,7 @@
 
 Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
 
-> **Stand: 26.2** — Netzwerk läuft auf **Minecraft/Paper 26.2**. Aktive Server: **Lobby** und **Survival**. Im Aufbau: überarbeiteter **Skyblock** (ohne Gilden, Freunde-Koop) und neuer **Mining**-Server (recycelter `rpg/`-Slot).
+> **Stand: 26.2** — Netzwerk läuft auf **Minecraft/Paper 26.2**. Aktiv sind **Lobby** als Entry-Hub und **Survival** als aktueller Hauptserver. Im Aufbau: **Skyblock** als Koop-MVP/Umbau und **Mining** als geplanter Grind-Loop im technischen `rpg/`-Slot.
 
 ---
 
@@ -21,12 +21,12 @@ Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
           ┌────────────────────────────┼────────────────────────────┐
           |                            |                            |
     ┌─────▼─────┐              ┌──────▼──────┐            ┌────────▼────────┐
-    │   Lobby   │              │   Survival  │            │  Skyblock/Mining│
+    │   Lobby   │              │   Survival  │            │ Skyblock/Mining │
     │  Server   │              │   Server    │            │                 │
-    │  (AKTIV)  │              │   (AKTIV)   │            │ (NEU / Umbau)   │
+    │ (ENTRY)   │              │   (MAIN)    │            │ (UMBAU / PLAN)  │
     └───────────┘              └─────────────┘            └─────────────────┘
-    - Routing                  - Survival/Tycoon         - Skyblock (Koop, ohne Gilden)
-    - Welcome                  - Jobs, Plots             - Mining (Abbau-Zonen, rpg/-Slot)
+    - Routing                  - Town + Freebuild        - Skyblock (Koop-MVP, ohne Gilden)
+    - Welcome                  - Jobs, Claims, Shops     - Mining (Grind-Loop, `rpg`-Slot)
     - Navigation               - Economy, BlueMap       
       (DeluxeMenus) 
 ```
@@ -98,21 +98,26 @@ Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
 
 ---
 
-### 3. Survival / Tycoon Server
+### 3. Survival Server
 
-**Funktion:** Survival-Server mit integriertem Tycoon-Gamemode (Generator-basierte Economy mit 25-Tier-Progression)
+**Funktion:** Aktiver Hauptserver mit **Town**- und **Freebuild**-Fokus.
+Historische Tycoon-Komponenten liegen teils noch im Repo, sind aktuell aber
+nicht das aktive Spielerlebnis.
 
 **Version:** Paper 26.2
 
 **Hauptplugins:**
 - **CMI** (+CMILib) - Core Management (Economy, Homes, Teleport, Kits, Chat-Formatierung, AFK-System, Hologramme)
-- **NextGens** - Generator-System (Tycoon-Kern, 25 Tier × Sub-Levels)
+- **NextGens** - Generator-System; aktuell deaktiviert und für einen späteren
+  dedizierten Tycoon-Server vorgesehen
 - **Jobs** - Job-System für Economy
-- **Rankup** - Rang-Progression-System (25 Tycoon-Ränge: Erde → Bedrock)
+- **Rankup** - Rang-/Freischalt-Progression für den Survival-Server
 - **CMI** (Rang-Engine) - zeitbasierte Rang-Leiter (`autorank`-Track, 14 Stufen) über `AutoRankUp` (ersetzt Autorank; siehe [survival/ZEITRANG_CMI.md](survival/ZEITRANG_CMI.md))
-- **Skript** - Custom Tycoon-Logik (Sell Wand, Chunk Collector, Nitwit Boss, Casino, Tutorial, Daily/Weekly Rewards, Prestige, dynamische Börse)
-- **PlotSquared** - Land-Claiming-System (Tycoon-Plots + Freebuild)
-- **Multiverse-Core** (+Inventories) - Verwaltung der Welten `tycoon`/`town`/`freebuild` mit getrennten Inventaren
+- **Skript** - Custom Survival-/Economy-Logik; einzelne Tycoon-Skripte sind
+  historisch vorhanden, aber derzeit nicht das aktive Kern-Gameplay
+- **PlotSquared** - Plot-/Bau-System für die `freebuild`-Welt
+- **Multiverse-Core** (+Inventories) - Verwaltung der Welten `town` und
+  `freebuild` mit getrennten Inventaren
 - **VoidGen** - Void-/Leerwelt-Generator
 - **Chunky** - Chunk-Pre-Generierung (Performance)
 - **WorldGuard** - Regionen-Schutz (gehärtet: TNT/Creeper/Feuer/Wither begrenzt)
@@ -130,21 +135,16 @@ Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
 - **PlaceholderAPI**, **ProtocolLib**, **CommandAPI**, **NBTAPI** - Backend-Bibliotheken
 - **bStats**, **faststats**, **spark** - Statistik & Profiling
 
-**Tycoon-Gamemode:**
-- 25-Tier Rangaufstieg (Erde → Stein → Kohle → ... → Bedrock)
-- Generator-basierte Item-Produktion mit Sell-Wand-System
-- Chunk Collector (automatisches Item-Sammeln im 20-Block-Radius)
-- Casino/Gambling-System mit täglichem Verlustlimit
-- Custom Nitwit-Boss-Encounters (zufällige Spawn-Events)
-- Multi-Plot-System: Progressive Plot-Limits pro Rang (1→5 Plots + Prestige-Boni)
-- Plot-Merging: Benachbarte Plots zusammenführen ($5M)
-- Plot-Reset bei Rangaufstieg (nur Haupt-Plot, zusätzliche Plots bleiben)
-- Prestige-System (10 Stufen mit permanentem Sell-Bonus bis +200%)
-- Tägliche Login-Belohnungen mit Streak-System (daily_rewards.sk)
-- Spielzeit-basierte Rang-Leiter über die CMI-Rang-Engine (`autorank`-Track, netzwerkweit via LuckPerms; ersetzt Autorank)
-- Tutorial-System für neue Spieler (tycoon_tutorial.sk)
+**Aktuelle Ausrichtung:**
+- **Town** ist die laufende Survival-Welt mit Claims/Economy.
+- **Freebuild** bleibt der Bau-/Plot-Bereich mit getrennter Inventargruppe.
+- Jobs, Shops, Market, CMI und BlueMap tragen das aktuelle Spielerlebnis.
+- Tycoon-/Generator-Mechaniken sind derzeit deaktiviert und für einen späteren
+  separaten Server vorgesehen.
 
-> Siehe [docs/survival/](../docs/survival/) für vollständige Tycoon-Dokumentation.
+> Siehe [docs/survival/README.md](survival/README.md) für den Ist-Stand;
+> [docs/survival/TYCOON.md](survival/TYCOON.md) dokumentiert den geparkten
+> Tycoon-Bestand.
 
 **Datenbank:**
 - **MySQL/MariaDB** (separiert von MMO-Servern)
@@ -154,7 +154,8 @@ Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
 
 **Besonderheiten:**
 - **Strikte Trennung von MMO-Servern** (keine Daten-Synchronisation)
-- Tycoon-Gamemode als primäres Spielerlebnis neben Standard-Survival
+- Town + Freebuild als aktuelles Spielerlebnis; Tycoon-Mechaniken derzeit
+  deaktiviert
 - Geyser/Floodgate für Bedrock-Spieler-Support
 - AFK-System aktiviert (Auto-Kick nach 30 Min bei 10+ Spielern online)
 - Chat-Formatierung aktiviert (CMI mit Rang-Prefix)
@@ -171,28 +172,54 @@ Dokumentation der technischen Architektur des MinecraftMMO Server-Netzwerks.
 
 ---
 
-### 4. Skyblock Server — *Umbau (ohne Gilden, Freunde-Koop)*
+### 4. Skyblock Server — *Koop-MVP im Umbau*
 
-> **🟢 Wird überarbeitet und behalten.** Kernänderung: **keine Gilden**, stattdessen **Freunde-Koop** über die Insel-Mitglieder von SuperiorSkyblock2. Details und Plugin-Shortlist in [NEW_SERVERS.md](NEW_SERVERS.md).
+> **🟢 Wird als schlanker Koop-Skyblock überarbeitet.** Keine Gilden; Freunde-Koop läuft über die Insel-Mitglieder von SuperiorSkyblock2. Maßgeblicher Ist-Stand: [skyblock/README.md](skyblock/README.md).
 
-**Funktion:** Koop-Skyblock (Freunde auf Insel einladen), schlankerer Fokus als Alt-MMO
+**Funktion:** Skyblock-MVP mit Koop-Inseln, Bazaar/Auktionen und eigener Server-Economy
 
 **Version:** Paper 26.2
 
 **Hauptplugins:**
-- **SuperiorSkyblock2** - Skyblock Core (inkl. Insel-Mitglieder/Koop)
-- **JetsMinions** - Minion-System
-- **CoinsEngine** - Multi-Währungs-System
-- **Aurora** / **AuroraCollections** - Collections/Achievements
-- **LuckPerms**, **PlaceholderAPI**, **Oraxen** - Basis-Infrastruktur
-- **DeluxeBazaar** - Bazaar-System
-- **MMOCore**, **MMOItems**, **MythicMobs** *(offene Frage: MMO-Integration behalten oder entfernen — siehe [NEW_SERVERS.md](NEW_SERVERS.md#7-verbleibende-offene-fragen))*
+- **SuperiorSkyblock2** - Insel-/Koop-Kern
+- **SlimeWorldManager** - dateibasierte Insel-Welten
+- **CMI** (+ **CMILib**, **Vault**) - Server-Economy und Basis-Management
+- **DeluxeBazaar** + **GlobalMarketPlus** - Handel/Auktionen
+- **LuckPerms**, **PlaceholderAPI**, **DeluxeMenus**, **Oraxen**, **Skript**, **Plan** - Netzwerk-/UI-Basis
 
-**Datenbank:**
-- **MariaDB** — Spielerprofile, Skyblock-Island-Daten, Collection-Progress
-- **Redis** — HuskSync Session-Cache
+**Datenhaltung:**
+- **SuperiorSkyblock2:** SQLite
+- **SlimeWorldManager:** Datei-Storage (`file`)
+- **CMI:** eigene MySQL-Datenbank `S5_CMI`
+- **Plan** / **LuckPerms:** zentrale Netzwerk-Dienste
 
 **Besonderheiten:**
-- Server-eigene Economy (CoinsEngine), kein Cross-Server-Economy-Mix
+- Koop über Insel-Mitglieder statt Gilden
+- Gameplay-Daten bleiben lokal; keine aktive Gameplay-Synchronisation mit Mining
+- Schlanker als der frühere MMO-Skyblock-Plan; maßgeblich ist der aktuelle Stack unter `skyblock/plugins/`
 
 ---
+
+### 5. Mining Server — *geplanter Grind-Loop im `rpg/`-Slot*
+
+> **🟡 Geplant.** Technischer Backend-/Ordnername bleibt `rpg`, spielerseitig heißt der Server **Mining**. Konzept-Stand: [prison/README.md](prison/README.md).
+
+**Funktion:** Casual Grind-Loop rund um Abbau-Zonen, aufwertbare Spitzhacken und neue Zonen-Freischaltungen
+
+**Version:** Paper 26.2 (geplant)
+
+**Kernsysteme:**
+- **Abbau-Zonen** mit Auto-Regeneration
+- **Aufwertbare Spitzhacke** als Kern-Progression
+- **Verkaufen → Aufwerten → Freischalten** als Haupt-Loop
+- **Server-isolierte Economy** mit getrennten Backend-Daten
+- **X-Prison-Suite** (`X-Prison`, `XPrivateMines`, `XPrisonArmors`, `XRobots`) als aktueller Repo-Bestand für den geplanten Mining-Stack
+
+**Datenhaltung:**
+- **X-Prison / XRobots:** lokal (H2/Plugin-Storage)
+- **CMI:** eigene MySQL-Datenbank `S3_CMI`
+- **Plan** / **LuckPerms:** zentrale Netzwerk-Dienste
+
+**Besonderheiten:**
+- Geplant als eigener Grind-/Progressions-Server, nicht als Fortsetzung des alten RPG-Modus
+- Technischer Slot/Velocity-Name bleibt `rpg`; öffentliche Kommunikation nutzt **Mining**

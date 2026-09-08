@@ -20,6 +20,10 @@ Beide Server laufen mit dem integrierten BlueMap-Webserver. Die Karten sind unte
 Ports lokal auf dem Host erreichbar, dürfen aber **nicht direkt nach außen freigegeben werden** —
 der Zugriff läuft ausschließlich über den Nginx-Reverse-Proxy.
 
+Der wöchentliche Health-Report (`tools/server-maintenance/festas-maintenance.sh`)
+prüft diese Reverse-Proxy-Only-Ports heuristisch gegen `LISTEN` + `ufw status`
+und markiert öffentliche Freigaben explizit im Bericht.
+
 ---
 
 ## Relevante Dateien in diesem Repo
@@ -151,6 +155,8 @@ Nach dem Pushen dieser Config-Änderungen:
    und analog für `mining.festas-builds.com`.
 5. **Firewall** — Ports 8102 und 8103 dürfen **nicht** direkt von außen erreichbar sein
    (`ufw deny 8102` / `ufw deny 8103` oder einfach nicht öffnen).
+   Nach der Härtung sollte der nächste Mittwochs-Health-Report diese Ports nicht
+   mehr als öffentlich freigegeben aufführen.
 6. **Website-Links prüfen** — BlueMap-Links sollen auf die neuen Subdomains zeigen.
 
 ---
