@@ -45,9 +45,10 @@ Der Bericht (`report.md`) enthält u. a.:
 - **Dienste & Health:** fehlgeschlagene systemd-Units, Kern-Dienste, Zeit-Sync.
 - **Netzwerk:** offene Ports, aktive Verbindungen, DNS/öffentliche IP.
 - **Sicherheit:** Firewall, fehlgeschlagene Logins, letzte Anmeldungen.
-- **Exposure-Drift:** dokumentierte Reverse-Proxy-Only-Ports werden gegen
-  `LISTEN` + `ufw status` abgeglichen; derzeit Plan `8804` sowie BlueMap
-  `8102/8103`. Nicht-Loopback-Binds werden gewarnt; `0.0.0.0`/`[::]`
+- **Exposure-/Bind-Drift:** dokumentierte Reverse-Proxy-Only-Ports werden
+  gegen `LISTEN` + `ufw status` abgeglichen; derzeit Plan `8804` sowie
+  BlueMap `8102/8103`. **Bind-Mismatches** werden gewarnt (Nicht-Loopback
+  oder nur `[::1]` trotz nginx-Upstream `127.0.0.1`); `0.0.0.0`/`[::]`
   **plus** `ALLOW Anywhere` wird explizit als öffentlich freigegeben markiert.
 - **Updates:** aktualisierbare Pakete, Sicherheitsupdates, Reboot-Bedarf.
 - **Logs:** häufigste Fehler/Warnungen (7 Tage), Kernel-I/O-Fehler.
@@ -135,7 +136,7 @@ Empfohlen nach jedem automatischen Mittwoch-Lauf:
 1. Morgens `server-logs/health/latest.md` prüfen; `latest.json` nur für
    Detailauswertung/Automationen hinzuziehen.
 2. **WARN/CRIT** am selben Tag triagieren – zuerst bestätigte Public-Exposures
-   und sonstige Nicht-Loopback-Binds auf Internal-Only-Ports (Plan/BlueMap),
+   und sonstige Bind-Mismatches auf Internal-Only-Ports (Plan/BlueMap),
    fehlgeschlagene Dienste,
    sicherheitsrelevante Updates und Backup-/Trenddrift.
 3. Sofortmaßnahmen direkt umsetzen; größere Themen als Issue/Todo für die Woche

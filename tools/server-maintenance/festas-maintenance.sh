@@ -217,13 +217,17 @@ listen_targets_for_port() {
 }
 
 listen_scope_for_port() {
-  local port="$1" binds
+  local port="$1" binds has_v4=0 has_v6=0
   have ss || { echo "unknown"; return 0; }
   binds="$(listen_targets_for_port "$port")"
   [ -z "${binds:-}" ] && { echo "absent"; return 0; }
   printf '%s\n' "$binds" | grep -Eq '^(0\.0\.0\.0:|\[::\]:|\*:)' && { echo "wildcard"; return 0; }
   printf '%s\n' "$binds" | grep -Eqv '^(127\.0\.0\.1:|\[::1\]:)' && { echo "other"; return 0; }
-  echo "loopback"
+  printf '%s\n' "$binds" | grep -Eq '^127\.0\.0\.1:' && has_v4=1
+  printf '%s\n' "$binds" | grep -Eq '^\[::1\]:' && has_v6=1
+  [ "$has_v4" -eq 1 ] && { echo "loopback"; return 0; }
+  [ "$has_v6" -eq 1 ] && { echo "loopback_v6_only"; return 0; }
+  echo "unknown"
 }
 
 summarize_listen_targets() {
@@ -555,7 +559,8 @@ section_security() {
   md "Heuristik auf Basis von \`docs/infrastructure/PLAN.md\` und"
   md "\`docs/infrastructure/BLUEMAP.md\`: diese Ports sind dokumentiert als"
   md "**intern-only** und sollen hostseitig nur via Loopback erreichbar sein."
-  md "Nicht-Loopback-Binds werden gewarnt; bestätigte UFW-\`ALLOW Anywhere\`-Freigaben explizit als öffentlich markiert."
+  md "Gewarnt wird bei Bind-Mismatches – also Nicht-Loopback-Binds oder nur \`[::1]\` trotz nginx-Upstream \`127.0.0.1\`."
+  md "Bestätigte UFW-\`ALLOW Anywhere\`-Freigaben werden zusätzlich explizit als öffentlich markiert."
   blank
   md "| Dienst | Port | Soll | Beobachtung |"
   md "|---|---:|---|---|"
@@ -564,20 +569,26 @@ section_security() {
     "BlueMap Survival:8102:nur via nginx / Host-Loopback"
     "BlueMap Mining:8103:nur via nginx / Host-Loopback"
   )
-  local def name port expected scope binds note public_exposed=0 non_loopback_bound=0
+  local def name port expected scope binds note public_exposed=0 bind_mismatch=0
   for def in "${defs[@]}"; do
     IFS=: read -r name port expected <<< "$def"
     scope="$(listen_scope_for_port "$port")"
     binds="$(summarize_listen_targets "$port")"
     case "$scope" in
       loopback)
-        note="✅ nur Loopback (${binds})"
+        note="✅ Loopback inkl. IPv4 (${binds})"
+        ;;
+      loopback_v6_only)
+        bind_mismatch=$((bind_mismatch + 1))
+        note="⚠️ nur IPv6-Loopback (${binds}); nginx-Upstream nutzt \`127.0.0.1\` → Bind-Mismatch"
+        issue WARN "Interner Dienst '${name}' (Port ${port}) bindet nur auf [::1], aber der dokumentierte nginx-Upstream nutzt 127.0.0.1 – Reverse-Proxy-Bind-Mismatch."
+        recommend "Port ${port} (${name}) auf \`127.0.0.1\` binden (ggf. zusätzlich zu \`[::1]\`) oder die nginx-Upstreams bewusst auf IPv6-Loopback umstellen."
         ;;
       absent)
         note="_kein Listener erkannt_"
         ;;
       wildcard)
-        non_loopback_bound=$((non_loopback_bound + 1))
+        bind_mismatch=$((bind_mismatch + 1))
         if ufw_allows_anywhere_port "$port"; then
           note="⚠️ öffentlich freigegeben (${binds}; UFW \`ALLOW Anywhere\`)"
           issue WARN "Interner Dienst '${name}' (Port ${port}) ist laut Host-Status öffentlich freigegeben – dokumentiert ist nur Reverse-Proxy/Loopback."
@@ -590,7 +601,7 @@ section_security() {
         fi
         ;;
       other)
-        non_loopback_bound=$((non_loopback_bound + 1))
+        bind_mismatch=$((bind_mismatch + 1))
         note="⚠️ nicht auf Loopback begrenzt (${binds}); intern-only-Vorgabe verletzt, öffentliche Freigabe nicht bestätigt"
         issue WARN "Interner Dienst '${name}' (Port ${port}) ist nicht nur auf Loopback gebunden – dokumentiert ist nur Reverse-Proxy/Loopback."
         recommend "Port ${port} (${name}) nur nach \`127.0.0.1\` veröffentlichen; falls bewusst breiter gebunden, Host-Firewall/UFW explizit prüfen."
@@ -601,7 +612,8 @@ section_security() {
     esac
     md "| ${name} | \`${port}\` | ${expected} | ${note} |"
   done
-  metric internal_only_non_loopback_bound "$non_loopback_bound"
+  metric internal_only_bind_mismatch "$bind_mismatch"
+  metric internal_only_non_loopback_bound "$bind_mismatch"
   metric internal_only_public_exposed "$public_exposed"
 
   if have fail2ban-client; then

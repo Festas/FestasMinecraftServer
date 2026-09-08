@@ -199,8 +199,9 @@ Einrichtung: [`tools/server-maintenance/README.md`](../tools/server-maintenance/
   (Warnung > 80 %, kritisch > 90 %).
 - **Exposure-Check für interne Webdienste:** gleicht dokumentierte
   Reverse-Proxy-Only-Ports (aktuell Plan `8804`, BlueMap `8102/8103`) gegen
-  `LISTEN` + `ufw status` ab, warnt bei **Nicht-Loopback-Binds** und markiert
-  bestätigte **öffentliche UFW-Freigaben** separat im Bericht.
+  `LISTEN` + `ufw status` ab, warnt bei **Bind-Mismatches** (Nicht-Loopback
+  oder nur `[::1]` trotz nginx-Upstream `127.0.0.1`) und markiert bestätigte
+  **öffentliche UFW-Freigaben** separat im Bericht.
 - **Wartung (optional, Modus `maintain`/`full`):** installiert sinnvolle Updates
   (`all`/nur `security`/`none`), entfernt verwaiste Pakete/alte Kernel, dampft
   Journald ein und räumt Docker gefahrlos auf (**ohne** `-a`/`--volumes` – Welten,
@@ -270,7 +271,8 @@ Für das Netzwerk werden zwei Ebenen unterschieden:
 
 > Plan (`8804`) und BlueMap (`8102`/`8103`) gelten infra-seitig als
 > **interne Webdienste hinter nginx**. Der wöchentliche Health-Report warnt bei
-> Nicht-Loopback-Binds und markiert bestätigte öffentliche Freigaben separat.
+> Bind-Mismatches (inkl. nur `[::1]` bei `127.0.0.1`-Upstream) und markiert
+> bestätigte öffentliche Freigaben separat.
 
 Die konkrete Metrik-Definition und die Prometheus-Beispielkonfiguration liegen unter:
 

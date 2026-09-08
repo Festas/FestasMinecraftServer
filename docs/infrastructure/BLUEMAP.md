@@ -21,8 +21,9 @@ Ports lokal auf dem Host erreichbar, dürfen aber **nicht direkt nach außen fre
 der Zugriff läuft ausschließlich über den Nginx-Reverse-Proxy.
 
 Der wöchentliche Health-Report (`tools/server-maintenance/festas-maintenance.sh`)
-prüft diese Reverse-Proxy-Only-Ports heuristisch gegen `LISTEN` + `ufw status`
-und markiert öffentliche Freigaben explizit im Bericht.
+prüft diese Reverse-Proxy-Only-Ports heuristisch gegen `LISTEN` + `ufw status`,
+warnt bei Bind-Mismatches (Nicht-Loopback oder nur `[::1]` trotz nginx-Upstream
+`127.0.0.1`) und markiert öffentliche Freigaben explizit im Bericht.
 
 ---
 
@@ -157,7 +158,8 @@ Nach dem Pushen dieser Config-Änderungen:
    (`ufw deny 8102` / `ufw deny 8103` oder einfach nicht öffnen).
    Nach der Härtung sollte der nächste Mittwochs-Health-Report diese Ports nicht
    mehr als öffentlich freigegeben aufführen; eine Warnung bleibt nur bestehen,
-   falls der Host-Bind weiterhin nicht auf Loopback begrenzt ist.
+   falls der Host-Bind weiterhin nicht zum nginx-Upstream passt (z. B. nur
+   `[::1]` statt `127.0.0.1`) oder nicht auf Loopback begrenzt ist.
 6. **Website-Links prüfen** — BlueMap-Links sollen auf die neuen Subdomains zeigen.
 
 ---
