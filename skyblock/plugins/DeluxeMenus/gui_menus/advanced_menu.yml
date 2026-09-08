@@ -1,121 +1,151 @@
-#  A DeluxeMenus advanced configuration guide
-#=========================================================
-menu_title: '&8> &6&lD&eM &bAdvanced Example'
-open_command:
-  - advancedmenu
-  - advancedexamplemenu
-  - themostadvancedmenuintheworld
-open_commands:
-  - '[sound] BLOCK_BEACON_ACTIVATE'
-  - '[message] &7Opening Advanced example menu, Plugin created by &bextended_clip&7!'
+# Pfad: plugins/DeluxeMenus/gui_menus/advanced_menu.yml
+# Skyblock Fortschritt – Insel, Missionen und Wirtschaft
+menu_title: '&8» &eSkyblock Fortschritt'
+open_command: advancedmenu
 size: 27
-# as always, only cool people can open this menu :)
-open_requirement:
-  requirements:
-    permission:
-      type: has permission
-      permission: deluxemenus.admin
-      deny_commands:
-        - "[message] &8[&bDeluxe&eMenus&8] &cYou don't have perms for this!"
+
 items:
-  'example':
-    material: LIME_DYE
-    slot: 11
-    priority: 1
-    update: true
-    item_flags:
-      - HIDE_ATTRIBUTES
-    display_name: '&bExample Kit'
-    lore:
-      - ''
-      - '&7Cooldown : &f3 Days'
-      - '&7Left Click to Redeem'
-    view_requirement:
-      requirements:
-        kit_requirement:
-          type: string equals
-          input: '%essentials_kit_is_available_example%'
-          output: 'yes'
-        kit_perm:
-          type: has permission
-          permission: essentials.kits.example
-    left_click_commands:
-      - '[player] kit example'
-      - '[close]'
-  'examplecd':
-    material: GRAY_DYE
-    slot: 11
-    priority: 2
-    update: true
-    item_flags:
-      - HIDE_ATTRIBUTES
-    display_name: '&cExample Kit Unavailable'
-    lore:
-      - '&7This kit is on cooldown!'
-      - '&7You must wait : &f%essentials_kit_time_until_available_example%'
-      - '&7Before using this kit again.'
-    view_requirement:
-      requirements:
-        kit_perm:
-          type: has permission
-          permission: essentials.kits.example
-  'examplenoperm':
-    material: GRAY_DYE
-    slot: 11
-    priority: 3
-    update: true
-    item_flags:
-      - HIDE_ATTRIBUTES
-    display_name: '&7Example Kit'
-    lore:
-      - '&7You do not have permission for this kit!'
-  'shopexample':
-    material: head-extended_clip
-    slot: 12
-    display_name: '&r'
-    lore:
-      - '&7Shop example using'
-      - '&7view requirements!'
-      - '&fLeft click to purchase.'
-    priority: 1
-    view_requirement:
-      requirements:
-        shop_perm:
-          type: has permission
-          permission: deluxemenus.shopexample
-    left_click_commands:
-      - '[sound] ENTITY_FIREWORK_ROCKET_BLAST'
-      - '[console] give %player_name% skull 1 player:extended_clip name:&bExtended_Clip lore:&8<lore>|&7Example_Shop_Item|&8<lore>'
-      - '[message] &8[&6&lDeluxeShop&8] &fYou have succesfully purchased &7extended_clips &fhead!'
-      - '[console] eco take %player_name% 666'
-      - '[close]'
-    left_click_requirement:
-      requirements:
-        balance_check:
-          type: has money
-          amount: 666
-  'shopnoperm':
-    material: head-extended_clip
-    slot: 12
-    display_name: '&7No permission'
-    lore:
-      - '&8You are missing the &bdeluxemenus.shopexample'
-      - '&8permission which is required to view the item!'
-      - '&fLeft click to close the menu.'
-    left_click_commands:
-      - '[sound] ENTITY_SNOW_GOLEM_DEATH'
-      - '[close]'
-      - '[message] &8[&6&lDeluxeShop&8] &fYou have closed the menu! &7(1 Second message delay!) <delay=20>'
-  'filler_item':
-    material: GRAY_STAINED_GLASS_PANE
+  'filler':
+    material: BLACK_STAINED_GLASS_PANE
     slots:
-      - 0
-      - 1
-      - 2
-      - 3
-      - 4
-      - 5
-      - 6
-      - 7
-      - 8
-    display_name: ' '
+      - '0-26'
+    display_name: '&f'
+    priority: 2
+
+  'header':
+    material: EXPERIENCE_BOTTLE
+    slot: 4
+    priority: 1
+    display_name: '&e&l⭐ Skyblock Fortschritt'
+    lore:
+      - '&7Prüfe deinen Fortschritt und'
+      - '&7öffne die nächsten wichtigen Schritte.'
+
+  'island_level':
+    material: EMERALD
+    slot: 10
+    priority: 1
+    display_name: '&a&lInsel-Level'
+    lore:
+      - '&7Sieh dir dein aktuelles Level an'
+      - '&7oder vergleiche dich mit anderen Inseln.'
+      - ''
+      - '&e► Linksklick: &7/is level'
+      - '&e► Rechtsklick: &7/is top'
+    left_click_commands:
+      - '[close]'
+      - '[player] is level'
+    right_click_commands:
+      - '[close]'
+      - '[player] is top'
+
+  'missions':
+    material: BOOK
+    slot: 12
+    priority: 1
+    display_name: '&b&lMissionen'
+    lore:
+      - '&7Missionen geben dir Belohnungen'
+      - '&7und zeigen die nächsten Ziele.'
+      - ''
+      - '&8» &f/is missions'
+    left_click_commands:
+      - '[close]'
+      - '[player] is missions'
+
+  'coop':
+    material: PLAYER_HEAD
+    slot: 14
+    priority: 1
+    display_name: '&d&lTeam verwalten'
+    lore:
+      - '&7Behalte deine Mitglieder im Blick'
+      - '&7und plane die nächsten Coop-Schritte.'
+      - ''
+      - '&8» &f/is members'
+      - '&8» &f/is invite <Spieler>'
+    left_click_commands:
+      - '[close]'
+      - '[player] is members'
+    right_click_commands:
+      - '[close]'
+      - '[player] is'
+
+  'economy':
+    material: GOLD_INGOT
+    slot: 16
+    priority: 1
+    display_name: '&6&lBazaar & Markt'
+    lore:
+      - '&7Verkaufe Farm-Erträge sofort'
+      - '&7oder handle mit anderen Spielern.'
+      - ''
+      - '&e► Linksklick: &7/bazaar'
+      - '&e► Rechtsklick: &7/market'
+    left_click_commands:
+      - '[close]'
+      - '[player] bazaar'
+    right_click_commands:
+      - '[close]'
+      - '[player] market'
+
+  'visits':
+    material: ENDER_PEARL
+    slot: 20
+    priority: 1
+    display_name: '&5&lWarps & Besuche'
+    lore:
+      - '&7Finde öffentliche Inseln und'
+      - '&7lass dich für deine eigene inspirieren.'
+      - ''
+      - '&8» &f/is warps'
+      - '&8» &f/is visit <Spieler>'
+    left_click_commands:
+      - '[close]'
+      - '[player] is warps'
+
+  'daily_tips':
+    material: SUNFLOWER
+    slot: 22
+    priority: 1
+    display_name: '&d&lDaily & Tipps'
+    lore:
+      - '&7Nimm tägliche Boni mit und'
+      - '&7lass dir den nächsten Tipp anzeigen.'
+      - ''
+      - '&e► Linksklick: &7/daily'
+      - '&e► Rechtsklick: &7/tips'
+    left_click_commands:
+      - '[close]'
+      - '[player] daily'
+    right_click_commands:
+      - '[close]'
+      - '[player] tips'
+
+  'goals':
+    material: PAPER
+    slot: 24
+    priority: 1
+    display_name: '&f&lNächste Ziele'
+    lore:
+      - '&7Öffne eine kurze Skyblock-Checkliste'
+      - '&7für die nächsten sinnvollen Ziele.'
+      - ''
+      - '&e► Klicke zum Öffnen'
+    left_click_commands:
+      - '[openguimenu] requirements_menu'
+    right_click_commands:
+      - '[openguimenu] requirements_menu'
+
+  'back':
+    material: ARROW
+    slot: 26
+    priority: 1
+    display_name: '&7&l← Hilfe oder Schnellstart'
+    lore:
+      - '&e► Linksklick: &7Zurück zur Hilfe'
+      - '&e► Rechtsklick: &7Schnellstart'
+    left_click_commands:
+      - '[openguimenu] help_menu'
+    right_click_commands:
+      - '[openguimenu] basics_menu'

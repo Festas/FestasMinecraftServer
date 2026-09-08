@@ -38,163 +38,143 @@ items:
     priority: 1
     display_name: '&3&l❓ Skyblock Hilfe'
     lore:
-      - '&7Willkommen auf dem Skyblock Server!'
-      - '&7Baue deine eigene Insel im Himmel auf.'
+      - '&7Finde deinen Start, Fortschritt'
+      - '&7und die wichtigsten Skyblock-Wege.'
 
   # ==============================================================
-  # INSEL
+  # SCHNELLSTART
   # ==============================================================
-  'island':
+  'quickstart':
     material: OAK_SAPLING
     slot: 10
     priority: 1
-    display_name: '&a&l🌴 Deine Insel'
+    display_name: '&a&l🌴 Schnellstart'
     lore:
-      - '&7Alles beginnt mit deiner eigenen Insel!'
+      - '&7Starte deine Insel, öffne dein'
+      - '&7Menü und finde die ersten Schritte.'
       - ''
-      - '&8» &fErstelle deine Insel mit &e/is create'
-      - '&8» &fSetze deinen Spawn mit &e/is sethome'
-      - '&8» &fErweitere die Grenze mit &e/is border'
-      - ''
-      - '&eBefehle:'
-      - '&e/is &8– &7Insel-Menü öffnen'
-      - '&e/is create &8– &7Neue Insel erstellen'
-      - '&e/is home &8– &7Zur Insel teleportieren'
+      - '&e► Klicke zum Öffnen'
     left_click_commands:
-      - '[close]'
-      - '[player] /is'
+      - '[openguimenu] basics_menu'
     right_click_commands:
-      - '[close]'
-      - '[player] /is'
+      - '[openguimenu] basics_menu'
 
   # ==============================================================
-  # TEAM / COOP
+  # FORTSCHRITT
   # ==============================================================
-  'coop':
-    material: PLAYER_HEAD
+  'progress':
+    material: EXPERIENCE_BOTTLE
     slot: 12
     priority: 1
-    display_name: '&b&l🤝 Team & Coop'
+    display_name: '&e&l⭐ Fortschritt'
     lore:
-      - '&7Spiele gemeinsam mit Freunden auf'
-      - '&7einer Insel – kein Gilden-System nötig!'
+      - '&7Missionen, Insel-Level, Team'
+      - '&7und Wirtschaft in einem Menü.'
       - ''
-      - '&8» &fLade Freunde mit &e/is invite <Spieler> &7ein'
-      - '&8» &fSieh dein Team mit &e/is members'
-      - '&8» &fRollen & Rechte mit &e/is permissions'
-      - ''
-      - '&eBefehle:'
-      - '&e/is invite <Spieler> &8– &7Freund einladen'
-      - '&e/is members &8– &7Team anzeigen'
-      - '&e/is kick <Spieler> &8– &7Mitglied entfernen'
+      - '&e► Klicke zum Öffnen'
+    left_click_commands:
+      - '[openguimenu] advanced_menu'
+    right_click_commands:
+      - '[openguimenu] advanced_menu'
 
   # ==============================================================
-  # INSEL-LEVEL & MISSIONEN
+  # ZIELE
   # ==============================================================
-  'level':
-    material: EXPERIENCE_BOTTLE
+  'goals':
+    material: PAPER
     slot: 14
     priority: 1
-    display_name: '&e&l⭐ Level & Missionen'
+    display_name: '&f&l📋 Ziele'
     lore:
-      - '&7Steigere dein Insel-Level und'
-      - '&7schließe Missionen für Belohnungen ab!'
+      - '&7Eine kurze Checkliste für deinen'
+      - '&7nächsten sinnvollen Skyblock-Schritt.'
       - ''
-      - '&8» &fWertvolle Blöcke &7erhöhen dein Level'
-      - '&8» &fMissionen &7geben Geld & Boni'
-      - '&8» &fKlettere in der &e/is top &7Rangliste'
-      - ''
-      - '&eBefehle:'
-      - '&e/is level &8– &7Insel-Level anzeigen'
-      - '&e/is missions &8– &7Missionen anzeigen'
-      - '&e/is top &8– &7Beste Inseln anzeigen'
+      - '&e► Klicke zum Öffnen'
+    left_click_commands:
+      - '[openguimenu] requirements_menu'
+    right_click_commands:
+      - '[openguimenu] requirements_menu'
 
   # ==============================================================
-  # WIRTSCHAFT / BAZAAR
+  # BAZAAR
   # ==============================================================
   'economy':
     material: GOLD_INGOT
     slot: 16
     priority: 1
-    display_name: '&6&l💰 Wirtschaft & Bazaar'
+    display_name: '&6&l💰 Bazaar & Markt'
     lore:
-      - '&7Verkaufe deine Ressourcen und'
-      - '&7werde reich!'
+      - '&7Verkaufe Ressourcen direkt oder'
+      - '&7handle mit anderen Spielern.'
       - ''
-      - '&8» &fBazaar &7– Sofort kaufen & verkaufen'
-      - '&8» &fMarktplatz &7– Handel mit Spielern'
-      - ''
-      - '&eBefehle:'
-      - '&e/bazaar &8– &7Bazaar öffnen'
-      - '&e/market &8– &7Spieler-Marktplatz'
-      - '&e/bal &8– &7Kontostand anzeigen'
+      - '&e► Linksklick: &7/bazaar'
+      - '&e► Rechtsklick: &7/market'
     left_click_commands:
       - '[close]'
-      - '[player] /bazaar'
+      - '[player] bazaar'
     right_click_commands:
       - '[close]'
-      - '[player] /bazaar'
+      - '[player] market'
 
   # ==============================================================
-  # TIPPS
+  # DAILY & TIPPS
   # ==============================================================
-  'tips':
-    material: BOOK
+  'daily_tips':
+    material: SUNFLOWER
     slot: 22
     priority: 1
-    display_name: '&d&l💡 Skyblock-Tipps'
+    display_name: '&d&l☀ Daily & Tipps'
     lore:
-      - '&7Brauchst du einen guten Rat?'
+      - '&7Hol dir täglich eine Belohnung ab'
+      - '&7oder nimm dir einen frischen Tipp mit.'
       - ''
-      - '&8» &fKlicke für einen zufälligen Tipp!'
-      - '&8» &fOder nutze jederzeit &e/tips'
-      - ''
-      - '&7Der &bNetzwerk-Kompass &7in deinem'
-      - '&7Inventar öffnet dieses Menü.'
+      - '&e► Linksklick: &7/daily'
+      - '&e► Rechtsklick: &7/tips'
     left_click_commands:
-      - '[player] /tips'
+      - '[close]'
+      - '[player] daily'
     right_click_commands:
-      - '[player] /tips'
+      - '[close]'
+      - '[player] tips'
 
   # ==============================================================
-  # ALLE BEFEHLE
+  # INSEL
   # ==============================================================
-  'commands':
-    material: COMMAND_BLOCK
+  'island':
+    material: COMPASS
     slot: 28
     priority: 1
-    display_name: '&e&l⌨ Alle Befehle'
+    display_name: '&2&l🧭 Insel-Menü'
     lore:
-      - '&7Die wichtigsten Befehle:'
+      - '&7Öffne dein Insel-Menü oder'
+      - '&7teleportiere dich direkt nach Hause.'
       - ''
-      - '&e/is &8– &7Insel-Menü'
-      - '&e/is create &8– &7Insel erstellen'
-      - '&e/is invite &8– &7Freund einladen'
-      - '&e/is level &8– &7Insel-Level'
-      - '&e/bazaar &8– &7Bazaar öffnen'
-      - '&e/market &8– &7Spieler-Marktplatz'
-      - '&e/daily &8– &7Tägliche Belohnung'
-      - '&e/tips &8– &7Zufälliger Tipp'
-      - '&e/lobby &8– &7Zurück zur Lobby'
+      - '&e► Linksklick: &7/is'
+      - '&e► Rechtsklick: &7/is home'
+    left_click_commands:
+      - '[close]'
+      - '[player] is'
+    right_click_commands:
+      - '[close]'
+      - '[player] is home'
 
   # ==============================================================
-  # BESUCHEN / WARPS
+  # BESUCHE / WARPS
   # ==============================================================
   'visit':
     material: ENDER_PEARL
     slot: 30
     priority: 1
-    display_name: '&5&l🌀 Inseln besuchen'
+    display_name: '&5&l🌀 Besuche & Warps'
     lore:
-      - '&7Besuche die Inseln anderer Spieler!'
+      - '&7Öffentliche Inseln ansehen und'
+      - '&7dir Inspiration für deine holen.'
       - ''
-      - '&8» &fÖffentliche Warps &7mit &e/is warps'
-      - '&8» &fBesuche direkt mit &e/is visit <Spieler>'
-      - ''
-      - '&eBefehle:'
-      - '&e/is warps &8– &7Öffentliche Warps'
-      - '&e/is visit <Spieler> &8– &7Insel besuchen'
-      - '&e/is setwarp &8– &7Eigenen Warp setzen'
+      - '&8» &f/is warps'
+      - '&8» &f/is visit <Spieler>'
+    left_click_commands:
+      - '[close]'
+      - '[player] is warps'
 
   # ==============================================================
   # SUPPORT
@@ -225,7 +205,7 @@ items:
       - '&7Verbinde dich zur Lobby'
     left_click_commands:
       - '[close]'
-      - '[player] /lobby'
+      - '[player] lobby'
     right_click_commands:
       - '[close]'
-      - '[player] /lobby'
+      - '[player] lobby'

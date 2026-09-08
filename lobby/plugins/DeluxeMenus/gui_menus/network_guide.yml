@@ -1,6 +1,5 @@
 # Pfad: plugins/DeluxeMenus/gui_menus/network_guide.yml
 # Netzwerk-Guide GUI - Geöffnet über /guide oder NPC Klick
-
 menu_title: '&8» &a📖 Netzwerk Guide'
 open_command: network_guide
 size: 45
@@ -9,134 +8,148 @@ items:
   'filler':
     material: GREEN_STAINED_GLASS_PANE
     slots:
-      - 0-8
-      - 36-44
+      - '0-8'
+      - '36-44'
     display_name: '&f'
     priority: 2
+
+  'filler2':
+    material: BLACK_STAINED_GLASS_PANE
+    slots:
+      - '9-35'
+    display_name: '&f'
+    priority: 3
 
   'header':
     material: KNOWLEDGE_BOOK
     slot: 4
+    priority: 1
     display_name: '&a&l📖 Netzwerk Guide'
     lore:
-      - '&7Erfahre alles über unser Netzwerk!'
-      - '&7Klicke auf einen Spielmodus für Details.'
+      - '&7Welcher Server passt zu dir?'
+      - '&7Vergleiche hier alle drei Modi.'
 
-  # --- SURVIVAL / TYCOON ---
   'survival_guide':
     material: GRASS_BLOCK
     slot: 10
+    priority: 1
     display_name: '&a&l🌳 Survival'
     lore:
-      - '&7Der Survival Server bietet:'
+      - '&7Passt zu dir, wenn du entspannt'
+      - '&7bauen, handeln und aufsteigen willst.'
       - ''
-      - '&6Wirtschaft:'
-      - '&8» &f13 Jobs &7(Miner, Farmer, Builder ...)'
-      - '&8» &fShops &7zum Kaufen und Verkaufen'
-      - '&8» &fMarktplatz &7für Spieler-Handel'
-      - '&8» &fCasino &7mit Münzwurf und Glücksspiel'
+      - '&8» &fJobs, Shop, Warps'
+      - '&8» &fRankup, Generatoren, Tycoon'
       - ''
-      - '&6Bauen:'
-      - '&8» &fBauen &7in der Survival Welt'
-      - '&8» &fPlots &7für sicheres Bauen'
-      - '&8» &fFreebuild &7für kreatives Bauen'
-      - ''
-      - '&eBefehle: &7/rankup, /shop, /jobs, /plot'
+      - '&e► Klicke zum Verbinden'
+    left_click_commands:
+      - '[close]'
+      - '[connect] survival'
+    right_click_commands:
+      - '[close]'
+      - '[connect] survival'
 
-  # --- MINING SERVER (recycelter rpg-Slot) ---
-  'rpg_guide':
-    material: DIAMOND_PICKAXE
-    slot: 12
-    display_name: '&b&l⛏ Mining Server'
-    lore:
-      - '&7Der Mining Server dreht sich ums'
-      - '&7Abbauen, Aufsteigen und Aufwerten:'
-      - ''
-      - '&6Abbau-Zonen:'
-      - '&8» &fEigene Zonen &7die du nach und nach freischaltest'
-      - '&8» &fAuto-Reset &7füllt die Zonen wieder auf'
-      - '&8» &fAutosell &7verkauft Blöcke direkt beim Abbau'
-      - ''
-      - '&6Progression:'
-      - '&8» &fRänge &7durch Geld verdienen (Rankup)'
-      - '&8» &fPrestige &7für Multiplikatoren'
-      - '&8» &fPrivate Mines &7für dich allein'
-      - ''
-      - '&6Spitzhacken:'
-      - '&8» &fAufwertbare Spitzhacken &7bauen mehr Blöcke auf einmal ab'
-      - '&8» &fEnchants &7für Tempo, Boni und Extras'
-      - ''
-      - '&eBefehle: &7/mine, /rankup, /prestige, /pmine'
-
-  # --- SKYBLOCK ---
   'skyblock_guide':
     material: OAK_SAPLING
-    slot: 14
+    slot: 13
+    priority: 1
     display_name: '&b&l🏝 Skyblock'
     lore:
-      - '&7Überarbeiteter Skyblock mit Freunde-Koop:'
+      - '&7Passt zu dir, wenn du auf einer'
+      - '&7Insel mit Freunden wachsen willst.'
       - ''
-      - '&6Skyblock:'
-      - '&8» &fEigene Insel &7bauen und erweitern'
-      - '&8» &fMinions &7die für dich arbeiten'
-      - '&8» &fInsel-Upgrades &7und Level-System'
-      - '&8» &fCoop-Inseln &7mit Freunden'
+      - '&8» &f/is create, Coop, Missionen'
+      - '&8» &fBazaar, Level, Insel-Besuche'
       - ''
-      - '&6Progression:'
-      - '&8» &fCollections &7für Belohnungen'
-      - '&8» &fBazaar &7für den Marktplatz'
-      - ''
-      - '&7Lade deine Freunde ein und baut'
-      - '&7gemeinsam an einer Insel!'
-      - ''
-      - '&eBefehle: &7/is, /is invite'
+      - '&e► Klicke zum Verbinden'
+    left_click_commands:
+      - '[close]'
+      - '[connect] skyblock'
+    right_click_commands:
+      - '[close]'
+      - '[connect] skyblock'
 
-  # --- NETZWERK INFO ---
-  'network_info':
-    material: NETHER_STAR
+  'rpg_guide':
+    material: NETHERITE_PICKAXE
     slot: 16
-    display_name: '&6&l✦ Netzwerk Info'
+    priority: 1
+    display_name: '&b&l⛏ Mining'
     lore:
-      - '&6Festas Builds &7Minecraft Netzwerk'
+      - '&7Passt zu dir, wenn du klare'
+      - '&7Progression und Grind suchst.'
       - ''
-      - '&8» &7IP: &fmc.festas-builds.com'
-      - '&8» &7Discord: &fdiscord.gg/festasbuilds'
-      - '&8» &7Version: &f1.21.1'
-      - '&8» &7Bedrock: &fUnterstützt (Geyser)'
+      - '&8» &f/mine, /rankup, /prestige'
+      - '&8» &fPrivate Mines & Pickaxe-Fortschritt'
       - ''
-      - '&7Wir unterstützen Java &fund &7Bedrock!'
+      - '&e► Klicke zum Verbinden'
+    left_click_commands:
+      - '[close]'
+      - '[connect] rpg'
+    right_click_commands:
+      - '[close]'
+      - '[connect] rpg'
 
-  # --- WICHTIGE BEFEHLE ---
+  'finder':
+    material: COMPASS
+    slot: 20
+    priority: 1
+    display_name: '&b&lSpielstil-Finder'
+    lore:
+      - '&7Noch unsicher? Vergleiche die'
+      - '&7Server nach deinem Spielstil.'
+      - ''
+      - '&e► Klicke zum Öffnen'
+    left_click_commands:
+      - '[openguimenu] advanced_menu'
+    right_click_commands:
+      - '[openguimenu] advanced_menu'
+
+  'selector':
+    material: NETHER_STAR
+    slot: 22
+    priority: 1
+    display_name: '&6&lDirekt zur Server-Auswahl'
+    lore:
+      - '&7Zurück zum Navigator mit'
+      - '&7direkten Verbindungen.'
+      - ''
+      - '&e► Klicke zum Öffnen'
+    left_click_commands:
+      - '[openguimenu] server_selector'
+    right_click_commands:
+      - '[openguimenu] server_selector'
+
+  'next_step':
+    material: PAPER
+    slot: 24
+    priority: 1
+    display_name: '&e&lEmpfohlener Start'
+    lore:
+      - '&7Pro Server kurz sehen, womit'
+      - '&7du am besten zuerst startest.'
+      - ''
+      - '&e► Klicke zum Öffnen'
+    left_click_commands:
+      - '[openguimenu] requirements_menu'
+    right_click_commands:
+      - '[openguimenu] requirements_menu'
+
   'commands':
     material: COMMAND_BLOCK
     slot: 28
+    priority: 1
     display_name: '&e&l⌨ Wichtige Befehle'
     lore:
-      - '&7Allgemeine Befehle für alle Server:'
-      - ''
       - '&e/navigator &8- &7Server-Auswahl'
-      - '&e/rules &8- &7Serverregeln'
       - '&e/guide &8- &7Dieser Guide'
+      - '&e/help &8- &7Lobby-Hilfe'
+      - '&e/rules &8- &7Serverregeln'
       - '&e/lobby &8- &7Zurück zur Lobby'
-      - '&e/msg <Spieler> &8- &7Private Nachricht'
 
-  # --- FREUNDE & KOOP ---
-  'coop':
-    material: PLAYER_HEAD
-    slot: 30
-    display_name: '&d&l🤝 Freunde & Koop'
-    lore:
-      - '&7Spiele zusammen mit deinen Freunden!'
-      - '&7Auf Skyblock baust du gemeinsam an einer Insel.'
-      - ''
-      - '&8» &fSkyblock-Koop &7per Insel-Einladung'
-      - ''
-      - '&eBefehl: &7/is invite'
-
-  # --- SUPPORT ---
   'support':
     material: ENDER_EYE
     slot: 32
+    priority: 1
     display_name: '&c&l❓ Hilfe & Support'
     lore:
       - '&7Brauchst du Hilfe? So erreichst du uns:'
@@ -144,16 +157,15 @@ items:
       - '&8» &fDiscord: &7discord.gg/festasbuilds'
       - '&8» &fIn-Game: &7/report <Spieler> <Grund>'
       - '&8» &fTeam: &7Schreibe einen Moderator an'
-      - ''
-      - '&7Bitte erstelle ein Ticket auf Discord'
-      - '&7für schnellste Hilfe!'
 
-  # --- ZURÜCK ---
   'back':
     material: ARROW
     slot: 40
+    priority: 1
     display_name: '&7&l← Zurück'
     lore:
-      - '&7Zurück zum Server-Menü'
+      - '&7Zurück zum Navigator'
     left_click_commands:
+      - '[openguimenu] server_selector'
+    right_click_commands:
       - '[openguimenu] server_selector'

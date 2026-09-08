@@ -1,121 +1,122 @@
-#  A DeluxeMenus advanced configuration guide
-#=========================================================
-menu_title: '&8> &6&lD&eM &bAdvanced Example'
-open_command:
-  - advancedmenu
-  - advancedexamplemenu
-  - themostadvancedmenuintheworld
-open_commands:
-  - '[sound] BLOCK_BEACON_ACTIVATE'
-  - '[message] &7Opening Advanced example menu, Plugin created by &bextended_clip&7!'
+# Pfad: plugins/DeluxeMenus/gui_menus/advanced_menu.yml
+# Spielstil-Finder – welcher Server passt zu dir?
+menu_title: '&8» &bWelcher Server passt zu dir?'
+open_command: advancedmenu
 size: 27
-# as always, only cool people can open this menu :)
-open_requirement:
-  requirements:
-    permission:
-      type: has permission
-      permission: deluxemenus.admin
-      deny_commands:
-        - "[message] &8[&bDeluxe&eMenus&8] &cYou don't have perms for this!"
+
 items:
-  'example':
-    material: LIME_DYE
-    slot: 11
-    priority: 1
-    update: true
-    item_flags:
-      - HIDE_ATTRIBUTES
-    display_name: '&bExample Kit'
-    lore:
-      - ''
-      - '&7Cooldown : &f3 Days'
-      - '&7Left Click to Redeem'
-    view_requirement:
-      requirements:
-        kit_requirement:
-          type: string equals
-          input: '%essentials_kit_is_available_example%'
-          output: 'yes'
-        kit_perm:
-          type: has permission
-          permission: essentials.kits.example
-    left_click_commands:
-      - '[player] kit example'
-      - '[close]'
-  'examplecd':
-    material: GRAY_DYE
-    slot: 11
-    priority: 2
-    update: true
-    item_flags:
-      - HIDE_ATTRIBUTES
-    display_name: '&cExample Kit Unavailable'
-    lore:
-      - '&7This kit is on cooldown!'
-      - '&7You must wait : &f%essentials_kit_time_until_available_example%'
-      - '&7Before using this kit again.'
-    view_requirement:
-      requirements:
-        kit_perm:
-          type: has permission
-          permission: essentials.kits.example
-  'examplenoperm':
-    material: GRAY_DYE
-    slot: 11
-    priority: 3
-    update: true
-    item_flags:
-      - HIDE_ATTRIBUTES
-    display_name: '&7Example Kit'
-    lore:
-      - '&7You do not have permission for this kit!'
-  'shopexample':
-    material: head-extended_clip
-    slot: 12
-    display_name: '&r'
-    lore:
-      - '&7Shop example using'
-      - '&7view requirements!'
-      - '&fLeft click to purchase.'
-    priority: 1
-    view_requirement:
-      requirements:
-        shop_perm:
-          type: has permission
-          permission: deluxemenus.shopexample
-    left_click_commands:
-      - '[sound] ENTITY_FIREWORK_ROCKET_BLAST'
-      - '[console] give %player_name% skull 1 player:extended_clip name:&bExtended_Clip lore:&8<lore>|&7Example_Shop_Item|&8<lore>'
-      - '[message] &8[&6&lDeluxeShop&8] &fYou have succesfully purchased &7extended_clips &fhead!'
-      - '[console] eco take %player_name% 666'
-      - '[close]'
-    left_click_requirement:
-      requirements:
-        balance_check:
-          type: has money
-          amount: 666
-  'shopnoperm':
-    material: head-extended_clip
-    slot: 12
-    display_name: '&7No permission'
-    lore:
-      - '&8You are missing the &bdeluxemenus.shopexample'
-      - '&8permission which is required to view the item!'
-      - '&fLeft click to close the menu.'
-    left_click_commands:
-      - '[sound] ENTITY_SNOW_GOLEM_DEATH'
-      - '[close]'
-      - '[message] &8[&6&lDeluxeShop&8] &fYou have closed the menu! &7(1 Second message delay!) <delay=20>'
-  'filler_item':
-    material: GRAY_STAINED_GLASS_PANE
+  'filler':
+    material: BLACK_STAINED_GLASS_PANE
     slots:
-      - 0
-      - 1
-      - 2
-      - 3
-      - 4
-      - 5
-      - 6
-      - 7
-      - 8
-    display_name: ' '
+      - '0-26'
+    display_name: '&f'
+    priority: 2
+
+  'header':
+    material: COMPASS
+    slot: 4
+    priority: 1
+    display_name: '&b&l🧭 Spielstil-Finder'
+    lore:
+      - '&7Wähle den Server, der am besten'
+      - '&7zu deinem Spielstil passt.'
+
+  'survival_choice':
+    material: GRASS_BLOCK
+    slot: 10
+    priority: 1
+    display_name: '&a&l🌳 Ich mag Wirtschaft & Bauen'
+    lore:
+      - '&7Dann passt Survival am besten zu dir.'
+      - ''
+      - '&8» &fJobs, Shop, Warps'
+      - '&8» &fRankup, Generatoren, Tycoon'
+      - ''
+      - '&e► Klicke zum Verbinden'
+    left_click_commands:
+      - '[close]'
+      - '[connect] survival'
+    right_click_commands:
+      - '[close]'
+      - '[connect] survival'
+
+  'skyblock_choice':
+    material: OAK_SAPLING
+    slot: 13
+    priority: 1
+    display_name: '&b&l🏝 Ich mag Inseln & Koop'
+    lore:
+      - '&7Dann passt Skyblock am besten zu dir.'
+      - ''
+      - '&8» &f/is create, Coop, Missionen'
+      - '&8» &fBazaar, Insel-Level, Besuche'
+      - ''
+      - '&e► Klicke zum Verbinden'
+    left_click_commands:
+      - '[close]'
+      - '[connect] skyblock'
+    right_click_commands:
+      - '[close]'
+      - '[connect] skyblock'
+
+  'mining_choice':
+    material: NETHERITE_PICKAXE
+    slot: 16
+    priority: 1
+    display_name: '&b&l⛏ Ich mag Grind & Progression'
+    lore:
+      - '&7Dann passt Mining am besten zu dir.'
+      - ''
+      - '&8» &f/mine, /rankup, /prestige'
+      - '&8» &fPrivate Mines & Pickaxe-Fortschritt'
+      - ''
+      - '&e► Klicke zum Verbinden'
+    left_click_commands:
+      - '[close]'
+      - '[connect] rpg'
+    right_click_commands:
+      - '[close]'
+      - '[connect] rpg'
+
+  'next_step':
+    material: PAPER
+    slot: 22
+    priority: 1
+    display_name: '&e&lEmpfohlener Start'
+    lore:
+      - '&7Zeig mir pro Server den'
+      - '&7besten ersten Schritt.'
+      - ''
+      - '&e► Klicke zum Öffnen'
+    left_click_commands:
+      - '[openguimenu] requirements_menu'
+    right_click_commands:
+      - '[openguimenu] requirements_menu'
+
+  'guide':
+    material: KNOWLEDGE_BOOK
+    slot: 24
+    priority: 1
+    display_name: '&a&l📖 Mehr Details'
+    lore:
+      - '&7Vergleiche Survival, Skyblock'
+      - '&7und Mining noch einmal direkt.'
+      - ''
+      - '&e► Klicke zum Öffnen'
+    left_click_commands:
+      - '[openguimenu] network_guide'
+    right_click_commands:
+      - '[openguimenu] network_guide'
+
+  'back':
+    material: ARROW
+    slot: 26
+    priority: 1
+    display_name: '&7&l← Zurück zum Navigator'
+    lore:
+      - '&e► Linksklick: &7Server-Auswahl'
+      - '&e► Rechtsklick: &7Lobby-Hilfe'
+    left_click_commands:
+      - '[openguimenu] server_selector'
+    right_click_commands:
+      - '[openguimenu] help_menu'

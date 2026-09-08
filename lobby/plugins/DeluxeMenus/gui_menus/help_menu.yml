@@ -39,7 +39,7 @@ items:
     display_name: '&b&l❓ Lobby Hilfe'
     lore:
       - '&7Willkommen auf Festas Builds!'
-      - '&7Hier erfährst du alles über die Lobby.'
+      - '&7Finde schnell den passenden Server.'
 
   # ==============================================================
   # NAVIGATOR
@@ -51,12 +51,16 @@ items:
     display_name: '&b&l🧭 Navigator'
     lore:
       - '&7Der Navigator ist dein Kompass'
-      - '&7in Slot 5 deines Inventars.'
+      - '&7für Serverwahl und erste Schritte.'
       - ''
-      - '&8» &fRechtsklick &7auf den Kompass'
+      - '&e► Linksklick: &7Server-Auswahl'
+      - '&e► Rechtsklick: &7Spielstil-Finder'
+      - ''
       - '&8» &fOder tippe &e/navigator'
-      - ''
-      - '&7Wähle damit deinen Server aus!'
+    left_click_commands:
+      - '[openguimenu] server_selector'
+    right_click_commands:
+      - '[openguimenu] advanced_menu'
 
   # ==============================================================
   # SERVER-AUSWAHL
@@ -67,17 +71,19 @@ items:
     priority: 1
     display_name: '&a&l🌐 Server wechseln'
     lore:
-      - '&7Wechsle zwischen den Spielmodi:'
+      - '&7Direkt zur Server-Auswahl oder'
+      - '&7zum empfohlenen Start je Server.'
       - ''
-      - '&8» &f&lSurvival &7– Jobs, Shops, Plots'
-      - '&8» &f&lMining &7– Abbauen & Aufwerten'
-      - '&8» &f&lSkyblock &7– Insel bauen mit Freunden'
+      - '&8» &fSurvival &7– Jobs, Shop, Rankup'
+      - '&8» &fMining &7– /mine, Prestige, /pmine'
+      - '&8» &fSkyblock &7– Inseln, Coop, Bazaar'
       - ''
-      - '&e/navigator &8– &7Server-Auswahl öffnen'
+      - '&e► Linksklick: &7Server-Auswahl'
+      - '&e► Rechtsklick: &7Empfohlener Start'
     left_click_commands:
       - '[openguimenu] server_selector'
     right_click_commands:
-      - '[openguimenu] server_selector'
+      - '[openguimenu] requirements_menu'
 
   # ==============================================================
   # NETZWERK-GUIDE
@@ -88,8 +94,8 @@ items:
     priority: 1
     display_name: '&a&l📖 Netzwerk Guide'
     lore:
-      - '&7Ausführliche Infos zu allen'
-      - '&7Servern und Spielmodi.'
+      - '&7Vergleiche alle Server noch einmal'
+      - '&7und finde den besten Modus für dich.'
       - ''
       - '&e/guide &8– &7Guide öffnen'
     left_click_commands:

@@ -24,4 +24,5 @@ gui_menus:
     file: warps_survival.yml
   help_menu:
     file: help_menu.yml
-
+  progress_menu:
+    file: progress_menu.yml

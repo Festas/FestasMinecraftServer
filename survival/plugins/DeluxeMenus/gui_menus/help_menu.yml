@@ -125,33 +125,25 @@ items:
       - '&e/ranks &8– &7Alle Ränge anzeigen'
 
   # ==============================================================
-  # CASINO / GLÜCKSSPIEL
+  # START & FORTSCHRITT
   # ==============================================================
-  'casino':
-    material: DIAMOND
+  'progression':
+    material: COMPASS
     slot: 22
     priority: 1
-    display_name: '&d&l🎰 Casino & Glücksspiel'
+    display_name: '&b&l🧭 Start & Fortschritt'
     lore:
-      - '&7Fühlst du dich heute glücklich, Bruder?'
-      - '&7Setze dein Geld und lass die Würfel rollen!'
+      - '&7Öffne die zentrale Route für'
+      - '&7Jobs, Shop, Warps und Rankup.'
       - ''
-      - '&8» &fBis zu &ex10 &7Auszahlung beim Jackpot'
-      - '&8» &fTrostpreise &7bei einer Pechsträhne'
-      - '&8» &fEigene &eCasino-Statistik &7& Siegesserien'
+      - '&8» &fGeneratoren, Tycoon & Events'
+      - '&8» &fDaily, Tipps & Zurück zur Lobby'
       - ''
-      - '&eBefehle:'
-      - '&e/gamble <Betrag> &8– &7Wette einen Betrag'
-      - '&e/gamble all &8– &7Setze alles auf eine Karte'
-      - '&e/gamble stats &8– &7Deine Statistik ansehen'
-      - ''
-      - '&c⚠ Zock mit Verstand – das Haus gewinnt oft!'
+      - '&e► Klicke zum Öffnen'
     left_click_commands:
-      - '[close]'
-      - '[player] /gamble help'
+      - '[openguimenu] progress_menu'
     right_click_commands:
-      - '[close]'
-      - '[player] /gamble help'
+      - '[openguimenu] progress_menu'
 
   # ==============================================================
   # TÄGLICHE BELOHNUNG & TIPPS
@@ -174,10 +166,10 @@ items:
       - '&e/tips &8– &7Zufälliger Tipp'
     left_click_commands:
       - '[close]'
-      - '[player] /daily'
+      - '[player] daily'
     right_click_commands:
       - '[close]'
-      - '[player] /daily'
+      - '[player] daily'
 
   # ==============================================================
   # ALLE BEFEHLE
@@ -250,7 +242,7 @@ items:
       - '&7Verbinde dich zur Lobby'
     left_click_commands:
       - '[close]'
-      - '[player] /lobby'
+      - '[player] lobby'
     right_click_commands:
       - '[close]'
-      - '[player] /lobby'
+      - '[player] lobby'
