@@ -569,7 +569,7 @@ section_security() {
     "BlueMap Survival:8102:nur via nginx / Host-Loopback"
     "BlueMap Mining:8103:nur via nginx / Host-Loopback"
   )
-  local def name port expected scope binds note public_exposed=0 bind_mismatch=0
+  local def name port expected scope binds note public_exposed=0 bind_mismatch=0 non_loopback_bound=0
   for def in "${defs[@]}"; do
     IFS=: read -r name port expected <<< "$def"
     scope="$(listen_scope_for_port "$port")"
@@ -589,6 +589,7 @@ section_security() {
         ;;
       wildcard)
         bind_mismatch=$((bind_mismatch + 1))
+        non_loopback_bound=$((non_loopback_bound + 1))
         if ufw_allows_anywhere_port "$port"; then
           note="⚠️ öffentlich freigegeben (${binds}; UFW \`ALLOW Anywhere\`)"
           issue WARN "Interner Dienst '${name}' (Port ${port}) ist laut Host-Status öffentlich freigegeben – dokumentiert ist nur Reverse-Proxy/Loopback."
@@ -602,6 +603,7 @@ section_security() {
         ;;
       other)
         bind_mismatch=$((bind_mismatch + 1))
+        non_loopback_bound=$((non_loopback_bound + 1))
         note="⚠️ nicht auf Loopback begrenzt (${binds}); intern-only-Vorgabe verletzt, öffentliche Freigabe nicht bestätigt"
         issue WARN "Interner Dienst '${name}' (Port ${port}) ist nicht nur auf Loopback gebunden – dokumentiert ist nur Reverse-Proxy/Loopback."
         recommend "Port ${port} (${name}) nur nach \`127.0.0.1\` veröffentlichen; falls bewusst breiter gebunden, Host-Firewall/UFW explizit prüfen."
@@ -613,7 +615,7 @@ section_security() {
     md "| ${name} | \`${port}\` | ${expected} | ${note} |"
   done
   metric internal_only_bind_mismatch "$bind_mismatch"
-  metric internal_only_non_loopback_bound "$bind_mismatch"
+  metric internal_only_non_loopback_bound "$non_loopback_bound"
   metric internal_only_public_exposed "$public_exposed"
 
   if have fail2ban-client; then
