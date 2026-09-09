@@ -3,9 +3,7 @@ name: Deploy survival Server Configs
 on:
   push:
     branches: [main]
-    paths:
-      - 'survival/plugins/**'
-      - 'survival/bluemap/**'
+    paths: ['survival/plugins/**']
   workflow_dispatch:
     inputs:
       replace_folder:
@@ -216,8 +214,6 @@ jobs:
           # folder name (must start with an alphanumeric/underscore; no '/', no '..',
           # no leading '.' or '-'). This prevents REPLACE_FOLDER values like '.' or
           # '..' from escaping the plugins directory in the paths used below.
-          SERVER_ROOT_PATH="$(dirname "$SERVER_PATH")"
-
           if [ -n "$REPLACE_FOLDER" ]; then
             case "$REPLACE_FOLDER" in
               */*|.|..)
@@ -256,11 +252,6 @@ jobs:
 
             rsync -avz -e 'ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new' "${EXCLUDE_ARGS[@]}" --backup --backup-dir="/tmp/festas-rsync-backup-$(date +%Y%m%d-%H%M%S)" "survival/plugins/$REPLACE_FOLDER/" "$SSH_USER@$SSH_HOST:$SERVER_PATH/$REPLACE_FOLDER/"
 
-            if [ "$REPLACE_FOLDER" = "BlueMap" ] && [ -d "survival/bluemap" ]; then
-              echo "Uploading Survival BlueMap webroot assets to $SERVER_ROOT_PATH/bluemap/"
-              rsync -avz -e 'ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new' "${EXCLUDE_ARGS[@]}" --backup --backup-dir="/tmp/festas-rsync-backup-$(date +%Y%m%d-%H%M%S)" "survival/bluemap/" "$SSH_USER@$SSH_HOST:$SERVER_ROOT_PATH/bluemap/"
-            fi
-
             echo "Folder $REPLACE_FOLDER uploaded successfully (no server files deleted)"
           else
             # --- Modus: Sync Changed Files ---
@@ -273,14 +264,9 @@ jobs:
 
                   if [[ "$file" == survival/plugins/* ]]; then
                     remote_relative_file="${file#survival/plugins/}"
-                    remote_base_path="$SERVER_PATH"
-                  elif [[ "$file" == survival/bluemap/* ]]; then
-                    remote_relative_file="${file#survival/}"
-                    remote_base_path="$SERVER_ROOT_PATH"
                   else
                     # Fallback falls Datei direkt in survival/ liegt (z.B. survival/readme.txt)
                     remote_relative_file="${file#survival/}"
-                    remote_base_path="$SERVER_PATH"
                   fi
 
                   # Excludes prüfen (auf Basis des Dateinamens)
@@ -302,10 +288,10 @@ jobs:
                     
                     dir_path=$(dirname "$remote_relative_file")
                     if [ "$dir_path" != "." ]; then
-                      ssh -n -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new "$SSH_USER@$SSH_HOST" "mkdir -p '$remote_base_path/$dir_path'"
+                      ssh -n -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new "$SSH_USER@$SSH_HOST" "mkdir -p '$SERVER_PATH/$dir_path'"
                     fi
                     
-                    scp -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new "$file" "$SSH_USER@$SSH_HOST:$remote_base_path/$remote_relative_file" < /dev/null
+                    scp -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new "$file" "$SSH_USER@$SSH_HOST:$SERVER_PATH/$remote_relative_file" < /dev/null
                   fi
                 done < /tmp/changed_files.txt
                 echo "Sync completed successfully"
@@ -322,9 +308,6 @@ jobs:
               # liegende (nicht im Repo vorhandene) Dateien/Ordner - insbesondere
               # Plugin-JARs - bleiben unangetastet.
               rsync -avz -e 'ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new' "${EXCLUDE_ARGS[@]}" --backup --backup-dir="/tmp/festas-rsync-backup-$(date +%Y%m%d-%H%M%S)" "survival/plugins/" "$SSH_USER@$SSH_HOST:$SERVER_PATH/"
-              if [ -d "survival/bluemap" ]; then
-                rsync -avz -e 'ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new' "${EXCLUDE_ARGS[@]}" --backup --backup-dir="/tmp/festas-rsync-backup-$(date +%Y%m%d-%H%M%S)" "survival/bluemap/" "$SSH_USER@$SSH_HOST:$SERVER_ROOT_PATH/bluemap/"
-              fi
               echo "Full sync completed successfully (no server files deleted)"
             fi
           fi
