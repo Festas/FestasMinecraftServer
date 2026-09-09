@@ -62,6 +62,10 @@ packs:
     url: http://cdn.moep.tv/files/Empty.zip
     hash: 01517226212d27586ea0c5d6aff1aa5492dd2484
 
+# ForceResourcepacks erwartet zusätzlich eine top-level-Referenz auf das leere Pack
+# für Reset-/Unload-Logik; `packs.empty` allein verhindert die Warnung nicht.
+empty: empty
+
 global:
   pack: empty
   secondary: []
