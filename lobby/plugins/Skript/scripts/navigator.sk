@@ -89,23 +89,31 @@ on respawn:
 on death of player:
     loop drops:
         if loop-value is compass:
-            if name of loop-value contains "Navigator" or name of loop-value contains "Guide":
+            if name of loop-value contains "Navigator":
+                remove loop-value from drops
+            else if name of loop-value contains "Guide":
                 remove loop-value from drops
         else if loop-value is book:
-            if name of loop-value contains "Navigator" or name of loop-value contains "Guide":
+            if name of loop-value contains "Navigator":
+                remove loop-value from drops
+            else if name of loop-value contains "Guide":
                 remove loop-value from drops
 
 # --- 4. SCHUTZ & INTERAKTION ---
 
 on inventory click:
     if world of player is "{@lobby_world}":
-        if index of event-slot is 4 or 8:
+        if index of event-slot is 4 or index of event-slot is 8:
             cancel event
-        if clicked item is compass:
-            if name of clicked item contains "Navigator" or name of clicked item contains "Guide":
+        if event-item is compass:
+            if name of event-item contains "Navigator":
                 cancel event
-        else if clicked item is book:
-            if name of clicked item contains "Navigator" or name of clicked item contains "Guide":
+            else if name of event-item contains "Guide":
+                cancel event
+        else if event-item is book:
+            if name of event-item contains "Navigator":
+                cancel event
+            else if name of event-item contains "Guide":
                 cancel event
 
 on drop:
