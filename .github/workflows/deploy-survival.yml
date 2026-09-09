@@ -262,8 +262,6 @@ jobs:
                 while IFS=$'\t' read -r status file; do
                   # file ist z.B. "survival/plugins/Ordner/Config.yml"
 
-                  # Berechne den Pfad für den Server (entferne 'survival/plugins/')
-                  # Da SERVER_PATH schon im plugins-Ordner ist, brauchen wir nur "Ordner/Config.yml"
                   if [[ "$file" == survival/plugins/* ]]; then
                     remote_relative_file="${file#survival/plugins/}"
                   else
@@ -293,7 +291,6 @@ jobs:
                       ssh -n -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new "$SSH_USER@$SSH_HOST" "mkdir -p '$SERVER_PATH/$dir_path'"
                     fi
                     
-                    # Nutze $file (lokaler voller Pfad) -> $SERVER_PATH/$remote_relative_file (Server Pfad ohne doppeltes plugins/)
                     scp -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new "$file" "$SSH_USER@$SSH_HOST:$SERVER_PATH/$remote_relative_file" < /dev/null
                   fi
                 done < /tmp/changed_files.txt

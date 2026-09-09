@@ -68,7 +68,7 @@ mehrere zusammengehörige Plugins ab.
 | `cmi` | CMI (+ CMILib) | lobby / survival / skyblock / rpg |
 | `luckperms` | LuckPerms | lobby / survival / skyblock / rpg |
 | `placeholderapi` | PlaceholderAPI | lobby / survival / skyblock / rpg |
-| `plan` | Plan | proxy / lobby / survival / rpg (skyblock = SQLite) |
+| `plan` | Plan | proxy / lobby / survival / skyblock / rpg |
 | `skript` | Skript (Gameplay-Logik, Navigator, Broadcasts, Daily-Rewards) | lobby / survival / skyblock / rpg |
 | `deluxemenus` | DeluxeMenus (GUI-Menüs, Server-Selector) | lobby / survival / skyblock / rpg |
 | `oraxen` | Oraxen (Items, Glyphs, Resourcepack) | lobby / survival / skyblock / rpg |
@@ -212,7 +212,7 @@ Reihenfolge-Faustregel: **Fundament zuerst** (Rechte/Welt/Item), **Anzeige zulet
 - **Reihenfolge:**
   1. `proxy/velocity.toml`: Server + Port (bestehend: lobby 25566, rpg 25567, survival 25568, skyblock 25569).
   2. `proxy-network`: MiniMOTD/ForceResourcepacks; `tab`: Bridge-Servername.
-  3. `plan`: `ServerInfoFile.yml` + geteilte MySQL (`s4_plan`) **oder** SQLite (wie skyblock).
+  3. `plan`: `ServerInfoFile.yml` + geteilte MySQL (`s4_plan`); bei Skyblock bleibt davon getrennt nur das Gameplay-Storage lokal.
   4. `luckperms`: geteilte DB `s4_perms` (Platzhalter), Kontexte.
   5. `cmi`: eigene Economy-DB `Sx_CMI` (falls Economy) – **nie** dieselbe Tabelle wie ein anderer Server.
   6. **Deploy/Secrets:** `deploy-<server>.yml` + benötigte Secrets (`LUCKPERMS_DB_ENV`, `PLAN_DB_ENV`,

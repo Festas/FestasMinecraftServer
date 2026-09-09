@@ -13,6 +13,6 @@
     { "key": "lobby",    "uuid": "82755ba5-91eb-4cca-a6a3-be06d891cb3d", "max": 40 },
     { "key": "survival", "uuid": "679bd851-d131-4425-b88d-e2714a3ef0f2", "max": 40 },
     { "key": "mining",   "uuid": "851efb50-b513-4c15-9393-0d5d43fc3814", "max": 20 },
-    { "key": "skyblock", "uuid": null,                                   "max": 20 }
+    { "key": "skyblock", "uuid": "d8a82d02-e78b-4723-9245-9a902d6cf0ac", "max": 20 }
   ]
 }

@@ -19,10 +19,10 @@ caveblock:
         place_sound: block.glass.place
       custom_variation: 0
       model: default/caveblock
-      hardness: 1
-      drop:
-        silktouch: false
-        loots:
+      breaking:
+      - else: null
+        hardness: 1
+        drops:
         - oraxen_item: caveblock
           probability: 1.0
       type: FULL

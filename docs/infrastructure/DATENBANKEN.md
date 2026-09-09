@@ -46,7 +46,7 @@
 | Datenbank     | Plugin          | Zweck                                        | Server                              |
 |---------------|-----------------|----------------------------------------------|-------------------------------------|
 | `s4_perms`    | LuckPerms       | Permissions, Gruppen, Tracks                 | Proxy, Lobby, Survival, Skyblock, Prison |
-| `s4_plan`     | Plan             | Spieler-Statistiken, Server-Analytics        | Proxy, Lobby, Survival, RPG         |
+| `s4_plan`     | Plan             | Spieler-Statistiken, Server-Analytics        | Proxy, Lobby, Survival, Skyblock, RPG |
 | `s4_husk`     | HuskSync        | Ränge und Cosmetics                          | Lobby, Prison                       |
 | `s4_bazaar`   | DeluxeBazaar    | Bazaar-Angebote und Transaktionen            | Skyblock, Prison                    |
 | `S1_CMI`      | CMI         | Economy-Guthaben (Survival)                  | Survival                            |
@@ -60,6 +60,10 @@
 > Gameplay-Server seine eigene Datenbank (`S1_CMI`, `S3_CMI`, `S5_CMI`). Die Lobby
 > hat keine Economy und bleibt auf SQLite. Details zur read-only Auswertung für die
 > Website siehe den Exporter [`tools/economy-export`](../../tools/economy-export/README.md).
+>
+> **Skyblock-Hinweis:** Nur **Plan** hängt dort an der geteilten Analytics-Datenbank
+> `s4_plan`. Die Skyblock-Kerndaten bleiben getrennt: **SuperiorSkyblock2** nutzt
+> weiter lokale SQLite, **SlimeWorldManager** weiter Datei-Storage.
 
 ### Redis
 
@@ -239,4 +243,4 @@ Detaillierte Informationen zur Backup-Strategie, Aufbewahrungsfristen und Wieder
 
 ---
 
-**Letzte Aktualisierung:** 2026-08-26
+**Letzte Aktualisierung:** 2026-09-09
