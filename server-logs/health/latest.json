@@ -1,19 +1,18 @@
 {
   "apt_security": 0,
-  "apt_upgradable": 6,
+  "apt_upgradable": 0,
   "cpu_cores": 8,
   "disk_root_total_bytes": 322302373888,
-  "disk_root_used_bytes": 132136022016,
+  "disk_root_used_bytes": 131053076480,
   "disk_root_used_pct": 43,
   "docker_containers_running": 8,
   "docker_containers_total": 8,
   "docker_unhealthy": 0,
   "dry_run": 0,
-  "established_conns": 89,
-  "failed_logins_7d": 16289,
+  "established_conns": 84,
+  "failed_logins_7d": 16264,
   "failed_services": 1,
-  "freed_bytes": 1207353344,
-  "generated_at": 1788919525,
+  "generated_at": 1788943223,
   "host": "festas-builds",
   "inode_root_used_pct": 8,
   "internal_only_bind_mismatch": 3,
@@ -38,16 +37,16 @@
     },
     {
       "level": "WARN",
-      "text": "Viele fehlgeschlagene Logins (16289) – Brute-Force? fail2ban prüfen."
+      "text": "Viele fehlgeschlagene Logins (16264) – Brute-Force? fail2ban prüfen."
     }
   ],
   "issues_crit": 0,
   "issues_warn": 5,
-  "journal_errors_7d": 99,
+  "journal_errors_7d": 103,
   "kernel": "Linux 6.8.0-138-generic",
-  "load1": 1.19,
-  "mem_used_pct": 76,
-  "mode": "full",
+  "load1": 0.4,
+  "mem_used_pct": 78,
+  "mode": "analyze",
   "oom_events_7d": 0,
   "os": "Ubuntu 24.04.4 LTS",
   "ptero_volumes_bytes": 0,
@@ -58,10 +57,9 @@
     "Port 8804 (Plan Analytics) in UFW schließen oder nur nach `127.0.0.1` veröffentlichen.",
     "Port 8102 (BlueMap Survival) nur nach `127.0.0.1` veröffentlichen; falls bewusst breiter gebunden, Host-Firewall/UFW explizit prüfen.",
     "Port 8103 (BlueMap Mining) nur nach `127.0.0.1` veröffentlichen; falls bewusst breiter gebunden, Host-Firewall/UFW explizit prüfen.",
-    "Paket-Updates einspielen (Modus `maintain`/`full`).",
     "Host-Reboot einplanen (Kernel/Bibliotheks-Updates aktivieren)."
   ],
   "status": "WARN",
-  "swap_used_pct": 5,
+  "swap_used_pct": 0,
   "wings_active": 1
 }
