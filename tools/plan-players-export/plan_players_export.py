@@ -12,7 +12,7 @@ Deliberate limits (see README.md):
   database exposes neither live player names nor a live world breakdown.
 * Latency is up to ~2 minutes and ``players_online`` is the *maximum* within the
   minute window, matching Plan's own dashboard logic.
-* Servers without a Plan installation yet (Mining, Skyblock) are emitted as
+* Configured servers without a fresh matching TPS row are emitted as
   ``online:false, count:0`` so the frontend cards stay stable.
 
 The script is intentionally dependency-light (only PyMySQL) and writes the output

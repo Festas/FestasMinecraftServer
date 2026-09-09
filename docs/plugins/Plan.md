@@ -1,6 +1,6 @@
 # Plan (Player Analytics)
 
-**Analytics/Statistiken · proxy / lobby / survival / rpg(mining) · MySQL geteilt · skyblock = SQLite**
+**Analytics/Statistiken · proxy / lobby / survival / skyblock / rpg(mining) · MySQL geteilt**
 
 ## Zweck
 Plan sammelt Spielerstatistiken (Sessions, Playtime, Server-Wechsel) und stellt das Web-Dashboard
@@ -10,17 +10,18 @@ Online-Zahlen für die öffentliche Seite.
 ## Wo (Server & Config-Pfade)
 - Proxy: `proxy/plugins/plan/config.yml` (Webserver-Host, Port **8804**)
 - Backends: `<server>/plugins/Plan/config.yml` (+ `ServerInfoFile.yml`)
-  - Aktiv mit geteilter MySQL: **lobby, survival, rpg(mining)**
-  - **skyblock**: lokal **SQLite** (kein Remote-DB-Zugang)
+  - Aktiv mit geteilter MySQL: **lobby, survival, skyblock, rpg(mining)**
+  - Aktuelle Skyblock-UUID: **`d8a82d02-e78b-4723-9245-9a902d6cf0ac`**
 
 ## Storage & Secrets
-- Geteilte MySQL-Datenbank **`s4_plan`** für Proxy/lobby/survival/rpg.
+- Geteilte MySQL-Datenbank **`s4_plan`** für Proxy/lobby/survival/skyblock/rpg.
 - Platzhalter: `__PLAN_DB_HOST__`, `__PLAN_DB_PORT__`, `__PLAN_DB_USER__`, `__PLAN_DB_PASSWORD__`,
   `__PLAN_DB_DATABASE__` (injiziert aus **`PLAN_DB_ENV`**).
 - ⚠️ **Injektion erfolgt per Python-Parsing** (Werte verbatim), **nie** shell-sourcen – Passwörter mit
   `$`, Backticks, `\`, Anführungszeichen oder Leerzeichen würden sonst zerstört und Plan schaltet sich mit
   „Access denied … Player Analytics Disabled" ab.
-- skyblock benötigt **kein** `PLAN_DB_ENV` (SQLite).
+- skyblock nutzt ebenfalls **`PLAN_DB_ENV`** für Plan; **separat davon** bleiben
+  **SuperiorSkyblock2** (lokal SQLite) und **SlimeWorldManager** (Datei-Storage).
 
 ## Wichtige Einstellungen / typische Aufgaben
 - **Webserver** am Proxy: `Disable_Webserver: false`, Port `8804` → nginx-Upstream
@@ -31,7 +32,8 @@ Online-Zahlen für die öffentliche Seite.
 
 ## Cross-Server / Gotchas
 - Auth-Fehler auf der geteilten MySQL betrifft **alle** MySQL-Plan-Server + LuckPerms gleichzeitig.
-- skyblock erscheint im Dashboard nur, wenn sein SQLite-Plan sauber läuft – Auth-Probleme dort anders gelagert.
+- skyblock hängt am selben Plan-MySQL-Verbund; fällt `PLAN_DB_ENV`/MariaDB aus, fehlt er wie die anderen
+  MySQL-Server im Dashboard/Export.
 - Öffentliche Spielerzahlen der Website kommen aus `tools/plan-players-export/config.json` (`max` pro Server),
   **nicht** aus `server.properties`.
 

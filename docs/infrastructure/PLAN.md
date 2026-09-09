@@ -218,8 +218,7 @@ Die Website (`https://mc.festas-builds.com`, Abschnitt „Wer ist online?") läd
   Sessions. Aus der DB gibt es daher **keine Live-Namen und keine Live-Welten**.
 - **Mapping:** DB → Website-Key über die stabile Server-**UUID** aus
   `*/plugins/Plan/ServerInfoFile.yml` (Lobby `82755ba5-…`, Survival `679bd851-…`,
-  Mining `851efb50-…` aus dem `rpg/`-Ordner; Skyblock hat noch keinen Plan-Ordner
-  → `online:false, count:0`).
+  Mining `851efb50-…` aus dem `rpg/`-Ordner, Skyblock `d8a82d02-…`).
 - **Sicherheit:** dedizierter **Read-only-User** (`SELECT` auf `s4_plan`), Secret
   `PLAN_RO_DB_ENV` (siehe `SECRETS.md`), `useSSL: true`. Nicht Plans RW-User
   wiederverwenden (Least Privilege, vgl. `DATENBANKEN.md`).
@@ -267,4 +266,5 @@ Datenbanken befüllt – wieder **ohne** zusätzliches Plugin, nach demselben Mu
 **Grenzen:** Wie beim Player-Counter zählt die **laufende** Session erst nach ihrem
 Ende (Plan hält aktive Sessions nur im RAM). Namen werden hier **bewusst** gezeigt
 (Kern des Features); optionale Ausschlussliste + `min_weight`-Filter in
-`config.json`. Skyblock nutzt lokales SQLite und ist in `s4_plan` **nicht** enthalten.
+`config.json`. Skyblock ist inzwischen Teil des geteilten `s4_plan`; davon
+unberührt bleiben SuperiorSkyblock2 (SQLite) und SlimeWorldManager (Dateien).

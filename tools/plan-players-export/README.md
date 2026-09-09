@@ -64,7 +64,7 @@ A snapshot matching the documented contract
 - `servers[].updated` = TPS timestamp in **seconds**; top-level `updated` = the
   script run time ("now"), which keeps the frontend's 90 s staleness check green
   even though individual TPS rows can be up to ~2 min old.
-- Servers without a Plan installation yet (Skyblock) are always emitted as
+- Configured servers without a fresh matching TPS row are still emitted as
   `online:false, count:0` so the four cards stay stable.
 
 ---
@@ -103,8 +103,8 @@ ORDER BY s.name;
 Non-secret settings live in [`config.json`](config.json) (committed):
 
 - `servers[]` — ordered website keys (`lobby | survival | mining | skyblock`),
-  their Plan `uuid` (or `null` if Plan is not installed there yet) and a static
-  `max` (Plan has no slot limit; set `max` to `0`/omit to hide `count/max`).
+  their Plan `uuid` and a static `max` (Plan has no slot limit; set `max` to
+  `0`/omit to hide `count/max`).
 - `output` — target `players.json` path.
 - `live_threshold_seconds` — default `120`.
 - `database` — non-secret host/port/database/ssl/timeout defaults.
@@ -116,13 +116,13 @@ Non-secret settings live in [`config.json`](config.json) (committed):
 | `lobby`     | `82755ba5-91eb-4cca-a6a3-be06d891cb3d` | `lobby/plugins/Plan/ServerInfoFile.yml` |
 | `survival`  | `679bd851-d131-4425-b88d-e2714a3ef0f2` | `survival/plugins/Plan/ServerInfoFile.yml` |
 | `mining`    | `851efb50-b513-4c15-9393-0d5d43fc3814` | `rpg/plugins/Plan/ServerInfoFile.yml` (the Mining/Prison server) |
-| `skyblock`  | _pending_ (no Plan yet) | — |
+| `skyblock`  | `d8a82d02-e78b-4723-9245-9a902d6cf0ac` | `skyblock/plugins/Plan/ServerInfoFile.yml` |
 
 > The Mining game mode is served by the `rpg/` server folder (X-Prison /
-> XPrivateMines); its Plan UUID is the `mining` website key above. Skyblock has no
-> Plan installation yet, so its `uuid` stays `null` and it renders as a stable
-> `online:false, count:0` card. To activate it later, install Plan on skyblock and
-> copy the UUID from `skyblock/plugins/Plan/ServerInfoFile.yml` into `config.json`.
+> XPrivateMines); its Plan UUID is the `mining` website key above. Skyblock Plan is
+> active as well and maps to the UUID above via the shared `s4_plan` database. This
+> does **not** change Skyblock's gameplay storage: **SuperiorSkyblock2** remains on
+> local SQLite and **SlimeWorldManager** remains file-backed.
 
 Secret DB credentials come from the environment (never committed) — see
 [`plan-players-export.env.example`](plan-players-export.env.example). Environment
