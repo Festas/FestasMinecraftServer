@@ -18,10 +18,10 @@ brunnera:
       place_sound: block.grass.place
       custom_variation: 1
       model: brunnera
-      hardness: 2
-      drop:
-        silktouch: false
-        loots:
+      breaking:
+      - else: null
+        hardness: 2
+        drops:
         - oraxen_item: brunnera
           probability: 1.0
       type: STRING
@@ -40,10 +40,10 @@ daffodil:
       place_sound: block.grass.place
       custom_variation: 2
       model: daffodil
-      hardness: 2
-      drop:
-        silktouch: false
-        loots:
+      breaking:
+      - else: null
+        hardness: 2
+        drops:
         - oraxen_item: daffodil
           probability: 1.0
       type: STRING
@@ -62,10 +62,10 @@ dailily:
       place_sound: block.grass.place
       custom_variation: 3
       model: dailily
-      hardness: 2
-      drop:
-        silktouch: false
-        loots:
+      breaking:
+      - else: null
+        hardness: 2
+        drops:
         - oraxen_item: dailily
           probability: 1.0
       type: STRING
