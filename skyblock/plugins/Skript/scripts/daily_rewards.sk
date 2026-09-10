@@ -88,7 +88,8 @@ function claimDailyReward(p: player):
         set {_reward} to {_reward} * 2
         set {_doubled} to true
 
-    # Geld geben
+    # Geld geben (auf ganze Zahl abrunden – CMI-sicher)
+    set {_reward} to floor({_reward})
     execute console command "cmi money give %{_p}% %{_reward}%"
 
     # Nachricht

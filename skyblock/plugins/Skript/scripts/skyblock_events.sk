@@ -158,6 +158,7 @@ function payoutPending():
         set {_pending} to {skyblock.event.pending::%{_uuid}%}
         if {_pending} is set:
             if {_pending} is greater than 0:
+                set {_pending} to floor({_pending})
                 execute console command "cmi money give %loop-player% %{_pending}%"
                 send action bar "&a+%{_pending}%€ &7Event-Bonus" to loop-player
                 play sound "entity.experience_orb.pickup" with volume 0.4 and pitch 1.5 to loop-player
@@ -172,6 +173,7 @@ on quit:
     set {_pending} to {skyblock.event.pending::%{_uuid}%}
     if {_pending} is set:
         if {_pending} is greater than 0:
+            set {_pending} to floor({_pending})
             execute console command "cmi money give %player% %{_pending}%"
             delete {skyblock.event.pending::%{_uuid}%}
 
