@@ -166,6 +166,8 @@ function payoutPending():
 # --- BEIM VERLASSEN: offene Boni sofort auszahlen (schließt die 30s-Lücke) ---
 # CMI zahlt per Spielername auch bei Disconnect zuverlässig aus.
 on quit:
+    if {skyblock.event.active} is not set:
+        stop
     set {_uuid} to "%player's uuid%"
     set {_pending} to {skyblock.event.pending::%{_uuid}%}
     if {_pending} is set:
@@ -200,8 +202,13 @@ every 30 seconds:
         if size of {_isle::*} is greater than 0:
             set {_lucky} to random element out of {_isle::*}
             eventBonus({_lucky}, random integer between 25 and 50, {@cap_meteor})
-            send "{@prefix}&b☄ &7Ein Meteorit ist nahe &e%{_lucky}% &7niedergegangen!" to {_lucky}
+            # Glückspilz persönlich benachrichtigen ...
+            send "{@prefix}&b☄ &7Ein Meteorit ist &edirekt neben dir &7niedergegangen! Bonus gesichert." to {_lucky}
             play sound "entity.generic.explode" with volume 0.5 and pitch 1.2 to {_lucky}
+            # ... und die übrigen Insel-Spieler informieren
+            loop {_isle::*}:
+                if loop-value is not {_lucky}:
+                    send "{@prefix}&b☄ &7Ein Meteorit ist nahe &e%{_lucky}% &7niedergegangen!" to loop-value
 
     # 4. Ausstehende Boni gebündelt auszahlen
     payoutPending()

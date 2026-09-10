@@ -83,6 +83,7 @@ function claimDailyReward(p: player):
     # --- EVENT: Doppelte Tagesbelohnung (Flag aus skyblock_events.sk) ---
     # Minimal-invasiv: verdoppelt die berechnete Belohnung, wenn das Event läuft.
     set {_doubled} to false
+    set {_base} to {_reward}
     if {skyblock.event.doubledaily} is true:
         set {_reward} to {_reward} * 2
         set {_doubled} to true
@@ -98,7 +99,7 @@ function claimDailyReward(p: player):
     send "" to {_p}
     send "{@prefix}&7Belohnung: &a%{_reward}%€" to {_p}
     if {_doubled} is true:
-        send "{@prefix}&e☀ Event-Bonus: &aTagesbelohnung verdoppelt!" to {_p}
+        send "{@prefix}&e☀ Event-Bonus: &aTagesbelohnung verdoppelt! &7(Basis: &a%{_base}%€&7)" to {_p}
     send "{@prefix}&7Login-Streak: &e%{_streak}% Tag(e)" to {_p}
     send "{@prefix}&7Tipp: Investiere dein Geld clever im &e/bazaar&7!" to {_p}
 
