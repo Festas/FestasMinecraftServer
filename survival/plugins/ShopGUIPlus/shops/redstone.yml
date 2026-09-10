@@ -331,14 +331,12 @@ redstone:
       page: 1
       commandsOnClick:
       - "shopgui blocks"
-
-
-
-
-
-
-
-
-
-
-
+    P1_43:
+      type: item
+      item:
+        material: POWERED_RAIL
+        quantity: 1
+      buyPrice: 40
+      sellPrice: -1
+      slot: 43
+      page: 1

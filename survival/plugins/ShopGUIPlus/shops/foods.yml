@@ -322,16 +322,21 @@ foods:
       page: 1
       commandsOnClick:
       - "shopgui decoration"
-
-
-
-
-
-
-
-
-
-
-
-
-
+    P1_42:
+      type: item
+      item:
+        material: COOKED_RABBIT
+        quantity: 1
+      buyPrice: 50
+      sellPrice: 10
+      slot: 42
+      page: 1
+    P1_43:
+      type: item
+      item:
+        material: GOLDEN_CARROT
+        quantity: 1
+      buyPrice: 60
+      sellPrice: 12
+      slot: 43
+      page: 1

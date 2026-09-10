@@ -606,78 +606,85 @@ shopMenuItems:
   # Has to be unique, value doesn't matter
   1:
     item:
-      # The same rules apply for material, amount, damage and lore as for goBackButton
       material: GRASS_BLOCK
       quantity: 1
       name: "&9&lBlocks"
-    # Shop ID from shops yaml
     shop: "blocks"
-    # Slot in shops menu, counting from 0 to 53
-    slot: 11
+    slot: 10
   2:
     item:
-      material: COOKED_CHICKEN
+      material: OAK_LOG
       quantity: 1
-      damage: 0
-      name: "&2&lFood"
-      lore:
-        - "&7Get some yummy food here!"
-    shop: "food"
-    slot: 12
+      name: "&6&lWood"
+    shop: "wood"
+    slot: 11
   3:
     item:
-      material: GOLD_INGOT
+      material: DIAMOND
       quantity: 1
-      damage: 0
-      name: "&3&lOres"
-    shop: "ores"
-    slot: 13
+      name: "&3&lMinerals"
+    shop: "minerals"
+    slot: 12
   4:
-    item:
-      material: IRON_PICKAXE
-      quantity: 1
-      name: "&8&lTools"
-    shop: "tools"
-    slot: 14
-  5:
-    item:
-      material: DIAMOND_CHESTPLATE
-      quantity: 1
-      name: "&4&lArmor"
-    shop: "armor"
-    slot: 15
-  6:
     item:
       material: WHEAT
       quantity: 1
-      name: "&5&lFarming"
+      name: "&a&lFarming"
     shop: "farming"
-    slot: 21
+    slot: 13
+  5:
+    item:
+      material: COOKED_BEEF
+      quantity: 1
+      name: "&2&lFoods"
+    shop: "foods"
+    slot: 14
+  6:
+    item:
+      material: ROTTEN_FLESH
+      quantity: 1
+      name: "&c&lMob Drops"
+    shop: "mobdrops"
+    slot: 15
   7:
     item:
-      material: SPIDER_EYE
+      material: RED_WOOL
       quantity: 1
-      name: "&9&lMob drops"
-    shop: "drops"
-    slot: 22
+      name: "&d&lColored Blocks"
+    shop: "coloredblocks"
+    slot: 16
   8:
     item:
-      material: LIGHT_BLUE_DYE
+      material: PAINTING
       quantity: 1
-      name: "&2&lDyes"
-    shop: "dyes"
-    slot: 23
+      name: "&e&lDecoration"
+    shop: "decoration"
+    slot: 20
   9:
     item:
-      material: SADDLE
+      material: REDSTONE
       quantity: 1
-      name: "&3&lMiscellaneous"
-    shop: "miscellaneous"
-    slot: 31
+      name: "&4&lRedstone"
+    shop: "redstone"
+    slot: 21
   10:
+    item:
+      material: IRON_PICKAXE
+      quantity: 1
+      name: "&7&lTools"
+    shop: "tools"
+    slot: 22
+  11:
+    item:
+      material: IRON_SWORD
+      quantity: 1
+      name: "&4&lWeapons & Armor"
+    shop: "weapons"
+    slot: 23
+  12:
     type: special
     special: balance
-    slot: 34
+    slot: 24
 
 specialElements:
   balance:

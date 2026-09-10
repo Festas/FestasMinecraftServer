@@ -638,23 +638,30 @@ wood:
       page: 2
       commandsOnClick:
       - "shopgui foods"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    P2_40:
+      type: item
+      item:
+        material: STRIPPED_MANGROVE_WOOD
+        quantity: 1
+      buyPrice: 25
+      sellPrice: 5
+      slot: 40
+      page: 2
+    P2_41:
+      type: item
+      item:
+        material: STRIPPED_CRIMSON_HYPHAE
+        quantity: 1
+      buyPrice: 40
+      sellPrice: 8
+      slot: 41
+      page: 2
+    P2_42:
+      type: item
+      item:
+        material: STRIPPED_WARPED_HYPHAE
+        quantity: 1
+      buyPrice: 40
+      sellPrice: 8
+      slot: 42
+      page: 2

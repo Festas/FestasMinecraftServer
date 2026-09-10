@@ -529,10 +529,39 @@ mobdrops:
       page: 2
       commandsOnClick:
       - "shopgui redstone"
-
-
-
-
-
-
-
+    P2_28:
+      type: item
+      item:
+        material: EGG
+        quantity: 1
+      buyPrice: 15
+      sellPrice: 3
+      slot: 28
+      page: 2
+    P2_29:
+      type: item
+      item:
+        material: SCUTE
+        quantity: 1
+      buyPrice: 200
+      sellPrice: 40
+      slot: 29
+      page: 2
+    P2_30:
+      type: item
+      item:
+        material: NAUTILUS_SHELL
+        quantity: 1
+      buyPrice: 300
+      sellPrice: 60
+      slot: 30
+      page: 2
+    P2_31:
+      type: item
+      item:
+        material: DRAGON_BREATH
+        quantity: 1
+      buyPrice: 200
+      sellPrice: 40
+      slot: 31
+      page: 2

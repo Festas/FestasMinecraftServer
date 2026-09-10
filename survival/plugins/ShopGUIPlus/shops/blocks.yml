@@ -1551,3 +1551,111 @@ blocks:
       page: 5
       commandsOnClick:
       - "shopgui farming"
+    P5_30:
+      type: item
+      item:
+        material: OBSIDIAN
+        quantity: 1
+      buyPrice: 60
+      sellPrice: 12
+      slot: 30
+      page: 5
+    P5_31:
+      type: item
+      item:
+        material: CRYING_OBSIDIAN
+        quantity: 1
+      buyPrice: 100
+      sellPrice: 20
+      slot: 31
+      page: 5
+    P5_32:
+      type: item
+      item:
+        material: NETHER_BRICKS
+        quantity: 1
+      buyPrice: 10
+      sellPrice: 2
+      slot: 32
+      page: 5
+    P5_33:
+      type: item
+      item:
+        material: CHISELED_NETHER_BRICKS
+        quantity: 1
+      buyPrice: 12
+      sellPrice: 2
+      slot: 33
+      page: 5
+    P5_34:
+      type: item
+      item:
+        material: NETHER_WART_BLOCK
+        quantity: 1
+      buyPrice: 20
+      sellPrice: 4
+      slot: 34
+      page: 5
+    P5_37:
+      type: item
+      item:
+        material: WARPED_WART_BLOCK
+        quantity: 1
+      buyPrice: 20
+      sellPrice: 4
+      slot: 37
+      page: 5
+    P5_38:
+      type: item
+      item:
+        material: STONE_BRICKS
+        quantity: 1
+      buyPrice: 6
+      sellPrice: 1
+      slot: 38
+      page: 5
+    P5_39:
+      type: item
+      item:
+        material: MOSSY_STONE_BRICKS
+        quantity: 1
+      buyPrice: 8
+      sellPrice: 2
+      slot: 39
+      page: 5
+    P5_40:
+      type: item
+      item:
+        material: CRACKED_STONE_BRICKS
+        quantity: 1
+      buyPrice: 8
+      sellPrice: 2
+      slot: 40
+      page: 5
+    P5_41:
+      type: item
+      item:
+        material: CHISELED_STONE_BRICKS
+        quantity: 1
+      buyPrice: 8
+      sellPrice: 2
+      slot: 41
+      page: 5
+    P5_42:
+      type: item
+      item:
+        material: POLISHED_ANDESITE
+        quantity: 1
+      buyPrice: 6
+      sellPrice: 1
+      slot: 42
+      page: 5
+    P5_43:
+      type: item
+      item:
+        material: POLISHED_DIORITE
+        quantity: 1
+      buyPrice: 6
+      sellPrice: 1
+      slot: 43
+      page: 5
