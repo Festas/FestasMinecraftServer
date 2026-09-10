@@ -45,8 +45,12 @@ bossbar-defaults:
 default-sound: BLOCK_NOTE_BLOCK_PLING
 
 # Automatic event scheduler.
+# Enabled so Payday / Token-Frenzy / Gem-Rush / XP-Boost / Enchant-Frenzy / Pickaxe-Frenzy
+# fire automatically as recurring "fun spikes". ROTATION picks one weighted-random event per
+# interval; prevent-duplicates stops re-starting a running event. Each event is 2.0x for a
+# short window, well inside the multiplier caps (money 25x / tokens 15x / gems 15x).
 scheduler:
-  enabled: false
+  enabled: true
   # ROTATION   -> every <interval> seconds, start a weighted-random event from the pool
   # SEQUENTIAL -> every <interval> seconds, start the next pool event in order
   # OFF        -> never auto-start (manual /events start only)
