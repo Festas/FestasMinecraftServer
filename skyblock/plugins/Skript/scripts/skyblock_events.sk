@@ -100,6 +100,10 @@ function startSkyblockEvent(id: number):
     set {skyblock.event.started} to now
     set {skyblock.event.until} to now + {@duration} minutes
     delete {skyblock.event.warned}
+    # Auszahlungs-Lifecycle: Boni werden alle 30s (online), sofort bei `on quit`
+    # und beim Event-Ende ausgezahlt. Der pauschale Reset unten ist ein
+    # Sicherheitsnetz; ein noch nicht ausgezahlter Rest kann nur bei einem
+    # harten Server-Crash (ohne quit-Event) verloren gehen – vernachlässigbar klein.
     delete {skyblock.event.earned::*}
     delete {skyblock.event.pending::*}
 
@@ -203,6 +207,8 @@ every 30 seconds:
                 add loop-player to {_isle::*}
         if size of {_isle::*} is greater than 0:
             set {_lucky} to random element out of {_isle::*}
+            # Teilt sich bewusst den Meteor-Cap mit dem `on break`-Hook (Anti-Farming):
+            # Ticker-Bonus und Abbau-Bonus zählen gemeinsam auf {@cap_meteor}.
             eventBonus({_lucky}, random integer between 25 and 50, {@cap_meteor})
             # Glückspilz persönlich benachrichtigen ...
             send "{@prefix}&b☄ &7Ein Meteorit ist &edirekt neben dir &7niedergegangen! Bonus gesichert." to {_lucky}

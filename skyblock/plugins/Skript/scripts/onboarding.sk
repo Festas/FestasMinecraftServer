@@ -54,4 +54,6 @@ on join:
     wait 4 seconds
     if {_p} is not online:
         stop
+    # Öffnet das DeluxeMenus-Menü "basics_menu" (externes Plugin). Fehlt das Menü,
+    # gibt DeluxeMenus nur eine Fehlermeldung aus – der Rest des Onboardings bleibt intakt.
     make {_p} execute command "/dm open basics_menu"
