@@ -293,6 +293,15 @@ minerals:
 
 
 
+    P2_24:
+      type: item
+      item:
+        material: ANCIENT_DEBRIS
+        quantity: 1
+      buyPrice: 8000
+      sellPrice: -1
+      slot: 24
+      page: 2
     Previous1:
       type: dummy
       item:

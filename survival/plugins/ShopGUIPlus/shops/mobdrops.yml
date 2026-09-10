@@ -565,3 +565,93 @@ mobdrops:
       sellPrice: 40
       slot: 31
       page: 2
+    P2_32:
+      type: item
+      item:
+        material: NETHER_STAR
+        quantity: 1
+      buyPrice: 10000
+      sellPrice: 2000
+      slot: 32
+      page: 2
+    P2_33:
+      type: item
+      item:
+        material: TOTEM_OF_UNDYING
+        quantity: 1
+      buyPrice: 5000
+      sellPrice: 1000
+      slot: 33
+      page: 2
+    P2_34:
+      type: item
+      item:
+        material: WITHER_SKELETON_SKULL
+        quantity: 1
+      buyPrice: 2500
+      sellPrice: 500
+      slot: 34
+      page: 2
+    P2_37:
+      type: item
+      item:
+        material: DRAGON_HEAD
+        quantity: 1
+      buyPrice: 20000
+      sellPrice: -1
+      slot: 37
+      page: 2
+    P2_38:
+      type: item
+      item:
+        material: WET_SPONGE
+        quantity: 1
+      buyPrice: 1000
+      sellPrice: 200
+      slot: 38
+      page: 2
+    P2_39:
+      type: item
+      item:
+        material: SADDLE
+        quantity: 1
+      buyPrice: 750
+      sellPrice: -1
+      slot: 39
+      page: 2
+    P2_40:
+      type: item
+      item:
+        material: WITHER_ROSE
+        quantity: 1
+      buyPrice: 500
+      sellPrice: 100
+      slot: 40
+      page: 2
+    P2_41:
+      type: item
+      item:
+        material: SPECTRAL_ARROW
+        quantity: 1
+      buyPrice: 40
+      sellPrice: 8
+      slot: 41
+      page: 2
+    P2_42:
+      type: item
+      item:
+        material: MUSIC_DISC_13
+        quantity: 1
+      buyPrice: 1500
+      sellPrice: -1
+      slot: 42
+      page: 2
+    P2_43:
+      type: item
+      item:
+        material: MUSIC_DISC_CAT
+        quantity: 1
+      buyPrice: 1500
+      sellPrice: -1
+      slot: 43
+      page: 2
