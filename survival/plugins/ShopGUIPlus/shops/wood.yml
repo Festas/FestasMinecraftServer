@@ -14,7 +14,7 @@ wood:
         material: OAK_LOG
         quantity: 1
       buyPrice: 15
-      sellPrice: 2
+      sellPrice: 3
       slot: 19
       page: 1
 
@@ -34,7 +34,7 @@ wood:
         material: OAK_WOOD
         quantity: 1
       buyPrice: 25
-      sellPrice: 2
+      sellPrice: 5
       slot: 21
       page: 1
 
@@ -54,7 +54,7 @@ wood:
         material: SPRUCE_LOG
         quantity: 1
       buyPrice: 15
-      sellPrice: 2
+      sellPrice: 3
       slot: 23
       page: 1
 
@@ -74,7 +74,7 @@ wood:
         material: SPRUCE_WOOD
         quantity: 1
       buyPrice: 25
-      sellPrice: 2
+      sellPrice: 5
       slot: 25
       page: 1
 
@@ -94,7 +94,7 @@ wood:
         material: BIRCH_LOG
         quantity: 1
       buyPrice: 15
-      sellPrice: 2
+      sellPrice: 3
       slot: 29
       page: 1
 
@@ -114,7 +114,7 @@ wood:
         material: BIRCH_WOOD
         quantity: 1
       buyPrice: 25
-      sellPrice: 2
+      sellPrice: 5
       slot: 31
       page: 1
 
@@ -134,7 +134,7 @@ wood:
         material: JUNGLE_LOG
         quantity: 1
       buyPrice: 15
-      sellPrice: 2
+      sellPrice: 3
       slot: 33
       page: 1
 
@@ -154,7 +154,7 @@ wood:
         material: JUNGLE_WOOD
         quantity: 1
       buyPrice: 25
-      sellPrice: 2
+      sellPrice: 5
       slot: 37
       page: 1
 
@@ -174,7 +174,7 @@ wood:
         material: ACACIA_LOG
         quantity: 1
       buyPrice: 15
-      sellPrice: 2
+      sellPrice: 3
       slot: 39
       page: 1
 
@@ -194,7 +194,7 @@ wood:
         material: ACACIA_WOOD
         quantity: 1
       buyPrice: 25
-      sellPrice: 2
+      sellPrice: 5
       slot: 41
       page: 1
 
@@ -214,7 +214,7 @@ wood:
         material: DARK_OAK_LOG
         quantity: 1
       buyPrice: 15
-      sellPrice: 2
+      sellPrice: 3
       slot: 43
       page: 1
 
@@ -250,7 +250,7 @@ wood:
         material: DARK_OAK_WOOD
         quantity: 1
       buyPrice: 25
-      sellPrice: 2
+      sellPrice: 5
       slot: 20
       page: 2
 
@@ -270,7 +270,7 @@ wood:
         material: CRIMSON_STEM
         quantity: 1
       buyPrice: 25
-      sellPrice: 2
+      sellPrice: 5
       slot: 22
       page: 2
 
@@ -280,7 +280,7 @@ wood:
         material: STRIPPED_CRIMSON_STEM
         quantity: 1
       buyPrice: 30
-      sellPrice: 25
+      sellPrice: 6
       slot: 23
       page: 2
 
@@ -290,7 +290,7 @@ wood:
         material: CRIMSON_HYPHAE
         quantity: 1
       buyPrice: 40
-      sellPrice: 25
+      sellPrice: 8
       slot: 24
       page: 2
 
@@ -310,7 +310,7 @@ wood:
         material: WARPED_STEM
         quantity: 1
       buyPrice: 25
-      sellPrice: 2
+      sellPrice: 5
       slot: 28
       page: 2
 
@@ -320,7 +320,7 @@ wood:
         material: STRIPPED_WARPED_STEM
         quantity: 1
       buyPrice: 30
-      sellPrice: 25
+      sellPrice: 6
       slot: 29
       page: 2
 
@@ -330,7 +330,7 @@ wood:
         material: WARPED_HYPHAE
         quantity: 1
       buyPrice: 40
-      sellPrice: 25
+      sellPrice: 8
       slot: 30
       page: 2
 
@@ -350,7 +350,7 @@ wood:
         material: MANGROVE_LOG
         quantity: 1
       buyPrice: 16
-      sellPrice: 2
+      sellPrice: 3
       slot: 32
       page: 2
 
@@ -360,7 +360,7 @@ wood:
         material: STRIPPED_MANGROVE_LOG
         quantity: 1
       buyPrice: 25
-      sellPrice: 21
+      sellPrice: 5
       slot: 33
       page: 2
 
@@ -370,7 +370,7 @@ wood:
         material: MANGROVE_WOOD
         quantity: 1
       buyPrice: 25
-      sellPrice: 22
+      sellPrice: 5
       slot: 34
       page: 2
 

@@ -23,7 +23,7 @@ mobdrops:
         material: GUNPOWDER
         quantity: 1
       buyPrice: 15
-      sellPrice: 1
+      sellPrice: 3
       slot: 20
       page: 1
 
@@ -33,7 +33,7 @@ mobdrops:
         material: ENDER_PEARL
         quantity: 1
       buyPrice: 25
-      sellPrice: 1
+      sellPrice: 5
       slot: 21
       page: 1
 
@@ -83,7 +83,7 @@ mobdrops:
         material: SLIME_BALL
         quantity: 1
       buyPrice: 20
-      sellPrice: 5
+      sellPrice: 4
       slot: 28
       page: 1
 
@@ -123,7 +123,7 @@ mobdrops:
         material: RABBIT_FOOT
         quantity: 1
       buyPrice: 20
-      sellPrice: 5
+      sellPrice: 4
       slot: 32
       page: 1
 
@@ -153,7 +153,7 @@ mobdrops:
         material: PRISMARINE_SHARD
         quantity: 1
       buyPrice: 2
-      sellPrice: 0.5
+      sellPrice: 1
       slot: 37
       page: 1
 
@@ -163,7 +163,7 @@ mobdrops:
         material: PRISMARINE_CRYSTALS
         quantity: 1
       buyPrice: 2
-      sellPrice: 0.5
+      sellPrice: 1
       slot: 38
       page: 1
 
@@ -173,7 +173,7 @@ mobdrops:
         material: BEEF
         quantity: 1
       buyPrice: 3
-      sellPrice: 0.5
+      sellPrice: 1
       slot: 39
       page: 1
 
@@ -183,7 +183,7 @@ mobdrops:
         material: RABBIT
         quantity: 1
       buyPrice: 3
-      sellPrice: 0.5
+      sellPrice: 1
       slot: 40
       page: 1
 
@@ -193,7 +193,7 @@ mobdrops:
         material: PORKCHOP
         quantity: 1
       buyPrice: 3
-      sellPrice: 0.5
+      sellPrice: 1
       slot: 41
       page: 1
 
@@ -203,7 +203,7 @@ mobdrops:
         material: CHICKEN
         quantity: 1
       buyPrice: 3
-      sellPrice: 0.5
+      sellPrice: 1
       slot: 42
       page: 1
 
@@ -213,7 +213,7 @@ mobdrops:
         material: MUTTON
         quantity: 1
       buyPrice: 3
-      sellPrice: 0.5
+      sellPrice: 1
       slot: 43
       page: 1
 
@@ -258,7 +258,7 @@ mobdrops:
         material: GHAST_TEAR
         quantity: 1
       buyPrice: 20
-      sellPrice: 5
+      sellPrice: 4
       slot: 21
       page: 2
 
@@ -288,7 +288,7 @@ mobdrops:
         material: MAGMA_CREAM
         quantity: 1
       buyPrice: 20
-      sellPrice: 5
+      sellPrice: 4
       slot: 24
       page: 2
 

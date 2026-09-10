@@ -93,7 +93,7 @@ blocks:
         material: PACKED_MUD
         quantity: 1
       buyPrice: 35
-      sellPrice: 5
+      sellPrice: 7
       slot: 29
       page: 1
 
@@ -153,7 +153,7 @@ blocks:
         material: SANDSTONE
         quantity: 1
       buyPrice: 15
-      sellPrice: 1
+      sellPrice: 3
       slot: 37
       page: 1
 
@@ -193,7 +193,7 @@ blocks:
         material: ICE
         quantity: 1
       buyPrice: 30
-      sellPrice: 5
+      sellPrice: 6
       slot: 41
       page: 1
 
@@ -203,7 +203,7 @@ blocks:
         material: SNOW_BLOCK
         quantity: 1
       buyPrice: 30
-      sellPrice: 5
+      sellPrice: 6
       slot: 42
       page: 1
 
@@ -267,7 +267,7 @@ blocks:
         material: MYCELIUM
         quantity: 1
       buyPrice: 30
-      sellPrice: 5
+      sellPrice: 6
       slot: 22
       page: 2
 
@@ -472,17 +472,17 @@ blocks:
         material: RAW_COPPER_BLOCK
         quantity: 1
       buyPrice: 200
-      sellPrice: 20
+      sellPrice: 27
       slot: 20
       page: 3
 
     P3_21:
       type: item
       item:
-        material: RAW_IRON_BlOCK
+        material: RAW_IRON_BLOCK
         quantity: 1
       buyPrice: 250
-      sellPrice: 30
+      sellPrice: 54
       slot: 21
       page: 3
 
@@ -492,17 +492,17 @@ blocks:
         material: RAW_GOLD_BLOCK
         quantity: 1
       buyPrice: 400
-      sellPrice: 50
+      sellPrice: 90
       slot: 22
       page: 3
 
     P3_23:
       type: item
       item:
-        material: COPPER_BLOCK
+        material: CUT_COPPER
         quantity: 1
-      buyPrice: 400
-      sellPrice: 50
+      buyPrice: 20
+      sellPrice: 4
       slot: 23
       page: 3
 
@@ -512,7 +512,7 @@ blocks:
         material: EXPOSED_COPPER
         quantity: 1
       buyPrice: 500
-      sellPrice: 50
+      sellPrice: 100
       slot: 24
       page: 3
 
@@ -522,7 +522,7 @@ blocks:
         material: WEATHERED_COPPER
         quantity: 1
       buyPrice: 500
-      sellPrice: 50
+      sellPrice: 100
       slot: 25
       page: 3
 
@@ -532,7 +532,7 @@ blocks:
         material: OXIDIZED_COPPER
         quantity: 1
       buyPrice: 500
-      sellPrice: 50
+      sellPrice: 100
       slot: 28
       page: 3
 
@@ -579,7 +579,7 @@ blocks:
     P3_33:
       type: item
       item:
-        material: POLISHED_BLACKSTONE
+        material: POLISHED_BLACKSTONE_BRICKS
         quantity: 1
       buyPrice: 5
       sellPrice: 1
@@ -642,7 +642,7 @@ blocks:
         material: SMOOTH_QUARTZ
         quantity: 1
       buyPrice: 50
-      sellPrice: 5
+      sellPrice: 10
       slot: 41
       page: 3
 
@@ -652,7 +652,7 @@ blocks:
         material: SMOOTH_RED_SANDSTONE
         quantity: 1
       buyPrice: 20
-      sellPrice: 5
+      sellPrice: 4
       slot: 42
       page: 3
 
@@ -662,7 +662,7 @@ blocks:
         material: SMOOTH_SANDSTONE
         quantity: 1
       buyPrice: 20
-      sellPrice: 5
+      sellPrice: 4
       slot: 43
       page: 3
 
@@ -843,7 +843,7 @@ blocks:
         material: SEA_PICKLE
         quantity: 1
       buyPrice: 20
-      sellPrice: 1
+      sellPrice: 4
       slot: 39
       page: 4
 
@@ -863,7 +863,7 @@ blocks:
         material: HONEY_BLOCK
         quantity: 1
       buyPrice: 20
-      sellPrice: 5
+      sellPrice: 4
       slot: 41
       page: 4
 
@@ -873,7 +873,7 @@ blocks:
         material: HONEYCOMB_BLOCK
         quantity: 1
       buyPrice: 20
-      sellPrice: 5
+      sellPrice: 4
       slot: 42
       page: 4
 
@@ -1132,7 +1132,7 @@ blocks:
       slot: 1
       page: 1
       commandsOnClick:
-      - "shopgui restone"
+      - "shopgui redstone"
 
     ShopTools1:
       type: dummy
@@ -1219,7 +1219,7 @@ blocks:
       slot: 1
       page: 2
       commandsOnClick:
-      - "shopgui restone"
+      - "shopgui redstone"
 
     ShopTools2:
       type: dummy
@@ -1306,7 +1306,7 @@ blocks:
       slot: 1
       page: 3
       commandsOnClick:
-      - "shopgui restone"
+      - "shopgui redstone"
 
     ShopTools3:
       type: dummy
@@ -1393,7 +1393,7 @@ blocks:
       slot: 1
       page: 4
       commandsOnClick:
-      - "shopgui restone"
+      - "shopgui redstone"
 
     ShopTools4:
       type: dummy
@@ -1480,7 +1480,7 @@ blocks:
       slot: 1
       page: 5
       commandsOnClick:
-      - "shopgui restone"
+      - "shopgui redstone"
 
     ShopTools5:
       type: dummy

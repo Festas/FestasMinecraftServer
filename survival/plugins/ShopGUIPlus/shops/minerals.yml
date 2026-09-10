@@ -36,7 +36,7 @@ minerals:
         material: RAW_IRON
         quantity: 1
       buyPrice: 30
-      sellPrice: 10
+      sellPrice: 6
       slot: 21
       page: 1
 
@@ -46,7 +46,7 @@ minerals:
         material: COAL
         quantity: 1
       buyPrice: 15
-      sellPrice: 8
+      sellPrice: 3
       slot: 22
       page: 1
 
@@ -56,7 +56,7 @@ minerals:
         material: GOLD_INGOT
         quantity: 1
       buyPrice: 50
-      sellPrice: 25
+      sellPrice: 10
       slot: 23
       page: 1
 
@@ -76,7 +76,7 @@ minerals:
         material: IRON_INGOT
         quantity: 1
       buyPrice: 20
-      sellPrice: 10
+      sellPrice: 4
       slot: 25
       page: 1
 
@@ -86,7 +86,7 @@ minerals:
         material: LAPIS_LAZULI
         quantity: 1
       buyPrice: 50
-      sellPrice: 25
+      sellPrice: 10
       slot: 28
       page: 1
 
@@ -96,7 +96,7 @@ minerals:
         material: COAL_BLOCK
         quantity: 1
       buyPrice: 150
-      sellPrice: 75
+      sellPrice: 27
       slot: 29
       page: 1
 
@@ -106,7 +106,7 @@ minerals:
         material: REDSTONE_BLOCK
         quantity: 1
       buyPrice: 200
-      sellPrice: 45
+      sellPrice: 54
       slot: 30
       page: 1
 
@@ -116,7 +116,7 @@ minerals:
         material: GOLD_BLOCK
         quantity: 1
       buyPrice: 400
-      sellPrice: 200
+      sellPrice: 90
       slot: 31
       page: 1
 
@@ -136,7 +136,7 @@ minerals:
         material: IRON_BLOCK
         quantity: 1
       buyPrice: 200
-      sellPrice: 90
+      sellPrice: 36
       slot: 33
       page: 1
 
@@ -146,7 +146,7 @@ minerals:
         material: DIAMOND_BLOCK
         quantity: 1
       buyPrice: 50000
-      sellPrice: 6750
+      sellPrice: 9000
       slot: 34
       page: 1
 
@@ -156,7 +156,7 @@ minerals:
         material: LAPIS_BLOCK
         quantity: 1
       buyPrice: 400
-      sellPrice: 225
+      sellPrice: 90
       slot: 37
       page: 1
 
@@ -166,7 +166,7 @@ minerals:
         material: REDSTONE
         quantity: 1
       buyPrice: 30
-      sellPrice: 15
+      sellPrice: 6
       slot: 38
       page: 1
 
@@ -176,7 +176,7 @@ minerals:
         material: DIAMOND
         quantity: 1
       buyPrice: 5000
-      sellPrice: 750
+      sellPrice: 1000
       slot: 39
       page: 1
 
@@ -196,7 +196,7 @@ minerals:
         material: RAW_COPPER
         quantity: 1
       buyPrice: 15
-      sellPrice: 8
+      sellPrice: 3
       slot: 41
       page: 1
 
@@ -206,7 +206,7 @@ minerals:
         material: EMERALD
         quantity: 1
       buyPrice: 1000
-      sellPrice: 150
+      sellPrice: 200
       slot: 42
       page: 1
 
@@ -216,7 +216,7 @@ minerals:
         material: QUARTZ_BLOCK
         quantity: 1
       buyPrice: 400
-      sellPrice: 180
+      sellPrice: 80
       slot: 43
       page: 1
 
@@ -239,7 +239,7 @@ minerals:
         material: COPPER_INGOT
         quantity: 1
       buyPrice: 20
-      sellPrice: 10
+      sellPrice: 4
       slot: 19
       page: 2
 
@@ -250,14 +250,14 @@ minerals:
         material: EMERALD_BLOCK
         quantity: 1
       buyPrice: 10000
-      sellPrice: 1500
+      sellPrice: 1800
       slot: 20
       page: 2
 
     P2_21:
       type: item
       item:
-        material: amethyst_shard
+        material: AMETHYST_SHARD
         quantity: 1
       buyPrice: 150
       sellPrice: 30
@@ -270,7 +270,7 @@ minerals:
         material: COPPER_BLOCK
         quantity: 1
       buyPrice: 200
-      sellPrice: 90
+      sellPrice: 36
       slot: 22
       page: 2
 
@@ -280,7 +280,7 @@ minerals:
         material: ECHO_SHARD
         quantity: 1
       buyPrice: 2000
-      sellPrice: 200
+      sellPrice: 400
       slot: 23
       page: 2
 

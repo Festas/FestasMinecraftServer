@@ -14,7 +14,7 @@ redstone:
         material: REDSTONE
         quantity: 1
       buyPrice: 30
-      sellPrice: 5
+      sellPrice: 6
       slot: 19
       page: 1
 
@@ -64,7 +64,7 @@ redstone:
         material: STICKY_PISTON
         quantity: 1
       buyPrice: 100
-      sellPrice:
+      sellPrice: -1
       slot: 24
       page: 1
 
@@ -330,7 +330,7 @@ redstone:
       slot: 7
       page: 1
       commandsOnClick:
-      - "shopgui bricks"
+      - "shopgui blocks"
 
 
 
