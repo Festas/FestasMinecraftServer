@@ -9,6 +9,7 @@
   "chance": 0.00002,
   "currency": "GEMS",
   "initialCost": 12500,
+  "pickaxeLevelRequired": 60,
   "prestige": {
     "enabled": false,
     "maxPrestige": 5,

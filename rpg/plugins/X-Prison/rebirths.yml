@@ -70,6 +70,7 @@ rebirths:
     rewards:
       commands:
         - lp user %player% permission set xprison.rebirth1 true
+        - lp user %player% permission set xprison.multiplier.r1 true
         - tokens give %player% 250000
         - gems give %player% 250
   '2':
@@ -92,6 +93,7 @@ rebirths:
     rewards:
       commands:
         - lp user %player% permission set xprison.rebirth2 true
+        - lp user %player% permission set xprison.multiplier.r2 true
         - tokens give %player% 400000
         - gems give %player% 400
   '3':
@@ -114,6 +116,7 @@ rebirths:
     rewards:
       commands:
         - lp user %player% permission set xprison.rebirth3 true
+        - lp user %player% permission set xprison.multiplier.r3 true
         - tokens give %player% 600000
         - gems give %player% 600
   '4':
@@ -136,6 +139,7 @@ rebirths:
     rewards:
       commands:
         - lp user %player% permission set xprison.rebirth4 true
+        - lp user %player% permission set xprison.multiplier.r4 true
         - tokens give %player% 900000
         - gems give %player% 900
   '5':
@@ -158,6 +162,7 @@ rebirths:
     rewards:
       commands:
         - lp user %player% permission set xprison.rebirth5 true
+        - lp user %player% permission set xprison.multiplier.r5 true
         - tokens give %player% 1250000
         - gems give %player% 1500
         - broadcast <gradient:#FFD700:#FFEA00><bold>%player%</bold></gradient> <white>has reached <yellow>Rebirth 5</yellow>!

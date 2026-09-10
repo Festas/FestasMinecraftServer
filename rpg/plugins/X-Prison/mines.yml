@@ -1,3 +1,41 @@
+# ===========================================================================
+# X-PRISON MINES  -  ZONEN-LADDER mine_a .. mine_j  (Mining-Server "rpg")
+# ===========================================================================
+# WICHTIG: Die eigentlichen Minen-Definitionen (Koordinaten, Region, konkrete
+# Block-Verteilung, Teleportpunkt, Reset-Wert) sind SERVER-STATE und werden
+# IM SPIEL gesetzt (/mines tool -> Auswahl, /mines create <name>,
+# /mines panel <name>). Sie liegen NICHT in dieser getrackten Datei.
+# Diese Datei haelt nur die globalen Reset-/Region-/Hologramm-Settings.
+#
+# NAMING-CONTRACT (netzwerkweit verbindlich - WorldGuard-Regionen UND Menues
+# nutzen exakt dieselben IDs): mine_a, mine_b, mine_c, mine_d, mine_e,
+# mine_f, mine_g, mine_h, mine_i, mine_j.
+# (Enchant-Flaecheneffekte triggern nur in Regionen, deren Name mit "mine"
+#  beginnt -> die IDs mine_a.. erfuellen das automatisch.)
+#
+# RANG-GATING: Jeder X-Prison-Rang schaltet die gleichnamige Zone frei
+#   Rang A -> mine_a, B -> mine_b, ... J -> mine_j.
+# X-Prison selbst sperrt den Minen-Zutritt NICHT; die Freischaltung erfolgt
+# ueber den Teleport-/Navigator-Menue (prueft den X-Prison-Rang) bzw. die
+# WorldGuard-Region. Der Rang ist die einzige Quelle der Progression.
+#
+# BLOCK-ZUSAMMENSETZUNG je Zone (eskalierend; im /mines panel einzutragen):
+#   mine_a (Rang A): STONE 70 / COBBLESTONE 25 / COAL_ORE 5
+#   mine_b (Rang B): STONE 55 / COAL_ORE 30 / COPPER_ORE 15
+#   mine_c (Rang C): STONE 45 / COAL_ORE 25 / IRON_ORE 25 / COPPER_ORE 5
+#   mine_d (Rang D): STONE 35 / IRON_ORE 30 / GOLD_ORE 25 / COAL_ORE 10
+#   mine_e (Rang E): STONE 30 / GOLD_ORE 25 / REDSTONE_ORE 25 / LAPIS_ORE 20
+#   mine_f (Rang F): STONE 25 / REDSTONE_ORE 20 / LAPIS_ORE 20 / EMERALD_ORE 20 / GOLD_ORE 15
+#   mine_g (Rang G): STONE 20 / EMERALD_ORE 25 / DIAMOND_ORE 30 / GOLD_ORE 25
+#   mine_h (Rang H): DEEPSLATE 20 / DEEPSLATE_DIAMOND_ORE 30 / DEEPSLATE_EMERALD_ORE 25 / DEEPSLATE_GOLD_ORE 25
+#   mine_i (Rang I): DEEPSLATE 15 / DEEPSLATE_DIAMOND_ORE 35 / DEEPSLATE_EMERALD_ORE 40 / ANCIENT_DEBRIS 10
+#   mine_j (Rang J): DEEPSLATE_DIAMOND_ORE 40 / DEEPSLATE_EMERALD_ORE 30 / ANCIENT_DEBRIS 25 / NETHERITE_BLOCK 5
+# (Alle diese Bloecke haben in autosell.yml einen monoton steigenden Preis.)
+#
+# RESET-GUIDANCE (pro Mine im /mines panel setzen): Reset per Prozent-Schwelle
+# (empfohlen ~30% Restbloecke) ODER per Timer. Die Hologramm-Platzhalter unten
+# (blocks_left / blocks_mined / timed_reset) funktionieren fuer beide Modi.
+# ===========================================================================
 messages:
   no_permission: <gradient:#FFD700:#FFAA00><bold>(!)</bold></gradient> <white>Dafür hast du keine Berechtigung!
   selection_valid: <gradient:#FFD700:#FFAA00>Deine Auswahl ist gültig.</gradient> <gray>Du kannst jetzt mit <yellow>/mines create <name></yellow> eine Mine erstellen.

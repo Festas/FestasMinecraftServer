@@ -8,7 +8,7 @@
   "maxLevel": 1000,
   "chance": 0.0002,
   "initialCost": 2500,
-  "pickaxeLevelRequired": 1,
+  "pickaxeLevelRequired": 125,
   "removeBlocks": false,
   "countBlocksBroken": false,
   "useEvents": true,

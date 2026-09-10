@@ -1,12 +1,18 @@
-# Mining-Server — Konzept (geplant)
+# Mining-Server — Konzept & X-Prison-Progression
 
-> **🟡 Geplant (26.2).** Dieser Server ist einer der **zwei neuen Server** der Netzwerk-Neuausrichtung
-> (neben dem überarbeiteten **Skyblock**). Er befindet sich in der **Konzept-/Aufbauphase**.
-> Grundlage: [../NEW_SERVERS.md](../NEW_SERVERS.md).
+> **🟢 X-Prison-Kernprogression umgesetzt.** Der Mining-Server (Velocity `rpg`, spielerseitig „Mining",
+> Weltname `world`, täglicher Neustart 04:05 Europe/Berlin) nutzt **X-Prison** als gebündelten Mining-Core
+> (Weg A). Die **Kernprogression** — Ränge/Zonen, AutoSell, Pickaxe/Enchants, endloses Prestige, Rebirth,
+> Ascension und permanente Multiplier — ist konfiguriert (siehe
+> [Umgesetzte X-Prison-Progression](#umgesetzte-x-prison-progression-fundament)).
+> Angrenzende Systeme (WorldGuard-Regionen, DeluxeMenus-Navigator, CMI-Economy, PlaceholderAPI, TAB, Skript)
+> bauen auf diesem Fundament auf. Grundlage: [../NEW_SERVERS.md](../NEW_SERVERS.md).
 
 Casual-Server rund um **Abbau-Zonen**: Spieler bauen mit einer **besonderen Spitzhacke** Blöcke ab,
-verkaufen sie und schalten damit **stärkere Spitzhacken** und **neue Zonen** frei. Der Kern-Loop ist bewusst
-einfach und schnell verständlich.
+verkaufen sie (**AutoSell**) und schalten damit **stärkere Spitzhacken**, **Enchants** und **neue Zonen** frei.
+Der Kern-Loop ist ein **endloser, milestone-getriebener Loop**:
+**Zone abbauen → AutoSell → Geld → Rankup (neue Zone) → … → Prestige (Reset + permanenter Multiplier) →
+… → Rebirth → … → Ascension (endlos).**
 
 ---
 
@@ -48,10 +54,101 @@ einfach und schnell verständlich.
 | **Zonen-Freischaltung** | Neue Zonen gegen Fortschritt/Währung öffnen | ✅ |
 | **Verkauf/Economy** | Blöcke zu Geld machen (server-isoliert) | ✅ |
 | **Auto-Regeneration der Zonen** | Abgebaute Blöcke füllen sich wieder auf | ✅ |
-| **Ränge/Prestige** | Langzeit-Progression nach den Zonen | ⬜ Phase 2 |
+| **Ränge/Prestige/Rebirth** | Endlose Progression (P0–P10 + Ascension, R0–R5) mit permanenten Multipliern | ✅ |
 | **Cosmetics/Battle-Pass** | Retention, Belohnungen | ⬜ Phase 2 |
-| **Verzauberungen/Boosts der Spitzhacke** | Zusätzliche Effekte (Auto-Sell, Multiplier) | ⬜ Phase 2 |
+| **Verzauberungen/Boosts der Spitzhacke** | Enchants inkl. AutoSell/Multiplier, stufenweise Freischaltung | ✅ |
 | **Black Market** | Rotierende Late-Game-Angebote als Ressourcen-Sink | ⬜ Phase 3 |
+
+---
+
+## Umgesetzte X-Prison-Progression (Fundament)
+
+> Konfiguriert unter `rpg/plugins/X-Prison/`. Minen-Koordinaten/Regionen sind **Server-State**
+> (im Spiel via `/mines create` + `/mines panel`); alles andere lebt in getrackter Config.
+
+### Währungen & Rollen
+
+| Währung | Rolle | Hauptquellen | Haupt-Sinks |
+|---------|-------|--------------|-------------|
+| **money** (Geld) | Kern-Fortschritt | AutoSell, Rankup-Boni | Rankup, Prestige, Private-Mine-Ausbau |
+| **tokens** (Token) | Power-Grind | Rankup/Prestige/Rebirth/Pickaxe-Milestones, tokenfinder | Enchants, Pickaxe-Quality, Robots, AutoMiner |
+| **gems** (Edelsteine) | Premium | Milestones, gemfinder | BlackMarket, Top-/Flächen-Enchants, Cosmetics |
+
+### Rang- & Zonen-Ladder (`mine_a … mine_j`)
+
+Jeder Rang schaltet die gleichnamige Zone frei (Rang A → `mine_a`, … J → `mine_j`). Die Zonen-IDs sind
+**netzwerkweit verbindlich** (WorldGuard-Regionen + Menüs nutzen exakt dieselben Namen). X-Prison gated den
+Zutritt nicht selbst — die Freischaltung erfolgt rang-basiert über Navigator/Menü bzw. WG-Region. Der
+X-Prison-Rang ist die alleinige Quelle der Progression (nicht Rankup/Autorank/CMI-Ränge).
+
+| Rang | Zone | Rankup-Kosten (money) | Block-Zusammensetzung (im `/mines panel` setzen) |
+|:----:|------|----------------------:|--------------------------------------------------|
+| A | `mine_a` | 0 | STONE 70 / COBBLESTONE 25 / COAL_ORE 5 |
+| B | `mine_b` | 5.000 | STONE 55 / COAL_ORE 30 / COPPER_ORE 15 |
+| C | `mine_c` | 15.000 | STONE 45 / COAL_ORE 25 / IRON_ORE 25 / COPPER_ORE 5 |
+| D | `mine_d` | 50.000 | STONE 35 / IRON_ORE 30 / GOLD_ORE 25 / COAL_ORE 10 |
+| E | `mine_e` | 125.000 | STONE 30 / GOLD_ORE 25 / REDSTONE_ORE 25 / LAPIS_ORE 20 |
+| F | `mine_f` | 300.000 | STONE 25 / REDSTONE_ORE 20 / LAPIS_ORE 20 / EMERALD_ORE 20 / GOLD_ORE 15 |
+| G | `mine_g` | 750.000 | STONE 20 / EMERALD_ORE 25 / DIAMOND_ORE 30 / GOLD_ORE 25 |
+| H | `mine_h` | 1.800.000 | DEEPSLATE 20 / DEEPSLATE_DIAMOND_ORE 30 / DEEPSLATE_EMERALD_ORE 25 / DEEPSLATE_GOLD_ORE 25 |
+| I | `mine_i` | 4.500.000 | DEEPSLATE 15 / DEEPSLATE_DIAMOND_ORE 35 / DEEPSLATE_EMERALD_ORE 40 / ANCIENT_DEBRIS 10 |
+| J | `mine_j` | 10.000.000 | DEEPSLATE_DIAMOND_ORE 40 / DEEPSLATE_EMERALD_ORE 30 / ANCIENT_DEBRIS 25 / NETHERITE_BLOCK 5 |
+
+Jeder Rankup gibt zusätzlich Token (250 → 25.000) und ab Rang E Gems; Rang J zusätzlich 250.000 money.
+AutoSell-Preise (`autosell.yml`) steigen **monoton leicht exponentiell** entlang der Ladder
+(z. B. STONE 1 → COAL_ORE 8 → IRON_ORE 20 → GOLD_ORE 70 → EMERALD_ORE 135 → DIAMOND_ORE 180 →
+DEEPSLATE_DIAMOND_ORE 260 → ANCIENT_DEBRIS 3.000 → NETHERITE_BLOCK 12.000), sodass höhere Zonen spürbar
+lukrativer sind, ohne die vorherigen zu entwerten.
+
+### Pickaxe & Enchants (stufenweise Freischaltung)
+
+- **Pickaxe-Level** (`pickaxe-levels.yml`): Formel `40*(level-1)^2`, max 300, Milestone-Rewards (Token/Gems)
+  bei 25/50/75/100/150/200/250/300.
+- **Pickaxe-Quality** (`pickaxe-quality.yml`): 10 Tiers (Tokens), permanenter Multiplier `1+0.08*tier`
+  (Tier 10 = ×1.8 auf money/tokens/gems) — dauerhafter, prestige-unabhängiger Ertragsbonus.
+- **Enchant-Gates** (`pickaxeLevelRequired`): früh (efficiency/fortune/haste/tokenfinder/gemfinder) ab Lvl 1;
+  mid: salary/blessing/charity 25, layer/explosive 50, blockbooster 60; late: laserbeam 100, nuke 125.
+- **Endlos-Enchants:** efficiency & fortune mit aktiviertem **Enchant-Prestige** (permanenter Multiplier je
+  Enchant-Prestige) → endlos investierbar; Kosten skalieren exponentiell (`baseCost*pow(1.05,level)`).
+  Flächen-Enchants triggern nur in Regionen, deren Name mit `mine` beginnt (→ `mine_a…mine_j`).
+
+### Endloser Prestige → Rebirth → Ascension-Loop
+
+- **Prestige P0–P10** (`prestiges.yml`, `currency: money`): feste Kosten 25M → 18B; `reset_rank_after_prestige: true`.
+  Jeder Prestige gibt Token/Gems **und** schaltet einen permanenten Multiplier `xprison.multiplier.pN` frei.
+- **Ascension (unlimited Prestige > P10):** `unlimited_prestiges.enabled: true`, geometrische Kostenformel
+  **`cost(n) = 28,8 Mrd × 1.6^(n-11)`** (setzt P10 = 18B glatt fort). Jeder Ascension-Prestige gibt stetig
+  Token/Gems; Meilensteine bei **P25 / P50 / P100 / P250 / P500 / P1000** schalten
+  `xprison.multiplier.asc1 … asc6` frei.
+- **Rebirth R0–R5** (`rebirths.yml`): große Gates (Rang 10 + Prestige 10 + eskalierende money 25B → 500B /
+  tokens 1,5M → 25M). Jeder Rebirth vergibt `xprison.rebirthN` **und** `xprison.multiplier.rN` + Token/Gems.
+  Über R5 hinaus ist **Ascension** (der endlose unlimited-Prestige-Loop) die dauerhafte Fortsetzung.
+
+### Permanente Multiplier-Leiter (`multipliers.yml`)
+
+Monoton steigende Rank-Multiplier (der **stärkste passende Key gewinnt**, multiplikativ auf den Ertrag),
+geprüft als Permission `xprison.multiplier.<key>` (`use-luckperms-groups: false`):
+
+| Stufe | Keys | money | tokens | gems |
+|-------|------|:-----:|:------:|:----:|
+| Prestige | p1 → p10 | 1.1 → 2.25 | 1.05 → 1.5 | 1.0 → 1.45 |
+| Rebirth | r1 → r5 | 3.0 → 12.0 | 2.0 → 6.5 | 1.8 → 5.5 |
+| Ascension | asc1 → asc6 | 13.5 → **25.0** | 7.0 → **15.0** | 6.0 → **15.0** |
+
+Deckel (`currency-multipliers`, greifen für Event-/Booster-Multiplier via `/gmulti` `/pmulti`):
+money 25× / tokens 15× / gems 15×. So lohnt sich **jeder Reset dauerhaft** und das Endgame bleibt endlos.
+
+### Milestone-Kadenz (Kurzüberblick)
+
+- **Ränge A–J:** Kostenstufe ~×2,2–3 pro Rang (0 → 10M money) — schnelle Früh-Progression, längere Endränge.
+- **Pickaxe-Milestones:** Lvl 25 / 50 / 75 / 100 / 150 / 200 / 250 / 300.
+- **Prestige P1–P10:** 25M → 18B money; **Ascension** endlos ×1.6 ab 28,8 Mrd.
+- **Rebirth R1–R5:** große Sammel-Gates; **Ascension-Meilensteine** P25/50/100/250/500/1000.
+
+> **Server-State (nur im Spiel):** Minen-Koordinaten/Region/Teleport/Reset-Wert je `mine_a…mine_j` via
+> `/mines create` + `/mines panel`; Block-Verteilung gemäß Tabelle oben eintragen.
+> **Verifizieren:** Dass die definierten P0–P10 bei aktiviertem `unlimited_prestiges` erhalten bleiben und
+> die Formel erst *jenseits* P10 greift, im Live-Betrieb einmal prüfen.
 
 ---
 
@@ -74,9 +171,10 @@ Vollständiger, für dieses Setup optimierter Plugin-Stack (inkl. Recycling- und
 
 ## Offene Punkte
 
-- Konkretes 26.2-taugliches Plugin für **Spitzhacken-Upgrades + Mehrblock-Abbau** festlegen: Weg A
-  (**X-Prison**-Core) oder Weg B (**EcoItems + EcoEnchants + AxMines**) — 26.2-Build bestätigen (Blocker).
-- Zonen-Design: Anzahl Zonen zum Launch, Block-Sets, Freischalt-Kosten, Balancing der Verkaufspreise.
+- **Entschieden:** Mining-Kern = **X-Prison** (Weg A). Kernprogression konfiguriert (siehe
+  [Umgesetzte X-Prison-Progression](#umgesetzte-x-prison-progression-fundament)); 26.2-Build im Deploy bestätigen.
+- **Zonen-Design festgelegt:** 10 Zonen `mine_a…mine_j` mit eskalierenden Block-Sets, Rankup-Kosten und
+  monoton steigenden AutoSell-Preisen (Details siehe Ladder-Tabelle). Minen-Koordinaten im Spiel setzen.
 - Abbau-Muster pro Spitzhacken-Stufe (1×1 → 3×3 → …) und Auto-Regenerations-Tempo festlegen.
 - Battle-Pass-Umfang und Cosmetic-Währung (siehe offene Economy-Frage in
   [../NEW_SERVERS.md → Abschnitt 7](../NEW_SERVERS.md#7-verbleibende-offene-fragen)).
@@ -133,4 +231,4 @@ Vollständiger, für dieses Setup optimierter Plugin-Stack (inkl. Recycling- und
 **Verwandt:** [PLUGINS.md](PLUGINS.md) · [../NEW_SERVERS.md](../NEW_SERVERS.md) · [../PLANNING.md](../PLANNING.md) ·
 [../skyblock/README.md](../skyblock/README.md)
 
-**Letzte Aktualisierung:** 2026-08-19
+**Letzte Aktualisierung:** 2026-09-10

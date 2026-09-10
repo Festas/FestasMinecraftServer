@@ -10,6 +10,7 @@
   "chance": 0.001,
   "currency": "GEMS",
   "initialCost": 5000,
+  "pickaxeLevelRequired": 50,
   "countBlocksBroken": false,
   "explosionType": "SPHERE",
   "currencyToGive": "MONEY",

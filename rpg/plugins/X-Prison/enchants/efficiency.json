@@ -9,10 +9,10 @@
   "currency": "TOKENS",
   "initialCost": 250,
   "prestige": {
-    "enabled": false,
-    "maxPrestige": 5,
-    "requiredActivationsFormula": "1000",
-    "multiplierPerPrestige": 0.1
+    "enabled": true,
+    "maxPrestige": 25,
+    "requiredActivationsFormula": "500000 * pow(4, prestige)",
+    "multiplierPerPrestige": 0.15
   },
   "refund": {
     "enabled": true,
