@@ -261,6 +261,7 @@ on death of monster:
 command /event [<text>] [<number>]:
     description: Zeigt das aktuelle Skyblock-Event und die Restzeit
     aliases: /events, /aktion
+    executable by: players
     trigger:
         set {_sub} to ""
         if arg-1 is set:
