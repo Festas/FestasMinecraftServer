@@ -1,0 +1,111 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                Developed by Ome_R                ##
+##                                                  ##
+######################################################
+
+# The mission file to use
+mission-file: FarmingMissions
+
+# Whether the mission should be given when completing all requirements.
+auto-reward: true
+
+# Should plant counts of players get reset when completing the mission?
+reset-after-finish: true
+
+# Rewards given when completing the mission.
+rewards:
+  items:
+    '1':
+      type: BEETROOT_SEEDS
+      amount: 1
+    '2':
+      type: PUMPKIN_SEEDS
+      amount: 1
+    '3':
+      type: MELON_SEEDS
+      amount: 1
+  commands:
+    - 'cmi money give %player% 1000'
+    - 'is admin msg %player% &e&lFarmer | &7Mission Farmer I abgeschlossen!'
+
+# List of all required plants must be gathered in order to complete the mission.
+required-plants:
+  '1':
+    types:
+      - 'CARROT'
+    amount: 10
+  '2':
+    types:
+      - 'POTATO'
+    amount: 10
+  '3':
+    types:
+      - 'WHEAT'
+    amount: 10
+
+# Icons used in the menus.
+icons:
+  not-completed:
+    type: PAPER
+    name: '&aFarmer I'
+    lore:
+      - '&7Lege eine kleine Farm an.'
+      - ''
+      - '&6Benötigte Pflanzen:'
+      - '&8 - &7x10 Karotten'
+      - '&8 - &7x10 Kartoffeln'
+      - '&8 - &7x10 Weizen'
+      - ''
+      - '&6Belohnungen:'
+      - '&8 - &7x1 Rote-Bete-Samen'
+      - '&8 - &7x1 Kürbiskerne'
+      - '&8 - &7x1 Melonenkerne'
+      - '&8 - &71.000 €'
+      - ''
+      - '&6Karotten angebaut: &7{value_carrot}/10'
+      - '&6Kartoffeln angebaut: &7{value_potato}/10'
+      - '&6Weizen angebaut: &7{value_wheat}/10'
+      - '&6Fortschritt: &7{0}%'
+      - '&c&l ✘ &7Nicht abgeschlossen'
+  can-complete:
+    type: PAPER
+    name: '&aFarmer I'
+    lore:
+      - '&7Lege eine kleine Farm an.'
+      - ''
+      - '&6Benötigte Pflanzen:'
+      - '&8 - &7x10 Karotten'
+      - '&8 - &7x10 Kartoffeln'
+      - '&8 - &7x10 Weizen'
+      - ''
+      - '&6Belohnungen:'
+      - '&8 - &7x1 Rote-Bete-Samen'
+      - '&8 - &7x1 Kürbiskerne'
+      - '&8 - &7x1 Melonenkerne'
+      - '&8 - &71.000 €'
+      - ''
+      - '&6Karotten angebaut: &710/10'
+      - '&6Kartoffeln angebaut: &710/10'
+      - '&6Weizen angebaut: &710/10'
+      - '&6Fortschritt: &7100%'
+      - '&a&l ✔ &7Klicke, um deine Belohnung abzuholen.'
+    glow: true
+  completed:
+    type: MAP
+    name: '&aFarmer I'
+    lore:
+      - '&7Lege eine kleine Farm an.'
+      - ''
+      - '&6Belohnungen:'
+      - '&8 - &7x1 Rote-Bete-Samen'
+      - '&8 - &7x1 Kürbiskerne'
+      - '&8 - &7x1 Melonenkerne'
+      - '&8 - &71.000 €'
+      - ''
+      - '&6Karotten angebaut: &710/10'
+      - '&6Kartoffeln angebaut: &710/10'
+      - '&6Weizen angebaut: &710/10'
+      - '&6Fortschritt: &7100%'
+      - '&a&l ✔ &7Bereits abgeholt.'

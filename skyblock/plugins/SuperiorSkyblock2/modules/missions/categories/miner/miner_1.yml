@@ -1,0 +1,93 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                Developed by Ome_R                ##
+##                                                  ##
+######################################################
+
+# The mission file to use
+mission-file: BlocksMissions
+
+# Whether the mission should be given when completing all requirements.
+auto-reward: true
+
+# Should block counts of players get reset when completing the mission?
+reset-after-finish: true
+
+# Whether only naturally spawned blocks should be counted towards the mission or not.
+only-natural-blocks: true
+
+# Rewards given when completing the mission.
+rewards:
+  commands:
+    - 'cmi money give %player% 1000'
+    - 'is admin rankup %player% generator-rates'
+    - 'is admin msg %player% &e&lBergbau | &7Mission Bergbau I abgeschlossen!'
+    - 'is admin msg %player% &e&lBergbau | &7Jetzt wo du Generatoren kennst, bau etwas Eisen ab.'
+    - 'is admin msg %player% &e&lBergbau | &7&oInfos zur nächsten Mission gibt es unter /is missions'
+
+# List of all required blocks must be gathered in order to complete the mission.
+required-blocks:
+  '1':
+    types:
+      - 'STONE'
+      - 'COBBLESTONE'
+    amount: 48
+  '2':
+    types:
+      - 'COAL_ORE'
+    amount: 16
+
+# Icons used in the menus.
+icons:
+  not-completed:
+    type: PAPER
+    name: '&aBergbau I'
+    lore:
+      - '&7Baue 48 Bruchstein und 16 Kohleerz ab.'
+      - ''
+      - '&6Benötigte Blöcke:'
+      - '&8 - &7x48 Bruchstein'
+      - '&8 - &7x16 Kohleerz'
+      - ''
+      - '&6Belohnungen:'
+      - '&8 - &71.000 €'
+      - '&8 - &7Generator-Upgrade'
+      - ''
+      - '&6Bruchstein abgebaut: &7{value_stone}/48'
+      - '&6Kohleerz abgebaut: &7{value_coal_ore}/16'
+      - '&6Fortschritt: &7{0}%'
+      - '&c&l ✘ &7Nicht abgeschlossen'
+  can-complete:
+    type: PAPER
+    name: '&aBergbau I'
+    lore:
+      - '&7Baue 48 Bruchstein und 16 Kohleerz ab.'
+      - ''
+      - '&6Benötigte Blöcke:'
+      - '&8 - &7x48 Bruchstein'
+      - '&8 - &7x16 Kohleerz'
+      - ''
+      - '&6Belohnungen:'
+      - '&8 - &71.000 €'
+      - '&8 - &7Generator-Upgrade'
+      - ''
+      - '&6Bruchstein abgebaut: &748/48'
+      - '&6Kohleerz abgebaut: &716/16'
+      - '&6Fortschritt: &7100%'
+      - '&a&l ✔ &7Klicke, um deine Belohnung abzuholen.'
+    glow: true
+  completed:
+    type: MAP
+    name: '&aBergbau I'
+    lore:
+      - '&7Baue 48 Bruchstein und 16 Kohleerz ab.'
+      - ''
+      - '&6Belohnungen:'
+      - '&8 - &71.000 €'
+      - '&8 - &7Generator-Upgrade'
+      - ''
+      - '&6Bruchstein abgebaut: &748/48'
+      - '&6Kohleerz abgebaut: &716/16'
+      - '&6Fortschritt: &7100%'
+      - '&a&l ✔ &7Bereits abgeholt.'

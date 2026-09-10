@@ -1,0 +1,103 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                Developed by Ome_R                ##
+##                                                  ##
+######################################################
+
+# The mission file to use
+mission-file: FishingMissions
+
+# Whether the mission should be given when completing all requirements.
+auto-reward: true
+
+# Rewards given when completing the mission.
+rewards:
+  commands:
+    - 'cmi money give %player% 2000'
+    - 'is admin msg %player% &e&lFischer | &7Mission Fischer I abgeschlossen!'
+    - 'is admin msg %player% &e&lFischer | &7Ich habe gehört, man findet auch andere Dinge...'
+    - 'is admin msg %player% &e&lFischer | &7&oInfos zur nächsten Mission gibt es unter /is missions'
+
+# List of all required caughts must be gathered in order to complete the mission.
+required-caughts:
+  '1':
+    types:
+      - 'COD'
+    amount: 1
+  '2':
+    types:
+      - 'SALMON'
+    amount: 1
+  '3':
+    types:
+      - 'TROPICAL_FISH'
+    amount: 1
+  '4':
+    types:
+      - 'PUFFERFISH'
+    amount: 1
+
+# Icons used in the menus.
+icons:
+  not-completed:
+    type: PAPER
+    name: '&aFischer I'
+    lore:
+      - '&7Machen wir eine Fischsuppe.'
+      - '&7Fange 1 Fisch von jeder Art.'
+      - ''
+      - '&6Benötigte Fänge:'
+      - '&8 - &7x1 Kabeljau'
+      - '&8 - &7x1 Lachs'
+      - '&8 - &7x1 Tropenfisch'
+      - '&8 - &7x1 Kugelfisch'
+      - ''
+      - '&6Belohnungen:'
+      - '&8 - &72.000 €'
+      - ''
+      - '&6Kabeljau gefangen: &7{value_cod}/1'
+      - '&6Lachs gefangen: &7{value_salmon}/1'
+      - '&6Tropenfisch gefangen: &7{value_tropical_fish}/1'
+      - '&6Kugelfisch gefangen: &7{value_pufferfish}/1'
+      - '&6Fortschritt: &7{0}%'
+      - '&c&l ✘ &7Nicht abgeschlossen'
+  can-complete:
+    type: PAPER
+    name: '&aFischer I'
+    lore:
+      - '&7Machen wir eine Fischsuppe.'
+      - '&7Fange 1 Fisch von jeder Art.'
+      - ''
+      - '&6Benötigte Fänge:'
+      - '&8 - &7x1 Kabeljau'
+      - '&8 - &7x1 Lachs'
+      - '&8 - &7x1 Tropenfisch'
+      - '&8 - &7x1 Kugelfisch'
+      - ''
+      - '&6Belohnungen:'
+      - '&8 - &72.000 €'
+      - ''
+      - '&6Kabeljau gefangen: &71/1'
+      - '&6Lachs gefangen: &71/1'
+      - '&6Tropenfisch gefangen: &71/1'
+      - '&6Kugelfisch gefangen: &71/1'
+      - '&6Fortschritt: &7100%'
+      - '&a&l ✔ &7Klicke, um deine Belohnung abzuholen.'
+    glow: true
+  completed:
+    type: MAP
+    name: '&aFischer I'
+    lore:
+      - '&7Machen wir eine Fischsuppe.'
+      - '&7Fange 1 Fisch von jeder Art.'
+      - ''
+      - '&6Belohnungen:'
+      - '&8 - &72.000 €'
+      - ''
+      - '&6Kabeljau gefangen: &71/1'
+      - '&6Lachs gefangen: &71/1'
+      - '&6Tropenfisch gefangen: &71/1'
+      - '&6Kugelfisch gefangen: &71/1'
+      - '&6Fortschritt: &7100%'
+      - '&a&l ✔ &7Bereits abgeholt.'

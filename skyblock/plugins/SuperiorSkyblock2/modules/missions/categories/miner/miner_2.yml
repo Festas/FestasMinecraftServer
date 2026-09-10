@@ -1,0 +1,133 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                Developed by Ome_R                ##
+##                                                  ##
+######################################################
+
+# The mission file to use
+mission-file: BlocksMissions
+
+# Whether the mission should be given when completing all requirements.
+auto-reward: true
+
+# Should block counts of players get reset when completing the mission?
+reset-after-finish: true
+
+# Whether only naturally spawned blocks should be counted towards the mission or not.
+only-natural-blocks: true
+
+# Rewards given when completing the mission.
+rewards:
+  commands:
+    - 'cmi money give %player% 3000'
+    - 'is admin rankup %player% generator-rates'
+    - 'is admin msg %player% &e&lBergbau | &7Mission Bergbau II abgeschlossen!'
+    - 'is admin msg %player% &e&lBergbau | &7Ich mag Eisen – holst du mir mehr?'
+    - 'is admin msg %player% &e&lBergbau | &7&oInfos zur nächsten Mission gibt es unter /is missions'
+
+# List of required missions that must be completed before completing this one.
+required-missions:
+  - 'miner_1'
+
+# List of all required blocks must be gathered in order to complete the mission.
+required-blocks:
+  '1':
+    types:
+      - 'STONE'
+      - 'COBBLESTONE'
+    amount: 96
+  '2':
+    types:
+      - 'COAL_ORE'
+    amount: 32
+  '3':
+    types:
+      - 'IRON_ORE'
+    amount: 16
+
+# Icons used in the menus.
+icons:
+  locked:
+    type: PAPER
+    name: '&aBergbau II'
+    lore:
+      - '&7Bau weiter Erze ab!'
+      - '&7Baue 96 Bruchstein, 32 Kohleerz und 16 Eisenerz ab.'
+      - ''
+      - '&6Benötigte Blöcke:'
+      - '&8 - &7x96 Bruchstein'
+      - '&8 - &7x32 Kohleerz'
+      - '&8 - &7x16 Eisenerz'
+      - ''
+      - '&6Belohnungen:'
+      - '&8 - &73.000 €'
+      - '&8 - &7Generator-Upgrade'
+      - ''
+      - '&6Bruchstein abgebaut: &7{value_cobblestone}/96'
+      - '&6Kohleerz abgebaut: &7{value_coal_ore}/32'
+      - '&6Eisenerz abgebaut: &7{value_iron_ore}/16'
+      - '&c&l ✘ &7Gesperrt'
+    amount: 2
+  not-completed:
+    type: PAPER
+    name: '&aBergbau II'
+    lore:
+      - '&7Bau weiter Erze ab!'
+      - '&7Baue 96 Bruchstein, 32 Kohleerz und 16 Eisenerz ab.'
+      - ''
+      - '&6Benötigte Blöcke:'
+      - '&8 - &7x96 Bruchstein'
+      - '&8 - &7x32 Kohleerz'
+      - '&8 - &7x16 Eisenerz'
+      - ''
+      - '&6Belohnungen:'
+      - '&8 - &73.000 €'
+      - '&8 - &7Generator-Upgrade'
+      - ''
+      - '&6Bruchstein abgebaut: &7{value_cobblestone}/96'
+      - '&6Kohleerz abgebaut: &7{value_coal_ore}/32'
+      - '&6Eisenerz abgebaut: &7{value_iron_ore}/16'
+      - '&6Fortschritt: &7{0}%'
+      - '&c&l ✘ &7Nicht abgeschlossen'
+    amount: 2
+  can-complete:
+    type: PAPER
+    name: '&aBergbau II'
+    lore:
+      - '&7Bau weiter Erze ab!'
+      - '&7Baue 96 Bruchstein, 32 Kohleerz und 16 Eisenerz ab.'
+      - ''
+      - '&6Benötigte Blöcke:'
+      - '&8 - &7x96 Bruchstein'
+      - '&8 - &7x32 Kohleerz'
+      - '&8 - &7x16 Eisenerz'
+      - ''
+      - '&6Belohnungen:'
+      - '&8 - &73.000 €'
+      - '&8 - &7Generator-Upgrade'
+      - ''
+      - '&6Bruchstein abgebaut: &796/96'
+      - '&6Kohleerz abgebaut: &732/32'
+      - '&6Eisenerz abgebaut: &716/16'
+      - '&6Fortschritt: &7100%'
+      - '&a&l ✔ &7Klicke, um deine Belohnung abzuholen.'
+    amount: 2
+    glow: true
+  completed:
+    type: MAP
+    name: '&aBergbau II'
+    lore:
+      - '&7Bau weiter Erze ab!'
+      - '&7Baue 96 Bruchstein, 32 Kohleerz und 16 Eisenerz ab.'
+      - ''
+      - '&6Belohnungen:'
+      - '&8 - &73.000 €'
+      - '&8 - &7Generator-Upgrade'
+      - ''
+      - '&6Bruchstein abgebaut: &796/96'
+      - '&6Kohleerz abgebaut: &732/32'
+      - '&6Eisenerz abgebaut: &716/16'
+      - '&6Fortschritt: &7100%'
+      - '&a&l ✔ &7Bereits abgeholt.'
+    amount: 2

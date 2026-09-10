@@ -1,0 +1,106 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                Developed by Ome_R                ##
+##                                                  ##
+######################################################
+
+# The mission file to use
+mission-file: KillsMissions
+
+# Whether the mission should be given when completing all requirements.
+auto-reward: true
+
+# Should entity counts of players get reset when completing the mission?
+reset-after-finish: true
+
+# Rewards given when completing the mission.
+rewards:
+  commands:
+    - 'cmi money give %player% 25000'
+    - 'is admin unlockworld %player% the_end true'
+    - 'is admin msg %player% &e&lKämpfer | &7Mission Kämpfer IV abgeschlossen!'
+    - 'is admin msg %player% &e&lKämpfer | &7Du hast alle Prüfungen bestanden, jetzt bist du bereit für das Ende...'
+    - 'is admin msg %player% &e&lKämpfer | &7&oDu bist jetzt ein Profi-Kämpfer, Glückwunsch!'
+
+# List of required missions that must be completed before completing this one.
+required-missions:
+  - 'slayer_1'
+  - 'slayer_2'
+  - 'slayer_3'
+
+# List of all required entities must be gathered in order to complete the mission.
+required-entities:
+  '1':
+    types:
+      - 'WITHER'
+    amount: 1
+
+# Icons used in the menus.
+icons:
+  locked:
+    type: PAPER
+    name: '&aKämpfer IV'
+    lore:
+      - '&7Vor dem Ende bleibt noch eine Mission.'
+      - '&7Töte den Wither.'
+      - ''
+      - '&6Benötigte Kills:'
+      - '&8 - &7x1 Wither'
+      - ''
+      - '&6Belohnungen:'
+      - '&8 - &725.000 €'
+      - '&8 - &7Das Ende freigeschaltet'
+      - ''
+      - '&6Wither getötet: &c&l✘'
+      - '&c&l ✘ &7Gesperrt'
+    amount: 4
+  not-completed:
+    type: PAPER
+    name: '&aKämpfer IV'
+    lore:
+      - '&7Vor dem Ende bleibt noch eine Mission.'
+      - '&7Töte den Wither.'
+      - ''
+      - '&6Benötigte Kills:'
+      - '&8 - &7x1 Wither'
+      - ''
+      - '&6Belohnungen:'
+      - '&8 - &725.000 €'
+      - '&8 - &7Das Ende freigeschaltet'
+      - ''
+      - '&6Wither getötet: &c&l✘'
+      - '&c&l ✘ &7Nicht abgeschlossen'
+    amount: 4
+  can-complete:
+    type: PAPER
+    name: '&aKämpfer IV'
+    lore:
+      - '&7Vor dem Ende bleibt noch eine Mission.'
+      - '&7Töte den Wither.'
+      - ''
+      - '&6Benötigte Kills:'
+      - '&8 - &7x1 Wither'
+      - ''
+      - '&6Belohnungen:'
+      - '&8 - &725.000 €'
+      - '&8 - &7Das Ende freigeschaltet'
+      - ''
+      - '&6Wither getötet: &a&l✔'
+      - '&a&l ✔ &7Klicke, um deine Belohnung abzuholen.'
+    amount: 4
+    glow: true
+  completed:
+    type: MAP
+    name: '&aKämpfer IV'
+    lore:
+      - '&7Vor dem Ende bleibt noch eine Mission.'
+      - '&7Töte den Wither.'
+      - ''
+      - '&6Belohnungen:'
+      - '&8 - &725.000 €'
+      - '&8 - &7Das Ende freigeschaltet'
+      - ''
+      - '&6Wither getötet: &a&l✔'
+      - '&a&l ✔ &7Bereits abgeholt.'
+    amount: 4

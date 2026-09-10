@@ -1,0 +1,105 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                Developed by Ome_R                ##
+##                                                  ##
+######################################################
+
+# The mission file to use
+mission-file: FishingMissions
+
+# Whether the mission should be given when completing all requirements.
+auto-reward: true
+
+# Rewards given when completing the mission.
+rewards:
+  commands:
+    - 'cmi money give %player% 25000'
+    - 'is admin msg %player% &e&lFischer | &7Mission Fischer III abgeschlossen!'
+    - 'is admin msg %player% &e&lFischer | &7Jetzt weißt du, wie Angeln funktioniert!'
+    - 'is admin msg %player% &e&lFischer | &7&oDu bist jetzt ein Profi-Fischer, Glückwunsch!'
+
+# List of required missions that must be completed before completing this one.
+required-missions:
+  - 'fisherman_1'
+  - 'fisherman_2'
+
+# List of all required caughts must be gathered in order to complete the mission.
+required-caughts:
+  '1':
+    types:
+      - 'BOW'
+      - 'ENCHANTED_BOOK'
+      - 'FISHING_ROD'
+      - 'NAME_TAG'
+      - 'SADDLE'
+      - 'NAUTILUS_SHELL'
+    amount: 3
+
+# Icons used in the menus.
+icons:
+  locked:
+    type: PAPER
+    name: '&aFischer III'
+    lore:
+      - '&7Im Ozean lassen sich Schätze angeln.'
+      - '&7Angle 3 Schätze.'
+      - ''
+      - '&6Benötigte Fänge:'
+      - '&8 - &7x3 Schätze'
+      - ''
+      - '&6Belohnungen:'
+      - '&8 - &725.000 €'
+      - ''
+      - '&6Schätze: &7{1}/3'
+      - '&c&l ✘ &7Gesperrt'
+    amount: 3
+  not-completed:
+    type: PAPER
+    name: '&aFischer III'
+    lore:
+      - '&7Im Ozean lassen sich Schätze angeln.'
+      - '&7Angle 3 Schätze.'
+      - ''
+      - '&6Benötigte Fänge:'
+      - '&8 - &7x3 Schätze'
+      - ''
+      - '&6Belohnungen:'
+      - '&8 - &725.000 €'
+      - ''
+      - '&6Schätze: &7{1}/3'
+      - '&6Fortschritt: &7{0}%'
+      - '&c&l ✘ &7Nicht abgeschlossen'
+    amount: 3
+  can-complete:
+    type: PAPER
+    name: '&aFischer III'
+    lore:
+      - '&7Im Ozean lassen sich Schätze angeln.'
+      - '&7Angle 3 Schätze.'
+      - ''
+      - '&6Benötigte Fänge:'
+      - '&8 - &7x3 Schätze'
+      - ''
+      - '&6Belohnungen:'
+      - '&8 - &725.000 €'
+      - ''
+      - '&6Schätze: &73/3'
+      - '&6Fortschritt: &7100%'
+      - '&a&l ✔ &7Klicke, um deine Belohnung abzuholen.'
+    amount: 3
+    glow: true
+  completed:
+    type: MAP
+    name: '&aFischer III'
+    lore:
+      - '&7Im Ozean lassen sich Schätze angeln.'
+      - '&7Angle 3 Schätze.'
+      - ''
+      - '&6Belohnungen:'
+      - '&8 - &725.000 €'
+      - ''
+      - '&6Schätze: &73/3'
+      - '&6Fortschritt: &7100%'
+      - '&a&l ✔ &7Bereits abgeholt.'
+    amount: 3

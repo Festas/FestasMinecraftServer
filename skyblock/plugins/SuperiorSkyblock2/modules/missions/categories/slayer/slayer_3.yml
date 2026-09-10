@@ -1,0 +1,125 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                Developed by Ome_R                ##
+##                                                  ##
+######################################################
+
+# The mission file to use
+mission-file: KillsMissions
+
+# Whether the mission should be given when completing all requirements.
+auto-reward: true
+
+# Should entity counts of players get reset when completing the mission?
+reset-after-finish: true
+
+# Rewards given when completing the mission.
+rewards:
+  commands:
+    - 'cmi money give %player% 12000'
+    - 'is admin msg %player% &e&lKämpfer | &7Mission Kämpfer III abgeschlossen!'
+    - 'is admin msg %player% &e&lKämpfer | &7Zeig, wer hier der Boss ist.'
+    - 'is admin msg %player% &e&lKämpfer | &7&oInfos zur nächsten Mission gibt es unter /is missions'
+
+# List of required missions that must be completed before completing this one.
+required-missions:
+  - 'slayer_1'
+  - 'slayer_2'
+
+# List of all required entities must be gathered in order to complete the mission.
+required-entities:
+  '1':
+    types:
+      - 'BLAZE'
+    amount: 12
+  '2':
+    types:
+      - 'ENDERMAN'
+    amount: 24
+  '3':
+    types:
+      - 'WITHER_SKELETON'
+    amount: 12
+
+# Icons used in the menus.
+icons:
+  locked:
+    type: PAPER
+    name: '&aKämpfer III'
+    lore:
+      - '&7Zeit, dich auf die Bosskämpfe vorzubereiten.'
+      - '&7Töte 12 Lohen, 12 Witherskelette und 24 Endermen.'
+      - ''
+      - '&6Benötigte Kills:'
+      - '&8 - &7x12 Lohen'
+      - '&8 - &7x12 Witherskelette'
+      - '&8 - &7x24 Endermen'
+      - ''
+      - '&6Belohnungen:'
+      - '&8 - &712.000 €'
+      - ''
+      - '&6Lohen getötet: &7{value_blaze}/12'
+      - '&6Witherskelette getötet: &7{value_wither_skeleton}/12'
+      - '&6Endermen getötet: &7{value_enderman}/24'
+      - '&c&l ✘ &7Gesperrt'
+    amount: 3
+  not-completed:
+    type: PAPER
+    name: '&aKämpfer III'
+    lore:
+      - '&7Zeit, dich auf die Bosskämpfe vorzubereiten.'
+      - '&7Töte 12 Lohen, 12 Witherskelette und 24 Endermen.'
+      - ''
+      - '&6Benötigte Kills:'
+      - '&8 - &7x12 Lohen'
+      - '&8 - &7x12 Witherskelette'
+      - '&8 - &7x24 Endermen'
+      - ''
+      - '&6Belohnungen:'
+      - '&8 - &712.000 €'
+      - ''
+      - '&6Lohen getötet: &7{value_blaze}/12'
+      - '&6Witherskelette getötet: &7{value_wither_skeleton}/12'
+      - '&6Endermen getötet: &7{value_enderman}/24'
+      - '&6Fortschritt: &7{0}%'
+      - '&c&l ✘ &7Nicht abgeschlossen'
+    amount: 3
+  can-complete:
+    type: PAPER
+    name: '&aKämpfer III'
+    lore:
+      - '&7Zeit, dich auf die Bosskämpfe vorzubereiten.'
+      - '&7Töte 12 Lohen, 12 Witherskelette und 24 Endermen.'
+      - ''
+      - '&6Benötigte Kills:'
+      - '&8 - &7x12 Lohen'
+      - '&8 - &7x12 Witherskelette'
+      - '&8 - &7x24 Endermen'
+      - ''
+      - '&6Belohnungen:'
+      - '&8 - &712.000 €'
+      - ''
+      - '&6Lohen getötet: &712/12'
+      - '&6Witherskelette getötet: &712/12'
+      - '&6Endermen getötet: &724/24'
+      - '&6Fortschritt: &7100%'
+      - '&a&l ✔ &7Klicke, um deine Belohnung abzuholen.'
+    amount: 3
+    glow: true
+  completed:
+    type: MAP
+    name: '&aKämpfer III'
+    lore:
+      - '&7Zeit, dich auf die Bosskämpfe vorzubereiten.'
+      - '&7Töte 12 Lohen, 12 Witherskelette und 24 Endermen.'
+      - ''
+      - '&6Belohnungen:'
+      - '&8 - &712.000 €'
+      - ''
+      - '&6Lohen getötet: &712/12'
+      - '&6Witherskelette getötet: &712/12'
+      - '&6Endermen getötet: &724/24'
+      - '&6Fortschritt: &7100%'
+      - '&a&l ✔ &7Bereits abgeholt.'
+    amount: 3

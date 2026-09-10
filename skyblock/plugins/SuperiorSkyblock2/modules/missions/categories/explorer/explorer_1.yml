@@ -1,0 +1,61 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                Developed by Ome_R                ##
+##                                                  ##
+######################################################
+
+# The mission file to use
+mission-file: IslandMissions
+
+# Whether the mission should be given when completing all requirements.
+auto-reward: true
+
+# Rewards given when completing the mission.
+rewards:
+  commands:
+    - 'cmi money give %player% 5000'
+    - 'is admin msg %player% &e&lEntdecker | &7Mission Entdecker I abgeschlossen!'
+    - 'is admin msg %player% &e&lEntdecker | &7Ein neues Biom, ein neuer Anblick – erkunde weiter!'
+    - 'is admin msg %player% &e&lEntdecker | &7&oInfos zur nächsten Mission gibt es unter /is missions'
+
+# List of events that will trigger the mission.
+events:
+  - IslandBiomeChangeEvent
+
+# Requirement of the event to complete the mission.
+success-check: 'event.getBiome() != null'
+
+# Icons used in the menus.
+icons:
+  not-completed:
+    type: PAPER
+    name: '&aEntdecker I'
+    lore:
+      - '&7Ändere das Biom deiner Insel.'
+      - ''
+      - '&6Belohnungen:'
+      - '&8 - &75.000 €'
+      - ''
+      - '&c&l ✘ &7Nicht abgeschlossen'
+  can-complete:
+    type: PAPER
+    name: '&aEntdecker I'
+    lore:
+      - '&7Ändere das Biom deiner Insel.'
+      - ''
+      - '&6Belohnungen:'
+      - '&8 - &75.000 €'
+      - ''
+      - '&a&l ✔ &7Klicke, um deine Belohnung abzuholen.'
+    glow: true
+  completed:
+    type: MAP
+    name: '&aEntdecker I'
+    lore:
+      - '&7Ändere das Biom deiner Insel.'
+      - ''
+      - '&6Belohnungen:'
+      - '&8 - &75.000 €'
+      - ''
+      - '&a&l ✔ &7Bereits abgeholt.'
