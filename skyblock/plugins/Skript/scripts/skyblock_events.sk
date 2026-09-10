@@ -103,6 +103,9 @@ function startSkyblockEvent(id: number):
     delete {skyblock.event.earned::*}
     delete {skyblock.event.pending::*}
 
+    # "Doppelte Tagesbelohnung"-Flag immer zuerst zurücksetzen, damit es
+    # ausschließlich während Event 5 aktiv ist (nie stale aus einer Vorrunde).
+    delete {skyblock.event.doubledaily}
     # Flag für "Doppelte Tagesbelohnung" (wird von daily_rewards.sk gelesen)
     if {_id} is 5:
         set {skyblock.event.doubledaily} to true
@@ -159,6 +162,16 @@ function payoutPending():
                 send action bar "&a+%{_pending}%€ &7Event-Bonus" to loop-player
                 play sound "entity.experience_orb.pickup" with volume 0.4 and pitch 1.5 to loop-player
                 delete {skyblock.event.pending::%{_uuid}%}
+
+# --- BEIM VERLASSEN: offene Boni sofort auszahlen (schließt die 30s-Lücke) ---
+# CMI zahlt per Spielername auch bei Disconnect zuverlässig aus.
+on quit:
+    set {_uuid} to "%player's uuid%"
+    set {_pending} to {skyblock.event.pending::%{_uuid}%}
+    if {_pending} is set:
+        if {_pending} is greater than 0:
+            execute console command "cmi money give %player% %{_pending}%"
+            delete {skyblock.event.pending::%{_uuid}%}
 
 # --- ZENTRALER TAKT: Ende prüfen, Warnung, Meteor-Einschlag, Auszahlung ---
 every 30 seconds:
@@ -277,7 +290,8 @@ command /event [<text>] [<number>]:
             if {skyblock.event.until} is set:
                 set {_left} to difference between now and {skyblock.event.until}
                 send "{@prefix}&7Restzeit: &e%{_left}%"
-            set {_mine} to {skyblock.event.earned::%player's uuid%}
+            set {_uuid} to "%player's uuid%"
+            set {_mine} to {skyblock.event.earned::%{_uuid}%}
             if {_mine} is not set:
                 set {_mine} to 0
             send "{@prefix}&7Dein Event-Bonus bisher: &a%{_mine}%€"
