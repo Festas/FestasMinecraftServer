@@ -22,7 +22,8 @@ on join:
 
     # Kurz warten, bis der Spieler vollständig geladen ist
     wait 3 seconds
-    {_p} is online
+    if {_p} is not online:
+        stop
 
     # --- WILLKOMMENS-BLOCK ---
     send title "&3&lWillkommen!" with subtitle "&7auf Festas &bSkyblock" to {_p} for 4 seconds
@@ -51,5 +52,6 @@ on join:
 
     # --- SCHNELLSTART-MENÜ ÖFFNEN (nach kurzer Verzögerung) ---
     wait 4 seconds
-    {_p} is online
+    if {_p} is not online:
+        stop
     make {_p} execute command "/dm open basics_menu"

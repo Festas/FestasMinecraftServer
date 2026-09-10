@@ -92,6 +92,10 @@ function startSkyblockEvent(id: number):
     if {_id} is greater than 5:
         set {_id} to 5
 
+    # Sicherheitsnetz: offene Boni einer vorherigen Runde auszahlen,
+    # bevor die Zähler für das neue Event zurückgesetzt werden.
+    payoutPending()
+
     set {skyblock.event.active} to {_id}
     set {skyblock.event.started} to now
     set {skyblock.event.until} to now + {@duration} minutes
