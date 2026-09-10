@@ -14,7 +14,7 @@ on script load:
 
 every 10 minutes:
     add 1 to {skyblock_bc_i}
-    if {skyblock_bc_i} is greater than 4:
+    if {skyblock_bc_i} is greater than 6:
         set {skyblock_bc_i} to 1
     loop all players:
         if {skyblock_bc_i} is 1:
@@ -22,6 +22,10 @@ every 10 minutes:
         else if {skyblock_bc_i} is 2:
             send "&8[&3&lSkyblock&8] &7Hol dir mit &e/daily &7deine Belohnung, lies &e/tips &7und plane dein Team mit &e/is invite <Spieler>&7." to loop-player
         else if {skyblock_bc_i} is 3:
-            send "&8[&3&lSkyblock&8] &7Schließe &e/is missions &7ab und handle deine Ressourcen clever im &e/bazaar&7." to loop-player
-        else:
+            send "&8[&3&lSkyblock&8] &7Erreiche Insel-Meilensteine: Schließe &e/is missions &7ab und steigere dein &e/is level&7." to loop-player
+        else if {skyblock_bc_i} is 4:
             send "&8[&3&lSkyblock&8] &7Besuche andere Inseln mit &e/is warps &7oder direkt per &e/is visit <Spieler>&7." to loop-player
+        else if {skyblock_bc_i} is 5:
+            send "&8[&3&lSkyblock&8] &7Läuft gerade ein Event? Prüfe es mit &e/event &7und sichere dir zeitlich begrenzte Boni!" to loop-player
+        else:
+            send "&8[&3&lSkyblock&8] &7Zeig deinen Stil! Öffne das &eKosmetik-Menü &7über &e/nav&7." to loop-player
