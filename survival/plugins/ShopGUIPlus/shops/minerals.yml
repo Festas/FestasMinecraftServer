@@ -302,6 +302,141 @@ minerals:
       sellPrice: -1
       slot: 24
       page: 2
+    P2_25:
+      type: item
+      item:
+        material: COAL_ORE
+        quantity: 1
+      buyPrice: -1
+      sellPrice: 3
+      slot: 25
+      page: 2
+    P2_28:
+      type: item
+      item:
+        material: DEEPSLATE_COAL_ORE
+        quantity: 1
+      buyPrice: -1
+      sellPrice: 3
+      slot: 28
+      page: 2
+    P2_29:
+      type: item
+      item:
+        material: IRON_ORE
+        quantity: 1
+      buyPrice: -1
+      sellPrice: 6
+      slot: 29
+      page: 2
+    P2_30:
+      type: item
+      item:
+        material: DEEPSLATE_IRON_ORE
+        quantity: 1
+      buyPrice: -1
+      sellPrice: 6
+      slot: 30
+      page: 2
+    P2_31:
+      type: item
+      item:
+        material: COPPER_ORE
+        quantity: 1
+      buyPrice: -1
+      sellPrice: 3
+      slot: 31
+      page: 2
+    P2_32:
+      type: item
+      item:
+        material: DEEPSLATE_COPPER_ORE
+        quantity: 1
+      buyPrice: -1
+      sellPrice: 3
+      slot: 32
+      page: 2
+    P2_33:
+      type: item
+      item:
+        material: GOLD_ORE
+        quantity: 1
+      buyPrice: -1
+      sellPrice: 10
+      slot: 33
+      page: 2
+    P2_34:
+      type: item
+      item:
+        material: DEEPSLATE_GOLD_ORE
+        quantity: 1
+      buyPrice: -1
+      sellPrice: 10
+      slot: 34
+      page: 2
+    P2_37:
+      type: item
+      item:
+        material: REDSTONE_ORE
+        quantity: 1
+      buyPrice: -1
+      sellPrice: 6
+      slot: 37
+      page: 2
+    P2_38:
+      type: item
+      item:
+        material: DEEPSLATE_REDSTONE_ORE
+        quantity: 1
+      buyPrice: -1
+      sellPrice: 6
+      slot: 38
+      page: 2
+    P2_39:
+      type: item
+      item:
+        material: LAPIS_ORE
+        quantity: 1
+      buyPrice: -1
+      sellPrice: 10
+      slot: 39
+      page: 2
+    P2_40:
+      type: item
+      item:
+        material: DEEPSLATE_LAPIS_ORE
+        quantity: 1
+      buyPrice: -1
+      sellPrice: 10
+      slot: 40
+      page: 2
+    P2_41:
+      type: item
+      item:
+        material: DIAMOND_ORE
+        quantity: 1
+      buyPrice: -1
+      sellPrice: 1000
+      slot: 41
+      page: 2
+    P2_42:
+      type: item
+      item:
+        material: DEEPSLATE_DIAMOND_ORE
+        quantity: 1
+      buyPrice: -1
+      sellPrice: 1000
+      slot: 42
+      page: 2
+    P2_43:
+      type: item
+      item:
+        material: EMERALD_ORE
+        quantity: 1
+      buyPrice: -1
+      sellPrice: 200
+      slot: 43
+      page: 2
     Previous1:
       type: dummy
       item:

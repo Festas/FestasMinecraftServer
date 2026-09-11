@@ -571,7 +571,7 @@ mobdrops:
         material: NETHER_STAR
         quantity: 1
       buyPrice: 10000
-      sellPrice: 2000
+      sellPrice: -1
       slot: 32
       page: 2
     P2_33:
@@ -580,7 +580,7 @@ mobdrops:
         material: TOTEM_OF_UNDYING
         quantity: 1
       buyPrice: 5000
-      sellPrice: 1000
+      sellPrice: -1
       slot: 33
       page: 2
     P2_34:
@@ -625,7 +625,7 @@ mobdrops:
         material: WITHER_ROSE
         quantity: 1
       buyPrice: 500
-      sellPrice: 100
+      sellPrice: -1
       slot: 40
       page: 2
     P2_41:
