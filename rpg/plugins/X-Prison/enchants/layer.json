@@ -14,7 +14,7 @@
   "sounds": true,
   "currencyToGive": "TOKENS",
   "message": "<gradient:#FFD700:#FFEA00><bold>ENCHANT </bold></gradient><dark_gray>» </dark_gray><gray>You got <yellow><bold>%amount% %currency%</bold></yellow> <gray>from <red><bold>Layer </bold></red>activation.</gray>",
-  "pickaxeLevelRequired": 1,
+  "pickaxeLevelRequired": 50,
   "prestige": {
     "enabled": true,
     "maxPrestige": 5,

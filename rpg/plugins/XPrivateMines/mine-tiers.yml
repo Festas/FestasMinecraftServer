@@ -1,7 +1,90 @@
+# ===========================================================================
+# XPRIVATEMINES  -  TIER-LADDER  (Mining-Server "rpg")
+# ===========================================================================
+# Die private Mine ist ein Money-Sink / Komfort-Loop PARALLEL zu den oeffentlichen
+# X-Prison-Zonen (mine_a..mine_j). Sie darf die oeffentlichen Zonen NICHT entwerten:
+# der Ertrag pro Block (EV) jedes Tiers liegt <= der thematisch vergleichbaren
+# oeffentlichen Zone, und die oeffentlichen Endgame-Zonen (mine_i/mine_j) bleiben
+# strikt die beste Einnahmequelle im Spiel.
+#
+# 'upgrade-cost' = money (CMI/Vault; currency: money laut config.yml), das der Spieler
+# zahlt, um IN dieses Tier aufzusteigen. Tier 1 ist die kostenlose Einstiegsstufe.
+# Die Kostenkurve folgt der Rang-/Prestige-Kurve (Raenge 5k..10M money, Prestige ab 25M):
+# der volle Ausbau (Summe aller Upgrades = 21.45M money) liegt zwischen Rang J (10M)
+# und dem ersten Prestige (25M) - plus optionale Expansion (schematic-settings.yml).
+#
+# 'blocks' = prozentuale Zusammensetzung (Summe je Tier = 100). Es werden nur die in
+# config.yml (gui.blocks) erlaubten UND in autosell.yml bepreisten Block-Typen genutzt
+# (STONE als Fueller, plus eskalierende Erze).
+#
+# EV/Block (Preise aus autosell.yml) je Tier vs. vergleichbare oeffentliche Zone:
+#   T1  1.35  (<= mine_a  1.35)     T5  36.25 (<= mine_e  39.30)
+#   T2  4.06  (<= mine_b  4.75)     T6  50.70 (<= mine_f  56.75)
+#   T3  6.96  (<= mine_c  8.05)     T7 100.25 (<= mine_g 105.45)
+#   T4 20.82  (<= mine_d 24.65)     T8 304.63 (<= mine_i 467.30, << mine_j 1511.00)
+# ===========================================================================
 tiers:
   '1':
-    name: Tier 1
+    name: Tier 1 (Stein, Kohle)
     upgrade-cost: 0
     blocks:
       STONE: 80
-      COBBLESTONE: 20
+      COBBLESTONE: 15
+      COAL_ORE: 5
+  '2':
+    name: Tier 2 (Kohle, Kupfer)
+    upgrade-cost: 25000
+    blocks:
+      STONE: 62
+      COAL_ORE: 28
+      COPPER_ORE: 10
+  '3':
+    name: Tier 3 (Eisen, Kupfer)
+    upgrade-cost: 75000
+    blocks:
+      STONE: 52
+      COAL_ORE: 23
+      COPPER_ORE: 5
+      IRON_ORE: 20
+  '4':
+    name: Tier 4 (Eisen, Gold)
+    upgrade-cost: 250000
+    blocks:
+      STONE: 42
+      COAL_ORE: 10
+      IRON_ORE: 28
+      GOLD_ORE: 20
+  '5':
+    name: Tier 5 (Gold, Redstone, Lapis)
+    upgrade-cost: 600000
+    blocks:
+      STONE: 35
+      LAPIS_ORE: 20
+      REDSTONE_ORE: 23
+      GOLD_ORE: 22
+  '6':
+    name: Tier 6 (Lapis, Redstone, Smaragd)
+    upgrade-cost: 1500000
+    blocks:
+      STONE: 30
+      LAPIS_ORE: 20
+      REDSTONE_ORE: 20
+      GOLD_ORE: 14
+      EMERALD_ORE: 16
+  '7':
+    name: Tier 7 (Smaragd, Diamant)
+    upgrade-cost: 4000000
+    blocks:
+      STONE: 25
+      GOLD_ORE: 22
+      EMERALD_ORE: 24
+      DIAMOND_ORE: 29
+  '8':
+    name: Tier 8 (Deepslate, Ancient Debris)
+    upgrade-cost: 15000000
+    blocks:
+      STONE: 18
+      DEEPSLATE_GOLD_ORE: 15
+      DEEPSLATE_EMERALD_ORE: 30
+      DEEPSLATE_DIAMOND_ORE: 32
+      ANCIENT_DEBRIS: 5

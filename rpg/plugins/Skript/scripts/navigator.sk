@@ -46,11 +46,17 @@ function miningTip(p: player):
     add "&7Starte in den &e/mine &7Zonen und hole dir davor deine Belohnung mit &e/daily&7." to {_tips::*}
     add "&7Gib dein Geld für &e/rankup &7aus und schalte bessere Zonen frei." to {_tips::*}
     add "&7Am höchsten Rang angekommen? Steig mit &e/prestige &7auf für Multiplikatoren!" to {_tips::*}
-    add "&7Werte deine &bSpitzhacke &7auf für mehr Blöcke pro Schlag & starke Enchants." to {_tips::*}
+    add "&7Verzaubere deine &bSpitzhacke &7im &e/enchantmenu &7für mehr Blöcke pro Schlag & starke Enchants." to {_tips::*}
     add "&7Schalte deine eigene &d/pmine &7(Private Mine) frei und baue ungestört ab." to {_tips::*}
     add "&7Prüfe deinen Fortschritt mit &e/ranks &7und dein Guthaben mit &e/bal&7." to {_tips::*}
     add "&7Seltene Enchants findest du in Kisten und bei Events – halte die Augen offen!" to {_tips::*}
     add "&7Nutze &e/nav &7oder den &bNetzwerk-Kompass&7, um das Hilfe-Menü jederzeit zu öffnen." to {_tips::*}
+    add "&7Nach genug &e/prestige &7geht es mit &e/rebirth &7endlos weiter - für noch größere Boni." to {_tips::*}
+    add "&7Sammle Fortschritt im BattlePass mit &e/bp &7und schließe deine &e/quests &7für Extra-Belohnungen ab." to {_tips::*}
+    add "&7Verwalte &e/tokens &7& &e/gems &7und ergattere seltene Deals im &e/blackmarket&7." to {_tips::*}
+    add "&7Schließe dich einer &e/gang &7an und lass &e/robots &7passives Einkommen für dich sammeln." to {_tips::*}
+    add "&7Lehn dich zurück: aktiviere den &e/autominer &7und verkaufe mit &e/sellall &7oder schalte &e/autosell &7um." to {_tips::*}
+    add "&7Alle Features & Loops zentral an einem Ort: öffne den Hub mit &e/features&7." to {_tips::*}
     set {_tip} to random element out of {_tips::*}
     send "&8[&b&lMining&8] &7Tipp: %{_tip}%" to {_p}
 

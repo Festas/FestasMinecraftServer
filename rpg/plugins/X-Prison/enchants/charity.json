@@ -10,6 +10,7 @@
   "currency": "TOKENS",
   "amountToGive": "level * 500",
   "initialCost": 500,
+  "pickaxeLevelRequired": 25,
   "messagesEnabled": true,
   "currencyToGive": "MONEY",
   "prestige": {

@@ -1,23 +1,23 @@
 messages:
-  no-permission: "<gradient:#FFD700:#FFEA00><bold>REBIRTH</bold></gradient> <dark_gray>»</dark_gray> <red>You do not have permission to use this command.</red>"
-  player-only: "<gradient:#FFD700:#FFEA00><bold>REBIRTH</bold></gradient> <dark_gray>»</dark_gray> <red>Only players can use this command.</red>"
-  current-rebirth: "<gradient:#FFD700:#FFEA00><bold>REBIRTH</bold></gradient> <dark_gray>»</dark_gray> <gray>You are currently <gold>%rebirth%</gold></gray>"
-  rebirth-set: "<gradient:#FFD700:#FFEA00><bold>REBIRTH</bold></gradient> <dark_gray>»</dark_gray> <gray>Set <gold>%player%</gold>'s rebirth to <gold>%rebirth%</gold></gray>"
-  player-not-found: "<gradient:#FFD700:#FFEA00><bold>REBIRTH</bold></gradient> <dark_gray>»</dark_gray> <red>Player not found.</red>"
-  invalid-number: "<gradient:#FFD700:#FFEA00><bold>REBIRTH</bold></gradient> <dark_gray>»</dark_gray> <red>Invalid number. Please enter a valid integer.</red>"
-  success: "<gradient:#FFD700:#FFEA00><bold>REBIRTH</bold></gradient> <dark_gray>»</dark_gray> <green>You are now <gold><bold>Rebirth %rebirth%</bold></gold></green>"
-  fail: "<gradient:#FFD700:#FFEA00><bold>REBIRTH</bold></gradient> <dark_gray>»</dark_gray> <red>You do not meet all the requirements to rebirth.</red>"
-  max-rebirth: "<gradient:#FFD700:#FFEA00><bold>REBIRTH</bold></gradient> <dark_gray>»</dark_gray> <red>You have reached the maximum rebirth level!</red>"
-  requirement-rank: "<gradient:#FFD700:#FFEA00><bold>REBIRTH</bold></gradient> <dark_gray>»</dark_gray> <red>You must be at least Rank <white>%rank%</white> to rebirth.</red>"
-  requirement-prestige: "<gradient:#FFD700:#FFEA00><bold>REBIRTH</bold></gradient> <dark_gray>»</dark_gray> <red>You must be at least Prestige <white>%prestige%</white> to rebirth.</red>"
-  requirement-currency: "<gradient:#FFD700:#FFEA00><bold>REBIRTH</bold></gradient> <dark_gray>»</dark_gray> <red>You need <white>%amount% %currency%</white> to rebirth.</red>"
-  invalid-rebirth: "<gradient:#FFD700:#FFEA00><bold>REBIRTH</bold></gradient> <dark_gray>»</dark_gray> <red>Invalid rebirth ID.</red>"
-  no-rebirth: "<gradient:#FFD700:#FFEA00><bold>REBIRTH</bold></gradient> <dark_gray>»</dark_gray> <gray>You have not yet reborn.</gray>"
+  no-permission: "<gradient:#FFD700:#FFAA00><bold>REBIRTH</bold> <dark_gray>»</dark_gray></gradient> <white>Dafür hast du keine Berechtigung!"
+  player-only: "<gradient:#FFD700:#FFAA00><bold>REBIRTH</bold> <dark_gray>»</dark_gray></gradient> <white>Diesen Befehl können nur Spieler nutzen."
+  current-rebirth: "<gradient:#FFD700:#FFAA00><bold>REBIRTH</bold> <dark_gray>»</dark_gray></gradient> <white>Du bist aktuell <yellow>%rebirth%</yellow><white>."
+  rebirth-set: "<gradient:#FFD700:#FFAA00><bold>REBIRTH</bold> <dark_gray>»</dark_gray></gradient> <white>Der Rebirth von <yellow>%player%</yellow> <white>wurde auf <yellow>%rebirth%</yellow> <white>gesetzt."
+  player-not-found: "<gradient:#FFD700:#FFAA00><bold>REBIRTH</bold> <dark_gray>»</dark_gray></gradient> <white>Spieler nicht gefunden."
+  invalid-number: "<gradient:#FFD700:#FFAA00><bold>REBIRTH</bold> <dark_gray>»</dark_gray></gradient> <white>Ungültige Zahl. Bitte gib eine gültige Ganzzahl ein."
+  success: "<gradient:#FFD700:#FFAA00><bold>REBIRTH</bold> <dark_gray>»</dark_gray></gradient> <white>Glückwunsch! Du bist jetzt <yellow><bold>Rebirth %rebirth%</bold></yellow><white>."
+  fail: "<gradient:#FFD700:#FFAA00><bold>REBIRTH</bold> <dark_gray>»</dark_gray></gradient> <white>Du erfüllst noch nicht alle Voraussetzungen für einen Rebirth."
+  max-rebirth: "<gradient:#FFD700:#FFAA00><bold>REBIRTH</bold> <dark_gray>»</dark_gray></gradient> <white>Du hast bereits den höchsten Rebirth erreicht!"
+  requirement-rank: "<gradient:#FFD700:#FFAA00><bold>REBIRTH</bold> <dark_gray>»</dark_gray></gradient> <white>Du musst mindestens Rang <yellow>%rank%</yellow> <white>sein, um einen Rebirth zu machen."
+  requirement-prestige: "<gradient:#FFD700:#FFAA00><bold>REBIRTH</bold> <dark_gray>»</dark_gray></gradient> <white>Du musst mindestens Prestige <yellow>%prestige%</yellow> <white>sein, um einen Rebirth zu machen."
+  requirement-currency: "<gradient:#FFD700:#FFAA00><bold>REBIRTH</bold> <dark_gray>»</dark_gray></gradient> <white>Du benötigst <yellow>%amount% %currency%</yellow> <white>für einen Rebirth."
+  invalid-rebirth: "<gradient:#FFD700:#FFAA00><bold>REBIRTH</bold> <dark_gray>»</dark_gray></gradient> <white>Ungültige Rebirth-ID."
+  no-rebirth: "<gradient:#FFD700:#FFAA00><bold>REBIRTH</bold> <dark_gray>»</dark_gray></gradient> <white>Du hast noch keinen Rebirth gemacht."
 # Title shown to player on rebirth. Supports MiniMessage. Placeholders: %rebirth% (new rebirth ID), %rebirth_prefix% (new rebirth prefix)
 rebirth-title:
   enabled: true
   title: '&c&lREBIRTH'
-  subtitle: '&aYou are now &eRebirth %rebirth%'
+  subtitle: '&aDu bist jetzt &eRebirth %rebirth%'
   fade-in: 1
   stay: 3
   fade-out: 1
@@ -70,6 +70,7 @@ rebirths:
     rewards:
       commands:
         - lp user %player% permission set xprison.rebirth1 true
+        - lp user %player% permission set xprison.multiplier.r1 true
         - tokens give %player% 250000
         - gems give %player% 250
   '2':
@@ -92,6 +93,7 @@ rebirths:
     rewards:
       commands:
         - lp user %player% permission set xprison.rebirth2 true
+        - lp user %player% permission set xprison.multiplier.r2 true
         - tokens give %player% 400000
         - gems give %player% 400
   '3':
@@ -114,6 +116,7 @@ rebirths:
     rewards:
       commands:
         - lp user %player% permission set xprison.rebirth3 true
+        - lp user %player% permission set xprison.multiplier.r3 true
         - tokens give %player% 600000
         - gems give %player% 600
   '4':
@@ -136,6 +139,7 @@ rebirths:
     rewards:
       commands:
         - lp user %player% permission set xprison.rebirth4 true
+        - lp user %player% permission set xprison.multiplier.r4 true
         - tokens give %player% 900000
         - gems give %player% 900
   '5':
@@ -158,6 +162,7 @@ rebirths:
     rewards:
       commands:
         - lp user %player% permission set xprison.rebirth5 true
+        - lp user %player% permission set xprison.multiplier.r5 true
         - tokens give %player% 1250000
         - gems give %player% 1500
         - broadcast <gradient:#FFD700:#FFEA00><bold>%player%</bold></gradient> <white>has reached <yellow>Rebirth 5</yellow>!
@@ -181,65 +186,65 @@ gui:
   # How each requirement type is described. %value% is the rank/prestige prefix
   # or required amount; %currency% is the currency name (currency type only).
   requirement-format:
-    rank: 'Rank %value%'
+    rank: 'Rang %value%'
     prestige: 'Prestige %value%'
     currency: '%value% %currency%'
   rebirth:
     owned:
       material: LIME_STAINED_GLASS_PANE
-      name: '%prefix% <dark_gray>(<green>Reached</green>)'
+      name: '%prefix% <dark_gray>(<green>Erreicht</green>)'
       lore:
         - '<gray>Rebirth <white>#%id%'
-        - '<green>✔ Already reborn.'
+        - '<green>✔ Diesen Rebirth hast du bereits abgeschlossen.'
     current:
       material: NETHER_STAR
       glow: true
-      name: '%prefix% <dark_gray>(<yellow>Current</yellow>)'
+      name: '%prefix% <dark_gray>(<yellow>Aktuell</yellow>)'
       lore:
         - '<gray>Rebirth <white>#%id%'
-        - '<yellow>➤ Your current rebirth.'
+        - '<yellow>➤ Das ist dein aktueller Rebirth.'
     next:
       material: BEACON
-      name: '%prefix% <dark_gray>(<gold>Next</gold>)'
+      name: '%prefix% <dark_gray>(<gold>Nächster</gold>)'
       lore:
         - '<gray>Rebirth <white>#%id%'
         - ' '
-        - '<gray>Requirements:'
+        - '<gray>Voraussetzungen:'
         - '%requirements%'
         - ' '
-        - '<yellow>Click to rebirth!'
+        - '<yellow>Klicke für den Rebirth!'
     locked:
       material: RED_STAINED_GLASS_PANE
-      name: '%prefix% <dark_gray>(<red>Locked</red>)'
+      name: '%prefix% <dark_gray>(<red>Gesperrt</red>)'
       lore:
         - '<gray>Rebirth <white>#%id%'
         - ' '
-        - '<gray>Requirements:'
+        - '<gray>Voraussetzungen:'
         - '%requirements%'
-        - '<red>🔒 Rebirth to unlock.'
+        - '<red>🔒 Rebirth zum Freischalten nötig.'
   items:
     info:
       slot: 4
       material: BOOK
       name: '<gold><bold>Rebirths'
       lore:
-        - '<gray>Rebirth resets your rank and prestige'
-        - '<gray>in exchange for permanent rewards.'
+        - '<gray>Ein Rebirth setzt Rang und Prestige'
+        - '<gray>zurück und gibt dir dauerhafte Belohnungen.'
         - ' '
-        - '<gray>Use <yellow>/rebirth <gray>or click the'
-        - '<gray>next rebirth below.'
+        - '<gray>Nutze <yellow>/rebirth <gray>oder klicke'
+        - '<gray>unten auf den nächsten Rebirth.'
     close:
       slot: 49
       material: BARRIER
-      name: '<red><bold>Close'
+      name: '<red><bold>Schließen'
       lore: []
     prev-page:
       slot: 48
       material: ARROW
-      name: '<yellow>« Previous Page'
+      name: '<yellow>« Vorherige Seite'
       lore: []
     next-page:
       slot: 50
       material: ARROW
-      name: '<yellow>Next Page »'
+      name: '<yellow>Nächste Seite »'
       lore: []

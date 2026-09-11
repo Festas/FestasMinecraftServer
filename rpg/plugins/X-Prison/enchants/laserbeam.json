@@ -8,7 +8,7 @@
   "maxLevel": 1000,
   "chance": 0.0002,
   "initialCost": 10000,
-  "pickaxeLevelRequired": 1,
+  "pickaxeLevelRequired": 100,
   "currency": "GEMS",
   "beamLength": 3,
   "countBlocksBroken": false,

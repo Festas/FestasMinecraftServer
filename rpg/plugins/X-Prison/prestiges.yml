@@ -34,20 +34,54 @@ prestige-top-format:
 - '{FOR_EACH_PLAYER} <white><bold>#%position%. <yellow>%player% <dark_gray>» <white>%prestige% Prestige'
 - <yellow><strikethrough>-------<white><strikethrough>-------<yellow><strikethrough>--------<white><strikethrough>--------<yellow><strikethrough>--------<white><strikethrough>-------<yellow><strikethrough>-------
 unlimited_prestiges:
-  enabled: false
+  # Endloses Prestige nach P10 aktiviert (Ascension-Loop). P0-P10 behalten ihre definierten Kosten/Prefixe/Rewards.
+  enabled: true
   max_prestige: 1000000
-  prestige_cost: 1000000
+  # Startkosten des ersten Ascension-Prestiges (setzt die Kurve jenseits P10=18B geometrisch fort, ~1.6x).
+  prestige_cost: 28800000000
   increase_cost:
     enabled: true
-    increase_cost_by: 1.25
-  prefix: <dark_green><bold>P%prestige%
+    # Geometrische Kostenskalierung pro Ascension-Stufe: cost(n) = prestige_cost * 1.6^(n-11).
+    increase_cost_by: 1.6
+  prefix: <gradient:#8E2DE2:#4A00E0><bold>P%prestige%</bold></gradient>
+  # Steter Ertrag bei JEDEM Ascension-Prestige (> P10) - haelt das Endgame endlos investierbar.
   rewards-per-prestige:
-    enabled: false
+    enabled: true
     rewards:
-    - money give %player% 1
+    - tokens give %player% 250000
+    - gems give %player% 100
+  # Ascension-Meilensteine: dauerhafte Multiplier-Freischaltung (xprison.multiplier.ascN) + Bonus-Currency.
   rewards:
-    10:
-      - tokens give %player% 10
+    25:
+      - lp user %player% permission set xprison.multiplier.asc1 true
+      - tokens give %player% 2500000
+      - gems give %player% 1500
+      - broadcast &d%player% &7hat &5Ascension I &7(Prestige 25) erreicht!
+    50:
+      - lp user %player% permission set xprison.multiplier.asc2 true
+      - tokens give %player% 6000000
+      - gems give %player% 3500
+      - broadcast &d%player% &7hat &5Ascension II &7(Prestige 50) erreicht!
+    100:
+      - lp user %player% permission set xprison.multiplier.asc3 true
+      - tokens give %player% 15000000
+      - gems give %player% 8000
+      - broadcast &d%player% &7hat &5Ascension III &7(Prestige 100) erreicht!
+    250:
+      - lp user %player% permission set xprison.multiplier.asc4 true
+      - tokens give %player% 40000000
+      - gems give %player% 20000
+      - broadcast &d%player% &7hat &5Ascension IV &7(Prestige 250) erreicht!
+    500:
+      - lp user %player% permission set xprison.multiplier.asc5 true
+      - tokens give %player% 100000000
+      - gems give %player% 50000
+      - broadcast &d%player% &7hat &5Ascension V &7(Prestige 500) erreicht!
+    1000:
+      - lp user %player% permission set xprison.multiplier.asc6 true
+      - tokens give %player% 250000000
+      - gems give %player% 125000
+      - broadcast &d%player% &7hat &5Ascension VI &7(Prestige 1000) erreicht!
 Prestige:
   '0':
     Prefix: <white><bold>P0</bold></white>
@@ -55,60 +89,70 @@ Prestige:
     Prefix: <green><bold>P1</bold></green>
     Cost: 25000000
     CMD:
+    - lp user %player% permission set xprison.multiplier.p1 true
     - tokens give %player% 15000
     - gems give %player% 25
   '2':
     Prefix: <green><bold>P2</bold></green>
     Cost: 75000000
     CMD:
+    - lp user %player% permission set xprison.multiplier.p2 true
     - tokens give %player% 25000
     - gems give %player% 40
   '3':
     Prefix: <yellow><bold>P3</bold></yellow>
     Cost: 175000000
     CMD:
+    - lp user %player% permission set xprison.multiplier.p3 true
     - tokens give %player% 40000
     - gems give %player% 60
   '4':
     Prefix: <gold><bold>P4</bold></gold>
     Cost: 400000000
     CMD:
+    - lp user %player% permission set xprison.multiplier.p4 true
     - tokens give %player% 60000
     - gems give %player% 90
   '5':
     Prefix: <red><bold>P5</bold></red>
     Cost: 900000000
     CMD:
+    - lp user %player% permission set xprison.multiplier.p5 true
     - tokens give %player% 90000
     - gems give %player% 125
   '6':
     Prefix: <light_purple><bold>P6</bold></light_purple>
     Cost: 1800000000
     CMD:
+    - lp user %player% permission set xprison.multiplier.p6 true
     - tokens give %player% 130000
     - gems give %player% 175
   '7':
     Prefix: <blue><bold>P7</bold></blue>
     Cost: 3500000000
     CMD:
+    - lp user %player% permission set xprison.multiplier.p7 true
     - tokens give %player% 180000
     - gems give %player% 225
   '8':
     Prefix: <aqua><bold>P8</bold></aqua>
     Cost: 6500000000
     CMD:
+    - lp user %player% permission set xprison.multiplier.p8 true
     - tokens give %player% 250000
     - gems give %player% 300
   '9':
     Prefix: <gradient:#f7971e:#ffd200><bold>P9</bold></gradient>
     Cost: 11000000000
     CMD:
+    - lp user %player% permission set xprison.multiplier.p9 true
     - tokens give %player% 350000
     - gems give %player% 400
   '10':
     Prefix: <gradient:#12c2e9:#c471ed><bold>P10</bold></gradient>
     Cost: 18000000000
     CMD:
+    - lp user %player% permission set xprison.multiplier.p10 true
     - tokens give %player% 500000
     - gems give %player% 550
     - broadcast &6%player% &7hat das höchste Prestige erreicht!

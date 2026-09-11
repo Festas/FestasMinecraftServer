@@ -56,8 +56,9 @@ header-footer:
       footer:
       - ''
       - '&8&m                                            '
-      - ' &7Prestige &8» &dP%xprison_prestige_id%    &8|    &7Guthaben &8» &a%vault_eco_balance_formatted%$'
-      - ' &7Modus &8» &dPrison    &8|    &7Status &8» &eAufbau'
+      - ' &7Rang &8» %xprison_rank_prefix%    &8|    &7Prestige &8» &dP%xprison_prestige_id%'
+      - ' &7Guthaben &8» &a%vault_eco_balance_formatted%$    &8|    &7Multiplikator &8» &e%xprison_multiplier%x'
+      - ' &7Tokens &8» &b%xprison_tokens%    &8|    &7Gems &8» &d%xprison_gems%'
       - ' &7Ping &8» %condition:ping_c1%    &8|    &7Online &8» &a%online%'
       - ' &7Web &8» %animation:web%'
       - ''
@@ -134,7 +135,7 @@ scoreboard:
       - ''
       - '&b&lMODI'
       - '&fSurvival||&aAktiv'
-      - '&fMining||&eAufbau'
+      - '&fMining||&aAktiv'
       - '&fSkyblock||&eAufbau'
       - ''
       - '&b&lVERBINDUNG'
@@ -187,15 +188,15 @@ scoreboard:
       lines:
       - '&8&m                     '
       - '&d&lFORTSCHRITT'
+      - '&fRang||%xprison_rank_prefix%'
       - '&fPrestige||&dP%xprison_prestige_id%'
+      - '&fMultiplikator||&e%xprison_multiplier%x'
+      - ''
+      - '&d&lWÄHRUNG'
       - '&fGuthaben||&a%vault_eco_balance_formatted%$'
+      - '&fTokens||&b%xprison_tokens%'
+      - '&fGems||&d%xprison_gems%'
       - ''
-      - '&d&lINFO'
-      - '&fServer||&dMining'
-      - '&fModus||&dPrison'
-      - '&fStatus||&eAufbau'
-      - ''
-      - '&d&lVERBINDUNG'
       - '&fPing||%condition:ping_c1%'
       - '&fOnline||&a%online%'
       - '&8&m                     '
@@ -269,6 +270,18 @@ placeholder-output-replacements:
   '%xprison_prestige_id%':
     ? ''
     : '0'
+  '%xprison_rank_prefix%':
+    ? ''
+    : '-'
+  '%xprison_tokens%':
+    ? ''
+    : '0'
+  '%xprison_gems%':
+    ? ''
+    : '0'
+  '%xprison_multiplier%':
+    ? ''
+    : '1'
 conditions:
   nick:
     conditions:
@@ -326,6 +339,10 @@ placeholder-refresh-intervals:
   '%rankup_next_rank%': 2000
   '%rankup_money_left_formatted%': 2000
   '%xprison_prestige_id%': 2000
+  '%xprison_rank_prefix%': 2000
+  '%xprison_tokens%': 2000
+  '%xprison_gems%': 2000
+  '%xprison_multiplier%': 2000
   '%superior_island_level%': 5000
   '%superior_island_worth%': 5000
   '%superior_island_team_size%': 5000

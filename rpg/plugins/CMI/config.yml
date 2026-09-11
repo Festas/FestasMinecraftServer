@@ -728,7 +728,7 @@ Ranks:
   AutoRankUp:
     # Defines how often in seconds plugin will check for possible player rankups
     # Set it to 0 or less to disable auto rankup checks
-    Delay: 60
+    Delay: 0
     # EXPERIMENTAL. When set to true, player rankup checks will be done in async mode
     # In case of errors related to this feature being turned on, turn it off and report issue with error log to github
     Async: false

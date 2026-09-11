@@ -38,6 +38,10 @@ test-server/
 **/internal/
 **/.hopper/
 
+# TAB proxy runtime data (per-player cache, not config)
+proxy/plugins/tab/playerdata.yml
+proxy/plugins/tab/skincache.yml
+
 # ProtocolLib runtime
 **/ProtocolLib/lastupdate
 **/ProtocolLib/error/
