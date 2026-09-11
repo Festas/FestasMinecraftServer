@@ -17,3 +17,5 @@ gui_menus:
     file: warps.yml
   help_menu:
     file: help_menu.yml
+  prison_hub:
+    file: prison_hub.yml

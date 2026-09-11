@@ -137,6 +137,25 @@ items:
       - '[player] tips'
 
   # ==============================================================
+  # ALLE FEATURES / LOOPS
+  # ==============================================================
+  'features_hub':
+    material: COMPASS
+    slot: 20
+    priority: 1
+    display_name: '&d&l✦ Alle Features/Loops'
+    lore:
+      - '&7Entdecke alle Mining-Loops zentral:'
+      - '&7Rankup, Prestige, BattlePass, Gangs,'
+      - '&7Verzauberungen, Robots und mehr.'
+      - ''
+      - '&e► Klicke zum Öffnen'
+    left_click_commands:
+      - '[openguimenu] prison_hub'
+    right_click_commands:
+      - '[openguimenu] prison_hub'
+
+  # ==============================================================
   # PRESTIGE
   # ==============================================================
   'prestige':

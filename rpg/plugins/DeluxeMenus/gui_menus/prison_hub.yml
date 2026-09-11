@@ -1,0 +1,305 @@
+# Pfad: plugins/DeluxeMenus/gui_menus/prison_hub.yml
+# RPG/Mining Feature-Hub – zentrale Übersicht aller Loops, geöffnet über /features
+menu_title: '&8» &d✦ Mining Features'
+open_command: features
+size: 54
+
+items:
+
+  # ==============================================================
+  # FILLER
+  # ==============================================================
+  'filler':
+    material: BLUE_STAINED_GLASS_PANE
+    slots:
+      - '0-8'
+      - '45-53'
+    display_name: '&f'
+    priority: 2
+
+  'filler2':
+    material: BLACK_STAINED_GLASS_PANE
+    slots:
+      - '9'
+      - '17'
+      - '18'
+      - '26'
+      - '27'
+      - '35'
+      - '36'
+      - '44'
+    display_name: '&f'
+    priority: 2
+
+  # ==============================================================
+  # HEADER
+  # ==============================================================
+  'header':
+    material: COMPASS
+    slot: 4
+    priority: 1
+    display_name: '&d&l✦ Alle Features & Loops'
+    lore:
+      - '&7Entdecke hier alle Mining-Loops'
+      - '&7auf einen Blick – klick dich rein!'
+
+  # ==============================================================
+  # KERN-PROGRESSION
+  # ==============================================================
+  'rankup':
+    material: EXPERIENCE_BOTTLE
+    slot: 11
+    priority: 1
+    display_name: '&a&l⬆ Rankup'
+    lore:
+      - '&7Steige Rang für Rang (A–J) auf'
+      - '&7und schalte neue Bereiche frei.'
+      - ''
+      - '&e► Klick: &7/rankup'
+    left_click_commands:
+      - '[close]'
+      - '[player] rankup'
+
+  'prestige':
+    material: NETHER_STAR
+    slot: 13
+    priority: 1
+    display_name: '&6&l✦ Prestige'
+    lore:
+      - '&7Nach Rang J geht es ins Prestige'
+      - '&7für dauerhafte Multiplikatoren.'
+      - ''
+      - '&e► Klick: &7/prestige'
+    left_click_commands:
+      - '[close]'
+      - '[player] prestige'
+
+  'rebirth':
+    material: DRAGON_EGG
+    slot: 15
+    priority: 1
+    display_name: '&5&l♻ Rebirth'
+    lore:
+      - '&7Setze mit Rebirth alles zurück'
+      - '&7und werde noch stärker als zuvor.'
+      - ''
+      - '&e► Klick: &7/rebirth'
+    left_click_commands:
+      - '[close]'
+      - '[player] rebirth'
+
+  # ==============================================================
+  # ENGAGEMENT
+  # ==============================================================
+  'battlepass':
+    material: WRITABLE_BOOK
+    slot: 20
+    priority: 1
+    display_name: '&b&l🏆 BattlePass'
+    lore:
+      - '&7Sammle Fortschritt und kassiere'
+      - '&7Belohnungen im BattlePass.'
+      - ''
+      - '&e► Klick: &7/bp'
+    left_click_commands:
+      - '[close]'
+      - '[player] bp'
+
+  'quests':
+    material: MAP
+    slot: 22
+    priority: 1
+    display_name: '&e&l📜 Quests'
+    lore:
+      - '&7Erledige Aufgaben und hol dir'
+      - '&7deine Quest-Belohnungen ab.'
+      - ''
+      - '&e► Klick: &7/quests'
+    left_click_commands:
+      - '[close]'
+      - '[player] quests'
+
+  'daily':
+    material: SUNFLOWER
+    slot: 24
+    priority: 1
+    display_name: '&e&l☀ Daily'
+    lore:
+      - '&7Hol dir jeden Tag deine'
+      - '&7tägliche Belohnung ab.'
+      - ''
+      - '&e► Klick: &7/daily'
+    left_click_commands:
+      - '[close]'
+      - '[player] daily'
+
+  # ==============================================================
+  # MINING-TOOLS
+  # ==============================================================
+  'enchants':
+    material: ENCHANTING_TABLE
+    slot: 28
+    priority: 1
+    display_name: '&d&l✦ Verzauberungen'
+    lore:
+      - '&7Verzaubere deine Spitzhacke und'
+      - '&7mach sie Stück für Stück stärker.'
+      - ''
+      - '&8» &7Deine Spitzhacke levelt beim'
+      - '&8» &7Abbauen ganz von selbst mit.'
+      - ''
+      - '&e► Klick: &7/enchantmenu'
+    left_click_commands:
+      - '[close]'
+      - '[player] enchantmenu'
+
+  'autominer':
+    material: IRON_PICKAXE
+    slot: 29
+    priority: 1
+    display_name: '&f&l⚙ AutoMiner'
+    lore:
+      - '&7Lass den AutoMiner für dich'
+      - '&7abbauen, auch mal nebenbei.'
+      - ''
+      - '&e► Klick: &7/autominer'
+    left_click_commands:
+      - '[close]'
+      - '[player] autominer'
+
+  'autosell':
+    material: HOPPER
+    slot: 30
+    priority: 1
+    display_name: '&6&l$ Verkaufen'
+    lore:
+      - '&7Verkaufe dein Inventar sofort'
+      - '&7oder schalte AutoSell um.'
+      - ''
+      - '&e► Linksklick: &7/sellall'
+      - '&e► Rechtsklick: &7/autosell'
+    left_click_commands:
+      - '[close]'
+      - '[player] sellall'
+    right_click_commands:
+      - '[close]'
+      - '[player] autosell'
+
+  # ==============================================================
+  # WIRTSCHAFT
+  # ==============================================================
+  'tokens':
+    material: GOLD_NUGGET
+    slot: 32
+    priority: 1
+    display_name: '&e&l⛁ Tokens'
+    lore:
+      - '&7Verwalte deine Tokens und'
+      - '&7gib sie sinnvoll aus.'
+      - ''
+      - '&e► Klick: &7/tokens'
+    left_click_commands:
+      - '[close]'
+      - '[player] tokens'
+
+  'gems':
+    material: EMERALD
+    slot: 33
+    priority: 1
+    display_name: '&a&l❖ Gems'
+    lore:
+      - '&7Behalte deine Gems im Blick'
+      - '&7und nutze sie clever.'
+      - ''
+      - '&e► Klick: &7/gems'
+    left_click_commands:
+      - '[close]'
+      - '[player] gems'
+
+  'blackmarket':
+    material: ENDER_CHEST
+    slot: 34
+    priority: 1
+    display_name: '&5&l☠ BlackMarket'
+    lore:
+      - '&7Mach im BlackMarket besondere'
+      - '&7Deals und Sonderangebote.'
+      - ''
+      - '&e► Klick: &7/blackmarket'
+    left_click_commands:
+      - '[close]'
+      - '[player] blackmarket'
+
+  # ==============================================================
+  # SOZIAL & AUSBAU
+  # ==============================================================
+  'gangs':
+    material: SHIELD
+    slot: 37
+    priority: 1
+    display_name: '&b&l⚔ Gangs'
+    lore:
+      - '&7Gründe eine Gang oder tritt'
+      - '&7einer bei und spielt gemeinsam.'
+      - ''
+      - '&e► Klick: &7/gang'
+    left_click_commands:
+      - '[close]'
+      - '[player] gang'
+
+  'robots':
+    material: IRON_GOLEM_SPAWN_EGG
+    slot: 38
+    priority: 1
+    display_name: '&7&l🤖 Robots'
+    lore:
+      - '&7Baue Robots für zusätzliches'
+      - '&7passives Einkommen.'
+      - ''
+      - '&e► Klick: &7/robots'
+    left_click_commands:
+      - '[close]'
+      - '[player] robots'
+
+  'private_mine':
+    material: DIAMOND_ORE
+    slot: 39
+    priority: 1
+    display_name: '&d&l💎 Private Mine'
+    lore:
+      - '&7Öffne deine eigene Private Mine'
+      - '&7und baue dort in Ruhe ab.'
+      - ''
+      - '&e► Klick: &7/pmine'
+    left_click_commands:
+      - '[close]'
+      - '[player] pmine'
+
+  # ==============================================================
+  # NAVIGATION
+  # ==============================================================
+  'back_help':
+    material: BOOK
+    slot: 42
+    priority: 1
+    display_name: '&7&l← Zurück zur Hilfe'
+    lore:
+      - '&7Zurück zum Hilfe-Menü'
+    left_click_commands:
+      - '[openguimenu] help_menu'
+    right_click_commands:
+      - '[openguimenu] help_menu'
+
+  'lobby':
+    material: ARROW
+    slot: 43
+    priority: 1
+    display_name: '&7&l⇦ Zur Lobby'
+    lore:
+      - '&7Verbinde dich zur Lobby'
+    left_click_commands:
+      - '[close]'
+      - '[player] lobby'
+    right_click_commands:
+      - '[close]'
+      - '[player] lobby'
