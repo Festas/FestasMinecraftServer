@@ -1,239 +1,239 @@
 tiers:
   common:
     multipliers:
-      tokens: 1.05
-      gems: 1.05
+      tokens: 1.04
+      gems: 1.03
       money: 1.05
     permission: xprisonarmor.common
     helmet:
       material: LEATHER_HELMET
       color: '#8C7B6B'
-      display-name: <gray><bold>Common Helmet</bold></gray>
+      display-name: <gray><bold>Gewöhnlicher Helm</bold></gray>
       lore:
-      - <dark_gray>A simple helmet for new miners.</dark_gray>
+      - <dark_gray>Ein einfacher Helm für frische Minenarbeiter.</dark_gray>
       - ' '
-      - <gray>Boosts:</gray>
-      - <yellow>⛃ Tokens boost:</yellow> <green><bold>1.05x</bold></green>
-      - <green>💠 Gems boost:</green> <green><bold>1.05x</bold></green>
-      - <gold>$ Money boost:</gold> <green><bold>1.05x</bold></green>
+      - <gray>Boni:</gray>
+      - <yellow>⛃ Token-Boost:</yellow> <green><bold>1.04x</bold></green>
+      - <green>💠 Edelstein-Boost:</green> <green><bold>1.03x</bold></green>
+      - <gold>$ Geld-Boost:</gold> <green><bold>1.05x</bold></green>
       enchants:
         PROTECTION: 5
     chestplate:
       material: LEATHER_CHESTPLATE
       color: '#8C7B6B'
-      display-name: <gray><bold>Common Chestplate</bold></gray>
+      display-name: <gray><bold>Gewöhnlicher Brustpanzer</bold></gray>
       lore:
-      - <dark_gray>Light and dependable for beginners.</dark_gray>
+      - <dark_gray>Leicht und verlässlich für Anfänger.</dark_gray>
       - ' '
-      - <gray>Boosts:</gray>
-      - <yellow>⛃ Tokens boost:</yellow> <green><bold>1.05x</bold></green>
-      - <green>💠 Gems boost:</green> <green><bold>1.05x</bold></green>
-      - <gold>$ Money boost:</gold> <green><bold>1.05x</bold></green>
+      - <gray>Boni:</gray>
+      - <yellow>⛃ Token-Boost:</yellow> <green><bold>1.04x</bold></green>
+      - <green>💠 Edelstein-Boost:</green> <green><bold>1.03x</bold></green>
+      - <gold>$ Geld-Boost:</gold> <green><bold>1.05x</bold></green>
       custom-model-data: 0
       enchants:
         PROTECTION: 5
     leggings:
       material: LEATHER_LEGGINGS
       color: '#8C7B6B'
-      display-name: <gray><bold>Common Leggings</bold></gray>
+      display-name: <gray><bold>Gewöhnliche Hose</bold></gray>
       lore:
-      - <dark_gray>Reliable and suitable for early mining.</dark_gray>
+      - <dark_gray>Zuverlässig und ideal für die ersten Schichten.</dark_gray>
       - ' '
-      - <gray>Boosts:</gray>
-      - <yellow>⛃ Tokens boost:</yellow> <green><bold>1.05x</bold></green>
-      - <green>💠 Gems boost:</green> <green><bold>1.05x</bold></green>
-      - <gold>$ Money boost:</gold> <green><bold>1.05x</bold></green>
+      - <gray>Boni:</gray>
+      - <yellow>⛃ Token-Boost:</yellow> <green><bold>1.04x</bold></green>
+      - <green>💠 Edelstein-Boost:</green> <green><bold>1.03x</bold></green>
+      - <gold>$ Geld-Boost:</gold> <green><bold>1.05x</bold></green>
       custom-model-data: 0
       enchants:
         PROTECTION: 5
     boots:
       material: LEATHER_BOOTS
       color: '#8C7B6B'
-      display-name: <gray><bold>Common Boots</bold></gray>
+      display-name: <gray><bold>Gewöhnliche Stiefel</bold></gray>
       lore:
-      - <dark_gray>Soft but sturdy; perfect for newcomers.</dark_gray>
+      - <dark_gray>Weich, aber robust – perfekt für Neulinge.</dark_gray>
       - ' '
-      - <gray>Boosts:</gray>
-      - <yellow>⛃ Tokens boost:</yellow> <green><bold>1.05x</bold></green>
-      - <green>💠 Gems boost:</green> <green><bold>1.05x</bold></green>
-      - <gold>$ Money boost:</gold> <green><bold>1.05x</bold></green>
+      - <gray>Boni:</gray>
+      - <yellow>⛃ Token-Boost:</yellow> <green><bold>1.04x</bold></green>
+      - <green>💠 Edelstein-Boost:</green> <green><bold>1.03x</bold></green>
+      - <gold>$ Geld-Boost:</gold> <green><bold>1.05x</bold></green>
       custom-model-data: 0
       enchants:
         PROTECTION: 5
   
   rare:
     multipliers:
-      tokens: 1.15
-      gems: 1.15
+      tokens: 1.1
+      gems: 1.07
       money: 1.15
     permission: xprisonarmor.rare
     helmet:
       material: IRON_HELMET
-      display-name: <gradient:#6dd6ff:#3aaed8><bold>Rare Helmet</bold></gradient>
+      display-name: <gradient:#6dd6ff:#3aaed8><bold>Seltener Helm</bold></gradient>
       lore:
-      - <gray>Shining with enhanced magical energy.</gray>
+      - <gray>Erstrahlt in verstärkter magischer Energie.</gray>
       - ' '
-      - <gray>Boosts:</gray>
-      - <yellow>⛃ Tokens boost:</yellow> <green><bold>1.15x</bold></green>
-      - <green>💠 Gems boost:</green> <green><bold>1.15x</bold></green>
-      - <gold>$ Money boost:</gold> <green><bold>1.15x</bold></green>
+      - <gray>Boni:</gray>
+      - <yellow>⛃ Token-Boost:</yellow> <green><bold>1.10x</bold></green>
+      - <green>💠 Edelstein-Boost:</green> <green><bold>1.07x</bold></green>
+      - <gold>$ Geld-Boost:</gold> <green><bold>1.15x</bold></green>
       custom-model-data: 0
       enchants:
         PROTECTION: 5
     chestplate:
       material: IRON_CHESTPLATE
-      display-name: <gradient:#6dd6ff:#3aaed8><bold>Rare Chestplate</bold></gradient>
+      display-name: <gradient:#6dd6ff:#3aaed8><bold>Seltener Brustpanzer</bold></gradient>
       lore:
-      - <gray>Forged from refined rare alloys.</gray>
+      - <gray>Geschmiedet aus veredelten, seltenen Legierungen.</gray>
       - ' '
-      - <gray>Boosts:</gray>
-      - <yellow>⛃ Tokens boost:</yellow> <green><bold>1.15x</bold></green>
-      - <green>💠 Gems boost:</green> <green><bold>1.15x</bold></green>
-      - <gold>$ Money boost:</gold> <green><bold>1.15x</bold></green>
+      - <gray>Boni:</gray>
+      - <yellow>⛃ Token-Boost:</yellow> <green><bold>1.10x</bold></green>
+      - <green>💠 Edelstein-Boost:</green> <green><bold>1.07x</bold></green>
+      - <gold>$ Geld-Boost:</gold> <green><bold>1.15x</bold></green>
       custom-model-data: 0
       enchants:
         PROTECTION: 5
     leggings:
       material: IRON_LEGGINGS
-      display-name: <gradient:#6dd6ff:#3aaed8><bold>Rare Leggings</bold></gradient>
+      display-name: <gradient:#6dd6ff:#3aaed8><bold>Seltene Hose</bold></gradient>
       lore:
-      - <gray>Enhanced with energetic materials.</gray>
+      - <gray>Verstärkt mit energiereichen Materialien.</gray>
       - ' '
-      - <gray>Boosts:</gray>
-      - <yellow>⛃ Tokens boost:</yellow> <green><bold>1.15x</bold></green>
-      - <green>💠 Gems boost:</green> <green><bold>1.15x</bold></green>
-      - <gold>$ Money boost:</gold> <green><bold>1.15x</bold></green>
+      - <gray>Boni:</gray>
+      - <yellow>⛃ Token-Boost:</yellow> <green><bold>1.10x</bold></green>
+      - <green>💠 Edelstein-Boost:</green> <green><bold>1.07x</bold></green>
+      - <gold>$ Geld-Boost:</gold> <green><bold>1.15x</bold></green>
       custom-model-data: 0
       enchants:
         PROTECTION: 5
     boots:
       material: IRON_BOOTS
-      display-name: <gradient:#6dd6ff:#3aaed8><bold>Rare Boots</bold></gradient>
+      display-name: <gradient:#6dd6ff:#3aaed8><bold>Seltene Stiefel</bold></gradient>
       lore:
-      - <gray>Swift and strengthened for growing adventurers.</gray>
+      - <gray>Flink und gestärkt für aufstrebende Abenteurer.</gray>
       - ' '
-      - <gray>Boosts:</gray>
-      - <yellow>⛃ Tokens boost:</yellow> <green><bold>1.15x</bold></green>
-      - <green>💠 Gems boost:</green> <green><bold>1.15x</bold></green>
-      - <gold>$ Money boost:</gold> <green><bold>1.15x</bold></green>
+      - <gray>Boni:</gray>
+      - <yellow>⛃ Token-Boost:</yellow> <green><bold>1.10x</bold></green>
+      - <green>💠 Edelstein-Boost:</green> <green><bold>1.07x</bold></green>
+      - <gold>$ Geld-Boost:</gold> <green><bold>1.15x</bold></green>
       custom-model-data: 0
       enchants:
         PROTECTION: 5
   
   legendary:
     multipliers:
-      tokens: 1.25
-      gems: 1.25
+      tokens: 1.18
+      gems: 1.12
       money: 1.25
     permission: xprisonarmor.legendary
     helmet:
       material: DIAMOND_HELMET
-      display-name: <gradient:#ffea00:#ff9f00><bold>Legendary Helmet</bold></gradient>
+      display-name: <gradient:#ffea00:#ff9f00><bold>Legendärer Helm</bold></gradient>
       lore:
-      - <gold>Forged by ancient master smiths.</gold>
+      - <gold>Geschmiedet von uralten Meisterschmieden.</gold>
       - ' '
-      - <gray>Boosts:</gray>
-      - <yellow>⛃ Tokens boost:</yellow> <green><bold>1.25x</bold></green>
-      - <green>💠 Gems boost:</green> <green><bold>1.25x</bold></green>
-      - <gold>$ Money boost:</gold> <green><bold>1.25x</bold></green>
+      - <gray>Boni:</gray>
+      - <yellow>⛃ Token-Boost:</yellow> <green><bold>1.18x</bold></green>
+      - <green>💠 Edelstein-Boost:</green> <green><bold>1.12x</bold></green>
+      - <gold>$ Geld-Boost:</gold> <green><bold>1.25x</bold></green>
       custom-model-data: 0
       enchants:
         PROTECTION: 5
     chestplate:
       material: DIAMOND_CHESTPLATE
-      display-name: <gradient:#ffea00:#ff9f00><bold>Legendary Chestplate</bold></gradient>
+      display-name: <gradient:#ffea00:#ff9f00><bold>Legendärer Brustpanzer</bold></gradient>
       lore:
-      - <gold>Pulses with ancient golden power.</gold>
+      - <gold>Pulsiert mit uralter goldener Macht.</gold>
       - ' '
-      - <gray>Boosts:</gray>
-      - <yellow>⛃ Tokens boost:</yellow> <green><bold>1.25x</bold></green>
-      - <green>💠 Gems boost:</green> <green><bold>1.25x</bold></green>
-      - <gold>$ Money boost:</gold> <green><bold>1.25x</bold></green>
+      - <gray>Boni:</gray>
+      - <yellow>⛃ Token-Boost:</yellow> <green><bold>1.18x</bold></green>
+      - <green>💠 Edelstein-Boost:</green> <green><bold>1.12x</bold></green>
+      - <gold>$ Geld-Boost:</gold> <green><bold>1.25x</bold></green>
       custom-model-data: 0
       enchants:
         PROTECTION: 5
     leggings:
       material: DIAMOND_LEGGINGS
-      display-name: <gradient:#ffea00:#ff9f00><bold>Legendary Leggings</bold></gradient>
+      display-name: <gradient:#ffea00:#ff9f00><bold>Legendäre Hose</bold></gradient>
       lore:
-      - <gold>Said to withstand any strike.</gold>
+      - <gold>Soll jedem Schlag standhalten.</gold>
       - ' '
-      - <gray>Boosts:</gray>
-      - <yellow>⛃ Tokens boost:</yellow> <green><bold>1.25x</bold></green>
-      - <green>💠 Gems boost:</green> <green><bold>1.25x</bold></green>
-      - <gold>$ Money boost:</gold> <green><bold>1.25x</bold></green>
+      - <gray>Boni:</gray>
+      - <yellow>⛃ Token-Boost:</yellow> <green><bold>1.18x</bold></green>
+      - <green>💠 Edelstein-Boost:</green> <green><bold>1.12x</bold></green>
+      - <gold>$ Geld-Boost:</gold> <green><bold>1.25x</bold></green>
       custom-model-data: 0
       enchants:
         PROTECTION: 5
     boots:
       material: DIAMOND_BOOTS
-      display-name: <gradient:#ffea00:#ff9f00><bold>Legendary Boots</bold></gradient>
+      display-name: <gradient:#ffea00:#ff9f00><bold>Legendäre Stiefel</bold></gradient>
       lore:
-      - <gold>Walk with the force of legends.</gold>
+      - <gold>Schreite mit der Kraft der Legenden.</gold>
       - ' '
-      - <gray>Boosts:</gray>
-      - <yellow>⛃ Tokens boost:</yellow> <green><bold>1.25x</bold></green>
-      - <green>💠 Gems boost:</green> <green><bold>1.25x</bold></green>
-      - <gold>$ Money boost:</gold> <green><bold>1.25x</bold></green>
+      - <gray>Boni:</gray>
+      - <yellow>⛃ Token-Boost:</yellow> <green><bold>1.18x</bold></green>
+      - <green>💠 Edelstein-Boost:</green> <green><bold>1.12x</bold></green>
+      - <gold>$ Geld-Boost:</gold> <green><bold>1.25x</bold></green>
       custom-model-data: 0
       enchants:
         PROTECTION: 5
   
   mythical:
     multipliers:
-      tokens: 1.5
-      gems: 1.5
+      tokens: 1.35
+      gems: 1.22
       money: 1.5
     permission: xprisonarmor.mythical
     helmet:
       material: NETHERITE_HELMET
-      display-name: <gradient:#d17bff:#9b00ff><bold>Mythical Helmet</bold></gradient>
+      display-name: <gradient:#d17bff:#9b00ff><bold>Mythischer Helm</bold></gradient>
       lore:
-      - <dark_purple>Whispers of voidborn power surround it.</dark_purple>
+      - <dark_purple>Umgeben vom Flüstern leerengeborener Macht.</dark_purple>
       - ' '
-      - <gray>Boosts:</gray>
-      - <yellow>⛃ Tokens boost:</yellow> <green><bold>1.5x</bold></green>
-      - <green>💠 Gems boost:</green> <green><bold>1.5x</bold></green>
-      - <gold>$ Money boost:</gold> <green><bold>1.5x</bold></green>
+      - <gray>Boni:</gray>
+      - <yellow>⛃ Token-Boost:</yellow> <green><bold>1.35x</bold></green>
+      - <green>💠 Edelstein-Boost:</green> <green><bold>1.22x</bold></green>
+      - <gold>$ Geld-Boost:</gold> <green><bold>1.5x</bold></green>
       custom-model-data: 0
       enchants:
         PROTECTION: 5
     chestplate:
       material: NETHERITE_CHESTPLATE
-      display-name: <gradient:#d17bff:#9b00ff><bold>Mythical Chestplate</bold></gradient>
+      display-name: <gradient:#d17bff:#9b00ff><bold>Mythischer Brustpanzer</bold></gradient>
       lore:
-      - <dark_purple>Pulses with cosmic, unstable force.</dark_purple>
+      - <dark_purple>Pulsiert mit kosmischer, instabiler Kraft.</dark_purple>
       - ' '
-      - <gray>Boosts:</gray>
-      - <yellow>⛃ Tokens boost:</yellow> <green><bold>1.5x</bold></green>
-      - <green>💠 Gems boost:</green> <green><bold>1.5x</bold></green>
-      - <gold>$ Money boost:</gold> <green><bold>1.5x</bold></green>
+      - <gray>Boni:</gray>
+      - <yellow>⛃ Token-Boost:</yellow> <green><bold>1.35x</bold></green>
+      - <green>💠 Edelstein-Boost:</green> <green><bold>1.22x</bold></green>
+      - <gold>$ Geld-Boost:</gold> <green><bold>1.5x</bold></green>
       custom-model-data: 0
       enchants:
         PROTECTION: 5
     leggings:
       material: NETHERITE_LEGGINGS
-      display-name: <gradient:#d17bff:#9b00ff><bold>Mythical Leggings</bold></gradient>
+      display-name: <gradient:#d17bff:#9b00ff><bold>Mythische Hose</bold></gradient>
       lore:
-      - <dark_purple>Forged from abyssal void essence.</dark_purple>
+      - <dark_purple>Geschmiedet aus abgründiger Leeren-Essenz.</dark_purple>
       - ' '
-      - <gray>Boosts:</gray>
-      - <yellow>⛃ Tokens boost:</yellow> <green><bold>1.5x</bold></green>
-      - <green>💠 Gems boost:</green> <green><bold>1.5x</bold></green>
-      - <gold>$ Money boost:</gold> <green><bold>1.5x</bold></green>
+      - <gray>Boni:</gray>
+      - <yellow>⛃ Token-Boost:</yellow> <green><bold>1.35x</bold></green>
+      - <green>💠 Edelstein-Boost:</green> <green><bold>1.22x</bold></green>
+      - <gold>$ Geld-Boost:</gold> <green><bold>1.5x</bold></green>
       custom-model-data: 0
       enchants:
         PROTECTION: 5
     boots:
       material: NETHERITE_BOOTS
-      display-name: <gradient:#d17bff:#9b00ff><bold>Mythical Boots</bold></gradient>
+      display-name: <gradient:#d17bff:#9b00ff><bold>Mythische Stiefel</bold></gradient>
       lore:
-      - <dark_purple>Each step radiates arcane power.</dark_purple>
+      - <dark_purple>Jeder Schritt strahlt arkane Macht aus.</dark_purple>
       - ' '
-      - <gray>Boosts:</gray>
-      - <yellow>⛃ Tokens boost:</yellow> <green><bold>1.5x</bold></green>
-      - <green>💠 Gems boost:</green> <green><bold>1.5x</bold></green>
-      - <gold>$ Money boost:</gold> <green><bold>1.5x</bold></green>
+      - <gray>Boni:</gray>
+      - <yellow>⛃ Token-Boost:</yellow> <green><bold>1.35x</bold></green>
+      - <green>💠 Edelstein-Boost:</green> <green><bold>1.22x</bold></green>
+      - <gold>$ Geld-Boost:</gold> <green><bold>1.5x</bold></green>
       custom-model-data: 0
       enchants:
         PROTECTION: 5

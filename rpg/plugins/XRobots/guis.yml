@@ -3,7 +3,7 @@ robots-gui:
   rows: 6
   
   # Title of the GUI window (supports color codes).
-  title: '&c&lROBOTS'
+  title: '&c&lROBOTER'
   
   # Material used to fill empty slots in the GUI for aesthetics.
   filler: BLACK_STAINED_GLASS_PANE
@@ -45,68 +45,68 @@ robots-gui:
     name: '%name%' # Display name of the robot item.
     lore:
     - ' '
-    - '&eStatistics'
-    - '&e&l| &fLevel: &e%level%'
-    - '&e&l| &f%currency% Per Second: &e%amount%'
+    - '&eStatistiken'
+    - '&e&l| &fStufe: &e%level%'
+    - '&e&l| &f%currency% pro Sekunde: &e%amount%'
     - ' '
-    - '&eNext Upgrade'
-    - '&e&l| &fLevel: &c%level% &f-> &a%new_level%'
-    - '&e&l| &f%currency% Per Second: &c%amount% &f-> &a%new_amount%'
-    - '&e&l| &fCost: &e%cost%'
+    - '&eNächstes Upgrade'
+    - '&e&l| &fStufe: &c%level% &f-> &a%new_level%'
+    - '&e&l| &f%currency% pro Sekunde: &c%amount% &f-> &a%new_amount%'
+    - '&e&l| &fKosten: &e%cost%'
     - ' '
-    - '&7Click to upgrade'
-    - '&7Shift-Click to max upgrade'
+    - '&7Klicke zum Verbessern'
+    - '&7Shift-Klick für die maximale Stufe'
   
   # Template for robot item when it has reached max level and can't be upgraded.
   robot-max-item:
     name: '%name%' # Display name of the robot item.
     lore:
     - ' '
-    - '&eStatistics'
-    - '&e&l| &fLevel: &e%level%'
-    - '&e&l| &f%currency% Per Second: &e%amount%'
+    - '&eStatistiken'
+    - '&e&l| &fStufe: &e%level%'
+    - '&e&l| &f%currency% pro Sekunde: &e%amount%'
     - ' '
-    - '&7This robot is maxed'
+    - '&7Dieser Roboter ist auf Maximalstufe'
   
   # GUI navigation and action items (e.g., page navigation, reward collection).
   items:
     next-page:
       slot: 52 # Slot index for "Next Page" button.
-      name: '&fNext Page' # Display name for the button.
+      name: '&fNächste Seite' # Display name for the button.
       material: ARROW # Minecraft material for the button.
       custom_model_data: 0 # Optional model data for texture packs.
       lore:
-      - '&7Click to go to next page'
+      - '&7Klicke, um zur nächsten Seite zu gehen'
     prev-page:
       slot: 46 # Slot index for "Previous Page" button.
-      name: '&fPrev Page'
+      name: '&fVorherige Seite'
       material: ARROW
       custom_model_data: 0
       lore:
-      - '&7Click to go back to previous page'
+      - '&7Klicke, um zur vorherigen Seite zu gehen'
     collect:
       slot: 47 # Slot index for the "Collect Rewards" button.
-      name: '&a&lCollect Rewards'
+      name: '&a&lBelohnungen einsammeln'
       material: EMERALD
       custom_model_data: 0
       rewards-format: '&f%currency%: &e%amount%' # Format for displaying individual reward lines.
       lore:
       - '%rewards%'
       - ' '
-      - '&7Click to collect'
+      - '&7Klicke zum Einsammeln'
     refresh:
       slot: 48 # Slot index for the "Refresh" button.
-      name: '&fRefresh'
+      name: '&fAktualisieren'
       material: COMPASS
       custom_model_data: 0
       lore:
-      - '&7Click to refresh'
+      - '&7Klicke zum Aktualisieren'
     filter:
       slot: 51
       name: '&b&lFilter'
       material: HOPPER
       custom_model_data: 0
       lore:
-      - '&b&l| &fCurrent: &b%filter%'
+      - '&b&l| &fAktuell: &b%filter%'
       - ' '
-      - '&7Click to change the filter.'
+      - '&7Klicke, um den Filter zu ändern.'
