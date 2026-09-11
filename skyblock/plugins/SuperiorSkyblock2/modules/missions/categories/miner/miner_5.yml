@@ -20,10 +20,10 @@ only-natural-blocks: true
 # Rewards given when completing the mission.
 rewards:
   commands:
-    - 'eco give %player% 250000'
-    - 'is admin msg %player% &e&lMiner | &7Successfully finished the mission Miner V!'
-    - 'is admin msg %player% &e&lMiner | &7Diamonds... diamonds... diamonds!'
-    - 'is admin msg %player% &e&lMiner | &7&oYou are now a professional Miner, congratz!'
+    - 'cmi money give %player% 25000'
+    - 'is admin msg %player% &e&lBergbau | &7Mission Bergbau V abgeschlossen!'
+    - 'is admin msg %player% &e&lBergbau | &7Diamanten... Diamanten... Diamanten!'
+    - 'is admin msg %player% &e&lBergbau | &7&oDu bist jetzt ein Profi-Bergmann, Glückwunsch!'
 
 # List of required missions that must be completed before completing this one.
 required-missions:
@@ -43,66 +43,66 @@ required-blocks:
 icons:
   locked:
     type: PAPER
-    name: '&aMiner V'
+    name: '&aBergbau V'
     lore:
-      - '&7It''s time to buy the best goodies.'
-      - '&7Mine x32 diamond ores.'
+      - '&7Zeit, dir die besten Sachen zu leisten.'
+      - '&7Baue 32 Diamanterz ab.'
       - ''
-      - '&6Required Blocks:'
-      - '&8 - &7x32 Diamond Ore'
+      - '&6Benötigte Blöcke:'
+      - '&8 - &7x32 Diamanterz'
       - ''
-      - '&6Rewards:'
-      - '&8 - &7$250,000'
+      - '&6Belohnungen:'
+      - '&8 - &725.000 €'
       - ''
-      - '&6Diamond Ore Mined: &7{1}/32'
-      - '&c&l ✘ &7Locked'
+      - '&6Diamanterz abgebaut: &7{1}/32'
+      - '&c&l ✘ &7Gesperrt'
     amount: 5
   not-completed:
     type: PAPER
-    name: '&aMiner V'
+    name: '&aBergbau V'
     lore:
-      - '&7It''s time to buy the best goodies.'
-      - '&7Mine x32 diamond ores.'
+      - '&7Zeit, dir die besten Sachen zu leisten.'
+      - '&7Baue 32 Diamanterz ab.'
       - ''
-      - '&6Required Blocks:'
-      - '&8 - &7x32 Diamond Ore'
+      - '&6Benötigte Blöcke:'
+      - '&8 - &7x32 Diamanterz'
       - ''
-      - '&6Rewards:'
-      - '&8 - &7$250,000'
+      - '&6Belohnungen:'
+      - '&8 - &725.000 €'
       - ''
-      - '&6Diamond Ore Mined: &7{1}/32'
-      - '&6Progress: &7{0}%'
-      - '&c&l ✘ &7Not Completed'
+      - '&6Diamanterz abgebaut: &7{1}/32'
+      - '&6Fortschritt: &7{0}%'
+      - '&c&l ✘ &7Nicht abgeschlossen'
     amount: 5
   can-complete:
     type: PAPER
-    name: '&aMiner V'
+    name: '&aBergbau V'
     lore:
-      - '&7It''s time to buy the best goodies.'
-      - '&7Mine x32 diamond ores.'
+      - '&7Zeit, dir die besten Sachen zu leisten.'
+      - '&7Baue 32 Diamanterz ab.'
       - ''
-      - '&6Required Blocks:'
-      - '&8 - &7x32 Diamond Ore'
+      - '&6Benötigte Blöcke:'
+      - '&8 - &7x32 Diamanterz'
       - ''
-      - '&6Rewards:'
-      - '&8 - &7$250,000'
+      - '&6Belohnungen:'
+      - '&8 - &725.000 €'
       - ''
-      - '&6Diamond Ore Mined: &732/32'
-      - '&6Progress: &7100%'
-      - '&a&l ✔ &7Click to redeem your reward.'
+      - '&6Diamanterz abgebaut: &732/32'
+      - '&6Fortschritt: &7100%'
+      - '&a&l ✔ &7Klicke, um deine Belohnung abzuholen.'
     amount: 5
     glow: true
   completed:
     type: MAP
-    name: '&aMiner V'
+    name: '&aBergbau V'
     lore:
-      - '&7It''s time to buy the best goodies.'
-      - '&7Mine x32 diamond ores.'
+      - '&7Zeit, dir die besten Sachen zu leisten.'
+      - '&7Baue 32 Diamanterz ab.'
       - ''
-      - '&6Rewards:'
-      - '&8 - &7$250,000'
+      - '&6Belohnungen:'
+      - '&8 - &725.000 €'
       - ''
-      - '&6Diamond Ore Mined: &732/32'
-      - '&6Progress: &7100%'
-      - '&a&l ✔ &7Already Claimed.'
+      - '&6Diamanterz abgebaut: &732/32'
+      - '&6Fortschritt: &7100%'
+      - '&a&l ✔ &7Bereits abgeholt.'
     amount: 5

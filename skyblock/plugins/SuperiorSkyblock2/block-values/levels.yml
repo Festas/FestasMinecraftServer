@@ -7,6 +7,105 @@
 
 # Here you can set all the level values for your blocks.
 # To set specific spawner types, use 'MOB_SPAWNER:<ENTITY>': <AMOUNT>
-# If no level is found, the formula from config will be used.
+# If no level is found, the formula from config will be used (worth / 20).
+#
+# Ziel-Skala (Festas Skyblock):
+#   - Frische Insel  < 25 Level
+#   - Ausgebaute Insel  100+ Level
+#   - Top-Inseln  1000+ Level
+# Massen-/Generator-Bloecke sind bewusst sehr niedrig, damit Insel-Level
+# durch echten Ausbau (Erze, Mineralbloecke, Spawner) und nicht durch
+# stumpfes Cobble-Stapeln steigt.
 
-EXAMPLE: 5
+# --- Massen- & Generatorbloecke (sehr niedrig) ---
+COBBLESTONE: 0.01
+STONE: 0.02
+COBBLED_DEEPSLATE: 0.02
+DEEPSLATE: 0.02
+TUFF: 0.02
+ANDESITE: 0.02
+DIORITE: 0.02
+GRANITE: 0.02
+DIRT: 0.01
+COARSE_DIRT: 0.01
+GRASS_BLOCK: 0.03
+GRAVEL: 0.01
+SAND: 0.01
+RED_SAND: 0.01
+NETHERRACK: 0.01
+BASALT: 0.02
+BLACKSTONE: 0.02
+
+# --- Basis-Bausteine, Holz & Laub ---
+OAK_LOG: 0.05
+BIRCH_LOG: 0.05
+SPRUCE_LOG: 0.05
+JUNGLE_LOG: 0.05
+ACACIA_LOG: 0.05
+DARK_OAK_LOG: 0.05
+MANGROVE_LOG: 0.05
+CHERRY_LOG: 0.05
+OAK_LEAVES: 0.02
+SPRUCE_LEAVES: 0.02
+BIRCH_LEAVES: 0.02
+JUNGLE_LEAVES: 0.02
+GLASS: 0.03
+WOOL: 0.03
+SANDSTONE: 0.03
+RED_SANDSTONE: 0.03
+TERRACOTTA: 0.05
+CLAY: 0.1
+ICE: 0.05
+PACKED_ICE: 0.08
+BLUE_ICE: 0.15
+GLOWSTONE: 0.2
+SEA_LANTERN: 0.3
+OBSIDIAN: 1
+CRYING_OBSIDIAN: 1.5
+
+# --- Erze (natuerlich abgebaut, inkl. Deepslate-Varianten) ---
+COAL_ORE: 0.25
+DEEPSLATE_COAL_ORE: 0.3
+COPPER_ORE: 0.3
+DEEPSLATE_COPPER_ORE: 0.35
+IRON_ORE: 0.5
+DEEPSLATE_IRON_ORE: 0.6
+REDSTONE_ORE: 0.5
+DEEPSLATE_REDSTONE_ORE: 0.6
+LAPIS_ORE: 0.75
+DEEPSLATE_LAPIS_ORE: 0.85
+GOLD_ORE: 1
+DEEPSLATE_GOLD_ORE: 1.2
+NETHER_GOLD_ORE: 0.5
+NETHER_QUARTZ_ORE: 0.3
+DIAMOND_ORE: 2
+DEEPSLATE_DIAMOND_ORE: 2.5
+EMERALD_ORE: 3
+DEEPSLATE_EMERALD_ORE: 3.5
+
+# --- Mineral- & Speicherbloecke (gecraftet, Prestige) ---
+COAL_BLOCK: 1
+COPPER_BLOCK: 1.5
+REDSTONE_BLOCK: 2
+LAPIS_BLOCK: 2
+IRON_BLOCK: 2
+AMETHYST_BLOCK: 3
+QUARTZ_BLOCK: 1
+SLIME_BLOCK: 2
+HONEY_BLOCK: 2
+GOLD_BLOCK: 8
+EMERALD_BLOCK: 12
+DIAMOND_BLOCK: 15
+NETHERITE_BLOCK: 75
+
+# --- Prestige & Spezialbloecke ---
+SPONGE: 1
+ENCHANTING_TABLE: 5
+ENDER_CHEST: 5
+BUDDING_AMETHYST: 10
+BEACON: 50
+DRAGON_EGG: 150
+
+# --- Spawner ---
+# Generischer Fallback fuer jeden Spawner-Typ.
+SPAWNER: 50

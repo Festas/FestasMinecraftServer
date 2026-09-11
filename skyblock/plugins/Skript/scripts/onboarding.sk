@@ -1,0 +1,59 @@
+# Pfad: plugins/Skript/scripts/onboarding.sk
+# Erst-Join-Erlebnis – Skyblock
+# Freundliche, NICHT-destruktive Begrüßung beim allerersten Join.
+# WICHTIG: Es wird NIEMALS das Inventar geleert oder der Gamemode gesetzt.
+# Idempotent über die persistente Marke {skyblock.onboarded.%uuid%}.
+
+# --- KONFIGURATION ---
+options:
+    prefix: &8[&3&lSkyblock&8] &7
+    # Einmaliges Startguthaben beim allerersten Join (0 = deaktiviert)
+    start_bonus: 500
+
+# --- ERST-JOIN ---
+on join:
+    # Bereits begrüßt? -> nichts tun (idempotent, kein Doppel-Trigger)
+    if {skyblock.onboarded.%player's uuid%} is set:
+        stop
+    # Marke sofort setzen, damit auch bei schnellem Rejoin nichts doppelt läuft
+    set {skyblock.onboarded.%player's uuid%} to true
+
+    set {_p} to player
+
+    # Kurz warten, bis der Spieler vollständig geladen ist
+    wait 3 seconds
+    if {_p} is not online:
+        stop
+
+    # --- WILLKOMMENS-BLOCK ---
+    send title "&3&lWillkommen!" with subtitle "&7auf Festas &bSkyblock" to {_p} for 4 seconds
+    play sound "entity.player.levelup" with volume 0.8 and pitch 1.2 at {_p} for {_p}
+
+    send "" to {_p}
+    send "&8&m─────────────────────────────────────" to {_p}
+    send "&b&l  ✦ Willkommen auf Festas Skyblock! ✦" to {_p}
+    send "&8&m─────────────────────────────────────" to {_p}
+    send "" to {_p}
+    send "{@prefix}&7Schön, dass du da bist! So startest du durch:" to {_p}
+    send "{@prefix}&e① &7Erstelle deine Insel mit &e/is create&7." to {_p}
+    send "{@prefix}&e② &7Hole dir täglich deine Belohnung mit &e/daily&7." to {_p}
+    send "{@prefix}&e③ &7Öffne die Navigation & Hilfe mit &e/nav&7." to {_p}
+    send "{@prefix}&e④ &7Schließe &e/is missions &7ab und steigere dein Insel-Level." to {_p}
+    send "{@prefix}&e⑤ &7Prüfe laufende &eEvents &7jederzeit mit &e/event&7." to {_p}
+    send "" to {_p}
+
+    # --- OPTIONALES STARTGUTHABEN (Economy via CMI, keine Items erzwingen) ---
+    if {@start_bonus} is greater than 0:
+        execute console command "cmi money give %{_p}% {@start_bonus}"
+        send "{@prefix}&aGeschenk zum Start: &e{@start_bonus}€ &7– viel Erfolg!" to {_p}
+        send "" to {_p}
+
+    send "&8&m─────────────────────────────────────" to {_p}
+
+    # --- SCHNELLSTART-MENÜ ÖFFNEN (nach kurzer Verzögerung) ---
+    wait 4 seconds
+    if {_p} is not online:
+        stop
+    # Öffnet das DeluxeMenus-Menü "basics_menu" (externes Plugin). Fehlt das Menü,
+    # gibt DeluxeMenus nur eine Fehlermeldung aus – der Rest des Onboardings bleibt intakt.
+    make {_p} execute command "/dm open basics_menu"

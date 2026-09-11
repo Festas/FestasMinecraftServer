@@ -1,0 +1,318 @@
+# Pfad: plugins/Skript/scripts/skyblock_events.sk
+# Rotierendes Live-Event-System – Skyblock
+# Self-contained: startet in festen Abständen ein zufälliges Zeit-Event für ein
+# begrenztes Fenster und belohnt die Teilnahme ausschließlich über eigene Skript-Events
+# (kein Eingriff in andere Plugins). Economy läuft über CMI-Konsolenbefehle.
+#
+# Genutzte Flags/Variablen (dürfen von Menü-/Anzeige-Skripten gelesen werden):
+#   {skyblock.event.active}      -> ID des laufenden Events (1-5) oder nicht gesetzt
+#   {skyblock.event.until}       -> Zeitpunkt (Datum), an dem das Event endet (nur Anzeige)
+#   {skyblock.event.started}     -> Startzeitpunkt (Datum) – robuste Ende-Erkennung
+#   {skyblock.event.doubledaily} -> true während "Doppelte Tagesbelohnung" (daily_rewards.sk liest es)
+#   {skyblock_event_names::ID}   -> Anzeigename des Events
+#   {skyblock_event_desc::ID}    -> Kurzbeschreibung des Events
+# Interne Zähler (Anti-Farming-Caps, gebündelte Auszahlung):
+#   {skyblock.event.earned::UUID}  -> im Fenster bereits gutgeschriebener Bonus (Cap-Tracker)
+#   {skyblock.event.pending::UUID} -> noch nicht ausgezahlter Bonus (Batch-Auszahlung)
+
+# --- KONFIGURATION ---
+options:
+    prefix: &8[&3&lSkyblock&8] &7
+    # Nur in der Insel-Welt aktiv (SuperiorSkyblock2: world-name)
+    island_world: SuperiorWorld
+    # Alle X Minuten wird versucht, ein Event zu starten ...
+    interval: 20
+    # ... das dann Y Minuten läuft.
+    duration: 10
+    # Maximaler Bonus pro Spieler und Event-Fenster (Anti-Farming-Cap)
+    cap_mining: 2500
+    cap_fish: 2200
+    cap_monster: 2500
+    cap_meteor: 1800
+
+# --- EVENT-DATEN LADEN ---
+on script load:
+    delete {skyblock_event_names::*}
+    set {skyblock_event_names::1} to "&b&l☄ Meteoritenschauer"
+    set {skyblock_event_names::2} to "&3&l🎣 Angel-Fieber"
+    set {skyblock_event_names::3} to "&c&l⚔ Monster-Invasion"
+    set {skyblock_event_names::4} to "&6&l⛏ Goldene Abbau-Stunde"
+    set {skyblock_event_names::5} to "&e&l☀ Doppelte Tagesbelohnung"
+
+    delete {skyblock_event_desc::*}
+    set {skyblock_event_desc::1} to "&7Herabstürzende Boni beim Abbau!"
+    set {skyblock_event_desc::2} to "&7Jeder Fang bringt Extra-Geld!"
+    set {skyblock_event_desc::3} to "&7Kopfgeld auf erlegte Monster!"
+    set {skyblock_event_desc::4} to "&7Erze zahlen Bonus-Geld beim Abbau!"
+    set {skyblock_event_desc::5} to "&7Deine /daily Belohnung zählt doppelt!"
+
+    delete {skyblock_event_howto::*}
+    set {skyblock_event_howto::1} to "&7Baue Blöcke auf deiner Insel ab und fange Meteoriten-Boni auf!"
+    set {skyblock_event_howto::2} to "&7Wirf deine Angel aus – jeder Fisch bringt Extra-Geld!"
+    set {skyblock_event_howto::3} to "&7Erlege Monster auf deiner Insel für Kopfgeld!"
+    set {skyblock_event_howto::4} to "&7Baue Erze ab – jeder Erzblock zahlt Bonus-Geld!"
+    set {skyblock_event_howto::5} to "&7Hole dir jetzt deine &e/daily &7Belohnung – sie zählt doppelt!"
+
+    # Stale-Event nach /sk reload oder Neustart aufräumen:
+    # geplante Timer überleben keinen Neustart, das Ende regelt der 30s-Wächter.
+    if {skyblock.event.active} is set:
+        if {skyblock.event.started} is not set:
+            clearSkyblockEvent()
+        else if difference between {skyblock.event.started} and now is greater than or equal to {@duration} minutes:
+            clearSkyblockEvent()
+
+    send "{@prefix}&aEvent-System geladen (5 Events, alle {@interval} Min, Dauer {@duration} Min)." to console
+
+# --- BONUS GUTSCHREIBEN (mit Cap + gebündelter Auszahlung) ---
+# Schreibt kleine Beträge nur in eine Variable (sehr günstig pro Aktion);
+# die eigentliche Auszahlung erfolgt gebündelt im 30-Sekunden-Takt.
+function eventBonus(p: player, amount: number, cap: number):
+    if {skyblock.event.active} is not set:
+        stop
+    set {_uuid} to "%{_p}'s uuid%"
+    set {_earned} to {skyblock.event.earned::%{_uuid}%}
+    if {_earned} is not set:
+        set {_earned} to 0
+    # Cap erreicht -> nichts mehr gutschreiben (Anti-Farming)
+    if {_earned} is greater than or equal to {_cap}:
+        stop
+    set {_amt} to {_amount}
+    set {_sum} to {_earned} + {_amt}
+    if {_sum} is greater than {_cap}:
+        set {_amt} to {_cap} - {_earned}
+    if {_amt} is less than or equal to 0:
+        stop
+    set {skyblock.event.earned::%{_uuid}%} to {_earned} + {_amt}
+    add {_amt} to {skyblock.event.pending::%{_uuid}%}
+
+# --- EVENT STARTEN ---
+function startSkyblockEvent(id: number):
+    if {_id} is less than 1:
+        set {_id} to 1
+    if {_id} is greater than 5:
+        set {_id} to 5
+
+    # Sicherheitsnetz: offene Boni einer vorherigen Runde auszahlen,
+    # bevor die Zähler für das neue Event zurückgesetzt werden.
+    payoutPending()
+
+    set {skyblock.event.active} to {_id}
+    set {skyblock.event.started} to now
+    set {skyblock.event.until} to now + {@duration} minutes
+    delete {skyblock.event.warned}
+    # Auszahlungs-Lifecycle: Boni werden alle 30s (online), sofort bei `on quit`
+    # und beim Event-Ende ausgezahlt. Der pauschale Reset unten ist ein
+    # Sicherheitsnetz; ein noch nicht ausgezahlter Rest kann nur bei einem
+    # harten Server-Crash (ohne quit-Event) verloren gehen – vernachlässigbar klein.
+    delete {skyblock.event.earned::*}
+    delete {skyblock.event.pending::*}
+
+    # "Doppelte Tagesbelohnung"-Flag immer zuerst zurücksetzen, damit es
+    # ausschließlich während Event 5 aktiv ist (nie stale aus einer Vorrunde).
+    delete {skyblock.event.doubledaily}
+    # Flag für "Doppelte Tagesbelohnung" (wird von daily_rewards.sk gelesen)
+    if {_id} is 5:
+        set {skyblock.event.doubledaily} to true
+
+    broadcast ""
+    broadcast "&8&m─────────────────────────────────────"
+    broadcast "{@prefix}%{skyblock_event_names::%{_id}%}% &7ist gestartet!"
+    broadcast "{@prefix}%{skyblock_event_desc::%{_id}%}%"
+    broadcast "{@prefix}%{skyblock_event_howto::%{_id}%}%"
+    broadcast "{@prefix}&7Dauer: &e{@duration} Minuten &7· Status: &e/event"
+    broadcast "&8&m─────────────────────────────────────"
+    broadcast ""
+
+    loop all players:
+        play sound "entity.player.levelup" with volume 0.7 and pitch 1.4 to loop-player
+        send title "%{skyblock_event_names::%{_id}%}%" with subtitle "&7Event gestartet!" to loop-player for 4 seconds
+
+# --- EVENT BEENDEN (mit Rest-Auszahlung + Ansage) ---
+function endSkyblockEvent():
+    if {skyblock.event.active} is not set:
+        stop
+    set {_id} to {skyblock.event.active}
+
+    # Ausstehende Boni ein letztes Mal auszahlen (nur Online-Spieler)
+    payoutPending()
+
+    broadcast ""
+    broadcast "{@prefix}%{skyblock_event_names::%{_id}%}% &7ist beendet. Danke fürs Mitmachen!"
+    broadcast ""
+
+    loop all players:
+        play sound "block.note_block.bell" with volume 0.6 and pitch 1 to loop-player
+
+    clearSkyblockEvent()
+
+# --- EVENT-ZUSTAND KOMPLETT LEEREN ---
+function clearSkyblockEvent():
+    delete {skyblock.event.active}
+    delete {skyblock.event.started}
+    delete {skyblock.event.until}
+    delete {skyblock.event.doubledaily}
+    delete {skyblock.event.warned}
+    delete {skyblock.event.earned::*}
+    delete {skyblock.event.pending::*}
+
+# --- GEBÜNDELTE AUSZAHLUNG (nur Online-Spieler, ein CMI-Call pro Spieler) ---
+function payoutPending():
+    loop all players:
+        set {_uuid} to "%loop-player's uuid%"
+        set {_pending} to {skyblock.event.pending::%{_uuid}%}
+        if {_pending} is set:
+            if {_pending} is greater than 0:
+                set {_pending} to floor({_pending})
+                execute console command "cmi money give %loop-player% %{_pending}%"
+                send action bar "&a+%{_pending}%€ &7Event-Bonus" to loop-player
+                play sound "entity.experience_orb.pickup" with volume 0.4 and pitch 1.5 to loop-player
+                delete {skyblock.event.pending::%{_uuid}%}
+
+# --- BEIM VERLASSEN: offene Boni sofort auszahlen (schließt die 30s-Lücke) ---
+# CMI zahlt per Spielername auch bei Disconnect zuverlässig aus.
+on quit:
+    if {skyblock.event.active} is not set:
+        stop
+    set {_uuid} to "%player's uuid%"
+    set {_pending} to {skyblock.event.pending::%{_uuid}%}
+    if {_pending} is set:
+        if {_pending} is greater than 0:
+            set {_pending} to floor({_pending})
+            execute console command "cmi money give %player% %{_pending}%"
+            delete {skyblock.event.pending::%{_uuid}%}
+
+# --- ZENTRALER TAKT: Ende prüfen, Warnung, Meteor-Einschlag, Auszahlung ---
+every 30 seconds:
+    if {skyblock.event.active} is not set:
+        stop
+
+    # 1. Ende prüfen (Fensterdauer verstrichen? – robust auch nach Reload/Neustart)
+    if {skyblock.event.started} is set:
+        if difference between {skyblock.event.started} and now is greater than or equal to {@duration} minutes:
+            endSkyblockEvent()
+            stop
+
+    # 2. 1-Minuten-Warnung (einmalig pro Fenster)
+    if {skyblock.event.warned} is not set:
+        set {_left} to difference between now and {skyblock.event.until}
+        if {_left} is less than 61 seconds:
+            set {skyblock.event.warned} to true
+            broadcast "{@prefix}&7Das Event %{skyblock_event_names::%{skyblock.event.active}%}% &7endet in &c1 Minute&7!"
+
+    # 3. Meteoritenschauer: gelegentlicher Bonus-Einschlag für aktive Insel-Spieler
+    if {skyblock.event.active} is 1:
+        delete {_isle::*}
+        loop all players:
+            if name of loop-player's world contains "{@island_world}":
+                add loop-player to {_isle::*}
+        if size of {_isle::*} is greater than 0:
+            set {_lucky} to random element out of {_isle::*}
+            # Teilt sich bewusst den Meteor-Cap mit dem `on break`-Hook (Anti-Farming):
+            # Ticker-Bonus und Abbau-Bonus zählen gemeinsam auf {@cap_meteor}.
+            eventBonus({_lucky}, random integer between 25 and 50, {@cap_meteor})
+            # Glückspilz persönlich benachrichtigen ...
+            send "{@prefix}&b☄ &7Ein Meteorit ist &edirekt neben dir &7niedergegangen! Bonus gesichert." to {_lucky}
+            play sound "entity.generic.explode" with volume 0.5 and pitch 1.2 to {_lucky}
+            # ... und die übrigen Insel-Spieler informieren
+            loop {_isle::*}:
+                if loop-value is not {_lucky}:
+                    send "{@prefix}&b☄ &7Ein Meteorit ist nahe &e%{_lucky}% &7niedergegangen!" to loop-value
+
+    # 4. Ausstehende Boni gebündelt auszahlen
+    payoutPending()
+
+# --- AUTOMATISCHER START: alle {@interval} Minuten ein zufälliges Event ---
+every {@interval} minutes:
+    if {skyblock.event.active} is not set:
+        if number of all players is greater than or equal to 1:
+            startSkyblockEvent(random integer between 1 and 5)
+
+# ==================== TEILNAHME-HOOKS (nur Insel-Welt) ====================
+
+# --- ABBAU: Goldene Abbau-Stunde (nur Erze) & Meteoritenschauer (Teilnahme) ---
+on break:
+    if {skyblock.event.active} is 4:
+        if name of player's world contains "{@island_world}":
+            # Nur Erzblöcke belohnen (Material-Name enthält "ore")
+            if "%type of event-block%" contains "ore":
+                eventBonus(player, random integer between 8 and 18, {@cap_mining})
+    else if {skyblock.event.active} is 1:
+        if name of player's world contains "{@island_world}":
+            eventBonus(player, random integer between 4 and 10, {@cap_meteor})
+
+# --- ANGELN: Angel-Fieber ---
+on fish:
+    if {skyblock.event.active} is 2:
+        if fishing state is caught fish:
+            if name of player's world contains "{@island_world}":
+                eventBonus(player, random integer between 14 and 28, {@cap_fish})
+
+# --- MONSTER TÖTEN: Monster-Invasion (nur durch Spieler) ---
+on death of monster:
+    if {skyblock.event.active} is 3:
+        if attacker is a player:
+            set {_killer} to attacker
+            if name of {_killer}'s world contains "{@island_world}":
+                eventBonus({_killer}, random integer between 12 and 24, {@cap_monster})
+
+# ==================== BEFEHL ====================
+
+# --- /event: Status (Standard) + Admin-Unterbefehle start/stop ---
+command /event [<text>] [<number>]:
+    description: Zeigt das aktuelle Skyblock-Event und die Restzeit
+    aliases: /events, /aktion
+    executable by: players
+    trigger:
+        set {_sub} to ""
+        if arg-1 is set:
+            set {_sub} to arg-1 in lower case
+
+        # --- ADMIN: START ---
+        if {_sub} is "start":
+            if player does not have permission "skyblock.admin":
+                send "{@prefix}&cDazu hast du keine Berechtigung!"
+                stop
+            if {skyblock.event.active} is set:
+                send "{@prefix}&cEs läuft bereits ein Event! Beende es mit &e/event stop&c."
+                stop
+            set {_id} to arg-2
+            if {_id} is not set:
+                set {_id} to random integer between 1 and 5
+            startSkyblockEvent({_id})
+            stop
+
+        # --- ADMIN: STOP ---
+        if {_sub} is "stop":
+            if player does not have permission "skyblock.admin":
+                send "{@prefix}&cDazu hast du keine Berechtigung!"
+                stop
+            if {skyblock.event.active} is not set:
+                send "{@prefix}&cAktuell läuft kein Event."
+                stop
+            endSkyblockEvent()
+            send "{@prefix}&7Event wurde manuell beendet."
+            stop
+
+        # --- STATUS (Standard) ---
+        send ""
+        send "&8&m─────────────────────────────────────"
+        send "&3&l  ✦ SKYBLOCK-EVENTS ✦"
+        send "&8&m─────────────────────────────────────"
+        send ""
+        if {skyblock.event.active} is set:
+            set {_id} to {skyblock.event.active}
+            send "{@prefix}&7Aktives Event: %{skyblock_event_names::%{_id}%}%"
+            send "{@prefix}%{skyblock_event_desc::%{_id}%}%"
+            if {skyblock.event.until} is set:
+                set {_left} to difference between now and {skyblock.event.until}
+                send "{@prefix}&7Restzeit: &e%{_left}%"
+            set {_uuid} to "%player's uuid%"
+            set {_mine} to {skyblock.event.earned::%{_uuid}%}
+            if {_mine} is not set:
+                set {_mine} to 0
+            send "{@prefix}&7Dein Event-Bonus bisher: &a%{_mine}%€"
+        else:
+            send "{@prefix}&7Aktuell läuft kein Event."
+            send "{@prefix}&7Das nächste Event startet automatisch – bleib dran!"
+        send ""
+        send "&8&m─────────────────────────────────────"

@@ -14,61 +14,67 @@ auto-reward: true
 # Rewards given when completing the mission.
 rewards:
   commands:
-    - 'cmi money give %player% 15000'
-    - 'is admin msg %player% &e&lEntdecker | &7Mission Entdecker II abgeschlossen!'
-    - 'is admin msg %player% &e&lEntdecker | &7&oDu hast deine Insel auf ein neues Level gebracht!'
+    - 'cmi money give %player% 25000'
+    - 'is admin msg %player% &e&lEntdecker | &7Mission Entdecker III abgeschlossen!'
+    - 'is admin msg %player% &e&lEntdecker | &7Deine Insel hat jetzt einen eigenen Warp-Punkt!'
+    - 'is admin msg %player% &e&lEntdecker | &7&oDu bist jetzt ein Profi-Entdecker, Glückwunsch!'
 
 # List of events that will trigger the mission.
 events:
-  - IslandUpgradeEvent
+  - IslandCreateWarpEvent
 
 # Requirement of the event to complete the mission.
-success-check: 'event.getUpgradeName() != null'
+success-check: 'event.getWarpName() != null'
 
 # List of required missions that must be completed before completing this one.
 required-missions:
   - 'explorer_1'
+  - 'explorer_2'
 
 # Icons used in the menus.
 icons:
   locked:
     type: PAPER
-    name: '&aEntdecker II'
+    name: '&aEntdecker III'
     lore:
-      - '&7Verbessere deine Insel mit einem Upgrade.'
+      - '&7Erstelle einen Warp auf deiner Insel.'
       - ''
       - '&6Belohnungen:'
-      - '&8 - &715.000 €'
+      - '&8 - &725.000 €'
       - ''
       - '&c&l ✘ &7Gesperrt'
+    amount: 3
   not-completed:
     type: PAPER
-    name: '&aEntdecker II'
+    name: '&aEntdecker III'
     lore:
-      - '&7Verbessere deine Insel mit einem Upgrade.'
+      - '&7Erstelle einen Warp auf deiner Insel.'
       - ''
       - '&6Belohnungen:'
-      - '&8 - &715.000 €'
+      - '&8 - &725.000 €'
       - ''
       - '&c&l ✘ &7Nicht abgeschlossen'
+    amount: 3
   can-complete:
     type: PAPER
-    name: '&aEntdecker II'
+    name: '&aEntdecker III'
     lore:
-      - '&7Verbessere deine Insel mit einem Upgrade.'
+      - '&7Erstelle einen Warp auf deiner Insel.'
       - ''
       - '&6Belohnungen:'
-      - '&8 - &715.000 €'
+      - '&8 - &725.000 €'
       - ''
       - '&a&l ✔ &7Klicke, um deine Belohnung abzuholen.'
+    amount: 3
     glow: true
   completed:
     type: MAP
-    name: '&aEntdecker II'
+    name: '&aEntdecker III'
     lore:
-      - '&7Verbessere deine Insel mit einem Upgrade.'
+      - '&7Erstelle einen Warp auf deiner Insel.'
       - ''
       - '&6Belohnungen:'
-      - '&8 - &715.000 €'
+      - '&8 - &725.000 €'
       - ''
       - '&a&l ✔ &7Bereits abgeholt.'
+    amount: 3

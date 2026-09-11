@@ -14,48 +14,48 @@ auto-reward: true
 # Rewards given when completing the mission.
 rewards:
   commands:
-    - 'eco give %player% 25000'
-    - 'is admin msg %player% &e&lExplorer | &7Successfully finished the mission Nether Explorer!'
-    - 'is admin msg %player% &e&lExplorer | &7Are you ready for the real challenge?'
-    - 'is admin msg %player% &e&lExplorer | &7&oFor more information about the next mission, checkout /is missions'
+    - 'cmi money give %player% 5000'
+    - 'is admin msg %player% &e&lEntdecker | &7Mission Entdecker I abgeschlossen!'
+    - 'is admin msg %player% &e&lEntdecker | &7Ein neues Biom, ein neuer Anblick – erkunde weiter!'
+    - 'is admin msg %player% &e&lEntdecker | &7&oInfos zur nächsten Mission gibt es unter /is missions'
 
 # List of events that will trigger the mission.
 events:
-  - IslandSchematicPasteEvent
+  - IslandBiomeChangeEvent
 
 # Requirement of the event to complete the mission.
-success-check: 'event.getSchematic().endsWith("_nether")'
+success-check: 'event.getBiome() != null'
 
 # Icons used in the menus.
 icons:
   not-completed:
     type: PAPER
-    name: '&aNether Explorer'
+    name: '&aEntdecker I'
     lore:
-      - '&7Go to the Nether.'
+      - '&7Ändere das Biom deiner Insel.'
       - ''
-      - '&6Rewards:'
-      - '&8 - &7$25,000'
+      - '&6Belohnungen:'
+      - '&8 - &75.000 €'
       - ''
-      - '&c&l ✘ &7Not Completed'
+      - '&c&l ✘ &7Nicht abgeschlossen'
   can-complete:
     type: PAPER
-    name: '&aNether Explorer'
+    name: '&aEntdecker I'
     lore:
-      - '&7Go to the Nether.'
+      - '&7Ändere das Biom deiner Insel.'
       - ''
-      - '&6Rewards:'
-      - '&8 - &7$25,000'
+      - '&6Belohnungen:'
+      - '&8 - &75.000 €'
       - ''
-      - '&a&l ✔ &7Click to redeem your reward.'
+      - '&a&l ✔ &7Klicke, um deine Belohnung abzuholen.'
     glow: true
   completed:
     type: MAP
-    name: '&aNether Explorer'
+    name: '&aEntdecker I'
     lore:
-      - '&7Go to the Nether.'
+      - '&7Ändere das Biom deiner Insel.'
       - ''
-      - '&6Rewards:'
-      - '&8 - &7$25,000'
+      - '&6Belohnungen:'
+      - '&8 - &75.000 €'
       - ''
-      - '&a&l ✔ &7Already Claimed.'
+      - '&a&l ✔ &7Bereits abgeholt.'
