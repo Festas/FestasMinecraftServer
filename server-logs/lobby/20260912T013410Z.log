@@ -1,6 +1,6 @@
-[04:05:05] [ServerMain/INFO]: [bootstrap] Running Java 25 (OpenJDK 64-Bit Server VM 25.0.4+7-LTS; Eclipse Adoptium Temurin-25.0.4+7) on Linux 6.8.0-138-generic (amd64)
-[04:05:05] [ServerMain/INFO]: [bootstrap] Loading Paper 26.2-112-main@c9e894d (2026-08-11T05:18:39Z) for Minecraft 26.2
-[04:05:05] [ServerMain/INFO]: [PluginInitializerManager] Initializing plugins...
+[04:05:04] [ServerMain/INFO]: [bootstrap] Running Java 25 (OpenJDK 64-Bit Server VM 25.0.4+7-LTS; Eclipse Adoptium Temurin-25.0.4+7) on Linux 6.8.0-138-generic (amd64)
+[04:05:04] [ServerMain/INFO]: [bootstrap] Loading Paper 26.2-112-main@c9e894d (2026-08-11T05:18:39Z) for Minecraft 26.2
+[04:05:04] [ServerMain/INFO]: [PluginInitializerManager] Initializing plugins...
 [04:05:05] [ServerMain/INFO]: [PluginInitializerManager] Initialized 16 plugins
 [04:05:05] [ServerMain/INFO]: [PluginInitializerManager] Paper plugins (1):
  - CommandAPI (12.0.0)
@@ -12,8 +12,8 @@
 [04:05:05] [ServerMain/INFO]: [CommandAPI] Hooked into Paper for paper-specific API implementations
 [04:05:05] [ServerMain/INFO]: [CommandAPI] Loaded platform CommandAPIPaper > CommandAPIBukkit
 [04:05:08] [DataConverter MCTypeRegistry init thread/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Initialising converters for DataConverter...
-[04:05:09] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
-[04:05:09] [DataConverter MCTypeRegistry init thread/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Finished initialising converters for DataConverter in 350.7ms
+[04:05:08] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+[04:05:09] [DataConverter MCTypeRegistry init thread/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Finished initialising converters for DataConverter in 427.3ms
 [04:05:10] [ServerMain/INFO]: Loaded 1585 recipes
 [04:05:10] [ServerMain/INFO]: Loaded 1688 advancements
 [04:05:10] [Server thread/INFO]: Starting minecraft server version 26.2
@@ -68,19 +68,19 @@
 [04:05:11] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/jetbrains/annotations/23.1.0/annotations-23.1.0.jar
 [04:05:11] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.12.3
 [04:05:11] [Server thread/INFO]: [LuckPerms] Loading server plugin LuckPerms v5.5.71
-[04:05:11] [Server thread/INFO]: [LuckPerms] Loading configuration...
+[04:05:12] [Server thread/INFO]: [LuckPerms] Loading configuration...
 [04:05:12] [Server thread/INFO]: [Vault] Loading server plugin Vault v2.20.2
 [04:05:12] [Server thread/INFO]: [FastAsyncWorldEdit] Loading server plugin FastAsyncWorldEdit v2.15.4-SNAPSHOT-1370+dd6a724
-[04:05:12] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@72d91285]
+[04:05:12] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@7113dbda]
 [04:05:12] [Server thread/INFO]: [ProtocolLib] Loading server plugin ProtocolLib v5.4.0
 [04:05:12] [Server thread/WARN]: [ProtocolLib] Version (MC: 26.2.0) has not yet been tested! Proceed with caution.
 [04:05:12] [Server thread/INFO]: [WorldGuard] Loading server plugin WorldGuard v7.0.18+2392-fa605e6
 [04:05:12] [Server thread/INFO]: [packetevents] Loading server plugin packetevents v2.13.0
 [04:05:13] [Server thread/INFO]: [packetevents] Loading packetevents...
-[04:05:14] [Server thread/INFO]: [packetevents] Loaded packetevents v2.13.0
-[04:05:14] [Server thread/INFO]: [Skript] Loading server plugin Skript v2.16.1
-[04:05:14] [Server thread/INFO]: [CMILib] Loading server plugin CMILib v1.5.9.9
-[04:05:14] [Server thread/INFO]: [Oraxen] Loading server plugin Oraxen v1.218.0
+[04:05:13] [Server thread/INFO]: [packetevents] Loaded packetevents v2.13.0
+[04:05:13] [Server thread/INFO]: [Skript] Loading server plugin Skript v2.16.1
+[04:05:13] [Server thread/INFO]: [CMILib] Loading server plugin CMILib v1.5.9.9
+[04:05:13] [Server thread/INFO]: [Oraxen] Loading server plugin Oraxen v1.218.0
 [04:05:14] [Server thread/INFO]: [CMI] Loading server plugin CMI v9.8.9.8
 [04:05:14] [Server thread/INFO]: [CommandAPI] Loading server plugin CommandAPI v12.0.0
 [04:05:14] [Server thread/INFO]: [DeluxeMenus] Loading server plugin DeluxeMenus v1.14.1-Release
@@ -99,8 +99,8 @@
 [04:05:14] [Server thread/INFO]: [me.lucko.luckperms.lib.hikari.HikariDataSource] luckperms-hikari - Start completed.
 [04:05:14] [Server thread/INFO]: [LuckPerms] Loading messaging service... [REDIS]
 [04:05:14] [Server thread/INFO]: [LuckPerms] Loading internal permission managers...
-[04:05:15] [Server thread/INFO]: [LuckPerms] Performing initial data load...
-[04:05:15] [Server thread/INFO]: [LuckPerms] Successfully enabled. (took 999ms)
+[04:05:14] [Server thread/INFO]: [LuckPerms] Performing initial data load...
+[04:05:15] [Server thread/INFO]: [LuckPerms] Successfully enabled. (took 1018ms)
 [04:05:15] [Server thread/INFO]: [Vault] Enabling Vault v2.20.2
 [04:05:15] [Server thread/INFO]: [Vault] Enabled Version 2.20.2
 [04:05:15] [Server thread/INFO]: [LuckPerms] Registered Vault permission & chat hook.
@@ -120,15 +120,16 @@
 [04:05:15] [Server thread/WARN]: Please see https://docs.papermc.io/velocity/security for further information.
 [04:05:15] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
 [04:05:15] [Server thread/INFO]: Preparing level "lobby"
-[04:05:15] [ForkJoinPool.commonPool-worker-4/WARN]: [com.fastasyncworldedit.core.util.UpdateNotification] An update for FastAsyncWorldEdit is available. You are 10 build(s) out of date.
-You are running build 1370, the latest version is build 1380.
+[04:05:15] [ForkJoinPool.commonPool-worker-5/WARN]: [com.fastasyncworldedit.core.util.UpdateNotification] An update for FastAsyncWorldEdit is available. You are 17 build(s) out of date.
+You are running build 1370, the latest version is build 1387.
 Update at https://ci.athion.net/job/FastAsyncWorldEdit
 [04:05:16] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:overworld'...
 [04:05:16] [Server thread/INFO]: Preparing spawn area: 100%
 [04:05:16] [Server thread/INFO]: Prepared spawn area in 1 ms
 [04:05:16] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:the_nether'...
-[04:05:16] [Server thread/INFO]: Prepared spawn area in 0 ms
-[04:05:16] [Server thread/INFO]: Done preparing level "lobby" (0.223s)
+[04:05:16] [Server thread/INFO]: Preparing spawn area: 100%
+[04:05:16] [Server thread/INFO]: Prepared spawn area in 1 ms
+[04:05:16] [Server thread/INFO]: Done preparing level "lobby" (0.211s)
 [04:05:16] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.12.3
 [04:05:16] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
 [04:05:16] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: vaultunlocked [2.13.1]
@@ -148,40 +149,35 @@ Update at https://ci.athion.net/job/FastAsyncWorldEdit
 [04:05:16] [packetevents-update-check-thread/INFO]: [packetevents] Checking for updates, please wait...
 [04:05:16] [Server thread/INFO]: [Skript] Enabling Skript v2.16.1
 [04:05:16] [packetevents-update-check-thread/INFO]: [packetevents] You are running the latest release: 2.13.0
-[04:05:17] [ForkJoinPool.commonPool-worker-2/INFO]: [Skript] A new version of Skript is available: 2.16.2 (you're currently running 2.16.1)
-[04:05:17] [ForkJoinPool.commonPool-worker-2/INFO]: Download it at: https://github.com/SkriptLang/Skript/releases/download/2.16.2/Skript-2.16.2.jar
+[04:05:16] [ForkJoinPool.commonPool-worker-5/INFO]: [Skript] A new version of Skript is available: 2.16.2 (you're currently running 2.16.1)
+[04:05:16] [ForkJoinPool.commonPool-worker-5/INFO]: Download it at: https://github.com/SkriptLang/Skript/releases/download/2.16.2/Skript-2.16.2.jar
 [04:05:17] [Server thread/INFO]: [Skript]  ~ created by & © Peter Güttinger aka Njol ~
 [04:05:17] [Server thread/INFO]: [CMILib] Enabling CMILib v1.5.9.9
 [04:05:17] [Server thread/INFO]: Server version detection by new method: v26_2_0 Legacy: false Mojang Mappings: true
 [04:05:17] [Server thread/INFO]: Server version: v26_2_0 - 26.2.0 - paper  26.2-112-c9e894d (MC: 26.2)
-[04:05:18] [Server thread/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+[04:05:17] [Server thread/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
 [04:05:18] [Server thread/INFO]: CMI hooked.
 [04:05:18] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: cmil [1.5.9.9]
 [04:05:18] [Server thread/INFO]: PlaceholderAPI hooked.
-[04:05:18] [Server thread/INFO]: Updated (EN) language file. Took 43ms
+[04:05:18] [Server thread/INFO]: Updated (EN) language file. Took 23ms
 [04:05:18] [Server thread/INFO]: [Oraxen] Enabling Oraxen v1.218.0
 [04:05:18] [Server thread/INFO]: Oraxen | [ProtocolLibAdapter] registerTitleListener called
 [04:05:18] [Server thread/INFO]: Oraxen | [ProtocolLibAdapter] Title Listener registered successfully
 [04:05:18] [Server thread/INFO]: Oraxen | Custom paintings already hot reloaded (0 unchanged).
-[04:05:18] [ForkJoinPool.commonPool-worker-2/INFO]: [Skript] Loaded 5750 aliases in 748ms
-[04:05:18] [Server thread/INFO]: Oraxen | TextEffects.shader.encoding 'alpha_lsb' is deprecated. Using 'effect_font'.
+[04:05:18] [ForkJoinPool.commonPool-worker-5/INFO]: [Skript] Loaded 5750 aliases in 734ms
 [04:05:18] [Server thread/INFO]: Oraxen | Loaded 4 text effects
 [04:05:18] [Server thread/INFO]: Oraxen | Loaded 16 glyphs, 0 reference glyphs, 1 animated glyphs
 [04:05:18] [Server thread/INFO]: Oraxen | Hot reloaded 1 new custom jukebox song(s), 0 updated, 0 removed, 0 unchanged.
-[04:05:18] [Server thread/INFO]: Oraxen | Block mechanic caveblock uses legacy 'hardness'/'drop' keys; please migrate them to a 'breaking' rule.
 [04:05:18] [Server thread/INFO]: Oraxen | Block mechanic amethyst_ore uses legacy 'hardness'/'drop' keys; please migrate them to a 'breaking' rule.
 [04:05:18] [Server thread/INFO]: Oraxen | Block mechanic ruby_ore uses legacy 'hardness'/'drop' keys; please migrate them to a 'breaking' rule.
 [04:05:18] [Server thread/INFO]: Oraxen | Block mechanic onyx_ore uses legacy 'hardness'/'drop' keys; please migrate them to a 'breaking' rule.
 [04:05:18] [Server thread/INFO]: Oraxen | Block mechanic orax_ore uses legacy 'hardness'/'drop' keys; please migrate them to a 'breaking' rule.
-[04:05:18] [Server thread/INFO]: Oraxen | Block mechanic brunnera uses legacy 'hardness'/'drop' keys; please migrate them to a 'breaking' rule.
-[04:05:18] [Server thread/INFO]: Oraxen | Block mechanic daffodil uses legacy 'hardness'/'drop' keys; please migrate them to a 'breaking' rule.
-[04:05:18] [Server thread/INFO]: Oraxen | Block mechanic dailily uses legacy 'hardness'/'drop' keys; please migrate them to a 'breaking' rule.
-[04:05:19] [Server thread/INFO]: Oraxen | Successfully loaded on Ubuntu 26.04 LTS (resolute)
-[04:05:19] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: oraxen [1.218.0]
-[04:05:19] [Server thread/INFO]: Oraxen | Plugin "PlaceholderAPI" detected, enabling hooks
-[04:05:19] [Server thread/INFO]: Oraxen | Skript compatibility enabled - Oraxen syntax registered
-[04:05:19] [Server thread/INFO]: Oraxen | Plugin "Skript" detected, enabling hooks
-[04:05:19] [Server thread/INFO]: [CMI] Enabling CMI v9.8.9.8
+[04:05:18] [Server thread/INFO]: Oraxen | Successfully loaded on Ubuntu 26.04 LTS (resolute)
+[04:05:18] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: oraxen [1.218.0]
+[04:05:18] [Server thread/INFO]: Oraxen | Plugin "PlaceholderAPI" detected, enabling hooks
+[04:05:18] [Server thread/INFO]: Oraxen | Skript compatibility enabled - Oraxen syntax registered
+[04:05:18] [Server thread/INFO]: Oraxen | Plugin "Skript" detected, enabling hooks
+[04:05:18] [Server thread/INFO]: [CMI] Enabling CMI v9.8.9.8
 [04:05:19] [Server thread/INFO]: _______________________________________________________
 [04:05:19] [Server thread/INFO]:  
 [04:05:19] [Server thread/INFO]:  ██████╗███╗   ███╗██╗
@@ -193,34 +189,33 @@ Update at https://ci.athion.net/job/FastAsyncWorldEdit
 [04:05:19] [Server thread/INFO]: _______________________________________________________
 [04:05:19] [Server thread/INFO]: Integrating PaperSpigot async methods
 [04:05:19] [Server thread/INFO]: Vault found. (Loaded: true)
-[04:05:19] [CMI-Thread-1/INFO]: Loaded (-) locale download into memory. Took 9ms
-[04:05:19] [Server thread/INFO]: Loaded (71) 70 Enabled and 1 Disabled modules into memory. Took 60ms
+[04:05:19] [CMI-Thread-1/INFO]: Loaded (-) locale download into memory. Took 6ms
+[04:05:19] [Server thread/INFO]: Loaded (71) 70 Enabled and 1 Disabled modules into memory. Took 62ms
 [04:05:19] [Server thread/INFO]: Initialized Cipher256 AES
 [04:05:19] [Server thread/INFO]: Loaded (61) regular alias into memory. Took 26ms
 [04:05:19] [CMI-Thread-2/INFO]: Loaded (1) custom text's into memory. Took 4ms
-[04:05:19] [Server thread/INFO]: (RandomTeleportation) Can't find world with (lobby_the_end) name
 [04:05:19] [Server thread/INFO]: SQLite 3.49.1 data base type detected
-[04:05:19] [Server thread/INFO]: Loaded (-) SqLite into memory. Took 82ms
+[04:05:19] [Server thread/INFO]: Loaded (-) SqLite into memory. Took 73ms
 [04:05:19] [Server thread/INFO]: Vault was found - Enabling capabilities. Economy: CMIEconomy
 [04:05:19] [Server thread/INFO]: Loaded (5) warning categories into memory. Took 0ms
 [04:05:19] [Server thread/INFO]: Loaded (3) warning commands into memory. Took 0ms
 [04:05:19] [Server thread/INFO]: Loaded (0) cooldowns into memory. Took 0ms
-[04:05:19] [Server thread/INFO]: Loaded (160) custom mob heads into memory. Took 9ms
+[04:05:19] [Server thread/INFO]: Loaded (160) custom mob heads into memory. Took 12ms
 [04:05:19] [Server thread/INFO]: Loaded (4) chat bubble groups into memory. Took 1ms
-[04:05:19] [Server thread/INFO]: Loaded (5) kits into memory. Took 9ms
+[04:05:19] [Server thread/INFO]: Loaded (5) kits into memory. Took 8ms
 [04:05:19] [Server thread/INFO]: Loaded (5) dialogs into memory. Took 7ms
-[04:05:20] [Server thread/INFO]: Loaded (7) ranks into memory. Took 6ms
-[04:05:20] [Server thread/INFO]: Loaded (8) playtime rewards into memory. Took 1ms
-[04:05:20] [Server thread/INFO]: Executed Player DB querry in 0ms
-[04:05:20] [Server thread/INFO]: Loaded (9) player data into memory. Took 7ms
-[04:05:20] [Server thread/INFO]: Loaded (0) playtime records into memory. Took 1ms
-[04:05:20] [Server thread/INFO]: Loaded (0) playtime reward records into memory. Took 0ms
-[04:05:20] [Server thread/INFO]: Loaded (0) custom alias into memory. Took 1ms
-[04:05:20] [Server thread/INFO]: Loaded (-) Registered events into memory. Took 124ms
-[04:05:20] [Server thread/INFO]: Loaded (22) event action commands into memory. Took 3ms
-[04:05:20] [Server thread/INFO]: Loaded (EN) language file into memory. Took 70ms
-[04:05:20] [Server thread/INFO]: Loaded (DE) language file into memory. Took 50ms
-[04:05:20] [Server thread/INFO]: Loaded (245) worth values into memory. Took 23ms
+[04:05:19] [Server thread/INFO]: Loaded (7) ranks into memory. Took 5ms
+[04:05:19] [Server thread/INFO]: Loaded (8) playtime rewards into memory. Took 1ms
+[04:05:19] [Server thread/INFO]: Executed Player DB querry in 0ms
+[04:05:19] [Server thread/INFO]: Loaded (9) player data into memory. Took 6ms
+[04:05:19] [Server thread/INFO]: Loaded (0) playtime records into memory. Took 1ms
+[04:05:19] [Server thread/INFO]: Loaded (0) playtime reward records into memory. Took 0ms
+[04:05:19] [Server thread/INFO]: Loaded (0) custom alias into memory. Took 1ms
+[04:05:19] [Server thread/INFO]: Loaded (-) Registered events into memory. Took 108ms
+[04:05:19] [Server thread/INFO]: Loaded (22) event action commands into memory. Took 3ms
+[04:05:19] [Server thread/INFO]: Loaded (EN) language file into memory. Took 63ms
+[04:05:20] [Server thread/INFO]: Loaded (DE) language file into memory. Took 45ms
+[04:05:20] [Server thread/INFO]: Loaded (245) worth values into memory. Took 18ms
 [04:05:20] [Server thread/INFO]: VaultPermissions found. (Loaded: true)
 [04:05:20] [Server thread/INFO]: PlaceholderAPI found. (Loaded: true)
 [04:05:20] [Server thread/INFO]: Loaded (5) schedules into memory. Took 4ms
@@ -241,18 +236,18 @@ Update at https://ci.athion.net/job/FastAsyncWorldEdit
 [04:05:20] [Server thread/INFO]: [TAB-Bridge] Enabling TAB-Bridge v6.2.2
 [04:05:20] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: tab [6.2.2]
 [04:05:20] [Server thread/INFO]: [Plan] Enabling Plan v5.8 build 3605
-[04:05:21] [Server thread/INFO]: [Plan] 
-[04:05:21] [Server thread/INFO]: [Plan]            ██▌
-[04:05:21] [Server thread/INFO]: [Plan]      ██▌   ██▌
-[04:05:21] [Server thread/INFO]: [Plan]   ██▌██▌██▌██▌  Player Analytics
-[04:05:21] [Server thread/INFO]: [Plan]   ██▌██▌██▌██▌  v5.8 build 3605
-[04:05:21] [Server thread/INFO]: [Plan] 
-[04:05:21] [Server thread/INFO]: [Plan] Locale: 'English' by AuroraLS3
-[04:05:21] [Server thread/INFO]: [Plan] Downloading MySQL Driver, this may take a while...
+[04:05:20] [Server thread/INFO]: [Plan] 
+[04:05:20] [Server thread/INFO]: [Plan]            ██▌
+[04:05:20] [Server thread/INFO]: [Plan]      ██▌   ██▌
+[04:05:20] [Server thread/INFO]: [Plan]   ██▌██▌██▌██▌  Player Analytics
+[04:05:20] [Server thread/INFO]: [Plan]   ██▌██▌██▌██▌  v5.8 build 3605
+[04:05:20] [Server thread/INFO]: [Plan] 
+[04:05:20] [Server thread/INFO]: [Plan] Locale: 'English' by AuroraLS3
+[04:05:20] [Server thread/INFO]: [Plan] Downloading MySQL Driver, this may take a while...
+[04:05:21] [Plan MySQLDB-transaction-thread-1/INFO]: [Plan] Database: Making sure schema is up to date..
 [04:05:21] [Server thread/INFO]: [Plan] MySQL-database connection established.
 [04:05:21] [Server thread/INFO]: [Plan] WebServer was not initialized. (WebServer.DisableWebServer: true)
 [04:05:21] [Server thread/INFO]: [Plan] Loading server identifying information
-[04:05:21] [Plan MySQLDB-transaction-thread-1/INFO]: [Plan] Database: Making sure schema is up to date..
 [04:05:21] [Server thread/INFO]: [Plan] Server identifier loaded: 82755ba5-91eb-4cca-a6a3-be06d891cb3d
 [04:05:21] [Plan Non critical-pool-5/INFO]: [Plan] Proxy server detected in the database - Proxy Webserver address is 'https://mc-stats.festas-builds.com'.
 [04:05:21] [Server thread/INFO]: [Plan] Registered extension: CMI
@@ -275,23 +270,21 @@ Update at https://ci.athion.net/job/FastAsyncWorldEdit
 [04:05:21] [Server thread/INFO]: [Skript]     Loaded regions hook for WorldGuard. Please note that Skript's region hooks are deprecated and will be removed in a future release. For WorldGuard support, we recommend using skript-worldguard: https://github.com/SkriptLang/skript-worldguard
 [04:05:21] [Server thread/INFO]: [Skript] Loading variables...
 [04:05:21] [Server thread/INFO]: [Skript] Loaded 18 variables in 0.0 seconds
-[04:05:21] [Craft Scheduler Thread - 1 - Plan/INFO]: [Plan] You're using the latest version.
-[04:05:22] [Server thread/INFO]: [Skript] Line 91: (navigator.sk)
-[04:05:22] [Server thread/INFO]:     There's no loop that matches 'loop-value is book'
-[04:05:22] [Server thread/INFO]:     Line: if loop-value is compass or loop-value is book:
-[04:05:22] [Server thread/INFO]:  
-[04:05:22] [Server thread/INFO]: [Skript] Line 101: (navigator.sk)
-[04:05:22] [Server thread/INFO]:     Can't understand this condition: 'clicked item is compass or clicked item is book'
-[04:05:22] [Server thread/INFO]:     Line: if clicked item is compass or clicked item is book:
+[04:05:21] [Craft Scheduler Thread - 1 - Plan/INFO]: [Plan] ----------------------------------------
+[04:05:21] [Craft Scheduler Thread - 1 - Plan/INFO]: [Plan] New Release (5.8.3638) is available https://github.com/plan-player-analytics/Plan/releases
+[04:05:21] [Craft Scheduler Thread - 1 - Plan/INFO]: [Plan] ----------------------------------------
+[04:05:22] [Server thread/INFO]: [Skript] Line 106: (navigator.sk)
+[04:05:22] [Server thread/INFO]:     There's no slot is 8 in an on inventory click event.
+[04:05:22] [Server thread/INFO]:     Line: if index of event-slot is 4 or index of event-slot is 8:
 [04:05:22] [Server thread/INFO]:  
 [04:05:22] [Server thread/INFO]: [Lobby] Announcement-System geladen (10 Nachrichten)!
-[04:05:22] [Server thread/INFO]: [Skript] Loaded 3 scripts with a total of 31 structures in 0.44 seconds
+[04:05:22] [Server thread/INFO]: [Skript] Loaded 3 scripts with a total of 31 structures in 0.78 seconds
 [04:05:22] [Server thread/INFO]: [Skript] Finished loading.
 [04:05:22] [Server thread/INFO]: [CMI] Permission plugin: LuckPerms5.5.71
 [04:05:22] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: cmi [9.8.9.8]
 [04:05:22] [Server thread/INFO]: [CMI] PlaceholderAPI hooked.
 [04:05:22] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: plan [5.8 build 3605]
-[04:05:22] [Server thread/INFO]: Done (17.804s)! For help, type "help"
+[04:05:22] [Server thread/INFO]: Done (18.253s)! For help, type "help"
 [04:05:22] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: luckperms [5.4-R2]
 [04:05:22] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: player-j17 [1.0.3]
 [04:05:22] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: bungee [2.3]
@@ -303,19 +296,13 @@ Update at https://ci.athion.net/job/FastAsyncWorldEdit
 [04:05:22] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: statistic [2.0.2]
 [04:05:22] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: server [2.7.3]
 [04:05:22] [Server thread/INFO]: 10 placeholder hook(s) registered!
-[04:05:22] [Paper Async Task Handler Thread - 1/INFO]: *** Currently you are 9 builds behind ***
+[04:05:22] [Paper Async Task Handler Thread - 1/INFO]: *** Currently you are 11 builds behind ***
 [04:05:22] [Paper Async Task Handler Thread - 1/INFO]: *** It is highly recommended to download the latest build from https://papermc.io/downloads/paper ***
-[05:10:55] [User Authenticator #0/INFO]: UUID of player _BlueSnow2010_ is 20f1f29c-bdfa-4425-aceb-c2a8fe9535f9
-[05:10:55] [Server thread/INFO]: [HorriblePlayerLoginEventHack] You have plugins listening to the PlayerLoginEvent, this will cause re-configuration APIs to be unavailable: [LuckPerms, Plan, CMI, DeluxeMenus, ProtocolLib, WorldGuard]
-[05:10:57] [Server thread/INFO]: _BlueSnow2010_ (formerly known as BlueDog2010) joined the game
-[05:10:57] [Server thread/INFO]: _BlueSnow2010_[/150.228.35.254:45166] logged in with entity id 1 at ([minecraft:overworld]295.86714480322706, 50.0, -1167.0766391920306)
-[05:11:18] [Server thread/INFO]: _BlueSnow2010_ lost connection: Disconnected
-[05:11:18] [Server thread/INFO]: _BlueSnow2010_ left the game
-[10:06:27] [CMI-Thread-4/INFO]: [CMI] SQLite 3.49.1 data base type detected
-[10:06:27] [CMI-Thread-5/INFO]: [CMI] Start Back up
-[10:06:27] [CMI-Thread-5/INFO]: [CMI] Copied playtimereward data
-[10:06:27] [CMI-Thread-5/INFO]: [CMI] Copied users data
-[10:06:27] [CMI-Thread-5/INFO]: [CMI] Finish Back up copy process
-[10:06:27] [CMI-Thread-6/INFO]: [CMI] Backup compacted: 2026-09-04_10-06-27_cmi.sqlite.db.zip
-[10:06:27] [CMI-Thread-5/INFO]: [CMI] Removed temporary file
-[10:06:27] [CMI-Thread-5/INFO]: [CMI] Deleted old backup: 2026-08-25_03-06-27_cmi.sqlite.db.zip
+[13:06:27] [CMI-Thread-4/INFO]: [CMI] SQLite 3.49.1 data base type detected
+[13:06:27] [CMI-Thread-5/INFO]: [CMI] Start Back up
+[13:06:27] [CMI-Thread-5/INFO]: [CMI] Copied playtimereward data
+[13:06:27] [CMI-Thread-5/INFO]: [CMI] Copied users data
+[13:06:27] [CMI-Thread-5/INFO]: [CMI] Finish Back up copy process
+[13:06:27] [CMI-Thread-6/INFO]: [CMI] Backup compacted: 2026-09-11_13-06-27_cmi.sqlite.db.zip
+[13:06:27] [CMI-Thread-5/INFO]: [CMI] Removed temporary file
+[13:06:27] [CMI-Thread-5/INFO]: [CMI] Deleted old backup: 2026-09-01_09-06-26_cmi.sqlite.db.zip

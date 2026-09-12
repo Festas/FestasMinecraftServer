@@ -13,7 +13,7 @@
 [04:05:05] [ServerMain/INFO]: [CommandAPI] Loaded platform CommandAPIPaper > CommandAPIBukkit
 [04:05:08] [DataConverter MCTypeRegistry init thread/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Initialising converters for DataConverter...
 [04:05:08] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
-[04:05:09] [DataConverter MCTypeRegistry init thread/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Finished initialising converters for DataConverter in 334.1ms
+[04:05:09] [DataConverter MCTypeRegistry init thread/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Finished initialising converters for DataConverter in 427.3ms
 [04:05:10] [ServerMain/INFO]: Loaded 1585 recipes
 [04:05:10] [ServerMain/INFO]: Loaded 1688 advancements
 [04:05:10] [Server thread/INFO]: Starting minecraft server version 26.2
@@ -68,10 +68,10 @@
 [04:05:11] [Server thread/INFO]: [SpigotLibraryLoader] [Oraxen] Loaded library /home/container/libraries/org/jetbrains/annotations/23.1.0/annotations-23.1.0.jar
 [04:05:11] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.12.3
 [04:05:11] [Server thread/INFO]: [LuckPerms] Loading server plugin LuckPerms v5.5.71
-[04:05:11] [Server thread/INFO]: [LuckPerms] Loading configuration...
+[04:05:12] [Server thread/INFO]: [LuckPerms] Loading configuration...
 [04:05:12] [Server thread/INFO]: [Vault] Loading server plugin Vault v2.20.2
 [04:05:12] [Server thread/INFO]: [FastAsyncWorldEdit] Loading server plugin FastAsyncWorldEdit v2.15.4-SNAPSHOT-1370+dd6a724
-[04:05:12] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@79d961c2]
+[04:05:12] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@7113dbda]
 [04:05:12] [Server thread/INFO]: [ProtocolLib] Loading server plugin ProtocolLib v5.4.0
 [04:05:12] [Server thread/WARN]: [ProtocolLib] Version (MC: 26.2.0) has not yet been tested! Proceed with caution.
 [04:05:12] [Server thread/INFO]: [WorldGuard] Loading server plugin WorldGuard v7.0.18+2392-fa605e6
@@ -81,15 +81,15 @@
 [04:05:13] [Server thread/INFO]: [Skript] Loading server plugin Skript v2.16.1
 [04:05:13] [Server thread/INFO]: [CMILib] Loading server plugin CMILib v1.5.9.9
 [04:05:13] [Server thread/INFO]: [Oraxen] Loading server plugin Oraxen v1.218.0
-[04:05:13] [Server thread/INFO]: [CMI] Loading server plugin CMI v9.8.9.8
-[04:05:13] [Server thread/INFO]: [CommandAPI] Loading server plugin CommandAPI v12.0.0
-[04:05:13] [Server thread/INFO]: [DeluxeMenus] Loading server plugin DeluxeMenus v1.14.1-Release
-[04:05:13] [Server thread/WARN]: [DeluxeMenus] Could not setup a NMS hook for your server version! The following Item options will not work: nbt_int, nbt_ints, nbt_string and nbt_strings.
-[04:05:13] [Server thread/INFO]: [CMIEInjector] Loading server plugin CMIEInjector v1.0.2.4
-[04:05:13] [Server thread/INFO]: [TAB-Bridge] Loading server plugin TAB-Bridge v6.2.2
-[04:05:13] [Server thread/INFO]: [Plan] Loading server plugin Plan v5.8 build 3605
-[04:05:13] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[04:05:13] [Server thread/INFO]: [LuckPerms] Enabling LuckPerms v5.5.71
+[04:05:14] [Server thread/INFO]: [CMI] Loading server plugin CMI v9.8.9.8
+[04:05:14] [Server thread/INFO]: [CommandAPI] Loading server plugin CommandAPI v12.0.0
+[04:05:14] [Server thread/INFO]: [DeluxeMenus] Loading server plugin DeluxeMenus v1.14.1-Release
+[04:05:14] [Server thread/WARN]: [DeluxeMenus] Could not setup a NMS hook for your server version! The following Item options will not work: nbt_int, nbt_ints, nbt_string and nbt_strings.
+[04:05:14] [Server thread/INFO]: [CMIEInjector] Loading server plugin CMIEInjector v1.0.2.4
+[04:05:14] [Server thread/INFO]: [TAB-Bridge] Loading server plugin TAB-Bridge v6.2.2
+[04:05:14] [Server thread/INFO]: [Plan] Loading server plugin Plan v5.8 build 3605
+[04:05:14] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[04:05:14] [Server thread/INFO]: [LuckPerms] Enabling LuckPerms v5.5.71
 [04:05:14] [Server thread/INFO]:         __    
 [04:05:14] [Server thread/INFO]:   |    |__)   LuckPerms v5.5.71
 [04:05:14] [Server thread/INFO]:   |___ |      Running on Bukkit - Paper
@@ -100,14 +100,14 @@
 [04:05:14] [Server thread/INFO]: [LuckPerms] Loading messaging service... [REDIS]
 [04:05:14] [Server thread/INFO]: [LuckPerms] Loading internal permission managers...
 [04:05:14] [Server thread/INFO]: [LuckPerms] Performing initial data load...
-[04:05:14] [Server thread/INFO]: [LuckPerms] Successfully enabled. (took 969ms)
-[04:05:14] [Server thread/INFO]: [Vault] Enabling Vault v2.20.2
-[04:05:14] [Server thread/INFO]: [Vault] Enabled Version 2.20.2
-[04:05:14] [Server thread/INFO]: [LuckPerms] Registered Vault permission & chat hook.
-[04:05:14] [Server thread/INFO]: [FastAsyncWorldEdit] Enabling FastAsyncWorldEdit v2.15.4-SNAPSHOT-1370+dd6a724
-[04:05:14] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] LZ4 Compression Binding loaded successfully
-[04:05:14] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] ZSTD Compression Binding loaded successfully
-[04:05:14] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[04:05:15] [Server thread/INFO]: [LuckPerms] Successfully enabled. (took 1018ms)
+[04:05:15] [Server thread/INFO]: [Vault] Enabling Vault v2.20.2
+[04:05:15] [Server thread/INFO]: [Vault] Enabled Version 2.20.2
+[04:05:15] [Server thread/INFO]: [LuckPerms] Registered Vault permission & chat hook.
+[04:05:15] [Server thread/INFO]: [FastAsyncWorldEdit] Enabling FastAsyncWorldEdit v2.15.4-SNAPSHOT-1370+dd6a724
+[04:05:15] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] LZ4 Compression Binding loaded successfully
+[04:05:15] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] ZSTD Compression Binding loaded successfully
+[04:05:15] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
 [04:05:15] [Server thread/INFO]: WEPIF: Vault detected! Using Vault for permissions
 [04:05:15] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.fawe.v26_2.PaperweightFaweAdapter as the Bukkit adapter
 [04:05:15] [Server thread/INFO]: [ProtocolLib] Enabling ProtocolLib v5.4.0
@@ -120,19 +120,20 @@
 [04:05:15] [Server thread/WARN]: Please see https://docs.papermc.io/velocity/security for further information.
 [04:05:15] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
 [04:05:15] [Server thread/INFO]: Preparing level "lobby"
-[04:05:15] [ForkJoinPool.commonPool-worker-7/WARN]: [com.fastasyncworldedit.core.util.UpdateNotification] An update for FastAsyncWorldEdit is available. You are 15 build(s) out of date.
-You are running build 1370, the latest version is build 1385.
+[04:05:15] [ForkJoinPool.commonPool-worker-5/WARN]: [com.fastasyncworldedit.core.util.UpdateNotification] An update for FastAsyncWorldEdit is available. You are 17 build(s) out of date.
+You are running build 1370, the latest version is build 1387.
 Update at https://ci.athion.net/job/FastAsyncWorldEdit
-[04:05:15] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:overworld'...
-[04:05:15] [Server thread/INFO]: Preparing spawn area: 100%
-[04:05:15] [Server thread/INFO]: Prepared spawn area in 1 ms
-[04:05:15] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:the_nether'...
-[04:05:15] [Server thread/INFO]: Prepared spawn area in 0 ms
-[04:05:15] [Server thread/INFO]: Done preparing level "lobby" (0.250s)
-[04:05:15] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.12.3
-[04:05:15] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
-[04:05:15] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: vaultunlocked [2.13.1]
-[04:05:15] [Server thread/INFO]: [WorldGuard] Enabling WorldGuard v7.0.18+2392-fa605e6
+[04:05:16] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:overworld'...
+[04:05:16] [Server thread/INFO]: Preparing spawn area: 100%
+[04:05:16] [Server thread/INFO]: Prepared spawn area in 1 ms
+[04:05:16] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:the_nether'...
+[04:05:16] [Server thread/INFO]: Preparing spawn area: 100%
+[04:05:16] [Server thread/INFO]: Prepared spawn area in 1 ms
+[04:05:16] [Server thread/INFO]: Done preparing level "lobby" (0.211s)
+[04:05:16] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.12.3
+[04:05:16] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
+[04:05:16] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: vaultunlocked [2.13.1]
+[04:05:16] [Server thread/INFO]: [WorldGuard] Enabling WorldGuard v7.0.18+2392-fa605e6
 [04:05:16] [Server thread/INFO]: [WorldGuard] (lobby) TNT ignition is PERMITTED.
 [04:05:16] [Server thread/INFO]: [WorldGuard] (lobby) Lighters are PERMITTED.
 [04:05:16] [Server thread/INFO]: [WorldGuard] (lobby) Lava fire is PERMITTED.
@@ -155,15 +156,15 @@ Update at https://ci.athion.net/job/FastAsyncWorldEdit
 [04:05:17] [Server thread/INFO]: Server version detection by new method: v26_2_0 Legacy: false Mojang Mappings: true
 [04:05:17] [Server thread/INFO]: Server version: v26_2_0 - 26.2.0 - paper  26.2-112-c9e894d (MC: 26.2)
 [04:05:17] [Server thread/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
-[04:05:17] [Server thread/INFO]: CMI hooked.
-[04:05:17] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: cmil [1.5.9.9]
-[04:05:17] [Server thread/INFO]: PlaceholderAPI hooked.
-[04:05:17] [Server thread/INFO]: Updated (EN) language file. Took 26ms
-[04:05:17] [Server thread/INFO]: [Oraxen] Enabling Oraxen v1.218.0
-[04:05:17] [Server thread/INFO]: Oraxen | [ProtocolLibAdapter] registerTitleListener called
-[04:05:17] [Server thread/INFO]: Oraxen | [ProtocolLibAdapter] Title Listener registered successfully
-[04:05:17] [Server thread/INFO]: Oraxen | Custom paintings already hot reloaded (0 unchanged).
-[04:05:18] [ForkJoinPool.commonPool-worker-5/INFO]: [Skript] Loaded 5750 aliases in 752ms
+[04:05:18] [Server thread/INFO]: CMI hooked.
+[04:05:18] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: cmil [1.5.9.9]
+[04:05:18] [Server thread/INFO]: PlaceholderAPI hooked.
+[04:05:18] [Server thread/INFO]: Updated (EN) language file. Took 23ms
+[04:05:18] [Server thread/INFO]: [Oraxen] Enabling Oraxen v1.218.0
+[04:05:18] [Server thread/INFO]: Oraxen | [ProtocolLibAdapter] registerTitleListener called
+[04:05:18] [Server thread/INFO]: Oraxen | [ProtocolLibAdapter] Title Listener registered successfully
+[04:05:18] [Server thread/INFO]: Oraxen | Custom paintings already hot reloaded (0 unchanged).
+[04:05:18] [ForkJoinPool.commonPool-worker-5/INFO]: [Skript] Loaded 5750 aliases in 734ms
 [04:05:18] [Server thread/INFO]: Oraxen | Loaded 4 text effects
 [04:05:18] [Server thread/INFO]: Oraxen | Loaded 16 glyphs, 0 reference glyphs, 1 animated glyphs
 [04:05:18] [Server thread/INFO]: Oraxen | Hot reloaded 1 new custom jukebox song(s), 0 updated, 0 removed, 0 unchanged.
@@ -177,64 +178,64 @@ Update at https://ci.athion.net/job/FastAsyncWorldEdit
 [04:05:18] [Server thread/INFO]: Oraxen | Skript compatibility enabled - Oraxen syntax registered
 [04:05:18] [Server thread/INFO]: Oraxen | Plugin "Skript" detected, enabling hooks
 [04:05:18] [Server thread/INFO]: [CMI] Enabling CMI v9.8.9.8
-[04:05:18] [Server thread/INFO]: _______________________________________________________
-[04:05:18] [Server thread/INFO]:  
-[04:05:18] [Server thread/INFO]:  ██████╗███╗   ███╗██╗
-[04:05:18] [Server thread/INFO]: ██╔════╝████╗ ████║██║
-[04:05:18] [Server thread/INFO]: ██║     ██╔████╔██║██║
-[04:05:18] [Server thread/INFO]: ██║     ██║╚██╔╝██║██║
-[04:05:18] [Server thread/INFO]: ╚██████╗██║ ╚═╝ ██║██║
-[04:05:18] [Server thread/INFO]:  ╚═════╝╚═╝     ╚═╝╚═╝
-[04:05:18] [Server thread/INFO]: _______________________________________________________
-[04:05:18] [Server thread/INFO]: Integrating PaperSpigot async methods
-[04:05:18] [Server thread/INFO]: Vault found. (Loaded: true)
-[04:05:18] [CMI-Thread-1/INFO]: Loaded (-) locale download into memory. Took 8ms
-[04:05:18] [Server thread/INFO]: Loaded (71) 70 Enabled and 1 Disabled modules into memory. Took 44ms
-[04:05:18] [Server thread/INFO]: Initialized Cipher256 AES
-[04:05:18] [Server thread/INFO]: Loaded (61) regular alias into memory. Took 26ms
-[04:05:18] [CMI-Thread-2/INFO]: Loaded (1) custom text's into memory. Took 3ms
+[04:05:19] [Server thread/INFO]: _______________________________________________________
+[04:05:19] [Server thread/INFO]:  
+[04:05:19] [Server thread/INFO]:  ██████╗███╗   ███╗██╗
+[04:05:19] [Server thread/INFO]: ██╔════╝████╗ ████║██║
+[04:05:19] [Server thread/INFO]: ██║     ██╔████╔██║██║
+[04:05:19] [Server thread/INFO]: ██║     ██║╚██╔╝██║██║
+[04:05:19] [Server thread/INFO]: ╚██████╗██║ ╚═╝ ██║██║
+[04:05:19] [Server thread/INFO]:  ╚═════╝╚═╝     ╚═╝╚═╝
+[04:05:19] [Server thread/INFO]: _______________________________________________________
+[04:05:19] [Server thread/INFO]: Integrating PaperSpigot async methods
+[04:05:19] [Server thread/INFO]: Vault found. (Loaded: true)
+[04:05:19] [CMI-Thread-1/INFO]: Loaded (-) locale download into memory. Took 6ms
+[04:05:19] [Server thread/INFO]: Loaded (71) 70 Enabled and 1 Disabled modules into memory. Took 62ms
+[04:05:19] [Server thread/INFO]: Initialized Cipher256 AES
+[04:05:19] [Server thread/INFO]: Loaded (61) regular alias into memory. Took 26ms
+[04:05:19] [CMI-Thread-2/INFO]: Loaded (1) custom text's into memory. Took 4ms
 [04:05:19] [Server thread/INFO]: SQLite 3.49.1 data base type detected
-[04:05:19] [Server thread/INFO]: Loaded (-) SqLite into memory. Took 77ms
+[04:05:19] [Server thread/INFO]: Loaded (-) SqLite into memory. Took 73ms
 [04:05:19] [Server thread/INFO]: Vault was found - Enabling capabilities. Economy: CMIEconomy
 [04:05:19] [Server thread/INFO]: Loaded (5) warning categories into memory. Took 0ms
 [04:05:19] [Server thread/INFO]: Loaded (3) warning commands into memory. Took 0ms
 [04:05:19] [Server thread/INFO]: Loaded (0) cooldowns into memory. Took 0ms
-[04:05:19] [Server thread/INFO]: Loaded (160) custom mob heads into memory. Took 9ms
+[04:05:19] [Server thread/INFO]: Loaded (160) custom mob heads into memory. Took 12ms
 [04:05:19] [Server thread/INFO]: Loaded (4) chat bubble groups into memory. Took 1ms
-[04:05:19] [Server thread/INFO]: Loaded (5) kits into memory. Took 10ms
-[04:05:19] [Server thread/INFO]: Loaded (5) dialogs into memory. Took 6ms
-[04:05:19] [Server thread/INFO]: Loaded (7) ranks into memory. Took 7ms
+[04:05:19] [Server thread/INFO]: Loaded (5) kits into memory. Took 8ms
+[04:05:19] [Server thread/INFO]: Loaded (5) dialogs into memory. Took 7ms
+[04:05:19] [Server thread/INFO]: Loaded (7) ranks into memory. Took 5ms
 [04:05:19] [Server thread/INFO]: Loaded (8) playtime rewards into memory. Took 1ms
 [04:05:19] [Server thread/INFO]: Executed Player DB querry in 0ms
-[04:05:19] [Server thread/INFO]: Loaded (9) player data into memory. Took 7ms
+[04:05:19] [Server thread/INFO]: Loaded (9) player data into memory. Took 6ms
 [04:05:19] [Server thread/INFO]: Loaded (0) playtime records into memory. Took 1ms
 [04:05:19] [Server thread/INFO]: Loaded (0) playtime reward records into memory. Took 0ms
-[04:05:19] [Server thread/INFO]: Loaded (0) custom alias into memory. Took 0ms
-[04:05:19] [Server thread/INFO]: Loaded (-) Registered events into memory. Took 113ms
+[04:05:19] [Server thread/INFO]: Loaded (0) custom alias into memory. Took 1ms
+[04:05:19] [Server thread/INFO]: Loaded (-) Registered events into memory. Took 108ms
 [04:05:19] [Server thread/INFO]: Loaded (22) event action commands into memory. Took 3ms
-[04:05:19] [Server thread/INFO]: Loaded (EN) language file into memory. Took 74ms
-[04:05:19] [Server thread/INFO]: Loaded (DE) language file into memory. Took 75ms
-[04:05:19] [Server thread/INFO]: Loaded (245) worth values into memory. Took 21ms
-[04:05:19] [Server thread/INFO]: VaultPermissions found. (Loaded: true)
-[04:05:19] [Server thread/INFO]: PlaceholderAPI found. (Loaded: true)
-[04:05:19] [Server thread/INFO]: Loaded (5) schedules into memory. Took 4ms
-[04:05:19] [Server thread/INFO]: Loaded (0) skin cache entries into memory. Took 0ms
-[04:05:19] [Server thread/INFO]: [CMI] Preloading playtimetop statistics
-[04:05:19] [Server thread/INFO]: Loaded (0) ArmorStand templates into memory. Took 0ms
-[04:05:19] [Server thread/INFO]: Version 9.8.9.8 has been enabled
-[04:05:19] [Server thread/INFO]: _______________________________________________________
-[04:05:19] [Server thread/INFO]: [CMIEInjector][Economy] CMI Economy hooked.
-[04:05:19] [Server thread/INFO]: [CommandAPI] Enabling CommandAPI v12.0.0
-[04:05:19] [Server thread/INFO]: [CommandAPI] Hooked into Paper ServerResourcesReloadedEvent
-[04:05:19] [Server thread/INFO]: [DeluxeMenus] Enabling DeluxeMenus v1.14.1-Release
-[04:05:19] [Server thread/INFO]: [DeluxeMenus] Successfully hooked into PlaceholderAPI!
-[04:05:19] [Server thread/INFO]: [DeluxeMenus] Successfully hooked into Vault!
-[04:05:19] [Server thread/INFO]: [DeluxeMenus] 6 GUI menus loaded!
-[04:05:19] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: deluxemenus [1.14.1-Release]
-[04:05:19] [Server thread/INFO]: [DeluxeMenus] You are running the latest version of DeluxeMenus!
-[04:05:19] [Server thread/INFO]: [TAB-Bridge] Enabling TAB-Bridge v6.2.2
-[04:05:19] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: tab [6.2.2]
-[04:05:19] [Server thread/INFO]: [Plan] Enabling Plan v5.8 build 3605
+[04:05:19] [Server thread/INFO]: Loaded (EN) language file into memory. Took 63ms
+[04:05:20] [Server thread/INFO]: Loaded (DE) language file into memory. Took 45ms
+[04:05:20] [Server thread/INFO]: Loaded (245) worth values into memory. Took 18ms
+[04:05:20] [Server thread/INFO]: VaultPermissions found. (Loaded: true)
+[04:05:20] [Server thread/INFO]: PlaceholderAPI found. (Loaded: true)
+[04:05:20] [Server thread/INFO]: Loaded (5) schedules into memory. Took 4ms
+[04:05:20] [Server thread/INFO]: Loaded (0) skin cache entries into memory. Took 0ms
+[04:05:20] [Server thread/INFO]: [CMI] Preloading playtimetop statistics
+[04:05:20] [Server thread/INFO]: Loaded (0) ArmorStand templates into memory. Took 0ms
+[04:05:20] [Server thread/INFO]: Version 9.8.9.8 has been enabled
+[04:05:20] [Server thread/INFO]: _______________________________________________________
+[04:05:20] [Server thread/INFO]: [CMIEInjector][Economy] CMI Economy hooked.
+[04:05:20] [Server thread/INFO]: [CommandAPI] Enabling CommandAPI v12.0.0
+[04:05:20] [Server thread/INFO]: [CommandAPI] Hooked into Paper ServerResourcesReloadedEvent
+[04:05:20] [Server thread/INFO]: [DeluxeMenus] Enabling DeluxeMenus v1.14.1-Release
+[04:05:20] [Server thread/INFO]: [DeluxeMenus] Successfully hooked into PlaceholderAPI!
+[04:05:20] [Server thread/INFO]: [DeluxeMenus] Successfully hooked into Vault!
+[04:05:20] [Server thread/INFO]: [DeluxeMenus] 6 GUI menus loaded!
+[04:05:20] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: deluxemenus [1.14.1-Release]
+[04:05:20] [Server thread/INFO]: [DeluxeMenus] You are running the latest version of DeluxeMenus!
+[04:05:20] [Server thread/INFO]: [TAB-Bridge] Enabling TAB-Bridge v6.2.2
+[04:05:20] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: tab [6.2.2]
+[04:05:20] [Server thread/INFO]: [Plan] Enabling Plan v5.8 build 3605
 [04:05:20] [Server thread/INFO]: [Plan] 
 [04:05:20] [Server thread/INFO]: [Plan]            ██▌
 [04:05:20] [Server thread/INFO]: [Plan]      ██▌   ██▌
@@ -243,65 +244,65 @@ Update at https://ci.athion.net/job/FastAsyncWorldEdit
 [04:05:20] [Server thread/INFO]: [Plan] 
 [04:05:20] [Server thread/INFO]: [Plan] Locale: 'English' by AuroraLS3
 [04:05:20] [Server thread/INFO]: [Plan] Downloading MySQL Driver, this may take a while...
-[04:05:20] [Plan MySQLDB-transaction-thread-1/INFO]: [Plan] Database: Making sure schema is up to date..
-[04:05:20] [Server thread/INFO]: [Plan] MySQL-database connection established.
-[04:05:20] [Server thread/INFO]: [Plan] WebServer was not initialized. (WebServer.DisableWebServer: true)
-[04:05:20] [Server thread/INFO]: [Plan] Loading server identifying information
-[04:05:20] [Server thread/INFO]: [Plan] Server identifier loaded: 82755ba5-91eb-4cca-a6a3-be06d891cb3d
-[04:05:20] [Plan Non critical-pool-5/INFO]: [Plan] Proxy server detected in the database - Proxy Webserver address is 'https://mc-stats.festas-builds.com'.
-[04:05:20] [Server thread/INFO]: [Plan] Registered extension: CMI
-[04:05:20] [Server thread/INFO]: [Plan] Registered extension: LuckPerms
-[04:05:20] [Server thread/INFO]: [Plan] Registered extension: PlaceholderAPI
-[04:05:20] [Server thread/INFO]: [Plan] Registered extension: Economy (Vault)
-[04:05:20] [Server thread/INFO]: [Plan] Registered extension: Permission Groups (Vault)
-[04:05:20] [Server thread/INFO]: [Plan] Player Analytics Enabled.
-[04:05:20] [Server thread/INFO]: [spark] Starting background profiler...
-[04:05:20] [Plan MySQLDB-transaction-thread-1/INFO]: [Plan] All database patches applied successfully.
-[04:05:20] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
-[04:05:20] [Server thread/INFO]: Saving chunks for level 'ServerLevel[lobby]'/minecraft:overworld
-[04:05:20] [Server thread/INFO]: Saving chunks for level 'ServerLevel[lobby]'/minecraft:the_nether
-[04:05:20] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
-[04:05:20] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[04:05:20] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
-[04:05:20] [Server thread/INFO]: Running delayed init tasks
-[04:05:20] [Server thread/INFO]: [com.fastasyncworldedit.bukkit.regions.WorldGuardFeature] Plugin 'WorldGuard' found. Using it now.
-[04:05:20] [Server thread/INFO]: [com.fastasyncworldedit.bukkit.FaweBukkit] Attempting to use plugin 'WorldGuard'
-[04:05:20] [Server thread/INFO]: [Skript]     Loaded regions hook for WorldGuard. Please note that Skript's region hooks are deprecated and will be removed in a future release. For WorldGuard support, we recommend using skript-worldguard: https://github.com/SkriptLang/skript-worldguard
+[04:05:21] [Plan MySQLDB-transaction-thread-1/INFO]: [Plan] Database: Making sure schema is up to date..
+[04:05:21] [Server thread/INFO]: [Plan] MySQL-database connection established.
+[04:05:21] [Server thread/INFO]: [Plan] WebServer was not initialized. (WebServer.DisableWebServer: true)
+[04:05:21] [Server thread/INFO]: [Plan] Loading server identifying information
+[04:05:21] [Server thread/INFO]: [Plan] Server identifier loaded: 82755ba5-91eb-4cca-a6a3-be06d891cb3d
+[04:05:21] [Plan Non critical-pool-5/INFO]: [Plan] Proxy server detected in the database - Proxy Webserver address is 'https://mc-stats.festas-builds.com'.
+[04:05:21] [Server thread/INFO]: [Plan] Registered extension: CMI
+[04:05:21] [Server thread/INFO]: [Plan] Registered extension: LuckPerms
+[04:05:21] [Server thread/INFO]: [Plan] Registered extension: PlaceholderAPI
+[04:05:21] [Server thread/INFO]: [Plan] Registered extension: Economy (Vault)
+[04:05:21] [Server thread/INFO]: [Plan] Registered extension: Permission Groups (Vault)
+[04:05:21] [Server thread/INFO]: [Plan] Player Analytics Enabled.
+[04:05:21] [Server thread/INFO]: [spark] Starting background profiler...
+[04:05:21] [Plan MySQLDB-transaction-thread-1/INFO]: [Plan] All database patches applied successfully.
+[04:05:21] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
+[04:05:21] [Server thread/INFO]: Saving chunks for level 'ServerLevel[lobby]'/minecraft:overworld
+[04:05:21] [Server thread/INFO]: Saving chunks for level 'ServerLevel[lobby]'/minecraft:the_nether
+[04:05:21] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[04:05:21] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[04:05:21] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[04:05:21] [Server thread/INFO]: Running delayed init tasks
+[04:05:21] [Server thread/INFO]: [com.fastasyncworldedit.bukkit.regions.WorldGuardFeature] Plugin 'WorldGuard' found. Using it now.
+[04:05:21] [Server thread/INFO]: [com.fastasyncworldedit.bukkit.FaweBukkit] Attempting to use plugin 'WorldGuard'
+[04:05:21] [Server thread/INFO]: [Skript]     Loaded regions hook for WorldGuard. Please note that Skript's region hooks are deprecated and will be removed in a future release. For WorldGuard support, we recommend using skript-worldguard: https://github.com/SkriptLang/skript-worldguard
 [04:05:21] [Server thread/INFO]: [Skript] Loading variables...
 [04:05:21] [Server thread/INFO]: [Skript] Loaded 18 variables in 0.0 seconds
-[04:05:21] [Craft Scheduler Thread - 7 - Plan/INFO]: [Plan] ----------------------------------------
-[04:05:21] [Craft Scheduler Thread - 7 - Plan/INFO]: [Plan] New Release (5.8.3638) is available https://github.com/plan-player-analytics/Plan/releases
-[04:05:21] [Craft Scheduler Thread - 7 - Plan/INFO]: [Plan] ----------------------------------------
-[04:05:21] [Server thread/INFO]: [Skript] Line 106: (navigator.sk)
-[04:05:21] [Server thread/INFO]:     There's no slot is 8 in an on inventory click event.
-[04:05:21] [Server thread/INFO]:     Line: if index of event-slot is 4 or index of event-slot is 8:
-[04:05:21] [Server thread/INFO]:  
-[04:05:21] [Server thread/INFO]: [Lobby] Announcement-System geladen (10 Nachrichten)!
-[04:05:21] [Server thread/INFO]: [Skript] Loaded 3 scripts with a total of 31 structures in 0.71 seconds
-[04:05:21] [Server thread/INFO]: [Skript] Finished loading.
-[04:05:21] [Server thread/INFO]: [CMI] Permission plugin: LuckPerms5.5.71
-[04:05:21] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: cmi [9.8.9.8]
-[04:05:21] [Server thread/INFO]: [CMI] PlaceholderAPI hooked.
-[04:05:21] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: plan [5.8 build 3605]
-[04:05:21] [Server thread/INFO]: Done (17.544s)! For help, type "help"
-[04:05:21] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: luckperms [5.4-R2]
-[04:05:21] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: player-j17 [1.0.3]
-[04:05:21] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: bungee [2.3]
-[04:05:21] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: vault [1.8.3]
-[04:05:21] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: player [2.0.9]
-[04:05:21] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: playerlist [3.1.0]
-[04:05:21] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: localtime [1.2]
-[04:05:21] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: math [2.0.2]
-[04:05:21] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: statistic [2.0.2]
-[04:05:21] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: server [2.7.3]
-[04:05:21] [Server thread/INFO]: 10 placeholder hook(s) registered!
-[04:05:21] [Paper Async Task Handler Thread - 1/INFO]: *** Currently you are 11 builds behind ***
-[04:05:21] [Paper Async Task Handler Thread - 1/INFO]: *** It is highly recommended to download the latest build from https://papermc.io/downloads/paper ***
-[13:06:26] [CMI-Thread-4/INFO]: [CMI] SQLite 3.49.1 data base type detected
-[13:06:26] [CMI-Thread-5/INFO]: [CMI] Start Back up
-[13:06:26] [CMI-Thread-5/INFO]: [CMI] Copied users data
-[13:06:26] [CMI-Thread-5/INFO]: [CMI] Copied playtimereward data
-[13:06:26] [CMI-Thread-5/INFO]: [CMI] Finish Back up copy process
-[13:06:26] [CMI-Thread-6/INFO]: [CMI] Backup compacted: 2026-09-10_13-06-26_cmi.sqlite.db.zip
-[13:06:26] [CMI-Thread-5/INFO]: [CMI] Removed temporary file
-[13:06:26] [CMI-Thread-5/INFO]: [CMI] Deleted old backup: 2026-08-31_09-06-25_cmi.sqlite.db.zip
+[04:05:21] [Craft Scheduler Thread - 1 - Plan/INFO]: [Plan] ----------------------------------------
+[04:05:21] [Craft Scheduler Thread - 1 - Plan/INFO]: [Plan] New Release (5.8.3638) is available https://github.com/plan-player-analytics/Plan/releases
+[04:05:21] [Craft Scheduler Thread - 1 - Plan/INFO]: [Plan] ----------------------------------------
+[04:05:22] [Server thread/INFO]: [Skript] Line 106: (navigator.sk)
+[04:05:22] [Server thread/INFO]:     There's no slot is 8 in an on inventory click event.
+[04:05:22] [Server thread/INFO]:     Line: if index of event-slot is 4 or index of event-slot is 8:
+[04:05:22] [Server thread/INFO]:  
+[04:05:22] [Server thread/INFO]: [Lobby] Announcement-System geladen (10 Nachrichten)!
+[04:05:22] [Server thread/INFO]: [Skript] Loaded 3 scripts with a total of 31 structures in 0.78 seconds
+[04:05:22] [Server thread/INFO]: [Skript] Finished loading.
+[04:05:22] [Server thread/INFO]: [CMI] Permission plugin: LuckPerms5.5.71
+[04:05:22] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: cmi [9.8.9.8]
+[04:05:22] [Server thread/INFO]: [CMI] PlaceholderAPI hooked.
+[04:05:22] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: plan [5.8 build 3605]
+[04:05:22] [Server thread/INFO]: Done (18.253s)! For help, type "help"
+[04:05:22] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: luckperms [5.4-R2]
+[04:05:22] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: player-j17 [1.0.3]
+[04:05:22] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: bungee [2.3]
+[04:05:22] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: vault [1.8.3]
+[04:05:22] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: player [2.0.9]
+[04:05:22] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: playerlist [3.1.0]
+[04:05:22] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: localtime [1.2]
+[04:05:22] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: math [2.0.2]
+[04:05:22] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: statistic [2.0.2]
+[04:05:22] [Server thread/INFO]: [PlaceholderAPI] Successfully registered external expansion: server [2.7.3]
+[04:05:22] [Server thread/INFO]: 10 placeholder hook(s) registered!
+[04:05:22] [Paper Async Task Handler Thread - 1/INFO]: *** Currently you are 11 builds behind ***
+[04:05:22] [Paper Async Task Handler Thread - 1/INFO]: *** It is highly recommended to download the latest build from https://papermc.io/downloads/paper ***
+[13:06:27] [CMI-Thread-4/INFO]: [CMI] SQLite 3.49.1 data base type detected
+[13:06:27] [CMI-Thread-5/INFO]: [CMI] Start Back up
+[13:06:27] [CMI-Thread-5/INFO]: [CMI] Copied playtimereward data
+[13:06:27] [CMI-Thread-5/INFO]: [CMI] Copied users data
+[13:06:27] [CMI-Thread-5/INFO]: [CMI] Finish Back up copy process
+[13:06:27] [CMI-Thread-6/INFO]: [CMI] Backup compacted: 2026-09-11_13-06-27_cmi.sqlite.db.zip
+[13:06:27] [CMI-Thread-5/INFO]: [CMI] Removed temporary file
+[13:06:27] [CMI-Thread-5/INFO]: [CMI] Deleted old backup: 2026-09-01_09-06-26_cmi.sqlite.db.zip
