@@ -13,7 +13,7 @@ weapons:
         material: LEATHER_HELMET
         quantity: 1
       buyPrice: 25
-      sellPrice: 2
+      sellPrice: 1
       slot: 19
       page: 1
 
@@ -23,7 +23,7 @@ weapons:
         material: LEATHER_CHESTPLATE
         quantity: 1
       buyPrice: 32
-      sellPrice: 3
+      sellPrice: 2
       slot: 20
       page: 1
 
@@ -33,7 +33,7 @@ weapons:
         material: LEATHER_LEGGINGS
         quantity: 1
       buyPrice: 28
-      sellPrice: 2
+      sellPrice: 1
       slot: 21
       page: 1
 
@@ -75,7 +75,7 @@ weapons:
         material: CHAINMAIL_HELMET
         quantity: 1
       buyPrice: 200
-      sellPrice: 15
+      sellPrice: 10
       slot: 28
       page: 1
 
@@ -85,7 +85,7 @@ weapons:
         material: CHAINMAIL_CHESTPLATE
         quantity: 1
       buyPrice: 200
-      sellPrice: 15
+      sellPrice: 10
       slot: 29
       page: 1
 
@@ -95,7 +95,7 @@ weapons:
         material: CHAINMAIL_LEGGINGS
         quantity: 1
       buyPrice: 200
-      sellPrice: 15
+      sellPrice: 10
       slot: 30
       page: 1
 
@@ -105,7 +105,7 @@ weapons:
         material: CHAINMAIL_BOOTS
         quantity: 1
       buyPrice: 200
-      sellPrice: 15
+      sellPrice: 10
       slot: 31
       page: 1
 
@@ -115,7 +115,7 @@ weapons:
         material: STONE_SWORD
         quantity: 1
       buyPrice: 20
-      sellPrice: 2
+      sellPrice: 1
       slot: 32
       page: 1
 
@@ -137,7 +137,7 @@ weapons:
         material: IRON_HELMET
         quantity: 1
       buyPrice: 200
-      sellPrice: 15
+      sellPrice: 10
       slot: 37
       page: 1
 
@@ -147,7 +147,7 @@ weapons:
         material: IRON_CHESTPLATE
         quantity: 1
       buyPrice: 200
-      sellPrice: 15
+      sellPrice: 10
       slot: 38
       page: 1
 
@@ -157,7 +157,7 @@ weapons:
         material: IRON_LEGGINGS
         quantity: 1
       buyPrice: 200
-      sellPrice: 15
+      sellPrice: 10
       slot: 39
       page: 1
 
@@ -167,7 +167,7 @@ weapons:
         material: IRON_BOOTS
         quantity: 1
       buyPrice: 200
-      sellPrice: 15
+      sellPrice: 10
       slot: 40
       page: 1
 
@@ -177,7 +177,7 @@ weapons:
         material: IRON_SWORD
         quantity: 1
       buyPrice: 50
-      sellPrice: 5
+      sellPrice: 3
       slot: 41
       page: 1
 
@@ -189,7 +189,7 @@ weapons:
         material: CROSSBOW
         quantity: 1
       buyPrice: 200
-      sellPrice: 15
+      sellPrice: 10
       slot: 43
       page: 1
 
@@ -207,7 +207,7 @@ weapons:
         material: GOLDEN_HELMET
         quantity: 1
       buyPrice: 300
-      sellPrice: 20
+      sellPrice: 15
       slot: 19
       page: 2
 
@@ -217,7 +217,7 @@ weapons:
         material: GOLDEN_CHESTPLATE
         quantity: 1
       buyPrice: 300
-      sellPrice: 20
+      sellPrice: 15
       slot: 20
       page: 2
 
@@ -227,7 +227,7 @@ weapons:
         material: GOLDEN_LEGGINGS
         quantity: 1
       buyPrice: 300
-      sellPrice: 20
+      sellPrice: 15
       slot: 21
       page: 2
 
@@ -237,7 +237,7 @@ weapons:
         material: GOLDEN_BOOTS
         quantity: 1
       buyPrice: 300
-      sellPrice: 20
+      sellPrice: 15
       slot: 22
       page: 2
 
@@ -247,7 +247,7 @@ weapons:
         material: GOLDEN_SWORD
         quantity: 1
       buyPrice: 100
-      sellPrice: 8
+      sellPrice: 5
       slot: 23
       page: 2
 
@@ -259,7 +259,7 @@ weapons:
         material: BOW
         quantity: 1
       buyPrice: 250
-      sellPrice: 15
+      sellPrice: 13
       slot: 25
       page: 2
 
@@ -321,7 +321,7 @@ weapons:
         material: SHIELD
         quantity: 1
       buyPrice: 100
-      sellPrice: 8
+      sellPrice: 5
       slot: 34
       page: 2
 

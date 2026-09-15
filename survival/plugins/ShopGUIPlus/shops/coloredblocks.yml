@@ -341,8 +341,8 @@ Coloredblocks:
       item:
         material: TERRACOTTA
         quantity: 1
-      buyPrice: 3.5
-      sellPrice: 0.28
+      buyPrice: 10
+      sellPrice: 1
       slot: 32
       page: 2
 
@@ -1051,7 +1051,7 @@ Coloredblocks:
         quantity: 1
         name: "&f&lᴘʀᴇᴠɪᴏᴜs"
       commandsOnClick:
-      - "shopgui Mobdrops"
+      - "shopgui mobdrops"
       slot: 0
       page: 1
     Next1:
@@ -1062,7 +1062,7 @@ Coloredblocks:
         quantity: 1
         name: "&f&lɴᴇxᴛ"
       commandsOnClick:
-      - "shopgui Decoration"
+      - "shopgui decoration"
       slot: 8
       page: 1
     Previous2:
@@ -1073,7 +1073,7 @@ Coloredblocks:
         quantity: 1
         name: "&f&lᴘʀᴇᴠɪᴏᴜs"
       commandsOnClick:
-      - "shopgui Mobdrops"
+      - "shopgui mobdrops"
       slot: 0
       page: 2
     Next2:
@@ -1084,7 +1084,7 @@ Coloredblocks:
         quantity: 1
         name: "&f&lɴᴇxᴛ"
       commandsOnClick:
-      - "shopgui Decoration"
+      - "shopgui decoration"
       slot: 8
       page: 2
     Previous3:
@@ -1095,7 +1095,7 @@ Coloredblocks:
         quantity: 1
         name: "&f&lᴘʀᴇᴠɪᴏᴜs"
       commandsOnClick:
-      - "shopgui Mobdrops"
+      - "shopgui mobdrops"
       slot: 0
       page: 3
     Next3:
@@ -1106,7 +1106,7 @@ Coloredblocks:
         quantity: 1
         name: "&f&lɴᴇxᴛ"
       commandsOnClick:
-      - "shopgui Decoration"
+      - "shopgui decoration"
       slot: 8
       page: 3
     Previous4:
@@ -1117,7 +1117,7 @@ Coloredblocks:
         quantity: 1
         name: "&f&lᴘʀᴇᴠɪᴏᴜs"
       commandsOnClick:
-      - "shopgui Mobdrops"
+      - "shopgui mobdrops"
       slot: 0
       page: 4
     Next4:
@@ -1128,7 +1128,7 @@ Coloredblocks:
         quantity: 1
         name: "&f&lɴᴇxᴛ"
       commandsOnClick:
-      - "shopgui Decoration"
+      - "shopgui decoration"
       slot: 8
       page: 4
     Previous5:
@@ -1139,7 +1139,7 @@ Coloredblocks:
         quantity: 1
         name: "&f&lᴘʀᴇᴠɪᴏᴜs"
       commandsOnClick:
-      - "shopgui Mobdrops"
+      - "shopgui mobdrops"
       slot: 0
       page: 5
     Next5:
@@ -1150,7 +1150,7 @@ Coloredblocks:
         quantity: 1
         name: "&f&lɴᴇxᴛ"
       commandsOnClick:
-      - "shopgui Decoration"
+      - "shopgui decoration"
       slot: 8
       page: 5
 
@@ -1230,7 +1230,7 @@ Coloredblocks:
       slot: 6
       page: 1
       commandsOnClick:
-      - "shopgui restone"
+      - "shopgui redstone"
 
     ShopTools1:
       type: dummy
@@ -1313,7 +1313,7 @@ Coloredblocks:
       slot: 6
       page: 2
       commandsOnClick:
-      - "shopgui restone"
+      - "shopgui redstone"
 
     ShopTools2:
       type: dummy
@@ -1396,7 +1396,7 @@ Coloredblocks:
       slot: 6
       page: 3
       commandsOnClick:
-      - "shopgui restone"
+      - "shopgui redstone"
 
     ShopTools3:
       type: dummy
@@ -1479,7 +1479,7 @@ Coloredblocks:
       slot: 6
       page: 4
       commandsOnClick:
-      - "shopgui restone"
+      - "shopgui redstone"
 
     ShopTools4:
       type: dummy
@@ -1562,7 +1562,7 @@ Coloredblocks:
       slot: 6
       page: 5
       commandsOnClick:
-      - "shopgui restone"
+      - "shopgui redstone"
 
     ShopTools5:
       type: dummy

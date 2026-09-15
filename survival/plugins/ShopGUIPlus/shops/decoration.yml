@@ -344,7 +344,7 @@ decoration:
         material: MOSS_BLOCK
         quantity: 1
       buyPrice: 50
-      sellPrice: 0.1
+      sellPrice: -1
       slot: 32
       page: 2
 
@@ -547,7 +547,7 @@ decoration:
       slot: 4
       page: 1
       commandsOnClick:
-      - "shopgui Decoration"
+      - "shopgui decoration"
 
     ShopRedstone1:
       type: dummy
@@ -627,7 +627,7 @@ decoration:
       slot: 4
       page: 2
       commandsOnClick:
-      - "shopgui Decoration"
+      - "shopgui decoration"
 
     ShopRedstone2:
       type: dummy

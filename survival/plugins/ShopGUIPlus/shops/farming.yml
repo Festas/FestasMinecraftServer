@@ -33,7 +33,7 @@ farming:
         material: PUMPKIN_SEEDS
         quantity: 1
       buyPrice: 30
-      sellPrice: 5
+      sellPrice: 6
       slot: 21
       page: 1
 
@@ -43,7 +43,7 @@ farming:
         material: MELON_SEEDS
         quantity: 1
       buyPrice: 30
-      sellPrice: 5
+      sellPrice: 6
       slot: 22
       page: 1
 
@@ -133,7 +133,7 @@ farming:
         material: CACTUS
         quantity: 1
       buyPrice: 120
-      sellPrice: 20
+      sellPrice: 24
       slot: 33
       page: 1
 
@@ -143,7 +143,7 @@ farming:
         material: KELP
         quantity: 1
       buyPrice: 90
-      sellPrice: 20
+      sellPrice: 18
       slot: 34
       page: 1
 
@@ -153,7 +153,7 @@ farming:
         material: BEETROOT
         quantity: 1
       buyPrice: 30
-      sellPrice: 5
+      sellPrice: 6
       slot: 37
       page: 1
     P1_38:
@@ -162,7 +162,7 @@ farming:
         material: SWEET_BERRIES
         quantity: 1
       buyPrice: 200
-      sellPrice: 30
+      sellPrice: 40
       slot: 38
       page: 1
 
