@@ -2,16 +2,16 @@
 
 _Automatisch erzeugt von `tools/server-maintenance/festas-maintenance.sh`._
 
-**Gesamtstatus:** 🟡 **WARNUNG** · erstellt 2026-09-30 02:12:02 UTC · Host `festas-builds`
+**Gesamtstatus:** 🟡 **WARNUNG** · erstellt 2026-10-07 02:14:56 UTC · Host `festas-builds`
 
 | Kennzahl | Wert |
 |---|---|
-| Festplatte `/` | 43 % belegt |
-| RAM | 75 % belegt |
-| Paket-Updates offen | 28 |
+| Festplatte `/` | 37 % belegt |
+| RAM | 76 % belegt |
+| Paket-Updates offen | 13 |
 | Fehlgeschlagene Dienste | 1 |
 | Modus dieses Laufs | `full` |
-| Trend | Seit letztem Lauf: -2.4GB auf `/`. |
+| Trend | Seit letztem Lauf: -17GB auf `/`. |
 
 **Wichtigste Befunde:**
 
@@ -19,8 +19,7 @@ _Automatisch erzeugt von `tools/server-maintenance/festas-maintenance.sh`._
 - 🟡 Interner Dienst 'Plan Analytics' (Port 8804) ist laut Host-Status öffentlich freigegeben – dokumentiert ist nur Reverse-Proxy/Loopback.
 - 🟡 Interner Dienst 'BlueMap Survival' (Port 8102) bindet auf allen Interfaces – dokumentiert ist nur Reverse-Proxy/Loopback.
 - 🟡 Interner Dienst 'BlueMap Mining' (Port 8103) bindet auf allen Interfaces – dokumentiert ist nur Reverse-Proxy/Loopback.
-- 🟡 Viele fehlgeschlagene Logins (21713) – Brute-Force? fail2ban prüfen.
-- 🟡 5 sicherheitsrelevante Updates ausstehend.
+- 🟡 Viele fehlgeschlagene Logins (17411) – Brute-Force? fail2ban prüfen.
 
 **Empfehlungen (Optimierungspotenzial):**
 
@@ -42,8 +41,8 @@ _Automatisch erzeugt von `tools/server-maintenance/festas-maintenance.sh`._
 | Kernel | Linux 6.8.0-138-generic |
 | Virtualisierung | kvm |
 | CPU-Kerne | 8 |
-| Load (1/5/15) | 0.28, 0.29, 0.23 |
-| Uptime | up 5 weeks, 3 days, 14 hours, 0 minutes |
+| Load (1/5/15) | 0.21, 0.30, 0.26 |
+| Uptime | up 6 weeks, 3 days, 14 hours, 3 minutes |
 
 ## 💾 Speicherplatz
 
@@ -52,19 +51,20 @@ _Automatisch erzeugt von `tools/server-maintenance/festas-maintenance.sh`._
 
 ```
 Filesystem     Type     Size  Used Avail Use% Mounted on
-/dev/sda1      ext4     301G  123G  166G  43% /
+/dev/sda1      ext4     301G  106G  183G  37% /
 /dev/sda15     vfat     253M  146K  252M   1% /boot/efi
-overlay        overlay  301G  123G  166G  43% /var/lib/docker/rootfs/overlayfs/bfd613e2007d272beb2a8e1fb4a168746000f1cb438506596ae69ec24bb72430
-overlay        overlay  301G  123G  166G  43% /var/lib/docker/rootfs/overlayfs/112483a404e535072efccab33ed27724561c3919260bae2a487186fb2846b602
-overlay        overlay  301G  123G  166G  43% /var/lib/docker/rootfs/overlayfs/7db11192f722c4c59ddebfeb2dca290490f3b720bdb96154c21a1e46f94fb616
-overlay        overlay  301G  123G  166G  43% /var/lib/docker/rootfs/overlayfs/771e0c9552f3dbab7f47f8346da6b40a01dd19b17396f27cfd440dc97b3cf08b
-overlay        overlay  301G  123G  166G  43% /var/lib/docker/rootfs/overlayfs/e59ab43912f7cf815f1d8e920da8fefe2f268c9439ff9269d78efa33293f5b06
-overlay        overlay  301G  123G  166G  43% /var/lib/docker/rootfs/overlayfs/53adfdd9d611cd6b69c527704b0f8f856a847fc6cc3be6ba97156c4c4460dc17
-overlay        overlay  301G  123G  166G  43% /var/lib/docker/rootfs/overlayfs/ad7e43386e49f88849ca629a41420d6a5bec0c6dddb1ef1a1640b4690444e12a
-overlay        overlay  301G  123G  166G  43% /var/lib/docker/rootfs/overlayfs/15dd13598595cb0e510078070f576ef84867b8e0783b112fe7de07a6c46b2aa5
+overlay        overlay  301G  106G  183G  37% /var/lib/docker/rootfs/overlayfs/bfd613e2007d272beb2a8e1fb4a168746000f1cb438506596ae69ec24bb72430
+overlay        overlay  301G  106G  183G  37% /var/lib/docker/rootfs/overlayfs/7db11192f722c4c59ddebfeb2dca290490f3b720bdb96154c21a1e46f94fb616
+overlay        overlay  301G  106G  183G  37% /var/lib/docker/rootfs/overlayfs/771e0c9552f3dbab7f47f8346da6b40a01dd19b17396f27cfd440dc97b3cf08b
+overlay        overlay  301G  106G  183G  37% /var/lib/docker/rootfs/overlayfs/8bc34fa36ea89c3c48b356664294fa89e9dff02d6da84231354276e6e1ee783b
+overlay        overlay  301G  106G  183G  37% /var/lib/docker/rootfs/overlayfs/26e38d131f54e89007d38aaad8c1a0f1405b9566476daf8d55b5906b035a66d3
+overlay        overlay  301G  106G  183G  37% /var/lib/docker/rootfs/overlayfs/ad66bcffa4777c016a129f97bc2eb9de3a348068c5308f4475f1131c7ac45f5f
+overlay        overlay  301G  106G  183G  37% /var/lib/docker/rootfs/overlayfs/1b50f4709fccad87efa10b64aa46763ea6652b7007be2fac271d9ce9a18a0575
+overlay        overlay  301G  106G  183G  37% /var/lib/docker/rootfs/overlayfs/058064f01147de65a1d22c08691a104554957ee788035a8d4b961f2e10740635
+overlay        overlay  301G  106G  183G  37% /var/lib/docker/rootfs/overlayfs/c832ab1ac2a1ed45fb4ca57da70638555501f2c0bcb5310dc596fe3a6ac400d9
 ```
-**Root (`/`):** 123GB / 301GB belegt (43 %), frei: 166GB.
-**Inodes (`/`):** 8 % belegt.
+**Root (`/`):** 106GB / 301GB belegt (37 %), frei: 183GB.
+**Inodes (`/`):** 6 % belegt.
 
 ### Größte Verzeichnisse unter / (eine Ebene)
 
@@ -103,29 +103,30 @@ overlay        overlay  301G  123G  166G  43% /var/lib/docker/rootfs/overlayfs/1
 
 ```
 TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE
-Images          38        4         20.29GB   18.54GB (91%)
-Containers      8         8         131.1kB   0B (0%)
+Images          6         6         2.171GB   0B (0%)
+Containers      9         9         213kB     0B (0%)
 Local Volumes   7         0         2.863GB   2.863GB (100%)
 Build Cache     9         0         310.6MB   0B
 ```
 
-Wiedergewinnbar laut Docker: **18.54GB (91%)**.
+Wiedergewinnbar laut Docker: **0B (0%)**.
 
 ### Container-Status
 
 ```
 NAMES                                  STATUS                 SIZE
-0af91553-d5ef-42fc-9ed1-97daaf3c4d70   Up 2 minutes           4.1kB (virtual 598MB)
-39a0762a-9e53-4b5b-8810-2bf63410800d   Up 7 minutes           4.1kB (virtual 598MB)
-cfb531d8-3843-4bff-a8d5-b534aa58fc92   Up 11 minutes          4.1kB (virtual 598MB)
-80c1457a-55b2-4671-82a8-60063041558b   Up 24 hours            4.1kB (virtual 598MB)
-fire-simulator                         Up 12 days             4.1kB (virtual 233MB)
-b50e2f8c-440f-4910-8f00-29577afbc455   Up 2 weeks             4.1kB (virtual 598MB)
-minecraft-web                          Up 2 weeks (healthy)   81.9kB (virtual 74.5MB)
-festas-redis                           Up 2 weeks (healthy)   24.6kB (virtual 41.1MB)
+0af91553-d5ef-42fc-9ed1-97daaf3c4d70   Up 4 minutes           4.1kB (virtual 599MB)
+39a0762a-9e53-4b5b-8810-2bf63410800d   Up 9 minutes           4.1kB (virtual 599MB)
+cfb531d8-3843-4bff-a8d5-b534aa58fc92   Up 14 minutes          4.1kB (virtual 599MB)
+cosmic-survivor                        Up 3 hours (healthy)   81.9kB (virtual 53.1MB)
+80c1457a-55b2-4671-82a8-60063041558b   Up 24 hours            4.1kB (virtual 599MB)
+minecraft-web                          Up 4 days (healthy)    81.9kB (virtual 68.5MB)
+fire-simulator                         Up 2 weeks             4.1kB (virtual 233MB)
+b50e2f8c-440f-4910-8f00-29577afbc455   Up 3 weeks             4.1kB (virtual 598MB)
+festas-redis                           Up 3 weeks (healthy)   24.6kB (virtual 41.1MB)
 ```
 
-Container: **8/8** laufend, **0** ungesund.
+Container: **9/9** laufend, **0** ungesund.
 
 ## 🪶 Pterodactyl / Wings
 
@@ -153,48 +154,48 @@ Wings-Dienst: **aktiv**.
 
 ```
                total        used        free      shared  buff/cache   available
-Mem:            15Gi        11Gi       220Mi        54Mi       3.9Gi       3.7Gi
-Swap:          2.0Gi       409Mi       1.6Gi
+Mem:            15Gi        11Gi       192Mi        55Mi       3.8Gi       3.6Gi
+Swap:          2.0Gi       283Mi       1.7Gi
 ```
 
-**RAM-Auslastung:** 75 % belegt.
-**Swap:** 19 % belegt.
+**RAM-Auslastung:** 76 % belegt.
+**Swap:** 13 % belegt.
 
 ### Top 15 Prozesse nach RAM (RSS)
 
 ```
     PID    PPID USER       RSS %MEM %CPU COMMAND
-3015843 3015818 pteroda+ 3137472 19.6 20.3 java
-3018042 3018017 pteroda+ 2729408 17.0 62.2 java
-2835101 2835076 pteroda+ 2619432 16.3 2.0 java
-3016959 3016935 pteroda+ 1821444 11.3 15.2 java
-3866550       1 mysql    382168  2.3 0.2 mariadbd
- 383005  382906 pteroda+ 350304  2.1 3.4 java
- 381961       1 root     133492  0.8 0.9 dockerd
-2485567       1 root     59672  0.3  0.0 fail2ban-server
-3866255       1 root     55276  0.3  0.6 containerd
- 647898  647874 fire     54748  0.3  0.0 next-server (v
-3866276       1 root     47140  0.2  0.0 systemd-journal
-2577472 2485536 www-data 45796  0.2  0.0 php-fpm8.3
-2876130 2485536 www-data 45276  0.2  0.0 php-fpm8.3
-2948992 2485536 www-data 44852  0.2  0.0 php-fpm8.3
-2485536       1 root     37652  0.2  0.0 php-fpm8.3
+ 404105  404079 pteroda+ 3248440 20.3 17.8 java
+ 406757  406733 pteroda+ 2671820 16.7 28.7 java
+ 166898  166873 pteroda+ 2663420 16.6 2.1 java
+ 405461  405436 pteroda+ 1618664 10.1 11.9 java
+3441582       1 mysql    490764  3.0 0.1 mariadbd
+ 383005  382906 pteroda+ 430140  2.6 2.7 java
+ 381961       1 root     132592  0.8 0.7 dockerd
+3441355       1 root     92140  0.5  0.0 systemd-journal
+3441483       1 root     76536  0.4  0.0 fail2ban-server
+3918050       1 root     73280  0.4  0.3 containerd
+ 647898  647874 fire     56848  0.3  0.0 next-server (v
+3918119 3918116 www-data 47856  0.2  0.0 php-fpm8.3
+3918118 3918116 www-data 47224  0.2  0.0 php-fpm8.3
+ 235677 3918116 www-data 45060  0.2  0.0 php-fpm8.3
+3918116       1 root     37496  0.2  0.0 php-fpm8.3
 ```
 
 ### Top 10 Prozesse nach CPU
 
 ```
     PID USER     %CPU %MEM COMMAND
-3018042 pteroda+ 62.2 17.0 java
-3015843 pteroda+ 20.3 19.6 java
-3016959 pteroda+ 15.2 11.3 java
- 383005 pteroda+  3.4  2.1 java
- 382553 root      2.9  0.2 wings
-2835101 pteroda+  2.0 16.3 java
-3018915 root      1.4  0.0 bash
- 381961 root      0.9  0.8 dockerd
-3018739 root      0.9  0.0 systemd
-3866255 root      0.6  0.3 containerd
+ 406757 pteroda+ 28.7 16.7 java
+ 404105 pteroda+ 17.8 20.3 java
+ 405461 pteroda+ 11.9 10.1 java
+ 383005 pteroda+  2.7  2.6 java
+ 382553 root      2.6  0.2 wings
+ 166898 pteroda+  2.1 16.6 java
+ 407993 root      1.1  0.0 systemd
+ 408208 root      1.1  0.0 bash
+ 381961 root      0.7  0.8 dockerd
+ 382367 pteroda+  0.5  0.0 redis-server
 ```
 
 **OOM-Ereignisse (7 Tage):** 0.
@@ -253,6 +254,7 @@ tcp 0.0.0.0:8103
 tcp 0.0.0.0:8804
 tcp 127.0.0.1:3200
 tcp 127.0.0.1:5432
+tcp 127.0.0.1:8200
 tcp 127.0.0.1:8201
 tcp 127.0.0.53%lo:53
 tcp 127.0.0.54:53
@@ -271,10 +273,9 @@ udp 0.0.0.0:25567
 udp 0.0.0.0:25568
 udp 0.0.0.0:25569
 udp 0.0.0.0:25599
-udp 0.0.0.0:25600
 ```
 
-**Etablierte Verbindungen:** 83.
+**Etablierte Verbindungen:** 85.
 
 ### Konnektivität & DNS
 
@@ -376,7 +377,7 @@ Status
 
 ### Fehlgeschlagene Logins (7 Tage)
 
-Fehlgeschlagene Passwort-Logins: **21713**.
+Fehlgeschlagene Passwort-Logins: **17411**.
 
 ### Letzte Anmeldungen
 
@@ -390,7 +391,7 @@ root     pts/0        213.244.61.249   Sun Aug 23 16:22 - 16:33  (00:11)
 
 ## 📦 Paket-Updates
 
-Verfügbare Updates: **28** (davon sicherheitsrelevant: **5**).
+Verfügbare Updates: **13** (davon sicherheitsrelevant: **0**).
 
 ⚠️ **Reboot erforderlich** (`reboot-required` vorhanden).
 ```
@@ -404,48 +405,35 @@ linux-base
 ### Aktualisierbare Pakete (Auszug)
 
 ```
-Inst libaudit-common [1:3.1.2-2.1build1.1] (1:3.1.2-2.1ubuntu0.1 Ubuntu:24.04/noble-updates [all])
-Inst libaudit1 [1:3.1.2-2.1build1.1] (1:3.1.2-2.1ubuntu0.1 Ubuntu:24.04/noble-updates [amd64])
-Inst libapparmor1 [4.0.1really4.0.1-0ubuntu0.24.04.7] (4.0.1really4.0.1-0ubuntu0.24.04.8 Ubuntu:24.04/noble-updates [amd64])
-Inst apparmor [4.0.1really4.0.1-0ubuntu0.24.04.7] (4.0.1really4.0.1-0ubuntu0.24.04.8 Ubuntu:24.04/noble-updates [amd64])
-Inst dmidecode [3.5-3ubuntu0.1] (3.5-3ubuntu0.2 Ubuntu:24.04/noble-updates [amd64])
-Inst containerd.io [2.3.5-1~ubuntu.24.04~noble] (2.3.6-1~ubuntu.24.04~noble Docker CE:noble [amd64])
-Inst dracut-install [060+5-1ubuntu3.3] (060+5-1ubuntu3.4 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])
-Inst java-21-amazon-corretto-jdk [1:21.0.12.9-1] (1:21.0.12.12-1 . stable:stable [amd64])
-Inst libdbi-perl [1.643-4ubuntu0.1] (1.643-4ubuntu0.3 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])
-Inst libevent-core-2.1-7t64 [2.1.12-stable-9ubuntu2.1] (2.1.12-stable-9ubuntu2.2 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])
-Inst libpciaccess0 [0.17-3ubuntu0.24.04.2] (0.17-3ubuntu0.24.04.3 Ubuntu:24.04/noble-updates [amd64])
-Inst php8.3-bcmath [8.3.33-1+ubuntu24.04.1+deb.sury.org+1] (8.3.35-1+ubuntu24.04.1+deb.sury.org+1 PPA for PHP:24.04/noble [amd64]) []
-Inst php8.3-zip [8.3.33-1+ubuntu24.04.1+deb.sury.org+1] (8.3.35-1+ubuntu24.04.1+deb.sury.org+1 PPA for PHP:24.04/noble [amd64]) []
-Inst php8.3-xml [8.3.33-1+ubuntu24.04.1+deb.sury.org+1] (8.3.35-1+ubuntu24.04.1+deb.sury.org+1 PPA for PHP:24.04/noble [amd64]) []
-Inst php8.3-sqlite3 [8.3.33-1+ubuntu24.04.1+deb.sury.org+1] (8.3.35-1+ubuntu24.04.1+deb.sury.org+1 PPA for PHP:24.04/noble [amd64]) []
-Inst php8.3-readline [8.3.33-1+ubuntu24.04.1+deb.sury.org+1] (8.3.35-1+ubuntu24.04.1+deb.sury.org+1 PPA for PHP:24.04/noble [amd64]) []
-Inst php8.3-opcache [8.3.33-1+ubuntu24.04.1+deb.sury.org+1] (8.3.35-1+ubuntu24.04.1+deb.sury.org+1 PPA for PHP:24.04/noble [amd64]) []
-Inst php8.3-mysql [8.3.33-1+ubuntu24.04.1+deb.sury.org+1] (8.3.35-1+ubuntu24.04.1+deb.sury.org+1 PPA for PHP:24.04/noble [amd64]) []
-Inst php8.3-mbstring [8.3.33-1+ubuntu24.04.1+deb.sury.org+1] (8.3.35-1+ubuntu24.04.1+deb.sury.org+1 PPA for PHP:24.04/noble [amd64]) []
-Inst php8.3-intl [8.3.33-1+ubuntu24.04.1+deb.sury.org+1] (8.3.35-1+ubuntu24.04.1+deb.sury.org+1 PPA for PHP:24.04/noble [amd64]) []
-Inst php8.3-gd [8.3.33-1+ubuntu24.04.1+deb.sury.org+1] (8.3.35-1+ubuntu24.04.1+deb.sury.org+1 PPA for PHP:24.04/noble [amd64]) []
-Inst php8.3-curl [8.3.33-1+ubuntu24.04.1+deb.sury.org+1] (8.3.35-1+ubuntu24.04.1+deb.sury.org+1 PPA for PHP:24.04/noble [amd64]) []
-Inst php8.3-fpm [8.3.33-1+ubuntu24.04.1+deb.sury.org+1] (8.3.35-1+ubuntu24.04.1+deb.sury.org+1 PPA for PHP:24.04/noble [amd64]) []
-Inst php8.3-cli [8.3.33-1+ubuntu24.04.1+deb.sury.org+1] (8.3.35-1+ubuntu24.04.1+deb.sury.org+1 PPA for PHP:24.04/noble [amd64]) []
-Inst php8.3-common [8.3.33-1+ubuntu24.04.1+deb.sury.org+1] (8.3.35-1+ubuntu24.04.1+deb.sury.org+1 PPA for PHP:24.04/noble [amd64])
-Inst php8.3 [8.3.33-1+ubuntu24.04.1+deb.sury.org+1] (8.3.35-1+ubuntu24.04.1+deb.sury.org+1 PPA for PHP:24.04/noble [all])
-Inst python3-jwt [2.7.0-1ubuntu0.1] (2.7.0-1ubuntu0.2 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [all])
-Inst python3-requests [2.31.0+dfsg-1ubuntu1.1] (2.31.0+dfsg-1ubuntu1.2 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [all])
+Inst docker-ce-cli [5:29.8.1-1~ubuntu.24.04~noble] (5:29.8.2-1~ubuntu.24.04~noble Docker CE:noble [amd64])
+Inst docker-ce [5:29.8.1-1~ubuntu.24.04~noble] (5:29.8.2-1~ubuntu.24.04~noble Docker CE:noble [amd64])
+Inst alsa-ucm-conf [1.2.10-1ubuntu5.14] (1.2.10-1ubuntu5.15 Ubuntu:24.04/noble-updates [all])
+Inst docker-ce-rootless-extras [5:29.8.1-1~ubuntu.24.04~noble] (5:29.8.2-1~ubuntu.24.04~noble Docker CE:noble [amd64])
+Inst docker-compose-plugin [5.5.1-1~ubuntu.24.04~noble] (5.6.0-1~ubuntu.24.04~noble Docker CE:noble [amd64])
+Inst libgl1-mesa-dri [25.2.8-0ubuntu0.24.04.2] (25.2.8-0ubuntu0.24.04.4 Ubuntu:24.04/noble-updates [amd64]) []
+Inst libglx-mesa0 [25.2.8-0ubuntu0.24.04.2] (25.2.8-0ubuntu0.24.04.4 Ubuntu:24.04/noble-updates [amd64]) []
+Inst libegl-mesa0 [25.2.8-0ubuntu0.24.04.2] (25.2.8-0ubuntu0.24.04.4 Ubuntu:24.04/noble-updates [amd64]) []
+Inst libgbm1 [25.2.8-0ubuntu0.24.04.2] (25.2.8-0ubuntu0.24.04.4 Ubuntu:24.04/noble-updates [amd64]) []
+Inst mesa-libgallium [25.2.8-0ubuntu0.24.04.2] (25.2.8-0ubuntu0.24.04.4 Ubuntu:24.04/noble-updates [amd64])
+Inst linux-libc-dev [6.8.0-142.142] (6.8.0-146.146 Ubuntu:24.04/noble-updates [amd64])
+Inst mesa-vulkan-drivers [25.2.8-0ubuntu0.24.04.2] (25.2.8-0ubuntu0.24.04.4 Ubuntu:24.04/noble-updates [amd64])
+Inst sosreport [4.10.2-0ubuntu0~24.04.1] (4.11.2-0ubuntu0~24.04.1 Ubuntu:24.04/noble-updates [amd64])
 ```
 
 ## 📜 Log-Analyse (7 Tage)
 
-Journald: **140** Fehler, **32195** Warnungen (7 Tage).
+Journald: **148** Fehler, **32456** Warnungen (7 Tage).
 
 ### Häufigste Fehlermeldungen
 
 ```
-    109 sshd[#]: error: kex_exchange_identification: read: Connection reset by peer
-     18 sshd[#]: error: kex_protocol_error: type # seq # [preauth]
-      8 sshd[#]: error: Protocol major versions differ: # vs. #
-      4 sshd[#]: error: beginning MaxStartups throttling
-      1 sshd[#]: fatal: userauth_pubkey: parse publickey packet: incomplete message [preauth]
+    130 sshd[#]: error: kex_exchange_identification: read: Connection reset by peer
+      6 sshd[#]: error: kex_protocol_error: type # seq # [preauth]
+      4 sshd[#]: error: Protocol major versions differ: # vs. #
+      3 sshd[#]: fatal: userauth_pubkey: parse publickey packet: incomplete message [preauth]
+      2 sshd[#]: fatal: userauth_finish: send failure packet: Connection reset by peer [preauth]
+      2 sshd[#]: error: maximum authentication attempts exceeded for root from #.#.#.# port # ssh# [preauth]
+      1 sshd[#]: error: beginning MaxStartups throttling
 ```
 
 Kernel-I/O-/Dateisystem-Fehler (7 Tage): **0**.
@@ -456,11 +444,11 @@ _smartctl (smartmontools) nicht installiert – SMART-Check übersprungen._
 
 ## 🔏 TLS-Zertifikate
 
-- `mc.festas-builds.com`: gültig bis Nov 17 04:51:59 2026 GMT (**48 Tage**).
+- `mc.festas-builds.com`: gültig bis Nov 17 04:51:59 2026 GMT (**41 Tage**).
 
 ## 🗄️ Backups (Heuristik)
 
-- `/var/backups` (0B); neueste Datei: 2026-09-28+00:00:01.2588706940 /var/backups/dpkg.arch.0
+- `/var/backups` (0B); neueste Datei: 2026-10-05+00:00:00.2940829760 /var/backups/dpkg.arch.0
 
 > Aufbewahrung/Off-Site siehe [docs/infrastructure/BACKUPS.md](../../docs/infrastructure/BACKUPS.md).
 
@@ -473,7 +461,7 @@ Diese Posten lassen sich typischerweise gefahrlos freigeben. Im Modus
 |---|---|---|
 | APT-Paketcache | 0B | `apt-get clean` **(auto)** |
 | Journald-Logs | aktuell ? | `journalctl --vacuum-time=14d` **(auto)** |
-| Docker (dangling/build-cache) | 18.54GB (91%) | `docker system prune -f` **(auto)** |
+| Docker (dangling/build-cache) | 0B (0%) | `docker system prune -f` **(auto)** |
 | Verwaiste Pakete/Kernel | variabel | `apt-get autoremove --purge` **(auto)** |
 | Temp-Dateien | `/tmp` (0B) | `systemd-tmpfiles --clean` **(auto)** |
 
@@ -483,7 +471,7 @@ Diese Posten lassen sich typischerweise gefahrlos freigeben. Im Modus
 ## 🔧 Durchgeführte Wartungsaktionen
 
 
-**Freigegebener Speicher in diesem Lauf:** 262MB.
+**Freigegebener Speicher in diesem Lauf:** 1.1GB.
 
 ➡️ Nach den Updates ist ein **Reboot erforderlich**.
 
@@ -497,5 +485,5 @@ Diese Posten lassen sich typischerweise gefahrlos freigeben. Im Modus
 
 ---
 
-<sub>Erzeugt am 2026-09-30 02:12:02 UTC · Modus `full` ·
+<sub>Erzeugt am 2026-10-07 02:14:56 UTC · Modus `full` ·
 Details/Anpassung: [tools/server-maintenance/README.md](../../tools/server-maintenance/README.md)</sub>
