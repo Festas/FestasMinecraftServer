@@ -1,0 +1,26 @@
+[00:02:20] [Netty epoll Worker #0/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /178.63.123.73:35825 has disconnected
+[00:14:22] [Netty epoll Worker #10/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /176.65.148.253:39400 has disconnected
+[00:25:29] [Netty epoll Worker #1/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /178.63.123.76:35903 has disconnected
+[00:34:24] [Netty epoll Worker #1/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /178.63.123.76:30513 has disconnected
+[00:44:26] [Netty epoll Worker #8/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /46.4.84.244:42623 has disconnected
+[00:56:27] [Netty epoll Worker #15/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /46.4.84.244:59659 has disconnected
+[01:05:35] [SkinsRestorer - Task Executor #401/INFO] [skinsrestorer]: A new version of SkinsRestorer (15.12.6) is available: https://modrinth.com/plugin/skinsrestorer/version/15.12.6
+[01:07:11] [Netty epoll Worker #5/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /178.63.179.212:43985 has disconnected
+[01:17:25] [Netty epoll Worker #11/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /178.63.179.209:8975 has disconnected
+[01:27:23] [Netty epoll Worker #1/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /178.63.123.75:51313 has disconnected
+[01:36:54] [Netty epoll Worker #6/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /178.63.179.209:13351 has disconnected
+[01:46:50] [Netty epoll Worker #9/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /178.63.179.211:16607 has disconnected
+[01:57:10] [Netty epoll Worker #15/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /178.63.179.212:21211 has disconnected
+[02:06:37] [Netty epoll Worker #2/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /178.63.179.210:14349 has disconnected
+[02:12:30] [Netty epoll Worker #3/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /178.63.123.75:2887 has disconnected
+[02:22:06] [Netty epoll Worker #6/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /46.4.84.241:22281 has disconnected
+[02:29:41] [Netty epoll Worker #4/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /178.63.123.78:51115 has disconnected
+[02:33:44] [Netty epoll Worker #4/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /46.4.84.244:11063 has disconnected
+[02:43:22] [Netty epoll Worker #6/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /46.4.84.241:23635 has disconnected
+[02:54:42] [Netty epoll Worker #0/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /176.65.148.253:46150 has disconnected
+[03:04:26] [Netty epoll Worker #6/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /176.65.148.253:39306 has disconnected
+[03:14:52] [Netty epoll Worker #13/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /178.63.179.209:39447 has disconnected
+[03:25:05] [Netty epoll Worker #3/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /178.63.123.76:9819 has disconnected
+[03:25:23] [Netty epoll Worker #2/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:60566: read timed out
+[03:33:55] [Netty epoll Worker #3/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /176.65.149.198:61000: read timed out
+[03:35:19] [Netty epoll Worker #9/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /178.63.179.211:10187 has disconnected
