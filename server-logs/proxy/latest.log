@@ -1,25 +1,23 @@
-[00:02:34] [Netty epoll Worker #1/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /178.63.123.77:54523 has disconnected
-[00:15:28] [Netty epoll Worker #8/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /46.4.84.241:61053 has disconnected
-[00:26:46] [Netty epoll Worker #12/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /46.4.84.241:54851 has disconnected
-[00:38:13] [Netty epoll Worker #1/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /176.65.149.198:61000: read timed out
-[00:38:41] [Netty epoll Worker #5/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /178.63.123.77:17467 has disconnected
-[00:49:12] [Netty epoll Worker #11/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /178.63.179.209:58997 has disconnected
-[00:59:48] [Netty epoll Worker #1/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /178.63.123.77:44579 has disconnected
-[01:09:12] [Netty epoll Worker #4/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /178.63.123.74:50025 has disconnected
-[01:19:34] [Netty epoll Worker #9/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /178.63.179.210:2669 has disconnected
-[01:29:47] [Netty epoll Worker #14/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /46.4.84.241:5647 has disconnected
-[01:32:40] [Netty epoll Worker #4/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /176.65.149.198:61000: read timed out
-[01:41:19] [Netty epoll Worker #7/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /178.63.123.73:33053 has disconnected
-[01:48:11] [Netty epoll Worker #2/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:58308: read timed out
-[01:50:47] [Netty epoll Worker #9/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /178.63.179.210:36347 has disconnected
-[02:02:05] [Netty epoll Worker #3/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /178.63.179.209:7221 has disconnected
-[02:05:36] [SkinsRestorer - Task Executor #60/INFO] [skinsrestorer]: A new version of SkinsRestorer (15.12.6) is available: https://modrinth.com/plugin/skinsrestorer/version/15.12.6
-[02:13:12] [Netty epoll Worker #12/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /46.4.84.241:27119 has disconnected
-[02:26:52] [Netty epoll Worker #8/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /176.65.148.253:54968 has disconnected
-[02:35:07] [Netty epoll Worker #8/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /176.65.148.226:61635: read timed out
-[02:37:21] [Netty epoll Worker #14/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /178.63.179.209:22105 has disconnected
-[03:05:14] [Netty epoll Worker #0/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /176.65.149.198:61000: read timed out
-[03:10:59] [Netty epoll Worker #11/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /176.65.149.198:61000: read timed out
-[03:14:04] [Netty epoll Worker #2/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /176.65.149.198:61000: read timed out
-[03:20:21] [Netty epoll Worker #1/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /176.65.149.198:61000: read timed out
-[03:28:41] [Netty epoll Worker #3/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /178.63.123.75:16011 has disconnected
+[00:05:36] [SkinsRestorer - Task Executor #119/INFO] [skinsrestorer]: A new version of SkinsRestorer (15.12.6) is available: https://modrinth.com/plugin/skinsrestorer/version/15.12.6
+[00:08:19] [Netty epoll Worker #10/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /46.4.84.241:37817 has disconnected
+[00:20:59] [Netty epoll Worker #3/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /178.63.123.77:52271 has disconnected
+[00:33:16] [Netty epoll Worker #9/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /178.63.123.74:8285 has disconnected
+[00:36:36] [Netty epoll Worker #15/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /176.65.149.198:61000: read timed out
+[00:46:47] [Netty epoll Worker #7/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /178.63.123.75:15879 has disconnected
+[01:00:13] [Netty epoll Worker #4/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /178.63.179.210:38193 has disconnected
+[01:12:16] [Netty epoll Worker #0/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /46.4.84.244:65183 has disconnected
+[01:20:55] [Netty epoll Worker #13/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /176.65.149.198:61000: read timed out
+[01:22:53] [Netty epoll Worker #3/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /178.63.123.76:43699 has disconnected
+[01:28:22] [Netty epoll Worker #11/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /176.65.149.198:61000: read timed out
+[01:30:00] [Netty epoll Worker #0/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /176.65.148.226:61635: read timed out
+[01:48:56] [Netty epoll Worker #7/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /178.63.123.75:33787 has disconnected
+[02:02:16] [Netty epoll Worker #2/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /178.63.123.73:31841 has disconnected
+[02:06:01] [Netty epoll Worker #9/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /176.65.148.226:61635: read timed out
+[02:16:09] [Netty epoll Worker #14/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /176.65.149.198:61000: read timed out
+[02:17:36] [SkinsRestorer - Task Executor #125/INFO] [skinsrestorer]: A new version of SkinsRestorer (15.12.6) is available: https://modrinth.com/plugin/skinsrestorer/version/15.12.6
+[02:19:00] [Netty epoll Worker #4/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /176.65.149.198:61000: read timed out
+[02:43:57] [Netty epoll Worker #8/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /176.65.148.253:63881: read timed out
+[02:50:58] [Netty epoll Worker #4/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /178.63.123.73:33057 has disconnected
+[03:02:26] [Netty epoll Worker #0/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /46.4.84.244:31013 has disconnected
+[03:15:20] [Netty epoll Worker #11/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /178.63.123.75:51463 has disconnected
+[03:20:26] [Netty epoll Worker #3/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /176.65.148.226:61635: read timed out
