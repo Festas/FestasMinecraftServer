@@ -1,8 +1,0 @@
-[01:06:22] [CMI-Thread-4/INFO]: [CMI] SQLite 3.49.1 data base type detected
-[01:06:22] [CMI-Thread-5/INFO]: [CMI] Start Back up
-[01:06:22] [CMI-Thread-5/INFO]: [CMI] Copied users data
-[01:06:22] [CMI-Thread-5/INFO]: [CMI] Copied playtimereward data
-[01:06:22] [CMI-Thread-5/INFO]: [CMI] Finish Back up copy process
-[01:06:22] [CMI-Thread-6/INFO]: [CMI] Backup compacted: 2026-10-06_01-06-22_cmi.sqlite.db.zip
-[01:06:22] [CMI-Thread-6/INFO]: [CMI] Removed temporary file
-[01:06:22] [CMI-Thread-6/INFO]: [CMI] Deleted old backup: 2026-09-25_19-06-26_cmi.sqlite.db.zip

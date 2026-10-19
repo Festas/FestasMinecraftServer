@@ -1,2 +1,9 @@
-[02:02:24] [Server thread/INFO]: FishNet (/176.65.149.198:61000) lost connection: Timed out
-[03:13:21] [Server thread/INFO]: FishNet (/176.65.149.198:61000) lost connection: Timed out
+[00:34:56] [Netty Epoll IO #1/INFO]: Disconnecting TidyShark2949 (/176.65.148.253:58501): This server requires you to connect with Velocity.
+[00:34:56] [Server thread/INFO]: TidyShark2949 (/176.65.148.253:58501) lost connection: This server requires you to connect with Velocity.
+[01:03:24] [Server thread/INFO]: Disconnecting FishNet (/176.65.149.198:61000): Took too long to log in
+[01:03:24] [Server thread/INFO]: FishNet (/176.65.149.198:61000) lost connection: Took too long to log in
+[02:23:44] [Server thread/INFO]: Disconnecting FishNet (/176.65.149.198:61000): Took too long to log in
+[02:23:44] [Server thread/INFO]: FishNet (/176.65.149.198:61000) lost connection: Took too long to log in
+[02:34:31] [Server thread/INFO]: FishNet (/176.65.149.198:61000) lost connection: Timed out
+[03:25:27] [Server thread/INFO]: Disconnecting FishNet (/176.65.149.198:61000): Took too long to log in
+[03:25:27] [Server thread/INFO]: FishNet (/176.65.149.198:61000) lost connection: Took too long to log in

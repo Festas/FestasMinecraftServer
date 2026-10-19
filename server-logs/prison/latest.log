@@ -1,12 +1,10 @@
-[00:10:18] [helper-scheduler-1/INFO]: [X-Prison] History cleanup: removed entries older than 30 days.
-[00:30:20] [Server thread/INFO]: FishNet (/176.65.149.198:61000) lost connection: Timed out
-[01:10:18] [helper-scheduler-1/INFO]: [X-Prison] History cleanup: removed entries older than 30 days.
-[01:19:17] [Server thread/INFO]: luckysystems (/134.101.183.218:61587) lost connection: Disconnected
-[01:19:30] [Server thread/INFO]: luckysystems (/50.47.113.196:50832) lost connection: Disconnected
-[01:34:39] [Server thread/INFO]: Disconnecting FishNet (/176.65.149.198:61000): Took too long to log in
-[01:34:39] [Server thread/INFO]: FishNet (/176.65.149.198:61000) lost connection: Took too long to log in
-[02:07:01] [Server thread/INFO]: Disconnecting FishNet (/176.65.149.198:61000): Took too long to log in
-[02:07:01] [Server thread/INFO]: FishNet (/176.65.149.198:61000) lost connection: Took too long to log in
-[02:10:18] [helper-scheduler-1/INFO]: [X-Prison] History cleanup: removed entries older than 30 days.
-[02:39:23] [Server thread/INFO]: FishNet (/176.65.149.198:61000) lost connection: Timed out
-[03:10:18] [helper-scheduler-1/INFO]: [X-Prison] History cleanup: removed entries older than 30 days.
+[00:10:20] [helper-scheduler-4/INFO]: [X-Prison] History cleanup: removed entries older than 30 days.
+[00:34:43] [Netty Epoll IO #1/INFO]: Disconnecting ZanyOtter6839 (/176.65.148.253:57337): This server requires you to connect with Velocity.
+[00:34:44] [Server thread/INFO]: ZanyOtter6839 (/176.65.148.253:57337) lost connection: This server requires you to connect with Velocity.
+[00:46:33] [Server thread/INFO]: Disconnecting FishNet (/176.65.149.198:61000): Took too long to log in
+[00:46:33] [Server thread/INFO]: FishNet (/176.65.149.198:61000) lost connection: Took too long to log in
+[01:10:20] [helper-scheduler-4/INFO]: [X-Prison] History cleanup: removed entries older than 30 days.
+[01:43:33] [Server thread/INFO]: Disconnecting FishNet (/176.65.149.198:61000): Took too long to log in
+[01:43:33] [Server thread/INFO]: FishNet (/176.65.149.198:61000) lost connection: Timed out
+[02:10:20] [helper-scheduler-4/INFO]: [X-Prison] History cleanup: removed entries older than 30 days.
+[03:10:20] [helper-scheduler-4/INFO]: [X-Prison] History cleanup: removed entries older than 30 days.
