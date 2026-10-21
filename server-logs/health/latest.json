@@ -1,25 +1,29 @@
 {
-  "apt_security": 8,
-  "apt_upgradable": 12,
+  "apt_security": 5,
+  "apt_upgradable": 14,
   "cpu_cores": 8,
   "disk_root_total_bytes": 322302373888,
-  "disk_root_used_bytes": 112173826048,
+  "disk_root_used_bytes": 112341299200,
   "disk_root_used_pct": 37,
   "docker_containers_running": 9,
   "docker_containers_total": 9,
   "docker_unhealthy": 0,
   "dry_run": 0,
   "established_conns": 84,
-  "failed_logins_7d": 13984,
+  "failed_logins_7d": 15798,
   "failed_services": 1,
-  "freed_bytes": 263835648,
-  "generated_at": 1791943494,
+  "freed_bytes": 347291648,
+  "generated_at": 1792548434,
   "host": "festas-builds",
   "inode_root_used_pct": 6,
   "internal_only_bind_mismatch": 3,
   "internal_only_non_loopback_bound": 3,
   "internal_only_public_exposed": 1,
   "issues": [
+    {
+      "level": "WARN",
+      "text": "RAM-Auslastung 81 % (Schwelle 80 %)."
+    },
     {
       "level": "WARN",
       "text": "1 fehlgeschlagene systemd-Unit(s)."
@@ -38,19 +42,19 @@
     },
     {
       "level": "WARN",
-      "text": "Viele fehlgeschlagene Logins (13984) – Brute-Force? fail2ban prüfen."
+      "text": "Viele fehlgeschlagene Logins (15798) – Brute-Force? fail2ban prüfen."
     },
     {
       "level": "WARN",
-      "text": "8 sicherheitsrelevante Updates ausstehend."
+      "text": "5 sicherheitsrelevante Updates ausstehend."
     }
   ],
   "issues_crit": 0,
-  "issues_warn": 6,
-  "journal_errors_7d": 291,
+  "issues_warn": 7,
+  "journal_errors_7d": 148,
   "kernel": "Linux 6.8.0-138-generic",
   "load1": 0.31,
-  "mem_used_pct": 74,
+  "mem_used_pct": 81,
   "mode": "full",
   "oom_events_7d": 0,
   "os": "Ubuntu 24.04.5 LTS",
@@ -66,6 +70,6 @@
     "Host-Reboot einplanen (Kernel/Bibliotheks-Updates aktivieren)."
   ],
   "status": "WARN",
-  "swap_used_pct": 31,
+  "swap_used_pct": 8,
   "wings_active": 1
 }
