@@ -2,8 +2,12 @@
 [00:15:26] [Server thread/INFO]: [DeluxeBazaar] (INFO) Item prices are refreshed.
 [01:15:26] [Server thread/INFO]: [DeluxeBazaar] (INFO) Item prices & amounts are saved to database.
 [01:15:26] [Server thread/INFO]: [DeluxeBazaar] (INFO) Item prices are refreshed.
-[01:56:14] [Server thread/INFO]: FishNet (/176.65.149.198:61000) lost connection: Timed out
 [02:15:26] [Server thread/INFO]: [DeluxeBazaar] (INFO) Item prices & amounts are saved to database.
 [02:15:26] [Server thread/INFO]: [DeluxeBazaar] (INFO) Item prices are refreshed.
+[02:15:26] [Server thread/INFO]: [DeluxeBazaar] (INFO) Item prices & amounts are saved to database.
+[02:15:26] [Server thread/INFO]: [DeluxeBazaar] (INFO) Item prices are refreshed.
+[02:19:45] [Server thread/INFO]: FishNet (/176.65.149.198:61000) lost connection: Timed out
+[02:40:18] [Netty Epoll IO #0/INFO]: Disconnecting IcyViper4914 (/176.65.148.253:55973): This server requires you to connect with Velocity.
+[02:40:18] [Server thread/INFO]: IcyViper4914 (/176.65.148.253:55973) lost connection: This server requires you to connect with Velocity.
 [03:15:26] [Server thread/INFO]: [DeluxeBazaar] (INFO) Item prices & amounts are saved to database.
 [03:15:26] [Server thread/INFO]: [DeluxeBazaar] (INFO) Item prices are refreshed.
