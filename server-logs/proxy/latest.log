@@ -1,5 +1,10 @@
-[00:17:04] [Netty epoll Worker #8/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /176.65.148.154:56264 has disconnected
-[00:52:50] [SkinsRestorer - Task Executor #347/INFO] [skinsrestorer]: A new version of SkinsRestorer (15.12.6) is available: https://modrinth.com/plugin/skinsrestorer/version/15.12.6
-[01:00:19] [Netty epoll Worker #6/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /176.65.148.154:38650 has disconnected
-[01:02:32] [Netty epoll Worker #11/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:36760: read timed out
-[01:56:13] [Netty epoll Worker #3/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /213.152.161.54:15481: read timed out
+[00:33:55] [Netty epoll Worker #1/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:53630: read timed out
+[00:44:36] [Netty epoll Worker #9/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /176.65.148.154:37546 has disconnected
+[01:15:34] [Netty epoll Worker #14/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:47344: read timed out
+[01:32:23] [Netty epoll Worker #0/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:50224: read timed out
+[01:40:43] [Netty epoll Worker #13/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:59454: read timed out
+[01:50:24] [Netty epoll Worker #13/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:35956: read timed out
+[01:59:41] [Netty epoll Worker #1/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:42458: read timed out
+[02:04:50] [SkinsRestorer - Task Executor #408/INFO] [skinsrestorer]: A new version of SkinsRestorer (15.12.6) is available: https://modrinth.com/plugin/skinsrestorer/version/15.12.6
+[02:35:25] [Netty epoll Worker #1/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /176.65.148.154:54272 has disconnected
+[02:58:46] [Netty epoll Worker #11/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:60732: read timed out

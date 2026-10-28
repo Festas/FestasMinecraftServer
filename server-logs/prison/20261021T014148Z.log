@@ -1,8 +1,0 @@
-[00:10:20] [helper-scheduler-0/INFO]: [X-Prison] History cleanup: removed entries older than 30 days.
-[01:10:20] [helper-scheduler-0/INFO]: [X-Prison] History cleanup: removed entries older than 30 days.
-[02:10:20] [helper-scheduler-0/INFO]: [X-Prison] History cleanup: removed entries older than 30 days.
-[02:46:01] [Server thread/INFO]: Disconnecting FishNet (/176.65.149.198:61000): Took too long to log in
-[02:46:01] [Server thread/INFO]: FishNet (/176.65.149.198:61000) lost connection: Took too long to log in
-[03:10:20] [helper-scheduler-0/INFO]: [X-Prison] History cleanup: removed entries older than 30 days.
-[03:19:15] [Server thread/INFO]: 67xia0mi (/45.133.74.41:61010) lost connection: Disconnected
-[03:41:34] [Server thread/INFO]: FishNet (/176.65.149.198:61000) lost connection: Timed out
