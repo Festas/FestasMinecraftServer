@@ -1,0 +1,1 @@
+[02:34:13] [Server thread/INFO]: /198.46.182.214:61510 lost connection: Internal Exception: io.netty.handler.codec.DecoderException: java.io.IOException: Packet login/serverbound/minecraft:hello (ServerboundHelloPacket) was larger than I expected, found 1 bytes extra whilst reading packet serverbound/minecraft:hello

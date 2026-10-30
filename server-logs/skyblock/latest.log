@@ -1,8 +1,10 @@
-[00:15:27] [Server thread/INFO]: [DeluxeBazaar] (INFO) Item prices & amounts are saved to database.
-[00:15:27] [Server thread/INFO]: [DeluxeBazaar] (INFO) Item prices are refreshed.
-[01:15:27] [Server thread/INFO]: [DeluxeBazaar] (INFO) Item prices & amounts are saved to database.
-[01:15:27] [Server thread/INFO]: [DeluxeBazaar] (INFO) Item prices are refreshed.
-[02:15:27] [Server thread/INFO]: [DeluxeBazaar] (INFO) Item prices & amounts are saved to database.
-[02:15:27] [Server thread/INFO]: [DeluxeBazaar] (INFO) Item prices are refreshed.
-[03:15:27] [Server thread/INFO]: [DeluxeBazaar] (INFO) Item prices & amounts are saved to database.
-[03:15:27] [Server thread/INFO]: [DeluxeBazaar] (INFO) Item prices are refreshed.
+[00:15:25] [Server thread/INFO]: [DeluxeBazaar] (INFO) Item prices & amounts are saved to database.
+[00:15:25] [Server thread/INFO]: [DeluxeBazaar] (INFO) Item prices are refreshed.
+[01:15:25] [Server thread/INFO]: [DeluxeBazaar] (INFO) Item prices & amounts are saved to database.
+[01:15:25] [Server thread/INFO]: [DeluxeBazaar] (INFO) Item prices are refreshed.
+[01:18:34] [Netty Epoll IO #0/INFO]: Disconnecting EagerSnake4656 (/176.65.148.253:39787): This server requires you to connect with Velocity.
+[01:18:34] [Server thread/INFO]: EagerSnake4656 (/176.65.148.253:39787) lost connection: This server requires you to connect with Velocity.
+[02:15:25] [Server thread/INFO]: [DeluxeBazaar] (INFO) Item prices & amounts are saved to database.
+[02:15:25] [Server thread/INFO]: [DeluxeBazaar] (INFO) Item prices are refreshed.
+[03:15:25] [Server thread/INFO]: [DeluxeBazaar] (INFO) Item prices & amounts are saved to database.
+[03:15:25] [Server thread/INFO]: [DeluxeBazaar] (INFO) Item prices are refreshed.
