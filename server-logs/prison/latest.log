@@ -1,12 +1,5 @@
-[00:04:34] [Server thread/INFO]: AntiKochSILA8473 (/185.31.41.84:49180) lost connection: Internal Exception: io.netty.handler.codec.DecoderException: Failed to decode packet 'serverbound/minecraft:custom_query_answer'
-[00:10:19] [helper-scheduler-0/INFO]: [X-Prison] History cleanup: removed entries older than 30 days.
-[00:17:45] [Server thread/INFO]: AntiKochSILA8547 (/185.31.41.84:40576) lost connection: Internal Exception: io.netty.handler.codec.DecoderException: Failed to decode packet 'serverbound/minecraft:custom_query_answer'
-[00:31:24] [Server thread/INFO]: AntiKochSILA1887 (/185.31.41.84:57654) lost connection: Internal Exception: io.netty.handler.codec.DecoderException: Failed to decode packet 'serverbound/minecraft:custom_query_answer'
-[00:44:56] [Server thread/INFO]: AntiKochSILA7013 (/185.31.41.84:46706) lost connection: Internal Exception: io.netty.handler.codec.DecoderException: Failed to decode packet 'serverbound/minecraft:custom_query_answer'
-[00:57:44] [Server thread/INFO]: AntiKochSILA8944 (/185.31.41.84:58506) lost connection: Internal Exception: io.netty.handler.codec.DecoderException: Failed to decode packet 'serverbound/minecraft:custom_query_answer'
-[01:10:19] [helper-scheduler-0/INFO]: [X-Prison] History cleanup: removed entries older than 30 days.
-[01:10:52] [Server thread/INFO]: AntiKochSILA3028 (/185.31.41.84:34752) lost connection: Internal Exception: io.netty.handler.codec.DecoderException: Failed to decode packet 'serverbound/minecraft:custom_query_answer'
-[01:23:41] [Server thread/INFO]: AntiKochSILA1821 (/185.31.41.84:56742) lost connection: Internal Exception: io.netty.handler.codec.DecoderException: Failed to decode packet 'serverbound/minecraft:custom_query_answer'
-[01:44:07] [Server thread/INFO]: AntiKochSILA3069 (/185.31.41.84:48414) lost connection: Internal Exception: io.netty.handler.codec.DecoderException: Failed to decode packet 'serverbound/minecraft:custom_query_answer'
-[02:10:19] [helper-scheduler-0/INFO]: [X-Prison] History cleanup: removed entries older than 30 days.
-[03:10:19] [helper-scheduler-0/INFO]: [X-Prison] History cleanup: removed entries older than 30 days.
+[00:10:19] [helper-scheduler-2/INFO]: [X-Prison] History cleanup: removed entries older than 30 days.
+[01:10:19] [helper-scheduler-2/INFO]: [X-Prison] History cleanup: removed entries older than 30 days.
+[01:38:26] [Server thread/INFO]: /198.46.182.214:61987 lost connection: Internal Exception: io.netty.handler.codec.DecoderException: java.io.IOException: Packet login/serverbound/minecraft:hello (ServerboundHelloPacket) was larger than I expected, found 1 bytes extra whilst reading packet serverbound/minecraft:hello
+[02:10:19] [helper-scheduler-2/INFO]: [X-Prison] History cleanup: removed entries older than 30 days.
+[03:10:19] [helper-scheduler-2/INFO]: [X-Prison] History cleanup: removed entries older than 30 days.
