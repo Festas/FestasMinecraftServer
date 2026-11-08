@@ -1,14 +1,10 @@
-[00:15:26] [Netty epoll Worker #3/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:54378: read timed out
-[01:13:10] [Netty epoll Worker #12/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /204.76.203.4:1001: read timed out
-[01:15:54] [Netty epoll Worker #2/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:43102: read timed out
-[01:27:36] [Netty epoll Worker #1/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /204.76.203.4:1001: read timed out
-[01:32:41] [Netty epoll Worker #8/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:59298: read timed out
-[01:41:01] [Netty epoll Worker #3/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:46144: read timed out
-[01:44:59] [Netty epoll Worker #10/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /198.46.182.214:61265: read timed out
-[01:52:19] [SkinsRestorer - Task Executor #178/INFO] [skinsrestorer]: A new version of SkinsRestorer (15.12.6) is available: https://modrinth.com/plugin/skinsrestorer/version/15.12.6
-[02:01:11] [Netty epoll Worker #6/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /204.76.203.4:1001: read timed out
-[02:01:43] [Netty epoll Worker #7/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:50146: read timed out
-[02:20:31] [Netty epoll Worker #7/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:40714: read timed out
-[02:31:20] [Netty epoll Worker #4/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /204.76.203.4:1001: read timed out
-[02:49:39] [Netty epoll Worker #4/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:51510: read timed out
-[03:17:27] [Netty epoll Worker #14/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:50938: read timed out
+[00:11:41] [Netty epoll Worker #1/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:39806: read timed out
+[00:19:25] [Netty epoll Worker #10/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:44940: read timed out
+[00:50:55] [Netty epoll Worker #4/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:56882: read timed out
+[01:24:44] [Netty epoll Worker #6/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:60994: read timed out
+[01:28:19] [SkinsRestorer - Task Executor #238/INFO] [skinsrestorer]: A new version of SkinsRestorer (15.12.6) is available: https://modrinth.com/plugin/skinsrestorer/version/15.12.6
+[01:41:54] [Netty epoll Worker #1/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /204.76.203.4:1001: read timed out
+[02:23:28] [Netty epoll Worker #9/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:39234: read timed out
+[03:08:33] [Netty epoll Worker #13/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /204.76.203.4:1001: read timed out
+[03:15:14] [Netty epoll Worker #8/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /204.76.203.4:1001: read timed out
+[03:18:45] [Netty epoll Worker #13/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /204.76.203.4:1001: read timed out
