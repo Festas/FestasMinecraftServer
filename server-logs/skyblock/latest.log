@@ -1,5 +1,14 @@
 [00:15:26] [Server thread/INFO]: [DeluxeBazaar] (INFO) Item prices & amounts are saved to database.
 [00:15:26] [Server thread/INFO]: [DeluxeBazaar] (INFO) Item prices are refreshed.
+[00:16:31] [CMI-Thread-4/INFO]: [CMI] SQLite 3.49.1 data base type detected
+[00:16:31] [CMI-Thread-5/INFO]: [CMI] Start Back up
+[00:16:31] [CMI-Thread-5/INFO]: [CMI] Copied playtimereward data
+[00:16:31] [CMI-Thread-5/INFO]: [CMI] Copied users data
+[00:16:31] [CMI-Thread-5/INFO]: [CMI] Finish Back up copy process
+[00:16:31] [CMI-Thread-6/INFO]: [CMI] Backup compacted: 2026-11-11_00-16-31_cmi.sqlite.db.zip
+[00:16:31] [CMI-Thread-5/INFO]: [CMI] Removed temporary file
+[00:16:31] [CMI-Thread-5/INFO]: [CMI] Deleted old backup: 2026-10-31_18-16-30_cmi.sqlite.db.zip
+[00:35:08] [Server thread/INFO]: iNhabiTORs75141 (/45.153.34.119:41322) lost connection: Disconnected
 [01:15:26] [Server thread/INFO]: [DeluxeBazaar] (INFO) Item prices & amounts are saved to database.
 [01:15:26] [Server thread/INFO]: [DeluxeBazaar] (INFO) Item prices are refreshed.
 [02:15:26] [Server thread/INFO]: [DeluxeBazaar] (INFO) Item prices & amounts are saved to database.
