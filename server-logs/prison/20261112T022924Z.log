@@ -1,0 +1,6 @@
+[00:10:20] [helper-scheduler-5/INFO]: [X-Prison] History cleanup: removed entries older than 30 days.
+[00:12:00] [Server thread/INFO]: /198.46.182.214:61987 lost connection: Internal Exception: io.netty.handler.codec.DecoderException: java.io.IOException: Packet login/serverbound/minecraft:hello (ServerboundHelloPacket) was larger than I expected, found 1 bytes extra whilst reading packet serverbound/minecraft:hello
+[01:10:20] [helper-scheduler-5/INFO]: [X-Prison] History cleanup: removed entries older than 30 days.
+[01:44:48] [Server thread/INFO]: /198.46.182.214:61987 lost connection: Internal Exception: io.netty.handler.codec.DecoderException: java.io.IOException: Packet login/serverbound/minecraft:hello (ServerboundHelloPacket) was larger than I expected, found 1 bytes extra whilst reading packet serverbound/minecraft:hello
+[02:10:20] [helper-scheduler-6/INFO]: [X-Prison] History cleanup: removed entries older than 30 days.
+[03:10:20] [helper-scheduler-6/INFO]: [X-Prison] History cleanup: removed entries older than 30 days.
