@@ -228,6 +228,8 @@ wird deployt. Datenbank-/`data/`-Inhalte gehören **nicht** ins Repo und werden 
 
 ## Verwandte Referenzen
 
+- **[`../roadmap/README.md`](../roadmap/README.md)** – Verbesserungsplan & Roadmap-Hub (Querschnitts-Backlog,
+  Gesamtstruktur, Proxy, KI-Agents, per-Server-Roadmaps)
 - **[`CROSS-PLUGIN.md`](CROSS-PLUGIN.md)** – Cross-Plugin-Features, Integrations-Backbone & Feature-Playbooks
   (Orchestrierung über mehrere Plugins/Agents)
 - **[`ORCHESTRATOR.md`](ORCHESTRATOR.md)** – Main-/Orchestrator-Agent, der die Feature-Playbooks ausführt
