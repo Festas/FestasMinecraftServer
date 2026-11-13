@@ -211,6 +211,10 @@ Velocity-Scoreboard-API.
 
 ## 8. Roadmap
 
+> **Zentraler Verbesserungsplan:** Der ausgearbeitete, agent-getriebene Roadmap-/Verbesserungsplan
+> (Querschnitts-Backlog, Gesamtstruktur, Proxy, KI-Agents und die vier per-Server-Roadmaps) liegt jetzt
+> unter [`roadmap/README.md`](roadmap/README.md). Die folgende Liste bleibt als Kurzüberblick bestehen.
+
 - [ ] **Mining** finalisieren (Zonen, Enchants/Prestige-Balancing, Battlepass, Launch)
 - [ ] **Skyblock** finalisieren (MVP-Scope: Inseln, Koop, Economy, Challenges)
 - [ ] Anti-Cheat auf Survival evaluieren
