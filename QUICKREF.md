@@ -105,3 +105,4 @@ rpg/plugins/
 - `SECRETS.md`
 - `docs/ARCHITECTURE.md`
 - `docs/OPERATIONS.md`
+- `docs/roadmap/README.md` (Verbesserungsplan & Roadmap-Hub)

@@ -1,5 +1,12 @@
 # Planungs-Fragenkatalog für MinecraftMMO
 
+> **⚠️ Veraltet (Stand 2026-08-15).** Dieses Dokument enthält **Alt-Konzepte**, die **nicht mehr im
+> Einsatz** sind (MMO-Modus, CoinsEngine, HuskSync, MMOItems, Factions/Gilden). Es bleibt nur als
+> historischer Ideen-/Fragenkatalog erhalten. **Maßgeblich/aktuell** sind stattdessen:
+> [`roadmap/README.md`](roadmap/README.md) (zentraler Verbesserungsplan), [`NEW_SERVERS.md`](NEW_SERVERS.md)
+> (Weichenstellung Mining/Skyblock) und [`SERVER_OVERVIEW.md`](SERVER_OVERVIEW.md) (Ist-Stand / Single
+> Source of Truth).
+
 Dieser Fragenkatalog dient als Leitfaden für die weitere Entwicklung und Dokumentation des MinecraftMMO Server-Netzwerks. Die Fragen helfen dabei, strukturiert über Features, Balance und Implementierung nachzudenken.
 
 > **ℹ️ Stand 26.2:** Der Fokus liegt aktuell auf **Lobby** und **Survival**. Dazu kommen ein **überarbeiteter Skyblock** (ohne Gilden, mit Freunde-Koop) und ein neuer **Mining**-Server (Abbau-Zonen mit aufwertbaren Spitzhacken). Die Weichenstellung inkl. Bewertung und Plugin-Shortlist steht in [NEW_SERVERS.md](NEW_SERVERS.md); die Planungskapitel für die neuen Server sind Abschnitte 2 (Mining) und 3 (Skyblock). Der **RPG**-Server wird zeitnah eingestellt.

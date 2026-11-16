@@ -84,6 +84,7 @@ Das Netzwerk besteht aus einem Velocity-Proxy und mehreren Paper-Backends. Die w
 
 Die aktuelle Projekt-Dokumentation liegt hauptsächlich in `docs/` und wird durch folgende zentrale Referenzen ergänzt:
 
+- `docs/roadmap/README.md`: **Verbesserungsplan & Roadmap (Hub)** – zentraler, agent-getriebener Einstieg für geplante Verbesserungen (Querschnitts-Backlog, Gesamtstruktur, Proxy, KI-Agents, per-Server-Roadmaps).
 - `docs/plugins/README.md`: **Plugin-Wissensbasis** (Datenbasis für KI-Agents) – Matrix, Storage-/Secret-/Deploy-Modell + ein Referenzdokument je Plugin. Ergänzt durch Custom AI Agents in `.github/agents/` und die Auto-Discovery-Regeln in `.github/copilot-instructions.md`.
 - `docs/ARCHITECTURE.md`: Netz- und Server-Architektur
 - `docs/OPERATIONS.md`: Betrieb, Start/Stopp, Wartung und Monitoring
