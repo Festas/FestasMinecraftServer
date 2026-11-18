@@ -1,0 +1,202 @@
+[00:43:17] [Server thread/INFO]: INHABiTOrs17726 (/45.153.34.119:32556) lost connection: Disconnected
+[01:01:40] [CMI-Thread-4/INFO]: [CMI] SQLite 3.49.1 data base type detected
+[01:01:40] [CMI-Thread-5/INFO]: [CMI] Start Back up
+[01:01:40] [CMI-Thread-5/INFO]: [CMI] Copied users data
+[01:01:40] [CMI-Thread-5/INFO]: [CMI] Copied playtimereward data
+[01:01:40] [CMI-Thread-5/INFO]: [CMI] Finish Back up copy process
+[01:01:40] [CMI-Thread-6/INFO]: [CMI] Backup compacted: 2026-11-18_01-01-40_cmi.sqlite.db.zip
+[01:01:40] [CMI-Thread-5/INFO]: [CMI] Removed temporary file
+[01:01:40] [CMI-Thread-5/INFO]: [CMI] Deleted old backup: 2026-11-07_19-01-41_cmi.sqlite.db.zip
+[01:53:36] [Server thread/INFO]: /198.46.182.214:61920 lost connection: Internal Exception: io.netty.handler.codec.DecoderException: java.io.IOException: Packet login/serverbound/minecraft:hello (ServerboundHelloPacket) was larger than I expected, found 1 bytes extra whilst reading packet serverbound/minecraft:hello
+[03:04:01] [Server thread/INFO]: Stopping server
+[03:04:01] [Server thread/INFO]: [AxiomPaper] Disabling AxiomPaper v5.0.4+26.2
+[03:04:01] [Server thread/INFO]: [Chunky] Disabling Chunky v1.5.3
+[03:04:01] [luckperms-worker-10/WARN]: [LuckPerms] Redis pubsub connection dropped, trying to re-open the connection
+me.lucko.luckperms.lib.jedis.exceptions.JedisConnectionException: Unexpected end of stream.
+	at me.lucko.luckperms.lib.jedis.util.RedisInputStream.ensureFill(RedisInputStream.java:259) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.util.RedisInputStream.readByte(RedisInputStream.java:55) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Protocol.process(Protocol.java:131) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Protocol.read(Protocol.java:221) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Connection.protocolRead(Connection.java:379) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:392) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Connection.getUnflushedObject(Connection.java:349) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.JedisPubSubBase.process(JedisPubSubBase.java:115) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.JedisPubSubBase.proceed(JedisPubSubBase.java:92) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.UnifiedJedis.subscribe(UnifiedJedis.java:3821) ~[?:?]
+	at me.lucko.luckperms.common.messaging.redis.RedisMessenger$Subscription.run(RedisMessenger.java:140) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.compute(ForkJoinTask.java:1753) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.compute(ForkJoinTask.java:1745) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinTask$InterruptibleTask.exec(ForkJoinTask.java:1662) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187) ~[?:?]
+[03:04:01] [Server thread/INFO]: [Plan] Disabling Plan v5.8 build 3605
+[03:04:01] [Server thread/INFO]: [Plan] Processing complete.
+[03:04:01] [Server thread/INFO]: [Plan] Waiting for unfinished transactions to avoid data loss..
+[03:04:01] [Server thread/INFO]: [Plan] Transaction queue closed.
+[03:04:01] [Server thread/INFO]: [Plan] Player Analytics Disabled.
+[03:04:01] [Server thread/INFO]: [ChestShop] Disabling ChestShop v1.5.1
+[03:04:01] [Server thread/INFO]: [TAB-Bridge] Disabling TAB-Bridge v6.2.2
+[03:04:01] [Server thread/INFO]: [ShopGUIPlus] Disabling ShopGUIPlus v1.113.0
+[03:04:01] [Server thread/INFO]: [CMIEInjector] Disabling CMIEInjector v1.0.2.4
+[03:04:01] [Server thread/INFO]: [DeluxeMenus] Disabling DeluxeMenus v1.14.1-Release
+[03:04:01] [Server thread/INFO]: [Rankup] Disabling Rankup v3.15.3
+[03:04:01] [Server thread/INFO]: [GlobalMarketPlus] Disabling GlobalMarketPlus v1.4.1.5
+[03:04:01] [Server thread/INFO]: [PlaceholderAPI] Unregistered placeholder expansion gmpapi
+[03:04:01] [Server thread/INFO]: [PlaceholderAPI] Reason: required plugin GlobalMarketPlus was disabled.
+[03:04:01] [Server thread/INFO]: GlobalMarketPlus >>> Async threads stopped.
+[03:04:01] [Server thread/INFO]: GlobalMarketPlus >>> Database SQLite:Database.db disconnected.
+[03:04:01] [Server thread/INFO]: GlobalMarketPlus >>> Database SQLite:Recorder.db disconnected.
+[03:04:01] [Server thread/INFO]: [Multiverse-Inventories] Disabling Multiverse-Inventories v5.3.5
+[03:04:01] [Server thread/INFO]: [Multiverse-Inventories] - Disabled
+[03:04:01] [Server thread/INFO]: [Autorank] Disabling Autorank v5.2.4
+[03:04:01] [Server thread/INFO]: [Autorank] Autorank 5.2.4 has been disabled!
+[03:04:01] [Server thread/INFO]: [LibsDisguises] Disabling LibsDisguises v26.8.13
+[03:04:01] [Server thread/INFO]: [CommandAPI] Disabling CommandAPI v12.0.0
+[03:04:01] [Server thread/INFO]: [HeadDatabase] Disabling HeadDatabase v4.24.0
+[03:04:01] [Server thread/INFO]: [Oraxen] Disabling Oraxen v1.218.0
+[03:04:01] [Server thread/INFO]: Oraxen | Unhooking plugin "Skript"
+[03:04:01] [Server thread/INFO]: Oraxen | Unhooking plugin "PlaceholderAPI"
+[03:04:01] [Server thread/INFO]: Oraxen | Successfully unloaded
+[03:04:01] [Server thread/INFO]: [Multiverse-Core] Disabling Multiverse-Core v5.8.0
+[03:04:01] [Server thread/INFO]: [Multiverse-Core] - Disabled
+[03:04:01] [Server thread/INFO]: [Jobs] Disabling Jobs v5.2.6.6
+[03:04:01] [Server thread/INFO]: ------------- Jobs -------------
+[03:04:01] [Jobs-DatabaseSaveTask/INFO]: Database save task shutdown!
+[03:04:01] [Server thread/INFO]: Cleared boss bar cache
+[03:04:01] [Server thread/INFO]: Saved player data
+[03:04:01] [Server thread/INFO]: Closed database connection
+[03:04:01] [Server thread/INFO]: ------------------------------------
+[03:04:01] [Server thread/INFO]: [CMI] Disabling CMI v9.8.9.8
+[03:04:01] [Jobs-BufferedPaymentThread/INFO]: Buffered payment thread shutdown.
+[03:04:01] [Server thread/INFO]: [CMI] Closed db connections
+[03:04:01] [Server thread/INFO]: [packetevents] Disabling packetevents v2.13.0
+[03:04:01] [Server thread/INFO]: [Lands] Disabling Lands v8.1.0
+[03:04:01] [Server thread/INFO]: [Lands] Closing storage.
+[03:04:01] [Server thread/INFO]: [Lands] Took 48 ms.
+[03:04:01] [Server thread/INFO]: [Skript] Disabling Skript v2.16.1
+[03:04:02] [Server thread/INFO]: [NBTAPI] Disabling NBTAPI v2.16.0
+[03:04:02] [Server thread/INFO]: [PlotSquared] Disabling PlotSquared v7.6.0-Premium
+[03:04:02] [Server thread/INFO]: [PlotSquared/SQLManager] All DB transactions during this session are being validated (This may take a while if corrections need to be made)
+[03:04:02] [Server thread/INFO]: [VoidGen] Disabling VoidGen v2.3.8
+[03:04:02] [Server thread/INFO]: [CMILib] Disabling CMILib v1.5.9.9
+[03:04:02] [Server thread/INFO]: [ProtocolLib] Disabling ProtocolLib v5.4.0
+[03:04:02] [Server thread/INFO]: [BlueMap] Disabling BlueMap v5.23
+[03:04:02] [Server thread/INFO]: [BlueMap] Stopping...
+[03:04:02] [Server thread/INFO]: [BlueMap] Saved and stopped!
+[03:04:02] [Server thread/INFO]: [WorldGuard] Disabling WorldGuard v7.0.18+2392-fa605e6
+[03:04:02] [Server thread/INFO]: [WorldGuard] Shutting down executor and cancelling any pending tasks...
+[03:04:02] [Server thread/INFO]: [FastAsyncWorldEdit] Disabling FastAsyncWorldEdit v2.15.4-SNAPSHOT-1370+dd6a724
+[03:04:02] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[03:04:02] [Server thread/INFO]: [Vault] Disabling Vault v2.20.2
+[03:04:02] [Server thread/INFO]: [PlaceholderAPI] Unregistered placeholder expansion vault
+[03:04:02] [Server thread/INFO]: [PlaceholderAPI] Reason: required plugin Vault was disabled.
+[03:04:02] [Server thread/INFO]: [LuckPerms] Disabling LuckPerms v5.5.71
+[03:04:02] [Server thread/INFO]: [PlaceholderAPI] Unregistered placeholder expansion luckperms
+[03:04:02] [Server thread/INFO]: [PlaceholderAPI] Reason: required plugin LuckPerms was disabled.
+[03:04:02] [Server thread/INFO]: [LuckPerms] Starting shutdown process...
+[03:04:02] [Server thread/INFO]: [LuckPerms] Closing messaging service...
+[03:04:04] [Server thread/ERROR]: Error occurred while disabling LuckPerms v5.5.71
+me.lucko.luckperms.lib.jedis.exceptions.JedisConnectionException: Failed to connect to 172.18.0.1:6380.
+	at me.lucko.luckperms.lib.jedis.DefaultJedisSocketFactory.connectToFirstSuccessfulHost(DefaultJedisSocketFactory.java:63) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.DefaultJedisSocketFactory.createSocket(DefaultJedisSocketFactory.java:89) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Connection.connect(Connection.java:227) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Connection.sendCommand(Connection.java:199) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.JedisPubSubBase.sendAndFlushCommand(JedisPubSubBase.java:43) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.JedisPubSubBase.unsubscribe(JedisPubSubBase.java:48) ~[?:?]
+	at me.lucko.luckperms.common.messaging.redis.RedisMessenger.close(RedisMessenger.java:118) ~[?:?]
+	at me.lucko.luckperms.common.messaging.LuckPermsMessagingService.close(LuckPermsMessagingService.java:99) ~[?:?]
+	at me.lucko.luckperms.common.plugin.AbstractLuckPermsPlugin.disable(AbstractLuckPermsPlugin.java:307) ~[?:?]
+	at me.lucko.luckperms.bukkit.LPBukkitBootstrap.onDisable(LPBukkitBootstrap.java:193) ~[?:?]
+	at LuckPerms-Bukkit-5.5.71.jar//me.lucko.luckperms.bukkit.loader.BukkitLoaderPlugin.onDisable(BukkitLoaderPlugin.java:55) ~[?:?]
+	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:285) ~[paper-api-26.2.build.112-stable.jar:?]
+	at io.papermc.paper.plugin.manager.PaperPluginInstanceManager.disablePlugin(PaperPluginInstanceManager.java:236) ~[paper-26.2.jar:26.2-112-c9e894d]
+	at io.papermc.paper.plugin.manager.PaperPluginInstanceManager.disablePlugins(PaperPluginInstanceManager.java:160) ~[paper-26.2.jar:26.2-112-c9e894d]
+	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.disablePlugins(PaperPluginManagerImpl.java:97) ~[paper-26.2.jar:26.2-112-c9e894d]
+	at org.bukkit.plugin.SimplePluginManager.disablePlugins(SimplePluginManager.java:540) ~[paper-api-26.2.build.112-stable.jar:?]
+	at org.bukkit.craftbukkit.CraftServer.disablePlugins(CraftServer.java:606) ~[paper-26.2.jar:26.2-112-c9e894d]
+	at net.minecraft.server.MinecraftServer.stopServer(MinecraftServer.java:1028) ~[paper-26.2.jar:26.2-112-c9e894d]
+	at net.minecraft.server.dedicated.DedicatedServer.stopServer(DedicatedServer.java:909) ~[paper-26.2.jar:26.2-112-c9e894d]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1384) ~[paper-26.2.jar:26.2-112-c9e894d]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:303) ~[paper-26.2.jar:26.2-112-c9e894d]
+	at java.base/java.lang.Thread.run(Thread.java:1474) ~[?:?]
+	Suppressed: java.net.SocketTimeoutException: Connect timed out
+		at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+		at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:594)
+		at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:307)
+		at java.base/java.net.Socket.connect(Socket.java:659)
+		at me.lucko.luckperms.lib.jedis.DefaultJedisSocketFactory.connectToFirstSuccessfulHost(DefaultJedisSocketFactory.java:75) ~[?:?]
+		... 21 more
+[03:04:04] [Server thread/INFO]: [PlaceholderAPI] Disabling PlaceholderAPI v2.12.3
+[03:04:04] [Server thread/INFO]: Saving players
+[03:04:04] [Server thread/INFO]: Saving worlds
+[03:04:04] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'minecraft:overworld'
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'minecraft:overworld'
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'minecraft:overworld'
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Saved 2 block chunks, 7 entity chunks, 0 poi chunks in world 'minecraft:overworld' in 0.00s
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'minecraft:overworld'
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'minecraft:overworld'
+[03:04:04] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'minecraft:the_nether'
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'minecraft:the_nether'
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'minecraft:the_nether'
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'minecraft:the_nether' in 0.00s
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'minecraft:the_nether'
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'minecraft:the_nether'
+[03:04:04] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'minecraft:the_end'
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'minecraft:the_end'
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'minecraft:the_end'
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'minecraft:the_end' in 0.00s
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'minecraft:the_end'
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'minecraft:the_end'
+[03:04:04] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:freebuild
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'minecraft:freebuild'
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'minecraft:freebuild'
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'minecraft:freebuild'
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'minecraft:freebuild' in 0.00s
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'minecraft:freebuild'
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'minecraft:freebuild'
+[03:04:04] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:schematics
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'minecraft:schematics'
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'minecraft:schematics'
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'minecraft:schematics'
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'minecraft:schematics' in 0.00s
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'minecraft:schematics'
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'minecraft:schematics'
+[03:04:04] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:town
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'minecraft:town'
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'minecraft:town'
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'minecraft:town'
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'minecraft:town' in 0.00s
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'minecraft:town'
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'minecraft:town'
+[03:04:04] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:tycoon
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'minecraft:tycoon'
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'minecraft:tycoon'
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'minecraft:tycoon'
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'minecraft:tycoon' in 0.00s
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'minecraft:tycoon'
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'minecraft:tycoon'
+[03:04:04] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[03:04:04] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[03:04:04] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[03:04:04] [Server thread/INFO]: ThreadedAnvilChunkStorage (freebuild): All chunks are saved
+[03:04:04] [Server thread/INFO]: ThreadedAnvilChunkStorage (schematics): All chunks are saved
+[03:04:04] [Server thread/INFO]: ThreadedAnvilChunkStorage (town): All chunks are saved
+[03:04:04] [Server thread/INFO]: ThreadedAnvilChunkStorage (tycoon): All chunks are saved
+[03:04:04] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[03:04:04] [Server thread/INFO]: Waiting for all RegionFile I/O tasks to complete...
+[03:04:04] [Server thread/INFO]: All RegionFile I/O tasks to complete
+[03:04:04] [Server thread/INFO]: [MoonriseCommon] Awaiting termination of worker pool for up to 60s...
+[03:04:04] [Server thread/INFO]: [MoonriseCommon] Awaiting termination of I/O pool for up to 60s...
+[03:04:04] [spark-monitoring-1-thread-1/ERROR]: [STDERR] [me.lucko.spark.paper.common.util.log.Logger$1] Uncaught exception thrown in thread spark-monitoring-1-thread-1
+[03:04:04] [spark-monitoring-1-thread-1/WARN]: java.util.concurrent.CancellationException
+[03:04:04] [spark-monitoring-1-thread-1/WARN]: 	at java.base/java.util.concurrent.FutureTask.report(FutureTask.java:123)
+[03:04:04] [spark-monitoring-1-thread-1/WARN]: 	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:193)
+[03:04:04] [spark-monitoring-1-thread-1/WARN]: 	at me.lucko.spark.paper.common.util.SparkScheduledThreadPoolExecutor.afterExecute(SparkScheduledThreadPoolExecutor.java:48)
+[03:04:04] [spark-monitoring-1-thread-1/WARN]: 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1091)
+[03:04:04] [spark-monitoring-1-thread-1/WARN]: 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+[03:04:04] [spark-monitoring-1-thread-1/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:1474)

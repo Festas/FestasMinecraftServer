@@ -1,0 +1,199 @@
+[00:10:19] [helper-scheduler-3/INFO]: [X-Prison] History cleanup: removed entries older than 30 days.
+[01:10:19] [helper-scheduler-3/INFO]: [X-Prison] History cleanup: removed entries older than 30 days.
+[01:53:40] [Server thread/INFO]: /198.46.182.214:61746 lost connection: Internal Exception: io.netty.handler.codec.DecoderException: java.io.IOException: Packet login/serverbound/minecraft:hello (ServerboundHelloPacket) was larger than I expected, found 1 bytes extra whilst reading packet serverbound/minecraft:hello
+[02:10:19] [helper-scheduler-3/INFO]: [X-Prison] History cleanup: removed entries older than 30 days.
+[03:04:01] [Server thread/INFO]: Stopping server
+[03:04:01] [Server thread/INFO]: [BlueMap] Disabling BlueMap v5.23
+[03:04:01] [Server thread/INFO]: [BlueMap] Stopping...
+[03:04:01] [luckperms-worker-7/WARN]: [LuckPerms] Redis pubsub connection dropped, trying to re-open the connection
+me.lucko.luckperms.lib.jedis.exceptions.JedisConnectionException: Unexpected end of stream.
+	at me.lucko.luckperms.lib.jedis.util.RedisInputStream.ensureFill(RedisInputStream.java:259) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.util.RedisInputStream.readByte(RedisInputStream.java:55) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Protocol.process(Protocol.java:131) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Protocol.read(Protocol.java:221) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Connection.protocolRead(Connection.java:379) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:392) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Connection.getUnflushedObject(Connection.java:349) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.JedisPubSubBase.process(JedisPubSubBase.java:115) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.JedisPubSubBase.proceed(JedisPubSubBase.java:92) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.UnifiedJedis.subscribe(UnifiedJedis.java:3821) ~[?:?]
+	at me.lucko.luckperms.common.messaging.redis.RedisMessenger$Subscription.run(RedisMessenger.java:140) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.compute(ForkJoinTask.java:1753) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.compute(ForkJoinTask.java:1745) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinTask$InterruptibleTask.exec(ForkJoinTask.java:1662) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187) ~[?:?]
+[03:04:01] [Server thread/INFO]: [BlueMap] Saved and stopped!
+[03:04:01] [Server thread/INFO]: [XRobots] Disabling XRobots v1.2.1
+[03:04:01] [Server thread/INFO]: [com.zaxxer.hikari.HikariDataSource] xrobots-0 - Shutdown initiated...
+[03:04:01] [Server thread/INFO]: [com.zaxxer.hikari.HikariDataSource] xrobots-0 - Shutdown completed.
+[03:04:01] [Server thread/INFO]: [XRobots] §cDatabase Connection closed
+[03:04:01] [Server thread/INFO]: [Plan] Disabling Plan v5.8 build 3605
+[03:04:01] [Server thread/INFO]: [Plan] Processing complete.
+[03:04:01] [Server thread/INFO]: [Plan] Waiting for unfinished transactions to avoid data loss..
+[03:04:01] [Server thread/INFO]: [Plan] Transaction queue closed.
+[03:04:01] [Server thread/INFO]: [Plan] Player Analytics Disabled.
+[03:04:01] [Server thread/INFO]: [TAB-Bridge] Disabling TAB-Bridge v6.2.2
+[03:04:01] [Server thread/INFO]: [XPrivateMines] Disabling XPrivateMines v2026.3.0.9
+[03:04:01] [Server thread/INFO]: [io.javalin.Javalin] Stopping Javalin ...
+[03:04:01] [Server thread/INFO]: [org.eclipse.jetty.server.Server] Stopped Server@4b8c77fd{STOPPING}[11.0.23,sto=0]
+[03:04:01] [Server thread/INFO]: [org.eclipse.jetty.server.AbstractConnector] Stopped ServerConnector@5ebb5947{HTTP/1.1, (http/1.1)}{0.0.0.0:8090}
+[03:04:01] [Server thread/INFO]: [org.eclipse.jetty.server.handler.ContextHandler] Stopped o.e.j.s.ServletContextHandler@61041ba5{/,null,STOPPED}
+[03:04:01] [Server thread/INFO]: [io.javalin.Javalin] Javalin has stopped
+[03:04:01] [Server thread/INFO]: [X-PrivateMines-Addon/Dashboard] Dashboard stopped.
+[03:04:01] [Server thread/INFO]: [CMIEInjector] Disabling CMIEInjector v1.0.2.4
+[03:04:01] [Server thread/INFO]: [DeluxeMenus] Disabling DeluxeMenus v1.14.1-Release
+[03:04:01] [Server thread/INFO]: [GlobalMarketPlus] Disabling GlobalMarketPlus v1.4.1.5
+[03:04:01] [Server thread/INFO]: [PlaceholderAPI] Unregistered placeholder expansion gmpapi
+[03:04:01] [Server thread/INFO]: [PlaceholderAPI] Reason: required plugin GlobalMarketPlus was disabled.
+[03:04:01] [Server thread/INFO]: GlobalMarketPlus >>> Async threads stopped.
+[03:04:01] [Server thread/INFO]: GlobalMarketPlus >>> Database SQLite:Database.db disconnected.
+[03:04:01] [Server thread/INFO]: GlobalMarketPlus >>> Database SQLite:Recorder.db disconnected.
+[03:04:01] [Server thread/INFO]: [Multiverse-Inventories] Disabling Multiverse-Inventories v5.3.5
+[03:04:01] [Server thread/INFO]: [Multiverse-Inventories] - Disabled
+[03:04:01] [Server thread/INFO]: [LibsDisguises] Disabling LibsDisguises v26.8.13
+[03:04:01] [Server thread/INFO]: [CommandAPI] Disabling CommandAPI v11.1.0
+[03:04:01] [Server thread/INFO]: [X-Prison] Disabling X-Prison v2026.3.3.0
+[03:04:01] [Server thread/INFO]: [X-Prison] Saved all currencies data to DB
+[03:04:01] [Server thread/INFO]: [X-Prison] §aBlocks Broken saved.
+[03:04:01] [Server thread/INFO]: [X-Prison] §aRanks saved.
+[03:04:01] [Server thread/INFO]: [X-Prison] §aPrestiges saved.
+[03:04:01] [Server thread/INFO]: [X-Prison] §aRebirths saved.
+[03:04:01] [Server thread/INFO]: [X-Prison] Saved global multipliers to DB
+[03:04:01] [Server thread/INFO]: [X-Prison] Saved all player multipliers to DB
+[03:04:01] [Server thread/INFO]: [X-Prison] §fSaved online players auto miner data.
+[03:04:01] [Server thread/INFO]: [X-Prison] §aGangs saved.
+[03:04:01] [Server thread/INFO]: [com.zaxxer.hikari.HikariDataSource] xprison-0 - Shutdown initiated...
+[03:04:01] [Server thread/INFO]: [com.zaxxer.hikari.HikariDataSource] xprison-0 - Shutdown completed.
+[03:04:01] [Server thread/INFO]: [X-Prison] §cDatabase Connection closed
+[03:04:01] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §9Voucher Finder§a created by §eDrawethree
+[03:04:01] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §x§0§0§e§0§f§fV§x§1§2§c§7§f§fa§x§2§3§a§d§f§fn§x§3§5§9§4§f§fg§x§4§6§7§b§f§fu§x§5§8§6§2§f§fa§x§6§9§4§8§f§fr§x§7§b§2§f§f§fd§a created by §eDrawethree
+[03:04:01] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §eRobot Finder§a created by §eDrawethree
+[03:04:01] [Server thread/INFO]: [X-Prison-Addon/Pets] Pets addon disabled.
+[03:04:01] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §dPet Finder§a created by §eDrawethree
+[03:04:01] [Server thread/INFO]: [X-Prison-Addon/Momentum] Momentum addon disabled.
+[03:04:01] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §eLucky Block§a created by §eDrawethree
+[03:04:01] [Server thread/INFO]: [X-Prison-Addon/Events] Events addon disabled.
+[03:04:01] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §dEcho Booster§a created by §eDrawethree
+[03:04:01] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §bDrill§a created by §eDrawethree
+[03:04:01] [Server thread/INFO]: [io.javalin.Javalin] Stopping Javalin ...
+[03:04:01] [Server thread/INFO]: [org.eclipse.jetty.server.Server] Stopped Server@27477573{STOPPING}[11.0.23,sto=0]
+[03:04:01] [Server thread/INFO]: [org.eclipse.jetty.server.AbstractConnector] Stopped ServerConnector@5aaf9e5f{HTTP/1.1, (http/1.1)}{0.0.0.0:8085}
+[03:04:01] [Server thread/INFO]: [org.eclipse.jetty.server.handler.ContextHandler] Stopped o.e.j.s.ServletContextHandler@3a13acc7{/,null,STOPPED}
+[03:04:01] [Server thread/INFO]: [io.javalin.Javalin] Javalin has stopped
+[03:04:01] [Server thread/INFO]: [X-Prison-Addon/Dashboard] Dashboard stopped.
+[03:04:01] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §cCluster Bomb§a created by §eDrawethree
+[03:04:01] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §cBomb Finder§a created by §eDrawethree
+[03:04:01] [Server thread/INFO]: [X-Prison-Addon/BlackMarket] Black Market addon disabled.
+[03:04:01] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §x§f§f§d§7§0§0A§x§f§f§c§8§1§cs§x§f§f§b§9§3§8c§x§f§f§a§a§5§4e§x§f§f§9§b§7§0n§x§f§f§8§b§8§cd§x§f§f§7§c§a§8a§x§f§f§6§d§c§4n§x§f§f§5§e§e§0t§a created by §eDrawethree
+[03:04:01] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §x§a§6§e§3§f§fF§x§9§b§d§b§f§br§x§9§0§d§2§f§7o§x§8§4§c§a§f§3s§x§7§9§c§1§f§0t§x§6§e§b§9§e§cb§x§6§3§b§0§e§8i§x§5§7§a§8§e§4t§x§4§c§9§f§e§0e§a created by §eDrawethree
+[03:04:01] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §x§9§c§f§f§3§cV§x§9§2§f§3§3§9e§x§8§9§e§8§3§6n§x§7§f§d§c§3§3o§x§7§6§d§0§3§0m§x§6§c§c§5§2§d §x§6§2§b§9§2§aB§x§5§9§a§d§2§7l§x§4§f§a§1§2§4o§x§4§6§9§6§2§1o§x§3§c§8§a§1§em§a created by §eDrawethree
+[03:04:01] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §x§e§a§f§5§f§fG§x§e§1§f§0§f§ca§x§d§8§e§b§f§9l§x§c§f§e§5§f§6e§x§c§6§e§0§f§3 §x§b§d§d§b§f§0C§x§b§3§d§6§e§cu§x§a§a§d§1§e§9t§x§a§1§c§b§e§6t§x§9§8§c§6§e§3e§x§8§f§c§1§e§0r§a created by §eDrawethree
+[03:04:01] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §x§f§f§b§0§3§0M§x§f§f§a§3§2§ba§x§f§f§9§6§2§6g§x§f§f§8§a§2§2m§x§f§f§7§d§1§da§x§f§f§7§0§1§8 §x§f§f§6§3§1§3S§x§f§f§5§6§0§eu§x§f§f§4§a§0§ar§x§f§f§3§d§0§5g§x§f§f§3§0§0§0e§a created by §eDrawethree
+[03:04:01] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §x§f§f§f§6§c§0D§x§f§f§f§2§b§4i§x§f§f§e§e§a§8v§x§f§f§e§a§9§ci§x§f§f§e§6§9§0n§x§f§f§e§2§8§4e§x§f§f§d§d§7§8 §x§f§f§d§9§6§cS§x§f§f§d§5§6§0m§x§f§f§d§1§5§4i§x§f§f§c§d§4§8t§x§f§f§c§9§3§ce§a created by §eDrawethree
+[03:04:01] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §x§7§b§e§8§d§cS§x§7§4§e§0§d§5o§x§6§d§d§7§c§du§x§6§6§c§f§c§6l§x§5§f§c§6§b§f §x§5§8§b§e§b§7H§x§5§1§b§5§b§0a§x§4§a§a§d§a§8r§x§4§3§a§4§a§1v§x§3§c§9§c§9§ae§x§3§5§9§3§9§2s§x§2§e§8§b§8§bt§a created by §eDrawethree
+[03:04:01] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §x§c§7§9§b§f§fA§x§b§f§9§0§f§fr§x§b§8§8§5§f§fc§x§b§0§7§a§f§fa§x§a§8§6§f§f§fn§x§a§1§6§5§f§fe§x§9§9§5§a§f§f §x§9§1§4§f§f§fN§x§8§9§4§4§f§fo§x§8§2§3§9§f§fv§x§7§a§2§e§f§fa§a created by §eDrawethree
+[03:04:01] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §x§f§f§f§1§b§8S§x§f§1§e§b§c§2t§x§e§3§e§5§c§ca§x§d§5§d§f§d§6r§x§c§6§d§a§e§1f§x§b§8§d§4§e§ba§x§a§a§c§e§f§5l§x§9§c§c§8§f§fl§a created by §eDrawethree
+[03:04:01] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §x§f§f§8§0§0§0M§x§f§f§8§7§0§0e§x§f§f§8§d§0§0t§x§f§f§9§4§0§0e§x§f§f§9§b§0§0o§x§f§f§a§1§0§0r§x§f§f§a§8§0§0 §x§f§f§a§f§0§0S§x§f§f§b§5§0§0t§x§f§f§b§c§0§0r§x§f§f§c§3§0§0i§x§f§f§c§9§0§0k§x§f§f§d§0§0§0e§a created by §eDrawethree
+[03:04:01] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §x§8§0§0§0§a§0B§x§8§7§0§b§a§bl§x§8§e§1§5§b§5a§x§9§5§2§0§c§0c§x§9§c§2§b§c§ak§x§a§4§3§5§d§5 §x§a§b§4§0§d§fH§x§b§2§4§b§e§ao§x§b§9§5§5§f§4l§x§c§0§6§0§f§fe§a created by §eDrawethree
+[03:04:01] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §x§7§8§c§8§f§fL§x§8§2§c§c§f§fi§x§8§b§d§0§f§fg§x§9§5§d§4§f§fh§x§9§f§d§8§f§ft§x§a§8§d§c§f§fn§x§b§2§e§0§f§fi§x§b§c§e§4§f§fn§x§c§5§e§7§f§fg§x§c§f§e§b§f§f §x§d§8§e§f§f§fS§x§e§2§f§3§f§ft§x§e§c§f§7§f§fo§x§f§5§f§b§f§fr§fm§a created by §eDrawethree
+[03:04:01] [Server thread/INFO]: [X-Prison] §aUnregistered enchant §x§b§0§b§0§b§0T§x§b§d§b§d§b§do§x§c§a§c§a§c§ar§x§d§8§d§8§d§8n§x§e§5§e§5§e§5a§x§f§2§f§2§f§2d§fo§a created by §eDrawethree
+[03:04:01] [Server thread/INFO]: [CMI] Disabling CMI v9.8.9.8
+[03:04:02] [Server thread/INFO]: [CMI] Closed db connections
+[03:04:02] [Server thread/INFO]: [Oraxen] Disabling Oraxen v1.218.0
+[03:04:02] [Server thread/INFO]: Oraxen | Unhooking plugin "Skript"
+[03:04:02] [Server thread/INFO]: Oraxen | Unhooking plugin "PlaceholderAPI"
+[03:04:02] [Server thread/INFO]: Oraxen | Successfully unloaded
+[03:04:02] [Server thread/INFO]: [helper] Disabling helper v5.6.14
+[03:04:02] [Server thread/INFO]: [Multiverse-Core] Disabling Multiverse-Core v5.8.0
+[03:04:02] [Server thread/INFO]: [Multiverse-Core] - Disabled
+[03:04:02] [Server thread/INFO]: [CMILib] Disabling CMILib v1.5.9.9
+[03:04:02] [Server thread/INFO]: [packetevents] Disabling packetevents v2.13.0
+[03:04:02] [Server thread/INFO]: [Skript] Disabling Skript v2.16.1
+[03:04:02] [Server thread/INFO]: [NBTAPI] Disabling NBTAPI v2.16.0
+[03:04:02] [Server thread/INFO]: [ProtocolLib] Disabling ProtocolLib v5.4.0
+[03:04:02] [Server thread/INFO]: [WorldGuard] Disabling WorldGuard v7.0.18+2392-fa605e6
+[03:04:02] [Server thread/INFO]: [WorldGuard] Shutting down executor and cancelling any pending tasks...
+[03:04:02] [Server thread/INFO]: [FastAsyncWorldEdit] Disabling FastAsyncWorldEdit v2.15.4-SNAPSHOT-1370+dd6a724
+[03:04:02] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[03:04:02] [Server thread/INFO]: [Vault] Disabling Vault v2.20.2
+[03:04:02] [Server thread/INFO]: [PlaceholderAPI] Unregistered placeholder expansion vault
+[03:04:02] [Server thread/INFO]: [PlaceholderAPI] Reason: required plugin Vault was disabled.
+[03:04:02] [Server thread/INFO]: [LuckPerms] Disabling LuckPerms v5.5.71
+[03:04:02] [Server thread/INFO]: [PlaceholderAPI] Unregistered placeholder expansion luckperms
+[03:04:02] [Server thread/INFO]: [PlaceholderAPI] Reason: required plugin LuckPerms was disabled.
+[03:04:02] [Server thread/INFO]: [LuckPerms] Starting shutdown process...
+[03:04:02] [Server thread/INFO]: [LuckPerms] Closing messaging service...
+[03:04:04] [Server thread/ERROR]: Error occurred while disabling LuckPerms v5.5.71
+me.lucko.luckperms.lib.jedis.exceptions.JedisConnectionException: Failed to connect to 172.18.0.1:6380.
+	at me.lucko.luckperms.lib.jedis.DefaultJedisSocketFactory.connectToFirstSuccessfulHost(DefaultJedisSocketFactory.java:63) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.DefaultJedisSocketFactory.createSocket(DefaultJedisSocketFactory.java:89) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Connection.connect(Connection.java:227) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.Connection.sendCommand(Connection.java:199) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.JedisPubSubBase.sendAndFlushCommand(JedisPubSubBase.java:43) ~[?:?]
+	at me.lucko.luckperms.lib.jedis.JedisPubSubBase.unsubscribe(JedisPubSubBase.java:48) ~[?:?]
+	at me.lucko.luckperms.common.messaging.redis.RedisMessenger.close(RedisMessenger.java:118) ~[?:?]
+	at me.lucko.luckperms.common.messaging.LuckPermsMessagingService.close(LuckPermsMessagingService.java:99) ~[?:?]
+	at me.lucko.luckperms.common.plugin.AbstractLuckPermsPlugin.disable(AbstractLuckPermsPlugin.java:307) ~[?:?]
+	at me.lucko.luckperms.bukkit.LPBukkitBootstrap.onDisable(LPBukkitBootstrap.java:193) ~[?:?]
+	at LuckPerms-Bukkit-5.5.71.jar//me.lucko.luckperms.bukkit.loader.BukkitLoaderPlugin.onDisable(BukkitLoaderPlugin.java:55) ~[?:?]
+	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:285) ~[paper-api-26.2.build.112-stable.jar:?]
+	at io.papermc.paper.plugin.manager.PaperPluginInstanceManager.disablePlugin(PaperPluginInstanceManager.java:236) ~[paper-26.2.jar:26.2-112-c9e894d]
+	at io.papermc.paper.plugin.manager.PaperPluginInstanceManager.disablePlugins(PaperPluginInstanceManager.java:160) ~[paper-26.2.jar:26.2-112-c9e894d]
+	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.disablePlugins(PaperPluginManagerImpl.java:97) ~[paper-26.2.jar:26.2-112-c9e894d]
+	at org.bukkit.plugin.SimplePluginManager.disablePlugins(SimplePluginManager.java:540) ~[paper-api-26.2.build.112-stable.jar:?]
+	at org.bukkit.craftbukkit.CraftServer.disablePlugins(CraftServer.java:606) ~[paper-26.2.jar:26.2-112-c9e894d]
+	at net.minecraft.server.MinecraftServer.stopServer(MinecraftServer.java:1028) ~[paper-26.2.jar:26.2-112-c9e894d]
+	at net.minecraft.server.dedicated.DedicatedServer.stopServer(DedicatedServer.java:909) ~[paper-26.2.jar:26.2-112-c9e894d]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1384) ~[paper-26.2.jar:26.2-112-c9e894d]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:303) ~[paper-26.2.jar:26.2-112-c9e894d]
+	at java.base/java.lang.Thread.run(Thread.java:1474) ~[?:?]
+	Suppressed: java.net.SocketTimeoutException: Connect timed out
+		at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+		at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:594)
+		at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:307)
+		at java.base/java.net.Socket.connect(Socket.java:659)
+		at me.lucko.luckperms.lib.jedis.DefaultJedisSocketFactory.connectToFirstSuccessfulHost(DefaultJedisSocketFactory.java:75) ~[?:?]
+		... 21 more
+[03:04:04] [Server thread/INFO]: [PlaceholderAPI] Disabling PlaceholderAPI v2.12.3
+[03:04:04] [Server thread/INFO]: Saving players
+[03:04:04] [Server thread/INFO]: Saving worlds
+[03:04:04] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'minecraft:overworld'
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'minecraft:overworld'
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'minecraft:overworld'
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'minecraft:overworld' in 0.00s
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'minecraft:overworld'
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'minecraft:overworld'
+[03:04:04] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'minecraft:the_nether'
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'minecraft:the_nether'
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'minecraft:the_nether'
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'minecraft:the_nether' in 0.00s
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'minecraft:the_nether'
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'minecraft:the_nether'
+[03:04:04] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:private_mines
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'minecraft:private_mines'
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'minecraft:private_mines'
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'minecraft:private_mines'
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'minecraft:private_mines' in 0.00s
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'minecraft:private_mines'
+[03:04:04] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'minecraft:private_mines'
+[03:04:04] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[03:04:04] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[03:04:04] [Server thread/INFO]: ThreadedAnvilChunkStorage (private_mines): All chunks are saved
+[03:04:04] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[03:04:04] [Server thread/INFO]: Waiting for all RegionFile I/O tasks to complete...
+[03:04:04] [Server thread/INFO]: All RegionFile I/O tasks to complete
+[03:04:04] [Server thread/INFO]: [MoonriseCommon] Awaiting termination of worker pool for up to 60s...
+[03:04:04] [Server thread/INFO]: [MoonriseCommon] Awaiting termination of I/O pool for up to 60s...
+[03:04:04] [spark-monitoring-1-thread-1/ERROR]: [STDERR] [me.lucko.spark.paper.common.util.log.Logger$1] Uncaught exception thrown in thread spark-monitoring-1-thread-1
+[03:04:04] [spark-monitoring-1-thread-1/WARN]: java.util.concurrent.CancellationException
+[03:04:04] [spark-monitoring-1-thread-1/WARN]: 	at java.base/java.util.concurrent.FutureTask.report(FutureTask.java:123)
+[03:04:04] [spark-monitoring-1-thread-1/WARN]: 	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:193)
+[03:04:04] [spark-monitoring-1-thread-1/WARN]: 	at me.lucko.spark.paper.common.util.SparkScheduledThreadPoolExecutor.afterExecute(SparkScheduledThreadPoolExecutor.java:48)
+[03:04:04] [spark-monitoring-1-thread-1/WARN]: 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1091)
+[03:04:04] [spark-monitoring-1-thread-1/WARN]: 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+[03:04:04] [spark-monitoring-1-thread-1/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:1474)
