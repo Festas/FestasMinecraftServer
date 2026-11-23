@@ -1,0 +1,22 @@
+[00:25:19] [SkinsRestorer - Task Executor #834/INFO] [skinsrestorer]: A new version of SkinsRestorer (15.12.6) is available: https://modrinth.com/plugin/skinsrestorer/version/15.12.6
+[01:09:55] [Netty epoll Worker #10/INFO] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /45.153.34.119:53406 has disconnected
+[01:25:19] [Netty epoll Worker #15/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:41008: read timed out
+[01:31:51] [Netty epoll Worker #12/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:57386: read timed out
+[02:12:10] [Netty epoll Worker #7/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:55314: read timed out
+[02:29:44] [Netty epoll Worker #1/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:45758: read timed out
+[02:38:26] [Netty epoll Worker #14/ERROR] [com.velocitypowered.proxy.connection.MinecraftConnection]: [initial connection] /23.176.184.152:59492: read timed out
+[03:04:01] [Shutdown thread/INFO] [com.velocitypowered.proxy.VelocityServer]: Shutting down the proxy...
+[03:04:01] [Shutdown thread/INFO] [com.velocitypowered.proxy.network.ConnectionManager]: Closing endpoint /0.0.0.0:25565
+[03:04:01] [main/ERROR] [com.velocitypowered.proxy.console.VelocityConsole]: Exception in thread "main" java.lang.IllegalStateException: Terminal has been closed
+[03:04:01] [main/ERROR] [com.velocitypowered.proxy.console.VelocityConsole]: 	at org.jline.terminal.impl.AbstractTerminal.checkClosed(AbstractTerminal.java:796)
+[03:04:01] [main/ERROR] [com.velocitypowered.proxy.console.VelocityConsole]: 	at org.jline.terminal.impl.AbstractUnixSysTerminal.setAttributes(AbstractUnixSysTerminal.java:182)
+[03:04:01] [main/ERROR] [com.velocitypowered.proxy.console.VelocityConsole]: 	at org.jline.reader.impl.LineReaderImpl.readLine(LineReaderImpl.java:729)
+[03:04:01] [main/ERROR] [com.velocitypowered.proxy.console.VelocityConsole]: 	at org.jline.reader.impl.LineReaderImpl.readLine(LineReaderImpl.java:468)
+[03:04:01] [main/ERROR] [com.velocitypowered.proxy.console.VelocityConsole]: 	at net.minecrell.terminalconsole.SimpleTerminalConsole.readCommands(SimpleTerminalConsole.java:158)
+[03:04:01] [main/ERROR] [com.velocitypowered.proxy.console.VelocityConsole]: 	at net.minecrell.terminalconsole.SimpleTerminalConsole.start(SimpleTerminalConsole.java:141)
+[03:04:01] [main/ERROR] [com.velocitypowered.proxy.console.VelocityConsole]: 	at com.velocitypowered.proxy.Velocity.main(Velocity.java:77)
+[03:04:01] [ForceResourcepacks - Task Executor #2/INFO] [plan]: Processing complete.
+[03:04:01] [ForceResourcepacks - Task Executor #2/INFO] [plan]: Waiting for unfinished transactions to avoid data loss..
+[03:04:01] [ForceResourcepacks - Task Executor #2/INFO] [plan]: Transaction queue closed.
+[03:04:01] [ForceResourcepacks - Task Executor #2/INFO] [plan]: Player Analytics Disabled.
+[03:04:01] [TAB Processing Thread/INFO] [TAB]: Disabled in 7ms
